@@ -1,0 +1,156 @@
+---
+import Base from '../layouts/Base.astro';
+const jsonld = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Meet A.I. AL — Cassian Creed",
+  "description": "A.I. AL (Analytical Logic): the transparent forensic method behind Cassian Creed, built on one unbreakable rule — never name the wrong person.",
+  "url": "https://cassiancreed.com/ai-al/"
+};
+const cases = [
+  { key:"converge", icon:"🎯", label:"WHEN IT CONVERGES", title:"The Idaho Student Murders", body:"DNA on a knife sheath, a suspect's car on surveillance, and his phone's pattern around the house — three independent directions that couldn't all be wrong together. The overlap collapsed to one person, and that's where the case landed." },
+  { key:"refuse", icon:"🛑", label:"WHEN IT REFUSES", title:"The Central Park Five", body:"Five teenagers, convicted almost entirely on confessions — but all five came from the same coercive interrogation. Not five clues. One event wearing five coats. The independent evidence, the DNA, excluded them all. A.I. AL refuses the conviction the real system made." },
+  { key:"withhold", icon:"⏸️", label:"WHEN IT WITHHOLDS", title:"JonBenét Ramsey", body:"Thirty years of public suspicion, and still no honest name. So it names no one, notes the family was cleared by DNA, and points instead at the one real lead. 'Not yet — but here's the thread worth pulling' is the system working, not failing." }
+];
+---
+<Base title="Meet A.I. AL — Cassian Creed" description="A.I. AL (Analytical Logic): the transparent forensic method behind Cassian Creed, built on one unbreakable rule — never name the wrong person." jsonld={jsonld}>
+  <section class="aial-hero wrap">
+    <p class="evidence evidence--accent">⚖️ A.I. AL · Analytical Logic</p>
+    <h1>The forensic mind that <em>refuses</em> to name the wrong person.</h1>
+    <p class="aial-lede">Most true crime asks <em>whodunit?</em> Our method asks a harder question first — <strong>how sure are we allowed to be?</strong> A.I. AL is a transparent, step-by-step way of reasoning about a case. Not a black box. Not a magic eight-ball. And it runs on one rule it will not break.</p>
+  </section>
+
+  <section class="wrap">
+    <div class="rule-card">
+      <span class="rule-card__tag">🔒 THE UNBREAKABLE RULE</span>
+      <p class="rule-card__big">Never name the wrong person.</p>
+      <p class="rule-card__sub">A false accusation creates a brand-new victim <em>and</em> frees the real offender to do it again. So A.I. AL would rather say <strong>"we don't know yet"</strong> than hand you a satisfying guess. That restraint is the whole reason you can trust it.</p>
+    </div>
+  </section>
+
+  <section class="wrap aial-section">
+    <p class="evidence evidence--accent">🧩 How it thinks</p>
+    <h2 class="aial-h2">The offender is an <span class="hl">overlap</span>.</h2>
+    <p class="aial-p">Every clue draws a circle. Some tell you who the offender <em>is</em> — "male," "small enough to fit the window," "knew the family's routine." Others tell you who they're <em>not</em> — "the DNA excludes these people." The offender lives in the overlap: inside everything we can prove, outside everything we can rule out.</p>
+
+    <figure class="venn">
+      <svg viewBox="0 0 640 380" role="img" aria-label="Inclusion-exclusion diagram: the offender is the overlap of what we can prove, minus what we can rule out.">
+        <defs>
+          <pattern id="hatch" width="8" height="8" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
+            <line x1="0" y1="0" x2="0" y2="8" stroke="#8a847c" stroke-width="2" opacity="0.5"/>
+          </pattern>
+        </defs>
+        <rect x="8" y="8" width="624" height="364" rx="14" fill="none" stroke="rgba(255,255,255,.10)"/>
+        <text x="24" y="34" fill="#8a847c" font-family="'JetBrains Mono',monospace" font-size="12" letter-spacing="2">Ω — EVERYONE</text>
+
+        <!-- include circles -->
+        <circle cx="250" cy="200" r="135" fill="rgba(224,86,59,.10)" stroke="#e0563b" stroke-width="2"/>
+        <circle cx="390" cy="200" r="135" fill="rgba(224,86,59,.10)" stroke="#e0563b" stroke-width="2"/>
+        <text x="150" y="120" fill="#e0563b" font-family="'JetBrains Mono',monospace" font-size="12">INCLUDE</text>
+        <text x="150" y="136" fill="#b8b1a8" font-family="Inter,sans-serif" font-size="12">who they ARE</text>
+
+        <!-- exclude blob carving the bottom of the lens -->
+        <circle cx="320" cy="300" r="95" fill="url(#hatch)" stroke="#8a847c" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.85"/>
+        <text x="470" y="330" fill="#8a847c" font-family="'JetBrains Mono',monospace" font-size="12">EXCLUDE</text>
+        <text x="470" y="346" fill="#8a847c" font-family="Inter,sans-serif" font-size="12">ruled out ✕</text>
+
+        <!-- surviving overlap highlight -->
+        <path d="M320 95 A135 135 0 0 1 320 230 A135 135 0 0 1 320 95 Z" fill="rgba(224,86,59,.42)"/>
+        <circle cx="320" cy="165" r="6" fill="#f4efe8"/>
+        <text x="320" y="150" fill="#f4efe8" font-family="Inter,sans-serif" font-size="13" text-anchor="middle" font-weight="600">the overlap</text>
+      </svg>
+      <figcaption>offender&nbsp;=&nbsp;<span class="mono">( everything we can prove )</span>&nbsp;−&nbsp;<span class="mono">( everything we can rule out )</span></figcaption>
+    </figure>
+
+    <p class="aial-p"><strong>Ruling people out is as powerful as ruling them in.</strong> A single small window clears thousands of people at once, by geometry — protection built from evidence. And you only get a <em>name</em> when hard, <strong>independent</strong> evidence collapses the overlap to one person. Until then, you have a <em>description</em>, not a suspect — and A.I. AL never pretends a description is a name.</p>
+  </section>
+
+  <section class="wrap aial-section">
+    <p class="evidence evidence--accent">🧪 Watch it work — three real cases</p>
+    <h2 class="aial-h2">Converge. Refuse. Withhold.</h2>
+    <p class="aial-p">The method does one of three things, depending on what the evidence earns. All three are real.</p>
+    <div class="cases">
+      {cases.map((c) => (
+        <div class={`case case--${c.key}`}>
+          <span class="case__label">{c.icon} {c.label}</span>
+          <h3 class="case__title">{c.title}</h3>
+          <p class="case__body">{c.body}</p>
+        </div>
+      ))}
+    </div>
+    <p class="aial-foot">It speaks when the evidence earns it — and stays silent when it doesn't.</p>
+  </section>
+
+  <section class="wrap aial-section">
+    <div class="lane">
+      <div class="lane__col lane__is">
+        <span class="evidence evidence--accent">✅ WHAT IT'S FOR</span>
+        <ul>
+          <li><strong>Explain</strong> how cases actually get solved.</li>
+          <li><strong>Audit</strong> convictions for the fingerprints of wrongful conviction.</li>
+          <li><strong>Find</strong> the missing and the overlooked.</li>
+          <li><strong>Protect</strong> — turn what the patterns teach into staying safe.</li>
+        </ul>
+      </div>
+      <div class="lane__col lane__isnt">
+        <span class="evidence">🚫 WHAT IT ISN'T</span>
+        <ul>
+          <li>Not law enforcement — it works only from <strong>public</strong> information.</li>
+          <li>It never implies investigators used our methods.</li>
+          <li>It hands genuine leads to the authorities who can act.</li>
+          <li>It will <strong>never</strong> name a living, un-convicted person — and holds the deceased to the same bar.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="aial-close">A.I. AL is, in the end, a forensic mind that's proudest of who it <em>refuses</em> to accuse.</p>
+  </section>
+
+  <section class="wrap aial-section">
+    <div class="aial-cta">
+      <p>See the method up close — how the missing are found, how a crime scene is read, the quiet logic of weighing evidence.</p>
+      <p><a class="btn" href="/forensic-tools/">Explore the Forensic Tools →</a> &nbsp; <a class="btn btn--ghost" href="/#subscribe">Get the free newsletter</a></p>
+    </div>
+  </section>
+
+  <style>
+    .aial-hero{padding:60px 0 10px}
+    .aial-hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(34px,5.2vw,58px);line-height:1.07;max-width:16ch;margin:14px 0 0}
+    .aial-hero h1 em{color:var(--accent);font-style:italic}
+    .aial-lede{color:var(--ink-2);max-width:60ch;font-size:19px;margin:20px 0 0}
+    .aial-section{padding:30px 0}
+    .aial-h2{font-family:var(--serif);font-weight:600;font-size:clamp(26px,3.4vw,38px);margin:8px 0 14px}
+    .aial-h2 .hl{color:var(--accent)}
+    .aial-p{color:var(--ink-2);max-width:64ch;margin:0 0 16px}
+    .aial-p strong,.aial-close strong{color:var(--ink)}
+    .mono{font-family:var(--mono);font-size:.85em;color:var(--accent)}
+    .rule-card{background:linear-gradient(160deg,#231512,#140d0b);border:1px solid rgba(224,86,59,.4);border-radius:14px;padding:30px 34px;margin:8px 0}
+    .rule-card__tag{font-family:var(--mono);font-size:11px;letter-spacing:.18em;color:var(--accent)}
+    .rule-card__big{font-family:var(--serif);font-weight:600;font-size:clamp(30px,5vw,48px);color:var(--ink);margin:8px 0 12px;line-height:1.05}
+    .rule-card__sub{color:var(--ink-2);max-width:62ch;margin:0}
+    .venn{margin:14px 0 18px;background:linear-gradient(180deg,#1b1714,#141009);border:1px solid var(--line);border-radius:12px;padding:18px}
+    .venn svg{width:100%;height:auto;display:block}
+    .venn figcaption{text-align:center;color:var(--ink-2);font-size:15px;margin-top:8px}
+    .cases{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:16px 0}
+    .case{background:var(--bg-2);border:1px solid var(--line);border-top-width:3px;border-radius:10px;padding:20px}
+    .case--converge{border-top-color:#4a9d6e}
+    .case--refuse{border-top-color:#e0563b}
+    .case--withhold{border-top-color:#d6a93e}
+    .case__label{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--ink-3)}
+    .case--converge .case__label{color:#67c08c}
+    .case--refuse .case__label{color:#e0563b}
+    .case--withhold .case__label{color:#d6a93e}
+    .case__title{font-family:var(--serif);font-weight:600;font-size:21px;margin:8px 0 8px}
+    .case__body{color:var(--ink-2);font-size:15px;margin:0}
+    .aial-foot{text-align:center;font-family:var(--serif);font-size:21px;color:var(--ink);margin:8px 0 0}
+    .lane{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .lane__col{background:var(--bg-2);border:1px solid var(--line);border-radius:10px;padding:22px}
+    .lane__is{border-color:rgba(224,86,59,.35)}
+    .lane__col ul{margin:12px 0 0;padding-left:18px;color:var(--ink-2)}
+    .lane__col li{margin:0 0 9px}
+    .aial-close{font-family:var(--serif);font-size:clamp(20px,2.6vw,26px);color:var(--ink);text-align:center;max-width:34ch;margin:26px auto 0;line-height:1.3}
+    .aial-close em{color:var(--accent);font-style:italic}
+    .aial-cta{background:var(--bg-3);border:1px solid rgba(224,86,59,.25);border-radius:12px;padding:28px;text-align:center}
+    .aial-cta p:first-child{color:var(--ink-2);max-width:54ch;margin:0 auto 16px}
+    @media(max-width:720px){.cases{grid-template-columns:1fr}.lane{grid-template-columns:1fr}}
+  </style>
+</Base>

@@ -1,0 +1,70 @@
+---
+import Base from '../layouts/Base.astro';
+const jsonld = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Trending True Crime Cases — Cassian Creed",
+  "description": "The true-crime cases everyone's following right now — trials, verdicts, sentencings, and appeals — each with a sourced, victim-first case file.",
+  "url": "https://cassiancreed.com/trending/"
+};
+const trending = [
+  { href:"/post/the-gilgo-beach-murders-rex-heuermann-pleads-guilty-and-eight-women-are-finally-named/", status:"SENTENCING JUNE 17", title:"The Gilgo Beach Murders", why:"Rex Heuermann pleaded guilty in April 2026; sentencing is days away. The Long Island case that haunted a decade." },
+  { href:"/post/the-lindsay-clancy-case-three-children-one-trial-and-the-questions-massachusetts-must-answer/", status:"TRIAL JULY 20", title:"The Lindsay Clancy Case", why:"A wrenching postpartum-psychosis case heads to trial in Plymouth, Massachusetts." },
+  { href:"/post/new-release-are-you-with-me-the-kouri-richins-story/", status:"SENTENCED MAY 2026", title:"The Kouri Richins Case", why:"The Utah grief-book author was sentenced to life for murdering her husband — and vows to appeal." },
+  { href:"/post/the-murdaugh-murders-how-alex-murdaugh-was-convicted-and-why-he-now-faces-a-new-trial/", status:"NEW TRIAL AHEAD", title:"The Murdaugh Murders", why:"His 2023 convictions were overturned in 2026 — the case everyone thought was closed, reopened." },
+  { href:"/post/karen-read-was-acquitted-of-killing-john-o-keefe-his-family-is-still-waiting-for-answers/", status:"CIVIL SUIT ONGOING", title:"Karen Read", why:"Acquitted after two trials; John O'Keefe's family still waits for answers as the wrongful-death suit grinds on." },
+  { href:"/post/diddy-s-verdict-explained-what-sean-combs-was-convicted-of-and-what-the-jury-rejected/", status:"2026 APPEAL", title:"Diddy: The Verdict, Explained", why:"What Sean Combs was actually convicted of — and acquitted of — and where the appeal stands." },
+  { href:"/post/the-menendez-brothers-case-from-the-1989-murders-to-the-2025-resentencing-and-parole-fight/", status:"PAROLE FIGHT", title:"The Menendez Brothers", why:"Resentenced in 2025 and parole-eligible — the decades-old case back in the headlines." },
+  { href:"/post/the-lori-vallow-daybell-case-remembering-jj-tylee-and-tammy-behind-the-doomsday-headlines/", status:"APPEAL PENDING", title:"The Lori Vallow Daybell Case", why:"Behind the 'doomsday' headlines — JJ, Tylee, and Tammy, and where the appeal stands." },
+  { href:"/post/no-accident-the-mackenzie-shirilla-story-the-full-account/", status:"APPEAL + NETFLIX", title:"No Accident: Mackenzie Shirilla", why:"Renewed attention as Netflix's 'The Crash' airs and her appeal reaches the Ohio Supreme Court." },
+  { href:"/post/what-happened-in-the-idaho-student-murders-the-bryan-kohberger-case-explained/", status:"SENTENCED 2025", title:"The Idaho Student Murders", why:"How Bryan Kohberger was caught, pleaded guilty, and was sentenced — the case explained." }
+];
+---
+<Base title="Trending True Crime Cases — Cassian Creed" description="The true-crime cases everyone's following right now — trials, verdicts, sentencings, and appeals — each with a sourced, victim-first case file." jsonld={jsonld}>
+  <section class="hero wrap">
+    <p class="evidence evidence--accent">Trending Now</p>
+    <h1>The cases everyone's following.</h1>
+    <p class="trend-lede">The most-followed true-crime cases right now — trials starting, verdicts landing, appeals reopening settled questions. Each one is a sourced, victim-first case file: what happened, who it happened to, and where it stands. Updated as the calendar moves.</p>
+  </section>
+
+  <section class="wrap">
+    <div class="trend-grid">
+      {trending.map((c) => (
+        <a class="trend-card" href={c.href}>
+          <span class="trend-card__status">{c.status}</span>
+          <h2 class="trend-card__title">{c.title}</h2>
+          <p class="trend-card__why">{c.why}</p>
+          <span class="trend-card__cta">Read the case file →</span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="wrap trend-foot">
+    <div class="trend-tracker">
+      <p class="evidence evidence--accent">The full watchlist</p>
+      <h2>Every trial and verdict to watch in 2026</h2>
+      <p>We keep a running, sourced tracker of the cases on the calendar — who's on trial, what's pending, and what could reopen. <a href="/post/true-crime-case-tracker-2026-the-trials-and-verdicts-to-watch/">See the 2026 Case Tracker →</a></p>
+      <p class="trend-sub">Want each week's biggest case in your inbox, written victim-first? <a href="/#subscribe">Get the free newsletter.</a></p>
+    </div>
+  </section>
+
+  <style>
+    .trend-lede{color:var(--ink-2);max-width:62ch;font-size:18px;margin:18px 0 0}
+    .trend-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:8px 0 28px}
+    .trend-card{display:block;background:var(--bg-2);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:10px;padding:20px 22px;transition:border-color .2s,transform .2s}
+    .trend-card:hover{border-color:rgba(224,86,59,.55);transform:translateY(-2px)}
+    .trend-card__status{font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--accent)}
+    .trend-card__title{font-family:var(--serif);font-weight:600;font-size:23px;margin:8px 0 8px;color:var(--ink)}
+    .trend-card__why{color:var(--ink-2);font-size:15px;margin:0 0 12px}
+    .trend-card__cta{font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--ink-3)}
+    .trend-card:hover .trend-card__cta{color:var(--accent)}
+    .trend-foot{padding:8px 0 40px}
+    .trend-tracker{background:var(--bg-3);border:1px solid rgba(224,86,59,.25);border-radius:12px;padding:28px}
+    .trend-tracker h2{font-family:var(--serif);font-weight:600;font-size:26px;margin:6px 0 10px}
+    .trend-tracker p{color:var(--ink-2);max-width:60ch;margin:0 0 10px}
+    .trend-tracker a{color:var(--accent);text-decoration:underline}
+    .trend-sub{font-size:15px}
+    @media(max-width:680px){.trend-grid{grid-template-columns:1fr}}
+  </style>
+</Base>

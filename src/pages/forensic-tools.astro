@@ -1,0 +1,61 @@
+---
+import Base from '../layouts/Base.astro';
+const jsonld = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Forensic Tools — Cassian Creed",
+  "description": "How A.I. AL analyzes crime: the interdisciplinary methods behind how cases get solved and how the missing are found — aimed at the truth, never at impugning the innocent.",
+  "url": "https://cassiancreed.com/forensic-tools/"
+};
+const tools = [
+  { href: "/ai-al/", tag: "A.I. AL", title: "Meet A.I. AL", blurb: "The forensic mind behind every case file — and the one rule it won't break: never name the wrong person. How it converges on the guilty, refuses a false confession, and withholds when no one can honestly be named, shown on three real cases." },
+  { href: "/post/how-are-missing-people-found-the-science-of-the-search/", tag: "The Search", title: "The Science of the Search", blurb: "The math that found a sunken submarine — used to find missing people. Plus lost-person-behavior data, grave-detection science, and the database that reunites the missing with the unidentified." },
+  { href: "/post/how-investigators-search-for-a-victims-remains/", tag: "The Remains", title: "Finding the Remains", blurb: "When a body is hidden, the search becomes a problem of time and space — rebuilt from timelines, cell-site pings, vehicle movement, and geography. Why some searches, like Harmony Montgomery's, remain agonizingly unfinished." },
+  { href: "/post/reading-the-crime-scene-what-forensics-reveals/", tag: "The Scene", title: "Reading the Crime Scene", blurb: "A scene is a record of what happened — if you can read it. From Locard's 'every contact leaves a trace' to DNA, and the honest line between the methods that hold up and the ones that have jailed the innocent." },
+  { href: "/post/how-investigators-weigh-evidence-plain-english/", tag: "The Logic", title: "How Investigators Weigh Evidence", blurb: "The quiet logic under every solved case, in plain English: how a clue 'nudges' the odds, why one amazing piece of evidence still isn't enough, and why the reasoning that catches the guilty is what protects the innocent. No math degree required." },
+  { href: "/post/warning-signs-the-science-validates-a-safety-system/", tag: "Protect", title: "The Warning Signs That Are Real", blurb: "Our forensics turned into prevention: the danger signs the research actually validates — intimate-partner lethality, strangulation, coercive control, stalking — and exactly what to do about each. The science, pointed at keeping you safe." },
+  { href: "/post/what-is-investigative-genetic-genealogy-and-how-does-it-solve-cold-cases/", tag: "DNA", title: "Investigative Genetic Genealogy", blurb: "How DNA and family trees crack cold cases that were unsolvable a decade ago — the science behind the Golden State Killer and Rachel Morin arrests." },
+  { href: "/post/why-do-some-murders-go-unsolved-linkage-blindness/", tag: "Linkage", title: "Linkage Blindness", blurb: "Why related cases go unconnected across jurisdictions, why overlooked victims fall through the cracks, and how public data is starting to catch what humans miss." },
+  { href: "/post/does-criminal-profiling-actually-work/", tag: "Profiling", title: "Does Profiling Actually Work?", blurb: "What the science really says — and why a profile describes a type, and can never name a person." },
+  { href: "/post/why-do-innocent-people-confess-to-crimes-they-didn-t-commit/", tag: "The Innocent", title: "Why Innocent People Confess", blurb: "Coercion, exhaustion, false-evidence ploys, and why protecting the wrongly accused is part of solving a crime, not separate from it." },
+  { href: "/case-solver/", tag: "Interactive", title: "Case Solver", blurb: "Walk a real solved case step by step and see how each piece of evidence narrowed the field — the way an investigation actually thinks." }
+];
+---
+<Base title="Forensic Tools — Cassian Creed" description="How A.I. AL analyzes crime: the interdisciplinary methods behind how cases get solved and how the missing are found — aimed at the truth, never at impugning the innocent." jsonld={jsonld}>
+  <section class="hero wrap">
+    <p class="evidence evidence--accent">Forensic Tools</p>
+    <h1>How the truth gets found.</h1>
+    <p class="hero__lede">Behind every solved case is a method. This is ours — the interdisciplinary toolkit our A.I. AL forensic lens uses to understand how crimes get solved, how the missing get found, and how the wrongly accused get cleared. It's some of the most fascinating science you'll ever read. It comes with one unbreakable rule.</p>
+  </section>
+
+  <article class="post">
+    <div class="post__content">
+      <h2>Two vows that are really one</h2>
+      <p>Everything here serves a single purpose: <strong>find the truth that stops the next victim</strong> — while making <strong>every effort never to impugn an innocent person.</strong> Those sound like they pull in opposite directions. They don't. A false accusation is itself a new victim, and it leaves the real perpetrator free. Naming the wrong person isn't a step toward solving a crime; it's the most reliable way to fail at one.</p>
+      <p>So our tools are aimed at <em>the gap, never the person</em>: unconnected cases, overlooked victims, investigations that missed something, and convictions that may have caught the wrong person. We work from public sources, we point toward the investigators and labs who do the official work, and we hold to one standard for naming anyone — living or deceased — as a perpetrator: it must be established <strong>beyond a reasonable doubt</strong> in the public record. The dead can't defend themselves, so that bar only rises.</p>
+      <h2>The lens, in plain terms</h2>
+      <p>When we look at a case, a few questions do most of the work: <strong>Who was the victim, and were they given the urgency they deserved?</strong> · <strong>What does the timeline actually permit or rule out?</strong> · <strong>How strong is each piece of evidence — really?</strong> · <strong>Could related cases belong together?</strong> · <strong>What did the investigation miss?</strong> · <strong>And are we falling for any of the traps — tunnel vision, junk science, a guess dressed up as a fact — that put innocent people in prison?</strong> That last question is the one we ask hardest, and we ask it about ourselves.</p>
+    </div>
+  </article>
+
+  <section class="wrap">
+    <p class="evidence evidence--accent">Start exploring</p>
+    <div class="grid">
+      {tools.map((t) => (
+        <a class="card" href={t.href}>
+          <div class="card__tile">
+            <div class="tile__top"><span class="tile__tag">{t.tag}</span></div>
+            <h3 class="card__title">{t.title}</h3>
+            <p class="card__blurb">{t.blurb}</p>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <article class="post">
+    <div class="post__content">
+      <p>New tools and deep-dives land here as we build them. Want them as they drop? <a href="/#subscribe">Get the free newsletter</a> — a new sourced case file and explainer every week.</p>
+    </div>
+  </article>
+</Base>

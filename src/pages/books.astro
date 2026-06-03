@@ -1,0 +1,42 @@
+---
+import Base from '../layouts/Base.astro';
+const books = [
+  { title: "The Gilgo Blueprint", sub: "Rex Heuermann and the Forensic Revolution", hook: "The complete, sourced account of how DNA genealogy, burner-phone analysis, and relentless detective work finally unmasked the Long Island serial killer — with the victims remembered as daughters and sisters, not statistics.", status: "Coming soon", href: "/post/the-gilgo-beach-murders-rex-heuermann-pleads-guilty-and-eight-women-are-finally-named/" },
+  { title: "The Trail", sub: "The Murder of Rachel Morin", hook: "A mother of five walked a familiar Maryland trail and never came home. The full account of the genetic-genealogy hunt that named a killer who sat in no database.", status: "On sale", buy: "https://cassiancreed.beehiiv.com/products/the-trail-the-murder-of-rachel-morin", buyAlt: "https://creedcaster5.gumroad.com/l/xbgnhg", price: "$5.99", href: "/post/the-trail-the-murder-of-rachel-morin-the-full-account/" },
+  { title: "No Accident", sub: "The Mackenzie Shirilla Story", hook: "Two young men — Dominic Russo and Davion Flanagan — died in what looked like a pre-dawn crash. The event data recorder and a GPS dry run told a different story.", status: "On sale", buy: "https://cassiancreed.beehiiv.com/products/no-accident-the-mackenzie-shirilla-story", buyAlt: "https://creedcaster5.gumroad.com/l/jsfwrv", price: "$5.99", href: "/post/no-accident-the-mackenzie-shirilla-story-the-full-account/" },
+  { title: "The Frame", sub: "The Brendan Banfield Story", hook: "A wife killed at home, an au pair, and a manufactured intruder story that unraveled count by count in a Virginia courtroom.", status: "Coming soon", href: null },
+  { title: "Are You With Me?", sub: "The Kouri Richins Story", hook: "A Utah author wrote a children's book about grief — after poisoning her husband, Eric, with fentanyl. What the evidence showed, told with care.", status: "Coming soon", href: "/post/new-release-are-you-with-me-the-kouri-richins-story/" },
+];
+---
+<Base title="True-crime books by Cassian Creed — The Trail, No Accident & more" description="Buy sourced, victim-first true-crime ebooks by Cassian Creed — The Trail (the murder of Rachel Morin) and No Accident (the Mackenzie Shirilla story), $5.99 each — plus more full-length case files.">
+  <article class="post">
+    <p class="evidence evidence--accent">Books</p>
+    <h1>The case files, in full</h1>
+    <div class="post__content">
+      <p>Each book is a full-length, primary-source case file — the complete timeline, the records, and the people at the center — told victim-first and without gratuitous detail. Join the Living Edition free and you will be first to know the day each new one is out.</p>
+      <p class="evidence evidence--accent" style="margin-top:14px">Sourced from the public record · victims named first · AI-assisted analysis, human-verified. <a href="/about/" style="color:var(--accent,#e0563b)">How we make these →</a></p>
+      <p style="margin-top:14px"><strong>Why trust these books.</strong> They are written under the Cassian Creed byline for Neural Edge Publishing — every claim tied to a primary source (court filings, official records, contemporaneous reporting), legal status re-verified before publish, and where a verdict is under appeal we say so on the page. The analysis is AI-assisted as a disclosed, human-overseen lens — never the narrator or the author. When we get something wrong, we correct it. <a href="/about/" style="color:var(--accent,#e0563b)">Read our standard &amp; corrections policy →</a></p>
+      <p style="margin-top:18px;padding:14px 18px;border:1px solid rgba(224,86,59,.4);border-left:3px solid var(--accent,#e0563b);border-radius:0 8px 8px 0;background:var(--bg-2,#191512)"><strong>Save with the Case Files Collection.</strong> Get both <em>The Trail</em> and <em>No Accident</em> together for <strong>$9.99</strong> — less than buying them separately ($11.98). <a href="https://creedcaster5.gumroad.com/l/jhgmwj" target="_blank" rel="noopener noreferrer" style="color:var(--accent,#e0563b)">Get the Collection — $9.99 →</a></p>
+    </div>
+  </article>
+
+  <div class="wrap">
+    <div class="books">
+      {books.map(b => (
+        <div class="book">
+          <div class={b.buy ? "book__badge book__badge--live" : "book__badge"}>{b.status}</div>
+          <h2 class="book__title">{b.title}</h2>
+          <p class="book__sub">{b.sub}</p>
+          <p class="book__hook">{b.hook}</p>
+          {b.buy && <a class="btn book__buy" href={b.buy} target="_blank" rel="noopener noreferrer">Buy the ebook — {b.price} →</a>}
+          {b.buyAlt && <a class="book__alt" href={b.buyAlt} target="_blank" rel="noopener noreferrer">Also on Gumroad →</a>}
+          {b.href && <a class="book__link" href={b.href}>Read the free case file →</a>}
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <div class="wrap"><section class="subscribe" id="subscribe">
+    <h2>Get the next case file first</h2>
+    <p>Free, victim-first true-crime case files and verdict updates from Cassian Creed — new analysis the day it's published, plus the Sunday newsletter. You'll be first to know the day each new book drops. No spam; unsubscribe anytime.</p>
+    

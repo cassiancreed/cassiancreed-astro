@@ -1,0 +1,81 @@
+---
+import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+const posts = (await getCollection('posts')).sort((a,b)=> b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const featured = posts.find(p=>p.data.featured) || posts[0];
+const rest = posts.filter(p=> featured && p.slug!==featured.slug);
+const short = (t)=> t.split(':')[0];
+const jsonld = {
+  "@context": "https://schema.org",
+  "@graph": [
+    { "@type": "WebSite", "@id": "https://cassiancreed.com/#website", "url": "https://cassiancreed.com/", "name": "Cassian Creed", "inLanguage": "en-US", "publisher": { "@id": "https://cassiancreed.com/#nep" } },
+    { "@type": "Organization", "@id": "https://cassiancreed.com/#nep", "name": "Neural Edge Publishing", "url": "https://cassiancreed.com/", "brand": "Cassian Creed", "description": "An independent true-crime imprint publishing sourced, victim-first case files.", "sameAs": ["https://x.com/CassianCreed", "https://cassiancreed.beehiiv.com/"] }
+  ]
+};
+---
+<Base title="The Case Files of Cassian Creed" jsonld={jsonld}>
+  <section class="hero">
+    <div class="wrap">
+      <p class="evidence evidence--accent">The Living Edition — free, every Sunday</p>
+      <h1>True crime that respects the victims.</h1>
+      <p class="hero__lede">Sourced case files for readers who want to understand cases, not consume them. Every victim named in life first — and with each one, what it teaches about keeping you and the people you love safe.</p>
+      <form class="hero__capture" action="https://cassiancreed.beehiiv.com/subscribe" method="get" aria-label="Subscribe free to the Living Edition newsletter">
+        <input type="email" name="email" required autocomplete="email" placeholder="you@email.com" aria-label="Your email address" />
+        <input type="hidden" name="utm_source" value="website" />
+        <input type="hidden" name="utm_medium" value="hero" />
+        <input type="hidden" name="utm_campaign" value="living_edition_dossier" />
+        <button class="btn" type="submit">Get the free dossier →</button>
+      </form>
+      <p class="hero__trust">Free forever · unsubscribe anytime · <a href="/start-here/">new here? start here →</a></p>
+      <ul class="hero__chips" aria-label="What makes these case files different">
+        <li>Sourced from the public record</li>
+        <li>Victims named in life first</li>
+        <li>Our A.I. AL forensic lens</li>
+        <li>No gore, no filler</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="mission wrap" aria-label="Our mission">
+    <p class="evidence evidence--accent">Why we do this</p>
+    <p class="mission__line">We tell these stories to help the victims — and never to create new ones by helping send an innocent person to prison or ruin a life. That single rule shapes every case file: presumption of innocence, sources you can check, and people remembered as more than how they died.</p>
+  </section>
+
+  {featured && (
+    <div class="feature wrap">
+      <div>
+        <span class="evidence evidence--accent">Latest case file</span>
+        <h2>{featured.data.title}</h2>
+        <p>{featured.data.description}</p>
+        <a class="btn" href={`/post/${featured.slug}/`}>Read the case →</a>
+      </div>
+      <a class="feature__cover" href={`/post/${featured.slug}/`}><span>{short(featured.data.title)}</span></a>
+    </div>
+  )}
+
+  <section class="wrap">
+    <h2 class="section-title"><span>The Case Files</span><span class="evidence">{posts.length} titles</span></h2>
+    <div class="grid">
+      {rest.map((p, i) => (
+        <a class="card" href={`/post/${p.slug}/`}>
+          <div class="card__tile">
+            <div class="tile__top"><span class="tile__no">Nº {String(i+1).padStart(2,'0')}</span><span class="tile__tag">{p.data.tag}</span></div>
+            <h3 class="card__title">{short(p.data.title)}</h3>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="subscribe wrap" id="subscribe">
+    <h2>Get the free Living Edition case dossier — every Sunday</h2>
+    <p>Each dossier lays out the full timeline, the primary-source records, and the safety takeaways for the cases everyone is asking about — victims named in life first, no gratuitous detail. Enter your email; it is free and you can unsubscribe anytime.</p>
+    <form action="https://cassiancreed.beehiiv.com/subscribe" method="get" aria-label="Subscribe to the free Cassian Creed newsletter">
+      <input type="email" name="email" required autocomplete="email" placeholder="you@email.com" aria-label="Your email address" />
+      <input type="hidden" name="utm_source" value="website" />
+      <input type="hidden" name="utm_medium" value="home_cta" />
+      <input type="hidden" name="utm_campaign" value="living_edition_dossier" />
+      <button class="btn" type="submit">Get the free dossier →</button>
+    </form>
+  </section>
+</Base>

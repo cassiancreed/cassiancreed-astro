@@ -1,0 +1,9 @@
+# Meta posts -> dedicated pages
+/post/start-here-a-reader-s-guide-to-cassian-creed   /start-here/   301
+/post/our-standard-how-we-tell-these-stories         /about/        301
+# Legacy Wix blog index -> Case Files
+/blog                                                /case-files/   301
+/blog/*                                              /case-files/   301
+
+# Host canonicalization: www -> apex (added 2026-06-02, canonical fix)
+https://www.cassiancreed.com/*   https://cassiancreed.com/:splat   301!

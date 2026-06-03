@@ -1,0 +1,67 @@
+---
+import '../styles/global.css';
+export interface Props { title: string; description?: string; jsonld?: object; ogImage?: string; }
+const { title, description = 'Sourced, victim-centered true-crime case files — what happened, and what it teaches about staying safe.', jsonld, ogImage = '/og.png' } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const ogImg = new URL(ogImage, Astro.site).href;
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:site_name" content="Cassian Creed" />
+  <meta property="og:image" content={ogImg} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content={title} />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@CassianCreed" />
+  <meta name="twitter:image" content={ogImg} />
+  <link rel="sitemap" href="/sitemap.xml" />
+  <link rel="alternate" type="application/rss+xml" title="Cassian Creed" href="/rss.xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Inter:wght@400;500&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+  {jsonld && <script type="application/ld+json" set:html={JSON.stringify(jsonld)} />}
+  <!-- Google Analytics 4 (property: Neural Edge Publishing) -->
+  <script async is:inline src="https://www.googletagmanager.com/gtag/js?id=G-5D0DX6WFW4"></script>
+  <script is:inline>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5D0DX6WFW4');
+  </script>
+</head>
+<body>
+  <header class="site-head"><div class="site-head__inner">
+    <a class="brand" href="/">Cassian<br/>Creed</a>
+    <nav class="nav">
+      <a href="/start-here/">Start Here</a>
+      <a href="/case-files/">Case Files</a>
+      <a href="/trending/">Trending</a>
+      <a href="/case-solver/">Case Solver</a>
+      <a href="/forensic-tools/">Forensic Tools</a>
+      <a href="/explainers/">Explainers</a>
+      <a href="/books/">Books</a>
+      <a href="/safety/">Stay Safe</a>
+      <a href="/support/">Support</a>
+      <a href="/about/">About</a>
+      <a href="/#subscribe">Subscribe</a>
+    </nav>
+  </div></header>
+  <main><slot /></main>
+  <footer class="site-foot"><div class="site-foot__inner">
+    <span class="evidence">© 2026 Neural Edge Publishing</span>
+    <span class="site-foot__note">Sourced · victim-centered · no gratuitous detail.</span>
+    <span class="site-foot__social"><a href="/safety/">Stay Safe</a> · <a href="/support/">Support</a> · <a href="https://x.com/CassianCreed" rel="me">Follow on X</a> · <a href="https://cassiancreed.beehiiv.com/subscribe?utm_source=website&utm_medium=footer">Free newsletter</a></span>
+  </div></footer>
+</body>
+</html>

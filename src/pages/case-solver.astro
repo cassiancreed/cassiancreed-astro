@@ -1,0 +1,104 @@
+---
+import Base from '../layouts/Base.astro';
+const jsonld = {
+  "@context": "https://schema.org",
+  "@type": "LearningResource",
+  "name": "Case Solver: How the Golden State Killer Was Caught",
+  "description": "An interactive walkthrough of how investigators solved the Golden State Killer case, step by step.",
+  "learningResourceType": "Interactive walkthrough",
+  "isFamilyFriendly": true,
+  "publisher": { "@type": "Organization", "name": "Neural Edge Publishing" }
+};
+---
+<Base title="Case Solver: How the Golden State Killer Was Caught — Step Through It Yourself" description="Work through a real, solved case the way investigators did. Each clue reveals how it was actually used — from a 40-year cold case to a name. Sourced, victim-first, from Cassian Creed." jsonld={jsonld}>
+  <article class="post">
+    <p class="evidence evidence--accent">Case Solver</p>
+    <h1>How the Golden State Killer was caught</h1>
+    <p class="post__note">Work through a real, solved case the way investigators did. Each step is a clue — open it to reveal how it was actually used, then move to the next. This walks the <strong>public record of how law enforcement cracked the case</strong>; our own A.I. AL analysis is a separate, independent lens, and played no part in the real investigation.</p>
+
+    <div class="solver">
+      <div class="solver__step">
+        <span class="solver__n">Step 1 · The puzzle</span>
+        <h2>One ghost, four decades, no name</h2>
+        <p>For more than forty years, a single offender committed burglaries, rapes, and murders across California — known by different names in different regions: the Visalia Ransacker, the East Area Rapist, the Original Night Stalker. He had no face and no name. The first problem: how do you even prove it's one person?</p>
+        <details><summary>Reveal what investigators did →</summary><p>DNA tied it together. As genetic evidence was preserved and compared across jurisdictions over the years, analysts confirmed the East Area Rapist and the Original Night Stalker were the same man — one genetic fingerprint linking a sprawling series that had been worked as separate cases for decades.</p></details>
+      </div>
+
+      <div class="solver__step">
+        <span class="solver__n">Step 2 · The dead end</span>
+        <h2>A perfect DNA profile that matched no one</h2>
+        <p>Investigators had the offender's complete genetic profile. They ran it against CODIS — the national database of known offenders. Nothing. A perfect fingerprint of a ghost. Why didn't it work?</p>
+        <details><summary>Reveal what investigators did →</summary><p>A database can only recognize people already entered into it. Despite a long crime series, this man had never been arrested and entered into CODIS — so there was nothing to match against. For decades, that was exactly where cases like this died.</p></details>
+      </div>
+
+      <div class="solver__step">
+        <span class="solver__n">Step 3 · The new idea</span>
+        <h2>Search a different kind of database</h2>
+        <p>In 2018, investigators tried something new: instead of a law-enforcement database, they turned to a public one. What were they actually looking for there?</p>
+        <details><summary>Reveal what investigators did →</summary><p>They uploaded the crime-scene profile to <strong>GEDmatch</strong>, a public genealogy site where people upload their own DNA to find relatives. They weren't looking for the killer — they were looking for his <em>relatives</em>. This is the core of investigative genetic genealogy: the match it returns is a cousin, often a distant one.</p></details>
+      </div>
+
+      <div class="solver__step">
+        <span class="solver__n">Step 4 · The family tree</span>
+        <h2>From a distant cousin to one person</h2>
+        <p>The search returned partial matches — people who shared enough DNA to be distant relatives of the offender. But a cousin isn't a suspect. How do you get from a relative to a name?</p>
+        <details><summary>Reveal what investigators did →</summary><p>Genealogy in reverse. Investigators built out the matched relatives' family trees, found the common ancestors, and traced the branches forward — narrowing to the one descendant who fit every known parameter of the case: the right age, the right sex, living in the right places at the right times. The search converged on Joseph DeAngelo, a former police officer.</p></details>
+      </div>
+
+      <div class="solver__step">
+        <span class="solver__n">Step 5 · The confirmation</span>
+        <h2>A genealogical lead is not proof</h2>
+        <p>Investigators had a name — but a family-tree inference can't convict anyone. They needed to tie this specific man directly to the crime-scene DNA without tipping him off. How?</p>
+        <details><summary>Reveal what investigators did →</summary><p><strong>Discarded DNA.</strong> They collected genetic material DeAngelo left behind in public — reportedly from a car door handle and a tissue — and compared it directly against the crime-scene profiles. It matched. The ghost finally had a name, confirmed by his own abandoned DNA.</p></details>
+      </div>
+
+      <div class="solver__step solver__step--resolve">
+        <span class="solver__n">The resolution</span>
+        <h2>The ghost gets a name</h2>
+        <p>Joseph James DeAngelo was arrested in April 2018. In June 2020 he pleaded guilty to 13 murders and admitted to dozens of rapes; in August 2020 he was sentenced to life in prison without the possibility of parole. The case became the landmark proof of concept for investigative genetic genealogy — the method that has since helped resolve hundreds of cold cases.</p>
+        <p class="solver__lens"><strong>A note on method:</strong> everything above is how <strong>law enforcement</strong> actually solved it. Our A.I. AL forensic lens — independent analysis, built only from the public record, never used by investigators — appears separately on the full case file.</p>
+        <p class="solver__close">This case is remembered not for the man at its center but for the survivors who outlasted his decades of anonymity, and the victims who never got to. Their names belong first.</p>
+        <p><a class="btn" href="/post/the-golden-state-killer-how-genetic-genealogy-caught-joseph-deangelo/">Read the full case file →</a></p>
+      </div>
+    </div>
+
+    <div class="solver">
+      <p class="evidence evidence--accent">The A.I. AL lens</p>
+      <h2>How A.I. AL would have handled it</h2>
+      <p class="post__note">Everything above is how <strong>law enforcement</strong> solved it. This is our <strong>independent</strong> lens — A.I. AL (our Artificial Intelligence · Analytical Logic system, overseen by humans), built only from the public record and never used by investigators. A.I. AL cannot run a DNA database. What it does is solve the part that kept this case cold for decades: the <strong>linkage</strong>.</p>
+
+      <div class="solver__step">
+        <span class="solver__n">Lens · The real gap</span>
+        <h2>Three names, one offender, siloed agencies</h2>
+        <p>For years the Visalia Ransacker, the East Area Rapist, and the Original Night Stalker were worked as separate cases by departments that could not easily share information across the jurisdictions he crossed. DNA did not officially unite the northern and southern series until 2001. The cold years were a <em>linkage</em> failure, not a lack of clues.</p>
+        <details><summary>What A.I. AL aims at →</summary><p>Not "who did it" — the gap. A.I. AL is built to recognize an unconnected series from the public record, then hand a sourced question to the investigators who can run the restricted tools.</p></details>
+      </div>
+
+      <div class="solver__step">
+        <span class="solver__n">Lens · The math</span>
+        <h2>Linkage as evidence, accumulated</h2>
+        <p>A.I. AL treats each shared, independent feature of the crimes as evidence — the same likelihood-ratio math behind DNA match statistics — and lets it move a deliberately skeptical starting assumption that any two unsolved cases are unrelated.</p>
+        <details><summary>See the accumulation →</summary><p>From a 2% prior, public-record features alone — a signature ritual (binding couples, pre-surveillance), a consistent nighttime-entry MO, a consistent offender description, a coherent geographic migration, and an escalation arc — drive the probability that this is <strong>one offender across jurisdictions</strong> to roughly <strong>99.8%</strong>. (The method is real and standard; the per-feature weights are illustrative, calibrated on adjudicated cases. No DNA required — this runs on the open record.)</p></details>
+      </div>
+
+      <div class="solver__step solver__step--resolve">
+        <span class="solver__n">Lens · The honest payoff</span>
+        <h2>Not the name — the link, years sooner</h2>
+        <p>A.I. AL would <strong>not</strong> have named Joseph DeAngelo. Identifying the man required DNA and genetic genealogy — law enforcement's lane, and theirs alone. But A.I. AL would have said, with high confidence and potentially years before the 2001 DNA link, <em>"work these jurisdictions as one offender."</em> Because the obstacle was siloing, not the absence of signal — and an independent, public-record lens is built to cut across silos. Earlier linkage concentrates resources, and concentrated resources protect the next person.</p>
+        <p class="solver__lens"><strong>Analytical confidence: moderate.</strong> The adjudicated facts are settled; the linkage is a sourced screening hypothesis, tested only against hard evidence — never a finger pointed at a living, non-adjudicated person. We name cases and systems, not people. First, create no victim.</p>
+      </div>
+    </div>
+  </article>
+
+  <div class="wrap"><section class="subscribe" id="subscribe">
+    <h2>Get a sourced case file every Sunday</h2>
+    <p>If you worked through that, you're exactly who the Living Edition is for. The full timeline, the records, the safety takeaways — free, every Sunday, victims named in life first.</p>
+    <form action="https://cassiancreed.beehiiv.com/subscribe" method="get" aria-label="Subscribe to the free Cassian Creed newsletter">
+      <input type="email" name="email" required autocomplete="email" placeholder="you@email.com" aria-label="Your email address" />
+      <input type="hidden" name="utm_source" value="website" />
+      <input type="hidden" name="utm_medium" value="case_solver" />
+      <input type="hidden" name="utm_campaign" value="living_edition_dossier" />
+      <button class="btn" type="submit">Get the free dossier →</button>
+    </form>
+  </section></div>
+</Base>

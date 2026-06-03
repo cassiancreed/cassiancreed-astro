@@ -1,0 +1,127 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+export async function getStaticPaths() {
+  const posts = await getCollection('posts');
+  const caseFiles = posts.filter(p => p.data.tag === 'Case Files');
+  return posts.map(p => {
+    const idx = caseFiles.findIndex(o => o.slug === p.slug);
+    let rel = [];
+    if (idx >= 0) { for (let k = 1; k <= 3; k++) rel.push(caseFiles[(idx + k) % caseFiles.length]); }
+    else { rel = caseFiles.slice(0, 3); }
+    rel = rel.filter(r => r && r.slug !== p.slug);
+    return { params: { slug: p.slug }, props: { post: p, related: rel.map(r => ({ slug: r.slug, title: r.data.title })) } };
+  });
+}
+const { post, related = [] } = Astro.props;
+const { Content } = await post.render();
+const isCase = post.data.tag === 'Case Files';
+const pageUrl = new URL(Astro.url.pathname, Astro.site).href;
+const mk = (m) => encodeURIComponent(pageUrl + '?utm_source=' + m + '&utm_medium=social_share');
+const shareT = encodeURIComponent(post.data.title);
+const articleNode = {
+  "@type":"Article",
+  "headline": post.data.title,
+  "description": post.data.description,
+  "datePublished": post.data.pubDate.toISOString().slice(0,10),
+  "author":{"@type":"Organization","name":"Cassian Creed"},
+  "publisher":{"@type":"Organization","name":"Neural Edge Publishing"},
+  "mainEntityOfPage": new URL(Astro.url.pathname, Astro.site).href,
+  "articleSection": post.data.tag
+};
+// Auto-derive FAQPage from an on-page "Frequently Asked Questions"/"FAQ" section.
+// Mirrors only visible Q&A text (Google structured-data guideline); emits nothing if absent.
+function extractFaq(body) {
+  const sec = body.match(/#{2,}\s*(?:Frequently Asked Questions|FAQ|Questions [Rr]eaders [Aa]sk)\s*\n([\s\S]*?)(?=\n#{2,}\s|\n---\s*\n|$)/i);
+  if (!sec) return [];
+  const out = [];
+  const re = /\*\*(.+?)\*\*\s*\n*([^\n*][\s\S]*?)(?=\n\s*\n|\n\*\*|$)/g;
+  let m;
+  while ((m = re.exec(sec[1]))) {
+    out.push({ q: m[1].trim(), a: m[2].replace(/\s+/g, ' ').trim() });
+  }
+  return out;
+}
+const faq = extractFaq(post.body);
+const faqNode = faq.length ? {
+  "@type":"FAQPage",
+  "mainEntity": faq.map(f => ({ "@type":"Question", "name": f.q, "acceptedAnswer": { "@type":"Answer", "text": f.a } }))
+} : null;
+const jsonld = faqNode
+  ? { "@context":"https://schema.org", "@graph": [articleNode, faqNode] }
+  : { "@context":"https://schema.org", ...articleNode };
+---
+<Base title={post.data.title} description={post.data.description} jsonld={jsonld} ogImage={`/og/${post.slug}.png`}>
+  <article class="post">
+    <p class="evidence evidence--accent">{post.data.tag}</p>
+    <h1>{post.data.title}</h1>
+    {isCase && <p class="post__note">A note before you read: this is a true account of real people and a real crime. We tell it with care — centered on the victims, grounded in the record, and without gratuitous detail.</p>}
+    {post.data.victim && (
+      <aside class="case-facts">
+        <p class="evidence evidence--accent">Case facts</p>
+        <dl>
+          <div><dt>Victim(s)</dt><dd>{post.data.victim}</dd></div>
+          {post.data.incidentDate && <div><dt>Date</dt><dd>{post.data.incidentDate}</dd></div>}
+          {post.data.location && <div><dt>Location</dt><dd>{post.data.location}</dd></div>}
+          {post.data.jurisdiction && <div><dt>Jurisdiction</dt><dd>{post.data.jurisdiction}</dd></div>}
+          {post.data.status && <div><dt>Legal status</dt><dd>{post.data.status}</dd></div>}
+        </dl>
+      </aside>
+    )}
+    <div class="post__content"><Content /></div>
+    {post.data.buyUrl && (
+      <aside class="buybox">
+        <p class="buybox__k">The ebook edition</p>
+        <p class="buybox__t">Prefer to read offline — or want to support independent, victim-first true crime? Get the complete case file as an ebook.</p>
+        <a class="btn buybox__btn" href={post.data.buyUrl} target="_blank" rel="noopener noreferrer">{post.data.buyPrice ? ("Buy the ebook — " + post.data.buyPrice + " →") : "Buy the ebook →"}</a>
+        {post.data.buyUrlAlt && <a class="buybox__alt" href={post.data.buyUrlAlt} target="_blank" rel="noopener noreferrer">Also available on Gumroad →</a>}
+      </aside>
+    )}
+    {isCase && <p class="post__crisis"><strong>If you need support.</strong> 988 Suicide &amp; Crisis Lifeline (call or text 988) · National Domestic Violence Hotline 1-800-799-7233 (text START to 88788) · RAINN 1-800-656-HOPE (4673).</p>}
+  </article>
+
+  <div class="wrap"><nav class="share" aria-label="Share this case file">
+    <span class="share__label">Share this case file</span>
+    <a class="share__btn" href={`https://twitter.com/intent/tweet?text=${shareT}&url=${mk('x')}`} target="_blank" rel="noopener noreferrer">X / Twitter</a>
+    <a class="share__btn" href={`https://www.facebook.com/sharer/sharer.php?u=${mk('facebook')}`} target="_blank" rel="noopener noreferrer">Facebook</a>
+    <a class="share__btn" href={`https://www.pinterest.com/pin/create/button/?url=${mk('pinterest')}&description=${shareT}`} target="_blank" rel="noopener noreferrer">Pinterest</a>
+    <a class="share__btn" href={`https://bsky.app/intent/compose?text=${shareT}%20${mk('bluesky')}`} target="_blank" rel="noopener noreferrer">Bluesky</a>
+  </nav></div>
+
+  {related.length > 0 && (
+  <div class="wrap"><section class="related" aria-label="Related case files">
+    <h2>Related case files</h2>
+    <ul class="related__list">{related.map(r => <li><a href={`/post/${r.slug}/`}>{r.title}</a></li>)}</ul>
+  </section></div>
+  )}
+
+  <div class="wrap"><section class="subscribe" id="subscribe">
+    <h2>Get the next case file first</h2>
+    <p>Free, victim-first true-crime case files and verdict updates from Cassian Creed — new analysis the day it's published, plus the Sunday newsletter. No spam; unsubscribe anytime.</p>
+    <form action="https://cassiancreed.beehiiv.com/subscribe" method="get" aria-label="Subscribe to the free Cassian Creed newsletter">
+      <input type="email" name="email" required autocomplete="email" placeholder="you@email.com" aria-label="Your email address" />
+      <input type="hidden" name="utm_source" value="website" />
+      <input type="hidden" name="utm_medium" value="post_cta" />
+      <input type="hidden" name="utm_campaign" value="free_case_files" />
+      <button class="btn" type="submit">Send me the free case files →</button>
+    </form>
+  </section></div>
+</Base>
+
+<style>
+  .share{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin:8px 0 0}
+  .share__label{font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-2)}
+  .share__btn{font-size:13px;text-decoration:none;border:1px solid rgba(224,86,59,.4);border-radius:20px;padding:6px 13px;color:var(--ink);transition:background .15s}
+  .share__btn:hover{background:rgba(224,86,59,.12)}
+  .buybox{margin:28px 0 8px;padding:20px 22px;background:var(--bg-3);border:1px solid rgba(95,174,126,.45);border-radius:10px}
+  .buybox__k{font-family:var(--mono,'JetBrains Mono',monospace);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#5fae7e;margin:0 0 6px}
+  .buybox__t{margin:0 0 14px;font-size:16px}
+  .buybox__btn{align-self:flex-start}
+  .buybox__alt{display:inline-block;margin-top:10px;font-size:13px;text-decoration:none;color:var(--ink-2)}
+  .buybox__alt:hover{color:var(--accent,#e0563b)}
+  .related{border-top:1px solid var(--line);padding-top:24px;margin-top:8px}
+  .related h2{font-family:var(--serif);font-weight:600;font-size:22px;margin:0 0 14px}
+  .related__list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+  .related__list a{color:var(--ink);text-decoration:none;border-left:2px solid var(--accent);padding-left:12px;display:inline-block;transition:color .15s}
+  .related__list a:hover{color:var(--accent,#e0563b)}
+</style>

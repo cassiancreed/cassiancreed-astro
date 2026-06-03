@@ -1,0 +1,50 @@
+---
+import Base from '../layouts/Base.astro';
+const jsonld = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://cassiancreed.com/#cassian",
+      "name": "Cassian Creed",
+      "jobTitle": "True-crime author and investigator",
+      "url": "https://cassiancreed.com/about/",
+      "description": "Cassian Creed writes sourced, victim-centered true-crime case files for Neural Edge Publishing — primary-source verified, AI-assisted and overseen by humans.",
+      "sameAs": ["https://x.com/CassianCreed", "https://cassiancreed.beehiiv.com/"],
+      "knowsAbout": ["true crime", "criminal justice", "forensic investigation", "investigative genetic genealogy", "victim advocacy"],
+      "worksFor": { "@id": "https://cassiancreed.com/#nep" }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://cassiancreed.com/#nep",
+      "name": "Neural Edge Publishing",
+      "url": "https://cassiancreed.com/",
+      "description": "An independent true-crime imprint publishing sourced, victim-first case files under the Cassian Creed byline.",
+      "founder": { "@id": "https://cassiancreed.com/#cassian" }
+    }
+  ]
+};
+---
+<Base title="About Cassian Creed — Sourced, Victim-First True Crime" description="Who writes Cassian Creed, and how: sourced from the public record, victim-centered, AI-assisted and overseen by humans, and never gratuitous. Meet the true-crime imprint behind the case files." jsonld={jsonld}>
+  <article class="post">
+    <p class="evidence evidence--accent">About</p>
+    <h1>How we tell these stories</h1>
+    <div class="post__content">
+      <p>Cassian Creed publishes true-crime case files for readers who want to understand what actually happened — and what these cases teach about staying safe. Every account is built on the public record: court filings, verdicts, and contemporaneous reporting.</p>
+
+      <h2>Who writes Cassian Creed</h2>
+      <p>Cassian Creed is the author byline of Neural Edge Publishing, an independent true-crime imprint. The work is investigative in spirit: read the record, name the victims first, separate what is proven from what is still disputed, and explain it plainly. The focus is never the notoriety of a perpetrator — it is the people harmed and the lessons that help readers stay safe.</p>
+
+      <h2>How these case files are made</h2>
+      <p>Every claim is tied to a primary source — court documents, official records, and contemporaneous reporting. The research is AI-assisted and the editorial judgment is overseen by humans: each piece is checked against the record, weighed for victim dignity, and held to a consistent quality and accessibility standard before it is published. Where a case is still moving through the courts, we say so plainly; when we get something wrong, we correct it.</p>
+
+      <h2>How our forensic analysis works — and its limits</h2>
+      <p>Some case files include an independent forensic lens: our own read of the behavioral patterns, timeline, and evidence, powered by an analytical system we call A.I. AL and overseen by humans. We are transparent about how it works. Our analysis is <strong>"Internet Agile"</strong> — it is built entirely from the public record and publicly accessible sources: court filings, official statements, verified news reporting, and public databases. We do not have access to police case files, sealed evidence, or anything non-public, and we never pretend otherwise.</p>
+      <p>That is a deliberate strength and an honest limit at once. Working only from public information keeps our analysis independent and, in principle, checkable — but it also means our read can be incomplete. So we flag uncertainty, show our confidence honestly instead of dressing a guess as a fact, and treat our analysis as a lens for understanding, never a verdict. The real investigation belongs to law enforcement, not to us. We are grateful to the detectives, forensic scientists, and officers who do the hard, often thankless work of justice — and if you have information about a case, the right move is always to contact law enforcement directly, never us.</p>
+
+      <h2>Our standard</h2>
+      <p>We lead with the victims, not the perpetrators. We do not glamorize violence or trade in gratuitous detail. We name the people at the center of each case in life first. Where a verdict is under appeal, that is stated, not buried.</p>
+
+      <h2>Corrections &amp; sources</h2>
+      <p>Accuracy is the whole product. Every case file is built from primary sources — court filings, official statements, verified reporting — and legal status is re-checked against the record before we publish and again when a case moves. We separate what is proven from what is argued, and we say plainly what we don't know rather than dressing a guess as a fact.</p>
+      <p>When we get something wrong, we fix it and say so. Spotted an error or have a correction? Reply in public on X at <a href="https://x.com/CassianCreed" rel="me">@CassianCreed</a> or write to PO Box 1039 — correction
