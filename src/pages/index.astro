@@ -37,20 +37,9 @@ const jsonld = {
       </div>
       <div class="hero__art" aria-hidden="true">
         <div class="dossier">
-          <div class="dossier__card">
-            <span class="dossier__k">Case File</span>
-            <div class="dossier__lines"><span></span><span></span><span></span></div>
-          </div>
-          <div class="dossier__card">
-            <span class="dossier__k">Case File</span>
-            <div class="dossier__lines"><span></span><span></span><span></span></div>
-          </div>
-          <div class="dossier__card">
-            <span class="dossier__k">Case File · Nº 001</span>
-            <span class="dossier__stamp">Public Record</span>
-            <p class="dossier__title">Sourced. Victim-first.</p>
-            <div class="dossier__lines"><span></span><span></span><span></span></div>
-          </div>
+          <div class="dossier__card"><span class="dossier__k">Case File</span><div class="dossier__lines"><span></span><span></span><span></span></div></div>
+          <div class="dossier__card"><span class="dossier__k">Case File</span><div class="dossier__lines"><span></span><span></span><span></span></div></div>
+          <div class="dossier__card"><span class="dossier__k">Case File · Nº 001</span><span class="dossier__stamp">Public Record</span><p class="dossier__title">Sourced. Victim-first.</p><div class="dossier__lines"><span></span><span></span><span></span></div></div>
         </div>
       </div>
     </div>
@@ -88,4 +77,14 @@ const jsonld = {
   </section>
 
   <section class="subscribe wrap" id="subscribe">
-    <h2>G
+    <h2>Get the free Living Edition case dossier — every Sunday</h2>
+    <p>Each dossier lays out the full timeline, the primary-source records, and the safety takeaways for the cases everyone is asking about — victims named in life first, no gratuitous detail. Enter your email; it is free and you can unsubscribe anytime.</p>
+    <form action="https://cassiancreed.beehiiv.com/subscribe" method="get" aria-label="Subscribe to the free Cassian Creed newsletter">
+      <input type="email" name="email" required autocomplete="email" placeholder="you@email.com" aria-label="Your email address" />
+      <input type="hidden" name="utm_source" value="website" />
+      <input type="hidden" name="utm_medium" value="home_cta" />
+      <input type="hidden" name="utm_campaign" value="living_edition_dossier" />
+      <button class="btn" type="submit">Get the free dossier →</button>
+    </form>
+  </section>
+</Base>
