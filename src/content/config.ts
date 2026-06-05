@@ -17,3 +17,4 @@ const posts = defineCollection({
     buyPrice: z.string().optional(),
   }),
 });
+export const collections = { posts };

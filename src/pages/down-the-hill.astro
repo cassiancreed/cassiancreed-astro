@@ -1,0 +1,152 @@
+---
+import Base from '../layouts/Base.astro';
+// Down the Hill: The Delphi Murders — landing/sales page.
+// Abby Williams (13) and Libby German (14) named first, in life. Minors — dignity, no gore.
+// Richard Allen convicted Nov 2024; appeal unresolved (stated honestly below).
+// Brand spine: presumption of innocence; cleared men are NOT named. A.I. AL is a disclosed,
+// human-overseen lens that reasons about evidence/geography but never names or accuses a suspect.
+// PRIMARY goal: email capture (Beehiiv free dossier). SECONDARY: $5.99 ebook on Gumroad
+// (no Beehiiv product for this title). Identity: Cassian Creed / Neural Edge Publishing.
+const jsonld = {
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "name": "Down the Hill: The Delphi Murders",
+  "author": { "@type": "Organization", "name": "Cassian Creed" },
+  "publisher": { "@type": "Organization", "name": "Neural Edge Publishing" },
+  "about": "The Delphi, Indiana murders of Abby Williams and Libby German, told at the town's own pace — a moral reckoning with suspicion and the cost of premature public blame.",
+  "offers": { "@type": "Offer", "price": "5.99", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://creedcaster5.gumroad.com/l/snagtm?utm_source=website&utm_medium=landing&utm_campaign=down_the_hill" }
+};
+---
+<Base title="Down the Hill: The Delphi Murders — a sourced, victim-first case file" description="Two girls went for a walk on the Monon High Bridge trail and did not come home. The Delphi case told at the town's own pace, in real time — a restrained, sourced reckoning with suspicion itself. Free dossier or the $5.99 ebook." jsonld={jsonld}>
+  <article class="lp">
+
+    <!-- HERO — single dominant CTA = email capture -->
+    <section class="lp-hero" aria-labelledby="lp-h1">
+      <p class="evidence evidence--accent">A Cassian Creed case file · sourced · victim-first</p>
+      <h1 id="lp-h1">Two girls went for a walk. A town spent the next five years suspecting the wrong men.</h1>
+      <p class="lp-sub">Abby Williams was thirteen. Libby German was fourteen. On a winter afternoon in 2017 they crossed the Monon High Bridge in Delphi, Indiana, and did not come home. <strong>This is the case told at the town's own pace, in real time, without the comfort of hindsight</strong> — its real subject is suspicion itself, and what it costs. Centered on Abby and Libby, told with care, without gratuitous detail.</p>
+
+      <form class="lp-capture" action="https://cassiancreed.beehiiv.com/subscribe" method="get" aria-label="Get the free Living Edition case dossier">
+        <label class="lp-capture__label" for="lp-email">Get the free Living Edition dossier — the timeline, the records, and the safety lessons, in your inbox.</label>
+        <div class="lp-capture__row">
+          <input id="lp-email" type="email" name="email" required autocomplete="email" placeholder="you@email.com" aria-label="Your email address" />
+          <input type="hidden" name="utm_source" value="website" />
+          <input type="hidden" name="utm_medium" value="landing_down_the_hill" />
+          <input type="hidden" name="utm_campaign" value="free_case_files" />
+          <button class="btn" type="submit">Send me the free dossier →</button>
+        </div>
+        <p class="lp-capture__fine">Free forever · no spam · unsubscribe anytime.</p>
+      </form>
+
+      <ul class="lp-badges" aria-label="Our standard">
+        <li>✓ Sourced from the public record</li>
+        <li>✓ Victims named in life first</li>
+        <li>✓ AI-assisted analysis, human-verified</li>
+        <li>✓ No gore, no filler</li>
+      </ul>
+    </section>
+
+    <!-- WHY THIS CASE -->
+    <section class="lp-block" aria-labelledby="lp-why">
+      <h2 id="lp-why">A few seconds of recording — and five years of dead ends</h2>
+      <p>Libby's phone caught the last moments on the trail: a grainy figure, a few words — "down the hill" — a recording that outlasted every theory built on top of it. For five years it was almost all there was. In the silence, a frightened community spent its certainty again and again, fixing on one man after another while the answer, as it turned out, had been close the whole time. We lay the years out in order, from the record — not as a chase, but as a study of how a town decides who to fear.</p>
+    </section>
+
+    <!-- WHAT YOU GET -->
+    <section class="lp-block" aria-labelledby="lp-get">
+      <h2 id="lp-get">What's inside the case file</h2>
+      <ul class="lp-list">
+        <li><strong>The complete timeline</strong> — the last ordinary afternoon through the 2024 verdict, built only from court filings, official statements, and contemporaneous reporting.</li>
+        <li><strong>The anatomy of premature blame</strong> — how suspicion moved through Delphi and landed, more than once, on men who were never charged and were later cleared. We do not repeat their names; that restraint is the point.</li>
+        <li><strong>"The Solve: law enforcement vs A.I. AL"</strong> — our signature, honest read of what investigators did, and where a disclosed analytical lens could reason about evidence and geography. The lens never names or accuses a suspect, and it openly concedes it did not solve this case.</li>
+        <li><strong>A trail &amp; everyday-safety guide</strong> — the real, validated steps that turn this story into something that protects you and the people you love.</li>
+      </ul>
+    </section>
+
+    <!-- CREDIBILITY / social proof (trust standard, honestly) -->
+    <section class="lp-trust" aria-labelledby="lp-trust-h">
+      <h2 id="lp-trust-h">Why you can trust this account</h2>
+      <p>Every claim is tied to a primary source. Legal status is re-verified before we publish and again when a case moves. We separate what is proven from what is argued, we name the people at the center in life first, and we hold the presumption of innocence as the book's moral spine — which is why the men once suspected and later cleared are not named here. The AI is a disclosed, human-overseen analytical lens, never the narrator or the author, and it never points at a suspect. When we get something wrong, we correct it. <a href="/about/">Read our full standard &amp; corrections policy →</a></p>
+    </section>
+
+    <!-- SECONDARY CTA — buy (visually subordinate to capture) -->
+    <section class="lp-buy" aria-labelledby="lp-buy-h">
+      <h2 id="lp-buy-h">Prefer the complete ebook?</h2>
+      <p class="lp-buy__lead">Read the whole thing offline — and support independent, victim-first true crime.</p>
+      <div class="lp-buy__cards">
+        <div class="lp-buy__card">
+          <p class="lp-buy__k">Down the Hill — ebook</p>
+          <p class="lp-buy__price">$5.99</p>
+          <a class="btn" href="https://creedcaster5.gumroad.com/l/snagtm?utm_source=website&utm_medium=landing&utm_campaign=down_the_hill" target="_blank" rel="noopener noreferrer">Get the ebook — $5.99 →</a>
+          <a class="lp-buy__alt" href="https://creedcaster5.gumroad.com/l/snagtm?utm_source=website&utm_medium=landing&utm_campaign=down_the_hill" target="_blank" rel="noopener noreferrer">Buy on Gumroad →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- HONEST LEGAL STATUS -->
+    <aside class="lp-status" aria-label="Where the case stands">
+      <p><strong>Where it stands.</strong> In November 2024, an Indiana jury found Richard Allen, a local man, guilty in the murders of Abby Williams and Libby German; he was sentenced to a lengthy prison term. Allen has appealed, and as of this writing that appeal is unresolved. We note it for honesty, and because the question of certainty is the heart of this book.</p>
+    </aside>
+
+    <!-- FINAL capture repeat (single CTA, repeated) -->
+    <section class="lp-final" aria-labelledby="lp-final-h">
+      <h2 id="lp-final-h">Start with the free dossier</h2>
+      <p>One email gets you the full sourced case file and the safety lessons — and you'll be first to know the day each new one is out.</p>
+      <form class="lp-capture" action="https://cassiancreed.beehiiv.com/subscribe" method="get" aria-label="Get the free Living Edition case dossier">
+        <div class="lp-capture__row">
+          <input id="lp-email2" type="email" name="email" required autocomplete="email" placeholder="you@email.com" aria-label="Your email address" />
+          <input type="hidden" name="utm_source" value="website" />
+          <input type="hidden" name="utm_medium" value="landing_down_the_hill_footer" />
+          <input type="hidden" name="utm_campaign" value="free_case_files" />
+          <button class="btn" type="submit">Send me the free dossier →</button>
+        </div>
+      </form>
+      <p class="lp-crisis"><strong>If you need support.</strong> 988 Suicide &amp; Crisis Lifeline (call or text 988) · National Domestic Violence Hotline 1-800-799-7233 · RAINN 1-800-656-HOPE. Cassian Creed · Neural Edge Publishing · PO Box 1039.</p>
+    </section>
+
+  </article>
+</Base>
+
+<style>
+  .lp{max-width:760px;margin:0 auto}
+  .lp h1, .lp h2{font-family:var(--serif)}
+  .lp-hero{padding:8px 0 8px}
+  #lp-h1{font-weight:600;font-size:clamp(30px,5vw,48px);line-height:1.1;margin:10px 0 16px;max-width:20ch}
+  .lp-sub{color:var(--ink-2);font-size:18px;line-height:1.65;max-width:60ch;margin:0 0 24px}
+  .lp-capture{background:var(--bg-2);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 10px 10px 0;padding:18px 20px;margin:0 0 18px}
+  .lp-capture__label{display:block;color:var(--ink);font-size:15px;margin:0 0 12px}
+  .lp-capture__row{display:flex;flex-wrap:wrap;gap:10px}
+  .lp-capture input[type=email]{flex:1 1 220px;background:var(--bg);border:1px solid var(--line);border-radius:6px;color:var(--ink);padding:12px 14px;font-size:15px}
+  .lp-capture input[type=email]:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+  .lp-capture .btn{border:0;cursor:pointer}
+  .lp-capture__fine{color:var(--ink-3);font-size:12px;margin:10px 0 0}
+  .lp-badges{list-style:none;display:flex;flex-wrap:wrap;gap:8px 18px;padding:0;margin:6px 0 0;color:var(--ink-2);font-size:13px}
+  .lp-block{padding:26px 0;border-top:1px solid var(--line)}
+  .lp-block h2, .lp-trust h2, .lp-buy h2, .lp-final h2{font-weight:600;font-size:clamp(22px,3vw,30px);margin:0 0 14px}
+  .lp-block p{color:var(--ink-2);line-height:1.7;max-width:64ch}
+  .lp-list{margin:0;padding:0;list-style:none;display:grid;gap:14px}
+  .lp-list li{color:var(--ink-2);line-height:1.6;border-left:2px solid var(--accent);padding-left:14px;max-width:64ch}
+  .lp-list strong, .lp-block strong{color:var(--ink)}
+  .lp-trust{padding:26px 0;border-top:1px solid var(--line)}
+  .lp-trust p{color:var(--ink-2);line-height:1.7;max-width:64ch}
+  .lp-trust a, .lp-block a{color:var(--accent)}
+  .lp-buy{padding:26px 0;border-top:1px solid var(--line)}
+  .lp-buy__lead{color:var(--ink-2);margin:0 0 18px}
+  .lp-buy__cards{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .lp-buy__card{background:var(--bg-3);border:1px solid var(--line);border-radius:10px;padding:20px;display:flex;flex-direction:column;gap:8px}
+  .lp-buy__card--bundle{border-color:rgba(224,86,59,.45)}
+  .lp-buy__k{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin:0}
+  .lp-buy__price{font-family:var(--serif);font-size:30px;font-weight:600;margin:0;color:var(--ink)}
+  .lp-buy__was{font-size:16px;color:var(--ink-3);text-decoration:line-through;font-family:var(--sans);font-weight:400}
+  .lp-buy__cardsub{color:var(--ink-2);font-size:14px;margin:0}
+  .lp-buy .btn{align-self:flex-start;border:0;margin-top:4px}
+  .lp-buy__alt{font-size:13px;color:var(--ink-2)}
+  .lp-buy__alt:hover{color:var(--accent)}
+  .lp-status{background:var(--bg-2);border:1px solid var(--line);border-radius:8px;padding:16px 18px;margin:26px 0 0}
+  .lp-status p{color:var(--ink-2);font-size:14px;line-height:1.6;margin:0;max-width:70ch}
+  .lp-final{padding:30px 0 10px;border-top:1px solid var(--line);margin-top:26px}
+  .lp-final p{color:var(--ink-2);max-width:60ch}
+  .lp-crisis{color:var(--ink-3);font-size:13px;line-height:1.6;margin-top:18px}
+  .lp-crisis strong{color:var(--ink-2)}
+  @media(max-width:640px){.lp-buy__cards{grid-template-columns:1fr}}
+</style>

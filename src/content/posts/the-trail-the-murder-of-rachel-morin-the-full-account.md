@@ -9,8 +9,8 @@ incidentDate: "August 2023"
 location: "Bel Air, Harford County, Maryland"
 jurisdiction: "Maryland state court"
 status: "Victor Martinez-Hernandez convicted (2025), life without parole; appeal pending"
-buyUrl: "https://cassiancreed.beehiiv.com/products/the-trail-the-murder-of-rachel-morin"
-buyUrlAlt: "https://creedcaster5.gumroad.com/l/xbgnhg"
+buyUrl: "https://cassiancreed.beehiiv.com/products/the-trail-the-murder-of-rachel-morin?utm_source=website&utm_medium=landing&utm_campaign=the_trail"
+buyUrlAlt: "https://creedcaster5.gumroad.com/l/xbgnhg?utm_source=website&utm_medium=landing&utm_campaign=the_trail"
 buyPrice: "$5.99"
 ---
 
@@ -32,8 +32,7 @@ What followed was the unglamorous work of a historian: building family trees fro
 
 On April 14, 2025, a Maryland jury found Victor Martinez-Hernandez guilty on all counts — first-degree murder, first-degree rape, kidnapping, and a related sex offense. The verdict was unqualified. He was sentenced to life in prison without the possibility of parole. He has indicated an intention to appeal; as of this writing that appeal is unresolved, and the conviction stands. We note the pending appeal not because it casts doubt on the verdict, but because honesty requires acknowledging that the process is not entirely concluded.
 
-<section class="solve" aria-label="The Solve: law enforcement versus A.I. AL"><p class="solve__k">The Solve · law enforcement vs A.I. AL</p><h3>Could AI have found Rachel's killer faster?</h3><div class="solve__disc"><strong>Law enforcement solved this case with traditional investigative work. They did NOT use A.I. AL or any Neural Edge tool.</strong> What follows is a retrospective illustration of how our verified analytical lens approaches an already-solved case — education and commentary, not a claim about the real investigation or the people who did it.</div><div class="solve__cols"><div class="solve__col"><p class="solve__k">What law enforcement did</p><ul><li>Built a crime-scene DNA profile — but it matched no one in CODIS.</li><li>Linked the same unknown man to a Los Angeles home-invasion assault.</li><li>Used forensic-grade genome sequencing where a standard profile gave nothing.</li><li>Built family trees through investigative genetic genealogy to a name: Victor Martinez-Hernandez.</li><li>Ran a multi-state manhunt to an arrest in Tulsa; convicted on all counts.</li></ul></div><div class="solve__col solve__col--ai"><p class="solve__k">What A.I. AL would do (public record only)</p><ul><li><strong>Timeline-X:</strong> reconcile the verifiable sequence against trail access and the discovery.</li><li><strong>Linkage-X:</strong> once the cross-state DNA link is public, frame the offender as transient/non-local.</li><li><strong>Evidence-X:</strong> weigh each item as a likelihood ratio — never a "probability of guilt."</li><li><strong>NegativeEvidence-X:</strong> read the CODIS no-match as a signal he was outside the system.</li><li>It would name no one — identity belongs to the DNA work and the labs.</li></ul></div></div><div class="solve__verdict"><p class="solve__k">Would A.I. AL have been faster?</p><p><strong>On its own, no.</strong> The wall here was identity, not linkage — and only forensic genome sequencing plus genetic genealogy could produce the name. A public-record lens can't do that.</p><p><strong>Law enforcement's work plus A.I. AL: plausibly faster on the human phases — and useful either way.</strong> Once the lab work was in hand, time still went to which lead to chase and where a transient suspect had gone. A record-only lens could help prioritize candidates and focus the search — and at minimum adds an independent, documented second read. Maybe it shaves time; we won't claim it for certain.</p><p><strong>The bottleneck that stays fixed:</strong> the genome-sequencing and genealogy turnaround. A.I. AL does not speed a lab — and the credit for naming him belongs to the investigators who did.</p></div></section>
-
-## Walk the trail
-
-The deepest lesson of this case is not fear. It is that the answers families need are produced by patience, funding, cooperation, and the refusal to give up — and that the trail belongs to all of us. Walk it. Run it. Do it wisely: vary your routine, share your location, trust your instincts. But do not let fear shrink your life, because that would be its own quiet defeat.
+<section class="solve" aria-label="The Solve: law enforcement versus A.I. AL">
+<p class="solve__k">The Solve · law enforcement vs A.I. AL</p>
+<h3>Could AI have found Rachel's killer faster?</h3>
+<div class="solve__disc"><strong>Law enforcement solved this case with traditional investigative work. They 

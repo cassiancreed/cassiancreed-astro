@@ -30,7 +30,7 @@ Four were found together along Ocean Parkway in December 2010 and became known a
 
 ## The A.I. AL lens: a case the system almost didn't solve
 
-Our A.I. AL system (our Artificial Intelligence · Analytical Logic system, overseen by humans) works only from the public record, and it was **not** used by investigators. Its reading of Gilgo is blunt: this was, above all, a story of **institutional failure**. The pieces that, in our analysis, pointed to a single connected series were on the public record for years — remains along one stretch of Ocean Parkway, victims found wrapped the same way, a shared pattern of contact through online ads — yet the cases were worked separately. What changed in 2022 was not new evidence so much as new will: a task force that finally treated the cases as worth solving. The lesson our work is built on follows directly: **whose victim it is must never decide the urgency of the search.** Our full breakdown of the investigation and the evidence is in [the complete Gilgo Beach case file](/post/the-gilgo-beach-murders-rex-heuermann-pleads-guilty-and-eight-women-are-finally-named/).
+Our A.I. AL system (our Artificial Intelligence · Analytical Logic system, overseen by humans) works only from the public record, and it was **not** used by investigators. Its reading of Gilgo is blunt: this was, above all, a story of **institutional failure**. The pieces that, in our analysis, pointed to a single connected series were on the public record for years — remains along one stretch of Ocean Parkway, victims found wrapped the same way, a shared pattern of contact through online ads — yet the cases were worked separately — a failure pattern we explain in [why some murders go unsolved: linkage blindness](/post/why-do-some-murders-go-unsolved-linkage-blindness/). What changed in 2022 was not new evidence so much as new will: a task force that finally treated the cases as worth solving. The lesson our work is built on follows directly: **whose victim it is must never decide the urgency of the search.** Our full breakdown of the investigation and the evidence is in [the complete Gilgo Beach case file](/post/the-gilgo-beach-murders-rex-heuermann-pleads-guilty-and-eight-women-are-finally-named/).
 
 ## Frequently Asked Questions
 
@@ -48,6 +48,12 @@ No. The guilty plea ends the prospect of a trial; the June 17 hearing is for vic
 
 **Can the family of the victims speak at sentencing?**
 Yes. Sentencing hearings include the opportunity for victims' family members to deliver impact statements to the court.
+
+**Did Rex Heuermann plead guilty to the Gilgo Beach murders?**
+Yes. On April 8, 2026, he pleaded guilty to murdering seven women and admitted in court to causing the death of an eighth, Karen Vergata, for whom he was not separately charged. The plea ended the case before its planned trial.
+
+**Will Rex Heuermann be eligible for parole?**
+No. Under the agreed plea, he is to receive three consecutive life sentences without the possibility of parole, plus four consecutive terms of 25 years to life — a structure that ensures he will spend the rest of his life in prison.
 
 ---
 

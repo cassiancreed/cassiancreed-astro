@@ -116,4 +116,5 @@ Eric Richins was a father, a business owner, and a friend whom those closest to 
 - [What to know about the 'Walk the Dog' letter as testimony ends — The Salt Lake Tribune](https://www.sltrib.com/news/2026/03/14/kouri-richins-trial-what-know/)
 - [Financial expert testifies about Kouri Richins's debt and life-insurance use — Park Record](https://www.parkrecord.com/2026/03/03/financial-expert-testifies-that-kouri-richins-used-money-from-life-insurance-policy-to-pay-off-growing-7-5-million-debt/)
 - [Timeline of the Kouri Richins case — KSL.com](https://www.ksl.com/article/51446543/heres-a-timeline-of-the-kouri-richins-case-as-jury-selection-gets-underway)
-- [How Kouri Richins learned she was cut out of her husband's will — KPCW](https://www.kpcw.org/summit-
+- [Kouri Richins sentenced to life in prison for husband's murder — KPCW](https://www.kpcw.org/summit-county/2026-05-13/kouri-richins-sentenced-to-life-in-prison-for-husbands-murder-after-emotional-hearing)
+- [Murder of Eric Richins — Wikipedia](https://en.wikipedia.org/wiki/Murder_of_Eric_Richins)

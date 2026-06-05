@@ -1,0 +1,124 @@
+---
+import Base from '../layouts/Base.astro';
+// LEAD MAGNET — free downloadable "Cassian Creed Case File" dossier (GREEN: Golden State Killer,
+// Joseph DeAngelo guilty plea 2020 — adjudicated). PRIMARY: email capture (Beehiiv). Soft offer: NE003 + bundle.
+// Plan-agnostic: capture-first + immediate download (works without Beehiiv Scale).
+const PDF = '/the-golden-state-killer-free-case-file.pdf';
+const jsonld = {
+  "@context":"https://schema.org","@type":"WebPage",
+  "name":"Free Case File: The Golden State Killer",
+  "description":"A free, sourced, victim-first case-file dossier on the Golden State Killer — and the Sunday newsletter."
+};
+---
+<Base title="Free Case File: The Golden State Killer — a sourced, victim-first dossier" description="Get a free downloadable Cassian Creed case-file dossier on the Golden State Killer: the at-a-glance, a primary-source timeline, a disclosed A.I. AL lens, and the safety lessons. Free, with the Sunday newsletter." jsonld={jsonld}>
+  <article class="lp">
+
+    <section class="lp-hero" aria-labelledby="lp-h1">
+      <p class="evidence evidence--accent">Free case file · sourced · victim-first</p>
+      <h1 id="lp-h1">Get the Golden State Killer case file — free.</h1>
+      <p class="lp-sub">A clean, downloadable <strong>Cassian Creed Case File</strong>: the people first, a primary-source timeline, a disclosed A.I. AL analytical lens, and the safety lessons — the same standard as the books, in a few pages you can keep. Enter your email and it's yours, plus the free Sunday newsletter.</p>
+
+      <aside class="lp-glance" aria-label="The case at a glance">
+        <p class="lp-glance__k">The case, in 10 seconds</p>
+        <dl>
+          <div><dt>Victims</dt><dd>13 murdered + dozens of survivors · California, 1974–1986</dd></div>
+          <div><dt>Identified</dt><dd>Joseph DeAngelo — April 2018, via investigative genetic genealogy</dd></div>
+          <div><dt>Status</dt><dd>Pleaded guilty 2020; life without parole (adjudicated)</dd></div>
+          <div><dt>How solved</dt><dd>Crime-scene DNA → public genealogy → family tree → confirmation</dd></div>
+        </dl>
+      </aside>
+
+      <form class="lp-capture" action="https://cassiancreed.beehiiv.com/subscribe" method="get" aria-label="Get the free case file and newsletter">
+        <label class="lp-capture__label" for="lp-email">Where should we send your case files?</label>
+        <div class="lp-capture__row">
+          <input id="lp-email" type="email" name="email" required autocomplete="email" placeholder="you@email.com" aria-label="Your email address" />
+          <input type="hidden" name="utm_source" value="website" />
+          <input type="hidden" name="utm_medium" value="lead_magnet_gsk" />
+          <input type="hidden" name="utm_campaign" value="free_case_files" />
+          <button class="btn" type="submit">Subscribe &amp; get the case file →</button>
+        </div>
+        <p class="lp-capture__fine">Free forever · no spam · unsubscribe anytime.</p>
+      </form>
+
+      <p class="lp-dl"><a class="btn btn--ghost" href={PDF} target="_blank" rel="noopener" download>↓ Download the dossier (PDF)</a> <span class="lp-dl__note">Yours to keep. If you grab it, consider subscribing above so we can send you the next one.</span></p>
+
+      <ul class="lp-badges" aria-label="Our standard">
+        <li>✓ Sourced from the public record</li>
+        <li>✓ Victims named in life first</li>
+        <li>✓ AI = a disclosed, human-verified lens</li>
+        <li>✓ No gore, no filler</li>
+      </ul>
+    </section>
+
+    <section class="lp-block" aria-labelledby="lp-in">
+      <h2 id="lp-in">What's in the dossier</h2>
+      <ul class="lp-list">
+        <li><strong>The people first</strong> — the thirteen killed and the survivors who outlasted his anonymity, before the man who harmed them.</li>
+        <li><strong>A primary-source timeline</strong> — from the regional crime series to the 2018 genetic-genealogy identification and the 2020 guilty plea.</li>
+        <li><strong>The A.I. AL lens, disclosed</strong> — an honest read of where an analytical lens could (and could not) have helped; it names no one and never claims the solve.</li>
+        <li><strong>A Stay-Safe sidebar</strong> — what the case teaches, and where to turn for help.</li>
+      </ul>
+    </section>
+
+    <section class="lp-buy" aria-labelledby="lp-buy-h">
+      <h2 id="lp-buy-h">If you want the full-length case files</h2>
+      <p class="lp-buy__lead">The books go all the way — complete timelines, the records, the people at the center.</p>
+      <div class="lp-buy__cards">
+        <div class="lp-buy__card">
+          <p class="lp-buy__k">The Trail — ebook</p>
+          <p class="lp-buy__price">$5.99</p>
+          <a class="btn" href="https://cassiancreed.beehiiv.com/products/the-trail-the-murder-of-rachel-morin?utm_source=website&utm_medium=landing&utm_campaign=the_trail" target="_blank" rel="noopener noreferrer">Buy The Trail — $5.99 →</a>
+        </div>
+        <div class="lp-buy__card lp-buy__card--bundle">
+          <p class="lp-buy__k">The Case Files Collection</p>
+          <p class="lp-buy__price">$8.99 <span class="lp-buy__was">$11.98</span></p>
+          <p class="lp-buy__cardsub">The Trail + No Accident — a $3 saving.</p>
+          <a class="btn" href="https://creedcaster5.gumroad.com/l/jhgmwj?utm_source=website&utm_medium=post_cta&utm_campaign=case_files_collection" target="_blank" rel="noopener noreferrer">Get the Collection — $8.99 →</a>
+        </div>
+      </div>
+    </section>
+
+    <p class="lp-crisis"><strong>If you need support.</strong> 988 Suicide &amp; Crisis Lifeline (call or text 988) · RAINN 1-800-656-HOPE. Cassian Creed · Neural Edge Publishing · PO Box 1039.</p>
+
+  </article>
+</Base>
+
+<style>
+  .lp{max-width:740px;margin:0 auto}
+  .lp h1,.lp h2{font-family:var(--serif)}
+  #lp-h1{font-weight:600;font-size:clamp(28px,5vw,44px);line-height:1.1;margin:10px 0 14px;max-width:18ch}
+  .lp-sub{color:var(--ink-2);font-size:17px;line-height:1.65;max-width:62ch;margin:0 0 18px}
+  .lp-glance{background:var(--bg-2);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 10px 10px 0;padding:14px 18px;margin:0 0 18px}
+  .lp-glance__k{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 8px}
+  .lp-glance dl{margin:0;display:grid;gap:7px}
+  .lp-glance dl div{display:grid;grid-template-columns:96px 1fr;gap:12px}
+  .lp-glance dt{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);padding-top:2px}
+  .lp-glance dd{margin:0;color:var(--ink);font-size:14px}
+  .lp-capture{background:var(--bg-2);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:0 0 12px}
+  .lp-capture__label{display:block;color:var(--ink);font-size:15px;margin:0 0 10px}
+  .lp-capture__row{display:flex;flex-wrap:wrap;gap:10px}
+  .lp-capture input[type=email]{flex:1 1 220px;background:var(--bg);border:1px solid var(--line);border-radius:6px;color:var(--ink);padding:12px 14px;font-size:15px}
+  .lp-capture input[type=email]:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+  .lp-capture .btn{border:0;cursor:pointer}
+  .lp-capture__fine{color:var(--ink-3);font-size:12px;margin:10px 0 0}
+  .lp-dl{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:0 0 16px}
+  .lp-dl__note{font-size:12px;color:var(--ink-3);max-width:44ch}
+  .lp-badges{list-style:none;display:flex;flex-wrap:wrap;gap:8px 18px;padding:0;margin:4px 0 0;color:var(--ink-2);font-size:13px}
+  .lp-block,.lp-buy{padding:26px 0;border-top:1px solid var(--line)}
+  .lp-block h2,.lp-buy h2{font-weight:600;font-size:clamp(20px,3vw,28px);margin:0 0 14px}
+  .lp-list{margin:0;padding:0;list-style:none;display:grid;gap:13px}
+  .lp-list li{color:var(--ink-2);line-height:1.6;border-left:2px solid var(--accent);padding-left:14px;max-width:64ch}
+  .lp-list strong,.lp-buy strong{color:var(--ink)}
+  .lp-buy__lead{color:var(--ink-2);margin:0 0 16px}
+  .lp-buy__cards{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .lp-buy__card{background:var(--bg-3);border:1px solid var(--line);border-radius:10px;padding:18px;display:flex;flex-direction:column;gap:7px}
+  .lp-buy__card--bundle{border-color:rgba(224,86,59,.45)}
+  .lp-buy__k{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin:0}
+  .lp-buy__price{font-family:var(--serif);font-size:28px;font-weight:600;margin:0;color:var(--ink)}
+  .lp-buy__was{font-size:15px;color:var(--ink-3);text-decoration:line-through;font-family:var(--sans);font-weight:400}
+  .lp-buy__cardsub{color:var(--ink-2);font-size:13px;margin:0}
+  .lp-buy .btn{align-self:flex-start;border:0;margin-top:4px}
+  .lp-crisis{color:var(--ink-3);font-size:13px;line-height:1.6;margin-top:24px}
+  .lp-crisis strong{color:var(--ink-2)}
+  @media(max-width:600px){.lp-buy__cards{grid-template-columns:1fr}.lp-glance dl div{grid-template-columns:1fr}}
+</style>

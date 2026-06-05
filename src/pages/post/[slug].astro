@@ -95,16 +95,28 @@ const jsonld = faqNode
   </section></div>
   )}
 
-  <div class="wrap"><section class="subscribe" id="subscribe">
-    <h2>Get the next case file first</h2>
-    <p>Free, victim-first true-crime case files and verdict updates from Cassian Creed — new analysis the day it's published, plus the Sunday newsletter. No spam; unsubscribe anytime.</p>
-    <form action="https://cassiancreed.beehiiv.com/subscribe" method="get" aria-label="Subscribe to the free Cassian Creed newsletter">
-      <input type="email" name="email" required autocomplete="email" placeholder="you@email.com" aria-label="Your email address" />
-      <input type="hidden" name="utm_source" value="website" />
-      <input type="hidden" name="utm_medium" value="post_cta" />
-      <input type="hidden" name="utm_campaign" value="free_case_files" />
-      <button class="btn" type="submit">Send me the free case files →</button>
-    </form>
+  <div class="wrap"><section class="convert" id="subscribe">
+    <div class="convert__grid">
+      <div class="convert__capture">
+        <p class="evidence evidence--accent">Free case files</p>
+        <h2>Get the next case file first</h2>
+        <p>Free, victim-first true-crime case files and verdict updates from Cassian Creed — new analysis the day it's published, plus the Sunday newsletter. No spam; unsubscribe anytime.</p>
+        <form action="https://cassiancreed.beehiiv.com/subscribe" method="get" aria-label="Subscribe to the free Cassian Creed newsletter">
+          <input type="email" name="email" required autocomplete="email" placeholder="you@email.com" aria-label="Your email address" />
+          <input type="hidden" name="utm_source" value="website" />
+          <input type="hidden" name="utm_medium" value="post_cta" />
+          <input type="hidden" name="utm_campaign" value="free_case_files" />
+          <button class="btn" type="submit">Send me the free case files →</button>
+        </form>
+        <p class="convert__magnet">Want one to read right now? <a href="/free-dossier/">Get the free Golden State Killer case-file dossier (PDF) →</a></p>
+      </div>
+      <aside class="convert__book">
+        <p class="convert__book-k">The Case Files Collection</p>
+        <p class="convert__book-t">Two complete, victim-first case files — <em>The Trail</em> + <em>No Accident</em> — for $8.99. Support independent true crime.</p>
+        <a class="btn convert__book-btn" href="https://creedcaster5.gumroad.com/l/jhgmwj?utm_source=website&utm_medium=post_cta&utm_campaign=case_files_collection" target="_blank" rel="noopener noreferrer">Get the Collection — $8.99 →</a>
+        <a class="convert__book-alt" href="/books/">See all case-file books →</a>
+      </aside>
+    </div>
   </section></div>
 </Base>
 
@@ -124,4 +136,16 @@ const jsonld = faqNode
   .related__list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
   .related__list a{color:var(--ink);text-decoration:none;border-left:2px solid var(--accent);padding-left:12px;display:inline-block;transition:color .15s}
   .related__list a:hover{color:var(--accent,#e0563b)}
+  .convert{border-top:1px solid var(--line);padding-top:26px;margin-top:8px}
+  .convert__grid{display:grid;grid-template-columns:1.6fr 1fr;gap:26px;align-items:start}
+  @media(max-width:720px){.convert__grid{grid-template-columns:1fr;gap:20px}}
+  .convert__magnet{margin:14px 0 0;font-size:15px}
+  .convert__magnet a{color:var(--accent,#e0563b);text-decoration:none;font-weight:600}
+  .convert__magnet a:hover{text-decoration:underline}
+  .convert__book{padding:18px 20px;background:var(--bg-3);border:1px solid rgba(95,174,126,.45);border-radius:10px}
+  .convert__book-k{font-family:var(--mono,'JetBrains Mono',monospace);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#5fae7e;margin:0 0 6px}
+  .convert__book-t{margin:0 0 14px;font-size:15px;line-height:1.45}
+  .convert__book-btn{align-self:flex-start}
+  .convert__book-alt{display:inline-block;margin-top:10px;font-size:13px;text-decoration:none;color:var(--ink-2)}
+  .convert__book-alt:hover{color:var(--accent,#e0563b)}
 </style>

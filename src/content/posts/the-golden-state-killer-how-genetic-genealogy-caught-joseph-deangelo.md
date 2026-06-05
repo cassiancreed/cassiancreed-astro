@@ -109,4 +109,5 @@ For survivors of sexual assault, the National Sexual Assault Hotline is availabl
 - [74-Year-Old 'Golden State Killer' Joseph DeAngelo Pleads Guilty to 13 Murders and Rapes — Death Penalty Information Center](https://deathpenaltyinfo.org/74-year-old-golden-state-killer-joseph-deangelo-pleads-guilty-to-13-murders-and-rapes-gets-11-life-sentences)
 - [Golden State Killer Sentenced To Life In Prison Without Possibility Of Parole — NPR](https://www.npr.org/2020/08/21/904744564/golden-state-killer-sentenced-to-life-in-prison)
 - [Golden State Killer Joseph DeAngelo sentenced to life without possibility of parole — NBC News](https://www.nbcnews.com/news/us-news/golden-state-killer-joseph-deangelo-sentenced-life-without-possibility-parole-n1237670)
-- [Joseph James DeAngelo Jr. Pleads Guilty to 13 Murders, 13 Kidnappings and Dozens of Additional Uncharged Crimes — Orange County District Attorney](
+- [Joseph James DeAngelo Jr. Pleads Guilty to 13 Murders, 13 Kidnappings and Dozens of Additional Uncharged Crimes — Orange County District Attorney](https://ocdistrictattorney.gov/press/joseph-james-deangelo-jr-pleads-guilty-to-13-murders-13-kidnappings-and-dozens-of-additional-uncharged-crimes/)
+- [Golden State Killer Joseph DeAngelo sentenced to life in prison — CNN](https://www.cnn.com/2020/08/21/us/golden-state-killer-sentencing)

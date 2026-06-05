@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900" width="600" height="900" role="img" aria-label="The Trail  — THE MURDER OF RACHEL MORIN">
+<defs>
+<linearGradient id="g" x1="0" y1="0" x2="0.5" y2="1">
+<stop offset="0" stop-color="#5c180d"/><stop offset="0.6" stop-color="#c9472b"/><stop offset="1" stop-color="#e0563b"/>
+</linearGradient>
+</defs>
+<rect width="600" height="900" fill="url(#g)"/>
+<g stroke="#fff" stroke-opacity="0.08" fill="none" stroke-width="1.4">
+<path d="M-40 700 C 160 640, 300 760, 660 690"/>
+<path d="M-40 740 C 160 690, 320 800, 660 730"/>
+<path d="M-40 780 C 180 740, 320 840, 660 775"/>
+<path d="M-40 820 C 180 790, 340 870, 660 820"/>
+</g>
+<circle cx="500" cy="190" r="150" fill="#fff" fill-opacity="0.05"/>
+<circle cx="500" cy="190" r="150" fill="none" stroke="#fff" stroke-opacity="0.14"/>
+<circle cx="500" cy="190" r="96" fill="none" stroke="#fff" stroke-opacity="0.10"/>
+<text x="60" y="118" font-family="'Courier New',monospace" font-size="22" letter-spacing="6" fill="#ffd9cd">CASE FILE 001</text>
+<rect x="60" y="138" width="120" height="3" fill="#ffd9cd"/>
+<text x="60" y="510" font-family="Georgia,serif" font-weight="700" font-size="92" fill="#fff">The Trail</text>
+<text x="60" y="568" font-family="'Courier New',monospace" font-size="20" letter-spacing="3" fill="#ffd9cd">THE MURDER OF RACHEL MORIN</text>
+<text x="60" y="828" font-family="'Courier New',monospace" font-size="22" letter-spacing="6" fill="#fff" fill-opacity="0.92">CASSIAN CREED</text>
+<g transform="translate(470,790)">
+<circle r="56" fill="#fff" fill-opacity="0.10" stroke="#fff" stroke-opacity="0.6"/>
+<text x="0" y="-2" text-anchor="middle" font-family="'Courier New',monospace" font-weight="700" font-size="26" fill="#fff">A.I. AL</text>
+<text x="0" y="20" text-anchor="middle" font-family="'Courier New',monospace" font-size="9" letter-spacing="2" fill="#fff" fill-opacity="0.85">ANALYSIS</text>
+</g>
+</svg>

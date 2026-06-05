@@ -1,42 +1,147 @@
 ---
 import Base from '../layouts/Base.astro';
 const books = [
-  { title: "The Gilgo Blueprint", sub: "Rex Heuermann and the Forensic Revolution", hook: "The complete, sourced account of how DNA genealogy, burner-phone analysis, and relentless detective work finally unmasked the Long Island serial killer — with the victims remembered as daughters and sisters, not statistics.", status: "Coming soon", href: "/post/the-gilgo-beach-murders-rex-heuermann-pleads-guilty-and-eight-women-are-finally-named/" },
-  { title: "The Trail", sub: "The Murder of Rachel Morin", hook: "A mother of five walked a familiar Maryland trail and never came home. The full account of the genetic-genealogy hunt that named a killer who sat in no database.", status: "On sale", buy: "https://cassiancreed.beehiiv.com/products/the-trail-the-murder-of-rachel-morin", buyAlt: "https://creedcaster5.gumroad.com/l/xbgnhg", price: "$5.99", href: "/post/the-trail-the-murder-of-rachel-morin-the-full-account/" },
-  { title: "No Accident", sub: "The Mackenzie Shirilla Story", hook: "Two young men — Dominic Russo and Davion Flanagan — died in what looked like a pre-dawn crash. The event data recorder and a GPS dry run told a different story.", status: "On sale", buy: "https://cassiancreed.beehiiv.com/products/no-accident-the-mackenzie-shirilla-story", buyAlt: "https://creedcaster5.gumroad.com/l/jsfwrv", price: "$5.99", href: "/post/no-accident-the-mackenzie-shirilla-story-the-full-account/" },
-  { title: "The Frame", sub: "The Brendan Banfield Story", hook: "A wife killed at home, an au pair, and a manufactured intruder story that unraveled count by count in a Virginia courtroom.", status: "Coming soon", href: null },
-  { title: "Are You With Me?", sub: "The Kouri Richins Story", hook: "A Utah author wrote a children's book about grief — after poisoning her husband, Eric, with fentanyl. What the evidence showed, told with care.", status: "Coming soon", href: "/post/new-release-are-you-with-me-the-kouri-richins-story/" },
+  {
+    title: "The Trail", series: "Case File 001", sub: "The Murder of Rachel Morin",
+    hook: "A mother of five walked a familiar Maryland trail and never came home — and her killer sat in no database on earth. The complete account of the genetic-genealogy hunt that named him anyway.",
+    status: "On sale", theme: "rust", price: "$5.99",
+    buy: "https://cassiancreed.beehiiv.com/products/the-trail-the-murder-of-rachel-morin?utm_source=website&utm_medium=landing&utm_campaign=the_trail",
+    buyAlt: "https://creedcaster5.gumroad.com/l/xbgnhg?utm_source=website&utm_medium=landing&utm_campaign=the_trail",
+    sample: "/the-trail/"
+  },
+  {
+    title: "No Accident", series: "Case File 002", sub: "The Mackenzie Shirilla Story",
+    hook: "Two young men — Dominic Russo and Davion Flanagan — died in what looked like a pre-dawn crash. The event-data recorder and a GPS dry run told a different story. Mackenzie Shirilla convicted 2023; appeal pending.",
+    status: "On sale", theme: "steel", price: "$5.99",
+    buy: "https://cassiancreed.beehiiv.com/products/no-accident-the-mackenzie-shirilla-story?utm_source=website&utm_medium=landing&utm_campaign=no_accident",
+    buyAlt: "https://creedcaster5.gumroad.com/l/jsfwrv?utm_source=website&utm_medium=landing&utm_campaign=no_accident",
+    sample: null
+  },
+  {
+    title: "Down the Hill", series: "Case File 005", sub: "The Delphi Murders",
+    hook: "On a warm February afternoon in 2017, two best friends walked onto an old iron railroad bridge in Delphi, Indiana, and never came home — and the man responsible stayed, hiding in plain sight, for five years. The full, sourced account of the case, and of a frightened town that spent its certainty on the wrong men.",
+    status: "On sale", theme: "slate", price: "$5.99",
+    buy: "https://creedcaster5.gumroad.com/l/snagtm?utm_source=website&utm_medium=landing&utm_campaign=down_the_hill",
+    buyAlt: null,
+    sample: "/down-the-hill/"
+  },
+  {
+    title: "The Gilgo Blueprint", series: "Case File 003", sub: "Rex Heuermann and the Forensic Revolution",
+    hook: "How DNA genealogy, burner-phone analysis, and relentless detective work finally unmasked the Long Island serial killer — with the eight women remembered as daughters and sisters, not statistics.",
+    status: "Coming soon", theme: "ink", price: null
+  },
+  {
+    title: "The Frame", series: "Case File 004", sub: "The Brendan Banfield Story",
+    hook: "A wife killed at home, an au pair, and a manufactured intruder story that unraveled count by count in a Virginia courtroom.",
+    status: "Coming soon", theme: "moss", price: null
+  },
 ];
 ---
-<Base title="True-crime books by Cassian Creed — The Trail, No Accident & more" description="Buy sourced, victim-first true-crime ebooks by Cassian Creed — The Trail (the murder of Rachel Morin) and No Accident (the Mackenzie Shirilla story), $5.99 each — plus more full-length case files.">
-  <article class="post">
-    <p class="evidence evidence--accent">Books</p>
-    <h1>The case files, in full</h1>
-    <div class="post__content">
-      <p>Each book is a full-length, primary-source case file — the complete timeline, the records, and the people at the center — told victim-first and without gratuitous detail. Join the Living Edition free and you will be first to know the day each new one is out.</p>
-      <p class="evidence evidence--accent" style="margin-top:14px">Sourced from the public record · victims named first · AI-assisted analysis, human-verified. <a href="/about/" style="color:var(--accent,#e0563b)">How we make these →</a></p>
-      <p style="margin-top:14px"><strong>Why trust these books.</strong> They are written under the Cassian Creed byline for Neural Edge Publishing — every claim tied to a primary source (court filings, official records, contemporaneous reporting), legal status re-verified before publish, and where a verdict is under appeal we say so on the page. The analysis is AI-assisted as a disclosed, human-overseen lens — never the narrator or the author. When we get something wrong, we correct it. <a href="/about/" style="color:var(--accent,#e0563b)">Read our standard &amp; corrections policy →</a></p>
-      <p style="margin-top:18px;padding:14px 18px;border:1px solid rgba(224,86,59,.4);border-left:3px solid var(--accent,#e0563b);border-radius:0 8px 8px 0;background:var(--bg-2,#191512)"><strong>Save with the Case Files Collection.</strong> Get both <em>The Trail</em> and <em>No Accident</em> together for <strong>$9.99</strong> — less than buying them separately ($11.98). <a href="https://creedcaster5.gumroad.com/l/jhgmwj" target="_blank" rel="noopener noreferrer" style="color:var(--accent,#e0563b)">Get the Collection — $9.99 →</a></p>
-    </div>
-  </article>
+<Base title="True-crime books by Cassian Creed — The Trail, No Accident & more" description="Sourced, victim-first true-crime ebooks by Cassian Creed — every book carries an exclusive A.I. AL forensic analysis you won't find anywhere else. The Trail and No Accident, $5.99 each.">
+  <section class="bk-hero wrap">
+    <p class="evidence evidence--accent">The Case Files Library</p>
+    <h1 class="bk-hero__h">Every book runs the case through <span>A.I. AL</span>.</h1>
+    <p class="bk-hero__p">Each Cassian Creed book is a full-length, primary-source case file — the complete timeline, the records, and the people at the center, told victim-first and without gratuitous detail. And every one carries something the free web articles never will: an exclusive <strong>A.I. AL Case Analysis</strong>.</p>
+  </section>
 
-  <div class="wrap">
-    <div class="books">
-      {books.map(b => (
-        <div class="book">
-          <div class={b.buy ? "book__badge book__badge--live" : "book__badge"}>{b.status}</div>
-          <h2 class="book__title">{b.title}</h2>
-          <p class="book__sub">{b.sub}</p>
-          <p class="book__hook">{b.hook}</p>
-          {b.buy && <a class="btn book__buy" href={b.buy} target="_blank" rel="noopener noreferrer">Buy the ebook — {b.price} →</a>}
-          {b.buyAlt && <a class="book__alt" href={b.buyAlt} target="_blank" rel="noopener noreferrer">Also on Gumroad →</a>}
-          {b.href && <a class="book__link" href={b.href}>Read the free case file →</a>}
-        </div>
-      ))}
+  <section class="wrap aial-strip" aria-label="What A.I. AL adds to every book">
+    <div class="aial-strip__seal">A.I. AL</div>
+    <div>
+      <p class="aial-strip__k">Inside every book — and nowhere else</p>
+      <p class="aial-strip__t">We run the case through the forensic <strong>X-modules</strong> — Timeline-X, Linkage-X, Evidence-X, Geo-X, Tip-Triage-X — then show, honestly, the insights an analytical lens could have surfaced and where it could have moved faster <em>alongside</em> investigators. It's a disclosed, human-overseen lens — never the narrator, never a claim it solved the case. <a href="/ai-al/">How A.I. AL works →</a></p>
     </div>
-  </div>
+  </section>
+
+  <div class="wrap"><div class="shelf">
+    {books.map(b => (
+      <div class={"bk bk--" + b.theme}>
+        <div class="bk__cover">
+          <span class={"bk__ribbon " + (b.price ? "bk__ribbon--live" : "bk__ribbon--soon")}>{b.status}</span>
+          <span class="bk__series">{b.series}</span>
+          <span class="bk__ctitle">{b.title}</span>
+          <span class="bk__csub">{b.sub}</span>
+          <span class="bk__seal">A.I. AL<small>case analysis</small></span>
+        </div>
+        <div class="bk__meta">
+          <p class="bk__hook">{b.hook}</p>
+          <div class="bk__cta">
+            {b.price && <a class="btn bk__buy" href={b.buy} target="_blank" rel="noopener noreferrer">Buy the ebook — {b.price} →</a>}
+            {b.buyAlt && <a class="bk__alt" href={b.buyAlt} target="_blank" rel="noopener noreferrer">Also on Gumroad →</a>}
+            {b.sample && <a class="bk__alt" href={b.sample}>Look inside (free sample) →</a>}
+            {!b.price && <a class="bk__alt bk__alt--soon" href="/#subscribe">Get notified when it drops →</a>}
+          </div>
+        </div>
+      </div>
+    ))}
+  </div></div>
+
+  <div class="wrap"><div class="bk-bundle">
+    <div>
+      <p class="bk-bundle__k">Best value</p>
+      <h2 class="bk-bundle__h">The Case Files Collection</h2>
+      <p class="bk-bundle__t"><em>The Trail</em> + <em>No Accident</em> — both complete case files, with their full A.I. AL analyses, for <strong>$8.99</strong> instead of $11.98.</p>
+    </div>
+    <a class="btn bk-bundle__btn" href="https://creedcaster5.gumroad.com/l/jhgmwj?utm_source=website&utm_medium=post_cta&utm_campaign=case_files_collection" target="_blank" rel="noopener noreferrer">Get the Collection — $8.99 →</a>
+  </div></div>
+
+  <section class="wrap bk-trust">
+    <p><strong>Why you can trust these.</strong> Written under the Cassian Creed byline for Neural Edge Publishing — every claim tied to a primary source, legal status re-verified before publish, and where a verdict is under appeal we say so. The analysis is A.I. AL: a disclosed, human-overseen lens, never the author or narrator. When we get something wrong, we correct it. <a href="/about/">Our standard &amp; corrections policy →</a></p>
+  </section>
 
   <div class="wrap"><section class="subscribe" id="subscribe">
-    <h2>Get the next case file first</h2>
-    <p>Free, victim-first true-crime case files and verdict updates from Cassian Creed — new analysis the day it's published, plus the Sunday newsletter. You'll be first to know the day each new book drops. No spam; unsubscribe anytime.</p>
-    
+    <h2>Be first when the next book drops</h2>
+    <p>Free, victim-first case files and verdict updates from Cassian Creed — plus first word the day each new book is released. No spam; unsubscribe anytime.</p>
+    <form action="https://cassiancreed.beehiiv.com/subscribe" method="get" aria-label="Subscribe to the free Cassian Creed newsletter">
+      <input type="email" name="email" required autocomplete="email" placeholder="you@email.com" aria-label="Your email address" />
+      <input type="hidden" name="utm_source" value="website" />
+      <input type="hidden" name="utm_medium" value="books_cta" />
+      <input type="hidden" name="utm_campaign" value="free_case_files" />
+      <button class="btn" type="submit">Send me the free case files →</button>
+    </form>
+  </section></div>
+</Base>
+
+<style>
+  .bk-hero{padding:8px 0 4px}
+  .bk-hero__h{font-family:var(--serif);font-weight:600;font-size:clamp(28px,4.5vw,44px);line-height:1.08;margin:6px 0 12px}
+  .bk-hero__h span{color:var(--accent,#e0563b)}
+  .bk-hero__p{font-size:17px;line-height:1.5;color:var(--ink-1);max-width:62ch}
+  .aial-strip{display:flex;gap:18px;align-items:center;margin:22px auto;padding:18px 22px;border:1px solid rgba(224,86,59,.35);border-radius:12px;background:linear-gradient(120deg,rgba(224,86,59,.10),rgba(224,86,59,.02))}
+  .aial-strip__seal{flex:none;width:64px;height:64px;border-radius:50%;display:grid;place-items:center;font-family:var(--mono,'JetBrains Mono',monospace);font-weight:700;font-size:15px;letter-spacing:.04em;color:#fff;background:var(--accent,#e0563b);box-shadow:0 6px 18px rgba(224,86,59,.4)}
+  .aial-strip__k{font-family:var(--mono,'JetBrains Mono',monospace);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent,#e0563b);margin:0 0 5px}
+  .aial-strip__t{margin:0;font-size:15px;line-height:1.5}
+  .aial-strip__t a{color:var(--accent,#e0563b);text-decoration:none;font-weight:600}
+  .shelf{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:26px;margin:8px 0}
+  .bk{display:flex;flex-direction:column;background:var(--bg-2,#191512);border:1px solid var(--line,#2a2521);border-radius:14px;overflow:hidden;transition:transform .18s,box-shadow .18s}
+  .bk:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(0,0,0,.45)}
+  .bk__cover{position:relative;aspect-ratio:3/4;padding:22px 20px;display:flex;flex-direction:column;color:#f5efe8;isolation:isolate}
+  .bk__cover::after{content:"";position:absolute;inset:0;z-index:-1;opacity:.9}
+  .bk--rust .bk__cover{background:linear-gradient(150deg,#7a2417,#c9472b 55%,#e0563b)}
+  .bk--steel .bk__cover{background:linear-gradient(150deg,#1f2b33,#33505f 60%,#4d7689)}
+  .bk--ink .bk__cover{background:linear-gradient(150deg,#161616,#2c2c33 60%,#45454f)}
+  .bk--moss .bk__cover{background:linear-gradient(150deg,#1c2a1f,#33503b 60%,#5fae7e)}
+  .bk--slate .bk__cover{background:linear-gradient(150deg,#14171d,#2a3140 60%,#4a586b)}
+  .bk__cover{box-shadow:inset 14px 0 24px -16px rgba(0,0,0,.6)}
+  .bk__ribbon{position:absolute;top:14px;right:0;font-family:var(--mono,'JetBrains Mono',monospace);font-size:10px;letter-spacing:.08em;text-transform:uppercase;padding:5px 12px;border-radius:14px 0 0 14px;color:#fff;backdrop-filter:blur(2px)}
+  .bk__ribbon--live{background:rgba(95,174,126,.95);color:#0f1a12}
+  .bk__ribbon--soon{background:rgba(0,0,0,.45)}
+  .bk__series{font-family:var(--mono,'JetBrains Mono',monospace);font-size:11px;letter-spacing:.12em;text-transform:uppercase;opacity:.8}
+  .bk__ctitle{font-family:var(--serif);font-weight:600;font-size:30px;line-height:1.05;margin-top:auto}
+  .bk__csub{font-size:13.5px;opacity:.9;margin-top:8px;letter-spacing:.01em}
+  .bk__seal{margin-top:16px;align-self:flex-start;display:flex;flex-direction:column;font-family:var(--mono,'JetBrains Mono',monospace);font-weight:700;font-size:13px;letter-spacing:.06em;padding:7px 11px;border:1px solid rgba(255,255,255,.55);border-radius:8px;line-height:1.1}
+  .bk__seal small{font-weight:400;font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;opacity:.85;margin-top:3px}
+  .bk__meta{padding:18px 20px 22px;display:flex;flex-direction:column;gap:14px;flex:1}
+  .bk__hook{margin:0;font-size:14.5px;line-height:1.5;color:var(--ink-1)}
+  .bk__cta{margin-top:auto;display:flex;flex-direction:column;gap:9px;align-items:flex-start}
+  .bk__alt{font-size:13px;text-decoration:none;color:var(--ink-2)}
+  .bk__alt:hover{color:var(--accent,#e0563b)}
+  .bk__alt--soon{color:var(--accent,#e0563b);font-weight:600}
+  .bk-bundle{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;margin:30px 0 8px;padding:22px 26px;border:1px solid rgba(95,174,126,.5);border-radius:14px;background:var(--bg-3,#15110e)}
+  .bk-bundle__k{font-family:var(--mono,'JetBrains Mono',monospace);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#5fae7e;margin:0 0 4px}
+  .bk-bundle__h{font-family:var(--serif);font-weight:600;font-size:24px;margin:0 0 6px}
+  .bk-bundle__t{margin:0;font-size:15px;max-width:52ch}
+  .bk-bundle__btn{flex:none}
+  .bk-trust{margin:24px auto 8px}
+  .bk-trust p{font-size:14px;line-height:1.55;color:var(--ink-2)}
+  .bk-trust a{color:var(--accent,#e0563b);text-decoration:none}
+</style>
