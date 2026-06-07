@@ -1,30 +1,32 @@
 ---
 import Base from '../layouts/Base.astro';
-// LEAD MAGNET — free downloadable "Cassian Creed Case File" dossier (GREEN: Golden State Killer,
-// Joseph DeAngelo guilty plea 2020 — adjudicated). PRIMARY: email capture (Beehiiv). Soft offer: NE003 + bundle.
-// Plan-agnostic: capture-first + immediate download (works without Beehiiv Scale).
-const PDF = '/the-golden-state-killer-free-case-file.pdf';
+// LEAD MAGNET — free downloadable "Cassian Creed Case File" dossier. North-star conversion offer:
+// Rachel Morin (The Trail) — convicted on all four counts (Apr 2025); sentenced Aug 11 2025 to two
+// consecutive life terms w/o parole + 40y; stated intent to appeal; conviction stands. Tease-to-convert
+// (rule 37): real value, funnels to the LIVE $5.99 book The Trail + the Sunday newsletter.
+// PRIMARY: email capture (Beehiiv). Plan-agnostic: capture-first + immediate download.
+const PDF = '/the-trail-rachel-morin-free-case-file.pdf';
 const jsonld = {
   "@context":"https://schema.org","@type":"WebPage",
-  "name":"Free Case File: The Golden State Killer",
-  "description":"A free, sourced, victim-first case-file dossier on the Golden State Killer — and the Sunday newsletter."
+  "name":"Free Case File: The Murder of Rachel Morin",
+  "description":"A free, sourced, victim-first case-file dossier on the murder of Rachel Morin — and the Sunday newsletter."
 };
 ---
-<Base title="Free Case File: The Golden State Killer — a sourced, victim-first dossier" description="Get a free downloadable Cassian Creed case-file dossier on the Golden State Killer: the at-a-glance, a primary-source timeline, a disclosed A.I. AL lens, and the safety lessons. Free, with the Sunday newsletter." jsonld={jsonld}>
+<Base title="Free Case File: The Murder of Rachel Morin — a sourced, victim-first dossier" description="Get a free downloadable Cassian Creed case-file dossier on the murder of Rachel Morin: the at-a-glance, a primary-source timeline, a disclosed A.I. AL lens, and the safety lessons. Free, with the Sunday newsletter." jsonld={jsonld}>
   <article class="lp">
 
     <section class="lp-hero" aria-labelledby="lp-h1">
       <p class="evidence evidence--accent">Free case file · sourced · victim-first</p>
-      <h1 id="lp-h1">Get the Golden State Killer case file — free.</h1>
-      <p class="lp-sub">A clean, downloadable <strong>Cassian Creed Case File</strong>: the people first, a primary-source timeline, a disclosed A.I. AL analytical lens, and the safety lessons — the same standard as the books, in a few pages you can keep. Enter your email and it's yours, plus the free Sunday newsletter.</p>
+      <h1 id="lp-h1">Get the Rachel Morin case file — free.</h1>
+      <p class="lp-sub">A clean, downloadable <strong>Cassian Creed Case File</strong> on the murder of Rachel Morin: the people first, a primary-source timeline, a disclosed A.I. AL analytical lens, and the safety lessons — the same standard as the books, in a few pages you can keep. Enter your email and it's yours, plus the free Sunday newsletter.</p>
 
       <aside class="lp-glance" aria-label="The case at a glance">
         <p class="lp-glance__k">The case, in 10 seconds</p>
         <dl>
-          <div><dt>Victims</dt><dd>13 murdered + dozens of survivors · California, 1974–1986</dd></div>
-          <div><dt>Identified</dt><dd>Joseph DeAngelo — April 2018, via investigative genetic genealogy</dd></div>
-          <div><dt>Status</dt><dd>Pleaded guilty 2020; life without parole (adjudicated)</dd></div>
-          <div><dt>How solved</dt><dd>Crime-scene DNA → public genealogy → family tree → confirmation</dd></div>
+          <div><dt>Victim</dt><dd>Rachel Morin — mother of five · Harford County, Maryland · Aug 5, 2023</dd></div>
+          <div><dt>Identified</dt><dd>Victor Martinez-Hernandez — arrested June 2024 via DNA &amp; genetic genealogy</dd></div>
+          <div><dt>Status</dt><dd>Convicted on all four counts (Apr 2025); sentenced Aug 2025 to two consecutive life terms without parole — he stated intent to appeal; the conviction stands</dd></div>
+          <div><dt>How it turned</dt><dd>Crime-scene DNA → linked to an earlier assault → genealogy → a name</dd></div>
         </dl>
       </aside>
 
@@ -33,7 +35,7 @@ const jsonld = {
         <div class="lp-capture__row">
           <input id="lp-email" type="email" name="email" required autocomplete="email" placeholder="you@email.com" aria-label="Your email address" />
           <input type="hidden" name="utm_source" value="website" />
-          <input type="hidden" name="utm_medium" value="lead_magnet_gsk" />
+          <input type="hidden" name="utm_medium" value="lead_magnet_morin" />
           <input type="hidden" name="utm_campaign" value="free_case_files" />
           <button class="btn" type="submit">Subscribe &amp; get the case file →</button>
         </div>
@@ -53,8 +55,8 @@ const jsonld = {
     <section class="lp-block" aria-labelledby="lp-in">
       <h2 id="lp-in">What's in the dossier</h2>
       <ul class="lp-list">
-        <li><strong>The people first</strong> — the thirteen killed and the survivors who outlasted his anonymity, before the man who harmed them.</li>
-        <li><strong>A primary-source timeline</strong> — from the regional crime series to the 2018 genetic-genealogy identification and the 2020 guilty plea.</li>
+        <li><strong>The people first</strong> — Rachel Morin in life, a mother of five, before the man who harmed her.</li>
+        <li><strong>A primary-source timeline</strong> — from the August 2023 disappearance on the Ma &amp; Pa Trail to the 2024 arrest, the 2025 conviction on all four counts, and the life sentence.</li>
         <li><strong>The A.I. AL lens, disclosed</strong> — an honest read of where an analytical lens could (and could not) have helped; it names no one and never claims the solve.</li>
         <li><strong>A Stay-Safe sidebar</strong> — what the case teaches, and where to turn for help.</li>
       </ul>
