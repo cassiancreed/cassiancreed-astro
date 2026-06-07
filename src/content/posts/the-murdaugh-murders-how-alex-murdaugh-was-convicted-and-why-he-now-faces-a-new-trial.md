@@ -1,5 +1,5 @@
 ---
-title: "The Murdaugh Murders: How Alex Murdaugh Was Convicted \u2014 and Why He Now Faces a New Trial"
+title: "The Murdaugh Murders: How Alex Murdaugh Was Convicted — and Why He Now Faces a New Trial"
 description: "Alex Murdaugh was convicted of murdering his wife Maggie and son Paul. In 2026 those convictions were overturned. Here is the case, the evidence, and where it stands."
 pubDate: 2026-05-24
 tag: "Case Files"
@@ -8,11 +8,11 @@ victim: "Maggie Murdaugh and Paul Murdaugh"
 incidentDate: "June 2021"
 location: "Colleton County, South Carolina"
 jurisdiction: "South Carolina state court"
-status: "Alex Murdaugh convicted (2023), life; now faces a new trial"
+status: "Murder convictions vacated (May 13, 2026); awaiting retrial — presumed innocent of the murder charges; financial-crime sentences (guilty pleas) remain in force"
 ---
 
 
-In March 2023, a South Carolina jury convicted disbarred attorney Alex Murdaugh of murdering his wife, Maggie Murdaugh, and their 22-year-old son, Paul Murdaugh, and he was sentenced to two consecutive life terms without parole. On May 13, 2026, the South Carolina Supreme Court unanimously overturned those murder convictions and ordered a new trial, citing jury interference by a county court clerk. Murdaugh remains in prison on separate financial-crimes convictions while the state prepares to retry him for the killings.
+In March 2023, a South Carolina jury convicted disbarred attorney Alex Murdaugh of murdering his wife, Maggie Murdaugh, and their 22-year-old son, Paul Murdaugh, and he was sentenced to two consecutive life terms without parole. On May 13, 2026, the South Carolina Supreme Court unanimously overturned those murder convictions and ordered a new trial, citing jury interference by a county court clerk. Murdaugh remains in prison on separate financial-crimes convictions while the state prepares to retry him for the killings. With the murder convictions vacated, he is — as a matter of law — presumed innocent of those charges unless and until a new jury convicts him.
 
 This is what is known, what was proven at the first trial, and where the case stands now.
 
@@ -52,7 +52,7 @@ The first trial turned heavily on forensic and digital evidence rather than eyew
 
 The single most consequential piece of evidence was a short Snapchat video found on Paul Murdaugh's phone. Paul recorded it at the dog kennels at **8:44 p.m.** on June 7, 2021 — by the prosecution's timeline, roughly five minutes before the killings. Paul had been trying to help a friend, Rogan Gibson, check on Gibson's dog, Cash, which was staying in the Murdaugh kennels.
 
-In the background of that video, prosecutors said, a third voice can be heard along with Maggie's and Paul's — a voice they identified as Alex Murdaugh's, calling to a family dog. The significance was direct: Murdaugh had repeatedly told investigators he was never at the kennels that night and was elsewhere on the property. The video placed him at the scene minutes before the shootings, undercutting his alibi. At trial, several witnesses who knew the family testified that the third voice was his. Murdaugh, taking the stand in his own defense, eventually acknowledged he had been at the kennels — and had lied to police about it — but insisted he was not the killer.
+In the background of that video, prosecutors said, a third voice can be heard along with Maggie's and Paul's — a voice they identified as Alex Murdaugh's, calling to a family dog. The significance, as prosecutors framed it, was direct: Murdaugh had repeatedly told investigators he was never at the kennels that night and was elsewhere on the property. By the prosecution's account, the video placed him at the scene minutes before the shootings, undercutting his alibi. At trial, several witnesses who knew the family testified that the third voice was his. Murdaugh, taking the stand in his own defense, eventually acknowledged he had been at the kennels — and had lied to police about it — but insisted he was not the killer.
 
 ### Cellphone and vehicle data
 
@@ -89,6 +89,7 @@ The justices wrote that Hill "placed her fingers on the scales of justice." Juro
 
 Several things follow from the 2026 ruling:
 
+- **He is presumed innocent of the murders.** With the convictions vacated, the murder charges return to pre-trial posture: they are allegations the state must prove again, beyond a reasonable doubt, to a new and impartial jury.
 - **Murdaugh stays in prison.** His separate financial-crimes convictions — the 40-year federal sentence and the 27-year state sentence — were obtained by guilty plea and remain fully in force. The reversal applies only to the murders.
 - **The state intends to retry him.** South Carolina's Attorney General's office has said it will seek to retry Murdaugh for the murders of Maggie and Paul, with the hope of bringing the case back to trial by the end of the year. As of this writing, no new trial date has been set.
 - **A retrial would likely look different.** The Supreme Court signaled that prosecutors should sharply limit how much of Murdaugh's financial misconduct they put before a new jury. A retrial would also face the practical challenge of seating impartial jurors in a case this widely publicized.
@@ -98,7 +99,7 @@ For readers who followed the case as a sealed verdict, this is the essential upd
 ## Frequently asked questions
 
 **Was Alex Murdaugh found innocent in 2026?**
-No. The South Carolina Supreme Court overturned his murder convictions on the grounds that jury interference denied him a fair trial. That is a procedural ruling about how the trial was conducted — not a finding that he did not commit the murders. The state plans to retry him.
+No. The South Carolina Supreme Court overturned his murder convictions on the grounds that jury interference denied him a fair trial. That is a procedural ruling about how the trial was conducted — not a finding that he did not commit the murders. He is, however, legally presumed innocent of the murder charges unless and until a new jury convicts him. The state plans to retry him.
 
 **Is Alex Murdaugh out of prison?**
 No. He remains incarcerated on his financial-crimes convictions: a 40-year federal sentence and a concurrent 27-year state sentence, both obtained by guilty plea and unaffected by the murder appeal.
@@ -124,4 +125,4 @@ The Murdaugh case is frequently consumed as a saga of a fallen family — a fram
 - CNN — [Court overturns Alex Murdaugh's murder convictions and orders new trial](https://www.cnn.com/2026/05/13/us/alex-murdaugh-murder-appeal)
 - CBS News — [Alex Murdaugh murder convictions overturned, new trial ordered](https://www.cbsnews.com/news/alex-murdaugh-murder-convictions-overturned-south-carolina-new-trial/)
 - NPR — [Convicted of killing wife and son, Alex Murdaugh gets new trial due to jury tampering](https://www.npr.org/2026/05/13/nx-s1-5821004/convicted-of-killing-wife-and-son-alex-murdaugh-gets-new-trial-due-to-jury-tampering)
-- The Post and Courier — [Alex Murdaugh's prison time to continue despite
+- NBC News — [Alex Murdaugh's double murder convictions overturned](https://www.nbcnews.com/news/us-news/alex-murdaugh-murder-conviction-overturned-state-supreme-court-rcna344926)
