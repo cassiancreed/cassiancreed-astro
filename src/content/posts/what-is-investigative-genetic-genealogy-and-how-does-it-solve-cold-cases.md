@@ -3,7 +3,7 @@ title: "What Is Investigative Genetic Genealogy, and How Does It Solve Cold Case
 description: "How investigative genetic genealogy uses DNA and family trees to crack cold cases — the science behind the Golden State Killer and Rachel Morin arrests."
 pubDate: 2026-05-04
 tag: "Explainers"
-featured: false
+featured: true
 ---
 
 Investigative genetic genealogy (IGG) is a technique that takes crime-scene DNA, compares it to public consumer DNA databases to find distant relatives of an unknown suspect, and then uses traditional genealogy and family trees to narrow those relatives down to a single named person. It does not find the suspect directly; it finds the suspect's family and works inward.
@@ -46,6 +46,13 @@ This is the counterintuitive heart of IGG: a suspect does not have to be in any 
 
 - [The Golden State Killer: How Genetic Genealogy Caught Joseph DeAngelo](/post/the-golden-state-killer-how-genetic-genealogy-caught-joseph-deangelo/) — the case that put IGG on the map. Investigators uploaded the killer's decades-old DNA to GEDmatch, built family trees from distant matches, narrowed to DeAngelo, then confirmed with DNA from a car door handle.
 - [The Murder of Rachel Morin: How Her Killer Was Found](/post/the-murder-of-rachel-morin-how-her-killer-was-found/) — after CODIS failed to name a suspect, an FBI Investigative Genetic Genealogy team, working from a profile built by the lab Othram, traced relatives, built a family tree, and identified Victor Martinez-Hernandez, later convicted and sentenced to life without parole.
+
+## Read the Full Case
+
+The Rachel Morin investigation is the clearest recent example of what this technique can and cannot do. We documented it end to end — the failed CODIS searches, the Othram lab work, the family tree, the confirmation, the trial.
+
+- **Free:** [the Rachel Morin case-file dossier (PDF)](/free-dossier/) — sourced, victim-first, yours to keep.
+- **The complete account:** [*The Trail: The Murder of Rachel Morin*](/the-trail/) — the full book, $5.99.
 
 ## Sources
 
