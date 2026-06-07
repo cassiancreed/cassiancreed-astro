@@ -32,12 +32,53 @@ const books = [
   },
   {
     title: "The Frame", series: "Case File 004", sub: "The Brendan Banfield Story",
-    hook: "A wife killed at home, an au pair, and a manufactured intruder story that unraveled count by count in a Virginia courtroom.",
-    status: "Coming soon", theme: "moss", price: null
+    hook: "A wife killed at home, an au pair, and a manufactured intruder story that unraveled count by count in a Virginia courtroom. Brendan Banfield convicted; sentenced June 2026; appeal available.",
+    status: "On sale", theme: "moss", price: "$5.99",
+    buy: "https://cassiancreed.beehiiv.com/products/the-frame?utm_source=website&utm_medium=landing&utm_campaign=the_frame",
+    buyAlt: null,
+    sample: null
   },
 ];
+// Book schema for AI/search discoverability (Mantra rule 47). Offers only for live, buyable products.
+const jsonld = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Book",
+    "@id": "https://cassiancreed.com/the-trail/#book",
+    "name": "The Trail: The Murder of Rachel Morin",
+    "alternateName": "Case File 001",
+    "author": { "@id": "https://cassiancreed.com/#cassian-creed" },
+    "publisher": { "@id": "https://cassiancreed.com/#org" },
+    "url": "https://cassiancreed.com/the-trail/",
+    "bookFormat": "https://schema.org/EBook",
+    "inLanguage": "en-US",
+    "genre": ["True Crime", "Nonfiction"],
+    "abstract": "The full, sourced account of the August 2023 murder of Rachel Morin, a mother of five killed on the Ma & Pa Trail in Harford County, Maryland, and the international investigation that identified and convicted her killer. Rachel is named in life first; every claim is tied to the public record.",
+    "offers": [
+      { "@type": "Offer", "price": "5.99", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://creedcaster5.gumroad.com/l/xbgnhg", "seller": { "@id": "https://cassiancreed.com/#org" } },
+      { "@type": "Offer", "price": "5.99", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://cassiancreed.beehiiv.com/products/the-trail-the-murder-of-rachel-morin", "seller": { "@id": "https://cassiancreed.com/#org" } }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Book",
+    "@id": "https://cassiancreed.com/books/#the-frame",
+    "name": "The Frame: The Brendan Banfield Story",
+    "alternateName": "Case File 004",
+    "author": { "@id": "https://cassiancreed.com/#cassian-creed" },
+    "publisher": { "@id": "https://cassiancreed.com/#org" },
+    "url": "https://cassiancreed.com/books/",
+    "bookFormat": "https://schema.org/EBook",
+    "inLanguage": "en-US",
+    "genre": ["True Crime", "Nonfiction"],
+    "abstract": "The sourced account of the 2023 Fairfax County, Virginia killings of Christine Banfield and Joseph Ryan — two victims remembered in life first — and the staged-scene prosecution that ended in Brendan Banfield's conviction. Built on court records and verified reporting, with the legal status of every person stated precisely and dated.",
+    "offers": [
+      { "@type": "Offer", "price": "5.99", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://cassiancreed.beehiiv.com/products/the-frame", "seller": { "@id": "https://cassiancreed.com/#org" } }
+    ]
+  }
+];
 ---
-<Base title="True-crime books by Cassian Creed — The Trail, No Accident & more" description="Sourced, victim-first true-crime ebooks by Cassian Creed — every book carries an exclusive A.I. AL forensic analysis you won't find anywhere else. The Trail and No Accident, $5.99 each.">
+<Base title="True-crime books by Cassian Creed — The Trail, No Accident & more" description="Sourced, victim-first true-crime ebooks by Cassian Creed — every book carries an exclusive A.I. AL forensic analysis you won't find anywhere else. The Trail and No Accident, $5.99 each." jsonld={jsonld}>
   <section class="bk-hero wrap">
     <p class="evidence evidence--accent">The Case Files Library</p>
     <h1 class="bk-hero__h">Every book runs the case through <span>A.I. AL</span>.</h1>
