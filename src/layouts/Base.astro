@@ -4,6 +4,44 @@ export interface Props { title: string; description?: string; jsonld?: object; o
 const { title, description = 'Sourced, victim-centered true-crime case files — what happened, and what it teaches about staying safe.', jsonld, ogImage = '/og.png' } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const ogImg = new URL(ogImage, Astro.site).href;
+// Sitewide Organization + Person JSON-LD (AI discoverability, Mantra rule 47).
+// @id anchors are referenced by Book/Article schema on individual pages.
+const orgLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://cassiancreed.com/#org",
+  "name": "Neural Edge Publishing",
+  "alternateName": "NEP",
+  "url": "https://cassiancreed.com/",
+  "logo": "https://cassiancreed.com/favicon.svg",
+  "description": "Independent publisher of sourced, victim-centered true-crime case files and plain-language forensic explainers under the Cassian Creed byline. Every account is built on the public record; the presumption of innocence is absolute.",
+  "founder": { "@id": "https://cassiancreed.com/#cassian-creed" },
+  "publishingPrinciples": "https://cassiancreed.com/about/",
+  "correctionsPolicy": "https://cassiancreed.com/about/",
+  "sameAs": [
+    "https://x.com/CassianCreed",
+    "https://cassiancreed.beehiiv.com",
+    "https://creedcaster5.gumroad.com"
+  ]
+};
+const personLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://cassiancreed.com/#cassian-creed",
+  "name": "Cassian Creed",
+  "url": "https://cassiancreed.com/about/",
+  "jobTitle": "Author and Independent Case Analyst",
+  "worksFor": { "@id": "https://cassiancreed.com/#org" },
+  "description": "True-crime author writing victim-first case files built on court records and verified reporting. Creator of the Case Files ebook series and The Living Edition newsletter. His work uses A.I. AL, a disclosed human-overseen analytical method, and never asserts the guilt of anyone not convicted.",
+  "knowsAbout": [
+    "true crime reporting",
+    "forensic evidence analysis",
+    "criminal trial coverage",
+    "investigative timelines",
+    "victim-centered storytelling"
+  ],
+  "sameAs": [ "https://x.com/CassianCreed" ]
+};
 ---
 <!doctype html>
 <html lang="en">
@@ -30,6 +68,8 @@ const ogImg = new URL(ogImage, Astro.site).href;
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Inter:wght@400;500&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+  <script type="application/ld+json" set:html={JSON.stringify(orgLd)} />
+  <script type="application/ld+json" set:html={JSON.stringify(personLd)} />
   {jsonld && <script type="application/ld+json" set:html={JSON.stringify(jsonld)} />}
   <!-- Google Analytics 4 (property: Neural Edge Publishing) -->
   <script async is:inline src="https://www.googletagmanager.com/gtag/js?id=G-5D0DX6WFW4"></script>
