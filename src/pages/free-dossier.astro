@@ -5,6 +5,8 @@ import Base from '../layouts/Base.astro';
 // consecutive life terms w/o parole + 40y; stated intent to appeal; conviction stands. Tease-to-convert
 // (rule 37): real value, funnels to the LIVE $5.99 book The Trail + the Sunday newsletter.
 // PRIMARY: email capture (Beehiiv). Plan-agnostic: capture-first + immediate download.
+// 2026-06-08 conversion reframe (ChatGPT funnel teardown): insider identity ("Case File Insiders")
+// + safety/protection value for the 45+ audience. Download kept until Beehiiv welcome-email delivery is wired (then re-gate).
 const PDF = '/the-trail-rachel-morin-free-case-file.pdf';
 const jsonld = {
   "@context":"https://schema.org","@type":"WebPage",
@@ -16,9 +18,9 @@ const jsonld = {
   <article class="lp">
 
     <section class="lp-hero" aria-labelledby="lp-h1">
-      <p class="evidence evidence--accent">Free case file · sourced · victim-first</p>
+      <p class="evidence evidence--accent">Free case file · Case File Insiders · victim-first</p>
       <h1 id="lp-h1">Get the Rachel Morin case file — free.</h1>
-      <p class="lp-sub">A clean, downloadable <strong>Cassian Creed Case File</strong> on the murder of Rachel Morin: the people first, a primary-source timeline, a disclosed A.I. AL analytical lens, and the safety lessons — the same standard as the books, in a few pages you can keep. Enter your email and it's yours, plus the free Sunday newsletter.</p>
+      <p class="lp-sub">A clean, downloadable <strong>Cassian Creed Case File</strong> on the murder of Rachel Morin: the people first, a primary-source timeline, a disclosed A.I. AL analytical lens, and the safety lessons that matter for you and your family. Enter your email to get it — and to join the <strong>Case File Insiders</strong>: one sourced, victim-first case file in your inbox each Sunday.</p>
 
       <aside class="lp-glance" aria-label="The case at a glance">
         <p class="lp-glance__k">The case, in 10 seconds</p>
@@ -37,12 +39,12 @@ const jsonld = {
           <input type="hidden" name="utm_source" value="website" />
           <input type="hidden" name="utm_medium" value="lead_magnet_morin" />
           <input type="hidden" name="utm_campaign" value="free_case_files" />
-          <button class="btn" type="submit">Subscribe &amp; get the case file →</button>
+          <button class="btn" type="submit">Join the Insiders &amp; get the case file →</button>
         </div>
         <p class="lp-capture__fine">Free forever · no spam · unsubscribe anytime.</p>
       </form>
 
-      <p class="lp-dl"><a class="btn btn--ghost" href={PDF} target="_blank" rel="noopener" download>↓ Download the dossier (PDF)</a> <span class="lp-dl__note">Yours to keep. If you grab it, consider subscribing above so we can send you the next one.</span></p>
+      <p class="lp-dl"><a class="btn btn--ghost" href={PDF} target="_blank" rel="noopener" download>↓ Download the dossier (PDF)</a> <span class="lp-dl__note">Yours to keep. If you grab it, join the Insiders above so we can send you the next one.</span></p>
 
       <ul class="lp-badges" aria-label="Our standard">
         <li>✓ Sourced from the public record</li>
@@ -58,7 +60,7 @@ const jsonld = {
         <li><strong>The people first</strong> — Rachel Morin in life, a mother of five, before the man who harmed her.</li>
         <li><strong>A primary-source timeline</strong> — from the August 2023 disappearance on the Ma &amp; Pa Trail to the 2024 arrest, the 2025 conviction on all four counts, and the life sentence.</li>
         <li><strong>The A.I. AL lens, disclosed</strong> — an honest read of where an analytical lens could (and could not) have helped; it names no one and never claims the solve.</li>
-        <li><strong>A Stay-Safe sidebar</strong> — what the case teaches, and where to turn for help.</li>
+        <li><strong>A Stay-Safe sidebar</strong> — what this case teaches about protecting yourself and your family, and where to turn for help.</li>
       </ul>
     </section>
 
