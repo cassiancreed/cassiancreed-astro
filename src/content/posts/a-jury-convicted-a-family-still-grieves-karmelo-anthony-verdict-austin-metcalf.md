@@ -8,7 +8,7 @@ victim: "Austin Metcalf, 17"
 incidentDate: "April 2, 2025"
 location: "Frisco, Texas"
 jurisdiction: "Collin County, Texas"
-status: "Convicted of murder June 9, 2026; sentencing phase underway"
+status: "Convicted of murder and sentenced to 35 years June 9, 2026; appeal available"
 ---
 
 Austin Metcalf was 17 years old. A junior at Memorial High School in Frisco, Texas. The MVP linebacker on his football team. A twin, with a brother named Hunter who was standing right next to him when it happened.
@@ -57,13 +57,15 @@ The jury convicted Anthony of murder. The lesser charge of manslaughter — whic
 
 ---
 
-## What Happens Next: The Sentencing Phase
+## The Sentence
+
+The jury sentenced Karmelo Anthony to 35 years in prison the same day it returned the guilty verdict. The defense had argued for "sudden passion" — a finding that can reduce a first-degree murder sentence, capping punishment at 20 years. The jury rejected that argument. Under Texas law, Anthony will be parole-eligible after serving half the sentence.
 
 Under Texas law, when a defendant is convicted of murder, the same jury that decided guilt then hears evidence during a separate punishment phase to determine the sentence. This is how Texas handles most serious felony cases — the jury does not simply hand the case to the judge. They stay on to decide the range.
 
 For a first-degree felony murder conviction, the statutory range is 5 years to 99 years or life in prison. Because Anthony was a minor — 17 years old — at the time of the offense, the death penalty is constitutionally off the table.
 
-The punishment phase was already underway shortly after the verdict was read. Anthony's mother was reported to have been the first defense witness called in the sentencing presentation.
+The punishment phase concluded the same day as the verdict.
 
 In the punishment phase, both sides present evidence relevant to the sentence: the defendant's background, character, and mitigating circumstances from the defense; the harm caused and the victim's family's impact statement from the prosecution. The jury weighs that evidence and sets the sentence within the 5-to-life range.
 
@@ -87,7 +89,7 @@ His twin brother Hunter was there when it happened. He stayed with Austin after 
 
 A jury of twelve people listened to every piece of evidence in this case for more than a week. They heard from more than twenty witnesses. They saw the video. They came back with a verdict the same day deliberations began.
 
-Whatever comes next in the sentencing phase and however the appeals process unfolds, those twelve people have now answered the question the law asked them to answer.
+Both the verdict and the sentence came the same day. However the appeals process unfolds, those twelve people have now answered the question the law asked them to answer.
 
 Austin Metcalf was 17. He deserved to come home from that track meet.
 
