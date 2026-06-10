@@ -8,15 +8,16 @@ const jsonld = {
   "url": "https://cassiancreed.com/trending/"
 };
 const trending = [
-  { href:"/post/the-gilgo-beach-murders-rex-heuermann-pleads-guilty-and-eight-women-are-finally-named/", status:"SENTENCING JUNE 17", title:"The Gilgo Beach Murders", why:"Rex Heuermann pleaded guilty in April 2026; sentencing is days away. The Long Island case that haunted a decade." },
+  { href:"/post/the-gilgo-beach-murders-rex-heuermann-pleads-guilty-and-eight-women-are-finally-named/", status:"SENTENCING JUNE 17", title:"The Gilgo Beach Murders", why:"Rex Heuermann pleaded guilty in April 2026; sentencing is days away. The Long Island case that haunted a decade.", book:{ label:"🔔 The Gilgo Blueprint — coming soon, get notified", href:"/books/" } },
   { href:"/post/the-lindsay-clancy-case-three-children-one-trial-and-the-questions-massachusetts-must-answer/", status:"TRIAL JULY 20", title:"The Lindsay Clancy Case", why:"A wrenching postpartum-psychosis case heads to trial in Plymouth, Massachusetts." },
   { href:"/post/new-release-are-you-with-me-the-kouri-richins-story/", status:"SENTENCED MAY 2026", title:"The Kouri Richins Case", why:"The Utah grief-book author was sentenced to life for murdering her husband — and vows to appeal." },
+  { href:"/post/the-delphi-murders-how-libby-german-s-own-phone-helped-convict-richard-allen/", status:"APPEAL SEPT 21", title:"The Delphi Murders", why:"Abby Williams and Libby German were thirteen and fourteen — Richard Allen was convicted in 2024, and his appeal argument is set for September." },
   { href:"/post/the-murdaugh-murders-how-alex-murdaugh-was-convicted-and-why-he-now-faces-a-new-trial/", status:"NEW TRIAL AHEAD", title:"The Murdaugh Murders", why:"His 2023 convictions were overturned in 2026 — the case everyone thought was closed, reopened." },
   { href:"/post/karen-read-was-acquitted-of-killing-john-o-keefe-his-family-is-still-waiting-for-answers/", status:"CIVIL SUIT ONGOING", title:"Karen Read", why:"Acquitted after two trials; John O'Keefe's family still waits for answers as the wrongful-death suit grinds on." },
   { href:"/post/diddy-s-verdict-explained-what-sean-combs-was-convicted-of-and-what-the-jury-rejected/", status:"2026 APPEAL", title:"Diddy: The Verdict, Explained", why:"What Sean Combs was actually convicted of — and acquitted of — and where the appeal stands." },
   { href:"/post/the-menendez-brothers-case-from-the-1989-murders-to-the-2025-resentencing-and-parole-fight/", status:"PAROLE FIGHT", title:"The Menendez Brothers", why:"Resentenced in 2025 and parole-eligible — the decades-old case back in the headlines." },
   { href:"/post/the-lori-vallow-daybell-case-remembering-jj-tylee-and-tammy-behind-the-doomsday-headlines/", status:"APPEAL PENDING", title:"The Lori Vallow Daybell Case", why:"Behind the 'doomsday' headlines — JJ, Tylee, and Tammy, and where the appeal stands." },
-  { href:"/post/no-accident-the-mackenzie-shirilla-story-the-full-account/", status:"APPEAL + NETFLIX", title:"No Accident: Mackenzie Shirilla", why:"Renewed attention as Netflix's 'The Crash' airs and her appeal reaches the Ohio Supreme Court." },
+  { href:"/post/no-accident-the-mackenzie-shirilla-story-the-full-account/", status:"APPEAL + NETFLIX", title:"No Accident: Mackenzie Shirilla", why:"Renewed attention as Netflix's 'The Crash' airs and her appeal reaches the Ohio Supreme Court.", book:{ label:"📕 Read the full case file: No Accident — $5.99", href:"https://cassiancreed.beehiiv.com/products/no-accident-the-mackenzie-shirilla-story?utm_source=website&utm_medium=trending&utm_campaign=no_accident" } },
   { href:"/post/what-happened-in-the-idaho-student-murders-the-bryan-kohberger-case-explained/", status:"SENTENCED 2025", title:"The Idaho Student Murders", why:"How Bryan Kohberger was caught, pleaded guilty, and was sentenced — the case explained." }
 ];
 ---
@@ -34,9 +35,19 @@ const trending = [
           <span class="trend-card__status">{c.status}</span>
           <h2 class="trend-card__title">{c.title}</h2>
           <p class="trend-card__why">{c.why}</p>
+          {c.book && (
+            <span class="trend-card__chip" onclick={`event.preventDefault();event.stopPropagation();window.location='${c.book.href}'`}>{c.book.label}</span>
+          )}
           <span class="trend-card__cta">Read the case file →</span>
         </a>
       ))}
+    </div>
+  </section>
+
+  <section class="wrap trend-dossier">
+    <div class="trend-dossier__inner">
+      <span class="evidence evidence--accent">Free resource</span>
+      <p>Following these cases? Get the free Sunday dossier — sourced case files, victim-first. <a href="/free-dossier/?utm_source=website&utm_medium=trending&utm_campaign=free_case_files">Read this week's →</a></p>
     </div>
   </section>
 
@@ -57,8 +68,14 @@ const trending = [
     .trend-card__status{font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--accent)}
     .trend-card__title{font-family:var(--serif);font-weight:600;font-size:23px;margin:8px 0 8px;color:var(--ink)}
     .trend-card__why{color:var(--ink-2);font-size:15px;margin:0 0 12px}
+    .trend-card__chip{display:block;margin:0 0 10px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--ink-2);background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:4px;padding:5px 9px;cursor:pointer;transition:background .15s,color .15s}
+    .trend-card__chip:hover{background:rgba(224,86,59,.1);color:var(--accent)}
     .trend-card__cta{font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--ink-3)}
     .trend-card:hover .trend-card__cta{color:var(--accent)}
+    .trend-dossier{padding:4px 0 20px}
+    .trend-dossier__inner{background:var(--bg-2);border:1px solid var(--line);border-radius:10px;padding:16px 22px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+    .trend-dossier__inner p{color:var(--ink-2);font-size:15px;margin:0}
+    .trend-dossier__inner a{color:var(--accent);text-decoration:underline}
     .trend-foot{padding:8px 0 40px}
     .trend-tracker{background:var(--bg-3);border:1px solid rgba(224,86,59,.25);border-radius:12px;padding:28px}
     .trend-tracker h2{font-family:var(--serif);font-weight:600;font-size:26px;margin:6px 0 10px}
