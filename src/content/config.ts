@@ -15,6 +15,7 @@ const posts = defineCollection({
     buyUrl: z.string().optional(),
     buyUrlAlt: z.string().optional(),
     buyPrice: z.string().optional(),
+    capture: z.string().optional(),
   }),
 });
 export const collections = { posts };
