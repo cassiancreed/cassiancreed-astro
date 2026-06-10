@@ -1,0 +1,109 @@
+---
+// Standalone capture page — NO site navigation by design (landing pages convert 20-30% better without exits).
+// Spec: _research/capture-page-rewrite_2026-06-09.md · Deployed by XO 2026-06-09.
+const title = "Rachel Morin Case — Free Forensic Dossier | Cassian Creed";
+const desc = "The Rachel Morin murder case, analyzed by forensic method. DNA evidence, Othram sequencing, and the full case timeline — free download, no spam.";
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>{title}</title>
+<meta name="description" content={desc} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={desc} />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://cassiancreed.com/rachel-morin/" />
+<link rel="canonical" href="https://cassiancreed.com/rachel-morin/" />
+<style>
+:root{--bg:#100d0b;--bg2:#191512;--ink:#f0e9e1;--ink2:#bbb1a6;--line:#2a2521;--accent:#e0563b;--serif:Georgia,'Times New Roman',serif;--sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.55}
+.wrap{max-width:680px;margin:0 auto;padding:0 20px}
+.mast{padding:18px 0;border-bottom:1px solid var(--line)}
+.mast a{color:var(--ink);text-decoration:none;font-family:var(--serif);font-size:20px;font-weight:600}
+.hero{padding:36px 0 8px}
+h1{font-family:var(--serif);font-weight:600;font-size:clamp(28px,5.5vw,40px);line-height:1.15;margin-bottom:14px}
+.sub{font-size:17px;color:var(--ink2);max-width:58ch;margin-bottom:24px}
+.form-block{background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:22px;margin:6px 0 10px}
+.form-block form{display:flex;flex-direction:column;gap:10px}
+.form-block input[type="email"]{width:100%;min-height:48px;padding:12px 14px;font-size:16px;border-radius:9px;border:1px solid var(--line);background:#0c0a08;color:var(--ink)}
+.form-block button{width:100%;min-height:48px;font-size:17px;font-weight:700;border:none;border-radius:9px;background:var(--accent);color:#fff;cursor:pointer}
+.form-block button:hover{filter:brightness(1.08)}
+.micro{font-size:12.5px;color:var(--ink2)}
+.bridge{margin:30px 0 6px;font-size:16.5px;line-height:1.6}
+h2{font-family:var(--serif);font-weight:600;font-size:24px;margin:30px 0 12px}
+ul.benefits{list-style:none;margin:0 0 8px}
+ul.benefits li{padding:10px 0 10px 28px;position:relative;border-bottom:1px solid var(--line);font-size:15.5px}
+ul.benefits li::before{content:"→";position:absolute;left:2px;color:var(--accent);font-weight:700}
+.cred{background:var(--bg2);border-left:3px solid var(--accent);border-radius:0 10px 10px 0;padding:18px 20px;margin:10px 0;font-size:15.5px;line-height:1.6}
+.cred p+p{margin-top:12px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 6px}
+.badges span{font-size:12px;color:var(--ink2);border:1px solid var(--line);border-radius:14px;padding:5px 11px}
+footer{margin:44px 0 28px;padding-top:16px;border-top:1px solid var(--line);font-size:12.5px;color:var(--ink2)}
+footer a{color:var(--ink2)}
+</style>
+</head>
+<body>
+<div class="mast"><div class="wrap"><a href="/">Cassian Creed</a></div></div>
+
+<section class="hero wrap">
+<h1>Rachel Morin Was Killed on a Trail in Bel Air. A DNA Match Caught Her Killer. This Dossier Shows You Exactly How.</h1>
+<p class="sub">The full forensic breakdown of the Rachel Morin case — the DNA evidence, the Othram genome sequencing, what the prosecution built, and what the analysis reveals about how this crime was solved. Free. No strings.</p>
+
+<div class="form-block">
+<form action="https://cassiancreed.beehiiv.com/subscribe" method="get" aria-label="Get the free Rachel Morin dossier">
+<input type="email" name="email" required autocomplete="email" placeholder="your@email.com" aria-label="Your email address" />
+<input type="hidden" name="utm_source" value="website" />
+<input type="hidden" name="utm_medium" value="capture_page" />
+<input type="hidden" name="utm_campaign" value="morin_dossier" />
+<button type="submit">Send Me the Free Dossier</button>
+<p class="micro">No spam. Your email is used to deliver this dossier and our weekly case dispatches. Unsubscribe in one click, any time.</p>
+</form>
+</div>
+</section>
+
+<section class="wrap">
+<p class="bridge">Rachel Morin was 37 years old, a mother of five, and out for a walk on a summer evening. She never came home. What happened on that trail in Harford County — and how investigators eventually connected a DNA sample to a man hiding in Oklahoma — is one of the cleaner examples of forensic science doing exactly what it is supposed to do. This dossier lays it out in full.</p>
+
+<h2>What's Inside the Dossier</h2>
+<ul class="benefits">
+<li><strong>The DNA chain of custody</strong> — from the crime scene sample through the Maryland State Police lab to Othram's Forensic-Grade Genome Sequencing, in plain language</li>
+<li><strong>The Othram method explained</strong> — what Investigative Genetic Genealogy (IGG) does that standard DNA testing cannot, and why this case needed it</li>
+<li><strong>The suspect timeline</strong> — what the record shows about Victor Martinez-Hernandez's movements, how he came to be in Maryland, and what the trial established</li>
+<li><strong>What the jury heard (and what they didn't)</strong> — a structured review of the prosecution's case, the defense arguments, and the verdict</li>
+<li><strong>The A.I. AL analytical overlay</strong> — where the evidence is solid, where inference is required, and what responsible forensic analysis looks like when it distinguishes proven facts from working conclusions</li>
+</ul>
+
+<h2>Why This Analysis Is Different</h2>
+<div class="cred">
+<p>Cassian Creed is a forensic true-crime writer and the creator of A.I. AL — Artificial Intelligence Analytical Layer — a structured forensic method for cold-case and active-case analysis. A.I. AL uses a discipline-based framework: reliable data first, logic and inference second, conclusions always labeled by their evidentiary weight. Nothing is claimed as proven that is not proven.</p>
+<p>Neural Edge Publishing produces case dossiers, books, and podcast episodes that apply this method to real cases — not to entertain with speculation, but to give readers an honest read of what the evidence actually shows. Every dossier is labeled: what's established, what's inferred, and what remains open.</p>
+<p>The Rachel Morin case was solved. This dossier shows you the anatomy of that solution.</p>
+</div>
+
+<div class="badges">
+<span>Forensic-method analysis, not armchair speculation</span>
+<span>Rachel Morin dossier: delivered to your inbox immediately</span>
+<span>Part of the Cassian Creed case catalog</span>
+<span>Presumption of innocence on anyone not convicted — our standard</span>
+</div>
+
+<div class="form-block">
+<form action="https://cassiancreed.beehiiv.com/subscribe" method="get" aria-label="Get the free Rachel Morin dossier">
+<input type="email" name="email" required autocomplete="email" placeholder="your@email.com" aria-label="Your email address" />
+<input type="hidden" name="utm_source" value="website" />
+<input type="hidden" name="utm_medium" value="capture_page_bottom" />
+<input type="hidden" name="utm_campaign" value="morin_dossier" />
+<button type="submit">Send Me the Free Dossier</button>
+<p class="micro">No spam. Unsubscribe any time.</p>
+</form>
+</div>
+
+<footer>
+© 2026 Neural Edge Publishing · Sourced · victim-centered · no gratuitous detail · <a href="/about/">About & corrections policy</a>
+</footer>
+</section>
+</body>
+</html>
