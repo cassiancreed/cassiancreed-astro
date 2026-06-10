@@ -1,5 +1,5 @@
 ---
-title: "The Kouri Richins Case: What Happened to Eric Richins"
+title: "Are You With Me? — The Book of the Kouri Richins Case"
 description: "Kouri Richins, a Utah grief-book author, was convicted in 2026 of murdering husband Eric Richins with fentanyl. A clear, victim-centered case explainer."
 pubDate: 2026-05-30
 tag: "Case Files"

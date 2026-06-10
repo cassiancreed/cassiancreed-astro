@@ -9,6 +9,7 @@ incidentDate: "August 2023"
 location: "Bel Air, Harford County, Maryland"
 jurisdiction: "Maryland state court"
 status: "Victor Martinez-Hernandez convicted (2025), life without parole; appeal pending"
+capture: "/rachel-morin/?utm_source=post&utm_medium=endcta&utm_campaign=morin_dossier"
 ---
 
 

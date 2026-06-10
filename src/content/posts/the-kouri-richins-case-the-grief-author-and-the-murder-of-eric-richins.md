@@ -1,5 +1,5 @@
 ---
-title: "The Kouri Richins Case: The Grief Author and the Murder of Eric Richins"
+title: "The Murder of Eric Richins: The Kouri Richins Case"
 slug: kouri-richins-eric-richins-murder
 description: "Kouri Richins wrote a children's book about grief after her husband Eric died of fentanyl. A Utah jury convicted her of his murder. The sourced account — Eric first."
 pubDate: 2026-06-05
@@ -61,6 +61,6 @@ The "grief author who grieved a man she killed" framing is what made this case v
 
 ---
 
-**Follow the case the right way.** We publish sourced, victim-first updates the day the record changes — including the appeal. [Start here →](https://cassiancreed.com/start-here/?utm_source=case_file&utm_medium=web&utm_campaign=kouri_richins&utm_content=cta)
+**Follow the case the right way.** We publish sourced, victim-first updates the day the record changes — including the appeal. [Get the free Rachel Morin case-file dossier →](https://cassiancreed.com/free-dossier/?utm_source=case_file&utm_medium=web&utm_campaign=kouri_richins&utm_content=cta) — or [start here](https://cassiancreed.com/start-here/?utm_source=case_file&utm_medium=web&utm_campaign=kouri_richins&utm_content=cta_secondary) if you'd rather read first.
 
 *This account reflects the public record as of June 5, 2026. Kouri Richins was convicted of the murder of Eric Richins; her conviction is under appeal.*

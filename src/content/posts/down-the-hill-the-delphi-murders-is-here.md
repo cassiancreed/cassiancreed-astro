@@ -1,5 +1,5 @@
 ---
-title: "New Release: Down the Hill — The Delphi Murders"
+title: "Down the Hill: The Delphi Murders — Now Available"
 description: "Down the Hill, the new full-length case file on the murders of Abby Williams and Libby German, is now available. A restrained, victim-first account of a town that spent five years suspecting the wrong men."
 pubDate: 2026-06-04
 tag: "Case Files"

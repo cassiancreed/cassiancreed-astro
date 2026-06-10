@@ -11,7 +11,7 @@ jurisdiction: "Collin County, Texas"
 status: "Convicted of murder June 9, 2026; sentencing phase underway"
 ---
 
-Austin Metcalf was 17 years old. A junior at Frisco Memorial High School in Frisco, Texas. The MVP linebacker on his football team. A twin, with a brother named Hunter who was standing right next to him when it happened.
+Austin Metcalf was 17 years old. A junior at Memorial High School in Frisco, Texas. The MVP linebacker on his football team. A twin, with a brother named Hunter who was standing right next to him when it happened.
 
 On April 2, 2025, Austin went to a high school track meet at David Kuykendall Stadium. He did not come home.
 

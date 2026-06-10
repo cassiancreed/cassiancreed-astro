@@ -11,6 +11,7 @@ jurisdiction: "Indiana state court (Carroll County)"
 status: "Richard Allen convicted (2024), 130 years; appeal pending (oral arguments Sept 2026)"
 buyUrl: "https://creedcaster5.gumroad.com/l/snagtm?utm_source=website&utm_medium=post_cta&utm_campaign=down_the_hill"
 buyPrice: "$5.99"
+capture: "/down-the-hill/?utm_source=post&utm_medium=endcta&utm_campaign=delphi_book"
 ---
 
 Richard Allen is the man convicted of murdering Abigail "Abby" Williams, 13, and Liberty "Libby" German, 14, two best friends from Delphi, Indiana, who were killed on February 13, 2017. After more than five years of investigation, Allen — a local pharmacy technician who had lived quietly in the same small town the whole time — was arrested in October 2022. On November 11, 2024, a jury found him guilty on all four counts, and in December 2024 a judge sentenced him to 130 years in prison. Allen has appealed; his case is before the Court of Appeals of Indiana, with oral arguments scheduled for September 21, 2026. That is the legal shape of the story. But the heart of it belongs to two eighth-graders who deserve to be remembered as far more than how they died.
