@@ -51,10 +51,11 @@ const jsonld = faqNode
   ? { "@context":"https://schema.org", "@graph": [articleNode, faqNode] }
   : { "@context":"https://schema.org", ...articleNode };
 ---
-<Base title={post.data.title} description={post.data.description} jsonld={jsonld} ogImage={`/og/${post.slug}.png`}>
+<Base title={post.data.title} description={post.data.description} jsonld={jsonld} ogImage={post.data.cover ?? `/og/${post.slug}.png`}>
   <article class="post">
     <p class="evidence evidence--accent">{post.data.tag}</p>
     <h1>{post.data.title}</h1>
+{post.data.cover && <figure class="post__hero"><img src={post.data.cover} alt={post.data.coverAlt ?? post.data.title} width="1024" height="1536" loading="eager" /></figure>}
     {isCase && <p class="post__note">A note before you read: this is a true account of real people and a real crime. We tell it with care — centered on the victims, grounded in the record, and without gratuitous detail.</p>}
     {post.data.victim && (
       <aside class="case-facts">
@@ -148,4 +149,5 @@ const jsonld = faqNode
   .convert__book-btn{align-self:flex-start}
   .convert__book-alt{display:inline-block;margin-top:10px;font-size:13px;text-decoration:none;color:var(--ink-2)}
   .convert__book-alt:hover{color:var(--accent,#e0563b)}
+.post__hero{margin:18px 0 6px}.post__hero img{width:100%;height:auto;max-height:340px;object-fit:cover;object-position:center 40%;border-radius:12px;display:block}
 </style>
