@@ -12,6 +12,8 @@ status: "Mackenzie Shirilla convicted (2023), 15 years to life; appeal before th
 buyUrl: "https://cassiancreed.beehiiv.com/products/no-accident-the-mackenzie-shirilla-story?utm_source=website&utm_medium=landing&utm_campaign=no_accident"
 buyUrlAlt: "https://creedcaster5.gumroad.com/l/jsfwrv?utm_source=website&utm_medium=landing&utm_campaign=no_accident"
 buyPrice: "$5.99"
+cover: "/covers/no-accident.jpg"
+coverAlt: "A deserted industrial street in the hour before dawn, a lone streetlight casting hard shadows on empty pavement."
 ---
 
 At first, it was an accident. In the pre-dawn dark of July 31, 2022, a black Toyota Camry left an industrial road in Strongsville, Ohio, crossed an intersection, and struck the corner of a building. Two young men in the car — Dominic Russo, twenty, and Davion Flanagan, nineteen — were killed instantly. The seventeen-year-old driver, Russo's girlfriend, survived. Nearly everyone who saw the scene saw the same thing: a terrible, ordinary tragedy. They were wrong.

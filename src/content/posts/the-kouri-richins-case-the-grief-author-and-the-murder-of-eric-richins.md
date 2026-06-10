@@ -18,6 +18,8 @@ sources:
   - "https://www.cnn.com/us/kouri-richins-trial"
   - "https://www.cbsnews.com/news/kouri-richins-utah-mom-eric-richins-murder/"
   - "https://www.kpcw.org/tag/kouri-richins"
+cover: "/covers/are-you-with-me.jpg"
+coverAlt: "Typographic title treatment in warm serif lettering on a deep navy background."
 ---
 
 # The Kouri Richins Case: The Grief Author and the Murder of Eric Richins

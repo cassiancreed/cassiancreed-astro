@@ -12,6 +12,8 @@ status: "Victor Martinez-Hernandez convicted (2025), life without parole; appeal
 buyUrl: "https://cassiancreed.beehiiv.com/products/the-trail-the-murder-of-rachel-morin?utm_source=website&utm_medium=landing&utm_campaign=the_trail"
 buyUrlAlt: "https://creedcaster5.gumroad.com/l/xbgnhg?utm_source=website&utm_medium=landing&utm_campaign=the_trail"
 buyPrice: "$5.99"
+cover: "/covers/the-trail.jpg"
+coverAlt: "A foggy wooded hillside trail disappearing into mist at twilight."
 ---
 
 On a summer evening in August 2023, Rachel Morin — thirty-seven years old, a mother of five — left her home to walk a familiar trail in Harford County, Maryland, the kind of evening errand millions of people perform without a second thought. She did not come home. What began as a search would become one of the most consequential forensic investigations of the decade — and the man who killed her had left no name in any database on earth.

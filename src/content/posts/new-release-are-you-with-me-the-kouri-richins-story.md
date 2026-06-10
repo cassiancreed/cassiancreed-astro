@@ -9,6 +9,8 @@ incidentDate: "March 2022"
 location: "Kamas, Summit County, Utah"
 jurisdiction: "Summit County, Utah"
 status: "Kouri Richins convicted (2026); life without parole"
+cover: "/covers/are-you-with-me.jpg"
+coverAlt: "Typographic title treatment in warm serif lettering on a deep navy background."
 ---
 
 

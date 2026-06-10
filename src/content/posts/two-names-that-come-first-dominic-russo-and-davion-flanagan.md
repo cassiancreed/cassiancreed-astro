@@ -9,6 +9,8 @@ incidentDate: "July 31, 2022"
 location: "Strongsville, Ohio"
 jurisdiction: "Cuyahoga County, Ohio"
 status: "Mackenzie Shirilla convicted (2023), 15 years to life; appeal before the Ohio Supreme Court"
+cover: "/covers/no-accident.jpg"
+coverAlt: "A deserted industrial street in the hour before dawn, a lone streetlight casting hard shadows on empty pavement."
 ---
 
 Before this was a verdict that went viral, before it was a streaming title climbing the charts, it was a Sunday before dawn when two young men did not come home. Their names were Dominic Russo and Davion Flanagan. Dominic was 20. Davion was 19. Whatever else this story becomes as new cameras turn toward it, those names come first — and they stay first.

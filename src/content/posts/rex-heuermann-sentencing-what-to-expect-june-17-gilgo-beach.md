@@ -9,6 +9,8 @@ incidentDate: "1990s–2010"
 location: "Long Island, New York"
 jurisdiction: "Suffolk County, New York"
 status: "Pleaded guilty April 8, 2026; sentencing June 17, 2026"
+cover: "/covers/the-gilgo-blueprint.jpg"
+coverAlt: "A desolate barrier-island causeway at dusk, a single distant streetlight glowing amber at the vanishing point."
 ---
 
 

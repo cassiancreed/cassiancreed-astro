@@ -9,6 +9,8 @@ incidentDate: "January 29, 2022"
 location: "Canton, Massachusetts"
 jurisdiction: "Norfolk County, Massachusetts"
 status: "Karen Read acquitted of murder (2025); wrongful-death civil suit pending"
+cover: "/case-art/karen-read.jpg"
+coverAlt: "A snow-dusted suburban street at night, a single porch light glowing, a bare flagpole standing in the frozen yard."
 ---
 
 On June 18, 2025, a Massachusetts jury found Karen Read not guilty of second-degree murder, manslaughter, and leaving the scene in the death of Boston police officer John O'Keefe. She was convicted only of operating under the influence of alcohol — a misdemeanor — and sentenced to one year of probation. After two trials, three and a half years, and a level of public attention rarely seen in a single homicide case, the law has rendered its answer on the most serious charges, and that answer must be respected: Karen Read did not kill John O'Keefe in the eyes of the court. But a verdict is not the same as closure. And the man at the center of this case — too often reduced to a name in someone else's trial — was a person first.

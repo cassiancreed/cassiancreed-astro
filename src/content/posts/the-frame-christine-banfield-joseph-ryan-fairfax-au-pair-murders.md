@@ -9,6 +9,8 @@ incidentDate: "2023-02-24"
 location: "Herndon, Virginia"
 jurisdiction: "Fairfax County"
 status: "Convicted and sentenced to life without parole (June 5, 2026); appeal available"
+cover: "/covers/the-frame.jpg"
+coverAlt: "A dark two-story suburban house at night, one upstairs window lit, the street below rain-slicked and empty."
 ---
 
 Christine Banfield was a wife and mother. Joseph Ryan was a man who believed he was meeting someone who needed help. On February 24, 2023, both were killed inside a home in Herndon, Fairfax County, Virginia. This is their case — told from the public record, with what was proven in court kept separate from what was only argued.
@@ -32,4 +34,12 @@ We mark that line on purpose. A conviction is fact; a narrative theory is not, a
 
 **Was Brendan Banfield convicted?** Yes. A Fairfax County jury convicted him on February 2, 2026, of two counts of aggravated murder, a firearm count, and child endangerment.
 
-**Has he been sentenced?** Yes. On June 5, 2026, he was sentenced to life in prison without the possibility of parole, with additional consecutive terms on the firearm and child-endangerment counts. A defense motion to set the verdict aside was denied on June 4. He may s
+**Has he been sentenced?** Yes. On June 5, 2026, he was sentenced to life in prison without the possibility of parole, with additional consecutive terms on the firearm and child-endangerment counts. A defense motion to set the verdict aside was denied on June 4. He may still appeal his conviction.
+
+**What happened to the au pair?** Juliana Peres Magalhães was sentenced to ten years after testifying under a plea agreement.
+
+---
+
+We center Christine Banfield and Joseph Ryan — not the man convicted of killing them. Sourced from court records and the public record; no gratuitous detail.
+
+*If you need support: 988 Suicide & Crisis Lifeline (call or text 988) · National Domestic Violence Hotline 1-800-799-7233 (text START to 88788) · RAINN 1-800-656-HOPE (4673).*

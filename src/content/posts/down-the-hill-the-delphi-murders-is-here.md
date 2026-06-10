@@ -12,6 +12,8 @@ status: "Richard Allen convicted Nov 2024; appeal unresolved"
 buyUrl: "https://creedcaster5.gumroad.com/l/snagtm?utm_source=website&utm_medium=post_cta&utm_campaign=down_the_hill"
 buyUrlAlt: ""
 buyPrice: "$5.99"
+cover: "/covers/down-the-hill.jpg"
+coverAlt: "An old iron railroad trestle spanning a dark creek at night, its girders vanishing into shadow."
 ---
 
 

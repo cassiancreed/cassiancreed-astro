@@ -9,6 +9,8 @@ incidentDate: "June 2021"
 location: "Colleton County, South Carolina"
 jurisdiction: "South Carolina state court"
 status: "Murder convictions vacated (May 13, 2026); awaiting retrial — presumed innocent of the murder charges; financial-crime sentences (guilty pleas) remain in force"
+cover: "/case-art/murdaugh-moselle.jpg"
+coverAlt: "An oak-lined lowcountry dirt drive at night, Spanish moss hanging overhead, a single distant yard light at the end of the lane."
 ---
 
 

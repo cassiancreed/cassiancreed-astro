@@ -9,6 +9,8 @@ incidentDate: "January 24, 2023"
 location: "Duxbury, Massachusetts"
 jurisdiction: "Plymouth County, Massachusetts"
 status: "Charged; pleaded not guilty (insanity defense); trial set for July 20, 2026"
+cover: "/case-art/lindsay-clancy.jpg"
+coverAlt: "A New England colonial house at winter dusk, one upstairs window warmly lit against the cold grey sky."
 ---
 
 Lindsay Clancy, a 35-year-old former labor-and-delivery nurse from Duxbury, Massachusetts, is accused of killing her three young children — Cora, Dawson, and Callan — at the family's home on January 24, 2023. She has pleaded not guilty to three counts each of murder and strangulation, and her attorney has said she will pursue an insanity defense rooted in severe postpartum mental illness. Her trial is scheduled to begin July 20, 2026. Until a jury says otherwise, Clancy is presumed innocent. This case has drawn national attention because it sits at an unbearable intersection: three children are gone, and the woman charged with their deaths was, by multiple accounts, a mother in acute psychiatric crisis who had repeatedly sought help. Both can be true. Holding them together is the only honest way to write about what happened in Duxbury.
