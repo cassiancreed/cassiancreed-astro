@@ -14,6 +14,6 @@ const short=(t)=>t.split(':')[0];
 <Base title={`${label} — Cassian Creed`}>
   <section class="hero wrap"><p class="evidence evidence--accent">{label}</p><h1>{label}</h1></section>
   <section class="wrap"><div class="grid">
-    {posts.map((p, i) => (<a class="card" href={`/post/${p.slug}/`}><div class="card__tile"><div class="tile__top"><span class="tile__no">Nº {String(i+1).padStart(2,'0')}</span><span class="tile__tag">{p.data.tag}</span></div><h3 class="card__title">{short(p.data.title)}</h3></div></a>))}
+    {posts.map((p, i) => (<a class="card" href={`/post/${p.slug}/`}><div class="card__tile" style={p.data.cover ? `background-image:linear-gradient(rgba(10,14,26,.30),rgba(10,14,26,.78)),url(${p.data.cover});background-size:cover;background-position:center 32%` : undefined}><div class="tile__top"><span class="tile__no">Nº {String(i+1).padStart(2,'0')}</span><span class="tile__tag">{p.data.tag}</span></div><h3 class="card__title">{short(p.data.title)}</h3></div></a>))}
   </div></section>
 </Base>
