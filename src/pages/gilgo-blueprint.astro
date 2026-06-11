@@ -1,0 +1,306 @@
+---
+import Base from '../layouts/Base.astro';
+// LANDING PAGE — The Gilgo Blueprint: Rex Heuermann and the Forensic Revolution
+// Case File 003 · Neural Edge Publishing · Staged 2026-06-10
+// Deploy target: src/pages/gilgo-blueprint.astro
+// Primary CTA: free dossier capture (/free-dossier utm_source=website&utm_medium=landing&utm_campaign=gilgo_blueprint)
+// Secondary CTA: notify when book drops (/#subscribe — book not on sale yet)
+// ogImage: /covers/the-gilgo-blueprint.jpg
+const jsonld_page = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "The Gilgo Blueprint: Rex Heuermann and the Forensic Revolution",
+  "description": "A victim-first case file on the Gilgo Beach investigation — DNA, genetic genealogy, digital evidence, and the guilty plea of Rex Heuermann. Case File 003 from Neural Edge Publishing.",
+  "image": "https://cassiancreed.com/covers/the-gilgo-blueprint.jpg"
+};
+const jsonld_faq = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Who were the Gilgo Beach victims?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Eight women were killed in the Gilgo Beach case. Their names are Melissa Barthelemy, Maureen Brainard-Barnes, Megan Waterman, Amber Lynn Costello, Jessica Taylor, Valerie Mack, Karen Vergata, and Sandra Costilla. Rex Heuermann pleaded guilty to seven counts on April 8, 2026, and admitted in court to killing an eighth. Every account in this case file names the women in life before discussing evidence."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many did Rex Heuermann kill?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Rex Heuermann pleaded guilty on April 8, 2026 to the murders of seven women, and admitted in court to killing an eighth. Eight women are confirmed as victims connected to his guilty plea and in-court allocution."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When did the Gilgo Beach murders begin?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The public record and investigative timeline covered in The Gilgo Blueprint spans from the initial disappearances through the April 8, 2026 guilty plea. The specific dates of individual disappearances are addressed in the ebook's victim-first timeline section."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is Rex Heuermann's sentencing date?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sentencing is scheduled for June 17, 2026, in the Rex Heuermann / Gilgo Beach case. No sentence terms have been imposed as of this writing. This page will not state sentence terms until they are confirmed through two independent sources after the hearing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Rex Heuermann getting life without parole (LWOP)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sentence terms have not been imposed as of this writing. The Gilgo Blueprint covers the plea terms that were entered on April 8, 2026 and explains what sentencing follows from the public record."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What was found on Rex Heuermann's computer — what is the blueprint document?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The term 'Gilgo Blueprint' refers to a planning document recovered as part of the investigation into Rex Heuermann. Prosecutors and investigators described evidence of planning, pattern, and preparation in public filings and statements. The ebook examines this evidence layer through the public record — what was documented, how it was characterized, and what role it played in the plea."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Did the killer use a planning file?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The public record in the Rex Heuermann case includes references by prosecutors and investigators to recovered documents and digital evidence related to planning and preparation. The Gilgo Blueprint covers this material in the context of the full evidence picture: DNA, genetic genealogy, burner-phone records, cellphone records, and digital reconstruction — examined together, not in isolation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What role did genetic genealogy play in the Gilgo Beach investigation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Genetic genealogy helped restore the identities of victims who had been known for years only by placeholders. The technology contributed to the broader forensic convergence — alongside DNA retesting, burner-phone analysis, and cellphone records — that moved the Gilgo Beach investigation from a stalled cold case toward a guilty plea. The ebook explains this in plain language without overstating any single tool's role."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens at the June 17 sentencing hearing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "June 17, 2026 is the scheduled sentencing date for Rex Heuermann following his April 8 guilty plea. At the hearing, families of the victims will have the opportunity to speak. Verified sentence terms will be confirmed through two independent sources before they are published here or in any affiliated content. The ebook covers the public record through the plea; the sentencing outcome will be addressed in a separate editorial update."
+      }
+    }
+  ]
+};
+---
+<Base
+  title="The Gilgo Blueprint: Rex Heuermann and the Forensic Revolution — Case File 003"
+  description="A victim-first case file on the Gilgo Beach investigation — DNA, genetic genealogy, digital evidence, and the guilty plea of Rex Heuermann. Case File 003 from Neural Edge Publishing."
+  jsonld={[jsonld_page, jsonld_faq]}
+  ogImage="/covers/the-gilgo-blueprint.jpg"
+>
+  <article class="lp">
+
+    <!-- ═══════════════════════════════════════════
+         HERO — victim-first opener
+    ════════════════════════════════════════════ -->
+    <section class="lp-hero" aria-labelledby="lp-h1">
+      <p class="evidence evidence--accent">Case File 003 · Neural Edge Publishing · victim-first</p>
+      <h1 id="lp-h1">The Gilgo Blueprint</h1>
+      <p class="lp-sub lp-sub--book">Rex Heuermann and the Forensic Revolution</p>
+      <p class="lp-sub">On April 8, 2026, Rex Heuermann pleaded guilty to the murders of seven women and admitted in court to killing an eighth. Sentencing is scheduled for June 17, 2026.</p>
+      <p class="lp-sub"><em>The Gilgo Blueprint</em> is a clear, victim-first analysis of how the Gilgo Beach investigation moved from years of unanswered questions to a guilty plea shaped by DNA, digital records, and the quiet discipline of forensic review.</p>
+      <p class="lp-sub">This is not a gore file. This is not a killer myth. This is a record of what changed when the evidence finally caught up.</p>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         NAMES FIRST
+    ════════════════════════════════════════════ -->
+    <section class="lp-block lp-block--names" aria-labelledby="lp-names-h">
+      <h2 id="lp-names-h">Remember Their Names First</h2>
+      <p class="lp-names">Melissa Barthelemy. Maureen Brainard-Barnes. Megan Waterman. Amber Lynn Costello. Jessica Taylor. Valerie Mack. Karen Vergata. Sandra Costilla.</p>
+      <p class="lp-names-sub">Eight women. Daughters. Sisters. Mothers. Friends. People with lives before the case number. They are not statistics. They are the reason this story has to be told plainly.</p>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         WHAT THIS EBOOK IS
+    ════════════════════════════════════════════ -->
+    <section class="lp-block" aria-labelledby="lp-what-h">
+      <h2 id="lp-what-h">What This Ebook Is</h2>
+      <p class="lp-block__lead"><em>The Gilgo Blueprint</em> examines the public record behind the Rex Heuermann case and the investigative turn that made the plea possible.</p>
+      <p class="lp-block__lead">Inside, you will find:</p>
+      <ul class="lp-list">
+        <li><strong>A clear timeline</strong> from the early disappearances through the April 8 guilty plea and the June 17 sentencing date.</li>
+        <li><strong>A victim-first account</strong> that names the women in life before discussing the case.</li>
+        <li><strong>A plain-language breakdown of the forensic shift:</strong> DNA, genetic genealogy, burner-phone analysis, cellphone records, and digital trace evidence.</li>
+        <li><strong>The "blueprint" angle:</strong> how investigators and prosecutors described planning, pattern, and evidence without turning the case into spectacle.</li>
+        <li><strong>The A.I. analytical layer:</strong> a disclosed case-analysis framework used to organize public-record evidence, identify timeline pressure points, and separate documented fact from inference.</li>
+        <li><strong>A review of what this case says</strong> about the next era of cold-case work.</li>
+      </ul>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         THE FORENSIC REVOLUTION
+    ════════════════════════════════════════════ -->
+    <section class="lp-block" aria-labelledby="lp-forensic-h">
+      <h2 id="lp-forensic-h">The Forensic Revolution</h2>
+      <p class="lp-block__lead">Gilgo was once treated like a case frozen in time. Then the tools changed.</p>
+      <p class="lp-block__lead">Genetic genealogy helped give names back to women who had been known for years by placeholders. Retested DNA and digital records helped investigators rebuild pathways that older methods could not fully trace. Burner-phone billing, cellphone movement, and search-history evidence gave the case a second architecture — not just where bodies were found, but how contact, movement, and intent could be reconstructed.</p>
+      <p class="lp-block__lead">That is the forensic revolution at the center of this file. Not magic. Not machine certainty. Just patient work, better tools, and evidence that could finally be read in sequence.</p>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         PRIMARY CTA — free dossier
+    ════════════════════════════════════════════ -->
+    <section class="lp-capture-section" aria-labelledby="lp-cta-h">
+      <h2 id="lp-cta-h">Get the Free Dossier</h2>
+      <p class="lp-block__lead">Before the book launches, start with the free Rachel Morin case file.</p>
+      <p class="lp-block__lead">The Rachel Morin dossier is a concise case file on evidence, public claims, and the way modern investigations move from uncertainty to accountability. It sets the editorial standard you can expect from every Neural Edge title.</p>
+      <p class="lp-block__lead">You will also receive launch notes for <em>The Gilgo Blueprint</em>. No spam. No fear-bait. Just clear case files and editorial updates.</p>
+      <a class="btn btn--primary lp-cta-btn" href="/free-dossier?utm_source=website&utm_medium=landing&utm_campaign=gilgo_blueprint">Send Me the Free Dossier →</a>
+      <ul class="lp-badges" aria-label="Our standard">
+        <li>✓ Sourced from the public record</li>
+        <li>✓ Victims named in life first</li>
+        <li>✓ AI = a disclosed, human-verified lens</li>
+        <li>✓ No gore, no filler</li>
+      </ul>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         SECONDARY CTA — coming soon / notify
+    ════════════════════════════════════════════ -->
+    <section class="lp-block lp-notify" aria-labelledby="lp-notify-h">
+      <h2 id="lp-notify-h">The Gilgo Blueprint — Coming Soon</h2>
+      <p class="lp-block__lead"><strong>The Gilgo Blueprint: Rex Heuermann and the Forensic Revolution</strong> — Case File 003</p>
+      <p class="lp-block__lead">Final copy is reviewed against the public record before publication.</p>
+      <a class="btn btn--secondary lp-cta-btn" href="/#subscribe">Get notified when it drops →</a>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         FAQ
+    ════════════════════════════════════════════ -->
+    <section class="lp-block lp-faq" aria-labelledby="lp-faq-h">
+      <h2 id="lp-faq-h">Frequently Asked Questions</h2>
+
+      <dl class="faq-list">
+
+        <div class="faq-item">
+          <dt>Who were the Gilgo Beach victims?</dt>
+          <dd>Eight women were killed in the Gilgo Beach case. Their names are Melissa Barthelemy, Maureen Brainard-Barnes, Megan Waterman, Amber Lynn Costello, Jessica Taylor, Valerie Mack, Karen Vergara, and Sandra Costilla. Rex Heuermann pleaded guilty to seven counts on April 8, 2026, and admitted in court to killing an eighth. Every account in this case file names the women in life before discussing evidence.</dd>
+        </div>
+
+        <div class="faq-item">
+          <dt>How many did Rex Heuermann kill?</dt>
+          <dd>Rex Heuermann pleaded guilty on April 8, 2026 to the murders of seven women, and admitted in court to killing an eighth. Eight women are confirmed as victims connected to his guilty plea and in-court allocution.</dd>
+        </div>
+
+        <div class="faq-item">
+          <dt>When did the Gilgo Beach murders begin?</dt>
+          <dd>The public record and investigative timeline covered in <em>The Gilgo Blueprint</em> spans from the initial disappearances through the April 8, 2026 guilty plea. The specific dates of individual disappearances are addressed in the ebook's victim-first timeline section.</dd>
+        </div>
+
+        <div class="faq-item">
+          <dt>What is Rex Heuermann's sentencing date?</dt>
+          <dd>Sentencing is scheduled for June 17, 2026, in the Rex Heuermann / Gilgo Beach case. No sentence terms have been imposed as of this writing. This page will not state sentence terms until they are confirmed through two independent sources after the hearing.</dd>
+        </div>
+
+        <div class="faq-item">
+          <dt>Is Rex Heuermann getting life without parole (LWOP)?</dt>
+          <dd>Sentence terms have not been imposed as of this writing. <em>The Gilgo Blueprint</em> covers the plea terms that were entered on April 8, 2026 and explains what sentencing follows from the public record.</dd>
+        </div>
+
+        <div class="faq-item">
+          <dt>What was found on Rex Heuermann's computer — what is "the blueprint document"?</dt>
+          <dd>The term "Gilgo Blueprint" refers to a planning document recovered as part of the investigation into Rex Heuermann. Prosecutors and investigators described evidence of planning, pattern, and preparation in public filings and statements. The ebook examines this evidence layer through the public record — what was documented, how it was characterized, and what role it played in the plea.</dd>
+        </div>
+
+        <div class="faq-item">
+          <dt>Did the killer use a planning file?</dt>
+          <dd>The public record in the Rex Heuermann case includes references by prosecutors and investigators to recovered documents and digital evidence related to planning and preparation. <em>The Gilgo Blueprint</em> covers this material in the context of the full evidence picture: DNA, genetic genealogy, burner-phone records, cellphone records, and digital reconstruction — examined together, not in isolation.</dd>
+        </div>
+
+        <div class="faq-item">
+          <dt>What role did genetic genealogy play in the Gilgo Beach investigation?</dt>
+          <dd>Genetic genealogy helped restore the identities of victims who had been known for years only by placeholders. The technology contributed to the broader forensic convergence — alongside DNA retesting, burner-phone analysis, and cellphone records — that moved the Gilgo Beach investigation from a stalled cold case toward a guilty plea. The ebook explains this in plain language without overstating any single tool's role.</dd>
+        </div>
+
+        <div class="faq-item">
+          <dt>What happens at the June 17 sentencing hearing?</dt>
+          <dd>June 17, 2026 is the scheduled sentencing date for Rex Heuermann following his April 8 guilty plea. At the hearing, families of the victims will have the opportunity to speak. Verified sentence terms will be confirmed through two independent sources before they are published here or in any affiliated content. The ebook covers the public record through the plea; the sentencing outcome will be addressed in a separate editorial update.</dd>
+        </div>
+
+      </dl>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         WHY NEURAL EDGE
+    ════════════════════════════════════════════ -->
+    <section class="lp-block" aria-labelledby="lp-why-h">
+      <h2 id="lp-why-h">Why Neural Edge Is Publishing This</h2>
+      <p class="lp-block__lead">Neural Edge Publishing studies cases at the point where crime, technology, media, and public memory collide.</p>
+      <p class="lp-block__lead">The Gilgo case matters because it shows what happens when old assumptions break. Women who were too easily dismissed became central to a decades-long reckoning. Evidence once too thin to carry a case became readable through newer forensic methods. A public that knew fragments finally saw a fuller record.</p>
+      <p class="lp-block__lead">Our job is not to sensationalize that. Our job is to make the record legible.</p>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         EDITORIAL STANDARDS
+    ════════════════════════════════════════════ -->
+    <section class="lp-block lp-editorial" aria-labelledby="lp-ed-h">
+      <h2 id="lp-ed-h">A Note on Editorial Standards</h2>
+      <p class="lp-block__lead">Every factual claim in this ebook is tied to public records or reputable reporting. A.I. is used only as a disclosed analytical lens for organizing timelines and evidence themes. It is not the narrator, authorial voice, or substitute for editorial judgment.</p>
+      <p class="lp-block__lead">Victims first. Public record first. No gore. No hype.</p>
+    </section>
+
+    <p class="lp-crisis"><strong>If you need support.</strong> 988 Suicide &amp; Crisis Lifeline (call or text 988) · RAINN 1-800-656-HOPE. Cassian Creed · Neural Edge Publishing · PO Box 1039.</p>
+
+  </article>
+</Base>
+
+<style>
+  .lp{max-width:740px;margin:0 auto}
+  .lp h1,.lp h2{font-family:var(--serif)}
+  #lp-h1{font-weight:600;font-size:clamp(28px,5vw,44px);line-height:1.1;margin:10px 0 6px;max-width:20ch}
+  .lp-sub--book{font-family:var(--serif);font-size:clamp(16px,2.5vw,22px);color:var(--accent);font-style:normal;margin:0 0 14px;font-weight:500}
+  .lp-sub{color:var(--ink-2);font-size:17px;line-height:1.65;max-width:64ch;margin:0 0 14px}
+  .lp-block{padding:26px 0;border-top:1px solid var(--line)}
+  .lp-block h2{font-weight:600;font-size:clamp(20px,3vw,28px);margin:0 0 14px}
+  .lp-block__lead{color:var(--ink-2);font-size:16px;line-height:1.7;max-width:66ch;margin:0 0 14px}
+  .lp-block--names{background:var(--bg-2);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 10px 10px 0;padding:18px 22px;margin:20px 0 0}
+  .lp-block--names h2{font-size:clamp(17px,2.5vw,22px);margin:0 0 10px}
+  .lp-names{font-family:var(--serif);font-size:17px;line-height:1.7;color:var(--ink);margin:0 0 10px}
+  .lp-names-sub{color:var(--ink-2);font-size:15px;line-height:1.6;margin:0}
+  .lp-list{margin:0;padding:0;list-style:none;display:grid;gap:13px}
+  .lp-list li{color:var(--ink-2);line-height:1.6;border-left:2px solid var(--accent);padding-left:14px;max-width:64ch;font-size:15px}
+  .lp-list strong{color:var(--ink)}
+
+  /* Primary CTA section */
+  .lp-capture-section{padding:26px 0;border-top:1px solid var(--line)}
+  .lp-capture-section h2{font-family:var(--serif);font-weight:600;font-size:clamp(20px,3vw,28px);margin:0 0 14px}
+  .lp-cta-btn{display:inline-block;margin:16px 0 18px;text-decoration:none}
+  .btn--primary{background:var(--accent);color:#fff;padding:14px 26px;border-radius:6px;font-size:16px;font-weight:600;border:0;cursor:pointer}
+  .btn--primary:hover{opacity:.9}
+  .btn--secondary{background:var(--bg-2);color:var(--ink);border:1px solid var(--line);padding:12px 24px;border-radius:6px;font-size:15px;font-weight:500;cursor:pointer}
+  .btn--secondary:hover{border-color:var(--accent);color:var(--accent)}
+  .lp-badges{list-style:none;display:flex;flex-wrap:wrap;gap:8px 18px;padding:0;margin:4px 0 0;color:var(--ink-2);font-size:13px}
+
+  /* Coming-soon notify block */
+  .lp-notify{background:var(--bg-2);border:1px solid var(--line);border-radius:10px;padding:22px 24px;margin-top:4px}
+
+  /* FAQ */
+  .faq-list{margin:0;padding:0;display:grid;gap:0}
+  .faq-item{border-bottom:1px solid var(--line);padding:16px 0}
+  .faq-item:last-child{border-bottom:0}
+  .faq-item dt{font-weight:600;color:var(--ink);font-size:16px;margin:0 0 8px;max-width:62ch}
+  .faq-item dd{margin:0;color:var(--ink-2);font-size:15px;line-height:1.7;max-width:66ch}
+  .faq-item dd em{font-style:italic}
+
+  /* Editorial / footer */
+  .lp-editorial .lp-block__lead{font-size:15px}
+  .lp-crisis{color:var(--ink-3);font-size:13px;line-height:1.6;margin-top:24px;padding-top:18px;border-top:1px solid var(--line)}
+  .lp-crisis strong{color:var(--ink-2)}
+
+  @media(max-width:600px){
+    .lp-block--names{border-radius:0 8px 8px 0;padding:14px 16px}
+    .lp-notify{padding:16px 18px}
+    .btn--primary,.btn--secondary{display:block;text-align:center;width:100%;box-sizing:border-box}
+  }
+</style>
