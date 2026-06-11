@@ -9,7 +9,8 @@ const books = [
     coverAlt: "Book cover of The Trail: The Murder of Rachel Morin by Cassian Creed — a wooded walking trail at twilight",
     buy: "https://cassiancreed.beehiiv.com/products/the-trail-the-murder-of-rachel-morin?utm_source=website&utm_medium=landing&utm_campaign=the_trail",
     buyAlt: "https://creedcaster5.gumroad.com/l/xbgnhg?utm_source=website&utm_medium=landing&utm_campaign=the_trail",
-    sample: "/the-trail/"
+    sample: "/the-trail/",
+    listen: "https://open.spotify.com/episode/6UJivvOBmuoYbMIJzqu67d"
   },
   {
     title: "No Accident", series: "Case File 002", sub: "The Mackenzie Shirilla Story",
@@ -34,9 +35,7 @@ const books = [
   {
     title: "The Gilgo Blueprint", series: "Case File 003", sub: "Rex Heuermann and the Forensic Revolution",
     hook: "How DNA genealogy, burner-phone analysis, and relentless detective work finally unmasked the Long Island serial killer — with the eight women remembered as daughters and sisters, not statistics.",
-    status: "Coming soon", theme: "ink", price: null,
-cover: "/covers/the-gilgo-blueprint.jpg",
-coverAlt: "Book cover of The Gilgo Blueprint: Rex Heuermann and the Forensic Revolution by Cassian Creed, a desolate barrier-island causeway at dusk with one distant amber streetlight"
+    status: "Coming soon", theme: "ink", price: null
   },
   {
     title: "The Frame", series: "Case File 004", sub: "The Brendan Banfield Story",
@@ -46,7 +45,8 @@ coverAlt: "Book cover of The Gilgo Blueprint: Rex Heuermann and the Forensic Rev
     coverAlt: "Book cover of The Frame: The Brendan Banfield Story by Cassian Creed — a dark two-story suburban house with one lit window on a rain-slicked street at night",
     buy: "https://cassiancreed.beehiiv.com/products/the-frame?utm_source=website&utm_medium=landing&utm_campaign=the_frame",
     buyAlt: null,
-    sample: null
+    sample: null,
+    listen: "https://open.spotify.com/episode/0ODduWMkrtOEZTfN2V2jLi"
   },
   {
     title: "Are You With Me?", series: "Case File 006", sub: "The Kouri Richins Story",
@@ -133,6 +133,7 @@ const jsonld = [
             {b.price && <a class="btn bk__buy" href={b.buy} target="_blank" rel="noopener noreferrer">Buy the ebook — {b.price} →</a>}
             {b.buyAlt && <a class="bk__alt" href={b.buyAlt} target="_blank" rel="noopener noreferrer">Also on Gumroad →</a>}
             {b.sample && <a class="bk__alt" href={b.sample}>Look inside (free sample) →</a>}
+            {b.listen && <a class="bk__alt" href={b.listen} target="_blank" rel="noopener noreferrer">🎧 Listen to the companion episode →</a>}
             {!b.price && <a class="bk__alt bk__alt--soon" href="/#subscribe">Get notified when it drops →</a>}
           </div>
         </div>
