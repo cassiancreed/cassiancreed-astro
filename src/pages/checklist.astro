@@ -1,0 +1,238 @@
+---
+import Base from '../layouts/Base.astro';
+// DELIVERY PAGE — "The 7 Signs Investigators Look For at a Staged Scene" checklist.
+// This page is reached only via the Beehiiv welcome email link.
+// It is NOT linked from the site nav or sitemap.
+// noindex is set below — see the head slot note.
+const jsonld = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "The 7 Signs Investigators Look For at a Staged Scene — Checklist",
+  "description": "A plain-language investigative checklist: what real investigators examine when a crime scene may have been staged. Delivered to subscribers of the Cassian Creed Sunday newsletter."
+};
+---
+
+{/*
+  noindex injection — requires Base.astro to declare <slot name="head" /> inside its <head>.
+  If it does not, remove this Fragment and add the meta tag directly in Base.astro's <head>
+  for pages where frontmatter sets a flag (e.g. noindex={true}).
+*/}
+<Fragment slot="head">
+  <meta name="robots" content="noindex, nofollow" />
+</Fragment>
+
+<Base
+  title="The 7 Signs Investigators Look For at a Staged Scene | Cassian Creed"
+  description="A plain-language checklist of what real investigators examine when a crime scene may have been staged — grounded in documented forensic practice."
+  jsonld={jsonld}
+>
+  <article class="lp">
+
+    <section class="lp-hero" aria-labelledby="cl-h1">
+      <p class="evidence evidence--accent">Free checklist · sourced · victim-first</p>
+      <h1 id="cl-h1">The 7 Signs Investigators Look For at a Staged Scene</h1>
+    </section>
+
+    <section class="cl-body" aria-label="Checklist content">
+
+      <div class="cl-note cl-note--top" role="note">
+        <p>This checklist exists because understanding how investigators work protects people — it clarifies how real cases get examined, and what it means when evidence doesn't add up. It is not a guide to suspicion, and it is not designed for entertainment. Every real case involves real victims and real families. That is the reason this knowledge belongs in plain language, not locked inside professional training manuals.</p>
+      </div>
+
+      <ol class="cl-list" aria-label="The 7 signs">
+
+        <li class="cl-item">
+          <h2 class="cl-item__h">Scene inconsistency with the stated account</h2>
+          <p>When an investigator arrives, the physical scene is compared directly against what witnesses and those involved have described. Furniture placement, point of entry, the position of objects — if the physical evidence does not match the account of what happened, investigators note that gap as a starting question, not a conclusion. A scene that appears arranged, rather than disrupted, raises that question early.</p>
+        </li>
+
+        <li class="cl-item">
+          <h2 class="cl-item__h">Wound patterns and the mechanics of the event</h2>
+          <p>Medical examiners and forensic pathologists examine the nature, location, and angle of injuries in relation to what the stated events would physically produce. Entry and exit characteristics, defensive wound indicators, and the pattern of injury are each evaluated against the described sequence of events. A pattern inconsistent with the mechanism claimed requires explanation.</p>
+        </li>
+
+        <li class="cl-item">
+          <h2 class="cl-item__h">Digital trails and timeline contradictions</h2>
+          <p>Phone location data, call logs, message timestamps, and access records from digital devices create a timeline that is independent of anyone's account. When that digital record places a person in a location, or documents an action, that contradicts a stated timeline, investigators pursue the contradiction. Digital evidence is not opinion — it has a timestamp and a source that can be independently verified or challenged.</p>
+        </li>
+
+        <li class="cl-item">
+          <h2 class="cl-item__h">Evidence that appears placed rather than disturbed</h2>
+          <p>Scenes that have been genuinely disrupted during a violent event carry a specific physical signature — broken patterns, incidental disturbance, and the chaos of uncontrolled movement. When evidence appears laid out, when blood evidence does not follow the physics of the described event, or when items are positioned in ways that serve a narrative rather than reflect motion, those observations go into the investigative record.</p>
+        </li>
+
+        <li class="cl-item">
+          <h2 class="cl-item__h">Inconsistencies in early accounts</h2>
+          <p>The accounts given in the immediate aftermath of a violent event are treated as significant data. People under genuine trauma misremember; that is expected and well-documented. What investigators watch for is a different pattern: details that shift in ways that track new information becoming public, specific and accurate details about the scene that the person would not plausibly know, or accounts that change in response to evidence rather than in response to memory. This is a narrow distinction and requires careful evaluation — not a reason to treat all inconsistency as deception.</p>
+        </li>
+
+        <li class="cl-item">
+          <h2 class="cl-item__h">Forensic cross-checks across independent evidence streams</h2>
+          <p>No single piece of evidence determines a conclusion about staging. Investigators cross-check: does the toxicology align with the timeline? Does the forensic biology match the described movement through the scene? Does the digital record corroborate the physical record? Staging typically fails at the intersection of independent evidence streams, because it is practically difficult to control every data source simultaneously. Each stream that contradicts the others becomes an investigative focus.</p>
+        </li>
+
+        <li class="cl-item">
+          <h2 class="cl-item__h">Behavioral indicators before and after the event</h2>
+          <p>Behavioral patterns in the period before and after a crime are part of the investigative picture when supported by documented evidence — financial records, communications, documented actions. These are contextual, not determinative on their own: behavior consistent with distress does not establish guilt, and behavior inconsistent with distress does not either. Behavioral evidence is evaluated alongside the physical and digital record, never in isolation.</p>
+        </li>
+
+      </ol>
+
+      <div class="cl-note cl-note--close" role="note">
+        <p class="cl-note__head">A closing note.</p>
+        <p>The presence of one or more of these indicators in any real case is the beginning of an investigative question, not the end of one. The investigative standard is evidence — documented, sourced, independently verifiable — and the standard in any legal proceeding is proof beyond a reasonable doubt. Presumption of innocence is not a formality. It is the structural protection that makes the system worth trusting when it works correctly.</p>
+      </div>
+
+    </section>
+
+    <div class="cl-crosslink" aria-label="Browse the full case files">
+      <a class="btn" href="/books/?utm_source=checklist&utm_medium=lead_magnet&utm_campaign=staged_scene_checklist">Want the full case files? Browse the books →</a>
+    </div>
+
+    <p class="lp-crisis">
+      <strong>If you need support.</strong> 988 Suicide &amp; Crisis Lifeline (call or text 988) · RAINN 1-800-656-HOPE (4673) · National Domestic Violence Hotline 1-800-799-7233. Cassian Creed · Neural Edge Publishing · PO Box 1039.
+    </p>
+
+  </article>
+</Base>
+
+<style>
+  /* ── Page wrapper ── */
+  .lp { max-width: 740px; margin: 0 auto; }
+  .lp h1, .lp h2 { font-family: var(--serif); }
+
+  /* ── Hero / badge ── */
+  #cl-h1 {
+    font-weight: 600;
+    font-size: clamp(26px, 5vw, 40px);
+    line-height: 1.15;
+    margin: 10px 0 24px;
+    max-width: 26ch;
+  }
+
+  /* ── Preamble / closing note boxes ── */
+  .cl-note {
+    background: var(--bg-2);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 10px 10px 0;
+    padding: 18px 22px;
+    margin: 0 0 32px;
+  }
+  .cl-note p {
+    color: var(--ink-2);
+    font-size: 17px;
+    line-height: 1.7;
+    margin: 0;
+  }
+  .cl-note--close { margin-top: 16px; margin-bottom: 0; }
+  .cl-note__head {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 10px;
+  }
+
+  /* ── Numbered checklist ── */
+  .cl-list {
+    list-style: none;
+    counter-reset: cl-counter;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0;
+  }
+  .cl-item {
+    counter-increment: cl-counter;
+    padding: 26px 0;
+    border-top: 1px solid var(--line);
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 0 18px;
+    align-items: start;
+  }
+  .cl-item::before {
+    content: counter(cl-counter);
+    font-family: var(--serif);
+    font-size: clamp(28px, 4vw, 38px);
+    font-weight: 600;
+    color: var(--accent);
+    line-height: 1;
+    padding-top: 3px;
+  }
+  .cl-item__h {
+    font-weight: 600;
+    font-size: clamp(17px, 2.5vw, 20px);
+    line-height: 1.25;
+    margin: 0 0 10px;
+    color: var(--ink);
+  }
+  .cl-item p {
+    color: var(--ink-2);
+    font-size: 18px;
+    line-height: 1.7;
+    margin: 0;
+    max-width: 62ch;
+  }
+  /* heading + body share the right column; before() occupies the left */
+  .cl-item__h,
+  .cl-item p {
+    grid-column: 2;
+  }
+
+  /* ── Cross-link CTA ── */
+  .cl-crosslink {
+    padding: 32px 0 8px;
+    border-top: 1px solid var(--line);
+    margin-top: 32px;
+  }
+  .cl-crosslink .btn {
+    border: 0;
+    display: inline-block;
+  }
+
+  /* ── Hotline footer ── */
+  .lp-crisis {
+    color: var(--ink-3);
+    font-size: 13px;
+    line-height: 1.6;
+    margin-top: 24px;
+  }
+  .lp-crisis strong { color: var(--ink-2); }
+
+  /* ── .evidence badge — local fallback if not in global styles ── */
+  .evidence {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin: 0 0 14px;
+    background: var(--bg-2);
+    color: var(--ink-3);
+    border: 1px solid var(--line);
+  }
+  .evidence--accent {
+    color: var(--accent);
+    border-color: rgba(224, 86, 59, .35);
+    background: rgba(224, 86, 59, .07);
+  }
+
+  /* ── Mobile ── */
+  @media (max-width: 600px) {
+    .cl-item {
+      grid-template-columns: 36px 1fr;
+      gap: 0 12px;
+    }
+    .cl-item::before {
+      font-size: 26px;
+    }
+    .cl-item p {
+      font-size: 17px;
+    }
+  }
+</style>
