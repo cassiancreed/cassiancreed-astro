@@ -4,6 +4,7 @@ description: "Justice doesn't always arrive in a flash. Sometimes it gathers dus
 pubDate: 2026-06-12
 tag: "Explainers"
 featured: false
+cover: "/covers/cf001_house_cover_FINAL.png"
 ---
 
 ## The Ghost in the Machine
