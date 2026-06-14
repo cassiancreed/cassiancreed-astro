@@ -51,11 +51,10 @@ const jsonld = faqNode
   ? { "@context":"https://schema.org", "@graph": [articleNode, faqNode] }
   : { "@context":"https://schema.org", ...articleNode };
 ---
-<Base title={post.data.title} description={post.data.description} jsonld={jsonld} ogImage={post.data.cover ?? `/og/${post.slug}.png`}>
+<Base title={post.data.title} description={post.data.description} jsonld={jsonld} ogImage={`/og/${post.slug}.png`}>
   <article class="post">
     <p class="evidence evidence--accent">{post.data.tag}</p>
     <h1>{post.data.title}</h1>
-{post.data.cover && <figure class="post__hero"><img src={post.data.cover} alt={post.data.coverAlt ?? post.data.title} width="1024" height="1536" loading="eager" /></figure>}
     {isCase && <p class="post__note">A note before you read: this is a true account of real people and a real crime. We tell it with care — centered on the victims, grounded in the record, and without gratuitous detail.</p>}
     {post.data.victim && (
       <aside class="case-facts">
@@ -81,21 +80,6 @@ const jsonld = faqNode
     {isCase && <p class="post__crisis"><strong>If you need support.</strong> 988 Suicide &amp; Crisis Lifeline (call or text 988) · National Domestic Violence Hotline 1-800-799-7233 (text START to 88788) · RAINN 1-800-656-HOPE (4673).</p>}
   </article>
 
-  <div class="wrap"><nav class="share" aria-label="Share this case file">
-    <span class="share__label">Share this case file</span>
-    <a class="share__btn" href={`https://twitter.com/intent/tweet?text=${shareT}&url=${mk('x')}`} target="_blank" rel="noopener noreferrer">X / Twitter</a>
-    <a class="share__btn" href={`https://www.facebook.com/sharer/sharer.php?u=${mk('facebook')}`} target="_blank" rel="noopener noreferrer">Facebook</a>
-    <a class="share__btn" href={`https://www.pinterest.com/pin/create/button/?url=${mk('pinterest')}&description=${shareT}`} target="_blank" rel="noopener noreferrer">Pinterest</a>
-    <a class="share__btn" href={`https://bsky.app/intent/compose?text=${shareT}%20${mk('bluesky')}`} target="_blank" rel="noopener noreferrer">Bluesky</a>
-  </nav></div>
-
-  {related.length > 0 && (
-  <div class="wrap"><section class="related" aria-label="Related case files">
-    <h2>Related case files</h2>
-    <ul class="related__list">{related.map(r => <li><a href={`/post/${r.slug}/`}>{r.title}</a></li>)}</ul>
-  </section></div>
-  )}
-
   <div class="wrap"><section class="convert" id="subscribe">
     <div class="convert__grid">
       <div class="convert__capture">
@@ -119,6 +103,21 @@ const jsonld = faqNode
       </aside>
     </div>
   </section></div>
+
+  <div class="wrap"><nav class="share" aria-label="Share this case file">
+    <span class="share__label">Share this case file</span>
+    <a class="share__btn" href={`https://twitter.com/intent/tweet?text=${shareT}&url=${mk('x')}`} target="_blank" rel="noopener noreferrer">X / Twitter</a>
+    <a class="share__btn" href={`https://www.facebook.com/sharer/sharer.php?u=${mk('facebook')}`} target="_blank" rel="noopener noreferrer">Facebook</a>
+    <a class="share__btn" href={`https://www.pinterest.com/pin/create/button/?url=${mk('pinterest')}&description=${shareT}`} target="_blank" rel="noopener noreferrer">Pinterest</a>
+    <a class="share__btn" href={`https://bsky.app/intent/compose?text=${shareT}%20${mk('bluesky')}`} target="_blank" rel="noopener noreferrer">Bluesky</a>
+  </nav></div>
+
+  {related.length > 0 && (
+  <div class="wrap"><section class="related" aria-label="Related case files">
+    <h2>Related case files</h2>
+    <ul class="related__list">{related.map(r => <li><a href={`/post/${r.slug}/`}>{r.title}</a></li>)}</ul>
+  </section></div>
+  )}
 </Base>
 
 <style>
@@ -149,5 +148,4 @@ const jsonld = faqNode
   .convert__book-btn{align-self:flex-start}
   .convert__book-alt{display:inline-block;margin-top:10px;font-size:13px;text-decoration:none;color:var(--ink-2)}
   .convert__book-alt:hover{color:var(--accent,#e0563b)}
-.post__hero{margin:18px 0 6px}.post__hero img{width:100%;height:auto;max-height:340px;object-fit:cover;object-position:center 40%;border-radius:12px;display:block}
 </style>
