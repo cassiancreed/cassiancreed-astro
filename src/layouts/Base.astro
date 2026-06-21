@@ -97,5 +97,43 @@ const personLd = {
     <span class="site-foot__note">Sourced · victim-centered · no gratuitous detail.</span>
     <span class="site-foot__social"><a href="/explainers/">Explainers</a> · <a href="/case-solver/">Case Solver</a> · <a href="/forensic-tools/">Forensic Tools</a> · <a href="/safety/">Stay Safe</a> · <a href="/support/">Support</a> · <a href="/about/">About</a> · <a href="https://x.com/CassianCreed" rel="me">Follow on X</a> · <a href="https://cassiancreed.beehiiv.com/subscribe?utm_source=website&utm_medium=footer&utm_campaign=free_case_files">Free newsletter</a></span>
   </div></footer>
+  <script is:inline>
+  (function(){
+    // Gumroad buy tracking — fires on any gumroad.com link click
+    document.addEventListener('click',function(e){
+      var a=e.target.closest('a');
+      if(a&&a.href&&a.href.includes('gumroad.com')){
+        if(typeof gtag!=='undefined'){
+          gtag('event','buy_cta_click',{link_url:a.href});
+          gtag('event','begin_checkout',{currency:'USD'});
+        }
+      }
+    });
+    // GA4 sign_up — fires when Beehiiv redirects to /?subscribed=1
+    if(window.location.search.includes('subscribed=1')){
+      function fs(){if(typeof gtag!=='undefined'){gtag('event','sign_up',{method:'beehiiv'});}}
+      if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',fs);}else{fs();}
+    }
+  })();
+  </script>
+  <script is:inline>
+  (function(){
+    // Gumroad buy tracking
+    document.addEventListener('click',function(e){
+      var a=e.target.closest('a');
+      if(a&&a.href&&a.href.includes('gumroad.com')){
+        if(typeof gtag!=='undefined'){
+          gtag('event','buy_cta_click',{link_url:a.href});
+          gtag('event','begin_checkout',{currency:'USD'});
+        }
+      }
+    });
+    // GA4 sign_up — fires when Beehiiv redirects back with ?subscribed=1
+    if(window.location.search.includes('subscribed=1')){
+      function fs(){if(typeof gtag!=='undefined'){gtag('event','sign_up',{method:'beehiiv'});}}
+      if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',fs);}else{fs();}
+    }
+  })();
+  </script>
 </body>
 </html>
