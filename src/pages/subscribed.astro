@@ -1,1 +1,28 @@
-
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="You're subscribed — Cassian Creed" description="You're now subscribed to The Case Files — victim-first true crime, every Sunday.">
+  <article class="post">
+    <p class="evidence evidence--accent">Subscribed</p>
+    <h1>You're in.</h1>
+    <div class="post__content">
+      <p>Welcome to The Case Files. Every Sunday: a sourced, victim-first case dossier built on court records. No gratuitous detail. Every victim named in life first.</p>
+      <p>Check your inbox to confirm your subscription. Not there? Check spam and mark us safe.</p>
+      <p><a href="/post/the-taylor-parker-case-the-murder-of-reagan-simmons-hancock-and-where-it-stands-now/">Start here: The Taylor Parker Case →</a></p>
+    </div>
+  </article>
+  <script is:inline>
+    (function() {
+      function fireSignUp() {
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'sign_up', { method: 'beehiiv' });
+        }
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', fireSignUp);
+      } else {
+        fireSignUp();
+      }
+    })();
+  </script>
+</Base>
