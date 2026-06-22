@@ -2,7 +2,7 @@
 title: "The Gilgo Beach Murders: When Science Unravels a Decades-Long Nightmare"
 description: "For thirteen years, Rex Heuermann evaded justice while the only evidence sat useless in a lab. Then whole genome sequencing caught up with him — via a discarded pizza crust."
 pubDate: 2026-06-21
-tag: true-crime
+tag: "Case Files"
 featured: false
 ---
 
