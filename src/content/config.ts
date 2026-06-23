@@ -5,7 +5,7 @@ const posts = defineCollection({
     title: z.string(),
     description: z.string().optional(),
     pubDate: z.coerce.date(),
-    tag: z.enum(['Case Files', 'Explainers']).default('Case Files'),
+    tag: z.enum(['Case Files', 'Explainers', 'Verdict']).default('Case Files'),
     featured: z.boolean().default(false),
     victim: z.string().optional(),
     incidentDate: z.string().optional(),
