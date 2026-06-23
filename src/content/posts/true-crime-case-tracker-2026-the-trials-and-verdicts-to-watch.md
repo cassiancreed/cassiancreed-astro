@@ -6,7 +6,11 @@ tag: "Case Files"
 featured: false
 ---
 
-The cases worth following, kept current. This is our running watchlist of the most-followed U.S. criminal cases — trials about to start, verdicts pending, sentencings on the calendar, and appeals that could reopen settled questions. We write victim-first: every case here is, first, about the people who were lost. Everyone charged but not yet convicted is presumed innocent. Bookmark this page and check back — the calendar moves. Last verified: June 2, 2026.
+The cases worth following, kept current. This is our running watchlist of the most-followed U.S. criminal cases — trials about to start, verdicts pending, sentencings on the calendar, and appeals that could reopen settled questions. We write victim-first: every case here is, first, about the people who were lost. Everyone charged but not yet convicted is presumed innocent. Bookmark this page and check back — the calendar moves. Last verified: June 23, 2026.
+
+## Etan Patz — conviction reinstated by the U.S. Supreme Court, June 22, 2026
+
+Victim: Etan Patz, 6, who vanished on May 25, 1979 during his first solo walk to the school bus in SoHo, Manhattan, and became the original "milk carton kid." Status: Pedro Hernandez, convicted in 2017, had his conviction reinstated 6-3 by the U.S. Supreme Court on June 22, 2026 under AEDPA; he continues to serve 25 years to life. What's next: the case is now closed; Hernandez was denied a new trial. Why it matters: a decades-long disappearance that reshaped how America searches for missing children reaches a final legal resolution. Read the full case file.
 
 ## Rex Heuermann (Gilgo Beach) — sentencing June 17, 2026
 
