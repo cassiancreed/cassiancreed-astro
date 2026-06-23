@@ -117,3 +117,4 @@ Sentencing is scheduled for July 22, 2026, at Snohomish County Superior Court. F
 When the Geary family heard each guilty verdict read on June 22, they shed tears and held hands.
 
 Sentencing is set for July 22. Follow NEP at [cassiancreed.com](https://cassiancreed.com) for updates.
+
