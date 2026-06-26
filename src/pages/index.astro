@@ -3,8 +3,14 @@ import Base from '../layouts/Base.astro';
 import { getCollection } from 'astro:content';
 const posts = (await getCollection('posts')).sort((a,b)=> b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 const featured = posts.find(p=>p.data.featured) || posts[0];
-const rest = posts.filter(p=> featured && p.slug!==featured.slug);
+const rest = posts.filter(p=> featured && p.slug!==featured.slug).slice(0,8);
 const short = (t)=> t.split(':')[0];
+const books = [
+  { title:"The Trail", series:"Case File 001", sub:"The Murder of Rachel Morin", theme:"rust", price:"$5.99", buy:"https://cassiancreed.beehiiv.com/products/the-trail-the-murder-of-rachel-morin?utm_source=website&utm_medium=home_shelf&utm_campaign=the_trail" },
+  { title:"No Accident", series:"Case File 002", sub:"The Mackenzie Shirilla Story", theme:"steel", price:"$5.99", buy:"https://cassiancreed.beehiiv.com/products/no-accident-the-mackenzie-shirilla-story?utm_source=website&utm_medium=home_shelf&utm_campaign=no_accident" },
+  { title:"The Frame", series:"Case File 004", sub:"The Brendan Banfield Story", theme:"moss", price:"$5.99", buy:"https://cassiancreed.beehiiv.com/products/the-frame?utm_source=website&utm_medium=home_shelf&utm_campaign=the_frame" },
+  { title:"Down the Hill", series:"Case File 005", sub:"The Delphi Murders", theme:"slate", price:"$5.99", buy:"https://creedcaster5.gumroad.com/l/snagtm?utm_source=website&utm_medium=home_shelf&utm_campaign=down_the_hill" }
+];
 const jsonld = {
   "@context": "https://schema.org",
   "@graph": [
@@ -17,17 +23,17 @@ const jsonld = {
   <section class="hero">
     <div class="wrap">
       <div class="hero__copy">
-        <p class="evidence evidence--accent">Free case file — the murder of Rachel Morin</p>
+        <p class="evidence evidence--accent">Sourced true crime &middot; victim-first</p>
         <h1>True crime that respects the victims.</h1>
-        <p class="hero__lede">Sourced case files for readers who want to understand cases, not consume them. Every victim named in life first — and with each one, what it teaches about keeping you and the people you love safe.</p>
+        <p class="hero__lede">Full, primary-source case files for readers who want to understand cases, not consume them. Every victim named in life first &mdash; and with each one, what it teaches about keeping the people you love safe.</p>
         <form class="hero__capture" action="https://cassiancreed.beehiiv.com/subscribe" method="get" aria-label="Subscribe free to the Living Edition newsletter">
           <input type="email" name="email" required autocomplete="email" placeholder="you@email.com" aria-label="Your email address" />
           <input type="hidden" name="utm_source" value="website" />
           <input type="hidden" name="utm_medium" value="hero" />
           <input type="hidden" name="utm_campaign" value="living_edition_dossier" />
-          <button class="btn" type="submit">Get the free dossier →</button>
+          <button class="btn" type="submit">Get the free dossier &rarr;</button>
         </form>
-        <p class="hero__trust">Free forever · unsubscribe anytime · <a href="/start-here/">new here? start here →</a></p>
+        <p class="hero__trust">Free forever &middot; unsubscribe anytime &middot; <a href="/start-here/">new here? start here &rarr;</a></p>
         <ul class="hero__chips" aria-label="What makes these case files different">
           <li>Sourced from the public record</li>
           <li>Victims named in life first</li>
@@ -37,16 +43,10 @@ const jsonld = {
       </div>
       <div class="hero__art" aria-hidden="true">
         <div class="dossier">
+          <div class="dossier__card"><span class="dossier__k">Case File</span></div>
+          <div class="dossier__card"><span class="dossier__k">Case File</span></div>
           <div class="dossier__card">
-            <span class="dossier__k">Case File</span>
-            <div class="dossier__lines"><span></span><span></span><span></span></div>
-          </div>
-          <div class="dossier__card">
-            <span class="dossier__k">Case File</span>
-            <div class="dossier__lines"><span></span><span></span><span></span></div>
-          </div>
-          <div class="dossier__card">
-            <span class="dossier__k">Case File · Nº 001</span>
+            <span class="dossier__k">Case File &middot; N&ordm; 001</span>
             <span class="dossier__stamp">Public Record</span>
             <p class="dossier__title">Sourced. Victim-first.</p>
             <div class="dossier__lines"><span></span><span></span><span></span></div>
@@ -57,72 +57,84 @@ const jsonld = {
   </section>
 
   <section class="mission wrap" aria-label="Our mission">
-    <p class="evidence evidence--accent">Why we do this</p>
-    <p class="mission__line">We tell these stories to help the victims — and never to create new ones by helping send an innocent person to prison or ruin a life. That single rule shapes every case file: presumption of innocence, sources you can check, and people remembered as more than how they died.</p>
+    <p class="evidence">Why we do this</p>
+    <p class="mission__line">We tell these stories to help the victims &mdash; and never to create new ones by helping send an innocent person to prison or ruin a life. That single rule shapes every case file: presumption of innocence, sources you can check, and people remembered as more than how they died.</p>
   </section>
 
   {featured && (
-    <div class="feature wrap">
+  <section class="wrap" aria-label="Latest case file">
+    <a class="feature" href={`/post/${featured.slug}/`}>
       <div>
-        <span class="evidence evidence--accent">Latest case file</span>
+        <p class="evidence evidence--accent">Latest case file</p>
         <h2>{featured.data.title}</h2>
         <p>{featured.data.description}</p>
-        <a class="btn" href={`/post/${featured.slug}/`}>Read the case →</a>
+        <span class="btn btn--ghost">Read the case &rarr;</span>
       </div>
-      <a class="feature__cover" href={`/post/${featured.slug}/`}><span>{short(featured.data.title)}</span></a>
-    </div>
+      <div class="feature__cover"><span>{short(featured.data.title)}</span></div>
+    </a>
+  </section>
   )}
 
-  <section class="wrap">
-    <h2 class="section-title"><span>The Case Files</span><span class="evidence">{posts.length} titles</span></h2>
+  <section class="wrap shop" aria-label="Buy the books">
+    <div class="section-title">
+      <span>The Case Files Library</span>
+      <a class="evidence evidence--accent" href="/books/">All books &rarr;</a>
+    </div>
+    <p class="shop__lede">Full-length, primary-source case files &mdash; each one carrying an exclusive A.I. AL Case Analysis you won't find in the free articles. Complete ebooks, $5.99 each.</p>
+    <div class="shop__shelf">
+      {books.map(b => (
+      <div class={`shopbk shopbk--${b.theme}`}>
+        <div class="shopbk__cover">
+          <span class="shopbk__series">{b.series}</span>
+          <span class="shopbk__title">{b.title}</span>
+          <span class="shopbk__sub">{b.sub}</span>
+          <span class="shopbk__seal">A.I. AL</span>
+        </div>
+        <a class="btn shopbk__buy" href={b.buy}>Buy the ebook &mdash; {b.price} &rarr;</a>
+      </div>
+      ))}
+    </div>
+    <div class="bundle">
+      <div>
+        <p class="evidence" style="color:#5fae7e">Best value</p>
+        <p class="bundle__t">Get the <strong>Case Files Collection</strong> &mdash; The Trail + No Accident, both complete with their A.I. AL analyses &mdash; for <strong>$8.99</strong> instead of $11.98.</p>
+      </div>
+      <a class="btn" href="https://creedcaster5.gumroad.com/l/jhgmwj?utm_source=website&utm_medium=home_bundle&utm_campaign=case_files_collection">Get the Collection &mdash; $8.99 &rarr;</a>
+    </div>
+  </section>
+
+  <section class="wrap" aria-label="Free case files">
+    <div class="section-title">
+      <span>Read free first</span>
+      <span class="evidence">{posts.length} case files</span>
+    </div>
     <div class="grid">
       {rest.map((p, i) => (
-        <a class="card" href={`/post/${p.slug}/`}>
-                    <div class="card__tile" style={p.data.cover ? `background-image:linear-gradient(rgba(10,14,26,.30),rgba(10,14,26,.78)),url(${p.data.cover});background-size:cover;background-position:center 32%` : undefined}>
-            <div class="tile__top"><span class="tile__no">Nº {String(i+1).padStart(2,'0')}</span><span class="tile__tag">{p.data.tag}</span></div>
-            <h3 class="card__title">{short(p.data.title)}</h3>
+      <a class="card" href={`/post/${p.slug}/`}>
+        <div class="card__tile">
+          <div class="tile__top">
+            <span class="tile__no">N&ordm; {String(i+1).padStart(2,'0')}</span>
+            <span class="tile__tag">{p.data.tag}</span>
           </div>
-        </a>
+          <h3 class="card__title">{short(p.data.title)}</h3>
+        </div>
+      </a>
       ))}
     </div>
   </section>
 
-  <section class="books-promo wrap" aria-label="The Case Files Library — full books">
-    <p class="evidence evidence--accent">The Case Files Library</p>
-    <h2 class="books-promo__heading">Complete books — $5.99 each</h2>
-    <div class="books-promo__shelf">
-      <a class="books-promo__item" href="/books/">
-        <img src="/covers/the-trail.jpg" width="150" alt="Book cover of The Trail by Cassian Creed" />
-      </a>
-      <a class="books-promo__item" href="/books/">
-        <img src="/covers/down-the-hill.jpg" width="150" alt="Book cover of Down the Hill by Cassian Creed" />
-      </a>
-      <a class="books-promo__item" href="/books/">
-        <img src="/covers/the-frame.jpg" width="150" alt="Book cover of The Frame by Cassian Creed" />
-      </a>
+  <section class="wrap" id="subscribe">
+    <div class="subscribe">
+      <p class="evidence evidence--accent">The Living Edition</p>
+      <h2>Get the free case dossier &mdash; every Sunday</h2>
+      <p>Each dossier lays out the full timeline, the primary-source records, and the safety takeaways for the cases everyone is asking about &mdash; victims named in life first, no gratuitous detail. Plus first word the day each new book drops. Free; unsubscribe anytime.</p>
+      <form action="https://cassiancreed.beehiiv.com/subscribe" method="get" aria-label="Subscribe free to the Living Edition newsletter">
+        <input type="email" name="email" required autocomplete="email" placeholder="you@email.com" aria-label="Your email address" />
+        <input type="hidden" name="utm_source" value="website" />
+        <input type="hidden" name="utm_medium" value="home_cta" />
+        <input type="hidden" name="utm_campaign" value="living_edition_dossier" />
+        <button class="btn" type="submit">Get the free dossier &rarr;</button>
+      </form>
     </div>
-    <p class="books-promo__bundle">Or get the full <strong>Case Files Collection</strong> bundle — all three titles — for <strong>$8.99</strong>.</p>
-    <a class="btn" href="/books/">Browse the full library →</a>
-  </section>
-
-  <section class="subscribe wrap" id="subscribe">
-    <h2>Get the free Living Edition case dossier — every Sunday</h2>
-    <p>Each dossier lays out the full timeline, the primary-source records, and the safety takeaways for the cases everyone is asking about — victims named in life first, no gratuitous detail. Enter your email; it is free and you can unsubscribe anytime.</p>
-    <form action="https://cassiancreed.beehiiv.com/subscribe" method="get" aria-label="Subscribe to the free Cassian Creed newsletter">
-      <input type="email" name="email" required autocomplete="email" placeholder="you@email.com" aria-label="Your email address" />
-      <input type="hidden" name="utm_source" value="website" />
-      <input type="hidden" name="utm_medium" value="home_cta" />
-      <input type="hidden" name="utm_campaign" value="living_edition_dossier" />
-      <button class="btn" type="submit">Get the free dossier →</button>
-    </form>
   </section>
 </Base>
-
-<style>
-  .books-promo{padding:56px 0 48px;border-top:1px solid var(--line)}
-  .books-promo__heading{font-family:var(--serif);font-weight:600;font-size:26px;margin:8px 0 28px}
-  .books-promo__shelf{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:20px}
-  .books-promo__item img{display:block;border-radius:4px;box-shadow:0 4px 18px rgba(0,0,0,.55);transition:transform .15s}
-  .books-promo__item:hover img{transform:translateY(-3px)}
-  .books-promo__bundle{color:var(--ink-2);font-size:15px;margin:0 0 20px}
-</style>
