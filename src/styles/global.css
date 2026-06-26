@@ -453,3 +453,7 @@ input[type=email]:focus-visible{outline:2px solid var(--accent);outline-offset:2
 .author__role{font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--ink-3);text-transform:uppercase;margin:0 0 16px}
 .author__bio{color:var(--ink-2);max-width:62ch;margin:0 0 22px}
 .mechanics,.living,.author{padding:8px 24px 8px}
+
+/* When a real cover image is present, let the art stand alone (2026-06-26) */
+.shopbk__cover:has(.shopbk__img) .shopbk__series,.shopbk__cover:has(.shopbk__img) .shopbk__seal{display:none}
+.shopbk__cover:has(.shopbk__img)::before{background:linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(0,0,0,.35) 100%)}
