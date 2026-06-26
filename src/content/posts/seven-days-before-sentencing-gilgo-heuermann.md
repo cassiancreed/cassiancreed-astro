@@ -8,12 +8,16 @@ victim: "Melissa Barthelemy, Maureen Brainard-Barnes, Megan Waterman, Amber Lynn
 incidentDate: ""
 location: "Gilgo Beach, New York"
 jurisdiction: "Suffolk County, New York"
-status: "Rex Heuermann guilty plea Apr 8 2026 (7 counts + 1 admitted); sentencing Jun 17 2026"
+status: "Rex Heuermann sentenced June 17, 2026 to life in prison without parole (guilty plea Apr 8 2026; 7 counts + 1 admitted)"
 cover: "/covers/the-gilgo-blueprint.jpg"
 coverAlt: "Cover art for The Gilgo Blueprint: Rex Heuermann and the Forensic Revolution by Neural Edge Publishing."
 ---
 
 *Published June 10, 2026 · Neural Edge Publishing · Cassian Creed*
+
+<div class="post__updates">
+<p><strong>Update — as of June 26, 2026:</strong> The sentencing has happened. On June 17, 2026, Rex Heuermann was sentenced to life in prison without the possibility of parole, and the victims' families delivered impact statements in court. This post was published before that date as part of our seven-day coverage; the original countdown framing is preserved below for the record. For the confirmed sentencing outcome, see <a href="/blog/rex-heuermann-sentencing-june-17-what-the-plea-established/">Rex Heuermann Sentenced: What the Plea Established</a>.</p>
+</div>
 
 ---
 
