@@ -80,8 +80,35 @@ const jsonld = {
       <span>The Case Files Library</span>
       <a class="evidence evidence--accent" href="/books/">All books &rarr;</a>
     </div>
-    <p class="shop__lede">Full-length, primary-source case files &mdash; each one carrying an exclusive A.I. AL Case Analysis you won't find in the free articles. Complete ebooks, $5.99 each.</p>
-    <div class="shop__shelf">
+<p class="shop__lede">Full-length, primary-source case files &mdash; each one carrying an exclusive A.I. AL Case Analysis you won't find in the free articles. Complete ebooks, $5.99 each.</p>
+
+<ul class="benefits" aria-label="Why buy the books">
+  <li class="benefit">
+    <span class="benefit__k">Exclusive analysis</span>
+    <p class="benefit__t">Every book runs the case through <strong>A.I. AL</strong> &mdash; the forensic X-modules that surface insights the free articles never include.</p>
+  </li>
+  <li class="benefit">
+    <span class="benefit__k">The complete case</span>
+    <p class="benefit__t">Full timeline, primary-source records, and the people at the center &mdash; not a thread, not a recap. The whole story, in one place.</p>
+  </li>
+  <li class="benefit">
+    <span class="benefit__k">Sourced &amp; verified</span>
+    <p class="benefit__t">Every claim tied to the public record and re-checked before publish. Where a verdict is under appeal, we say so &mdash; and we correct what we get wrong.</p>
+  </li>
+  <li class="benefit">
+    <span class="benefit__k">Read it your way</span>
+    <p class="benefit__t">Instant ebook download, yours to keep, plus a companion audio episode for select titles. Under $6 &mdash; less than a coffee.</p>
+  </li>
+  <li class="benefit">
+    <span class="benefit__k">Victim-first, no filler</span>
+    <p class="benefit__t">Victims named in life first and remembered as more than how they died. No gore, no padding, no true-crime exploitation.</p>
+  </li>
+  <li class="benefit">
+    <span class="benefit__k">Support the work</span>
+    <p class="benefit__t">Buying directly funds independent, sourced reporting from Neural Edge Publishing &mdash; and the next case file.</p>
+  </li>
+</ul>
+        <div class="shop__shelf">
       {books.map(b => (
       <div class={`shopbk shopbk--${b.theme}`}>
         <div class="shopbk__cover">
