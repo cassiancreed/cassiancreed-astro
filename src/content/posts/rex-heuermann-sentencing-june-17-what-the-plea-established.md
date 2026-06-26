@@ -1,21 +1,30 @@
 ---
-title: "Rex Heuermann Sentencing June 17: What the Plea Established — and What Comes Next"
-description: "Rex Heuermann pleaded guilty on April 8, 2026 to murdering seven women in the Gilgo Beach serial killings. His sentencing is set for June 17. Here is what the plea established, what the victims' families faced in court, and what will happen on the 17th."
+title: "Rex Heuermann Sentenced in the Gilgo Beach Murders: What the Plea Established and What Comes Next"
+description: "On June 17, 2026, Rex Heuermann was sentenced to life in prison without parole in the Gilgo Beach serial killings, after pleading guilty April 8 to murdering seven women. Here is what the plea established, what the victims' families said in court, and what comes next."
 pubDate: 2026-06-10
+updatedDate: 2026-06-26
 tag: "Case Files"
 featured: false
 victim: "Melissa Barthelemy, Megan Waterman, Amber Costello, Maureen Brainard-Barnes, Sandra Costilla, Jessica Taylor, Valerie Mack"
 incidentDate: "1993–2010"
 location: "Gilgo Beach, Long Island, New York"
 jurisdiction: "Suffolk County, New York"
-status: "Guilty plea entered April 8, 2026; sentencing June 17, 2026"
+status: "Pleaded guilty April 8, 2026; sentenced June 17, 2026 to life in prison without parole; appeal available"
 ---
 
 They were daughters, sisters, mothers. They disappeared across almost two decades on Long Island, and for years their families had no answers — only the place where their remains were found, along a desolate stretch of Ocean Parkway near Gilgo Beach.
 
 On April 8, 2026, in a Suffolk County courtroom, a man named Rex Heuermann stood and said he killed them. Seven by formal guilty plea. An eighth — Karen Vergata — acknowledged in his own words before the court.
 
-On June 17, 2026, he will be sentenced. This is what you need to know before that day.
+On June 17, 2026, he was sentenced. This is the record of what the plea established and what the day decided.
+
+<div class="post__updates">
+<p>What's changed</p>
+
+- **Jun 17, 2026** — Heuermann was sentenced to life in prison without the possibility of parole. Victims' family members delivered impact statements in court.
+- **Apr 8, 2026** — Heuermann pleaded guilty to murdering seven women and admitted causing the death of an eighth, Karen Vergata.
+
+</div>
 
 ---
 
@@ -30,7 +39,7 @@ On June 17, 2026, he will be sentenced. This is what you need to know before tha
 | **Additional admission** | Karen Vergata (not charged; admitted in open court) |
 | **Remains found** | Gilgo Beach area, Ocean Parkway, Suffolk County |
 | **Span of killings** | 1993–2010 |
-| **Sentencing date** | June 17, 2026 |
+| **Sentenced** | June 17, 2026 — life without parole |
 
 ---
 
@@ -46,18 +55,18 @@ The plea was, prosecutors said, the defendant's own decision. There was no negot
 
 ---
 
-## What June 17 Will Decide
+## What June 17 Decided
 
 New York does not have the death penalty. The maximum sentence available is life imprisonment without the possibility of parole.
 
-On June 17, the Suffolk County Court is expected to impose:
+On June 17, the Suffolk County Court imposed:
 
 - **Three consecutive life sentences without the possibility of parole** for the murders of Barthelemy, Waterman, and Costello (the first-degree counts)
 - **A consecutive term of 100 years to life** for the murders of Brainard-Barnes, Costilla, Taylor, and Mack (the second-degree counts)
 
-The sentences would run consecutively — one after another, not at the same time. In practical terms, Heuermann, 61, will die in prison. The structure matters nonetheless: consecutive life terms are the court's formal record of seven distinct women, seven distinct crimes.
+The sentences run consecutively — one after another, not at the same time. In practical terms, Heuermann, 61, will die in prison. The structure matters nonetheless: consecutive life terms are the court's formal record of seven distinct women, seven distinct crimes.
 
-Victims' family members will have the opportunity to deliver impact statements. Those statements are among the most significant moments of any sentencing — not for their effect on the outcome, which is already effectively determined, but because they are the first time many of these families have the floor.
+Victims' family members delivered impact statements in court. Those statements were among the most significant moments of the sentencing — not for their effect on the outcome, which was already effectively determined, but because they were the first time many of these families had the floor.
 
 ---
 
@@ -83,18 +92,18 @@ Their families sat in that courtroom on April 8 as Heuermann spoke. Some wept. T
 
 ---
 
-## What to Watch on June 17
+## What the Sentencing Confirmed
 
-- **Impact statements**: family members of the victims are expected to speak. Their statements will be the emotional record of this sentencing.
-- **Whether the expected sentence is imposed exactly as structured**: no indication exists of any deviation, but the formal imposition is the record.
-- **Heuermann's FBI cooperation**: investigators have said the behavioral analysis cooperation is meaningful — any indication of progress on that front may surface in court filings or statements.
-- **Jane Doe No. 6**: this case remains open. The sentencing will not resolve it, but watch for any comment from prosecutors on its status.
+- **The sentence:** life in prison without the possibility of parole, imposed as the consecutive structure the plea pointed to. There was no deviation.
+- **The families had the floor:** victims' relatives delivered impact statements — for many, the first time they had spoken in court.
+- **FBI cooperation continues:** under the plea, Heuermann agreed to cooperate with the Behavioral Analysis Unit; any progress would surface in future filings.
+- **Jane Doe No. 6 remains open:** the sentencing did not resolve that uncharged matter.
 
 ---
 
 ## Frequently Asked Questions
 
-**When is Rex Heuermann being sentenced?**
+**When was Rex Heuermann sentenced?**
 June 17, 2026, in Suffolk County Court, Long Island, New York.
 
 **What did Rex Heuermann plead guilty to?**
