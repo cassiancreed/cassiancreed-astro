@@ -422,3 +422,9 @@ input[type=email]:focus-visible{outline:2px solid var(--accent);outline-offset:2
 .benefit__t{margin:0;font-size:14.5px;line-height:1.55;color:var(--ink-2)}
 .benefit__t strong{color:var(--ink)}
 @media(prefers-reduced-motion:reduce){.benefit:hover{transform:none}}
+
+/* ===== Book cover images on shelf (2026-06-25) ===== */
+.shopbk__cover{overflow:hidden}
+.shopbk__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.shopbk__cover::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(0,0,0,.15) 0%,rgba(0,0,0,.05) 45%,rgba(0,0,0,.78) 100%)}
+.shopbk__series,.shopbk__title,.shopbk__sub,.shopbk__seal{position:relative;z-index:2}
