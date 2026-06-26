@@ -3,7 +3,7 @@ import Base from '../layouts/Base.astro';
 import { getCollection } from 'astro:content';
 export async function getStaticPaths() {
   return [
-    { params: { category: 'case-files' }, props: { tag: 'Case Files', label: 'Case Files' } },
+    { params: { category: 'case-files' }, props: { tag: 'Case Files', label: 'Blog' } },
     { params: { category: 'explainers' }, props: { tag: 'Explainers', label: 'Explainers' } },
   ];
 }
