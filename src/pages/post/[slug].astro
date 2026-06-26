@@ -27,7 +27,8 @@ const articleNode = {
   "author":{"@type":"Organization","name":"Cassian Creed"},
   "publisher":{"@type":"Organization","name":"Neural Edge Publishing"},
   "mainEntityOfPage": new URL(Astro.url.pathname, Astro.site).href,
-  "articleSection": post.data.tag
+  "articleSection": post.data.tag,
+"dateModified": (post.data.updatedDate ?? post.data.pubDate).toISOString().slice(0,10)
 };
 // Auto-derive FAQPage from an on-page "Frequently Asked Questions"/"FAQ" section.
 // Mirrors only visible Q&A text (Google structured-data guideline); emits nothing if absent.
@@ -55,6 +56,7 @@ const jsonld = faqNode
   <article class="post">
     <p class="evidence evidence--accent">{post.data.tag}</p>
     <h1>{post.data.title}</h1>
+<p class="post__dates"><time datetime={post.data.pubDate.toISOString().slice(0,10)}>Published {post.data.pubDate.toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'})}</time>{post.data.updatedDate && <> · <time datetime={post.data.updatedDate.toISOString().slice(0,10)}>Updated {post.data.updatedDate.toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'})}</time></>}</p>
     {isCase && <p class="post__note">A note before you read: this is a true account of real people and a real crime. We tell it with care — centered on the victims, grounded in the record, and without gratuitous detail.</p>}
     {post.data.victim && (
       <aside class="case-facts">
