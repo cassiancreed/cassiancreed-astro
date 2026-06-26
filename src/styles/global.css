@@ -399,3 +399,26 @@ input[type=email]:focus-visible{outline:2px solid var(--accent);outline-offset:2
 .bundle__t{margin:6px 0 0;font-size:15px;max-width:54ch;color:var(--ink-2)}
 .bundle__t strong{color:var(--ink)}
 @media(prefers-reduced-motion:reduce){.shopbk:hover .shopbk__cover{transform:none}}
+
+
+/* ===== WHY BUY — features & benefits grid (2026-06-25) ============== */
+.benefits{
+  list-style:none;margin:0 0 26px;padding:0;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:14px;
+}
+@media(max-width:760px){.benefits{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.benefits{grid-template-columns:1fr}}
+.benefit{
+  background:var(--bg-2);border:1px solid var(--line);border-radius:10px;
+  padding:16px 18px;border-left:2px solid var(--accent);
+  transition:border-color .18s,transform .18s;
+}
+.benefit:hover{border-color:rgba(232,93,61,.5);transform:translateY(-2px)}
+.benefit__k{
+  display:block;font-family:var(--mono);font-size:11px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--accent);margin:0 0 7px;
+}
+.benefit__k::before{content:"✓ ";font-weight:700}
+.benefit__t{margin:0;font-size:14.5px;line-height:1.55;color:var(--ink-2)}
+.benefit__t strong{color:var(--ink)}
+@media(prefers-reduced-motion:reduce){.benefit:hover{transform:none}}
