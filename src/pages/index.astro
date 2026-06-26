@@ -114,8 +114,8 @@ const jsonld = {
         <div class="shopbk__cover">
 {b.cover && <img class="shopbk__img" src={b.cover} alt={b.coverAlt} loading="lazy" />}
           <span class="shopbk__series">{b.series}</span>
-          <span class="shopbk__title">{b.title}</span>
-          <span class="shopbk__sub">{b.sub}</span>
+                      {!b.cover && <span class="shopbk__title">{b.title}</span>}
+            {!b.cover && <span class="shopbk__sub">{b.sub}</span>}
           <span class="shopbk__seal">A.I. AL</span>
         </div>
         <a class="btn shopbk__buy" href={b.buy}>Buy the ebook &mdash; {b.price} &rarr;</a>
@@ -130,6 +130,36 @@ const jsonld = {
       <a class="btn" href="https://creedcaster5.gumroad.com/l/jhgmwj?utm_source=website&utm_medium=home_bundle&utm_campaign=case_files_collection">Get the Collection &mdash; $8.99 &rarr;</a>
     </div>
   </section>
+
+    <section class="wrap mechanics" id="case-mechanics" aria-label="Case mechanics">
+      <div class="section-title">
+        <span>Case mechanics</span>
+        <span class="evidence">How the analysis works</span>
+      </div>
+      <p class="mechanics__lede">Every case file separates what the record proves from what is still open — and labels our own reading as analysis, never verdict. Here is the structure behind each one.</p>
+      <div class="mechanics__grid">
+        <div class="mechx mechx--known">
+          <span class="mechx__tag">What we know</span>
+          <p>Facts tied to the public record: court filings, verdicts, charging documents, and contemporaneous reporting — each one checkable.</p>
+        </div>
+        <div class="mechx mechx--open">
+          <span class="mechx__tag">What we don't know</span>
+          <p>Open questions and disputed points are named plainly. We show our confidence honestly instead of dressing a guess as a fact.</p>
+        </div>
+        <div class="mechx mechx--lens">
+          <span class="mechx__tag">The A.I. AL lens</span>
+          <p>A disclosed, human-overseen analytical read of timeline and evidence — built only from public sources. A lens for understanding, never a claim a case was solved.</p>
+        </div>
+      </div>
+      <div class="matrix" role="table" aria-label="Sample evidence matrix">
+        <div class="matrix__row matrix__row--head" role="row"><span role="columnheader">Evidence</span><span role="columnheader">Status</span><span role="columnheader">Weight</span></div>
+        <div class="matrix__row" role="row"><span role="cell">Forensic genealogy ID</span><span role="cell" class="is-known">Court record</span><span role="cell">High</span></div>
+        <div class="matrix__row" role="row"><span role="cell">Timeline reconstruction</span><span role="cell" class="is-known">Public filing</span><span role="cell">High</span></div>
+        <div class="matrix__row" role="row"><span role="cell">Motive interpretation</span><span role="cell" class="is-open">Analysis</span><span role="cell">Contextual</span></div>
+      </div>
+      <p class="mechanics__note">Sample structure shown for illustration. The full evidence matrix and forensic walkthrough live inside each book's A.I. AL Case Analysis. <a href="/about/">How our analysis works and its limits &rarr;</a></p>
+      <a class="btn" href="/books/?utm_source=website&utm_medium=mechanics&utm_campaign=case_mechanics">See the depth in the books &rarr;</a>
+    </section>
 
   <section class="wrap" aria-label="Free case files">
     <div class="section-title">
@@ -150,6 +180,42 @@ const jsonld = {
       ))}
     </div>
   </section>
+
+    <section class="wrap author" aria-label="About the author">
+      <div class="author__card">
+        <p class="evidence evidence--accent">Who's behind the case files</p>
+        <h2 class="author__name">Cassian Creed</h2>
+        <p class="author__role">Author and independent case analyst, Neural Edge Publishing</p>
+        <p class="author__bio">Cassian Creed writes victim-first true crime built entirely on the public record — court filings, verdicts, and verified reporting. The work separates what is proven from what is disputed, names the people at the center in life first, and corrects what it gets wrong. The analytical reads are produced with A.I. AL, a disclosed, human-overseen method that is not affiliated with law enforcement and never asserts the guilt of anyone not convicted.</p>
+        <a class="btn btn--ghost" href="/about/">Read the method, sourcing &amp; corrections policy &rarr;</a>
+      </div>
+    </section>
+
+    <section class="wrap living" id="living-edition" aria-label="The Living Edition">
+      <div class="section-title">
+        <span>The Living Edition</span>
+        <span class="evidence">Why it's worth coming back</span>
+      </div>
+      <p class="living__lede">Cases don't stop when the headlines do. The Living Edition is the part of Cassian Creed that keeps moving — a maintained layer that tells you when something actually changes.</p>
+      <div class="living__grid">
+        <div class="liv">
+          <span class="liv__tag">Case tracker</span>
+          <h3>A maintained map of where each case stands</h3>
+          <p>Legal status, next court dates, and open threads — kept current against the record, not frozen at publish.</p>
+        </div>
+        <div class="liv">
+          <span class="liv__tag">Verdict-change alerts</span>
+          <h3>Know the moment a case moves</h3>
+          <p>When a verdict lands, an appeal is decided, or a charge changes, you hear it — with the source, in plain language.</p>
+        </div>
+        <div class="liv">
+          <span class="liv__tag">Cross-case patterns</span>
+          <h3>The connections single recaps miss</h3>
+          <p>Recurring essays on the methods, forensics, and patterns that link cases — the analytical thread across the archive.</p>
+        </div>
+      </div>
+      <p class="living__note">Delivered free every Sunday through the Living Edition newsletter. No gratuitous detail, victims named in life first, unsubscribe anytime.</p>
+    </section>
 
   <section class="wrap" id="subscribe">
     <div class="subscribe">
