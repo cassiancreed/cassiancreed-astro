@@ -112,6 +112,7 @@ const jsonld = {
       {books.map(b => (
       <div class={`shopbk shopbk--${b.theme}`}>
         <div class="shopbk__cover">
+{b.cover && <img class="shopbk__img" src={b.cover} alt={b.coverAlt} loading="lazy" />}
           <span class="shopbk__series">{b.series}</span>
           <span class="shopbk__title">{b.title}</span>
           <span class="shopbk__sub">{b.sub}</span>
