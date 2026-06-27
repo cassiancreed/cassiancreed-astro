@@ -9,7 +9,7 @@ incidentDate: 1975
 location: Clinton County, Iowa
 jurisdiction: Clinton County, Iowa
 status: Identified June 2026; homicide investigation active, no arrest announced
-cover: /covers/cheryl-lynn-edwards.jpg
+cover: /covers/generated-image.png
 ---
 
 # Cheryl Lynn Edwards Case Timeline: From Jane Clinton Doe to a Name
