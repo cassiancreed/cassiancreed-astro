@@ -9,7 +9,7 @@ incidentDate: "April 11, 1975"
 location: "Clinton County, Iowa"
 jurisdiction: "Iowa Department of Public Safety; Clinton County Sheriff's Office"
 status: "Identified June 2026; homicide investigation active, no arrest announced"
-cover: "/covers/cheryl-lynn-edwards.jpg"
+cover: "/covers/generated-image.png"
 coverAlt: "Mist rising over the Mississippi River at dawn."
 ---
 
