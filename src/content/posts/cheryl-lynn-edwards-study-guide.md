@@ -9,7 +9,7 @@ incidentDate: "1975"
 location: "Clinton County, Iowa"
 jurisdiction: "Clinton County, Iowa"
 status: "Identified in 2026; homicide investigation active; no arrest announced"
-cover: "/covers/cheryl-lynn-edwards.jpg"
+cover: "/covers/generated-image.png"
 ---
 
 # Study Guide: The Identification of Cheryl Lynn Edwards
