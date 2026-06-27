@@ -7,3 +7,5 @@
 
 # Host canonicalization: www -> apex (added 2026-06-02, canonical fix)
 https://www.cassiancreed.com/*   https://cassiancreed.com/:splat   301!
+
+# trigger redeploy 2026-06-26 (publish generated-image.png cover)
