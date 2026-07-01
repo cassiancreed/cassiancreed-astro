@@ -5,7 +5,7 @@ pubDate: 2026-06-26
 tag: Case Files
 featured: false
 victim: Cheryl Lynn Edwards (formerly Jane Clinton Doe), 15
-incidentDate: 1975
+incidentDate: "1975"
 location: Clinton County, Iowa
 jurisdiction: Clinton County, Iowa
 status: Identified June 2026; homicide investigation active, no arrest announced
