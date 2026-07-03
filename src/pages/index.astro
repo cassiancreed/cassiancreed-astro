@@ -6,7 +6,7 @@ const featured = posts.find(p=>p.data.featured) || posts[0];
 const rest = posts.filter(p=> featured && p.slug!==featured.slug).slice(0,8);
 const short = (t)=> t.split(':')[0];
 const books = [
-  { title:"The Trail", series:"Case File 001", sub:"The Murder of Rachel Morin", theme:"rust", price:"$5.99", onsale:true, sample:"/the-trail/", cover:"/covers/the-trail.jpg", coverAlt:"Book cover of The Trail: The Murder of Rachel Morin", buy:"/books/?utm_source=website&utm_medium=home_shelf&utm_campaign=the_trail#the-trail" },
+  { title:"The Trail", series:"Case File 001", sub:"The Murder of Rachel Morin", theme:"rust", price:"$5.99", onsale:true, sample:"/the-trail/", cover:"/covers/the-trail.jpg", cardCover:"/covers/square-1x1.png", coverAlt:"Book cover of The Trail: The Murder of Rachel Morin", buy:"/books/?utm_source=website&utm_medium=home_shelf&utm_campaign=the_trail#the-trail" },
   { title:"Down the Hill", series:"Case File 005", sub:"The Delphi Murders", theme:"slate", price:"$5.99", onsale:true, sample:"/down-the-hill/", cover:"/covers/down-the-hill.jpg", coverAlt:"Book cover of Down the Hill: The Delphi Murders", buy:"/books/?utm_source=website&utm_medium=home_shelf&utm_campaign=down_the_hill#down-the-hill" },
 ];
 const jsonld = {
@@ -108,9 +108,9 @@ const jsonld = {
 </ul>
         <div class="shop__shelf">
       {books.map(b => (
-      <div class={`shopbk shopbk--${b.theme}`}>
+        <div class={`shopbk shopbk--${b.theme}${b.cardCover ? ' shopbk--square' : ''}`}>
         <div class="shopbk__cover">
-{b.cover && <img class="shopbk__img" src={b.cover} alt={b.coverAlt} loading="lazy" />}
+{b.cover && <img class="shopbk__img" src={b.cardCover || b.cover} alt={b.coverAlt} loading="lazy" />}
           <span class="shopbk__series">{b.series}</span>
                       {!b.cover && <span class="shopbk__title">{b.title}</span>}
             {!b.cover && <span class="shopbk__sub">{b.sub}</span>}
