@@ -35,8 +35,9 @@ const trending = [
           <span class="trend-card__status">{c.status}</span>
           <h2 class="trend-card__title">{c.title}</h2>
           <p class="trend-card__why">{c.why}</p>
-          {c.book && (
-            <span class="trend-card__chip" onclick={`event.preventDefault();event.stopPropagation();window.location='${c.book.href}'`}>{c.book.label}</span>
+          {c.book && (c.book.href && c.book.href.includes('beehiiv.com/products')
+            ? <span class="trend-card__chip" aria-disabled="true">Coming soon — new edition in production</span>
+            : <span class="trend-card__chip" onclick={`event.preventDefault();event.stopPropagation();window.location='${c.book.href}'`}>{c.book.label}</span>
           )}
           <span class="trend-card__cta">Read the case file →</span>
         </a>

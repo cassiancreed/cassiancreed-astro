@@ -131,7 +131,9 @@ const jsonld = [
         <div class="bk__meta">
           <p class="bk__hook">{b.hook}</p>
           <div class="bk__cta">
-            {b.price && <a class="btn bk__buy" href={b.buy} target="_blank" rel="noopener noreferrer">Buy the ebook — {b.price} →</a>}
+            {b.price && (b.buy && b.buy.includes('beehiiv.com/products')
+              ? <span class="btn bk__buy" aria-disabled="true">Coming soon — new edition in production</span>
+              : <a class="btn bk__buy" href={b.buy} target="_blank" rel="noopener noreferrer">Buy the ebook — {b.price} →</a>)}
             {b.buyAlt && <a class="bk__alt" href={b.buyAlt} target="_blank" rel="noopener noreferrer">Also on Gumroad →</a>}
             {b.sample && <a class="bk__alt" href={b.sample}>Look inside (free sample) →</a>}
             {b.listen && <a class="bk__alt" href={b.listen} target="_blank" rel="noopener noreferrer">🎧 Listen to the companion episode →</a>}

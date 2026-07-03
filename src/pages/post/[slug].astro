@@ -75,7 +75,9 @@ const jsonld = faqNode
       <aside class="buybox">
         <p class="buybox__k">The ebook edition</p>
         <p class="buybox__t">Prefer to read offline — or want to support independent, victim-first true crime? Get the complete case file as an ebook.</p>
-        <a class="btn buybox__btn" href={post.data.buyUrl} target="_blank" rel="noopener noreferrer">{post.data.buyPrice ? ("Buy the ebook — " + post.data.buyPrice + " →") : "Buy the ebook →"}</a>
+        {post.data.buyUrl.includes('beehiiv.com/products')
+          ? <span class="btn buybox__btn" aria-disabled="true">Coming soon — new edition in production</span>
+          : <a class="btn buybox__btn" href={post.data.buyUrl} target="_blank" rel="noopener noreferrer">{post.data.buyPrice ? ("Buy the ebook — " + post.data.buyPrice + " →") : "Buy the ebook →"}</a>}
         {post.data.buyUrlAlt && <a class="buybox__alt" href={post.data.buyUrlAlt} target="_blank" rel="noopener noreferrer">Also available on Gumroad →</a>}
       </aside>
     )}
