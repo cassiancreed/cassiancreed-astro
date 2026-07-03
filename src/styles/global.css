@@ -379,6 +379,7 @@ input[type=email]:focus-visible{outline:2px solid var(--accent);outline-offset:2
   display:flex;flex-direction:column;color:#f5efe8;isolation:isolate;
   box-shadow:0 16px 36px -18px rgba(0,0,0,.85);transition:transform .18s,box-shadow .18s;
 }
+.shopbk--square .shopbk__cover{aspect-ratio:1/1}
 .shopbk:hover .shopbk__cover{transform:translateY(-4px);box-shadow:0 22px 46px -18px rgba(0,0,0,.9)}
 .shopbk__cover::after{content:"";position:absolute;inset:8px;border:1px solid rgba(255,255,255,.14);border-radius:4px;pointer-events:none}
 .shopbk--rust .shopbk__cover{background:linear-gradient(150deg,#7a2417,#c9472b 55%,#e85d3d)}
