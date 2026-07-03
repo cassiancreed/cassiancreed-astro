@@ -6,6 +6,7 @@ const books = [
     hook: "A mother of five walked a familiar Maryland trail and never came home — and her killer sat in no database on earth. The complete account of the genetic-genealogy hunt that named him anyway.",
     status: "On sale", theme: "rust", price: "$1.44 — 76% off for July 4th (reg. $5.99)",
     cover: "/covers/the-trail.jpg",
+    cardCover: "/covers/square-1x1.png",
     coverAlt: "Book cover of The Trail: The Murder of Rachel Morin by Cassian Creed — a wooded walking trail at twilight",
     buy: "https://cassiancreed.beehiiv.com/products/the-trail-the-murder-of-rachel-morin?utm_source=website&utm_medium=landing&utm_campaign=the_trail",
     buyAlt: null,
@@ -104,11 +105,11 @@ const jsonld = [
 
   <div class="wrap"><div class="shelf">
     {books.map(b => (
-      <div class={"bk bk--" + b.theme}>
+      <div class={"bk bk--" + b.theme + (b.cardCover ? " bk--square" : "")}>
         {b.cover ? (
           <div class="bk__cover bk__cover--art">
             <span class={"bk__ribbon " + (b.price ? "bk__ribbon--live" : "bk__ribbon--soon")}>{b.status}</span>
-            <img class="bk__img" src={b.cover} alt={b.coverAlt} width="600" height="900" loading="lazy" />
+          <img class="bk__img" src={b.cardCover || b.cover} alt={b.coverAlt} width="600" height={b.cardCover ? "600" : "900"} loading="lazy" />
           </div>
         ) : (
           <div class="bk__cover">
@@ -164,6 +165,7 @@ const jsonld = [
   .bk{display:flex;flex-direction:column;background:var(--bg-2,#191512);border:1px solid var(--line,#2a2521);border-radius:14px;overflow:hidden;transition:transform .18s,box-shadow .18s}
   .bk:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(0,0,0,.45)}
   .bk__cover{position:relative;aspect-ratio:2/3;padding:22px 20px;display:flex;flex-direction:column;color:#f5efe8;isolation:isolate}
+      .bk--square .bk__cover{aspect-ratio:1/1}
   .bk__cover--art{padding:0}
   .bk__img{display:block;width:100%;height:100%;object-fit:cover}
   .bk__cover::after{content:"";position:absolute;inset:0;z-index:-1;opacity:.9}
