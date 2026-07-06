@@ -33,7 +33,7 @@ The defense offered an innocent explanation for the one most incriminating fact:
 
 ## Sentence, and what is still open
 
-On August 21, 2023, Shirilla received two life sentences, to be served concurrently, with parole eligibility after fifteen years. An Ohio appeals court affirmed the convictions. In 2026 a new legal team filed a post-conviction petition arguing that her original lawyer failed to present medical evidence for the POTS theory, with a neurologist now opining that her records are consistent with a medical episode; an earlier appeal was rejected after it was filed a day late, and the state's highest court has not said whether it will hear the case. The conviction stands as the established fact it is. The challenge is real, ongoing, and — like every legal question — one the courts, not a documentary or a book, will decide.
+On August 21, 2023, Shirilla received two life sentences, to be served concurrently, with parole eligibility after fifteen years. An Ohio appeals court affirmed the convictions. An earlier appeal was rejected as untimely; a 2026 post-conviction petition was declined by the Ohio Supreme Court on procedural grounds — a filing-deadline miss, not a ruling on the merits. The conviction stands as the established fact it is. The challenge is real, ongoing, and — like every legal question — one the courts, not a documentary or a book, will decide.
 
 <section class="solve" aria-label="The Solve: law enforcement versus A.I. AL">
 <p class="solve__k">The Solve · law enforcement vs A.I. AL</p>
