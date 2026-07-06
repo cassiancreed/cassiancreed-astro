@@ -108,6 +108,10 @@ This is why the verdict and the "undetermined" ruling are not in conflict. They 
 
 ---
 
+> **Get one case file free**  
+> Start with *The Trail* — the free Deep Dive Case File on Rachel Morin's case. Sourced, victim-first, and delivered in exchange for your email.  
+> [Get the free Trail case file →](https://cassiancreed.beehiiv.com/products/the-trail-deep-dive-case-file)
+
 ## What Comes Next
 
 Nestor Hernandez Melgar was convicted on June 22, 2026, on all counts: first-degree murder, first-degree burglary, and violation of a domestic violence no-contact order, each with a domestic violence special aggravator. He remains in custody.
