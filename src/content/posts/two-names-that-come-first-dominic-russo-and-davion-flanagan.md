@@ -9,7 +9,6 @@ incidentDate: "July 31, 2022"
 location: "Strongsville, Ohio"
 jurisdiction: "Cuyahoga County, Ohio"
 status: "Mackenzie Shirilla convicted (2023), 15 years to life; appeal before the Ohio Supreme Court"
-cover: "/covers/no-accident.jpg"
 coverAlt: "A deserted industrial street in the hour before dawn, a lone streetlight casting hard shadows on empty pavement."
 ---
 

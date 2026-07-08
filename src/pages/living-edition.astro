@@ -2,16 +2,14 @@
 import Base from '../layouts/Base.astro';
 const updated = "June 26, 2026";
 const cases = [
-  { name:"The Delphi Murders", subject:"Richard Allen", status:"Convicted · under appeal", tone:"appeal", note:"Convicted on all counts; sentenced to 130 years. Appeal oral arguments are scheduled for Sept. 21, 2026.", book:"/books/#down-the-hill" },
+  { name:"The Delphi Murders", subject:"Richard Allen", status:"Convicted · under appeal", tone:"appeal", note:"Convicted on all counts; sentenced to 130 years. Appeal oral arguments are scheduled for Sept. 21, 2026.", book:null },
   { name:"The Gilgo Beach Murders", subject:"Rex Heuermann", status:"Convicted · sentenced", tone:"closed", note:"Pleaded guilty in April 2026 to eight murders and was sentenced in June 2026 to life without parole.", book:null },
-  { name:"The Murder of Rachel Morin", subject:"Victor Martinez-Hernandez", status:"Convicted · sentenced", tone:"closed", note:"Identified through forensic genetic genealogy; convicted and sentenced to life without parole.", book:"/books/#the-trail" },
-  { name:"The Mackenzie Shirilla Story", subject:"Mackenzie Shirilla", status:"Convicted · appeals exhausted", tone:"closed", note:"Convicted of murder in 2023; the Ohio Supreme Court declined to hear a further appeal in June 2026.", book:"/books/#no-accident" },
-  { name:"The Brendan Banfield Story", subject:"Brendan Banfield", status:"Convicted · sentenced", tone:"closed", note:"Convicted on all counts in early 2026; sentenced in June 2026 to life in prison.", book:"/books/#the-frame" },
+  { name:"The Murder of Rachel Morin", subject:"Victor Martinez-Hernandez", status:"Convicted · sentenced", tone:"closed", note:"Identified through forensic genetic genealogy; convicted and sentenced to life without parole.", book:"/the-trail/" },
+  { name:"The Brendan Banfield Story", subject:"Brendan Banfield", status:"Convicted · sentenced", tone:"closed", note:"Convicted on all counts in early 2026; sentenced in June 2026 to life in prison.", book:null },
   { name:"The Kouri Richins Story", subject:"Kouri Richins", status:"Convicted · sentenced", tone:"closed", note:"Convicted of aggravated murder in March 2026; sentenced in May 2026 to life without parole. She has stated she will appeal.", book:null },
   { name:"The Luigi Mangione Case", subject:"Luigi Mangione", status:"Charged · awaiting trial", tone:"open", note:"Charged and has pleaded not guilty. Trial is scheduled for September 2026. He is presumed innocent unless and until proven guilty.", book:null }
 ];
 const log = [
-  { date:"Jun 24, 2026", text:"Ohio Supreme Court declined to hear Mackenzie Shirilla's further appeal; her 2023 murder conviction stands." },
   { date:"Jun 17, 2026", text:"Rex Heuermann sentenced to life without parole in the Gilgo Beach murders, following his April 2026 guilty pleas." },
   { date:"Jun 5, 2026",  text:"Brendan Banfield sentenced to life in prison after his conviction earlier in the year." },
   { date:"May 13, 2026", text:"Kouri Richins sentenced to life without parole; she has said she intends to appeal." }
