@@ -1,17 +1,14 @@
 ---
-title: "Down the Hill: The Delphi Murders — Now Available"
-description: "Down the Hill, the new full-length case file on the murders of Abby Williams and Libby German, is now available. A restrained, victim-first account of a town that spent five years suspecting the wrong men."
+title: "The Delphi Murders — A Restrained, Victim-First Account"
+description: "A restrained, victim-first account of the Delphi, Indiana case — the murders of Abby Williams and Libby German, and the town that spent five years suspecting the wrong men."
 pubDate: 2026-06-04
 tag: "Case Files"
-featured: true
+featured: false
 victim: "Abby Williams & Libby German"
 incidentDate: "February 13, 2017"
 location: "Delphi, Indiana"
 jurisdiction: "Carroll County, Indiana"
 status: "Richard Allen convicted Nov 2024; appeal unresolved"
-buyUrl: "https://creedcaster5.gumroad.com/l/snagtm?utm_source=website&utm_medium=post_cta&utm_campaign=down_the_hill"
-buyUrlAlt: ""
-buyPrice: "$5.99"
 cover: "/covers/down-the-hill.jpg"
 coverAlt: "An old iron railroad trestle spanning a dark creek at night, its girders vanishing into shadow."
 ---
@@ -47,13 +44,7 @@ Richard Allen, a Delphi resident, was charged in the case and convicted in Novem
 
 ## Two Ways to Read It
 
-**Start free.** Our Living Edition dossier on the Delphi case is part of what subscribers receive — an evolving brief that we keep current as the appeal and the record develop. If you want to follow this case responsibly, with the facts kept honest over time, [join the newsletter](#subscribe) and we will send it your way.
-
-**Or read the whole thing.** The full-length book, *Down the Hill: The Delphi Murders*, is available now for **$5.99**. It is the complete account — the town, the timeline, the long misdirection, and the disclosed A.I. AL lens applied with the restraint the case demands.
-
-[Read more about the book at the full sales page →](/down-the-hill/)
-
-[Get *Down the Hill* — $5.99 →](https://creedcaster5.gumroad.com/l/snagtm?utm_source=website&utm_medium=post_cta&utm_campaign=down_the_hill)
+**Follow it with us.** Our Living Edition dossier on the Delphi case is part of what subscribers receive — an evolving brief that we keep current as the appeal and the record develop. If you want to follow this case responsibly, with the facts kept honest over time, [join the newsletter](#subscribe) and we will send it your way.
 
 ---
 

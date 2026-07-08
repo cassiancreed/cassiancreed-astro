@@ -81,8 +81,6 @@ It is a victim-first account of the public record behind this case: a clear time
 
 It is not a gore file. It is not written by an artificial intelligence narrator. The analytical layer is labeled and disclosed; the voice, judgment, and editorial responsibility are human.
 
-The ebook is $5.99.
-
 If you want to follow the coverage between now and June 17 — including the verified sentencing update on June 17 itself — the best way to do that is to join the list. We will not send noise. We will send the verified record when it exists.
 
 ---
@@ -101,28 +99,18 @@ Seven days.
 
 ## Get the Free Rachel Morin Case Dossier
 
-Before The Gilgo Blueprint launches on June 17, start with our free Rachel Morin case dossier — a concise case file on evidence, public-record claims, and the way modern investigations move from uncertainty to accountability.
-
-It is the same editorial standard as The Gilgo Blueprint: victim-first, public record only, forensic method explained without hype.
+Start with our free Rachel Morin case dossier — a concise case file on evidence, public-record claims, and the way modern investigations move from uncertainty to accountability. Victim-first, public record only, forensic method explained without hype.
 
 **[Send Me the Free Dossier →](https://cassiancreed.com/free-dossier?utm_source=blog&utm_medium=post&utm_campaign=gilgo-ladder-day1)**
 
-*You will also receive launch notes for The Gilgo Blueprint and our verified sentencing update on June 17. No spam. No fear-bait. Just clear case files.*
+*You will also receive our verified sentencing update on June 17. No spam. No fear-bait. Just clear case files.*
 
 ---
 
-### Already want the ebook?
+### Follow the sentencing coverage
 
-**[Get notified when The Gilgo Blueprint drops →](https://cassiancreed.com/#subscribe)**
-
-*Final copy is reviewed against the public record before publication. Publishes June 17.*
-
----
-
-### Follow the seven-day coverage
-
-- [Newsletter →](https://cassiancreed.com/newsletter?utm_source=blog&utm_medium=post&utm_campaign=gilgo-ladder-day1) — verified sentencing update June 17
-- [All Case Files →](https://cassiancreed.com/books?utm_source=blog&utm_medium=post&utm_campaign=gilgo-ladder-day1) — the full Neural Edge Publishing catalog
+- [Newsletter →](https://cassiancreed.beehiiv.com/subscribe?utm_source=blog&utm_medium=post&utm_campaign=gilgo-ladder-day1) — verified sentencing update June 17
+- [The Trail — our full-length case file, $1.99 →](/the-trail/)
 
 ---
 
@@ -132,7 +120,7 @@ It is the same editorial standard as The Gilgo Blueprint: victim-first, public r
 ASSEMBLY REPORT — 5 lines
 1. Schema fields used: title, description, pubDate, tag, featured, victim, incidentDate, location, jurisdiction, status, cover, coverAlt. All declared fields from config.ts were populated; cover/coverAlt follow the existing post convention (down-the-hill.md) even though absent from config.ts schema — they appear in the existing post and are carried here for consistency.
 2. Text NOT carried over: PART A (title-selection scoring rubric, per-persona sweat scorecard, composite calculation, absolute gate checks, flags for XO review, PART C SEO meta description as inline text, PART D sweat scorecard, PART E three-line summary) — all scoring/rubric/editorial apparatus was correctly excluded per instructions (body = PART B verbatim). PART C meta description text WAS used as the frontmatter description field. The staging note at the end of PART B was not carried into the post body. The "Already want the ebook?" buy-link block was replaced with the "Coming soon" notify CTA (/#subscribe) per placeholder resolution instructions.
-3. Placeholder resolution applied: the buy link ("Buy The Gilgo Blueprint — Case File 003 · $5.99 →" linking to cassiancreed.com/books) was replaced with "Get notified when The Gilgo Blueprint drops →" linking to cassiancreed.com/#subscribe, per instructions.
+3. Placeholder resolution applied: the buy link (originally to a not-yet-live product) was replaced with a link to /the-trail/ during the 2026-07 book-catalog consolidation — Cassian Creed is Trail-only.
 4. Unverifiable: incidentDate left empty string — the exact earliest disappearance date is not stated in the source files and was deliberately left open per FAQ placeholder resolution instructions. The live URLs (free-dossier, newsletter, books, #subscribe) are carried as written in PART B; deploy-time URL verification is required before go-live per the staging note in the source file.
 5. cover/coverAlt: these fields appear in the existing reference post (down-the-hill.md) but are NOT in config.ts schema. They are included here to match the project's actual content convention. If config.ts is updated before deploy to declare these fields, no change to this file is needed. If not, Astro will likely pass them through without error as extra frontmatter — but this should be confirmed at build time.
 -->

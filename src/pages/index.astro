@@ -6,8 +6,7 @@ const featured = posts.find(p=>p.data.featured) || posts[0];
 const rest = posts.filter(p=> featured && p.slug!==featured.slug).slice(0,8);
 const short = (t)=> t.split(':')[0];
 const books = [
-  { title:"The Trail", series:"Case File 001", sub:"The Murder of Rachel Morin", theme:"rust", price:"$5.99", onsale:true, sample:"/the-trail/", cover:"/covers/the-trail.jpg", cardCover:"/covers/square-1x1.png", coverAlt:"Book cover of The Trail: The Murder of Rachel Morin", buy:"/books/?utm_source=website&utm_medium=home_shelf&utm_campaign=the_trail#the-trail" },
-  { title:"Down the Hill", series:"Case File 005", sub:"The Delphi Murders", theme:"slate", price:"$5.99", onsale:true, sample:"/down-the-hill/", cover:"/covers/down-the-hill.jpg", coverAlt:"Book cover of Down the Hill: The Delphi Murders", buy:"/books/?utm_source=website&utm_medium=home_shelf&utm_campaign=down_the_hill#down-the-hill" },
+  { title:"The Trail", series:"Case File 001", sub:"The Murder of Rachel Morin", theme:"rust", price:"$1.99", onsale:true, sample:"/the-trail/", cover:"/covers/the-trail.jpg", cardCover:"/covers/square-1x1.png", coverAlt:"Book cover of The Trail: The Murder of Rachel Morin", buy:"https://cassiancreed.beehiiv.com/products/the-trail?utm_source=website&utm_medium=home_shelf&utm_campaign=the_trail" },
 ];
 const jsonld = {
   "@context": "https://schema.org",
@@ -81,7 +80,7 @@ The Trail is $1.99 — Rachel Morin's story, told with care. <a href="https://ca
       <span>The Case Files Library</span>
       <a class="evidence evidence--accent" href="/books/">All books &rarr;</a>
     </div>
-<p class="shop__lede">Full-length, primary-source case files &mdash; each one carrying an exclusive A.I. AL Case Analysis you won't find in the free articles. Complete ebooks, $5.99 each.</p>
+<p class="shop__lede">A full-length, primary-source case file &mdash; carrying an exclusive A.I. AL Case Analysis you won't find in the free articles. The Trail is $1.99.</p>
 
 <ul class="benefits" aria-label="Why buy the books">
   <li class="benefit">
@@ -98,7 +97,7 @@ The Trail is $1.99 — Rachel Morin's story, told with care. <a href="https://ca
   </li>
   <li class="benefit">
     <span class="benefit__k">Read it your way</span>
-    <p class="benefit__t">Instant ebook download, yours to keep, plus a companion audio episode for select titles. Under $6 &mdash; less than a coffee.</p>
+    <p class="benefit__t">Instant ebook download, yours to keep. Under $2 &mdash; less than a coffee.</p>
   </li>
   <li class="benefit">
     <span class="benefit__k">Victim-first, no filler</span>

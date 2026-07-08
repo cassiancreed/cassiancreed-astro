@@ -3,8 +3,8 @@ import Base from '../layouts/Base.astro';
 // NE003 flagship landing page — "The Trail: The Murder of Rachel Morin"
 // GREEN tier: Victor Martinez-Hernandez convicted on all counts (April 2025), two consecutive
 // life terms without parole; appeal intended, no ruling (verified 2026-06-03). Rachel named first.
-// PRIMARY goal: email capture (Beehiiv free dossier). SECONDARY: NE003 $5.99 + the Case Files
-// Collection bundle. Buy paths: Beehiiv 0% + Gumroad (no Amazon). Identity: Cassian Creed, PO #1039.
+// PRIMARY goal: email capture (Beehiiv free dossier). SECONDARY: NE003 $1.99 on Beehiiv.
+// Buy path: Beehiiv only (top sale banner). Identity: Cassian Creed, PO #1039.
 const jsonld = {
   "@context": "https://schema.org",
   "@type": "Book",
@@ -15,7 +15,7 @@ const jsonld = {
     "offers": { "@type": "Offer", "price": "1.99", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://cassiancreed.beehiiv.com/products/the-trail?utm_source=website&utm_medium=landing&utm_campaign=the_trail" }
 };
 ---
-<Base title="The Trail: The Murder of Rachel Morin — a sourced, victim-first case file" description="A mother of five walked a Maryland trail and never came home. The full, sourced account of the genetic-genealogy hunt that named a killer who sat in no database. Free dossier or the $5.99 ebook." jsonld={jsonld}>
+<Base title="The Trail: The Murder of Rachel Morin — a sourced, victim-first case file" description="A mother of five walked a Maryland trail and never came home. The full, sourced account of the genetic-genealogy hunt that named a killer who sat in no database. Free dossier or the full $1.99 ebook." jsonld={jsonld}>
   <article class="lp">
     <div class="lp-sale" style="background:#e0563b;color:#fff;border-radius:10px;padding:14px 18px;margin:0 0 18px;text-align:center;font-size:15px;line-height:1.5" role="note">
 <strong>The Trail is $1.99</strong> — Rachel Morin's story, told with care. <a href="https://cassiancreed.beehiiv.com/products/the-trail?utm_source=website&utm_medium=trail_sale_block&utm_campaign=the_trail_sale" style="color:#fff;font-weight:600;text-decoration:underline" target="_blank" rel="noopener noreferrer">Read it here →</a>
@@ -69,26 +69,6 @@ const jsonld = {
     <section class="lp-trust" aria-labelledby="lp-trust-h">
       <h2 id="lp-trust-h">Why you can trust this account</h2>
       <p>Every claim is tied to a primary source. Legal status is re-verified before we publish and again when a case moves. We separate what is proven from what is argued, we name the people at the center in life first, and the AI is a disclosed, human-overseen analytical lens — never the narrator or the author. When we get something wrong, we correct it. <a href="/about/">Read our full standard &amp; corrections policy →</a></p>
-    </section>
-
-    <!-- SECONDARY CTA — buy (visually subordinate to capture) -->
-    <section class="lp-buy" aria-labelledby="lp-buy-h">
-      <h2 id="lp-buy-h">Prefer the complete ebook?</h2>
-      <p class="lp-buy__lead">Read the whole thing offline — and support independent, victim-first true crime.</p>
-      <div class="lp-buy__cards">
-        <div class="lp-buy__card">
-          <p class="lp-buy__k">The Trail — ebook</p>
-          <p class="lp-buy__price">$5.99</p>
-          <a class="btn" href="https://cassiancreed.beehiiv.com/products/the-trail?utm_source=website&utm_medium=landing&utm_campaign=the_trail" target="_blank" rel="noopener noreferrer">Buy the ebook — $5.99 →</a>
-          <a class="lp-buy__alt" href="https://creedcaster5.gumroad.com/l/xbgnhg?utm_source=website&utm_medium=landing&utm_campaign=the_trail" target="_blank" rel="noopener noreferrer">Also on Gumroad →</a>
-        </div>
-        <div class="lp-buy__card lp-buy__card--bundle">
-          <p class="lp-buy__k">The Case Files Collection</p>
-          <p class="lp-buy__price">$8.99 <span class="lp-buy__was">$11.98</span></p>
-          <p class="lp-buy__cardsub">The Trail + No Accident — both full case files, for less than buying them apart.</p>
-          <a class="btn" href="https://creedcaster5.gumroad.com/l/jhgmwj?utm_source=website&utm_medium=post_cta&utm_campaign=case_files_collection" target="_blank" rel="noopener noreferrer">Get the Collection — $8.99 →</a>
-        </div>
-      </div>
     </section>
 
     <!-- HONEST LEGAL STATUS -->

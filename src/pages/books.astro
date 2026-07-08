@@ -13,45 +13,6 @@ const books = [
     sample: "/the-trail/",
     listen: "https://open.spotify.com/episode/6UJivvOBmuoYbMIJzqu67d"
   },
-  {
-    title: "No Accident", series: "Case File 002", sub: "The Mackenzie Shirilla Story",
-    hook: "Two young men — Dominic Russo and Davion Flanagan — died in what looked like a pre-dawn crash. The event-data recorder and a GPS dry run told a different story. Mackenzie Shirilla convicted 2023; appeal pending.",
-    status: "Coming soon", theme: "steel", price: null,
-    cover: "/covers/no-accident.jpg",
-    coverAlt: "Book cover of No Accident: The Mackenzie Shirilla Story by Cassian Creed — a deserted industrial street under a lone streetlight before dawn",
-  },
-  {
-    title: "Down the Hill", series: "Case File 005", sub: "The Delphi Murders",
-    hook: "On a warm February afternoon in 2017, two best friends walked onto an old iron railroad bridge in Delphi, Indiana, and never came home — and the man responsible stayed, hiding in plain sight, for five years. The full, sourced account of the case, and of a frightened town that spent its certainty on the wrong men.",
-    status: "On sale", theme: "slate", price: "$5.99",
-    cover: "/covers/down-the-hill.jpg",
-    coverAlt: "Book cover of Down the Hill: The Delphi Murders by Cassian Creed — an old iron railroad trestle over a creek at night, one distant amber light",
-    buy: "https://creedcaster5.gumroad.com/l/snagtm?utm_source=website&utm_medium=landing&utm_campaign=down_the_hill",
-    buyAlt: null,
-    sample: "/down-the-hill/"
-  },
-  {
-    title: "The Gilgo Blueprint", series: "Case File 003", sub: "Rex Heuermann and the Forensic Revolution",
-    hook: "How DNA genealogy, burner-phone analysis, and relentless detective work finally unmasked the Long Island serial killer — with the eight women remembered as daughters and sisters, not statistics.",
-    status: "Coming soon", theme: "ink", price: null,
-    cover: "/covers/the-gilgo-blueprint.jpg",
-    coverAlt: "Book cover of The Gilgo Blueprint: Rex Heuermann and the Forensic Revolution by Cassian Creed — a rain-slicked road at night vanishing toward a single amber streetlight, dunes and dark ocean to one side"
-  },
-  {
-    title: "The Frame", series: "Case File 004", sub: "The Brendan Banfield Story",
-    hook: "A wife killed at home, an au pair, and a manufactured intruder story that unraveled count by count in a Virginia courtroom. Brendan Banfield convicted; sentenced June 2026; appeal available.",
-    status: "Coming soon", theme: "moss", price: null,
-    cover: "/covers/the-frame.jpg",
-    coverAlt: "Book cover of The Frame: The Brendan Banfield Story by Cassian Creed — a dark two-story suburban house with one lit window on a rain-slicked street at night",
-    listen: "https://open.spotify.com/episode/0ODduWMkrtOEZTfN2V2jLi"
-  },
-  {
-    title: "Are You With Me?", series: "Case File 006", sub: "The Kouri Richins Story",
-    hook: "Eric Richins went to sleep in his own home in March 2022 and never woke up — five times a lethal dose of fentanyl in his system. The grief book his wife wrote came later. The full, sourced account of the case that ended in Kouri Richins' conviction. Convicted March 2026; appeal planned.",
-    status: "Coming soon", theme: "ink", price: null,
-    cover: "/covers/are-you-with-me.jpg",
-    coverAlt: "Book cover of Are You With Me? The Kouri Richins Story by Cassian Creed — typographic title on deep navy"
-  },
 ];
 // Book schema for AI/search discoverability (Mantra rule 47). Offers only for live, buyable products.
 const jsonld = [
@@ -69,36 +30,22 @@ const jsonld = [
     "genre": ["True Crime", "Nonfiction"],
     "abstract": "The full, sourced account of the August 2023 murder of Rachel Morin, a mother of five killed on the Ma & Pa Trail in Harford County, Maryland, and the international investigation that identified and convicted her killer. Rachel is named in life first; every claim is tied to the public record.",
     "offers": [
-      { "@type": "Offer", "price": "1.44", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://cassiancreed.beehiiv.com/products/the-trail", "seller": { "@id": "https://cassiancreed.com/#org" } }
+      { "@type": "Offer", "price": "1.99", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://cassiancreed.beehiiv.com/products/the-trail", "seller": { "@id": "https://cassiancreed.com/#org" } }
     ]
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "Book",
-    "@id": "https://cassiancreed.com/books/#the-frame",
-    "name": "The Frame: The Brendan Banfield Story",
-    "alternateName": "Case File 004",
-    "author": { "@id": "https://cassiancreed.com/#cassian-creed" },
-    "publisher": { "@id": "https://cassiancreed.com/#org" },
-    "url": "https://cassiancreed.com/books/",
-    "bookFormat": "https://schema.org/EBook",
-    "inLanguage": "en-US",
-    "genre": ["True Crime", "Nonfiction"],
-    "abstract": "The sourced account of the 2023 Fairfax County, Virginia killings of Christine Banfield and Joseph Ryan — two victims remembered in life first — and the staged-scene prosecution that ended in Brendan Banfield's conviction. Built on court records and verified reporting, with the legal status of every person stated precisely and dated.",
-    }
+  }
 ];
 ---
-<Base title="True-crime books by Cassian Creed — The Book Library" description="Sourced, victim-first true-crime ebooks by Cassian Creed — every book carries an exclusive A.I. AL forensic analysis you won't find anywhere else. The Trail, No Accident & The Frame — $1.99 each." jsonld={jsonld}>
+<Base title="True-crime books by Cassian Creed — The Book Library" description="Sourced, victim-first true-crime ebooks by Cassian Creed — every book carries an exclusive A.I. AL forensic analysis you won't find anywhere else. The Trail — $1.99." jsonld={jsonld}>
   <section class="bk-hero wrap">
     <p class="evidence evidence--accent">The Book Library</p>
-    <h1 class="bk-hero__h">Every book runs the case through <span>A.I. AL</span>.</h1>
-    <p class="bk-hero__p">Each Cassian Creed book is a full-length, primary-source case file — the complete timeline, the records, and the people at the center, told victim-first and without gratuitous detail. And every one carries something the free web articles never will: an exclusive <strong>A.I. AL Case Analysis</strong>.</p>
+    <h1 class="bk-hero__h">The book runs the case through <span>A.I. AL</span>.</h1>
+    <p class="bk-hero__p">The Cassian Creed book is a full-length, primary-source case file — the complete timeline, the records, and the people at the center, told victim-first and without gratuitous detail. It carries something the free web articles never will: an exclusive <strong>A.I. AL Case Analysis</strong>.</p>
   </section>
 
-  <section class="wrap aial-strip" aria-label="What A.I. AL adds to every book">
+  <section class="wrap aial-strip" aria-label="What A.I. AL adds to the book">
     <div class="aial-strip__seal">A.I. AL</div>
     <div>
-      <p class="aial-strip__k">Inside every book — and nowhere else</p>
+      <p class="aial-strip__k">Inside the book — and nowhere else</p>
       <p class="aial-strip__t">We run the case through the forensic <strong>X-modules</strong> — Timeline-X, Linkage-X, Evidence-X, Geo-X, Tip-Triage-X — then show, honestly, the insights an analytical lens could have surfaced and where it could have moved faster <em>alongside</em> investigators. It's a disclosed, human-overseen lens — never the narrator, never a claim it solved the case. <a href="/ai-al/">How A.I. AL works →</a></p>
     </div>
   </section>
@@ -124,7 +71,6 @@ const jsonld = [
           <p class="bk__hook">{b.hook}</p>
           <div class="bk__cta">
             {b.price && <a class="btn bk__buy" href={b.buy} target="_blank" rel="noopener noreferrer">Buy the ebook — {b.price} →</a>}
-            {b.buyAlt && <a class="bk__alt" href={b.buyAlt} target="_blank" rel="noopener noreferrer">Also on Gumroad →</a>}
             {b.sample && <a class="bk__alt" href={b.sample}>Look inside (free sample) →</a>}
             {b.listen && <a class="bk__alt" href={b.listen} target="_blank" rel="noopener noreferrer">🎧 Listen to the companion episode →</a>}
             {!b.price && <a class="bk__alt bk__alt--soon" href="/#subscribe">Get notified when it drops →</a>}
@@ -139,8 +85,8 @@ const jsonld = [
   </section>
 
   <div class="wrap"><section class="subscribe" id="subscribe">
-    <h2>Be first when the next book drops</h2>
-    <p>Free, victim-first case files and verdict updates from Cassian Creed — plus first word the day each new book is released. No spam; unsubscribe anytime.</p>
+    <h2>Free case files, straight to your inbox</h2>
+    <p>Free, victim-first case files and verdict updates from Cassian Creed. No spam; unsubscribe anytime.</p>
     <form action="https://cassiancreed.beehiiv.com/subscribe" method="get" aria-label="Subscribe to the free Cassian Creed newsletter">
       <input type="email" name="email" required autocomplete="email" placeholder="you@email.com" aria-label="Your email address" />
       <input type="hidden" name="utm_source" value="website" />

@@ -20,8 +20,7 @@ const orgLd = {
   "correctionsPolicy": "https://cassiancreed.com/about/",
   "sameAs": [
     "https://x.com/CassianCreed",
-    "https://cassiancreed.beehiiv.com",
-    "https://creedcaster5.gumroad.com"
+    "https://cassiancreed.beehiiv.com"
   ]
 };
 const personLd = {
@@ -103,10 +102,10 @@ const personLd = {
   </div></footer>
   <script is:inline>
   (function(){
-    // Gumroad buy tracking — fires on any gumroad.com link click
+    // Beehiiv buy tracking — fires on any beehiiv.com product link click
     document.addEventListener('click',function(e){
       var a=e.target.closest('a');
-      if(a&&a.href&&a.href.includes('gumroad.com')){
+      if(a&&a.href&&a.href.includes('cassiancreed.beehiiv.com/products/')){
         if(typeof gtag!=='undefined'){
           gtag('event','buy_cta_click',{link_url:a.href});
           gtag('event','begin_checkout',{currency:'USD'});
@@ -114,25 +113,6 @@ const personLd = {
       }
     });
     // GA4 sign_up — fires when Beehiiv redirects to /?subscribed=1
-    if(window.location.search.includes('subscribed=1')){
-      function fs(){if(typeof gtag!=='undefined'){gtag('event','sign_up',{method:'beehiiv'});}}
-      if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',fs);}else{fs();}
-    }
-  })();
-  </script>
-  <script is:inline>
-  (function(){
-    // Gumroad buy tracking
-    document.addEventListener('click',function(e){
-      var a=e.target.closest('a');
-      if(a&&a.href&&a.href.includes('gumroad.com')){
-        if(typeof gtag!=='undefined'){
-          gtag('event','buy_cta_click',{link_url:a.href});
-          gtag('event','begin_checkout',{currency:'USD'});
-        }
-      }
-    });
-    // GA4 sign_up — fires when Beehiiv redirects back with ?subscribed=1
     if(window.location.search.includes('subscribed=1')){
       function fs(){if(typeof gtag!=='undefined'){gtag('event','sign_up',{method:'beehiiv'});}}
       if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',fs);}else{fs();}

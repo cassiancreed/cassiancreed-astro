@@ -32,6 +32,6 @@ But before we discuss the science, we must remember the women it was used to fin
 
 Their names were Melissa Barthelemy, Megan Waterman, Amber Lynn Costello, Maureen Brainard-Barnes, Jessica Taylor, Valerie Mack, and Sandra Costilla.
 
-The Gilgo Beach case is not just a murder case. It is the story of how forensic science evolved in real time to catch a predator who believed he was untouchable. For readers who want to go deeper — the investigation, the psychology, the legal battles, and the victims' lives — the full documentation is at **[creedcaster5.gumroad.com](https://creedcaster5.gumroad.com)**.
+The Gilgo Beach case is not just a murder case. It is the story of how forensic science evolved in real time to catch a predator who believed he was untouchable. For more from Cassian Creed — sourced, victim-first true crime — [read The Trail](/the-trail/) or [join the free newsletter](https://cassiancreed.beehiiv.com/subscribe).
 
 *Published under Cassian Creed. True crime that names victims in life first. More at [cassiancreed.com](https://cassiancreed.com).*
