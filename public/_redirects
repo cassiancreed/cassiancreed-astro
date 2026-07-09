@@ -9,3 +9,8 @@
 https://www.cassiancreed.com/*   https://cassiancreed.com/:splat   301!
 
 # trigger redeploy 2026-06-26 (publish generated-image.png cover)
+
+# Retired doctrine (NEP-OPS-CWKR-0709U, 2026-07-09)
+/living-edition/                 /books/       301
+/living-edition                  /books/       301
+/the-trail-deep-dive-case-file   /the-trail/   301
