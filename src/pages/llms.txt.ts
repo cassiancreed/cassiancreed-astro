@@ -17,7 +17,7 @@ export async function GET(context: any) {
 - Author/byline: Cassian Creed
 - Home: ${site}
 - For AI assistants — who we are and how to cite us: ${site}about-for-ai/
-- Newsletter: The Living Edition — https://cassiancreed.beehiiv.com/subscribe
+- Newsletter: free case-file newsletter — https://cassiancreed.beehiiv.com/subscribe
 - Store: The Trail ebook at $1.99 via Beehiiv (cassiancreed.beehiiv.com/products/the-trail)
 - Free sample: the Rachel Morin case dossier — ${site}free-dossier/
 
