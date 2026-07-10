@@ -51,7 +51,7 @@ This is the counterintuitive heart of IGG: a suspect does not have to be in any 
 
 The Rachel Morin investigation is the clearest recent example of what this technique can and cannot do. We documented it end to end — the failed CODIS searches, the Othram lab work, the family tree, the confirmation, the trial.
 
-- **Free:** [the Rachel Morin case-file dossier (PDF)](/free-dossier/) — sourced, victim-first, yours to keep.
+- **Free:** [*The Jury Chess Game* field guide (PDF)](https://cassiancreed.beehiiv.com/subscribe) — how lawyers really pick a jury; sent when you subscribe.
 - **The complete account:** [*The Trail: The Murder of Rachel Morin*](/the-trail/) — the full book, $1.99.
 
 ## Sources

@@ -65,7 +65,7 @@ She remains on Texas's death row. No execution date has been set as of this writ
 
 It is easy, with a case this shocking, to remember the name of the person who did it and forget the people it was done to. The truer memorial is the other way around. Reagan Simmons-Hancock and her daughter Braxlynn are the reason this story is told at all — say their names first.
 
-**Get the free Trail Deep Dive Case File.** Rachel Morin's case, sourced and victim-first — enter your email for instant access and future case-file updates. [Get the free case file →](https://cassiancreed.beehiiv.com/products/the-trail-deep-dive-case-file)
+**Subscribe free — get *The Jury Chess Game*.** Our free field guide to how lawyers really pick the twelve people who decide guilt or innocence — subscribe and it's in your inbox. [Send me the free guide →](https://cassiancreed.beehiiv.com/subscribe)
 
 ## Sources
 

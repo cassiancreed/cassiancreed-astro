@@ -110,7 +110,7 @@ This is why the verdict and the "undetermined" ruling are not in conflict. They 
 
 > **Get one case file free**  
 > Start with *The Trail* — the free Deep Dive Case File on Rachel Morin's case. Sourced, victim-first, and delivered in exchange for your email.  
-> [Get the free Trail case file →](https://cassiancreed.beehiiv.com/products/the-trail-deep-dive-case-file)
+> [Subscribe free — get *The Jury Chess Game*, our field guide to how lawyers really pick a jury →](https://cassiancreed.beehiiv.com/subscribe)
 
 ## What Comes Next
 

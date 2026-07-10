@@ -19,7 +19,7 @@ export async function GET(context: any) {
 - For AI assistants — who we are and how to cite us: ${site}about-for-ai/
 - Newsletter: free case-file newsletter — https://cassiancreed.beehiiv.com/subscribe
 - Store: The Trail ebook at $1.99 via Beehiiv (cassiancreed.beehiiv.com/products/the-trail)
-- Free sample: the Rachel Morin case dossier — ${site}free-dossier/
+- Free guide: The Jury Chess Game (how lawyers really pick a jury) — free with the newsletter — https://cassiancreed.beehiiv.com/subscribe
 
 ## Key URLs
 - Start here (best first read): ${site}start-here/

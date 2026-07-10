@@ -101,7 +101,7 @@ Seven days.
 
 Start with our free Rachel Morin case dossier — a concise case file on evidence, public-record claims, and the way modern investigations move from uncertainty to accountability. Victim-first, public record only, forensic method explained without hype.
 
-**[Send Me the Free Dossier →](https://cassiancreed.com/free-dossier?utm_source=blog&utm_medium=post&utm_campaign=gilgo-ladder-day1)**
+**[Send me the free guide →](https://cassiancreed.beehiiv.com/subscribe)**
 
 *You will also receive our verified sentencing update on June 17. No spam. No fear-bait. Just clear case files.*
 

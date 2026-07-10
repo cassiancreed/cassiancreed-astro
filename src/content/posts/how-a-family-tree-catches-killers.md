@@ -46,6 +46,6 @@ Much of the field's hardest laboratory work runs through Othram Inc., a Texas la
 
 We wrote a full case file on the Rachel Morin investigation — the timeline, the forensic chain, what law enforcement did at each step, kept clearly separate from our own analysis. It is free, because the point of this work is understanding, and understanding should not have a paywall in front of it.
 
-**[Get the free Rachel Morin case file](/free-dossier/?utm_source=site&utm_medium=explainer&utm_campaign=igg_package)**
+**[Subscribe free — get *The Jury Chess Game*, our field guide to how lawyers really pick a jury](https://cassiancreed.beehiiv.com/subscribe)**
 
 If you would rather have this kind of work arrive on its own, the newsletter is where we publish first: one case, examined honestly, no hype. You can unsubscribe in one click and we will not take it personally.
