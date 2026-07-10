@@ -4,3 +4,23 @@
 
 [build.environment]
   NODE_VERSION = "20"
+
+[[redirects]]
+  from = "/free-dossier"
+  to = "/#subscribe"
+  status = 301
+
+[[redirects]]
+  from = "/free-dossier/*"
+  to = "/#subscribe"
+  status = 301
+
+[[redirects]]
+  from = "/rachel-morin"
+  to = "/#subscribe"
+  status = 301
+
+[[redirects]]
+  from = "/rachel-morin/*"
+  to = "/#subscribe"
+  status = 301

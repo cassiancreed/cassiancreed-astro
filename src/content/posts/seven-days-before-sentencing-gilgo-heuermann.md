@@ -97,13 +97,13 @@ Seven days.
 
 ---
 
-## Get the Free Rachel Morin Case Dossier
+## Get the Free Field Guide
 
-Start with our free Rachel Morin case dossier — a concise case file on evidence, public-record claims, and the way modern investigations move from uncertainty to accountability. Victim-first, public record only, forensic method explained without hype.
+Subscribe free and we'll send you *The Jury Chess Game* — our field guide to how lawyers really pick the twelve people who decide guilt or innocence. Victim-first, public record only, forensic method explained without hype.
 
 **[Send me the free guide →](https://cassiancreed.beehiiv.com/subscribe)**
 
-*You will also receive our verified sentencing update on June 17. No spam. No fear-bait. Just clear case files.*
+*No spam. No fear-bait. Just clear case files.*
 
 ---
 
@@ -116,11 +116,3 @@ Start with our free Rachel Morin case dossier — a concise case file on evidenc
 
 *Every factual claim in this post is tied to public records or verified reporting. A.I. is used only as a disclosed analytical lens for organizing public-record material — it is not the narrator, authorial voice, or substitute for editorial judgment. Victims first. Public record first.*
 
-<!--
-ASSEMBLY REPORT — 5 lines
-1. Schema fields used: title, description, pubDate, tag, featured, victim, incidentDate, location, jurisdiction, status, cover, coverAlt. All declared fields from config.ts were populated; cover/coverAlt follow the existing post convention (down-the-hill.md) even though absent from config.ts schema — they appear in the existing post and are carried here for consistency.
-2. Text NOT carried over: PART A (title-selection scoring rubric, per-persona sweat scorecard, composite calculation, absolute gate checks, flags for XO review, PART C SEO meta description as inline text, PART D sweat scorecard, PART E three-line summary) — all scoring/rubric/editorial apparatus was correctly excluded per instructions (body = PART B verbatim). PART C meta description text WAS used as the frontmatter description field. The staging note at the end of PART B was not carried into the post body. The "Already want the ebook?" buy-link block was replaced with the "Coming soon" notify CTA (/#subscribe) per placeholder resolution instructions.
-3. Placeholder resolution applied: the buy link (originally to a not-yet-live product) was replaced with a link to /the-trail/ during the 2026-07 book-catalog consolidation — Cassian Creed is Trail-only.
-4. Unverifiable: incidentDate left empty string — the exact earliest disappearance date is not stated in the source files and was deliberately left open per FAQ placeholder resolution instructions. The live URLs (free-dossier, newsletter, books, #subscribe) are carried as written in PART B; deploy-time URL verification is required before go-live per the staging note in the source file.
-5. cover/coverAlt: these fields appear in the existing reference post (down-the-hill.md) but are NOT in config.ts schema. They are included here to match the project's actual content convention. If config.ts is updated before deploy to declare these fields, no change to this file is needed. If not, Astro will likely pass them through without error as extra frontmatter — but this should be confirmed at build time.
--->
