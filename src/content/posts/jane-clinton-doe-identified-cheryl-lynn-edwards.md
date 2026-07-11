@@ -3,7 +3,7 @@ title: "The Identification of Cheryl Lynn Edwards: Restoring Identity After 51 Y
 description: "After 51 years as Jane Clinton Doe, a 15-year-old homicide victim has her name back. Forensic genetic genealogy restored her identity; the homicide investigation remains active."
 pubDate: 2026-06-26
 tag: "Case Files"
-featured: false
+featured: true
 victim: "Cheryl Lynn Edwards"
 incidentDate: "April 11, 1975"
 location: "Clinton County, Iowa"
@@ -56,4 +56,4 @@ As of June 26, 2026, the homicide investigation remains active. No arrest has be
 
 At Neural Edge Publishing, we slow down on cases like this because the point is not just to tell a story. It is to keep the facts straight, name the people involved carefully, and avoid turning tragedy into spectacle.
 
-*Follow Cassian Creed for the next case.*
+**Subscribe free — get *The Jury Chess Game*** — our free field guide to how lawyers really pick the twelve people who decide guilt or innocence. After that, we only email when we've shipped something new: a fresh case file or a book. No weekly blast; unsubscribe anytime. [Send me the free guide →](https://cassiancreed.beehiiv.com/subscribe)

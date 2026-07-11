@@ -3,7 +3,7 @@ title: "Nancy Guthrie: What We Know About the Tucson Abduction"
 description: "A grandmother taken from her own bed. A masked figure at the door. Two notes sent to the press. What is verified in the active search for 84-year-old Nancy Guthrie — and how the public can help."
 pubDate: 2026-06-23
 tag: "Case Files"
-featured: true
+featured: false
 victim: "Nancy Guthrie, 84"
 incidentDate: "February 1, 2026"
 location: "Catalina Foothills, near Tucson, Arizona"
