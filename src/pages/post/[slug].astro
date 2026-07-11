@@ -3,7 +3,8 @@ import Base from '../../layouts/Base.astro';
 import { getCollection } from 'astro:content';
 export async function getStaticPaths() {
   const posts = await getCollection('posts');
-  const caseFiles = posts.filter(p => p.data.tag === 'Case Files');
+  // Nancy Guthrie is excluded from related-content rails by standing order; the page itself stays live.
+  const caseFiles = posts.filter(p => p.data.tag === 'Case Files' && p.slug !== 'nancy-guthrie-abduction-what-we-know');
   return posts.map(p => {
     const idx = caseFiles.findIndex(o => o.slug === p.slug);
     let rel = [];
