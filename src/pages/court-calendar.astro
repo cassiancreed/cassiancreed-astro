@@ -1,105 +1,484 @@
 ---
 import Base from '../layouts/Base.astro';
-// DRAFT SCAFFOLD — every Court / Next Event / Date / Status cell is intentionally
-// "DRAFT-PLACEHOLDER" until each entry is verified against court records.
-const intro = "Upcoming hearings, trials, and sentencings in the cases we cover — dates verified before they're listed.";
-const PH = 'DRAFT-PLACEHOLDER';
-const rows = [
-  { caseName: 'Clancy',                  coverage: '/post/the-lindsay-clancy-case-three-children-one-trial-and-the-questions-massachusetts-must-answer/' },
-  { caseName: 'Peck / Baby Boy Doe',     coverage: null },
-  { caseName: 'Hernandez Melgar',        coverage: '/post/anatomy-of-a-murder-trial-hernandez-melgar/' },
-  { caseName: 'Karmelo Anthony',         coverage: '/post/a-jury-convicted-a-family-still-grieves-karmelo-anthony-verdict-austin-metcalf/' },
-  { caseName: 'Brooke George',           coverage: null },
-  { caseName: 'Heuermann (Gilgo Beach)', coverage: '/post/the-gilgo-beach-murders-rex-heuermann-pleads-guilty-and-eight-women-are-finally-named/' },
+
+const LAST_VERIFIED = 'July 11, 2026';
+const BUILD_DATE = new Date().toISOString().slice(0, 10);
+
+// Every entry below is tied to an outside source of record — a court filing, a
+// prosecutor's office, or courtroom reporting. We never cite our own articles as
+// the source for a date. `srcType` states plainly what kind of source it is.
+const entries = [
+  {
+    id: 'clancy-pretrial',
+    case: 'Lindsay Clancy',
+    proceeding: 'Pretrial hearing',
+    dateISO: '2026-07-13',
+    dateText: 'Monday, July 13, 2026',
+    court: 'Plymouth County Superior Court, Brockton, MA',
+    status: 'Pleaded not guilty; charged with three counts of first-degree murder after prosecutors dropped duplicative strangulation counts.',
+    detail: 'The court is expected to take up a disputed blood-pattern demonstration and finalize the juror questionnaire before trial.',
+    src: 'https://www.bostonglobe.com/2026/07/10/metro/lindsay-clancy-strangulation-charges-dropped/',
+    srcLabel: 'The Boston Globe, court reporting (July 10, 2026)',
+    srcType: 'Court reporting',
+    link: '/post/the-lindsay-clancy-case-three-children-one-trial-and-the-questions-massachusetts-must-answer/',
+    linkText: 'Read our Lindsay Clancy case primer',
+    groups: ['next', 'hearings'],
+  },
+  {
+    id: 'clancy-trial',
+    case: 'Lindsay Clancy',
+    proceeding: 'Trial begins (jury selection)',
+    dateISO: '2026-07-20',
+    dateText: 'Monday, July 20, 2026',
+    court: 'Plymouth County Superior Court, Brockton, MA',
+    status: 'Pleaded not guilty; charged with three counts of first-degree murder after prosecutors dropped duplicative strangulation counts.',
+    detail: 'Jury selection opens the trial. She is presumed innocent unless and until a jury says otherwise.',
+    src: 'https://www.boston.com/news/crime/2025/11/18/lindsay-clancy-murder-trial-pushed-back-to-july-2026/',
+    srcLabel: 'Boston.com, reporting the court’s scheduling order',
+    srcType: 'Court reporting',
+    link: '/post/the-lindsay-clancy-case-three-children-one-trial-and-the-questions-massachusetts-must-answer/',
+    linkText: 'Read our Lindsay Clancy case primer',
+    groups: ['next', 'trials'],
+  },
+  {
+    id: 'hernandez-melgar-sentencing',
+    case: 'Nestor Hernandez Melgar',
+    proceeding: 'Sentencing',
+    dateISO: '2026-07-22',
+    dateText: 'Wednesday, July 22, 2026',
+    court: 'Snohomish County Superior Court, Everett, WA',
+    status: 'Convicted by jury of first-degree murder, first-degree burglary, and violation of a court order.',
+    detail: 'This is a sentencing hearing, not a trial. The jury returned its verdict on June 22, 2026.',
+    src: 'https://www.heraldnet.com/2026/06/22/jury-convicts-man-in-everett-murder-staged-as-suicide/',
+    srcLabel: 'The Everett Herald, courtroom reporting (June 22, 2026)',
+    srcType: 'Court reporting',
+    link: '/post/anatomy-of-a-murder-trial-hernandez-melgar/',
+    linkText: 'Read our explainer on the Hernandez Melgar trial',
+    groups: ['next', 'sentencing'],
+  },
+  {
+    id: 'peck-pretrial',
+    case: 'Dianne Curry Peck',
+    proceeding: 'Pretrial hearing',
+    dateISO: '2026-08-31',
+    dateText: 'Monday, August 31, 2026',
+    court: 'Bristol County Superior Court, Fall River, MA',
+    status: 'Pleaded not guilty; released on conditions. No trial date set.',
+    detail: 'The 1985 Mansfield newborn case — known for four decades as Baby Boy Doe, or the Mansfield Baby Boy Doe case — was reopened using forensic genetic genealogy.',
+    src: 'https://www.bostonglobe.com/2026/06/30/metro/dianne-curry-newborn-mansfield-arraignment/',
+    srcLabel: 'The Boston Globe, arraignment reporting (June 30, 2026)',
+    srcType: 'Court reporting',
+    link: null,
+    linkText: null,
+    groups: ['next', 'hearings'],
+  },
 ];
+
+const unconfirmed = [
+  {
+    case: 'Brooke George',
+    where: 'United Arab Emirates',
+    status: 'Detained pending proceedings. No publicly verified court date.',
+    note: 'Details of the allegation come from an advocacy organization, not from UAE authorities or any court. No charge has been confirmed on the public record, and she is presumed innocent.',
+    src: 'https://www.cbsnews.com/news/brooke-george-british-influencer-dubai-execution-stabbing-man-death-self-defense/',
+    srcLabel: 'CBS News (reporting an advocacy group’s account)',
+    srcType: 'News report — not officially confirmed',
+    link: null,
+    linkText: null,
+  },
+  {
+    case: 'Taylor Parker',
+    where: 'Texas',
+    status: 'Direct appeal exhausted; case is in habeas review. No dated proceeding and no execution date.',
+    note: 'Habeas review moves without a public calendar. There is nothing to attend.',
+    src: 'https://www.tdcj.texas.gov/death_row/dr_info/parkertaylor.html',
+    srcLabel: 'Texas Department of Criminal Justice, offender record',
+    srcType: 'Primary — state agency record',
+    link: '/post/maternal-instinct-netflix-forensic-evidence-taylor-parker/',
+    linkText: 'Read our analysis of the forensic evidence',
+  },
+  {
+    case: 'Pedro Hernandez (Etan Patz)',
+    where: 'New York',
+    status: 'Conviction reinstated by the U.S. Supreme Court on June 22, 2026, and the case remanded to the Second Circuit. No dated proceeding.',
+    note: 'A remand does not put a hearing on a public calendar. Nothing is currently scheduled.',
+    src: 'https://www.supremecourt.gov/opinions/25pdf/25-748_4g1o.pdf',
+    srcLabel: 'Supreme Court of the United States, slip opinion No. 25-748',
+    srcType: 'Primary — court opinion',
+    link: '/post/etan-patz-supreme-court-2026-conviction-reinstated/',
+    linkText: 'Read what the Supreme Court actually decided',
+  },
+];
+
+const appeals = [
+  {
+    case: 'Karmelo Anthony',
+    where: 'Collin County, Texas',
+    status: 'Convicted and sentenced June 2026; new-trial and recusal motions filed July 7; no hearing date publicly confirmed.',
+    note: 'A recusal motion is referred to a regional administrative judge before any hearing is set, so no date exists to publish yet.',
+    src: 'https://collincountyda.com/da-greg-willis-announces-first-degree-murder-indictment-in-frisco-track-meet-stabbing-death-of-austin-metcalf-karmelo-anthony-charged/',
+    srcLabel: 'Collin County District Attorney, case announcement',
+    srcType: 'Primary — prosecutor’s office',
+    link: '/post/a-jury-convicted-a-family-still-grieves-karmelo-anthony-verdict-austin-metcalf/',
+    linkText: 'Read our coverage of the verdict and what it left unresolved',
+  },
+];
+
+const completed = [
+  {
+    case: 'Rex Heuermann',
+    where: 'Suffolk County, New York',
+    status: 'Case concluded by guilty plea (April 2026) and sentencing (June 2026).',
+    note: 'There is no upcoming court date in this case. He waived his right to appeal as part of the plea.',
+    src: 'https://www.suffolkcountyda.org/gilgo-serial-killer-sentenced-to-three-consecutive-life-sentences-plus-100-years-for-murdering-eight-women/',
+    srcLabel: 'Suffolk County District Attorney, sentencing announcement',
+    srcType: 'Primary — prosecutor’s office',
+    link: '/post/rex-heuermann-sentencing-june-17-what-the-plea-established/',
+    linkText: 'Read what the plea established — and what it did not',
+  },
+];
+
+const byGroup = (g) => entries.filter((e) => e.groups.includes(g));
+const nextDates = byGroup('next').sort((a, b) => a.dateISO.localeCompare(b.dateISO));
+
+const jsonld = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    { '@type': 'Organization', '@id': 'https://cassiancreed.com/#org' },
+    {
+      '@type': 'WebSite',
+      '@id': 'https://cassiancreed.com/#website',
+      url: 'https://cassiancreed.com/',
+      name: 'Cassian Creed',
+      publisher: { '@id': 'https://cassiancreed.com/#org' },
+    },
+    {
+      '@type': 'CollectionPage',
+      '@id': 'https://cassiancreed.com/court-calendar#page',
+      url: 'https://cassiancreed.com/court-calendar',
+      name: 'True Crime Court Calendar: Trial Dates & Hearings 2026',
+      description:
+        'Track verified 2026 true-crime trial dates, hearings, sentencing proceedings, and appeals, including Lindsay Clancy, Dianne Curry Peck, and other major cases.',
+      isPartOf: { '@id': 'https://cassiancreed.com/#website' },
+      publisher: { '@id': 'https://cassiancreed.com/#org' },
+      dateModified: BUILD_DATE,
+      mainEntity: { '@id': 'https://cassiancreed.com/court-calendar#schedule' },
+    },
+    {
+      '@type': 'ItemList',
+      '@id': 'https://cassiancreed.com/court-calendar#schedule',
+      name: 'Scheduled court proceedings',
+      itemListOrder: 'https://schema.org/ItemListOrderAscending',
+      numberOfItems: nextDates.length,
+      itemListElement: nextDates.map((e, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        name: e.case + ' — ' + e.proceeding + ' — ' + e.dateText + ' — ' + e.court,
+        url: 'https://cassiancreed.com/court-calendar#' + e.id,
+      })),
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': 'https://cassiancreed.com/court-calendar#breadcrumb',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://cassiancreed.com/' },
+        { '@type': 'ListItem', position: 2, name: 'True Crime Court Calendar', item: 'https://cassiancreed.com/court-calendar' },
+      ],
+    },
+  ],
+};
 ---
-<Base title="True Crime Court Calendar" description={intro}>
+<Base
+  title="True Crime Court Calendar: Trial Dates & Hearings 2026"
+  description="Track verified 2026 true-crime trial dates, hearings, sentencing proceedings, and appeals, including Lindsay Clancy, Dianne Curry Peck, and other major cases."
+  jsonld={jsonld}
+>
   <section class="hero wrap">
     <p class="evidence evidence--accent">Court Calendar</p>
-    <h1>True Crime Court Calendar</h1>
-    <p class="cal-lede">{intro}</p>
+    <h1>True Crime Court Calendar: Trial Dates &amp; Hearings 2026</h1>
+    <p class="cal-answer">
+      Three court dates are confirmed. Lindsay Clancy returns to Plymouth County Superior Court on <strong>July 13</strong> for a pretrial hearing, and her trial begins <strong>July 20</strong> with jury selection. Dianne Curry Peck is due back in Bristol County Superior Court on <strong>August 31</strong>. Nestor Hernandez Melgar is sentenced July 22.
+    </p>
+    <p class="cal-fresh">
+      <strong>Last verified: {LAST_VERIFIED}.</strong> Court dates move. Every entry below is checked against the public record, and each one carries its source. Confirm with the court before you travel.
+    </p>
   </section>
 
-  <section class="wrap">
+  <section class="wrap cal-sec" aria-labelledby="next-dates">
+    <h2 id="next-dates">Next Court Dates</h2>
+    <p class="cal-sub">Everything currently on a calendar, in date order.</p>
+    <div class="cards">
+      {nextDates.map((e) => (
+        <article class="card" id={e.id}>
+          <p class="card__type">{e.proceeding}</p>
+          <h3 class="card__case">{e.case}</h3>
+          <p class="card__when"><time datetime={e.dateISO}>{e.dateText}</time></p>
+          <p class="card__court">{e.court}</p>
+          <p class="card__status"><span class="card__k">Status</span> {e.status}</p>
+          <p class="card__detail">{e.detail}</p>
+          <p class="card__meta">
+            <span class="card__verified">Last verified: {LAST_VERIFIED}</span>
+            <span class="card__change">All dates are subject to change by the court.</span>
+          </p>
+          <p class="card__src">
+            <span class="card__k">Source</span>
+            <a href={e.src} target="_blank" rel="noopener noreferrer">{e.srcLabel}</a>
+            <span class="card__srctype">{e.srcType}</span>
+          </p>
+          <p class="card__links">
+            {e.link ? (
+              <a class="card__read" href={e.link}>{e.linkText} &rarr;</a>
+            ) : (
+              <span class="card__soon">Our case file on this is in progress.</span>
+            )}
+            <a class="card__help" href="/support/">Victim &amp; Reader Resources</a>
+          </p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="wrap cal-sec" aria-labelledby="upcoming-trials">
+    <h2 id="upcoming-trials">Upcoming Trials</h2>
+    {byGroup('trials').map((e) => (
+      <div class="row">
+        <p class="row__type">{e.proceeding}</p>
+        <h3 class="row__case">{e.case}</h3>
+        <p class="row__when"><time datetime={e.dateISO}>{e.dateText}</time> &middot; {e.court}</p>
+        <p class="row__status">{e.status}</p>
+        <p class="row__meta">Last verified: {LAST_VERIFIED} &middot; subject to change by the court &middot; Source: <a href={e.src} target="_blank" rel="noopener noreferrer">{e.srcLabel}</a></p>
+        <p class="row__links"><a href={e.link}>{e.linkText} &rarr;</a> <a class="row__help" href="/support/">Victim &amp; Reader Resources</a></p>
+      </div>
+    ))}
+  </section>
+
+  <section class="wrap cal-sec" aria-labelledby="hearings">
+    <h2 id="hearings">Hearings &amp; Pretrial</h2>
+    {byGroup('hearings').map((e) => (
+      <div class="row">
+        <p class="row__type">{e.proceeding}</p>
+        <h3 class="row__case">{e.case}</h3>
+        <p class="row__when"><time datetime={e.dateISO}>{e.dateText}</time> &middot; {e.court}</p>
+        <p class="row__status">{e.status}</p>
+        <p class="row__meta">Last verified: {LAST_VERIFIED} &middot; subject to change by the court &middot; Source: <a href={e.src} target="_blank" rel="noopener noreferrer">{e.srcLabel}</a></p>
+        <p class="row__links">
+          {e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : <span class="card__soon">Our case file on this is in progress.</span>}
+          <a class="row__help" href="/support/">Victim &amp; Reader Resources</a>
+        </p>
+      </div>
+    ))}
+  </section>
+
+  <section class="wrap cal-sec" aria-labelledby="sentencing">
+    <h2 id="sentencing">Sentencing &amp; Appeals</h2>
+    {byGroup('sentencing').map((e) => (
+      <div class="row">
+        <p class="row__type">{e.proceeding}</p>
+        <h3 class="row__case">{e.case}</h3>
+        <p class="row__when"><time datetime={e.dateISO}>{e.dateText}</time> &middot; {e.court}</p>
+        <p class="row__status">{e.status}</p>
+        <p class="row__meta">Last verified: {LAST_VERIFIED} &middot; subject to change by the court &middot; Source: <a href={e.src} target="_blank" rel="noopener noreferrer">{e.srcLabel}</a></p>
+        <p class="row__links"><a href={e.link}>{e.linkText} &rarr;</a> <a class="row__help" href="/support/">Victim &amp; Reader Resources</a></p>
+      </div>
+    ))}
+    {appeals.map((e) => (
+      <div class="row">
+        <p class="row__type">Post-conviction motions</p>
+        <h3 class="row__case">{e.case}</h3>
+        <p class="row__when">No hearing date publicly confirmed &middot; {e.where}</p>
+        <p class="row__status">{e.status}</p>
+        <p class="row__note">{e.note}</p>
+        <p class="row__meta">Last verified: {LAST_VERIFIED} &middot; subject to change by the court &middot; Source: <a href={e.src} target="_blank" rel="noopener noreferrer">{e.srcLabel}</a> ({e.srcType})</p>
+        <p class="row__links"><a href={e.link}>{e.linkText} &rarr;</a> <a class="row__help" href="/support/">Victim &amp; Reader Resources</a></p>
+      </div>
+    ))}
+  </section>
+
+  <section class="wrap cal-sec" aria-labelledby="unconfirmed">
+    <h2 id="unconfirmed">Dates Not Yet Confirmed</h2>
+    <p class="cal-sub">These cases are active, but no date is on a public calendar. We do not publish a date until we can point to where it came from.</p>
+    {unconfirmed.map((e) => (
+      <div class="row row--muted">
+        <p class="row__type">No date set</p>
+        <h3 class="row__case">{e.case}</h3>
+        <p class="row__when">{e.where}</p>
+        <p class="row__status">{e.status}</p>
+        <p class="row__note">{e.note}</p>
+        <p class="row__meta">Last verified: {LAST_VERIFIED} &middot; subject to change by the court &middot; Source: <a href={e.src} target="_blank" rel="noopener noreferrer">{e.srcLabel}</a> ({e.srcType})</p>
+        <p class="row__links">
+          {e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : <span class="card__soon">Our case file on this is in progress.</span>}
+          <a class="row__help" href="/support/">Victim &amp; Reader Resources</a>
+        </p>
+      </div>
+    ))}
+  </section>
+
+  <section class="wrap cal-sec" aria-labelledby="completed">
+    <h2 id="completed">Recently Completed</h2>
+    {completed.map((e) => (
+      <div class="row row--done">
+        <p class="row__type">Concluded</p>
+        <h3 class="row__case">{e.case}</h3>
+        <p class="row__when">{e.where}</p>
+        <p class="row__status">{e.status}</p>
+        <p class="row__note">{e.note}</p>
+        <p class="row__meta">Last verified: {LAST_VERIFIED} &middot; Source: <a href={e.src} target="_blank" rel="noopener noreferrer">{e.srcLabel}</a> ({e.srcType})</p>
+        <p class="row__links"><a href={e.link}>{e.linkText} &rarr;</a> <a class="row__help" href="/support/">Victim &amp; Reader Resources</a></p>
+      </div>
+    ))}
+  </section>
+
+  <section class="wrap cal-sec" aria-labelledby="case-by-case">
+    <h2 id="case-by-case">Case-by-Case Schedule</h2>
     <div class="cal-scroll">
       <table class="cal-table">
         <thead>
           <tr>
             <th scope="col">Case</th>
-            <th scope="col">Defendant</th>
-            <th scope="col">Court</th>
-            <th scope="col">Next Event</th>
+            <th scope="col">Proceeding</th>
             <th scope="col">Date</th>
+            <th scope="col">Court</th>
             <th scope="col">Status</th>
-            <th scope="col">Coverage</th>
           </tr>
         </thead>
         <tbody>
-          {rows.map((r) => (
+          {nextDates.map((e) => (
             <tr>
-              <td class="cal-case">{r.caseName}</td>
-              <td class="cal-ph">{PH}</td>
-              <td class="cal-ph">{PH}</td>
-              <td class="cal-ph">{PH}</td>
-              <td class="cal-ph">{PH}</td>
-              <td class="cal-ph">{PH}</td>
-              <td>{r.coverage
-                ? <a class="cal-link" href={r.coverage}>Read the case file →</a>
-                : <span class="cal-soon">Coverage coming soon</span>}</td>
+              <td class="t-case">{e.case}</td>
+              <td>{e.proceeding}</td>
+              <td><time datetime={e.dateISO}>{e.dateText}</time></td>
+              <td>{e.court}</td>
+              <td class="t-status">{e.status}</td>
+            </tr>
+          ))}
+          {appeals.map((e) => (
+            <tr>
+              <td class="t-case">{e.case}</td>
+              <td>Post-conviction motions</td>
+              <td class="t-none">No date set</td>
+              <td>{e.where}</td>
+              <td class="t-status">{e.status}</td>
+            </tr>
+          ))}
+          {unconfirmed.map((e) => (
+            <tr>
+              <td class="t-case">{e.case}</td>
+              <td class="t-none">&mdash;</td>
+              <td class="t-none">No date set</td>
+              <td>{e.where}</td>
+              <td class="t-status">{e.status}</td>
+            </tr>
+          ))}
+          {completed.map((e) => (
+            <tr>
+              <td class="t-case">{e.case}</td>
+              <td>Concluded</td>
+              <td class="t-none">No upcoming date</td>
+              <td>{e.where}</td>
+              <td class="t-status">{e.status}</td>
             </tr>
           ))}
         </tbody>
       </table>
     </div>
-    <p class="cal-note evidence">Draft — no event details are listed until verified.</p>
+    <p class="cal-note evidence">Last verified: {LAST_VERIFIED}. All dates are subject to change by the court.</p>
   </section>
 
-  <!--
-    JSON-LD PLACEHOLDER — populate with verified data before production.
-    Template only: this block must stay an HTML comment. Do NOT move it into a live
-    <script type="application/ld+json"> tag until every TODO field is filled with
-    verified court data. Duplicate the ListItem block for each verified calendar row.
-    {
-      "@context": "https://schema.org",
-      "@type": "ItemList",
-      "name": "True Crime Court Calendar",
-      "url": "https://cassiancreed.com/court-calendar/",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "item": {
-            "@type": "Event",
-            "name": "TODO: verified event name (hearing / trial / sentencing)",
-            "startDate": "TODO: verified ISO 8601 date",
-            "eventStatus": "TODO: schema.org EventScheduled (or updated status)",
-            "location": {
-              "@type": "Place",
-              "name": "TODO: verified court name",
-              "address": "TODO: verified court address"
-            },
-            "description": "TODO: one-line verified description",
-            "url": "TODO: matching coverage URL on cassiancreed.com"
-          }
-        }
-      ]
-    }
-  -->
+  <section class="wrap cal-sec" aria-labelledby="how-we-verify">
+    <h2 id="how-we-verify">How We Verify Court Dates</h2>
+    <div class="prose">
+      <p>A wrong date is not a small mistake. It sends a victim's family to an empty courtroom, and it puts a scheduled proceeding in a defendant's name that may not exist. So we hold every line on this page to the same rule.</p>
+      <ol>
+        <li><strong>The source is never us.</strong> Each date traces to a court filing, a prosecutor's office, a state agency record, or a reporter who was in the room. We do not cite our own articles as the source for a date.</li>
+        <li><strong>We name the source type.</strong> A district attorney's announcement and a news report are not the same thing, so we label which one you are looking at.</li>
+        <li><strong>No date, no entry.</strong> If a case is active but nothing is scheduled, it goes in <a href="#unconfirmed">Dates Not Yet Confirmed</a> and stays there. We would rather say "we don't know" than guess.</li>
+        <li><strong>We re-check before we publish, and we date the check.</strong> Every card carries the date it was last verified.</li>
+        <li><strong>Legal status is stated exactly.</strong> Charged is not convicted. A plea is not a verdict. An appeal is not a retrial.</li>
+      </ol>
+      <p>Even so: courts continue courts. If you plan to attend, call the clerk's office first.</p>
+    </div>
+  </section>
+
+  <section class="wrap cal-sec" aria-labelledby="faq">
+    <h2 id="faq">FAQ</h2>
+    <div class="prose faq">
+      <h3>When does the Lindsay Clancy trial start?</h3>
+      <p>Jury selection is scheduled to begin Monday, July 20, 2026, in Plymouth County Superior Court. A pretrial hearing is set for July 13. She has pleaded not guilty and is presumed innocent.</p>
+
+      <h3>What is the next court date for Dianne Curry Peck?</h3>
+      <p>August 31, 2026, in Bristol County Superior Court in Fall River. She pleaded not guilty and was released on conditions. No trial date has been set.</p>
+
+      <h3>Does Brooke George have a trial date?</h3>
+      <p>No. There is no publicly verified court date. She is reported to be detained pending proceedings, but the details of the allegation come from an advocacy group rather than from UAE authorities or any court, and no charge has been confirmed on the public record.</p>
+
+      <h3>Is Karmelo Anthony still facing an upcoming court date?</h3>
+      <p>Not one that has been publicly scheduled. He was convicted and sentenced in June 2026, and new-trial and recusal motions were filed on July 7. No hearing date on those motions has been confirmed.</p>
+
+      <h3>Is Rex Heuermann still going to trial?</h3>
+      <p>No. That case is over. It concluded with a guilty plea in April 2026 and sentencing in June 2026. There is no upcoming court date.</p>
+
+      <h3>Can these dates change?</h3>
+      <p>Yes, and they often do. Hearings get continued, trials get pushed, and courts reschedule with little notice. Treat every date here as the best current information, not a promise.</p>
+
+      <h3>How are these dates verified?</h3>
+      <p>Each one traces to a court filing, a prosecutor's office, a state agency record, or courtroom reporting, and each card names its source and the date we last checked it. See <a href="#how-we-verify">How We Verify Court Dates</a>.</p>
+    </div>
+  </section>
+
+  <section class="wrap cal-sec">
+    <p class="cal-help">
+      True crime is about real people. If a case on this page touches something in your own life, our <a href="/support/">Victim &amp; Reader Resources</a> page lists free, confidential help.
+    </p>
+  </section>
 
   <style>
-    .cal-lede{color:var(--ink-2);max-width:62ch;font-size:18px;margin:18px 0 0}
-    .cal-scroll{overflow-x:auto;margin:26px 0 12px;background:var(--bg-2);border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow)}
-    .cal-table{width:100%;min-width:880px;border-collapse:collapse;font-size:15px}
-    .cal-table th{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);text-align:left;padding:14px 16px;background:var(--bg-3);border-bottom:1px solid var(--line-strong)}
-    .cal-table td{padding:14px 16px;border-top:1px solid var(--line);vertical-align:top}
-    .cal-table tbody tr:first-child td{border-top:0}
-    .cal-table tbody tr:hover{background:rgba(255,255,255,.02)}
-    .cal-case{font-family:var(--serif);font-weight:600;font-size:18px;color:var(--ink);white-space:nowrap}
-    .cal-ph{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--ink-3);white-space:nowrap}
-    .cal-link{color:var(--accent);text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
-    .cal-link:hover{color:#ff7d5e}
-    .cal-soon{color:var(--ink-3);font-size:14px;white-space:nowrap}
-    .cal-note{display:block;margin:0 0 44px}
-    @media(prefers-reduced-motion:reduce){.cal-table tbody tr:hover{background:none}}
+    .cal-answer{font-size:19px;color:var(--ink);max-width:68ch;margin:18px 0 0;line-height:1.6}
+    .cal-answer strong{color:var(--accent)}
+    .cal-fresh{font-size:15px;color:var(--ink-2);max-width:68ch;margin:14px 0 0}
+    .cal-fresh strong{color:var(--ink)}
+    .cal-sec{margin:44px auto 0}
+    .cal-sec h2{font-family:var(--serif);font-size:26px;font-weight:600;margin:0 0 6px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+    .cal-sub{color:var(--ink-2);font-size:15px;margin:0 0 18px;max-width:66ch}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px;margin-top:18px}
+    .card{background:var(--bg-2);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:10px;padding:20px}
+    .card__type,.row__type{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin:0 0 8px}
+    .card__case,.row__case{font-family:var(--serif);font-size:21px;font-weight:600;margin:0 0 6px;color:var(--ink)}
+    .card__when{font-family:var(--mono);font-size:15px;color:var(--ink);margin:0 0 4px}
+    .card__court,.row__when{color:var(--ink-2);font-size:14px;margin:0 0 12px}
+    .card__status,.row__status{font-size:15px;color:var(--ink);margin:0 0 10px;line-height:1.5}
+    .card__detail,.row__note{font-size:14px;color:var(--ink-2);margin:0 0 12px;line-height:1.5}
+    .card__k{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);display:block;margin-bottom:2px}
+    .card__meta{display:flex;flex-direction:column;gap:2px;margin:0 0 10px}
+    .card__verified,.card__change,.row__meta{font-family:var(--mono);font-size:11px;color:var(--ink-3);letter-spacing:.03em}
+    .card__src{font-size:13px;margin:0 0 12px}
+    .card__src a,.row__meta a{color:var(--accent);text-decoration:underline;text-underline-offset:2px}
+    .card__srctype{display:block;font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:var(--ink-3);margin-top:3px}
+    .card__links,.row__links{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin:0;padding-top:12px;border-top:1px solid var(--line)}
+    .card__read,.row__links a{color:var(--accent);text-decoration:none;font-size:14px}
+    .card__read:hover,.row__links a:hover{text-decoration:underline}
+    .card__help,.row__help{color:var(--ink-2)!important;font-size:13px}
+    .card__soon{color:var(--ink-3);font-size:13px}
+    .row{padding:18px 0;border-bottom:1px solid var(--line)}
+    .row:last-child{border-bottom:0}
+    .row--muted .row__type{color:var(--ink-3)}
+    .row--done .row__type{color:#5fae7e}
+    .row__meta{display:block;margin:0 0 10px}
+    .cal-scroll{overflow-x:auto;margin:18px 0 12px;background:var(--bg-2);border:1px solid var(--line);border-radius:10px}
+    .cal-table{width:100%;min-width:900px;border-collapse:collapse;font-size:14px}
+    .cal-table th{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);text-align:left;padding:13px 16px;background:var(--bg-3);border-bottom:1px solid var(--line-strong)}
+    .cal-table td{padding:13px 16px;border-top:1px solid var(--line);vertical-align:top;color:var(--ink-2)}
+    .t-case{font-family:var(--serif);font-weight:600;font-size:16px;color:var(--ink);white-space:nowrap}
+    .t-none{font-family:var(--mono);font-size:11.5px;color:var(--ink-3)}
+    .t-status{max-width:34ch}
+    .cal-note{display:block;margin:0 0 8px;color:var(--ink-3)}
+    .prose p,.prose li{color:var(--ink-2);line-height:1.65;max-width:70ch}
+    .prose strong{color:var(--ink)}
+    .prose ol{padding-left:20px}
+    .prose li{margin-bottom:10px}
+    .prose a{color:var(--accent)}
+    .faq h3{font-family:var(--serif);font-size:18px;font-weight:600;color:var(--ink);margin:22px 0 6px}
+    .cal-help{margin:36px 0 44px;padding:16px 18px;background:var(--bg-2);border:1px solid var(--line);border-radius:10px;font-size:15px;color:var(--ink-2)}
+    .cal-help a{color:var(--accent)}
+    @media(max-width:680px){.cards{grid-template-columns:1fr}}
   </style>
 </Base>
