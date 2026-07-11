@@ -6,6 +6,59 @@ import Base from '../layouts/Base.astro';
     <p class="evidence evidence--accent">Stay Safe</p>
     <h1>What criminal history teaches about keeping you and your loved ones safe</h1>
     <div class="post__content">
+      <section class="note" aria-labelledby="note-from-cassian">
+        <h2 class="note__h" id="note-from-cassian">A note from Cassian Creed</h2>
+        <p>We do not blame victims. Not here, not ever. The blame for a crime belongs to the person who commits it &mdash; no one else.</p>
+        <p>But I spend my days inside these cases, and I can&rsquo;t unlearn what they teach. Patterns repeat. Warnings get missed. And some of those lessons, shared plainly, can put a locked door, a second thought, or a trusted phone call between danger and the next person it reaches for.</p>
+        <p>That&rsquo;s why this page exists. Not to say anyone should have known better &mdash; but so that more of us know now.</p>
+        <p class="note__line">No more victims.</p>
+        <p class="note__sig">&mdash; Cassian Creed</p>
+      </section>
+
+      <section class="resources" id="resources" aria-labelledby="reader-resources">
+        <h2 id="reader-resources">Need help now? Real resources</h2>
+        <p class="resources__intro">True crime is about real people. If a story on this site touches something in your own life, these services exist for you &mdash; free, confidential, and staffed by people who know how to help.</p>
+
+        <div class="res res--danger">
+          <p class="res__k">Immediate danger</p>
+          <p>If you or someone else is in immediate danger, call <strong>911</strong>.</p>
+        </div>
+
+        <div class="res">
+          <p class="res__k">Crisis support</p>
+          <p><strong>988 Suicide &amp; Crisis Lifeline:</strong> call or text <strong>988</strong>, or chat at <a href="https://988lifeline.org" target="_blank" rel="noopener noreferrer">988lifeline.org</a>. 24/7, free, confidential.</p>
+        </div>
+
+        <div class="res">
+          <p class="res__k">Domestic violence</p>
+          <p><strong>National Domestic Violence Hotline:</strong> <strong>1-800-799-7233</strong>, or text <strong>START</strong> to <strong>88788</strong>. <a href="https://www.thehotline.org" target="_blank" rel="noopener noreferrer">thehotline.org</a>. 24/7, confidential, safety planning included.</p>
+        </div>
+
+        <div class="res">
+          <p class="res__k">Maternal mental health</p>
+          <p><strong>National Maternal Mental Health Hotline:</strong> <strong>1-833-852-6262</strong> (call or text, 24/7). <strong>Postpartum Support International:</strong> <strong>1-800-944-4773</strong>, <a href="https://postpartum.net" target="_blank" rel="noopener noreferrer">postpartum.net</a>. New and expecting parents deserve support &mdash; reaching out is strength, not failure.</p>
+          <p class="res__note">A note so no one is left waiting: the PSI HelpLine is not a crisis line &mdash; it returns messages between 8am and 11pm ET. If you are in crisis right now, call or text <strong>988</strong>.</p>
+        </div>
+
+        <div class="res">
+          <p class="res__k">Missing or exploited children</p>
+          <p><strong>National Center for Missing &amp; Exploited Children:</strong> <strong>1-800-843-5678</strong> (1-800-THE-LOST), <a href="https://www.missingkids.org" target="_blank" rel="noopener noreferrer">missingkids.org</a>.</p>
+        </div>
+
+        <div class="res">
+          <p class="res__k">Crime victims &amp; families</p>
+          <p><strong>VictimConnect Resource Center:</strong> <strong>1-855-484-2846</strong>, <a href="https://victimconnect.org" target="_blank" rel="noopener noreferrer">victimconnect.org</a> &mdash; referrals for victims of any crime.</p>
+        </div>
+
+        <div class="res">
+          <p class="res__k">Case tips</p>
+          <p>Have information about a case? Contact the investigating agency directly, or submit federal tips at <a href="https://tips.fbi.gov" target="_blank" rel="noopener noreferrer">tips.fbi.gov</a>. Please do not send tips to this site.</p>
+        </div>
+
+        <p class="resources__foot">Numbers verified July 2026. If any resource here fails you, tell us and we will fix it.</p>
+      </section>
+
+      <h2 class="lessons__h">What the record teaches</h2>
       <p>The point of reading true crime is not fear. It is that patterns repeat — and patterns can be learned. Across hundreds of cases, the same warning signs, the same moments where a different choice changed an outcome, show up again and again. None of this is about living afraid. It is about carrying a few useful instincts so that you, and the people you love, are a little harder to harm. Here is what the record actually teaches.</p>
 
       <section class="patterns" aria-label="Patterns of harm and safety">
@@ -73,6 +126,22 @@ import Base from '../layouts/Base.astro';
   </section></div>
 
   <style>
+    .note{margin:0 0 26px;padding:24px 26px;background:var(--bg-2);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:12px}
+    .note__h{font-family:var(--serif);font-size:24px;font-weight:700;text-transform:uppercase;letter-spacing:.02em;margin:0 0 14px;color:var(--ink)}
+    .note p{color:var(--ink-2);line-height:1.65;margin:0 0 12px}
+    .note__line{font-family:var(--serif);font-size:20px;font-weight:600;color:var(--ink)!important;margin:18px 0 4px!important}
+    .note__sig{font-family:var(--mono);font-size:13px;letter-spacing:.06em;color:var(--ink-3)!important;margin:0!important}
+    .resources{margin:0 0 30px;padding-bottom:26px;border-bottom:1px solid var(--line)}
+    .resources h2{margin-top:0}
+    .resources__intro{color:var(--ink-2);max-width:68ch}
+    .res{margin:0 0 12px;padding:16px 18px;background:var(--bg-2);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:8px}
+    .res--danger{border-left-color:#d94f3d;background:#1d1512}
+    .res__k{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin:0 0 6px}
+    .res--danger .res__k{color:#e8705c}
+    .res p{margin:0;line-height:1.6}
+    .res__note{margin-top:10px!important;font-size:14px;color:var(--ink-3)}
+    .resources__foot{margin:20px 0 0;font-size:14px;color:var(--ink-3);font-style:italic}
+    .lessons__h{margin-top:8px}
     .patterns{margin:26px 0 32px;padding:24px;background:var(--bg-2);border:1px solid var(--line);border-radius:12px}
     .patterns__lead{color:var(--ink-2);margin:0 0 18px}
     .patterns__lead strong{color:var(--ink)}

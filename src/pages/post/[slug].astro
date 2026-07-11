@@ -3,7 +3,8 @@ import Base from '../../layouts/Base.astro';
 import { getCollection } from 'astro:content';
 export async function getStaticPaths() {
   const posts = await getCollection('posts');
-  const caseFiles = posts.filter(p => p.data.tag === 'Case Files');
+  // Nancy Guthrie is excluded from related-content rails by standing order; the page itself stays live.
+  const caseFiles = posts.filter(p => p.data.tag === 'Case Files' && p.slug !== 'nancy-guthrie-abduction-what-we-know');
   return posts.map(p => {
     const idx = caseFiles.findIndex(o => o.slug === p.slug);
     let rel = [];
@@ -79,6 +80,7 @@ const jsonld = faqNode
       </aside>
     )}
     {isCase && <p class="post__crisis"><strong>If you need support.</strong> 988 Suicide &amp; Crisis Lifeline (call or text 988) · National Domestic Violence Hotline 1-800-799-7233 (text START to 88788) · RAINN 1-800-656-HOPE (4673).</p>}
+    <p class="post__resources"><a href="/support/">Victim &amp; Reader Resources</a> &mdash; free, confidential help for victims, families, and readers.</p>
   </article>
 
   <div class="wrap"><section class="convert" id="subscribe">
