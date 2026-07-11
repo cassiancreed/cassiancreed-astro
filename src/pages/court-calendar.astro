@@ -1,0 +1,105 @@
+---
+import Base from '../layouts/Base.astro';
+// DRAFT SCAFFOLD — every Court / Next Event / Date / Status cell is intentionally
+// "DRAFT-PLACEHOLDER" until each entry is verified against court records.
+const intro = "Upcoming hearings, trials, and sentencings in the cases we cover — dates verified before they're listed.";
+const PH = 'DRAFT-PLACEHOLDER';
+const rows = [
+  { caseName: 'Clancy',                  coverage: '/post/the-lindsay-clancy-case-three-children-one-trial-and-the-questions-massachusetts-must-answer/' },
+  { caseName: 'Peck / Baby Boy Doe',     coverage: null },
+  { caseName: 'Hernandez Melgar',        coverage: '/post/anatomy-of-a-murder-trial-hernandez-melgar/' },
+  { caseName: 'Karmelo Anthony',         coverage: '/post/a-jury-convicted-a-family-still-grieves-karmelo-anthony-verdict-austin-metcalf/' },
+  { caseName: 'Brooke George',           coverage: null },
+  { caseName: 'Heuermann (Gilgo Beach)', coverage: '/post/the-gilgo-beach-murders-rex-heuermann-pleads-guilty-and-eight-women-are-finally-named/' },
+];
+---
+<Base title="True Crime Court Calendar" description={intro}>
+  <section class="hero wrap">
+    <p class="evidence evidence--accent">Court Calendar</p>
+    <h1>True Crime Court Calendar</h1>
+    <p class="cal-lede">{intro}</p>
+  </section>
+
+  <section class="wrap">
+    <div class="cal-scroll">
+      <table class="cal-table">
+        <thead>
+          <tr>
+            <th scope="col">Case</th>
+            <th scope="col">Defendant</th>
+            <th scope="col">Court</th>
+            <th scope="col">Next Event</th>
+            <th scope="col">Date</th>
+            <th scope="col">Status</th>
+            <th scope="col">Coverage</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((r) => (
+            <tr>
+              <td class="cal-case">{r.caseName}</td>
+              <td class="cal-ph">{PH}</td>
+              <td class="cal-ph">{PH}</td>
+              <td class="cal-ph">{PH}</td>
+              <td class="cal-ph">{PH}</td>
+              <td class="cal-ph">{PH}</td>
+              <td>{r.coverage
+                ? <a class="cal-link" href={r.coverage}>Read the case file →</a>
+                : <span class="cal-soon">Coverage coming soon</span>}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p class="cal-note evidence">Draft — no event details are listed until verified.</p>
+  </section>
+
+  <!--
+    JSON-LD PLACEHOLDER — populate with verified data before production.
+    Template only: this block must stay an HTML comment. Do NOT move it into a live
+    <script type="application/ld+json"> tag until every TODO field is filled with
+    verified court data. Duplicate the ListItem block for each verified calendar row.
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "True Crime Court Calendar",
+      "url": "https://cassiancreed.com/court-calendar/",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Event",
+            "name": "TODO: verified event name (hearing / trial / sentencing)",
+            "startDate": "TODO: verified ISO 8601 date",
+            "eventStatus": "TODO: schema.org EventScheduled (or updated status)",
+            "location": {
+              "@type": "Place",
+              "name": "TODO: verified court name",
+              "address": "TODO: verified court address"
+            },
+            "description": "TODO: one-line verified description",
+            "url": "TODO: matching coverage URL on cassiancreed.com"
+          }
+        }
+      ]
+    }
+  -->
+
+  <style>
+    .cal-lede{color:var(--ink-2);max-width:62ch;font-size:18px;margin:18px 0 0}
+    .cal-scroll{overflow-x:auto;margin:26px 0 12px;background:var(--bg-2);border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow)}
+    .cal-table{width:100%;min-width:880px;border-collapse:collapse;font-size:15px}
+    .cal-table th{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);text-align:left;padding:14px 16px;background:var(--bg-3);border-bottom:1px solid var(--line-strong)}
+    .cal-table td{padding:14px 16px;border-top:1px solid var(--line);vertical-align:top}
+    .cal-table tbody tr:first-child td{border-top:0}
+    .cal-table tbody tr:hover{background:rgba(255,255,255,.02)}
+    .cal-case{font-family:var(--serif);font-weight:600;font-size:18px;color:var(--ink);white-space:nowrap}
+    .cal-ph{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--ink-3);white-space:nowrap}
+    .cal-link{color:var(--accent);text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
+    .cal-link:hover{color:#ff7d5e}
+    .cal-soon{color:var(--ink-3);font-size:14px;white-space:nowrap}
+    .cal-note{display:block;margin:0 0 44px}
+    @media(prefers-reduced-motion:reduce){.cal-table tbody tr:hover{background:none}}
+  </style>
+</Base>
