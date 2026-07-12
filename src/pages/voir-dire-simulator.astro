@@ -1,0 +1,535 @@
+---
+import Base from '../layouts/Base.astro';
+
+const jsonld = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      '@id': 'https://cassiancreed.com/voir-dire-simulator#page',
+      url: 'https://cassiancreed.com/voir-dire-simulator',
+      name: 'Voir Dire Simulator — Try Jury Selection Yourself',
+      description: 'An interactive, educational jury-selection game: question fictional jurors, argue challenges for cause, spend peremptory strikes, and survive a Batson challenge.',
+      isPartOf: { '@id': 'https://cassiancreed.com/#website' },
+      publisher: { '@id': 'https://cassiancreed.com/#org' },
+    },
+    {
+      '@type': 'FAQPage',
+      '@id': 'https://cassiancreed.com/voir-dire-simulator#faq',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'What is voir dire?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Voir dire is the questioning phase of jury selection. Lawyers and the judge question the jury pool to uncover bias, hardship, and conflicts before deciding who is seated. Jurors are removed two ways: challenges for cause (unlimited, but a judge must agree there is a legal basis) and peremptory strikes (limited in number, no reason required — with constitutional exceptions).' },
+        },
+        {
+          '@type': 'Question',
+          name: 'What is a peremptory challenge?',
+          acceptedAnswer: { '@type': 'Answer', text: 'A peremptory challenge lets a lawyer remove a prospective juror without stating a reason. Each side gets a limited number — how many varies by state and by the severity of the charge. The key limit: peremptory strikes may not be used to remove jurors because of their race, ethnicity, or gender.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'What is a Batson challenge?',
+          acceptedAnswer: { '@type': 'Answer', text: 'A Batson challenge is an objection that the other side is using peremptory strikes in a discriminatory pattern. Under Batson v. Kentucky (1986) race and ethnicity are protected; J.E.B. v. Alabama (1994) extended protection to gender. If the pattern is challenged, the striking side must offer a neutral explanation — and if the judge finds the reason is pretext, the strike is disallowed. Age and occupation are not protected classes under Batson.' },
+        },
+      ],
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': 'https://cassiancreed.com/voir-dire-simulator#breadcrumb',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://cassiancreed.com/' },
+        { '@type': 'ListItem', position: 2, name: 'Voir Dire Simulator', item: 'https://cassiancreed.com/voir-dire-simulator' },
+      ],
+    },
+  ],
+};
+---
+<Base
+  title="Voir Dire Simulator — Try Jury Selection Yourself"
+  description="Think you could seat a fair jury? Question fictional jurors, argue challenges for cause, spend limited peremptory strikes — and survive a Batson challenge. Free, in your browser."
+  jsonld={jsonld}
+>
+  <section class="hero wrap">
+    <p class="evidence evidence--accent">Interactive &middot; Educational</p>
+    <h1>Voir Dire Simulator: Try Jury Selection Yourself</h1>
+    <p class="vds-intro">
+      Twelve seats. A limited stack of strikes. A judge who makes you argue for every removal.
+      This is <strong>voir dire</strong> &mdash; the questioning phase of jury selection &mdash; turned into a
+      playable teaching model. Pick a side in a fictional armed-robbery case, question the pool,
+      and learn the real difference between a <strong>challenge for cause</strong>, a
+      <strong>peremptory strike</strong>, and the constitutional tripwire called a <strong>Batson challenge</strong>.
+    </p>
+    <p class="vds-disclaimer" role="note">
+      A simplified educational model. Not legal advice, not a prediction tool. Procedures vary by
+      state and court. All jurors fictional.
+    </p>
+  </section>
+
+  <section class="wrap vds-sec" aria-label="Voir dire simulator game">
+    <noscript><p class="vds-noscript">The simulator needs JavaScript. Everything else on this page &mdash; including the FAQ below &mdash; works without it.</p></noscript>
+    <div id="vds-app">
+
+      <!-- PRE-GAME -->
+      <div id="vds-setup" class="vds-panel">
+        <p class="vds-case"><span class="vds-k">The case</span> <em>State v. Rivera</em> &mdash; armed robbery of a convenience store. Entirely fictional, deliberately unlike any case we cover. The defendant is presumed innocent; your job is only to seat a fair jury.</p>
+        <fieldset class="vds-side">
+          <legend>Choose your table</legend>
+          <div class="vds-side__row" role="radiogroup" aria-label="Choose your side">
+            <button type="button" class="vds-sidebtn" data-side="defense" aria-pressed="false">DEFENSE<span>protect the presumption</span></button>
+            <button type="button" class="vds-sidebtn" data-side="prosecution" aria-pressed="false">PROSECUTION<span>seat jurors who can convict</span></button>
+          </div>
+        </fieldset>
+        <fieldset class="vds-cond">
+          <legend>Conditions panel</legend>
+          <div class="vds-slider">
+            <label for="sl-media">Media saturation <output id="out-media">40%</output></label>
+            <input type="range" id="sl-media" min="0" max="100" value="40" step="5" />
+            <p class="vds-hint">How much of the pool has seen coverage. Crank it up and watch how slowly a jury seats &mdash; this is why high-publicity trials take days to pick twelve.</p>
+          </div>
+          <div class="vds-slider">
+            <label for="sl-comm">Community attitudes <output id="out-comm">Balanced</output></label>
+            <input type="range" id="sl-comm" min="0" max="100" value="50" step="5" aria-describedby="comm-hint" />
+            <p class="vds-hint" id="comm-hint">Left: more residents skeptical of police testimony. Right: more &ldquo;tough on crime.&rdquo;</p>
+          </div>
+          <div class="vds-slider">
+            <label for="sl-pool">Pool size <output id="out-pool">30 jurors</output></label>
+            <input type="range" id="sl-pool" min="24" max="40" value="30" step="2" />
+          </div>
+        </fieldset>
+        <button type="button" id="vds-start" class="btn" disabled>Pick a side to begin</button>
+      </div>
+
+      <!-- GAME -->
+      <div id="vds-game" class="vds-panel" hidden>
+        <div class="vds-status" aria-live="polite">
+          <span id="st-side" class="vds-chip"></span>
+          <span class="vds-chip">Seated: <strong id="st-seated">0</strong>/12 &middot; Alt: <strong id="st-alt">0</strong>/2</span>
+          <span class="vds-chip">Your peremptories: <strong id="st-mine">6</strong></span>
+          <span class="vds-chip">Theirs: <strong id="st-theirs">6</strong></span>
+          <span class="vds-chip" id="st-pool"></span>
+        </div>
+        <p class="vds-perem-note">Six peremptories per side in this sim &mdash; <strong>real numbers vary by state and charge.</strong> Challenges for cause are unlimited, but the judge rules on each.</p>
+
+        <div class="vds-cols">
+          <div class="vds-jurorcol">
+            <article id="vds-juror" class="vds-juror" aria-label="Prospective juror under examination">
+              <p class="vds-jno">Prospective Juror <strong id="j-no">#1</strong></p>
+              <h3 id="j-name">&nbsp;</h3>
+              <dl class="vds-demo">
+                <div><dt>Age</dt><dd id="j-age"></dd></div>
+                <div><dt>Gender</dt><dd id="j-gender"></dd></div>
+                <div><dt>Race / ethnicity</dt><dd id="j-race"></dd></div>
+                <div><dt>Occupation</dt><dd id="j-occ"></dd></div>
+              </dl>
+              <p class="vds-demonote">Demographics are visible in a real courtroom too &mdash; the law does not pretend lawyers can't see them. It forbids <em>striking because of</em> the protected ones.</p>
+              <div class="vds-revealed">
+                <p class="vds-k">On the record <span id="j-qleft">(3 questions left)</span></p>
+                <ul id="j-facts"><li class="vds-fact--none">Nothing yet. Ask.</li></ul>
+              </div>
+              <div class="vds-questions" role="group" aria-label="Question this juror">
+                <button type="button" class="vds-q" data-q="media">Media &amp; this case</button>
+                <button type="button" class="vds-q" data-q="experience">Experience with crime</button>
+                <button type="button" class="vds-q" data-q="police">Views on police testimony</button>
+                <button type="button" class="vds-q" data-q="hardship">Hardship &amp; availability</button>
+                <button type="button" class="vds-q" data-q="law">Can you follow the law?</button>
+              </div>
+              <div class="vds-actions" role="group" aria-label="Decide on this juror">
+                <button type="button" id="act-cause" class="vds-act">Challenge for cause&hellip;</button>
+                <button type="button" id="act-strike" class="vds-act vds-act--strike">Peremptory strike</button>
+                <button type="button" id="act-accept" class="vds-act vds-act--accept">Accept juror</button>
+              </div>
+              <div id="cause-picker" class="vds-causebox" hidden>
+                <p class="vds-k">State your legal basis &mdash; cause is argued, not asserted:</p>
+                <button type="button" class="vds-cause" data-basis="bias">Demonstrated bias</button>
+                <button type="button" class="vds-cause" data-basis="hardship">Hardship</button>
+                <button type="button" class="vds-cause" data-basis="law">Cannot follow the law</button>
+                <button type="button" class="vds-cause vds-cause--x" data-basis="cancel">Withdraw</button>
+              </div>
+            </article>
+          </div>
+          <div class="vds-logcol">
+            <p class="vds-k">Courtroom record</p>
+            <ul id="vds-log" class="vds-log" aria-live="polite" aria-label="Courtroom record"></ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- MODAL (judge rulings / Batson) -->
+      <div id="vds-modal" class="vds-modal" role="dialog" aria-modal="true" aria-labelledby="m-title" hidden>
+        <div class="vds-modal__card">
+          <p class="vds-k" id="m-kicker"></p>
+          <h3 id="m-title"></h3>
+          <div id="m-body"></div>
+          <div id="m-actions" class="vds-modal__actions"></div>
+        </div>
+      </div>
+
+      <!-- END SCREEN -->
+      <div id="vds-end" class="vds-panel" hidden>
+        <p class="evidence evidence--accent">Jury seated</p>
+        <h2>Your panel is sworn.</h2>
+        <div id="end-score" class="vds-score"></div>
+        <div id="end-profile" class="vds-profile"></div>
+        <div id="end-teach" class="vds-teach"></div>
+        <div class="vds-banks">
+          <h3>You just played the surface.</h3>
+          <p><em>The Jury Chess Game</em> &mdash; our free field guide to how lawyers really do this &mdash; goes deeper: the strike patterns, the questions that actually expose bias, and the moves this simplified model can only hint at.</p>
+          <form action="https://cassiancreed.beehiiv.com/subscribe" method="get" aria-label="Subscribe free to the Cassian Creed newsletter">
+            <input type="email" name="email" required autocomplete="email" placeholder="you@email.com" aria-label="Your email address" />
+            <input type="hidden" name="utm_source" value="website" />
+            <input type="hidden" name="utm_medium" value="voir_dire_sim" />
+            <input type="hidden" name="utm_campaign" value="jury_chess_game_guide" />
+            <button class="btn" type="submit">Send me the free guide &rarr;</button>
+          </form>
+        </div>
+        <button type="button" id="vds-again" class="vds-act">Play again with new conditions</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap vds-sec" aria-labelledby="how-real">
+    <h2 id="how-real">How this maps to real courtrooms</h2>
+    <div class="prose">
+      <p>Everything above is a compressed model of a process you can watch play out in real coverage. Two places to see it live: our <a href="/court-calendar/">True Crime Court Calendar</a> tracks upcoming jury selections and hearings with sourced dates, and <a href="/post/anatomy-of-a-murder-trial-hernandez-melgar/">Anatomy of a Murder Trial</a> walks a real conviction from jury selection to verdict.</p>
+      <p>The two-strike system is real: unlimited challenges for cause that a judge must grant, and a limited stack of peremptories that need no reason &mdash; bounded by <em>Batson v. Kentucky</em> (1986), which forbids striking jurors because of race or ethnicity, and <em>J.E.B. v. Alabama</em> (1994), which extended that protection to gender. Age and occupation are not Batson-protected classes, and the simulator reflects that line exactly.</p>
+    </div>
+  </section>
+
+  <section class="wrap vds-sec" aria-labelledby="vds-faq">
+    <h2 id="vds-faq">FAQ</h2>
+    <div class="prose faq">
+      <h3>What is voir dire?</h3>
+      <p>Voir dire is the questioning phase of jury selection. Lawyers and the judge question the pool to uncover bias, hardship, and conflicts before deciding who sits. Jurors leave two ways: challenges for cause (unlimited, judge decides) and peremptory strikes (limited, no reason required &mdash; with constitutional exceptions).</p>
+      <h3>What is a peremptory challenge?</h3>
+      <p>A removal that requires no stated reason. Each side gets a limited number &mdash; the count varies by state and by the severity of the charge. The hard limit: peremptories may not be used to remove jurors because of race, ethnicity, or gender.</p>
+      <h3>What is a Batson challenge?</h3>
+      <p>An objection that the other side is striking jurors in a discriminatory pattern. Under <em>Batson v. Kentucky</em> race and ethnicity are protected; <em>J.E.B. v. Alabama</em> extended protection to gender. The striking side must give a neutral reason, and a judge who finds pretext disallows the strike. Age and occupation are not protected classes under Batson.</p>
+    </div>
+    <p class="vds-disclaimer" role="note">
+      A simplified educational model. Not legal advice, not a prediction tool. Procedures vary by
+      state and court. All jurors fictional.
+    </p>
+  </section>
+
+  <style>
+    .vds-intro{font-size:19px;line-height:1.6;max-width:70ch;color:var(--ink)}
+    .vds-intro strong{color:var(--accent)}
+    .vds-disclaimer{margin:18px 0 0;padding:10px 14px;border:1px solid var(--line-strong);border-left:3px solid var(--accent-2);border-radius:8px;font-family:var(--mono);font-size:12.5px;letter-spacing:.02em;color:var(--ink-2);max-width:70ch}
+    .vds-sec{margin:40px auto 0}
+    .vds-sec h2{font-family:var(--serif);font-size:26px;font-weight:600;margin:0 0 12px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+    .vds-noscript{padding:14px;border:1px solid var(--line);border-radius:8px;color:var(--ink-2)}
+    .vds-panel{background:var(--bg-2);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+    .vds-k{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin:0 0 8px}
+    .vds-case{font-size:16px;color:var(--ink);max-width:70ch;line-height:1.6;margin:0 0 18px}
+    .vds-case .vds-k{display:block}
+    fieldset.vds-side,fieldset.vds-cond{border:1px solid var(--line);border-radius:10px;padding:16px;margin:0 0 16px}
+    legend{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);padding:0 8px}
+    .vds-side__row{display:flex;gap:12px;flex-wrap:wrap}
+    .vds-sidebtn{flex:1;min-width:200px;background:var(--bg-3);color:var(--ink);border:1px solid var(--line-strong);border-radius:10px;padding:16px;font-family:var(--mono);font-size:14px;letter-spacing:.1em;cursor:pointer;text-align:left}
+    .vds-sidebtn span{display:block;font-family:var(--sans);font-size:13px;letter-spacing:0;text-transform:none;color:var(--ink-2);margin-top:6px}
+    .vds-sidebtn[aria-pressed="true"]{border-color:var(--accent);outline:2px solid var(--accent);outline-offset:1px}
+    .vds-sidebtn:focus-visible,.vds-q:focus-visible,.vds-act:focus-visible,.vds-cause:focus-visible,button:focus-visible{outline:2px solid var(--accent-2);outline-offset:2px}
+    .vds-slider{margin:0 0 16px}
+    .vds-slider label{display:flex;justify-content:space-between;font-size:15px;color:var(--ink);margin-bottom:6px}
+    .vds-slider output{font-family:var(--mono);color:var(--accent-2)}
+    .vds-slider input[type="range"]{width:100%;accent-color:var(--accent)}
+    .vds-hint{font-size:13px;color:var(--ink-3);margin:6px 0 0;max-width:64ch}
+    #vds-start{margin-top:4px}
+    #vds-start[disabled]{opacity:.55;cursor:not-allowed}
+    .vds-status{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 8px}
+    .vds-chip{background:var(--bg-3);border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-family:var(--mono);font-size:12px;color:var(--ink-2)}
+    .vds-chip strong{color:var(--ink)}
+    .vds-perem-note{font-size:13px;color:var(--ink-3);margin:0 0 16px}
+    .vds-perem-note strong{color:var(--ink-2)}
+    .vds-cols{display:grid;grid-template-columns:1fr;gap:16px}
+    @media(min-width:860px){.vds-cols{grid-template-columns:3fr 2fr}}
+    .vds-juror{background:var(--bg-3);border:1px solid var(--line-strong);border-left:3px solid var(--accent);border-radius:10px;padding:18px}
+    .vds-jno{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin:0 0 4px}
+    .vds-juror h3{font-family:var(--serif);font-size:22px;margin:0 0 12px;color:var(--ink)}
+    .vds-demo{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px;margin:0 0 6px}
+    .vds-demo dt{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
+    .vds-demo dd{margin:2px 0 0;font-size:15px;color:var(--ink)}
+    .vds-demonote{font-size:12.5px;color:var(--ink-3);font-style:italic;margin:0 0 12px}
+    .vds-revealed{border-top:1px solid var(--line);padding-top:12px;margin-bottom:12px}
+    .vds-revealed ul{margin:0;padding-left:18px}
+    .vds-revealed li{font-size:14.5px;color:var(--ink);margin-bottom:4px;line-height:1.5}
+    .vds-fact--none{color:var(--ink-3);font-style:italic;list-style:none;margin-left:-18px}
+    #j-qleft{color:var(--ink-3);text-transform:none;letter-spacing:.02em}
+    .vds-questions{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px}
+    .vds-q{background:var(--bg-2);color:var(--ink-2);border:1px solid var(--line-strong);border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer}
+    .vds-q:hover:not([disabled]){border-color:var(--accent);color:var(--ink)}
+    .vds-q[disabled]{opacity:.45;cursor:not-allowed}
+    .vds-actions{display:flex;flex-wrap:wrap;gap:8px}
+    .vds-act{background:var(--bg-2);color:var(--ink);border:1px solid var(--line-strong);border-radius:8px;padding:11px 14px;font-size:14px;cursor:pointer}
+    .vds-act--strike{border-color:var(--accent);color:var(--accent)}
+    .vds-act--strike[disabled]{opacity:.45;cursor:not-allowed}
+    .vds-act--accept{border-color:#5fae7e;color:#8fd0a9}
+    .vds-causebox{margin-top:12px;border-top:1px dashed var(--line-strong);padding-top:12px}
+    .vds-cause{background:var(--bg-2);color:var(--ink);border:1px solid var(--line-strong);border-radius:8px;padding:9px 12px;font-size:13.5px;cursor:pointer;margin:0 6px 6px 0}
+    .vds-cause--x{color:var(--ink-3)}
+    .vds-logcol{min-width:0}
+    .vds-log{list-style:none;margin:0;padding:0;max-height:430px;overflow-y:auto;border:1px solid var(--line);border-radius:10px;background:var(--bg);padding:12px}
+    .vds-log li{font-size:13.5px;line-height:1.5;color:var(--ink-2);padding:6px 8px;border-bottom:1px solid var(--line)}
+    .vds-log li:last-child{border-bottom:0}
+    .vds-log .lg-judge{color:var(--accent-2)}
+    .vds-log .lg-batson{color:var(--accent);font-weight:600}
+    .vds-log .lg-seat{color:#8fd0a9}
+    .vds-modal{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;padding:18px;z-index:60}
+    .vds-modal__card{background:var(--bg-2);border:1px solid var(--line-strong);border-left:4px solid var(--accent);border-radius:12px;box-shadow:var(--shadow);max-width:600px;width:100%;padding:22px;max-height:86vh;overflow-y:auto}
+    .vds-modal__card h3{font-family:var(--serif);font-size:22px;margin:0 0 10px;color:var(--ink)}
+    .vds-modal__card p{font-size:15px;line-height:1.6;color:var(--ink-2)}
+    .vds-modal__card p strong{color:var(--ink)}
+    .vds-modal__actions{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+    .vds-modal__actions button{text-align:left}
+    .vds-score,.vds-profile,.vds-teach{border:1px solid var(--line);border-radius:10px;padding:16px;margin:0 0 14px;background:var(--bg-3)}
+    .vds-score table{width:100%;border-collapse:collapse;font-size:14.5px}
+    .vds-score td{padding:6px 4px;border-bottom:1px solid var(--line);color:var(--ink-2)}
+    .vds-score td:last-child{text-align:right;color:var(--ink);font-family:var(--mono)}
+    .vds-teach p{margin:0 0 8px;font-size:15px;line-height:1.6;color:var(--ink)}
+    .vds-banks{border:1px solid var(--line-strong);border-left:3px solid var(--accent);border-radius:10px;padding:20px;margin:18px 0 14px;background:var(--bg-3)}
+    .vds-banks h3{font-family:var(--serif);font-size:22px;margin:0 0 8px;color:var(--ink)}
+    .vds-banks p{color:var(--ink-2);max-width:64ch;line-height:1.6}
+    .vds-banks form{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+    .vds-banks input[type="email"]{flex:1;min-width:220px;background:var(--bg);border:1px solid var(--line-strong);border-radius:8px;color:var(--ink);padding:12px 14px;font-size:15px}
+    #vds-again{margin-top:4px}
+    .vds-toast{position:fixed;left:50%;transform:translateX(-50%);bottom:18px;background:var(--bg-3);border:1px solid var(--accent-2);border-radius:10px;color:var(--ink);padding:12px 16px;font-size:14px;max-width:520px;z-index:70;box-shadow:var(--shadow)}
+    .prose p{color:var(--ink-2);line-height:1.65;max-width:70ch}
+    .prose a{color:var(--accent)}
+    .faq h3{font-family:var(--serif);font-size:18px;font-weight:600;color:var(--ink);margin:22px 0 6px}
+  </style>
+
+  <script is:inline>
+  (function(){
+  'use strict';
+  var $=function(id){return document.getElementById(id)};
+  var FIRST=['Marisol','Dexter','Hannah','Kwame','Linh','Robert','Aisha','Sean','Priya','Tomás','Grace','Ilya','Dawn','Marcus','Yuki','Colleen','Andre','Beatriz','Walt','Naomi','Omar','Jill','Hector','Simone','Ray','Talia','Gordon','Ivy','Luis','Meredith','Chuck','Fatima','Nate','Opal','Vik','Sandra','Earl','Rosa','Ken','Dina'];
+  var LAST=['Whitfield','Okafor','Tran','Delgado','Kaminski','Barrow','Nakamura','Reyes','Stone','Achebe','Lindqvist','Marsh','Ferreira','Boone','Haddad','Kelly','Osei','Vargas','Pruitt','Chen','Maldonado','Fox','Ivanov','Beltran','Shaw','Ngo','Ricci','Dover','Ames','Solano'];
+  var OCC=['retired teacher','nurse','warehouse supervisor','software tester','barista','city bus driver','accountant','night-shift stocker','real-estate agent','freelance photographer','retired postal worker','daycare owner','electrician','paralegal','line cook','security guard','college student','physical therapist','pastor','bartender','bookkeeper','HVAC technician','retired firefighter','grocery cashier','social worker','delivery driver','dental hygienist','union machinist'];
+  var RACES=[['White',.46],['Black',.17],['Hispanic/Latino',.17],['Asian',.10],['Middle Eastern',.04],['Native American',.03],['Multiracial',.03]];
+  var S={};
+  function rnd(a){return a[Math.floor(Math.random()*a.length)]}
+  function chance(p){return Math.random()<p}
+  function pickRace(){var r=Math.random(),acc=0,i;for(i=0;i<RACES.length;i++){acc+=RACES[i][1];if(r<acc)return RACES[i][0]}return 'White'}
+  function makeJuror(n,cfg){
+    var g=chance(.04)?'Nonbinary':(chance(.5)?'Female':'Male');
+    var j={no:n,name:rnd(FIRST)+' '+rnd(LAST),age:19+Math.floor(Math.random()*60),gender:g,race:pickRace(),occ:rnd(OCC),facts:{},revealed:[],qleft:3,struckBy:null};
+    var m=cfg.media/100, c=cfg.comm/100;
+    j.facts.media = chance(m) ? (chance(.55)?'heavy':'some') : 'none';
+    j.facts.opinion = (j.facts.media==='heavy') && chance(.6);
+    if(chance(.22)) j.facts.exp='robbery victim'; else if(chance(.18)) j.facts.exp='law-enforcement family'; else if(chance(.15)) j.facts.exp='prior jury service ('+(chance(.5)?'criminal':'civil')+')'; else j.facts.exp=null;
+    j.facts.police = chance(1-c) && chance(.5) ? 'distrusts police testimony' : (chance(c) && chance(.4) ? 'gives police extra credence' : null);
+    j.facts.hardship = chance(.16) ? rnd(['night-shift hardship','sole caregiver at home','non-refundable travel booked','small business, no cover']) : null;
+    j.facts.law = chance(.10) ? rnd(['would expect the defendant to testify','doubts they can presume innocence','says they cannot sit in judgment of anyone']) : null;
+    return j;
+  }
+  function log(t,cls){var li=document.createElement('li');if(cls)li.className=cls;li.textContent=t;var l=$('vds-log');l.appendChild(li);l.scrollTop=l.scrollHeight}
+  function toast(t){var d=document.createElement('div');d.className='vds-toast';d.setAttribute('role','status');d.textContent=t;document.body.appendChild(d);setTimeout(function(){d.remove()},7000)}
+  function reveal(j,k,text){if(j.revealed.indexOf(k)<0){j.revealed.push(k)}var li=document.createElement('li');li.textContent=text;var f=$('j-facts');if(f.querySelector('.vds-fact--none'))f.innerHTML='';f.appendChild(li)}
+  function modal(kick,title,html,actions){
+    $('m-kicker').textContent=kick;$('m-title').textContent=title;$('m-body').innerHTML=html;
+    var box=$('m-actions');box.innerHTML='';
+    actions.forEach(function(a){var b=document.createElement('button');b.type='button';b.className='vds-act';b.textContent=a[0];b.addEventListener('click',function(){$('vds-modal').hidden=true;a[1]()});box.appendChild(b)});
+    $('vds-modal').hidden=false; setTimeout(function(){var b=box.querySelector('button');if(b)b.focus()},30);
+  }
+  function updateStatus(){
+    $('st-side').textContent='You: '+S.side.toUpperCase();
+    $('st-seated').textContent=S.seated.length;$('st-alt').textContent=S.alternates.length;
+    $('st-mine').textContent=S.mine;$('st-theirs').textContent=S.theirs;
+    $('st-pool').textContent='Pool remaining: '+(S.pool.length-S.idx);
+    $('act-strike').disabled = S.mine<=0;
+  }
+  function showJuror(){
+    if(S.seated.length>=12 && S.alternates.length>=2){return endGame()}
+    if(S.idx>=S.pool.length){
+      log('The venire is exhausted. The court summons ten more jurors — big pools exist for exactly this reason.','lg-judge');
+      for(var i=0;i<10;i++){S.pool.push(makeJuror(S.pool.length+1,S.cfg))}
+    }
+    var j=S.cur=S.pool[S.idx];
+    $('j-no').textContent='#'+j.no;$('j-name').textContent=j.name;
+    $('j-age').textContent=j.age;$('j-gender').textContent=j.gender;$('j-race').textContent=j.race;$('j-occ').textContent=j.occ;
+    $('j-facts').innerHTML='<li class="vds-fact--none">Nothing yet. Ask.</li>';
+    $('j-qleft').textContent='(3 questions left)';
+    document.querySelectorAll('.vds-q').forEach(function(b){b.disabled=false});
+    $('cause-picker').hidden=true;
+    updateStatus();
+  }
+  var QA={
+    media:function(j){var t;if(j.facts.media==='none'){t='Hasn’t seen coverage of this case.'}else if(j.facts.media==='some'){t='Saw a headline or two; says it left no impression.'}else{t='Followed the coverage closely'+(j.facts.opinion?' — and admits they’ve “probably already got a view.”':' but insists they can set it aside.')}reveal(j,'media',t);return t},
+    experience:function(j){var t=j.facts.exp?('Life experience: '+j.facts.exp+'.'):'No relevant personal history with robbery or the courts.';reveal(j,'experience',t);return t},
+    police:function(j){var t=j.facts.police?('States plainly: '+j.facts.police+'.'):'Says they’d weigh an officer’s testimony like anyone else’s.';reveal(j,'police',t);return t},
+    hardship:function(j){var t=j.facts.hardship?('Raises a hardship: '+j.facts.hardship+'.'):'No scheduling or hardship issues.';reveal(j,'hardship',t);return t},
+    law:function(j){var t=j.facts.law?('On the law: '+j.facts.law+'.'):'Affirms they can presume innocence and hold the State to its burden.';reveal(j,'law',t);return t}
+  };
+  function causeSupported(j,basis){
+    if(basis==='bias'){
+      if(j.revealed.indexOf('media')>=0 && j.facts.opinion) return 'Juror admitted a formed opinion from coverage. Granted — that is demonstrated bias.';
+      if(j.revealed.indexOf('police')>=0 && j.facts.police) return 'A stated inability to weigh testimony neutrally goes to bias. Granted.';
+      if(j.revealed.indexOf('experience')>=0 && j.facts.exp==='robbery victim') return 'Given the juror’s own robbery, the court errs on the side of caution. Granted.';
+      return null;
+    }
+    if(basis==='hardship'){ if(j.revealed.indexOf('hardship')>=0 && j.facts.hardship) return 'Hardship is on the record. Granted — the juror is excused with the court’s thanks.'; return null; }
+    if(basis==='law'){ if(j.revealed.indexOf('law')>=0 && j.facts.law) return 'A juror who cannot apply the presumption or the burden cannot serve. Granted.'; return null; }
+    return null;
+  }
+  function denialLine(j,basis){
+    var hasHidden = (basis==='bias'&&(j.facts.opinion||j.facts.police||j.facts.exp==='robbery victim'))||(basis==='hardship'&&j.facts.hardship)||(basis==='law'&&j.facts.law);
+    if(hasHidden) return 'Denied. There is nothing in this record to support that — counsel, you never asked.';
+    if(basis==='hardship') return 'Denied. No hardship has been raised.';
+    if(basis==='bias') return 'Denied. Occupation and demeanor alone are not cause — cause is argued from the record, not asserted.';
+    return 'Denied. This juror has said nothing suggesting they cannot follow the law.';
+  }
+  function batsonScan(strikes){
+    var byRace={},byGender={},i,s;
+    for(i=0;i<strikes.length;i++){s=strikes[i];byRace[s.race]=(byRace[s.race]||0)+1;byGender[s.gender]=(byGender[s.gender]||0)+1}
+    var n=strikes.length,k;
+    for(k in byRace){if(byRace[k]>=3&&byRace[k]/n>=0.75)return{cls:'race/ethnicity',group:k}}
+    for(k in byGender){if(byGender[k]>=4&&byGender[k]/n>=0.8)return{cls:'gender',group:k}}
+    return null;
+  }
+  function nonProtectedToast(strikes){
+    var older=strikes.filter(function(s){return s.age>=60}).length;
+    if(older>=3&&!S.ageToasted){S.ageToasted=true;toast('Pattern noted: several older jurors struck. Age is NOT a Batson-protected class — that pattern is legal. Whether it’s wise is a different question.')}
+    var occ={},i;for(i=0;i<strikes.length;i++){occ[strikes[i].occ]=(occ[strikes[i].occ]||0)+1;if(occ[strikes[i].occ]>=2&&!S.occToasted){S.occToasted=true;toast('You’ve struck the same occupation twice. Occupation is not a protected class either — lawyers strike by job all the time.')}}
+  }
+  function playerStrike(){
+    if(S.mine<=0)return;
+    var j=S.cur;
+    var flagged = batsonScan(S.myStrikes.concat([j]));
+    if(flagged && !S.batsonSpent[flagged.cls+flagged.group]){
+      S.batsonSpent[flagged.cls+flagged.group]=true;
+      var neutral=[];
+      j.revealed.forEach(function(k){
+        if(k==='media'&&j.facts.media!=='none')neutral.push(['“Heavy media exposure.” — a real, revealed, neutral reason',true]);
+        if(k==='police'&&j.facts.police)neutral.push(['“Their stated view of police testimony.” — revealed and neutral',true]);
+        if(k==='experience'&&j.facts.exp)neutral.push(['“Their life experience: '+j.facts.exp+'.” — revealed and neutral',true]);
+        if(k==='hardship'&&j.facts.hardship)neutral.push(['“The hardship they raised.” — revealed and neutral',true]);
+      });
+      neutral.push(['“Gut feeling, Your Honor.”',false]);
+      neutral.push(['“Honestly? The demographics.”',false]);
+      var html='<p><strong>Opposing counsel rises: “Batson challenge, Your Honor.”</strong></p>'+
+        '<p>Your peremptory strikes have fallen in a pattern against one '+flagged.cls+' group ('+flagged.group+'). <strong>Race, ethnicity, and gender are constitutionally protected from peremptory strikes</strong> — <em>Batson v. Kentucky</em> (1986) for race and ethnicity, <em>J.E.B. v. Alabama</em> (1994) for gender. Age and occupation are <em>not</em> protected classes.</p>'+
+        '<p>The judge turns to you: <strong>“Counsel, I need a neutral reason for this strike.”</strong></p>';
+      var acts=neutral.map(function(nr){
+        return [nr[0],function(){
+          if(nr[1]){S.batsonFlags++;log('BATSON: challenge survived — your reason was neutral on this record. The judge notes the pattern.','lg-batson');commitStrike(j,true)}
+          else{S.batsonFlags++;S.batsonLost++;S.mine--;log('BATSON: pretext found. Strike disallowed — Juror #'+j.no+' will be seated. You lose that peremptory (remedies vary in real courts).','lg-batson');seat(j,'seated over a disallowed strike');advance()}
+        }];
+      });
+      modal('Objection','Batson challenge',html,acts);
+      return;
+    }
+    commitStrike(j,false);
+  }
+  function commitStrike(j,afterBatson){
+    S.mine--;S.myStrikes.push(j);j.struckBy='you';
+    log('You use a peremptory on Juror #'+j.no+' ('+j.occ+'). No reason required.'+(afterBatson?'':''),'');
+    nonProtectedToast(S.myStrikes);
+    advance();
+  }
+  function aiTurn(j,cb){
+    var d=S.side==='defense';
+    var bad=0;
+    if(j.facts.police==='distrusts police testimony') bad+= d?-2:3;
+    if(j.facts.police==='gives police extra credence') bad+= d?3:-2;
+    if(j.facts.exp==='robbery victim') bad+= d?3:-1;
+    if(j.facts.exp==='law-enforcement family') bad+= d?2:-2;
+    if(j.facts.opinion) bad+=2;
+    if(S.theirs>0 && bad>=3 && chance(.8)){
+      S.theirs--;S.theirStrikes.push(j);j.struckBy='them';
+      log('Opposing counsel uses a peremptory on Juror #'+j.no+'.','');
+      var pat=batsonScan(S.theirStrikes);
+      if(pat && !S.aiBatsonDone){
+        S.aiBatsonDone=true;
+        modal('Your move','Their strikes are forming a pattern',
+          '<p>Opposing counsel’s peremptories have clustered against one '+pat.cls+' group ('+pat.group+'). You may raise a <strong>Batson challenge</strong> and make them state a neutral reason.</p>',
+          [['Raise Batson',function(){
+            if(chance(.6)){S.batsonRaisedWon++;log('BATSON (yours): the judge finds pretext — their strike is disallowed and Juror #'+j.no+' is seated.','lg-batson');seat(j,'seated — opposing strike disallowed');cb(true);return}
+            S.batsonRaisedLost++;log('BATSON (yours): they offer a neutral reason; the strike stands. The pattern is on the record now.','lg-batson');cb(false);
+          }],['Let it go',function(){cb(false)}]]);
+        return;
+      }
+      cb(false);return;
+    }
+    cb(null);
+  }
+  function seat(j,why){
+    if(S.seated.length<12){S.seated.push(j);log('Juror #'+j.no+' ('+j.occ+', '+j.age+') is SEATED'+(why?' — '+why:'')+'. ('+S.seated.length+'/12)','lg-seat')}
+    else if(S.alternates.length<2){S.alternates.push(j);log('Juror #'+j.no+' is seated as ALTERNATE '+S.alternates.length+'/2.','lg-seat')}
+  }
+  function advance(){S.idx++;updateStatus();showJuror()}
+  function endGame(){
+    $('vds-game').hidden=true;$('vds-end').hidden=false;
+    var sc='<p class="vds-k">Scorecard</p><table>'+
+      '<tr><td>Your peremptories spent</td><td>'+(6-S.mine)+' / 6</td></tr>'+
+      '<tr><td>Their peremptories spent</td><td>'+(6-S.theirs)+' / 6</td></tr>'+
+      '<tr><td>Cause challenges — won / lost</td><td>'+S.causeWon+' / '+S.causeLost+'</td></tr>'+
+      '<tr><td>Batson flags against you</td><td>'+S.batsonFlags+(S.batsonLost?' ('+S.batsonLost+' strike lost)':'')+'</td></tr>'+
+      '<tr><td>Batson you raised — won / lost</td><td>'+S.batsonRaisedWon+' / '+S.batsonRaisedLost+'</td></tr>'+
+      '<tr><td>Jurors questioned</td><td>'+S.questionsAsked+' questions</td></tr></table>';
+    $('end-score').innerHTML=sc;
+    var all=S.seated, avg=Math.round(all.reduce(function(a,j){return a+j.age},0)/all.length);
+    var media=all.filter(function(j){return j.facts.media!=='none'}).length;
+    var victims=all.filter(function(j){return j.facts.exp==='robbery victim'}).length;
+    var skept=all.filter(function(j){return j.facts.police==='distrusts police testimony'}).length;
+    $('end-profile').innerHTML='<p class="vds-k">Seated panel profile</p><p>Average age '+avg+'. '+media+' of 12 saw some coverage. '+victims+' robbery victim(s). '+skept+' police-skeptic(s). Two alternates behind them.</p>';
+    var t=[];
+    if(S.cfg.media>=70)t.push('Under heavy media saturation you burned strikes on exposure alone — exactly why high-publicity trials seat juries slowly.');
+    if(S.batsonFlags>0)t.push('You drew a Batson flag: race, ethnicity, and gender are protected from peremptory strikes — age and occupation are not. That line is the whole lesson.');
+    if(S.causeLost>S.causeWon)t.push('Most of your cause challenges died for lack of a record. Cause is argued from answers, not asserted from hunches — question first.');
+    if(t.length<3)t.push('Every strike is a trade: remove one risk and you may seat a worse one you never questioned.');
+    if(t.length<3)t.push('The judge granted cause only where the record supported it — the transcript, not instinct, is the currency of voir dire.');
+    $('end-teach').innerHTML='<p class="vds-k">Three lines to keep</p>'+t.slice(0,3).map(function(x){return '<p>'+x+'</p>'}).join('');
+  }
+  function start(){
+    S.cfg={media:+$('sl-media').value,comm:+$('sl-comm').value,pool:+$('sl-pool').value};
+    S.pool=[];for(var i=1;i<=S.cfg.pool;i++)S.pool.push(makeJuror(i,S.cfg));
+    S.idx=0;S.seated=[];S.alternates=[];S.mine=6;S.theirs=6;S.myStrikes=[];S.theirStrikes=[];
+    S.causeWon=0;S.causeLost=0;S.batsonFlags=0;S.batsonLost=0;S.batsonRaisedWon=0;S.batsonRaisedLost=0;
+    S.batsonSpent={};S.aiBatsonDone=false;S.ageToasted=false;S.occToasted=false;S.questionsAsked=0;
+    $('vds-setup').hidden=true;$('vds-end').hidden=true;$('vds-game').hidden=false;$('vds-log').innerHTML='';
+    log('THE COURT: “Counsel, we have a pool of '+S.cfg.pool+'. Twelve and two alternates. Proceed.”','lg-judge');
+    showJuror();
+  }
+  document.querySelectorAll('.vds-sidebtn').forEach(function(b){
+    b.addEventListener('click',function(){
+      document.querySelectorAll('.vds-sidebtn').forEach(function(x){x.setAttribute('aria-pressed','false')});
+      b.setAttribute('aria-pressed','true');S.side=b.dataset.side;
+      var st=$('vds-start');st.disabled=false;st.textContent='Begin voir dire →';
+    });
+  });
+  $('sl-media').addEventListener('input',function(){$('out-media').textContent=this.value+'%'});
+  $('sl-comm').addEventListener('input',function(){var v=+this.value;$('out-comm').textContent=v<35?'Police-skeptical':(v>65?'Tough on crime':'Balanced')});
+  $('sl-pool').addEventListener('input',function(){$('out-pool').textContent=this.value+' jurors'});
+  $('vds-start').addEventListener('click',start);
+  $('vds-again').addEventListener('click',function(){$('vds-end').hidden=true;$('vds-setup').hidden=false});
+  document.querySelectorAll('.vds-q').forEach(function(b){
+    b.addEventListener('click',function(){
+      var j=S.cur;if(j.qleft<=0)return;
+      j.qleft--;S.questionsAsked++;
+      var ans=QA[b.dataset.q](j);
+      log('Q to #'+j.no+' ('+b.textContent.trim()+'): '+ans,'');
+      b.disabled=true;
+      $('j-qleft').textContent='('+j.qleft+' question'+(j.qleft===1?'':'s')+' left)';
+      if(j.qleft===0)document.querySelectorAll('.vds-q').forEach(function(x){x.disabled=true});
+    });
+  });
+  $('act-cause').addEventListener('click',function(){$('cause-picker').hidden=!$('cause-picker').hidden});
+  document.querySelectorAll('.vds-cause').forEach(function(b){
+    b.addEventListener('click',function(){
+      $('cause-picker').hidden=true;
+      var basis=b.dataset.basis;if(basis==='cancel')return;
+      var j=S.cur, ok=causeSupported(j,basis);
+      if(ok){S.causeWon++;log('THE COURT on your cause challenge (#'+j.no+', '+basis+'): '+ok,'lg-judge');advance()}
+      else{S.causeLost++;log('THE COURT on your cause challenge (#'+j.no+', '+basis+'): '+denialLine(j,basis),'lg-judge')}
+    });
+  });
+  $('act-strike').addEventListener('click',playerStrike);
+  $('act-accept').addEventListener('click',function(){
+    var j=S.cur;
+    log('You accept Juror #'+j.no+'.','');
+    aiTurn(j,function(handled){ if(handled===null){seat(j,'accepted by both sides')} advance(); });
+  });
+  })();
+  </script>
+</Base>
