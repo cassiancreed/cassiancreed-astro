@@ -113,3 +113,10 @@ He indicated at sentencing that he intended to appeal. As of mid-2026 that appea
 Rachel Morin deserves to be remembered as a mother and a person — not reduced to the violence done to her. The science that identified her killer is genuine and significant. It matters because it worked.
 
 If you want the full sourced account of this case — the investigation, the forensic method, and the evidence presented at trial — the book [*The Trail: The Murder of Rachel Morin*](/the-trail/) covers it in depth. Subscribing to the free [Cassian Creed newsletter](https://cassiancreed.beehiiv.com/subscribe) gets you *The Jury Chess Game*, our field guide to how lawyers really pick a jury.
+
+## Listen to this case
+
+<iframe loading="lazy" style="border-radius:12px" src="https://open.spotify.com/embed/episode/37J4OqhMHX4tVzjzjTFnuE?theme=0" width="100%" height="152" frameborder="0" allow="clipboard-write; encrypted-media; fullscreen; picture-in-picture" title="Listen: The DNA Trail to Rachel Morin’s Killer — Cassian Creed: Daily Update"></iframe>
+
+> **Get the next case file the day it ships**  
+> [Subscribe free — get *The Jury Chess Game*, our field guide to how lawyers really pick a jury →](https://cassiancreed.beehiiv.com/subscribe?utm_source=website&utm_medium=av_embed&utm_campaign=jury_chess_game_guide)

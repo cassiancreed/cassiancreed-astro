@@ -85,7 +85,15 @@ Nestor Hernandez Melgar is scheduled for sentencing on July 22, 2026.
 
 ## Stay in the Loop
 
-**Listen:** New episode on [Cassian Creed: Daily Update](https://open.spotify.com/show/3yAJhBsYBJcruN3lJAQ8db)  
+## Listen to this case
+
+<iframe loading="lazy" style="border-radius:12px" src="https://open.spotify.com/embed/show/3yAJhBsYBJcruN3lJAQ8db?theme=0" width="100%" height="352" frameborder="0" allow="clipboard-write; encrypted-media; fullscreen; picture-in-picture" title="Listen: Cassian Creed — Daily Update episodes on this case"></iframe>
+
+> **Get the next case file the day it ships**  
+> [Subscribe free — get *The Jury Chess Game*, our field guide to how lawyers really pick a jury →](https://cassiancreed.beehiiv.com/subscribe?utm_source=website&utm_medium=av_embed&utm_campaign=jury_chess_game_guide)
+
+**Interactive:** [Try jury selection yourself — our free Voir Dire Simulator](/voir-dire-simulator/): question a fictional pool, argue cause, spend peremptories, survive a Batson challenge.
+  
 **Watch:** [YouTube Short walkthrough](https://www.youtube.com/@CassianCreed)  
 **More coverage:** Follow all our open cases at [cassiancreed.com](https://cassiancreed.com).  
 *Sentencing for Nestor Hernandez Melgar is scheduled for July 22, 2026.*

@@ -60,3 +60,10 @@ The ruling closes a forty-seven-year saga and leaves Pedro Hernandez serving his
 What happened to Etan Patz changed American childhood. Who killed Etan Patz was answered, contested, and — in 2026 — settled. The milk carton kid's case is now one of the defining legal stories of its era.
 
 *If this case file moved you, subscribe to Neural Edge Publishing, explore our other true crime case files, and follow us for ongoing coverage of the cases that rewrite the law. More at cassiancreed.com.*
+
+## Listen to this case
+
+<iframe loading="lazy" style="border-radius:12px" src="https://open.spotify.com/embed/episode/6ArfeTybQ5QZlKjNUaZalb?theme=0" width="100%" height="152" frameborder="0" allow="clipboard-write; encrypted-media; fullscreen; picture-in-picture" title="Listen: Etan Patz: The Milk Carton Kid and the 2026 Supreme Court Ruling — Cassian Creed: Daily Update"></iframe>
+
+> **Get the next case file the day it ships**  
+> [Subscribe free — get *The Jury Chess Game*, our field guide to how lawyers really pick a jury →](https://cassiancreed.beehiiv.com/subscribe?utm_source=website&utm_medium=av_embed&utm_campaign=jury_chess_game_guide)
