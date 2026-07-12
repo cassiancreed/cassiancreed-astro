@@ -275,7 +275,7 @@ const jsonld = {
     .vds-log .lg-judge{color:var(--accent-2)}
     .vds-log .lg-batson{color:var(--accent);font-weight:600}
     .vds-log .lg-seat{color:#8fd0a9}
-    .vds-modal{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;padding:18px;z-index:60}
+    .vds-modal:not([hidden]){position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;padding:18px;z-index:60}
     .vds-modal__card{background:var(--bg-2);border:1px solid var(--line-strong);border-left:4px solid var(--accent);border-radius:12px;box-shadow:var(--shadow);max-width:600px;width:100%;padding:22px;max-height:86vh;overflow-y:auto}
     .vds-modal__card h3{font-family:var(--serif);font-size:22px;margin:0 0 10px;color:var(--ink)}
     .vds-modal__card p{font-size:15px;line-height:1.6;color:var(--ink-2)}
