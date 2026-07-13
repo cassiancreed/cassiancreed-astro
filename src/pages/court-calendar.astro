@@ -1,6 +1,11 @@
 ---
 import Base from '../layouts/Base.astro';
 
+// DATE-VERIFICATION POLICY: every date on this page is verified DAILY against
+// live outside coverage — a court filing, a prosecutor's office, or courtroom
+// reporting. We never cite our own articles as the source for a date, and we
+// never guess. If a date cannot be confirmed against an outside source of
+// record, it is pulled, not estimated. Bump LAST_VERIFIED on each sweep.
 const LAST_VERIFIED = 'July 11, 2026';
 const BUILD_DATE = new Date().toISOString().slice(0, 10);
 
