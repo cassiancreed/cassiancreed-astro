@@ -1,0 +1,198 @@
+---
+import Base from '../layouts/Base.astro';
+
+// GLOSSARY — scaffold. Built to accept more entries later: add an object to
+// `terms` below and the anchor, heading, cross-links, and JSON-LD all follow
+// automatically. Keep `id` kebab-case and stable — anchors are linked from
+// other pages (e.g. /safety/#... and the genealogy explainer).
+// `links` = [{ label, href }]; internal hrefs keep the trailing slash.
+
+const CLANCY = '/post/lindsay-clancy-trial-2026-postpartum-psychosis/';
+const KARMELO = '/post/a-jury-convicted-a-family-still-grieves-karmelo-anthony-verdict-austin-metcalf/';
+const BABY_BOY_DOE = 'https://cassiancreed.beehiiv.com/p/baby-boy-doe-mansfield-1985';
+
+const terms = [
+  {
+    id: 'arraignment',
+    term: 'Arraignment',
+    def: "A defendant's first formal court appearance on criminal charges, where the charges are read and the person enters a plea (usually not guilty at this stage). It's the official start of the court process, not a trial or any finding of guilt.",
+    why: 'the plea entered here sets the case on its path; "not guilty" at arraignment is routine and says nothing about the eventual outcome.',
+    links: [{ label: 'Baby Boy Doe — Mansfield, 1985', href: BABY_BOY_DOE, ext: true }],
+  },
+  {
+    id: 'indictment',
+    term: 'Indictment',
+    def: "A formal accusation, issued by a grand jury, that there is enough evidence to charge someone with a crime and proceed toward trial. An indictment is not a conviction or proof of guilt — it's a decision that the case can move forward.",
+    why: 'people often mistake an indictment for a verdict; it only means charges are formally filed.',
+    links: [{ label: 'Baby Boy Doe — Mansfield, 1985', href: BABY_BOY_DOE, ext: true }],
+  },
+  {
+    id: 'voir-dire',
+    term: 'Voir Dire',
+    def: 'The jury-selection process, where attorneys and the judge question potential jurors to decide who will serve. The goal is an impartial jury with no disqualifying bias.',
+    why: 'which jurors are seated can shape a trial before any evidence is heard.',
+    links: [
+      { label: 'The Lindsay Clancy trial', href: CLANCY },
+      { label: 'Try the Voir Dire Simulator', href: '/voir-dire-simulator/' },
+    ],
+  },
+  {
+    id: 'nolle-prosequi',
+    term: 'Nolle Prosequi (nol-pros)',
+    def: 'A formal decision by prosecutors to drop or not pursue specific charges. It can happen because charges are redundant, evidence shifts, or counts are folded into others. It is a prosecutorial choice, not a court finding of innocence.',
+    why: "dropped counts don't mean the case is weak — often they're consolidated.",
+    links: [{ label: 'The Lindsay Clancy trial', href: CLANCY }],
+  },
+  {
+    id: 'lack-of-criminal-responsibility',
+    term: 'Not Guilty by Reason of Lack of Criminal Responsibility',
+    def: 'A defense (the modern Massachusetts framing of what’s commonly called an "insanity defense") arguing that, because of mental illness or defect, the defendant could not understand that their actions were wrong or could not conform their conduct to the law. If accepted, it results in a verdict other than a standard guilty finding, typically leading to commitment/treatment rather than prison.',
+    why: 'it is NOT the same as "getting off" — it addresses criminal responsibility, not whether the act occurred.',
+    links: [{ label: 'The Lindsay Clancy trial', href: CLANCY }],
+  },
+  {
+    id: 'recusal',
+    term: 'Recusal',
+    def: 'When a judge steps aside from a case, voluntarily or on request, usually to avoid an actual or perceived conflict of interest or bias.',
+    why: 'recusal changes who hears the case but does not itself decide any issue in it.',
+    links: [{ label: 'The Karmelo Anthony verdict', href: KARMELO }],
+  },
+  {
+    id: 'recusal-vs-removal',
+    term: 'Recusal vs. Removal',
+    def: 'A distinction people frequently get wrong. Recusal is a judge stepping aside from one case; removal is a separate, far rarer process of taking a judge off the bench entirely. A recusal motion is not an attempt to fire a judge.',
+    why: 'coverage often blurs these; they are not the same action or the same stakes.',
+    links: [{ label: 'The Karmelo Anthony verdict', href: KARMELO }],
+  },
+  {
+    id: 'motion-for-a-new-trial',
+    term: 'Motion for a New Trial',
+    def: 'A formal request asking the court to set aside a verdict and hold a new trial, based on claimed legal errors, new evidence, or process problems. Filing one does not undo the conviction; a judge must grant it first, and most are denied.',
+    why: 'a filed motion is a request, not a reversal — the original verdict stands unless and until a court rules otherwise.',
+    links: [{ label: 'The Karmelo Anthony verdict', href: KARMELO }],
+  },
+  {
+    id: 'limiting-instruction',
+    term: 'Limiting Instruction',
+    def: "A judge's direction telling jurors they may consider a piece of evidence only for a specific, narrow purpose. It's used when evidence is admissible for one reason but could be misused for another (for example, an emotional recording admitted for its factual content, not to inflame).",
+    why: 'it shapes how powerful evidence is allowed to be used.',
+    links: [{ label: 'The Lindsay Clancy trial', href: CLANCY }],
+  },
+  {
+    id: 'sequestration-of-witnesses',
+    term: 'Sequestration (of witnesses)',
+    def: "A court order keeping witnesses out of the courtroom until they testify, so their accounts aren't influenced by hearing others. Sometimes family members are exempted.",
+    why: 'it protects testimony from contamination.',
+    links: [{ label: 'The Lindsay Clancy trial', href: CLANCY }],
+  },
+  {
+    id: 'pretrial-conference',
+    term: 'Pretrial Conference / Hearing',
+    def: "A court session before trial where the judge and attorneys resolve outstanding issues — what evidence is admissible, scheduling, and procedural matters. Rulings here shape what the jury will and won't see.",
+    why: 'cases are often "won or lost" in what evidence gets admitted before trial even starts.',
+    links: [
+      { label: 'The Lindsay Clancy trial', href: CLANCY },
+      { label: 'Court Calendar', href: '/court-calendar/' },
+    ],
+  },
+  {
+    id: 'forensic-genetic-genealogy',
+    term: 'Forensic Genetic Genealogy (Investigative Genetic Genealogy)',
+    def: 'A technique that compares crime-scene DNA against genealogy databases to build family trees and identify potential suspects or unidentified victims. Critically, it generates leads, not courtroom proof — identity is then confirmed by a separate, direct DNA comparison.',
+    why: 'it names a direction to investigate; the case is proven by conventional confirmation testing, not the genealogy match itself.',
+    links: [
+      { label: 'How forensic genetic genealogy actually works', href: '/how-forensic-genetic-genealogy-works/' },
+      { label: 'Baby Boy Doe — Mansfield, 1985', href: BABY_BOY_DOE, ext: true },
+    ],
+  },
+  {
+    id: 'coercive-control',
+    term: 'Coercive Control',
+    def: "A pattern of behavior used to dominate and limit another person's freedom — monitoring, isolation, intimidation, financial control, threats. Increasingly recognized in law as a form of abuse even without physical violence.",
+    why: 'harm often begins here, before any assault, and recognizing it early can be protective.',
+    links: [
+      { label: 'The Stay Safe guide', href: '/safety/#coercive-control' },
+      { label: 'What is coercive control?', href: '/post/what-is-coercive-control-the-signs-examples-and-what-to-do/' },
+    ],
+  },
+  {
+    id: 'protective-restraining-order',
+    term: 'Protective / Restraining Order',
+    def: "A court order limiting one person's contact with another to prevent harm or harassment. Terms and names vary by state.",
+    why: 'violations are themselves offenses and can be evidence of escalation.',
+    links: [{ label: 'The Stay Safe guide', href: '/safety/#stalking' }],
+  },
+];
+
+const jsonld = {
+  '@context': 'https://schema.org',
+  '@type': 'DefinedTermSet',
+  name: 'Cassian Creed True-Crime & Courtroom Glossary',
+  hasDefinedTerm: terms.map(t => ({
+    '@type': 'DefinedTerm',
+    '@id': `https://cassiancreed.com/glossary/#${t.id}`,
+    name: t.term,
+    description: t.def,
+  })),
+};
+---
+<Base
+  title="True-Crime & Courtroom Glossary — Plain-English Legal Terms | Cassian Creed"
+  description="A plain-English glossary of the courtroom and forensic terms that true-crime coverage gets wrong: arraignment, indictment, voir dire, nolle prosequi, recusal, motion for a new trial, forensic genetic genealogy, coercive control, and more."
+>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonld)} />
+
+  <section class="hero wrap">
+    <h1>Glossary</h1>
+    <p class="hero__lede">The courtroom and forensic terms true-crime coverage gets wrong &mdash; in plain English, with the cases where they actually came up.</p>
+  </section>
+
+  <article class="post">
+    <div class="post__content">
+      <p>An indictment is not a verdict. A dropped charge is not an acquittal. A judge stepping aside is not a judge being fired. These distinctions decide how a story is understood &mdash; so we define them, plainly, and link each one to the case where it mattered.</p>
+      <p class="post__note">This glossary is growing. Terms are added as our case files raise them.</p>
+
+      <nav class="post__note" aria-label="Jump to a term">
+        <strong>Jump to:</strong>
+        {terms.map((t, i) => (<>{i > 0 && ' · '}<a href={`#${t.id}`}>{t.term}</a></>))}
+      </nav>
+
+      {terms.map(t => (
+        <section class="forensic__block" id={t.id}>
+          <h2>{t.term}</h2>
+          <p>{t.def}</p>
+          <p><strong>Why it matters:</strong> {t.why}</p>
+          {t.links && t.links.length > 0 && (
+            <p class="post__note">
+              <strong>See it in a case:</strong>{' '}
+              {t.links.map((l, i) => (
+                <>
+                  {i > 0 && ' · '}
+                  {l.ext
+                    ? <a href={l.href} target="_blank" rel="noopener noreferrer">{l.label}</a>
+                    : <a href={l.href}>{l.label}</a>}
+                </>
+              ))}
+            </p>
+          )}
+        </section>
+      ))}
+
+      <p class="post__note">Keep reading: the <a href="/guides/">Resources &amp; Guides library</a> &middot; the <a href="/safety/">Stay Safe guide</a> &middot; <a href="/how-forensic-genetic-genealogy-works/">how forensic genetic genealogy works</a> &middot; our <a href="/case-files/">case files</a> &middot; the <a href="/court-calendar/">court calendar</a>.</p>
+    </div>
+  </article>
+
+  <div class="wrap"><section class="subscribe" id="subscribe">
+    <p class="evidence evidence--accent">The free newsletter</p>
+    <h2>Subscribe free &mdash; get <em>The Jury Chess Game</em></h2>
+    <p>Subscribe and we&rsquo;ll send you <em>The Jury Chess Game</em> &mdash; our free field guide to how lawyers really pick the twelve people who decide guilt or innocence. No weekly blast; unsubscribe anytime.</p>
+    <form action="https://cassiancreed.beehiiv.com/subscribe" method="get" aria-label="Subscribe to the free Cassian Creed newsletter">
+      <input type="hidden" name="utm_source" value="website" />
+      <input type="hidden" name="utm_medium" value="glossary" />
+      <input type="hidden" name="utm_campaign" value="jury_chess_game_guide" />
+      <input type="email" name="email" required autocomplete="email" placeholder="you@email.com" aria-label="Your email address" />
+      <button class="btn" type="submit">Send me the free guide &rarr;</button>
+    </form>
+    <p class="site-foot__note">No spam. Unsubscribe anytime.</p>
+  </section></div>
+</Base>

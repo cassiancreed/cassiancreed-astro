@@ -25,6 +25,11 @@ export async function GET(context: any) {
 - Start here (best first read): ${site}start-here/
 - Case Files index: ${site}case-files/
 - Explainers index: ${site}explainers/
+- Resources & Guides library: ${site}guides/
+- Personal safety guide (coercive control, stalking): ${site}safety/
+- How forensic genetic genealogy works: ${site}how-forensic-genetic-genealogy-works/
+- Glossary of courtroom & forensic terms: ${site}glossary/
+- Court calendar (dates verified against outside sources): ${site}court-calendar/
 - Books (the Case File ebook series): ${site}books/
 - The A.I. AL method (our disclosed analytical lens): ${site}ai-al/
 - Editorial standard + corrections policy: ${site}about/

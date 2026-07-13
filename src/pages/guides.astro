@@ -1,0 +1,120 @@
+---
+import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+// RESOURCES & GUIDES — the body-of-work page. Its job is to show depth at a
+// glance: the guides, the tools, the glossary, the case-file library, the books.
+// Counts are pulled live from the content collection so this page can never go
+// stale as posts are added. Add a new guide by appending to `guides` below.
+
+const posts = await getCollection('posts');
+const caseFiles = posts.filter(p => p.data.tag === 'Case Files');
+const explainers = posts.filter(p => p.data.tag === 'Explainers');
+
+const guides = [
+  {
+    href: '/safety/',
+    kicker: 'Guide',
+    title: 'Stay Safe — And Know It’s Not On You',
+    desc: 'A calm, practical personal-safety guide: coercive control signs, stalking warning signs, digital safety, de-escalation, and verified hotlines. No fear, no blame. Free and open — no email required.',
+  },
+  {
+    href: '/how-forensic-genetic-genealogy-works/',
+    kicker: 'Explainer',
+    title: 'How Forensic Genetic Genealogy Actually Works',
+    desc: 'The technique that names the unknown, explained plainly — how investigative genetic genealogy solves cold cases, and why it produces leads, not proof.',
+  },
+  {
+    href: '/glossary/',
+    kicker: 'Reference',
+    title: 'True-Crime & Courtroom Glossary',
+    desc: 'Arraignment, indictment, voir dire, nolle prosequi, recusal, coercive control — the terms coverage gets wrong, defined plainly and linked to the cases where they mattered.',
+  },
+  {
+    href: '/voir-dire-simulator/',
+    kicker: 'Tool',
+    title: 'The Voir Dire Simulator',
+    desc: 'Sit in the chair. Pick the jury. See how attorneys really choose the twelve people who decide guilt or innocence — then watch what your choices do.',
+  },
+  {
+    href: '/case-solver/',
+    kicker: 'Tool',
+    title: 'Case Solver',
+    desc: 'Work a case the way an investigator does — evidence first, conclusions last.',
+  },
+  {
+    href: '/forensic-tools/',
+    kicker: 'Reference',
+    title: 'Forensic Tools',
+    desc: 'What the techniques actually do, what they can’t do, and how much weight each one really carries.',
+  },
+  {
+    href: '/court-calendar/',
+    kicker: 'Tracker',
+    title: 'Court Calendar',
+    desc: 'Upcoming hearings and trial dates in the cases we cover — every date tied to an outside source of record, verified daily.',
+  },
+];
+---
+<Base
+  title="Resources & Guides — Safety Guide, Glossary, Forensic Explainers & Tools | Cassian Creed"
+  description="The Cassian Creed library: a free personal safety guide, a plain-English courtroom glossary, forensic explainers, the Voir Dire Simulator, the Case Solver, and a verified court calendar — alongside our case files and books."
+>
+  <section class="hero wrap">
+    <p class="evidence evidence--accent">The Library</p>
+    <h1>Resources &amp; Guides</h1>
+    <p class="hero__lede">Everything we&rsquo;ve built, in one place &mdash; free, open, and sourced. {caseFiles.length} case files, {explainers.length} explainers, plus the guides, tools, and reference work below.</p>
+  </section>
+
+  <article class="post">
+    <div class="post__content">
+      <p>Neural Edge Publishing is not a single book. It is a body of work: sourced, victim-first case files; plain-language forensic explainers; practical guides that ask nothing of you in return; and tools that let you sit in the chair yourself. Everything here is free to read. Nothing here is gated.</p>
+
+      <h2 id="guides-and-tools">Guides, tools &amp; reference</h2>
+    </div>
+  </article>
+
+  <section class="wrap"><div class="grid">
+    {guides.map(g => (
+      <a class="card" href={g.href}>
+        <div class="card__tile">
+          <div class="tile__top"><span class="tile__no">{g.kicker}</span><span class="tile__tag">Free</span></div>
+          <h3 class="card__title">{g.title}</h3>
+        </div>
+        <div class="card__body"><p>{g.desc}</p></div>
+      </a>
+    ))}
+  </div></section>
+
+  <article class="post">
+    <div class="post__content">
+      <h2 id="the-case-files">The case files</h2>
+      <p>{caseFiles.length} sourced, victim-first case files &mdash; each built on the public record: court filings, charging documents, and courtroom reporting. The presumption of innocence is absolute.</p>
+      <p><a class="btn" href="/case-files/">Browse all case files &rarr;</a></p>
+
+      <h2 id="the-explainers">The explainers</h2>
+      <p>{explainers.length} plain-language explainers on how the science and the system actually work &mdash; genetic genealogy, false confessions, coercive control, forensic evidence, and the courtroom process itself.</p>
+      <p><a class="btn btn--ghost" href="/explainers/">Browse all explainers &rarr;</a></p>
+
+      <h2 id="the-books">The books</h2>
+      <p>Long-form work under the Cassian Creed byline, built the same way as the case files &mdash; from the record, for the victim.</p>
+      <p><a class="btn btn--ghost" href="/books/">See the books &rarr;</a></p>
+
+      <p class="post__note">New here? <a href="/start-here/">Start Here</a> is the shortest path in. Or read our <a href="/mission/">mission</a> &mdash; no more victims.</p>
+    </div>
+  </article>
+
+  <div class="wrap"><section class="subscribe" id="subscribe">
+    <p class="evidence evidence--accent">The free newsletter</p>
+    <h2>Subscribe free &mdash; get <em>The Jury Chess Game</em></h2>
+    <p>Subscribe and we&rsquo;ll send you <em>The Jury Chess Game</em> &mdash; our free field guide to how lawyers really pick the twelve people who decide guilt or innocence. After that, we only email when we&rsquo;ve shipped something new: a fresh case file or a book. No weekly blast; unsubscribe anytime.</p>
+    <form action="https://cassiancreed.beehiiv.com/subscribe" method="get" aria-label="Subscribe to the free Cassian Creed newsletter">
+      <input type="hidden" name="utm_source" value="website" />
+      <input type="hidden" name="utm_medium" value="guides_library" />
+      <input type="hidden" name="utm_campaign" value="jury_chess_game_guide" />
+      <input type="email" name="email" required autocomplete="email" placeholder="you@email.com" aria-label="Your email address" />
+      <button class="btn" type="submit">Send me the free guide &rarr;</button>
+    </form>
+    <p class="site-foot__note">No spam. Unsubscribe anytime.</p>
+  </section></div>
+</Base>
