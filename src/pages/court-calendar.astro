@@ -6,7 +6,7 @@ import Base from '../layouts/Base.astro';
 // reporting. We never cite our own articles as the source for a date, and we
 // never guess. If a date cannot be confirmed against an outside source of
 // record, it is pulled, not estimated. Bump LAST_VERIFIED on each sweep.
-const LAST_VERIFIED = 'July 11, 2026';
+const LAST_VERIFIED = 'July 14, 2026';
 const BUILD_DATE = new Date().toISOString().slice(0, 10);
 
 // Every entry below is tied to an outside source of record — a court filing, a
@@ -21,9 +21,9 @@ const entries = [
     dateText: 'Monday, July 13, 2026',
     court: 'Plymouth County Superior Court, Brockton, MA',
     status: 'Pleaded not guilty; charged with three counts of first-degree murder after prosecutors dropped duplicative strangulation counts.',
-    detail: 'The court is expected to take up a disputed blood-pattern demonstration and finalize the juror questionnaire before trial.',
-    src: 'https://www.bostonglobe.com/2026/07/10/metro/lindsay-clancy-strangulation-charges-dropped/',
-    srcLabel: 'The Boston Globe, court reporting (July 10, 2026)',
+    detail: 'HELD. At the final pretrial hearing on July 13, the judge denied the defense request to sequester the jury, barred lay witnesses from testifying about their own experience with postpartum depression or psychosis, and set the panel at 18 jurors. Jury questionnaires and trial procedure were also settled.',
+    src: 'https://www.boston.com/news/crime/2026/07/13/lindsay-clancy-final-pretrial-hearing/',
+    srcLabel: 'Boston.com, courtroom reporting (July 13, 2026)',
     srcType: 'Court reporting',
     link: '/post/the-lindsay-clancy-case-three-children-one-trial-and-the-questions-massachusetts-must-answer/',
     linkText: 'Read our Lindsay Clancy case primer',
@@ -37,7 +37,7 @@ const entries = [
     dateText: 'Monday, July 20, 2026',
     court: 'Plymouth County Superior Court, Brockton, MA',
     status: 'Pleaded not guilty; charged with three counts of first-degree murder after prosecutors dropped duplicative strangulation counts.',
-    detail: 'Jury selection opens the trial. She is presumed innocent unless and until a jury says otherwise.',
+    detail: 'Jury selection opens the trial; the court intends to seat 18 jurors. Rulings at the July 13 final pretrial hearing denied jury sequestration and barred lay witnesses from testifying about their own experience with postpartum depression or psychosis. Attorneys estimate four to six weeks. She is presumed innocent unless and until a jury says otherwise.',
     src: 'https://www.boston.com/news/crime/2025/11/18/lindsay-clancy-murder-trial-pushed-back-to-july-2026/',
     srcLabel: 'Boston.com, reporting the court’s scheduling order',
     srcType: 'Court reporting',
@@ -68,7 +68,7 @@ const entries = [
     dateISO: '2026-08-31',
     dateText: 'Monday, August 31, 2026',
     court: 'Bristol County Superior Court, Fall River, MA',
-    status: 'Pleaded not guilty; released on conditions. No trial date set.',
+    status: 'Pleaded not guilty; released on $10,000 cash bail. No trial date set.',
     detail: 'The 1985 Mansfield newborn case — known for four decades as Baby Boy Doe, or the Mansfield Baby Boy Doe case — was reopened using forensic genetic genealogy.',
     src: 'https://www.bostonglobe.com/2026/06/30/metro/dianne-curry-newborn-mansfield-arraignment/',
     srcLabel: 'The Boston Globe, arraignment reporting (June 30, 2026)',
@@ -143,7 +143,11 @@ const completed = [
   },
 ];
 
-const byGroup = (g) => entries.filter((e) => e.groups.includes(g));
+// A date that has passed is not a "next court date." Nothing filtered these out, so a
+// hearing kept rendering as upcoming the day after it was held. BUILD_DATE is recomputed
+// every build, so this now self-heals: past entries drop out of every section automatically.
+const isUpcoming = (e) => e.dateISO >= BUILD_DATE;
+const byGroup = (g) => entries.filter((e) => e.groups.includes(g) && isUpcoming(e));
 const nextDates = byGroup('next').sort((a, b) => a.dateISO.localeCompare(b.dateISO));
 
 const jsonld = {
@@ -409,10 +413,10 @@ const jsonld = {
     <h2 id="faq">FAQ</h2>
     <div class="prose faq">
       <h3>When does the Lindsay Clancy trial start?</h3>
-      <p>Jury selection is scheduled to begin Monday, July 20, 2026, in Plymouth County Superior Court. A pretrial hearing is set for July 13. She has pleaded not guilty and is presumed innocent.</p>
+      <p>Jury selection is scheduled to begin Monday, July 20, 2026, in Plymouth County Superior Court. The final pretrial hearing was held on July 13, where the judge denied jury sequestration, barred lay witnesses from testifying about their own experience with postpartum depression or psychosis, and set the panel at 18 jurors. She has pleaded not guilty and is presumed innocent.</p>
 
       <h3>What is the next court date for Dianne Curry Peck?</h3>
-      <p>August 31, 2026, in Bristol County Superior Court in Fall River. She pleaded not guilty and was released on conditions. No trial date has been set.</p>
+      <p>August 31, 2026, in Bristol County Superior Court in Fall River. She pleaded not guilty and was released on $10,000 cash bail. No trial date has been set.</p>
 
       <h3>Does Brooke George have a trial date?</h3>
       <p>No. There is no publicly verified court date. She is reported to be detained pending proceedings, but the details of the allegation come from an advocacy group rather than from UAE authorities or any court, and no charge has been confirmed on the public record.</p>
