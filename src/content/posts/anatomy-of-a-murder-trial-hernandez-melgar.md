@@ -14,8 +14,7 @@ Here is how that happened.
 
 ## 1. The Charges
 
-Nestor Hernandez Melgar, 29, faced four charges when the trial commenced:
-
+Nestor Hernandez Melgar, 29, faced three offenses, each carrying a domestic-violence aggravator, when the trial commenced:
 - **First-Degree Murder** — the allegation of premeditated or intentional killing
 - **First-Degree Burglary** — in this domestic context, the "unlawful entry" element was substantiated by Melgar's presence in Geary's residence while a no-contact order was active
 - **Violation of a Court Order** — addressing the breach of a documented protection order issued two months prior to the death
