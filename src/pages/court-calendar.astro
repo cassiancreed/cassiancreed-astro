@@ -6,7 +6,7 @@ import Base from '../layouts/Base.astro';
 // reporting. We never cite our own articles as the source for a date, and we
 // never guess. If a date cannot be confirmed against an outside source of
 // record, it is pulled, not estimated. Bump LAST_VERIFIED on each sweep.
-const LAST_VERIFIED = 'July 14, 2026';
+const LAST_VERIFIED = 'July 15, 2026';
 const BUILD_DATE = new Date().toISOString().slice(0, 10);
 
 // Every entry below is tied to an outside source of record — a court filing, a
@@ -206,7 +206,7 @@ const jsonld = {
     <p class="evidence evidence--accent">Court Calendar</p>
     <h1>True Crime Court Calendar: Trial Dates &amp; Hearings 2026</h1>
     <p class="cal-answer">
-      Three court dates are confirmed. Lindsay Clancy returns to Plymouth County Superior Court on <strong>July 13</strong> for a pretrial hearing, and her trial begins <strong>July 20</strong> with jury selection. Dianne Curry Peck is due back in Bristol County Superior Court on <strong>August 31</strong>. Nestor Hernandez Melgar is sentenced July 22.
+      Three court dates are confirmed. Lindsay Clancy&rsquo;s trial begins <strong>July 20</strong> with jury selection in Plymouth County Superior Court. Nestor Hernandez Melgar is sentenced <strong>July 22</strong> in Snohomish County. Dianne Curry Peck is due back in Bristol County Superior Court on <strong>August 31</strong>.
     </p>
     <p class="cal-fresh">
       <strong>Last verified: {LAST_VERIFIED}.</strong> Court dates move. Every entry below is checked against the public record, and each one carries its source. Confirm with the court before you travel.
