@@ -8,12 +8,23 @@ victim: "Cora (5), Dawson (3), and Callan (8 months) Clancy"
 incidentDate: "January 24, 2023"
 location: "Duxbury, Massachusetts"
 jurisdiction: "Plymouth County, Massachusetts"
-status: "Charged; pleaded not guilty (insanity defense); trial set for July 20, 2026"
+status: "Charged with 3 counts of first-degree murder; pleaded not guilty (defense of lack of criminal responsibility); jury selection begins July 20, 2026"
 cover: "/case-art/lindsay-clancy.jpg"
 coverAlt: "A New England colonial house at winter dusk, one upstairs window warmly lit against the cold grey sky."
 ---
 
-Lindsay Clancy, a 35-year-old former labor-and-delivery nurse from Duxbury, Massachusetts, is accused of killing her three young children — Cora, Dawson, and Callan — at the family's home on January 24, 2023. She has pleaded not guilty to three counts each of murder and strangulation, and her attorney has said she will pursue an insanity defense rooted in severe postpartum mental illness. Her trial is scheduled to begin July 20, 2026. Until a jury says otherwise, Clancy is presumed innocent. This case has drawn national attention because it sits at an unbearable intersection: three children are gone, and the woman charged with their deaths was, by multiple accounts, a mother in acute psychiatric crisis who had repeatedly sought help. Both can be true. Holding them together is the only honest way to write about what happened in Duxbury.
+Lindsay Clancy, a 35-year-old former labor-and-delivery nurse from Duxbury, Massachusetts, is accused of killing her three young children — Cora, Dawson, and Callan — at the family's home on January 24, 2023. She pleaded not guilty and faces three counts of first-degree murder, and her attorney has said she will pursue a defense of lack of criminal responsibility rooted in severe postpartum mental illness. Her trial is scheduled to begin July 20, 2026. Until a jury says otherwise, Clancy is presumed innocent. This case has drawn national attention because it sits at an unbearable intersection: three children are gone, and the woman charged with their deaths was, by multiple accounts, a mother in acute psychiatric crisis who had repeatedly sought help. Both can be true. Holding them together is the only honest way to write about what happened in Duxbury.
+
+## Case Status — as of July 2026
+
+*Record-only update. No trial has taken place, and Lindsay Clancy is presumed innocent.*
+
+- **Jury selection begins Monday, July 20, 2026**, in Plymouth Superior Court, before **Judge William F. Sullivan**. The court plans to seat roughly 18 jurors, including 6 alternates.
+- **The charges:** Clancy faces **three counts of first-degree murder** and has pleaded not guilty. She is presumed innocent unless and until a jury finds otherwise.
+- **The defense is lack of criminal responsibility.** If the jury agrees, the verdict would be *"not guilty by reason of lack of criminal responsibility."* This is an argument the defense intends to make — not a finding.
+- **July 13 hearing:** the court **denied** the defense's motion to call lay witnesses to describe their own postpartum experiences (what the parties called a "trial within a trial"). The ruling limits the *form* of that testimony only; expert witnesses may still testify about postpartum psychosis. The court also **denied** sequestration of the jury — a request the defense may renew at empanelment.
+- **July 9:** prosecutors filed a *nolle prosequi* **dismissing the three strangulation counts** as redundant, subsumed under the three first-degree murder counts.
+- **The children remain at the center:** Cora (5), Dawson (3), and Callan (8 months) Clancy.
 
 ## Cora, Dawson, and Callan
 
@@ -21,7 +32,7 @@ Before this became a legal story, it was a family. Cora Clancy was 5 years old. 
 
 ## What Prosecutors Say
 
-The Plymouth County District Attorney's office has charged Clancy with three counts of murder and three counts of strangulation. Prosecutors have characterized her conduct as deliberate, describing a sequence of actions on the evening of January 24, 2023, that they argue reflect intent rather than a person wholly detached from reality. The prosecution has resisted the framing that Clancy could not be held criminally responsible, and the Commonwealth's burden at trial will be to prove the killings and to rebut the defense's claim about her mental state. Out of respect for the children, this post does not reproduce the graphic specifics of how they died; repeating them serves nothing but spectacle.
+The Plymouth County District Attorney's office charged Clancy with three counts of first-degree murder. (In July 2026, prosecutors dismissed three related strangulation counts as redundant; see the case-status update above.) Prosecutors have characterized her conduct as deliberate, describing a sequence of actions on the evening of January 24, 2023, that they argue reflect intent rather than a person wholly detached from reality. The prosecution has resisted the framing that Clancy could not be held criminally responsible, and the Commonwealth's burden at trial will be to prove the killings and to rebut the defense's claim about her mental state. Out of respect for the children, this post does not reproduce the graphic specifics of how they died; repeating them serves nothing but spectacle.
 
 ## What the Defense Says
 
