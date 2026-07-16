@@ -15,6 +15,10 @@ featured: false
 
 Lindsay Geary, a 36-year-old woman from Everett, Washington, was found dead on her bathroom floor on the night of November 16, 2024. Her boyfriend, Nestor Hernandez Melgar, 29, called 911 and said she had hanged herself. After a four-week trial, a Snohomish County jury reached a different conclusion. On June 22, 2026, Melgar was convicted on all counts — first-degree murder, first-degree burglary, and violation of a no-contact order, each carrying a domestic-violence aggravator. He is convicted and awaiting sentencing, set for July 22, 2026.
 
+<div class="capture-cta" style="border:1px solid var(--rule,#e4e0d9);border-left:4px solid var(--accent,#b91c1c);background:var(--card,#faf9f7);padding:1rem 1.25rem;margin:1.5rem 0;border-radius:6px">
+<strong>Every case deserves a witness.</strong> Neural Edge Publishing covers true crime primary-source verified, presumption of innocence first, every victim named in life before anything else. <a href="https://cassiancreed.beehiiv.com/subscribe">Subscribe to Neural Edge Publishing →</a>
+</div>
+
 <aside class="status-box">
   <p class="status-box__k">Case status — last verified July 15, 2026</p>
   <ul>
@@ -83,6 +87,10 @@ One of the most unusual features of this case is that the jury convicted despite
 The ME found the **cause of death** to be asphyxia due to ligature compression — that is, pressure from the rope. But the ME classified the **manner of death** as "undetermined" — not homicide, and not suicide.
 
 Those are two different questions. *Cause* describes the physical mechanism that ended a life. *Manner* is the broader classification of how it came about — natural, accident, suicide, homicide, or undetermined. A finding of "undetermined" means the medical evidence alone did not allow the examiner to say, to the standard required, which of those categories applied. It is not a finding that the death was a suicide, and it is not a finding that it was a homicide. The ME's report took seven months to complete.
+
+<div class="capture-cta" style="border:1px solid var(--rule,#e4e0d9);border-left:4px solid var(--accent,#b91c1c);background:var(--card,#faf9f7);padding:1rem 1.25rem;margin:1.5rem 0;border-radius:6px">
+<strong>Every case deserves a witness.</strong> Neural Edge Publishing covers true crime primary-source verified, presumption of innocence first, every victim named in life before anything else. <a href="https://cassiancreed.beehiiv.com/subscribe">Subscribe to Neural Edge Publishing →</a>
+</div>
 
 ## The Evidence
 
@@ -154,3 +162,8 @@ This page is the canonical hub for the Nestor Hernandez Melgar case. For deeper 
 - Snohomish County Superior Court record.
 
 *Last verified: July 15, 2026.*
+
+
+<div class="capture-cta" style="border:1px solid var(--rule,#e4e0d9);border-left:4px solid var(--accent,#b91c1c);background:var(--card,#faf9f7);padding:1rem 1.25rem;margin:1.5rem 0;border-radius:6px">
+<strong>Every case deserves a witness.</strong> Neural Edge Publishing covers true crime primary-source verified, presumption of innocence first, every victim named in life before anything else. <a href="https://cassiancreed.beehiiv.com/subscribe">Subscribe to Neural Edge Publishing →</a>
+</div>
