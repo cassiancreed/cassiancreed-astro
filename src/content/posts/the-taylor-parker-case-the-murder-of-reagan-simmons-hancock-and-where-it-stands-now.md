@@ -14,6 +14,10 @@ status: "Convicted of capital murder and sentenced to death (Nov. 9, 2022); sent
 
 Netflix's documentary **_Maternal Instinct_** arrives June 12, 2026, and it will bring a wave of new attention to one of the most disturbing Texas cases of the decade. Before that happens, this case file does what the headlines rarely do: it puts the victims first, sticks to the record, and lays out exactly where the case stands today.
 
+<div class="capture-cta" style="border:1px solid var(--rule,#e4e0d9);border-left:4px solid var(--accent,#b91c1c);background:var(--card,#faf9f7);padding:1rem 1.25rem;margin:1.5rem 0;border-radius:6px">
+<strong>Every case deserves a witness.</strong> Neural Edge Publishing covers true crime primary-source verified, presumption of innocence first, every victim named in life before anything else. <a href="https://cassiancreed.beehiiv.com/subscribe">Subscribe to Neural Edge Publishing →</a>
+</div>
+
 The people this case is about are **Reagan Simmons-Hancock**, 21, of New Boston, Texas, and her unborn daughter, **Braxlynn Sage Hancock.** Reagan was a young mother. On the morning of October 9, 2020, her own mother found her body in her home. Her three-year-old daughter was there at the time. Whatever else is said about this case, it begins and ends with them.
 
 ## What the record shows
@@ -37,6 +41,10 @@ This is the part that matters most heading into the documentary, because true-cr
 In a capital case, a death sentence triggers an automatic appeal to the **Texas Court of Criminal Appeals**, the state's highest criminal court. Parker's lawyers raised 25 separate points of error — including arguments about pretrial publicity, evidentiary rulings, and claims that prosecutors had unfairly prejudiced the jury. On **November 6, 2025**, the court rejected every one of them and **affirmed both her conviction and her death sentence** in a unanimous decision. In **May 2026**, the **U.S. Supreme Court declined to review** the case, leaving that ruling in place.
 
 Parker remains on death row in Texas. As of this writing, no execution date has been set; further post-conviction proceedings are still possible, as they are in nearly every capital case. But the core question — whether she is guilty — has been answered by every court that has examined it.
+
+<div class="capture-cta" style="border:1px solid var(--rule,#e4e0d9);border-left:4px solid var(--accent,#b91c1c);background:var(--card,#faf9f7);padding:1rem 1.25rem;margin:1.5rem 0;border-radius:6px">
+<strong>Every case deserves a witness.</strong> Neural Edge Publishing covers true crime primary-source verified, presumption of innocence first, every victim named in life before anything else. <a href="https://cassiancreed.beehiiv.com/subscribe">Subscribe to Neural Edge Publishing →</a>
+</div>
 
 ## The A.I. AL lens: a planned crime hiding in plain sight
 
@@ -74,3 +82,8 @@ It is easy, with a case this shocking, to remember the name of the person who di
 - [Death sentence upheld for Bowie County woman in 2020 killing, fetal abduction — Texarkana Gazette](https://www.texarkanagazette.com/news/2025/nov/07/death-sentence-upheld-for-bowie-county-woman-in/)
 - [Supreme Court will not review Taylor Parker's conviction in Bowie County capital murder case — Texarkana Gazette](https://www.texarkanagazette.com/news/2026/may/29/supreme-court-will-not-review-taylor-parkers/)
 - ['Maternal Instinct' documentary release date news — Netflix Tudum](https://www.netflix.com/tudum/articles/maternal-instinct-release-date-news)
+
+
+<div class="capture-cta" style="border:1px solid var(--rule,#e4e0d9);border-left:4px solid var(--accent,#b91c1c);background:var(--card,#faf9f7);padding:1rem 1.25rem;margin:1.5rem 0;border-radius:6px">
+<strong>Every case deserves a witness.</strong> Neural Edge Publishing covers true crime primary-source verified, presumption of innocence first, every victim named in life before anything else. <a href="https://cassiancreed.beehiiv.com/subscribe">Subscribe to Neural Edge Publishing →</a>
+</div>

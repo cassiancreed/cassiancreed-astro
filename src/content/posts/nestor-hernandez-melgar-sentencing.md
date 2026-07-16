@@ -29,6 +29,10 @@ featured: false
 
 Nestor Hernandez Melgar was convicted on June 22, 2026, in the death of his girlfriend, Lindsay Geary, 36, of Everett. His sentencing is scheduled for July 22, 2026, in Snohomish County Superior Court. As of July 15, 2026, no sentence has been imposed — the judge will decide at that hearing. We will update this page with the result.
 
+<div class="capture-cta" style="border:1px solid var(--rule,#e4e0d9);border-left:4px solid var(--accent,#b91c1c);background:var(--card,#faf9f7);padding:1rem 1.25rem;margin:1.5rem 0;border-radius:6px">
+<strong>Every case deserves a witness.</strong> Neural Edge Publishing covers true crime primary-source verified, presumption of innocence first, every victim named in life before anything else. <a href="https://cassiancreed.beehiiv.com/subscribe">Subscribe to Neural Edge Publishing →</a>
+</div>
+
 ## When is Nestor Hernandez Melgar's sentencing?
 
 His sentencing is set for July 22, 2026, in Snohomish County Superior Court in Everett, Washington. The conviction is already final; the sentence itself has not been handed down. We will update this page on the same web address once the court rules. No hearing time or courtroom has been confirmed here.
@@ -40,6 +44,10 @@ On June 22, 2026, after a four-week trial, a jury found him guilty on all counts
 ## What sentence could he face under Washington law?
 
 We are not predicting a number, and no sentence has been announced. In general terms: first-degree murder is a Class A felony in Washington. Sentences follow the state's Sentencing Reform Act, which sets a standard range based on the offense and the offender's criminal-history score. Because the jury returned domestic-violence aggravator findings, the law permits the court to consider an exceptional sentence above the standard range. The actual sentence is the judge's to decide at the July 22 hearing.
+
+<div class="capture-cta" style="border:1px solid var(--rule,#e4e0d9);border-left:4px solid var(--accent,#b91c1c);background:var(--card,#faf9f7);padding:1rem 1.25rem;margin:1.5rem 0;border-radius:6px">
+<strong>Every case deserves a witness.</strong> Neural Edge Publishing covers true crime primary-source verified, presumption of innocence first, every victim named in life before anything else. <a href="https://cassiancreed.beehiiv.com/subscribe">Subscribe to Neural Edge Publishing →</a>
+</div>
 
 ## What happens next?
 
@@ -62,3 +70,8 @@ For the full story, see our [complete coverage of the Lindsay Geary case](/post/
 - HeraldNet (Ian Davis-Leonard), "Jury convicts man in Everett murder staged as suicide," June 22, 2026.
 - Snohomish County Superior Court record.
 - Last verified: July 15, 2026.
+
+
+<div class="capture-cta" style="border:1px solid var(--rule,#e4e0d9);border-left:4px solid var(--accent,#b91c1c);background:var(--card,#faf9f7);padding:1rem 1.25rem;margin:1.5rem 0;border-radius:6px">
+<strong>Every case deserves a witness.</strong> Neural Edge Publishing covers true crime primary-source verified, presumption of innocence first, every victim named in life before anything else. <a href="https://cassiancreed.beehiiv.com/subscribe">Subscribe to Neural Edge Publishing →</a>
+</div>
