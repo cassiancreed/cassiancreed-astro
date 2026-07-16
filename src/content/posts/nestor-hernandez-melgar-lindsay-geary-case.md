@@ -18,7 +18,7 @@ Lindsay Geary, a 36-year-old woman from Everett, Washington, was found dead on h
 <div class="capture-cta" style="border:1px solid var(--rule,#3a332c);border-left:4px solid var(--accent,#e0563b);background:var(--card,#1a1613);color:var(--ink,#f6f1ea);padding:1.25rem 1.5rem;margin:1.75rem 0;border-radius:8px">
 <p style="margin:0 0 .4rem;font-size:1.12rem;font-weight:700;line-height:1.3">Get the case files the news won't run — free, straight to your inbox.</p>
 <p style="margin:0 0 1rem;color:var(--ink-2,#b8b1a8);font-size:.95rem">Victim-first true crime, sourced from the record. No spam, unsubscribe anytime.</p>
-<a href="https://cassiancreed.beehiiv.com/subscribe" style="display:inline-block;background:var(--accent,#e0563b);color:#fff;font-weight:700;padding:.6rem 1.25rem;border-radius:6px;text-decoration:none">Subscribe free →</a>
+<a href="https://cassiancreed.beehiiv.com/subscribe" style="display:inline-block;background:#b8431f;color:#fff;font-weight:700;padding:.6rem 1.25rem;border-radius:6px;text-decoration:none">Subscribe free →</a>
 </div>
 
 <aside class="status-box">
@@ -93,7 +93,7 @@ Those are two different questions. *Cause* describes the physical mechanism that
 <div class="capture-cta" style="border:1px solid var(--rule,#3a332c);border-left:4px solid var(--accent,#e0563b);background:var(--card,#1a1613);color:var(--ink,#f6f1ea);padding:1.25rem 1.5rem;margin:1.75rem 0;border-radius:8px">
 <p style="margin:0 0 .4rem;font-size:1.12rem;font-weight:700;line-height:1.3">Get the case files the news won't run — free, straight to your inbox.</p>
 <p style="margin:0 0 1rem;color:var(--ink-2,#b8b1a8);font-size:.95rem">Victim-first true crime, sourced from the record. No spam, unsubscribe anytime.</p>
-<a href="https://cassiancreed.beehiiv.com/subscribe" style="display:inline-block;background:var(--accent,#e0563b);color:#fff;font-weight:700;padding:.6rem 1.25rem;border-radius:6px;text-decoration:none">Subscribe free →</a>
+<a href="https://cassiancreed.beehiiv.com/subscribe" style="display:inline-block;background:#b8431f;color:#fff;font-weight:700;padding:.6rem 1.25rem;border-radius:6px;text-decoration:none">Subscribe free →</a>
 </div>
 
 ## The Evidence
@@ -171,5 +171,5 @@ This page is the canonical hub for the Nestor Hernandez Melgar case. For deeper 
 <div class="capture-cta" style="border:1px solid var(--rule,#3a332c);border-left:4px solid var(--accent,#e0563b);background:var(--card,#1a1613);color:var(--ink,#f6f1ea);padding:1.25rem 1.5rem;margin:1.75rem 0;border-radius:8px">
 <p style="margin:0 0 .4rem;font-size:1.12rem;font-weight:700;line-height:1.3">Get the case files the news won't run — free, straight to your inbox.</p>
 <p style="margin:0 0 1rem;color:var(--ink-2,#b8b1a8);font-size:.95rem">Victim-first true crime, sourced from the record. No spam, unsubscribe anytime.</p>
-<a href="https://cassiancreed.beehiiv.com/subscribe" style="display:inline-block;background:var(--accent,#e0563b);color:#fff;font-weight:700;padding:.6rem 1.25rem;border-radius:6px;text-decoration:none">Subscribe free →</a>
+<a href="https://cassiancreed.beehiiv.com/subscribe" style="display:inline-block;background:#b8431f;color:#fff;font-weight:700;padding:.6rem 1.25rem;border-radius:6px;text-decoration:none">Subscribe free →</a>
 </div>
