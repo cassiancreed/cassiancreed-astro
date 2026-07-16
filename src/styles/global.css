@@ -1,4 +1,5 @@
 :root{
+  --card:var(--bg-2); --rule:var(--line); /* 0715CE: restore callout card + rule tokens (dark-branded) */
   --bg:#14110f; --bg-2:#191512; --bg-3:#1d1916;
   --ink:#f4efe8; --ink-2:#b8b1a8; --ink-3:#8a847c;
   --accent:#e0563b; --line:rgba(255,255,255,.08);
