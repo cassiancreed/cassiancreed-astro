@@ -122,7 +122,7 @@ The Trail is $1.99 — Rachel Morin's story, told with care. <a href="https://ca
       {books.map(b => (
         <div class={`shopbk shopbk--${b.theme}${b.cardCover ? ' shopbk--square' : ''}`}>
         <div class="shopbk__cover">
-{b.cover && <img class="shopbk__img" src={b.cardCover || b.cover} alt={b.coverAlt} loading="lazy" />}
+{b.cover && <img decoding="async" class="shopbk__img" src={b.cardCover || b.cover} alt={b.coverAlt} loading="lazy" />}
           <span class="shopbk__series">{b.series}</span>
                       {!b.cover && <span class="shopbk__title">{b.title}</span>}
             {!b.cover && <span class="shopbk__sub">{b.sub}</span>}
