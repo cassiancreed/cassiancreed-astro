@@ -179,12 +179,37 @@ const jsonld = {
       name: 'Scheduled court proceedings',
       itemListOrder: 'https://schema.org/ItemListOrderAscending',
       numberOfItems: nextDates.length,
-      itemListElement: nextDates.map((e, i) => ({
-        '@type': 'ListItem',
-        position: i + 1,
-        name: e.case + ' — ' + e.proceeding + ' — ' + e.dateText + ' — ' + e.court,
-        url: 'https://cassiancreed.com/court-calendar#' + e.id,
-      })),
+      itemListElement: nextDates.map((e, i) => {
+        const parts = e.court.split(', ');
+        const caseUrl = e.link ? (e.link.startsWith('http') ? e.link : 'https://cassiancreed.com' + e.link) : null;
+        return {
+          '@type': 'ListItem',
+          position: i + 1,
+          item: {
+            '@type': 'Event',
+            '@id': 'https://cassiancreed.com/court-calendar#' + e.id,
+            name: e.case + ' — ' + e.proceeding,
+            startDate: e.dateISO,
+            eventStatus: 'https://schema.org/EventScheduled',
+            eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+            location: {
+              '@type': 'Place',
+              name: parts[0],
+              address: {
+                '@type': 'PostalAddress',
+                addressLocality: parts[1],
+                addressRegion: parts[2],
+                addressCountry: 'US',
+              },
+            },
+            description: e.status,
+            url: 'https://cassiancreed.com/court-calendar#' + e.id,
+            about: { '@type': 'Thing', name: e.case },
+            isAccessibleForFree: true,
+            ...(caseUrl ? { subjectOf: { '@type': 'WebPage', url: caseUrl } } : {}),
+          },
+        };
+      }),
     },
     {
       '@type': 'BreadcrumbList',
@@ -192,6 +217,19 @@ const jsonld = {
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://cassiancreed.com/' },
         { '@type': 'ListItem', position: 2, name: 'True Crime Court Calendar', item: 'https://cassiancreed.com/court-calendar' },
+      ],
+    },
+    {
+      '@type': 'FAQPage',
+      '@id': 'https://cassiancreed.com/court-calendar#faq',
+      mainEntity: [
+        { '@type': 'Question', name: 'When does the Lindsay Clancy trial start?', acceptedAnswer: { '@type': 'Answer', text: 'Jury selection is scheduled to begin Monday, July 20, 2026, in Plymouth County Superior Court. The final pretrial hearing was held on July 13, where the judge denied jury sequestration, barred lay witnesses from testifying about their own experience with postpartum depression or psychosis, and set the panel at 18 jurors. She has pleaded not guilty and is presumed innocent.' } },
+        { '@type': 'Question', name: 'What is the next court date for Dianne Curry Peck?', acceptedAnswer: { '@type': 'Answer', text: 'August 31, 2026, in Bristol County Superior Court in Fall River. She pleaded not guilty and was released on $10,000 cash bail. No trial date has been set.' } },
+        { '@type': 'Question', name: 'Does Brooke George have a trial date?', acceptedAnswer: { '@type': 'Answer', text: 'No. There is no publicly verified court date. She is reported to be detained pending proceedings, but the details of the allegation come from an advocacy group rather than from UAE authorities or any court, and no charge has been confirmed on the public record.' } },
+        { '@type': 'Question', name: 'Is Karmelo Anthony still facing an upcoming court date?', acceptedAnswer: { '@type': 'Answer', text: 'Not one that has been publicly scheduled. He was convicted and sentenced in June 2026, and new-trial and recusal motions were filed on July 7. No hearing date on those motions has been confirmed.' } },
+        { '@type': 'Question', name: 'Is Rex Heuermann still going to trial?', acceptedAnswer: { '@type': 'Answer', text: 'No. That case is over. It concluded with a guilty plea in April 2026 and sentencing in June 2026. There is no upcoming court date.' } },
+        { '@type': 'Question', name: 'Can these dates change?', acceptedAnswer: { '@type': 'Answer', text: 'Yes, and they often do. Hearings get continued, trials get pushed, and courts reschedule with little notice. Treat every date here as the best current information, not a promise.' } },
+        { '@type': 'Question', name: 'How are these dates verified?', acceptedAnswer: { '@type': 'Answer', text: 'Each one traces to a court filing, a prosecutor\'s office, a state agency record, or courtroom reporting, and each card names its source and the date we last checked it.' } },
       ],
     },
   ],
@@ -244,6 +282,19 @@ const jsonld = {
           </p>
         </article>
       ))}
+    </div>
+  </section>
+
+  <section class="wrap cal-sec">
+    <div class="capture-cta" aria-label="Stay current on this court calendar and get the free Jury Chess Game guide">
+      <p class="capture-cta__eyebrow">Came here for a date?</p>
+      <h2 class="capture-cta__head">We&rsquo;ll keep you current on the calendar.</h2>
+      <p class="capture-cta__body">
+        Court dates move. Subscribe and we&rsquo;ll send you <em>The Jury Chess Game</em> &mdash; our free field guide to how lawyers really pick the twelve people who decide guilt or innocence. After that, we only email when we&rsquo;ve shipped something new: a fresh case file or a book. No weekly blast; unsubscribe anytime.
+      </p>
+      <a class="capture-cta__btn" href="https://cassiancreed.beehiiv.com/subscribe?utm_source=website&utm_medium=court_calendar&utm_campaign=jury_chess_game_guide">
+        Get the guide &amp; date updates
+      </a>
     </div>
   </section>
 
@@ -442,6 +493,12 @@ const jsonld = {
   </section>
 
   <style>
+    .capture-cta{background:var(--bg-2);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:10px;padding:20px}
+    .capture-cta__eyebrow{margin:0 0 6px;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+    .capture-cta__head{margin:0 0 10px;font-family:var(--serif);font-size:1.35rem;line-height:1.2;color:var(--ink)}
+    .capture-cta__body{margin:0 0 16px;color:var(--ink-2);line-height:1.55;max-width:60ch}
+    .capture-cta__btn{display:inline-block;padding:11px 18px;border:1px solid var(--accent);border-radius:8px;background:var(--accent);color:var(--bg-2);font-family:var(--mono);font-size:.9rem;text-decoration:none}
+    .capture-cta__btn:hover{background:var(--bg-2);color:var(--accent)}
     .cal-answer{font-size:19px;color:var(--ink);max-width:68ch;margin:18px 0 0;line-height:1.6}
     .cal-answer strong{color:var(--accent)}
     .cal-fresh{font-size:15px;color:var(--ink-2);max-width:68ch;margin:14px 0 0}
