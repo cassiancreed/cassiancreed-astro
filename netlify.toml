@@ -24,3 +24,35 @@
   from = "/rachel-morin/*"
   to = "/#subscribe"
   status = 301
+
+# --- Clancy cluster: retire legacy trial slug to the tracker (0715BR) ---
+[[redirects]]
+  from = "/lindsay-clancy-trial-2026-postpartum-psychosis"
+  to = "/post/lindsay-clancy-trial/"
+  status = 301
+
+[[redirects]]
+  from = "/lindsay-clancy-trial-2026-postpartum-psychosis/"
+  to = "/post/lindsay-clancy-trial/"
+  status = 301
+
+# --- 404 repair (0715BR) ---
+[[redirects]]
+  from = "/products"
+  to = "/books/"
+  status = 301
+
+[[redirects]]
+  from = "/products/*"
+  to = "/books/"
+  status = 301
+
+[[redirects]]
+  from = "/signup"
+  to = "https://cassiancreed.beehiiv.com/subscribe"
+  status = 301
+
+[[redirects]]
+  from = "/subscribe"
+  to = "https://cassiancreed.beehiiv.com/subscribe"
+  status = 301
