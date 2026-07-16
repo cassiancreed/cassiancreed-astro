@@ -1,6 +1,6 @@
 ---
 title: "The Nestor Hernandez Melgar Case: What Happened to Lindsay Geary"
-description: "Lindsay Geary, 37, was found dead in her Everett apartment in 2024. Nestor Hernandez Melgar was convicted of her murder June 22, 2026; sentencing July 22."
+description: "Lindsay Geary, 36, was found dead in her Everett apartment in 2024. Nestor Hernandez Melgar was convicted of her murder June 22, 2026; sentencing July 22."
 pubDate: 2026-07-15
 tag: Case Files
 featured: false
@@ -13,7 +13,7 @@ featured: false
 .status-box li{margin:.2rem 0}
 </style>
 
-Lindsay Geary, a 37-year-old woman from Everett, Washington, was found dead on her bathroom floor on the night of November 16, 2024. Her boyfriend, Nestor Hernandez Melgar, 29, called 911 and said she had hanged herself. After a four-week trial, a Snohomish County jury reached a different conclusion. On June 22, 2026, Melgar was convicted on all counts — first-degree murder, first-degree burglary, and violation of a no-contact order, each carrying a domestic-violence aggravator. He is convicted and awaiting sentencing, set for July 22, 2026.
+Lindsay Geary, a 36-year-old woman from Everett, Washington, was found dead on her bathroom floor on the night of November 16, 2024. Her boyfriend, Nestor Hernandez Melgar, 29, called 911 and said she had hanged herself. After a four-week trial, a Snohomish County jury reached a different conclusion. On June 22, 2026, Melgar was convicted on all counts — first-degree murder, first-degree burglary, and violation of a no-contact order, each carrying a domestic-violence aggravator. He is convicted and awaiting sentencing, set for July 22, 2026.
 
 <aside class="status-box">
   <p class="status-box__k">Case status — last verified July 15, 2026</p>
@@ -22,13 +22,13 @@ Lindsay Geary, a 37-year-old woman from Everett, Washington, was found dead on h
     <li><strong>Convicted:</strong> June 22, 2026 — first-degree murder, first-degree burglary, and violation of a court order (no-contact order); each of the three offenses carried a special domestic-violence aggravator</li>
     <li><strong>Sentencing:</strong> July 22, 2026, Snohomish County Superior Court</li>
     <li><strong>Defendant:</strong> Nestor Hernandez Melgar, 29</li>
-    <li><strong>Victim:</strong> Lindsay Geary, 37</li>
+    <li><strong>Victim:</strong> Lindsay Geary, 36</li>
   </ul>
 </aside>
 
 ## Who Was Lindsay Geary
 
-Lindsay Geary was 37 years old. On the last day of her life, her family remembered her as happy — she was making plans for the upcoming holidays and for birthday celebrations, the ordinary looking-forward of a person expecting more days ahead.
+Lindsay Geary was 36 years old. On the last day of her life, her family remembered her as happy — she was making plans for the upcoming holidays and for birthday celebrations, the ordinary looking-forward of a person expecting more days ahead.
 
 She was a daughter, a partner, and a person her family loved. Everything that follows on this page is about how she died and how the courts have answered for it, but the starting point is simpler and more important: she was a real person, and her life mattered on its own terms, entirely apart from the case that now carries her name.
 
@@ -124,7 +124,7 @@ The next milestone is the July 22, 2026 sentencing hearing in Snohomish County S
 
 - **~September 2024 (approximate):** A domestic-violence no-contact order is issued, roughly two months before Geary's death.
 - **~November 8, 2024 (approximate):** Everett police are called over an alleged attempted break-in, roughly eight days before her death. (Multiple prior domestic-dispute police contacts also preceded this.)
-- **November 16, 2024:** Lindsay Geary, 37, is found dead on the bathroom floor of her Everett apartment; Melgar is arrested at the scene.
+- **November 16, 2024:** Lindsay Geary, 36, is found dead on the bathroom floor of her Everett apartment; Melgar is arrested at the scene.
 - **After the incident:** Charges are filed — first-degree murder, first-degree burglary, and violation of a no-contact order, each with a DV aggravator.
 - **December 27, 2025:** A draft "suicide-note"-like message is discovered on Geary's phone, more than a year after her death (per the Herald).
 - **~Mid-2025 (approximate):** The medical examiner's report is completed, roughly seven months after death; cause ruled asphyxia due to ligature compression, manner "undetermined."

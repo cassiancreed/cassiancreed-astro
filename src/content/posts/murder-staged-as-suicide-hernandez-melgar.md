@@ -20,7 +20,7 @@ How did prosecutors win? That is what this post explains. Sentencing is schedule
 
 ## Who Was Lindsay Geary
 
-Lindsay Geary was 37 years old when she died on November 16, 2024. She grew up in Everett, Washington, graduated from Everett High School, and spent her professional life as a bookkeeper — most recently at the Silver Firs Safeway location in Everett, where she had also worked in earlier positions at other area Safeway stores.
+Lindsay Geary was 36 years old when she died on November 16, 2024. She grew up in Everett, Washington, graduated from Everett High School, and spent her professional life as a bookkeeper — most recently at the Silver Firs Safeway location in Everett, where she had also worked in earlier positions at other area Safeway stores.
 
 By every account from the people who knew her, Geary was defined by how she showed up for others. Coworkers described her as "the most beautiful kind and sweetest person." She trained colleagues, advocated for them in difficult situations, and — in a detail her colleagues remembered specifically — kept extra blankets in her truck to give to homeless customers.
 
