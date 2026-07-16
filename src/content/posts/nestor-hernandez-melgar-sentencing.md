@@ -1,6 +1,6 @@
 ---
 title: "Nestor Hernandez Melgar Sentencing: Date, Status & What to Know"
-description: "Nestor Hernandez Melgar was convicted June 22, 2026, in the death of Lindsay Geary, 37. Sentencing is set for July 22, 2026, in Snohomish County — not yet imposed."
+description: "Nestor Hernandez Melgar was convicted June 22, 2026, in the death of Lindsay Geary, 36. Sentencing is set for July 22, 2026, in Snohomish County — not yet imposed."
 pubDate: 2026-07-15
 tag: Case Files
 featured: false
@@ -19,7 +19,7 @@ featured: false
     <li><strong>Last verified:</strong> July 15, 2026</li>
     <li><strong>Hearing:</strong> July 22, 2026 — Snohomish County Superior Court</li>
     <li><strong>Defendant:</strong> Nestor Hernandez Melgar, 29</li>
-    <li><strong>Victim:</strong> Lindsay Geary, 37</li>
+    <li><strong>Victim:</strong> Lindsay Geary, 36</li>
     <li><strong>Convicted (June 22, 2026):</strong> first-degree murder, first-degree burglary, and violation of a court order — each with a domestic-violence aggravator</li>
     <li><strong>Result:</strong> not yet imposed</li>
   </ul>
@@ -27,7 +27,7 @@ featured: false
 
 <!-- ON 2026-07-22 UPDATE: set data-state="sentenced", change "UPCOMING SENTENCING" -> "SENTENCE IMPOSED", change "Result: not yet imposed" -> the actual sentence as pronounced, and update Last verified. Update the direct-answer paragraph. Do NOT change the URL. -->
 
-Nestor Hernandez Melgar was convicted on June 22, 2026, in the death of his girlfriend, Lindsay Geary, 37, of Everett. His sentencing is scheduled for July 22, 2026, in Snohomish County Superior Court. As of July 15, 2026, no sentence has been imposed — the judge will decide at that hearing. We will update this page with the result.
+Nestor Hernandez Melgar was convicted on June 22, 2026, in the death of his girlfriend, Lindsay Geary, 36, of Everett. His sentencing is scheduled for July 22, 2026, in Snohomish County Superior Court. As of July 15, 2026, no sentence has been imposed — the judge will decide at that hearing. We will update this page with the result.
 
 ## When is Nestor Hernandez Melgar's sentencing?
 
