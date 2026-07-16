@@ -8,6 +8,8 @@ featured: false
 
 On June 22, 2026, a Snohomish County jury found Nestor Hernandez Melgar guilty of first-degree murder in the death of his girlfriend, Lindsay Geary. Guilty, also, of first-degree burglary. Guilty of violating a domestic violence no-contact order. All three counts carried a domestic violence special aggravator.
 
+Nestor Hernandez Melgar is scheduled to be sentenced on **July 22, 2026** — follow the date, status, and outcome on our [Nestor Hernandez Melgar sentencing tracker](/post/nestor-hernandez-melgar-sentencing/).
+
 What makes this verdict unusual — and legally significant — is what the Snohomish County Medical Examiner's Office did not do.
 
 Seven months after Lindsay Geary was found dead on the bathroom floor of her Everett apartment, the medical examiner issued a finding on the manner of her death. The finding was not "homicide." It was not "suicide." It was "undetermined."

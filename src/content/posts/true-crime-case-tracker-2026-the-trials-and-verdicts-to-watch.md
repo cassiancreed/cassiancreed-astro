@@ -8,8 +8,10 @@ featured: false
 
 The cases worth following, kept current. This is our running watchlist of the most-followed U.S. criminal cases — trials about to start, verdicts pending, sentencings on the calendar, and appeals that could reopen settled questions. We write victim-first: every case here is, first, about the people who were lost. Everyone charged but not yet convicted is presumed innocent. Bookmark this page and check back — the calendar moves. Last verified: June 23, 2026.
 
-<div class="capture-cta" style="border:1px solid var(--rule,#e4e0d9);border-left:4px solid var(--accent,#b91c1c);background:var(--card,#faf9f7);padding:1rem 1.25rem;margin:1.5rem 0;border-radius:6px">
-<strong>Every case deserves a witness.</strong> Neural Edge Publishing covers true crime primary-source verified, presumption of innocence first, every victim named in life before anything else. <a href="https://cassiancreed.beehiiv.com/subscribe">Subscribe to Neural Edge Publishing →</a>
+<div class="capture-cta" style="border:1px solid var(--rule,#3a332c);border-left:4px solid var(--accent,#e0563b);background:var(--card,#1a1613);color:var(--ink,#f6f1ea);padding:1.25rem 1.5rem;margin:1.75rem 0;border-radius:8px">
+<p style="margin:0 0 .4rem;font-size:1.12rem;font-weight:700;line-height:1.3">Get the case files the news won't run — free, straight to your inbox.</p>
+<p style="margin:0 0 1rem;color:var(--ink-2,#b8b1a8);font-size:.95rem">Victim-first true crime, sourced from the record. No spam, unsubscribe anytime.</p>
+<a href="https://cassiancreed.beehiiv.com/subscribe" style="display:inline-block;background:var(--accent,#e0563b);color:#fff;font-weight:700;padding:.6rem 1.25rem;border-radius:6px;text-decoration:none">Subscribe free →</a>
 </div>
 
 ## Etan Patz — conviction reinstated by the U.S. Supreme Court, June 22, 2026
@@ -24,8 +26,10 @@ Victims: the women recovered from Long Island's Gilgo Beach, whose families wait
 
 Victims: Cora, Dawson, and Callan Clancy, her three young children. Status: accused; has pleaded not guilty and is expected to pursue an insanity defense. What's next: trial scheduled to begin July 20, 2026, in Plymouth Superior Court, Massachusetts. Why it matters: a wrenching postpartum-mental-health case reshaping how courts talk about maternal psychosis.
 
-<div class="capture-cta" style="border:1px solid var(--rule,#e4e0d9);border-left:4px solid var(--accent,#b91c1c);background:var(--card,#faf9f7);padding:1rem 1.25rem;margin:1.5rem 0;border-radius:6px">
-<strong>Every case deserves a witness.</strong> Neural Edge Publishing covers true crime primary-source verified, presumption of innocence first, every victim named in life before anything else. <a href="https://cassiancreed.beehiiv.com/subscribe">Subscribe to Neural Edge Publishing →</a>
+<div class="capture-cta" style="border:1px solid var(--rule,#3a332c);border-left:4px solid var(--accent,#e0563b);background:var(--card,#1a1613);color:var(--ink,#f6f1ea);padding:1.25rem 1.5rem;margin:1.75rem 0;border-radius:8px">
+<p style="margin:0 0 .4rem;font-size:1.12rem;font-weight:700;line-height:1.3">Get the case files the news won't run — free, straight to your inbox.</p>
+<p style="margin:0 0 1rem;color:var(--ink-2,#b8b1a8);font-size:.95rem">Victim-first true crime, sourced from the record. No spam, unsubscribe anytime.</p>
+<a href="https://cassiancreed.beehiiv.com/subscribe" style="display:inline-block;background:var(--accent,#e0563b);color:#fff;font-weight:700;padding:.6rem 1.25rem;border-radius:6px;text-decoration:none">Subscribe free →</a>
 </div>
 
 ## Larry Millete — trial underway, verdict pending
@@ -41,6 +45,8 @@ Victim: Brian Thompson, the UnitedHealthcare CEO shot in Midtown Manhattan in De
 Victims: Dominic Russo and Davion Flanagan, killed in a 2022 crash a judge found intentional. Status: convicted of murder, serving 15 years to life. What's next: her attorneys filed with the Ohio Supreme Court in April 2026; the court has not yet decided whether to hear it. Why it matters: a renewed legal fight keeps a case many thought settled in the news.
 
 
-<div class="capture-cta" style="border:1px solid var(--rule,#e4e0d9);border-left:4px solid var(--accent,#b91c1c);background:var(--card,#faf9f7);padding:1rem 1.25rem;margin:1.5rem 0;border-radius:6px">
-<strong>Every case deserves a witness.</strong> Neural Edge Publishing covers true crime primary-source verified, presumption of innocence first, every victim named in life before anything else. <a href="https://cassiancreed.beehiiv.com/subscribe">Subscribe to Neural Edge Publishing →</a>
+<div class="capture-cta" style="border:1px solid var(--rule,#3a332c);border-left:4px solid var(--accent,#e0563b);background:var(--card,#1a1613);color:var(--ink,#f6f1ea);padding:1.25rem 1.5rem;margin:1.75rem 0;border-radius:8px">
+<p style="margin:0 0 .4rem;font-size:1.12rem;font-weight:700;line-height:1.3">Get the case files the news won't run — free, straight to your inbox.</p>
+<p style="margin:0 0 1rem;color:var(--ink-2,#b8b1a8);font-size:.95rem">Victim-first true crime, sourced from the record. No spam, unsubscribe anytime.</p>
+<a href="https://cassiancreed.beehiiv.com/subscribe" style="display:inline-block;background:var(--accent,#e0563b);color:#fff;font-weight:700;padding:.6rem 1.25rem;border-radius:6px;text-decoration:none">Subscribe free →</a>
 </div>

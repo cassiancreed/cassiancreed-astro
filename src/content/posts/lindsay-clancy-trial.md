@@ -37,8 +37,10 @@ This page tracks verified developments in the Massachusetts criminal case agains
 
 Cora, 5, Dawson, 3, and Callan, 8 months, died after events at their Duxbury home in January 2023. Their mother, Lindsay Clancy, has pleaded not guilty to three counts of first-degree murder. **PROSECUTION:** Prosecutors allege she acted deliberately. **DEFENSE:** Her lawyers argue she experienced postpartum psychosis and lacked criminal responsibility, and they also allege that overmedication contributed to her condition. A jury has not decided those contested claims.
 
-<div class="capture-cta" style="border:1px solid var(--rule,#e4e0d9);border-left:4px solid var(--accent,#b91c1c);background:var(--card,#faf9f7);padding:1rem 1.25rem;margin:1.5rem 0;border-radius:6px">
-<strong>Every case deserves a witness.</strong> Neural Edge Publishing covers true crime primary-source verified, presumption of innocence first, every victim named in life before anything else. <a href="https://cassiancreed.beehiiv.com/subscribe">Subscribe to Neural Edge Publishing →</a>
+<div class="capture-cta" style="border:1px solid var(--rule,#3a332c);border-left:4px solid var(--accent,#e0563b);background:var(--card,#1a1613);color:var(--ink,#f6f1ea);padding:1.25rem 1.5rem;margin:1.75rem 0;border-radius:8px">
+<p style="margin:0 0 .4rem;font-size:1.12rem;font-weight:700;line-height:1.3">Get the case files the news won't run — free, straight to your inbox.</p>
+<p style="margin:0 0 1rem;color:var(--ink-2,#b8b1a8);font-size:.95rem">Victim-first true crime, sourced from the record. No spam, unsubscribe anytime.</p>
+<a href="https://cassiancreed.beehiiv.com/subscribe" style="display:inline-block;background:var(--accent,#e0563b);color:#fff;font-weight:700;padding:.6rem 1.25rem;border-radius:6px;text-decoration:none">Subscribe free →</a>
 </div>
 
 ## Fact card
@@ -149,8 +151,10 @@ Jury selection is scheduled for Monday, July 20, 2026. The status box is reverif
 
 Court schedules and evidentiary plans can change. This tracker distinguishes what happened in court from what either side says the evidence means. Corrections identify the changed fact, the source, and the time of the update. For the wider context on postpartum psychosis and the Massachusetts legal test, see the primer on [how postpartum psychosis differs from the legal test for criminal responsibility](/post/lindsay-clancy-trial-2026-postpartum-psychosis/).
 
-<div class="capture-cta" style="border:1px solid var(--rule,#e4e0d9);border-left:4px solid var(--accent,#b91c1c);background:var(--card,#faf9f7);padding:1rem 1.25rem;margin:1.5rem 0;border-radius:6px">
-<strong>Every case deserves a witness.</strong> Follow this case the way it should be followed — verified, attributed, and presumption-of-innocence first. <a href="https://cassiancreed.beehiiv.com/subscribe">Subscribe to Neural Edge Publishing →</a>
+<div class="capture-cta" style="border:1px solid var(--rule,#3a332c);border-left:4px solid var(--accent,#e0563b);background:var(--card,#1a1613);color:var(--ink,#f6f1ea);padding:1.25rem 1.5rem;margin:1.75rem 0;border-radius:8px">
+<p style="margin:0 0 .4rem;font-size:1.12rem;font-weight:700;line-height:1.3">Get the case files the news won't run — free, straight to your inbox.</p>
+<p style="margin:0 0 1rem;color:var(--ink-2,#b8b1a8);font-size:.95rem">Victim-first true crime, sourced from the record. No spam, unsubscribe anytime.</p>
+<a href="https://cassiancreed.beehiiv.com/subscribe" style="display:inline-block;background:var(--accent,#e0563b);color:#fff;font-weight:700;padding:.6rem 1.25rem;border-radius:6px;text-decoration:none">Subscribe free →</a>
 </div>
 
 ## Sources
