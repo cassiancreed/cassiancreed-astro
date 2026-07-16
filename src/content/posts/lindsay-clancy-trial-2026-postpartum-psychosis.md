@@ -24,8 +24,10 @@ Cora, 5, Dawson, 3, and Callan, 8 months, died after events at their Duxbury hom
 
 This primer explains the clinical term postpartum psychosis and the separate Massachusetts legal standard for lack of criminal responsibility. It does not diagnose anyone, predict a verdict, or treat a mental-health condition as proof of violence.
 
-<div class="capture-cta" style="border:1px solid var(--rule,#e4e0d9);border-left:4px solid var(--accent,#b91c1c);background:var(--card,#faf9f7);padding:1rem 1.25rem;margin:1.5rem 0;border-radius:6px">
-<strong>Every case deserves a witness.</strong> Neural Edge Publishing covers true crime primary-source verified, presumption of innocence first, every victim named in life before anything else. <a href="https://cassiancreed.beehiiv.com/subscribe">Subscribe to Neural Edge Publishing →</a>
+<div class="capture-cta" style="border:1px solid var(--rule,#3a332c);border-left:4px solid var(--accent,#e0563b);background:var(--card,#1a1613);color:var(--ink,#f6f1ea);padding:1.25rem 1.5rem;margin:1.75rem 0;border-radius:8px">
+<p style="margin:0 0 .4rem;font-size:1.12rem;font-weight:700;line-height:1.3">Get the case files the news won't run — free, straight to your inbox.</p>
+<p style="margin:0 0 1rem;color:var(--ink-2,#b8b1a8);font-size:.95rem">Victim-first true crime, sourced from the record. No spam, unsubscribe anytime.</p>
+<a href="https://cassiancreed.beehiiv.com/subscribe" style="display:inline-block;background:#b8431f;color:#fff;font-weight:700;padding:.6rem 1.25rem;border-radius:6px;text-decoration:none">Subscribe free →</a>
 </div>
 
 ## What is established, and what remains disputed?
@@ -86,8 +88,10 @@ Also look for a visible verification date. Court schedules change, and a live ca
 
 This primer does not carry a running schedule or live verdict box. See the [trial tracker](/post/lindsay-clancy-trial/) for current status, dated court updates, charges, and rulings.
 
-<div class="capture-cta" style="border:1px solid var(--rule,#e4e0d9);border-left:4px solid var(--accent,#b91c1c);background:var(--card,#faf9f7);padding:1rem 1.25rem;margin:1.5rem 0;border-radius:6px">
-<strong>Every case deserves a witness.</strong> Understand cases, don't just consume them. <a href="https://cassiancreed.beehiiv.com/subscribe">Subscribe to Neural Edge Publishing →</a>
+<div class="capture-cta" style="border:1px solid var(--rule,#3a332c);border-left:4px solid var(--accent,#e0563b);background:var(--card,#1a1613);color:var(--ink,#f6f1ea);padding:1.25rem 1.5rem;margin:1.75rem 0;border-radius:8px">
+<p style="margin:0 0 .4rem;font-size:1.12rem;font-weight:700;line-height:1.3">Get the case files the news won't run — free, straight to your inbox.</p>
+<p style="margin:0 0 1rem;color:var(--ink-2,#b8b1a8);font-size:.95rem">Victim-first true crime, sourced from the record. No spam, unsubscribe anytime.</p>
+<a href="https://cassiancreed.beehiiv.com/subscribe" style="display:inline-block;background:#b8431f;color:#fff;font-weight:700;padding:.6rem 1.25rem;border-radius:6px;text-decoration:none">Subscribe free →</a>
 </div>
 
 ## Sources

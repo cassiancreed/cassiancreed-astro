@@ -8,6 +8,8 @@ featured: false
 
 On June 22, 2026, the Snohomish County Superior Court concluded one of the most instructive criminal trials in recent Washington state history. The case of *State of Washington v. Nestor Hernandez Melgar* sits at the intersection of forensic ambiguity and circumstantial sufficiency. No DNA linked the defendant to the victim's body. The medical examiner refused to call the death a homicide. And yet — the jury returned guilty on all counts.
 
+Nestor Hernandez Melgar is scheduled to be sentenced on **July 22, 2026** — follow the date, status, and outcome on our [Nestor Hernandez Melgar sentencing tracker](/post/nestor-hernandez-melgar-sentencing/).
+
 Here is how that happened.
 
 ---
