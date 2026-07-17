@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import CaptureBlock from '../components/CaptureBlock.astro';
 // Discovery-layer case file — "A Name for Baby Jacob" (Round Lake Beach, IL, 2001 infant-Doe IGG cold case).
 // Guardrails (Tier ORANGE): Jennifer Lebron is CHARGED, NOT CONVICTED. "charged"/"alleged" only; no guilt asserted.
 // Charges stated precisely: TWO COUNTS OF INVOLUNTARY MANSLAUGHTER (felony) — NOT murder.
@@ -67,16 +68,6 @@ import Base from '../layouts/Base.astro';
   </article>
 
   <div class="wrap"><section class="subscribe" id="subscribe">
-    <p class="evidence evidence--accent">The free newsletter</p>
-    <h2>Understand cases &mdash; get <em>The Jury Chess Game</em></h2>
-    <p>Subscribe and we&rsquo;ll send you <em>The Jury Chess Game</em> &mdash; our free field guide to how lawyers really pick the twelve people who decide guilt or innocence. After that, we only email when we&rsquo;ve shipped something new: a fresh case file or a book. No weekly blast; unsubscribe anytime.</p>
-    <form action="https://cassiancreed.beehiiv.com/subscribe" method="get" aria-label="Subscribe to the free Cassian Creed newsletter">
-      <input type="hidden" name="utm_source" value="website" />
-      <input type="hidden" name="utm_medium" value="baby_jacob_case_file" />
-      <input type="hidden" name="utm_campaign" value="jury_chess_game_guide" />
-      <input type="email" name="email" required autocomplete="email" placeholder="you@email.com" aria-label="Your email address" />
-      <button class="btn" type="submit">Send me the free guide &rarr;</button>
-    </form>
-    <p class="site-foot__note">No spam. Unsubscribe anytime.</p>
+    <CaptureBlock campaign="baby_jacob" />
   </section></div>
 </Base>
