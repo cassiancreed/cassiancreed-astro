@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import { getCollection } from 'astro:content';
+import CaptureBlock from '../../components/CaptureBlock.astro';
 export async function getStaticPaths() {
   const posts = await getCollection('posts');
   // Nancy Guthrie is excluded from related-content rails by standing order; the page itself stays live.
@@ -85,19 +86,7 @@ const jsonld = faqNode
 
   <div class="wrap"><section class="convert" id="subscribe">
     <div class="convert__grid">
-      <div class="convert__capture">
-        <p class="evidence evidence--accent">The free newsletter</p>
-        <h2>Subscribe free &mdash; get <em>The Jury Chess Game</em></h2>
-        <p>Subscribe and we&rsquo;ll send you <em>The Jury Chess Game</em> &mdash; our free field guide to how lawyers really pick the twelve people who decide guilt or innocence. After that, we only email when we&rsquo;ve shipped something new: a fresh case file or a book. No weekly blast; unsubscribe anytime.</p>
-        <form action="https://cassiancreed.beehiiv.com/subscribe" method="get" aria-label="Subscribe free to the Cassian Creed newsletter">
-          <input type="email" name="email" required autocomplete="email" placeholder="you@email.com" aria-label="Your email address" />
-          <input type="hidden" name="utm_source" value="website" />
-          <input type="hidden" name="utm_medium" value="post_cta" />
-          <input type="hidden" name="utm_campaign" value="jury_chess_game_guide" />
-          <button class="btn" type="submit">Send me the free guide →</button>
-        </form>
-        <p class="convert__magnet">No spam. Unsubscribe anytime.</p>
-      </div>
+      <CaptureBlock campaign={'post_' + post.slug} />
       <aside class="convert__book">
         <p class="convert__book-k">The Trail — ebook</p>
         <p class="convert__book-t">The complete, victim-first case file for Rachel Morin — for $1.99. Support independent true crime.</p>
