@@ -3,10 +3,27 @@
 // These are the ONLY strings to edit before merge. Leave the surrounding code untouched.
 // Props of the same name (headline/subtext/button) override these per-placement if ever needed,
 // but the DEFAULTS below are the canonical swap-point.
-const DEFAULT_HEADLINE = 'PLACEHOLDER — winning headline goes here';
-const DEFAULT_SUBTEXT  = 'PLACEHOLDER — supporting subtext / the promise goes here.';
-const DEFAULT_BUTTON   = 'PLACEHOLDER — button label';
+const DEFAULT_HEADLINE = 'Never Wonder What Happened Next.';
+const DEFAULT_SUBTEXT  = 'Subscribe to Neural Edge Publishing’s case tracker — a weekly briefing that follows the forensic evidence, the courtroom proceedings, and the verdicts on the cases you’ve been reading about. Because the story doesn’t end when the article does.';
+const DEFAULT_BUTTON   = 'Never Miss a Verdict';
 // ▲▲▲▲▲ END OFFER COPY SWAP-POINT ▲▲▲▲▲
+
+// ── FUTURE PAGE-MATCHED COPY (commented — no runtime effect yet) ──
+// The DEFAULT_* strings above apply to every placement now: home, all posts, and baby_jacob.
+// To slot page-specific copy LATER without rebuilding this component, uncomment the map
+// below (keyed by the `campaign` prop each placement passes) and, in the resolver, prefer
+// COPY_BY_CAMPAIGN[campaign] before the DEFAULT_* fallback. 1B forensic + 2A trial are
+// pre-reserved so their AB-certified copy can drop straight in.
+// const COPY_BY_CAMPAIGN = {
+//   home:       { headline: DEFAULT_HEADLINE, subtext: DEFAULT_SUBTEXT, button: DEFAULT_BUTTON },
+//   baby_jacob: { headline: DEFAULT_HEADLINE, subtext: DEFAULT_SUBTEXT, button: DEFAULT_BUTTON },
+//   // '1B_forensic': { headline: '', subtext: '', button: '' },  // forensic-evidence page
+//   // '2A_trial':    { headline: '', subtext: '', button: '' },  // trial / courtroom page
+//   // 'post_<slug>': { ... },                                    // per-post override as needed
+// };
+// When enabled, resolve as:
+//   const c = COPY_BY_CAMPAIGN[campaign] ?? {};
+//   resolvedHeadline = headline ?? c.headline ?? DEFAULT_HEADLINE;  (same for subtext/button)
 
 export interface Props {
   /** Required. Feeds utm_campaign so each placement is tracked distinctly. */
