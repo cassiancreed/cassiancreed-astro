@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import CaptureBlock from '../components/CaptureBlock.astro';
 import { getCollection } from 'astro:content';
 
 // RESOURCES & GUIDES — the body-of-work page. Its job is to show depth at a
@@ -111,16 +112,6 @@ const guides = [
   </article>
 
   <div class="wrap"><section class="subscribe" id="subscribe">
-    <p class="evidence evidence--accent">The free newsletter</p>
-    <h2>Subscribe free &mdash; get <em>How to Read a Case Like the Court Does</em></h2>
-    <p>A charge isn&rsquo;t a conviction. A theory isn&rsquo;t proof. Subscribe and we&rsquo;ll send you <em>How to Read a Case Like the Court Does</em> &mdash; a plain-language framework for weighing evidence instead of guessing, the real difference between proof and speculation, and what a verdict actually settles (and what it doesn&rsquo;t). No weekly blast; unsubscribe anytime.</p>
-    <form action="https://cassiancreed.beehiiv.com/subscribe" method="get" aria-label="Subscribe to the free Cassian Creed newsletter">
-      <input type="hidden" name="utm_source" value="website" />
-      <input type="hidden" name="utm_medium" value="guides_library" />
-      <input type="hidden" name="utm_campaign" value="lm_case_how-to-read-a-case" />
-      <input type="email" name="email" required autocomplete="email" placeholder="you@email.com" aria-label="Your email address" />
-      <button class="btn" type="submit">Send me the free guide &rarr;</button>
-    </form>
-    <p class="site-foot__note">No spam. Unsubscribe anytime.</p>
+    <CaptureBlock offer="case" content="guides" />
   </section></div>
 </Base>
