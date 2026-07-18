@@ -43,6 +43,14 @@ const resolvedButton   = button   ?? DEFAULT_BUTTON;
 // Href is built from the prop. encodeURIComponent guards odd campaign strings.
 const subscribeHref =
   `https://cassiancreed.beehiiv.com/subscribe?utm_source=website&utm_medium=capture&utm_campaign=${encodeURIComponent(campaign)}`;
+
+// Beehiiv INLINE EMBED (direct-submit): visitor enters email ONCE, on-page, no bounce/re-type.
+// slim=true renders a compact email+button row (no duplicate Beehiiv header). Per-placement UTM
+// is passed on the src so attribution stays distinct. Success redirects to /?subscribed=1,
+// which fires the existing GA4 sign_up event in Base.astro.
+const EMBED_FORM_ID = '4d0df7d0-f274-4901-a457-091f80cecef0';
+const embedSrc =
+  `https://embeds.beehiiv.com/${EMBED_FORM_ID}?slim=true&utm_source=website&utm_medium=capture&utm_campaign=${encodeURIComponent(campaign)}`;
 ---
 
 <section class="capture" aria-label="Email newsletter sign-up">
@@ -50,17 +58,22 @@ const subscribeHref =
     <h2 class="capture__headline">{resolvedHeadline}</h2>
     <p class="capture__subtext">{resolvedSubtext}</p>
 
-    {/* Wrapper MUST keep class "capture-cta" — the site layout's GA4 handler
-        fires subscribe_click on any <a> inside .capture-cta. CTA is an <a>, not a form. */}
+    {/* Wrapper keeps class "capture-cta" so the site layout's GA4 subscribe_click
+        handler still fires on the fallback <a>. Primary path is the Beehiiv inline
+        embed below: the visitor enters their email ONCE, here on cassiancreed.com —
+        no redirect to a second domain, no re-typing. */}
     <div class="capture-cta">
-      <a
-        class="capture__button"
-        href={subscribeHref}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        {resolvedButton}
-      </a>
+      <iframe
+        class="capture__embed"
+        src={embedSrc}
+        title={resolvedButton}
+        loading="lazy"
+        scrolling="no"
+        frameborder="0"
+      ></iframe>
+      <p class="capture__fallback">
+        Form not loading? <a href={subscribeHref} target="_blank" rel="noopener noreferrer">{resolvedButton} &rarr;</a>
+      </p>
     </div>
   </div>
 </section>
@@ -98,6 +111,24 @@ const subscribeHref =
   }
 
   .capture-cta { margin-top: 0.35rem; }
+
+  .capture__embed {
+    display: block;
+    width: 100%;
+    max-width: 460px;
+    height: 64px;
+    border: 0;
+    margin: 0;
+    background: transparent;
+    color-scheme: light;
+  }
+
+  .capture__fallback {
+    margin: 0.5rem 0 0;
+    font-size: 0.85rem;
+    color: var(--ink-2);
+  }
+  .capture__fallback a { color: var(--accent); }
 
   .capture__button {
     display: flex;               /* full-width, centered on mobile */
