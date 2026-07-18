@@ -17,7 +17,7 @@ On the morning of May 25, 1979, a six-year-old boy named Etan Patz left his fami
 
 This is the full case file — the disappearance, the milk carton kid, the confession of Pedro Hernandez, and the 6-3 Supreme Court ruling on June 22, 2026 that reinstated his conviction.
 
-*New here? Subscribe to Neural Edge Publishing and explore our other true crime case files for the cases that changed the law.*
+*New here? Get the free guide and explore our other true crime case files for the cases that changed the law.*
 
 ## What Happened to Etan Patz?
 
@@ -66,4 +66,4 @@ What happened to Etan Patz changed American childhood. Who killed Etan Patz was 
 <iframe loading="lazy" style="border-radius:12px" src="https://open.spotify.com/embed/episode/6ArfeTybQ5QZlKjNUaZalb?theme=0" width="100%" height="152" frameborder="0" allow="clipboard-write; encrypted-media; fullscreen; picture-in-picture" title="Listen: Etan Patz: The Milk Carton Kid and the 2026 Supreme Court Ruling — Cassian Creed: Daily Update"></iframe>
 
 > **Get the next case file the day it ships**  
-> [Subscribe free — get *How to Read a Case Like the Court Does*, our field guide to reading a case the way a court does →](https://cassiancreed.beehiiv.com/subscribe?utm_source=website&utm_medium=av_embed&utm_campaign=lm_case_how-to-read-a-case)
+> [Get *How to Read a Case Like the Court Does*, our field guide to reading a case the way a court does →](https://cassiancreed.beehiiv.com/subscribe?utm_source=website&utm_medium=av_embed&utm_campaign=lm_case_how-to-read-a-case)

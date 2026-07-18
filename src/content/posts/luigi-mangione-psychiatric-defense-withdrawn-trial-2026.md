@@ -61,4 +61,4 @@ As the state murder trial approaches its September 8, 2026 date, the psychiatric
 
 ---
 
-*Subscribe to the Cassian Creed newsletter for primary-source verified true crime analysis: [cassiancreed.beehiiv.com](https://cassiancreed.beehiiv.com)*
+*Get the Cassian Creed newsletter for primary-source verified true crime analysis: [cassiancreed.beehiiv.com](https://cassiancreed.beehiiv.com)*

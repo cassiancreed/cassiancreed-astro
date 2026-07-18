@@ -17,7 +17,7 @@ capture: "dna"
 
 Use this study guide to review the key facts of the Cheryl Lynn Edwards case, the forensic methods involved, and the questions worth thinking through. It is built for careful study, not for spectacle.
 
-*New here? Subscribe to Neural Edge Publishing and explore our other true crime case files.*
+*New here? Get the free guide and explore our other true crime case files.*
 
 ## Key Facts to Know
 

@@ -17,7 +17,7 @@ capture: "dna"
 
 For nearly fifty years, this case had no name attached to it. The timeline below lays out what is known, in order, from her birth to her identification in 2026.
 
-*New here? Subscribe to Neural Edge Publishing and explore our other true crime case files.*
+*New here? Get the free guide and explore our other true crime case files.*
 
 ## The Timeline
 
