@@ -126,4 +126,4 @@ Yes. The victim known as Jane Doe No. 6 has not been charged. Investigators have
 
 ---
 
-*The women remembered here deserve more than a byline. If you want to follow cases like this as the record moves, [subscribe free — we'll send you The Jury Chess Game, our guide to how juries are really chosen](https://cassiancreed.beehiiv.com/subscribe).*
+*The women remembered here deserve more than a byline. If you want to follow cases like this as the record moves, [subscribe free — we'll send you How to Read a Case Like the Court Does, our field guide to reading a case the way a court does](https://cassiancreed.beehiiv.com/subscribe).*

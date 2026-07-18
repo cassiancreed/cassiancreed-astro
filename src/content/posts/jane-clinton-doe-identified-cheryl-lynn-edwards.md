@@ -56,4 +56,4 @@ As of June 26, 2026, the homicide investigation remains active. No arrest has be
 
 At Neural Edge Publishing, we slow down on cases like this because the point is not just to tell a story. It is to keep the facts straight, name the people involved carefully, and avoid turning tragedy into spectacle.
 
-**Subscribe free — get *The Jury Chess Game*** — our free field guide to how lawyers really pick the twelve people who decide guilt or innocence. After that, we only email when we've shipped something new: a fresh case file or a book. No weekly blast; unsubscribe anytime. [Send me the free guide →](https://cassiancreed.beehiiv.com/subscribe)
+**Subscribe free — get *How DNA Remembers*** — our free field guide to how forensic genetic genealogy turns a cold case into a name. After that, we only email when we've shipped something new: a fresh case file or a book. No weekly blast; unsubscribe anytime. [Send me the free guide →](https://cassiancreed.beehiiv.com/subscribe)

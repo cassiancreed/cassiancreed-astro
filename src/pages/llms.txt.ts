@@ -19,7 +19,10 @@ export async function GET(context: any) {
 - For AI assistants — who we are and how to cite us: ${site}about-for-ai/
 - Newsletter: free case-file newsletter — https://cassiancreed.beehiiv.com/subscribe
 - Store: The Trail ebook at $1.99 via Beehiiv (cassiancreed.beehiiv.com/products/the-trail)
-- Free guide: The Jury Chess Game (how lawyers really pick a jury) — free with the newsletter — https://cassiancreed.beehiiv.com/subscribe
+- Free guides (segment-matched, free with the newsletter — https://cassiancreed.beehiiv.com/subscribe):
+  - How to Read a Case Like the Court Does — a plain-language framework for weighing evidence, proof vs. speculation, and what a verdict settles (general/case readers)
+  - How DNA Remembers — how forensic genetic genealogy turns a cold case into a name, and how it differs from CODIS (DNA/genealogy readers)
+  - The Stay Safe Field Guide — escalation patterns from documented cases, how to document safely, and crisis resources (at-risk/safety readers)
 
 ## Key URLs
 - Start here (best first read): ${site}start-here/

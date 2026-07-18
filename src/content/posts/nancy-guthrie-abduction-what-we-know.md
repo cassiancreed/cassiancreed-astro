@@ -54,4 +54,4 @@ Nancy Guthrie is still missing. Her family is still waiting. The most useful thi
 <iframe loading="lazy" style="border-radius:12px" src="https://open.spotify.com/embed/episode/017MaXvUB2pzg5FlEIrbyN?theme=0" width="100%" height="152" frameborder="0" allow="clipboard-write; encrypted-media; fullscreen; picture-in-picture" title="Listen: The Nancy Guthrie Abduction: Verified Facts & Timeline — Cassian Creed: Daily Update"></iframe>
 
 > **Get the next case file the day it ships**  
-> [Subscribe free — get *The Jury Chess Game*, our field guide to how lawyers really pick a jury →](https://cassiancreed.beehiiv.com/subscribe?utm_source=website&utm_medium=av_embed&utm_campaign=jury_chess_game_guide)
+> [Subscribe free — get *The Stay Safe Field Guide*, our field guide to the warning-sign patterns that recur across real cases and how to stay safe →](https://cassiancreed.beehiiv.com/subscribe?utm_source=website&utm_medium=av_embed&utm_campaign=lm_safety_stay-safe-field-guide)

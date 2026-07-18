@@ -64,6 +64,6 @@ One thing is certain: coercive control is never the survivor's fault. No one pro
 
 ---
 
-*At Neural Edge, we cover cases where control turned fatal — and the warning signs that were there all along. Want the deeper story? Subscribe free and we'll send you our field guide **The Jury Chess Game**, plus new case files as we publish them. [Subscribe free →](https://cassiancreed.beehiiv.com/subscribe)*
+*At Neural Edge, we cover cases where control turned fatal — and the warning signs that were there all along. Want the deeper story? Subscribe free and we'll send you **The Stay Safe Field Guide** — the warning-sign patterns that recur across real cases, and how to document and stay safe — plus new case files as we publish them. [Subscribe free →](https://cassiancreed.beehiiv.com/subscribe)*
 
 INTERNAL LINKS TO ADD: link "coercive control" to a relevant Case Files narrative; link "safety plan" / resources to the For-Survivors resource hub once built. Cross-link from the false-confessions and degrees-of-homicide explainers where relevant.

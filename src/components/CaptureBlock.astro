@@ -18,36 +18,48 @@
 
 const JURY_FORM = '4d0df7d0-f274-4901-a457-091f80cecef0';
 
+// ── Converged offers (isweat: all three ship ≥8.0, Rex+Banks PASS) ──
+// The general/case segment magnet was SWITCHED from "The Jury Chess Game"
+// (6.76, unresolvable Banks reader-value mismatch) to "How to Read a Case
+// Like the Court Does" (8.56). `jury` is kept as an ALIAS → `case` so any
+// page/post still passing offer="jury" resolves to the converged offer with
+// no page edits; the voir-dire material is retired as a magnet and lives on
+// as a standalone article.
 const OFFERS = {
-  jury: {
-    formId: JURY_FORM,
+  case: {
+    formId: JURY_FORM,        // reuses the single live subscribe form (copy+UTM matched)
     formMatched: true,
-    campaign: 'jury_chess_game_guide',
-    headline: 'Never Wonder What Happened Next.',
-    subtext: 'Subscribe to Neural Edge Publishing’s case tracker — a weekly briefing that follows the forensic evidence, the courtroom proceedings, and the verdicts on the cases you’ve been reading about. Because the story doesn’t end when the article does.',
-    button: 'Never Miss a Verdict',
+    campaign: 'lm_case_how-to-read-a-case',
+    headline: 'Everyone has an opinion on a case. Here’s how to actually read one.',
+    subtext: 'A charge isn’t a conviction. A theory isn’t proof. Subscribe free and we’ll send How to Read a Case Like the Court Does — a plain-language framework for weighing evidence instead of guessing, the real difference between proof and speculation, and what a verdict actually settles (and what it doesn’t) — plus how each new case’s evidence actually breaks down, using the same framework. No weekly blast; unsubscribe anytime.',
+    button: 'Get the free guide',
   },
   dna: {
     formId: JURY_FORM,        // TODO: swap to the "How DNA Remembers" form when it exists
     formMatched: false,
-    campaign: 'dna_guide',
-    headline: 'Get the free guide — and the next amazing case.',
-    subtext: 'Subscribe free to Neural Edge Publishing and we’ll send the printable How DNA Remembers guide — the science of family trees and cousin-matching — plus the next real DNA identification the moment it breaks. No weekly blast; unsubscribe anytime.',
+    campaign: 'lm_dna_how-dna-remembers',
+    headline: 'The science that gives cold cases a name.',
+    subtext: 'A DNA match is a lead, not a verdict. Subscribe free and we’ll send the printable How DNA Remembers guide — how shared DNA narrows a family tree into a name, the real difference between a CODIS hit and forensic genetic genealogy, and exactly what a match can (and can’t) prove in court — plus the next real identification the moment it’s confirmed. No weekly blast; unsubscribe anytime.',
     button: 'Get the free guide',
   },
   safety: {
     formId: JURY_FORM,        // TODO: swap to the Stay-Safe guide form when it exists
     formMatched: false,
-    campaign: 'safety_guide',
-    headline: 'Know the warning signs before they matter.',
-    subtext: 'Case after case, the same warning signs repeat — and what repeats can be learned. Subscribe free and we’ll send the Stay Safe guide, plus what each new case teaches about keeping the people you love safe. No weekly blast; unsubscribe anytime.',
+    campaign: 'lm_safety_stay-safe-field-guide',
+    // Rex requirement: crisis hotlines must be visible ON-PAGE, ungated,
+    // BEFORE any signup ask. Rendered via `safetyLine` below the subtext.
+    safetyLine: 'If you’re in danger right now: call or text 988, call the National Domestic Violence Hotline at 1-800-799-7233, or text HOME to 741741. Free, confidential, 24/7 — no signup required.',
+    headline: 'The warning signs repeat. So does the way out.',
+    subtext: 'If you’re worried about your own safety or someone you love, you’re not alone — and what other cases have shown can help you see clearly. Subscribe free for the printable Stay Safe guide: the escalation patterns that recur across real, documented cases, how to document safely, and how to plan around someone who monitors or controls you — plus what each new case teaches about staying safe. This guide is not a substitute for a personalized safety plan from a trained advocate; the hotlines above can connect you to one, free. No weekly blast; unsubscribe anytime.',
     button: 'Get the free guide',
   },
 };
+// Back-compat alias: legacy pages/posts still pass offer="jury".
+OFFERS.jury = OFFERS.case;
 
 export interface Props {
-  /** Topic-matched magnet: 'jury' (cases/trials/home), 'dna' (genealogy), 'safety'. */
-  offer?: 'jury' | 'dna' | 'safety';
+  /** Topic-matched magnet: 'case' (cases/trials/home; 'jury' is a back-compat alias), 'dna' (genealogy), 'safety'. */
+  offer?: 'case' | 'jury' | 'dna' | 'safety';
   /** Optional UTM override. Defaults to the offer's own campaign. */
   campaign?: string;
   /** Optional per-placement copy overrides (win over the offer defaults). */
@@ -63,14 +75,16 @@ export interface Props {
   embed?: boolean;
 }
 
-const { offer = 'jury', campaign, content, headline, subtext, button, embed = true } = Astro.props;
-const o = OFFERS[offer] ?? OFFERS.jury;
+const { offer = 'case', campaign, content, headline, subtext, button, embed = true } = Astro.props;
+const o = OFFERS[offer] ?? OFFERS.case;
 
 const camp             = campaign ?? o.campaign;
 const utmContent       = content ? `&utm_content=${encodeURIComponent(content)}` : '';
 const resolvedHeadline = headline ?? o.headline;
 const resolvedSubtext  = subtext  ?? o.subtext;
 const resolvedButton   = button   ?? o.button;
+// Ungated crisis line (safety offer only). Always rendered before signup.
+const safetyLine       = (o as { safetyLine?: string }).safetyLine;
 
 // Fallback / non-embed link. encodeURIComponent guards odd campaign strings.
 const subscribeHref =
@@ -85,6 +99,9 @@ const embedSrc =
 <section class="capture" aria-label="Email newsletter sign-up">
   <div class="capture__inner">
     <h2 class="capture__headline">{resolvedHeadline}</h2>
+    {safetyLine && (
+      <p class="capture__safety" role="note">{safetyLine}</p>
+    )}
     <p class="capture__subtext">{resolvedSubtext}</p>
 
     {/* .capture-cta wrapper keeps the GA4 subscribe_click handler firing on the
@@ -140,6 +157,20 @@ const embedSrc =
     color: var(--ink-2);        /* --ink-2 on --bg-2 ≈ 8.6:1 — AA/AAA */
     font-size: 1rem;
     line-height: 1.5;
+    margin: 0;
+  }
+
+  /* Ungated crisis line (safety offer). Deliberately prominent and visible
+     BEFORE the signup ask — duty of care, not a marketing element. */
+  .capture__safety {
+    color: var(--ink);
+    background: rgba(224, 86, 59, 0.10);
+    border: 1px solid var(--accent);
+    border-radius: 8px;
+    padding: 0.75rem 0.9rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    font-weight: 600;
     margin: 0;
   }
 

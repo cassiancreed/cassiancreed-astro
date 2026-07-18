@@ -28,19 +28,25 @@ The Trail is $1.99 — Rachel Morin's story, told with care. <a href="https://ca
         <p class="evidence evidence--accent">Sourced true crime &middot; victim-first</p>
         <h1>True crime that respects the victims.</h1>
         <p class="hero__lede">Full, primary-source case files for readers who want to understand cases, not consume them. Every victim named in life first &mdash; and with each one, what it teaches about keeping the people you love safe.</p>
-        {/* Beehiiv INLINE EMBED — direct submit. Visitor enters email ONCE, here on
-            cassiancreed.com; no redirect to beehiiv.com, no re-typing. slim=true renders a
-            compact email+button row. Success redirects to /?subscribed=1 (fires GA4 sign_up). */}
+        {/* NATIVE branded capture (replaces the Beehiiv iframe — kills the green
+            embed button, full brand control). Posts to Beehiiv's own /create form
+            target with the same hidden fields the hosted form uses, so the signup
+            still fires the welcome-guide automation. Visitor types email ONCE, here. */}
         <div class="hero__capture">
-          <iframe
-            class="hero__embed"
-            src="https://embeds.beehiiv.com/4d0df7d0-f274-4901-a457-091f80cecef0?slim=true&utm_source=website&utm_medium=hero&utm_campaign=jury_chess_game_guide"
-            title="Subscribe free to the Cassian Creed newsletter — get the free guide"
-            loading="lazy"
-            scrolling="no"
-            frameborder="0"
-          ></iframe>
-          <noscript><a class="btn" href="https://cassiancreed.beehiiv.com/subscribe?utm_source=website&utm_medium=hero&utm_campaign=jury_chess_game_guide">Get the free guide &rarr;</a></noscript>
+          <form class="capf" action="https://cassiancreed.beehiiv.com/create" method="post">
+            <input type="hidden" name="sent_from_orchid" value="true" />
+            <input type="hidden" name="double_opt" value="false" />
+            <input type="hidden" name="auto_login_enabled" value="true" />
+            <input type="hidden" name="utm_source" value="website" />
+            <input type="hidden" name="utm_medium" value="hero" />
+            <input type="hidden" name="utm_campaign" value="lm_case_how-to-read-a-case" />
+            <label class="capf__label" for="hero-email">Email address</label>
+            <div class="capf__row">
+              <input class="capf__input" id="hero-email" type="email" name="email" required autocomplete="email" placeholder="Enter your email" />
+              <button class="capf__btn" type="submit">Get the free guide &rarr;</button>
+            </div>
+            <noscript><a class="btn" href="https://cassiancreed.beehiiv.com/subscribe?utm_source=website&utm_medium=hero&utm_campaign=lm_case_how-to-read-a-case">Get the free guide &rarr;</a></noscript>
+          </form>
         </div>
         <p class="hero__trust">Free forever &middot; unsubscribe anytime &middot; <a href="/start-here/">new here? start here &rarr;</a></p>
         <ul class="hero__chips" aria-label="What makes these case files different">
@@ -225,4 +231,18 @@ The Trail is $1.99 — Rachel Morin's story, told with care. <a href="https://ca
   .nmv__alt{color:var(--ink-2);font-size:15px;text-decoration:none;border-bottom:1px solid var(--line)}
   .nmv__alt:hover{color:var(--accent)}
   @media(max-width:640px){.nmv{padding:22px 20px}.nmv__h{font-size:25px}}
+
+  /* Native branded hero capture — replaces the Beehiiv iframe (no green button). */
+  .capf{margin:22px 0 0;max-width:520px}
+  .capf__label{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+  .capf__row{display:flex;gap:0;border:1px solid rgba(255,255,255,.14);border-radius:8px;overflow:hidden;background:#0f0d0b}
+  .capf__input{flex:1;min-width:0;background:transparent;border:0;padding:14px 16px;color:var(--ink);font-family:var(--sans);font-size:16px}
+  .capf__input::placeholder{color:var(--ink-3)}
+  .capf__input:focus{outline:none}
+  .capf__row:focus-within{border-color:var(--accent)}
+  .capf__btn{flex:0 0 auto;background:var(--accent);color:#1a0f0a;border:0;padding:0 22px;font-family:var(--mono);font-weight:700;font-size:14px;letter-spacing:.02em;cursor:pointer;transition:filter .15s ease,transform .05s ease}
+  .capf__btn:hover{filter:brightness(1.08)}
+  .capf__btn:active{transform:translateY(1px)}
+  .capf__btn:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+  @media(max-width:520px){.capf__row{flex-direction:column;border:0;background:transparent;gap:10px}.capf__input{border:1px solid rgba(255,255,255,.14);border-radius:8px;background:#0f0d0b}.capf__btn{border-radius:8px;padding:14px 22px;width:100%}}
 </style>

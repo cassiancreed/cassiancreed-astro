@@ -99,7 +99,7 @@ Seven days.
 
 ## Get the Free Field Guide
 
-Subscribe free and we'll send you *The Jury Chess Game* — our field guide to how lawyers really pick the twelve people who decide guilt or innocence. Victim-first, public record only, forensic method explained without hype.
+Subscribe free and we'll send you *How to Read a Case Like the Court Does*, our field guide to reading a case the way a court does. Victim-first, public record only, forensic method explained without hype.
 
 **[Send me the free guide →](https://cassiancreed.beehiiv.com/subscribe)**
 

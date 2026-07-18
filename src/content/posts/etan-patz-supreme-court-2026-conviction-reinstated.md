@@ -66,4 +66,4 @@ What happened to Etan Patz changed American childhood. Who killed Etan Patz was 
 <iframe loading="lazy" style="border-radius:12px" src="https://open.spotify.com/embed/episode/6ArfeTybQ5QZlKjNUaZalb?theme=0" width="100%" height="152" frameborder="0" allow="clipboard-write; encrypted-media; fullscreen; picture-in-picture" title="Listen: Etan Patz: The Milk Carton Kid and the 2026 Supreme Court Ruling — Cassian Creed: Daily Update"></iframe>
 
 > **Get the next case file the day it ships**  
-> [Subscribe free — get *The Jury Chess Game*, our field guide to how lawyers really pick a jury →](https://cassiancreed.beehiiv.com/subscribe?utm_source=website&utm_medium=av_embed&utm_campaign=jury_chess_game_guide)
+> [Subscribe free — get *How to Read a Case Like the Court Does*, our field guide to reading a case the way a court does →](https://cassiancreed.beehiiv.com/subscribe?utm_source=website&utm_medium=av_embed&utm_campaign=lm_case_how-to-read-a-case)

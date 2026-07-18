@@ -48,7 +48,7 @@ When you hear testimony about the internet searches, the argument is identical: 
 
 The documentary cannot cover everything the trial covered. A case with over 140 witnesses and 1,000 exhibits will always be compressed. If you find yourself wanting the sourced record — the full timeline, the legal history through the Supreme Court, and a victim-first account that puts Reagan and Braxlynn at the center — that is what our [full case file](/post/the-taylor-parker-case-the-murder-of-reagan-simmons-hancock-and-where-it-stands-now/) is built for.
 
-If you want sourced, victim-first case files like this one, subscribe free and we'll send you *The Jury Chess Game* — our field guide to how lawyers really pick a jury: [cassiancreed.beehiiv.com/subscribe](https://cassiancreed.beehiiv.com/subscribe).
+If you want sourced, victim-first case files like this one, subscribe free and we'll send you *How to Read a Case Like the Court Does*, our field guide to reading a case the way a court does: [cassiancreed.beehiiv.com/subscribe](https://cassiancreed.beehiiv.com/subscribe).
 
 Reagan Simmons-Hancock and Braxlynn Sage Hancock are the reason this documentary exists, and the reason this account was written. Say their names first.
 

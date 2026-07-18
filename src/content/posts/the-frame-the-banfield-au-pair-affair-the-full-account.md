@@ -86,7 +86,7 @@ So we end where we began. Christine Banfield was a nurse and a mother, killed at
 <section class="cta-block" aria-label="Read more from Cassian Creed">
 <p class="evidence evidence--accent">Go deeper on this case</p>
 
-**Get the free field guide.** Subscribe and we'll send you *The Jury Chess Game* — how lawyers really pick the twelve people who decide guilt or innocence: [Send me the free guide →](https://cassiancreed.beehiiv.com/subscribe).
+**Get the free field guide.** Subscribe and we'll send you *How to Read a Case Like the Court Does* — how lawyers really pick the twelve people who decide guilt or innocence: [Send me the free guide →](https://cassiancreed.beehiiv.com/subscribe).
 
 **Get new case files and verdict updates the day they publish.** Join the case-file newsletter: [Subscribe](https://cassiancreed.beehiiv.com/?utm_source=blog&utm_medium=post&utm_campaign=s2e2). No spam; unsubscribe anytime.
 
