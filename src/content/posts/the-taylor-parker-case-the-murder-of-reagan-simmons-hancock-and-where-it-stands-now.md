@@ -1,6 +1,7 @@
 ---
 title: "The Taylor Parker Case: The Murder of Reagan Simmons-Hancock and Where It Stands Now"
-description: "Ahead of Netflix's 'Maternal Instinct,' a sourced, victim-first account of the murder of Reagan Simmons-Hancock and her unborn daughter Braxlynn — and where Taylor Parker's death sentence stands after the appeals courts ruled."
+seoTitle: "Taylor Parker Case Update: Appeals and Habeas Status"
+description: "The July 2026 Taylor Parker case update: Supreme Court status, Texas habeas review, Netflix’s Maternal Instinct, and what remains unresolved."
 pubDate: 2026-06-03
 tag: "Case Files"
 featured: true
@@ -44,7 +45,7 @@ This is the part that matters most heading into the documentary, because true-cr
 
 In a capital case, a death sentence triggers an automatic appeal to the **Texas Court of Criminal Appeals**, the state's highest criminal court. Parker's lawyers raised 25 separate points of error — including arguments about pretrial publicity, evidentiary rulings, and claims that prosecutors had unfairly prejudiced the jury. On **November 6, 2025**, the court rejected every one of them and **affirmed both her conviction and her death sentence** in a unanimous decision. In **May 2026**, the **U.S. Supreme Court declined to review** the case, leaving that ruling in place.
 
-Parker remains on death row in Texas. As of this writing, no execution date has been set; further post-conviction proceedings are still possible, as they are in nearly every capital case. But the core question — whether she is guilty — has been answered by every court that has examined it.
+Parker remains on death row in Texas. As of this writing, no execution date has been set; further post-conviction proceedings are still possible, as they are in nearly every capital case. The [court calendar](/court-calendar/) keeps Taylor Parker in the no-date-set section until a proceeding or execution date is publicly confirmed. But the core question — whether she is guilty — has been answered by every court that has examined it.
 
 <div class="capture-cta" style="border:1px solid var(--rule,#3a332c);border-left:4px solid var(--accent,#e0563b);background:var(--card,#1a1613);color:var(--ink,#f6f1ea);padding:1.25rem 1.5rem;margin:1.75rem 0;border-radius:8px">
 <p style="margin:0 0 .4rem;font-size:1.12rem;font-weight:700;line-height:1.3">Get the case files the news won't run — free, straight to your inbox.</p>
@@ -62,9 +63,13 @@ Reagan Simmons-Hancock and her unborn daughter, Braxlynn, remain at the center o
 
 Netflix brought new attention to Reagan Simmons-Hancock's case with **Maternal Instinct**, a documentary film released on the service on **June 12, 2026**. ([Bates-Rolf Funeral Home, joint obituary, accessed July 18, 2026](https://www.batesrolffuneralhome.com/obituary/reagan-braxlynn-hancock); [Netflix Tudum, June 15, 2026](https://www.netflix.com/tudum/articles/maternal-instinct-release-date-news)) Netflix's Tudum release article, published June 15, says the documentary had premiered June 12 and was streaming, while the official Netflix listing identifies it as a 2026 documentary. The court-status information in this update comes from the legal record rather than from the film. ([Netflix Tudum, June 15, 2026](https://www.netflix.com/tudum/articles/maternal-instinct-release-date-news); [Netflix, *Maternal Instinct* official title page, accessed July 18, 2026](https://www.netflix.com/title/81766093))
 
+For a record-only companion to the documentary, read [what the evidence in Maternal Instinct actually shows](/post/maternal-instinct-netflix-forensic-evidence-taylor-parker/) and which claims require more context.
+
 ### State and federal habeas posture
 
 The Supreme Court's refusal to hear Parker's petition closed that route of direct review, but it did not finish the separate post-conviction process. The latest primary filing located that states the habeas case's posture is Parker's March 6, 2026 Supreme Court petition. It says her state-habeas proceeding was filed in June 2025 and remained ongoing, and it lists **Ex Parte Taylor Parker, Habeas Court Cause No. 20F1345-202**, as pending in Bowie County's 202nd District Court. ([Supreme Court of the United States, docket No. 25-7025, May 18, 2026](https://www.supremecourt.gov/search.aspx?filename=%2Fdocket%2Fdocketfiles%2Fhtml%2Fpublic%2F25-7025.html); [Taylor Rene Parker, Supreme Court petition for writ of certiorari, filed March 6, 2026](https://www.supremecourt.gov/DocketPDF/25/25-7025/400221/20260306142947828_2026-03-06%20Petition%20for%20Writ%20of%20Certiorari.pdf))
+
+The glossary explains why a [motion for a new trial](/glossary/#motion-for-a-new-trial) or habeas filing is a request for relief, not a reversal of the conviction.
 
 In plain language, state habeas is a separate review process, not another replay of the direct appeal. Under Texas law, the convicting court develops any necessary factual record and makes findings, then the Texas Court of Criminal Appeals reviews the application and enters judgment. Federal habeas relief under 28 U.S.C. § 2254 generally requires exhaustion of available state remedies, subject to statutory exceptions. ([Texas Legislature Online, Code of Criminal Procedure art. 11.071, accessed July 18, 2026](https://statutes.capitol.texas.gov/GetStatute.aspx?Code=CR&Value=11.071); [Office of the Law Revision Counsel, U.S. House of Representatives, 28 U.S.C. § 2254, accessed July 18, 2026](https://uscode.house.gov/view.xhtml?edition=prelim&req=granuleid%3AUSC-prelim-title28-section2254))
 
@@ -72,7 +77,7 @@ In plain language, state habeas is a separate review process, not another replay
 
 ### What happens next
 
-The next publicly identifiable milestone is action in Parker's pending state-habeas case, with any necessary factual development and findings in the Bowie County trial court followed by review in the Texas Court of Criminal Appeals. If the state courts deny relief, Parker could seek federal habeas review; federal relief generally requires exhaustion of available state remedies. The Supreme Court's May 18 order did not resolve those habeas claims; it only declined to take the direct-review case. ([Parker certiorari petition, March 6, 2026](https://www.supremecourt.gov/DocketPDF/25/25-7025/400221/20260306142947828_2026-03-06%20Petition%20for%20Writ%20of%20Certiorari.pdf); [Texas Code of Criminal Procedure art. 11.071, accessed July 18, 2026](https://statutes.capitol.texas.gov/GetStatute.aspx?Code=CR&Value=11.071); [28 U.S.C. § 2254, accessed July 18, 2026](https://uscode.house.gov/view.xhtml?edition=prelim&req=granuleid%3AUSC-prelim-title28-section2254); [Supreme Court docket No. 25-7025, May 18, 2026](https://www.supremecourt.gov/search.aspx?filename=%2Fdocket%2Fdocketfiles%2Fhtml%2Fpublic%2F25-7025.html))
+The next publicly identifiable milestone is action in Parker's pending state-habeas case, with any necessary factual development and findings in the Bowie County trial court followed by review in the Texas Court of Criminal Appeals. If the state courts deny relief, Parker could seek federal habeas review; federal relief generally requires exhaustion of available state remedies. The Supreme Court's May 18 order did not resolve those habeas claims; it only declined to take the direct-review case. Readers new to our record-first approach can begin at [Start Here](/start-here/) for the distinction between a verdict, an appeal, and collateral review. ([Parker certiorari petition, March 6, 2026](https://www.supremecourt.gov/DocketPDF/25/25-7025/400221/20260306142947828_2026-03-06%20Petition%20for%20Writ%20of%20Certiorari.pdf); [Texas Code of Criminal Procedure art. 11.071, accessed July 18, 2026](https://statutes.capitol.texas.gov/GetStatute.aspx?Code=CR&Value=11.071); [28 U.S.C. § 2254, accessed July 18, 2026](https://uscode.house.gov/view.xhtml?edition=prelim&req=granuleid%3AUSC-prelim-title28-section2254); [Supreme Court docket No. 25-7025, May 18, 2026](https://www.supremecourt.gov/search.aspx?filename=%2Fdocket%2Fdocketfiles%2Fhtml%2Fpublic%2F25-7025.html))
 
 ## The A.I. AL lens: a planned crime hiding in plain sight
 

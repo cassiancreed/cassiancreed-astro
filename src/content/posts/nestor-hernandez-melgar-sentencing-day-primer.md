@@ -1,6 +1,7 @@
 ---
 title: "The Hernandez Melgar Sentencing: What Washington Law Decides on July 22"
-description: "A plain-language primer for the July 22, 2026 sentencing of Nestor Hernandez Melgar in Snohomish County — what the verdicts established, what Washington sentencing law provides, what happens at the hearing, and what has not yet been verified."
+seoTitle: "Hernandez Melgar Sentencing July 22: What to Know"
+description: "Nestor Hernandez Melgar is due for sentencing July 22. See the verified convictions, Washington sentencing ranges, and what the judge must decide."
 pubDate: 2026-07-18
 tag: Case Files
 featured: false
@@ -23,11 +24,13 @@ Before this case became a trial, a verdict, or a sentencing date, Lindsay Geary 
 
 On June 22, 2026, after a four-week trial in Snohomish County Superior Court, a jury found Nestor Hernandez Melgar guilty on all three charged counts: **first-degree murder, first-degree burglary and violation of a domestic-violence no-contact order**. The jury also found a **domestic-violence aggravating circumstance** attached to each count.
 
-The first-degree murder verdict means the jurors concluded beyond a reasonable doubt that Hernandez Melgar caused Geary's death with the premeditated intent required by Washington law. The burglary verdict separately reflects the jury's determination that his entry into or remaining in the residence met the elements of first-degree burglary. The no-contact-order verdict established a separate violation of the court order then in effect.
+The first-degree murder verdict means the jurors concluded beyond a reasonable doubt that Hernandez Melgar caused Geary's death with the premeditated intent required by Washington law. The burglary verdict separately reflects the jury's determination that his entry into or remaining in the residence met the elements of first-degree burglary. The no-contact-order verdict established a separate violation of the court order then in effect. The glossary explains [protective and no-contact orders](/glossary/#protective-restraining-order), including why violating one can create a separate criminal count.
 
 One important forensic fact remains unchanged by the verdict: the Snohomish County Medical Examiner classified Geary's **cause of death** as asphyxia due to ligature compression but recorded the **manner of death** as **undetermined**, rather than homicide or suicide. That is not the same question the jury decided. A medical examiner classifies a death from the medical and investigative record. A jury decides whether the prosecution proved the charged crime beyond a reasonable doubt after hearing all admitted evidence.
 
 The two conclusions therefore remain side by side. The medical record still says the manner could not be determined. The legal record now says a jury found Hernandez Melgar guilty of first-degree murder.
+
+For the evidence and disputed medical findings behind those verdicts, read [how the jury reached its verdict](/post/murder-staged-as-suicide-hernandez-melgar/) despite an undetermined manner-of-death classification.
 
 Sentencing is reported as set for **Wednesday, July 22, 2026**, in Snohomish County Superior Court. Hernandez Melgar remains in custody pending sentencing.
 
@@ -36,6 +39,8 @@ Sentencing is reported as set for **Wednesday, July 22, 2026**, in Snohomish Cou
 Sources for this section: [The Daily Herald, "Jury convicts man in Everett murder staged as suicide," June 22, 2026](https://www.heraldnet.com/2026/06/22/jury-convicts-man-in-everett-murder-staged-as-suicide/); [RCW 9A.32.030, Murder in the first degree, accessed July 18, 2026](https://app.leg.wa.gov/RCW/default.aspx?cite=9A.32.030); [Cassian Creed / Neural Edge Publishing, "The Jury Said Murder. The Medical Examiner Said Undetermined," June 22, 2026](https://cassiancreed.com/post/murder-staged-as-suicide-hernandez-melgar/); [Lindsay Geary obituary, The Daily Herald via Legacy, December 2024](https://www.legacy.com/us/obituaries/heraldnet/name/lindsay-geary-obituary?id=56931932).
 
 ## What Washington Sentencing Law Provides
+
+Our [Washington court process](/post/how-washington-courts-work-hernandez-melgar/) explainer separates the Superior Court proceeding in this case from the federal system and shows where sentencing fits.
 
 Washington does not give a trial judge a blank sheet of paper at sentencing. For felony convictions, the court begins with the state's sentencing grid. Two numbers matter: the crime's **seriousness level** and the defendant's **offender score**, which is largely based on qualifying criminal history and other current convictions.
 
@@ -83,6 +88,8 @@ A sentencing hearing begins after guilt has already been decided. The judge is n
 Washington law requires the court to hold a sentencing hearing before imposing sentence. The court may consider presentence materials, verified criminal history, victim-impact statements and the parties' sentencing submissions. The prosecutor and defense then argue for the sentences they believe the law and facts support.
 
 For Lindsay Geary's family, sentencing is also the stage at which the law expressly gives survivors a voice. Washington's Crime Victim Bill of Rights allows a victim or survivor to submit a victim-impact statement and to speak personally or through a representative at sentencing. Those statements may describe the financial, medical, social and psychological harm caused by the crime. In a homicide case, they can also tell the court who the victim was and what her absence has meant to the people who loved her.
+
+The [Stay Safe guide](/safety/) collects the relationship-warning signs and confidential support resources that recur across cases involving coercive control and court orders.
 
 The prosecution will normally state its recommended prison term and explain how it calculated the offender score, standard range, aggravating findings and any request for an exceptional sentence. The defense may challenge that calculation, argue for a different point within the range, oppose an exceptional sentence and present mitigating information or letters from people speaking on the defendant's behalf.
 

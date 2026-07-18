@@ -66,7 +66,7 @@ const jsonld = faqNode
   ? { "@context":"https://schema.org", "@graph": [articleNode, faqNode] }
   : { "@context":"https://schema.org", ...articleNode };
 ---
-<Base title={post.data.title} description={post.data.description} jsonld={jsonld} ogImage={post.data.cover ?? `/og/${post.slug}.png`}>
+<Base title={post.data.seoTitle ?? post.data.title} description={post.data.description} jsonld={jsonld} ogImage={post.data.cover ?? `/og/${post.slug}.png`}>
   <article class="post">
     <p class="evidence evidence--accent">{post.data.tag}</p>
     <h1>{post.data.title}</h1>
