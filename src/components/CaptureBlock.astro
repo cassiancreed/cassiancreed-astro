@@ -90,10 +90,8 @@ const safetyLine       = (o as { safetyLine?: string }).safetyLine;
 const subscribeHref =
   `https://cassiancreed.beehiiv.com/subscribe?utm_source=website&utm_medium=capture&utm_campaign=${encodeURIComponent(camp)}${utmContent}`;
 
-// Beehiiv INLINE EMBED (direct-submit): visitor enters email ONCE, on-page.
-// slim=true renders a compact email+button row. Per-placement UTM on the src.
-const embedSrc =
-  `https://embeds.beehiiv.com/${o.formId}?slim=true&utm_source=website&utm_medium=capture&utm_campaign=${encodeURIComponent(camp)}${utmContent}`;
+// Unique input id per placement (a page can carry more than one CaptureBlock).
+const emailId = `cap-email-${camp}${content ? '-' + content : ''}`.replace(/[^a-zA-Z0-9_-]/g, '-');
 ---
 
 <section class="capture" aria-label="Email newsletter sign-up">
@@ -109,17 +107,28 @@ const embedSrc =
     <div class="capture-cta">
       {embed ? (
         <>
-          <iframe
-            class="capture__embed"
-            src={embedSrc}
-            title={resolvedButton}
-            loading="lazy"
-            scrolling="no"
-            frameborder="0"
-          ></iframe>
-          <p class="capture__fallback">
-            Form not loading? <a href={subscribeHref} target="_blank" rel="noopener noreferrer">{resolvedButton} &rarr;</a>
-          </p>
+          {/* NATIVE branded capture — same pattern as the homepage hero. Posts to
+              Beehiiv's own /create target with the hidden fields the hosted form
+              uses, so the welcome-guide automation still fires. Visitor types their
+              email ONCE, here. No iframe -> no unstyled green Beehiiv button, and no
+              ::after overlay masking a cross-origin control we do not own. */}
+          <form class="capf" action="https://cassiancreed.beehiiv.com/create" method="post">
+            <input type="hidden" name="sent_from_orchid" value="true" />
+            <input type="hidden" name="double_opt" value="false" />
+            <input type="hidden" name="auto_login_enabled" value="true" />
+            <input type="hidden" name="utm_source" value="website" />
+            <input type="hidden" name="utm_medium" value="capture" />
+            <input type="hidden" name="utm_campaign" value={camp} />
+            {content && <input type="hidden" name="utm_content" value={content} />}
+            <label class="capf__label" for={emailId}>Email address</label>
+            <div class="capf__row">
+              <input class="capf__input" id={emailId} type="email" name="email" required autocomplete="email" placeholder="Enter your email" />
+              <button class="capf__btn" type="submit">{resolvedButton} &rarr;</button>
+            </div>
+            <noscript>
+              <a class="capture__button" href={subscribeHref} target="_blank" rel="noopener noreferrer">{resolvedButton} &rarr;</a>
+            </noscript>
+          </form>
         </>
       ) : (
         <a class="capture__button" href={subscribeHref} target="_blank" rel="noopener noreferrer">{resolvedButton} &rarr;</a>
