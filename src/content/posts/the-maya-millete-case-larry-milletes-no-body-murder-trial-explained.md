@@ -53,6 +53,28 @@ Larry Millete's murder trial opened in San Diego County Superior Court in May 20
 
 What is settled is the loss. Maya Millete has been missing for more than five years. Her children have grown without her, and her family is still waiting — for a verdict, and, far more painfully, to learn where she is.
 
+## The Verdict — July 2026
+
+**Maya Millete was a mother of three, a civilian Department of Defense employee, a sister, and a friend whose family has spent more than five years trying to bring her home. On July 9, 2026, a San Diego County jury found her husband, Larry Millete, guilty of first-degree murder. Maya herself remains missing.**
+
+The verdict came after a seven-week trial in Chula Vista and less than a day of jury deliberations. Prosecutors did not have Maya's remains, an identified murder weapon, an eyewitness to her death, or a medical finding establishing how she died. Instead, they presented a circumstantial case that asked jurors to consider Maya's plans to leave the marriage, Larry Millete's conduct before and after her disappearance, digital evidence, surveillance evidence, and the absence of any verified sign that Maya was alive after January 7, 2021.
+
+The jury's first-degree-murder verdict means it found the killing was willful, deliberate, and premeditated, and that the prosecution proved Larry Millete's guilt beyond a reasonable doubt. The conviction also demonstrates a basic point about “no-body” murder cases: California law does not require investigators to recover a victim's remains before a jury can return a murder verdict. It requires proof beyond a reasonable doubt, which may be established through circumstantial evidence.
+
+But the verdict did not finish the family's work.
+
+Outside the courthouse, Maya's sister, Maricris Drouaillet, said justice had “probably” been served, then immediately turned attention back to Maya. “We still have my sister out there,” she said. “We still have the second step to go through. We still have to bring my sister home, to bring her to her three children.”
+
+That is the part of the case that remains unresolved. A jury has now decided who was responsible for Maya's death, but her family still does not know where she is. Prosecutors and investigators said after the verdict that the search continues.
+
+Sentencing has not yet been set. California law provides a standard sentence of **25 years to life** for first-degree murder in circumstances like those presently reported. That does not mean automatic release after 25 years; it is an indeterminate life sentence, and any future parole release would require a separate suitability decision. Before the court sentences Millete on the murder conviction, it must also resolve a separate assault-weapon-possession charge. He is scheduled to return to court on that matter July 20.
+
+The legal case has reached a major judgment. Maya's case has not reached its final answer.
+
+Her family is still asking for the one thing the verdict could not give them: the chance to bring Maya home.
+
+_Verdict-section sources: [San Diego County District Attorney's Office, July 9, 2026](https://www.sdcda.org/content/office/newsroom/tempDownloads/1e7873cc-4ec3-4bf9-a73f-405fa778ab3a_Larry%20Millete%20Guilty%20Verdict%20News%20Release%20July%202026.pdf); [KPBS / City News Service, July 9, 2026](https://www.kpbs.org/news/public-safety/2026/07/09/verdict-reached-in-trial-of-larry-millete-accused-of-murdering-missing-wife); [ABC 10News / City News Service, July 9, 2026](https://www.10news.com/news/maya-millete/verdict-reached-in-murder-trial-of-larry-millete); [CBS 8, July 9, 2026](https://www.cbs8.com/article/news/investigations/millete/maya-millete-sister-speaks-after-guilty-verdict-larry-millete-murder-trial/509-e486108a-1970-4f1e-9c57-851724096266); [California Penal Code § 190](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=PEN&nodeTreePath=4.7.1&sectionNum=190.); [California Department of Corrections and Rehabilitation — Parole Eligibility](https://www.cdcr.ca.gov/bph/parole-eligibility/)._
+
 ## Frequently Asked Questions
 
 **Has Larry Millete been convicted?**

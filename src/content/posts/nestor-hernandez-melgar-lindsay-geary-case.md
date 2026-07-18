@@ -116,6 +116,8 @@ On June 22, 2026, after a four-week trial, the Snohomish County jury found Nesto
 
 The verdict is notable precisely because of the ambiguity described above. The medical examiner had left the manner of death "undetermined," and Melgar's DNA was absent from Geary's neck. Yet the jury — applying the criminal standard of proof beyond a reasonable doubt to the full record, not the ME's manner-of-death classification — reached the conclusion the examiner's report did not: that this was a homicide, and that Melgar was responsible. A jury and a medical examiner answer different questions under different standards, and here the jury resolved what the ME's science alone could not.
 
+Cassian Creed compiled this Neural Edge Publishing case file from the Snohomish County Superior Court record and contemporaneous courtroom reporting, keeping the jury's findings separate from the medical examiner's undetermined manner-of-death classification.
+
 ## Sentencing
 
 Sentencing is scheduled for **July 22, 2026**, in Snohomish County Superior Court. No sentence has been imposed yet.
