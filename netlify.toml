@@ -47,14 +47,17 @@
   to = "/books/"
   status = 301
 
+# CY2 (NEP-DPL-CMT-0718CY): retired Subscribe-era routes now match the live
+# nav "Free Guide" target. There is no /free-guide/ page; the nav item points
+# to /#subscribe (Base.astro navItems), so /signup and /subscribe follow it.
 [[redirects]]
   from = "/signup"
-  to = "https://cassiancreed.beehiiv.com/subscribe"
+  to = "/#subscribe"
   status = 301
 
 [[redirects]]
   from = "/subscribe"
-  to = "https://cassiancreed.beehiiv.com/subscribe"
+  to = "/#subscribe"
   status = 301
 
 # --- AK8: legacy static pages ported to Astro posts (NEP-DPL-CWK-0718AK) ---
