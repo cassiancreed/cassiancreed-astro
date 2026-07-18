@@ -56,3 +56,30 @@
   from = "/subscribe"
   to = "https://cassiancreed.beehiiv.com/subscribe"
   status = 301
+
+# --- AK8: legacy static pages ported to Astro posts (NEP-DPL-CWK-0718AK) ---
+# force = true is REQUIRED: the old files still exist under public/, and Netlify
+# serves a matching static file BEFORE consulting a non-forced redirect.
+[[redirects]]
+  from = "/blog/chevy-chase-cold-case-dna"
+  to = "/post/chevy-chase-cold-case-dna/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/eugene-gligor-leslie-preer"
+  to = "/post/eugene-gligor-leslie-preer/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/othram-genetic-genealogy-leslie-preer-cold-case"
+  to = "/post/othram-genetic-genealogy-leslie-preer-cold-case/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/leslie-preer-murder"
+  to = "/post/leslie-preer-murder/"
+  status = 301
+  force = true
