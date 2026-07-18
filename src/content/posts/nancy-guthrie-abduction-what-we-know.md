@@ -11,6 +11,7 @@ jurisdiction: "Pima County Sheriff's Department & FBI (joint task force)"
 status: "Active abduction investigation — no suspect named, no charges filed"
 cover: "/covers/nancy-guthrie.png"
 coverAlt: "An atmospheric Arizona Sonoran desert at dusk near Tucson, with saguaro silhouettes and distant city lights."
+capture: "safety"
 ---
 
 Before she was a headline, Nancy Guthrie was a mother and a grandmother. She is 84 years old. She is the mother of "TODAY" co-anchor Savannah Guthrie and of her older daughter, Annie Guthrie. On the last night anyone in her family saw her, she had spent the evening at Annie's home outside Tucson. Hours later, she was gone.

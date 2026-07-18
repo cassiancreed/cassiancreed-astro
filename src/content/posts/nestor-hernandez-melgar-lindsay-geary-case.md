@@ -18,8 +18,19 @@ Lindsay Geary, a 36-year-old woman from Everett, Washington, was found dead on h
 <div class="capture-cta" style="border:1px solid var(--rule,#3a332c);border-left:4px solid var(--accent,#e0563b);background:var(--card,#1a1613);color:var(--ink,#f6f1ea);padding:1.25rem 1.5rem;margin:1.75rem 0;border-radius:8px">
 <p style="margin:0 0 .4rem;font-size:1.12rem;font-weight:700;line-height:1.3">Get the case files the news won't run — free, straight to your inbox.</p>
 <p style="margin:0 0 1rem;color:var(--ink-2,#b8b1a8);font-size:.95rem">Victim-first true crime, sourced from the record. No spam, unsubscribe anytime.</p>
-<iframe src="https://embeds.beehiiv.com/4d0df7d0-f274-4901-a457-091f80cecef0?slim=true&utm_source=website&utm_medium=post_cta&utm_campaign=lm_case_how-to-read-a-case" title="Subscribe free" loading="lazy" scrolling="no" frameborder="0" style="display:block;width:100%;max-width:460px;height:64px;border:0;margin:0;background:transparent;color-scheme:light"></iframe>
-<p style="margin:.5rem 0 0;font-size:.85rem;color:var(--ink-2,#b8b1a8)">Form not loading? <a href="https://cassiancreed.beehiiv.com/subscribe?utm_source=website&utm_medium=post_cta&utm_campaign=lm_case_how-to-read-a-case" target="_blank" rel="noopener noreferrer" style="color:#e0563b;text-decoration:underline">Subscribe free →</a></p>
+<form class="capf" action="https://cassiancreed.beehiiv.com/create" method="post">
+<input type="hidden" name="sent_from_orchid" value="true" />
+<input type="hidden" name="double_opt" value="false" />
+<input type="hidden" name="auto_login_enabled" value="true" />
+<input type="hidden" name="utm_source" value="website" />
+<input type="hidden" name="utm_medium" value="post_cta" />
+<input type="hidden" name="utm_campaign" value="lm_case_how-to-read-a-case" />
+<label class="capf__label" for="em-nestor-hernandez-melgar-lind-1">Email address</label>
+<div class="capf__row">
+<input class="capf__input" id="em-nestor-hernandez-melgar-lind-1" type="email" name="email" required autocomplete="email" placeholder="Enter your email" />
+<button class="capf__btn" type="submit">Get the free guide &rarr;</button>
+</div>
+</form>
 </div>
 
 <aside class="status-box">
@@ -94,8 +105,19 @@ Those are two different questions. *Cause* describes the physical mechanism that
 <div class="capture-cta" style="border:1px solid var(--rule,#3a332c);border-left:4px solid var(--accent,#e0563b);background:var(--card,#1a1613);color:var(--ink,#f6f1ea);padding:1.25rem 1.5rem;margin:1.75rem 0;border-radius:8px">
 <p style="margin:0 0 .4rem;font-size:1.12rem;font-weight:700;line-height:1.3">Get the case files the news won't run — free, straight to your inbox.</p>
 <p style="margin:0 0 1rem;color:var(--ink-2,#b8b1a8);font-size:.95rem">Victim-first true crime, sourced from the record. No spam, unsubscribe anytime.</p>
-<iframe src="https://embeds.beehiiv.com/4d0df7d0-f274-4901-a457-091f80cecef0?slim=true&utm_source=website&utm_medium=post_cta&utm_campaign=lm_case_how-to-read-a-case" title="Subscribe free" loading="lazy" scrolling="no" frameborder="0" style="display:block;width:100%;max-width:460px;height:64px;border:0;margin:0;background:transparent;color-scheme:light"></iframe>
-<p style="margin:.5rem 0 0;font-size:.85rem;color:var(--ink-2,#b8b1a8)">Form not loading? <a href="https://cassiancreed.beehiiv.com/subscribe?utm_source=website&utm_medium=post_cta&utm_campaign=lm_case_how-to-read-a-case" target="_blank" rel="noopener noreferrer" style="color:#e0563b;text-decoration:underline">Subscribe free →</a></p>
+<form class="capf" action="https://cassiancreed.beehiiv.com/create" method="post">
+<input type="hidden" name="sent_from_orchid" value="true" />
+<input type="hidden" name="double_opt" value="false" />
+<input type="hidden" name="auto_login_enabled" value="true" />
+<input type="hidden" name="utm_source" value="website" />
+<input type="hidden" name="utm_medium" value="post_cta" />
+<input type="hidden" name="utm_campaign" value="lm_case_how-to-read-a-case" />
+<label class="capf__label" for="em-nestor-hernandez-melgar-lind-2">Email address</label>
+<div class="capf__row">
+<input class="capf__input" id="em-nestor-hernandez-melgar-lind-2" type="email" name="email" required autocomplete="email" placeholder="Enter your email" />
+<button class="capf__btn" type="submit">Get the free guide &rarr;</button>
+</div>
+</form>
 </div>
 
 ## The Evidence
@@ -173,6 +195,17 @@ This page is the canonical hub for the Nestor Hernandez Melgar case. For deeper 
 <div class="capture-cta" style="border:1px solid var(--rule,#3a332c);border-left:4px solid var(--accent,#e0563b);background:var(--card,#1a1613);color:var(--ink,#f6f1ea);padding:1.25rem 1.5rem;margin:1.75rem 0;border-radius:8px">
 <p style="margin:0 0 .4rem;font-size:1.12rem;font-weight:700;line-height:1.3">Get the case files the news won't run — free, straight to your inbox.</p>
 <p style="margin:0 0 1rem;color:var(--ink-2,#b8b1a8);font-size:.95rem">Victim-first true crime, sourced from the record. No spam, unsubscribe anytime.</p>
-<iframe src="https://embeds.beehiiv.com/4d0df7d0-f274-4901-a457-091f80cecef0?slim=true&utm_source=website&utm_medium=post_cta&utm_campaign=lm_case_how-to-read-a-case" title="Subscribe free" loading="lazy" scrolling="no" frameborder="0" style="display:block;width:100%;max-width:460px;height:64px;border:0;margin:0;background:transparent;color-scheme:light"></iframe>
-<p style="margin:.5rem 0 0;font-size:.85rem;color:var(--ink-2,#b8b1a8)">Form not loading? <a href="https://cassiancreed.beehiiv.com/subscribe?utm_source=website&utm_medium=post_cta&utm_campaign=lm_case_how-to-read-a-case" target="_blank" rel="noopener noreferrer" style="color:#e0563b;text-decoration:underline">Subscribe free →</a></p>
+<form class="capf" action="https://cassiancreed.beehiiv.com/create" method="post">
+<input type="hidden" name="sent_from_orchid" value="true" />
+<input type="hidden" name="double_opt" value="false" />
+<input type="hidden" name="auto_login_enabled" value="true" />
+<input type="hidden" name="utm_source" value="website" />
+<input type="hidden" name="utm_medium" value="post_cta" />
+<input type="hidden" name="utm_campaign" value="lm_case_how-to-read-a-case" />
+<label class="capf__label" for="em-nestor-hernandez-melgar-lind-3">Email address</label>
+<div class="capf__row">
+<input class="capf__input" id="em-nestor-hernandez-melgar-lind-3" type="email" name="email" required autocomplete="email" placeholder="Enter your email" />
+<button class="capf__btn" type="submit">Get the free guide &rarr;</button>
+</div>
+</form>
 </div>
