@@ -18,6 +18,12 @@
 
 const JURY_FORM = '4d0df7d0-f274-4901-a457-091f80cecef0';
 
+// ⚠ SLOTS FOR FLIGHT 0718M — when the dedicated forms exist, drop the id here and
+// flip formMatched:true on that offer. Nothing else changes; the transport below
+// reads o.formId. NEVER invent a form id.
+// const DNA_FORM    = '';   // 0718M — "How DNA Remembers"
+// const SAFETY_FORM = '';   // 0718M — "Stay Safe Field Guide"
+
 // ── Converged offers (isweat: all three ship ≥8.0, Rex+Banks PASS) ──
 // The general/case segment magnet was SWITCHED from "The Jury Chess Game"
 // (6.76, unresolvable Banks reader-value mismatch) to "How to Read a Case
@@ -75,6 +81,8 @@ export interface Props {
   embed?: boolean;
 }
 
+const EMBED_BASE = 'https://subscribe-forms.beehiiv.com';
+
 const { offer = 'case', campaign, content, headline, subtext, button, embed = true } = Astro.props;
 const o = OFFERS[offer] ?? OFFERS.case;
 
@@ -90,8 +98,15 @@ const safetyLine       = (o as { safetyLine?: string }).safetyLine;
 const subscribeHref =
   `https://cassiancreed.beehiiv.com/subscribe?utm_source=website&utm_medium=capture&utm_campaign=${encodeURIComponent(camp)}${utmContent}`;
 
-// Unique input id per placement (a page can carry more than one CaptureBlock).
-const emailId = `cap-email-${camp}${content ? '-' + content : ''}`.replace(/[^a-zA-Z0-9_-]/g, '-');
+// SUPPORTED BEEHIIV TRANSPORT (NEP-FIX-CWK-0718R).
+// subscribe-forms.beehiiv.com is the v2 form-builder embed: it renders the
+// DASHBOARD styling (verified live 2026-07-18 — button #A8503A / text #F6F1EA,
+// label "Get the free guide."). The legacy embeds.beehiiv.com/<id>?slim=true
+// endpoint ignores the v2 theme, which is where the neon-green button came from.
+// The native POST to /create that 0718L shipped is REJECTED by Beehiiv (403 for
+// humans, Kasada wall for bots) and captured zero subscribers — never reinstate it.
+const embedSrc =
+  `${EMBED_BASE}/${o.formId}?utm_source=website&utm_medium=capture&utm_campaign=${encodeURIComponent(camp)}${utmContent}`;
 ---
 
 <section class="capture" aria-label="Email newsletter sign-up">
@@ -107,28 +122,17 @@ const emailId = `cap-email-${camp}${content ? '-' + content : ''}`.replace(/[^a-
     <div class="capture-cta">
       {embed ? (
         <>
-          {/* NATIVE branded capture — same pattern as the homepage hero. Posts to
-              Beehiiv's own /create target with the hidden fields the hosted form
-              uses, so the welcome-guide automation still fires. Visitor types their
-              email ONCE, here. No iframe -> no unstyled green Beehiiv button, and no
-              ::after overlay masking a cross-origin control we do not own. */}
-          <form class="capf" action="https://cassiancreed.beehiiv.com/create" method="post">
-            <input type="hidden" name="sent_from_orchid" value="true" />
-            <input type="hidden" name="double_opt" value="false" />
-            <input type="hidden" name="auto_login_enabled" value="true" />
-            <input type="hidden" name="utm_source" value="website" />
-            <input type="hidden" name="utm_medium" value="capture" />
-            <input type="hidden" name="utm_campaign" value={camp} />
-            {content && <input type="hidden" name="utm_content" value={content} />}
-            <label class="capf__label" for={emailId}>Email address</label>
-            <div class="capf__row">
-              <input class="capf__input" id={emailId} type="email" name="email" required autocomplete="email" placeholder="Enter your email" />
-              <button class="capf__btn" type="submit">{resolvedButton} &rarr;</button>
-            </div>
-            <noscript>
-              <a class="capture__button" href={subscribeHref} target="_blank" rel="noopener noreferrer">{resolvedButton} &rarr;</a>
-            </noscript>
-          </form>
+          <iframe
+            class="capture__embed"
+            src={embedSrc}
+            title={resolvedButton}
+            loading="lazy"
+            scrolling="no"
+            frameborder="0"
+          ></iframe>
+          <p class="capture__fallback">
+            Form not loading? <a href={subscribeHref} target="_blank" rel="noopener noreferrer">{resolvedButton} &rarr;</a>
+          </p>
         </>
       ) : (
         <a class="capture__button" href={subscribeHref} target="_blank" rel="noopener noreferrer">{resolvedButton} &rarr;</a>
