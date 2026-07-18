@@ -32,7 +32,8 @@ Nestor Hernandez Melgar was convicted on June 22, 2026, in the death of his girl
 <div class="capture-cta" style="border:1px solid var(--rule,#3a332c);border-left:4px solid var(--accent,#e0563b);background:var(--card,#1a1613);color:var(--ink,#f6f1ea);padding:1.25rem 1.5rem;margin:1.75rem 0;border-radius:8px">
 <p style="margin:0 0 .4rem;font-size:1.12rem;font-weight:700;line-height:1.3">Get the case files the news won't run — free, straight to your inbox.</p>
 <p style="margin:0 0 1rem;color:var(--ink-2,#b8b1a8);font-size:.95rem">Victim-first true crime, sourced from the record. No spam, unsubscribe anytime.</p>
-<a href="https://cassiancreed.beehiiv.com/subscribe" style="display:inline-block;background:#b8431f;color:#fff;font-weight:700;padding:.6rem 1.25rem;border-radius:6px;text-decoration:none">Subscribe free →</a>
+<iframe src="https://embeds.beehiiv.com/4d0df7d0-f274-4901-a457-091f80cecef0?slim=true&utm_source=website&utm_medium=post_cta&utm_campaign=jury_chess_game_guide" title="Subscribe free" loading="lazy" scrolling="no" frameborder="0" style="display:block;width:100%;max-width:460px;height:64px;border:0;margin:0;background:transparent;color-scheme:light"></iframe>
+<p style="margin:.5rem 0 0;font-size:.85rem;color:var(--ink-2,#b8b1a8)">Form not loading? <a href="https://cassiancreed.beehiiv.com/subscribe?utm_source=website&utm_medium=post_cta&utm_campaign=jury_chess_game_guide" target="_blank" rel="noopener noreferrer" style="color:#e0563b;text-decoration:underline">Subscribe free →</a></p>
 </div>
 
 ## When is Nestor Hernandez Melgar's sentencing?
@@ -50,7 +51,8 @@ We are not predicting a number, and no sentence has been announced. In general t
 <div class="capture-cta" style="border:1px solid var(--rule,#3a332c);border-left:4px solid var(--accent,#e0563b);background:var(--card,#1a1613);color:var(--ink,#f6f1ea);padding:1.25rem 1.5rem;margin:1.75rem 0;border-radius:8px">
 <p style="margin:0 0 .4rem;font-size:1.12rem;font-weight:700;line-height:1.3">Get the case files the news won't run — free, straight to your inbox.</p>
 <p style="margin:0 0 1rem;color:var(--ink-2,#b8b1a8);font-size:.95rem">Victim-first true crime, sourced from the record. No spam, unsubscribe anytime.</p>
-<a href="https://cassiancreed.beehiiv.com/subscribe" style="display:inline-block;background:#b8431f;color:#fff;font-weight:700;padding:.6rem 1.25rem;border-radius:6px;text-decoration:none">Subscribe free →</a>
+<iframe src="https://embeds.beehiiv.com/4d0df7d0-f274-4901-a457-091f80cecef0?slim=true&utm_source=website&utm_medium=post_cta&utm_campaign=jury_chess_game_guide" title="Subscribe free" loading="lazy" scrolling="no" frameborder="0" style="display:block;width:100%;max-width:460px;height:64px;border:0;margin:0;background:transparent;color-scheme:light"></iframe>
+<p style="margin:.5rem 0 0;font-size:.85rem;color:var(--ink-2,#b8b1a8)">Form not loading? <a href="https://cassiancreed.beehiiv.com/subscribe?utm_source=website&utm_medium=post_cta&utm_campaign=jury_chess_game_guide" target="_blank" rel="noopener noreferrer" style="color:#e0563b;text-decoration:underline">Subscribe free →</a></p>
 </div>
 
 ## What happens next?
@@ -79,5 +81,6 @@ For the full story, see our [complete coverage of the Lindsay Geary case](/post/
 <div class="capture-cta" style="border:1px solid var(--rule,#3a332c);border-left:4px solid var(--accent,#e0563b);background:var(--card,#1a1613);color:var(--ink,#f6f1ea);padding:1.25rem 1.5rem;margin:1.75rem 0;border-radius:8px">
 <p style="margin:0 0 .4rem;font-size:1.12rem;font-weight:700;line-height:1.3">Get the case files the news won't run — free, straight to your inbox.</p>
 <p style="margin:0 0 1rem;color:var(--ink-2,#b8b1a8);font-size:.95rem">Victim-first true crime, sourced from the record. No spam, unsubscribe anytime.</p>
-<a href="https://cassiancreed.beehiiv.com/subscribe" style="display:inline-block;background:#b8431f;color:#fff;font-weight:700;padding:.6rem 1.25rem;border-radius:6px;text-decoration:none">Subscribe free →</a>
+<iframe src="https://embeds.beehiiv.com/4d0df7d0-f274-4901-a457-091f80cecef0?slim=true&utm_source=website&utm_medium=post_cta&utm_campaign=jury_chess_game_guide" title="Subscribe free" loading="lazy" scrolling="no" frameborder="0" style="display:block;width:100%;max-width:460px;height:64px;border:0;margin:0;background:transparent;color-scheme:light"></iframe>
+<p style="margin:.5rem 0 0;font-size:.85rem;color:var(--ink-2,#b8b1a8)">Form not loading? <a href="https://cassiancreed.beehiiv.com/subscribe?utm_source=website&utm_medium=post_cta&utm_campaign=jury_chess_game_guide" target="_blank" rel="noopener noreferrer" style="color:#e0563b;text-decoration:underline">Subscribe free →</a></p>
 </div>
