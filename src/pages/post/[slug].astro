@@ -16,6 +16,18 @@ export async function getStaticPaths() {
   });
 }
 const { post, related = [] } = Astro.props;
+// Per-page lead-magnet matching (NEP-REV-CWK-0717AF): pick the offer that matches
+// who lands on THIS post. Frontmatter `capture` wins; else classify by slug.
+// DNA/genealogy -> dna guide; safety/coercive-control -> safety guide; else Jury Chess.
+function pickOffer(p){
+  const explicit = p.data.capture;
+  if (explicit === 'dna' || explicit === 'safety' || explicit === 'jury') return explicit;
+  const s = p.slug;
+  if (/(dna|genetic-genealog|genealog|family-tree|othram|codis|-fgg-|fgg-|forensic-genetic)/.test(s)) return 'dna';
+  if (/(coercive-control|warning-signs|stay-safe|safety)/.test(s)) return 'safety';
+  return 'jury';
+}
+const captureOffer = pickOffer(post);
 const { Content } = await post.render();
 const isCase = post.data.tag === 'Case Files';
 const pageUrl = new URL(Astro.url.pathname, Astro.site).href;
@@ -86,7 +98,7 @@ const jsonld = faqNode
 
   <div class="wrap"><section class="convert" id="subscribe">
     <div class="convert__grid">
-      <CaptureBlock campaign={'post_' + post.slug} />
+      <CaptureBlock offer={captureOffer} content={'post_' + post.slug} />
       <aside class="convert__book">
         <p class="convert__book-k">The Trail — ebook</p>
         <p class="convert__book-t">The complete, victim-first case file for Rachel Morin — for $1.99. Support independent true crime.</p>
