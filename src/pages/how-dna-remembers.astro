@@ -1,0 +1,110 @@
+---
+import Base from '../layouts/Base.astro';
+import CaptureBlock from '../components/CaptureBlock.astro';
+// Lead-magnet landing page for the certified DNA guide "How DNA Remembers" (isweat 9.18).
+// Guide text is used VERBATIM from the certified file — do not rewrite or add facts.
+// Capture: CaptureBlock campaign="dna_guide" -> utm_campaign=dna_guide. Downloadable at /guides/how-dna-remembers.pdf.
+// Wonder-first framing; justice is the closing bonus, never the lead. No privacy lecture.
+
+const pageTitle = 'How DNA Remembers: The Science Behind Your Family Tree | Cassian Creed';
+const pageDesc = 'A free, fascinating guide to how your DNA works: the four-letter code, how you inherit it, how cousin-matching and centimorgans really work, how far back DNA can reach — and the remarkable thing this science can do.';
+
+const articleLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How DNA Remembers: The Science Behind Your Family Tree",
+  "description": pageDesc,
+  "author": { "@id": "https://cassiancreed.com/#cassian-creed" },
+  "publisher": { "@id": "https://cassiancreed.com/#org" },
+  "mainEntityOfPage": "https://cassiancreed.com/how-dna-remembers/",
+  "inLanguage": "en"
+};
+---
+<Base title={pageTitle} description={pageDesc} jsonld={articleLd}>
+  <article class="post">
+    <p class="evidence evidence--accent">Free Guide</p>
+    <h1>How DNA Remembers</h1>
+    <p class="hero__lede">The science behind your family tree &mdash; and the four little letters that carry you</p>
+
+    <div class="post__content">
+      <div class="res" id="get-the-guide">
+        <p class="res__k">Get the free guide</p>
+        <p>Read it all right here &mdash; then get the clean, printable version and the next amazing DNA case straight to your inbox. <a href="/guides/how-dna-remembers.pdf" download>Download the PDF</a>, or <a href="https://cassiancreed.beehiiv.com/subscribe?utm_source=website&utm_medium=guide_top&utm_campaign=dna_guide" target="_blank" rel="noopener noreferrer">subscribe free</a> to follow the real cases this science cracks.</p>
+      </div>
+
+      <p>You are made of instructions.</p>
+
+      <p>Not memories, not photos, not a diary &mdash; actual chemical instructions, written in a code so small you&rsquo;d need a very good microscope to see a single copy, and so long that if you unspooled the strand from just one of your cells, it would stretch about six feet. You have trillions of cells. The instructions in each one are, in a very real sense, <em>you</em> &mdash; and a record of everyone you came from.</p>
+
+      <p>That&rsquo;s the part that stops people. Your DNA isn&rsquo;t just a blueprint for building a person. It&rsquo;s a kind of memory. It remembers your grandmother&rsquo;s grandmother. It remembers cousins you&rsquo;ve never met and never will. And with the right tools, you can read what it remembers.</p>
+
+      <p>This is a short guide to how that works &mdash; in plain language, and accurate. No jargon you have to pretend to understand. Just the genuinely amazing stuff, explained the way you&rsquo;d want a friend who happens to be a geneticist to explain it.</p>
+
+      <p>Let&rsquo;s start with the code itself.</p>
+
+      <h2 id="what-dna-is">1. What DNA actually is: a four-letter alphabet</h2>
+      <p>Here&rsquo;s the wild part. The entire instruction manual for a human being is written with just four letters: A, T, C, and G. They stand for four small molecules (adenine, thymine, cytosine, guanine), but you don&rsquo;t need the chemistry. You just need the idea: four letters, repeated in a specific order, billions of times.</p>
+      <p>Your full set of instructions &mdash; your genome &mdash; is about 3 billion of these letters long. Written out at normal book size, it would fill something like a thousand thick phone books.</p>
+      <p>And here&rsquo;s the elegant trick nature uses to keep it safe: the letters pair up. A always pairs with T. C always pairs with G. So the famous &ldquo;double helix&rdquo; &mdash; that twisted-ladder shape &mdash; is really two copies of the same information, each rung of the ladder a matched pair. If one side says A, the other must say T. That pairing is why a cell can copy its DNA almost perfectly every time it divides: it just unzips the ladder and rebuilds the matching half.</p>
+      <p>Long stretches of these letters spell out genes &mdash; the roughly 20,000 recipes your body uses to build everything from the color of your eyes to the enzymes in your gut. The order of the letters is the message. Change the order, and you change the person.</p>
+      <p>So when someone says &ldquo;it&rsquo;s in your DNA,&rdquo; they&rsquo;re being more literal than they know. The instructions for a whole person really do fit inside a code with a four-letter alphabet. That&rsquo;s the foundation. Everything else in this guide is about what happens when that code gets passed down.</p>
+
+      <h2 id="how-you-inherit-it">2. How you inherit it: half from each, reshuffled every time</h2>
+      <p>You have two copies of almost all your DNA &mdash; one set from your mother, one set from your father. That&rsquo;s the simple version, and it&rsquo;s true: you got 50% of your DNA from each parent. Exactly half. That number never varies.</p>
+      <p>But the next step is where it gets interesting, because the halving doesn&rsquo;t just continue neatly.</p>
+      <p>You&rsquo;d expect to carry 25% from each grandparent, and on average you do. But your parents didn&rsquo;t pass down a clean, tidy 25% slice from each of their own parents. Before your parents made the egg and sperm that became you, their cells did something remarkable called recombination &mdash; they shuffled the deck.</p>
+      <p>Picture your mother&rsquo;s two sets of chromosomes &mdash; one she got from her mom, one from her dad &mdash; lining up side by side and swapping chunks back and forth, like two decks of cards being riffled together. The single set she passes to you is a brand-new mix of both her parents. Your father&rsquo;s cells do the same thing on his side.</p>
+      <p>So you really do carry about a quarter of each grandparent&rsquo;s DNA &mdash; but which quarter is random, and it&rsquo;s different for you than for your siblings. This is why two siblings, with the exact same four grandparents, can get noticeably different results: one might carry 27% from a particular grandparent, the other 22%. Same parents. Same ancestors. Different shuffle.</p>
+      <p>That shuffling is the engine of the whole family tree. It&rsquo;s why you&rsquo;re not a carbon copy of anyone, and it&rsquo;s the reason DNA can be used to tell relatives apart at all &mdash; which is exactly what the next section is about.</p>
+
+      <h2 id="cousin-matching">3. How cousin-matching works: centimorgans, in plain English</h2>
+      <p>When a testing company tells you &ldquo;this person is your second cousin,&rdquo; how does it actually know? It&rsquo;s measuring one thing: how much DNA the two of you share.</p>
+      <p>The more recently two people share an ancestor, the more identical DNA they carry &mdash; because there have been fewer shuffles between them and that common source. Siblings share a lot. First cousins share less. Distant cousins share just a sprinkle.</p>
+      <p>The unit for measuring &ldquo;how much&rdquo; is the centimorgan (cM). Don&rsquo;t let the name scare you. A centimorgan isn&rsquo;t a measure of weight or length you can picture &mdash; it&rsquo;s a measure of shared genetic distance. For our purposes, treat it simply: more shared centimorgans = closer relative. That&rsquo;s the whole idea.</p>
+      <p>Your full genome is roughly 6,800 centimorgans total. So the shared numbers tell a clean story:</p>
+      <ul>
+        <li>Parent and child share about 3,400 cM &mdash; right around half. (This is the one relationship with a fixed answer, because you always inherit exactly 50% from a parent.)</li>
+        <li>Full siblings share roughly 2,200&ndash;3,400 cM &mdash; a big chunk, but a variable one, thanks to that reshuffling.</li>
+        <li>First cousins share around 700&ndash;1,300 cM.</li>
+        <li>Second cousins share roughly 70&ndash;300 cM &mdash; noticeably less.</li>
+        <li>Distant cousins may share only a handful of small segments.</li>
+      </ul>
+      <p>When you upload or take a test, the company compares your string of letters against everyone else in its database, looking for stretches that match yours exactly. It adds up the length of those matching stretches, converts it to centimorgans, and uses the total to estimate how you&rsquo;re related. A &ldquo;match,&rdquo; then, isn&rsquo;t magic &mdash; it&rsquo;s a measured overlap that can only mean one thing: somewhere back there, you two share an ancestor.</p>
+      <p>Worth knowing: a single centimorgan total can fit more than one relationship. Around 850 shared cM could mean a first cousin, a half-aunt, or even a grandparent &mdash; because those relationships happen to share similar amounts. That&rsquo;s why serious family-tree work pairs the DNA number with old-fashioned records: birth certificates, census pages, obituaries. The DNA says how close; the paper trail says exactly who.</p>
+
+      <h2 id="how-far-back">4. How far back can DNA reach &mdash; and what it can&rsquo;t tell you</h2>
+      <p>This is the question everyone eventually asks: how deep into the past can my DNA actually see?</p>
+      <p>The honest, and slightly surprising, answer: not as far as you&rsquo;d think &mdash; and that&rsquo;s because of the shuffling.</p>
+      <p>Every generation, recombination chops your ancestors&rsquo; contributions into smaller and smaller pieces. Go back far enough and the piece you inherited from any one specific ancestor becomes so tiny that testing equipment simply can&rsquo;t spot it anymore. After roughly five to seven generations, there&rsquo;s a real chance you inherited no detectable segment at all from a particular ancestor &mdash; even though they are absolutely, genuinely your ancestor. One large study found that most people share no detectable DNA with specific forebears from the early 1800s.</p>
+      <p>So here&rsquo;s the mind-bender: you have thousands of ancestors whose DNA left no trace in you. They&rsquo;re still in your family tree. They&rsquo;re just not in your genome. The reshuffling that makes you unique also quietly erases the fine detail over time.</p>
+      <p>That&rsquo;s what standard &ldquo;autosomal&rdquo; testing &mdash; the kind most kits use &mdash; can and can&rsquo;t do. It&rsquo;s excellent out to about the level of your third or fourth cousins, a few hundred years. Beyond that, it fades.</p>
+      <p>(Two special threads reach further. A line of DNA passed father-to-son down the surname line, and a separate line passed mother-to-child, each change very slowly and can trace one single path back thousands of years &mdash; but only that one path, not your whole tree. Handy to know they exist; most of the everyday cousin-matching magic is the autosomal kind above.)</p>
+      <p>None of this makes DNA less amazing. If anything it&rsquo;s more so: the same reshuffling that limits how far back you can see is the exact mechanism that makes each match meaningful in the first place. Which brings us to the most remarkable thing this science can do.</p>
+
+      <h2 id="the-wonder">5. The wonder at the end: DNA that gives a name back</h2>
+      <p>Everything you&rsquo;ve just read &mdash; the four letters, the shuffling, the shared centimorgans, the way a match has to mean a shared ancestor &mdash; adds up to one quietly astonishing power.</p>
+      <p>The same science that maps your family tree can give a nameless person their name back.</p>
+      <p>Picture someone found long ago, with no ID, no records, no one who came forward. For decades, just a case number. Then someone reads the DNA left behind, and runs it through the very same kind of cousin-matching you&rsquo;d use to find a lost great-uncle. There&rsquo;s no match to the person themselves &mdash; but there&rsquo;s a match to a third or fourth cousin who once tested out of pure curiosity about their heritage.</p>
+      <p>That faint cousin connection is the thread. Genealogists pull it &mdash; building a family tree outward from the distant match, cross-checking birth records, marriages, census pages, obituaries &mdash; the same paper trail from Section 3 &mdash; until the branches narrow to a single point. And a person who was a number for thirty years becomes, once again, someone&rsquo;s daughter. Someone&rsquo;s brother. A name.</p>
+      <p>The famous first proof of this was the 2018 identification of a long-sought offender in California, found not by his own DNA being on file, but through his relatives&rsquo; &mdash; matched to third and fourth cousins in a public genealogy database, then traced down through an ordinary family tree. The same approach has since given identities back to people missing for decades, and answered questions families had carried their whole lives.</p>
+      <p>Sit with how ordinary the ingredients are. People who tested because they wondered where their grandparents came from &mdash; hobbyists, the curious, folks doing exactly what you might do this weekend &mdash; collectively built something none of them planned: a map dense enough that almost no one is truly a stranger to it. Their wish to understand their own past became, without anyone intending it, a way to return names to the nameless.</p>
+      <p>That&rsquo;s not a story about surveillance or catching people. It&rsquo;s a story about connection &mdash; the plain fact that we are all more related than we feel, and that a four-letter code, faithfully copied and gently reshuffled across generations, remembers it. The curiosity that makes you want to know your own family is the same curiosity that, at scale, does something genuinely good in the world.</p>
+      <p>Your DNA remembers. And now you know how.</p>
+
+      <h2 id="keep-exploring">Keep exploring the fascinating side of DNA</h2>
+      <p>If any of this made you sit up a little &mdash; good. There&rsquo;s so much more.</p>
+      <p>Neural Edge Publishing follows the science of DNA and the real cases it cracks &mdash; every new identification, every cold case a family tree helped solve, every &ldquo;wait, how did they do that?&rdquo; explained plainly and accurately. If that&rsquo;s your kind of fascinating, come along.</p>
+      <p>Want to go deeper right now? Read <a href="/how-forensic-genetic-genealogy-works/">how forensic genetic genealogy actually works</a>, or see it play out in a real identification: <a href="/baby-jacob-round-lake-beach-genetic-genealogy/">Jacob Hope &mdash; the Round Lake Beach case</a>.</p>
+      <p class="post__note"><em>A quick note on accuracy: the figures in this guide reflect current, mainstream genetics. Shared-DNA amounts are typical ranges, not fixed rules &mdash; the whole point of the shuffle is that individual results vary. Sources and further reading: ISOGG Wiki (Autosomal DNA statistics), FamilySearch centimorgan guide, The Tech Interactive &ldquo;Ask a Geneticist,&rdquo; and reporting on the 2018 genetic-genealogy identification in California.</em></p>
+    </div>
+  </article>
+
+  <div class="wrap"><section class="subscribe" id="subscribe">
+    <CaptureBlock
+      campaign="dna_guide"
+      headline="Get the free guide — and the next amazing case."
+      subtext="You just read How DNA Remembers. Subscribe free to Neural Edge Publishing and we’ll send the clean printable guide plus the next real DNA case the moment it breaks — the science of family trees, and the identifications it makes possible. No weekly blast; unsubscribe anytime."
+      button="Get the free guide"
+    />
+  </section></div>
+</Base>
