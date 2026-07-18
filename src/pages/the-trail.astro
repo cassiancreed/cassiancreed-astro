@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import CaptureBlock from '../components/CaptureBlock.astro';
 // NE003 flagship landing page — "The Trail: The Murder of Rachel Morin"
 // GREEN tier: Victor Martinez-Hernandez convicted on all counts (April 2025), two consecutive
 // life terms without parole; appeal intended, no ruling (verified 2026-06-03). Rachel named first.
@@ -28,17 +29,7 @@ const jsonld = {
       <h1 id="lp-h1">She walked a trail she had walked a hundred times. She did not come home.</h1>
       <p class="lp-sub">Rachel Morin — thirty-seven, a mother of five — was killed on a familiar Maryland trail in August 2023. Her killer had left no name in any database on earth. <strong>This is the full, sourced account of how genetic genealogy found him anyway</strong> — told with care, centered on Rachel, without gratuitous detail.</p>
 
-      <form class="lp-capture" action="https://cassiancreed.beehiiv.com/subscribe" method="get" aria-label="Subscribe free to the Cassian Creed newsletter">
-        <label class="lp-capture__label" for="lp-email">Subscribe free — we'll send you our field guide <em>How to Read a Case Like the Court Does</em>, and you'll be first to each new case file.</label>
-        <div class="lp-capture__row">
-          <input id="lp-email" type="email" name="email" required autocomplete="email" placeholder="you@email.com" aria-label="Your email address" />
-          <input type="hidden" name="utm_source" value="website" />
-          <input type="hidden" name="utm_medium" value="landing_the_trail" />
-          <input type="hidden" name="utm_campaign" value="lm_case_how-to-read-a-case" />
-          <button class="btn" type="submit">Send me the free guide →</button>
-        </div>
-        <p class="lp-capture__fine">Free forever · no spam · unsubscribe anytime.</p>
-      </form>
+      <CaptureBlock offer="dna" content="the_trail_hero" />
 
       <ul class="lp-badges" aria-label="Our standard">
         <li>✓ Sourced from the public record</li>
@@ -85,16 +76,7 @@ const jsonld = {
 
   <section class="lp-final" aria-labelledby="lp-final-h">
       <h2 id="lp-final-h">Start with the free guide</h2>
-      <p>A charge isn&rsquo;t a conviction. A theory isn&rsquo;t proof. Subscribe and we&rsquo;ll send you <em>How to Read a Case Like the Court Does</em> &mdash; a plain-language framework for weighing evidence instead of guessing, the real difference between proof and speculation, and what a verdict actually settles (and what it doesn&rsquo;t). No weekly blast; unsubscribe anytime.</p>
-      <form class="lp-capture" action="https://cassiancreed.beehiiv.com/subscribe" method="get" aria-label="Subscribe free to the Cassian Creed newsletter">
-        <div class="lp-capture__row">
-          <input id="lp-email2" type="email" name="email" required autocomplete="email" placeholder="you@email.com" aria-label="Your email address" />
-          <input type="hidden" name="utm_source" value="website" />
-          <input type="hidden" name="utm_medium" value="landing_the_trail_footer" />
-          <input type="hidden" name="utm_campaign" value="lm_case_how-to-read-a-case" />
-          <button class="btn" type="submit">Send me the free guide →</button>
-        </div>
-      </form>
+      <CaptureBlock offer="dna" content="the_trail_footer" />
       <p class="lp-crisis"><strong>If you need support.</strong> 988 Suicide &amp; Crisis Lifeline (call or text 988) · National Domestic Violence Hotline 1-800-799-7233 · RAINN 1-800-656-HOPE. Cassian Creed · Neural Edge Publishing · PO Box 1039.</p>
     </section>
 

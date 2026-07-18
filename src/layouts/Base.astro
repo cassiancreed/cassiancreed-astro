@@ -58,11 +58,43 @@ const navItems = [
   { href: '/about/',               label: 'About' },
   { href: '/#subscribe',           label: 'Subscribe' },
 ];
+// Standalone pages that are not themselves a nav item highlight their nav
+// CATEGORY, so no page ever renders with zero highlighted nav item
+// (NEP-FIX-CWK-0718L). Add new standalone pages here when they ship.
+const NAV_CATEGORY = {
+  // DNA / forensic-genealogy explainers + reference -> Guides
+  '/how-dna-remembers':                    '/guides',
+  '/how-forensic-genetic-genealogy-works': '/guides',
+  '/how-othram-works-in-a-case':           '/guides',
+  '/is-fgg-evidence-or-just-a-lead':       '/guides',
+  '/is-forensic-genetic-genealogy-legal':  '/guides',
+  '/codis-vs-forensic-genetic-genealogy':  '/guides',
+  '/forensic-tools':                       '/guides',
+  '/glossary':                             '/guides',
+  '/checklist':                            '/guides',
+  '/case-solver':                          '/guides',
+  '/explainers':                           '/guides',
+  // Individual case pages + roundups -> Case Files
+  '/baby-jacob-round-lake-beach-genetic-genealogy': '/case-files',
+  '/trending':                             '/case-files',
+  // Org / identity pages -> About
+  '/about-for-ai':                         '/about',
+  '/mission':                              '/about',
+  // Crisis + victim-support resources -> Stay Safe
+  '/support':                              '/safety',
+  // Post-signup thank-you: the reader is brand new -> Start Here
+  '/subscribed':                           '/start-here',
+};
+
+// Homepage highlights the brand/home position instead of a nav item.
+const homeActive = (navPath === '/');
+
 function navActive(href){
   if (href.startsWith('/#')) return false;          // in-page anchor, never "current page"
   const h = href.replace(/\/+$/, '');
   if (navPath === h) return true;                    // exact page match
   if (h === '/case-files' && navPath.startsWith('/post/')) return true; // case/explainer posts live under Case Files
+  if (NAV_CATEGORY[navPath] === h) return true;      // standalone page -> its category
   return false;
 }
 ---
@@ -105,57 +137,10 @@ function navActive(href){
     gtag('js', new Date());
     gtag('config', 'G-5D0DX6WFW4');
   </script>
-  <style is:global>
-    /* Beehiiv's legacy slim embed is cross-origin, so its green/invisible button
-       cannot inherit the site's CSS. Cover that button with the branded CTA while
-       leaving pointer events to pass through to the real submit control below. */
-    .hero__capture:has(.hero__embed),
-    .capture-cta:has(.capture__embed) {
-      position: relative;
-      width: 100%;
-      max-width: 460px;
-    }
-
-    .hero__capture:has(.hero__embed)::after,
-    .capture-cta:has(.capture__embed)::after {
-      position: absolute;
-      top: 0;
-      right: 0;
-      z-index: 2;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-sizing: border-box;
-      width: clamp(88px, 22%, 110px);
-      height: 52px;
-      padding: 0 10px;
-      background: var(--accent);
-      color: #1a0f0a;
-      border-radius: 0 7px 7px 0;
-      font-family: var(--sans);
-      font-size: 13px;
-      font-weight: 600;
-      line-height: 1;
-      white-space: nowrap;
-      pointer-events: none;
-    }
-
-    .hero__capture:has(.hero__embed)::after { content: "Get it free"; }
-    .capture-cta:has(.capture__embed)::after { content: "Subscribe"; }
-
-    .hero__capture:has(.hero__embed):hover::after,
-    .capture-cta:has(.capture__embed):hover::after { filter: brightness(1.08); }
-
-    .hero__capture:has(.hero__embed):focus-within::after,
-    .capture-cta:has(.capture__embed):focus-within::after {
-      outline: 2px solid var(--ink);
-      outline-offset: 2px;
-    }
-  </style>
 </head>
 <body>
   <header class="site-head"><div class="site-head__inner">
-    <a class="brand" href="/">Cassian<br/>Creed</a>
+    <a class={homeActive ? "brand active" : "brand"} href="/" aria-current={homeActive ? "page" : undefined}>Cassian<br/>Creed</a>
     <nav class="nav" aria-label="Primary">
       {navItems.map(i => (
         <a href={i.href} class={navActive(i.href) ? 'active' : undefined} aria-current={navActive(i.href) ? 'page' : undefined}>{i.label}</a>

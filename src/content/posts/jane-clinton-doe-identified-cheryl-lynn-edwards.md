@@ -11,6 +11,7 @@ jurisdiction: "Iowa Department of Public Safety; Clinton County Sheriff's Office
 status: "Identified June 2026; homicide investigation active, no arrest announced"
 cover: "/covers/generated-image.png"
 coverAlt: "Mist rising over the Mississippi River at dawn."
+capture: "dna"
 ---
 
 After 51 years as an unidentified decedent known only as "Jane Clinton Doe," a 15-year-old homicide victim has been identified as Cheryl Lynn Edwards. Found in the Mississippi River in 1975, her identity remained a mystery for over five decades due to jurisdictional gaps and the limits of 20th-century forensic technology. Her identification in June 2026 was made possible through forensic genetic genealogy. While restoring her name is a milestone, the homicide investigation remains active, and no arrests have been announced.
