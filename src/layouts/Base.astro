@@ -46,6 +46,7 @@ const personLd = {
 // visitors always know where they are. .nav a.active styling already lives in global.css.
 const navPath = (Astro.url.pathname.replace(/\/+$/, '') || '/');
 const navItems = [
+  { href: '/',                      label: 'Home' },
   { href: '/start-here/',          label: 'Start Here' },
   { href: '/case-files/',          label: 'Case Files' },
   { href: '/guides/',              label: 'Guides' },
@@ -91,7 +92,7 @@ const homeActive = (navPath === '/');
 
 function navActive(href){
   if (href.startsWith('/#')) return false;          // in-page anchor, never "current page"
-  const h = href.replace(/\/+$/, '');
+  const h = (href.replace(/\/+$/, '') || '/');   // '/' must survive the strip (AK5)
   if (navPath === h) return true;                    // exact page match
   if (h === '/case-files' && navPath.startsWith('/post/')) return true; // case/explainer posts live under Case Files
   if (NAV_CATEGORY[navPath] === h) return true;      // standalone page -> its category
