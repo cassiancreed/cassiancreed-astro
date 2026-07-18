@@ -28,25 +28,22 @@ The Trail is $1.99 — Rachel Morin's story, told with care. <a href="https://ca
         <p class="evidence evidence--accent">Sourced true crime &middot; victim-first</p>
         <h1>True crime that respects the victims.</h1>
         <p class="hero__lede">Full, primary-source case files for readers who want to understand cases, not consume them. Every victim named in life first &mdash; and with each one, what it teaches about keeping the people you love safe.</p>
-        {/* NATIVE branded capture (replaces the Beehiiv iframe — kills the green
-            embed button, full brand control). Posts to Beehiiv's own /create form
-            target with the same hidden fields the hosted form uses, so the signup
-            still fires the welcome-guide automation. Visitor types email ONCE, here. */}
+        {/* SUPPORTED BEEHIIV EMBED (NEP-FIX-CWK-0718R). subscribe-forms.beehiiv.com
+            is the v2 form-builder endpoint and renders the DASHBOARD styling
+            (verified live: #A8503A button, "Get the free guide."). The native POST
+            to /create shipped in 0718L returned 403 for real humans and captured
+            ZERO subscribers — do not reinstate it. */}
+        <p class="hero__offer">Subscribe free and we&rsquo;ll send you <strong><em>How to Read a Case Like the Court Does</em></strong> &mdash; a plain-language framework for weighing evidence instead of guessing.</p>
         <div class="hero__capture">
-          <form class="capf" action="https://cassiancreed.beehiiv.com/create" method="post">
-            <input type="hidden" name="sent_from_orchid" value="true" />
-            <input type="hidden" name="double_opt" value="false" />
-            <input type="hidden" name="auto_login_enabled" value="true" />
-            <input type="hidden" name="utm_source" value="website" />
-            <input type="hidden" name="utm_medium" value="hero" />
-            <input type="hidden" name="utm_campaign" value="lm_case_how-to-read-a-case" />
-            <label class="capf__label" for="hero-email">Email address</label>
-            <div class="capf__row">
-              <input class="capf__input" id="hero-email" type="email" name="email" required autocomplete="email" placeholder="Enter your email" />
-              <button class="capf__btn" type="submit">Get the free guide &rarr;</button>
-            </div>
-            <noscript><a class="btn" href="https://cassiancreed.beehiiv.com/subscribe?utm_source=website&utm_medium=hero&utm_campaign=lm_case_how-to-read-a-case">Get the free guide &rarr;</a></noscript>
-          </form>
+          <iframe
+            class="hero__embed"
+            src="https://subscribe-forms.beehiiv.com/4d0df7d0-f274-4901-a457-091f80cecef0?utm_source=website&utm_medium=hero&utm_campaign=lm_case_how-to-read-a-case"
+            title="Subscribe free — get the free guide"
+            loading="eager"
+            scrolling="no"
+            frameborder="0"
+          ></iframe>
+          <noscript><a class="btn" href="https://cassiancreed.beehiiv.com/subscribe?utm_source=website&utm_medium=hero&utm_campaign=lm_case_how-to-read-a-case">Get the free guide &rarr;</a></noscript>
         </div>
         <p class="hero__trust">Free forever &middot; unsubscribe anytime &middot; <a href="/start-here/">new here? start here &rarr;</a></p>
         <ul class="hero__chips" aria-label="What makes these case files different">
