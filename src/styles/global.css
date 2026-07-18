@@ -25,7 +25,7 @@ img{max-width:100%}
 .brand{font-family:var(--serif);font-size:20px;line-height:1.05;font-weight:600}
 .nav{display:flex;gap:24px;font-size:13px;letter-spacing:.03em;color:var(--ink-2)}
 .nav a:hover{color:var(--ink)}
-.nav a.active{color:var(--accent)}
+.nav a.active{color:var(--accent);font-weight:700}
 
 /* hero */
 .hero{padding:64px 0 28px}
@@ -296,7 +296,13 @@ h1,h2,h3{letter-spacing:-.012em}
 .brand{font-size:21px;letter-spacing:.005em}
 .nav a{position:relative;transition:color .15s}
 .nav a:hover{color:var(--ink)}
-.nav a.active::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;background:var(--accent);border-radius:2px}
+/* AK5 — CURRENT-PAGE INDICATOR. The old treatment was a 2px underline in
+   accent colour, which a low-vision reader cannot pick out at a glance, and
+   the homepage had no nav item to carry it at all. Now: a filled high-contrast
+   pill on the active item, plus an explicit Home entry so "/" has something to
+   light up. Same treatment on every page — one pattern, not a special case. */
+.nav a.active{background:var(--accent);color:#1a0f0a;font-weight:700;padding:5px 11px;border-radius:999px;letter-spacing:.02em}
+.nav a.active::after{content:none}
 
 /* buttons: more tactile, with lift + glow */
 .btn{
