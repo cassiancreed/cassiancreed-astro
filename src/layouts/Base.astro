@@ -41,6 +41,30 @@ const personLd = {
   ],
   "sameAs": [ "https://x.com/CassianCreed" ]
 };
+
+// Active-nav highlight (NEP-REV-CWK-0717AF): mark the current page's nav item so
+// visitors always know where they are. .nav a.active styling already lives in global.css.
+const navPath = (Astro.url.pathname.replace(/\/+$/, '') || '/');
+const navItems = [
+  { href: '/start-here/',          label: 'Start Here' },
+  { href: '/case-files/',          label: 'Case Files' },
+  { href: '/guides/',              label: 'Guides' },
+  { href: '/safety/',              label: 'Stay Safe' },
+  { href: '/court-calendar/',      label: 'Court Calendar' },
+  { href: '/voir-dire-simulator/', label: 'Jury Simulator' },
+  { href: '/ai-al/',               label: 'A.I. AL' },
+  { href: '/the-trail/',           label: 'The Trail' },
+  { href: '/books/',               label: 'Books' },
+  { href: '/about/',               label: 'About' },
+  { href: '/#subscribe',           label: 'Subscribe' },
+];
+function navActive(href){
+  if (href.startsWith('/#')) return false;          // in-page anchor, never "current page"
+  const h = href.replace(/\/+$/, '');
+  if (navPath === h) return true;                    // exact page match
+  if (h === '/case-files' && navPath.startsWith('/post/')) return true; // case/explainer posts live under Case Files
+  return false;
+}
 ---
 <!doctype html>
 <html lang="en">
@@ -85,18 +109,10 @@ const personLd = {
 <body>
   <header class="site-head"><div class="site-head__inner">
     <a class="brand" href="/">Cassian<br/>Creed</a>
-    <nav class="nav">
-      <a href="/start-here/">Start Here</a>
-      <a href="/case-files/">Case Files</a>
-      <a href="/guides/">Guides</a>
-      <a href="/safety/">Stay Safe</a>
-      <a href="/court-calendar/">Court Calendar</a>
-      <a href="/voir-dire-simulator/">Jury Simulator</a>
-      <a href="/ai-al/">A.I. AL</a>
-      <a href="/the-trail/">The Trail</a>
-      <a href="/books/">Books</a>
-      <a href="/about/">About</a>
-      <a href="/#subscribe">Subscribe</a>
+    <nav class="nav" aria-label="Primary">
+      {navItems.map(i => (
+        <a href={i.href} class={navActive(i.href) ? 'active' : undefined} aria-current={navActive(i.href) ? 'page' : undefined}>{i.label}</a>
+      ))}
     </nav>
   </div></header>
   <main><slot /></main>
