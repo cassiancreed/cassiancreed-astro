@@ -1,56 +1,85 @@
 ---
-// ▼▼▼▼▼ OFFER COPY SWAP-POINT — AB replaces these 3 strings with 0716V isweat-certified copy ▼▼▼▼▼
-// These are the ONLY strings to edit before merge. Leave the surrounding code untouched.
-// Props of the same name (headline/subtext/button) override these per-placement if ever needed,
-// but the DEFAULTS below are the canonical swap-point.
-const DEFAULT_HEADLINE = 'Never Wonder What Happened Next.';
-const DEFAULT_SUBTEXT  = 'Subscribe to Neural Edge Publishing’s case tracker — a weekly briefing that follows the forensic evidence, the courtroom proceedings, and the verdicts on the cases you’ve been reading about. Because the story doesn’t end when the article does.';
-const DEFAULT_BUTTON   = 'Never Miss a Verdict';
-// ▲▲▲▲▲ END OFFER COPY SWAP-POINT ▲▲▲▲▲
+// ─────────────────────────────────────────────────────────────────────────────
+// CaptureBlock — per-page lead-magnet matching (NEP-REV-CWK-0717AF)
+//
+// Each PAGE passes an `offer` that matches WHO lands there. The OFFERS map below
+// holds the matched headline/subtext/button, the Beehiiv form to embed, and a
+// distinct utm_campaign so attribution stays clean per magnet.
+//
+// ⚠ BEEHIIV FORM REALITY (verified 2026-07-17): the publication has exactly ONE
+// subscribe form — the Jury Chess form (4d0df7d0). No dedicated "How DNA
+// Remembers" form and no Safety-guide form exist yet. Per standing rule we do
+// NOT invent form IDs. So the `dna` and `safety` offers carry their own matched
+// COPY + UTM but, until a real form+automation is built, they embed the single
+// live form (formMatched:false marks this). When the owner creates a real form,
+// drop its id into the offer's `formId` and set formMatched:true — delivery then
+// matches with no other change.
+// ─────────────────────────────────────────────────────────────────────────────
 
-// ── FUTURE PAGE-MATCHED COPY (commented — no runtime effect yet) ──
-// The DEFAULT_* strings above apply to every placement now: home, all posts, and baby_jacob.
-// To slot page-specific copy LATER without rebuilding this component, uncomment the map
-// below (keyed by the `campaign` prop each placement passes) and, in the resolver, prefer
-// COPY_BY_CAMPAIGN[campaign] before the DEFAULT_* fallback. 1B forensic + 2A trial are
-// pre-reserved so their AB-certified copy can drop straight in.
-// const COPY_BY_CAMPAIGN = {
-//   home:       { headline: DEFAULT_HEADLINE, subtext: DEFAULT_SUBTEXT, button: DEFAULT_BUTTON },
-//   baby_jacob: { headline: DEFAULT_HEADLINE, subtext: DEFAULT_SUBTEXT, button: DEFAULT_BUTTON },
-//   // '1B_forensic': { headline: '', subtext: '', button: '' },  // forensic-evidence page
-//   // '2A_trial':    { headline: '', subtext: '', button: '' },  // trial / courtroom page
-//   // 'post_<slug>': { ... },                                    // per-post override as needed
-// };
-// When enabled, resolve as:
-//   const c = COPY_BY_CAMPAIGN[campaign] ?? {};
-//   resolvedHeadline = headline ?? c.headline ?? DEFAULT_HEADLINE;  (same for subtext/button)
+const JURY_FORM = '4d0df7d0-f274-4901-a457-091f80cecef0';
+
+const OFFERS = {
+  jury: {
+    formId: JURY_FORM,
+    formMatched: true,
+    campaign: 'jury_chess_game_guide',
+    headline: 'Never Wonder What Happened Next.',
+    subtext: 'Subscribe to Neural Edge Publishing’s case tracker — a weekly briefing that follows the forensic evidence, the courtroom proceedings, and the verdicts on the cases you’ve been reading about. Because the story doesn’t end when the article does.',
+    button: 'Never Miss a Verdict',
+  },
+  dna: {
+    formId: JURY_FORM,        // TODO: swap to the "How DNA Remembers" form when it exists
+    formMatched: false,
+    campaign: 'dna_guide',
+    headline: 'Get the free guide — and the next amazing case.',
+    subtext: 'Subscribe free to Neural Edge Publishing and we’ll send the printable How DNA Remembers guide — the science of family trees and cousin-matching — plus the next real DNA identification the moment it breaks. No weekly blast; unsubscribe anytime.',
+    button: 'Get the free guide',
+  },
+  safety: {
+    formId: JURY_FORM,        // TODO: swap to the Stay-Safe guide form when it exists
+    formMatched: false,
+    campaign: 'safety_guide',
+    headline: 'Know the warning signs before they matter.',
+    subtext: 'Case after case, the same warning signs repeat — and what repeats can be learned. Subscribe free and we’ll send the Stay Safe guide, plus what each new case teaches about keeping the people you love safe. No weekly blast; unsubscribe anytime.',
+    button: 'Get the free guide',
+  },
+};
 
 export interface Props {
-  /** Required. Feeds utm_campaign so each placement is tracked distinctly. */
-  campaign: string;
-  /** Optional per-placement overrides. Leave unset to use the swap-point defaults above. */
+  /** Topic-matched magnet: 'jury' (cases/trials/home), 'dna' (genealogy), 'safety'. */
+  offer?: 'jury' | 'dna' | 'safety';
+  /** Optional UTM override. Defaults to the offer's own campaign. */
+  campaign?: string;
+  /** Optional per-placement copy overrides (win over the offer defaults). */
   headline?: string;
   subtext?: string;
   button?: string;
+  /** Optional per-placement id → utm_content (keeps per-post attribution while
+      utm_campaign carries the matched offer). */
+  content?: string;
+  /** false → render the styled orange button CTA instead of an inline iframe.
+      Use when a page already carries one inline embed (avoids duplicate same-form
+      embeds colliding — the homepage bug this component fixes). Default true. */
+  embed?: boolean;
 }
 
-const { campaign, headline, subtext, button } = Astro.props;
+const { offer = 'jury', campaign, content, headline, subtext, button, embed = true } = Astro.props;
+const o = OFFERS[offer] ?? OFFERS.jury;
 
-const resolvedHeadline = headline ?? DEFAULT_HEADLINE;
-const resolvedSubtext  = subtext  ?? DEFAULT_SUBTEXT;
-const resolvedButton   = button   ?? DEFAULT_BUTTON;
+const camp             = campaign ?? o.campaign;
+const utmContent       = content ? `&utm_content=${encodeURIComponent(content)}` : '';
+const resolvedHeadline = headline ?? o.headline;
+const resolvedSubtext  = subtext  ?? o.subtext;
+const resolvedButton   = button   ?? o.button;
 
-// Href is built from the prop. encodeURIComponent guards odd campaign strings.
+// Fallback / non-embed link. encodeURIComponent guards odd campaign strings.
 const subscribeHref =
-  `https://cassiancreed.beehiiv.com/subscribe?utm_source=website&utm_medium=capture&utm_campaign=${encodeURIComponent(campaign)}`;
+  `https://cassiancreed.beehiiv.com/subscribe?utm_source=website&utm_medium=capture&utm_campaign=${encodeURIComponent(camp)}${utmContent}`;
 
-// Beehiiv INLINE EMBED (direct-submit): visitor enters email ONCE, on-page, no bounce/re-type.
-// slim=true renders a compact email+button row (no duplicate Beehiiv header). Per-placement UTM
-// is passed on the src so attribution stays distinct. Success redirects to /?subscribed=1,
-// which fires the existing GA4 sign_up event in Base.astro.
-const EMBED_FORM_ID = '4d0df7d0-f274-4901-a457-091f80cecef0';
+// Beehiiv INLINE EMBED (direct-submit): visitor enters email ONCE, on-page.
+// slim=true renders a compact email+button row. Per-placement UTM on the src.
 const embedSrc =
-  `https://embeds.beehiiv.com/${EMBED_FORM_ID}?slim=true&utm_source=website&utm_medium=capture&utm_campaign=${encodeURIComponent(campaign)}`;
+  `https://embeds.beehiiv.com/${o.formId}?slim=true&utm_source=website&utm_medium=capture&utm_campaign=${encodeURIComponent(camp)}${utmContent}`;
 ---
 
 <section class="capture" aria-label="Email newsletter sign-up">
@@ -58,22 +87,26 @@ const embedSrc =
     <h2 class="capture__headline">{resolvedHeadline}</h2>
     <p class="capture__subtext">{resolvedSubtext}</p>
 
-    {/* Wrapper keeps class "capture-cta" so the site layout's GA4 subscribe_click
-        handler still fires on the fallback <a>. Primary path is the Beehiiv inline
-        embed below: the visitor enters their email ONCE, here on cassiancreed.com —
-        no redirect to a second domain, no re-typing. */}
+    {/* .capture-cta wrapper keeps the GA4 subscribe_click handler firing on the
+        <a> in either mode. */}
     <div class="capture-cta">
-      <iframe
-        class="capture__embed"
-        src={embedSrc}
-        title={resolvedButton}
-        loading="lazy"
-        scrolling="no"
-        frameborder="0"
-      ></iframe>
-      <p class="capture__fallback">
-        Form not loading? <a href={subscribeHref} target="_blank" rel="noopener noreferrer">{resolvedButton} &rarr;</a>
-      </p>
+      {embed ? (
+        <>
+          <iframe
+            class="capture__embed"
+            src={embedSrc}
+            title={resolvedButton}
+            loading="lazy"
+            scrolling="no"
+            frameborder="0"
+          ></iframe>
+          <p class="capture__fallback">
+            Form not loading? <a href={subscribeHref} target="_blank" rel="noopener noreferrer">{resolvedButton} &rarr;</a>
+          </p>
+        </>
+      ) : (
+        <a class="capture__button" href={subscribeHref} target="_blank" rel="noopener noreferrer">{resolvedButton} &rarr;</a>
+      )}
     </div>
   </div>
 </section>
