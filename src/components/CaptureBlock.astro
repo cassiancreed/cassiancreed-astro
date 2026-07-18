@@ -126,6 +126,10 @@ const embedSrc =
           <p class="capture__fallback">
             Form not loading? <a href={subscribeHref} target="_blank" rel="noopener noreferrer">{resolvedButton} &rarr;</a>
           </p>
+          <p class="capture__helper">After you subscribe, the guide arrives by email within a minute &mdash; check your inbox (and your spam folder).</p>
+          <div class="capture__success" role="status" hidden>
+            <strong>You&rsquo;re in.</strong> Check your inbox for the guide &mdash; it arrives by email within a minute. Peek in spam if you don&rsquo;t see it.
+          </div>
         </>
       ) : (
         <a class="capture__button" href={subscribeHref} target="_blank" rel="noopener noreferrer">{resolvedButton} &rarr;</a>
@@ -133,6 +137,29 @@ const embedSrc =
     </div>
   </div>
 </section>
+
+<script>
+  // DG4 (NEP-OPS-CWK-0718DG): honest capture success feedback.
+  // The Beehiiv form's success behaviour is a redirect to a SAME-ORIGIN url
+  // (cassiancreed.com/?subscribed=1). The iframe starts cross-origin (beehiiv) and
+  // is unreadable, so we do nothing on that first load. After a REAL submit the
+  // iframe lands same-origin and becomes readable -- that is the genuine success
+  // signal, not a guess. On detection we reveal our own success note and hide the
+  // now-redundant embed (which would otherwise render our homepage inside itself).
+  function wireCapture(iframe){
+    iframe.addEventListener('load', function(){
+      var href;
+      try { href = iframe.contentWindow.location.href; } catch (e) { return; } // cross-origin => pre-submit
+      if (!href || href.indexOf('subscribed=1') === -1) return;
+      var cta = iframe.closest('.capture-cta'); if (!cta) return;
+      var ok = cta.querySelector('.capture__success'); if (ok) ok.hidden = false;
+      iframe.hidden = true;
+      var fb = cta.querySelector('.capture__fallback'); if (fb) fb.hidden = true;
+      var hp = cta.querySelector('.capture__helper');  if (hp) hp.hidden = true;
+    });
+  }
+  document.querySelectorAll('iframe.capture__embed').forEach(wireCapture);
+</script>
 
 <style>
   /* Mobile-first: base rules target narrow screens. */
@@ -199,6 +226,26 @@ const embedSrc =
     color: var(--ink-2);
   }
   .capture__fallback a { color: var(--accent); }
+
+  .capture__helper {
+    margin: 0.5rem 0 0;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: var(--ink-2);
+  }
+
+  /* Shown only after a genuine same-origin success redirect (see script). */
+  .capture__success {
+    margin: 0.35rem 0 0;
+    padding: 0.85rem 1rem;
+    background: rgba(95, 174, 126, 0.14);
+    border: 1px solid rgba(95, 174, 126, 0.55);
+    border-radius: 8px;
+    color: var(--ink);
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  .capture__success strong { color: var(--ink); }
 
   .capture__button {
     display: flex;               /* full-width, centered on mobile */
