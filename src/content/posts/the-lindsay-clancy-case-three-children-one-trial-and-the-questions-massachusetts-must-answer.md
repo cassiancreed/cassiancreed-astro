@@ -19,7 +19,7 @@ Lindsay Clancy, a 35-year-old former labor-and-delivery nurse from Duxbury, Mass
 
 *Record-only update. No trial has taken place, and Lindsay Clancy is presumed innocent.*
 
-- **Jury selection begins Monday, July 20, 2026**, in Plymouth Superior Court, before **Judge William F. Sullivan**. The court plans to seat roughly 18 jurors, including 6 alternates.
+- **Jury selection begins Monday, July 20, 2026**, in Plymouth Superior Court, before **Judge William F. Sullivan**. The court plans to seat 18 people — 12 deliberating jurors and 6 alternates.
 - **The charges:** Clancy faces **three counts of first-degree murder** and has pleaded not guilty. She is presumed innocent unless and until a jury finds otherwise.
 - **The defense is lack of criminal responsibility.** If the jury agrees, the verdict would be *"not guilty by reason of lack of criminal responsibility."* This is an argument the defense intends to make — not a finding.
 - **July 13 hearing:** the court **denied** the defense's motion to call lay witnesses to describe their own postpartum experiences (what the parties called a "trial within a trial"). The ruling limits the *form* of that testimony only; expert witnesses may still testify about postpartum psychosis. The court also **denied** sequestration of the jury — a request the defense may renew at empanelment.

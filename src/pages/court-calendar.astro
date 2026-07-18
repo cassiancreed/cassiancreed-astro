@@ -57,8 +57,10 @@ const entries = [
     src: 'https://www.boston.com/news/crime/2025/11/18/lindsay-clancy-murder-trial-pushed-back-to-july-2026/',
     srcLabel: 'Boston.com, reporting the court’s scheduling order',
     srcType: 'Court reporting',
-    link: '/post/the-lindsay-clancy-case-three-children-one-trial-and-the-questions-massachusetts-must-answer/',
-    linkText: 'Read our Lindsay Clancy case primer',
+    link: '/post/what-actually-happens-on-day-one-of-a-high-profile-trial/',
+    linkText: 'What happens on day one',
+    link2: '/post/lindsay-clancy-trial-2026-postpartum-psychosis/',
+    linkText2: 'Full Clancy case tracker',
     groups: ['next', 'trials'],
   },
   {
@@ -73,8 +75,10 @@ const entries = [
     src: 'https://www.heraldnet.com/2026/06/22/jury-convicts-man-in-everett-murder-staged-as-suicide/',
     srcLabel: 'The Everett Herald, courtroom reporting (June 22, 2026)',
     srcType: 'Court reporting',
-    link: '/post/anatomy-of-a-murder-trial-hernandez-melgar/',
-    linkText: 'Read our explainer on the Hernandez Melgar trial',
+    link: '/post/nestor-hernandez-melgar-sentencing-day-primer/',
+    linkText: 'Read the July 22 sentencing primer',
+    link2: '/post/murder-staged-as-suicide-hernandez-melgar/',
+    linkText2: 'How the jury convicted',
     groups: ['next', 'sentencing'],
   },
   {
@@ -89,8 +93,8 @@ const entries = [
     src: 'https://www.bostonglobe.com/2026/06/30/metro/dianne-curry-newborn-mansfield-arraignment/',
     srcLabel: 'The Boston Globe, arraignment reporting (June 30, 2026)',
     srcType: 'Court reporting',
-    link: 'https://cassiancreed.beehiiv.com/p/baby-boy-doe-mansfield-1985',
-    linkText: 'Read our Baby Boy Doe case file',
+    link: '/post/baby-boy-doe-mansfield-1985/',
+    linkText: 'Read the Baby Boy Doe case update',
     groups: ['next', 'hearings'],
   },
 ];
@@ -115,8 +119,19 @@ const unconfirmed = [
     src: 'https://www.tdcj.texas.gov/death_row/dr_info/parkertaylor.html',
     srcLabel: 'Texas Department of Criminal Justice, offender record',
     srcType: 'Primary — state agency record',
-    link: '/post/maternal-instinct-netflix-forensic-evidence-taylor-parker/',
-    linkText: 'Read our analysis of the forensic evidence',
+    link: '/post/the-taylor-parker-case-the-murder-of-reagan-simmons-hancock-and-where-it-stands-now/',
+    linkText: 'Read the July 2026 case-status update',
+  },
+  {
+    case: 'Larry Millete',
+    where: 'San Diego County, California',
+    status: 'Convicted of first-degree murder; sentencing date not yet publicly confirmed.',
+    note: 'A separate assault-weapon-possession charge remains to be resolved before sentencing on the murder conviction. The July 20 court date concerns that weapons charge, not the murder sentencing.',
+    src: 'https://www.sdcda.org/content/office/newsroom/tempDownloads/1e7873cc-4ec3-4bf9-a73f-405fa778ab3a_Larry%20Millete%20Guilty%20Verdict%20News%20Release%20July%202026.pdf',
+    srcLabel: 'San Diego County District Attorney, guilty-verdict news release (July 9, 2026)',
+    srcType: 'Primary — prosecutor’s office',
+    link: '/post/the-maya-millete-case-larry-milletes-no-body-murder-trial-explained/',
+    linkText: 'Read the verdict update',
   },
   {
     case: 'Pedro Hernandez (Etan Patz)',
@@ -294,6 +309,7 @@ const jsonld = {
             ) : (
               <span class="card__soon">Our case file on this is in progress.</span>
             )}
+            {e.link2 && <a class="card__read" href={e.link2}>{e.linkText2} &rarr;</a>}
             <a class="card__help" href="/support/">Victim &amp; Reader Resources</a>
           </p>
         </article>
@@ -323,7 +339,7 @@ const jsonld = {
         <p class="row__when"><time datetime={e.dateISO}>{e.dateText}</time> &middot; {e.court}</p>
         <p class="row__status">{e.status}</p>
         <p class="row__meta">Last verified: {LAST_VERIFIED} &middot; subject to change by the court &middot; Source: <a href={e.src} target="_blank" rel="noopener noreferrer">{e.srcLabel}</a></p>
-        <p class="row__links"><a href={e.link}>{e.linkText} &rarr;</a> <a class="row__help" href="/support/">Victim &amp; Reader Resources</a></p>
+        <p class="row__links"><a href={e.link}>{e.linkText} &rarr;</a> {e.link2 && <a href={e.link2}>{e.linkText2} &rarr;</a>} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a></p>
       </div>
     ))}
   </section>
@@ -354,7 +370,7 @@ const jsonld = {
         <p class="row__when"><time datetime={e.dateISO}>{e.dateText}</time> &middot; {e.court}</p>
         <p class="row__status">{e.status}</p>
         <p class="row__meta">Last verified: {LAST_VERIFIED} &middot; subject to change by the court &middot; Source: <a href={e.src} target="_blank" rel="noopener noreferrer">{e.srcLabel}</a></p>
-        <p class="row__links"><a href={e.link}>{e.linkText} &rarr;</a> <a class="row__help" href="/support/">Victim &amp; Reader Resources</a></p>
+        <p class="row__links"><a href={e.link}>{e.linkText} &rarr;</a> {e.link2 && <a href={e.link2}>{e.linkText2} &rarr;</a>} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a></p>
       </div>
     ))}
     {appeals.map((e) => (

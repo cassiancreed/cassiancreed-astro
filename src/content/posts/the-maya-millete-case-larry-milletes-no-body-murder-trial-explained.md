@@ -1,6 +1,7 @@
 ---
 title: "The Maya Millete Case: Larry Millete's 'No-Body' Murder Trial, Explained"
-description: "Maya Millete vanished from Chula Vista in 2021. Her husband Larry is on trial for her murder — with no body found. The facts, both sides, and where the case stands in 2026."
+seoTitle: "Larry Millete Guilty Verdict: Maya Millete Case Update"
+description: "A jury found Larry Millete guilty of first-degree murder. Read the verified verdict, what happens next, and why the search for Maya Millete continues."
 pubDate: 2026-06-02
 tag: "Case Files"
 featured: false
@@ -8,7 +9,7 @@ victim: "Maya 'May' Millete, 39"
 incidentDate: "January 7, 2021"
 location: "Chula Vista, California"
 jurisdiction: "San Diego County, California"
-status: "Larry Millete charged with first-degree murder; pleaded not guilty; trial underway in 2026, no verdict yet"
+status: "Larry Millete convicted of first-degree murder on July 9, 2026; sentencing date not yet set. July 20 court date concerns the separate assault-weapon-possession charge, not the murder sentencing."
 ---
 
 Maya "May" Millete, a 39-year-old mother of three, vanished from her Chula Vista, California home on January 7, 2021. Her husband, Larry Millete, was arrested nine months later and charged with her murder — even though her body has never been found. As of June 2026 his trial is underway, no verdict has been reached, and Larry Millete has pleaded not guilty and maintains his innocence. Everything below the conviction line is unproven: he is presumed innocent unless and until a jury says otherwise.
@@ -31,7 +32,7 @@ Larry Millete was arrested on October 19, 2021, roughly nine months after Maya d
 
 ## What the Prosecution Argues
 
-Prosecutors have built their case on circumstantial evidence pointing, they argue, to a controlling husband who did not want his wife to leave. Among the evidence presented by the state and described in testimony, according to court reporting:
+Prosecutors have built their case on circumstantial evidence pointing, they argue, to a controlling husband who did not want his wife to leave. The glossary defines [coercive control](/glossary/#coercive-control) as a pattern of domination and isolation, while keeping the distinction between an alleged pattern and a proved criminal element clear. Among the evidence presented by the state and described in testimony, according to court reporting:
 
 - **Tracking and logs.** A Chula Vista detective testified that Larry kept detailed records of Maya's movements in the weeks before she disappeared — logging where she went and when.
 - **Emails to "spellcasters."** Prosecutors say that in the months before Maya vanished, Larry sent hundreds of emails to people offering spells, asking that Maya fall back in love with him or be made dependent on him. The state characterizes the requests as escalating in tone over time.
@@ -57,7 +58,11 @@ What is settled is the loss. Maya Millete has been missing for more than five ye
 
 **Maya Millete was a mother of three, a civilian Department of Defense employee, a sister, and a friend whose family has spent more than five years trying to bring her home. On July 9, 2026, a San Diego County jury found her husband, Larry Millete, guilty of first-degree murder. Maya herself remains missing.**
 
+Our [Start Here guide](/start-here/) explains what a verdict settles—and what it does not, including the difference between a jury finding, sentencing, and later appellate review.
+
 The verdict came after a seven-week trial in Chula Vista and less than a day of jury deliberations. Prosecutors did not have Maya's remains, an identified murder weapon, an eyewitness to her death, or a medical finding establishing how she died. Instead, they presented a circumstantial case that asked jurors to consider Maya's plans to leave the marriage, Larry Millete's conduct before and after her disappearance, digital evidence, surveillance evidence, and the absence of any verified sign that Maya was alive after January 7, 2021.
+
+The [jury deliberations](/post/what-actually-happens-when-a-jury-deliberates/) explainer shows how jurors move from instructions and evidence review to a signed verdict form without making the private discussion public.
 
 The jury's first-degree-murder verdict means it found the killing was willful, deliberate, and premeditated, and that the prosecution proved Larry Millete's guilt beyond a reasonable doubt. The conviction also demonstrates a basic point about “no-body” murder cases: California law does not require investigators to recover a victim's remains before a jury can return a murder verdict. It requires proof beyond a reasonable doubt, which may be established through circumstantial evidence.
 
@@ -73,12 +78,14 @@ The legal case has reached a major judgment. Maya's case has not reached its fin
 
 Her family is still asking for the one thing the verdict could not give them: the chance to bring Maya home.
 
+[Victim and Reader Resources](/support/) lists confidential help for families and readers affected by disappearance, domestic abuse, trauma, or the aftermath of violent crime.
+
 _Verdict-section sources: [San Diego County District Attorney's Office, July 9, 2026](https://www.sdcda.org/content/office/newsroom/tempDownloads/1e7873cc-4ec3-4bf9-a73f-405fa778ab3a_Larry%20Millete%20Guilty%20Verdict%20News%20Release%20July%202026.pdf); [KPBS / City News Service, July 9, 2026](https://www.kpbs.org/news/public-safety/2026/07/09/verdict-reached-in-trial-of-larry-millete-accused-of-murdering-missing-wife); [ABC 10News / City News Service, July 9, 2026](https://www.10news.com/news/maya-millete/verdict-reached-in-murder-trial-of-larry-millete); [CBS 8, July 9, 2026](https://www.cbs8.com/article/news/investigations/millete/maya-millete-sister-speaks-after-guilty-verdict-larry-millete-murder-trial/509-e486108a-1970-4f1e-9c57-851724096266); [California Penal Code § 190](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=PEN&nodeTreePath=4.7.1&sectionNum=190.); [California Department of Corrections and Rehabilitation — Parole Eligibility](https://www.cdcr.ca.gov/bph/parole-eligibility/)._
 
 ## Frequently Asked Questions
 
 **Has Larry Millete been convicted?**
-No. As of June 2026 he is on trial, has pleaded not guilty, and no verdict has been reached. He is presumed innocent unless a jury convicts him.
+Yes. On July 9, 2026, a San Diego County jury found Larry Millete guilty of first-degree murder in the death of his wife, Maya Millete. A sentencing date for the murder conviction has not yet been set. His July 20, 2026 court appearance concerns the separate assault-weapon-possession charge and is not the murder sentencing hearing.
 
 **How can there be a murder trial with no body?**
 California, like every U.S. state, allows murder prosecutions without a recovered body. The state must prove beyond a reasonable doubt — through circumstantial evidence — that the victim is dead and that the defendant caused the death. We cover how that works in our explainer on [convictions without a body](/post/can-you-be-convicted-of-murder-without-a-body/).

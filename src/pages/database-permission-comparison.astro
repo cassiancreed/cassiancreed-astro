@@ -1,0 +1,95 @@
+---
+import Base from '../layouts/Base.astro';
+import CaptureBlock from '../components/CaptureBlock.astro';
+// Genealogy pillar page (CW5a Part 2): database law-enforcement matching comparison.
+// UPGRADE applied: MyHeritage row uses the VERIFIED firm answer (verbatim Terms/
+// Privacy clauses) — MyHeritage expressly prohibits law-enforcement/forensic use
+// absent a court order. Terms updated Apr 19 2026; Privacy updated Jun 1 2026.
+---
+<Base
+  title="Database Permission Comparison: Which DNA Databases Allow Law-Enforcement Matching | Cassian Creed"
+  description="A verified comparison of consumer DNA database law-enforcement matching policies — GEDmatch, FamilyTreeDNA, Ancestry, 23andMe, and MyHeritage — covering which allow investigative matching, their consent structures, and what each policy actually means for your kit."
+>
+  <article class="post">
+    <p class="evidence evidence--accent">Explainer</p>
+    <h1>Database Permission Comparison</h1>
+    <p class="hero__lede">Consumer DNA database law-enforcement matching policies, plainly compared</p>
+
+    <div class="post__content">
+      <p><strong>Verified July 18, 2026.</strong> &ldquo;Matching allowed&rdquo; below means the company provides a platform mechanism for a forensic profile to be compared with eligible customer kits. It does <em>not</em> mean police have unrestricted access to the company&rsquo;s full database. A separate legal demand for a particular account or record is a different issue from database-wide investigative matching.</p>
+
+      <div class="table-wrap">
+        <table class="cmp">
+          <thead>
+            <tr>
+              <th>Database</th>
+              <th>Does it allow investigative law-enforcement matching?</th>
+              <th>Current consent/default structure</th>
+              <th>Main limits and plain-language meaning</th>
+              <th>Current company policy source</th>
+              <th>Recent change or verification note</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>GEDmatch</strong></td>
+              <td><strong>Yes, for eligible kits through GEDmatch PRO.</strong></td>
+              <td>Law-enforcement processing requires express opt-in under the current privacy policy. At upload, users choose a privacy category. Kits not opted in are not available for perpetrator searches. Some non-opt-in settings may still permit comparison in unidentified-human-remains work, depending on the selected category.</td>
+              <td>GEDmatch PRO is the separate law-enforcement portal. Its terms limit perpetrator uploads to qualifying violent crimes and also permit unidentified-human-remains identification. Users should inspect the privacy label on each kit rather than assume all kits in one account share the same setting.</td>
+              <td>Privacy Policy (Oct. 21, 2025): <a href="https://www.gedmatch.com/privacy-policy-october-21-2025/" target="_blank" rel="noopener noreferrer">gedmatch.com</a> &middot; Terms of Service (Nov. 22, 2024): <a href="https://www.gedmatch.com/terms-of-service-november-22-2024/" target="_blank" rel="noopener noreferrer">gedmatch.com</a></td>
+              <td>The current privacy policy is newer than the 2024 terms and states that law-enforcement processing occurs only with express opt-in. GEDmatch still describes multiple privacy categories, so the effect for human-remains comparisons is more nuanced than a single yes/no switch.</td>
+            </tr>
+            <tr>
+              <td><strong>FamilyTreeDNA</strong></td>
+              <td><strong>Yes, through Investigative Genetic Genealogy Matching (IGGM).</strong></td>
+              <td><strong>Opt-in.</strong> The law-enforcement guide applies to customers who have chosen IGGM. A customer can change the setting in Privacy &amp; Sharing controls.</td>
+              <td>Approved U.S. law-enforcement requests are reviewed case by case and must meet FamilyTreeDNA&rsquo;s guide. Ordinary relative matching and IGGM are separate permissions; participating in normal matching does not by itself mean a kit is available for investigative matching.</td>
+              <td>Law Enforcement Guide (effective Apr. 25, 2024): <a href="https://www.familytreedna.com/legal/law-enforcement-guide" target="_blank" rel="noopener noreferrer">familytreedna.com</a> &middot; Privacy Statement: <a href="https://www.familytreedna.com/legal/privacy-statement" target="_blank" rel="noopener noreferrer">familytreedna.com</a> &middot; <a href="https://help.familytreedna.com/hc/en-us/articles/4413980686863-IGGM-Frequently-Asked-Questions" target="_blank" rel="noopener noreferrer">IGGM FAQ</a></td>
+              <td>No newer replacement guide was located. The live privacy statement still refers to disclosure &ldquo;upon your opting in&rdquo; to IGGM.</td>
+            </tr>
+            <tr>
+              <td><strong>Ancestry</strong></td>
+              <td><strong>No.</strong> Ancestry says law enforcement and contractors acting for it may not use its DNA tools, family trees, records, or platform to investigate crimes or identify human remains.</td>
+              <td>No investigative-matching opt-in exists because the platform use is prohibited.</td>
+              <td>This does not make Ancestry immune from legal process. The company says it requires a valid, legally binding court order and reviews demands. That is targeted legal disclosure, not an open genealogy-database search.</td>
+              <td>Position on Law Enforcement and Privacy (Dec. 11, 2025): <a href="https://www.ancestry.com/c/ancestry-blog/ancestry-news/ancestry-position-law-enforcement-your-privacy" target="_blank" rel="noopener noreferrer">ancestry.com</a> &middot; <a href="https://www.ancestry.com/c/legal/lawenforcement" target="_blank" rel="noopener noreferrer">Guide for Law Enforcement</a></td>
+              <td>Ancestry says it clarified its terms in January 2024 and August 2025 so that restrictions expressly cover all services and any law-enforcement investigation. It says the underlying policy did not change.</td>
+            </tr>
+            <tr>
+              <td><strong>23andMe</strong></td>
+              <td><strong>No ordinary investigative matching access.</strong></td>
+              <td>No customer opt-in lane for forensic database matching.</td>
+              <td>23andMe says it does not voluntarily share customer information with law enforcement and considers only legally valid court orders, subpoenas, warrants, or similar demands. Its current customer-care page says it has not released customer information to law enforcement to date.</td>
+              <td><a href="https://customercare.23andme.com/hc/en-us/articles/212271048-How-23andMe-Responds-to-Law-Enforcement-Requests-for-Customer-Information" target="_blank" rel="noopener noreferrer">How 23andMe Responds to Law Enforcement Requests</a> &middot; <a href="https://customercare.23andme.com/hc/en-us/articles/202907870-Will-the-Information-I-Provide-Be-Shared-With-Third-Parties" target="_blank" rel="noopener noreferrer">Third-party sharing policy</a></td>
+              <td>No current company page was found offering a forensic matching program. The policy language concerns responses to targeted legal demands, not permission to search the customer DNA-relative database.</td>
+            </tr>
+            <tr>
+              <td><strong>MyHeritage</strong></td>
+              <td><strong>No. MyHeritage expressly prohibits law-enforcement and forensic use of its DNA Services absent a court order.</strong></td>
+              <td>No forensic matching opt-in exists. Consumer DNA Matching is user-controlled, but that setting governs matching with other MyHeritage users, not a law-enforcement portal.</td>
+              <td>MyHeritage&rsquo;s Terms and Conditions (Last Updated April 19, 2026) state, verbatim: &ldquo;Any use of the DNA Services for law enforcement purposes, forensic examinations, criminal investigations, or to identify human remains is strictly prohibited, unless a court order is obtained. It is our policy to resist law enforcement inquiries to protect your privacy.&rdquo; The Privacy Policy (Last Updated June 1, 2026) lists as a key principle, verbatim: &ldquo;MyHeritage prohibits law enforcement use of its DNA Services,&rdquo; and adds: &ldquo;We will not provide information to law enforcement unless we are required by a valid court order or subpoena, and in that case, we would seek to limit the scope of the court order or subpoena.&rdquo;</td>
+              <td>Terms and Conditions (updated Apr. 19, 2026): <a href="https://www.myheritage.com/terms-and-conditions" target="_blank" rel="noopener noreferrer">myheritage.com</a> &middot; Privacy Policy (updated Jun. 1, 2026): <a href="https://www.myheritage.com/privacy-policy" target="_blank" rel="noopener noreferrer">myheritage.com</a> &middot; <a href="https://www.myheritage.com/help/en/articles/12852440-what-are-the-privacy-options-for-my-dna-data" target="_blank" rel="noopener noreferrer">DNA privacy settings</a></td>
+              <td><strong>Verified July 18, 2026</strong> from the fully rendered legal pages: the prohibition on law-enforcement/forensic use absent a court order is stated verbatim in both the Terms and Conditions and the Privacy Policy.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="what-this-means">What this means for your kit</h2>
+      <p>A kit&rsquo;s ordinary relative-matching setting is not always the same as permission for forensic matching. On GEDmatch and FamilyTreeDNA, the important question is whether that specific kit is eligible for investigative genetic genealogy under the platform&rsquo;s current consent controls. Check each kit separately, especially when you manage DNA for a relative. Permission should come from the test taker or another person legally authorized to act for them; managing an account is not automatically the same as having informed consent for every secondary use.</p>
+      <p>At Ancestry, 23andMe, and MyHeritage, enabling cousin matching does not create a verified law-enforcement search lane. Ancestry expressly prohibits investigative use of its services. 23andMe says it does not voluntarily provide access and responds only to legally valid demands. MyHeritage expressly prohibits law-enforcement and forensic use of its DNA Services absent a court order and states it is its policy to resist law-enforcement inquiries. Any company may still be required to respond to a valid, targeted legal order under applicable law; that is different from allowing investigators to upload an unknown profile and search the full matching database.</p>
+      <p>The practical rule is simple: read the current setting attached to the individual kit, distinguish consumer matching from investigative matching, and recheck the terms before making a consent decision. Database ownership, wording, eligible case categories, and defaults can change.</p>
+
+      <div class="res">
+        <p class="res__k">Research notes</p>
+        <p>The DOJ policy remains labeled &ldquo;interim&rdquo; on the current DOJ forensic-science page; it is the clearest federal public description of the method but is not a universal state-law code and does not itself create enforceable rights. Othram sources describe Othram&rsquo;s own workflow and technology and are used for technical process descriptions, not as proof that every laboratory uses the same proprietary system. GEDmatch&rsquo;s current privacy policy states express opt-in for law-enforcement processing, while its terms separately describe settings that may allow unidentified-human-remains comparisons without allowing violent-crime perpetrator comparisons.</p>
+      </div>
+
+      <p class="post__note">Keep reading: <a href="/the-five-steps-of-forensic-genetic-genealogy/">The Five Steps of Forensic Genetic Genealogy</a> &middot; <a href="/the-dna-privacy-checklist/">The DNA Privacy Checklist</a> &middot; <a href="/how-forensic-genetic-genealogy-works/">How Forensic Genetic Genealogy Works</a> &middot; the <a href="/glossary/">glossary</a>.</p>
+    </div>
+  </article>
+
+  <div class="wrap"><section class="subscribe" id="subscribe">
+    <CaptureBlock offer="dna" content="database_permission_comparison" />
+  </section></div>
+</Base>

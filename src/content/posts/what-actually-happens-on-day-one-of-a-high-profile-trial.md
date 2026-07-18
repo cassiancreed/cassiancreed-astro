@@ -1,6 +1,7 @@
 ---
 title: "What Actually Happens on Day One of a High-Profile Trial"
-description: "There are no opening statements on day one — there is voir dire, alternates, and pretrial matters the public rarely sees. A plain-language guide to how a major trial really begins, and how to read day-one coverage wisely."
+seoTitle: "Lindsay Clancy Trial: Jury Selection Explained"
+description: "What happens when the Lindsay Clancy trial begins July 20: voir dire, alternate jurors, private questioning, and what day one will not include."
 pubDate: 2026-07-18
 tag: Explainers
 featured: false
@@ -11,13 +12,17 @@ Jury selection begins Monday in the Lindsay Clancy case in Plymouth County, Mass
 
 Because day one of a major trial rarely looks like what most people expect. There are no opening statements. No witnesses. No dramatic reveals. What there is, instead, is a careful, methodical process that will shape everything that follows — and it deserves to be understood on its own terms.
 
+For the live case posture, charges, rulings, and schedule, follow [the Lindsay Clancy trial tracker](/post/lindsay-clancy-trial-2026-postpartum-psychosis/) as the proceeding develops.
+
 ## What Jury Selection Really Is — and Why Lawyers Call It De-Selection
 
 The phrase "jury selection" implies that attorneys are choosing the people they want. In practice, the opposite is closer to the truth. Most trial lawyers will tell you that what they are really doing is *de-selecting* — identifying the people they cannot afford to have on the jury and working to remove them.
 
-The formal process is called **voir dire**, a French phrase meaning roughly "to speak the truth." Prospective jurors are questioned — sometimes briefly, sometimes at length — about their backgrounds, their media exposure to the case, their personal experiences, and their ability to be fair. In a high-profile case, this questioning can be extensive. Jurors may be asked about what they've read, what they believe about the justice system, whether they've had personal experiences with mental illness, domestic violence, or law enforcement, and dozens of other topics depending on the nature of the case.
+The formal process is called [voir dire](/glossary/#voir-dire), the court-supervised questioning used to identify prospective jurors who cannot decide the case fairly. Prospective jurors are questioned — sometimes briefly, sometimes at length — about their backgrounds, their media exposure to the case, their personal experiences, and their ability to be fair. In a high-profile case, this questioning can be extensive. Jurors may be asked about what they've read, what they believe about the justice system, whether they've had personal experiences with mental illness, domestic violence, or law enforcement, and dozens of other topics depending on the nature of the case.
 
 Each side has two tools for shaping the jury. The first is a **challenge for cause** — an argument that a specific juror cannot be impartial, for a concrete, articulable reason. There is no limit on challenges for cause; if the judge agrees, the juror is dismissed. The second tool is the **peremptory challenge**, which allows each side to dismiss a limited number of jurors without giving any reason at all. The number of peremptory challenges varies by jurisdiction and the severity of the charges.
+
+Readers can test those choices in the [free Voir Dire Simulator](/voir-dire-simulator/), which shows how cause challenges, peremptory strikes, and Batson limits work together.
 
 What each side is actually trying to do is build a jury that will hear their narrative most openly. The prosecution is typically looking for jurors who trust institutions, follow rules, and are comfortable with the idea of accountability. The defense is often looking for jurors who are skeptical of authority, comfortable with ambiguity, and willing to hold the state to a high standard of proof. Neither side will say this out loud during voir dire. But it is the underlying logic of nearly every question asked.
 
@@ -54,6 +59,8 @@ Three questions worth asking of any courtroom report:
 **2. What is the context?** A ruling that sounds devastating in isolation may be routine in practice. A piece of evidence that sounds damning may face significant challenges before it ever reaches the jury. Ask what the report is leaving out.
 
 **3. Whose voice is centered?** Trial coverage often defaults to the voices of attorneys, analysts, and officials. The people most affected — victims, families, communities — are frequently the last to be heard. Notice who is speaking, and who isn't.
+
+The [court calendar](/court-calendar/) carries the verified July 20 start date and will reflect any publicly confirmed schedule change.
 
 Following a trial well means resisting the pull of the daily narrative and keeping your attention on the larger arc. The verdict will not be decided on day one. Neither will your understanding of what happened.
 

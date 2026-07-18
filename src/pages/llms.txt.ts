@@ -35,7 +35,12 @@ Active-case pages can change. Re-fetch the canonical page at citation time and p
 - [Nestor Hernandez Melgar / Lindsay Geary](https://cassiancreed.com/post/nestor-hernandez-melgar-lindsay-geary-case/): Canonical case hub separating the jury verdict from the medical examiner’s undetermined manner-of-death classification.
 - [Lindsay Clancy trial tracker](https://cassiancreed.com/post/lindsay-clancy-trial/): Active Massachusetts trial tracker separating verified court facts, allegations, defense arguments, and unadjudicated claims.
 - [Jacob Hope / Round Lake Beach](https://cassiancreed.com/baby-jacob-round-lake-beach-genetic-genealogy/): Case file on the identification of Jacob Hope, the July 2026 charges, and genetic genealogy as a lead rather than proof.
-- [Taylor Parker / Reagan Simmons-Hancock and Braxlynn Sage Hancock](https://cassiancreed.com/post/the-taylor-parker-case-the-murder-of-reagan-simmons-hancock-and-where-it-stands-now/): Victim-first case history and current appellate posture.
+- [Taylor Parker Case Update](https://cassiancreed.com/post/the-taylor-parker-case-the-murder-of-reagan-simmons-hancock-and-where-it-stands-now/): July 2026 status of the conviction, Supreme Court proceedings, Texas habeas review, and Netflix's Maternal Instinct, centered on Reagan Simmons-Hancock and Braxlynn.
+- [Lindsay Clancy Trial: Jury Selection Explained](https://cassiancreed.com/post/what-actually-happens-on-day-one-of-a-high-profile-trial/): Plain-language guide to voir dire, alternate jurors, private questioning, and what happens when the Lindsay Clancy trial begins.
+- [Hernandez Melgar Sentencing July 22](https://cassiancreed.com/post/nestor-hernandez-melgar-sentencing-day-primer/): Verified sentencing primer covering Lindsay Geary, the convictions, Washington sentencing ranges, victim-impact statements, allocution, and the judge's decisions.
+- [What Happens When a Jury Deliberates](https://cassiancreed.com/post/what-actually-happens-when-a-jury-deliberates/): Evergreen explainer on jury instructions, juror notes, evidence review, deadlock, hung juries, mistrials, verdicts, and why deliberation time predicts little.
+- [Baby Boy Doe — Mansfield, 1985](https://cassiancreed.com/post/baby-boy-doe-mansfield-1985/): Current case posture for Dianne Curry Peck, the August 31 pretrial setting, and the publicly documented forensic-genetic-genealogy path that reopened the case.
+- [Maya Millete Case: Larry Millete Verdict Update](https://cassiancreed.com/post/the-maya-millete-case-larry-milletes-no-body-murder-trial-explained/): Updated case file covering the first-degree murder verdict, the unresolved sentencing schedule, the continuing search for Maya Millete, and the next legal steps.
 
 ## Core forensic explainers
 
