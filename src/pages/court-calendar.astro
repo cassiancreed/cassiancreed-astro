@@ -6,13 +6,29 @@ import Base from '../layouts/Base.astro';
 // reporting. We never cite our own articles as the source for a date, and we
 // never guess. If a date cannot be confirmed against an outside source of
 // record, it is pulled, not estimated. Bump LAST_VERIFIED on each sweep.
-const LAST_VERIFIED = 'July 16, 2026';
+const LAST_VERIFIED = 'July 18, 2026';
 const BUILD_DATE = new Date().toISOString().slice(0, 10);
 
 // Every entry below is tied to an outside source of record — a court filing, a
 // prosecutor's office, or courtroom reporting. We never cite our own articles as
 // the source for a date. `srcType` states plainly what kind of source it is.
 const entries = [
+  {
+    id: 'lebron-status',
+    case: 'Jennifer Lebron',
+    proceeding: 'Next court date',
+    dateISO: '2026-08-12',
+    dateText: 'Wednesday, August 12, 2026',
+    court: 'Lake County Circuit Court, Waukegan, IL',
+    status: 'Charged with two counts of involuntary manslaughter in the 2001 death of her newborn son, known for 25 years as Baby Jacob Hope. Released from custody with conditions. She is presumed innocent unless and until a jury says otherwise.',
+    detail: 'The infant was found on August 26, 2001, in a dumpster behind a Rollins Road grocery store in Round Lake Beach; an autopsy found he was born alive. Round Lake Beach police reopened the case in early 2024 and submitted his DNA for testing, which led investigators to Lebron. The baby\u2019s father is not suspected of wrongdoing. Judge Rhonda K. Bruno imposed a curfew and barred drug and alcohol use pending trial.',
+    src: 'https://www.dailyherald.com/20260715/news/woman-charged-in-2001-death-of-infant-son-released-from-custody/',
+    srcLabel: 'Daily Herald, court reporting (July 15, 2026)',
+    srcType: 'Court reporting',
+    link: '/baby-jacob-round-lake-beach-genetic-genealogy/',
+    linkText: 'Read our Baby Jacob Hope case page',
+    groups: ['next', 'hearings'],
+  },
   {
     id: 'clancy-pretrial',
     case: 'Lindsay Clancy',
