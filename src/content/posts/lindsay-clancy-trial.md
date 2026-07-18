@@ -19,6 +19,8 @@ status: "Pretrial; jury selection scheduled July 20, 2026. No verdict."
 
 This page tracks verified developments in the Massachusetts criminal case against Lindsay Clancy. It separates court facts from prosecution allegations, defense arguments, and claims that have not been adjudicated.
 
+Cassian Creed maintains this Neural Edge Publishing tracker by checking court records and same-day courtroom reporting before changing its verification date, while keeping verified facts, prosecution allegations, defense arguments, and unadjudicated claims in separate lanes.
+
 <div class="status-box" style="border:1px solid var(--rule,#e4e0d9);border-left:4px solid var(--accent,#b91c1c);background:var(--card,#faf9f7);padding:1rem 1.25rem;margin:1.5rem 0;border-radius:6px">
 <p style="margin-top:0"><strong>Trial status</strong></p>
 <p><strong>Has there been a verdict? No.</strong></p>
