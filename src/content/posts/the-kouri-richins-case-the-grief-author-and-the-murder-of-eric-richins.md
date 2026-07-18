@@ -63,6 +63,6 @@ The "grief author who grieved a man she killed" framing is what made this case v
 
 ---
 
-**Follow the case the right way.** We publish sourced, victim-first updates the day the record changes — including the appeal. [Subscribe free — get *How to Read a Case Like the Court Does* →](https://cassiancreed.beehiiv.com/subscribe) — or [start here](https://cassiancreed.com/start-here/?utm_source=case_file&utm_medium=web&utm_campaign=kouri_richins&utm_content=cta_secondary) if you'd rather read first.
+**Follow the case the right way.** We publish sourced, victim-first updates the day the record changes — including the appeal. [Get *How to Read a Case Like the Court Does* →](https://cassiancreed.beehiiv.com/subscribe) — or [start here](https://cassiancreed.com/start-here/?utm_source=case_file&utm_medium=web&utm_campaign=kouri_richins&utm_content=cta_secondary) if you'd rather read first.
 
 *This account reflects the public record as of June 5, 2026. Kouri Richins was convicted of the murder of Eric Richins; her conviction is under appeal.*

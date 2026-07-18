@@ -119,4 +119,4 @@ If you want the full sourced account of this case — the investigation, the for
 <iframe loading="lazy" style="border-radius:12px" src="https://open.spotify.com/embed/episode/37J4OqhMHX4tVzjzjTFnuE?theme=0" width="100%" height="152" frameborder="0" allow="clipboard-write; encrypted-media; fullscreen; picture-in-picture" title="Listen: The DNA Trail to Rachel Morin’s Killer — Cassian Creed: Daily Update"></iframe>
 
 > **Get the next case file the day it ships**  
-> [Subscribe free — get *How to Read a Case Like the Court Does*, our field guide to reading a case the way a court does →](https://cassiancreed.beehiiv.com/subscribe?utm_source=website&utm_medium=av_embed&utm_campaign=lm_case_how-to-read-a-case)
+> [Get *How to Read a Case Like the Court Does*, our field guide to reading a case the way a court does →](https://cassiancreed.beehiiv.com/subscribe?utm_source=website&utm_medium=av_embed&utm_campaign=lm_case_how-to-read-a-case)

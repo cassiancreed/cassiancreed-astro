@@ -17,7 +17,7 @@ capture: "dna"
 
 For decades she was known only as Jane Clinton Doe. In June 2026, she got her name back. This FAQ answers the most common questions about the case in plain language.
 
-*New here? Subscribe to Neural Edge Publishing and explore our other true crime case files.*
+*New here? Get the free guide and explore our other true crime case files.*
 
 ## Who was Cheryl Lynn Edwards?
 

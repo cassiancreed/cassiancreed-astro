@@ -27,7 +27,7 @@ This primer explains the clinical term postpartum psychosis and the separate Mas
 <div class="capture-cta" style="border:1px solid var(--rule,#3a332c);border-left:4px solid var(--accent,#e0563b);background:var(--card,#1a1613);color:var(--ink,#f6f1ea);padding:1.25rem 1.5rem;margin:1.75rem 0;border-radius:8px">
 <p style="margin:0 0 .4rem;font-size:1.12rem;font-weight:700;line-height:1.3">Get the case files the news won't run — free, straight to your inbox.</p>
 <p style="margin:0 0 1rem;color:var(--ink-2,#b8b1a8);font-size:.95rem">Victim-first true crime, sourced from the record. No spam, unsubscribe anytime.</p>
-<iframe class="capture__embed" src="https://subscribe-forms.beehiiv.com/4d0df7d0-f274-4901-a457-091f80cecef0?utm_source=website&amp;utm_medium=post_cta&amp;utm_campaign=lm_case_how-to-read-a-case" title="Subscribe free — get the free guide" loading="lazy" scrolling="no" frameborder="0" style="display:block;width:100%;max-width:460px;height:220px;border:0;margin:0;background:transparent;color-scheme:light"></iframe>
+<iframe class="capture__embed" src="https://subscribe-forms.beehiiv.com/v3/forms/4d0df7d0-f274-4901-a457-091f80cecef0?utm_source=website&amp;utm_medium=post_cta&amp;utm_campaign=lm_case_how-to-read-a-case" title="Get the free guide" loading="lazy" scrolling="no" frameborder="0" style="display:block;width:100%;max-width:460px;height:220px;border:0;margin:0;background:transparent;color-scheme:light"></iframe>
 </div>
 
 ## What is established, and what remains disputed?
@@ -91,7 +91,7 @@ This primer does not carry a running schedule or live verdict box. See the [tria
 <div class="capture-cta" style="border:1px solid var(--rule,#3a332c);border-left:4px solid var(--accent,#e0563b);background:var(--card,#1a1613);color:var(--ink,#f6f1ea);padding:1.25rem 1.5rem;margin:1.75rem 0;border-radius:8px">
 <p style="margin:0 0 .4rem;font-size:1.12rem;font-weight:700;line-height:1.3">Get the case files the news won't run — free, straight to your inbox.</p>
 <p style="margin:0 0 1rem;color:var(--ink-2,#b8b1a8);font-size:.95rem">Victim-first true crime, sourced from the record. No spam, unsubscribe anytime.</p>
-<iframe class="capture__embed" src="https://subscribe-forms.beehiiv.com/4d0df7d0-f274-4901-a457-091f80cecef0?utm_source=website&amp;utm_medium=post_cta&amp;utm_campaign=lm_case_how-to-read-a-case" title="Subscribe free — get the free guide" loading="lazy" scrolling="no" frameborder="0" style="display:block;width:100%;max-width:460px;height:220px;border:0;margin:0;background:transparent;color-scheme:light"></iframe>
+<iframe class="capture__embed" src="https://subscribe-forms.beehiiv.com/v3/forms/4d0df7d0-f274-4901-a457-091f80cecef0?utm_source=website&amp;utm_medium=post_cta&amp;utm_campaign=lm_case_how-to-read-a-case" title="Get the free guide" loading="lazy" scrolling="no" frameborder="0" style="display:block;width:100%;max-width:460px;height:220px;border:0;margin:0;background:transparent;color-scheme:light"></iframe>
 </div>
 
 ## Sources

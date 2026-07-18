@@ -99,6 +99,6 @@ Austin Metcalf was 17. He deserved to come home from that track meet.
 
 If you follow cases like Austin's — where the evidence matters, the families matter, and the noise should stay out of it — our free newsletter delivers victim-first case files and verdict updates directly to your inbox.
 
-**[Subscribe free — no spam, just the case.](https://cassiancreed.beehiiv.com/subscribe?utm_source=website&utm_medium=post_cta&utm_campaign=karmelo_verdict)**
+**[Get the free guide — no spam, just the case.](https://cassiancreed.beehiiv.com/subscribe?utm_source=website&utm_medium=post_cta&utm_campaign=karmelo_verdict)**
 
 For our full catalog of true-crime case books, visit [cassiancreed.com/books](/books/).

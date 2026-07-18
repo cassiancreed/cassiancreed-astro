@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import CaptureBlock from '../components/CaptureBlock.astro';
 // Brick 2 — "How Othram Works in a Case."
 // Guardrails: LEADS not proof; a possible identity is not proof. Name CODIS/SNP
 // specifically. Accreditation stays SOFT — attribute to Othram, never assert as
@@ -55,16 +56,6 @@ import Base from '../layouts/Base.astro';
   </article>
 
   <div class="wrap"><section class="subscribe" id="subscribe">
-    <p class="evidence evidence--accent">The free newsletter</p>
-    <h2>Subscribe free &mdash; get <em>How DNA Remembers</em></h2>
-    <p>A DNA match is a lead, not a verdict. Subscribe and we&rsquo;ll send you the printable <em>How DNA Remembers</em> guide &mdash; how shared DNA narrows a family tree into a name, the real difference between a CODIS hit and forensic genetic genealogy, and exactly what a match can (and can&rsquo;t) prove in court &mdash; plus the next real identification the moment it&rsquo;s confirmed. No weekly blast; unsubscribe anytime.</p>
-    <form action="https://cassiancreed.beehiiv.com/subscribe" method="get" aria-label="Subscribe to the free Cassian Creed newsletter">
-      <input type="hidden" name="utm_source" value="website" />
-      <input type="hidden" name="utm_medium" value="othram_explainer" />
-      <input type="hidden" name="utm_campaign" value="lm_dna_how-dna-remembers" />
-      <input type="email" name="email" required autocomplete="email" placeholder="you@email.com" aria-label="Your email address" />
-      <button class="btn" type="submit">Send me the free guide &rarr;</button>
-    </form>
-    <p class="site-foot__note">No spam. Unsubscribe anytime.</p>
+    <CaptureBlock offer="dna" content="how_othram_works_in_a_case" />
   </section></div>
 </Base>

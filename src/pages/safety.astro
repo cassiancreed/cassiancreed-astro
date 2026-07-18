@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import CaptureBlock from '../components/CaptureBlock.astro';
 // STAY SAFE — canonical safety guide. Body replaced 2026-07-13 with the approved,
 // hotline-verified guide. Hotlines are verbatim and verified: ANAD is 888-375-7767.
 // Do NOT reintroduce the discontinued NEDA telephone helpline.
@@ -145,16 +146,6 @@ import Base from '../layouts/Base.astro';
   </article>
 
   <div class="wrap"><section class="subscribe" id="subscribe">
-    <p class="evidence evidence--accent">The free newsletter</p>
-    <h2>Subscribe free &mdash; get <em>The Stay Safe Field Guide</em></h2>
-    <p>If you&rsquo;re worried about your own safety or someone you love, you&rsquo;re not alone. Subscribe for the printable <em>Stay Safe</em> guide: the escalation patterns that recur across real, documented cases, how to document safely, and how to plan around someone who monitors or controls you. This guide is not a substitute for a personalized safety plan from a trained advocate; the hotlines above can connect you to one, free. No weekly blast; unsubscribe anytime.</p>
-    <form action="https://cassiancreed.beehiiv.com/subscribe" method="get" aria-label="Subscribe to the free Cassian Creed newsletter">
-      <input type="hidden" name="utm_source" value="website" />
-      <input type="hidden" name="utm_medium" value="safety_guide" />
-      <input type="hidden" name="utm_campaign" value="lm_safety_stay-safe-field-guide" />
-      <input type="email" name="email" required autocomplete="email" placeholder="you@email.com" aria-label="Your email address" />
-      <button class="btn" type="submit">Send me the free guide &rarr;</button>
-    </form>
-    <p class="site-foot__note">No spam. Unsubscribe anytime.</p>
+    <CaptureBlock offer="safety" content="safety" />
   </section></div>
 </Base>

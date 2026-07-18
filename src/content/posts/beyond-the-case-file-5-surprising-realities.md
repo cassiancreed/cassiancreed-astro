@@ -79,7 +79,7 @@ Ask yourself: whose name is currently gathering dust in a folder you've already 
 
 Explore the complete Cassian Creed case library: **[cassiancreed.com/case-files](https://cassiancreed.com/case-files/?utm_source=blog&utm_medium=internal&utm_campaign=cf001&utm_content=notebooklm_post)**
 
-Subscribe to the *True Crime Case Tracker* — weekly forensic intelligence, free: **[cassiancreed.com](https://cassiancreed.com/?utm_source=blog&utm_medium=internal&utm_campaign=cf001&utm_content=notebooklm_post_subscribe)**
+Get the *True Crime Case Tracker* — weekly forensic intelligence, free: **[cassiancreed.com](https://cassiancreed.com/?utm_source=blog&utm_medium=internal&utm_campaign=cf001&utm_content=notebooklm_post_subscribe)**
 
 ---
 

@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import CaptureBlock from '../components/CaptureBlock.astro';
 // Brick 5 — "Is Forensic Genetic Genealogy Legal? What the DOJ Rules Actually Say."
 // Guardrails: the DOJ policy is INTERIM (never "final"). It binds FEDERAL /
 // participating investigations — NOT a nationwide statute; state and local law
@@ -65,7 +66,7 @@ import Base from '../layouts/Base.astro';
 
       <div class="res">
         <p class="res__k">From Neural Edge Publishing</p>
-        <p>Understand cases, don&rsquo;t just consume them. Neural Edge Publishing covers true crime primary-source verified, presumption of innocence first, every victim named in life before anything else. Get it free in your inbox &mdash; <a href="https://cassiancreed.beehiiv.com/subscribe" target="_blank" rel="noopener noreferrer">Subscribe to Neural Edge Publishing</a>.</p>
+        <p>Understand cases, don&rsquo;t just consume them. Neural Edge Publishing covers true crime primary-source verified, presumption of innocence first, every victim named in life before anything else. Get it free in your inbox &mdash; <a href="https://cassiancreed.beehiiv.com/subscribe" target="_blank" rel="noopener noreferrer">Get the free guide from Neural Edge Publishing</a>.</p>
       </div>
 
       <h2 id="related">Related in This Hub</h2>
@@ -80,16 +81,6 @@ import Base from '../layouts/Base.astro';
   </article>
 
   <div class="wrap"><section class="subscribe" id="subscribe">
-    <p class="evidence evidence--accent">The free newsletter</p>
-    <h2>Understand cases &mdash; get <em>How DNA Remembers</em></h2>
-    <p>A DNA match is a lead, not a verdict. Subscribe and we&rsquo;ll send you the printable <em>How DNA Remembers</em> guide &mdash; how shared DNA narrows a family tree into a name, the real difference between a CODIS hit and forensic genetic genealogy, and exactly what a match can (and can&rsquo;t) prove in court &mdash; plus the next real identification the moment it&rsquo;s confirmed. No weekly blast; unsubscribe anytime.</p>
-    <form action="https://cassiancreed.beehiiv.com/subscribe" method="get" aria-label="Subscribe to the free Cassian Creed newsletter">
-      <input type="hidden" name="utm_source" value="website" />
-      <input type="hidden" name="utm_medium" value="fgg_legal_explainer" />
-      <input type="hidden" name="utm_campaign" value="lm_dna_how-dna-remembers" />
-      <input type="email" name="email" required autocomplete="email" placeholder="you@email.com" aria-label="Your email address" />
-      <button class="btn" type="submit">Send me the free guide &rarr;</button>
-    </form>
-    <p class="site-foot__note">No spam. Unsubscribe anytime.</p>
+    <CaptureBlock offer="dna" content="is_forensic_genetic_genealogy_legal" />
   </section></div>
 </Base>

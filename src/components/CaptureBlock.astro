@@ -6,23 +6,16 @@
 // holds the matched headline/subtext/button, the Beehiiv form to embed, and a
 // distinct utm_campaign so attribution stays clean per magnet.
 //
-// ⚠ BEEHIIV FORM REALITY (verified 2026-07-17): the publication has exactly ONE
-// subscribe form — the Jury Chess form (4d0df7d0). No dedicated "How DNA
-// Remembers" form and no Safety-guide form exist yet. Per standing rule we do
-// NOT invent form IDs. So the `dna` and `safety` offers carry their own matched
-// COPY + UTM but, until a real form+automation is built, they embed the single
-// live form (formMatched:false marks this). When the owner creates a real form,
-// drop its id into the offer's `formId` and set formMatched:true — delivery then
-// matches with no other change.
+// ✅ BEEHIIV FORM REALITY (updated 2026-07-18, flight 0718M): the publication now
+// has THREE live subscribe forms — case/Jury (4d0df7d0), How DNA Remembers
+// (6102d20f) and Stay Safe Field Guide (32e7f9bd). Every offer is therefore
+// formMatched:true and delivery matches the pitch. Never invent a form id.
 // ─────────────────────────────────────────────────────────────────────────────
 
-const JURY_FORM = '4d0df7d0-f274-4901-a457-091f80cecef0';
+const JURY_FORM   = '4d0df7d0-f274-4901-a457-091f80cecef0';
+const DNA_FORM    = '6102d20f-cfb4-46fa-88db-dbeae2d63094';  // "How DNA Remembers"      (0718M)
+const SAFETY_FORM = '32e7f9bd-83d8-4945-a3c2-7b9cbc649bd1';  // "Stay Safe Field Guide"  (0718M)
 
-// ⚠ SLOTS FOR FLIGHT 0718M — when the dedicated forms exist, drop the id here and
-// flip formMatched:true on that offer. Nothing else changes; the transport below
-// reads o.formId. NEVER invent a form id.
-// const DNA_FORM    = '';   // 0718M — "How DNA Remembers"
-// const SAFETY_FORM = '';   // 0718M — "Stay Safe Field Guide"
 
 // ── Converged offers (isweat: all three ship ≥8.0, Rex+Banks PASS) ──
 // The general/case segment magnet was SWITCHED from "The Jury Chess Game"
@@ -37,26 +30,26 @@ const OFFERS = {
     formMatched: true,
     campaign: 'lm_case_how-to-read-a-case',
     headline: 'Everyone has an opinion on a case. Here’s how to actually read one.',
-    subtext: 'A charge isn’t a conviction. A theory isn’t proof. Subscribe free and we’ll send How to Read a Case Like the Court Does — a plain-language framework for weighing evidence instead of guessing, the real difference between proof and speculation, and what a verdict actually settles (and what it doesn’t) — plus how each new case’s evidence actually breaks down, using the same framework. No weekly blast; unsubscribe anytime.',
+    subtext: 'A charge isn’t a conviction. A theory isn’t proof. Get the free guide — we’ll send How to Read a Case Like the Court Does — a plain-language framework for weighing evidence instead of guessing, the real difference between proof and speculation, and what a verdict actually settles (and what it doesn’t) — plus how each new case’s evidence actually breaks down, using the same framework. No weekly blast; unsubscribe anytime.',
     button: 'Get the free guide',
   },
   dna: {
-    formId: JURY_FORM,        // TODO: swap to the "How DNA Remembers" form when it exists
-    formMatched: false,
+    formId: DNA_FORM,         // dedicated form, live 2026-07-18 (0718M)
+    formMatched: true,
     campaign: 'lm_dna_how-dna-remembers',
     headline: 'The science that gives cold cases a name.',
-    subtext: 'A DNA match is a lead, not a verdict. Subscribe free and we’ll send the printable How DNA Remembers guide — how shared DNA narrows a family tree into a name, the real difference between a CODIS hit and forensic genetic genealogy, and exactly what a match can (and can’t) prove in court — plus the next real identification the moment it’s confirmed. No weekly blast; unsubscribe anytime.',
+    subtext: 'A DNA match is a lead, not a verdict. Get the free guide — we’ll send the printable How DNA Remembers guide — how shared DNA narrows a family tree into a name, the real difference between a CODIS hit and forensic genetic genealogy, and exactly what a match can (and can’t) prove in court — plus the next real identification the moment it’s confirmed. No weekly blast; unsubscribe anytime.',
     button: 'Get the free guide',
   },
   safety: {
-    formId: JURY_FORM,        // TODO: swap to the Stay-Safe guide form when it exists
-    formMatched: false,
+    formId: SAFETY_FORM,      // dedicated form, live 2026-07-18 (0718M)
+    formMatched: true,
     campaign: 'lm_safety_stay-safe-field-guide',
     // Rex requirement: crisis hotlines must be visible ON-PAGE, ungated,
     // BEFORE any signup ask. Rendered via `safetyLine` below the subtext.
     safetyLine: 'If you’re in danger right now: call or text 988, call the National Domestic Violence Hotline at 1-800-799-7233, or text HOME to 741741. Free, confidential, 24/7 — no signup required.',
     headline: 'The warning signs repeat. So does the way out.',
-    subtext: 'If you’re worried about your own safety or someone you love, you’re not alone — and what other cases have shown can help you see clearly. Subscribe free for the printable Stay Safe guide: the escalation patterns that recur across real, documented cases, how to document safely, and how to plan around someone who monitors or controls you — plus what each new case teaches about staying safe. This guide is not a substitute for a personalized safety plan from a trained advocate; the hotlines above can connect you to one, free. No weekly blast; unsubscribe anytime.',
+    subtext: 'If you’re worried about your own safety or someone you love, you’re not alone — and what other cases have shown can help you see clearly. Get the free guide for the printable Stay Safe guide: the escalation patterns that recur across real, documented cases, how to document safely, and how to plan around someone who monitors or controls you — plus what each new case teaches about staying safe. This guide is not a substitute for a personalized safety plan from a trained advocate; the hotlines above can connect you to one, free. No weekly blast; unsubscribe anytime.',
     button: 'Get the free guide',
   },
 };
@@ -81,7 +74,7 @@ export interface Props {
   embed?: boolean;
 }
 
-const EMBED_BASE = 'https://subscribe-forms.beehiiv.com';
+const EMBED_BASE = 'https://subscribe-forms.beehiiv.com/v3/forms';
 
 const { offer = 'case', campaign, content, headline, subtext, button, embed = true } = Astro.props;
 const o = OFFERS[offer] ?? OFFERS.case;
