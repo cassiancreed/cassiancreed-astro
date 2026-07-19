@@ -173,9 +173,20 @@ if(typeof gtag!=='undefined'){gtag('event','capture_outbound',{link_url:s.href,m
         }
       }
     });
-    // GA4 sign_up — fires when Beehiiv redirects to /?subscribed=1
+    // GA4 sign_up — fires when Beehiiv redirects the top window to /?subscribed=1.
+    // DG5 (NEP-OPS-CWK-0719SP): the SAME signal also reveals the styled
+    // .capture__success panel and hides the now-redundant form + helper line,
+    // so returning subscribers see "You're in." instead of Beehiiv's raw
+    // in-iframe "Reference ID" text.
     if(window.location.search.includes('subscribed=1')){
-      function fs(){if(typeof gtag!=='undefined'){gtag('event','sign_up',{method:'beehiiv'});}}
+      function fs(){
+        if(typeof gtag!=='undefined'){gtag('event','sign_up',{method:'beehiiv'});}
+        document.querySelectorAll('.capture__success').forEach(function(ok){
+          ok.hidden=false;
+          var cta=ok.closest('.capture-cta')||ok.parentNode;
+          if(cta){cta.querySelectorAll('.capture__embed,.capture__fallback,.capture__helper').forEach(function(el){el.hidden=true;});}
+        });
+      }
       if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',fs);}else{fs();}
     }
   })();
