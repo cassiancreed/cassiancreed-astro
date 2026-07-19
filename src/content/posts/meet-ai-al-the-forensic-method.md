@@ -48,4 +48,4 @@ So that's A.I. AL: a forensic mind that's proudest, in the end, of who it *refus
 
 ---
 
-*Want to see the method up close? Explore the [Forensic Tools](/forensic-tools/) — how the missing are found, how a crime scene is read, and the quiet logic of weighing evidence. And if you'd like a new sourced case file every week, the [free newsletter](/#subscribe) is the place.*
+*Want to see the method up close? Explore the [Forensic Tools](/forensic-tools/) — how the missing are found, how a crime scene is read, and the quiet logic of weighing evidence. And if you'd like a new sourced case file every week, the [free newsletter](/#free-guide) is the place.*

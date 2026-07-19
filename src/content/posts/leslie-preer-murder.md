@@ -39,4 +39,4 @@ DNA preserved from decades-old scenes is still usable. CODIS failure is not a pe
 **The Trail: The Murder of Rachel Morin** — our full-length case file, $1.99 on Beehiiv.
 
   
-Read it at [cassiancreed.com/the-trail](https://cassiancreed.com/the-trail) — or subscribe free at [cassiancreed.beehiiv.com/subscribe](https://cassiancreed.beehiiv.com/subscribe) and we’ll send you *The Jury Chess Game*, our field guide to how lawyers really pick a jury.
+Read it at [cassiancreed.com/the-trail](https://cassiancreed.com/the-trail/) — or subscribe free at [cassiancreed.beehiiv.com/subscribe](https://cassiancreed.beehiiv.com/subscribe) and we’ll send you *The Jury Chess Game*, our field guide to how lawyers really pick a jury.

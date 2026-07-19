@@ -7,22 +7,22 @@
 
 [[redirects]]
   from = "/free-dossier"
-  to = "/#subscribe"
+  to = "/#free-guide"
   status = 301
 
 [[redirects]]
   from = "/free-dossier/*"
-  to = "/#subscribe"
+  to = "/#free-guide"
   status = 301
 
 [[redirects]]
   from = "/rachel-morin"
-  to = "/#subscribe"
+  to = "/#free-guide"
   status = 301
 
 [[redirects]]
   from = "/rachel-morin/*"
-  to = "/#subscribe"
+  to = "/#free-guide"
   status = 301
 
 # --- Clancy cluster: retire legacy trial slug to the tracker (0715BR) ---
@@ -49,15 +49,15 @@
 
 # CY2 (NEP-DPL-CMT-0718CY): retired Subscribe-era routes now match the live
 # nav "Free Guide" target. There is no /free-guide/ page; the nav item points
-# to /#subscribe (Base.astro navItems), so /signup and /subscribe follow it.
+# to /#free-guide (Base.astro navItems), so /signup and /subscribe follow it.
 [[redirects]]
   from = "/signup"
-  to = "/#subscribe"
+  to = "/#free-guide"
   status = 301
 
 [[redirects]]
   from = "/subscribe"
-  to = "/#subscribe"
+  to = "/#free-guide"
   status = 301
 
 # --- AK8: legacy static pages ported to Astro posts (NEP-DPL-CWK-0718AK) ---

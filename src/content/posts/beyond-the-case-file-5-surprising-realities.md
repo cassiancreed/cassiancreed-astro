@@ -75,7 +75,7 @@ Ask yourself: whose name is currently gathering dust in a folder you've already 
 
 ---
 
-**Read the full case file: [The Murder of Leslie Preer — DNA, Deception & 23 Years of Silence](https://cassiancreed.com/leslie-preer-murder/?utm_source=blog&utm_medium=internal&utm_campaign=cf001&utm_content=notebooklm_post)**
+**Read the full case file: [The Murder of Leslie Preer — DNA, Deception & 23 Years of Silence](https://cassiancreed.com/post/leslie-preer-murder/?utm_source=blog&utm_medium=internal&utm_campaign=cf001&utm_content=notebooklm_post)**
 
 Explore the complete Cassian Creed case library: **[cassiancreed.com/case-files](https://cassiancreed.com/case-files/?utm_source=blog&utm_medium=internal&utm_campaign=cf001&utm_content=notebooklm_post)**
 

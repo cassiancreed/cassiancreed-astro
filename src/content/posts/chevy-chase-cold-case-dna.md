@@ -46,7 +46,7 @@ What the Leslie Preer case demonstrates, at the technical level, is that the com
 The genealogy was the lead. The STR match was the proof. The case is closed.
 
   
-For more sourced, victim-first true crime from Cassian Creed, [**read The Trail**](https://cassiancreed.com/the-trail) — the full-length case file on the murder of Rachel Morin, $1.99 on Beehiiv.
+For more sourced, victim-first true crime from Cassian Creed, [**read The Trail**](https://cassiancreed.com/the-trail/) — the full-length case file on the murder of Rachel Morin, $1.99 on Beehiiv.
 
   
 Get the free guide at [cassiancreed.beehiiv.com/subscribe](https://cassiancreed.beehiiv.com/subscribe) and we’ll send you *The Jury Chess Game*, our field guide to how lawyers really pick a jury.
