@@ -115,3 +115,22 @@ const guides = [
     <CaptureBlock offer="case" content="guides" />
   </section></div>
 </Base>
+
+<style>
+  /* NEP-OPS-CMT-0718DP: the global rule `.post__content a{color:var(--accent)}`
+     was overriding the base filled `.btn` label colour, painting the "Browse all
+     case files" text the same orange as the button fill (#e0563b) — an invisible
+     label on a solid orange block. Restore legibility using the site's
+     established filled-button pattern (cream #F6F1EA on #A8503A), matching the
+     capture buttons that render "Get the free guide" correctly. Scoped here so it
+     only touches THIS page's filled CTA — the outlined `.btn--ghost` links are
+     left exactly as they were. */
+  .post__content a.btn:not(.btn--ghost) {
+    color: #F6F1EA;
+    background: #A8503A;
+    text-decoration: none;
+  }
+  .post__content a.btn:not(.btn--ghost):hover {
+    color: #F6F1EA;
+  }
+</style>
