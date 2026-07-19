@@ -44,7 +44,7 @@ Richard Allen, a Delphi resident, was charged in the case and convicted in Novem
 
 ## Two Ways to Read It
 
-**Follow it with us.** When the Delphi appeal moves, we cover it in a new case file. If you want to follow this case responsibly, with the facts kept honest over time, [join the newsletter](#subscribe) — subscribers get our free field guide *How to Read a Case Like the Court Does*, and new case files as we publish them.
+**Follow it with us.** When the Delphi appeal moves, we cover it in a new case file. If you want to follow this case responsibly, with the facts kept honest over time, [join the newsletter](#free-guide) — subscribers get our free field guide *How to Read a Case Like the Court Does*, and new case files as we publish them.
 
 ---
 
