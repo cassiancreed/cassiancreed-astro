@@ -1,48 +1,54 @@
 ---
-title: "Why Do Some Murders Go Unsolved? Linkage Blindness and the Victims We Overlook"
-description: "Many murders go unsolved not for lack of evidence, but because related cases are never connected across jurisdictions — and because some victims are under-investigated. How linkage blindness works, and how public data is starting to catch what humans miss."
+title: "Linkage Blindness: Why Some Murders Go Unsolved"
+description: "Linkage blindness can keep related murders disconnected across jurisdictions. Learn how shared evidence, better data, and equal urgency for every victim can help solve cold cases."
 pubDate: 2026-06-02
 tag: "Explainers"
 featured: false
 ---
 
-Many murders go unsolved not because the evidence isn't there, but because no one connects the dots. When related killings happen in different counties or states, the agencies investigating them often never learn the others exist — a documented failure investigators call **linkage blindness**. Add the long-standing tendency to under-investigate marginalized victims, and you get cases that stay cold for decades while a pattern hides in plain sight. Here is how that happens, and what is finally being done about it.
+*Updated July 2026.*
+
+Many murders go unsolved not because the evidence isn't there, but because no one connects the dots. When related killings happen in different counties or states, the agencies investigating them often never learn the others exist — a documented failure investigators call **linkage blindness**. Add the long-standing tendency to under-investigate marginalized victims, and you get cases that stay cold for decades while a pattern hides in plain sight. Here is how that happens, and what can help close the gap.
 
 ## What linkage blindness actually is
 
-American policing is intensely local. A homicide in one county is investigated by that county's detectives, logged in their records, worked with their resources. If the same offender kills again two counties over — or two states over — those detectives are usually working in the dark, unaware that a strikingly similar case exists elsewhere. There is no automatic national tripwire that says, "these belong together."
+American policing is intensely local. A homicide in one county is investigated by that county's detectives, logged in their records, and worked with their resources. If the same offender kills again two counties over — or two states over — those detectives may be working in the dark, unaware that a strikingly similar case exists elsewhere. There is no automatic national tripwire that says, "these belong together."
 
-That gap has a name. **Linkage blindness** is the failure to recognize that separate crimes are connected. It is not a story about brilliant criminals outwitting the system; far more often it is a structural problem — fragmented records, jurisdictions that don't share data, and the sheer volume of cases. When linkage fails, a series gets worked as a scatter of unrelated incidents, and the thread that would crack all of them is never pulled.
+That gap has a name. **Linkage blindness** is the failure to recognize that separate crimes are connected. It is not a story about brilliant criminals outwitting the system; far more often it is a structural problem — fragmented records, jurisdictions that do not share data, and the sheer volume of cases. When linkage fails, a series gets worked as a scatter of unrelated incidents, and the thread that could crack all of them is never pulled.
 
 ## Why some victims fall through the cracks
 
-Linkage blindness is worse for some victims than others. Cases involving people on society's margins — those in the sex trade, people struggling with addiction or homelessness, those who are transient or estranged from family — have historically drawn less investigative urgency. When a victim is presumed to be "high-risk" or simply isn't missed quickly, the early hours that matter most can slip away, and the case can be quietly deprioritized.
+Linkage blindness is worse for some victims than others. Cases involving people on society's margins — those in the sex trade, people struggling with addiction or homelessness, and people who are transient or estranged from family — have historically drawn less investigative urgency. When a victim is presumed to be "high-risk" or simply is not missed quickly, the early hours that matter most can slip away, and the case can be quietly deprioritized.
 
-The Gilgo Beach murders on Long Island became the textbook example. For more than a decade, the cases of women who had disappeared after arranging to meet clients online were treated separately, under-investigated, and in some instances barely investigated at all — a failure many critics tied directly to the fact that the victims had worked in the sex trade. A killer operated for years in the gap. Only after a 2022 inter-agency task force finally treated the cases as worth solving did the forensic and digital trail come together. The lesson is uncomfortable and central to honest true-crime work: **whose victim it is should never decide the urgency of the search.**
+The Gilgo Beach investigation ultimately became a positive example of what cross-jurisdictional linkage can accomplish. The case remained cold for roughly 13 years after the first Gilgo Four victims — Melissa Barthelemy, Maureen Brainard-Barnes, Megan Waterman, and Amber Costello — were found in 2010. A renewed multi-agency investigation connected evidence across jurisdictions, including cellphone records, DNA, and DNA recovered from a discarded pizza box. Rex Heuermann pleaded guilty on April 8, 2026, to murdering Barthelemy, Brainard-Barnes, Waterman, Costello, Jessica Taylor, Valerie Mack, and Sandra Costilla, and admitted killing Karen Vergata. Suffolk County District Attorney Raymond Tierney announced that Heuermann was sentenced on June 17, 2026, to three consecutive life sentences plus 100 years. The case shows how a long-cold investigation can be solved when agencies connect evidence rather than treating each homicide as an isolated file.
 
-## How public data is starting to catch what humans miss
+The central lesson remains uncomfortable and essential to honest true-crime work: **whose victim it is should never decide the urgency of the search.** For more on the evidence that helped resolve this case, see our [Gilgo Beach sentencing explainer](/post/rex-heuermann-sentencing-what-to-expect-june-17-gilgo-beach/).
 
-The encouraging development is that the systemic gap can be measured. Independent analysts have begun using public homicide data to find clusters that humans missed. The **Murder Accountability Project**, a nonprofit founded in 2015 by retired detectives, journalists, and scholars, runs a publicly accessible algorithm over decades of federal homicide records. It organizes more than 700,000 killings into roughly 100,000 groups by geography, victim sex, and method, then flags clusters with abnormally low clearance rates — the statistical fingerprint a hidden series can leave behind.
+## How homicide data can reveal missed patterns
 
-Crucially, the project is careful about what its results mean. A suspicious cluster is a question, not an answer: the organization states plainly that these patterns "are not proof of the presence or absence" of a serial offender. The output points at **cases and systems** — here is a group of unsolved killings that share a signature and that nobody seems to be clearing — not at any individual person. That distinction is the whole ethical ballgame. Pointing a data tool at the *gap* helps victims; pointing one at a *person* risks branding the innocent, because true serial offenders are rare and any individual prediction is overwhelmingly likely to be wrong.
+The systemic gap can be measured. The **Murder Accountability Project** maintains the largest independent database of U.S. homicides and estimates that more than 250,000 homicides since 1980 remain cases in which no one has been charged. Its public tools flag statistical clusters of potentially linked unsolved murders — usually clusters containing dozens of cases — so investigators, journalists, researchers, and families can see patterns that fragmented local records may conceal.
+
+Crucially, the project is careful about what its results mean. A suspicious cluster is a question, not an answer. The organization states that these patterns are not proof of the presence or absence of a serial offender. The output points at **cases and systems** — a group of unsolved killings that share characteristics and deserve closer review — not at any individual person. That distinction is the ethical line. Pointing a data tool at the *gap* can help victims; pointing one at a *person* risks branding someone who has never been charged.
 
 ## What it would take to close the gap
 
-The fixes are not mysterious. They are cross-jurisdictional data sharing, consistent and complete homicide reporting, and — most of all — the discipline to take every victim seriously from the first day, regardless of who they were or how they lived. None of that is glamorous. All of it saves lives, because a pattern caught early is a series cut short.
+The fixes are not mysterious. They include cross-jurisdictional data sharing, consistent and complete homicide reporting, modern forensic review, and — most of all — the discipline to take every victim seriously from the first day, regardless of who they were or how they lived. None of that is glamorous. All of it matters, because a pattern caught early can prevent years of investigative delay.
+
+Readers comparing how different forensic systems share and restrict information may also find our [forensic tools guide](/forensic-tools/) useful.
 
 ## Frequently asked questions
 
-**Why do so many murders go unsolved?**
-A combination of factors: fragmented, local recordkeeping that makes it hard to connect related cases across jurisdictions (linkage blindness); the under-investigation of marginalized victims; resource limits; and cases that simply lack physical evidence. Nationally, a significant share of homicides go uncleared each year.
+**Why do so many murders go unsolved?**  
+A combination of factors: fragmented local recordkeeping that makes it hard to connect related cases across jurisdictions; the under-investigation of marginalized victims; resource limits; witness and evidence problems; and cases that simply lack enough usable evidence. In 2024, 61.4% of reported murders and non-negligent manslaughters were **cleared**, not necessarily solved through a conviction.
 
-**What is linkage blindness?**
-It is the failure to recognize that separate crimes are connected — usually because the agencies involved don't share records or aren't aware of one another's cases. It allows a single offender's crimes to be worked as unrelated incidents.
+**What is linkage blindness?**  
+It is the failure to recognize that separate crimes are connected — usually because the agencies involved do not share records or are not aware of one another's cases. It can allow one offender's crimes to be worked as unrelated incidents.
 
-**Is there a tool that detects serial killers?**
-There are tools that detect *suspicious patterns in case data* — most notably the Murder Accountability Project's public algorithm, which flags clusters of unsolved killings with low clearance rates. They identify cases and systemic gaps that deserve a closer look; they explicitly do not identify or accuse individuals, and their developers stress that a cluster is not proof of a serial offender.
+**Is there a tool that detects serial killers?**  
+There are tools that detect *suspicious patterns in case data* — most notably the Murder Accountability Project's public cluster tools. They identify cases and systemic gaps that deserve a closer look; they do not identify or accuse individuals, and a cluster is not proof of a serial offender.
 
-**Why are marginalized victims more likely to be overlooked?**
-Victims in the sex trade, those struggling with addiction or homelessness, and people who are transient have historically drawn less investigative urgency and are often not reported missing quickly — which both delays investigation and makes linkage across cases harder.
+**Why are marginalized victims more likely to be overlooked?**  
+Victims in the sex trade, people struggling with addiction or homelessness, and people who are transient have historically drawn less investigative urgency and are often not reported missing quickly. That can delay investigation and make linkage across cases harder.
 
 ---
 
@@ -50,5 +56,7 @@ If you are reading this because of someone you lost, we are sorry. Every name ma
 
 ## Sources
 
+- [Suffolk County District Attorney — Gilgo serial killer pleads guilty](https://www.suffolkcountyda.org/gilgo-serial-killer-pleads-guilty-to-seven-charged-murders-and-also-admits-to-the-killing-of-karen-vergata/)
+- [Suffolk County District Attorney — Gilgo serial killer sentenced](https://www.suffolkcountyda.org/gilgo-serial-killer-sentenced-to-three-consecutive-life-sentences-plus-100-years-for-murdering-eight-women/)
+- [Murder Accountability Project](https://www.murderdata.org/)
 - [Murder Accountability Project — Data & Docs](https://www.murderdata.org/p/data-docs.html)
-- [Murder Accountability Project — Wikipedia](https://en.wikipedia.org/wiki/Murder_Accountability_Project)
