@@ -6,7 +6,7 @@ import Base from '../layouts/Base.astro';
 // reporting. We never cite our own articles as the source for a date, and we
 // never guess. If a date cannot be confirmed against an outside source of
 // record, it is pulled, not estimated. Bump LAST_VERIFIED on each sweep.
-const LAST_VERIFIED = 'July 18, 2026';
+const LAST_VERIFIED = 'July 20, 2026';
 const BUILD_DATE = new Date().toISOString().slice(0, 10);
 
 // Every entry below is tied to an outside source of record — a court filing, a
@@ -21,7 +21,7 @@ const entries = [
     dateText: 'Wednesday, August 12, 2026',
     court: 'Lake County Circuit Court, Waukegan, IL',
     status: 'Charged with two counts of involuntary manslaughter in the 2001 death of her newborn son, known for 25 years as Baby Jacob Hope. Released from custody with conditions. She is presumed innocent unless and until a jury says otherwise.',
-    detail: 'The infant was found on August 26, 2001, in a dumpster behind a Rollins Road grocery store in Round Lake Beach; an autopsy found he was born alive. Round Lake Beach police reopened the case in early 2024 and submitted his DNA for testing, which led investigators to Lebron. The baby\u2019s father is not suspected of wrongdoing. Judge Rhonda K. Bruno imposed a curfew and barred drug and alcohol use pending trial.',
+    detail: 'The infant was found on August 26, 2001, in a dumpster behind a Rollins Road grocery store in Round Lake Beach; an autopsy found he was born alive. Round Lake Beach police reopened the case in early 2024 and submitted his DNA for testing, which led investigators to Lebron. The baby’s father is not suspected of wrongdoing. Judge Rhonda K. Bruno imposed a curfew and barred drug and alcohol use pending trial.',
     src: 'https://www.dailyherald.com/20260715/news/woman-charged-in-2001-death-of-infant-son-released-from-custody/',
     srcLabel: 'Daily Herald, court reporting (July 15, 2026)',
     srcType: 'Court reporting',
@@ -48,14 +48,14 @@ const entries = [
   {
     id: 'clancy-trial',
     case: 'Lindsay Clancy',
-    proceeding: 'Trial begins (jury selection)',
+    proceeding: 'Trial underway (jury selection)',
     dateISO: '2026-07-20',
     dateText: 'Monday, July 20, 2026',
     court: 'Plymouth County Superior Court, Plymouth, MA',
-    status: 'Pleaded not guilty; charged with three counts of first-degree murder after prosecutors dropped duplicative strangulation counts.',
-    detail: 'Jury selection opens the trial; the court intends to seat 18 jurors. Rulings at the July 13 final pretrial hearing denied jury sequestration and barred lay witnesses from testifying about their own experience with postpartum depression or psychosis. Attorneys estimate four to six weeks. She is presumed innocent unless and until a jury says otherwise.',
-    src: 'https://www.boston.com/news/crime/2025/11/18/lindsay-clancy-murder-trial-pushed-back-to-july-2026/',
-    srcLabel: 'Boston.com, reporting the court’s scheduling order',
+    status: 'Pleaded not guilty; charged with three counts of first-degree murder after prosecutors dropped the duplicative strangulation counts in early July.',
+    detail: 'UNDERWAY. Jury selection began July 20 before Judge William F. Sullivan; the court plans to seat an 18-juror panel (12 jurors plus 6 alternates). Attorneys have estimated four to six weeks of trial. She is presumed innocent unless and until a jury says otherwise.',
+    src: 'https://www.cbsnews.com/boston/news/lindsay-clancy-duxbury-ma-murder-trial/',
+    srcLabel: 'CBS News Boston, courtroom reporting (July 20, 2026)',
     srcType: 'Court reporting',
     link: '/post/what-actually-happens-on-day-one-of-a-high-profile-trial/',
     linkText: 'What happens on day one',
@@ -82,6 +82,40 @@ const entries = [
     groups: ['next', 'sentencing'],
   },
   {
+    id: 'colt-gray-plea',
+    case: 'Colt Gray',
+    proceeding: 'Plea and sentencing hearing',
+    dateISO: '2026-07-24',
+    dateText: 'Friday, July 24, 2026',
+    court: 'Barrow County Superior Court, Winder, GA',
+    status: 'Charged with 55 felony counts — including malice murder and felony murder — in the September 4, 2024 shooting at Apalachee High School. Set to enter a non-negotiated (blind) plea: no sentence agreement is in place. He is presumed innocent unless and until a plea is accepted or a jury decides otherwise.',
+    detail: 'The hearing before Judge Nicholas Primm begins at 9:00 a.m. ET and may run into the following week. The shooting killed teachers Cristina Irimie and Richard Aspinwall and 14-year-old students Mason Schermerhorn and Christian Angulo; nine others were wounded. If the court does not accept a plea, jury selection is set for October 13, with jurors drawn from Columbia County (Augusta area).',
+    src: 'https://www.atlantanewsfirst.com/2026/07/11/plea-deal-sentencing-scheduled-accused-apalachee-high-school-shooter/',
+    srcLabel: 'Atlanta News First, court-filing reporting (July 11, 2026)',
+    srcType: 'Court reporting',
+    link: null,
+    linkText: null,
+    groups: ['next', 'hearings'],
+  },
+  {
+    id: 'colin-gray-sentencing',
+    case: 'Colin Gray',
+    proceeding: 'Sentencing',
+    dateISO: '2026-07-28',
+    dateText: 'Tuesday–Wednesday, July 28–29, 2026',
+    court: 'Barrow County Superior Court, Winder, GA',
+    status: 'Convicted March 3, 2026, on all counts — including second-degree murder, involuntary manslaughter, and reckless conduct — in connection with the Apalachee High School shooting carried out by his son.',
+    detail: 'This is a sentencing hearing, not a trial; the court has set two days. Prosecutors argued at trial that he ignored repeated warnings about his son’s mental health and provided the AR-style rifle used in the shooting. The jury returned its verdict on March 3, 2026.',
+    src: 'https://www.atlantanewsfirst.com/2026/07/11/plea-deal-sentencing-scheduled-accused-apalachee-high-school-shooter/',
+    srcLabel: 'Atlanta News First, court-filing reporting (July 11, 2026)',
+    srcType: 'Court reporting',
+    link: null,
+    linkText: null,
+    groups: ['next', 'sentencing'],
+  },
+  // GW7 (verified 2026-07-20): press phrasing is "end of August"; 8/31 stands on the
+  // Globe's arraignment reporting. CONFIRM VIA BRISTOL COUNTY DOCKET before 8/31.
+  {
     id: 'peck-pretrial',
     case: 'Dianne Curry Peck',
     proceeding: 'Pretrial hearing',
@@ -96,6 +130,22 @@ const entries = [
     link: '/post/baby-boy-doe-mansfield-1985/',
     linkText: 'Read the Baby Boy Doe case update',
     groups: ['next', 'hearings'],
+  },
+  {
+    id: 'woods-sentencing',
+    case: 'Yvonne “Missy” Woods',
+    proceeding: 'Sentencing',
+    dateISO: '2026-09-08',
+    dateText: 'Tuesday, September 8, 2026',
+    court: 'Jefferson County District Court, Golden, CO',
+    status: 'Pleaded guilty June 23, 2026, to four felonies — cybercrime, first-degree perjury, attempt to influence a public servant, and forgery — with a stipulated prison sentence of 8 to 16 years; roughly 100 remaining counts were dismissed.',
+    detail: 'The former Colorado Bureau of Investigation DNA analyst admitted manipulating data across years of casework, including in more than 30 sexual-assault cases. Sentencing before Judge Andrew Poland begins at 8:30 a.m. MT, with a full day set aside for victim statements.',
+    src: 'https://firstda.co/news-update/former-cbi-lab-analyst-missy-woods-pleads-guilty/',
+    srcLabel: 'Colorado First Judicial District Attorney’s Office, plea announcement (June 23, 2026)',
+    srcType: 'Primary — prosecutor’s office',
+    link: null,
+    linkText: null,
+    groups: ['next', 'sentencing'],
   },
 ];
 
@@ -123,15 +173,15 @@ const unconfirmed = [
     linkText: 'Read the July 2026 case-status update',
   },
   {
-    case: 'Larry Millete',
-    where: 'San Diego County, California',
-    status: 'Convicted of first-degree murder; sentencing date not yet publicly confirmed.',
-    note: 'A separate assault-weapon-possession charge remains to be resolved before sentencing on the murder conviction. The July 20 court date concerns that weapons charge, not the murder sentencing.',
-    src: 'https://www.sdcda.org/content/office/newsroom/tempDownloads/1e7873cc-4ec3-4bf9-a73f-405fa778ab3a_Larry%20Millete%20Guilty%20Verdict%20News%20Release%20July%202026.pdf',
-    srcLabel: 'San Diego County District Attorney, guilty-verdict news release (July 9, 2026)',
-    srcType: 'Primary — prosecutor’s office',
-    link: '/post/the-maya-millete-case-larry-milletes-no-body-murder-trial-explained/',
-    linkText: 'Read the verdict update',
+    case: 'Carlos Reales Dominguez',
+    where: 'Yolo County Superior Court, Woodland, CA',
+    status: 'Verdict pending — the retrial jury has been deliberating since July 16, 2026.',
+    note: 'He is being retried on two counts of second-degree murder and one count of attempted murder in the 2023 Davis stabbings; the first jury acquitted him of first-degree murder and deadlocked on the remaining counts. A verdict can come on any court day, so there is no future date to publish. He is presumed innocent unless and until the jury says otherwise.',
+    src: 'https://davisvanguard.org/2026/07/carlos-reales-dominguez-retrial-3/',
+    srcLabel: 'The Davis Vanguard, courtroom reporting (July 2026)',
+    srcType: 'Court reporting',
+    link: '/post/what-a-racial-justice-act-violation-means-dominguez/',
+    linkText: 'What the Racial Justice Act findings mean',
   },
   {
     case: 'Pedro Hernandez (Etan Patz)',
@@ -157,6 +207,19 @@ const appeals = [
     srcType: 'Primary — prosecutor’s office',
     link: '/post/a-jury-convicted-a-family-still-grieves-karmelo-anthony-verdict-austin-metcalf/',
     linkText: 'Read our coverage of the verdict and what it left unresolved',
+  },
+  {
+    case: 'Larry Millete',
+    where: 'San Diego County Superior Court, Chula Vista, CA',
+    type: 'Sentencing pending',
+    when: 'Murder sentencing not yet scheduled',
+    status: 'Convicted of first-degree murder on July 9, 2026, in the killing of his wife, Maya Millete. The murder sentence (an exposure of 25 years to life) has not been scheduled; it is expected late summer or fall.',
+    note: 'The July 20, 2026 status hearing before Judge Enrique Camarena concerns the separate, bifurcated unregistered-assault-weapon charge — which Millete has opted to have tried to the bench — not the murder sentencing. A sentencing date may be announced at that hearing.',
+    src: 'https://www.nbcsandiego.com/news/local/whats-ahead-for-convicted-murderer-larry-millete/4047565/',
+    srcLabel: 'NBC 7 San Diego, court reporting (July 2026)',
+    srcType: 'Court reporting',
+    link: '/post/the-maya-millete-case-larry-milletes-no-body-murder-trial-explained/',
+    linkText: 'Read the verdict update',
   },
 ];
 
@@ -254,7 +317,7 @@ const jsonld = {
       '@type': 'FAQPage',
       '@id': 'https://cassiancreed.com/court-calendar#faq',
       mainEntity: [
-        { '@type': 'Question', name: 'When does the Lindsay Clancy trial start?', acceptedAnswer: { '@type': 'Answer', text: 'Jury selection is scheduled to begin Monday, July 20, 2026, in Plymouth County Superior Court. The final pretrial hearing was held on July 13, where the judge denied jury sequestration, barred lay witnesses from testifying about their own experience with postpartum depression or psychosis, and set the panel at 18 jurors. She has pleaded not guilty and is presumed innocent.' } },
+        { '@type': 'Question', name: 'When does the Lindsay Clancy trial start?', acceptedAnswer: { '@type': 'Answer', text: 'It is underway. Jury selection began Monday, July 20, 2026, in Plymouth County Superior Court before Judge William F. Sullivan, who plans to seat an 18-juror panel — 12 jurors and 6 alternates. Attorneys have estimated four to six weeks. Prosecutors dropped the three duplicative strangulation counts in early July, leaving three counts of first-degree murder. She has pleaded not guilty and is presumed innocent.' } },
         { '@type': 'Question', name: 'What is the next court date for Dianne Curry Peck?', acceptedAnswer: { '@type': 'Answer', text: 'August 31, 2026, in Bristol County Superior Court in Fall River. She pleaded not guilty and was released on $10,000 cash bail. No trial date has been set.' } },
         { '@type': 'Question', name: 'Does Brooke George have a trial date?', acceptedAnswer: { '@type': 'Answer', text: 'No. There is no publicly verified court date. She is reported to be detained pending proceedings, but the details of the allegation come from an advocacy group rather than from UAE authorities or any court, and no charge has been confirmed on the public record.' } },
         { '@type': 'Question', name: 'Is Karmelo Anthony still facing an upcoming court date?', acceptedAnswer: { '@type': 'Answer', text: 'Not one that has been publicly scheduled. He was convicted and sentenced in June 2026, and new-trial and recusal motions were filed on July 7. No hearing date on those motions has been confirmed.' } },
@@ -275,7 +338,7 @@ const jsonld = {
     <p class="evidence evidence--accent">Court Calendar</p>
     <h1>True Crime Court Calendar: Trial Dates &amp; Hearings 2026</h1>
     <p class="cal-answer">
-      Three court dates are confirmed. Lindsay Clancy&rsquo;s trial begins <strong>July 20</strong> with jury selection in Plymouth County Superior Court. Nestor Hernandez Melgar is sentenced <strong>July 22</strong> in Snohomish County. Dianne Curry Peck is due back in Bristol County Superior Court on <strong>August 31</strong>.
+      Lindsay Clancy&rsquo;s murder trial is <strong>underway</strong> &mdash; jury selection began July 20 in Plymouth County. Nestor Hernandez Melgar is sentenced <strong>July 22</strong> in Snohomish County. Colt Gray&rsquo;s non-negotiated plea and sentencing hearing begins <strong>July 24</strong> in Barrow County, with Colin Gray&rsquo;s sentencing to follow <strong>July 28&ndash;29</strong>. Dianne Curry Peck is due in Bristol County Superior Court <strong>August 31</strong>, and Yvonne &ldquo;Missy&rdquo; Woods is sentenced <strong>September 8</strong> in Jefferson County, Colorado.
     </p>
     <p class="cal-fresh">
       <strong>Last verified: {LAST_VERIFIED}.</strong> Court dates move. Every entry below is checked against the public record, and each one carries its source. Confirm with the court before you travel.
@@ -375,9 +438,9 @@ const jsonld = {
     ))}
     {appeals.map((e) => (
       <div class="row">
-        <p class="row__type">Post-conviction motions</p>
+        <p class="row__type">{e.type || 'Post-conviction motions'}</p>
         <h3 class="row__case">{e.case}</h3>
-        <p class="row__when">No hearing date publicly confirmed &middot; {e.where}</p>
+        <p class="row__when">{e.when || 'No hearing date publicly confirmed'} &middot; {e.where}</p>
         <p class="row__status">{e.status}</p>
         <p class="row__note">{e.note}</p>
         <p class="row__meta">Last verified: {LAST_VERIFIED} &middot; subject to change by the court &middot; Source: <a href={e.src} target="_blank" rel="noopener noreferrer">{e.srcLabel}</a> ({e.srcType})</p>
@@ -446,7 +509,7 @@ const jsonld = {
           {appeals.map((e) => (
             <tr>
               <td class="t-case">{e.case}</td>
-              <td>Post-conviction motions</td>
+              <td>{e.type || 'Post-conviction motions'}</td>
               <td class="t-none">No date set</td>
               <td>{e.where}</td>
               <td class="t-status">{e.status}</td>
@@ -497,7 +560,7 @@ const jsonld = {
     <h2 id="faq">FAQ</h2>
     <div class="prose faq">
       <h3>When does the Lindsay Clancy trial start?</h3>
-      <p>Jury selection is scheduled to begin Monday, July 20, 2026, in Plymouth County Superior Court. The final pretrial hearing was held on July 13, where the judge denied jury sequestration, barred lay witnesses from testifying about their own experience with postpartum depression or psychosis, and set the panel at 18 jurors. She has pleaded not guilty and is presumed innocent.</p>
+      <p>It is underway. Jury selection began Monday, July 20, 2026, in Plymouth County Superior Court before Judge William F. Sullivan, who plans to seat an 18-juror panel — 12 jurors and 6 alternates. Attorneys have estimated four to six weeks. Prosecutors dropped the three duplicative strangulation counts in early July, leaving three counts of first-degree murder. She has pleaded not guilty and is presumed innocent.</p>
 
       <h3>What is the next court date for Dianne Curry Peck?</h3>
       <p>August 31, 2026, in Bristol County Superior Court in Fall River. She pleaded not guilty and was released on $10,000 cash bail. No trial date has been set.</p>
