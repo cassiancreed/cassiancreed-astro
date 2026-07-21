@@ -65,3 +65,5 @@ This case shows what public DNA databases can do when people knowingly choose to
 ---
 
 *Jane Hart's full case file — the 1976 discovery, the fifty-year gap, and the genealogy that closed it — joins our case library at cassiancreed.com. If this kind of evidence-first storytelling matters to you, get the free case guide and follow along as this story develops.*
+
+**[Read the complete case file](/post/jane-hart-1976-case-file/)**
