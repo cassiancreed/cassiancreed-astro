@@ -1,6 +1,7 @@
 ---
 title: "The Frame: The Banfield 'Au Pair Affair' — the full account"
-description: "Christine Banfield and Joseph Ryan were killed in a Fairfax County home, and a stranger was framed as the attacker. The episode companion to our case file: how the staged self-defense story came apart, and how Joseph Ryan's name was given back."
+seoTitle: "Banfield Au Pair Affair: Evidence, Trial & Verdict"
+description: "A sourced account of Christine Banfield and Joseph Ryan: staged-scene evidence, both sides at trial, the verdict, sentence, and what remains open."
 pubDate: 2026-06-07
 tag: "Case Files"
 featured: false
