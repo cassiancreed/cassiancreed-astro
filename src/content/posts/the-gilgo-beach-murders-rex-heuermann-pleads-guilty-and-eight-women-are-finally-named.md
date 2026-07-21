@@ -1,20 +1,22 @@
 ---
 title: "The Gilgo Beach Murders: Inside the Long Island Serial Killer Case"
-description: "Rex Heuermann pleaded guilty in April 2026 to the Gilgo Beach killings. The full story of the Long Island serial killer case and the women he murdered."
+seoTitle: "Gilgo Beach Murders: The Eight Women, Named First"
+description: "Melissa, Maureen, Megan, Amber, Jessica, Sandra, Valerie, and Karen: their lives, the failed investigation, the guilty plea, and life sentence."
 pubDate: 2026-05-26
+updatedDate: 2026-07-20
 tag: "Case Files"
 featured: true
 victim: "Women recovered at Gilgo Beach"
 incidentDate: "1990s\u20132010s"
 location: "Long Island, New York"
 jurisdiction: "Suffolk County, New York"
-status: "Rex Heuermann pleaded guilty (2026); sentencing June 17, 2026"
+status: "Sentenced June 17, 2026 — three consecutive life-without-parole terms plus four consecutive terms of 25 years to life; conviction stands"
 cover: "/covers/the-gilgo-blueprint.jpg"
 coverAlt: "A desolate barrier-island causeway at dusk, a single distant streetlight glowing amber at the vanishing point."
 ---
 
 
-For more than a decade, the Gilgo Beach murders stood as one of America's most haunting unsolved cases: a cluster of women's remains found along a desolate stretch of Ocean Parkway on Long Island, and no one held to account. That changed in July 2023 with the arrest of Rex Heuermann, a Manhattan architect and married father from suburban Massapequa Park. On April 8, 2026, Heuermann pleaded guilty in Suffolk County Court to murdering seven women and admitted to causing the death of an eighth, bringing a long-delayed measure of accountability to a case defined for years by institutional neglect.
+For more than a decade, the Gilgo Beach murders stood as one of America's most haunting unsolved cases: a cluster of women's remains found along a desolate stretch of Ocean Parkway on Long Island, and no one held to account. That changed in July 2023 with the arrest of Rex Heuermann, a Manhattan architect and married father from suburban Massapequa Park. On April 8, 2026, Heuermann pleaded guilty in Suffolk County Court to murdering seven women and admitted to causing the death of an eighth, bringing a long-delayed measure of accountability to a case defined for years by institutional neglect. On June 17, 2026, he was sentenced to life in prison without parole.
 
 This is the story of that case — and, above all, of the women whose names were too often reduced to a body count.
 
@@ -67,7 +69,7 @@ An eighth woman, **Karen Vergata**, 34, disappeared in 1996. Heuermann admitted 
 - **2024:** Charges are added for Maureen Brainard-Barnes, then for Jessica Taylor and Sandra Costilla.
 - **December 2024:** A superseding indictment adds the murder of Valerie Mack.
 - **April 8, 2026:** Heuermann pleads guilty to seven murders and admits causing Karen Vergata's death.
-- **June 17, 2026:** Sentencing is scheduled.
+- **June 17, 2026:** Judge Timothy Mazzei sentences Heuermann in Suffolk County to three consecutive terms of life without parole plus four consecutive terms of 25 years to life.
 
 ## The Investigation and the Break in the Case
 
@@ -90,7 +92,7 @@ The search of Heuermann's home, which began in the days after his arrest, stretc
 <div class="forensic__block forensic__block--le">
 <span class="forensic__tag forensic__tag--le">What law enforcement actually did</span>
 <h3>How investigators built the case</h3>
-<p>For more than a decade the case stalled — through department turnover, a corruption scandal, and a failure to take the victims seriously because many had worked in the sex trade. The break came after a 2022 inter-agency task force reopened it: investigators linked a first-generation Chevrolet Avalanche to a suspect, then used cell-site and burner-phone analysis and DNA evidence to build the case against Rex Heuermann, a Massapequa Park architect. He was arrested in 2023 and pleaded guilty in April 2026.</p>
+<p>For more than a decade the case stalled — through department turnover, a corruption scandal, and a failure to take the victims seriously because many had worked in the sex trade. The break came after a 2022 inter-agency task force reopened it: investigators linked a first-generation Chevrolet Avalanche to a suspect, then used cell-site and burner-phone analysis and DNA evidence to build the case against Rex Heuermann, a Massapequa Park architect. He was arrested in 2023, pleaded guilty in April 2026, and was sentenced to life without parole on June 17, 2026.</p>
 </div>
 <div class="forensic__block forensic__block--lens">
 <span class="forensic__tag forensic__tag--lens">The Neural Edge forensic lens · A.I. AL</span>
@@ -113,9 +115,9 @@ For more than two years, Heuermann maintained his innocence and pleaded not guil
 
 ## Where the Case Stands Now
 
-On April 8, 2026, in a development that surprised many observers, Rex Heuermann, 62, reversed course and pleaded guilty in Suffolk County Court. He admitted to murdering all seven women named in the indictments and acknowledged that he had caused the death of an eighth, Karen Vergata. In exchange, he will not face a separate charge in Vergata's case.
+On April 8, 2026, in a development that surprised many observers, Rex Heuermann, 62, reversed course in Suffolk County Court. He pleaded guilty to three counts of first-degree murder — for the killings of Melissa Barthelemy, Megan Waterman, and Amber Costello — and four counts of second-degree murder — for the killings of Maureen Brainard-Barnes, Jessica Taylor, Sandra Costilla, and Valerie Mack — and admitted in court to killing an eighth woman, Karen Vergata, with whose death he was never formally charged. In exchange, he will not face a separate charge in Vergata's case.
 
-Under the terms of the plea, Heuermann is expected to receive a sentence amounting to life in prison without the possibility of parole — reported as three consecutive life sentences followed by four consecutive terms of 25 years to life. His **sentencing is scheduled for June 17, 2026**, when family members of the victims are expected to have the opportunity to deliver impact statements.
+On June 17, 2026, Judge Timothy Mazzei sentenced Heuermann in Suffolk County Court to **three consecutive terms of life in prison without the possibility of parole, plus four consecutive terms of 25 years to life.** The conviction stands.
 
 The guilty plea ends the prospect of a trial. It does not end every question. Notably, the death of Shannan Gilbert — whose 2010 disappearance set the entire search in motion — was never charged against Heuermann; authorities have long maintained her death was not a homicide, a conclusion her family has disputed for years. For the families of the eight women Heuermann admitted killing, the plea delivers a long-sought acknowledgment of guilt, even as it arrives years later than it should have.
 
@@ -124,10 +126,10 @@ Readers who follow how cold cases finally crack may also recognize echoes of the
 ## Frequently Asked Questions
 
 **How many people did Rex Heuermann plead guilty to killing?**
-He pleaded guilty to murdering seven women — Melissa Barthelemy, Maureen Brainard-Barnes, Megan Waterman, Amber Lynn Costello, Jessica Taylor, Sandra Costilla, and Valerie Mack — and admitted to causing the death of an eighth, Karen Vergata, for which he was not separately charged.
+He pleaded guilty on April 8, 2026, to three counts of first-degree murder — Melissa Barthelemy, Megan Waterman, and Amber Lynn Costello — and four counts of second-degree murder — Maureen Brainard-Barnes, Jessica Taylor, Sandra Costilla, and Valerie Mack — and admitted in court to killing an eighth woman, Karen Vergata, with whose death he was never formally charged.
 
 **Has Rex Heuermann been sentenced?**
-Not yet. As of June 1, 2026, his guilty plea has been entered and accepted, and sentencing is scheduled for June 17, 2026. He is expected to receive a sentence of life in prison without parole.
+Yes. On June 17, 2026, Judge Timothy Mazzei sentenced him in Suffolk County to three consecutive terms of life without parole plus four consecutive terms of 25 years to life. The conviction stands.
 
 **Who were the "Gilgo Four"?**
 They were the first four victims found together along Ocean Parkway in December 2010: Melissa Barthelemy, Maureen Brainard-Barnes, Megan Waterman, and Amber Lynn Costello. Their cases anchored the eventual prosecution.
