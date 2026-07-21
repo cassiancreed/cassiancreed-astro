@@ -6,7 +6,7 @@ victim: "Jane Hart"
 incidentDate: "October 8, 1976"
 location: "Otterbein, Benton County, Indiana"
 jurisdiction: "Benton County, Indiana"
-status: "Identified July 15, 2026; the homicide remains an active investigation"
+status: "Identified July 15, 2026; the homicide remains unsolved"
 capture: "dna"
 seoTitle: "Jane Hart Case File: The 1976 Benton County Jane Doe"
 description: "The complete Jane Hart case file — the 1976 Otterbein discovery, fifty years unidentified, and the genetic genealogy that restored her name in 2026."
@@ -14,11 +14,11 @@ description: "The complete Jane Hart case file — the 1976 Otterbein discovery,
 
 ## The Woman Before the Case
 
-Jane Hart was born in Ohio in 1906 to a Croatian mother who had immigrated the year before. Her childhood ended early: when her father died, the family could not hold together. One brother was kept at home, another was sent away, and Jane was placed at St. Joseph's Orphanage for Girls in Cleveland, where she lived until she was old enough to support herself.
+Jane Hart was born in Ohio in 1906 to a Croatian mother who had immigrated the year before. Her childhood ended early. As the Journal & Courier's reporting reconstructed it, when her father died the family could not hold together: one brother was kept at home, another was sent away, and Jane was placed at St. Joseph's Orphanage for Girls in Cleveland, where she lived until she was old enough to support herself.
 
 She moved to Chicago as an adult and built a quiet, working life as a housekeeper in Rogers Park, near Paulina Street and Lunt Avenue. The physical record kept the truth of that life: when investigators examined her decades later, they noted her calloused hands.
 
-In the mid-1970s, Jane Hart disappeared from every public record. She was sixty-nine years old. No one reported her missing — because the family separated at that orphanage door had lost track of her so completely that some of her relatives never knew she existed.
+In the 1970s, Jane Hart disappeared from every public record. She was sixty-nine years old. No one reported her missing — because the family separated at that orphanage door had lost track of her so completely that some of her relatives never knew she existed.
 
 ## October 8, 1976 — Otterbein, Indiana
 
@@ -33,14 +33,14 @@ Investigators concluded the box had been in the field for only about twelve hour
 | Date found | October 8, 1976 |
 | Location | Farm field near County Road 200 South, six miles north of Otterbein, Indiana |
 | Estimated age | 55–65 (she was in fact 69) |
-| Description | About 5'2", 160–180 lbs, sandy hair graying, upturned nose, calloused hands |
+| Description | About 5'2"; weight recorded as 160 lbs by the DNA Doe Project and 170–180 lbs in the 1976 police reports; sandy hair graying; upturned nose; calloused hands |
 | Clothing | Two-tone green double-knit pantsuit — button-down jacket, solid green slacks |
 | Personal effects | A single broken bottle of perfume |
 | Distinctive medical history | A large scar from a right-side radical mastectomy |
 
 Investigators worked the leads the 1970s gave them. The mastectomy scar pointed toward a hospital record somewhere; the popular double-knit pantsuit pointed toward a retailer; the perfume bottle was the only personal item she was left with. Dental X-rays were compared against missing-persons files and fingerprints were processed by the Indiana State Police. Nothing matched. In a community where everyone knew everyone, no one knew her.
 
-On October 18, 1976, she was buried at Fowler Cemetery in Benton County. For the next four decades she was the Benton County Jane Doe — NamUs case UP58250.
+She was buried in an unmarked grave at Fowler Cemetery in Benton County. For the next four decades she was the Benton County Jane Doe — NamUs case UP58250.
 
 ## 2019–2021: The Case Reawakens
 
@@ -74,7 +74,7 @@ The confirmation carried its own quiet tragedy. Because the family had been frac
 
 Jane Hart's name is restored. Her killing is not solved.
 
-Her death remains an active homicide investigation in Benton County. Coroner Rosenbarger has said publicly that the identification is an opportunity for anyone who remembers something — a name, a face, a connection to Chicago's Rogers Park in the mid-1970s, anything about how a sixty-nine-year-old housekeeper came to be left in an Indiana field — to finally make the record right. No suspect has been named, and nothing in the public record establishes who killed her or why. This page will state it plainly for as long as it is true: the person or persons responsible have never been identified.
+Her homicide is unsolved. WLFI reported that her death remains an active homicide investigation; Coroner Rosenbarger, speaking to the Journal & Courier, was more careful — he said he was not certain of the case's formal status, but that any new information would be acted upon. What is beyond dispute is his public ask: the identification is an opportunity for anyone who remembers something — a name, a face, a connection to Chicago's Rogers Park in the 1970s, anything about how a sixty-nine-year-old housekeeper came to be left in an Indiana field — to finally make the record right. No suspect has been named, and nothing in the public record establishes who killed her or why. This page will state it plainly for as long as it is true: the person or persons responsible have never been identified.
 
 If you have information about the death of Jane Hart, contact the Benton County Coroner's Office or the Benton County Sheriff's Office.
 
