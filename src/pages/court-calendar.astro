@@ -6,7 +6,7 @@ import Base from '../layouts/Base.astro';
 // reporting. We never cite our own articles as the source for a date, and we
 // never guess. If a date cannot be confirmed against an outside source of
 // record, it is pulled, not estimated. Bump LAST_VERIFIED on each sweep.
-const LAST_VERIFIED = 'July 20, 2026';
+const LAST_VERIFIED = 'July 21, 2026';
 const BUILD_DATE = new Date().toISOString().slice(0, 10);
 
 // Every entry below is tied to an outside source of record — a court filing, a
@@ -49,11 +49,11 @@ const entries = [
     id: 'clancy-trial',
     case: 'Lindsay Clancy',
     proceeding: 'Trial underway (jury selection)',
-    dateISO: '2026-07-20',
-    dateText: 'Monday, July 20, 2026',
+    dateISO: '2026-07-21',
+    dateText: 'Underway \u2014 jury selection began Monday, July 20, 2026',
     court: 'Plymouth County Superior Court, Plymouth, MA',
-    status: 'Pleaded not guilty; charged with three counts of first-degree murder after prosecutors dropped the duplicative strangulation counts in early July.',
-    detail: 'UNDERWAY. Jury selection began July 20 before Judge William F. Sullivan; the court plans to seat an 18-juror panel (12 jurors plus 6 alternates). Attorneys have estimated four to six weeks of trial. She is presumed innocent unless and until a jury says otherwise.',
+    status: 'Jury selection in progress (began July 20); opening statements possible late this week. Pleaded not guilty; charged with three counts of first-degree murder after prosecutors dropped the duplicative strangulation counts in early July.',
+    detail: 'UNDERWAY. Jury selection began July 20 before Judge William F. Sullivan; the court plans to seat an 18-juror panel (12 jurors plus 6 alternates). Opening statements are possible late this week. Attorneys have estimated four to six weeks of trial. She is presumed innocent unless and until a jury says otherwise.',
     src: 'https://www.cbsnews.com/boston/news/lindsay-clancy-duxbury-ma-murder-trial/',
     srcLabel: 'CBS News Boston, courtroom reporting (July 20, 2026)',
     srcType: 'Court reporting',
@@ -82,6 +82,22 @@ const entries = [
     groups: ['next', 'sentencing'],
   },
   {
+    id: 'chavez-briefing',
+    case: 'Irasema Chavez case (Mayra Velasquez charged)',
+    proceeding: 'Arlington PD\u2013FBI press conference',
+    dateISO: '2026-07-22',
+    dateText: 'Wednesday, July 22, 2026, 10:30 a.m. CT',
+    court: 'Arlington Police Department & FBI Dallas Field Office, Arlington, TX',
+    status: 'Mayra Velasquez, a DFW-area real estate agent, has been charged with capital murder in the 2012 killing of Irasema Chavez after an investigative genetic genealogy lead. The charge is an allegation; she is presumed innocent unless and until proved guilty in court.',
+    detail: 'This is a joint law-enforcement briefing, not a court proceeding. Officials are expected to detail the investigation that led to the July 16 arrest. Our case file will be updated the same day with what is disclosed.',
+    src: 'https://www.cbsnews.com/texas/news/arlington-cold-case-arrest-2012-stabbing-mayra-velasquez-july-2026/',
+    srcLabel: 'CBS News Texas, coverage of the arrest and scheduled briefing (July 20, 2026)',
+    srcType: 'News coverage of the scheduled briefing',
+    link: '/post/irasema-chavez-mayra-velasquez-arlington-cold-case/',
+    linkText: 'Read our Irasema Chavez case file',
+    groups: ['next', 'hearings'],
+  },
+  {
     id: 'colt-gray-plea',
     case: 'Colt Gray',
     proceeding: 'Plea and sentencing hearing',
@@ -98,32 +114,49 @@ const entries = [
     groups: ['next', 'hearings'],
   },
   {
+    id: 'williams-penalty-phase',
+    case: 'Jermaine Williams Sr.',
+    proceeding: 'Death-penalty phase (underway)',
+    dateISO: '2026-07-21',
+    dateText: 'Underway \u2014 began Tuesday, July 21, 2026',
+    court: 'Flagler County Circuit Court, Bunnell, FL',
+    status: 'Convicted July 17, 2026, of first-degree premeditated murder in the stabbing death of his wife. The same jury now hears the death-penalty phase, which began July 21.',
+    detail: 'The penalty phase determines whether the jury recommends a death sentence. This entry tracks a phase in progress, not a future date.',
+    src: 'https://flaglerlive.com/williams-verdict/',
+    srcLabel: 'FlaglerLive, courtroom reporting (July 2026)',
+    srcType: 'Court reporting',
+    link: null,
+    linkText: null,
+    groups: ['next', 'trials'],
+  },
+  {
     id: 'colin-gray-sentencing',
     case: 'Colin Gray',
     proceeding: 'Sentencing',
-    dateISO: '2026-07-28',
-    dateText: 'Tuesday–Wednesday, July 28–29, 2026',
+    dateISO: '2026-07-30',
+    dateText: 'Thursday, July 30, 2026, 9:00 a.m.',
     court: 'Barrow County Superior Court, Winder, GA',
     status: 'Convicted March 3, 2026, on all counts — including second-degree murder, involuntary manslaughter, and reckless conduct — in connection with the Apalachee High School shooting carried out by his son.',
-    detail: 'This is a sentencing hearing, not a trial; the court has set two days. Prosecutors argued at trial that he ignored repeated warnings about his son’s mental health and provided the AR-style rifle used in the shooting. The jury returned its verdict on March 3, 2026.',
-    src: 'https://www.atlantanewsfirst.com/2026/07/11/plea-deal-sentencing-scheduled-accused-apalachee-high-school-shooter/',
-    srcLabel: 'Atlanta News First, court-filing reporting (July 11, 2026)',
+    detail: 'This is a sentencing hearing, not a trial. The hearing was moved from the earlier July 28–29 setting and begins at 9:00 a.m. Prosecutors argued at trial that he ignored repeated warnings about his son’s mental health and provided the AR-style rifle used in the shooting. The jury returned its verdict on March 3, 2026.',
+    src: 'https://www.wrdw.com/2026/07/20/sentencing-date-moved-father-accused-apalachee-high-school-shooter/',
+    srcLabel: 'WRDW, court reporting on the date change (July 20, 2026)',
     srcType: 'Court reporting',
     link: null,
     linkText: null,
     groups: ['next', 'sentencing'],
   },
-  // GW7 (verified 2026-07-20): press phrasing is "end of August"; 8/31 stands on the
-  // Globe's arraignment reporting. CONFIRM VIA BRISTOL COUNTY DOCKET before 8/31.
+  // LW (2026-07-21): softened. Press phrasing is "end of August"; NO primary source
+  // states a hard 8/31. dateISO below is a SORT KEY ONLY — dateText carries the truth.
+  // Publish a hard date only when the Bristol County docket confirms one.
   {
     id: 'peck-pretrial',
     case: 'Dianne Curry Peck',
-    proceeding: 'Pretrial hearing',
-    dateISO: '2026-08-31',
-    dateText: 'Monday, August 31, 2026',
+    proceeding: 'Pretrial conference (expected)',
+    dateISO: '2026-08-24',
+    dateText: 'Expected late August 2026 (date not yet confirmed by court records)',
     court: 'Bristol County Superior Court, Fall River, MA',
     status: 'Pleaded not guilty; released on $10,000 cash bail. No trial date set.',
-    detail: 'The 1985 Mansfield newborn case — known for four decades as Baby Boy Doe, or the Mansfield Baby Boy Doe case — was reopened using forensic genetic genealogy.',
+    detail: 'The 1985 Mansfield newborn case — known for four decades as Baby Boy Doe, or the Mansfield Baby Boy Doe case — was reopened using forensic genetic genealogy. A previously reported August 31 setting has not been confirmed by court records; this entry will carry the docketed date once one is public.',
     src: 'https://www.bostonglobe.com/2026/06/30/metro/dianne-curry-newborn-mansfield-arraignment/',
     srcLabel: 'The Boston Globe, arraignment reporting (June 30, 2026)',
     srcType: 'Court reporting',
@@ -318,7 +351,7 @@ const jsonld = {
       '@id': 'https://cassiancreed.com/court-calendar#faq',
       mainEntity: [
         { '@type': 'Question', name: 'When does the Lindsay Clancy trial start?', acceptedAnswer: { '@type': 'Answer', text: 'It is underway. Jury selection began Monday, July 20, 2026, in Plymouth County Superior Court before Judge William F. Sullivan, who plans to seat an 18-juror panel — 12 jurors and 6 alternates. Attorneys have estimated four to six weeks. Prosecutors dropped the three duplicative strangulation counts in early July, leaving three counts of first-degree murder. She has pleaded not guilty and is presumed innocent.' } },
-        { '@type': 'Question', name: 'What is the next court date for Dianne Curry Peck?', acceptedAnswer: { '@type': 'Answer', text: 'August 31, 2026, in Bristol County Superior Court in Fall River. She pleaded not guilty and was released on $10,000 cash bail. No trial date has been set.' } },
+        { '@type': 'Question', name: 'What is the next court date for Dianne Curry Peck?', acceptedAnswer: { '@type': 'Answer', text: 'A pretrial conference is expected in late August 2026 in Bristol County Superior Court in Fall River; the exact date has not yet been confirmed by court records. She pleaded not guilty and was released on $10,000 cash bail. No trial date has been set.' } },
         { '@type': 'Question', name: 'Does Brooke George have a trial date?', acceptedAnswer: { '@type': 'Answer', text: 'No. There is no publicly verified court date. She is reported to be detained pending proceedings, but the details of the allegation come from an advocacy group rather than from UAE authorities or any court, and no charge has been confirmed on the public record.' } },
         { '@type': 'Question', name: 'Is Karmelo Anthony still facing an upcoming court date?', acceptedAnswer: { '@type': 'Answer', text: 'Not one that has been publicly scheduled. He was convicted and sentenced in June 2026, and new-trial and recusal motions were filed on July 7. No hearing date on those motions has been confirmed.' } },
         { '@type': 'Question', name: 'Is Rex Heuermann still going to trial?', acceptedAnswer: { '@type': 'Answer', text: 'No. That case is over. It concluded with a guilty plea in April 2026 and sentencing in June 2026. There is no upcoming court date.' } },
@@ -338,7 +371,7 @@ const jsonld = {
     <p class="evidence evidence--accent">Court Calendar</p>
     <h1>True Crime Court Calendar: Trial Dates &amp; Hearings 2026</h1>
     <p class="cal-answer">
-      Lindsay Clancy&rsquo;s murder trial is <strong>underway</strong> &mdash; jury selection began July 20 in Plymouth County. Nestor Hernandez Melgar is sentenced <strong>July 22</strong> in Snohomish County. Colt Gray&rsquo;s non-negotiated plea and sentencing hearing begins <strong>July 24</strong> in Barrow County, with Colin Gray&rsquo;s sentencing to follow <strong>July 28&ndash;29</strong>. Dianne Curry Peck is due in Bristol County Superior Court <strong>August 31</strong>, and Yvonne &ldquo;Missy&rdquo; Woods is sentenced <strong>September 8</strong> in Jefferson County, Colorado.
+      Lindsay Clancy&rsquo;s murder trial is <strong>underway</strong> &mdash; jury selection is in progress, with opening statements possible late this week. Nestor Hernandez Melgar is sentenced <strong>July 22</strong> in Snohomish County, the same day Arlington police and the FBI brief the <strong>Irasema Chavez</strong> case at 10:30 a.m. CT. Jermaine Williams Sr.&rsquo;s death-penalty phase is underway in Flagler County. Colt Gray&rsquo;s non-negotiated plea and sentencing hearing begins <strong>July 24</strong> in Barrow County, with Colin Gray&rsquo;s sentencing to follow <strong>July 30</strong>. Dianne Curry Peck&rsquo;s next appearance is <strong>expected late August</strong> (not yet confirmed by court records), and Yvonne &ldquo;Missy&rdquo; Woods is sentenced <strong>September 8</strong> in Jefferson County, Colorado.
     </p>
     <p class="cal-fresh">
       <strong>Last verified: {LAST_VERIFIED}.</strong> Court dates move. Every entry below is checked against the public record, and each one carries its source. Confirm with the court before you travel.
@@ -563,7 +596,7 @@ const jsonld = {
       <p>It is underway. Jury selection began Monday, July 20, 2026, in Plymouth County Superior Court before Judge William F. Sullivan, who plans to seat an 18-juror panel — 12 jurors and 6 alternates. Attorneys have estimated four to six weeks. Prosecutors dropped the three duplicative strangulation counts in early July, leaving three counts of first-degree murder. She has pleaded not guilty and is presumed innocent.</p>
 
       <h3>What is the next court date for Dianne Curry Peck?</h3>
-      <p>August 31, 2026, in Bristol County Superior Court in Fall River. She pleaded not guilty and was released on $10,000 cash bail. No trial date has been set.</p>
+      <p>A pretrial conference is expected in late August 2026 in Bristol County Superior Court in Fall River; the exact date has not yet been confirmed by court records. She pleaded not guilty and was released on $10,000 cash bail. No trial date has been set.</p>
 
       <h3>Does Brooke George have a trial date?</h3>
       <p>No. There is no publicly verified court date. She is reported to be detained pending proceedings, but the details of the allegation come from an advocacy group rather than from UAE authorities or any court, and no charge has been confirmed on the public record.</p>
