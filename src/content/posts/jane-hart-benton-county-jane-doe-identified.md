@@ -1,5 +1,6 @@
 ---
 title: "Jane Hart Has Her Name Back: The Benton County Jane Doe, Identified After 50 Years"
+description: "Jane Hart, 69, was the Benton County Jane Doe for fifty years. How the DNA Doe Project restored her name — and why her 1976 homicide remains unsolved."
 pubDate: 2026-07-20
 tag: "Case Files"
 victim: "Jane Hart"
