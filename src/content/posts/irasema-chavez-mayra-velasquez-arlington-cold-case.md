@@ -44,6 +44,12 @@ Public reporting specifies what that 2016 composite predicted: long brown hair a
 
 In November 2024, Arlington homicide detectives consulted the FBI Dallas Field Office about a different tool: investigative genetic genealogy. Rather than predicting appearance, IGG looks for biological relatives among consenting database users and uses traditional genealogy research to build family lines toward an investigative candidate. Officials say that joint work produced a significant lead in early 2026, and that detectives then developed additional evidence supporting an arrest warrant. What that additional evidence is, which genealogy resources were used, and how the family-tree research proceeded have not been disclosed.
 
+## Watch: two DNA methods, one cold case
+
+<div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;margin:1.2rem 0">
+<iframe loading="lazy" src="https://www.youtube.com/embed/AumxrlzJjmg" title="Irasema Chavez: Two DNA Methods, One 2012 Arlington Cold Case" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;border-radius:12px" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+
 ## A lead, not a verdict
 
 The method deserves precision, because it is routinely overstated in coverage.
