@@ -1,6 +1,6 @@
 ---
 title: "The Nestor Hernandez Melgar Case: What Happened to Lindsay Geary"
-description: "Lindsay Geary, 36, was found dead in her Everett apartment in 2024. Nestor Hernandez Melgar was convicted of her murder June 22, 2026; sentencing July 22."
+description: "Lindsay Geary, 36, was found dead in her Everett apartment in 2024. Nestor Hernandez Melgar was convicted of aggravated first-degree murder and, on July 22, 2026, sentenced to life without the possibility of parole."
 pubDate: 2026-07-15
 tag: Case Files
 featured: false
@@ -13,7 +13,7 @@ featured: false
 .status-box li{margin:.2rem 0}
 </style>
 
-Lindsay Geary, a 36-year-old woman from Everett, Washington, was found dead on her bathroom floor on the night of November 16, 2024. Her boyfriend, Nestor Hernandez Melgar, 29, called 911 and said she had hanged herself. After a four-week trial, a Snohomish County jury reached a different conclusion. On June 22, 2026, Melgar was convicted on all counts — first-degree murder, first-degree burglary, and violation of a no-contact order, each carrying a domestic-violence aggravator. He is convicted and awaiting sentencing, set for July 22, 2026.
+Lindsay Geary, a 36-year-old woman from Everett, Washington, was found dead on her bathroom floor on the night of November 16, 2024. Her boyfriend, Nestor Hernandez Melgar, 29, called 911 and said she had hanged herself. After a four-week trial, a Snohomish County jury reached a different conclusion. On June 22, 2026, Melgar was convicted on all counts — aggravated first-degree murder, first-degree murder, first-degree burglary, and violation of a no-contact order, each carrying a domestic-violence aggravator. On July 22, 2026, Judge Cindy Larsen sentenced him to life in prison without the possibility of parole.
 
 <div class="capture-cta" style="border:1px solid var(--rule,#3a332c);border-left:4px solid var(--accent,#e0563b);background:var(--card,#1a1613);color:var(--ink,#f6f1ea);padding:1.25rem 1.5rem;margin:1.75rem 0;border-radius:8px">
 <p style="margin:0 0 .4rem;font-size:1.12rem;font-weight:700;line-height:1.3">Get the case files the news won't run — free, straight to your inbox.</p>
@@ -22,11 +22,13 @@ Lindsay Geary, a 36-year-old woman from Everett, Washington, was found dead on h
 </div>
 
 <aside class="status-box">
-  <p class="status-box__k">Case status — last verified July 15, 2026</p>
+  <p class="status-box__k">Case status — last verified July 22, 2026</p>
   <ul>
-    <li><strong>Status:</strong> Convicted, awaiting sentencing</li>
-    <li><strong>Convicted:</strong> June 22, 2026 — first-degree murder, first-degree burglary, and violation of a court order (no-contact order); each of the three offenses carried a special domestic-violence aggravator</li>
-    <li><strong>Sentencing:</strong> July 22, 2026, Snohomish County Superior Court</li>
+    <li><strong>Status:</strong> Sentenced</li>
+    <li><strong>Sentence (July 22, 2026):</strong> Life in prison without the possibility of parole on the aggravated first-degree murder count, with a concurrent 34 months on the first-degree burglary count</li>
+    <li><strong>Convicted:</strong> June 22, 2026 — aggravated first-degree murder, first-degree murder, first-degree burglary, and violation of a court order (no-contact order); each count carried a special domestic-violence aggravator. At sentencing, the first-degree murder and court-order counts were vacated on double-jeopardy grounds.</li>
+    <li><strong>Appeal:</strong> 30 days from sentencing to file</li>
+    <li><strong>Judge:</strong> Snohomish County Superior Court Judge Cindy Larsen</li>
     <li><strong>Defendant:</strong> Nestor Hernandez Melgar, 29</li>
     <li><strong>Victim:</strong> Lindsay Geary, 36</li>
   </ul>
@@ -48,13 +50,21 @@ Melgar was arrested at the scene in connection with the death. At the time, an a
 
 ## The Charges
 
-Melgar was ultimately tried on **three offenses**, and the jury convicted him of all three:
+On June 22, 2026, the jury convicted Melgar on **four counts**:
 
-1. **First-degree murder**
-2. **First-degree burglary**
-3. **Violation of a court order** — the domestic-violence no-contact order
+1. **Aggravated first-degree murder** — the count that carries the life sentence
+2. **First-degree murder**
+3. **First-degree burglary**
+4. **Violation of a court order** — the domestic-violence no-contact order
 
-Each of those three offenses carried a **special domestic-violence aggravator**. It is worth being precise about what that means, because it is easy to get wrong (an earlier write-up of this case mislabeled it as "four charges"). The domestic-violence aggravator is **not** a fourth, separate charge. It is an enhancement attached to each of the three counts — a formal finding that the offense was a crime of domestic violence, which can carry consequences at sentencing. So the correct way to state it is: three offenses, each with a DV aggravator, not four charges.
+Each count also carried a **special domestic-violence aggravator** — a formal finding that the offense was a crime of domestic violence, which can weigh at sentencing. The aggravator is not itself a separate charge; it is an enhancement attached to the counts above.
+
+At sentencing on July 22, 2026, Judge Cindy Larsen **vacated** two of the four counts — first-degree murder and violation of a court order — on **double-jeopardy** grounds, because they overlapped with the greater aggravated first-degree murder count. That left the aggravated first-degree murder conviction, which fixes the sentence, and the first-degree burglary conviction.
+
+<aside class="status-box">
+  <p class="status-box__k">A note on this correction</p>
+  <p style="margin:.25rem 0 0">An earlier version of this page described the case as <strong>three offenses, not four</strong>. That was our reading of the June conviction reporting, which listed three charges alongside the domestic-violence aggravator. The sentencing record on July 22 made the fuller charging clear: there was a distinct <strong>aggravated first-degree murder</strong> count — the one that carries life without parole — in addition to the ordinary first-degree murder count. We have corrected the count here to match the court record, and we are noting the change rather than making it silently.</p>
+</aside>
 
 ## The Prosecution's Case
 
@@ -112,7 +122,7 @@ The jury weighed these competing bodies of evidence and resolved them in the Sta
 
 ## The Verdict
 
-On June 22, 2026, after a four-week trial, the Snohomish County jury found Nestor Hernandez Melgar guilty on all counts: first-degree murder, first-degree burglary, and violation of a no-contact order, each with a domestic-violence aggravator.
+On June 22, 2026, after a four-week trial, the Snohomish County jury found Nestor Hernandez Melgar guilty on all counts: aggravated first-degree murder, first-degree murder, first-degree burglary, and violation of a no-contact order, each with a domestic-violence aggravator.
 
 The verdict is notable precisely because of the ambiguity described above. The medical examiner had left the manner of death "undetermined," and Melgar's DNA was absent from Geary's neck. Yet the jury — applying the criminal standard of proof beyond a reasonable doubt to the full record, not the ME's manner-of-death classification — reached the conclusion the examiner's report did not: that this was a homicide, and that Melgar was responsible. A jury and a medical examiner answer different questions under different standards, and here the jury resolved what the ME's science alone could not.
 
@@ -120,42 +130,38 @@ Cassian Creed compiled this Neural Edge Publishing case file from the Snohomish 
 
 ## Sentencing
 
-Sentencing is scheduled for **July 22, 2026**, in Snohomish County Superior Court. No sentence has been imposed yet.
+On **July 22, 2026**, in Snohomish County Superior Court, Judge Cindy Larsen sentenced Melgar to **life in prison without the possibility of parole**.
 
-The following is general Washington framework, not a prediction of any specific outcome in this case:
+That sentence flows from the aggravated first-degree murder conviction. Under Washington law, aggravated first-degree murder carries a **presumptive sentence of life without the possibility of parole** — the most serious sentence available in the state. Judge Larsen also imposed **34 months** on the first-degree burglary count, to run **concurrently** with the life term. The first-degree murder and court-order counts were vacated on double-jeopardy grounds and carry no separate sentence.
 
-- First-degree murder is a **Class A felony** in Washington.
-- Under the state's Sentencing Reform Act (SRA), sentences are generally set within a **standard range** determined by the seriousness of the offense and the defendant's **offender score** (which reflects criminal history).
-- A **domestic-violence aggravator**, when found, can support an **exceptional sentence above the standard range**.
-
-How those pieces apply here is for the sentencing judge to decide on July 22. This page makes no prediction about the length or terms of Melgar's sentence.
+Melgar has **30 days** from sentencing to file an appeal.
 
 ## What Happens Next
 
-The next milestone is the July 22, 2026 sentencing hearing in Snohomish County Superior Court, where the court will impose sentence on all three counts. This page will be kept current as the case moves forward, including after sentencing.
+With sentencing complete, the next milestone is the appeal. Melgar has 30 days from the July 22, 2026 sentencing to file. This page will be kept current as the appeal window runs and if any appeal is filed.
 
 ## Timeline
 
 - **~September 2024 (approximate):** A domestic-violence no-contact order is issued, roughly two months before Geary's death.
 - **~November 8, 2024 (approximate):** Everett police are called over an alleged attempted break-in, roughly eight days before her death. (Multiple prior domestic-dispute police contacts also preceded this.)
 - **November 16, 2024:** Lindsay Geary, 36, is found dead on the bathroom floor of her Everett apartment; Melgar is arrested at the scene.
-- **After the incident:** Charges are filed — first-degree murder, first-degree burglary, and violation of a no-contact order, each with a DV aggravator.
+- **After the incident:** Charges are filed — aggravated first-degree murder, first-degree murder, first-degree burglary, and violation of a no-contact order, each with a DV aggravator.
 - **December 27, 2025:** A draft "suicide-note"-like message is discovered on Geary's phone, more than a year after her death (per the Herald).
 - **~Mid-2025 (approximate):** The medical examiner's report is completed, roughly seven months after death; cause ruled asphyxia due to ligature compression, manner "undetermined."
 - **June 1, 2026:** Trial opens; defense delivers its opening statement.
 - **June 17, 2026:** Closing arguments.
-- **June 22, 2026:** Jury convicts Melgar on all counts.
-- **July 22, 2026:** Sentencing set in Snohomish County Superior Court.
+- **June 22, 2026:** Jury convicts Melgar on all four counts — aggravated first-degree murder, first-degree murder, first-degree burglary, and violation of a court order.
+- **July 22, 2026:** Judge Cindy Larsen sentences Melgar to life without the possibility of parole on the aggravated first-degree murder count (34 months concurrent on the burglary count); the first-degree murder and court-order counts are vacated on double-jeopardy grounds.
 
 ## Follow the Lindsay Geary Case
 
 This page is the canonical hub for the Nestor Hernandez Melgar case. For deeper analysis of specific threads, these companion pages go further:
 
-- **[Sentencing updates and lookup](/post/nestor-hernandez-melgar-sentencing/)** — the live page tracking the July 22, 2026 sentencing hearing and any sentence imposed.
+- **[Sentencing updates and lookup](/post/nestor-hernandez-melgar-sentencing/)** — the page covering the July 22, 2026 sentencing and the life-without-parole term imposed.
 - **[A murder staged as a suicide: the narrative](/post/murder-staged-as-suicide-hernandez-melgar/)** — the full story of the night of November 16, 2024, and the staged-suicide theory the State proved at trial.
 - **[Anatomy of a murder trial](/post/anatomy-of-a-murder-trial-hernandez-melgar/)** — a closer look at how prosecutors won a murder conviction on circumstantial evidence despite an "undetermined" manner of death.
 - **[How Washington courts work](/post/how-washington-courts-work-hernandez-melgar/)** — a plain-English explainer on charges, aggravators, and sentencing in Washington, using this case as the guide.
-- **[Court calendar](/court-calendar/)** — upcoming hearing dates, including the July 22 sentencing.
+- **[Court calendar](/court-calendar/)** — tracked hearing and sentencing dates across the cases we follow.
 - **[Voir dire simulator](/voir-dire-simulator/)** — an interactive look at how a jury like the one in this case gets selected.
 
 ---
@@ -165,9 +171,10 @@ This page is the canonical hub for the Nestor Hernandez Melgar case. For deeper 
 ## Sources
 
 - Ian Davis-Leonard, "Jury convicts man in Everett murder staged as suicide," *HeraldNet* (The Daily Herald), June 22, 2026.
+- Ian Davis-Leonard, "Life sentence for man convicted of girlfriend's 2024 murder in Everett," *HeraldNet* (The Daily Herald), July 22, 2026.
 - Snohomish County Superior Court record.
 
-*Last verified: July 15, 2026.*
+*Last verified: July 22, 2026.*
 
 
 <div class="capture-cta" style="border:1px solid var(--rule,#3a332c);border-left:4px solid var(--accent,#e0563b);background:var(--card,#1a1613);color:var(--ink,#f6f1ea);padding:1.25rem 1.5rem;margin:1.75rem 0;border-radius:8px">
