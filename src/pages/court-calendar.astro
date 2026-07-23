@@ -64,24 +64,6 @@ const entries = [
     groups: ['next', 'trials'],
   },
   {
-    id: 'hernandez-melgar-sentencing',
-    case: 'Nestor Hernandez Melgar',
-    proceeding: 'Sentencing',
-    dateISO: '2026-07-22',
-    dateText: 'Wednesday, July 22, 2026',
-    court: 'Snohomish County Superior Court, Everett, WA',
-    status: 'Convicted by jury of first-degree murder, first-degree burglary, and violation of a court order.',
-    detail: 'This is a sentencing hearing, not a trial. The jury returned its verdict on June 22, 2026.',
-    src: 'https://www.heraldnet.com/2026/06/22/jury-convicts-man-in-everett-murder-staged-as-suicide/',
-    srcLabel: 'The Everett Herald, courtroom reporting (June 22, 2026)',
-    srcType: 'Court reporting',
-    link: '/post/nestor-hernandez-melgar-sentencing-day-primer/',
-    linkText: 'Read the July 22 sentencing primer',
-    link2: '/post/murder-staged-as-suicide-hernandez-melgar/',
-    linkText2: 'How the jury convicted',
-    groups: ['next', 'sentencing'],
-  },
-  {
     id: 'chavez-briefing',
     case: 'Irasema Chavez case (Mayra Velasquez charged)',
     proceeding: 'Arlington PD\u2013FBI press conference',
@@ -268,6 +250,17 @@ const completed = [
     link: '/post/rex-heuermann-sentencing-june-17-what-the-plea-established/',
     linkText: 'Read what the plea established — and what it did not',
   },
+  {
+    case: 'Nestor Hernandez Melgar',
+    where: 'Snohomish County Superior Court, Everett, WA',
+    status: 'Sentenced July 22, 2026, to life in prison without the possibility of parole. A jury convicted him June 22, 2026, on four counts — aggravated first-degree murder, first-degree murder, first-degree burglary, and violation of a court order, each with a domestic-violence aggravator.',
+    note: 'Judge Cindy Larsen imposed the life term on the aggravated first-degree murder count, with a concurrent 34 months on the burglary count. The first-degree murder and court-order counts were vacated on double-jeopardy grounds. He has 30 days to appeal.',
+    src: 'https://www.heraldnet.com/2026/07/22/life-sentence-for-man-convicted-of-girlfriends-2024-murder-in-everett/',
+    srcLabel: 'The Everett Herald, courtroom reporting (July 22, 2026)',
+    srcType: 'Court reporting',
+    link: '/post/nestor-hernandez-melgar-lindsay-geary-case/',
+    linkText: 'Read the full Lindsay Geary case file',
+  },
 ];
 
 // A date that has passed is not a "next court date." Nothing filtered these out, so a
@@ -371,7 +364,7 @@ const jsonld = {
     <p class="evidence evidence--accent">Court Calendar</p>
     <h1>True Crime Court Calendar: Trial Dates &amp; Hearings 2026</h1>
     <p class="cal-answer">
-      Lindsay Clancy&rsquo;s murder trial is <strong>underway</strong> &mdash; jury selection is in progress, with opening statements possible late this week. Nestor Hernandez Melgar is sentenced <strong>July 22</strong> in Snohomish County, the same day Arlington police and the FBI brief the <strong>Irasema Chavez</strong> case at 10:30 a.m. CT. Jermaine Williams Sr.&rsquo;s death-penalty phase is underway in Flagler County. Colt Gray&rsquo;s non-negotiated plea and sentencing hearing begins <strong>July 24</strong> in Barrow County, with Colin Gray&rsquo;s sentencing to follow <strong>July 30</strong>. Dianne Curry Peck&rsquo;s next appearance is <strong>expected late August</strong> (not yet confirmed by court records), and Yvonne &ldquo;Missy&rdquo; Woods is sentenced <strong>September 8</strong> in Jefferson County, Colorado.
+      Lindsay Clancy&rsquo;s murder trial is <strong>underway</strong> &mdash; jury selection is in progress, with opening statements possible late this week. Nestor Hernandez Melgar was sentenced <strong>July 22</strong> to life without the possibility of parole in Snohomish County, the same day Arlington police and the FBI briefed the <strong>Irasema Chavez</strong> case. Jermaine Williams Sr.&rsquo;s death-penalty phase is underway in Flagler County. Colt Gray&rsquo;s non-negotiated plea and sentencing hearing begins <strong>July 24</strong> in Barrow County, with Colin Gray&rsquo;s sentencing to follow <strong>July 30</strong>. Dianne Curry Peck&rsquo;s next appearance is <strong>expected late August</strong> (not yet confirmed by court records), and Yvonne &ldquo;Missy&rdquo; Woods is sentenced <strong>September 8</strong> in Jefferson County, Colorado.
     </p>
     <p class="cal-fresh">
       <strong>Last verified: {LAST_VERIFIED}.</strong> Court dates move. Every entry below is checked against the public record, and each one carries its source. Confirm with the court before you travel.
