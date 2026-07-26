@@ -28,18 +28,11 @@ const jsonld = [
     "inLanguage": "en-US",
     "genre": ["True Crime", "Nonfiction"],
     "offers": [{ "@type": "Offer", "price": "1.99", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://cassiancreed.beehiiv.com/products/the-frame", "seller": { "@id": "https://cassiancreed.com/#org" } }]
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "Book",
-    "name": "No Accident: The Mackenzie Shirilla Story",
-    "author": { "@id": "https://cassiancreed.com/#cassian-creed" },
-    "publisher": { "@id": "https://cassiancreed.com/#org" },
-    "bookFormat": "https://schema.org/EBook",
-    "inLanguage": "en-US",
-    "genre": ["True Crime", "Nonfiction"],
-    "offers": [{ "@type": "Offer", "price": "1.99", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://cassiancreed.beehiiv.com/products/no-accident-the-mackenzie-shirilla-story", "seller": { "@id": "https://cassiancreed.com/#org" } }]
   }
+  // NEP-CWK-NO-ACCIDENT-WEBSITE-REMOVAL-0726: the third Book node
+  // ("No Accident: The Mackenzie Shirilla Story") was removed with its catalog
+  // card. Title withdrawn from the site by ruling — do not reinstate the node,
+  // the Offer, or the product URL.
 ];
 ---
 <Base title="Cassian Creed Books: Complete True-Crime Case Files" description="Sourced, victim-first true-crime books from Neural Edge Publishing — each case told from the record, plus a free Voir Dire guide." jsonld={jsonld}>
@@ -83,22 +76,11 @@ const jsonld = [
       </div>
     </div>
 
-    <div class="bk bk--ink">
-      <div class="bk__cover">
-        <span class="bk__ribbon bk__ribbon--live">On sale</span>
-        <span class="bk__ctitle">No Accident</span>
-        <span class="bk__csub">The Mackenzie Shirilla Story</span>
-      </div>
-      <div class="bk__meta">
-        <h2 class="bk__title">No Accident: The Mackenzie Shirilla Story</h2>
-        <p class="bk__hook">Two young men—Dominic Russo, 20, and Davion Flanagan, 19—died in what looked like a pre-dawn crash in Strongsville, Ohio.</p>
-        <p class="bk__desc">The event-data recorder and GPS evidence told a different story. <em>No Accident</em> reconstructs the case from the public record, explains the evidence that led to Mackenzie Shirilla’s 2023 conviction, and keeps Dominic Russo and Davion Flanagan at the center.</p>
-        <div class="bk__cta">
-          <p class="bk__price">$1.99</p>
-          <a class="btn bk__buy" href="https://cassiancreed.beehiiv.com/products/no-accident-the-mackenzie-shirilla-story" target="_blank" rel="noopener noreferrer">Get the book →</a>
-        </div>
-      </div>
-    </div>
+    {/* NEP-CWK-NO-ACCIDENT-WEBSITE-REMOVAL-0726: the third shelf card
+        ("No Accident: The Mackenzie Shirilla Story") was removed here — card,
+        cover block, sales copy, price and buy CTA. Title withdrawn from the
+        site by ruling. The .bk--ink theme rules are retained in the stylesheet
+        below and are unused until a future title claims them. */}
 
   </div></div>
 
