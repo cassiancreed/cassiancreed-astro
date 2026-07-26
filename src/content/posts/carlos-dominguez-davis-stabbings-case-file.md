@@ -49,9 +49,11 @@ Because of an unusual arithmetic problem.
 
 When a California defendant is found not guilty by reason of insanity, the court commits him to a state hospital rather than sentencing him to prison. Penal Code § 1026.5(a)(1) caps how long that commitment can run: it is the longest prison term that *could* have been imposed for the offenses of which the person was convicted, including enhancements.
 
-Here, the only guilty verdicts were two counts of involuntary manslaughter with weapon enhancements. Reporting on the maximum exposure puts that at roughly **six years and four months** — and Dominguez has been in continuous custody since May 2023. With credits applied, that maximum is effectively already exhausted.
+Here, the only guilty verdicts were two counts of involuntary manslaughter with weapon enhancements — among the least serious dispositions available in a case that began as a double murder prosecution. Dominguez has been in continuous custody since May 2023.
 
-So the August 19 hearing does not decide punishment. It decides *placement* — which state hospital — against a backdrop where the ordinary statutory clock has already run out. Prosecutors are expected to petition under § 1026.5(b) for an extended commitment: two years at a time, renewable, and only if the state proves **beyond a reasonable doubt** that he represents a substantial danger of physical harm to others by reason of mental disease or defect. Courts have read that standard to require serious difficulty controlling dangerous behavior.
+The § 1026.5(a)(1) maximum will be fixed by the commitment order. Coverage has put it at roughly six years and four months, and suggested time already served largely consumes it; that figure appears in no record we could read, and how pre-commitment custody is credited against the maximum is a genuine legal question. The order settles both.
+
+What is not in doubt is the mechanism waiting behind it. If the state wants to hold him past the § 1026.5(a)(1) maximum, whatever that maximum turns out to be, it must petition under § 1026.5(b) for an extended commitment: two years at a time, renewable, and only on proof **beyond a reasonable doubt** that he represents a substantial danger of physical harm to others by reason of mental disease or defect. California courts have read that standard to require serious difficulty controlling dangerous behavior — a gloss from the case law under § 1026.5(b), not from the statute's own words.
 
 The August 5 setting is described as the procedural step preceding the commitment order. Its precise scope has not been spelled out in any account we could find, and several major outlets do not mention that date at all. Victim impact statements are expected on August 19.
 
@@ -85,7 +87,11 @@ At UC Davis he was a fourth-year computer science major in the University Honors
 
 He was also working full time as a software engineer while finishing his degree. Since March 2023 he had been at XRAI Glass, building augmented-reality glasses that display live subtitles for people who are deaf or hard of hearing. He had interned at Audible and held a full-time offer there, and was planning a move to New York.
 
-He was riding his bicycle home through Sycamore Park when he was attacked. UC Davis named a pathway in his memory and established a fund in his name.
+His father described him not by any of that, but this way: "Karim was a bundle of energy. A free spirit, someone who wanted to see goodness around him."
+
+He was riding his bicycle home through Sycamore Park when he was attacked. It was a route his family traveled every day.
+
+UC Davis awarded his degree posthumously, and his father walked in his place at commencement. The city named the Sycamore Park bike path the Karim Abou Najm Pathway, and a public artwork — *Fiat Lux*, in steel, glass and stone — was installed there. His family established two funds in his name: a memorial undergraduate research award and a change-makers prize, both still running in the 2026 cycle.
 
 ### Kimberlee Guillory, 64
 
@@ -93,7 +99,17 @@ She was stabbed through the wall of her tent in an encampment near Second and L 
 
 **The jury acquitted Dominguez of the attempted murder count concerning her.** There is no conviction and no adverse finding of any kind arising from that attack. Any account of this case that leaves that out is telling it wrong.
 
-We would like to tell you more about who she is. She has not spoken publicly, and we have not approached her. Victim impact statements are expected at the August 19 hearing; whether she gives one is hers to decide.
+She has spoken for herself twice, and both times are on the record.
+
+The first was from a hospital bed in **May 2023** — days after the attack, and three years before any jury heard the case. Speaking to a reporter then, she said her friends in the nearby tents came when she screamed: "We thought that we would be safe all together." Of the arrest, she said, "I'm glad that they got him. I was praying for that, that nobody else will have to go through this." And: "Me and the other two victims never did anything to him. There was no reason for him to come after people that he didn't even know."
+
+Those were her words in 2023. In 2026, a jury acquitted on the count concerning her. Both of those things are true, and the second does not cancel the first.
+
+The second time she spoke was in a courtroom. She testified in person at the 2025 trial, and became tearful when her own 911 call was played for the jury.
+
+In that same 2023 interview she described her circumstances. She was 64 at the time. She had been unhoused for about two and a half years, since leaving her home to care for a daughter with pancreatic cancer; her daughter died. She stayed unhoused in part because shelters would not take her dog. And she said: "I'm grateful that I'm alive and that I wasn't killed."
+
+Victim impact statements are expected at the August 19 hearing. Whether she gives one is hers to decide.
 
 ## What Actually Happened in the Two Trials
 
@@ -119,7 +135,7 @@ The standard is Penal Code § 25(b). As written, it requires a defendant to prov
 
 The hearing lasted about fifteen minutes. Three mental health experts had diagnosed schizophrenia and were prepared to testify that Dominguez could not appreciate the nature, quality, or wrongfulness of his acts. Judge McAdam found him legally insane, saying the evidence "was overwhelming at trial." He ordered an evaluation by CONREP — California's Conditional Release Program, which assesses people committed after an insanity finding — and the case was set for a commitment hearing.
 
-District Attorney Melinda Aiello said afterward: "Violent cases involving schizophrenia, or other serious mental illnesses, are both complex and challenging." She added that while the outcome was not what her office hoped for, "we respect the role of the jury in our justice system."
+Melinda Aiello, speaking for the Yolo County District Attorney's Office, said afterward: "Violent cases involving schizophrenia, or other serious mental illnesses, are both complex and challenging." She added that while the outcome was not what her office hoped for, "we respect the role of the jury in our justice system."
 
 ## The Part That Confuses Everyone
 
@@ -172,9 +188,9 @@ We have written separately on [what a Racial Justice Act violation means](/post/
 
 **The extended-commitment petition.** This is the real question. If prosecutors petition under § 1026.5(b), they must prove dangerousness beyond a reasonable doubt, and the commitment is renewable in two-year increments. That process — not the criminal case — now determines how long Dominguez is held.
 
-**Which hospital.** The August 19 hearing decides placement. He was previously restored to competency at Atascadero State Hospital, but no facility has been designated for this commitment.
+**The maximum term, and how custody credits apply to it.** Both belong in the commitment order. That document is the thing to read.
 
-**Whether the August 5 hearing produces anything public.** Its scope has not been described in detail anywhere.
+**Which hospital.** The August 19 hearing decides placement. He was previously restored to competency at Atascadero State Hospital, but no facility has been designated for this commitment.
 
 **The shape of the whole thing.** Step back and the arc is its own story: found incompetent to stand trial, restored at a state hospital, tried twice, acquitted of every murder count, found legally insane, and now facing a civil commitment that renews in two-year increments for as long as the state can carry its burden. That mechanism has no ceiling. It can hold a person longer than the criminal charges ever could have, and it is decided in hearings almost nobody attends.
 
