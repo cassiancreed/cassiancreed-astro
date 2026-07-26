@@ -28,6 +28,17 @@ const jsonld = [
     "inLanguage": "en-US",
     "genre": ["True Crime", "Nonfiction"],
     "offers": [{ "@type": "Offer", "price": "1.99", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://cassiancreed.beehiiv.com/products/the-frame", "seller": { "@id": "https://cassiancreed.com/#org" } }]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Book",
+    "name": "Jury Chess: How Criminal Jury Trials Actually Work",
+    "author": { "@id": "https://cassiancreed.com/#cassian-creed" },
+    "publisher": { "@id": "https://cassiancreed.com/#org" },
+    "bookFormat": "https://schema.org/EBook",
+    "inLanguage": "en-US",
+    "genre": ["Law", "Nonfiction"],
+    "offers": [{ "@type": "Offer", "price": "3.99", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://cassiancreed.beehiiv.com/products/jury-chess", "seller": { "@id": "https://cassiancreed.com/#org" } }]
   }
   // NEP-CWK-NO-ACCIDENT-WEBSITE-REMOVAL-0726: the third Book node
   // ("No Accident: The Mackenzie Shirilla Story") was removed with its catalog
@@ -76,6 +87,22 @@ const jsonld = [
       </div>
     </div>
 
+    <div class="bk bk--ink">
+      <div class="bk__cover bk__cover--art">
+        <span class="bk__ribbon bk__ribbon--live">On sale</span>
+        <img class="bk__img" src="/covers/jury-chess.jpg" alt="Book cover of Jury Chess: How Criminal Jury Trials Actually Work by Cassian Creed — a courtroom drawn in line art with a chessboard set in the jury box" width="600" height="900" loading="lazy" />
+      </div>
+      <div class="bk__meta">
+        <h2 class="bk__title">Jury Chess: How Criminal Jury Trials Actually Work</h2>
+        <p class="bk__hook">A criminal jury trial is not a television story or a public vote.</p>
+        <p class="bk__desc">It is a controlled legal process shaped by burdens of proof, evidence rules, courtroom roles, jury instructions, and the limits of the admitted record. <em>Jury Chess</em> explains how that process works from jury selection through verdict—how to separate evidence from argument, follow objections and rulings, evaluate forensic claims carefully, and avoid treating allegations or public commentary as proof. Written for readers who follow criminal trials, with practical “Watch for This” exercises and 212 source notes. This book is for general education and is not legal advice.</p>
+        <div class="bk__cta">
+          <p class="bk__price">$3.99</p>
+          <a class="btn bk__buy" href="https://cassiancreed.beehiiv.com/products/jury-chess" target="_blank" rel="noopener noreferrer">Get the book →</a>
+        </div>
+      </div>
+    </div>
+
     {/* NEP-CWK-NO-ACCIDENT-WEBSITE-REMOVAL-0726: the third shelf card
         ("No Accident: The Mackenzie Shirilla Story") was removed here — card,
         cover block, sales copy, price and buy CTA. Title withdrawn from the
@@ -94,12 +121,10 @@ const jsonld = [
     </div>
   </section></div>
 
-  <div class="wrap"><section class="coming" aria-label="Coming soon">
-    <span class="coming__badge">Coming soon</span>
-    <h2 class="coming__h">Jury Chess: Read the Record, Not the Rhetoric</h2>
-    <p class="coming__sub">How Criminal Jury Trials Actually Work</p>
-    <p class="coming__p">A practical trial-literacy guide to following the jury’s closed record, the burden of proof, and the courtroom process from jury selection through the verdict.</p>
-  </section></div>
+  {/* JURY CHESS shipped 2026-07-26: the "Coming soon" block that stood here was
+      replaced by a live shelf card above ($3.99, Beehiiv direct checkout). The
+      .coming* theme rules are retained in the stylesheet below and are unused
+      until a future title claims them. */}
 
   <section class="wrap bk-faq" aria-label="Frequently asked questions">
     <h2 class="bk-faq__h">Frequently Asked Questions</h2>
