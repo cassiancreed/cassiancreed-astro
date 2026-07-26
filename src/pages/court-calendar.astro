@@ -15,6 +15,7 @@ const BUILD_DATE = new Date().toISOString().slice(0, 10);
 const entries = [
   {
     id: 'clancy-trial',
+    slug: 'lindsay-clancy',
     case: 'Lindsay Clancy',
     proceeding: 'Murder trial — opening statements',
     ongoing: true,
@@ -34,6 +35,7 @@ const entries = [
   },
   {
     id: 'colt-gray-sentencing',
+    slug: 'colt-gray',
     case: 'Colt Gray',
     proceeding: 'Sentencing hearing (continued)',
     dateISO: '2026-07-27',
@@ -44,12 +46,13 @@ const entries = [
     src: 'https://www.usatoday.com/story/news/crime/2026/07/24/apalachee-high-school-shooting-colt-gray-plead-guilty/91033648007/',
     srcLabel: 'USA TODAY, courtroom reporting (July 24, 2026)',
     srcType: 'Court reporting',
-    link: null,
-    linkText: null,
+    link: '/post/colt-gray-apalachee-high-school-case-file/',
+    linkText: 'Read our Colt Gray case file',
     groups: ['next', 'sentencing'],
   },
   {
     id: 'colin-gray-sentencing',
+    slug: 'colin-gray',
     case: 'Colin Gray',
     proceeding: 'Sentencing',
     dateISO: '2026-07-30',
@@ -60,12 +63,13 @@ const entries = [
     src: 'https://www.11alive.com/article/news/crime/trials/colin-gray-father-of-the-accused-apalachee-high-shooter-colt-gray-to-be-sentenced-july-30/85-eb8045e5-a0f1-4b4c-8b25-b7ffa6e9231f',
     srcLabel: '11Alive, court reporting on the date change (July 20, 2026)',
     srcType: 'Court reporting',
-    link: null,
-    linkText: null,
+    link: '/post/colin-gray-apalachee-parent-prosecution-case-file/',
+    linkText: 'Read our Colin Gray case file',
     groups: ['next', 'sentencing'],
   },
   {
     id: 'dominguez-further',
+    slug: 'carlos-dominguez',
     case: 'Carlos Reales Dominguez',
     proceeding: 'Further proceedings after insanity finding',
     dateISO: '2026-08-05',
@@ -76,12 +80,15 @@ const entries = [
     src: 'https://newsroom.courts.ca.gov/news/dominguez-ruled-insane-will-be-committed-state-hospital-davis-stabbings',
     srcLabel: 'California Courts Newsroom, judicial branch release (July 22, 2026)',
     srcType: 'Primary — state judicial branch',
-    link: '/post/what-a-racial-justice-act-violation-means-dominguez/',
-    linkText: 'What the Racial Justice Act findings mean',
+    link: '/post/carlos-dominguez-davis-stabbings-case-file/',
+    linkText: 'Read our Carlos Dominguez case file',
+    link2: '/post/what-a-racial-justice-act-violation-means-dominguez/',
+    linkText2: 'What the Racial Justice Act findings mean',
     groups: ['next', 'hearings'],
   },
   {
     id: 'lebron-status',
+    slug: 'jennifer-lebron',
     case: 'Jennifer Lebron',
     proceeding: 'Status of attorney hearing',
     dateISO: '2026-08-12',
@@ -100,6 +107,7 @@ const entries = [
   },
   {
     id: 'anthony-recusal',
+    slug: 'karmelo-anthony',
     case: 'Karmelo Anthony',
     proceeding: 'Hearing on motion to recuse the trial judge',
     dateISO: '2026-08-19',
@@ -118,6 +126,7 @@ const entries = [
   },
   {
     id: 'anthony-new-trial',
+    slug: 'karmelo-anthony',
     case: 'Karmelo Anthony',
     proceeding: 'Hearing on motion for new trial',
     dateISO: '2026-08-20',
@@ -134,6 +143,7 @@ const entries = [
   },
   {
     id: 'dominguez-placement',
+    slug: 'carlos-dominguez',
     case: 'Carlos Reales Dominguez',
     proceeding: 'Placement and housing determination',
     dateISO: '2026-08-19',
@@ -144,12 +154,15 @@ const entries = [
     src: 'https://newsroom.courts.ca.gov/news/dominguez-ruled-insane-will-be-committed-state-hospital-davis-stabbings',
     srcLabel: 'California Courts Newsroom, judicial branch release (July 22, 2026)',
     srcType: 'Primary — state judicial branch',
-    link: '/post/what-a-racial-justice-act-violation-means-dominguez/',
-    linkText: 'What the Racial Justice Act findings mean',
+    link: '/post/carlos-dominguez-davis-stabbings-case-file/',
+    linkText: 'Read our Carlos Dominguez case file',
+    link2: '/post/what-a-racial-justice-act-violation-means-dominguez/',
+    linkText2: 'What the Racial Justice Act findings mean',
     groups: ['next', 'hearings'],
   },
   {
     id: 'peck-pretrial',
+    slug: 'dianne-curry-peck',
     case: 'Dianne Curry Peck',
     proceeding: 'Pretrial conference',
     dateISO: '2026-08-31',
@@ -168,6 +181,7 @@ const entries = [
   },
   {
     id: 'woods-sentencing',
+    slug: 'missy-woods',
     case: 'Yvonne “Missy” Woods',
     proceeding: 'Sentencing',
     dateISO: '2026-09-08',
@@ -178,12 +192,13 @@ const entries = [
     src: 'https://firstda.co/news-update/former-cbi-lab-analyst-missy-woods-pleads-guilty/',
     srcLabel: 'Colorado First Judicial District Attorney’s Office, plea announcement (June 23, 2026)',
     srcType: 'Primary — prosecutor’s office',
-    link: null,
-    linkText: null,
+    link: '/post/yvonne-missy-woods-cbi-dna-case-file/',
+    linkText: 'Read our Missy Woods case file',
     groups: ['next', 'sentencing'],
   },
   {
     id: 'millete-sentencing',
+    slug: 'larry-millete',
     case: 'Larry Millete',
     proceeding: 'Sentencing',
     dateISO: '2026-09-29',
@@ -203,17 +218,19 @@ const entries = [
 const unconfirmed = [
   {
     case: 'Jermaine Williams Sr.',
+    slug: 'jermaine-williams',
     where: 'Flagler County Circuit Court, Bunnell, FL',
     status: 'Convicted July 17, 2026, of first-degree premeditated murder in the stabbing death of his wife, Yolonda Williams, outside their Bunnell home in August 2024. On July 22 the jury voted 11–1 to recommend a death sentence and found all four aggravating factors unanimously.',
     note: 'A Spencer hearing is expected in August 2026 before Circuit Judge Dawn Nichols, after which the judge imposes sentence. No date has been published, so there is nothing to publish here yet. Case No. 2024-00790-CFA.',
     src: 'https://flaglerlive.com/williams-recommendation/',
     srcLabel: 'FlaglerLive, courtroom reporting (July 22, 2026)',
     srcType: 'Court reporting',
-    link: null,
-    linkText: null,
+    link: '/post/jermaine-williams-yolonda-williams-case-file/',
+    linkText: 'Read our Yolonda Williams case file',
   },
   {
     case: 'Mayra Velasquez (Irasema Chavez case)',
+    slug: 'mayra-velasquez',
     where: 'Tarrant County, Arlington, TX',
     status: 'Charged with capital murder in the 2012 killing of Irasema Chavez following an investigative genetic genealogy lead, and arrested July 16, 2026. The charge is an allegation. She is presumed innocent unless and until proved guilty in court.',
     note: 'Arlington police and the FBI held a joint briefing on July 22, 2026. A press conference is not a court proceeding, and no court date in this case has been publicly confirmed.',
@@ -225,6 +242,7 @@ const unconfirmed = [
   },
   {
     case: 'Taylor Parker',
+    slug: 'taylor-parker',
     where: 'Texas',
     status: 'Direct appeal complete. The Texas Court of Criminal Appeals affirmed the conviction and sentence on November 6, 2025, and the U.S. Supreme Court denied certiorari on May 29, 2026. The case is now in habeas review. No dated proceeding and no execution date.',
     note: 'Habeas review moves without a public calendar. There is nothing to attend.',
@@ -236,6 +254,7 @@ const unconfirmed = [
   },
   {
     case: 'Pedro Hernandez (Etan Patz)',
+    slug: 'pedro-hernandez-etan-patz',
     where: 'New York',
     status: 'Conviction reinstated by the U.S. Supreme Court on June 22, 2026, in docket No. 25-748, with the case remanded to the Second Circuit. The Supreme Court’s judgment issued on July 24, 2026. No dated proceeding.',
     note: 'A remand does not put a hearing on a public calendar. Nothing is currently scheduled in the Second Circuit or in state court.',
@@ -249,6 +268,7 @@ const unconfirmed = [
   },
   {
     case: 'Brooke George',
+    slug: 'brooke-george',
     where: 'United Arab Emirates',
     status: 'Detained in Dubai since June 22, 2026, in connection with the death of William “Billy” Treeby. No charge has been confirmed by UAE authorities or any court, and no court date exists on the public record.',
     note: 'The only official confirmation of any kind is from the UK Foreign, Commonwealth and Development Office, which says it is in contact with a British woman detained in the UAE and is supporting her family. The specific allegations, and the account of how she has been treated in custody, come from an advocacy organisation rather than from UAE authorities or any court. Record entry only.',
@@ -257,6 +277,7 @@ const unconfirmed = [
     srcType: 'News report — no official charge confirmed',
     link: null,
     linkText: null,
+    noPageNote: 'Record entry only. No authority or court has confirmed a charge, so there is nothing verified enough to build a case file on.',
   },
 ];
 
@@ -269,6 +290,7 @@ const appeals = [];
 const completed = [
   {
     case: 'Nestor Hernandez Melgar',
+    slug: 'nestor-hernandez-melgar',
     where: 'Snohomish County Superior Court, Everett, WA',
     status: 'Sentenced July 22, 2026, to life in prison without the possibility of parole for the murder of Lindsay Geary. A jury convicted him June 22, 2026, on four counts — aggravated first-degree murder, first-degree murder, first-degree burglary, and violation of a court order, each with a domestic-violence aggravator.',
     note: 'Judge Cindy Larsen imposed the life term on the aggravated first-degree murder count, with a concurrent 34 months on the burglary count. The first-degree murder and court-order counts were vacated on double-jeopardy grounds. No notice of appeal had been filed as of July 25, 2026; the 30-day window runs to about August 21, 2026.',
@@ -280,6 +302,7 @@ const completed = [
   },
   {
     case: 'Rex Heuermann',
+    slug: 'rex-heuermann',
     where: 'Suffolk County Court, Riverhead, New York',
     status: 'Pleaded guilty April 8, 2026, before Justice Timothy P. Mazzei to three counts of first-degree murder and four counts of second-degree murder, and was sentenced June 17, 2026, to three consecutive terms of life without parole plus a consecutive 100 years to life.',
     note: 'The victims are Melissa Barthelemy, Maureen Brainard-Barnes, Amber Costello, Megan Waterman, Jessica Taylor, Sandra Costilla, and Valerie Mack; he also allocuted to the uncharged killing of Karen Vergata, which the plea covered. He waived his right to appeal on the record at the plea hearing. There is no upcoming court date in this case.',
@@ -294,6 +317,16 @@ const completed = [
 // An entry disappears only when it is finished, never merely because its start
 // date has passed. `ongoing: true` pins a proceeding that is actively running;
 // finished matters are moved by hand into `completed`, never dropped silently.
+// INTERNAL LINK ATTRIBUTION. We deliberately do NOT put utm_* parameters on
+// internal links: GA4 treats a utm_source on a same-site click as a new
+// campaign and restarts the session, which would destroy the original
+// acquisition attribution for every reader who arrives here from search.
+// Instead we tag with neutral params and fire a GA4 event (see the script at
+// the foot of this page). ref=court_calendar identifies the surface;
+// cc_case is the stable lowercase case slug used as the campaign dimension.
+const track = (href, slug) =>
+  href && href.startsWith('/') ? `${href}?ref=court_calendar&cc_case=${slug}` : href;
+
 const isUpcoming = (e) => e.ongoing === true || e.dateISO >= BUILD_DATE;
 const byGroup = (g) => entries.filter((e) => e.groups.includes(g) && isUpcoming(e));
 const nextDates = byGroup('next').sort((a, b) => a.dateISO.localeCompare(b.dateISO));
@@ -425,11 +458,11 @@ const jsonld = {
           </p>
           <p class="card__links">
             {e.link ? (
-              <a class="card__read" href={e.link}>{e.linkText} &rarr;</a>
+              <a class="card__read" href={track(e.link, e.slug)} data-case={e.slug}>{e.linkText} &rarr;</a>
             ) : (
-              <span class="card__soon">Our case file on this is in progress.</span>
+              <span class="card__soon">{e.noPageNote || 'Our case file on this is in progress.'}</span>
             )}
-            {e.link2 && <a class="card__read" href={e.link2}>{e.linkText2} &rarr;</a>}
+            {e.link2 && <a class="card__read" href={track(e.link2, e.slug)} data-case={e.slug}>{e.linkText2} &rarr;</a>}
             <a class="card__help" href="/support/">Victim &amp; Reader Resources</a>
           </p>
         </article>
@@ -459,7 +492,7 @@ const jsonld = {
         <p class="row__when"><time datetime={e.dateISO}>{e.dateText}</time> &middot; {e.court}</p>
         <p class="row__status">{e.status}</p>
         <p class="row__meta">Last verified: {LAST_VERIFIED} &middot; subject to change by the court &middot; Source: <a href={e.src} target="_blank" rel="noopener noreferrer">{e.srcLabel}</a></p>
-        <p class="row__links">{e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : <span class="card__soon">Our case file on this is in progress.</span>} {e.link2 && <a href={e.link2}>{e.linkText2} &rarr;</a>} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a></p>
+        <p class="row__links">{e.link ? <a href={track(e.link, e.slug)} data-case={e.slug}>{e.linkText} &rarr;</a> : <span class="card__soon">{e.noPageNote || 'Our case file on this is in progress.'}</span>} {e.link2 && <a href={track(e.link2, e.slug)} data-case={e.slug}>{e.linkText2} &rarr;</a>} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a></p>
       </div>
     ))}
   </section>
@@ -474,7 +507,7 @@ const jsonld = {
         <p class="row__status">{e.status}</p>
         <p class="row__meta">Last verified: {LAST_VERIFIED} &middot; subject to change by the court &middot; Source: <a href={e.src} target="_blank" rel="noopener noreferrer">{e.srcLabel}</a></p>
         <p class="row__links">
-          {e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : <span class="card__soon">Our case file on this is in progress.</span>}
+          {e.link ? <a href={track(e.link, e.slug)} data-case={e.slug}>{e.linkText} &rarr;</a> : <span class="card__soon">{e.noPageNote || 'Our case file on this is in progress.'}</span>}
           <a class="row__help" href="/support/">Victim &amp; Reader Resources</a>
         </p>
       </div>
@@ -490,7 +523,7 @@ const jsonld = {
         <p class="row__when"><time datetime={e.dateISO}>{e.dateText}</time> &middot; {e.court}</p>
         <p class="row__status">{e.status}</p>
         <p class="row__meta">Last verified: {LAST_VERIFIED} &middot; subject to change by the court &middot; Source: <a href={e.src} target="_blank" rel="noopener noreferrer">{e.srcLabel}</a></p>
-        <p class="row__links">{e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : <span class="card__soon">Our case file on this is in progress.</span>} {e.link2 && <a href={e.link2}>{e.linkText2} &rarr;</a>} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a></p>
+        <p class="row__links">{e.link ? <a href={track(e.link, e.slug)} data-case={e.slug}>{e.linkText} &rarr;</a> : <span class="card__soon">{e.noPageNote || 'Our case file on this is in progress.'}</span>} {e.link2 && <a href={track(e.link2, e.slug)} data-case={e.slug}>{e.linkText2} &rarr;</a>} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a></p>
       </div>
     ))}
     {appeals.map((e) => (
@@ -501,7 +534,7 @@ const jsonld = {
         <p class="row__status">{e.status}</p>
         <p class="row__note">{e.note}</p>
         <p class="row__meta">Last verified: {LAST_VERIFIED} &middot; subject to change by the court &middot; Source: <a href={e.src} target="_blank" rel="noopener noreferrer">{e.srcLabel}</a> ({e.srcType})</p>
-        <p class="row__links">{e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : <span class="card__soon">Our case file on this is in progress.</span>} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a></p>
+        <p class="row__links">{e.link ? <a href={track(e.link, e.slug)} data-case={e.slug}>{e.linkText} &rarr;</a> : <span class="card__soon">{e.noPageNote || 'Our case file on this is in progress.'}</span>} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a></p>
       </div>
     ))}
   </section>
@@ -518,7 +551,7 @@ const jsonld = {
         <p class="row__note">{e.note}</p>
         <p class="row__meta">Last verified: {LAST_VERIFIED} &middot; subject to change by the court &middot; Source: <a href={e.src} target="_blank" rel="noopener noreferrer">{e.srcLabel}</a> ({e.srcType})</p>
         <p class="row__links">
-          {e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : <span class="card__soon">Our case file on this is in progress.</span>}
+          {e.link ? <a href={track(e.link, e.slug)} data-case={e.slug}>{e.linkText} &rarr;</a> : <span class="card__soon">{e.noPageNote || 'Our case file on this is in progress.'}</span>}
           <a class="row__help" href="/support/">Victim &amp; Reader Resources</a>
         </p>
       </div>
@@ -535,7 +568,7 @@ const jsonld = {
         <p class="row__status">{e.status}</p>
         <p class="row__note">{e.note}</p>
         <p class="row__meta">Last verified: {LAST_VERIFIED} &middot; Source: <a href={e.src} target="_blank" rel="noopener noreferrer">{e.srcLabel}</a> ({e.srcType})</p>
-        <p class="row__links">{e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : <span class="card__soon">Our case file on this is in progress.</span>} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a></p>
+        <p class="row__links">{e.link ? <a href={track(e.link, e.slug)} data-case={e.slug}>{e.linkText} &rarr;</a> : <span class="card__soon">{e.noPageNote || 'Our case file on this is in progress.'}</span>} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a></p>
       </div>
     ))}
   </section>
@@ -705,4 +738,20 @@ const jsonld = {
     .cal-help a{color:var(--accent)}
     @media(max-width:680px){.cards{grid-template-columns:1fr}}
   </style>
+  <script is:inline>
+    // Court-calendar → case-file click attribution.
+    // Fires a GA4 event for every calendar link out to one of our case files,
+    // so calendar-entry clicks can be separated from organic case-file views
+    // without utm_* parameters restarting the visitor's session.
+    document.addEventListener('click', function (ev) {
+      var a = ev.target.closest && ev.target.closest('a[data-case]');
+      if (!a || typeof window.gtag !== 'function') return;
+      window.gtag('event', 'calendar_case_click', {
+        case_slug: a.getAttribute('data-case'),
+        link_url: a.getAttribute('href'),
+        link_text: (a.textContent || '').trim().slice(0, 100),
+        source_surface: 'court_calendar'
+      });
+    }, { passive: true });
+  </script>
 </Base>
