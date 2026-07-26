@@ -62,7 +62,13 @@ Until one of those arrives, this page will say what it says now.
 
 ## Sources and Source Notes
 
-The detention date, both ages, and both hometowns are consistently reported across [IBTimes UK](https://www.ibtimes.co.uk/british-tiktok-influencer-murder-charge-dubai-1805333) and [LADbible](https://www.ladbible.com/news/uk-news/uk-influencer-firing-squad-dubai-news-403373-20260723), and the earlier detention reporting was carried by [BBC News](https://www.bbc.com/news/articles/cwy0p813jn7o), which reported the Foreign Office statement.
+We name our sources here but do not link out to them. You can find any of these by searching the publication and the headline.
+
+- **BBC News** — report of the Foreign Office statement on a British woman detained in the UAE — June 25, 2026. The source for the Foreign Office position.
+- **IBTimes UK** — "Who Is Brooke George?" — July 2026. The source for her age, her home county, and the airport detention on June 22, 2026.
+- **LADbible** — update on her reported condition in custody — July 23, 2026. The source for the campaign group's and the family's statements, both of which are attributed as such above.
+
+The detention date, both ages, and both hometowns are consistent across all three.
 
 **What we have deliberately not published.** We have not stated that a murder charge exists, because no authority has confirmed one — the claim is attributed to a campaign group and to family. We have not published the self-defense account or the custody-treatment allegations as fact, for the same reason. We have not published the contrasting account from the deceased's side as fact either. We have not described the possible penalty, because a penalty presupposes a charge and a conviction, neither of which exists on this record.
 
