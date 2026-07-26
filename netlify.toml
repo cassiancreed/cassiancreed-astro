@@ -5,6 +5,31 @@
 [build.environment]
   NODE_VERSION = "20"
 
+# --- No Accident withdrawal (NEP-CWK-NO-ACCIDENT-WEBSITE-REMOVAL-0726) ---
+# The title is withdrawn from the site by ruling. Its former post URL was
+# already deleted from src/content/posts/ in commit 2e6e2f4 and has been
+# serving Netlify's default 404 since. These rules replace that soft 404 with
+# an explicit, permanent 410 Gone so crawlers drop the URL instead of
+# re-queuing it. NOT a redirect to another product — that is prohibited.
+# ROLLBACK = delete this block (and public/410.html); the URL returns to 404.
+[[redirects]]
+  from = "/post/no-accident-the-mackenzie-shirilla-story-the-full-account"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/post/no-accident-the-mackenzie-shirilla-story-the-full-account/"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/og/no-accident-the-mackenzie-shirilla-story-the-full-account.png"
+  to = "/410.html"
+  status = 410
+  force = true
+
 [[redirects]]
   from = "/free-dossier"
   to = "/#free-guide"
