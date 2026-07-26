@@ -59,6 +59,17 @@ const navItems = [
   { href: '/about/',               label: 'About' },
   { href: '/books/#free-guide',     label: 'Free Guide' },
 ];
+// NEP-CWK-IRASEMA-CONVERSION-RESCUE-0726 — CTA ROUTE REPAIR.
+// On a post page the primary email CTA already lives on THIS page at
+// `#free-guide` (see post/[slug].astro), but the nav item routed the visitor
+// OFF the page to /books/#free-guide — i.e. the one always-visible, above-the-
+// fold path to the primary conversion pushed people away from the case they
+// came to read. On /post/* the item now targets the on-page anchor.
+// No wording changed; link target only.
+const isPostPage = navPath.startsWith('/post/');
+const resolvedNav = navItems.map(i =>
+  (isPostPage && i.href === '/books/#free-guide') ? { ...i, href: '#free-guide' } : i
+);
 // Standalone pages that are not themselves a nav item highlight their nav
 // CATEGORY, so no page ever renders with zero highlighted nav item
 // (NEP-FIX-CWK-0718L). Add new standalone pages here when they ship.
@@ -91,7 +102,7 @@ const NAV_CATEGORY = {
 const homeActive = (navPath === '/');
 
 function navActive(href){
-  if (href.startsWith('/#')) return false;          // in-page anchor, never "current page"
+  if (href.startsWith('/#') || href.startsWith('#')) return false; // in-page anchor, never "current page"
   const h = (href.replace(/\/+$/, '') || '/');   // '/' must survive the strip (AK5)
   if (navPath === h) return true;                    // exact page match
   if (h === '/case-files' && navPath.startsWith('/post/')) return true; // case/explainer posts live under Case Files
@@ -138,12 +149,60 @@ function navActive(href){
     gtag('js', new Date());
     gtag('config', 'G-5D0DX6WFW4');
   </script>
+  <!-- ───────────────────────────────────────────────────────────────────────
+       ORIGIN CAPTURE — NEP-CWK-IRASEMA-CONVERSION-RESCUE-0726
+       Problem this fixes: inbound campaign UTMs (e.g. a Spotify episode link
+       carrying utm_source=spotify) were read by GA4 for the SESSION and then
+       thrown away. They never reached the Beehiiv subscribe form, whose URL
+       hard-codes utm_source=website — so a subscriber who arrived from Spotify
+       was indistinguishable, inside Beehiiv, from one who arrived from anywhere
+       else. And an inbound UTM was lost the moment the visitor clicked to a
+       second page.
+       What this does: stores FIRST-TOUCH origin for the session (first touch
+       wins, so Spotify stays credited if the visitor wanders the site before
+       subscribing), exposes it as window.NEP_ORIGIN for CaptureBlock to fold
+       into the form's utm_content, and fires one explicit `origin_visit` event
+       so campaign-origin visits are recoverable as an EVENT, not only as GA4
+       session-source dimensions. No new analytics vendor; existing gtag only.
+       ─────────────────────────────────────────────────────────────────────── -->
+  <script is:inline>
+  (function(){
+    try{
+      var q = new URLSearchParams(location.search);
+      var inbound = {}, has = false;
+      ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(function(k){
+        var v = q.get(k); if (v) { inbound[k] = v; has = true; }
+      });
+      var KEY = 'nep_origin', stored = null;
+      try { stored = JSON.parse(sessionStorage.getItem(KEY) || 'null'); } catch(e){}
+      if (has && !stored) {
+        stored = {
+          s: inbound.utm_source   || '',
+          m: inbound.utm_medium   || '',
+          c: inbound.utm_campaign || '',
+          p: location.pathname,
+          t: Math.round(Date.now()/1000)
+        };
+        try { sessionStorage.setItem(KEY, JSON.stringify(stored)); } catch(e){}
+      }
+      window.NEP_ORIGIN = stored || null;
+      if (has && typeof gtag === 'function') {
+        gtag('event','origin_visit',{
+          origin_source:   inbound.utm_source   || '(none)',
+          origin_medium:   inbound.utm_medium   || '(none)',
+          origin_campaign: inbound.utm_campaign || '(none)',
+          page_path: location.pathname
+        });
+      }
+    }catch(e){}
+  })();
+  </script>
 </head>
 <body>
   <header class="site-head"><div class="site-head__inner">
     <a class={homeActive ? "brand active" : "brand"} href="/" aria-current={homeActive ? "page" : undefined}>Cassian<br/>Creed</a>
     <nav class="nav" aria-label="Primary">
-      {navItems.map(i => (
+      {resolvedNav.map(i => (
         <a href={i.href} class={navActive(i.href) ? 'active' : undefined} aria-current={navActive(i.href) ? 'page' : undefined}>{i.label}</a>
       ))}
     </nav>
@@ -184,7 +243,7 @@ if(typeof gtag!=='undefined'){gtag('event','capture_outbound',{link_url:s.href,m
         document.querySelectorAll('.capture__success').forEach(function(ok){
           ok.hidden=false;
           var cta=ok.closest('.capture-cta')||ok.parentNode;
-          if(cta){cta.querySelectorAll('.capture__embed,.capture__fallback,.capture__helper').forEach(function(el){el.hidden=true;});}
+          if(cta){cta.querySelectorAll('.capture__embed-window,.capture__embed,.capture__fallback,.capture__helper').forEach(function(el){el.hidden=true;});}
         });
       }
       if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',fs);}else{fs();}

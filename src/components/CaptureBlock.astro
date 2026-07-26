@@ -115,14 +115,40 @@ const embedSrc =
     <div class="capture-cta">
       {embed ? (
         <>
-          <iframe
-            class="capture__embed"
-            src={embedSrc}
-            title={resolvedButton}
-            loading="lazy"
-            scrolling="no"
-            frameborder="0"
-          ></iframe>
+          {/* FORM VISIBILITY FIX — NEP-CWK-IRASEMA-FULL-FIX-DEPLOY-0726.
+              The Beehiiv v2 theme wraps this form in 80px of padding on ALL
+              FOUR sides (measured live 2026-07-26 on the form itself, not
+              inferred). Two consequences, both live since 2026-07-18:
+                · VERTICAL — the form's control row sits at y=80..127 inside a
+                  207px document. The old iframe was height:64px with scrolling
+                  off, so the only visible slice was the top padding: no email
+                  field, no button, just the "Form not loading?" fallback. That
+                  is the reported live breakage.
+                · HORIZONTAL — 80px of padding each side eats the width. In a
+                  298px-wide frame the email input collapsed to 65px.
+              Fix: give the iframe a document 160px WIDER and 207px tall, then
+              shift it up/left inside a clipping window so the padding is
+              cropped and only the control row shows. The window keeps the old
+              64px height, so nothing else on the page moves.
+              Window max-width is 400px ON PURPOSE: the form's own max-width is
+              400px and it centres inside the padded box once that box exceeds
+              400px, which would reintroduce a left gap. Capping the window at
+              400px keeps iframe width <= 560px, where the form still fills the
+              box and starts at exactly x=80 — so the -80px crop stays exact at
+              every width. Verified alignment at 342 / 502 / 620 / 760px.
+              If the form ever looks off-centre or clipped again, re-measure the
+              theme padding FIRST — that is the number this crop depends on. */}
+          <div class="capture__embed-window">
+            <iframe
+              class="capture__embed"
+              data-nep-campaign={camp}
+              src={embedSrc}
+              title={resolvedButton}
+              loading="lazy"
+              scrolling="no"
+              frameborder="0"
+            ></iframe>
+          </div>
           <p class="capture__fallback">
             Form not loading? <a href={subscribeHref} target="_blank" rel="noopener noreferrer">{resolvedButton} &rarr;</a>
           </p>
@@ -132,7 +158,7 @@ const embedSrc =
           </div>
         </>
       ) : (
-        <a class="capture__button" href={subscribeHref} target="_blank" rel="noopener noreferrer">{resolvedButton} &rarr;</a>
+        <a class="capture__button" data-nep-campaign={camp} href={subscribeHref} target="_blank" rel="noopener noreferrer">{resolvedButton} &rarr;</a>
       )}
     </div>
   </div>
@@ -154,10 +180,121 @@ const embedSrc =
       var cta = iframe.closest('.capture-cta'); if (!cta) return;
       var ok = cta.querySelector('.capture__success'); if (ok) ok.hidden = false;
       iframe.hidden = true;
+      // Hide the clipping window too, or a 64px empty box is left behind
+      // (0726 full-fix: the iframe is now absolutely positioned inside it).
+      var win = cta.querySelector('.capture__embed-window'); if (win) win.hidden = true;
       var fb = cta.querySelector('.capture__fallback'); if (fb) fb.hidden = true;
       var hp = cta.querySelector('.capture__helper');  if (hp) hp.hidden = true;
+      // NEP-CWK-IRASEMA-CONVERSION-RESCUE-0726 — attributable success.
+      // The in-iframe success page loads Base.astro and fires its own GA4
+      // sign_up, but attributed to page "/" (the iframe's URL), NOT the case
+      // page the visitor actually converted on. This parent-side event carries
+      // the true page_path and the campaign origin, so a signup can be traced
+      // back to the post AND to Spotify.
+      fire('capture_success', iframe);
     });
   }
+
+  // ── Shared helpers (0726) ────────────────────────────────────────────────
+  function origin(){ try { return window.NEP_ORIGIN || null; } catch(e){ return null; } }
+  function fire(name, el){
+    if (typeof window.gtag !== 'function') return;
+    var o = origin() || {};
+    window.gtag('event', name, {
+      page_path: location.pathname,
+      origin_source:   o.s || '(direct)',
+      origin_medium:   o.m || '(none)',
+      origin_campaign: o.c || '(none)',
+      capture_offer: (el && el.getAttribute('data-nep-campaign')) || '(unknown)'
+    });
+  }
+
+  // ORIGIN FORWARDING. The form URL's utm_source/medium/campaign are LEFT
+  // ALONE so every existing Beehiiv report keeps working; the visitor's
+  // first-touch origin is folded into utm_content, which is already
+  // per-placement and therefore free to extend. Result: a Beehiiv subscription
+  // record reads e.g.
+  //   utm_content = post_<slug>.src-spotify.mdm-podcast.cmp-irasema_chavez_update
+  // which is a recoverable, greppable Spotify-origin signup.
+  function clean(v){ return String(v||'').toLowerCase().replace(/[^a-z0-9_-]/g,'').slice(0,32); }
+  function originSuffix(){
+    var o = origin(); if (!o) return '';
+    var s = clean(o.s); if (!s) return '';
+    return '.src-' + s + (clean(o.m) ? '.mdm-' + clean(o.m) : '') + (clean(o.c) ? '.cmp-' + clean(o.c) : '');
+  }
+  function stamp(el, attr){
+    var sfx = originSuffix(); if (!sfx) return;
+    var raw = el.getAttribute(attr); if (!raw) return;
+    try {
+      var u = new URL(raw, location.origin);
+      var c = u.searchParams.get('utm_content') || '';
+      if (c.indexOf('.src-') !== -1) return;       // already stamped
+      u.searchParams.set('utm_content', c + sfx);
+      el.setAttribute(attr, u.toString());
+    } catch(e){}
+  }
+
+  document.querySelectorAll('section.capture').forEach(function(sec){
+    var ifr = sec.querySelector('iframe.capture__embed');
+    // Stamp BEFORE the lazy iframe fetches (the capture block sits low on the
+    // page, so on a real visit this runs well ahead of the load).
+    if (ifr) stamp(ifr, 'src');
+    sec.querySelectorAll('.capture__fallback a, a.capture__button').forEach(function(a){ stamp(a, 'href'); });
+
+    // PRIMARY-CTA VIEW. Fires once, when at least half the capture block has
+    // actually been on screen — the missing denominator for "did anyone even
+    // reach the CTA?" on a page whose CTA sits at ~87% scroll depth.
+    var seen = false;
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function(es){
+        es.forEach(function(en){
+          if (en.isIntersecting && !seen) { seen = true; fire('capture_view', ifr || sec); io.disconnect(); }
+        });
+      }, { threshold: 0.5 });
+      io.observe(sec);
+    }
+
+    // FORM INTERACTION (proxy, and labelled as one). The form is a
+    // cross-origin iframe, so clicks inside it are unreadable by design. When
+    // a visitor clicks into it, focus leaves this document and lands on the
+    // iframe element — that transition is the closest honest signal available
+    // that someone engaged the form rather than merely scrolled past it.
+    var engaged = false;
+    if (ifr) {
+      window.addEventListener('blur', function(){
+        if (engaged) return;
+        if (document.activeElement === ifr) { engaged = true; fire('capture_form_engage', ifr); }
+      });
+    }
+  });
+
+  // IN-PAGE CTA ROUTE (0726). global.css sets html{scroll-behavior:smooth}; a
+  // default anchor jump would therefore smooth-scroll ~11,700px on this post —
+  // long enough to read as a runaway page on a phone. Jump instantly instead,
+  // move focus to the CTA for keyboard/screen-reader users, and record the
+  // route being used as a CTA interaction.
+  document.querySelectorAll('a[href="#free-guide"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var wrap = document.getElementById('free-guide'); if (!wrap) return; // no anchor here -> let the link behave normally
+      // Aim at the capture block itself, not its wrapper: the wrapper's top
+      // edge can leave the actual email CTA just below the fold on a phone.
+      var t = wrap.querySelector('section.capture') || wrap;
+      e.preventDefault();
+      // behavior:'auto' RESOLVES TO THE CSS VALUE (which is smooth here), so it
+      // does not force an instant jump — verified: the page was still mid-glide
+      // when measured. An inline style beats the stylesheet, so override, jump,
+      // restore.
+      var root = document.documentElement, prev = root.style.scrollBehavior;
+      root.style.scrollBehavior = 'auto';
+      t.scrollIntoView({ block: 'start' });
+      setTimeout(function(){ root.style.scrollBehavior = prev; }, 0);
+      if (history.replaceState) history.replaceState(null,'','#free-guide'); else location.hash = 'free-guide';
+      var f = t.querySelector('.capture__headline');
+      if (f) { f.setAttribute('tabindex','-1'); f.focus({ preventScroll: true }); }
+      fire('capture_cta_nav', t.querySelector('iframe.capture__embed'));
+    });
+  });
+
   document.querySelectorAll('iframe.capture__embed').forEach(wireCapture);
 </script>
 
@@ -170,6 +307,8 @@ const embedSrc =
     border-radius: 12px;
     padding: 1.5rem 1.25rem;
     margin: 2rem 0;
+    /* Sticky site header must not cover the CTA on an anchor jump (0726). */
+    scroll-margin-top: 84px;
   }
 
   .capture__inner {
@@ -209,11 +348,35 @@ const embedSrc =
 
   .capture-cta { margin-top: 0.35rem; }
 
-  .capture__embed {
+  /* Clipping window — see the comment beside the markup above. Keeps the old
+     64px height so the rest of the page does not move; max-width 400px keeps
+     the crop exact. */
+  .capture__embed-window {
+    position: relative;
     display: block;
     width: 100%;
-    max-width: 460px;
+    max-width: 400px;
     height: 64px;
+    overflow: hidden;
+    margin: 0;
+    border-radius: 8px;
+  }
+
+  /* Deliberately two classes deep. `global.css` carries its own unscoped
+     `.capture__embed { max-width:460px; height:220px }` rule serving the
+     hand-pasted iframes in older post bodies. At equal specificity that rule
+     was clamping this crop's width (calc resolved, then got capped at 460px)
+     and only lost the height fight on source order — which is not something to
+     rely on. `.capture__embed-window .capture__embed` outranks it outright, and
+     `max-width:none` explicitly releases the clamp. The global rule is left
+     alone so the older pages that depend on it do not change. */
+  .capture__embed-window .capture__embed {
+    position: absolute;
+    top: -72px;          /* crops the theme's 80px top padding, leaving 8px */
+    left: -80px;         /* crops the theme's 80px left padding exactly */
+    width: calc(100% + 160px);   /* +160 = the left AND right padding */
+    max-width: none;     /* releases global.css's 460px clamp */
+    height: 207px;       /* the form document's full natural height */
     border: 0;
     margin: 0;
     background: transparent;

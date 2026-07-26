@@ -1,16 +1,19 @@
 ---
 title: "Irasema Chavez Case: Mayra Velasquez Charged in 2012 Arlington Killing"
 pubDate: 2026-07-21
+updatedDate: 2026-07-26
 tag: "Case Files"
+victim: "Irasema Chavez, 32"
+incidentDate: "January 2012 — found January 20, 2012"
+location: "Aspenwood Apartments, South Collins Street, Arlington, Texas"
 jurisdiction: "Texas"
+status: "Charged — Mayra Velasquez, 42, charged with capital murder. The charge is an allegation; she is presumed innocent unless and until proved guilty in court."
 capture: "case"
 seoTitle: "Irasema Chavez Cold Case: Mayra Velasquez and the IGG Break"
 description: "How did genetic genealogy lead to Mayra Velasquez's arrest in the Irasema Chavez case? Read the known record, what remains undisclosed, and what comes next."
 ---
 
-*Pre-briefing case file, current through July 21, 2026. A joint Arlington Police Department–FBI briefing is scheduled for 10:30 a.m. Central on Wednesday, July 22. This file will be updated the same day with what officials disclose.*
-
-*Updated July 22, 2026. A same-day update will follow the 10:30 a.m. Central Arlington Police Department–FBI press conference; this file does not yet reflect what officials say there.*
+*Case file current through July 21, 2026. A joint Arlington Police Department–FBI briefing was held on Wednesday, July 22, 2026; what officials disclosed there is not yet reflected in this file.*
 
 Irasema Chavez was 32 when family members went to check on her at her Arlington, Texas apartment in January 2012. Fourteen years later, police have announced an arrest. The public record can now say much more about the investigation than it can about the woman at its center — and that imbalance should not be mistaken for the measure of her life.
 
