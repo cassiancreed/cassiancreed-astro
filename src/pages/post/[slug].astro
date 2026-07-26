@@ -141,6 +141,9 @@ const jsonld = faqNode
   .related__list a{color:var(--ink);text-decoration:none;border-left:2px solid var(--accent);padding-left:12px;display:inline-block;transition:color .15s}
   .related__list a:hover{color:var(--accent,#e0563b)}
   .convert{border-top:1px solid var(--line);padding-top:26px;margin-top:8px}
+  /* Sticky header would otherwise cover the CTA heading on an anchor jump
+     (NEP-CWK-IRASEMA-CONVERSION-RESCUE-0726). */
+  #free-guide{scroll-margin-top:84px}
   .convert__grid{display:grid;grid-template-columns:1.6fr 1fr;gap:26px;align-items:start}
   @media(max-width:720px){.convert__grid{grid-template-columns:1fr;gap:20px}}
   .convert__magnet{margin:14px 0 0;font-size:15px}
@@ -152,4 +155,18 @@ const jsonld = faqNode
   .convert__book-btn{align-self:flex-start}
   .convert__book-alt{display:inline-block;margin-top:10px;font-size:13px;text-decoration:none;color:var(--ink-2)}
   .convert__book-alt:hover{color:var(--accent,#e0563b)}
+  /* NEP-CWK-IRASEMA-CONVERSION-RESCUE-0726 — ONE PRIMARY ACTION ON MOBILE.
+     On a phone the two-column convert grid collapses to a stack, which put the
+     green "Buy The Trail" card directly beneath the email capture at equal
+     visual weight: a filled button competing with the primary objective, and a
+     paid ask aimed at a visitor who has not yet been given anything free.
+     Demoted, not removed — the buy route still works for anyone who wants it,
+     it just stops competing. Wording unchanged; visual weight only.
+     MUST stay last in this block: same specificity as the base .convert__book
+     rules above, so source order is what makes it win. */
+  @media(max-width:720px){
+    .convert__book{order:2;background:transparent;border:0;border-top:1px solid var(--line);padding:14px 0 0;border-radius:0}
+    .convert__book-t{font-size:14px;color:var(--ink-2)}
+    .convert__book-btn{background:transparent;color:var(--ink-2);border:1px solid var(--line);font-weight:500}
+  }
 </style>
