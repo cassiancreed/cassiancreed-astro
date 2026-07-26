@@ -458,7 +458,7 @@ const jsonld = {
           </p>
           <p class="card__src">
             <span class="card__k">Source</span>
-            <a href={e.src} target="_blank" rel="noopener noreferrer">{e.srcLabel}</a>
+            <span class="card__srcname">{e.srcLabel}</span>
             <span class="card__srctype">{e.srcType}</span>
           </p>
           <p class="card__links">
@@ -496,7 +496,7 @@ const jsonld = {
         <h3 class="row__case">{e.case}</h3>
         <p class="row__when"><time datetime={e.dateISO}>{e.dateText}</time> &middot; {e.court}</p>
         <p class="row__status">{e.status}</p>
-        <p class="row__meta">Last verified: {LAST_VERIFIED} &middot; subject to change by the court &middot; Source: <a href={e.src} target="_blank" rel="noopener noreferrer">{e.srcLabel}</a></p>
+        <p class="row__meta">Last verified: {LAST_VERIFIED} &middot; subject to change by the court &middot; Source: <span class="card__srcname">{e.srcLabel}</span></p>
         <p class="row__links">{e.link ? <a href={track(e.link, e.slug)} data-case={e.slug}>{e.linkText} &rarr;</a> : <span class="card__soon">Our case file on this is in progress.</span>} {e.link2 && <a href={track(e.link2, e.slug)} data-case={e.slug}>{e.linkText2} &rarr;</a>} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a></p>
       </div>
     ))}
@@ -510,7 +510,7 @@ const jsonld = {
         <h3 class="row__case">{e.case}</h3>
         <p class="row__when"><time datetime={e.dateISO}>{e.dateText}</time> &middot; {e.court}</p>
         <p class="row__status">{e.status}</p>
-        <p class="row__meta">Last verified: {LAST_VERIFIED} &middot; subject to change by the court &middot; Source: <a href={e.src} target="_blank" rel="noopener noreferrer">{e.srcLabel}</a></p>
+        <p class="row__meta">Last verified: {LAST_VERIFIED} &middot; subject to change by the court &middot; Source: <span class="card__srcname">{e.srcLabel}</span></p>
         <p class="row__links">
           {e.link ? <a href={track(e.link, e.slug)} data-case={e.slug}>{e.linkText} &rarr;</a> : <span class="card__soon">Our case file on this is in progress.</span>}
           {e.link2 && <a href={track(e.link2, e.slug)} data-case={e.slug}>{e.linkText2} &rarr;</a>}
@@ -528,7 +528,7 @@ const jsonld = {
         <h3 class="row__case">{e.case}</h3>
         <p class="row__when"><time datetime={e.dateISO}>{e.dateText}</time> &middot; {e.court}</p>
         <p class="row__status">{e.status}</p>
-        <p class="row__meta">Last verified: {LAST_VERIFIED} &middot; subject to change by the court &middot; Source: <a href={e.src} target="_blank" rel="noopener noreferrer">{e.srcLabel}</a></p>
+        <p class="row__meta">Last verified: {LAST_VERIFIED} &middot; subject to change by the court &middot; Source: <span class="card__srcname">{e.srcLabel}</span></p>
         <p class="row__links">{e.link ? <a href={track(e.link, e.slug)} data-case={e.slug}>{e.linkText} &rarr;</a> : <span class="card__soon">Our case file on this is in progress.</span>} {e.link2 && <a href={track(e.link2, e.slug)} data-case={e.slug}>{e.linkText2} &rarr;</a>} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a></p>
       </div>
     ))}
@@ -539,7 +539,7 @@ const jsonld = {
         <p class="row__when">{e.when || 'No hearing date publicly confirmed'} &middot; {e.where}</p>
         <p class="row__status">{e.status}</p>
         <p class="row__note">{e.note}</p>
-        <p class="row__meta">Last verified: {LAST_VERIFIED} &middot; subject to change by the court &middot; Source: <a href={e.src} target="_blank" rel="noopener noreferrer">{e.srcLabel}</a> ({e.srcType})</p>
+        <p class="row__meta">Last verified: {LAST_VERIFIED} &middot; subject to change by the court &middot; Source: <span class="card__srcname">{e.srcLabel}</span> ({e.srcType})</p>
         <p class="row__links">{e.link ? <a href={track(e.link, e.slug)} data-case={e.slug}>{e.linkText} &rarr;</a> : <span class="card__soon">Our case file on this is in progress.</span>} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a></p>
       </div>
     ))}
@@ -555,7 +555,7 @@ const jsonld = {
         <p class="row__when">{e.where}</p>
         <p class="row__status">{e.status}</p>
         <p class="row__note">{e.note}</p>
-        <p class="row__meta">Last verified: {LAST_VERIFIED} &middot; subject to change by the court &middot; Source: <a href={e.src} target="_blank" rel="noopener noreferrer">{e.srcLabel}</a> ({e.srcType})</p>
+        <p class="row__meta">Last verified: {LAST_VERIFIED} &middot; subject to change by the court &middot; Source: <span class="card__srcname">{e.srcLabel}</span> ({e.srcType})</p>
         <p class="row__links">
           {e.link ? <a href={track(e.link, e.slug)} data-case={e.slug}>{e.linkText} &rarr;</a> : <span class="card__soon">Our case file on this is in progress.</span>}
           <a class="row__help" href="/support/">Victim &amp; Reader Resources</a>
@@ -573,7 +573,7 @@ const jsonld = {
         <p class="row__when">{e.where}</p>
         <p class="row__status">{e.status}</p>
         <p class="row__note">{e.note}</p>
-        <p class="row__meta">Last verified: {LAST_VERIFIED} &middot; Source: <a href={e.src} target="_blank" rel="noopener noreferrer">{e.srcLabel}</a> ({e.srcType})</p>
+        <p class="row__meta">Last verified: {LAST_VERIFIED} &middot; Source: <span class="card__srcname">{e.srcLabel}</span> ({e.srcType})</p>
         <p class="row__links">{e.link ? <a href={track(e.link, e.slug)} data-case={e.slug}>{e.linkText} &rarr;</a> : <span class="card__soon">Our case file on this is in progress.</span>} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a></p>
       </div>
     ))}
@@ -715,6 +715,7 @@ const jsonld = {
     .card__verified,.card__change,.row__meta{font-family:var(--mono);font-size:11px;color:var(--ink-3);letter-spacing:.03em}
     .card__src{font-size:13px;margin:0 0 12px}
     .card__src a,.row__meta a{color:var(--accent);text-decoration:underline;text-underline-offset:2px}
+    .card__srcname{font-style:normal;color:inherit}
     .card__srctype{display:block;font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:var(--ink-3);margin-top:3px}
     .card__links,.row__links{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin:0;padding-top:12px;border-top:1px solid var(--line)}
     .card__read,.row__links a{color:var(--accent);text-decoration:none;font-size:14px}
