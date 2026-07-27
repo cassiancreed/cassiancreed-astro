@@ -1,0 +1,158 @@
+---
+import Base from '../layouts/Base.astro';
+
+// COURT CALENDAR AND CASE-TRACKING POLICY
+// The body text of this page is approved policy language. Do not rewrite,
+// tighten, summarize, or "improve" it. Formatting (paragraph breaks, headings,
+// links) may change; wording may not. Any wording change must be logged.
+const LAST_UPDATED = 'July 27, 2026';
+
+const CORRECTION_MAILTO =
+  'mailto:cassiancreed@cassiancreed.com?subject=Court%20Calendar%20correction&body=Case%20or%20person%20name%3A%0D%0AWhat%20is%20wrong%3A%0D%0AWhat%20the%20correct%20information%20is%3A%0D%0AOfficial%20record%20or%20source%20(link%20or%20citation)%3A%0D%0AYour%20name%20and%20role%20(optional)%3A%0D%0A';
+
+const jsonld = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    { '@type': 'Organization', '@id': 'https://cassiancreed.com/#org' },
+    {
+      '@type': 'WebSite',
+      '@id': 'https://cassiancreed.com/#website',
+      url: 'https://cassiancreed.com/',
+      name: 'Cassian Creed',
+      publisher: { '@id': 'https://cassiancreed.com/#org' },
+    },
+    {
+      '@type': 'WebPage',
+      '@id': 'https://cassiancreed.com/court-calendar-policy#page',
+      url: 'https://cassiancreed.com/court-calendar-policy',
+      name: 'Court Calendar and Case-Tracking Policy',
+      description:
+        'How Neural Edge Publishing decides what appears on its court calendar, what inclusion does and does not mean, how legal status is stated, and how to report a correction.',
+      isPartOf: { '@id': 'https://cassiancreed.com/#website' },
+      publisher: { '@id': 'https://cassiancreed.com/#org' },
+      about: { '@id': 'https://cassiancreed.com/court-calendar#page' },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': 'https://cassiancreed.com/court-calendar-policy#breadcrumb',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://cassiancreed.com/' },
+        { '@type': 'ListItem', position: 2, name: 'True Crime Court Calendar', item: 'https://cassiancreed.com/court-calendar' },
+        { '@type': 'ListItem', position: 3, name: 'Court Calendar and Case-Tracking Policy', item: 'https://cassiancreed.com/court-calendar-policy' },
+      ],
+    },
+  ],
+};
+---
+<Base
+  title="Court Calendar and Case-Tracking Policy"
+  description="How Neural Edge Publishing decides what appears on its court calendar, what inclusion does and does not mean, how legal status is stated, and how to report a correction."
+  jsonld={jsonld}
+>
+  <section class="hero wrap">
+    <p class="evidence evidence--accent">Policy</p>
+    <h1>Court Calendar and Case-Tracking Policy</h1>
+    <p class="pol-lede">
+      This page governs the <a href="/court-calendar/">True Crime Court Calendar</a>. It explains what inclusion means, what it does not mean, and how to tell us we got something wrong.
+    </p>
+    <p class="pol-updated"><strong>Last updated: {LAST_UPDATED}.</strong></p>
+  </section>
+
+  <section class="wrap pol-sec" aria-labelledby="notice">
+    <h2 id="notice">About this calendar</h2>
+    <blockquote class="pol-notice">
+      <p>
+        <strong>About this calendar:</strong> Neural Edge Publishing provides this calendar as a best-effort informational resource for readers following publicly reported court proceedings and case developments. Inclusion does not imply endorsement, guilt, credibility, or editorial approval. Allegations, arrests, and charges are not convictions. Court dates, legal status, and other information may change. Each entry identifies the sources and date used for its latest review. Readers should consult the linked court or government source for the most current official information and may report a correction through the correction link provided.
+      </p>
+    </blockquote>
+  </section>
+
+  <section class="wrap pol-sec" aria-labelledby="policy">
+    <h2 id="policy">Expanded Court Calendar and Case-Tracking Policy</h2>
+    <div class="prose">
+      <p>Neural Edge Publishing maintains this calendar to help readers locate publicly reported court dates, legal proceedings, and material case developments. The calendar is an informational and research resource. Inclusion reflects public attention, scheduling relevance, or research value only.</p>
+
+      <p>Inclusion does not mean Neural Edge Publishing endorses a person, allegation, claim, prosecution, defense, legal theory, documentary, source, or public reaction. It also does not mean that a case has been approved for an NEP article, newsletter, book, video, promotion, or commercial treatment.</p>
+
+      <p>NEP distinguishes investigations, suspicions, allegations, arrests, charges, indictments, pleas, convictions, acquittals, dismissals, appeals, and other legal outcomes. A person who has not been convicted is presumed innocent. Search interest, social activity, repetition, or public suspicion does not establish that a claim is true.</p>
+
+      <p>NEP makes a good-faith effort to use identified court records, government records, official statements, and reliable reporting. Court schedules and case information can change, sometimes without advance notice. The calendar may therefore be incomplete, delayed, superseded, or affected by later court action. It is not legal advice and should not be treated as an official court notice. Readers should verify dates, courtroom information, filing requirements, and legal status through the linked court or government source before relying on an entry.</p>
+
+      <p>NEP may correct, update, narrow, or remove an entry when better information becomes available. Readers, subjects, attorneys, families, and public agencies may report a factual error or provide an updated official record through the correction channel linked on this page.</p>
+    </div>
+  </section>
+
+  <section class="wrap pol-sec" aria-labelledby="fields">
+    <h2 id="fields">What every published entry shows</h2>
+    <div class="prose">
+      <p>An entry is published only when the public record supports each of the following. Where a field cannot be confirmed, the entry says so rather than filling the gap.</p>
+      <ul>
+        <li>Case or person name</li>
+        <li>Jurisdiction</li>
+        <li>Court or agency, when known</li>
+        <li>Docket or case number, when safely and publicly available</li>
+        <li>Exact present legal status</li>
+        <li>A neutral description of the matter</li>
+        <li>The next confirmed court date</li>
+        <li>Event type</li>
+        <li>Time and timezone, when confirmed</li>
+        <li>Courthouse or remote-hearing information, when confirmed and appropriate</li>
+        <li>The date the entry was last verified</li>
+        <li>The primary official source, where available, and reliable reporting where it is needed</li>
+        <li>A correction route</li>
+      </ul>
+      <p>When no future event is confirmed, the entry reads: <strong>No confirmed upcoming court date found.</strong> The date field is never left blank, and a date is never estimated to fill it.</p>
+      <p>A case that cannot meet these requirements is not published. Cases with unresolved identity, jurisdiction, legal status, sourcing, or scheduling questions are held back rather than published in partial form.</p>
+    </div>
+  </section>
+
+  <section class="wrap pol-sec" aria-labelledby="corrections">
+    <h2 id="corrections">Report a correction</h2>
+    <div class="prose">
+      <p>If an entry on the court calendar is wrong, out of date, or unfair, tell us and we will fix it. Readers, subjects of coverage, attorneys, families, and public agencies are all welcome to write. You do not need to be a party to the case.</p>
+      <p>Corrections go to <a href={CORRECTION_MAILTO} class="pol-correct">cassiancreed@cassiancreed.com</a> with the subject line <em>Court Calendar correction</em>. The link fills that in for you.</p>
+      <p>It helps if you can include:</p>
+      <ul>
+        <li>The case or person name as it appears on the calendar</li>
+        <li>What is wrong</li>
+        <li>What the correct information is</li>
+        <li>The official record or source that supports it, if you have one</li>
+      </ul>
+      <p>An official record — a docket entry, a filed order, a court notice, a prosecutor's statement — is the fastest way to get an entry changed, but it is not required to report a problem. If a correction request identifies a real error, the entry is corrected, narrowed, or removed whether or not paperwork comes with it.</p>
+      <p class="pol-cta-row">
+        <a class="pol-btn" href={CORRECTION_MAILTO}>Report a correction</a>
+        <a class="pol-back" href="/court-calendar/">Back to the court calendar &rarr;</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="wrap pol-sec" aria-labelledby="related">
+    <h2 id="related">Related</h2>
+    <div class="prose">
+      <p>
+        <a href="/court-calendar/#how-we-verify">How we verify court dates</a> sets out the sourcing rules we apply before a date goes on the calendar. Our <a href="/mission/">mission</a> and <a href="/about/">about</a> pages explain who publishes this work. If a case on the calendar touches something in your own life, our <a href="/support/">Victim &amp; Reader Resources</a> page lists free, confidential help.
+      </p>
+    </div>
+  </section>
+
+  <style>
+    .pol-lede{font-size:19px;color:var(--ink);max-width:68ch;margin:18px 0 0;line-height:1.6}
+    .pol-updated{font-size:15px;color:var(--ink-2);max-width:68ch;margin:14px 0 0}
+    .pol-updated strong{color:var(--ink)}
+    .pol-sec{margin:44px auto 0}
+    .pol-sec h2{font-family:var(--serif);font-size:26px;font-weight:600;margin:0 0 14px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+    .pol-notice{margin:0;padding:18px 20px;background:var(--bg-2);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:10px}
+    .pol-notice p{margin:0;color:var(--ink-2);line-height:1.65;max-width:74ch;font-size:15px}
+    .pol-notice strong{color:var(--ink)}
+    .prose p,.prose li{color:var(--ink-2);line-height:1.65;max-width:70ch}
+    .prose strong{color:var(--ink)}
+    .prose ul{padding-left:20px;margin:0 0 16px}
+    .prose li{margin-bottom:7px}
+    .prose a{color:var(--accent)}
+    .pol-cta-row{display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin:22px 0 44px}
+    .pol-btn{display:inline-block;padding:11px 18px;border:1px solid var(--accent);border-radius:8px;background:var(--accent);color:var(--bg-2)!important;font-family:var(--mono);font-size:.9rem;text-decoration:none}
+    .pol-btn:hover{background:var(--bg-2);color:var(--accent)!important}
+    .pol-back{font-size:14px}
+    @media(max-width:680px){.pol-sec h2{font-size:23px}}
+  </style>
+</Base>
