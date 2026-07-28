@@ -99,12 +99,16 @@ const jsonld = faqNode
   <div class="wrap"><section class="convert" id="free-guide">
     <div class="convert__grid">
       <CaptureBlock offer={captureOffer} content={'post_' + post.slug} />
+      {/* Opt-in suppression (frontmatter hideBookOffer, default false): some posts
+         must have email capture as their single conversion action. */}
+      {!post.data.hideBookOffer && (
       <aside class="convert__book">
         <p class="convert__book-k">The Trail — ebook</p>
         <p class="convert__book-t">The complete, victim-first case file for Rachel Morin — for $1.99. Support independent true crime.</p>
         <a class="btn convert__book-btn" href="https://cassiancreed.beehiiv.com/products/the-trail?utm_source=website&utm_medium=post_cta&utm_campaign=the_trail" target="_blank" rel="noopener noreferrer">Buy The Trail — $1.99 →</a>
         <a class="convert__book-alt" href="/books/">See all case-file books →</a>
       </aside>
+      )}
     </div>
   </section></div>
 
