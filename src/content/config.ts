@@ -18,6 +18,11 @@ const posts = defineCollection({
     buyUrlAlt: z.string().optional(),
     buyPrice: z.string().optional(),
     capture: z.string().optional(),
+    // Opt-in only (defaults false, so no existing post changes): suppress the
+    // template's "The Trail — ebook" aside in the convert block. Used on posts
+    // where a book-sales CTA is inappropriate and email capture is the single
+    // conversion action (NEP D4vd stand-trial build, 2026-07-27).
+    hideBookOffer: z.boolean().default(false),
     cover: z.string().optional(),
     coverAlt: z.string().optional(),
   }),
