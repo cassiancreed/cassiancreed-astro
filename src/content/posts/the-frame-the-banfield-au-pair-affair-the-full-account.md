@@ -90,6 +90,4 @@ So we end where we began. Christine Banfield was a nurse and a mother, killed at
 **Get the free field guide.** We'll send you *How to Read a Case Like the Court Does* — how to weigh evidence instead of guessing, and what a verdict actually settles: [Send me the free guide →](https://cassiancreed.beehiiv.com/subscribe).
 
 **Get new case files and verdict updates the day they publish.** Join the case-file newsletter: [Get the free guide](https://cassiancreed.beehiiv.com/?utm_source=blog&utm_medium=post&utm_campaign=s2e2). No spam; unsubscribe anytime.
-
-**Read the full-length Cassian Creed case file.** [*The Trail: The Murder of Rachel Morin*](/the-trail/) — the complete, sourced account, $1.99.
 </section>

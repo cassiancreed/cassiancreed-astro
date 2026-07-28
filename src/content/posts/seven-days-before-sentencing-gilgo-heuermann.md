@@ -110,7 +110,6 @@ Get the free guide — we'll send you *How to Read a Case Like the Court Does*, 
 ### Follow the sentencing coverage
 
 - [Newsletter →](https://cassiancreed.beehiiv.com/subscribe?utm_source=blog&utm_medium=post&utm_campaign=gilgo-ladder-day1) — verified sentencing update June 17
-- [The Trail — our full-length case file, $1.99 →](/the-trail/)
 
 ---
 

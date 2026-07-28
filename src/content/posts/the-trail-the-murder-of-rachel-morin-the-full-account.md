@@ -9,10 +9,6 @@ incidentDate: "August 2023"
 location: "Bel Air, Harford County, Maryland"
 jurisdiction: "Maryland state court"
 status: "Victor Martinez-Hernandez convicted (2025), life without parole; appeal pending"
-buyUrl: "https://cassiancreed.beehiiv.com/products/the-trail?utm_source=website&utm_medium=landing&utm_campaign=the_trail"
-buyPrice: "$1.99"
-cover: "/covers/the-trail.jpg"
-coverAlt: "A foggy wooded hillside trail disappearing into mist at twilight."
 ---
 
 On a summer evening in August 2023, Rachel Morin — thirty-seven years old, a mother of five — left her home to walk a familiar trail in Harford County, Maryland, the kind of evening errand millions of people perform without a second thought. She did not come home. What began as a search would become one of the most consequential forensic investigations of the decade — and the man who killed her had left no name in any database on earth.

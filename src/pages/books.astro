@@ -5,30 +5,12 @@ import Base from '../layouts/Base.astro';
 // Beehiiv product URLs. Free guide CTA goes to the guide's own live $0 product
 // checkout (delivery-matched); no anchor bounces on this page.
 const jsonld = [
-  {
-    "@context": "https://schema.org",
-    "@type": "Book",
-    "@id": "https://cassiancreed.com/the-trail/#book",
-    "name": "The Trail: The Murder of Rachel Morin",
-    "author": { "@id": "https://cassiancreed.com/#cassian-creed" },
-    "publisher": { "@id": "https://cassiancreed.com/#org" },
-    "url": "https://cassiancreed.com/the-trail/",
-    "bookFormat": "https://schema.org/EBook",
-    "inLanguage": "en-US",
-    "genre": ["True Crime", "Nonfiction"],
-    "offers": [{ "@type": "Offer", "price": "1.99", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://cassiancreed.beehiiv.com/products/the-trail", "seller": { "@id": "https://cassiancreed.com/#org" } }]
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "Book",
-    "name": "The Frame: The Murders of Christine Banfield and Joseph Ryan",
-    "author": { "@id": "https://cassiancreed.com/#cassian-creed" },
-    "publisher": { "@id": "https://cassiancreed.com/#org" },
-    "bookFormat": "https://schema.org/EBook",
-    "inLanguage": "en-US",
-    "genre": ["True Crime", "Nonfiction"],
-    "offers": [{ "@type": "Offer", "price": "1.99", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://cassiancreed.beehiiv.com/products/the-frame", "seller": { "@id": "https://cassiancreed.com/#org" } }]
-  },
+  // CONVERSION-FIRST RANK 1 (2026-07-28): the Book + Offer nodes for
+  // "The Trail: The Murder of Rachel Morin" and "The Frame: The Murders of
+  // Christine Banfield and Joseph Ryan" were removed here while both titles are
+  // held for worthiness review. Nothing was deleted from source control — the
+  // full nodes are recoverable from git history. Do not reinstate either node,
+  // its Offer, or its product URL until Cassian approves the title's return.
   {
     "@context": "https://schema.org",
     "@type": "Book",
@@ -55,37 +37,16 @@ const jsonld = [
 
   <div class="wrap"><div class="shelf">
 
-    <div class="bk bk--rust bk--square">
-      <div class="bk__cover bk__cover--art">
-        <span class="bk__ribbon bk__ribbon--live">On sale</span>
-        <img class="bk__img" src="/covers/the-trail-card.jpg" alt="Book cover of The Trail: The Murder of Rachel Morin by Cassian Creed — a wooded walking trail at twilight" width="600" height="600" loading="lazy" />
-      </div>
-      <div class="bk__meta">
-        <h2 class="bk__title">The Trail: The Murder of Rachel Morin</h2>
-        <p class="bk__hook">A mother of five walked a familiar Maryland trail and never came home.</p>
-        <p class="bk__desc"><em>The Trail</em> is the sourced account of Rachel Morin’s case and the genetic-genealogy work that led investigators to Victor Martinez-Hernandez— convicted in 2025. It explains how investigators identified a man whose DNA was not already in a law-enforcement database while keeping Rachel, her life, and her family at the center.</p>
-        <div class="bk__cta">
-          <p class="bk__price">$1.99</p>
-          <a class="btn bk__buy" href="https://cassiancreed.beehiiv.com/products/the-trail" target="_blank" rel="noopener noreferrer">Get the book →</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="bk bk--steel">
-      <div class="bk__cover bk__cover--art">
-        <span class="bk__ribbon bk__ribbon--live">On sale</span>
-        <img class="bk__img" src="/covers/the-frame.jpg" alt="Book cover of The Frame: The Murders of Christine Banfield and Joseph Ryan by Cassian Creed" width="600" height="900" loading="lazy" />
-      </div>
-      <div class="bk__meta">
-        <h2 class="bk__title">The Frame: The Murders of Christine Banfield and Joseph Ryan</h2>
-        <p class="bk__hook">Two people were killed in a Virginia home; one of them was then falsely cast as the attacker.</p>
-        <p class="bk__desc">Christine Banfield was a pediatric intensive-care nurse and a mother. Joseph Ryan was lured to the home and framed after his death. <em>The Frame</em> follows how digital evidence, blood evidence, and the court record dismantled the staged self-defense account—and restores both victims to the center of the story.</p>
-        <div class="bk__cta">
-          <p class="bk__price">$1.99</p>
-          <a class="btn bk__buy" href="https://cassiancreed.beehiiv.com/products/the-frame" target="_blank" rel="noopener noreferrer">Get the book →</a>
-        </div>
-      </div>
-    </div>
+    {/* CONVERSION-FIRST RANK 1 (2026-07-28): the "The Trail: The Murder of
+        Rachel Morin" (.bk--rust .bk--square) and "The Frame: The Murders of
+        Christine Banfield and Joseph Ryan" (.bk--steel) shelf cards were
+        removed here — cover block, hook, sales copy, price and buy CTA — while
+        both titles are held for worthiness review. Beehiiv and PublishDrive
+        were not touched by that change. Manuscripts, covers and copy are all
+        intact; the cards themselves are recoverable from git history. The
+        .bk--rust / .bk--steel / .bk--square theme rules are retained in the
+        stylesheet below and are unused until a title reclaims them. Do not
+        restore either card until Cassian approves the title's return. */}
 
     <div class="bk bk--ink">
       <div class="bk__cover bk__cover--art">

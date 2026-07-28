@@ -40,17 +40,12 @@ import CaptureBlock from '../components/CaptureBlock.astro';
     </div>
   </section>
 
-  <section class="books-promo wrap" aria-label="The Case Files Library — the book">
-    <p class="evidence evidence--accent">The Case Files Library</p>
-    <h2 class="books-promo__heading">The Trail — $1.99</h2>
-    <div class="books-promo__shelf">
-      <a class="books-promo__item" href="/the-trail/">
-        <img src="/covers/the-trail.jpg" width="150" alt="Book cover of The Trail by Cassian Creed" />
-      </a>
-    </div>
-    <p class="books-promo__bundle">The complete, sourced case file for Rachel Morin — with an exclusive A.I. AL Case Analysis.</p>
-    <a class="btn" href="https://cassiancreed.beehiiv.com/products/the-trail?utm_source=website&utm_medium=start_here&utm_campaign=the_trail" target="_blank" rel="noopener noreferrer">Buy The Trail — $1.99 →</a>
-  </section>
+  {/* CONVERSION-FIRST RANK 1 (2026-07-28): the "The Trail — $1.99" promo
+      section stood here — heading, cover thumbnail linking to /the-trail/,
+      bundle line and buy button. Removed while the title is held for
+      worthiness review; recoverable from git history. Nothing was put in its
+      place, so the page runs straight from the "go deeper" step into the free
+      guide capture below. */}
 
   <section class="subscribe wrap" id="free-guide">
     <CaptureBlock offer="case" content="start_here" />
