@@ -7,9 +7,12 @@ const featured = posts.find(p=>p.data.featured) || posts[0];
 const rest = posts.filter(p=> featured && p.slug!==featured.slug && p.slug!=='nancy-guthrie-abduction-what-we-know').slice(0,8);
 const cfCount = posts.filter(p=>p.data.tag==='Case Files').length;
 const short = (t)=> t.split(':')[0];
-const books = [
-  { title:"The Trail", series:"Case File 001", sub:"The Murder of Rachel Morin", theme:"rust", price:"$1.99", onsale:true, sample:"/the-trail/", cover:"/covers/the-trail.jpg", cardCover:"/covers/square-1x1.png", coverAlt:"Book cover of The Trail: The Murder of Rachel Morin", buy:"https://cassiancreed.beehiiv.com/products/the-trail?utm_source=website&utm_medium=home_shelf&utm_campaign=the_trail" },
-];
+// CONVERSION-FIRST RANK 1 (2026-07-28): the home shelf held exactly one entry,
+// "The Trail", and the whole shop section below was written around it (its
+// price, its cover, its "under $2" benefit copy). The title is held for
+// worthiness review, so the entry and the section it fed were removed rather
+// than left as an empty shelf. Recoverable from git history. /books/ is still
+// reachable from the header nav and from the case-mechanics section.
 const jsonld = {
   "@context": "https://schema.org",
   "@graph": [
@@ -19,9 +22,8 @@ const jsonld = {
 };
 ---
 <Base title="Cassian Creed | Evidence-First, Victim-First True Crime" description="Read evidence-first case files built from court records and verified reporting—victims named in life first, disputed claims labeled, no gore or filler." jsonld={jsonld}>
-  <div class="trail-sale-bar" style="background:#e0563b;color:#fff;text-align:center;padding:10px 16px;font-size:15px;line-height:1.4" role="note">
-The Trail is $1.99 — Rachel Morin's story, told with care. <a href="https://cassiancreed.beehiiv.com/products/the-trail?utm_source=website&utm_medium=announcement_bar&utm_campaign=the_trail_sale" style="color:#fff;font-weight:600;text-decoration:underline" target="_blank" rel="noopener noreferrer">Read it here →</a>
-</div>
+  {/* CONVERSION-FIRST RANK 1 (2026-07-28): the orange "The Trail is $1.99"
+      announcement bar that stood here was removed with the title. */}
   <section class="hero">
     <div class="wrap">
       <div class="hero__copy">
@@ -96,54 +98,13 @@ The Trail is $1.99 — Rachel Morin's story, told with care. <a href="https://ca
   </section>
   )}
 
-  <section class="wrap shop" aria-label="Buy the books">
-    <div class="section-title">
-      <span>The Case Files Library</span>
-      <a class="evidence evidence--accent" href="/books/">All books &rarr;</a>
-    </div>
-<p class="shop__lede">A full-length, primary-source case file &mdash; carrying an exclusive A.I. AL Case Analysis you won't find in the free articles. The Trail is $1.99.</p>
-
-<ul class="benefits" aria-label="Why buy the books">
-  <li class="benefit">
-    <span class="benefit__k">Exclusive analysis</span>
-    <p class="benefit__t">Every book runs the case through <strong>A.I. AL</strong> &mdash; the forensic X-modules that surface insights the free articles never include.</p>
-  </li>
-  <li class="benefit">
-    <span class="benefit__k">The complete case</span>
-    <p class="benefit__t">Full timeline, primary-source records, and the people at the center &mdash; not a thread, not a recap. The whole story, in one place.</p>
-  </li>
-  <li class="benefit">
-    <span class="benefit__k">Sourced &amp; verified</span>
-    <p class="benefit__t">Every claim tied to the public record and re-checked before publish. Where a verdict is under appeal, we say so &mdash; and we correct what we get wrong.</p>
-  </li>
-  <li class="benefit">
-    <span class="benefit__k">Read it your way</span>
-    <p class="benefit__t">Instant ebook download, yours to keep. Under $2 &mdash; less than a coffee.</p>
-  </li>
-  <li class="benefit">
-    <span class="benefit__k">Victim-first, no filler</span>
-    <p class="benefit__t">Victims named in life first and remembered as more than how they died. No gore, no padding, no true-crime exploitation.</p>
-  </li>
-  <li class="benefit">
-    <span class="benefit__k">Support the work</span>
-    <p class="benefit__t">Buying directly funds independent, sourced reporting from Neural Edge Publishing &mdash; and the next case file.</p>
-  </li>
-</ul>
-        <div class="shop__shelf">
-      {books.map(b => (
-        <div class={`shopbk shopbk--${b.theme}${b.cardCover ? ' shopbk--square' : ''}`}>
-        <div class="shopbk__cover">
-{b.cover && <img decoding="async" class="shopbk__img" src={b.cardCover || b.cover} alt={b.coverAlt} loading="lazy" />}
-          <span class="shopbk__series">{b.series}</span>
-                      {!b.cover && <span class="shopbk__title">{b.title}</span>}
-            {!b.cover && <span class="shopbk__sub">{b.sub}</span>}
-          <span class="shopbk__seal">A.I. AL</span>
-        </div>
-        <a class="btn shopbk__buy" href={b.buy}>Buy the ebook &mdash; {b.price} &rarr;</a>
-      </div>
-      ))}
-    </div>
-  </section>
+  {/* CONVERSION-FIRST RANK 1 (2026-07-28): the home "Case Files Library" shop
+      section stood here — section title, "The Trail is $1.99" lede, the
+      six "Why buy the books" benefit tiles (including the "Under $2" price
+      claim) and the one-card shelf that sold The Trail. The title is held
+      for worthiness review, so the whole section was removed rather than
+      left as an empty shelf or a price claim no live book meets. Fully
+      recoverable from git history. */}
 
     <section class="wrap mechanics" id="case-mechanics" aria-label="Case mechanics">
       <div class="section-title">
@@ -171,7 +132,13 @@ The Trail is $1.99 — Rachel Morin's story, told with care. <a href="https://ca
         <div class="matrix__row" role="row"><span role="cell">Timeline reconstruction</span><span role="cell" class="is-known">Public filing</span><span role="cell">High</span></div>
         <div class="matrix__row" role="row"><span role="cell">Motive interpretation</span><span role="cell" class="is-open">Analysis</span><span role="cell">Contextual</span></div>
       </div>
-      <p class="mechanics__note">Sample structure shown for illustration. The full evidence matrix and forensic walkthrough live inside each book's A.I. AL Case Analysis. <a href="/about/">How our analysis works and its limits &rarr;</a></p>
+      {/* CONVERSION-FIRST RANK 1 (2026-07-28): the sentence "The full evidence
+          matrix and forensic walkthrough live inside each book's A.I. AL Case
+          Analysis." was removed from the note below. With The Trail and The
+          Frame held for worthiness review, "each book" resolves to the one
+          live title, which carries no A.I. AL Case Analysis — the claim would
+          have been false. No replacement wording was invented. */}
+      <p class="mechanics__note">Sample structure shown for illustration. <a href="/about/">How our analysis works and its limits &rarr;</a></p>
       <a class="btn" href="/books/?utm_source=website&utm_medium=mechanics&utm_campaign=case_mechanics">See the depth in the books &rarr;</a>
     </section>
 
