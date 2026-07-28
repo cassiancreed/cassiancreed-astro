@@ -52,7 +52,6 @@ This is the counterintuitive heart of IGG: a suspect does not have to be in any 
 The Rachel Morin investigation is the clearest recent example of what this technique can and cannot do. We documented it end to end — the failed CODIS searches, the Othram lab work, the family tree, the confirmation, the trial.
 
 - **Free:** [*How DNA Remembers* field guide (PDF)](https://cassiancreed.beehiiv.com/subscribe) — how forensic genetic genealogy turns a cold case into a name; sent when you subscribe.
-- **The complete account:** [*The Trail: The Murder of Rachel Morin*](/the-trail/) — the full book, $1.99.
 
 ## Sources
 
