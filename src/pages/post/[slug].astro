@@ -99,12 +99,12 @@ const jsonld = faqNode
   <div class="wrap"><section class="convert" id="free-guide">
     <div class="convert__grid">
       <CaptureBlock offer={captureOffer} content={'post_' + post.slug} />
-      <aside class="convert__book">
-        <p class="convert__book-k">The Trail — ebook</p>
-        <p class="convert__book-t">The complete, victim-first case file for Rachel Morin — for $1.99. Support independent true crime.</p>
-        <a class="btn convert__book-btn" href="https://cassiancreed.beehiiv.com/products/the-trail?utm_source=website&utm_medium=post_cta&utm_campaign=the_trail" target="_blank" rel="noopener noreferrer">Buy The Trail — $1.99 →</a>
-        <a class="convert__book-alt" href="/books/">See all case-file books →</a>
-      </aside>
+      {/* CONVERSION-FIRST RANK 1 (2026-07-28): the sitewide `.convert__book`
+          aside sold The Trail at $1.99 from the foot of EVERY post. The title
+          is held for worthiness review, so the aside was removed and the
+          two-column grid collapsed to one column below — leaving the email
+          capture as the single CTA instead of a half-empty row. Recoverable
+          from git history; the .convert__book* rules are retained and unused. */}
     </div>
   </section></div>
 
@@ -144,7 +144,9 @@ const jsonld = faqNode
   /* Sticky header would otherwise cover the CTA heading on an anchor jump
      (NEP-CWK-IRASEMA-CONVERSION-RESCUE-0726). */
   #free-guide{scroll-margin-top:84px}
-  .convert__grid{display:grid;grid-template-columns:1.6fr 1fr;gap:26px;align-items:start}
+  /* Single column since the book aside was removed (RANK 1, 2026-07-28).
+     Restore `1.6fr 1fr` if a second card ever returns to this block. */
+  .convert__grid{display:grid;grid-template-columns:1fr;gap:26px;align-items:start}
   @media(max-width:720px){.convert__grid{grid-template-columns:1fr;gap:20px}}
   .convert__magnet{margin:14px 0 0;font-size:15px}
   .convert__magnet a{color:var(--accent,#e0563b);text-decoration:none;font-weight:600}
