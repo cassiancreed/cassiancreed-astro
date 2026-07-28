@@ -30,6 +30,34 @@
   status = 410
   force = true
 
+# --- The Trail landing page withdrawn (CONVERSION-FIRST RANK 1, 2026-07-28) ---
+# /the-trail/ was the book's sales landing page (H1 + $1.99 banner + Book/Offer
+# schema + "what's inside the case file"). The title is held for worthiness
+# review, so the page was removed rather than left as a stale promotion.
+# 301 — NOT 410 — because the title is expected to come back after review, and
+# because the free, sourced account of the same case is still published. The
+# target is the topic-matched post, not /books/: sending Rachel Morin queries to
+# a store page whose only title is a jury-procedure book would read as a soft
+# 404 to crawlers and as a bait-and-switch to readers. Inbound links from six
+# posts, the old nav item and the sitemap all land correctly here.
+# ⚠ SEO-material decision — Cassian's call before merge. Alternatives: 301 to
+# /books/, or 410 Gone. ROLLBACK = delete this block and restore
+# src/pages/the-trail.astro from git history.
+[[redirects]]
+  from = "/the-trail"
+  to = "/post/the-trail-the-murder-of-rachel-morin-the-full-account/"
+  status = 301
+
+[[redirects]]
+  from = "/the-trail/"
+  to = "/post/the-trail-the-murder-of-rachel-morin-the-full-account/"
+  status = 301
+
+[[redirects]]
+  from = "/the-trail/*"
+  to = "/post/the-trail-the-murder-of-rachel-morin-the-full-account/"
+  status = 301
+
 [[redirects]]
   from = "/free-dossier"
   to = "/#free-guide"
