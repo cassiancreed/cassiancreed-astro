@@ -9,6 +9,18 @@ import Base from '../layouts/Base.astro';
 const LAST_VERIFIED = 'July 25, 2026';
 const BUILD_DATE = new Date().toISOString().slice(0, 10);
 
+// Per-entry verification: an entry may carry its own `verified` date. Entries
+// without one fall back to LAST_VERIFIED, the date of the last full sweep. This
+// exists so a partial sweep never silently re-certifies a card nobody checked.
+// Bump an entry's own `verified` when, and only when, you re-checked that entry.
+
+// Correction route. Every entry links here, and the policy page repeats it.
+const CORRECTION_MAILTO =
+  'mailto:cassiancreed@cassiancreed.com?subject=Court%20Calendar%20correction&body=Case%20or%20person%20name%3A%0D%0AWhat%20is%20wrong%3A%0D%0AWhat%20the%20correct%20information%20is%3A%0D%0AOfficial%20record%20or%20source%20(link%20or%20citation)%3A%0D%0AYour%20name%20and%20role%20(optional)%3A%0D%0A';
+
+// Required exact wording when nothing is on a calendar. Do not paraphrase.
+const NO_DATE = 'No confirmed upcoming court date found.';
+
 // Every entry below is tied to an outside source of record — a court filing, a
 // prosecutor's office, or courtroom reporting. We never cite our own articles as
 // the source for a date. `srcType` states plainly what kind of source it is.
@@ -19,12 +31,14 @@ const entries = [
     proceeding: 'Murder trial — opening statements',
     ongoing: true,
     dateISO: '2026-07-27',
-    dateText: 'Monday, July 27, 2026 — opening statements (trial underway)',
+    dateText: 'Monday, July 27, 2026 — opening statements delivered (trial underway)',
     court: 'Plymouth County Superior Court, Plymouth, MA',
+    verified: 'July 27, 2026',
+    nextNote: NO_DATE + ' The trial is in progress and the court has not published a specific next trial day.',
     status: 'On trial. She has pleaded not guilty to three counts of first-degree murder in the deaths of her three children, Cora, Dawson, and Callan Clancy. Prosecutors dropped three duplicative strangulation counts on July 9. She is presumed innocent unless and until a jury says otherwise.',
-    detail: 'Jury selection ran July 20 to July 23 before Judge William F. Sullivan and produced an 18-juror panel — 12 women and 6 men, including 6 alternates. Opening statements begin Monday morning, and prosecutors are expected to call the children’s father, Patrick Clancy, as their first witness. On July 24 the judge restricted public and media dissemination of the 911 call and the children’s autopsy photographs. At the July 13 final pretrial hearing the court denied a defense request to sequester the jury and barred lay witnesses from testifying about their own experience with postpartum depression or psychosis. Attorneys now estimate at least six weeks of trial.',
-    src: 'https://www.wbur.org/news/2026/07/24/jury-selected-lindsay-clancy-opening-statements-murder-trial',
-    srcLabel: 'WBUR, courtroom reporting (July 24, 2026)',
+    detail: 'Jury selection ran July 20 to July 23 before Judge William F. Sullivan and produced an 18-juror panel — 12 women and 6 men, including 6 alternates. Opening statements were delivered on the morning of Monday, July 27, and the children’s father, Patrick Clancy, took the stand as the first witness. The defense told jurors it will argue insanity arising from postpartum psychosis. On July 24 the judge restricted public and media dissemination of the 911 call and the children’s autopsy photographs. At the July 13 final pretrial hearing the court denied a defense request to sequester the jury and barred lay witnesses from testifying about their own experience with postpartum depression or psychosis. The judge has said the trial could run several weeks and potentially up to two months.',
+    src: 'https://www.wbur.org/news/2026/07/27/lindsay-clancy-trial-opening-statements',
+    srcLabel: 'WBUR, courtroom reporting (July 27, 2026)',
     srcType: 'Court reporting',
     link: '/post/lindsay-clancy-trial-2026-postpartum-psychosis/',
     linkText: 'Full Clancy case tracker',
@@ -36,13 +50,16 @@ const entries = [
     id: 'colt-gray-sentencing',
     case: 'Colt Gray',
     proceeding: 'Sentencing hearing (continued)',
+    ongoing: true,
     dateISO: '2026-07-27',
-    dateText: 'Continues Monday, July 27, 2026, 9:00 a.m. ET',
+    dateText: 'Resumed Monday, July 27, 2026 — hearing underway (start time not published)',
     court: 'Barrow County Superior Court, Winder, GA',
-    status: 'Pleaded guilty on July 24, 2026, to all 55 counts in the September 4, 2024 shooting at Apalachee High School, including malice murder and felony murder. The plea was non-negotiated: no sentence was agreed in advance. No sentence has been imposed yet.',
-    detail: 'The shooting killed teachers Cristina Irimie and Richard Aspinwall and 14-year-old students Mason Schermerhorn and Christian Angulo; nine others were wounded. Chief Judge Nicholas Primm took the plea, accepted it, and moved straight into sentencing on July 24 with victim impact statements and evidence from the State before adjourning to Monday morning. The defense is expected to call a psychologist, a juvenile detention counselor, and Gray’s grandmother. The minimum available sentence is life with the possibility of parole; the maximum is life without parole. The October 13 jury selection that had been set in Columbia County is moot now that the plea disposed of the indictment.',
-    src: 'https://www.usatoday.com/story/news/crime/2026/07/24/apalachee-high-school-shooting-colt-gray-plead-guilty/91033648007/',
-    srcLabel: 'USA TODAY, courtroom reporting (July 24, 2026)',
+    verified: 'July 27, 2026',
+    nextNote: NO_DATE + ' The hearing resumed on July 27 and reporting indicates it could extend into Tuesday, July 28, but no further setting has been ordered on the public record.',
+    status: 'Pleaded guilty on July 24, 2026, to all 55 counts in the September 4, 2024 shooting at Apalachee High School, including malice murder and felony murder. The plea was non-negotiated: no sentence was agreed in advance. No sentence has been imposed.',
+    detail: 'The shooting killed teachers Cristina Irimie and Richard Aspinwall and 14-year-old students Mason Schermerhorn and Christian Angulo; nine others were wounded. Chief Judge Nicholas Primm took the plea, accepted it, and moved straight into sentencing on July 24 with victim impact statements and evidence from the State before adjourning to Monday morning. The hearing resumed on July 27 with testimony that included a forensic psychologist on Gray’s mental health. No start time for the July 27 session was published by the court, so we do not print one. The minimum available sentence is life with the possibility of parole; the maximum is life without parole, and that choice is the judge’s. The October 13 jury selection that had been set in Columbia County is moot now that the plea disposed of the indictment.',
+    src: 'https://www.cbsnews.com/atlanta/news/colt-gray-sentencing-hearing-to-resume-monday-after-guilty-plea-in-apalachee-high-school-shooting/',
+    srcLabel: 'CBS News Atlanta, courtroom reporting (updated July 27, 2026)',
     srcType: 'Court reporting',
     link: null,
     linkText: null,
@@ -53,9 +70,10 @@ const entries = [
     case: 'Colin Gray',
     proceeding: 'Sentencing',
     dateISO: '2026-07-30',
-    dateText: 'Thursday, July 30, 2026 (start time not published)',
+    dateText: 'Thursday, July 30, 2026, 9:00 a.m. ET',
     court: 'Barrow County Superior Court, Winder, GA',
-    status: 'Convicted by a jury in March 2026 on 27 counts — including second-degree murder, involuntary manslaughter, reckless conduct, and second-degree cruelty to children — in connection with the Apalachee High School shooting carried out by his son. Two counts were vacated because two victims did not testify.',
+    verified: 'July 27, 2026',
+    status: 'Convicted by a jury on March 3, 2026 on 27 counts — including second-degree murder, involuntary manslaughter, reckless conduct, and second-degree cruelty to children — in connection with the Apalachee High School shooting carried out by his son. Two counts were vacated because two victims did not testify.',
     detail: 'This is a sentencing hearing, not a trial. The court moved it from the earlier July 28–29 setting to July 30; no reason was given on the record reported. Prosecutors argued at trial that he ignored repeated warnings about his son’s mental health and provided the AR-style rifle used in the shooting. Reported maximum exposure is 180 years. Some coverage published as late as July 24 still carried the old July 28–29 date; the July 30 setting is the one reported from the scheduling change itself.',
     src: 'https://www.11alive.com/article/news/crime/trials/colin-gray-father-of-the-accused-apalachee-high-shooter-colt-gray-to-be-sentenced-july-30/85-eb8045e5-a0f1-4b4c-8b25-b7ffa6e9231f',
     srcLabel: '11Alive, court reporting on the date change (July 20, 2026)',
@@ -198,6 +216,44 @@ const entries = [
     linkText: 'Read the verdict update',
     groups: ['next', 'sentencing'],
   },
+  {
+    id: 'burke-prelim',
+    case: 'David Anthony Burke, known as D4vd',
+    proceeding: 'Arraignment',
+    dateISO: '2026-08-31',
+    dateText: 'Monday, August 31, 2026 (start time not published)',
+    court: 'Clara Shortridge Foltz Criminal Justice Center, Los Angeles, CA',
+    docket: 'Case No. 26CJCF02399',
+    verified: 'July 27, 2026',
+    status: 'Held to answer, and still presumed innocent. He pleaded not guilty on April 20, 2026 to one count each of murder, continuous sexual abuse of a child under the age of 14, and unlawful mutilation of human remains. On July 27, 2026, at the close of the preliminary hearing, Judge Charlaine F. Olmedo held him to answer on all charges and upheld all three special-circumstance allegations — lying in wait, murder for financial gain, and murder of a witness. He is held without bail. Being held to answer is not a conviction and decides no one’s guilt; it means only that a judge found enough evidence for the case to proceed. He is presumed innocent unless and until proved guilty in court.',
+    detail: 'The preliminary hearing ran five days, July 21 to July 27, 2026, before Judge Olmedo in Department 105. On the final day prosecutors rested, the defense called no witnesses and asked the court to dismiss, and the judge denied that motion from the bench, saying the People had met their burden of proof including the special circumstances. The case now moves to arraignment on the information, set for August 31, 2026; the department for that setting has not been published. No trial date has been set, and reported estimates of how soon a trial would follow the arraignment differ. The Los Angeles County District Attorney has said the decision on whether to seek the death penalty will be made later. Celeste Rivas Hernandez was 14 years old; we do not republish the evidentiary detail from this hearing.',
+    src: 'https://da.lacounty.gov/about/inside-LADA/singer-d4vd-charged-capital-murder-14-year-old-girl',
+    srcLabel: 'Los Angeles County District Attorney, charging announcement (April 20, 2026)',
+    srcType: 'Primary — prosecutor’s office',
+    src2: 'https://www.latimes.com/california/story/2026-07-27/d4vd-david-anthony-burke-preliminary-hearing-testimony-text-messages',
+    srcLabel2: 'Los Angeles Times, courtroom reporting on the holding order (July 27, 2026)',
+    link: null,
+    linkText: null,
+    groups: ['next', 'hearings'],
+  },
+  {
+    id: 'goncalves-wsu-trial',
+    case: 'Goncalves v. Washington State University',
+    proceeding: 'Civil jury trial',
+    dateISO: '2027-09-13',
+    dateText: 'Monday, September 13, 2027, 9:30 a.m. PT',
+    court: 'U.S. District Court, Western District of Washington, Seattle, WA',
+    docket: 'Case No. 2:26-cv-00301',
+    verified: 'July 27, 2026',
+    status: 'A civil lawsuit, not a criminal case. The family of Kaylee Goncalves is suing Washington State University. Bryan Kohberger is not a defendant in this case. Nothing has been decided: a scheduled trial date is not a finding of liability, and no court has found the university responsible for anything.',
+    detail: 'We list this because it is the only proceeding connected to the University of Idaho murders that currently has a court-ordered date. The court entered a scheduling order on June 1, 2026 setting a 20-day jury trial to begin September 13, 2027 at 9:30 a.m. in Courtroom 16106; the case was reassigned to Judge Brian A. Tsuchida on the parties’ consent on June 12, 2026. Civil trial dates set more than a year out move often. Kohberger’s criminal case is separate and closed — see his entry under Dates Not Yet Confirmed.',
+    src: 'https://www.courtlistener.com/docket/72193493/goncalves-v-washington-state-university/',
+    srcLabel: 'U.S. District Court, W.D. Washington, docket No. 2:26-cv-00301 (scheduling order entered June 1, 2026)',
+    srcType: 'Primary — federal court record',
+    link: null,
+    linkText: null,
+    groups: ['next', 'trials'],
+  },
 ];
 
 const unconfirmed = [
@@ -255,6 +311,34 @@ const unconfirmed = [
     src: 'https://www.bbc.com/news/articles/cwy0p813jn7o',
     srcLabel: 'BBC News, reporting the FCDO statement and the advocacy account (June 25, 2026)',
     srcType: 'News report — no official charge confirmed',
+    link: null,
+    linkText: null,
+  },
+  {
+    case: 'Bryan Kohberger',
+    where: 'District Court, Fourth Judicial District, Ada County, Boise, ID',
+    docket: 'Case No. CR01-24-31665',
+    verified: 'July 27, 2026',
+    status: 'Convicted by his own guilty plea and sentenced. On July 2, 2025 he pleaded guilty to one count of burglary and four counts of first-degree murder in the November 13, 2022 deaths of University of Idaho students Kaylee Goncalves, Madison Mogen, Xana Kernodle and Ethan Chapin. On July 23, 2025 Judge Steven Hippler imposed four consecutive fixed life terms without the possibility of parole, plus a consecutive 10-year term on the burglary count. The plea agreement contained a waiver of his right to appeal.',
+    note: 'The criminal case has been closed since sentencing, and the official Idaho court file shows no future hearing set. Separately, a federal civil suit brought by the Goncalves family against Washington State University does have a trial date — it is listed above, and Kohberger is not a defendant in it.',
+    src: 'https://coi.isc.idaho.gov/docs/Cases/CR01-24-31665-26.html',
+    srcLabel: 'Idaho Supreme Court, official case file for CR01-24-31665',
+    srcType: 'Primary — court record',
+    link: null,
+    linkText: null,
+  },
+  {
+    case: 'Michelle Hadley — cleared; the Diaz prosecutions',
+    where: 'Orange County Superior Court, CA; U.S. District Court, Central District of California',
+    docket: 'Ian Diaz post-conviction motion: No. 8:26-cv-00442 (C.D. Cal.)',
+    verified: 'July 27, 2026',
+    status: 'Michelle Hadley was never convicted of anything. She was arrested in Orange County, California in 2016 after online posts and threats were falsely attributed to her, and she spent time in custody before being released on her own recognizance in October 2016. The Orange County District Attorney concluded she had been framed, and the charges against her were dismissed in January 2017. She appears on this calendar as a cleared person, not as a defendant.',
+    note: 'The people who framed her were prosecuted. Angela Diaz pleaded guilty in Orange County Superior Court and was sentenced on October 18, 2017 to five years in state prison. Ian Diaz, a former deputy U.S. marshal, was convicted by a federal jury on March 23, 2023 of conspiracy to commit cyberstalking, cyberstalking, perjury and obstruction, and was sentenced on June 30, 2023 to 121 months in prison. A motion by Ian Diaz to vacate his sentence under 28 U.S.C. § 2255 was filed on February 23, 2026 and is still pending before Judge Josephine L. Staton; the docket shows activity through July 2026, but the filings themselves are not publicly readable and no hearing date appears on the public record. The Netflix documentary A Toxic Love Story was released July 22, 2026. A documentary is not a court proceeding and does not change anyone’s legal status.',
+    src: 'https://oig.justice.gov/news/press-release/former-deputy-us-marshal-sentenced-conspiracy-cyberstalking-perjury-and',
+    srcLabel: 'U.S. Department of Justice, Office of the Inspector General, sentencing announcement (June 30, 2023)',
+    srcType: 'Primary — federal agency',
+    src2: 'https://www.courtlistener.com/docket/72377097/ian-diaz-v-united-states/',
+    srcLabel2: 'U.S. District Court, C.D. California, docket No. 8:26-cv-00442 (pending § 2255 motion)',
     link: null,
     linkText: null,
   },
@@ -373,12 +457,15 @@ const jsonld = {
       '@type': 'FAQPage',
       '@id': 'https://cassiancreed.com/court-calendar#faq',
       mainEntity: [
-        { '@type': 'Question', name: 'When does the Lindsay Clancy trial start?', acceptedAnswer: { '@type': 'Answer', text: 'It is underway. Jury selection ran July 20 to July 23, 2026, in Plymouth County Superior Court before Judge William F. Sullivan, and an 18-juror panel was seated — 12 jurors and 6 alternates. Opening statements begin Monday, July 27, 2026, and prosecutors are expected to call the children’s father as their first witness. Attorneys estimate at least six weeks. Prosecutors dropped three duplicative strangulation counts on July 9, leaving three counts of first-degree murder. She has pleaded not guilty and is presumed innocent.' } },
-        { '@type': 'Question', name: 'Was Colt Gray sentenced?', acceptedAnswer: { '@type': 'Answer', text: 'Not yet. He pleaded guilty on July 24, 2026, to all 55 counts in the Apalachee High School shooting in a non-negotiated plea, meaning no sentence was agreed in advance. Chief Judge Nicholas Primm accepted the plea and began the sentencing hearing the same day before adjourning it to Monday, July 27, 2026, at 9:00 a.m. Eastern. The minimum available sentence is life with the possibility of parole; the maximum is life without parole.' } },
+        { '@type': 'Question', name: 'When does the Lindsay Clancy trial start?', acceptedAnswer: { '@type': 'Answer', text: 'It is underway. Jury selection ran July 20 to July 23, 2026, in Plymouth County Superior Court before Judge William F. Sullivan, and an 18-juror panel was seated — 12 jurors and 6 alternates. Opening statements were delivered on Monday, July 27, 2026, and the children’s father, Patrick Clancy, testified as the first witness. The judge has said the trial could run several weeks and potentially up to two months. Prosecutors dropped three duplicative strangulation counts on July 9, leaving three counts of first-degree murder. She has pleaded not guilty and is presumed innocent.' } },
+        { '@type': 'Question', name: 'Was Colt Gray sentenced?', acceptedAnswer: { '@type': 'Answer', text: 'Not yet. He pleaded guilty on July 24, 2026, to all 55 counts in the Apalachee High School shooting in a non-negotiated plea, meaning no sentence was agreed in advance. Chief Judge Nicholas Primm accepted the plea and began the sentencing hearing the same day before adjourning it to Monday, July 27, 2026. The hearing resumed that morning — the court did not publish a start time, so we do not print one — and as of the reporting available that day no sentence had been imposed. The minimum available sentence is life with the possibility of parole; the maximum is life without parole.' } },
         { '@type': 'Question', name: 'What is the next court date for Dianne Curry Peck?', acceptedAnswer: { '@type': 'Answer', text: 'A pretrial conference is set for Monday, August 31, 2026, in Bristol County Superior Court in Fall River. Two outlets that reviewed the court file report that date; one broadcast report instead said December, and we are flagging that disagreement rather than picking quietly. She was indicted on one count of murder, pleaded not guilty, and was released on $100,000 surety with $10,000 cash posted. No trial date has been set.' } },
         { '@type': 'Question', name: 'Does Brooke George have a trial date?', acceptedAnswer: { '@type': 'Answer', text: 'No. There is no publicly verified court date. She is reported to be detained pending proceedings, but the details of the allegation come from an advocacy group rather than from UAE authorities or any court, and no charge has been confirmed on the public record.' } },
         { '@type': 'Question', name: 'Is Karmelo Anthony still facing an upcoming court date?', acceptedAnswer: { '@type': 'Answer', text: 'Yes — two. A hearing on his motion to recuse the trial judge is set for Wednesday, August 19, 2026, at 9:00 a.m. Central in the 494th District Court in Collin County, before Senior Judge Sid L. Harle. A hearing on his motion for a new trial is set for Thursday, August 20, 2026, with the courtroom and presiding judge not yet assigned. He was convicted of murder on June 9, 2026, sentenced to 35 years, and filed a notice of appeal the next day.' } },
         { '@type': 'Question', name: 'Is Rex Heuermann still going to trial?', acceptedAnswer: { '@type': 'Answer', text: 'No. That case is over. It concluded with a guilty plea in April 2026 and sentencing in June 2026. There is no upcoming court date.' } },
+        { '@type': 'Question', name: 'Why is Michelle Hadley listed if she was cleared?', acceptedAnswer: { '@type': 'Answer', text: 'Because the calendar tracks cases, not accusations, and her case is the clearest example of why that distinction matters. Michelle Hadley was never convicted of anything: she was arrested in Orange County, California in 2016 after online posts were falsely attributed to her, and the District Attorney concluded she had been framed. The charges were dismissed in January 2017. The live legal matter connected to that case is a pending motion by Ian Diaz to vacate his own federal sentence, and no hearing date on it is on the public record.' } },
+        { '@type': 'Question', name: 'Does Bryan Kohberger have an upcoming court date?', acceptedAnswer: { '@type': 'Answer', text: 'No confirmed upcoming court date found. His criminal case in Ada County, Idaho closed when Judge Steven Hippler sentenced him on July 23, 2025 to four consecutive fixed life terms without parole plus 10 years, after he pleaded guilty on July 2, 2025. A separate civil suit by the Goncalves family against Washington State University, in which Kohberger is not a defendant, has a jury trial set for September 13, 2027 in federal court in Seattle.' } },
+        { '@type': 'Question', name: 'What is the next court date for D4vd?', acceptedAnswer: { '@type': 'Answer', text: 'No confirmed upcoming court date found. A preliminary hearing for David Anthony Burke, the musician known as D4vd, opened on July 21, 2026 before Judge Charlaine F. Olmedo in Department 105 of the Clara Shortridge Foltz Criminal Justice Center in Los Angeles, and was still in progress on its fifth day, July 27, with the judge yet to rule on whether the case proceeds. He pleaded not guilty on April 20, 2026 and is held without bail. A preliminary hearing decides only whether there is enough evidence to go forward; it is not a trial and it decides no one’s guilt.' } },
         { '@type': 'Question', name: 'Can these dates change?', acceptedAnswer: { '@type': 'Answer', text: 'Yes, and they often do. Hearings get continued, trials get pushed, and courts reschedule with little notice. Treat every date here as the best current information, not a promise.' } },
         { '@type': 'Question', name: 'How are these dates verified?', acceptedAnswer: { '@type': 'Answer', text: 'Each one traces to a court filing, a prosecutor\'s office, a state agency record, or courtroom reporting, and each card names its source and the date we last checked it.' } },
       ],
@@ -395,11 +482,24 @@ const jsonld = {
     <p class="evidence evidence--accent">Court Calendar</p>
     <h1>True Crime Court Calendar: Trial Dates &amp; Hearings 2026</h1>
     <p class="cal-answer">
-      Colt Gray pleaded guilty <strong>July 24</strong> to all 55 counts in the Apalachee High School shooting; his sentencing hearing resumes <strong>Monday, July 27</strong> in Barrow County, and his father Colin Gray is sentenced <strong>July 30</strong>. Opening statements in Lindsay Clancy&rsquo;s murder trial begin <strong>Monday, July 27</strong> in Plymouth County, before a jury seated July 23. Karmelo Anthony has his first post-conviction hearings <strong>August 19 and 20</strong> in Collin County, Texas. Dianne Curry Peck&rsquo;s pretrial conference is set for <strong>August 31</strong> in Fall River, Yvonne &ldquo;Missy&rdquo; Woods is sentenced <strong>September 8</strong> in Jefferson County, Colorado, and Larry Millete is sentenced <strong>September 29</strong> in Chula Vista.
+      Colt Gray pleaded guilty <strong>July 24</strong> to all 55 counts in the Apalachee High School shooting; his sentencing hearing resumed <strong>Monday, July 27</strong> in Barrow County and no sentence has been imposed yet, and his father Colin Gray is sentenced <strong>July 30</strong>. Opening statements in Lindsay Clancy&rsquo;s murder trial were delivered <strong>Monday, July 27</strong> in Plymouth County. David Anthony Burke, known as D4vd, was held to answer on all charges on <strong>July 27</strong> at the close of a five-day preliminary hearing in Los Angeles and is due back for arraignment <strong>August 31</strong>. Karmelo Anthony has his first post-conviction hearings <strong>August 19 and 20</strong> in Collin County, Texas. Dianne Curry Peck&rsquo;s pretrial conference is set for <strong>August 31</strong> in Fall River, Yvonne &ldquo;Missy&rdquo; Woods is sentenced <strong>September 8</strong> in Jefferson County, Colorado, and Larry Millete is sentenced <strong>September 29</strong> in Chula Vista.
     </p>
     <p class="cal-fresh">
-      <strong>Last verified: {LAST_VERIFIED}.</strong> Court dates move. Every entry below is checked against the public record, and each one carries its source. Confirm with the court before you travel.
+      <strong>Last full sweep: {LAST_VERIFIED}.</strong> Court dates move. Every entry below is checked against the public record, carries its source, and carries the date <em>that entry</em> was last verified &mdash; we do not re-date a card nobody re-checked. Confirm with the court before you travel.
     </p>
+  </section>
+
+  <section class="wrap cal-sec" aria-labelledby="about-this-calendar">
+    <h2 id="about-this-calendar" class="cal-notice__h">About this calendar</h2>
+    <div class="cal-notice">
+      <p>
+        <strong>About this calendar:</strong> Neural Edge Publishing provides this calendar as a best-effort informational resource for readers following publicly reported court proceedings and case developments. Inclusion does not imply endorsement, guilt, credibility, or editorial approval. Allegations, arrests, and charges are not convictions. Court dates, legal status, and other information may change. Each entry identifies the sources and date used for its latest review. Readers should consult the linked court or government source for the most current official information and may report a correction through the correction link provided.
+      </p>
+      <p class="cal-notice__links">
+        <a href="/court-calendar-policy/">Read the full Court Calendar and Case-Tracking Policy</a>
+        <a href={CORRECTION_MAILTO}>Report a correction</a>
+      </p>
+    </div>
   </section>
 
   <section class="wrap cal-sec" aria-labelledby="next-dates">
@@ -412,16 +512,19 @@ const jsonld = {
           <h3 class="card__case">{e.case}</h3>
           <p class="card__when"><time datetime={e.dateISO}>{e.dateText}</time></p>
           <p class="card__court">{e.court}</p>
+          {e.docket && <p class="card__docket">{e.docket}</p>}
           <p class="card__status"><span class="card__k">Status</span> {e.status}</p>
           <p class="card__detail">{e.detail}</p>
+          {e.nextNote && <p class="card__nodate"><span class="card__k">Next court date</span> {e.nextNote}</p>}
           <p class="card__meta">
-            <span class="card__verified">Last verified: {LAST_VERIFIED}</span>
+            <span class="card__verified">Last verified: {e.verified || LAST_VERIFIED}</span>
             <span class="card__change">All dates are subject to change by the court.</span>
           </p>
           <p class="card__src">
             <span class="card__k">Source</span>
             <a href={e.src} target="_blank" rel="noopener noreferrer">{e.srcLabel}</a>
             <span class="card__srctype">{e.srcType}</span>
+            {e.src2 && <a class="card__src2" href={e.src2} target="_blank" rel="noopener noreferrer">{e.srcLabel2}</a>}
           </p>
           <p class="card__links">
             {e.link ? (
@@ -431,6 +534,7 @@ const jsonld = {
             )}
             {e.link2 && <a class="card__read" href={e.link2}>{e.linkText2} &rarr;</a>}
             <a class="card__help" href="/support/">Victim &amp; Reader Resources</a>
+            <a class="card__help" href={CORRECTION_MAILTO}>Report a correction</a>
           </p>
         </article>
       ))}
@@ -457,9 +561,11 @@ const jsonld = {
         <p class="row__type">{e.proceeding}</p>
         <h3 class="row__case">{e.case}</h3>
         <p class="row__when"><time datetime={e.dateISO}>{e.dateText}</time> &middot; {e.court}</p>
+        {e.docket && <p class="row__docket">{e.docket}</p>}
         <p class="row__status">{e.status}</p>
-        <p class="row__meta">Last verified: {LAST_VERIFIED} &middot; subject to change by the court &middot; Source: <a href={e.src} target="_blank" rel="noopener noreferrer">{e.srcLabel}</a></p>
-        <p class="row__links">{e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : <span class="card__soon">Our case file on this is in progress.</span>} {e.link2 && <a href={e.link2}>{e.linkText2} &rarr;</a>} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a></p>
+        {e.nextNote && <p class="row__nodate"><strong>Next court date:</strong> {e.nextNote}</p>}
+        <p class="row__meta">Last verified: {e.verified || LAST_VERIFIED} &middot; subject to change by the court &middot; Source: <a href={e.src} target="_blank" rel="noopener noreferrer">{e.srcLabel}</a></p>
+        <p class="row__links">{e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : <span class="card__soon">Our case file on this is in progress.</span>} {e.link2 && <a href={e.link2}>{e.linkText2} &rarr;</a>} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <a class="row__help" href={CORRECTION_MAILTO}>Report a correction</a></p>
       </div>
     ))}
   </section>
@@ -471,11 +577,13 @@ const jsonld = {
         <p class="row__type">{e.proceeding}</p>
         <h3 class="row__case">{e.case}</h3>
         <p class="row__when"><time datetime={e.dateISO}>{e.dateText}</time> &middot; {e.court}</p>
+        {e.docket && <p class="row__docket">{e.docket}</p>}
         <p class="row__status">{e.status}</p>
-        <p class="row__meta">Last verified: {LAST_VERIFIED} &middot; subject to change by the court &middot; Source: <a href={e.src} target="_blank" rel="noopener noreferrer">{e.srcLabel}</a></p>
+        {e.nextNote && <p class="row__nodate"><strong>Next court date:</strong> {e.nextNote}</p>}
+        <p class="row__meta">Last verified: {e.verified || LAST_VERIFIED} &middot; subject to change by the court &middot; Source: <a href={e.src} target="_blank" rel="noopener noreferrer">{e.srcLabel}</a></p>
         <p class="row__links">
           {e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : <span class="card__soon">Our case file on this is in progress.</span>}
-          <a class="row__help" href="/support/">Victim &amp; Reader Resources</a>
+          <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <a class="row__help" href={CORRECTION_MAILTO}>Report a correction</a>
         </p>
       </div>
     ))}
@@ -488,38 +596,45 @@ const jsonld = {
         <p class="row__type">{e.proceeding}</p>
         <h3 class="row__case">{e.case}</h3>
         <p class="row__when"><time datetime={e.dateISO}>{e.dateText}</time> &middot; {e.court}</p>
+        {e.docket && <p class="row__docket">{e.docket}</p>}
         <p class="row__status">{e.status}</p>
-        <p class="row__meta">Last verified: {LAST_VERIFIED} &middot; subject to change by the court &middot; Source: <a href={e.src} target="_blank" rel="noopener noreferrer">{e.srcLabel}</a></p>
-        <p class="row__links">{e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : <span class="card__soon">Our case file on this is in progress.</span>} {e.link2 && <a href={e.link2}>{e.linkText2} &rarr;</a>} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a></p>
+        {e.nextNote && <p class="row__nodate"><strong>Next court date:</strong> {e.nextNote}</p>}
+        <p class="row__meta">Last verified: {e.verified || LAST_VERIFIED} &middot; subject to change by the court &middot; Source: <a href={e.src} target="_blank" rel="noopener noreferrer">{e.srcLabel}</a></p>
+        <p class="row__links">{e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : <span class="card__soon">Our case file on this is in progress.</span>} {e.link2 && <a href={e.link2}>{e.linkText2} &rarr;</a>} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <a class="row__help" href={CORRECTION_MAILTO}>Report a correction</a></p>
       </div>
     ))}
     {appeals.map((e) => (
       <div class="row">
         <p class="row__type">{e.type || 'Post-conviction motions'}</p>
         <h3 class="row__case">{e.case}</h3>
-        <p class="row__when">{e.when || 'No hearing date publicly confirmed'} &middot; {e.where}</p>
+        <p class="row__when">{e.where}</p>
+        <p class="row__nodate"><strong>Next court date:</strong> {NO_DATE}</p>
         <p class="row__status">{e.status}</p>
+        {e.nextNote && <p class="row__nodate"><strong>Next court date:</strong> {e.nextNote}</p>}
         <p class="row__note">{e.note}</p>
-        <p class="row__meta">Last verified: {LAST_VERIFIED} &middot; subject to change by the court &middot; Source: <a href={e.src} target="_blank" rel="noopener noreferrer">{e.srcLabel}</a> ({e.srcType})</p>
-        <p class="row__links">{e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : <span class="card__soon">Our case file on this is in progress.</span>} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a></p>
+        <p class="row__meta">Last verified: {e.verified || LAST_VERIFIED} &middot; subject to change by the court &middot; Source: <a href={e.src} target="_blank" rel="noopener noreferrer">{e.srcLabel}</a> ({e.srcType}){e.src2 && <span class="row__src2"> &middot; Also: <a href={e.src2} target="_blank" rel="noopener noreferrer">{e.srcLabel2}</a></span>}</p>
+        <p class="row__links">{e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : <span class="card__soon">Our case file on this is in progress.</span>} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <a class="row__help" href={CORRECTION_MAILTO}>Report a correction</a></p>
       </div>
     ))}
   </section>
 
   <section class="wrap cal-sec" aria-labelledby="unconfirmed">
     <h2 id="unconfirmed">Dates Not Yet Confirmed</h2>
-    <p class="cal-sub">These cases are active, but no date is on a public calendar. We do not publish a date until we can point to where it came from.</p>
+    <p class="cal-sub">These cases are being tracked, but no date is on a public calendar. We do not publish a date until we can point to where it came from.</p>
     {unconfirmed.map((e) => (
       <div class="row row--muted">
         <p class="row__type">No date set</p>
         <h3 class="row__case">{e.case}</h3>
         <p class="row__when">{e.where}</p>
+        {e.docket && <p class="row__docket">{e.docket}</p>}
+        <p class="row__nodate"><strong>Next court date:</strong> {NO_DATE}</p>
         <p class="row__status">{e.status}</p>
+        {e.nextNote && <p class="row__nodate"><strong>Next court date:</strong> {e.nextNote}</p>}
         <p class="row__note">{e.note}</p>
-        <p class="row__meta">Last verified: {LAST_VERIFIED} &middot; subject to change by the court &middot; Source: <a href={e.src} target="_blank" rel="noopener noreferrer">{e.srcLabel}</a> ({e.srcType})</p>
+        <p class="row__meta">Last verified: {e.verified || LAST_VERIFIED} &middot; subject to change by the court &middot; Source: <a href={e.src} target="_blank" rel="noopener noreferrer">{e.srcLabel}</a> ({e.srcType}){e.src2 && <span class="row__src2"> &middot; Also: <a href={e.src2} target="_blank" rel="noopener noreferrer">{e.srcLabel2}</a></span>}</p>
         <p class="row__links">
           {e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : <span class="card__soon">Our case file on this is in progress.</span>}
-          <a class="row__help" href="/support/">Victim &amp; Reader Resources</a>
+          <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <a class="row__help" href={CORRECTION_MAILTO}>Report a correction</a>
         </p>
       </div>
     ))}
@@ -532,10 +647,13 @@ const jsonld = {
         <p class="row__type">Concluded</p>
         <h3 class="row__case">{e.case}</h3>
         <p class="row__when">{e.where}</p>
+        {e.docket && <p class="row__docket">{e.docket}</p>}
+        <p class="row__nodate"><strong>Next court date:</strong> {NO_DATE}</p>
         <p class="row__status">{e.status}</p>
+        {e.nextNote && <p class="row__nodate"><strong>Next court date:</strong> {e.nextNote}</p>}
         <p class="row__note">{e.note}</p>
-        <p class="row__meta">Last verified: {LAST_VERIFIED} &middot; Source: <a href={e.src} target="_blank" rel="noopener noreferrer">{e.srcLabel}</a> ({e.srcType})</p>
-        <p class="row__links">{e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : <span class="card__soon">Our case file on this is in progress.</span>} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a></p>
+        <p class="row__meta">Last verified: {e.verified || LAST_VERIFIED} &middot; Source: <a href={e.src} target="_blank" rel="noopener noreferrer">{e.srcLabel}</a> ({e.srcType}){e.src2 && <span class="row__src2"> &middot; Also: <a href={e.src2} target="_blank" rel="noopener noreferrer">{e.srcLabel2}</a></span>}</p>
+        <p class="row__links">{e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : <span class="card__soon">Our case file on this is in progress.</span>} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <a class="row__help" href={CORRECTION_MAILTO}>Report a correction</a></p>
       </div>
     ))}
   </section>
@@ -567,7 +685,7 @@ const jsonld = {
             <tr>
               <td class="t-case">{e.case}</td>
               <td>{e.type || 'Post-conviction motions'}</td>
-              <td class="t-none">No date set</td>
+              <td class="t-none">{NO_DATE}</td>
               <td>{e.where}</td>
               <td class="t-status">{e.status}</td>
             </tr>
@@ -576,7 +694,7 @@ const jsonld = {
             <tr>
               <td class="t-case">{e.case}</td>
               <td class="t-none">&mdash;</td>
-              <td class="t-none">No date set</td>
+              <td class="t-none">{NO_DATE}</td>
               <td>{e.where}</td>
               <td class="t-status">{e.status}</td>
             </tr>
@@ -585,7 +703,7 @@ const jsonld = {
             <tr>
               <td class="t-case">{e.case}</td>
               <td>Concluded</td>
-              <td class="t-none">No upcoming date</td>
+              <td class="t-none">{NO_DATE}</td>
               <td>{e.where}</td>
               <td class="t-status">{e.status}</td>
             </tr>
@@ -593,7 +711,7 @@ const jsonld = {
         </tbody>
       </table>
     </div>
-    <p class="cal-note evidence">Last verified: {LAST_VERIFIED}. All dates are subject to change by the court.</p>
+    <p class="cal-note evidence">Last full sweep: {LAST_VERIFIED}. Each entry above carries its own last-verified date. All dates are subject to change by the court. <a href={CORRECTION_MAILTO}>Report a correction</a>.</p>
   </section>
 
   <section class="wrap cal-sec" aria-labelledby="how-we-verify">
@@ -610,6 +728,7 @@ const jsonld = {
         <li><strong>A press conference is not a hearing.</strong> Briefings, filing deadlines, and announcements do not go on the calendar. Only proceedings a court has actually set do.</li>
       </ol>
       <p>Even so: courts continue courts. If you plan to attend, call the clerk's office first.</p>
+      <p>The full <a href="/court-calendar-policy/">Court Calendar and Case-Tracking Policy</a> sets out what inclusion on this page does and does not mean, what every entry must show before it is published, and how to report a correction. If something here is wrong, <a href={CORRECTION_MAILTO}>tell us</a> and we will fix it.</p>
       <p>Want to feel why seating twelve takes days? <a href="/voir-dire-simulator/">Play our free Voir Dire Simulator</a> &mdash; question the pool, argue cause, and try to survive a Batson challenge.</p>
     </div>
   </section>
@@ -618,10 +737,10 @@ const jsonld = {
     <h2 id="faq">FAQ</h2>
     <div class="prose faq">
       <h3>When does the Lindsay Clancy trial start?</h3>
-      <p>It is underway. Jury selection ran July 20 to July 23, 2026, in Plymouth County Superior Court before Judge William F. Sullivan, and an 18-juror panel was seated — 12 jurors and 6 alternates. Opening statements begin Monday, July 27, 2026, and prosecutors are expected to call the children’s father as their first witness. Attorneys estimate at least six weeks. Prosecutors dropped three duplicative strangulation counts on July 9, leaving three counts of first-degree murder. She has pleaded not guilty and is presumed innocent.</p>
+      <p>It is underway. Jury selection ran July 20 to July 23, 2026, in Plymouth County Superior Court before Judge William F. Sullivan, and an 18-juror panel was seated — 12 jurors and 6 alternates. Opening statements were delivered on Monday, July 27, 2026, and the children’s father, Patrick Clancy, testified as the first witness. The judge has said the trial could run several weeks and potentially up to two months. Prosecutors dropped three duplicative strangulation counts on July 9, leaving three counts of first-degree murder. She has pleaded not guilty and is presumed innocent.</p>
 
       <h3>Was Colt Gray sentenced?</h3>
-      <p>Not yet. He pleaded guilty on July 24, 2026, to all 55 counts in the Apalachee High School shooting in a non-negotiated plea, meaning no sentence was agreed in advance. Chief Judge Nicholas Primm accepted the plea and began the sentencing hearing the same day before adjourning it to Monday, July 27, 2026, at 9:00 a.m. Eastern. The minimum available sentence is life with the possibility of parole; the maximum is life without parole.</p>
+      <p>Not yet. He pleaded guilty on July 24, 2026, to all 55 counts in the Apalachee High School shooting in a non-negotiated plea, meaning no sentence was agreed in advance. Chief Judge Nicholas Primm accepted the plea and began the sentencing hearing the same day before adjourning it to Monday, July 27, 2026. The hearing resumed that morning — the court did not publish a start time, so we do not print one — and as of the reporting available that day no sentence had been imposed. The minimum available sentence is life with the possibility of parole; the maximum is life without parole.</p>
 
       <h3>What is the next court date for Dianne Curry Peck?</h3>
       <p>A pretrial conference is set for Monday, August 31, 2026, in Bristol County Superior Court in Fall River. Two outlets that reviewed the court file report that date; one broadcast report instead said December, and we are flagging that disagreement rather than picking quietly. She was indicted on one count of murder, pleaded not guilty, and was released on $100,000 surety with $10,000 cash posted. No trial date has been set.</p>
@@ -634,6 +753,15 @@ const jsonld = {
 
       <h3>Is Rex Heuermann still going to trial?</h3>
       <p>No. That case is over. It concluded with a guilty plea in April 2026 and sentencing in June 2026. There is no upcoming court date.</p>
+
+      <h3>Why is Michelle Hadley listed if she was cleared?</h3>
+      <p>Because the calendar tracks cases, not accusations, and her case is the clearest example of why that distinction matters. Michelle Hadley was never convicted of anything: she was arrested in Orange County, California in 2016 after online posts were falsely attributed to her, and the District Attorney concluded she had been framed. The charges were dismissed in January 2017. The live legal matter connected to that case is a pending motion by Ian Diaz to vacate his own federal sentence, and no hearing date on it is on the public record.</p>
+
+      <h3>Does Bryan Kohberger have an upcoming court date?</h3>
+      <p>No confirmed upcoming court date found. His criminal case in Ada County, Idaho closed when Judge Steven Hippler sentenced him on July 23, 2025 to four consecutive fixed life terms without parole plus 10 years, after he pleaded guilty on July 2, 2025. A separate civil suit by the Goncalves family against Washington State University, in which Kohberger is not a defendant, has a jury trial set for September 13, 2027 in federal court in Seattle.</p>
+
+      <h3>What is the next court date for D4vd?</h3>
+      <p>His arraignment is set for <strong>Monday, August 31, 2026</strong> at the Clara Shortridge Foltz Criminal Justice Center in Los Angeles; a start time and department have not been published. A five-day preliminary hearing ended on July 27, 2026, when Judge Charlaine F. Olmedo held David Anthony Burke to answer on all charges and upheld all three special-circumstance allegations. He pleaded not guilty on April 20, 2026 and is held without bail. Being held to answer is not a conviction and decides no one’s guilt; it means only that a judge found enough evidence for the case to proceed. No trial date has been set.</p>
 
       <h3>Can these dates change?</h3>
       <p>Yes, and they often do. Hearings get continued, trials get pushed, and courts reschedule with little notice. Treat every date here as the best current information, not a promise.</p>
@@ -656,6 +784,18 @@ const jsonld = {
     .capture-cta__body{margin:0 0 16px;color:var(--ink-2);line-height:1.55;max-width:60ch}
     .capture-cta__btn{display:inline-block;padding:11px 18px;border:1px solid var(--accent);border-radius:8px;background:var(--accent);color:var(--bg-2);font-family:var(--mono);font-size:.9rem;text-decoration:none}
     .capture-cta__btn:hover{background:var(--bg-2);color:var(--accent)}
+    .cal-notice__h{font-family:var(--serif);font-size:26px;font-weight:600;margin:0 0 14px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+    .cal-notice{background:var(--bg-2);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:10px;padding:18px 20px}
+    .cal-notice p{margin:0;color:var(--ink-2);font-size:15px;line-height:1.65;max-width:74ch}
+    .cal-notice strong{color:var(--ink)}
+    .cal-notice__links{display:flex;flex-wrap:wrap;gap:18px;margin-top:14px!important;padding-top:12px;border-top:1px solid var(--line)}
+    .cal-notice__links a{color:var(--accent);font-size:14px;text-decoration:none}
+    .cal-notice__links a:hover{text-decoration:underline}
+    .card__docket,.row__docket{font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;color:var(--ink-3);margin:0 0 10px}
+    .card__nodate,.row__nodate{font-size:14px;color:var(--ink-2);margin:0 0 12px;line-height:1.5;padding:9px 12px;background:var(--bg-3);border-radius:7px}
+    .card__nodate strong,.row__nodate strong{color:var(--ink);font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;display:block;margin-bottom:3px}
+    .card__src2{display:block;margin-top:6px}
+    .row__src2 a{color:var(--accent)}
     .cal-answer{font-size:19px;color:var(--ink);max-width:68ch;margin:18px 0 0;line-height:1.6}
     .cal-answer strong{color:var(--accent)}
     .cal-fresh{font-size:15px;color:var(--ink-2);max-width:68ch;margin:14px 0 0}
