@@ -52,6 +52,11 @@ const entries = [
     id: 'colin-gray-sentencing',
     case: 'Colin Gray',
     proceeding: 'Sentencing',
+    // Pinned: without this the card, its three group rows, its table row and its
+    // Event node all disappear on the first build after July 30, with nothing in
+    // `completed` to replace them. Visible and one day stale beats invisible.
+    // Move this entry to `completed` once sentence is imposed, then drop the flag.
+    ongoing: true,
     dateISO: '2026-07-30',
     dateText: 'Thursday, July 30, 2026, 9:00 a.m. ET',
     court: 'Barrow County Superior Court, Winder, GA',
@@ -636,6 +641,75 @@ const isUpcoming = (e) => e.ongoing === true || e.dateISO >= BUILD_DATE;
 const byGroup = (g) => entries.filter((e) => e.groups.includes(g) && isUpcoming(e));
 const nextDates = byGroup('next').sort((a, b) => a.dateISO.localeCompare(b.dateISO));
 
+// SINGLE SOURCE OF TRUTH for the FAQ. The visible FAQ block and the FAQPage
+// structured data are both generated from this one array. They used to be two
+// hand-maintained copies, which silently drifted: the schema was updated to say
+// Colt Gray had been sentenced while the visible prose still said "Not yet."
+// Never reintroduce a second copy. Every question here renders on the page, so
+// no answer is published to machines that a reader cannot also read.
+const faqs = [
+  {
+    q: 'When does the Lindsay Clancy trial start?',
+    a: 'It is underway. Jury selection ran July 20 to July 23, 2026, in Plymouth County Superior Court before Judge William F. Sullivan, and an 18-juror panel was seated — 12 jurors and 6 alternates. Opening statements were delivered on Monday, July 27, 2026. On July 29 the jury heard the 911 call and the children’s father, Patrick Clancy, testified and was cross-examined; the court then recessed until Thursday, July 30, 2026 at 9:00 a.m. Reporting from the trial estimates it could run up to eight weeks. Prosecutors dropped three duplicative strangulation counts on July 10, leaving three counts of murder. She has pleaded not guilty, the defense contends she is not criminally responsible because of severe postpartum depression and postpartum psychosis, and she is presumed innocent.',
+  },
+  {
+    q: 'Was Colt Gray sentenced?',
+    a: 'Yes. He was sentenced on Tuesday, July 28, 2026, to life in prison without the possibility of parole. He had pleaded guilty on July 24, 2026, to all 55 counts in the Apalachee High School shooting in a non-negotiated plea, meaning no sentence was agreed in advance. Chief Judge Nicholas Primm accepted the plea, heard evidence and victim impact statements, adjourned to July 27 for further testimony, and imposed sentence on July 28. His case is now listed under Concluded Matters. His father, Colin Gray, is a separate case and is sentenced on July 30, 2026.',
+  },
+  {
+    q: 'Has Tyler Robinson been sent to trial?',
+    a: 'Not yet. A five-day preliminary hearing ran July 6 to July 10, 2026 in the Fourth Judicial District Court in Provo, Utah, and ended without a ruling. Judge Tony F. Graf Jr. ordered written briefing and set final arguments for Tuesday, September 1, 2026 at 10:00 a.m., after which he will decide whether there is probable cause to bind the case over. Robinson has entered no plea — under Utah procedure a defendant charged by Information does not plead until arraignment after bind-over — and there is no trial date. He is charged with seven counts, including aggravated murder as a capital felony, and is presumed innocent.',
+  },
+  {
+    q: 'When is the Luigi Mangione trial?',
+    a: 'There are two trials in two different courts. The New York state murder trial is set to begin Tuesday, September 8, 2026 in the Supreme Court of the State of New York, New York County, before Justice Gregory Carro, and is expected to run about six weeks. The federal trial in the Southern District of New York begins with in-person jury selection on January 5, 2027 and evidence on January 25, 2027, before Judge Margaret M. Garnett. The federal death penalty is off the table after the court dismissed two counts in January 2026 and the Department of Justice declined to appeal, and there is no death penalty available in the state case. He has pleaded not guilty in both and is presumed innocent.',
+  },
+  {
+    q: 'When is Erin Patterson’s appeal?',
+    a: 'The appeal is listed for two days, Wednesday and Thursday, August 19 and 20, 2026, before the Court of Appeal of the Supreme Court of Victoria in Melbourne, Australia. She has appealed against conviction on seven grounds, alleging a substantial miscarriage of justice, and the Victorian Director of Public Prosecutions has separately appealed the sentence as manifestly inadequate; sources disagree on whether both are heard on those same two days. An appeal is not a retrial and not an acquittal — the court can dismiss it, order a new trial, or in some circumstances enter an acquittal. The convictions stand unless and until a court sets them aside.',
+  },
+  {
+    q: 'What is the next court date for Dianne Curry Peck?',
+    a: 'A pretrial conference is set for Monday, August 31, 2026, in Bristol County Superior Court in Fall River. Two outlets that reviewed the court file report that date; one broadcast report instead said December, and we are flagging that disagreement rather than picking quietly. She was indicted on one count of murder, pleaded not guilty, and was released on $100,000 surety with $10,000 cash posted. No trial date has been set.',
+  },
+  {
+    q: 'Does Brooke George have a trial date?',
+    a: 'No confirmed upcoming court date found. There is no publicly verified court date of any kind. She is reported to be detained pending proceedings, but the details of the allegation come from an advocacy group rather than from UAE authorities or any court, and no charge has been confirmed on the public record.',
+  },
+  {
+    q: 'Is Karmelo Anthony still facing an upcoming court date?',
+    a: 'Yes — two. A hearing on his motion to recuse the trial judge is set for Wednesday, August 19, 2026, at 9:00 a.m. Central in the 494th District Court in Collin County, before Senior Judge Sid L. Harle. A hearing on his motion for a new trial is set for Thursday, August 20, 2026, with the courtroom and presiding judge not yet assigned. He was convicted of murder on June 9, 2026, sentenced to 35 years, and filed a notice of appeal the next day.',
+  },
+  {
+    q: 'Is Rex Heuermann still going to trial?',
+    a: 'No. That case is over. It concluded with a guilty plea in April 2026 and sentencing in June 2026. No confirmed upcoming court date found.',
+  },
+  {
+    q: 'Why is Michelle Hadley listed if she was cleared?',
+    a: 'Because the calendar tracks cases, not accusations, and her case is the clearest example of why that distinction matters. Michelle Hadley was never convicted of anything: she was arrested in Orange County, California in 2016 after online posts were falsely attributed to her, and the District Attorney concluded she had been framed. The charges were dismissed in January 2017. The live legal matter connected to that case is a pending motion by Ian Diaz to vacate his own federal sentence, and no hearing date on it is on the public record.',
+  },
+  {
+    q: 'Does Bryan Kohberger have an upcoming court date?',
+    a: 'No confirmed upcoming court date found. Court records show that on Monday, July 27, 2026 he filed a petition for post-conviction relief in Ada County, representing himself, seeking to withdraw his guilty plea and asserting actual innocence. No hearing has been set on it, no case number for the petition has been published, and the convictions and sentences stand: Judge Steven Hippler sentenced him on July 23, 2025 to four consecutive fixed life terms without parole plus 10 years, after he pleaded guilty on July 2, 2025. Under Idaho law withdrawing a plea after sentencing requires a showing of manifest injustice. A Netflix documentary released on July 29, 2026 is not a court event. A separate civil suit by the Goncalves family against Washington State University, in which Kohberger is not a defendant, has a jury trial set for September 13, 2027 in federal court in Seattle.',
+  },
+  {
+    q: 'What is the next court date for D4vd?',
+    a: 'Monday, August 31, 2026 — arraignment on the information, in Department 105 of the Clara Shortridge Foltz Criminal Justice Center in Los Angeles. The court did not publish a start time. On July 27, 2026, at the close of a five-day preliminary hearing, the court held David Anthony Burke, the musician known as D4vd, to answer on all counts and found three special-circumstance allegations supported. Being held to answer is not a conviction and decides no one’s guilt; it means only that a judge found enough evidence for the case to proceed. He pleaded not guilty on April 20, 2026, is held without bail, and is presumed innocent. No trial date has been set, and the District Attorney has said the decision on whether to seek the death penalty will be made at a later date.',
+  },
+  {
+    q: 'Was Sean Combs’s case dismissed?',
+    a: 'No. Posts claiming the case was dismissed or that he was cleared are false. A jury convicted him in July 2025 on two counts of transportation to engage in prostitution and acquitted him of racketeering conspiracy and two counts of sex trafficking, and he was sentenced on October 3, 2025 to 50 months in prison. His direct appeal is pending in the Second Circuit, which heard argument on April 9, 2026 and has not issued a decision. No confirmed upcoming court date found. Reporting about prison discipline and about his release date concerns Bureau of Prisons administration, not any court proceeding.',
+  },
+  {
+    q: 'Can these dates change?',
+    a: 'Yes, and they often do. Hearings get continued, trials get pushed, and courts reschedule with little notice. Treat every date here as the best current information, not a promise.',
+  },
+  {
+    q: 'How are these dates verified?',
+    a: 'Each one traces to a court filing, a prosecutor\'s office, a state agency record, or courtroom reporting, and each card names its source and the date we last checked it.',
+  },
+];
+
 const jsonld = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -710,23 +784,11 @@ const jsonld = {
     {
       '@type': 'FAQPage',
       '@id': 'https://cassiancreed.com/court-calendar#faq',
-      mainEntity: [
-        { '@type': 'Question', name: 'When does the Lindsay Clancy trial start?', acceptedAnswer: { '@type': 'Answer', text: 'It is underway. Jury selection ran July 20 to July 23, 2026, in Plymouth County Superior Court before Judge William F. Sullivan, and an 18-juror panel was seated — 12 jurors and 6 alternates. Opening statements were delivered on Monday, July 27, 2026. On July 29 the jury heard the 911 call and the children’s father, Patrick Clancy, testified and was cross-examined; the court then recessed until Thursday, July 30, 2026 at 9:00 a.m. Reporting from the trial estimates it could run up to eight weeks. Prosecutors dropped three duplicative strangulation counts on July 10, leaving three counts of murder. She has pleaded not guilty, the defense contends she is not criminally responsible because of severe postpartum depression and postpartum psychosis, and she is presumed innocent.' } },
-        { '@type': 'Question', name: 'Was Colt Gray sentenced?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. He was sentenced on Tuesday, July 28, 2026, to life in prison without the possibility of parole. He had pleaded guilty on July 24, 2026, to all 55 counts in the Apalachee High School shooting in a non-negotiated plea, meaning no sentence was agreed in advance. Chief Judge Nicholas Primm accepted the plea, heard evidence and victim impact statements, adjourned to July 27 for further testimony, and imposed sentence on July 28. His case is now listed under Concluded Matters. His father, Colin Gray, is a separate case and is sentenced on July 30, 2026.' } },
-        { '@type': 'Question', name: 'Has Tyler Robinson been sent to trial?', acceptedAnswer: { '@type': 'Answer', text: 'Not yet. A five-day preliminary hearing ran July 6 to July 10, 2026 in the Fourth Judicial District Court in Provo, Utah, and ended without a ruling. Judge Tony F. Graf Jr. ordered written briefing and set final arguments for Tuesday, September 1, 2026 at 10:00 a.m., after which he will decide whether there is probable cause to bind the case over. Robinson has entered no plea — under Utah procedure a defendant charged by Information does not plead until arraignment after bind-over — and there is no trial date. He is charged with seven counts, including aggravated murder as a capital felony, and is presumed innocent.' } },
-        { '@type': 'Question', name: 'When is the Luigi Mangione trial?', acceptedAnswer: { '@type': 'Answer', text: 'There are two trials in two different courts. The New York state murder trial is set to begin Tuesday, September 8, 2026 in the Supreme Court of the State of New York, New York County, before Justice Gregory Carro, and is expected to run about six weeks. The federal trial in the Southern District of New York begins with in-person jury selection on January 5, 2027 and evidence on January 25, 2027, before Judge Margaret M. Garnett. The federal death penalty is off the table after the court dismissed two counts in January 2026 and the Department of Justice declined to appeal, and there is no death penalty available in the state case. He has pleaded not guilty in both and is presumed innocent.' } },
-        { '@type': 'Question', name: 'When is Erin Patterson’s appeal?', acceptedAnswer: { '@type': 'Answer', text: 'The appeal is listed for two days, Wednesday and Thursday, August 19 and 20, 2026, before the Court of Appeal of the Supreme Court of Victoria in Melbourne, Australia. She has appealed against conviction on seven grounds, alleging a substantial miscarriage of justice, and the Victorian Director of Public Prosecutions has separately appealed the sentence as manifestly inadequate; sources disagree on whether both are heard on those same two days. An appeal is not a retrial and not an acquittal — the court can dismiss it, order a new trial, or in some circumstances enter an acquittal. The convictions stand unless and until a court sets them aside.' } },
-        { '@type': 'Question', name: 'What is the next court date for Dianne Curry Peck?', acceptedAnswer: { '@type': 'Answer', text: 'A pretrial conference is set for Monday, August 31, 2026, in Bristol County Superior Court in Fall River. Two outlets that reviewed the court file report that date; one broadcast report instead said December, and we are flagging that disagreement rather than picking quietly. She was indicted on one count of murder, pleaded not guilty, and was released on $100,000 surety with $10,000 cash posted. No trial date has been set.' } },
-        { '@type': 'Question', name: 'Does Brooke George have a trial date?', acceptedAnswer: { '@type': 'Answer', text: 'No. There is no publicly verified court date. She is reported to be detained pending proceedings, but the details of the allegation come from an advocacy group rather than from UAE authorities or any court, and no charge has been confirmed on the public record.' } },
-        { '@type': 'Question', name: 'Is Karmelo Anthony still facing an upcoming court date?', acceptedAnswer: { '@type': 'Answer', text: 'Yes — two. A hearing on his motion to recuse the trial judge is set for Wednesday, August 19, 2026, at 9:00 a.m. Central in the 494th District Court in Collin County, before Senior Judge Sid L. Harle. A hearing on his motion for a new trial is set for Thursday, August 20, 2026, with the courtroom and presiding judge not yet assigned. He was convicted of murder on June 9, 2026, sentenced to 35 years, and filed a notice of appeal the next day.' } },
-        { '@type': 'Question', name: 'Is Rex Heuermann still going to trial?', acceptedAnswer: { '@type': 'Answer', text: 'No. That case is over. It concluded with a guilty plea in April 2026 and sentencing in June 2026. There is no upcoming court date.' } },
-        { '@type': 'Question', name: 'Why is Michelle Hadley listed if she was cleared?', acceptedAnswer: { '@type': 'Answer', text: 'Because the calendar tracks cases, not accusations, and her case is the clearest example of why that distinction matters. Michelle Hadley was never convicted of anything: she was arrested in Orange County, California in 2016 after online posts were falsely attributed to her, and the District Attorney concluded she had been framed. The charges were dismissed in January 2017. The live legal matter connected to that case is a pending motion by Ian Diaz to vacate his own federal sentence, and no hearing date on it is on the public record.' } },
-        { '@type': 'Question', name: 'Does Bryan Kohberger have an upcoming court date?', acceptedAnswer: { '@type': 'Answer', text: 'No confirmed upcoming court date found. Court records show that on Monday, July 27, 2026 he filed a petition for post-conviction relief in Ada County, representing himself, seeking to withdraw his guilty plea and asserting actual innocence. No hearing has been set on it, no case number for the petition has been published, and the convictions and sentences stand: Judge Steven Hippler sentenced him on July 23, 2025 to four consecutive fixed life terms without parole plus 10 years, after he pleaded guilty on July 2, 2025. Under Idaho law withdrawing a plea after sentencing requires a showing of manifest injustice. A Netflix documentary released on July 29, 2026 is not a court event. A separate civil suit by the Goncalves family against Washington State University, in which Kohberger is not a defendant, has a jury trial set for September 13, 2027 in federal court in Seattle.' } },
-        { '@type': 'Question', name: 'What is the next court date for D4vd?', acceptedAnswer: { '@type': 'Answer', text: 'Monday, August 31, 2026 — arraignment on the information, in Department 105 of the Clara Shortridge Foltz Criminal Justice Center in Los Angeles. The court did not publish a start time. On July 27, 2026, at the close of a five-day preliminary hearing, the court held David Anthony Burke, the musician known as D4vd, to answer on all counts and found three special-circumstance allegations supported. Being held to answer is not a conviction and decides no one’s guilt; it means only that a judge found enough evidence for the case to proceed. He pleaded not guilty on April 20, 2026, is held without bail, and is presumed innocent. No trial date has been set, and the District Attorney has said the decision on whether to seek the death penalty will be made at a later date.' } },
-        { '@type': 'Question', name: 'Was Sean Combs’s case dismissed?', acceptedAnswer: { '@type': 'Answer', text: 'No. Posts claiming the case was dismissed or that he was cleared are false. A jury convicted him in July 2025 on two counts of transportation to engage in prostitution and acquitted him of racketeering conspiracy and two counts of sex trafficking, and he was sentenced on October 3, 2025 to 50 months in prison. His direct appeal is pending in the Second Circuit, which heard argument on April 9, 2026 and has not issued a decision. There is no upcoming court date. Reporting about prison discipline and about his release date concerns Bureau of Prisons administration, not any court proceeding.' } },
-        { '@type': 'Question', name: 'Can these dates change?', acceptedAnswer: { '@type': 'Answer', text: 'Yes, and they often do. Hearings get continued, trials get pushed, and courts reschedule with little notice. Treat every date here as the best current information, not a promise.' } },
-        { '@type': 'Question', name: 'How are these dates verified?', acceptedAnswer: { '@type': 'Answer', text: 'Each one traces to a court filing, a prosecutor\'s office, a state agency record, or courtroom reporting, and each card names its source and the date we last checked it.' } },
-      ],
+      mainEntity: faqs.map((f) => ({
+        '@type': 'Question',
+        name: f.q,
+        acceptedAnswer: { '@type': 'Answer', text: f.a },
+      })),
     },
   ],
 };
@@ -994,38 +1056,13 @@ const jsonld = {
   <section class="wrap cal-sec" aria-labelledby="faq">
     <h2 id="faq">FAQ</h2>
     <div class="prose faq">
-      <h3>When does the Lindsay Clancy trial start?</h3>
-      <p>It is underway. Jury selection ran July 20 to July 23, 2026, in Plymouth County Superior Court before Judge William F. Sullivan, and an 18-juror panel was seated — 12 jurors and 6 alternates. Opening statements were delivered on Monday, July 27, 2026, and the children’s father, Patrick Clancy, testified as the first witness. The judge has said the trial could run several weeks and potentially up to two months. Prosecutors dropped three duplicative strangulation counts on July 9, leaving three counts of first-degree murder. She has pleaded not guilty and is presumed innocent.</p>
-
-      <h3>Was Colt Gray sentenced?</h3>
-      <p>Not yet. He pleaded guilty on July 24, 2026, to all 55 counts in the Apalachee High School shooting in a non-negotiated plea, meaning no sentence was agreed in advance. Chief Judge Nicholas Primm accepted the plea and began the sentencing hearing the same day before adjourning it to Monday, July 27, 2026. The hearing resumed that morning — the court did not publish a start time, so we do not print one — and as of the reporting available that day no sentence had been imposed. The minimum available sentence is life with the possibility of parole; the maximum is life without parole.</p>
-
-      <h3>What is the next court date for Dianne Curry Peck?</h3>
-      <p>A pretrial conference is set for Monday, August 31, 2026, in Bristol County Superior Court in Fall River. Two outlets that reviewed the court file report that date; one broadcast report instead said December, and we are flagging that disagreement rather than picking quietly. She was indicted on one count of murder, pleaded not guilty, and was released on $100,000 surety with $10,000 cash posted. No trial date has been set.</p>
-
-      <h3>Does Brooke George have a trial date?</h3>
-      <p>No. There is no publicly verified court date. She is reported to be detained pending proceedings, but the details of the allegation come from an advocacy group rather than from UAE authorities or any court, and no charge has been confirmed on the public record.</p>
-
-      <h3>Is Karmelo Anthony still facing an upcoming court date?</h3>
-      <p>Yes — two. A hearing on his motion to recuse the trial judge is set for Wednesday, August 19, 2026, at 9:00 a.m. Central in the 494th District Court in Collin County, before Senior Judge Sid L. Harle. A hearing on his motion for a new trial is set for Thursday, August 20, 2026, with the courtroom and presiding judge not yet assigned. He was convicted of murder on June 9, 2026, sentenced to 35 years, and filed a notice of appeal the next day.</p>
-
-      <h3>Is Rex Heuermann still going to trial?</h3>
-      <p>No. That case is over. It concluded with a guilty plea in April 2026 and sentencing in June 2026. There is no upcoming court date.</p>
-
-      <h3>Why is Michelle Hadley listed if she was cleared?</h3>
-      <p>Because the calendar tracks cases, not accusations, and her case is the clearest example of why that distinction matters. Michelle Hadley was never convicted of anything: she was arrested in Orange County, California in 2016 after online posts were falsely attributed to her, and the District Attorney concluded she had been framed. The charges were dismissed in January 2017. The live legal matter connected to that case is a pending motion by Ian Diaz to vacate his own federal sentence, and no hearing date on it is on the public record.</p>
-
-      <h3>Does Bryan Kohberger have an upcoming court date?</h3>
-      <p>No confirmed upcoming court date found. His criminal case in Ada County, Idaho closed when Judge Steven Hippler sentenced him on July 23, 2025 to four consecutive fixed life terms without parole plus 10 years, after he pleaded guilty on July 2, 2025. A separate civil suit by the Goncalves family against Washington State University, in which Kohberger is not a defendant, has a jury trial set for September 13, 2027 in federal court in Seattle.</p>
-
-      <h3>What is the next court date for D4vd?</h3>
-      <p>His arraignment is set for <strong>Monday, August 31, 2026</strong> at the Clara Shortridge Foltz Criminal Justice Center in Los Angeles; a start time and department have not been published. A five-day preliminary hearing ended on July 27, 2026, when Judge Charlaine F. Olmedo held David Anthony Burke to answer on all charges and upheld all three special-circumstance allegations. He pleaded not guilty on April 20, 2026 and is held without bail. Being held to answer is not a conviction and decides no one’s guilt; it means only that a judge found enough evidence for the case to proceed. No trial date has been set.</p>
-
-      <h3>Can these dates change?</h3>
-      <p>Yes, and they often do. Hearings get continued, trials get pushed, and courts reschedule with little notice. Treat every date here as the best current information, not a promise.</p>
-
-      <h3>How are these dates verified?</h3>
-      <p>Each one traces to a court filing, a prosecutor's office, a state agency record, or courtroom reporting, and each card names its source and the date we last checked it. See <a href="#how-we-verify">How We Verify Court Dates</a>.</p>
+      {faqs.map((f) => (
+        <Fragment>
+          <h3>{f.q}</h3>
+          <p>{f.a}</p>
+        </Fragment>
+      ))}
+      <p>See <a href="#how-we-verify">How We Verify Court Dates</a> for the rule behind every entry on this page.</p>
     </div>
   </section>
 
