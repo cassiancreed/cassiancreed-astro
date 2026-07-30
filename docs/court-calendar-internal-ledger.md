@@ -141,7 +141,8 @@ filing, no ruling identified.
    entry. This sweep re-verified only the entries carrying `verified: 'July 29, 2026'`. Entries still
    resting on the July 25 fallback and not re-checked here: Dominguez (both), Lebron, Karmelo Anthony
    (both), Peck, Woods, Millete, Goncalves v. WSU, Jermaine Williams Sr., Mayra Velasquez, Taylor
-   Parker, Pedro Hernandez, Brooke George, Michelle Hadley / Diaz, Melgar, Heuermann.
+   Parker, Pedro Hernandez, Brooke George, Melgar, Heuermann. (Michelle Hadley / Diaz was
+   re-checked on 2026-07-29 — see the addendum — and now carries its own date.)
 2. **Colin Gray sentencing is 2026-07-30, 9:00 a.m.** — re-check the same day; the entry goes to
    `completed` once sentence is imposed.
 3. **Clancy trial is live.** Re-check daily; the `nextNote` carries a one-day-ahead resumption time
