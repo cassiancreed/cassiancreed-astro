@@ -199,3 +199,62 @@ purchase — worth setting if the PM wants this tracked continuously.
 **Open blocker added: missing approved NEP market-country list.** `NEP_CURRENT_INTELLIGENCE` §3
 forbids inventing it and requires naming it as a stop. Both the Meta and ChatGPT scouts hit the same
 wall and substituted guessed market sets, so international coverage is currently unreconcilable.
+
+---
+
+## Addendum 2 — 2026-07-29 late, owner rulings and the fallback clear
+
+### Nygard court-name conflict — RECORDED, not resolved
+Two reports name **two different Montreal courts** for the 2026-10-02 hearing:
+- The Canadian Press coverage of the conviction names **Quebec Superior Court**.
+- Other coverage names the **Court of Québec**.
+
+These are different courts. Per ruling, **neither name is on the public page** — the court field now
+reads only `The court in Montreal, Montreal, Quebec`, which is the narrowest wording both sources
+support. The two candidate names live here and nowhere else until the record settles it. The same
+entry also carries an unresolved conflict over what October 2 is *for*: a medical-report progress
+update versus the presentation of a joint sentencing submission. Not a confirmed sentencing date.
+
+### July 25 fallback — CLEARED
+A targeted change-check ran on 2026-07-29 against the 15 entries that were still inheriting the
+sweep date. Result: **13 UNCHANGED, 1 CHANGED, 1 CANNOT CONFIRM.**
+
+- **CHANGED — Mayra Velasquez.** Released from the Tarrant County jail on a **$450,000 bond on
+  2026-07-29** after her attorneys obtained a writ of habeas corpus following an initial bond denial.
+  Separately, **Tarrant County court records describe the charge as "murder"**, while early coverage
+  of the arrest said "capital murder." The page now uses the narrower county-records wording and
+  flags the disagreement — publishing "capital murder" against an accused person on the strength of
+  early arrest coverage was an overstatement. Still no next court date.
+- **CANNOT CONFIRM — Nestor Hernandez Melgar.** No Snohomish County or Division I record was
+  reachable, so the entry is now **explicitly pinned at `verified: 'July 25, 2026'`** rather than
+  inheriting a newer date, and its text states the appeal position as of that earlier date. This is
+  the one entry that must NOT be bumped to match the sweep.
+- **Taylor Parker** — current coverage dates the Court of Criminal Appeals affirmance to
+  **November 7, 2025**; our entry had November 6. Sources disagree, so the page now gives only
+  **November 2025**. Both candidate dates recorded here.
+
+Because every entry now carries its **own explicit** verified date, the fallback is unused and
+`LAST_VERIFIED` has been advanced to **2026-07-29** without silently re-certifying anything. Two
+entries deliberately state older dates: Goncalves v. WSU at July 27 and Melgar at July 25.
+
+### Colin Gray — do NOT move yet (ruling)
+Sentencing is 2026-07-30, 9:00 a.m. Per ruling, the entry stays in `entries` with `ongoing: true`
+until sentence is imposed **and verified**. Then, in this order: verify the official result → update
+the exact disposition → move the entry to `completed` → drop the `ongoing` flag → de-hardcode him
+from the hero `cal-answer` → rebuild → re-check.
+
+### Orphan branch — do NOT delete yet (ruling)
+`cassiancreed-patch-13` stays untouched. Deletion is destructive and needs Cassian's approval, and
+only after: (1) PR #71 approved, (2) merged, (3) the live calendar independently verified,
+(4) rollback confirmed. It remains true that merging it would delete 181 files; no PR points at it.
+
+### Outbound links — NOT touched (ruling)
+Zero external anchors were changed. Measured count on the built page is **87** `<a>` anchors — 85
+source anchors plus 2 Beehiiv links; the earlier "83" predated the Wells and Gilson entries, whose 4
+new source anchors reconcile the difference. All 63 distinct source URLs are byte-identical to the
+previous commit. The two conflicting clauses are quoted verbatim, with
+their scope and their live consequences, in `court-calendar-master-intake.md`.
+
+### International market coverage
+Status is `INCOMPLETE — APPROVED MARKET-COUNTRY LIST NOT SUPPLIED`. No full-coverage claim is made
+anywhere. Follow-up item for the next scout cycle is recorded in the master intake.

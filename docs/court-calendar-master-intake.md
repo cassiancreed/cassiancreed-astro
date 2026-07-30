@@ -112,3 +112,133 @@ Three matters that the 2:49 PM order had scoped out (it limited me to the three 
 3. **Outbound-link rule unresolved.** The 12:41 PM order requires external URLs to render as plain unclickable text; the 2:49 PM order forbids redesigning the calendar. 83 external anchors remain. Needs a ruling on which order governs.
 4. **Full sweep still owed.** `LAST_VERIFIED` remains 2026-07-25. See the ledger for the entries still resting on that fallback.
 5. **Orphan branch `cassiancreed-patch-13`** still needs deleting. Merging it would remove 181 files. No PR points at it.
+
+---
+
+## INTERNATIONAL MARKET COVERAGE
+
+```text
+INTERNATIONAL MARKET COVERAGE
+
+STATUS: INCOMPLETE — APPROVED MARKET-COUNTRY LIST NOT SUPPLIED
+
+APPROVED MARKET COUNTRIES CHECKED: cannot be stated — the approved list was not supplied
+COUNTRIES WITH NORMAL-THRESHOLD TRENDING CASES: US, UK, AU, NZ, IE, CA, ZA, IN, BR, NG, MX, PH, AE
+COUNTRIES USING BELOW-THRESHOLD MARKET COVERAGE CASES: none designated — designation requires the approved list
+COUNTRIES NOT COMPLETED: cannot be enumerated without the approved list
+EXACT ACCESS OR SOURCE BLOCKER: the current approved NEP market-country list was never supplied to this session
+```
+
+**We do not claim full country coverage.** The countries above are the ones that happen to be
+represented by cases the three scouts surfaced. That is incidental coverage, not certified coverage
+against an approved list. Both the Meta AI and ChatGPT scouts independently reported the same gap and
+each substituted a *guessed* market set — Meta used US/UK/BR/MX/PH/IN, ChatGPT used
+US/UK/CA/AU/IE/NZ/ZA/IN. Neither is authoritative and neither is adopted here.
+
+Per ruling, this does **not** block PR #71.
+
+### FOLLOW-UP ITEM FOR THE NEXT SCOUT CYCLE
+
+> **Cassian must supply or approve the NEP market-country list before international coverage can be
+> certified.**
+
+Until then every scout return and every calendar reconciliation carries the status line
+`INCOMPLETE — APPROVED MARKET-COUNTRY LIST NOT SUPPLIED`.
+
+---
+
+## Owner rulings applied (2026-07-29 evening)
+
+| Ruling | Applied as |
+|---|---|
+| Do not invent the market-country list; do not block #71 on it | Status line above; follow-up item recorded; PR stays open |
+| Do not change the 83 outbound anchors yet | **Zero anchor changes made.** Conflicting clauses recorded below; working state preserved |
+| Nygard — use the narrowest wording both sources support | Public court field now reads **"The court in Montreal, Montreal, Quebec"**. Neither disputed court name appears on the page. Conflict retained in the ledger |
+| Colin Gray — do not move before sentencing is verified | Left in `entries`, pinned `ongoing: true`, dated 2026-07-30. Post-sentencing procedure recorded in the ledger |
+| Orphan branch — do not delete yet | `cassiancreed-patch-13` untouched. Delete only after #71 is approved, merged, live-verified, and rollback confirmed |
+
+---
+
+## OUTBOUND-LINK CONFLICT — the exact clauses, verbatim
+
+**No anchors were changed.** Measured on the built page: **87 external `<a>` anchors** — 85 source
+anchors (`e.src` / `e.src2`) plus 2 Beehiiv capture links. (A further 5 external `href`s are
+`<link rel>` elements for fonts, not anchors, and are out of scope.) The earlier figure of 83 was
+measured before the Nolan Wells and Sara Gilson entries were added; those two contributed 4 more
+source anchors, which reconciles 83 → 87. All 63 distinct source URLs are byte-identical to the
+previous commit — verified, not assumed.
+
+### Clause A — from the 12:41 PM order, 2026-07-29
+
+> OUTBOUND-LINK RULE:
+> Remove clickable outbound links from:
+> - the court calendar;
+> - all seven case files;
+> - source lists;
+> - body copy;
+> - citations;
+> - image credits;
+> - footnotes;
+> - metadata fields that render as links;
+> - buttons;
+> - related-source modules.
+
+> Render the URL as text only:
+> - no anchor element;
+> - no Markdown link;
+> - no automatic linkification;
+> - no target attribute;
+> - no clickable schema or UI treatment;
+> - no button;
+> - no redirect wrapper.
+
+And its carve-out:
+
+> Do not remove or disable:
+> - NEP internal navigation;
+> - NEP case-file links;
+> - NEP court-calendar links;
+> - NEP correction/contact link;
+> - approved Beehiiv owned-audience link after Cassian approves the CTA;
+> - legal or accessibility links hosted on the NEP domain.
+
+**What it requires:** every off-domain source URL on the calendar rendered as plain text in the
+`Source: / URL: / Last checked:` shape, with no `<a>`, no `target`, and not reachable by keyboard
+focus. Internal NEP links stay clickable.
+
+**Which anchors it affects:** the **85 source anchors** on `/court-calendar/` — `e.src` and `e.src2`
+across the 39 entry blocks. Whether the 2 Beehiiv anchors are in scope is itself ambiguous: Clause A
+lists "buttons" for removal but its carve-out preserves the "approved Beehiiv owned-audience link
+after Cassian approves the CTA," and that CTA has not been approved. It does **not** affect the 33
+internal links or the `mailto:` correction route.
+
+**What the live result would look like:** every entry's Source line becomes unclickable grey text
+showing the publisher and the bare URL. A reader wanting the source must copy the URL by hand.
+Verification remains visible; one-click auditing ends. Tab order shortens by 85 stops.
+
+### Clause B — from the 2:49 PM order, 2026-07-29
+
+> DO NOT:
+> * Do not redesign the calendar unless required to prevent breakage.
+
+**What it requires:** leave the calendar's structure and rendering alone. Removing anchors is not a
+breakage fix — the anchors work — so under this clause the change is out of scope.
+
+**Which anchors it affects:** the same 85, in the opposite direction — it protects them from being
+touched.
+
+**What the live result would look like:** exactly what is on the preview now. Every source is one
+click from the reader; external links open in a new tab with `rel="noopener noreferrer"`.
+
+### The conflict, stated plainly
+
+Clause A orders the removal of the same 85 anchors that Clause B forbids touching. They cannot both
+be honoured. **No mixed rule has been applied** — de-linking some sources and not others would be
+worse than either order, because a reader could not tell which sources were auditable.
+
+A third consideration, recorded because it is a fact and not an opinion: PR #64
+(`plugins/rehype-plain-external-sources.mjs`) already implements de-linking for **post** content and
+is **unmerged**. If Clause A wins, the honest question is whether the calendar should use that same
+plugin rather than a second hand-rolled mechanism.
+
+**Preserved as-is pending Cassian's decision.**
