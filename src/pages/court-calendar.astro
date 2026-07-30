@@ -6,7 +6,7 @@ import Base from '../layouts/Base.astro';
 // reporting. We never cite our own articles as the source for a date, and we
 // never guess. If a date cannot be confirmed against an outside source of
 // record, it is pulled, not estimated. Bump LAST_VERIFIED on each sweep.
-const LAST_VERIFIED = 'July 25, 2026';
+const LAST_VERIFIED = 'July 29, 2026';
 const BUILD_DATE = new Date().toISOString().slice(0, 10);
 
 // Per-entry verification: an entry may carry its own `verified` date. Entries
@@ -75,6 +75,7 @@ const entries = [
   {
     id: 'dominguez-further',
     case: 'Carlos Reales Dominguez',
+    verified: 'July 29, 2026',
     proceeding: 'Further proceedings after insanity finding',
     dateISO: '2026-08-05',
     dateText: 'Wednesday, August 5, 2026, 1:30 p.m. PT',
@@ -91,6 +92,7 @@ const entries = [
   {
     id: 'lebron-status',
     case: 'Jennifer Lebron',
+    verified: 'July 29, 2026',
     proceeding: 'Status of attorney hearing',
     dateISO: '2026-08-12',
     dateText: 'Wednesday, August 12, 2026 (start time not published)',
@@ -109,6 +111,7 @@ const entries = [
   {
     id: 'anthony-recusal',
     case: 'Karmelo Anthony',
+    verified: 'July 29, 2026',
     proceeding: 'Hearing on motion to recuse the trial judge',
     dateISO: '2026-08-19',
     dateText: 'Wednesday, August 19, 2026, 9:00 a.m. CT',
@@ -127,6 +130,7 @@ const entries = [
   {
     id: 'anthony-new-trial',
     case: 'Karmelo Anthony',
+    verified: 'July 29, 2026',
     proceeding: 'Hearing on motion for new trial',
     dateISO: '2026-08-20',
     dateText: 'Thursday, August 20, 2026 (courtroom and presiding judge not yet assigned)',
@@ -143,6 +147,7 @@ const entries = [
   {
     id: 'dominguez-placement',
     case: 'Carlos Reales Dominguez',
+    verified: 'July 29, 2026',
     proceeding: 'Placement and housing determination',
     dateISO: '2026-08-19',
     dateText: 'Wednesday, August 19, 2026, 1:30 p.m. PT',
@@ -159,6 +164,7 @@ const entries = [
   {
     id: 'peck-pretrial',
     case: 'Dianne Curry Peck',
+    verified: 'July 29, 2026',
     proceeding: 'Pretrial conference',
     dateISO: '2026-08-31',
     dateText: 'Monday, August 31, 2026 (from the court file; start time not published)',
@@ -177,6 +183,7 @@ const entries = [
   {
     id: 'woods-sentencing',
     case: 'Yvonne “Missy” Woods',
+    verified: 'July 29, 2026',
     proceeding: 'Sentencing',
     dateISO: '2026-09-08',
     dateText: 'Tuesday, September 8, 2026, 8:30 a.m. MT',
@@ -193,6 +200,7 @@ const entries = [
   {
     id: 'millete-sentencing',
     case: 'Larry Millete',
+    verified: 'July 29, 2026',
     proceeding: 'Sentencing',
     dateISO: '2026-09-29',
     dateText: 'Tuesday, September 29, 2026 (start time not published)',
@@ -349,11 +357,11 @@ const entries = [
     proceeding: 'Hearing following the Quebec conviction',
     dateISO: '2026-10-02',
     dateText: 'Friday, October 2, 2026 (start time not published)',
-    court: 'Quebec Superior Court or Court of Québec, Montreal, Quebec',
+    court: 'The court in Montreal, Montreal, Quebec',
     country: 'CA',
     verified: 'July 29, 2026',
     status: 'Convicted in Montreal on July 13, 2026 of one count of sexual assault and one count of forcible confinement involving a single complainant, in conduct alleged between November 1997 and November 1998. No Quebec sentencing date has been set; sentencing is deferred pending medical assessments. He is already serving an 11-year sentence imposed in Ontario in September 2024 for four counts of sexual assault, and that appeal was dismissed in 2026. A separate nine-count United States indictment charging racketeering, sex trafficking and related offenses remains pending and untried; those are allegations, not findings.',
-    detail: 'Sources disagree on two points and we do not resolve either by guessing. First, the court: one report names Quebec Superior Court and another the Court of Québec, which are different courts, so we print both rather than pick. Second, what October 2 is for: one report describes it as an update on the progress of medical reports, another as the presentation of a joint sentencing recommendation. It is not a confirmed sentencing date. Reporting also differs on the mechanism of conviction — some describe a guilty plea, others that he chose not to contest the Crown’s evidence without formally pleading guilty. The United States charges are pending in the Southern District of New York, not the Eastern District as some summaries state. He was cleared for extradition in 2024 and is now seeking reconsideration of that order; no date exists in either the United States case or the extradition matter.',
+    detail: 'Sources disagree on two points and we do not resolve either by guessing. First, which court: available reports name two different Montreal courts, so we name neither and say only that the hearing is before a court in Montreal until the record settles it. Second, what October 2 is for: one report describes it as an update on the progress of medical reports, another as the presentation of a joint sentencing recommendation. It is not a confirmed sentencing date. Reporting also differs on the mechanism of conviction — some describe a guilty plea, others that he chose not to contest the Crown’s evidence without formally pleading guilty. The United States charges are pending in the Southern District of New York, not the Eastern District as some summaries state. He was cleared for extradition in 2024 and is now seeking reconsideration of that order; no date exists in either the United States case or the extradition matter.',
     src: 'https://ca.news.yahoo.com/peter-nygard-convicted-montreal-sexual-010356689.html',
     srcLabel: 'The Canadian Press, court reporting on the Montreal conviction (July 13, 2026)',
     srcType: 'Court reporting',
@@ -404,6 +412,7 @@ const entries = [
 const unconfirmed = [
   {
     case: 'Jermaine Williams Sr.',
+    verified: 'July 29, 2026',
     where: 'Flagler County Circuit Court, Bunnell, FL',
     status: 'Convicted July 17, 2026, of first-degree premeditated murder in the stabbing death of his wife, Yolonda Williams, outside their Bunnell home in August 2024. On July 22 the jury voted 11–1 to recommend a death sentence and found all four aggravating factors unanimously.',
     note: 'A Spencer hearing is expected in August 2026 before Circuit Judge Dawn Nichols, after which the judge imposes sentence. No date has been published, so there is nothing to publish here yet. Case No. 2024-00790-CFA.',
@@ -416,8 +425,9 @@ const unconfirmed = [
   {
     case: 'Mayra Velasquez (Irasema Chavez case)',
     where: 'Tarrant County, Arlington, TX',
-    status: 'Charged with capital murder in the 2012 killing of Irasema Chavez following an investigative genetic genealogy lead, and arrested July 16, 2026. The charge is an allegation. She is presumed innocent unless and until proved guilty in court.',
-    note: 'Arlington police and the FBI held a joint briefing on July 22, 2026. A press conference is not a court proceeding, and no court date in this case has been publicly confirmed.',
+    verified: 'July 29, 2026',
+    status: 'Charged in the 2012 killing of Irasema Chavez following an investigative genetic genealogy lead, and arrested July 16, 2026. Tarrant County court records describe the charge as murder; earlier coverage of the arrest described it as capital murder. We use the narrower wording the county records support and flag the disagreement. She was released from the Tarrant County jail on a $450,000 bond on July 29, 2026, after her attorneys obtained a writ of habeas corpus following an initial bond denial. The charge is an allegation. She is presumed innocent unless and until proved guilty in court.',
+    note: 'Arlington police and the FBI held a joint briefing on July 22, 2026. A press conference is not a court proceeding, and county records still show no next court date, so there is nothing to put on a calendar. Release on bond decides nothing about the charge.',
     src: 'https://www.cbsnews.com/texas/news/arlington-cold-case-arrest-2012-stabbing-mayra-velasquez-july-2026/',
     srcLabel: 'CBS News Texas, coverage of the arrest and briefing (July 20, 2026)',
     srcType: 'News coverage — no court date established',
@@ -427,7 +437,8 @@ const unconfirmed = [
   {
     case: 'Taylor Parker',
     where: 'Texas',
-    status: 'Direct appeal complete. The Texas Court of Criminal Appeals affirmed the conviction and sentence on November 6, 2025, and the U.S. Supreme Court denied certiorari on May 29, 2026. The case is now in habeas review. No dated proceeding and no execution date.',
+    verified: 'July 29, 2026',
+    status: 'Direct appeal complete. The Texas Court of Criminal Appeals affirmed the conviction and sentence in November 2025 — reporting differs on whether that was November 6 or November 7, so we give the month — and the U.S. Supreme Court denied certiorari on May 29, 2026. The case is now in habeas review. No dated proceeding and no execution date.',
     note: 'Habeas review moves without a public calendar. There is nothing to attend.',
     src: 'https://www.tdcj.texas.gov/death_row/dr_info/parkertaylor.html',
     srcLabel: 'Texas Department of Criminal Justice, offender record',
@@ -437,6 +448,7 @@ const unconfirmed = [
   },
   {
     case: 'Pedro Hernandez (Etan Patz)',
+    verified: 'July 29, 2026',
     where: 'New York',
     status: 'Conviction reinstated by the U.S. Supreme Court on June 22, 2026, in docket No. 25-748, with the case remanded to the Second Circuit. The Supreme Court’s judgment issued on July 24, 2026. No dated proceeding.',
     note: 'A remand does not put a hearing on a public calendar. Nothing is currently scheduled in the Second Circuit or in state court.',
@@ -450,6 +462,7 @@ const unconfirmed = [
   },
   {
     case: 'Brooke George',
+    verified: 'July 29, 2026',
     where: 'United Arab Emirates',
     status: 'Detained in Dubai since June 22, 2026, in connection with the death of William “Billy” Treeby. No charge has been confirmed by UAE authorities or any court, and no court date exists on the public record.',
     note: 'The only official confirmation of any kind is from the UK Foreign, Commonwealth and Development Office, which says it is in contact with a British woman detained in the UAE and is supporting her family. The specific allegations, and the account of how she has been treated in custody, come from an advocacy organisation rather than from UAE authorities or any court. Record entry only.',
@@ -640,9 +653,13 @@ const completed = [
   },
   {
     case: 'Nestor Hernandez Melgar',
+    // Change-check on July 29 could not reach a Snohomish County or Division I record,
+    // so this entry keeps the date its facts were last actually confirmed. Do not bump it
+    // to match the sweep date — that is exactly the silent re-certification we guard against.
+    verified: 'July 25, 2026',
     where: 'Snohomish County Superior Court, Everett, WA',
     status: 'Sentenced July 22, 2026, to life in prison without the possibility of parole for the murder of Lindsay Geary. A jury convicted him June 22, 2026, on four counts — aggravated first-degree murder, first-degree murder, first-degree burglary, and violation of a court order, each with a domestic-violence aggravator.',
-    note: 'Judge Cindy Larsen imposed the life term on the aggravated first-degree murder count, with a concurrent 34 months on the burglary count. The first-degree murder and court-order counts were vacated on double-jeopardy grounds. No notice of appeal had been filed as of July 25, 2026; the 30-day window runs to about August 21, 2026.',
+    note: 'No notice of appeal had been filed as of July 25, 2026 and we could not reach a court record to re-check that on July 29, so the position is stated as of the earlier date. Judge Cindy Larsen imposed the life term on the aggravated first-degree murder count, with a concurrent 34 months on the burglary count. The first-degree murder and court-order counts were vacated on double-jeopardy grounds. The 30-day window runs to about August 21, 2026.',
     src: 'https://www.heraldnet.com/2026/07/22/life-sentence-for-man-convicted-of-girlfriends-2024-murder-in-everett/',
     srcLabel: 'The Everett Herald, courtroom reporting (July 22, 2026)',
     srcType: 'Court reporting',
@@ -651,6 +668,7 @@ const completed = [
   },
   {
     case: 'Rex Heuermann',
+    verified: 'July 29, 2026',
     where: 'Suffolk County Court, Riverhead, New York',
     status: 'Pleaded guilty April 8, 2026, before Justice Timothy P. Mazzei to three counts of first-degree murder and four counts of second-degree murder, and was sentenced June 17, 2026, to three consecutive terms of life without parole plus a consecutive 100 years to life.',
     note: 'The victims are Melissa Barthelemy, Maureen Brainard-Barnes, Amber Costello, Megan Waterman, Jessica Taylor, Sandra Costilla, and Valerie Mack; he also allocuted to the uncharged killing of Karen Vergata, which the plea covered. He waived his right to appeal on the record at the plea hearing. There is no upcoming court date in this case.',
