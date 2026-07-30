@@ -6,9 +6,9 @@ tag: Verdict
 featured: false
 ---
 
-On June 22, 2026, a Snohomish County jury found Nestor Hernandez Melgar guilty of first-degree murder in the death of his girlfriend, Lindsay Geary. Guilty, also, of first-degree burglary. Guilty of violating a domestic violence no-contact order. All three counts carried a domestic violence special aggravator.
+On June 22, 2026, a Snohomish County jury found Nestor Hernandez Melgar guilty of aggravated first-degree murder in the death of his girlfriend, Lindsay Geary. Guilty, also, of first-degree murder. Guilty of first-degree burglary. Guilty of violating a domestic violence no-contact order. All four counts carried a domestic violence special aggravator.
 
-Nestor Hernandez Melgar is scheduled to be sentenced on **July 22, 2026** — follow the date, status, and outcome on our [Nestor Hernandez Melgar sentencing tracker](/post/nestor-hernandez-melgar-sentencing/).
+On **July 22, 2026**, Nestor Hernandez Melgar was sentenced to life in prison without the possibility of parole — the full outcome is on our [Nestor Hernandez Melgar sentencing tracker](/post/nestor-hernandez-melgar-sentencing/).
 
 What makes this verdict unusual — and legally significant — is what the Snohomish County Medical Examiner's Office did not do.
 
@@ -16,7 +16,7 @@ Seven months after Lindsay Geary was found dead on the bathroom floor of her Eve
 
 A jury convicted Nestor Hernandez Melgar of first-degree murder without a single forensic official declaring that a murder had occurred. No defendant DNA was found on Geary's neck. No murder weapon was definitively established in the forensic record. The case that Deputy Prosecuting Attorney Toni Montgomery brought before jurors was built almost entirely from behavioral evidence — the order of phone calls made, the length of a rope, and 90 seconds spent not opening a door.
 
-How did prosecutors win? That is what this post explains. Sentencing is scheduled for July 22, 2026.
+How did prosecutors win? That is what this post explains. He was sentenced on July 22, 2026.
 
 ---
 
@@ -116,11 +116,13 @@ This is why the verdict and the "undetermined" ruling are not in conflict. They 
 
 ## What Comes Next
 
-Nestor Hernandez Melgar was convicted on June 22, 2026, on all counts: first-degree murder, first-degree burglary, and violation of a domestic violence no-contact order, each with a domestic violence special aggravator. He remains in custody.
+Nestor Hernandez Melgar was convicted on June 22, 2026, on all counts: aggravated first-degree murder, first-degree murder, first-degree burglary, and violation of a domestic violence no-contact order, each with a domestic violence special aggravator.
 
-Sentencing is scheduled for July 22, 2026, at Snohomish County Superior Court. First-degree murder in Washington state is a Class A felony. The domestic violence aggravators attached to all three counts create the legal basis for the court to impose an exceptional sentence above the standard range. What sentence will be handed down is a determination for the court.
+On July 22, 2026, Judge Cindy Larsen sentenced him at Snohomish County Superior Court to life in prison without parole on the aggravated first-degree murder count. A concurrent 34-month sentence was imposed on the burglary count. The first-degree murder and court-order counts were vacated on double-jeopardy grounds.
 
 When the Geary family heard each guilty verdict read on June 22, they shed tears and held hands.
 
-Sentencing is set for July 22. Follow NEP at [cassiancreed.com](https://cassiancreed.com) for updates.
+The medical examiner's finding on the manner of Lindsay Geary's death is still "undetermined," and the sentence does not change it. Those two records answer different questions. The jury's verdict — and the judgment now entered on it — is the legally operative one.
+
+Follow NEP at [cassiancreed.com](https://cassiancreed.com) for updates.
 
