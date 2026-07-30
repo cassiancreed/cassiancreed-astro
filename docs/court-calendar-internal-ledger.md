@@ -160,3 +160,41 @@ filing, no ruling identified.
    for a decision.
 8. **Case files do not exist** for most of the newly added cases, so those entries render "Our case
    file on this is in progress." That is accurate but it is a lot of them now.
+
+---
+
+## Addendum — 2026-07-29 evening, second order
+
+Three matters from the 12:41 PM football's case set were verified and **installed as public,
+no-confirmed-date entries** (they had been out of scope of the 2:49 PM order, which limited the
+sweep to the three scout reports):
+
+- **Nolan Wells** — no arrest, no charge, no defendant. The "grand-jury review" is the District
+  Attorney describing routine county practice; no grand jury is confirmed convened and no date is
+  public. Sheriff Ledbetter said investigators did **not** suspect foul play; the family's private
+  autopsy says undetermined and cannot rule out non-accidental factors. Both published, attributed,
+  and kept apart. **Held out entirely:** racial motive, deleted phone, audio recordings, the
+  $100,000 reward figure, and any suggestion a named friend could be charged — none has
+  named-official support. Level L4.
+- **Sara Gilson and Jeremiah Duffey** — both deceased, so no proceeding exists or can. "Murder-suicide"
+  is the police investigative framing, **not** a released Oklahoma medical-examiner determination.
+  Duffey was never charged; the federal investigation into an allegation involving a minor closed on
+  his death. Nothing published about the surviving child, the minor, the 911 material, or the manner
+  of death. Level L4. **Not confirmed:** whether the June 10, 2026 protective-order file remains
+  formally open — no case number retrievable; such orders normally abate on death.
+- **Ian Diaz § 2255** (the live matter under Michelle Hadley) — re-verified on the docket:
+  8:26-cv-00442 (C.D. Cal.), open and pending, Judge Josephine L. Staton still assigned, eleven
+  entries, last activity 2026-07-27, **no ruling**. The filings and the June 26 / July 10 orders are
+  not readable on the public docket, so his grounds and those orders are deliberately **not**
+  characterised, and no hearing date is claimed. Hadley remains a cleared person. Levels: Hadley L4
+  cleared, Ian Diaz L2, Angela Diaz L1.
+
+A CourtListener docket alert on 72377097 would surface any new § 2255 activity without a PACER
+purchase — worth setting if the PM wants this tracked continuously.
+
+**Legal-status levels (L1–L4) are now recorded for all 42 matters** in
+`court-calendar-master-intake.md`. They are internal and never render on the page.
+
+**Open blocker added: missing approved NEP market-country list.** `NEP_CURRENT_INTELLIGENCE` §3
+forbids inventing it and requires naming it as a stop. Both the Meta and ChatGPT scouts hit the same
+wall and substituted guessed market sets, so international coverage is currently unreconcilable.
