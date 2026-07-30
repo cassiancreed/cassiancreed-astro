@@ -11,6 +11,21 @@ featured: false
 .status-box .status-box__k{font-weight:700;letter-spacing:.04em;text-transform:uppercase;font-size:.8rem;margin:0 0 .5rem}
 .status-box ul{margin:.25rem 0 0;padding-left:1.1rem}
 .status-box li{margin:.2rem 0}
+/* Inline capture form on this page only. Deliberately NOT reusing the site-wide
+   .capture__embed-window class from src/components/CaptureBlock.astro — that
+   component also renders inside a .capture-cta on this page, and sharing the class
+   would restyle it. The Beehiiv embed document carries 80px padding on all four
+   sides and its control row is flex-wrap:nowrap, so it never stacks. On a narrow
+   frame the padding eats the row and the email field and button label clip. Clip
+   the padding away with a window so the control row gets the full frame width.
+   Window max-width stays 400px so the form still starts at exactly x=80 and the
+   crop is exact. Height is rem-based so it absorbs enlarged accessibility text. */
+.capture__embed-fit{position:relative;display:block;width:100%;max-width:400px;height:clamp(88px,5.5rem,128px);overflow:hidden;margin:0;border-radius:8px}
+.capture__embed-fit > .capture__embed{position:absolute;top:-68px;left:-80px;width:calc(100% + 160px);max-width:none;height:240px;border:0;margin:0;display:block;background:transparent;color-scheme:light}
+/* On phone widths let the form bleed into the CTA box's own side padding, so the
+   email field keeps a usable width next to the fixed 156px button. Stays under the
+   400px window cap at every viewport this query matches, so the crop stays exact. */
+@media (max-width:430px){.capture__embed-fit{width:calc(100% + 2.5rem);margin-left:-1.25rem}}
 </style>
 
 <aside class="status-box" data-state="sentenced">
@@ -30,7 +45,7 @@ On July 22, 2026, Snohomish County Superior Court Judge Cindy Larsen sentenced h
 <div class="capture-cta" style="border:1px solid var(--rule,#3a332c);border-left:4px solid var(--accent,#e0563b);background:var(--card,#1a1613);color:var(--ink,#f6f1ea);padding:1.25rem 1.5rem;margin:1.75rem 0;border-radius:8px">
 <p style="margin:0 0 .4rem;font-size:1.12rem;font-weight:700;line-height:1.3">Get the case files the news won't run — free, straight to your inbox.</p>
 <p style="margin:0 0 1rem;color:var(--ink-2,#b8b1a8);font-size:.95rem">Victim-first true crime, sourced from the record. No spam, unsubscribe anytime.</p>
-<iframe class="capture__embed" src="https://subscribe-forms.beehiiv.com/v3/forms/4d0df7d0-f274-4901-a457-091f80cecef0?utm_source=website&amp;utm_medium=post_cta&amp;utm_campaign=lm_case_how-to-read-a-case" title="Get the free guide" loading="lazy" scrolling="no" frameborder="0" style="display:block;width:100%;max-width:460px;height:220px;border:0;margin:0;background:transparent;color-scheme:light"></iframe>
+<div class="capture__embed-fit"><iframe class="capture__embed" src="https://subscribe-forms.beehiiv.com/v3/forms/4d0df7d0-f274-4901-a457-091f80cecef0?utm_source=website&amp;utm_medium=post_cta&amp;utm_campaign=lm_case_how-to-read-a-case" title="Get the free guide" loading="lazy" scrolling="no" frameborder="0"></iframe></div>
 </div>
 
 ## What sentence did Nestor Hernandez Melgar receive?
@@ -44,7 +59,7 @@ The Herald's sentencing report lists four charges: aggravated first-degree murde
 <div class="capture-cta" style="border:1px solid var(--rule,#3a332c);border-left:4px solid var(--accent,#e0563b);background:var(--card,#1a1613);color:var(--ink,#f6f1ea);padding:1.25rem 1.5rem;margin:1.75rem 0;border-radius:8px">
 <p style="margin:0 0 .4rem;font-size:1.12rem;font-weight:700;line-height:1.3">Get the case files the news won't run — free, straight to your inbox.</p>
 <p style="margin:0 0 1rem;color:var(--ink-2,#b8b1a8);font-size:.95rem">Victim-first true crime, sourced from the record. No spam, unsubscribe anytime.</p>
-<iframe class="capture__embed" src="https://subscribe-forms.beehiiv.com/v3/forms/4d0df7d0-f274-4901-a457-091f80cecef0?utm_source=website&amp;utm_medium=post_cta&amp;utm_campaign=lm_case_how-to-read-a-case" title="Get the free guide" loading="lazy" scrolling="no" frameborder="0" style="display:block;width:100%;max-width:460px;height:220px;border:0;margin:0;background:transparent;color-scheme:light"></iframe>
+<div class="capture__embed-fit"><iframe class="capture__embed" src="https://subscribe-forms.beehiiv.com/v3/forms/4d0df7d0-f274-4901-a457-091f80cecef0?utm_source=website&amp;utm_medium=post_cta&amp;utm_campaign=lm_case_how-to-read-a-case" title="Get the free guide" loading="lazy" scrolling="no" frameborder="0"></iframe></div>
 </div>
 
 ## What happens next?
@@ -74,5 +89,5 @@ For the full story, see our [complete coverage of the Lindsay Geary case](/post/
 <div class="capture-cta" style="border:1px solid var(--rule,#3a332c);border-left:4px solid var(--accent,#e0563b);background:var(--card,#1a1613);color:var(--ink,#f6f1ea);padding:1.25rem 1.5rem;margin:1.75rem 0;border-radius:8px">
 <p style="margin:0 0 .4rem;font-size:1.12rem;font-weight:700;line-height:1.3">Get the case files the news won't run — free, straight to your inbox.</p>
 <p style="margin:0 0 1rem;color:var(--ink-2,#b8b1a8);font-size:.95rem">Victim-first true crime, sourced from the record. No spam, unsubscribe anytime.</p>
-<iframe class="capture__embed" src="https://subscribe-forms.beehiiv.com/v3/forms/4d0df7d0-f274-4901-a457-091f80cecef0?utm_source=website&amp;utm_medium=post_cta&amp;utm_campaign=lm_case_how-to-read-a-case" title="Get the free guide" loading="lazy" scrolling="no" frameborder="0" style="display:block;width:100%;max-width:460px;height:220px;border:0;margin:0;background:transparent;color-scheme:light"></iframe>
+<div class="capture__embed-fit"><iframe class="capture__embed" src="https://subscribe-forms.beehiiv.com/v3/forms/4d0df7d0-f274-4901-a457-091f80cecef0?utm_source=website&amp;utm_medium=post_cta&amp;utm_campaign=lm_case_how-to-read-a-case" title="Get the free guide" loading="lazy" scrolling="no" frameborder="0"></iframe></div>
 </div>
