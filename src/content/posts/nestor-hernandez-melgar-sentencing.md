@@ -1,6 +1,6 @@
 ---
-title: "Nestor Hernandez Melgar Sentencing: Date, Status & What to Know"
-description: "Nestor Hernandez Melgar was convicted June 22, 2026, in the death of Lindsay Geary, 36. Sentencing is set for July 22, 2026, in Snohomish County — not yet imposed."
+title: "Nestor Hernandez Melgar Sentencing: Life in Prison in the Lindsay Geary Case"
+description: "Nestor Hernandez Melgar was sentenced July 22, 2026, to life in prison for the aggravated murder of Lindsay Geary in Everett. Judge Cindy Larsen also imposed a concurrent 34-month burglary term."
 pubDate: 2026-07-15
 tag: Case Files
 featured: false
@@ -11,51 +11,60 @@ featured: false
 .status-box .status-box__k{font-weight:700;letter-spacing:.04em;text-transform:uppercase;font-size:.8rem;margin:0 0 .5rem}
 .status-box ul{margin:.25rem 0 0;padding-left:1.1rem}
 .status-box li{margin:.2rem 0}
+/* Inline capture form on this page only. Deliberately NOT reusing the site-wide
+   .capture__embed-window class from src/components/CaptureBlock.astro — that
+   component also renders inside a .capture-cta on this page, and sharing the class
+   would restyle it. The Beehiiv embed document carries 80px padding on all four
+   sides and its control row is flex-wrap:nowrap, so it never stacks. On a narrow
+   frame the padding eats the row and the email field and button label clip. Clip
+   the padding away with a window so the control row gets the full frame width.
+   Window max-width stays 400px so the form still starts at exactly x=80 and the
+   crop is exact. Height is rem-based so it absorbs enlarged accessibility text. */
+.capture__embed-fit{position:relative;display:block;width:100%;max-width:400px;height:clamp(88px,5.5rem,128px);overflow:hidden;margin:0;border-radius:8px}
+.capture__embed-fit > .capture__embed{position:absolute;top:-68px;left:-80px;width:calc(100% + 160px);max-width:none;height:240px;border:0;margin:0;display:block;background:transparent;color-scheme:light}
+/* On phone widths let the form bleed into the CTA box's own side padding, so the
+   email field keeps a usable width next to the fixed 156px button. Stays under the
+   400px window cap at every viewport this query matches, so the crop stays exact. */
+@media (max-width:430px){.capture__embed-fit{width:calc(100% + 2.5rem);margin-left:-1.25rem}}
 </style>
 
-<aside class="status-box" data-state="upcoming">
-  <p class="status-box__k">UPCOMING SENTENCING</p>
+<aside class="status-box" data-state="sentenced">
+  <p class="status-box__k">SENTENCE IMPOSED</p>
   <ul>
-    <li><strong>Last verified:</strong> July 15, 2026</li>
-    <li><strong>Hearing:</strong> July 22, 2026 — Snohomish County Superior Court</li>
+    <li><strong>Last verified:</strong> July 30, 2026</li>
+    <li><strong>Sentencing:</strong> July 22, 2026 — Snohomish County Superior Court</li>
     <li><strong>Defendant:</strong> Nestor Hernandez Melgar, 29</li>
     <li><strong>Victim:</strong> Lindsay Geary, 36</li>
-    <li><strong>Convicted (June 22, 2026):</strong> first-degree murder, first-degree burglary, and violation of a court order — each with a domestic-violence aggravator</li>
-    <li><strong>Result:</strong> not yet imposed</li>
+    <li><strong>Original counts:</strong> aggravated first-degree murder, first-degree murder, first-degree burglary, and violation of a court order — each with a domestic-violence aggravator</li>
+    <li><strong>Result:</strong> life in prison on the aggravated first-degree murder count, plus a concurrent 34-month burglary term; the first-degree murder and court-order convictions were vacated on double-jeopardy grounds</li>
   </ul>
 </aside>
 
-<!-- ON 2026-07-22 UPDATE: set data-state="sentenced", change "UPCOMING SENTENCING" -> "SENTENCE IMPOSED", change "Result: not yet imposed" -> the actual sentence as pronounced, and update Last verified. Update the direct-answer paragraph. Do NOT change the URL. -->
-
-Nestor Hernandez Melgar was convicted on June 22, 2026, in the death of his girlfriend, Lindsay Geary, 36, of Everett. His sentencing is scheduled for July 22, 2026, in Snohomish County Superior Court. As of July 15, 2026, no sentence has been imposed — the judge will decide at that hearing. We will update this page with the result.
+On July 22, 2026, Snohomish County Superior Court Judge Cindy Larsen sentenced him to life in prison on the aggravated first-degree murder count, plus a concurrent 34-month term for first-degree burglary. His convictions for first-degree murder and violation of a court order were vacated on double-jeopardy grounds. He had 30 days from sentencing to appeal.
 
 <div class="capture-cta" style="border:1px solid var(--rule,#3a332c);border-left:4px solid var(--accent,#e0563b);background:var(--card,#1a1613);color:var(--ink,#f6f1ea);padding:1.25rem 1.5rem;margin:1.75rem 0;border-radius:8px">
 <p style="margin:0 0 .4rem;font-size:1.12rem;font-weight:700;line-height:1.3">Get the case files the news won't run — free, straight to your inbox.</p>
 <p style="margin:0 0 1rem;color:var(--ink-2,#b8b1a8);font-size:.95rem">Victim-first true crime, sourced from the record. No spam, unsubscribe anytime.</p>
-<iframe class="capture__embed" src="https://subscribe-forms.beehiiv.com/v3/forms/4d0df7d0-f274-4901-a457-091f80cecef0?utm_source=website&amp;utm_medium=post_cta&amp;utm_campaign=lm_case_how-to-read-a-case" title="Get the free guide" loading="lazy" scrolling="no" frameborder="0" style="display:block;width:100%;max-width:460px;height:220px;border:0;margin:0;background:transparent;color-scheme:light"></iframe>
+<div class="capture__embed-fit"><iframe class="capture__embed" src="https://subscribe-forms.beehiiv.com/v3/forms/4d0df7d0-f274-4901-a457-091f80cecef0?utm_source=website&amp;utm_medium=post_cta&amp;utm_campaign=lm_case_how-to-read-a-case" title="Get the free guide" loading="lazy" scrolling="no" frameborder="0"></iframe></div>
 </div>
 
-## When is Nestor Hernandez Melgar's sentencing?
+## What sentence did Nestor Hernandez Melgar receive?
 
-His sentencing is set for July 22, 2026, in Snohomish County Superior Court in Everett, Washington. The conviction is already final; the sentence itself has not been handed down. We will update this page on the same web address once the court rules. No hearing time or courtroom has been confirmed here.
+He was sentenced on the afternoon of July 22, 2026, in Snohomish County Superior Court in Everett. Judge Cindy Larsen imposed life in prison on the aggravated first-degree murder count. Under RCW 10.95.030, an adult convicted of aggravated first-degree murder in Washington is sentenced to life imprisonment without the possibility of release or parole. A 34-month sentence for first-degree burglary runs concurrently.
 
 ## What was he convicted of?
 
-On June 22, 2026, after a four-week trial, a jury found him guilty on all counts. That means three offenses: (1) first-degree murder, (2) first-degree burglary, and (3) violation of a court order — the domestic-violence no-contact order in place at the time. Each of the three offenses carried a special domestic-violence aggravator. To be precise, this is three offenses, each with an aggravator — not four separate charges, and the aggravator is not a standalone crime.
-
-## What sentence could he face under Washington law?
-
-We are not predicting a number, and no sentence has been announced. In general terms: first-degree murder is a Class A felony in Washington. Sentences follow the state's Sentencing Reform Act, which sets a standard range based on the offense and the offender's criminal-history score. Because the jury returned domestic-violence aggravator findings, the law permits the court to consider an exceptional sentence above the standard range. The actual sentence is the judge's to decide at the July 22 hearing.
+The Herald's sentencing report lists four charges: aggravated first-degree murder, first-degree murder, first-degree burglary, and violation of a court order — each carrying a special domestic-violence aggravator. At sentencing, Judge Larsen vacated the first-degree murder and court-order convictions on double-jeopardy grounds, leaving the aggravated murder count and burglary count as the sentenced convictions.
 
 <div class="capture-cta" style="border:1px solid var(--rule,#3a332c);border-left:4px solid var(--accent,#e0563b);background:var(--card,#1a1613);color:var(--ink,#f6f1ea);padding:1.25rem 1.5rem;margin:1.75rem 0;border-radius:8px">
 <p style="margin:0 0 .4rem;font-size:1.12rem;font-weight:700;line-height:1.3">Get the case files the news won't run — free, straight to your inbox.</p>
 <p style="margin:0 0 1rem;color:var(--ink-2,#b8b1a8);font-size:.95rem">Victim-first true crime, sourced from the record. No spam, unsubscribe anytime.</p>
-<iframe class="capture__embed" src="https://subscribe-forms.beehiiv.com/v3/forms/4d0df7d0-f274-4901-a457-091f80cecef0?utm_source=website&amp;utm_medium=post_cta&amp;utm_campaign=lm_case_how-to-read-a-case" title="Get the free guide" loading="lazy" scrolling="no" frameborder="0" style="display:block;width:100%;max-width:460px;height:220px;border:0;margin:0;background:transparent;color-scheme:light"></iframe>
+<div class="capture__embed-fit"><iframe class="capture__embed" src="https://subscribe-forms.beehiiv.com/v3/forms/4d0df7d0-f274-4901-a457-091f80cecef0?utm_source=website&amp;utm_medium=post_cta&amp;utm_campaign=lm_case_how-to-read-a-case" title="Get the free guide" loading="lazy" scrolling="no" frameborder="0"></iframe></div>
 </div>
 
 ## What happens next?
 
-At the July 22, 2026 hearing, the court will impose a sentence. Because Melgar has been convicted, the presumption of innocence no longer applies — but the length and terms of the sentence remain entirely the court's to set within the law. Once the judge rules, we will update this page — same web address — with the outcome.
+Sentencing is complete. Hernandez Melgar had 30 days from July 22, 2026, to appeal his convictions.
 
 ## The case, in short
 
@@ -71,13 +80,14 @@ For the full story, see our [complete coverage of the Lindsay Geary case](/post/
 
 ### Sources
 
-- HeraldNet (Ian Davis-Leonard), "Jury convicts man in Everett murder staged as suicide," June 22, 2026.
-- Snohomish County Superior Court record.
-- Last verified: July 15, 2026.
+- HeraldNet, Ian Davis-Leonard, "Life sentence for man convicted of girlfriend's 2024 murder in Everett," July 22, 2026.
+- RCW 10.95.030.
+- Last verified: July 30, 2026.
 
+**Updated July 30, 2026:** This page originally described sentencing as pending and described three counts. It now reflects the July 22, 2026 sentencing and the four-count structure reported by The Herald.
 
 <div class="capture-cta" style="border:1px solid var(--rule,#3a332c);border-left:4px solid var(--accent,#e0563b);background:var(--card,#1a1613);color:var(--ink,#f6f1ea);padding:1.25rem 1.5rem;margin:1.75rem 0;border-radius:8px">
 <p style="margin:0 0 .4rem;font-size:1.12rem;font-weight:700;line-height:1.3">Get the case files the news won't run — free, straight to your inbox.</p>
 <p style="margin:0 0 1rem;color:var(--ink-2,#b8b1a8);font-size:.95rem">Victim-first true crime, sourced from the record. No spam, unsubscribe anytime.</p>
-<iframe class="capture__embed" src="https://subscribe-forms.beehiiv.com/v3/forms/4d0df7d0-f274-4901-a457-091f80cecef0?utm_source=website&amp;utm_medium=post_cta&amp;utm_campaign=lm_case_how-to-read-a-case" title="Get the free guide" loading="lazy" scrolling="no" frameborder="0" style="display:block;width:100%;max-width:460px;height:220px;border:0;margin:0;background:transparent;color-scheme:light"></iframe>
+<div class="capture__embed-fit"><iframe class="capture__embed" src="https://subscribe-forms.beehiiv.com/v3/forms/4d0df7d0-f274-4901-a457-091f80cecef0?utm_source=website&amp;utm_medium=post_cta&amp;utm_campaign=lm_case_how-to-read-a-case" title="Get the free guide" loading="lazy" scrolling="no" frameborder="0"></iframe></div>
 </div>
