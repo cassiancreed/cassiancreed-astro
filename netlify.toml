@@ -89,6 +89,27 @@
   to = "/post/lindsay-clancy-trial/"
   status = 301
 
+# --- Gilson CTA target (2026-08-01) ---
+# The published podcast and video both close by telling listeners to go to
+# "cassiancreed.com/gilson". That path never existed and was serving a 404 to
+# the highest-intent traffic in the funnel. The CTA is baked into rendered audio
+# and video and cannot be edited, so the path has to exist.
+# ROLLBACK = delete this block; /gilson returns to 404.
+[[redirects]]
+  from = "/gilson"
+  to = "/post/sara-gilson-jeremiah-duffey-owasso-case-file/"
+  status = 301
+
+[[redirects]]
+  from = "/gilson/"
+  to = "/post/sara-gilson-jeremiah-duffey-owasso-case-file/"
+  status = 301
+
+[[redirects]]
+  from = "/gilson/*"
+  to = "/post/sara-gilson-jeremiah-duffey-owasso-case-file/"
+  status = 301
+
 # --- 404 repair (0715BR) ---
 [[redirects]]
   from = "/products"
