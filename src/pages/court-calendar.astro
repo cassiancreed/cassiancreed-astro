@@ -237,6 +237,27 @@ const entries = [
     groups: ['next', 'hearings'],
   },
   {
+    id: 'davis-tupac-trial',
+    case: 'Duane “Keffe D” Davis — Tupac Shakur murder case',
+    proceeding: 'Murder trial — jury selection',
+    dateISO: '2026-08-10',
+    dateText: 'Monday, August 10, 2026 (start time not published)',
+    court: 'Eighth Judicial District Court, Clark County, Las Vegas, NV',
+    verified: 'August 7, 2026',
+    status: 'Charged with one count of murder with use of a deadly weapon with a gang enhancement in the September 1996 killing of Tupac Shakur. Davis has pleaded not guilty and is presumed innocent unless and until proved guilty in court.',
+    detail: 'Jury selection is scheduled to begin August 10 before District Judge Carli Kierny, nearly 30 years after Shakur was fatally shot in Las Vegas. Prosecutors allege Davis orchestrated the attack and supplied the weapon; the defense disputes the State’s case and the use of his past statements. Recent pretrial rulings allowed prosecutors to use a 2008 police interview. Current reporting says the trial is expected to last about four weeks. The scheduled start can still move, so confirm with the court before attending.',
+    src: 'https://apnews.com/article/4529257714634e87ed258fde044f948b',
+    srcLabel: 'Associated Press, pretrial and scheduling report (August 5, 2026)',
+    srcType: 'Court reporting',
+    src2: 'https://news3lv.com/news/local/trial-date-man-charged-tupac-shakur-murder-duane-davis-keffe-d-delayed-summer-2026-las-vegas-clark-county-court-nevada',
+    srcLabel2: 'KSNV, reporting the August 10 setting from Clark County court records (November 26, 2025)',
+    link: '/post/tupac-shakur-keffe-d-charged-not-shooter/',
+    linkText: 'Why Davis is charged even though prosecutors do not call him the shooter',
+    link2: '/post/tupac-shakur-homicide-evidence-evolution/',
+    linkText2: 'How the Tupac homicide evidence evolved',
+    groups: ['next', 'trials'],
+  },
+  {
     id: 'goncalves-wsu-trial',
     case: 'Goncalves v. Washington State University',
     proceeding: 'Civil jury trial',
@@ -457,6 +478,7 @@ const jsonld = {
       '@type': 'FAQPage',
       '@id': 'https://cassiancreed.com/court-calendar#faq',
       mainEntity: [
+        { '@type': 'Question', name: 'When does the Tupac Shakur murder trial start?', acceptedAnswer: { '@type': 'Answer', text: 'Jury selection in the murder trial of Duane “Keffe D” Davis is scheduled to begin Monday, August 10, 2026, in the Eighth Judicial District Court in Las Vegas. Davis is charged with one count of murder with use of a deadly weapon with a gang enhancement in Tupac Shakur’s 1996 killing. He has pleaded not guilty and is presumed innocent.' } },
         { '@type': 'Question', name: 'When does the Lindsay Clancy trial start?', acceptedAnswer: { '@type': 'Answer', text: 'It is underway. Jury selection ran July 20 to July 23, 2026, in Plymouth County Superior Court before Judge William F. Sullivan, and an 18-juror panel was seated — 12 jurors and 6 alternates. Opening statements were delivered on Monday, July 27, 2026, and the children’s father, Patrick Clancy, testified as the first witness. The judge has said the trial could run several weeks and potentially up to two months. Prosecutors dropped three duplicative strangulation counts on July 9, leaving three counts of first-degree murder. She has pleaded not guilty and is presumed innocent.' } },
         { '@type': 'Question', name: 'Was Colt Gray sentenced?', acceptedAnswer: { '@type': 'Answer', text: 'Not yet. He pleaded guilty on July 24, 2026, to all 55 counts in the Apalachee High School shooting in a non-negotiated plea, meaning no sentence was agreed in advance. Chief Judge Nicholas Primm accepted the plea and began the sentencing hearing the same day before adjourning it to Monday, July 27, 2026. The hearing resumed that morning — the court did not publish a start time, so we do not print one — and as of the reporting available that day no sentence had been imposed. The minimum available sentence is life with the possibility of parole; the maximum is life without parole.' } },
         { '@type': 'Question', name: 'What is the next court date for Dianne Curry Peck?', acceptedAnswer: { '@type': 'Answer', text: 'A pretrial conference is set for Monday, August 31, 2026, in Bristol County Superior Court in Fall River. Two outlets that reviewed the court file report that date; one broadcast report instead said December, and we are flagging that disagreement rather than picking quietly. She was indicted on one count of murder, pleaded not guilty, and was released on $100,000 surety with $10,000 cash posted. No trial date has been set.' } },
@@ -475,14 +497,14 @@ const jsonld = {
 ---
 <Base
   title="True Crime Court Calendar: Trial Dates & Hearings 2026"
-  description="Track verified 2026 true-crime trial dates, hearings, sentencing proceedings, and appeals, including Lindsay Clancy, Dianne Curry Peck, and other major cases."
+  description="Track verified 2026 true-crime trial dates, hearings, sentencing proceedings, and appeals, including the Tupac Shakur murder trial, Lindsay Clancy, and other major cases."
   jsonld={jsonld}
 >
   <section class="hero wrap">
     <p class="evidence evidence--accent">Court Calendar</p>
     <h1>True Crime Court Calendar: Trial Dates &amp; Hearings 2026</h1>
     <p class="cal-answer">
-      Colt Gray pleaded guilty <strong>July 24</strong> to all 55 counts in the Apalachee High School shooting; his sentencing hearing resumed <strong>Monday, July 27</strong> in Barrow County and no sentence has been imposed yet, and his father Colin Gray is sentenced <strong>July 30</strong>. Opening statements in Lindsay Clancy&rsquo;s murder trial were delivered <strong>Monday, July 27</strong> in Plymouth County. David Anthony Burke, known as D4vd, was held to answer on all charges on <strong>July 27</strong> at the close of a five-day preliminary hearing in Los Angeles and is due back for arraignment <strong>August 31</strong>. Karmelo Anthony has his first post-conviction hearings <strong>August 19 and 20</strong> in Collin County, Texas. Dianne Curry Peck&rsquo;s pretrial conference is set for <strong>August 31</strong> in Fall River, Yvonne &ldquo;Missy&rdquo; Woods is sentenced <strong>September 8</strong> in Jefferson County, Colorado, and Larry Millete is sentenced <strong>September 29</strong> in Chula Vista.
+      Duane &ldquo;Keffe D&rdquo; Davis&rsquo;s trial in the Tupac Shakur murder case is scheduled to begin with jury selection on <strong>Monday, August 10</strong> in Las Vegas. Colt Gray pleaded guilty <strong>July 24</strong> to all 55 counts in the Apalachee High School shooting; his sentencing hearing resumed <strong>Monday, July 27</strong> in Barrow County and no sentence has been imposed yet, and his father Colin Gray is sentenced <strong>July 30</strong>. Opening statements in Lindsay Clancy&rsquo;s murder trial were delivered <strong>Monday, July 27</strong> in Plymouth County. David Anthony Burke, known as D4vd, was held to answer on all charges on <strong>July 27</strong> at the close of a five-day preliminary hearing in Los Angeles and is due back for arraignment <strong>August 31</strong>. Karmelo Anthony has his first post-conviction hearings <strong>August 19 and 20</strong> in Collin County, Texas. Dianne Curry Peck&rsquo;s pretrial conference is set for <strong>August 31</strong> in Fall River, Yvonne &ldquo;Missy&rdquo; Woods is sentenced <strong>September 8</strong> in Jefferson County, Colorado, and Larry Millete is sentenced <strong>September 29</strong> in Chula Vista.
     </p>
     <p class="cal-fresh">
       <strong>Last full sweep: {LAST_VERIFIED}.</strong> Court dates move. Every entry below is checked against the public record, carries its source, and carries the date <em>that entry</em> was last verified &mdash; we do not re-date a card nobody re-checked. Confirm with the court before you travel.
@@ -736,6 +758,9 @@ const jsonld = {
   <section class="wrap cal-sec" aria-labelledby="faq">
     <h2 id="faq">FAQ</h2>
     <div class="prose faq">
+      <h3>When does the Tupac Shakur murder trial start?</h3>
+      <p>Jury selection in the murder trial of Duane &ldquo;Keffe D&rdquo; Davis is scheduled to begin <strong>Monday, August 10, 2026</strong>, in the Eighth Judicial District Court in Las Vegas. Prosecutors allege Davis orchestrated the September 1996 drive-by shooting and supplied the weapon; he is not accused of firing the fatal shots. Davis has pleaded not guilty and is presumed innocent unless and until proved guilty in court. Current reporting says the trial could last about four weeks.</p>
+
       <h3>When does the Lindsay Clancy trial start?</h3>
       <p>It is underway. Jury selection ran July 20 to July 23, 2026, in Plymouth County Superior Court before Judge William F. Sullivan, and an 18-juror panel was seated — 12 jurors and 6 alternates. Opening statements were delivered on Monday, July 27, 2026, and the children’s father, Patrick Clancy, testified as the first witness. The judge has said the trial could run several weeks and potentially up to two months. Prosecutors dropped three duplicative strangulation counts on July 9, leaving three counts of first-degree murder. She has pleaded not guilty and is presumed innocent.</p>
 
