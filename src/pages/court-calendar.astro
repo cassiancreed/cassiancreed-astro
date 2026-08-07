@@ -237,6 +237,25 @@ const entries = [
     groups: ['next', 'hearings'],
   },
   {
+    id: 'bridegan-fernandez-trial',
+    case: 'Mario Fernandez Saldana — Jared Bridegan case',
+    proceeding: 'Murder trial — jury selection',
+    dateISO: '2026-08-10',
+    dateText: 'Monday, August 10, 2026 (start time not published)',
+    court: 'Duval County Circuit Court, Jacksonville, FL',
+    verified: 'August 7, 2026',
+    status: 'Charged with first-degree murder and solicitation to commit a capital felony in the February 2022 killing of Jared Bridegan. Prosecutors dropped conspiracy and child-abuse charges on July 27. Fernandez Saldana has pleaded not guilty and is presumed innocent unless and until proved guilty in court.',
+    detail: 'Jury selection is scheduled for August 10, with trial set for August 17 through August 28. Fernandez Saldana is the first of three defendants scheduled for separate trials in what prosecutors allege was a murder-for-hire plot. Judge London Kite finalized the juror questionnaire and ruled on remaining evidentiary motions on August 4, including blocking testimony from two prosecution witnesses. The schedule and the evidence ultimately presented to jurors can still change, so confirm with the clerk before attending.',
+    src: 'https://www.news4jax.com/news/local/2026/08/04/judge-to-decide-on-final-motions-ahead-of-jury-selection-for-1st-trial-in-jared-bridegan-murder-for-hire-case/',
+    srcLabel: 'News4JAX, courtroom reporting on final motions and jury selection (August 4, 2026)',
+    srcType: 'Court reporting',
+    src2: 'https://www.news4jax.com/news/local/2026/07/27/final-hearing-for-mario-fernandez-before-jury-selection-begins-in-first-of-3-murder-for-hire-trials-in-bridegan-case/',
+    srcLabel2: 'News4JAX, courtroom reporting on charges and trial schedule (July 27, 2026)',
+    link: null,
+    linkText: null,
+    groups: ['next', 'trials'],
+  },
+  {
     id: 'davis-tupac-trial',
     case: 'Duane “Keffe D” Davis — Tupac Shakur murder case',
     proceeding: 'Murder trial — jury selection',
@@ -478,6 +497,7 @@ const jsonld = {
       '@type': 'FAQPage',
       '@id': 'https://cassiancreed.com/court-calendar#faq',
       mainEntity: [
+        { '@type': 'Question', name: 'When does the Mario Fernandez trial in the Jared Bridegan case start?', acceptedAnswer: { '@type': 'Answer', text: 'Jury selection in Mario Fernandez Saldana’s trial is scheduled to begin Monday, August 10, 2026, in Duval County Circuit Court in Jacksonville, Florida, with the trial set for August 17 through August 28. He faces first-degree murder and solicitation charges in Jared Bridegan’s death, has pleaded not guilty, and is presumed innocent.' } },
         { '@type': 'Question', name: 'When does the Tupac Shakur murder trial start?', acceptedAnswer: { '@type': 'Answer', text: 'Jury selection in the murder trial of Duane “Keffe D” Davis is scheduled to begin Monday, August 10, 2026, in the Eighth Judicial District Court in Las Vegas. Davis is charged with one count of murder with use of a deadly weapon with a gang enhancement in Tupac Shakur’s 1996 killing. He has pleaded not guilty and is presumed innocent.' } },
         { '@type': 'Question', name: 'When does the Lindsay Clancy trial start?', acceptedAnswer: { '@type': 'Answer', text: 'It is underway. Jury selection ran July 20 to July 23, 2026, in Plymouth County Superior Court before Judge William F. Sullivan, and an 18-juror panel was seated — 12 jurors and 6 alternates. Opening statements were delivered on Monday, July 27, 2026, and the children’s father, Patrick Clancy, testified as the first witness. The judge has said the trial could run several weeks and potentially up to two months. Prosecutors dropped three duplicative strangulation counts on July 9, leaving three counts of first-degree murder. She has pleaded not guilty and is presumed innocent.' } },
         { '@type': 'Question', name: 'Was Colt Gray sentenced?', acceptedAnswer: { '@type': 'Answer', text: 'Not yet. He pleaded guilty on July 24, 2026, to all 55 counts in the Apalachee High School shooting in a non-negotiated plea, meaning no sentence was agreed in advance. Chief Judge Nicholas Primm accepted the plea and began the sentencing hearing the same day before adjourning it to Monday, July 27, 2026. The hearing resumed that morning — the court did not publish a start time, so we do not print one — and as of the reporting available that day no sentence had been imposed. The minimum available sentence is life with the possibility of parole; the maximum is life without parole.' } },
@@ -504,7 +524,7 @@ const jsonld = {
     <p class="evidence evidence--accent">Court Calendar</p>
     <h1>True Crime Court Calendar: Trial Dates &amp; Hearings 2026</h1>
     <p class="cal-answer">
-      Duane &ldquo;Keffe D&rdquo; Davis&rsquo;s trial in the Tupac Shakur murder case is scheduled to begin with jury selection on <strong>Monday, August 10</strong> in Las Vegas. Colt Gray pleaded guilty <strong>July 24</strong> to all 55 counts in the Apalachee High School shooting; his sentencing hearing resumed <strong>Monday, July 27</strong> in Barrow County and no sentence has been imposed yet, and his father Colin Gray is sentenced <strong>July 30</strong>. Opening statements in Lindsay Clancy&rsquo;s murder trial were delivered <strong>Monday, July 27</strong> in Plymouth County. David Anthony Burke, known as D4vd, was held to answer on all charges on <strong>July 27</strong> at the close of a five-day preliminary hearing in Los Angeles and is due back for arraignment <strong>August 31</strong>. Karmelo Anthony has his first post-conviction hearings <strong>August 19 and 20</strong> in Collin County, Texas. Dianne Curry Peck&rsquo;s pretrial conference is set for <strong>August 31</strong> in Fall River, Yvonne &ldquo;Missy&rdquo; Woods is sentenced <strong>September 8</strong> in Jefferson County, Colorado, and Larry Millete is sentenced <strong>September 29</strong> in Chula Vista.
+      Mario Fernandez Saldana&rsquo;s trial in the Jared Bridegan case and Duane &ldquo;Keffe D&rdquo; Davis&rsquo;s trial in the Tupac Shakur murder case are both scheduled to begin with jury selection on <strong>Monday, August 10</strong>. Fernandez Saldana&rsquo;s trial is set for <strong>August 17&ndash;28</strong> in Jacksonville, while Davis&rsquo;s case proceeds in Las Vegas. Colt Gray pleaded guilty <strong>July 24</strong> to all 55 counts in the Apalachee High School shooting; his sentencing hearing resumed <strong>Monday, July 27</strong> in Barrow County and no sentence has been imposed yet, and his father Colin Gray is sentenced <strong>July 30</strong>. Opening statements in Lindsay Clancy&rsquo;s murder trial were delivered <strong>Monday, July 27</strong> in Plymouth County. David Anthony Burke, known as D4vd, was held to answer on all charges on <strong>July 27</strong> at the close of a five-day preliminary hearing in Los Angeles and is due back for arraignment <strong>August 31</strong>. Karmelo Anthony has his first post-conviction hearings <strong>August 19 and 20</strong> in Collin County, Texas. Dianne Curry Peck&rsquo;s pretrial conference is set for <strong>August 31</strong> in Fall River, Yvonne &ldquo;Missy&rdquo; Woods is sentenced <strong>September 8</strong> in Jefferson County, Colorado, and Larry Millete is sentenced <strong>September 29</strong> in Chula Vista.
     </p>
     <p class="cal-fresh">
       <strong>Last full sweep: {LAST_VERIFIED}.</strong> Court dates move. Every entry below is checked against the public record, carries its source, and carries the date <em>that entry</em> was last verified &mdash; we do not re-date a card nobody re-checked. Confirm with the court before you travel.
@@ -771,6 +791,9 @@ const jsonld = {
   <section class="wrap cal-sec" aria-labelledby="faq">
     <h2 id="faq">FAQ</h2>
     <div class="prose faq">
+      <h3>When does the Mario Fernandez trial in the Jared Bridegan case start?</h3>
+      <p>Jury selection is scheduled to begin <strong>Monday, August 10, 2026</strong>, in Duval County Circuit Court in Jacksonville, with the trial set for August 17 through August 28. Mario Fernandez Saldana faces first-degree murder and solicitation charges in Jared Bridegan&rsquo;s death after prosecutors dropped conspiracy and child-abuse charges on July 27. He has pleaded not guilty and is presumed innocent unless and until proved guilty in court.</p>
+
       <h3>When does the Tupac Shakur murder trial start?</h3>
       <p>Jury selection in the murder trial of Duane &ldquo;Keffe D&rdquo; Davis is scheduled to begin <strong>Monday, August 10, 2026</strong>, in the Eighth Judicial District Court in Las Vegas. Prosecutors allege Davis orchestrated the September 1996 drive-by shooting and supplied the weapon; he is not accused of firing the fatal shots. Davis has pleaded not guilty and is presumed innocent unless and until proved guilty in court. Current reporting says the trial could last about four weeks.</p>
 
