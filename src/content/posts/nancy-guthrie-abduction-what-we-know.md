@@ -2,21 +2,24 @@
 title: "Nancy Guthrie Update: What We Know About the Tucson Abduction"
 description: "The latest on the Nancy Guthrie case: what is verified in the active search for the missing 84-year-old, where the investigation stands, the $100,000 FBI reward — and the scams now exploiting it."
 pubDate: 2026-06-23
+updatedDate: 2026-08-06
 tag: "Case Files"
 featured: false
 victim: "Nancy Guthrie, 84"
 incidentDate: "February 1, 2026"
 location: "Catalina Foothills, near Tucson, Arizona"
 jurisdiction: "Pima County Sheriff's Department & FBI (joint task force)"
-status: "Active abduction investigation — no one charged in the disappearance (updated July 20, 2026)"
-cover: "/covers/nancy-guthrie.png"
-coverAlt: "An atmospheric Arizona Sonoran desert at dusk near Tucson, with saguaro silhouettes and distant city lights."
+status: "Active investigation — Nancy remains missing; no one charged in the disappearance (updated August 6, 2026)"
+cover: "/covers/nancy-guthrie-case-update-2026.png"
+coverAlt: "Editorial Nancy Guthrie case-update graphic with an Arizona map, Tucson night scene, door camera, timeline, and Confirmed, Claimed, Unknown evidence labels."
 capture: "safety"
 ---
 
+> **August 6 update:** Read the [verified Jan. 31–Aug. 6 timeline](/post/nancy-guthrie-case-update-verified-timeline/), the [ransom-communication evidence guide](/post/nancy-guthrie-ransom-notes-what-they-reveal/), and the [Arizona/federal jurisdiction explainer](/post/nancy-guthrie-arizona-federal-kidnapping-jurisdiction/). Nancy remains missing; an unknown writer's claim about her death has not been publicly confirmed by investigators.
+
 Before she was a headline, Nancy Guthrie was a mother and a grandmother. She is 84 years old. She is the mother of "TODAY" co-anchor Savannah Guthrie and of her older daughter, Annie Guthrie. On the last night anyone in her family saw her, she had spent the evening at Annie's home outside Tucson. Hours later, she was gone.
 
-> **Case status — updated July 20, 2026:** Nancy Guthrie remains missing, and the investigation is active. No person has been publicly identified or charged in her abduction. The masked individual shown in released doorbell footage remains unidentified. In a separate federal case, Derrick Callella pleaded guilty to harassing communications sent to the family; he has not been charged in Guthrie's disappearance. The FBI currently offers a reward of up to $100,000, while the family has separately announced a reward of up to $1 million for information leading to her recovery.
+> **Case status — updated August 6, 2026:** Nancy Guthrie remains missing, and the investigation is active. No person has been publicly identified or charged in her abduction. The masked individual shown in released doorbell footage remains unidentified. In a separate federal case, Derrick Callella pleaded guilty to harassing communications sent to the family; he has not been charged in Guthrie's disappearance. The FBI currently offers a reward of up to $100,000, while the family has separately announced a reward of up to $1 million for information leading to her recovery.
 
 ## What is verified
 
@@ -68,6 +71,7 @@ Nancy Guthrie is still missing. Her family is still waiting. The most useful thi
 
 ## Listen to this case
 
-[https://open.spotify.com/embed/episode/017MaXvUB2pzg5FlEIrbyN?theme=0](https://open.spotify.com/embed/episode/017MaXvUB2pzg5FlEIrbyN?theme=0)
+[Listen to the August 6 Nancy Guthrie case update on Spotify](https://open.spotify.com/episode/0gVY7vMMCMAS484jONuw6p?si=-IK76ffVSPiQA2HCVSgisg) or [watch the source-labeled YouTube explainer](https://youtu.be/n7H14lJ9vSw).
+
 > **Get the next case file the day it ships**
 > [Get *The Stay Safe Field Guide*, our field guide to the warning-sign patterns that recur across real cases and how to stay safe →](https://cassiancreed.beehiiv.com/subscribe?utm_source=website&utm_medium=av_embed&utm_campaign=lm_safety_stay-safe-field-guide)

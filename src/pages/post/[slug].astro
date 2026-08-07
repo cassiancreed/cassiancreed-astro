@@ -4,8 +4,8 @@ import { getCollection } from 'astro:content';
 import CaptureBlock from '../../components/CaptureBlock.astro';
 export async function getStaticPaths() {
   const posts = await getCollection('posts');
-  // Nancy Guthrie is excluded from related-content rails by standing order; the page itself stays live.
-  const caseFiles = posts.filter(p => p.data.tag === 'Case Files' && p.slug !== 'nancy-guthrie-abduction-what-we-know');
+  // Nancy Guthrie coverage is excluded from related-content rails by standing order; the pages themselves stay live.
+  const caseFiles = posts.filter(p => p.data.tag === 'Case Files' && !p.slug.startsWith('nancy-guthrie-'));
   return posts.map(p => {
     const idx = caseFiles.findIndex(o => o.slug === p.slug);
     let rel = [];
