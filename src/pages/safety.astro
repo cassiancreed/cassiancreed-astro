@@ -11,6 +11,17 @@ import CaptureBlock from '../components/CaptureBlock.astro';
   title="Personal Safety Guide — Coercive Control Signs & Stalking Warning Signs | Cassian Creed"
   description="A calm, practical personal safety guide: coercive control signs, stalking warning signs, digital safety, de-escalation, and verified hotlines. No fear, no blame — from a true-crime publisher that refuses to sell fear."
 >
+  <aside class="safety-alert" aria-labelledby="safety-alert-title">
+    <div class="safety-alert__copy">
+      <strong id="safety-alert-title">Could someone be monitoring this device?</strong>
+      <span>Use a safer device they have not accessed, if you can. Changing settings, deleting history, or removing a tracker can sometimes alert the person monitoring you.</span>
+      <span class="safety-alert__limit">Press Escape twice or use Quick Exit. It changes the screen, but cannot erase browser history, network records, or monitoring software.</span>
+    </div>
+    <button class="safety-exit" id="quick-exit" type="button" aria-label="Quickly leave this page and open a weather website">
+      Quick Exit
+    </button>
+  </aside>
+
   <article class="post">
     <p class="evidence evidence--accent">Stay Safe</p>
     <h1>Stay Safe &mdash; And Know It&rsquo;s Not On You</h1>
@@ -23,19 +34,20 @@ import CaptureBlock from '../components/CaptureBlock.astro';
 
       <p>You deserve information without blame, fear, or pressure. Take what is useful. Leave what is not. Move at the pace that is safest for you.</p>
 
-      <p class="post__note"><em>A note on why this exists: the patterns below are common &mdash; far more common than most people realize. Learning to recognize them protects you, and it helps you recognize when someone you care about may be in trouble too. That is the whole of our mission: no more victims.</em></p>
+      <p class="post__note"><em>Why this exists: across documented cases, recurring offender behaviors, escalation signals, intervention opportunities, and protective actions appear repeatedly. This page translates guidance from survivor-service specialists into options readers can consider; it does not claim that any checklist predicts violence or that a victim could have prevented it.</em></p>
 
       <div class="res res--danger">
         <p class="res__k">Immediate danger</p>
         <p>If you or someone else is in immediate danger, call <strong>911</strong> (or your local emergency number) when it is safe to do so.</p>
       </div>
 
-      <h2 id="awareness">Start With Awareness, Not Fear</h2>
+      <h2 id="awareness">Reduce Exposure Without Shrinking Your Life</h2>
       <p>Situational awareness does not mean living on high alert. It means giving yourself enough attention and information to make choices.</p>
       <p>When you enter a place, quietly notice the basics: where you are, who is nearby, how you would leave, and where you could go if you needed help. Keep your phone accessible when practical. In unfamiliar settings, consider letting a trusted person know where you are and when you expect to check in.</p>
       <p>Awareness also includes changes. A person, vehicle, account, message pattern, or repeated &ldquo;coincidence&rdquo; may deserve attention when it begins to form a pattern. One event may be harmless. Repetition, persistence, boundary-testing, or escalation can change the meaning.</p>
       <p>You do not have to confront someone to validate your concern. You do not owe a stranger politeness, and you do not owe a known person access to you. Moving toward other people, entering a staffed business, changing your route, calling someone, or asking an employee for assistance are reasonable choices.</p>
       <p>The goal is not to appear fearless. The goal is to preserve choices.</p>
+      <p class="post__note">These are <em>safer options</em>, not guarantees. Responsibility always remains with the person who chooses to harm. See RAINN&rsquo;s <a href="https://rainn.org/get-informed/prevention/strategies-to-reduce-risk-increase-safety/" target="_blank" rel="noopener noreferrer">risk-reduction framing</a>.</p>
 
       <h2 id="trust-the-signal">Trust the Signal Before You Can Explain It</h2>
       <p>People often notice danger first as discomfort: a tight feeling, mental fog, a sudden wish to leave, or the sense that something does not fit. That feeling is information, even when you cannot yet name the reason.</p>
@@ -57,10 +69,10 @@ import CaptureBlock from '../components/CaptureBlock.astro';
       </ul>
       <p>No single checklist can diagnose a relationship. The important question is whether a pattern is shrinking your freedom, increasing your fear, or making ordinary choices feel dangerous.</p>
       <p>The responsibility belongs to the person choosing control or harm. De-escalation may sometimes help someone get through a moment, but it is never a victim&rsquo;s duty to manage an abusive person successfully. A failure to calm someone down is not consent, complicity, or fault.</p>
-      <p class="post__note">Related: our explainer on <a href="/post/what-is-coercive-control-the-signs-examples-and-what-to-do/">what coercive control is, the signs, and what to do</a>, and the <a href="/glossary/#coercive-control">glossary entry for coercive control</a>.</p>
+      <p class="post__note">Related: our explainer on <a href="/post/what-is-coercive-control-the-signs-examples-and-what-to-do/">what coercive control is, the signs, and what to do</a>; the <a href="/glossary/#coercive-control">glossary entry for coercive control</a>; and the National Domestic Violence Hotline&rsquo;s <a href="https://www.thehotline.org/plan-for-safety/" target="_blank" rel="noopener noreferrer">individualized safety-planning guidance</a>.</p>
 
       <h2 id="stalking">Take Stalking and Escalation Seriously</h2>
-      <p>Stalking is more than unwanted attention. It is a course of conduct that causes fear or serious emotional distress. It may happen in person, through technology, through other people, or across several channels at once.</p>
+      <p>Stalking is more than unwanted attention. A useful behavioral definition is a pattern directed at a specific person that would cause a reasonable person to fear for safety or experience substantial emotional distress. Legal definitions and required evidence vary by jurisdiction. It may happen in person, through technology, through other people, or across several channels at once.</p>
       <p>Possible signs include:</p>
       <ul>
         <li>Repeated unwanted calls, texts, or messages.</li>
@@ -72,10 +84,10 @@ import CaptureBlock from '../components/CaptureBlock.astro';
         <li>Contacting your friends or relatives to gather information about you.</li>
         <li>Threatening to reveal private material.</li>
       </ul>
-      <p>Escalation matters. Concern rises when contact becomes more frequent, more intrusive, more threatening, or more focused on punishment and control. Separation, blocked access, legal action, job loss, public exposure, weapon access, threats, a history of strangulation, and violations of protective boundaries can be important risk factors that deserve specialist attention.</p>
+      <p>Escalation matters. Concern rises when contact becomes more frequent, more intrusive, more threatening, or more focused on punishment and control. Separation, weapon access, threats, a history of strangulation, and violations of protective boundaries are among the circumstances that deserve prompt specialist attention. No public checklist can assess an individual situation.</p>
       <p>Do not assume you must personally warn, confront, or negotiate with someone who is stalking you. Direct contact can sometimes increase danger or provide the response the person is seeking. A stalking or domestic-violence advocate can help you think through documentation, reporting, technology, workplace or school measures, and legal options based on your circumstances.</p>
       <p>Preserve evidence when doing so is safe. Save messages, voicemails, screenshots, dates, locations, witness names, damaged-property photos, and police or platform report numbers. Store copies somewhere the person cannot access. Documentation is not a guarantee of action, but patterns are often clearer when incidents are recorded together.</p>
-      <p class="post__note">Related: the glossary entry for a <a href="/glossary/#protective-restraining-order">protective / restraining order</a>.</p>
+      <p class="post__note">Sources and tools: SPARC&rsquo;s <a href="https://www.stalkingawareness.org/definition-faqs/" target="_blank" rel="noopener noreferrer">behavioral definition</a>, <a href="https://www.stalkingawareness.org/risk-and-safety/" target="_blank" rel="noopener noreferrer">risk and safety resources</a>, and <a href="https://www.stalkingawareness.org/documentation-log/" target="_blank" rel="noopener noreferrer">documentation log</a>. Related: the glossary entry for a <a href="/glossary/#protective-restraining-order">protective / restraining order</a>.</p>
 
       <h2 id="digital-safety">Protect Your Digital Space</h2>
       <p>Digital safety is personal safety. Phones, shared accounts, vehicles, smart-home devices, cloud photos, family plans, and social platforms can reveal location, routines, contacts, and private conversations.</p>
@@ -83,6 +95,8 @@ import CaptureBlock from '../components/CaptureBlock.astro';
       <p>Useful steps may include reviewing account recovery emails and phone numbers, using unique passwords, enabling multifactor authentication, checking active sessions and connected devices, limiting location sharing, reviewing app permissions, and tightening social-media privacy. Consider what friends and relatives post about you, especially real-time locations, travel, workplaces, children&rsquo;s schools, or recognizable routines.</p>
       <p>Be cautious with unexpected links, login alerts, password-reset messages, new follower requests, and urgent demands for codes or personal information. Confirm requests through a separate, trusted channel.</p>
       <p>Blocking can be helpful, but it is not always the safest first step in a stalking or coercive-control situation. It may erase access to evidence, trigger escalation, or cause the person to switch methods. A specialist can help you decide whether to block, mute, archive, change accounts, preserve evidence, or involve a platform or law enforcement.</p>
+      <p>If you discover a hidden camera, spyware, or location tracker, consider documenting it from a safer device and making a plan before disabling or removing it. Cutting off access may reveal that it was found or trigger a change in behavior. A trained advocate can help you weigh safety, evidence preservation, and reporting options.</p>
+      <p class="post__note">Technology guidance: NNEDV Safety Net Project&rsquo;s <a href="https://www.techsafety.org/resources-survivors/technology-safety-plan" target="_blank" rel="noopener noreferrer">Technology Safety Plan</a>, <a href="https://www.techsafety.org/location-tracking" target="_blank" rel="noopener noreferrer">location-tracking guide</a>, and <a href="https://www.techsafety.org/tools-for-safer-browsing" target="_blank" rel="noopener noreferrer">safer-browsing tools</a>.</p>
 
       <h2 id="de-escalation">De-escalation Is an Option, Not an Obligation</h2>
       <p>In a tense encounter, simple communication may sometimes lower immediate friction: keep your voice steady, use short sentences, avoid unnecessary argument, maintain physical space, and move toward an exit or other people. Do not make sudden movements around someone who appears highly agitated or armed.</p>
@@ -115,7 +129,7 @@ import CaptureBlock from '../components/CaptureBlock.astro';
 
         <div class="res">
           <p class="res__k">Sexual assault</p>
-          <p><strong>RAINN National Sexual Assault Hotline</strong> &mdash; <a href="https://www.rainn.org" target="_blank" rel="noopener noreferrer">RAINN.org</a>. Call <strong>800-656-HOPE (4673)</strong> or use the online chat for confidential sexual-assault support.</p>
+          <p><strong>RAINN National Sexual Assault Hotline</strong> &mdash; <a href="https://rainn.org/help-and-healing/hotline/" target="_blank" rel="noopener noreferrer">RAINN.org</a>. Call <strong>800-656-HOPE (4673)</strong>, text <strong>HOPE</strong> to <strong>64673</strong>, or use online chat for free, confidential, 24/7 sexual-assault support.</p>
         </div>
 
         <div class="res">
@@ -125,10 +139,16 @@ import CaptureBlock from '../components/CaptureBlock.astro';
 
         <div class="res">
           <p class="res__k">Eating disorders</p>
-          <p><strong>National Association of Anorexia Nervosa and Associated Disorders (ANAD)</strong> &mdash; <a href="https://anad.org" target="_blank" rel="noopener noreferrer">ANAD.org</a>. The current ANAD helpline is <strong>888-375-7767</strong>. (Do not rely on the discontinued NEDA telephone helpline.)</p>
+          <p><strong>National Association of Anorexia Nervosa and Associated Disorders (ANAD)</strong> &mdash; <a href="https://anad.org/get-support/eating-disorders-helpline/" target="_blank" rel="noopener noreferrer">ANAD.org</a>. The current ANAD helpline is <strong>888-375-7767</strong>, Monday&ndash;Friday, 9 a.m.&ndash;9 p.m. Central. Messages left outside those hours are returned. (Do not rely on the discontinued NEDA telephone helpline.)</p>
         </div>
 
-        <p class="resources__foot"><em>When using a shared or monitored device, consider clearing browsing history only if doing so will not create suspicion. Many advocacy sites offer a quick-exit feature, but a quick exit does not erase browser history.</em></p>
+        <p class="resources__foot"><em>When using a shared or monitored device, clear browsing history only if doing so will not create suspicion. Private browsing may reduce what is saved locally, but it cannot defeat spyware, account syncing, router or network records, or monitoring by someone with access to the device.</em></p>
+      </section>
+
+      <section class="sources" id="sources" aria-labelledby="safety-sources-title">
+        <h2 id="safety-sources-title">Evidence Standard and Review Date</h2>
+        <p>This guide was reviewed on <strong>August 9, 2026</strong>. Its safety framework and current contact information were checked against primary guidance from the <a href="https://www.techsafety.org/" target="_blank" rel="noopener noreferrer">NNEDV Safety Net Project</a>, <a href="https://www.thehotline.org/" target="_blank" rel="noopener noreferrer">National Domestic Violence Hotline</a>, <a href="https://www.stalkingawareness.org/" target="_blank" rel="noopener noreferrer">SPARC</a>, <a href="https://rainn.org/" target="_blank" rel="noopener noreferrer">RAINN</a>, <a href="https://humantraffickinghotline.org/en" target="_blank" rel="noopener noreferrer">National Human Trafficking Hotline</a>, <a href="https://988lifeline.org/" target="_blank" rel="noopener noreferrer">988 Lifeline</a>, and <a href="https://anad.org/" target="_blank" rel="noopener noreferrer">ANAD</a>.</p>
+        <p>This is educational information, not individualized legal, medical, or emergency advice. Services, laws, and safety needs vary by location and circumstance.</p>
       </section>
 
       <h2 id="a-small-plan">A Small Plan Is Still a Plan</h2>
@@ -148,4 +168,45 @@ import CaptureBlock from '../components/CaptureBlock.astro';
   <div class="wrap"><section class="subscribe" id="free-guide">
     <CaptureBlock offer="safety" content="safety" />
   </section></div>
+
+  <script is:inline>
+    (function () {
+      var exit = document.getElementById('quick-exit');
+      var lastEscape = 0;
+      function leaveSafetyPage() {
+        window.location.replace('https://weather.com/');
+      }
+      if (exit) exit.addEventListener('click', leaveSafetyPage);
+      document.addEventListener('keydown', function (event) {
+        if (event.key !== 'Escape') return;
+        var now = Date.now();
+        if (now - lastEscape < 1000) leaveSafetyPage();
+        lastEscape = now;
+      });
+    })();
+  </script>
 </Base>
+
+<style>
+  .safety-alert{
+    position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:center;
+    gap:18px;padding:12px 20px;background:#2c1014;color:#fff;border-bottom:2px solid #d9a65c;
+    box-shadow:0 4px 18px rgba(0,0,0,.22)
+  }
+  .safety-alert__copy{display:flex;flex-direction:column;gap:2px;max-width:930px;font-size:.91rem;line-height:1.35}
+  .safety-alert__copy strong{color:#fff;font-size:1rem}
+  .safety-alert__limit{color:#f2d9d9;font-size:.82rem}
+  .safety-exit{
+    flex:0 0 auto;min-height:44px;padding:10px 18px;border:2px solid #fff;border-radius:7px;
+    background:#fff;color:#5a111a;font:inherit;font-weight:800;cursor:pointer
+  }
+  .safety-exit:hover,.safety-exit:focus-visible{background:#f6dfb9;color:#2c1014;outline:3px solid #d9a65c;outline-offset:2px}
+  .sources{margin-top:2.5rem;padding:1.25rem 1.4rem;border:1px solid var(--line);border-radius:12px;background:var(--bg-2)}
+  .sources h2{margin-top:0}
+  @media(max-width:720px){
+    .safety-alert{align-items:flex-start;padding:10px 12px;gap:10px}
+    .safety-alert__copy{font-size:.8rem}
+    .safety-alert__limit{font-size:.74rem}
+    .safety-exit{padding:9px 12px}
+  }
+</style>
