@@ -48,8 +48,8 @@ const OFFERS = {
     // Rex requirement: crisis hotlines must be visible ON-PAGE, ungated,
     // BEFORE any signup ask. Rendered via `safetyLine` below the subtext.
     safetyLine: 'Immediate physical danger: call 911 or local emergency services. Suicide, mental-health, or substance-use crisis support: call or text 988. No signup is required for help.',
-    headline: 'Get practical safety tools and This Week in Court.',
-    subtext: 'Get the printable Stay Safe Field Guide, evidence-first courtroom updates, plain-English explanations, and practical safety guidance—without sensationalism or victim blame. This optional email is not emergency support or a personalized safety plan. No weekly blast; unsubscribe anytime.',
+    headline: 'Request the printable Stay Safe Field Guide.',
+    subtext: 'Use this optional subscription form to request the printable Stay Safe Field Guide and receive NEP updates. Updates may include This Week in Court, plain-English explainers, and practical safety guidance—without sensationalism or victim blame. This email is not emergency support or a personalized safety plan. Unsubscribe anytime.',
     button: 'Get the free guide',
   },
 };
@@ -86,6 +86,7 @@ const resolvedSubtext  = subtext  ?? o.subtext;
 const resolvedButton   = button   ?? o.button;
 // Ungated crisis line (safety offer only). Always rendered before signup.
 const safetyLine       = (o as { safetyLine?: string }).safetyLine;
+const safetyOffer      = offer === 'safety';
 
 // Fallback / non-embed link. encodeURIComponent guards odd campaign strings.
 const subscribeHref =
@@ -152,9 +153,9 @@ const embedSrc =
           <p class="capture__fallback">
             Form not loading? <a href={subscribeHref} target="_blank" rel="noopener noreferrer">{resolvedButton} &rarr;</a>
           </p>
-          <p class="capture__helper">After you subscribe, the guide arrives by email within a minute &mdash; check your inbox (and your spam folder).</p>
+          <p class="capture__helper">{safetyOffer ? 'After submitting, follow Beehiiv’s on-screen confirmation instructions.' : 'After you subscribe, the guide arrives by email within a minute — check your inbox (and your spam folder).'}</p>
           <div class="capture__success" role="status" hidden>
-            <strong>You&rsquo;re in.</strong> Check your inbox for the guide &mdash; it arrives by email within a minute. Peek in spam if you don&rsquo;t see it.
+            <strong>You&rsquo;re in.</strong> {safetyOffer ? 'Follow the confirmation instructions shown by Beehiiv.' : 'Check your inbox for the guide — it arrives by email within a minute. Peek in spam if you don’t see it.'}
           </div>
         </>
       ) : (
