@@ -2,7 +2,12 @@
   "name": "cassiancreed-astro",
   "type": "module",
   "version": "1.0.0",
-  "scripts": { "dev": "astro dev", "build": "astro build", "preview": "astro preview" },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "npm run calendar:check && astro build",
+    "preview": "astro preview",
+    "calendar:check": "node scripts/validate-court-calendar.mjs"
+  },
   "dependencies": {
     "astro": "^4.16.0",
     "@astrojs/sitemap": "^3.2.0",
