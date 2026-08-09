@@ -4,9 +4,10 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "astro dev",
-    "build": "npm run calendar:check && astro build",
+    "build": "npm run calendar:check && npm run posts:check && astro build",
     "preview": "astro preview",
-    "calendar:check": "node scripts/validate-court-calendar.mjs"
+    "calendar:check": "node scripts/validate-court-calendar.mjs",
+    "posts:check": "node scripts/validate-post-archive.mjs"
   },
   "dependencies": {
     "@astrojs/mdx": "^3.1.9",

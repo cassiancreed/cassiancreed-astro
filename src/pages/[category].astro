@@ -2,24 +2,118 @@
 import Base from '../layouts/Base.astro';
 import CaptureBlock from '../components/CaptureBlock.astro';
 import { getCollection } from 'astro:content';
+
 export async function getStaticPaths() {
   return [
     { params: { category: 'case-files' }, props: { tag: 'Case Files', label: 'True Crime Blog' } },
     { params: { category: 'explainers' }, props: { tag: 'Explainers', label: 'Explainers' } },
   ];
 }
+
 const { tag, label } = Astro.props;
-const posts = (await getCollection('posts')).filter(p=>p.data.tag===tag).sort((a,b)=> b.data.pubDate.valueOf()-a.data.pubDate.valueOf());
-const short=(t)=>t.split(':')[0];
+const posts = (await getCollection('posts'))
+  .filter((post) => post.data.tag === tag)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const formatDate = (date) => new Intl.DateTimeFormat('en-US', {
+  month: 'short',
+  day: 'numeric',
+  year: 'numeric',
+  timeZone: 'UTC',
+}).format(date);
+
+const searchText = (post) => [
+  post.data.title,
+  post.data.description,
+  post.data.victim,
+  post.data.location,
+  post.data.jurisdiction,
+  post.data.status,
+].filter(Boolean).join(' ').toLowerCase();
+
+const archiveDescription = tag === 'Case Files'
+  ? 'Search every sourced, victim-centered case file. New reporting appears first; older coverage remains available for readers and search engines.'
+  : 'Browse plain-language explainers of evidence, criminal law, forensic science, and the court process.';
 ---
-<Base title={`${label} — Cassian Creed`}>
-  <section class="hero wrap">
+<Base title={`${label} — Cassian Creed`} description={archiveDescription}>
+  <section class="hero archive-hero wrap">
+    <span class="evidence evidence--accent">Case Files Archive</span>
     <h1>{label}</h1>
+    <p class="archive-hero__lede">{archiveDescription}</p>
     <p class="post__note">Also in the library: the <a href="/guides/">Resources &amp; Guides</a> &middot; the <a href="/glossary/">Glossary</a> &middot; the free <a href="/safety/">Stay Safe guide</a> &middot; <a href="/how-forensic-genetic-genealogy-works/">how forensic genetic genealogy works</a> &middot; the <a href="/court-calendar/">Court Calendar</a>.</p>
   </section>
-  {tag === 'Case Files' && (<section class="wrap" aria-label="Get the free guide"><CaptureBlock offer="case" content="category_case_files" /></section>)}
-  <section class="wrap"><div class="grid">
-    {tag === 'Case Files' && (<a class="card" href="https://cassiancreed.beehiiv.com/p/baby-boy-doe-mansfield-1985" target="_blank" rel="noopener"><div class="card__tile"><div class="tile__top"><span class="tile__no">New</span><span class="tile__tag">Case Files</span></div><h3 class="card__title">Baby Boy Doe — Mansfield, 1985</h3></div></a>)}
-    {posts.map((p, i) => (<a class="card" href={`/post/${p.slug}/`}><div class="card__tile" style={p.data.cover ? `background-image:linear-gradient(rgba(10,14,26,.30),rgba(10,14,26,.78)),url(${p.data.cover});background-size:cover;background-position:center 32%` : undefined}><div class="tile__top"><span class="tile__no">Nº {String(i+1).padStart(2,'0')}</span><span class="tile__tag">{p.data.tag}</span></div><h3 class="card__title">{short(p.data.title)}</h3></div></a>))}
-  </div></section>
+
+  <section class="archive wrap" aria-labelledby="archive-heading">
+    <div class="archive__heading">
+      <div>
+        <span class="evidence">Browse the archive</span>
+        <h2 id="archive-heading">Latest reporting</h2>
+      </div>
+      <span class="archive__order">Newest first</span>
+    </div>
+
+    <div class="archive-search" role="search">
+      <label for="case-search">Search cases</label>
+      <div class="archive-search__field">
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><path d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <input id="case-search" type="search" placeholder="Search a case, victim, place, or topic…" autocomplete="off" />
+      </div>
+      <p class="archive-search__status" id="archive-status" aria-live="polite">{posts.length} {posts.length === 1 ? 'article' : 'articles'}</p>
+    </div>
+
+    <div class="archive-grid" id="archive-grid">
+      {posts.map((post) => (
+        <a
+          class="archive-card"
+          href={`/post/${post.slug}/`}
+          data-search={searchText(post)}
+        >
+          <div
+            class="archive-card__art"
+            style={post.data.cover ? `background-image:linear-gradient(rgba(10,14,26,.18),rgba(10,14,26,.72)),url(${post.data.cover});background-size:cover;background-position:center 32%` : undefined}
+          >
+            <span class="archive-card__tag">{post.data.tag}</span>
+          </div>
+          <div class="archive-card__body">
+            <time datetime={post.data.pubDate.toISOString().slice(0, 10)}>{formatDate(post.data.pubDate)}</time>
+            <h3>{post.data.title}</h3>
+            {post.data.description && <p>{post.data.description}</p>}
+            <span class="archive-card__link">Read {post.data.tag === 'Case Files' ? 'case file' : 'explainer'} <span aria-hidden="true">→</span></span>
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <p class="archive-empty" id="archive-empty" hidden>No articles matched that search. Try a person’s name, location, case, or evidence type.</p>
+  </section>
+
+  {tag === 'Case Files' && (
+    <section class="wrap archive-capture" aria-label="Get the free guide">
+      <CaptureBlock offer="case" content="category_case_files" />
+    </section>
+  )}
+
+  <script is:inline>
+    (() => {
+      const input = document.querySelector('#case-search');
+      const cards = Array.from(document.querySelectorAll('.archive-card'));
+      const status = document.querySelector('#archive-status');
+      const empty = document.querySelector('#archive-empty');
+      if (!(input instanceof HTMLInputElement) || !status || !empty) return;
+
+      input.addEventListener('input', () => {
+        const query = input.value.trim().toLowerCase();
+        let visible = 0;
+
+        cards.forEach((card) => {
+          const matches = !query || (card.getAttribute('data-search') || '').includes(query);
+          card.hidden = !matches;
+          if (matches) visible += 1;
+        });
+
+        status.textContent = `${visible} ${visible === 1 ? 'article' : 'articles'}`;
+        empty.hidden = visible !== 0;
+      });
+    })();
+  </script>
 </Base>
