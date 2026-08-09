@@ -1,419 +1,35 @@
 ---
 import Base from '../layouts/Base.astro';
 
-// DATE-VERIFICATION POLICY: every date on this page is verified DAILY against
-// live outside coverage — a court filing, a prosecutor's office, or courtroom
-// reporting. We never cite our own articles as the source for a date, and we
-// never guess. If a date cannot be confirmed against an outside source of
-// record, it is pulled, not estimated. Bump LAST_VERIFIED on each sweep.
-const LAST_VERIFIED = 'July 25, 2026';
-const BUILD_DATE = new Date().toISOString().slice(0, 10);
+import calendarTsv from '../data/court-calendar.tsv?raw';
+import { formatCalendarDate, parseCourtCalendar } from '../data/court-calendar-parser.mjs';
 
-// Per-entry verification: an entry may carry its own `verified` date. Entries
-// without one fall back to LAST_VERIFIED, the date of the last full sweep. This
-// exists so a partial sweep never silently re-certifies a card nobody checked.
-// Bump an entry's own `verified` when, and only when, you re-checked that entry.
+// All editable calendar content lives in one spreadsheet-style TSV file.
+// Replace or edit src/data/court-calendar.tsv; the parser validates every row
+// before Astro can build or publish the page.
+const calendar = parseCourtCalendar(calendarTsv);
+const { entries, unconfirmed, appeals, completed } = calendar;
+const LAST_VERIFIED = formatCalendarDate(calendar.metadata.last_full_sweep);
+const TARGETED_UPDATE = formatCalendarDate(calendar.metadata.targeted_update);
+const PAGE_TITLE = calendar.metadata.page_title;
+const PAGE_DESCRIPTION = calendar.metadata.page_description;
+const localDateParts = Object.fromEntries(
+  new Intl.DateTimeFormat('en-US', {
+    timeZone: 'America/Los_Angeles',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+  })
+    .formatToParts(new Date())
+    .filter((part) => part.type !== 'literal')
+    .map((part) => [part.type, part.value]),
+);
+const BUILD_DATE = `${localDateParts.year}-${localDateParts.month}-${localDateParts.day}`;
 
-// Correction route. Every entry links here, and the policy page repeats it.
 const CORRECTION_MAILTO =
   'mailto:cassiancreed@cassiancreed.com?subject=Court%20Calendar%20correction&body=Case%20or%20person%20name%3A%0D%0AWhat%20is%20wrong%3A%0D%0AWhat%20the%20correct%20information%20is%3A%0D%0AOfficial%20record%20or%20source%20(link%20or%20citation)%3A%0D%0AYour%20name%20and%20role%20(optional)%3A%0D%0A';
 
-// Required exact wording when nothing is on a calendar. Do not paraphrase.
 const NO_DATE = 'No confirmed upcoming court date found.';
-
-// Every entry below is tied to an outside source of record — a court filing, a
-// prosecutor's office, or courtroom reporting. We never cite our own articles as
-// the source for a date. `srcType` states plainly what kind of source it is.
-const entries = [
-  {
-    id: 'clancy-trial',
-    case: 'Lindsay Clancy',
-    proceeding: 'Murder trial — opening statements',
-    ongoing: true,
-    dateISO: '2026-07-27',
-    dateText: 'Monday, July 27, 2026 — opening statements delivered (trial underway)',
-    court: 'Plymouth County Superior Court, Plymouth, MA',
-    verified: 'July 27, 2026',
-    nextNote: NO_DATE + ' The trial is in progress and the court has not published a specific next trial day.',
-    status: 'On trial. She has pleaded not guilty to three counts of first-degree murder in the deaths of her three children, Cora, Dawson, and Callan Clancy. Prosecutors dropped three duplicative strangulation counts on July 9. She is presumed innocent unless and until a jury says otherwise.',
-    detail: 'Jury selection ran July 20 to July 23 before Judge William F. Sullivan and produced an 18-juror panel — 12 women and 6 men, including 6 alternates. Opening statements were delivered on the morning of Monday, July 27, and the children’s father, Patrick Clancy, took the stand as the first witness. The defense told jurors it will argue insanity arising from postpartum psychosis. On July 24 the judge restricted public and media dissemination of the 911 call and the children’s autopsy photographs. At the July 13 final pretrial hearing the court denied a defense request to sequester the jury and barred lay witnesses from testifying about their own experience with postpartum depression or psychosis. The judge has said the trial could run several weeks and potentially up to two months.',
-    src: 'https://www.wbur.org/news/2026/07/27/lindsay-clancy-trial-opening-statements',
-    srcLabel: 'WBUR, courtroom reporting (July 27, 2026)',
-    srcType: 'Court reporting',
-    link: '/post/lindsay-clancy-trial-2026-postpartum-psychosis/',
-    linkText: 'Full Clancy case tracker',
-    link2: '/post/what-actually-happens-on-day-one-of-a-high-profile-trial/',
-    linkText2: 'What happens on day one',
-    groups: ['next', 'trials'],
-  },
-  {
-    id: 'colt-gray-sentencing',
-    case: 'Colt Gray',
-    proceeding: 'Sentencing hearing (continued)',
-    ongoing: true,
-    dateISO: '2026-07-27',
-    dateText: 'Resumed Monday, July 27, 2026 — hearing underway (start time not published)',
-    court: 'Barrow County Superior Court, Winder, GA',
-    verified: 'July 27, 2026',
-    nextNote: NO_DATE + ' The hearing resumed on July 27 and reporting indicates it could extend into Tuesday, July 28, but no further setting has been ordered on the public record.',
-    status: 'Pleaded guilty on July 24, 2026, to all 55 counts in the September 4, 2024 shooting at Apalachee High School, including malice murder and felony murder. The plea was non-negotiated: no sentence was agreed in advance. No sentence has been imposed.',
-    detail: 'The shooting killed teachers Cristina Irimie and Richard Aspinwall and 14-year-old students Mason Schermerhorn and Christian Angulo; nine others were wounded. Chief Judge Nicholas Primm took the plea, accepted it, and moved straight into sentencing on July 24 with victim impact statements and evidence from the State before adjourning to Monday morning. The hearing resumed on July 27 with testimony that included a forensic psychologist on Gray’s mental health. No start time for the July 27 session was published by the court, so we do not print one. The minimum available sentence is life with the possibility of parole; the maximum is life without parole, and that choice is the judge’s. The October 13 jury selection that had been set in Columbia County is moot now that the plea disposed of the indictment.',
-    src: 'https://www.cbsnews.com/atlanta/news/colt-gray-sentencing-hearing-to-resume-monday-after-guilty-plea-in-apalachee-high-school-shooting/',
-    srcLabel: 'CBS News Atlanta, courtroom reporting (updated July 27, 2026)',
-    srcType: 'Court reporting',
-    link: null,
-    linkText: null,
-    groups: ['next', 'sentencing'],
-  },
-  {
-    id: 'colin-gray-sentencing',
-    case: 'Colin Gray',
-    proceeding: 'Sentencing',
-    dateISO: '2026-07-30',
-    dateText: 'Thursday, July 30, 2026, 9:00 a.m. ET',
-    court: 'Barrow County Superior Court, Winder, GA',
-    verified: 'July 27, 2026',
-    status: 'Convicted by a jury on March 3, 2026 on 27 counts — including second-degree murder, involuntary manslaughter, reckless conduct, and second-degree cruelty to children — in connection with the Apalachee High School shooting carried out by his son. Two counts were vacated because two victims did not testify.',
-    detail: 'This is a sentencing hearing, not a trial. The court moved it from the earlier July 28–29 setting to July 30; no reason was given on the record reported. Prosecutors argued at trial that he ignored repeated warnings about his son’s mental health and provided the AR-style rifle used in the shooting. Reported maximum exposure is 180 years. Some coverage published as late as July 24 still carried the old July 28–29 date; the July 30 setting is the one reported from the scheduling change itself.',
-    src: 'https://www.11alive.com/article/news/crime/trials/colin-gray-father-of-the-accused-apalachee-high-shooter-colt-gray-to-be-sentenced-july-30/85-eb8045e5-a0f1-4b4c-8b25-b7ffa6e9231f',
-    srcLabel: '11Alive, court reporting on the date change (July 20, 2026)',
-    srcType: 'Court reporting',
-    link: null,
-    linkText: null,
-    groups: ['next', 'sentencing'],
-  },
-  {
-    id: 'dominguez-further',
-    case: 'Carlos Reales Dominguez',
-    proceeding: 'Further proceedings after insanity finding',
-    dateISO: '2026-08-05',
-    dateText: 'Wednesday, August 5, 2026, 1:30 p.m. PT',
-    court: 'Yolo County Superior Court, Department 14, Woodland, CA',
-    status: 'Found not guilty by reason of insanity on July 22, 2026. On July 21 a jury acquitted him of two counts of second-degree murder and one count of attempted murder in the 2023 Davis stabbings, and convicted him of two counts of involuntary manslaughter with deadly-weapon allegations found true. There is no murder conviction and there will be no prison sentence.',
-    detail: 'David Breaux and Karim Abou Najm were killed and Kimberlee Guillory was gravely wounded in the April 2023 attacks. After the July 21 verdicts, prosecutors waived a jury for the sanity phase and Judge Samuel T. McAdam found him legally insane, ordering a CONREP evaluation and commitment to a state hospital rather than a criminal sentence. A separate placement and housing determination is set for August 19, 2026, at 1:30 p.m. in the same department.',
-    src: 'https://newsroom.courts.ca.gov/news/dominguez-ruled-insane-will-be-committed-state-hospital-davis-stabbings',
-    srcLabel: 'California Courts Newsroom, judicial branch release (July 22, 2026)',
-    srcType: 'Primary — state judicial branch',
-    link: '/post/what-a-racial-justice-act-violation-means-dominguez/',
-    linkText: 'What the Racial Justice Act findings mean',
-    groups: ['next', 'hearings'],
-  },
-  {
-    id: 'lebron-status',
-    case: 'Jennifer Lebron',
-    proceeding: 'Status of attorney hearing',
-    dateISO: '2026-08-12',
-    dateText: 'Wednesday, August 12, 2026 (start time not published)',
-    court: 'Lake County Circuit Court, 19th Judicial Circuit, Waukegan, IL',
-    status: 'Charged with two counts of involuntary manslaughter, a Class 3 felony, in the 2001 death of her newborn son, known for 25 years as Baby Jacob Hope. Released from custody with conditions. She is presumed innocent unless and until a jury says otherwise.',
-    detail: 'The infant was found on August 26, 2001, in a bag in a dumpster behind a Rollins Road grocery store in Round Lake Beach; an autopsy found he was born alive. Round Lake Beach police reopened the case in early 2024 and submitted his DNA for testing, which led investigators to Lebron. The baby’s father is not suspected of wrongdoing. At the July 15 first appearance the State filed no petition to detain, and Judge Randie K. Bruno released her on Level 4 pretrial monitoring with a curfew, a bar on drugs and alcohol with random testing, and no driving without a valid license. The August 12 setting is to confirm whether she has retained private counsel.',
-    src: 'https://www.dailyherald.com/20260715/news/woman-charged-in-2001-death-of-infant-son-released-from-custody/',
-    srcLabel: 'Daily Herald, court reporting (July 15, 2026)',
-    srcType: 'Court reporting',
-    src2: 'https://content.govdelivery.com/accounts/ILLAKE/bulletins/42084a1',
-    srcLabel2: 'Round Lake Beach Police Department and Lake County State’s Attorney, joint release (July 14, 2026)',
-    link: '/baby-jacob-round-lake-beach-genetic-genealogy/',
-    linkText: 'Read our Baby Jacob Hope case page',
-    groups: ['next', 'hearings'],
-  },
-  {
-    id: 'anthony-recusal',
-    case: 'Karmelo Anthony',
-    proceeding: 'Hearing on motion to recuse the trial judge',
-    dateISO: '2026-08-19',
-    dateText: 'Wednesday, August 19, 2026, 9:00 a.m. CT',
-    court: '494th District Court, Collin County, McKinney, TX',
-    status: 'Convicted of murder by a jury on June 9, 2026, in the stabbing death of Austin Metcalf at a Frisco track meet, and sentenced to 35 years. A notice of appeal was filed June 10, 2026. Cause No. 296-83565-2025.',
-    detail: 'On July 7 his appellate team filed a motion for new trial and a verified motion to recuse the trial judge, John Roach Jr. Under Texas practice a recusal motion goes to a regional administrative judge, who on July 14 signed an order assigning Senior Judge Sid L. Harle to hear it. The hearing is open to the public and is expected to run about half a day.',
-    src: 'https://www.wfaa.com/article/news/local/texas/karmelo-anthony-files-motion-for-new-trial-after-murder-conviction/287-7e3cc298-fe3d-47eb-b023-64442c21dc82',
-    srcLabel: 'WFAA, court reporting on the hearing settings (July 22, 2026)',
-    srcType: 'Court reporting',
-    src2: 'https://www.collincountytx.gov/details?news=fd3f1f12-44a1-4774-9773-e7f254286cd3&title=Information-for-the-trial-State-of-Texas-v-Karmelo-Sincere-Anthony-Cause-No-296-83565-2025',
-    srcLabel2: 'Collin County, official case information page (updated July 24, 2026)',
-    link: '/post/a-jury-convicted-a-family-still-grieves-karmelo-anthony-verdict-austin-metcalf/',
-    linkText: 'Read our coverage of the verdict and what it left unresolved',
-    groups: ['next', 'hearings'],
-  },
-  {
-    id: 'anthony-new-trial',
-    case: 'Karmelo Anthony',
-    proceeding: 'Hearing on motion for new trial',
-    dateISO: '2026-08-20',
-    dateText: 'Thursday, August 20, 2026 (courtroom and presiding judge not yet assigned)',
-    court: 'Collin County, McKinney, TX',
-    status: 'Convicted of murder June 9, 2026, and sentenced to 35 years; motion for new trial filed July 7, 2026. Cause No. 296-83565-2025.',
-    detail: 'This setting is expected to take at least a full day. Which judge hears it depends in part on the outcome of the recusal hearing the day before. The Collin County District Attorney has said transcripts of private hearings contradict a trial-counsel affidavit filed in support of the motion; the defense disputes that. The county has said a redacted testimony transcript will be available on or before August 7, 2026.',
-    src: 'https://www.nbcdfw.com/news/local/karmelo-anthonys-appeal-court-requests-new-trial-judges-recusal/4053061/',
-    srcLabel: 'NBC 5 DFW, court reporting (July 22, 2026)',
-    srcType: 'Court reporting',
-    link: '/post/a-jury-convicted-a-family-still-grieves-karmelo-anthony-verdict-austin-metcalf/',
-    linkText: 'Read our coverage of the verdict and what it left unresolved',
-    groups: ['next', 'hearings'],
-  },
-  {
-    id: 'dominguez-placement',
-    case: 'Carlos Reales Dominguez',
-    proceeding: 'Placement and housing determination',
-    dateISO: '2026-08-19',
-    dateText: 'Wednesday, August 19, 2026, 1:30 p.m. PT',
-    court: 'Yolo County Superior Court, Department 14, Woodland, CA',
-    status: 'Found not guilty by reason of insanity on July 22, 2026. This hearing decides where he is committed, not how long he is punished — there is no criminal sentence to impose.',
-    detail: 'Judge Samuel T. McAdam ruled from the bench on July 22 that Dominguez was legally insane at the time of the stabbings and ordered him committed to a state hospital. Further proceedings are set for August. Reporting on the hearing indicates the commitment is capped by the maximum term for the manslaughter convictions.',
-    src: 'https://newsroom.courts.ca.gov/news/dominguez-ruled-insane-will-be-committed-state-hospital-davis-stabbings',
-    srcLabel: 'California Courts Newsroom, judicial branch release (July 22, 2026)',
-    srcType: 'Primary — state judicial branch',
-    link: '/post/what-a-racial-justice-act-violation-means-dominguez/',
-    linkText: 'What the Racial Justice Act findings mean',
-    groups: ['next', 'hearings'],
-  },
-  {
-    id: 'peck-pretrial',
-    case: 'Dianne Curry Peck',
-    proceeding: 'Pretrial conference',
-    dateISO: '2026-08-31',
-    dateText: 'Monday, August 31, 2026 (from the court file; start time not published)',
-    court: 'Bristol County Superior Court, Fall River, MA',
-    status: 'Indicted June 29, 2026, on one count of murder; pleaded not guilty at arraignment on June 30. Released on $100,000 surety with $10,000 cash posted, and surrendered her passport. No trial date set. She is presumed innocent unless and until a jury says otherwise.',
-    detail: 'The 1985 Mansfield newborn case — known for four decades as Baby Boy Doe, or the Mansfield Baby Boy Doe case — was reopened using forensic genetic genealogy. Two outlets that reviewed the court file, The Boston Globe and the Fall River Reporter, both report an August 31 pretrial conference. One broadcast report instead said she was due back in December. We publish the August 31 date because it is the one attributed to the court papers, and we are flagging the disagreement rather than hiding it. Call the clerk before you travel.',
-    src: 'https://www.bostonglobe.com/2026/06/30/metro/dianne-curry-newborn-mansfield-arraignment/',
-    srcLabel: 'The Boston Globe, arraignment reporting citing court papers (June 30, 2026)',
-    srcType: 'Court reporting (court file)',
-    src2: 'https://fallriverreporter.com/local-woman-accused-of-murdering-newborn-son-granted-bail-in-fall-river-superior-court/',
-    srcLabel2: 'Fall River Reporter, arraignment reporting citing court records (June 30, 2026)',
-    link: '/post/baby-boy-doe-mansfield-1985/',
-    linkText: 'Read the Baby Boy Doe case update',
-    groups: ['next', 'hearings'],
-  },
-  {
-    id: 'woods-sentencing',
-    case: 'Yvonne “Missy” Woods',
-    proceeding: 'Sentencing',
-    dateISO: '2026-09-08',
-    dateText: 'Tuesday, September 8, 2026, 8:30 a.m. MT',
-    court: 'Jefferson County District Court, Golden, CO',
-    status: 'Pleaded guilty June 23, 2026, to four felonies — cybercrime, first-degree perjury, attempt to influence a public servant, and forgery — with a stipulated prison sentence of 8 to 16 years; roughly 100 remaining counts were dismissed.',
-    detail: 'The former Colorado Bureau of Investigation DNA analyst admitted manipulating data across years of casework, including in more than 30 sexual-assault cases. Sentencing before Judge Andrew Poland begins at 8:30 a.m. MT, with a full day set aside for victim statements. A presentence investigation report was ordered at the plea hearing, and she remains on bond until sentencing.',
-    src: 'https://firstda.co/news-update/former-cbi-lab-analyst-missy-woods-pleads-guilty/',
-    srcLabel: 'Colorado First Judicial District Attorney’s Office, plea announcement (June 23, 2026)',
-    srcType: 'Primary — prosecutor’s office',
-    link: null,
-    linkText: null,
-    groups: ['next', 'sentencing'],
-  },
-  {
-    id: 'millete-sentencing',
-    case: 'Larry Millete',
-    proceeding: 'Sentencing',
-    dateISO: '2026-09-29',
-    dateText: 'Tuesday, September 29, 2026 (start time not published)',
-    court: 'San Diego County Superior Court, South Bay courthouse, Chula Vista, CA',
-    status: 'Convicted of first-degree murder on July 9, 2026, in the killing of his wife, Maya “May” Millete, who disappeared from Chula Vista on January 7, 2021. On July 20 he pleaded guilty to a separate felony count of possessing an unregistered assault weapon. Sentencing on both counts is set for September 29.',
-    detail: 'The murder count carries 25 years to life. The weapon count, which had been bifurcated and was headed for a bench trial, was resolved by guilty plea on July 20 with no agreement on the term; it carries a maximum of three years. Judge Enrique Camarena set the sentencing date in open court that day and victim impact statements are expected.',
-    src: 'https://www.sandiegouniontribune.com/2026/07/21/already-convicted-of-murder-in-wifes-disappearance-millete-pleads-guilty-to-assault-weapon-charge/',
-    srcLabel: 'The San Diego Union-Tribune, court reporting (July 21, 2026)',
-    srcType: 'Court reporting',
-    link: '/post/the-maya-millete-case-larry-milletes-no-body-murder-trial-explained/',
-    linkText: 'Read the verdict update',
-    groups: ['next', 'sentencing'],
-  },
-  {
-    id: 'burke-prelim',
-    case: 'David Anthony Burke, known as D4vd',
-    proceeding: 'Arraignment',
-    dateISO: '2026-08-31',
-    dateText: 'Monday, August 31, 2026 (start time not published)',
-    court: 'Clara Shortridge Foltz Criminal Justice Center, Los Angeles, CA',
-    docket: 'Case No. 26CJCF02399',
-    verified: 'July 27, 2026',
-    status: 'Held to answer, and still presumed innocent. He pleaded not guilty on April 20, 2026 to one count each of murder, continuous sexual abuse of a child under the age of 14, and unlawful mutilation of human remains. On July 27, 2026, at the close of the preliminary hearing, Judge Charlaine F. Olmedo held him to answer on all charges and upheld all three special-circumstance allegations — lying in wait, murder for financial gain, and murder of a witness. He is held without bail. Being held to answer is not a conviction and decides no one’s guilt; it means only that a judge found enough evidence for the case to proceed. He is presumed innocent unless and until proved guilty in court.',
-    detail: 'The preliminary hearing ran five days, July 21 to July 27, 2026, before Judge Olmedo in Department 105. On the final day prosecutors rested, the defense called no witnesses and asked the court to dismiss, and the judge denied that motion from the bench, saying the People had met their burden of proof including the special circumstances. The case now moves to arraignment on the information, set for August 31, 2026; the department for that setting has not been published. No trial date has been set, and reported estimates of how soon a trial would follow the arraignment differ. The Los Angeles County District Attorney has said the decision on whether to seek the death penalty will be made later. Celeste Rivas Hernandez was 14 years old; we do not republish the evidentiary detail from this hearing.',
-    src: 'https://da.lacounty.gov/about/inside-LADA/singer-d4vd-charged-capital-murder-14-year-old-girl',
-    srcLabel: 'Los Angeles County District Attorney, charging announcement (April 20, 2026)',
-    srcType: 'Primary — prosecutor’s office',
-    src2: 'https://www.latimes.com/california/story/2026-07-27/d4vd-david-anthony-burke-preliminary-hearing-testimony-text-messages',
-    srcLabel2: 'Los Angeles Times, courtroom reporting on the holding order (July 27, 2026)',
-    link: null,
-    linkText: null,
-    groups: ['next', 'hearings'],
-  },
-  {
-    id: 'bridegan-fernandez-trial',
-    case: 'Mario Fernandez Saldana — Jared Bridegan case',
-    proceeding: 'Murder trial — jury selection',
-    dateISO: '2026-08-10',
-    dateText: 'Monday, August 10, 2026 (start time not published)',
-    court: 'Duval County Circuit Court, Jacksonville, FL',
-    verified: 'August 7, 2026',
-    status: 'Charged with first-degree murder and solicitation to commit a capital felony in the February 2022 killing of Jared Bridegan. Prosecutors dropped conspiracy and child-abuse charges on July 27. Fernandez Saldana has pleaded not guilty and is presumed innocent unless and until proved guilty in court.',
-    detail: 'Jury selection is scheduled for August 10, with trial set for August 17 through August 28. Fernandez Saldana is the first of three defendants scheduled for separate trials in what prosecutors allege was a murder-for-hire plot. Judge London Kite finalized the juror questionnaire and ruled on remaining evidentiary motions on August 4, including blocking testimony from two prosecution witnesses. The schedule and the evidence ultimately presented to jurors can still change, so confirm with the clerk before attending.',
-    src: 'https://www.news4jax.com/news/local/2026/08/04/judge-to-decide-on-final-motions-ahead-of-jury-selection-for-1st-trial-in-jared-bridegan-murder-for-hire-case/',
-    srcLabel: 'News4JAX, courtroom reporting on final motions and jury selection (August 4, 2026)',
-    srcType: 'Court reporting',
-    src2: 'https://www.news4jax.com/news/local/2026/07/27/final-hearing-for-mario-fernandez-before-jury-selection-begins-in-first-of-3-murder-for-hire-trials-in-bridegan-case/',
-    srcLabel2: 'News4JAX, courtroom reporting on charges and trial schedule (July 27, 2026)',
-    link: null,
-    linkText: null,
-    groups: ['next', 'trials'],
-  },
-  {
-    id: 'davis-tupac-trial',
-    case: 'Duane “Keffe D” Davis — Tupac Shakur murder case',
-    proceeding: 'Murder trial — jury selection',
-    dateISO: '2026-08-10',
-    dateText: 'Monday, August 10, 2026 (start time not published)',
-    court: 'Eighth Judicial District Court, Clark County, Las Vegas, NV',
-    verified: 'August 7, 2026',
-    status: 'Charged with one count of murder with use of a deadly weapon with a gang enhancement in the September 1996 killing of Tupac Shakur. Davis has pleaded not guilty and is presumed innocent unless and until proved guilty in court.',
-    detail: 'Jury selection is scheduled to begin August 10 before District Judge Carli Kierny, nearly 30 years after Shakur was fatally shot in Las Vegas. Prosecutors allege Davis orchestrated the attack and supplied the weapon; the defense disputes the State’s case and the use of his past statements. Recent pretrial rulings allowed prosecutors to use a 2008 police interview. Current reporting says the trial is expected to last about four weeks. The scheduled start can still move, so confirm with the court before attending.',
-    src: 'https://apnews.com/article/4529257714634e87ed258fde044f948b',
-    srcLabel: 'Associated Press, pretrial and scheduling report (August 5, 2026)',
-    srcType: 'Court reporting',
-    src2: 'https://news3lv.com/news/local/trial-date-man-charged-tupac-shakur-murder-duane-davis-keffe-d-delayed-summer-2026-las-vegas-clark-county-court-nevada',
-    srcLabel2: 'KSNV, reporting the August 10 setting from Clark County court records (November 26, 2025)',
-    link: '/post/tupac-shakur-keffe-d-charged-not-shooter/',
-    linkText: 'Why Davis is charged even though prosecutors do not call him the shooter',
-    link2: '/post/tupac-shakur-homicide-evidence-evolution/',
-    linkText2: 'How the Tupac homicide evidence evolved',
-    groups: ['next', 'trials'],
-  },
-  {
-    id: 'goncalves-wsu-trial',
-    case: 'Goncalves v. Washington State University',
-    proceeding: 'Civil jury trial',
-    dateISO: '2027-09-13',
-    dateText: 'Monday, September 13, 2027, 9:30 a.m. PT',
-    court: 'U.S. District Court, Western District of Washington, Seattle, WA',
-    docket: 'Case No. 2:26-cv-00301',
-    verified: 'July 27, 2026',
-    status: 'A civil lawsuit, not a criminal case. The family of Kaylee Goncalves is suing Washington State University. Bryan Kohberger is not a defendant in this case. Nothing has been decided: a scheduled trial date is not a finding of liability, and no court has found the university responsible for anything.',
-    detail: 'We list this because it is the only proceeding connected to the University of Idaho murders that currently has a court-ordered date. The court entered a scheduling order on June 1, 2026 setting a 20-day jury trial to begin September 13, 2027 at 9:30 a.m. in Courtroom 16106; the case was reassigned to Judge Brian A. Tsuchida on the parties’ consent on June 12, 2026. Civil trial dates set more than a year out move often. Kohberger’s criminal case is separate and closed — see his entry under Dates Not Yet Confirmed.',
-    src: 'https://www.courtlistener.com/docket/72193493/goncalves-v-washington-state-university/',
-    srcLabel: 'U.S. District Court, W.D. Washington, docket No. 2:26-cv-00301 (scheduling order entered June 1, 2026)',
-    srcType: 'Primary — federal court record',
-    link: null,
-    linkText: null,
-    groups: ['next', 'trials'],
-  },
-];
-
-const unconfirmed = [
-  {
-    case: 'Jermaine Williams Sr.',
-    where: 'Flagler County Circuit Court, Bunnell, FL',
-    status: 'Convicted July 17, 2026, of first-degree premeditated murder in the stabbing death of his wife, Yolonda Williams, outside their Bunnell home in August 2024. On July 22 the jury voted 11–1 to recommend a death sentence and found all four aggravating factors unanimously.',
-    note: 'A Spencer hearing is expected in August 2026 before Circuit Judge Dawn Nichols, after which the judge imposes sentence. No date has been published, so there is nothing to publish here yet. Case No. 2024-00790-CFA.',
-    src: 'https://flaglerlive.com/williams-recommendation/',
-    srcLabel: 'FlaglerLive, courtroom reporting (July 22, 2026)',
-    srcType: 'Court reporting',
-    link: null,
-    linkText: null,
-  },
-  {
-    case: 'Mayra Velasquez (Irasema Chavez case)',
-    where: 'Tarrant County, Arlington, TX',
-    status: 'Charged with capital murder in the 2012 killing of Irasema Chavez following an investigative genetic genealogy lead, and arrested July 16, 2026. The charge is an allegation. She is presumed innocent unless and until proved guilty in court.',
-    note: 'Arlington police and the FBI held a joint briefing on July 22, 2026. A press conference is not a court proceeding, and no court date in this case has been publicly confirmed.',
-    src: 'https://www.cbsnews.com/texas/news/arlington-cold-case-arrest-2012-stabbing-mayra-velasquez-july-2026/',
-    srcLabel: 'CBS News Texas, coverage of the arrest and briefing (July 20, 2026)',
-    srcType: 'News coverage — no court date established',
-    link: '/post/irasema-chavez-mayra-velasquez-arlington-cold-case/',
-    linkText: 'Read our Irasema Chavez case file',
-  },
-  {
-    case: 'Taylor Parker',
-    where: 'Texas',
-    status: 'Direct appeal complete. The Texas Court of Criminal Appeals affirmed the conviction and sentence on November 6, 2025, and the U.S. Supreme Court denied certiorari on May 29, 2026. The case is now in habeas review. No dated proceeding and no execution date.',
-    note: 'Habeas review moves without a public calendar. There is nothing to attend.',
-    src: 'https://www.tdcj.texas.gov/death_row/dr_info/parkertaylor.html',
-    srcLabel: 'Texas Department of Criminal Justice, offender record',
-    srcType: 'Primary — state agency record',
-    link: '/post/the-taylor-parker-case-the-murder-of-reagan-simmons-hancock-and-where-it-stands-now/',
-    linkText: 'Read the July 2026 case-status update',
-  },
-  {
-    case: 'Pedro Hernandez (Etan Patz)',
-    where: 'New York',
-    status: 'Conviction reinstated by the U.S. Supreme Court on June 22, 2026, in docket No. 25-748, with the case remanded to the Second Circuit. The Supreme Court’s judgment issued on July 24, 2026. No dated proceeding.',
-    note: 'A remand does not put a hearing on a public calendar. Nothing is currently scheduled in the Second Circuit or in state court.',
-    src: 'https://www.supremecourt.gov/search.aspx?filename=/docket/docketfiles/html/public/25-748.html',
-    srcLabel: 'Supreme Court of the United States, docket No. 25-748',
-    srcType: 'Primary — court record',
-    src2: 'https://www.supremecourt.gov/opinions/25pdf/25-748_4g1o.pdf',
-    srcLabel2: 'Supreme Court of the United States, slip opinion No. 25-748 (June 22, 2026)',
-    link: '/post/etan-patz-supreme-court-2026-conviction-reinstated/',
-    linkText: 'Read what the Supreme Court actually decided',
-  },
-  {
-    case: 'Brooke George',
-    where: 'United Arab Emirates',
-    status: 'Detained in Dubai since June 22, 2026, in connection with the death of William “Billy” Treeby. No charge has been confirmed by UAE authorities or any court, and no court date exists on the public record.',
-    note: 'The only official confirmation of any kind is from the UK Foreign, Commonwealth and Development Office, which says it is in contact with a British woman detained in the UAE and is supporting her family. The specific allegations, and the account of how she has been treated in custody, come from an advocacy organisation rather than from UAE authorities or any court. Record entry only.',
-    src: 'https://www.bbc.com/news/articles/cwy0p813jn7o',
-    srcLabel: 'BBC News, reporting the FCDO statement and the advocacy account (June 25, 2026)',
-    srcType: 'News report — no official charge confirmed',
-    link: null,
-    linkText: null,
-  },
-  {
-    case: 'Bryan Kohberger',
-    where: 'District Court, Fourth Judicial District, Ada County, Boise, ID',
-    docket: 'Case No. CR01-24-31665',
-    verified: 'July 27, 2026',
-    status: 'Convicted by his own guilty plea and sentenced. On July 2, 2025 he pleaded guilty to one count of burglary and four counts of first-degree murder in the November 13, 2022 deaths of University of Idaho students Kaylee Goncalves, Madison Mogen, Xana Kernodle and Ethan Chapin. On July 23, 2025 Judge Steven Hippler imposed four consecutive fixed life terms without the possibility of parole, plus a consecutive 10-year term on the burglary count. The plea agreement contained a waiver of his right to appeal.',
-    note: 'The criminal case has been closed since sentencing, and the official Idaho court file shows no future hearing set. Separately, a federal civil suit brought by the Goncalves family against Washington State University does have a trial date — it is listed above, and Kohberger is not a defendant in it.',
-    src: 'https://coi.isc.idaho.gov/docs/Cases/CR01-24-31665-26.html',
-    srcLabel: 'Idaho Supreme Court, official case file for CR01-24-31665',
-    srcType: 'Primary — court record',
-    link: null,
-    linkText: null,
-  },
-  {
-    case: 'Michelle Hadley — cleared; the Diaz prosecutions',
-    where: 'Orange County Superior Court, CA; U.S. District Court, Central District of California',
-    docket: 'Ian Diaz post-conviction motion: No. 8:26-cv-00442 (C.D. Cal.)',
-    verified: 'July 27, 2026',
-    status: 'Michelle Hadley was never convicted of anything. She was arrested in Orange County, California in 2016 after online posts and threats were falsely attributed to her, and she spent time in custody before being released on her own recognizance in October 2016. The Orange County District Attorney concluded she had been framed, and the charges against her were dismissed in January 2017. She appears on this calendar as a cleared person, not as a defendant.',
-    note: 'The people who framed her were prosecuted. Angela Diaz pleaded guilty in Orange County Superior Court and was sentenced on October 18, 2017 to five years in state prison. Ian Diaz, a former deputy U.S. marshal, was convicted by a federal jury on March 23, 2023 of conspiracy to commit cyberstalking, cyberstalking, perjury and obstruction, and was sentenced on June 30, 2023 to 121 months in prison. A motion by Ian Diaz to vacate his sentence under 28 U.S.C. § 2255 was filed on February 23, 2026 and is still pending before Judge Josephine L. Staton; the docket shows activity through July 2026, but the filings themselves are not publicly readable and no hearing date appears on the public record. The Netflix documentary A Toxic Love Story was released July 22, 2026. A documentary is not a court proceeding and does not change anyone’s legal status.',
-    src: 'https://oig.justice.gov/news/press-release/former-deputy-us-marshal-sentenced-conspiracy-cyberstalking-perjury-and',
-    srcLabel: 'U.S. Department of Justice, Office of the Inspector General, sentencing announcement (June 30, 2023)',
-    srcType: 'Primary — federal agency',
-    src2: 'https://www.courtlistener.com/docket/72377097/ian-diaz-v-united-states/',
-    srcLabel2: 'U.S. District Court, C.D. California, docket No. 8:26-cv-00442 (pending § 2255 motion)',
-    link: null,
-    linkText: null,
-  },
-];
-
-// Both former entries here (Karmelo Anthony, Larry Millete) acquired real,
-// court-ordered dates and moved into `entries` on the 2026-07-25 sweep. This
-// array stays in place for the next case that is post-conviction with nothing
-// on a calendar. The `sentencing` section renders nothing extra when it is empty.
-const appeals = [];
-
-const completed = [
-  {
-    case: 'Nestor Hernandez Melgar',
-    where: 'Snohomish County Superior Court, Everett, WA',
-    status: 'Sentenced July 22, 2026, to life in prison without the possibility of parole for the murder of Lindsay Geary. A jury convicted him June 22, 2026, on four counts — aggravated first-degree murder, first-degree murder, first-degree burglary, and violation of a court order, each with a domestic-violence aggravator.',
-    note: 'Judge Cindy Larsen imposed the life term on the aggravated first-degree murder count, with a concurrent 34 months on the burglary count. The first-degree murder and court-order counts were vacated on double-jeopardy grounds. No notice of appeal had been filed as of July 25, 2026; the 30-day window runs to about August 21, 2026.',
-    src: 'https://www.heraldnet.com/2026/07/22/life-sentence-for-man-convicted-of-girlfriends-2024-murder-in-everett/',
-    srcLabel: 'The Everett Herald, courtroom reporting (July 22, 2026)',
-    srcType: 'Court reporting',
-    link: '/post/nestor-hernandez-melgar-lindsay-geary-case/',
-    linkText: 'Read the full Lindsay Geary case file',
-  },
-  {
-    case: 'Rex Heuermann',
-    where: 'Suffolk County Court, Riverhead, New York',
-    status: 'Pleaded guilty April 8, 2026, before Justice Timothy P. Mazzei to three counts of first-degree murder and four counts of second-degree murder, and was sentenced June 17, 2026, to three consecutive terms of life without parole plus a consecutive 100 years to life.',
-    note: 'The victims are Melissa Barthelemy, Maureen Brainard-Barnes, Amber Costello, Megan Waterman, Jessica Taylor, Sandra Costilla, and Valerie Mack; he also allocuted to the uncharged killing of Karen Vergata, which the plea covered. He waived his right to appeal on the record at the plea hearing. There is no upcoming court date in this case.',
-    src: 'https://www.suffolkcountyda.org/gilgo-serial-killer-sentenced-to-three-consecutive-life-sentences-plus-100-years-for-murdering-eight-women/',
-    srcLabel: 'Suffolk County District Attorney, sentencing announcement (June 17, 2026)',
-    srcType: 'Primary — prosecutor’s office',
-    link: '/post/rex-heuermann-sentencing-june-17-what-the-plea-established/',
-    linkText: 'Read what the plea established — and what it did not',
-  },
-];
 
 // An entry disappears only when it is finished, never merely because its start
 // date has passed. `ongoing: true` pins a proceeding that is actively running;
@@ -421,6 +37,32 @@ const completed = [
 const isUpcoming = (e) => e.ongoing === true || e.dateISO >= BUILD_DATE;
 const byGroup = (g) => entries.filter((e) => e.groups.includes(g) && isUpcoming(e));
 const nextDates = byGroup('next').sort((a, b) => a.dateISO.localeCompare(b.dateISO));
+const heroDates = nextDates.filter((e) => e.dateISO >= BUILD_DATE).slice(0, 6);
+
+const faqRows = [
+  ...entries.map((row) => ({ ...row, section: 'scheduled' })),
+  ...unconfirmed.map((row) => ({ ...row, section: 'unconfirmed' })),
+  ...appeals.map((row) => ({ ...row, section: 'appeal' })),
+  ...completed.map((row) => ({ ...row, section: 'completed' })),
+];
+const faqAnswer = (row) => {
+  if (row.section === 'scheduled') return `${row.dateText} at ${row.court}. ${row.status} ${row.detail}`;
+  return `${row.status} ${row.note}`;
+};
+const caseFaqs = faqRows
+  .filter((row) => row.faqQuestion)
+  .map((row) => ({ question: row.faqQuestion, answer: faqAnswer(row) }));
+const genericFaqs = [
+  {
+    question: 'Can these dates change?',
+    answer: 'Yes, and they often do. Hearings get continued, trials get pushed, and courts reschedule with little notice. Treat every date here as the best current information, not a promise.',
+  },
+  {
+    question: 'How are these dates verified?',
+    answer: "Each one traces to a court filing, a prosecutor's office, a state agency record, or courtroom reporting, and each card names its source and the date we last checked it.",
+  },
+];
+const allFaqs = [...caseFaqs, ...genericFaqs];
 
 const jsonld = {
   '@context': 'https://schema.org',
@@ -437,12 +79,11 @@ const jsonld = {
       '@type': 'CollectionPage',
       '@id': 'https://cassiancreed.com/court-calendar#page',
       url: 'https://cassiancreed.com/court-calendar',
-      name: 'True Crime Court Calendar: Trial Dates & Hearings 2026',
-      description:
-        'Track verified 2026 true-crime trial dates, hearings, sentencing proceedings, and appeals, including Lindsay Clancy, Dianne Curry Peck, and other major cases.',
+      name: PAGE_TITLE,
+      description: PAGE_DESCRIPTION,
       isPartOf: { '@id': 'https://cassiancreed.com/#website' },
       publisher: { '@id': 'https://cassiancreed.com/#org' },
-      dateModified: BUILD_DATE,
+      dateModified: calendar.metadata.targeted_update,
       mainEntity: { '@id': 'https://cassiancreed.com/court-calendar#schedule' },
     },
     {
@@ -496,38 +137,35 @@ const jsonld = {
     {
       '@type': 'FAQPage',
       '@id': 'https://cassiancreed.com/court-calendar#faq',
-      mainEntity: [
-        { '@type': 'Question', name: 'When does the Mario Fernandez trial in the Jared Bridegan case start?', acceptedAnswer: { '@type': 'Answer', text: 'Jury selection in Mario Fernandez Saldana’s trial is scheduled to begin Monday, August 10, 2026, in Duval County Circuit Court in Jacksonville, Florida, with the trial set for August 17 through August 28. He faces first-degree murder and solicitation charges in Jared Bridegan’s death, has pleaded not guilty, and is presumed innocent.' } },
-        { '@type': 'Question', name: 'When does the Tupac Shakur murder trial start?', acceptedAnswer: { '@type': 'Answer', text: 'Jury selection in the murder trial of Duane “Keffe D” Davis is scheduled to begin Monday, August 10, 2026, in the Eighth Judicial District Court in Las Vegas. Davis is charged with one count of murder with use of a deadly weapon with a gang enhancement in Tupac Shakur’s 1996 killing. He has pleaded not guilty and is presumed innocent.' } },
-        { '@type': 'Question', name: 'When does the Lindsay Clancy trial start?', acceptedAnswer: { '@type': 'Answer', text: 'It is underway. Jury selection ran July 20 to July 23, 2026, in Plymouth County Superior Court before Judge William F. Sullivan, and an 18-juror panel was seated — 12 jurors and 6 alternates. Opening statements were delivered on Monday, July 27, 2026, and the children’s father, Patrick Clancy, testified as the first witness. The judge has said the trial could run several weeks and potentially up to two months. Prosecutors dropped three duplicative strangulation counts on July 9, leaving three counts of first-degree murder. She has pleaded not guilty and is presumed innocent.' } },
-        { '@type': 'Question', name: 'Was Colt Gray sentenced?', acceptedAnswer: { '@type': 'Answer', text: 'Not yet. He pleaded guilty on July 24, 2026, to all 55 counts in the Apalachee High School shooting in a non-negotiated plea, meaning no sentence was agreed in advance. Chief Judge Nicholas Primm accepted the plea and began the sentencing hearing the same day before adjourning it to Monday, July 27, 2026. The hearing resumed that morning — the court did not publish a start time, so we do not print one — and as of the reporting available that day no sentence had been imposed. The minimum available sentence is life with the possibility of parole; the maximum is life without parole.' } },
-        { '@type': 'Question', name: 'What is the next court date for Dianne Curry Peck?', acceptedAnswer: { '@type': 'Answer', text: 'A pretrial conference is set for Monday, August 31, 2026, in Bristol County Superior Court in Fall River. Two outlets that reviewed the court file report that date; one broadcast report instead said December, and we are flagging that disagreement rather than picking quietly. She was indicted on one count of murder, pleaded not guilty, and was released on $100,000 surety with $10,000 cash posted. No trial date has been set.' } },
-        { '@type': 'Question', name: 'Does Brooke George have a trial date?', acceptedAnswer: { '@type': 'Answer', text: 'No. There is no publicly verified court date. She is reported to be detained pending proceedings, but the details of the allegation come from an advocacy group rather than from UAE authorities or any court, and no charge has been confirmed on the public record.' } },
-        { '@type': 'Question', name: 'Is Karmelo Anthony still facing an upcoming court date?', acceptedAnswer: { '@type': 'Answer', text: 'Yes — two. A hearing on his motion to recuse the trial judge is set for Wednesday, August 19, 2026, at 9:00 a.m. Central in the 494th District Court in Collin County, before Senior Judge Sid L. Harle. A hearing on his motion for a new trial is set for Thursday, August 20, 2026, with the courtroom and presiding judge not yet assigned. He was convicted of murder on June 9, 2026, sentenced to 35 years, and filed a notice of appeal the next day.' } },
-        { '@type': 'Question', name: 'Is Rex Heuermann still going to trial?', acceptedAnswer: { '@type': 'Answer', text: 'No. That case is over. It concluded with a guilty plea in April 2026 and sentencing in June 2026. There is no upcoming court date.' } },
-        { '@type': 'Question', name: 'Why is Michelle Hadley listed if she was cleared?', acceptedAnswer: { '@type': 'Answer', text: 'Because the calendar tracks cases, not accusations, and her case is the clearest example of why that distinction matters. Michelle Hadley was never convicted of anything: she was arrested in Orange County, California in 2016 after online posts were falsely attributed to her, and the District Attorney concluded she had been framed. The charges were dismissed in January 2017. The live legal matter connected to that case is a pending motion by Ian Diaz to vacate his own federal sentence, and no hearing date on it is on the public record.' } },
-        { '@type': 'Question', name: 'Does Bryan Kohberger have an upcoming court date?', acceptedAnswer: { '@type': 'Answer', text: 'No confirmed upcoming court date found. His criminal case in Ada County, Idaho closed when Judge Steven Hippler sentenced him on July 23, 2025 to four consecutive fixed life terms without parole plus 10 years, after he pleaded guilty on July 2, 2025. A separate civil suit by the Goncalves family against Washington State University, in which Kohberger is not a defendant, has a jury trial set for September 13, 2027 in federal court in Seattle.' } },
-        { '@type': 'Question', name: 'What is the next court date for D4vd?', acceptedAnswer: { '@type': 'Answer', text: 'No confirmed upcoming court date found. A preliminary hearing for David Anthony Burke, the musician known as D4vd, opened on July 21, 2026 before Judge Charlaine F. Olmedo in Department 105 of the Clara Shortridge Foltz Criminal Justice Center in Los Angeles, and was still in progress on its fifth day, July 27, with the judge yet to rule on whether the case proceeds. He pleaded not guilty on April 20, 2026 and is held without bail. A preliminary hearing decides only whether there is enough evidence to go forward; it is not a trial and it decides no one’s guilt.' } },
-        { '@type': 'Question', name: 'Can these dates change?', acceptedAnswer: { '@type': 'Answer', text: 'Yes, and they often do. Hearings get continued, trials get pushed, and courts reschedule with little notice. Treat every date here as the best current information, not a promise.' } },
-        { '@type': 'Question', name: 'How are these dates verified?', acceptedAnswer: { '@type': 'Answer', text: 'Each one traces to a court filing, a prosecutor\'s office, a state agency record, or courtroom reporting, and each card names its source and the date we last checked it.' } },
-      ],
+      mainEntity: allFaqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+      })),
     },
   ],
 };
 ---
 <Base
-  title="True Crime Court Calendar: Trial Dates & Hearings 2026"
-  description="Track verified 2026 true-crime trial dates, hearings, sentencing proceedings, and appeals, including the Tupac Shakur murder trial, Lindsay Clancy, and other major cases."
+  title={PAGE_TITLE}
+  description={PAGE_DESCRIPTION}
   jsonld={jsonld}
 >
   <section class="hero wrap">
     <p class="evidence evidence--accent">Court Calendar</p>
-    <h1>True Crime Court Calendar: Trial Dates &amp; Hearings 2026</h1>
+    <h1>{PAGE_TITLE}</h1>
     <p class="cal-answer">
-      Mario Fernandez Saldana&rsquo;s trial in the Jared Bridegan case and Duane &ldquo;Keffe D&rdquo; Davis&rsquo;s trial in the Tupac Shakur murder case are both scheduled to begin with jury selection on <strong>Monday, August 10</strong>. Fernandez Saldana&rsquo;s trial is set for <strong>August 17&ndash;28</strong> in Jacksonville, while Davis&rsquo;s case proceeds in Las Vegas. Colt Gray pleaded guilty <strong>July 24</strong> to all 55 counts in the Apalachee High School shooting; his sentencing hearing resumed <strong>Monday, July 27</strong> in Barrow County and no sentence has been imposed yet, and his father Colin Gray is sentenced <strong>July 30</strong>. Opening statements in Lindsay Clancy&rsquo;s murder trial were delivered <strong>Monday, July 27</strong> in Plymouth County. David Anthony Burke, known as D4vd, was held to answer on all charges on <strong>July 27</strong> at the close of a five-day preliminary hearing in Los Angeles and is due back for arraignment <strong>August 31</strong>. Karmelo Anthony has his first post-conviction hearings <strong>August 19 and 20</strong> in Collin County, Texas. Dianne Curry Peck&rsquo;s pretrial conference is set for <strong>August 31</strong> in Fall River, Yvonne &ldquo;Missy&rdquo; Woods is sentenced <strong>September 8</strong> in Jefferson County, Colorado, and Larry Millete is sentenced <strong>September 29</strong> in Chula Vista.
+      {heroDates.length ? (
+        <>
+          <strong>Next on the calendar:</strong>{' '}
+          {heroDates.map((entry, index) => (
+            <span><strong>{entry.dateText}</strong>: {entry.case} — {entry.proceeding}{index < heroDates.length - 1 ? '; ' : '.'}</span>
+          ))}
+        </>
+      ) : 'No confirmed future court dates are currently listed.'}
     </p>
     <p class="cal-fresh">
-      <strong>Last full sweep: {LAST_VERIFIED}.</strong> Court dates move. Every entry below is checked against the public record, carries its source, and carries the date <em>that entry</em> was last verified &mdash; we do not re-date a card nobody re-checked. Confirm with the court before you travel.
+      <strong>Targeted update: {TARGETED_UPDATE}. Last full sweep: {LAST_VERIFIED}.</strong> Court dates move. Every entry below carries its source and the date <em>that entry</em> was last verified &mdash; we do not re-date a card nobody re-checked. Confirm with the court before you travel.
     </p>
   </section>
 
@@ -766,7 +404,7 @@ const jsonld = {
         </tbody>
       </table>
     </div>
-    <p class="cal-note evidence">Last full sweep: {LAST_VERIFIED}. Each entry above carries its own last-verified date. All dates are subject to change by the court. <a href={CORRECTION_MAILTO}>Report a correction</a>.</p>
+    <p class="cal-note evidence">Targeted update: {TARGETED_UPDATE}. Last full sweep: {LAST_VERIFIED}. Each entry above carries its own last-verified date. All dates are subject to change by the court. <a href={CORRECTION_MAILTO}>Report a correction</a>.</p>
   </section>
 
   <section class="wrap cal-sec" aria-labelledby="how-we-verify">
@@ -791,38 +429,12 @@ const jsonld = {
   <section class="wrap cal-sec" aria-labelledby="faq">
     <h2 id="faq">FAQ</h2>
     <div class="prose faq">
-      <h3>When does the Mario Fernandez trial in the Jared Bridegan case start?</h3>
-      <p>Jury selection is scheduled to begin <strong>Monday, August 10, 2026</strong>, in Duval County Circuit Court in Jacksonville, with the trial set for August 17 through August 28. Mario Fernandez Saldana faces first-degree murder and solicitation charges in Jared Bridegan&rsquo;s death after prosecutors dropped conspiracy and child-abuse charges on July 27. He has pleaded not guilty and is presumed innocent unless and until proved guilty in court.</p>
-
-      <h3>When does the Tupac Shakur murder trial start?</h3>
-      <p>Jury selection in the murder trial of Duane &ldquo;Keffe D&rdquo; Davis is scheduled to begin <strong>Monday, August 10, 2026</strong>, in the Eighth Judicial District Court in Las Vegas. Prosecutors allege Davis orchestrated the September 1996 drive-by shooting and supplied the weapon; he is not accused of firing the fatal shots. Davis has pleaded not guilty and is presumed innocent unless and until proved guilty in court. Current reporting says the trial could last about four weeks.</p>
-
-      <h3>When does the Lindsay Clancy trial start?</h3>
-      <p>It is underway. Jury selection ran July 20 to July 23, 2026, in Plymouth County Superior Court before Judge William F. Sullivan, and an 18-juror panel was seated — 12 jurors and 6 alternates. Opening statements were delivered on Monday, July 27, 2026, and the children’s father, Patrick Clancy, testified as the first witness. The judge has said the trial could run several weeks and potentially up to two months. Prosecutors dropped three duplicative strangulation counts on July 9, leaving three counts of first-degree murder. She has pleaded not guilty and is presumed innocent.</p>
-
-      <h3>Was Colt Gray sentenced?</h3>
-      <p>Not yet. He pleaded guilty on July 24, 2026, to all 55 counts in the Apalachee High School shooting in a non-negotiated plea, meaning no sentence was agreed in advance. Chief Judge Nicholas Primm accepted the plea and began the sentencing hearing the same day before adjourning it to Monday, July 27, 2026. The hearing resumed that morning — the court did not publish a start time, so we do not print one — and as of the reporting available that day no sentence had been imposed. The minimum available sentence is life with the possibility of parole; the maximum is life without parole.</p>
-
-      <h3>What is the next court date for Dianne Curry Peck?</h3>
-      <p>A pretrial conference is set for Monday, August 31, 2026, in Bristol County Superior Court in Fall River. Two outlets that reviewed the court file report that date; one broadcast report instead said December, and we are flagging that disagreement rather than picking quietly. She was indicted on one count of murder, pleaded not guilty, and was released on $100,000 surety with $10,000 cash posted. No trial date has been set.</p>
-
-      <h3>Does Brooke George have a trial date?</h3>
-      <p>No. There is no publicly verified court date. She is reported to be detained pending proceedings, but the details of the allegation come from an advocacy group rather than from UAE authorities or any court, and no charge has been confirmed on the public record.</p>
-
-      <h3>Is Karmelo Anthony still facing an upcoming court date?</h3>
-      <p>Yes — two. A hearing on his motion to recuse the trial judge is set for Wednesday, August 19, 2026, at 9:00 a.m. Central in the 494th District Court in Collin County, before Senior Judge Sid L. Harle. A hearing on his motion for a new trial is set for Thursday, August 20, 2026, with the courtroom and presiding judge not yet assigned. He was convicted of murder on June 9, 2026, sentenced to 35 years, and filed a notice of appeal the next day.</p>
-
-      <h3>Is Rex Heuermann still going to trial?</h3>
-      <p>No. That case is over. It concluded with a guilty plea in April 2026 and sentencing in June 2026. There is no upcoming court date.</p>
-
-      <h3>Why is Michelle Hadley listed if she was cleared?</h3>
-      <p>Because the calendar tracks cases, not accusations, and her case is the clearest example of why that distinction matters. Michelle Hadley was never convicted of anything: she was arrested in Orange County, California in 2016 after online posts were falsely attributed to her, and the District Attorney concluded she had been framed. The charges were dismissed in January 2017. The live legal matter connected to that case is a pending motion by Ian Diaz to vacate his own federal sentence, and no hearing date on it is on the public record.</p>
-
-      <h3>Does Bryan Kohberger have an upcoming court date?</h3>
-      <p>No confirmed upcoming court date found. His criminal case in Ada County, Idaho closed when Judge Steven Hippler sentenced him on July 23, 2025 to four consecutive fixed life terms without parole plus 10 years, after he pleaded guilty on July 2, 2025. A separate civil suit by the Goncalves family against Washington State University, in which Kohberger is not a defendant, has a jury trial set for September 13, 2027 in federal court in Seattle.</p>
-
-      <h3>What is the next court date for D4vd?</h3>
-      <p>His arraignment is set for <strong>Monday, August 31, 2026</strong> at the Clara Shortridge Foltz Criminal Justice Center in Los Angeles; a start time and department have not been published. A five-day preliminary hearing ended on July 27, 2026, when Judge Charlaine F. Olmedo held David Anthony Burke to answer on all charges and upheld all three special-circumstance allegations. He pleaded not guilty on April 20, 2026 and is held without bail. Being held to answer is not a conviction and decides no one’s guilt; it means only that a judge found enough evidence for the case to proceed. No trial date has been set.</p>
+      {caseFaqs.map((faq) => (
+        <>
+          <h3>{faq.question}</h3>
+          <p>{faq.answer}</p>
+        </>
+      ))}
 
       <h3>Can these dates change?</h3>
       <p>Yes, and they often do. Hearings get continued, trials get pushed, and courts reschedule with little notice. Treat every date here as the best current information, not a promise.</p>
