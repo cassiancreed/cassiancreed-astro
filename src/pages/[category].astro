@@ -43,6 +43,12 @@ const archiveDescription = tag === 'Case Files'
     <p class="post__note">Also in the library: the <a href="/guides/">Resources &amp; Guides</a> &middot; the <a href="/glossary/">Glossary</a> &middot; the free <a href="/safety/">Stay Safe guide</a> &middot; <a href="/how-forensic-genetic-genealogy-works/">how forensic genetic genealogy works</a> &middot; the <a href="/court-calendar/">Court Calendar</a>.</p>
   </section>
 
+  {tag === 'Case Files' && (
+    <section class="wrap archive-capture" aria-label="Get the free guide">
+      <CaptureBlock offer="case" content="category_case_files" />
+    </section>
+  )}
+
   <section class="archive wrap" aria-labelledby="archive-heading">
     <div class="archive__heading">
       <div>
@@ -86,12 +92,6 @@ const archiveDescription = tag === 'Case Files'
 
     <p class="archive-empty" id="archive-empty" hidden>No articles matched that search. Try a person’s name, location, case, or evidence type.</p>
   </section>
-
-  {tag === 'Case Files' && (
-    <section class="wrap archive-capture" aria-label="Get the free guide">
-      <CaptureBlock offer="case" content="category_case_files" />
-    </section>
-  )}
 
   <script is:inline>
     (() => {
