@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import CaptureBlock from '../components/CaptureBlock.astro';
 const principles = [
  { title:"Victims first, always", body:"Every case file leads with the people who were harmed — their names, their lives, and what was taken. We do not center perpetrators or trade in the spectacle of violence." },
  { title:"The record, not the rumor", body:"We build only on the public record: court filings, verdicts, official statements, and verified reporting. We separate what is proven from what is still disputed, and we say plainly when something is unknown." },
@@ -44,24 +45,35 @@ const jsonld = {
 <p class="ms-foot">Questions about our method or a correction? <a href="/about/">Read how the case files are made</a>.</p>
 </section>
 
+<section class="ms-block ms-next" aria-label="Continue with Cassian Creed">
+<h2>Put the standard into practice</h2>
+<p>Read the public-record case files, or go deeper with a complete book.</p>
+<p class="ms-actions"><a class="btn" href="/case-files/">Read the case files &rarr;</a><a class="btn btn--ghost" href="/books/">Browse the books &rarr;</a></p>
+</section>
+
+<div class="wrap" id="free-guide"><CaptureBlock offer="case" content="mission" /></div>
+
 </Base>
 
 <style>
 .ms-hero{max-width:760px;margin:0 auto;padding:3.5rem 1.25rem 1rem;text-align:center}
 .ms-kicker{text-transform:uppercase;letter-spacing:.18em;font-size:.78rem;color:#9a6a3a;margin:0 0 .5rem}
 .ms-hero h1{font-size:2.6rem;line-height:1.1;margin:0 0 1rem}
-.ms-sub{font-size:1.14rem;line-height:1.6;color:#444;margin:0 auto;max-width:620px}
+.ms-sub{font-size:1.14rem;line-height:1.6;color:var(--ink-2);margin:0 auto;max-width:620px}
 .ms-block{max-width:900px;margin:0 auto;padding:2.25rem 1.25rem}
 .ms-block h2{font-size:1.7rem;margin:0 0 1.5rem;text-align:center}
 .ms-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.1rem}
-.ms-card{border:1px solid #e7e0d6;border-radius:12px;padding:1.4rem;background:#fff;position:relative}
+.ms-card{border:1px solid var(--line);border-radius:12px;padding:1.4rem;background:var(--bg-2);position:relative}
 .ms-num{display:block;font-size:.95rem;font-weight:700;color:#c9b79a;letter-spacing:.05em;margin-bottom:.4rem}
-.ms-card h3{font-size:1.12rem;margin:0 0 .55rem;line-height:1.25}
-.ms-card p{font-size:.96rem;line-height:1.55;color:#444;margin:0}
-.ms-pledge{background:#faf7f2;border-radius:14px;max-width:820px}
+.ms-card h3{font-size:1.12rem;margin:0 0 .55rem;line-height:1.25;color:var(--ink)}
+.ms-card p{font-size:.96rem;line-height:1.55;color:var(--ink-2);margin:0}
+.ms-pledge{background:var(--bg-3);border:1px solid var(--line);border-radius:14px;max-width:820px}
 .ms-pledge h2{text-align:left}
-.ms-pledge p{font-size:1.04rem;line-height:1.65;color:#3a3a3a;margin:0 0 1rem}
-.ms-foot{font-size:.95rem;color:#666}
+.ms-pledge p{font-size:1.04rem;line-height:1.65;color:var(--ink-2);margin:0 0 1rem}
+.ms-foot{font-size:.95rem;color:var(--ink-2)}
 .ms-foot a,.ms-pledge a{color:#9a6a3a}
+.ms-next{text-align:center}
+.ms-next>p{color:var(--ink-2)}
+.ms-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
 @media(max-width:560px){.ms-hero h1{font-size:2rem}}
 </style>
