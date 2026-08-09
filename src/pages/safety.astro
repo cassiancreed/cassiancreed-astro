@@ -1,212 +1,158 @@
 ---
 import Base from '../layouts/Base.astro';
 import CaptureBlock from '../components/CaptureBlock.astro';
-// STAY SAFE — canonical safety guide. Body replaced 2026-07-13 with the approved,
-// hotline-verified guide. Hotlines are verbatim and verified: ANAD is 888-375-7767.
-// Do NOT reintroduce the discontinued NEDA telephone helpline.
-// This is the ONE canonical safety URL (/safety/). Do not create a second
-// /stay-safe/ page — two safety pages cannibalize each other in search.
+import SafetyAlert from '../components/SafetyAlert.astro';
 ---
 <Base
-  title="Personal Safety Guide — Coercive Control Signs & Stalking Warning Signs | Cassian Creed"
-  description="A calm, practical personal safety guide: coercive control signs, stalking warning signs, digital safety, de-escalation, and verified hotlines. No fear, no blame — from a true-crime publisher that refuses to sell fear."
+  title="Stay Safe: Practical Safety Tools"
+  description="Evidence-informed safety tools, monitored-device guidance, emergency resources, coercive-control and stalking guides, and practical options without fear or blame."
 >
-  <aside class="safety-alert" aria-labelledby="safety-alert-title">
-    <div class="safety-alert__copy">
-      <strong id="safety-alert-title">Could someone be monitoring this device?</strong>
-      <span>Use a safer device they have not accessed, if you can. Changing settings, deleting history, or removing a tracker can sometimes alert the person monitoring you.</span>
-      <span class="safety-alert__limit">Press Escape twice or use Quick Exit. It changes the screen, but cannot erase browser history, network records, or monitoring software.</span>
-    </div>
-    <button class="safety-exit" id="quick-exit" type="button" aria-label="Quickly leave this page and open a weather website">
-      Quick Exit
-    </button>
-  </aside>
+  <SafetyAlert />
 
-  <article class="post">
-    <p class="evidence evidence--accent">Stay Safe</p>
-    <h1>Stay Safe &mdash; And Know It&rsquo;s Not On You</h1>
-    <p class="hero__lede">A calm, practical guide to personal safety &mdash; from a true-crime publisher that refuses to sell fear</p>
+  <article class="safety-hub wrap">
+    <header class="safety-hero">
+      <p class="evidence evidence--accent">Stay Safe</p>
+      <h1>Stay Safe</h1>
+      <p class="safety-hero__promise">Practical, evidence-informed tools to help you understand risk, preserve your options, and stay safer&mdash;without fear, spectacle, or victim blame.</p>
+      <p class="safety-boundary">Safety information may help people recognize patterns, document conduct, consider options, and reach appropriate support. It cannot predict or prevent every act of harm. Responsibility always belongs to the person causing harm&mdash;not the person targeted.</p>
+    </header>
 
-    <div class="post__content">
-      <p>Safety is not a test you pass by doing everything perfectly. It is not your job to predict another person&rsquo;s choices, manage their anger, or prove that a situation is &ldquo;bad enough&rdquo; before you ask for help.</p>
+    <nav class="safety-paths" aria-label="Choose a safety pathway">
+      <a class="safety-path safety-path--urgent" href="#immediate-help"><span class="safety-path__number" aria-hidden="true">01</span><strong>Immediate Help</strong><span>Emergency and crisis contacts first. No email required.</span></a>
+      <a class="safety-path" href="#recognize-pattern"><span class="safety-path__number" aria-hidden="true">02</span><strong>Recognize a Pattern</strong><span>Coercive control and stalking guidance without diagnosis or prediction.</span></a>
+      <a class="safety-path" href="#practical-tools"><span class="safety-path__number" aria-hidden="true">03</span><strong>Practical Safety Tools</strong><span>Digital safety, documentation, planning, and support options.</span></a>
+    </nav>
 
-      <p>This guide offers practical ways to notice what is happening, protect your options, and reach trained support. It is not a substitute for a personalized safety plan from a domestic-violence, stalking, sexual-assault, trafficking, or crisis advocate. When risk is high, changing quickly, or connected to someone who monitors or controls you, specialized help matters.</p>
-
-      <p>You deserve information without blame, fear, or pressure. Take what is useful. Leave what is not. Move at the pace that is safest for you.</p>
-
-      <p class="post__note"><em>Why this exists: across documented cases, recurring offender behaviors, escalation signals, intervention opportunities, and protective actions appear repeatedly. This page translates guidance from survivor-service specialists into options readers can consider; it does not claim that any checklist predicts violence or that a victim could have prevented it.</em></p>
-
-      <div class="res res--danger">
-        <p class="res__k">Immediate danger</p>
-        <p>If you or someone else is in immediate danger, call <strong>911</strong> (or your local emergency number) when it is safe to do so.</p>
+    <section class="safety-section immediate" id="immediate-help" aria-labelledby="immediate-help-title">
+      <p class="evidence evidence--accent">Ungated resources</p>
+      <h2 id="immediate-help-title">Immediate Help</h2>
+      <p class="section-lede">These contacts are U.S.-based. Outside the United States, use your local emergency number and qualified local survivor services.</p>
+      <div class="help-grid">
+        <article class="help-card help-card--emergency">
+          <h3>Immediate physical danger or urgent medical help</h3>
+          <p>Call <a class="help-number" href="tel:911">911</a> or your local emergency services when it is safe to do so.</p>
+          <p class="help-note">911 is for immediate danger and emergency response.</p>
+        </article>
+        <article class="help-card">
+          <h3>Suicide, mental-health, or substance-use crisis</h3>
+          <p>Call or text <a class="help-number" href="tel:988">988</a>, or use <a href="https://988lifeline.org/get-help/" target="_blank" rel="noopener noreferrer">988 Lifeline chat</a>.</p>
+          <p class="help-note">988 provides crisis support. It does not replace 911 for immediate physical danger.</p>
+        </article>
+        <article class="help-card">
+          <h3>Domestic violence or coercive control</h3>
+          <p><a href="https://www.thehotline.org/get-help/" target="_blank" rel="noopener noreferrer">National Domestic Violence Hotline</a>: call <a href="tel:18007997233">800-799-SAFE (7233)</a> or text <a href="sms:88788?body=START">START to 88788</a>.</p>
+          <p class="help-note">Free, confidential advocate support is available 24/7.</p>
+        </article>
+        <article class="help-card">
+          <h3>Sexual assault support</h3>
+          <p><a href="https://rainn.org/help-and-healing/hotline/" target="_blank" rel="noopener noreferrer">RAINN National Sexual Assault Hotline</a>: call <a href="tel:18006564673">800-656-HOPE (4673)</a> or text <a href="sms:64673?body=HOPE">HOPE to 64673</a>.</p>
+          <p class="help-note">Free, confidential support is available 24/7.</p>
+        </article>
+        <article class="help-card">
+          <h3>Human trafficking support</h3>
+          <p><a href="https://humantraffickinghotline.org/en/get-help" target="_blank" rel="noopener noreferrer">National Human Trafficking Hotline</a>: call <a href="tel:18883737888">888-373-7888</a> or text <a href="sms:233733">233733</a>.</p>
+          <p class="help-note">Specialized support and referrals are available 24/7.</p>
+        </article>
       </div>
+      <p class="resource-boundary"><strong>NEP is not an emergency, counseling, medical, or legal service.</strong> You never need to subscribe, buy anything, or read a case file to use the resources above.</p>
+    </section>
 
-      <h2 id="awareness">Reduce Exposure Without Shrinking Your Life</h2>
-      <p>Situational awareness does not mean living on high alert. It means giving yourself enough attention and information to make choices.</p>
-      <p>When you enter a place, quietly notice the basics: where you are, who is nearby, how you would leave, and where you could go if you needed help. Keep your phone accessible when practical. In unfamiliar settings, consider letting a trusted person know where you are and when you expect to check in.</p>
-      <p>Awareness also includes changes. A person, vehicle, account, message pattern, or repeated &ldquo;coincidence&rdquo; may deserve attention when it begins to form a pattern. One event may be harmless. Repetition, persistence, boundary-testing, or escalation can change the meaning.</p>
-      <p>You do not have to confront someone to validate your concern. You do not owe a stranger politeness, and you do not owe a known person access to you. Moving toward other people, entering a staffed business, changing your route, calling someone, or asking an employee for assistance are reasonable choices.</p>
-      <p>The goal is not to appear fearless. The goal is to preserve choices.</p>
-      <p class="post__note">These are <em>safer options</em>, not guarantees. Responsibility always remains with the person who chooses to harm. See RAINN&rsquo;s <a href="https://rainn.org/get-informed/prevention/strategies-to-reduce-risk-increase-safety/" target="_blank" rel="noopener noreferrer">risk-reduction framing</a>.</p>
+    <section class="safety-section" id="recognize-pattern" aria-labelledby="recognize-pattern-title">
+      <p class="evidence evidence--accent">Understand, do not diagnose</p>
+      <h2 id="recognize-pattern-title">Recognize a Pattern</h2>
+      <p class="section-lede">A concerning behavior may deserve attention without proving what will happen next. Look for repetition, persistence, loss of freedom, boundary violations, or escalation. A trained advocate can help consider the full context without pushing you toward a predetermined choice.</p>
+      <div class="guide-grid">
+        <a class="guide-card" href="/post/what-is-coercive-control-the-signs-examples-and-what-to-do/">
+          <span class="guide-card__label">Focused guide</span>
+          <h3>Coercive Control: Recognizing Patterns and Considering Options</h3>
+          <p>Understand patterns of power and control, possible signs, technology concerns, and options for support&mdash;without treating a checklist as a diagnosis.</p>
+          <span class="guide-card__go">Read the guide &rarr;</span>
+        </a>
+        <a class="guide-card" href="/post/stalking-documentation-digital-safety-finding-help/">
+          <span class="guide-card__label">Focused guide</span>
+          <h3>Stalking: Documentation, Digital Safety, and Finding Help</h3>
+          <p>Learn how patterns may appear across channels, what may be useful to preserve, and why safety planning should come before abrupt technology changes.</p>
+          <span class="guide-card__go">Read the guide &rarr;</span>
+        </a>
+      </div>
+      <p class="calibration"><strong>Risk factors are not predictions.</strong> A documented factor can help a specialist assess context; it cannot guarantee that harm will or will not occur, and no public checklist can evaluate an individual situation.</p>
+    </section>
 
-      <h2 id="trust-the-signal">Trust the Signal Before You Can Explain It</h2>
-      <p>People often notice danger first as discomfort: a tight feeling, mental fog, a sudden wish to leave, or the sense that something does not fit. That feeling is information, even when you cannot yet name the reason.</p>
-      <p>Trusting your instincts does not require believing that every uneasy moment predicts violence. It means allowing yourself to pause, create distance, gather information, or leave without waiting for certainty.</p>
-      <p>You may have been taught to be agreeable, avoid embarrassment, or give someone the benefit of the doubt. Courtesy is optional when your safety is involved. You can end a conversation, refuse a ride, step out of an elevator, cancel a meeting, block an account, or ask for help without presenting a case.</p>
-      <p>If the concern involves a partner, former partner, family member, coworker, or other known person, your instincts may be responding to a pattern that outsiders cannot see. You are the expert on the day-to-day reality. A trained advocate can help you examine that pattern without ordering you to leave or blaming you for staying.</p>
+    <section class="safety-section" id="practical-tools" aria-labelledby="practical-tools-title">
+      <p class="evidence evidence--accent">Preserve your options</p>
+      <h2 id="practical-tools-title">Practical Safety Tools</h2>
+      <div class="tool-list">
+        <article><h3>Use a safer device when monitoring is possible</h3><p>If someone may have access to your phone, accounts, vehicle, or connected devices, consider using a different device before researching help. Abruptly removing access or a tracker can sometimes alert the person monitoring you. Review the <a href="https://www.techsafety.org/resources-survivors/technology-safety-plan" target="_blank" rel="noopener noreferrer">Safety Net Project technology plan</a>.</p></article>
+        <article><h3>Document only when it is safe for you</h3><p>A dated record may help show a pattern if you later seek advocacy, workplace, school, civil, or criminal-justice support. Storage location and device access matter. SPARC provides a <a href="https://www.stalkingawareness.org/documentation-log/" target="_blank" rel="noopener noreferrer">stalking documentation log and handbook</a>.</p></article>
+        <article><h3>Build a plan around your real responsibilities</h3><p>A personalized plan may consider communication, transportation, medications, documents, money, children, pets, work, school, disability access, and the risks of different choices. A trained advocate can help without ordering you to leave. Start with the Hotline&rsquo;s <a href="https://www.thehotline.org/plan-for-safety/" target="_blank" rel="noopener noreferrer">safety-planning resources</a>.</p></article>
+        <article><h3>Keep first meetings flexible and public when practical</h3><p>For a first meeting with someone known online, options may include verifying identity through another channel, choosing a public staffed location, arranging your own transportation, and telling a trusted person your plan. These are options, not guarantees; the person causing harm remains responsible. See RAINN&rsquo;s <a href="https://rainn.org/strategies-to-reduce-risk-increase-safety/tips-for-safer-dating-online-and-in-person/" target="_blank" rel="noopener noreferrer">safer-dating guidance</a>.</p></article>
+        <article><h3>Help without taking away autonomy</h3><p>Listen without judgment, ask what would be useful, and avoid ultimatums that may increase isolation. The person closest to the situation often knows risks that are not visible to others. The Hotline offers guidance for <a href="https://www.thehotline.org/resources/safety-planning-for-friends-and-family/" target="_blank" rel="noopener noreferrer">friends and family</a>.</p></article>
+      </div>
+    </section>
 
-      <h2 id="coercive-control">Recognize Control, Not Just Physical Violence</h2>
-      <p>Harm often begins before any physical assault. Coercive control is a pattern of domination that reduces another person&rsquo;s freedom and independence. It may include monitoring, isolation, intimidation, financial control, threats, humiliation, sexual pressure, or rules that apply only to one person.</p>
-      <p>Warning signs can include someone who:</p>
-      <ul>
-        <li>Demands constant access to your location, passwords, phone, or accounts.</li>
-        <li>Decides who you may see, where you may go, what you may wear, or how you may spend money.</li>
-        <li>Punishes independence with rage, silence, threats, public embarrassment, or accusations.</li>
-        <li>Uses children, pets, housing, immigration status, disability, employment, private images, or finances as leverage.</li>
-        <li>Threatens self-harm, harm to others, or ruin unless you comply.</li>
-        <li>Treats jealousy, surveillance, or possession as proof of love.</li>
-        <li>Repeatedly ignores a clear &ldquo;no,&rdquo; then minimizes the behavior or says you caused it.</li>
-      </ul>
-      <p>No single checklist can diagnose a relationship. The important question is whether a pattern is shrinking your freedom, increasing your fear, or making ordinary choices feel dangerous.</p>
-      <p>The responsibility belongs to the person choosing control or harm. De-escalation may sometimes help someone get through a moment, but it is never a victim&rsquo;s duty to manage an abusive person successfully. A failure to calm someone down is not consent, complicity, or fault.</p>
-      <p class="post__note">Related: our explainer on <a href="/post/what-is-coercive-control-the-signs-examples-and-what-to-do/">what coercive control is, the signs, and what to do</a>; the <a href="/glossary/#coercive-control">glossary entry for coercive control</a>; and the National Domestic Violence Hotline&rsquo;s <a href="https://www.thehotline.org/plan-for-safety/" target="_blank" rel="noopener noreferrer">individualized safety-planning guidance</a>.</p>
+    <section class="safety-section safety-email" id="safety-updates" aria-labelledby="safety-updates-title">
+      <h2 id="safety-updates-title" class="sr-only">Optional safety and court updates</h2>
+      <CaptureBlock offer="safety" content="safety_hub" />
+    </section>
 
-      <h2 id="stalking">Take Stalking and Escalation Seriously</h2>
-      <p>Stalking is more than unwanted attention. A useful behavioral definition is a pattern directed at a specific person that would cause a reasonable person to fear for safety or experience substantial emotional distress. Legal definitions and required evidence vary by jurisdiction. It may happen in person, through technology, through other people, or across several channels at once.</p>
-      <p>Possible signs include:</p>
-      <ul>
-        <li>Repeated unwanted calls, texts, or messages.</li>
-        <li>Showing up at your home, work, or regular places.</li>
-        <li>Following you, or seeming to always know where you are.</li>
-        <li>Unwanted gifts, letters, or deliveries.</li>
-        <li>Property damage, or impersonating you online.</li>
-        <li>Account intrusion, location tracking, or monitoring your devices.</li>
-        <li>Contacting your friends or relatives to gather information about you.</li>
-        <li>Threatening to reveal private material.</li>
-      </ul>
-      <p>Escalation matters. Concern rises when contact becomes more frequent, more intrusive, more threatening, or more focused on punishment and control. Separation, weapon access, threats, a history of strangulation, and violations of protective boundaries are among the circumstances that deserve prompt specialist attention. No public checklist can assess an individual situation.</p>
-      <p>Do not assume you must personally warn, confront, or negotiate with someone who is stalking you. Direct contact can sometimes increase danger or provide the response the person is seeking. A stalking or domestic-violence advocate can help you think through documentation, reporting, technology, workplace or school measures, and legal options based on your circumstances.</p>
-      <p>Preserve evidence when doing so is safe. Save messages, voicemails, screenshots, dates, locations, witness names, damaged-property photos, and police or platform report numbers. Store copies somewhere the person cannot access. Documentation is not a guarantee of action, but patterns are often clearer when incidents are recorded together.</p>
-      <p class="post__note">Sources and tools: SPARC&rsquo;s <a href="https://www.stalkingawareness.org/definition-faqs/" target="_blank" rel="noopener noreferrer">behavioral definition</a>, <a href="https://www.stalkingawareness.org/risk-and-safety/" target="_blank" rel="noopener noreferrer">risk and safety resources</a>, and <a href="https://www.stalkingawareness.org/documentation-log/" target="_blank" rel="noopener noreferrer">documentation log</a>. Related: the glossary entry for a <a href="/glossary/#protective-restraining-order">protective / restraining order</a>.</p>
+    <section class="safety-section court-bridge" aria-labelledby="court-bridge-title">
+      <p class="evidence evidence--accent">Safety and the public record</p>
+      <h2 id="court-bridge-title">What the record can teach us&mdash;without blaming the victim.</h2>
+      <p>When a court record supports a practical lesson, NEP may explain the documented behavior and the limits of the evidence. One case does not predict another. No safety choice transfers responsibility away from the person who caused harm.</p>
+      <p><a class="btn btn--ghost" href="/court-calendar/">Open the verified Court Calendar &rarr;</a></p>
+      <p class="help-note">The optional subscriber form above connects practical safety tools with NEP updates that may include <em>This Week in Court</em>. Emergency and crisis resources remain separate and ungated.</p>
+    </section>
 
-      <h2 id="digital-safety">Protect Your Digital Space</h2>
-      <p>Digital safety is personal safety. Phones, shared accounts, vehicles, smart-home devices, cloud photos, family plans, and social platforms can reveal location, routines, contacts, and private conversations.</p>
-      <p>Begin with the possibility that changing settings may alert a person who is monitoring you. If that could raise the risk, use a safer device or speak with an advocate before making major changes.</p>
-      <p>Useful steps may include reviewing account recovery emails and phone numbers, using unique passwords, enabling multifactor authentication, checking active sessions and connected devices, limiting location sharing, reviewing app permissions, and tightening social-media privacy. Consider what friends and relatives post about you, especially real-time locations, travel, workplaces, children&rsquo;s schools, or recognizable routines.</p>
-      <p>Be cautious with unexpected links, login alerts, password-reset messages, new follower requests, and urgent demands for codes or personal information. Confirm requests through a separate, trusted channel.</p>
-      <p>Blocking can be helpful, but it is not always the safest first step in a stalking or coercive-control situation. It may erase access to evidence, trigger escalation, or cause the person to switch methods. A specialist can help you decide whether to block, mute, archive, change accounts, preserve evidence, or involve a platform or law enforcement.</p>
-      <p>If you discover a hidden camera, spyware, or location tracker, consider documenting it from a safer device and making a plan before disabling or removing it. Cutting off access may reveal that it was found or trigger a change in behavior. A trained advocate can help you weigh safety, evidence preservation, and reporting options.</p>
-      <p class="post__note">Technology guidance: NNEDV Safety Net Project&rsquo;s <a href="https://www.techsafety.org/resources-survivors/technology-safety-plan" target="_blank" rel="noopener noreferrer">Technology Safety Plan</a>, <a href="https://www.techsafety.org/location-tracking" target="_blank" rel="noopener noreferrer">location-tracking guide</a>, and <a href="https://www.techsafety.org/tools-for-safer-browsing" target="_blank" rel="noopener noreferrer">safer-browsing tools</a>.</p>
-
-      <h2 id="de-escalation">De-escalation Is an Option, Not an Obligation</h2>
-      <p>In a tense encounter, simple communication may sometimes lower immediate friction: keep your voice steady, use short sentences, avoid unnecessary argument, maintain physical space, and move toward an exit or other people. Do not make sudden movements around someone who appears highly agitated or armed.</p>
-      <p>But there is no perfect phrase that controls another person&rsquo;s behavior. You are not required to remain present, reason with someone, disclose personal information, or protect their feelings. Leaving, calling for help, drawing attention, or complying temporarily to survive can all be valid responses.</p>
-      <p>Survival responses are not always deliberate. People may fight, flee, freeze, submit, dissociate, or try to appease. None of those reactions makes the harm their fault. The body often chooses what it believes offers the best chance of getting through the moment.</p>
-
-      <h2 id="advocate">Know When to Bring In a Trained Advocate</h2>
-      <p>Some situations are too complex or high-risk to carry alone. Contact a trained advocate when there is coercive control, stalking, trafficking, sexual violence, threats, weapon access, strangulation, escalating behavior, technology-facilitated abuse, danger around separation, or concern for children, pets, elders, or a person with disabilities.</p>
-      <p>An advocate can help build a personalized safety plan. That may include safer communications, emergency contacts, transportation, medications, documents, money, children, pets, workplace or school precautions, evidence preservation, shelter, legal resources, and the risks of different choices.</p>
-      <p>A good advocate should support your agency. They should not demand that you leave, shame you for returning, or treat one plan as safe for everyone. Leaving can be a dangerous period, and careful planning may be more protective than an impulsive exit.</p>
-      <p>For immediate danger, call 911 or your local emergency number when it is safe to do so. If contacting police could create additional risk for you, an advocate may help you consider other available options.</p>
-
-      <section class="resources" id="resources" aria-labelledby="current-support-resources">
-        <h2 id="current-support-resources">Current Support Resources</h2>
-
-        <div class="res">
-          <p class="res__k">Domestic violence &amp; coercive control</p>
-          <p><strong>National Domestic Violence Hotline</strong> &mdash; <a href="https://www.thehotline.org" target="_blank" rel="noopener noreferrer">TheHotline.org</a>. Call <strong>800-799-SAFE (7233)</strong> or text <strong>START</strong> to <strong>88788</strong>. Advocates can discuss domestic abuse, coercive control, safety planning, and local services.</p>
-        </div>
-
-        <div class="res">
-          <p class="res__k">Stalking</p>
-          <p><strong>Stalking Prevention, Awareness &amp; Resource Center (SPARC)</strong> &mdash; <a href="https://www.stalkingawareness.org" target="_blank" rel="noopener noreferrer">StalkingAwareness.org</a>. Provides stalking information and can help you understand documentation, risk, and connections to local victim-service providers. It is not an emergency hotline.</p>
-        </div>
-
-        <div class="res">
-          <p class="res__k">Human trafficking</p>
-          <p><strong>National Human Trafficking Hotline</strong> &mdash; <a href="https://humantraffickinghotline.org" target="_blank" rel="noopener noreferrer">HumanTraffickingHotline.org</a>. Call <strong>888-373-7888</strong> or text <strong>233733</strong> for specialized trafficking support and referrals.</p>
-        </div>
-
-        <div class="res">
-          <p class="res__k">Sexual assault</p>
-          <p><strong>RAINN National Sexual Assault Hotline</strong> &mdash; <a href="https://rainn.org/help-and-healing/hotline/" target="_blank" rel="noopener noreferrer">RAINN.org</a>. Call <strong>800-656-HOPE (4673)</strong>, text <strong>HOPE</strong> to <strong>64673</strong>, or use online chat for free, confidential, 24/7 sexual-assault support.</p>
-        </div>
-
-        <div class="res">
-          <p class="res__k">Crisis support</p>
-          <p><strong>988 Suicide &amp; Crisis Lifeline</strong> &mdash; Call or text <strong>988</strong>, or chat at <a href="https://988lifeline.org" target="_blank" rel="noopener noreferrer">988lifeline.org</a>, for suicide, mental-health, or substance-use crisis support. 988 is not a general crime-reporting line and does not replace 911 for immediate physical danger.</p>
-        </div>
-
-        <div class="res">
-          <p class="res__k">Eating disorders</p>
-          <p><strong>National Association of Anorexia Nervosa and Associated Disorders (ANAD)</strong> &mdash; <a href="https://anad.org/get-support/eating-disorders-helpline/" target="_blank" rel="noopener noreferrer">ANAD.org</a>. The current ANAD helpline is <strong>888-375-7767</strong>, Monday&ndash;Friday, 9 a.m.&ndash;9 p.m. Central. Messages left outside those hours are returned. (Do not rely on the discontinued NEDA telephone helpline.)</p>
-        </div>
-
-        <p class="resources__foot"><em>When using a shared or monitored device, clear browsing history only if doing so will not create suspicion. Private browsing may reduce what is saved locally, but it cannot defeat spyware, account syncing, router or network records, or monitoring by someone with access to the device.</em></p>
-      </section>
-
-      <section class="sources" id="sources" aria-labelledby="safety-sources-title">
-        <h2 id="safety-sources-title">Evidence Standard and Review Date</h2>
-        <p>This guide was reviewed on <strong>August 9, 2026</strong>. Its safety framework and current contact information were checked against primary guidance from the <a href="https://www.techsafety.org/" target="_blank" rel="noopener noreferrer">NNEDV Safety Net Project</a>, <a href="https://www.thehotline.org/" target="_blank" rel="noopener noreferrer">National Domestic Violence Hotline</a>, <a href="https://www.stalkingawareness.org/" target="_blank" rel="noopener noreferrer">SPARC</a>, <a href="https://rainn.org/" target="_blank" rel="noopener noreferrer">RAINN</a>, <a href="https://humantraffickinghotline.org/en" target="_blank" rel="noopener noreferrer">National Human Trafficking Hotline</a>, <a href="https://988lifeline.org/" target="_blank" rel="noopener noreferrer">988 Lifeline</a>, and <a href="https://anad.org/" target="_blank" rel="noopener noreferrer">ANAD</a>.</p>
-        <p>This is educational information, not individualized legal, medical, or emergency advice. Services, laws, and safety needs vary by location and circumstance.</p>
-      </section>
-
-      <h2 id="a-small-plan">A Small Plan Is Still a Plan</h2>
-      <p>You do not need to solve everything today. One useful action may be enough for now: save a number under a neutral name, identify a safer device, tell one trustworthy person, photograph an important document, change one recovery address, pack medication, record one incident, or speak privately with an advocate.</p>
-      <p>Safety planning is not a promise that harm will never happen. It is a way to increase options and reduce isolation. The person causing harm remains responsible for the harm.</p>
-      <p>You deserve to be believed. You deserve choices. You deserve support that respects your reality.</p>
-
-      <h2 id="stay-with-us">Stay With Us</h2>
-      <p>Neural Edge Publishing covers crime without turning suffering into spectacle. Our work is victim-first, sourced, and built around one mission: <strong>NO MORE VICTIMS.</strong></p>
-      <p>For calm safety resources, responsible case coverage, and practical guides, join the free NEP newsletter at <strong><a href="https://cassiancreed.beehiiv.com/subscribe?utm_source=website&utm_medium=safety_guide&utm_campaign=lm_safety_stay-safe-field-guide" target="_blank" rel="noopener noreferrer">cassiancreed.beehiiv.com</a></strong>.</p>
-      <p>No pressure. No fear campaign. Just useful information, delivered with dignity.</p>
-
-      <p class="post__note">Keep reading: the <a href="/guides/">Resources &amp; Guides library</a> &middot; the <a href="/glossary/">true-crime &amp; courtroom glossary</a> &middot; our <a href="/case-files/">case files</a>.</p>
-    </div>
+    <section class="safety-section sources" id="sources" aria-labelledby="sources-title">
+      <h2 id="sources-title">Sources and review standard</h2>
+      <p>Reviewed August 9, 2026. Material safety and contact information on this hub was checked against the <a href="https://www.thehotline.org/" target="_blank" rel="noopener noreferrer">National Domestic Violence Hotline</a>, <a href="https://www.stalkingawareness.org/" target="_blank" rel="noopener noreferrer">SPARC</a>, <a href="https://www.techsafety.org/" target="_blank" rel="noopener noreferrer">NNEDV Safety Net Project</a>, <a href="https://988lifeline.org/" target="_blank" rel="noopener noreferrer">988 Lifeline</a>, <a href="https://rainn.org/" target="_blank" rel="noopener noreferrer">RAINN</a>, <a href="https://humantraffickinghotline.org/en" target="_blank" rel="noopener noreferrer">National Human Trafficking Hotline</a>, and <a href="https://www.womenslaw.org/" target="_blank" rel="noopener noreferrer">WomensLaw</a>.</p>
+      <p>This is general education, not individualized legal, medical, emergency, or safety advice. Services, laws, and risks vary by location and circumstance.</p>
+    </section>
   </article>
-
-  <div class="wrap"><section class="subscribe" id="free-guide">
-    <CaptureBlock offer="safety" content="safety" />
-  </section></div>
-
-  <script is:inline>
-    (function () {
-      var exit = document.getElementById('quick-exit');
-      var lastEscape = 0;
-      function leaveSafetyPage() {
-        window.location.replace('https://weather.com/');
-      }
-      if (exit) exit.addEventListener('click', leaveSafetyPage);
-      document.addEventListener('keydown', function (event) {
-        if (event.key !== 'Escape') return;
-        var now = Date.now();
-        if (now - lastEscape < 1000) leaveSafetyPage();
-        lastEscape = now;
-      });
-    })();
-  </script>
 </Base>
 
 <style>
-  .safety-alert{
-    position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:center;
-    gap:18px;padding:12px 20px;background:#2c1014;color:#fff;border-bottom:2px solid #d9a65c;
-    box-shadow:0 4px 18px rgba(0,0,0,.22)
-  }
-  .safety-alert__copy{display:flex;flex-direction:column;gap:2px;max-width:930px;font-size:.91rem;line-height:1.35}
-  .safety-alert__copy strong{color:#fff;font-size:1rem}
-  .safety-alert__limit{color:#f2d9d9;font-size:.82rem}
-  .safety-exit{
-    flex:0 0 auto;min-height:44px;padding:10px 18px;border:2px solid #fff;border-radius:7px;
-    background:#fff;color:#5a111a;font:inherit;font-weight:800;cursor:pointer
-  }
-  .safety-exit:hover,.safety-exit:focus-visible{background:#f6dfb9;color:#2c1014;outline:3px solid #d9a65c;outline-offset:2px}
-  .sources{margin-top:2.5rem;padding:1.25rem 1.4rem;border:1px solid var(--line);border-radius:12px;background:var(--bg-2)}
-  .sources h2{margin-top:0}
-  @media(max-width:720px){
-    .safety-alert{align-items:flex-start;padding:10px 12px;gap:10px}
-    .safety-alert__copy{font-size:.8rem}
-    .safety-alert__limit{font-size:.74rem}
-    .safety-exit{padding:9px 12px}
-  }
+  .safety-hub{max-width:1040px;padding-top:54px}
+  .safety-hero{max-width:790px}
+  .safety-hero h1{font-family:var(--serif);font-size:clamp(42px,7vw,72px);line-height:1;margin:10px 0 16px}
+  .safety-hero__promise{font-family:var(--serif);font-size:clamp(23px,3.4vw,34px);line-height:1.28;margin:0 0 18px;color:var(--ink)}
+  .safety-boundary,.calibration,.resource-boundary{padding:18px 20px;border-left:3px solid var(--accent);background:var(--bg-2);border-radius:0 9px 9px 0;color:var(--ink-2);line-height:1.6}
+  .safety-paths{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:36px 0 56px}
+  .safety-path{display:flex;flex-direction:column;gap:8px;min-height:190px;padding:22px;border:1px solid var(--line-strong);border-radius:12px;background:var(--bg-2);transition:border-color .16s,transform .16s}
+  .safety-path:hover{border-color:var(--accent);transform:translateY(-2px)}
+  .safety-path:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+  .safety-path strong{font-family:var(--serif);font-size:25px;line-height:1.15}
+  .safety-path span:last-child{color:var(--ink-2);font-size:15px;line-height:1.5}
+  .safety-path__number{font-family:var(--mono);font-size:11px;color:var(--accent);letter-spacing:.12em}
+  .safety-path--urgent{border-color:rgba(217,166,92,.55)}
+  .safety-section{scroll-margin-top:92px;margin:0 0 66px}
+  .safety-section h2{font-family:var(--serif);font-size:clamp(31px,4.5vw,44px);line-height:1.1;margin:8px 0 14px}
+  .section-lede{font-size:18px;color:var(--ink-2);max-width:72ch;margin:0 0 24px}
+  .help-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  .help-card{padding:22px;border:1px solid var(--line);border-radius:11px;background:var(--bg-2)}
+  .help-card--emergency{border:2px solid #d9a65c}
+  .help-card h3,.tool-list h3{font-family:var(--serif);font-size:22px;line-height:1.2;margin:0 0 10px}
+  .help-card p{margin:0 0 8px;color:var(--ink-2)}
+  .help-card a,.tool-list a,.sources a{color:#ff8064;text-decoration:underline;text-underline-offset:3px}
+  .help-number{font-size:1.25em;font-weight:800}
+  .help-note{font-size:13px;color:var(--ink-3)!important}
+  .resource-boundary{margin-top:18px}
+  .guide-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .guide-card{display:flex;flex-direction:column;min-height:290px;padding:26px;border:1px solid var(--line-strong);border-radius:12px;background:linear-gradient(155deg,var(--bg-2),#15110f)}
+  .guide-card:hover{border-color:var(--accent)}
+  .guide-card:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+  .guide-card__label{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+  .guide-card h3{font-family:var(--serif);font-size:28px;line-height:1.12;margin:12px 0}
+  .guide-card p{color:var(--ink-2);margin:0 0 20px}
+  .guide-card__go{margin-top:auto;color:var(--accent);font-weight:700}
+  .calibration{margin-top:18px}
+  .tool-list{display:grid;gap:0;border-top:1px solid var(--line)}
+  .tool-list article{display:grid;grid-template-columns:minmax(210px,.7fr) 1.3fr;gap:28px;padding:24px 0;border-bottom:1px solid var(--line)}
+  .tool-list p{margin:0;color:var(--ink-2)}
+  .safety-email{border-top:1px solid var(--line);padding-top:12px}
+  .court-bridge,.sources{padding:28px;border:1px solid var(--line);border-radius:12px;background:var(--bg-2)}
+  .sources p{color:var(--ink-2)}
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  @media(max-width:760px){.safety-hub{padding:38px 18px 0}.safety-paths,.help-grid,.guide-grid{grid-template-columns:1fr}.safety-path{min-height:0}.tool-list article{grid-template-columns:1fr;gap:8px}.court-bridge,.sources{padding:22px}.safety-section{margin-bottom:48px}}
+  @media(prefers-reduced-motion:reduce){.safety-path:hover{transform:none}}
 </style>
