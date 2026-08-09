@@ -8,10 +8,13 @@ facts, dates, FAQ copy, or hero-summary copy directly to the Astro page.
 
 1. Open `court-calendar.tsv` in Excel, Numbers, or Google Sheets.
 2. Edit existing rows, add new rows, or move finished cases to `completed`.
-3. Update the `targeted_update` metadata row. Update `last_full_sweep` only after
-   every tracked case has been rechecked.
-4. Export as tab-separated values, preserving the exact column headers.
-5. Run `npm run calendar:check`. The normal site build runs the same check
+3. Check every listed case against its source every day, correct any changed
+   information, and add newly confirmed cases.
+4. Set every reviewed row's `verified` date and the `last_updated` metadata row
+   to that day's publication date. The public page uses this one overall update
+   date while each entry retains its own verification date.
+5. Export as tab-separated values, preserving the exact column headers.
+6. Run `npm run calendar:check`. The normal site build runs the same check
    automatically and will stop if the table is malformed.
 
 ## Row rules
