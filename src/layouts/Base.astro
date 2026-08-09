@@ -2,6 +2,21 @@
 import '../styles/global.css';
 export interface Props { title: string; description?: string; jsonld?: object; ogImage?: string; }
 const { title, description = 'Sourced, victim-centered true-crime case files — what happened, and what it teaches about staying safe.', jsonld, ogImage = '/og.png' } = Astro.props;
+const BRAND = 'Cassian Creed';
+const BRAND_SUFFIX = ` | ${BRAND}`;
+// Page authors may pass an existing brand suffix while content is migrated.
+// Normalize it, then spend the suffix only when the complete SERP title fits.
+const baseTitle = title
+  .trim()
+  .replace(/\s*(?:\||—|-)\s*Cassian Creed$/i, '')
+  .trim();
+const titleAlreadyStartsWithBrand = /^Cassian Creed\b/i.test(baseTitle);
+const renderedTitle = !titleAlreadyStartsWithBrand && baseTitle.length + BRAND_SUFFIX.length <= 60
+  ? `${baseTitle}${BRAND_SUFFIX}`
+  : baseTitle;
+if (renderedTitle.length > 60) {
+  console.warn(`[seo:title] ${Astro.url.pathname} renders ${renderedTitle.length} characters: "${renderedTitle}"`);
+}
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const ogImg = new URL(ogImage, Astro.site).href;
 // Sitewide Organization + Person JSON-LD (AI discoverability, Mantra rule 47).
@@ -121,20 +136,20 @@ function navActive(href){
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>{title}</title>
+  <title>{renderedTitle}</title>
   <meta name="description" content={description} />
   <link rel="canonical" href={canonical} />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content={title} />
+  <meta property="og:title" content={renderedTitle} />
   <meta property="og:description" content={description} />
   <meta property="og:url" content={canonical} />
   <meta property="og:site_name" content="Cassian Creed" />
   <meta property="og:image" content={ogImg} />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content={title} />
+  <meta property="og:image:alt" content={renderedTitle} />
   <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={title} />
+    <meta name="twitter:title" content={renderedTitle} />
     <meta name="twitter:description" content={description} />
   <meta name="twitter:site" content="@CassianCreed" />
   <meta name="twitter:image" content={ogImg} />
@@ -233,7 +248,12 @@ if(typeof gtag!=='undefined'){gtag('event','capture_outbound',{link_url:s.href,m
       var a=e.target.closest('a');
       if(a&&a.href&&a.href.includes('cassiancreed.beehiiv.com/products/')){
         if(typeof gtag!=='undefined'){
-          gtag('event','buy_cta_click',{link_url:a.href});
+          gtag('event','buy_cta_click',{
+            link_url:a.href,
+            page_path:location.pathname,
+            book_key:a.dataset.bookKey||'(not_set)',
+            cta_placement:a.dataset.ctaPlacement||'(not_set)'
+          });
           gtag('event','begin_checkout',{currency:'USD'});
         }
       }

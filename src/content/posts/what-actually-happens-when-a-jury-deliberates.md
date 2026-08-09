@@ -1,14 +1,17 @@
 ---
-title: "What Actually Happens When a Jury Deliberates"
-seoTitle: "Jury Deliberations Explained: Verdicts and Hung Juries"
-description: "What happens during jury deliberations, why juror notes are normal, what a hung jury means, and why deliberation length does not predict a verdict."
+title: "Hung Jury vs. Mistrial: What Happens When a Jury Can't Decide"
+seoTitle: "Hung Jury vs. Mistrial: What Happens Next?"
+description: "What happens during jury deliberations, how a hung jury can cause a mistrial, when a retrial is allowed, and why deliberation length does not predict a verdict."
 pubDate: 2026-07-18
+updatedDate: 2026-08-08
 tag: Explainers
 featured: false
 capture: "case"
 ---
 
 When a judge says the case is "going to the jury," it sounds like a handoff — and in a real sense, it is. The trial phase ends, and the decision phase begins. But before jurors ever set foot in the deliberation room, there is one final, critical step: jury instructions.
+
+The terms that follow are related, but not interchangeable. A **hung jury** is a jury that cannot reach the agreement required for a verdict. A **mistrial** is a trial the judge ends without a valid verdict. A hung jury can cause a mistrial, but serious procedural error, prejudicial misconduct, or an emergency can cause one too. Because a mistrial is not an acquittal, a retrial is often possible.
 
 ## The Moment the Case Goes to the Jury
 
@@ -41,7 +44,7 @@ When jurors have a question — about a legal term, about what a specific instru
 
 These notes are not a sign of confusion or trouble. They are the system working as designed. Jurors are not lawyers, and the law is genuinely complex. A jury that asks questions is a jury that is taking its responsibility seriously.
 
-## What a Deadlock Really Means — and What a Mistrial Does and Doesn't Decide
+## Hung Jury vs. Mistrial: The Difference
 
 A deadlocked jury — sometimes called a "hung jury" — occurs when jurors cannot reach the unanimous agreement required for a verdict. (A small number of states allow non-unanimous verdicts in certain cases, but federal criminal trials and most state murder trials require unanimity.)
 
@@ -49,11 +52,14 @@ When a jury reports that it is deadlocked, the judge does not simply declare a m
 
 If deliberations continue and the jury remains deadlocked, the judge will eventually declare a mistrial.
 
-Here is what a mistrial means — and what it does not:
+A hung jury is only one route to a mistrial. A judge may also end a trial after a serious procedural error, prejudicial misconduct by an attorney, juror, or witness, or an emergency that makes a fair trial impossible. The common thread is not juror disagreement; it is that the proceeding can no longer produce a valid, fair verdict.
+
+Here is what a hung-jury mistrial means — and what it does not:
 
 - A mistrial is **not an acquittal.** The defendant is not found not guilty. No verdict has been reached.
-- A mistrial does **not bar retrial.** Because no verdict was entered, double jeopardy does not attach in the same way it would after an acquittal. The prosecution can — and often does — retry the case.
+- A hung-jury mistrial usually does **not bar retrial.** The prosecution can — and often does — try the case again. Other mistrial circumstances can raise more complicated double-jeopardy questions, especially when the prosecution sought or caused the mistrial, so the exact result depends on the record and jurisdiction.
 - A mistrial is, in practical terms, a reset. The case returns to the starting line. Whether the prosecution chooses to retry depends on the strength of the evidence, the resources available, and the interests of the victim's family and the public.
+- An **acquittal is different.** A valid not-guilty verdict is final for that charge; the prosecution cannot simply start over because it dislikes the result.
 
 For families of victims, a mistrial is one of the most painful outcomes imaginable — not because justice was denied forever, but because the wait continues.
 
@@ -78,5 +84,23 @@ If you are following a case and waiting for a verdict, here are three honest way
 The jury room is one of the few places left in public life where ordinary people are asked to do something genuinely consequential — and to do it together, in private, without an audience. That process deserves patience and respect, even when the waiting is hard.
 
 The [verified court calendar](/court-calendar/) tracks proceedings we cover, while this guide explains the deliberation stage once a listed trial reaches the jury.
+
+## Frequently Asked Questions
+
+**Is a hung jury the same as a mistrial?**
+
+No. A hung jury describes jurors who cannot reach the agreement required for a verdict. A mistrial describes the legal result when a judge ends a trial without a valid verdict. A hung jury can lead to a mistrial, but it is not the only possible cause.
+
+**Can prosecutors retry a case after a hung jury?**
+
+Usually, yes. A hung-jury mistrial produces no acquittal, so prosecutors may retry the charge, negotiate a plea, or decline to proceed. The precise rule can depend on the jurisdiction and what caused the mistrial.
+
+**Does a long deliberation mean the jury will acquit?**
+
+No. Deliberation length does not reliably predict a guilty verdict, an acquittal, or a deadlock. It may reflect complex evidence, multiple charges, careful review, or disagreement among jurors.
+
+**What is an Allen charge?**
+
+An Allen charge is a supplemental instruction that asks deadlocked jurors to keep deliberating, listen to one another, and reconsider their views without abandoning an honestly held conviction.
 
 *Cassian Creed publishes victim-first true crime at [cassiancreed.com](https://cassiancreed.com).*

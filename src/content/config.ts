@@ -20,6 +20,11 @@ const posts = defineCollection({
     capture: z.string().optional(),
     cover: z.string().optional(),
     coverAlt: z.string().optional(),
+    relatedBook: z.object({
+      key: z.literal('jury-chess'),
+      midCopy: z.string(),
+      endCopy: z.string(),
+    }).optional(),
   }),
 });
 export const collections = { posts };
