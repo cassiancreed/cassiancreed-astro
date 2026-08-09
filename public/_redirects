@@ -17,7 +17,10 @@ https://www.cassiancreed.com/*   https://cassiancreed.com/:splat   301!
 
 # Genealogy hub consolidation (NEP-WEB-CWK-0713Z, 2026-07-13)
 # The older explainer post cannibalized the new canonical hub for the same query set.
-# Forced (301!) because the source post still exists in src/content/posts/ — nothing was
-# deleted. ROLLBACK = delete these two lines; the post returns untouched.
+# Forced (301!) so every legacy link consolidates into the canonical guide.
 /post/what-is-investigative-genetic-genealogy-and-how-does-it-solve-cold-cases/   /how-forensic-genetic-genealogy-works/   301!
 /post/what-is-investigative-genetic-genealogy-and-how-does-it-solve-cold-cases    /how-forensic-genetic-genealogy-works/   301!
+
+# Jury-intent consolidation (2026-08-08)
+/post/mistrial-vs-hung-jury-what-s-the-difference/   /post/what-actually-happens-when-a-jury-deliberates/   301!
+/post/mistrial-vs-hung-jury-what-s-the-difference    /post/what-actually-happens-when-a-jury-deliberates/   301!

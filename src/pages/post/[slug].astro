@@ -2,6 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import { getCollection } from 'astro:content';
 import CaptureBlock from '../../components/CaptureBlock.astro';
+import BookCTA from '../../components/BookCTA.astro';
 export async function getStaticPaths() {
   const posts = await getCollection('posts');
   // Nancy Guthrie coverage is excluded from related-content rails by standing order; the pages themselves stay live.
@@ -85,6 +86,7 @@ const jsonld = faqNode
       </aside>
     )}
     <div class="post__content"><Content /></div>
+    {post.data.relatedBook && <BookCTA book={post.data.relatedBook} placement="end" />}
     {post.data.buyUrl && (
       <aside class="buybox">
         <p class="buybox__k">The ebook edition</p>
