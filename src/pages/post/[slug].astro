@@ -3,6 +3,8 @@ import Base from '../../layouts/Base.astro';
 import { getCollection } from 'astro:content';
 import CaptureBlock from '../../components/CaptureBlock.astro';
 import BookCTA from '../../components/BookCTA.astro';
+import { existsSync } from 'node:fs';
+import { resolve } from 'node:path';
 export async function getStaticPaths() {
   const posts = await getCollection('posts');
   // Nancy Guthrie coverage is excluded from related-content rails by standing order; the pages themselves stay live.
@@ -29,6 +31,15 @@ function pickOffer(p){
   return 'jury';
 }
 const captureOffer = pickOffer(post);
+const requestedOgImage = post.data.cover ?? `/og/${post.slug}.png`;
+const requestedOgPath = requestedOgImage.startsWith('http')
+  ? null
+  : requestedOgImage.split('?')[0].replace(/^\//, '');
+// Never publish a broken social card. Posts with commissioned art retain it;
+// all others use the tested 1200x630 Cassian Creed brand card.
+const socialImage = requestedOgPath && existsSync(resolve('public', requestedOgPath))
+  ? requestedOgImage
+  : '/og.png';
 const { Content } = await post.render();
 const isCase = post.data.tag === 'Case Files';
 const pageUrl = new URL(Astro.url.pathname, Astro.site).href;
@@ -67,7 +78,7 @@ const jsonld = faqNode
   ? { "@context":"https://schema.org", "@graph": [articleNode, faqNode] }
   : { "@context":"https://schema.org", ...articleNode };
 ---
-<Base title={post.data.seoTitle ?? post.data.title} description={post.data.description} jsonld={jsonld} ogImage={post.data.cover ?? `/og/${post.slug}.png`}>
+<Base title={post.data.seoTitle ?? post.data.title} description={post.data.description} jsonld={jsonld} ogImage={socialImage}>
   <article class="post">
     <p class="evidence evidence--accent">{post.data.tag}</p>
     <h1>{post.data.title}</h1>

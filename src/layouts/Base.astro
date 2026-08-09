@@ -86,6 +86,20 @@ const navItems = [
   { href: '/about/',               label: 'About' },
   { href: '/#free-guide',           label: 'Free Guide' },
 ];
+const desktopPrimary = [
+  { href: '/case-files/', label: 'Case Files' },
+  { href: '/books/', label: 'Jury Chess' },
+  { href: '/safety/', label: 'Stay Safe' },
+  { href: '/about/', label: 'About' },
+  { href: '/#free-guide', label: 'Free Guide', cta: true },
+];
+const exploreItems = [
+  { href: '/start-here/', label: 'Start Here' },
+  { href: '/guides/', label: 'Guides' },
+  { href: '/court-calendar/', label: 'Court Calendar' },
+  { href: '/voir-dire-simulator/', label: 'Jury Simulator' },
+  { href: '/ai-al/', label: 'A.I. AL' },
+];
 // NEP-CWK-IRASEMA-CONVERSION-RESCUE-0726 — CTA ROUTE REPAIR.
 // On a post page the primary email CTA already lives on THIS page at
 // `#free-guide` (see post/[slug].astro), but the nav item routed the visitor
@@ -97,6 +111,10 @@ const isPostPage = navPath.startsWith('/post/');
 const resolvedNav = navItems.map(i =>
   (isPostPage && i.href === '/#free-guide') ? { ...i, href: '#free-guide' } : i
 );
+const resolveItem = (i) =>
+  (isPostPage && i.href === '/#free-guide') ? { ...i, href: '#free-guide' } : i;
+const resolvedDesktopPrimary = desktopPrimary.map(resolveItem);
+const resolvedExplore = exploreItems.map(resolveItem);
 // Standalone pages that are not themselves a nav item highlight their nav
 // CATEGORY, so no page ever renders with zero highlighted nav item
 // (NEP-FIX-CWK-0718L). Add new standalone pages here when they ship.
@@ -136,6 +154,7 @@ function navActive(href){
   if (NAV_CATEGORY[navPath] === h) return true;      // standalone page -> its category
   return false;
 }
+const exploreActive = resolvedExplore.some(i => navActive(i.href));
 ---
 <!doctype html>
 <html lang="en">
@@ -228,11 +247,30 @@ function navActive(href){
 <body>
   <header class="site-head"><div class="site-head__inner">
     <a class={homeActive ? "brand active" : "brand"} href="/" aria-current={homeActive ? "page" : undefined}>Cassian<br/>Creed</a>
-    <nav class="nav" aria-label="Primary">
-      {resolvedNav.map(i => (
+    <nav class="nav nav--desktop" aria-label="Primary">
+      {resolvedDesktopPrimary.slice(0, 3).map(i => (
         <a href={i.href} class={navActive(i.href) ? 'active' : undefined} aria-current={navActive(i.href) ? 'page' : undefined}>{i.label}</a>
       ))}
+      <details class="nav__explore">
+        <summary class={exploreActive ? 'active' : undefined}>Explore</summary>
+        <div class="nav__panel">
+          {resolvedExplore.map(i => (
+            <a href={i.href} class={navActive(i.href) ? 'active' : undefined} aria-current={navActive(i.href) ? 'page' : undefined}>{i.label}</a>
+          ))}
+        </div>
+      </details>
+      {resolvedDesktopPrimary.slice(3).map(i => (
+        <a href={i.href} class:list={[navActive(i.href) && 'active', i.cta && 'nav__cta']} aria-current={navActive(i.href) ? 'page' : undefined}>{i.label}</a>
+      ))}
     </nav>
+    <details class="nav-menu">
+      <summary>Menu</summary>
+      <nav class="nav-menu__panel" aria-label="Mobile primary">
+        {resolvedNav.map(i => (
+          <a href={i.href} class:list={[navActive(i.href) && 'active', i.label === 'Free Guide' && 'nav__cta']} aria-current={navActive(i.href) ? 'page' : undefined}>{i.label === 'Books' ? 'Jury Chess' : i.label}</a>
+        ))}
+      </nav>
+    </details>
   </div></header>
   <main><slot /></main>
   <footer class="site-foot"><div class="site-foot__inner">

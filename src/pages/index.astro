@@ -17,7 +17,8 @@ const jsonld = {
   "@context": "https://schema.org",
   "@graph": [
     { "@type": "WebSite", "@id": "https://cassiancreed.com/#website", "url": "https://cassiancreed.com/", "name": "Cassian Creed", "inLanguage": "en-US", "publisher": { "@id": "https://cassiancreed.com/#nep" } },
-    { "@type": "Organization", "@id": "https://cassiancreed.com/#nep", "name": "Neural Edge Publishing", "url": "https://cassiancreed.com/", "brand": "Cassian Creed", "description": "An independent true-crime imprint publishing sourced, victim-first case files.", "sameAs": ["https://x.com/CassianCreed", "https://cassiancreed.beehiiv.com/"] }
+    { "@type": "Organization", "@id": "https://cassiancreed.com/#nep", "name": "Neural Edge Publishing", "url": "https://cassiancreed.com/", "brand": "Cassian Creed", "description": "An independent true-crime imprint publishing sourced, victim-first case files.", "sameAs": ["https://x.com/CassianCreed", "https://cassiancreed.beehiiv.com/"] },
+    { "@type": "Book", "name": "Jury Chess: How Criminal Jury Trials Actually Work", "author": { "@id": "https://cassiancreed.com/#cassian-creed" }, "publisher": { "@id": "https://cassiancreed.com/#org" }, "bookFormat": "https://schema.org/EBook", "offers": { "@type": "Offer", "price": "3.99", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://cassiancreed.beehiiv.com/products/jury-chess" } }
   ]
 };
 ---
@@ -85,10 +86,10 @@ const jsonld = {
   </section>
 
   {featured && (
-  <section class="wrap" aria-label="Latest case file">
+  <section class="wrap" aria-label="Featured case file">
     <a class="feature" href={`/post/${featured.slug}/`}>
       <div>
-        <p class="evidence evidence--accent">Latest case file</p>
+        <p class="evidence evidence--accent">Featured case file</p>
         <h2>{featured.data.title}</h2>
         <p>{featured.data.description}</p>
         <span class="btn btn--ghost">Read the case &rarr;</span>
@@ -97,6 +98,30 @@ const jsonld = {
     </a>
   </section>
   )}
+
+  <section class="wrap jury-home" aria-labelledby="jury-chess-title">
+    <div class="jury-home__card">
+      <a class="jury-home__cover" href="/books/#jury-chess" aria-label="Read about Jury Chess">
+        <img src="/covers/jury-chess.jpg" alt="Cover of Jury Chess: How Criminal Jury Trials Actually Work by Cassian Creed" width="600" height="900" loading="lazy" decoding="async" />
+      </a>
+      <div class="jury-home__copy">
+        <p class="evidence evidence--accent">The verified Cassian Creed book</p>
+        <h2 id="jury-chess-title">Follow the evidence. Understand the verdict.</h2>
+        <p class="jury-home__title"><em>Jury Chess: How Criminal Jury Trials Actually Work</em></p>
+        <p>A plain-language guide to burdens of proof, evidence rules, objections, jury instructions, deliberations, and the limits of the admitted record. Includes practical “Watch for This” exercises and 212 source notes.</p>
+        <ul class="jury-home__proof" aria-label="What Jury Chess covers">
+          <li>Separate evidence from argument</li>
+          <li>Understand courtroom rulings</li>
+          <li>Evaluate forensic claims carefully</li>
+        </ul>
+        <div class="jury-home__actions">
+          <a class="btn" href="https://cassiancreed.beehiiv.com/products/jury-chess?utm_source=website&utm_medium=homepage&utm_campaign=jury_chess" target="_blank" rel="noopener noreferrer" data-book-key="jury-chess" data-cta-placement="homepage">Get <em>Jury Chess</em> — $3.99 &rarr;</a>
+          <a class="btn btn--ghost" href="/books/#jury-chess">Book details &rarr;</a>
+        </div>
+        <p class="jury-home__trust">Secure checkout &middot; instant PDF download &middot; educational, not legal advice</p>
+      </div>
+    </div>
+  </section>
 
   {/* CONVERSION-FIRST RANK 1 (2026-07-28): the home "Case Files Library" shop
       section stood here — section title, "The Trail is $1.99" lede, the
@@ -139,7 +164,7 @@ const jsonld = {
           live title, which carries no A.I. AL Case Analysis — the claim would
           have been false. No replacement wording was invented. */}
       <p class="mechanics__note">Sample structure shown for illustration. <a href="/about/">How our analysis works and its limits &rarr;</a></p>
-      <a class="btn" href="/books/?utm_source=website&utm_medium=mechanics&utm_campaign=case_mechanics">See the depth in the books &rarr;</a>
+      <a class="btn" href="/books/#jury-chess">See the courtroom framework in <em>Jury Chess</em> &rarr;</a>
     </section>
 
   <section class="wrap" aria-label="Free case files">
@@ -195,6 +220,21 @@ const jsonld = {
   .nmv__alt{color:var(--ink-2);font-size:15px;text-decoration:none;border-bottom:1px solid var(--line)}
   .nmv__alt:hover{color:var(--accent)}
   @media(max-width:640px){.nmv{padding:22px 20px}.nmv__h{font-size:25px}}
+
+  .jury-home{padding-top:12px;padding-bottom:40px}
+  .jury-home__card{display:grid;grid-template-columns:minmax(180px,280px) 1fr;gap:38px;align-items:center;padding:32px;background:linear-gradient(145deg,#211d20,#13100e 62%);border:1px solid rgba(232,93,61,.32);border-radius:14px;box-shadow:var(--shadow)}
+  .jury-home__cover{display:block;border-radius:7px;overflow:hidden;box-shadow:0 26px 50px -22px rgba(0,0,0,.9);transition:transform .18s}
+  .jury-home__cover:hover{transform:translateY(-4px)}
+  .jury-home__cover img{display:block;width:100%;height:auto}
+  .jury-home__copy h2{font-family:var(--serif);font-size:clamp(30px,4vw,44px);line-height:1.04;margin:8px 0 10px;max-width:15ch}
+  .jury-home__title{font-size:17px;color:var(--ink);margin:0 0 12px}
+  .jury-home__copy>p:not(.evidence):not(.jury-home__title):not(.jury-home__trust){color:var(--ink-2);max-width:62ch;margin:0 0 16px}
+  .jury-home__proof{display:grid;gap:7px;list-style:none;margin:0 0 22px;padding:0;color:var(--ink-2);font-size:15px}
+  .jury-home__proof li::before{content:"✓ ";color:var(--accent);font-weight:700}
+  .jury-home__actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+  .jury-home__trust{font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--ink-3);margin:14px 0 0}
+  @media(max-width:700px){.jury-home__card{grid-template-columns:100px 1fr;gap:18px;padding:22px}.jury-home__copy h2{font-size:27px}.jury-home__cover{align-self:start}.jury-home__title,.jury-home__copy>p:not(.evidence):not(.jury-home__title):not(.jury-home__trust),.jury-home__proof,.jury-home__actions,.jury-home__trust{grid-column:1/-1}.jury-home__copy{display:contents}.jury-home__actions .btn{width:100%;text-align:center}}
+  @media(prefers-reduced-motion:reduce){.jury-home__cover:hover{transform:none}}
 
   /* Native branded hero capture — replaces the Beehiiv iframe (no green button). */
 </style>

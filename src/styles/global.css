@@ -26,6 +26,21 @@ img{max-width:100%}
 .nav{display:flex;gap:24px;font-size:13px;letter-spacing:.03em;color:var(--ink-2)}
 .nav a:hover{color:var(--ink)}
 .nav a.active{color:var(--accent);font-weight:700}
+.nav--desktop{align-items:center}
+.nav__explore{position:relative}
+.nav__explore summary,.nav-menu summary{cursor:pointer;list-style:none}
+.nav__explore summary::-webkit-details-marker,.nav-menu summary::-webkit-details-marker{display:none}
+.nav__explore summary::after{content:" +";color:var(--accent)}
+.nav__explore[open] summary::after{content:" −"}
+.nav__explore summary.active{color:var(--accent);font-weight:700}
+.nav__panel{position:absolute;right:0;top:calc(100% + 12px);display:grid;gap:4px;min-width:190px;padding:10px;background:var(--bg-2);border:1px solid var(--line-strong);border-radius:10px;box-shadow:var(--shadow)}
+.nav__panel a{padding:8px 10px;border-radius:6px;white-space:nowrap}
+.nav__cta{background:var(--accent);color:#1a0f0a!important;font-weight:700;padding:7px 12px;border-radius:999px}
+.nav-menu{display:none;position:relative}
+.nav-menu>summary{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line-strong);border-radius:7px;padding:8px 12px;color:var(--ink)}
+.nav-menu__panel{position:absolute;right:0;top:calc(100% + 10px);display:grid;gap:4px;width:min(280px,calc(100vw - 32px));max-height:calc(100vh - 90px);overflow:auto;padding:12px;background:var(--bg-2);border:1px solid var(--line-strong);border-radius:10px;box-shadow:var(--shadow)}
+.nav-menu__panel a{padding:9px 11px;border-radius:6px;color:var(--ink-2)}
+.nav-menu__panel a.active{background:rgba(232,93,61,.16);color:var(--ink);font-weight:700}
 
 /* hero */
 .hero{padding:64px 0 28px}
@@ -65,7 +80,8 @@ img{max-width:100%}
 .site-foot__inner{display:flex;justify-content:space-between;align-items:center;padding:22px 24px;flex-wrap:wrap;gap:8px}
 .site-foot__note{color:var(--ink-3);font-size:13px}
 
-@media(max-width:760px){.grid{grid-template-columns:1fr 1fr}.nav{gap:14px;font-size:12px}}
+@media(max-width:860px){.nav--desktop{display:none}.nav-menu{display:block}}
+@media(max-width:760px){.grid{grid-template-columns:1fr 1fr}.site-head__inner{padding:12px 18px}}
 @media(max-width:520px){.grid{grid-template-columns:1fr}}
 
 /* ===== PREMIUM POLISH PASS (match original proposal) ===== */
