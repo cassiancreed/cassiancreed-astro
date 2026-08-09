@@ -21,7 +21,10 @@ const requireFields = (row, fields, line) => {
 
 const checkUrl = (value, field, line, internal = false) => {
   if (!value) return;
-  if (internal && value.startsWith('/')) return;
+  if (internal) {
+    if (value.startsWith('/') && !value.startsWith('//')) return;
+    fail(line, `${field} must be a same-site path beginning with "/"`);
+  }
   try {
     const url = new URL(value);
     if (!['http:', 'https:'].includes(url.protocol)) throw new Error();

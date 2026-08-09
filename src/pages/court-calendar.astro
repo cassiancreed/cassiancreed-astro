@@ -25,8 +25,7 @@ const localDateParts = Object.fromEntries(
 );
 const BUILD_DATE = `${localDateParts.year}-${localDateParts.month}-${localDateParts.day}`;
 
-const CORRECTION_MAILTO =
-  'mailto:cassiancreed@cassiancreed.com?subject=Court%20Calendar%20correction&body=Case%20or%20person%20name%3A%0D%0AWhat%20is%20wrong%3A%0D%0AWhat%20the%20correct%20information%20is%3A%0D%0AOfficial%20record%20or%20source%20(link%20or%20citation)%3A%0D%0AYour%20name%20and%20role%20(optional)%3A%0D%0A';
+const CORRECTION_EMAIL = 'cassiancreed@cassiancreed.com';
 
 const NO_DATE = 'No confirmed upcoming court date found.';
 
@@ -149,6 +148,7 @@ const jsonld = {
   title={PAGE_TITLE}
   description={PAGE_DESCRIPTION}
   jsonld={jsonld}
+  internalLinksOnly
 >
   <section class="hero wrap">
     <p class="evidence evidence--accent">Court Calendar</p>
@@ -176,7 +176,7 @@ const jsonld = {
       </p>
       <p class="cal-notice__links">
         <a href="/court-calendar-policy/">Read the full Court Calendar and Case-Tracking Policy</a>
-        <a href={CORRECTION_MAILTO}>Report a correction</a>
+        <span>Report corrections: {CORRECTION_EMAIL}</span>
       </p>
     </div>
   </section>
@@ -200,9 +200,9 @@ const jsonld = {
           </p>
           <p class="card__src">
             <span class="card__k">Source</span>
-            <a href={e.src} target="_blank" rel="noopener noreferrer">{e.srcLabel}</a>
+            <span>{e.srcLabel}</span>
             <span class="card__srctype">{e.srcType}</span>
-            {e.src2 && <a class="card__src2" href={e.src2} target="_blank" rel="noopener noreferrer">{e.srcLabel2}</a>}
+            {e.src2 && <span class="card__src2">{e.srcLabel2}</span>}
           </p>
           <p class="card__links">
             {e.link ? (
@@ -212,7 +212,7 @@ const jsonld = {
             )}
             {e.link2 && <a class="card__read" href={e.link2}>{e.linkText2} &rarr;</a>}
             <a class="card__help" href="/support/">Victim &amp; Reader Resources</a>
-            <a class="card__help" href={CORRECTION_MAILTO}>Report a correction</a>
+            <span class="card__help">Corrections: {CORRECTION_EMAIL}</span>
           </p>
         </article>
       ))}
@@ -226,7 +226,7 @@ const jsonld = {
       <p class="capture-cta__body">
         Court dates move &mdash; and so does what a hearing actually settles. We&rsquo;ll send you <em>How to Read a Case Like the Court Does</em> &mdash; a plain-language framework for weighing evidence instead of guessing, and what a verdict really settles (and what it doesn&rsquo;t) &mdash; plus calendar updates when dates change. No weekly blast; unsubscribe anytime.
       </p>
-      <a class="capture-cta__btn" href="https://cassiancreed.beehiiv.com/subscribe?utm_source=website&utm_medium=court_calendar&utm_campaign=lm_case_how-to-read-a-case">
+      <a class="capture-cta__btn" href="/#free-guide">
         Get the guide &amp; date updates
       </a>
     </div>
@@ -239,7 +239,7 @@ const jsonld = {
       <p class="capture-cta__body">
         Headlines tell you what happened. <em>Jury Chess: How Criminal Jury Trials Actually Work</em> explains the machinery underneath &mdash; jury selection, evidence disputes, cross-examination, jury instructions, deliberations, and the verdict.
       </p>
-      <a class="capture-cta__btn" href="https://cassiancreed.beehiiv.com/products/jury-chess?utm_source=cassiancreed.com&amp;utm_medium=court_calendar&amp;utm_campaign=jury_chess_trial_cycle" id="jury-chess-court-calendar">
+      <a class="capture-cta__btn" href="/books/" id="jury-chess-court-calendar">
         Get <em>Jury Chess</em>
       </a>
     </div>
@@ -255,8 +255,8 @@ const jsonld = {
         {e.docket && <p class="row__docket">{e.docket}</p>}
         <p class="row__status">{e.status}</p>
         {e.nextNote && <p class="row__nodate"><strong>Next court date:</strong> {e.nextNote}</p>}
-        <p class="row__meta">Subject to change by the court &middot; Source: <a href={e.src} target="_blank" rel="noopener noreferrer">{e.srcLabel}</a></p>
-        <p class="row__links">{e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : <span class="card__soon">Our case file on this is in progress.</span>} {e.link2 && <a href={e.link2}>{e.linkText2} &rarr;</a>} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <a class="row__help" href={CORRECTION_MAILTO}>Report a correction</a></p>
+        <p class="row__meta">Subject to change by the court &middot; Source: {e.srcLabel}</p>
+        <p class="row__links">{e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : <span class="card__soon">Our case file on this is in progress.</span>} {e.link2 && <a href={e.link2}>{e.linkText2} &rarr;</a>} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <span class="row__help">Corrections: {CORRECTION_EMAIL}</span></p>
       </div>
     ))}
   </section>
@@ -271,10 +271,10 @@ const jsonld = {
         {e.docket && <p class="row__docket">{e.docket}</p>}
         <p class="row__status">{e.status}</p>
         {e.nextNote && <p class="row__nodate"><strong>Next court date:</strong> {e.nextNote}</p>}
-        <p class="row__meta">Subject to change by the court &middot; Source: <a href={e.src} target="_blank" rel="noopener noreferrer">{e.srcLabel}</a></p>
+        <p class="row__meta">Subject to change by the court &middot; Source: {e.srcLabel}</p>
         <p class="row__links">
           {e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : <span class="card__soon">Our case file on this is in progress.</span>}
-          <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <a class="row__help" href={CORRECTION_MAILTO}>Report a correction</a>
+          <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <span class="row__help">Corrections: {CORRECTION_EMAIL}</span>
         </p>
       </div>
     ))}
@@ -290,8 +290,8 @@ const jsonld = {
         {e.docket && <p class="row__docket">{e.docket}</p>}
         <p class="row__status">{e.status}</p>
         {e.nextNote && <p class="row__nodate"><strong>Next court date:</strong> {e.nextNote}</p>}
-        <p class="row__meta">Subject to change by the court &middot; Source: <a href={e.src} target="_blank" rel="noopener noreferrer">{e.srcLabel}</a></p>
-        <p class="row__links">{e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : <span class="card__soon">Our case file on this is in progress.</span>} {e.link2 && <a href={e.link2}>{e.linkText2} &rarr;</a>} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <a class="row__help" href={CORRECTION_MAILTO}>Report a correction</a></p>
+        <p class="row__meta">Subject to change by the court &middot; Source: {e.srcLabel}</p>
+        <p class="row__links">{e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : <span class="card__soon">Our case file on this is in progress.</span>} {e.link2 && <a href={e.link2}>{e.linkText2} &rarr;</a>} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <span class="row__help">Corrections: {CORRECTION_EMAIL}</span></p>
       </div>
     ))}
     {appeals.map((e) => (
@@ -303,8 +303,8 @@ const jsonld = {
         <p class="row__status">{e.status}</p>
         {e.nextNote && <p class="row__nodate"><strong>Next court date:</strong> {e.nextNote}</p>}
         <p class="row__note">{e.note}</p>
-        <p class="row__meta">Subject to change by the court &middot; Source: <a href={e.src} target="_blank" rel="noopener noreferrer">{e.srcLabel}</a> ({e.srcType}){e.src2 && <span class="row__src2"> &middot; Also: <a href={e.src2} target="_blank" rel="noopener noreferrer">{e.srcLabel2}</a></span>}</p>
-        <p class="row__links">{e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : <span class="card__soon">Our case file on this is in progress.</span>} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <a class="row__help" href={CORRECTION_MAILTO}>Report a correction</a></p>
+        <p class="row__meta">Subject to change by the court &middot; Source: {e.srcLabel} ({e.srcType}){e.src2 && <span class="row__src2"> &middot; Also: {e.srcLabel2}</span>}</p>
+        <p class="row__links">{e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : <span class="card__soon">Our case file on this is in progress.</span>} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <span class="row__help">Corrections: {CORRECTION_EMAIL}</span></p>
       </div>
     ))}
   </section>
@@ -322,10 +322,10 @@ const jsonld = {
         <p class="row__status">{e.status}</p>
         {e.nextNote && <p class="row__nodate"><strong>Next court date:</strong> {e.nextNote}</p>}
         <p class="row__note">{e.note}</p>
-        <p class="row__meta">Subject to change by the court &middot; Source: <a href={e.src} target="_blank" rel="noopener noreferrer">{e.srcLabel}</a> ({e.srcType}){e.src2 && <span class="row__src2"> &middot; Also: <a href={e.src2} target="_blank" rel="noopener noreferrer">{e.srcLabel2}</a></span>}</p>
+        <p class="row__meta">Subject to change by the court &middot; Source: {e.srcLabel} ({e.srcType}){e.src2 && <span class="row__src2"> &middot; Also: {e.srcLabel2}</span>}</p>
         <p class="row__links">
           {e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : <span class="card__soon">Our case file on this is in progress.</span>}
-          <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <a class="row__help" href={CORRECTION_MAILTO}>Report a correction</a>
+          <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <span class="row__help">Corrections: {CORRECTION_EMAIL}</span>
         </p>
       </div>
     ))}
@@ -343,8 +343,8 @@ const jsonld = {
         <p class="row__status">{e.status}</p>
         {e.nextNote && <p class="row__nodate"><strong>Next court date:</strong> {e.nextNote}</p>}
         <p class="row__note">{e.note}</p>
-        <p class="row__meta">Source: <a href={e.src} target="_blank" rel="noopener noreferrer">{e.srcLabel}</a> ({e.srcType}){e.src2 && <span class="row__src2"> &middot; Also: <a href={e.src2} target="_blank" rel="noopener noreferrer">{e.srcLabel2}</a></span>}</p>
-        <p class="row__links">{e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : <span class="card__soon">Our case file on this is in progress.</span>} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <a class="row__help" href={CORRECTION_MAILTO}>Report a correction</a></p>
+        <p class="row__meta">Source: {e.srcLabel} ({e.srcType}){e.src2 && <span class="row__src2"> &middot; Also: {e.srcLabel2}</span>}</p>
+        <p class="row__links">{e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : <span class="card__soon">Our case file on this is in progress.</span>} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <span class="row__help">Corrections: {CORRECTION_EMAIL}</span></p>
       </div>
     ))}
   </section>
@@ -402,7 +402,7 @@ const jsonld = {
         </tbody>
       </table>
     </div>
-    <p class="cal-note evidence">Updated: {LAST_UPDATED}. All dates are subject to change by the court. <a href={CORRECTION_MAILTO}>Report a correction</a>.</p>
+    <p class="cal-note evidence">Updated: {LAST_UPDATED}. All dates are subject to change by the court. Corrections: {CORRECTION_EMAIL}.</p>
   </section>
 
   <section class="wrap cal-sec" aria-labelledby="how-we-verify">
@@ -419,7 +419,7 @@ const jsonld = {
         <li><strong>A press conference is not a hearing.</strong> Briefings, filing deadlines, and announcements do not go on the calendar. Only proceedings a court has actually set do.</li>
       </ol>
       <p>Even so: courts continue courts. If you plan to attend, call the clerk's office first.</p>
-      <p>The full <a href="/court-calendar-policy/">Court Calendar and Case-Tracking Policy</a> sets out what inclusion on this page does and does not mean, what every entry must show before it is published, and how to report a correction. If something here is wrong, <a href={CORRECTION_MAILTO}>tell us</a> and we will fix it.</p>
+      <p>The full <a href="/court-calendar-policy/">Court Calendar and Case-Tracking Policy</a> sets out what inclusion on this page does and does not mean, what every entry must show before it is published, and how to report a correction. If something here is wrong, email {CORRECTION_EMAIL} and we will fix it.</p>
       <p>Want to feel why seating twelve takes days? <a href="/voir-dire-simulator/">Play our free Voir Dire Simulator</a> &mdash; question the pool, argue cause, and try to survive a Batson challenge.</p>
     </div>
   </section>

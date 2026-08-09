@@ -29,8 +29,10 @@ facts, dates, FAQ copy, or hero-summary copy directly to the Astro page.
   actively underway, so it remains visible after its start date.
 - `faq_question` is optional. When present, the page and its search-engine FAQ
   data automatically create an answer from that row.
-- Source and internal-link fields must contain complete web addresses or a site
-  path beginning with `/`.
+- Source fields must contain complete `http` or `https` web addresses. They are
+  retained as editorial records but displayed as non-clickable source names.
+- Internal-link fields must contain a same-site path beginning with `/`. The
+  validator rejects external URLs so calendar links cannot send readers away.
 - Do not put tabs or hard line breaks inside a cell.
 
 The page automatically sorts court dates, builds the next-dates summary, renders

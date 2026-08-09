@@ -1,7 +1,13 @@
 ---
 import '../styles/global.css';
-export interface Props { title: string; description?: string; jsonld?: object; ogImage?: string; }
-const { title, description = 'Sourced, victim-centered true-crime case files — what happened, and what it teaches about staying safe.', jsonld, ogImage = '/og.png' } = Astro.props;
+export interface Props { title: string; description?: string; jsonld?: object; ogImage?: string; internalLinksOnly?: boolean; }
+const {
+  title,
+  description = 'Sourced, victim-centered true-crime case files — what happened, and what it teaches about staying safe.',
+  jsonld,
+  ogImage = '/og.png',
+  internalLinksOnly = false,
+} = Astro.props;
 const BRAND = 'Cassian Creed';
 const BRAND_SUFFIX = ` | ${BRAND}`;
 // Page authors may pass an existing brand suffix while content is migrated.
@@ -232,7 +238,7 @@ function navActive(href){
   <footer class="site-foot"><div class="site-foot__inner">
     <span class="evidence">© 2026 Neural Edge Publishing</span>
     <span class="site-foot__note">Sourced · victim-centered · no gratuitous detail.</span>
-            <span class="site-foot__social"><a href="/explainers/">Explainers</a> · <a href="/guides/">Guides</a> · <a href="/glossary/">Glossary</a> · <a href="/case-solver/">Case Solver</a> · <a href="/forensic-tools/">Forensic Tools</a> · <a href="/safety/">Stay Safe</a> · <a href="/support/">Support</a> · <a href="/mission/">Mission</a> · <a href="/about/">About</a> · <a href="https://x.com/CassianCreed">Follow on X</a> · <a href="https://www.tiktok.com/@cassiancreed">Follow on TikTok</a> · <a href="https://cassiancreed.beehiiv.com/subscribe?utm_source=website&utm_medium=footer&utm_campaign=lm_case_how-to-read-a-case">Free newsletter</a></span>
+            <span class="site-foot__social"><a href="/explainers/">Explainers</a> · <a href="/guides/">Guides</a> · <a href="/glossary/">Glossary</a> · <a href="/case-solver/">Case Solver</a> · <a href="/forensic-tools/">Forensic Tools</a> · <a href="/safety/">Stay Safe</a> · <a href="/support/">Support</a> · <a href="/mission/">Mission</a> · <a href="/about/">About</a>{internalLinksOnly ? <> · Follow on X · Follow on TikTok · Free newsletter</> : <> · <a href="https://x.com/CassianCreed">Follow on X</a> · <a href="https://www.tiktok.com/@cassiancreed">Follow on TikTok</a> · <a href="https://cassiancreed.beehiiv.com/subscribe?utm_source=website&utm_medium=footer&utm_campaign=lm_case_how-to-read-a-case">Free newsletter</a></>}</span>
   </div></footer>
   <script is:inline>
   (function(){
