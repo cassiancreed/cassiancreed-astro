@@ -1,18 +1,32 @@
 ---
 title: "The Idaho Student Murders: How Bryan Kohberger Was Caught, Pleaded Guilty, and Was Sentenced"
-description: "How Bryan Kohberger was identified through DNA on a knife sheath, pleaded guilty in 2025, and received four consecutive life sentences for the Idaho murders."
+seoTitle: "Can Bryan Kohberger Withdraw His Guilty Plea and Get a New Trial?"
+description: "Bryan Kohberger is seeking post-conviction relief after pleading guilty to the Idaho murders. Here is what Idaho's manifest-injustice standard means and what happens next."
 pubDate: 2026-05-28
+updatedDate: 2026-08-08
 tag: "Case Files"
 featured: false
 victim: "Kaylee Goncalves, Madison Mogen, Xana Kernodle, Ethan Chapin"
 incidentDate: "November 13, 2022"
 location: "Moscow, Idaho"
 jurisdiction: "Latah County, Idaho"
-status: "Bryan Kohberger pleaded guilty (2025); life without parole"
+status: "Convicted and serving four consecutive life sentences; post-conviction petition pending"
 ---
 
 
 Bryan Kohberger murdered four University of Idaho students — Kaylee Goncalves, Madison Mogen, Xana Kernodle, and Ethan Chapin — in their off-campus home in Moscow, Idaho, in the early hours of November 13, 2022. On July 2, 2025, he pleaded guilty to four counts of first-degree murder and one count of burglary, and on July 23, 2025, an Idaho judge sentenced him to four consecutive terms of life in prison without the possibility of parole. The case was cracked by DNA recovered from a knife sheath left at the scene, traced to Kohberger through investigative genetic genealogy.
+
+> **August 8, 2026 update:** Kohberger filed a petition for post-conviction relief on July 27, 2026, asking the Ada County District Court to set aside his convictions and permit him to withdraw his guilty plea. He alleges ineffective assistance of counsel, coercion, false promises, and withheld evidence. Those are his claims; the court has not accepted them as fact or vacated any conviction. Attorney Gregory Rauch has since been appointed to represent him. Kohberger remains convicted and continues serving the sentence imposed in 2025.
+
+## Can Bryan Kohberger Withdraw His Guilty Plea and Get a New Trial?
+
+He can ask, but he does not receive a new trial merely by filing the petition. Idaho Criminal Rule 33(c) allows a court to set aside a judgment after sentencing and permit withdrawal of a guilty plea only to correct a **manifest injustice**. That is a substantially higher barrier than the standard applied before sentencing.
+
+Kohberger's signed plea agreement states that he was satisfied with his legal representation, had reviewed possible defenses, was not being coerced, and was waiving his direct-appeal rights. His 2026 petition takes the opposite position: he now alleges that his plea resulted from ineffective assistance, coercion, disinformation, false promises, and the withholding of evidence he considers exculpatory. The judge must decide whether the petition and supporting proof justify relief under Idaho law.
+
+At this stage, the convictions and four consecutive life-without-parole sentences remain in force. Appointment of counsel allows the post-conviction case to proceed with representation; it is not a finding that Kohberger's allegations are true and does not itself grant a hearing or a new trial. If the convictions were eventually vacated and the guilty plea withdrawn, the prosecution could again pursue the original charges, and the death penalty could return as a potential sentencing issue. That outcome is possible, not automatic.
+
+**Watch the current legal explainer:** [YouTube](https://youtu.be/8eSHCAZUTaQ) · [TikTok](https://www.tiktok.com/@cassiancreed/video/7671811624809876749)
 
 ## What Happened
 
@@ -45,6 +59,8 @@ Two other roommates were home and survived. Out of respect for them, this accoun
 - **2023–2024:** The case proceeds through pretrial litigation. A not-guilty plea is entered on his behalf, and prosecutors signal their intent to seek the death penalty.
 - **July 2, 2025:** Kohberger pleads guilty to four counts of first-degree murder and one count of burglary in a Boise courtroom, under a plea agreement that removes the death penalty.
 - **July 23, 2025:** District Judge Steven Hippler sentences Kohberger to four consecutive life sentences without parole, plus the maximum 10 years on the burglary count.
+- **July 27, 2026:** Kohberger files a petition for post-conviction relief, alleging ineffective assistance of counsel and asking to withdraw his guilty plea.
+- **August 3, 2026:** Attorney Gregory Rauch is appointed to represent Kohberger in the post-conviction proceeding.
 
 ## The Investigation and Key Evidence
 
@@ -76,9 +92,9 @@ The plea, while removing the public spectacle of a trial, also meant that some q
 
 ## Where Things Stand Now
 
-As of mid-2025, the criminal case is effectively closed. Kohberger has been convicted by his own guilty plea and sentenced to life without parole, and the agreement bars him from appealing. Barring extraordinary developments, he will spend the rest of his life in an Idaho maximum-security prison.
+As of August 8, 2026, Kohberger remains convicted by his 2025 guilty plea and is serving four consecutive life sentences without parole, plus 10 years for burglary. His plea agreement waived direct appeals and a motion to reduce the sentence under Idaho Criminal Rule 35. It did not prevent him from filing a separate post-conviction challenge alleging that the plea itself was constitutionally defective.
 
-In the weeks after sentencing, courts began unsealing portions of the case file, and additional police records were released, offering the public a fuller view of the investigation. More records have continued to emerge over time. What did not change is the core outcome: a man with no apparent connection to his victims was identified through forensic and digital evidence, admitted his guilt, and was removed from society permanently.
+The July 2026 petition has reopened litigation, but it has not reopened the criminal judgment. Kohberger bears the burden of establishing a legal basis for relief. Idaho Rule 33(c) authorizes post-sentencing plea withdrawal only to correct manifest injustice. Until a court grants relief, the guilty plea, convictions, and sentences remain unchanged.
 
 For the families, the legal resolution is not the same as closure. Like the long aftermath seen in cases such as the Murdaugh prosecution in South Carolina, a verdict or plea answers the question of accountability without undoing the loss. Four families are left to carry that absence forward.
 
@@ -86,6 +102,12 @@ For the families, the legal resolution is not the same as closure. Like the long
 
 **Did Bryan Kohberger plead guilty or go to trial?**
 He pleaded guilty. On July 2, 2025, Kohberger admitted to four counts of first-degree murder and one count of burglary under a plea agreement that took the death penalty off the table. There was no trial on the question of guilt.
+
+**Can Bryan Kohberger withdraw his guilty plea and get a new trial?**
+He has asked the court to allow it, but no new trial has been granted. Because he was already sentenced, Idaho Rule 33(c) requires him to establish that withdrawing the plea is necessary to correct a manifest injustice. His allegations of ineffective counsel, coercion, false promises, and withheld evidence remain allegations unless proved and accepted by the court.
+
+**Did his plea agreement prevent every later court challenge?**
+No. The agreement waived direct appeals and a Rule 35 sentence-reduction motion. Kohberger is now using Idaho's separate post-conviction process to challenge the validity of the plea itself. Filing that petition does not undo the waiver, vacate the judgment, or prove his claims.
 
 **What was Bryan Kohberger's sentence?**
 On July 23, 2025, he was sentenced to four consecutive life terms in prison without the possibility of parole, plus the maximum 10 years for burglary. The plea agreement also barred him from appealing.
@@ -97,7 +119,7 @@ Investigators recovered DNA from a Ka-Bar knife sheath left at the scene and use
 No clear motive has been established. Kohberger had no known relationship with any of the four victims, and at sentencing the judge stated that the motive may never be known. He declined to speak in court.
 
 **Where is Bryan Kohberger now?**
-He is serving his sentence at the Idaho Maximum Security Institution near Kuna, Idaho. Because of the terms of his plea, he is not eligible for parole and cannot appeal.
+He is serving his sentence at the Idaho Maximum Security Institution near Kuna, Idaho. He is not eligible for parole under the sentence now in force. His direct-appeal rights were waived in the plea agreement, but his post-conviction petition is pending.
 
 ---
 
@@ -112,3 +134,8 @@ He is serving his sentence at the Idaho Maximum Security Institution near Kuna, 
 - CBS News — [Bryan Kohberger sentenced to 4 life terms in prison without parole for Idaho murders](https://www.cbsnews.com/news/bryan-kohberger-sentence-idaho-murders/)
 - CNN — [Bryan Kohberger plea hearing: the new evidence we learned about from the prosecution](https://www.cnn.com/2025/07/03/us/bryan-kohberger-plea-hearing-new-evidence)
 - Idaho Office of the Attorney General — [Attorney General Labrador Commends Life Sentences for Bryan Kohberger](https://www.ag.idaho.gov/newsroom/attorney-general-labrador-commends-life-sentences-for-bryan-kohberger/)
+- Idaho Supreme Court — [Idaho Criminal Rule 33(c): Withdrawal of Plea of Guilty](https://isc.idaho.gov/rules-procedure/icr)
+- Ada County District Court — [State v. Bryan C. Kohberger case-record information](https://adacounty.id.gov/judicial-court/kohberger/)
+- Associated Press — [Bryan Kohberger asks to withdraw his guilty plea in the University of Idaho murders case](https://apnews.com/article/57e2021fc9159399751749377c6bd7f6)
+- ABC News — [Bryan Kohberger seeks to withdraw guilty plea in University of Idaho murders](https://abcnews.com/US/bryan-kohberger-challenge-conviction-university-idaho-murders-court/story?id=135126516)
+- KIVI — [New public defender appointed in bid to withdraw guilty plea](https://www.kivitv.com/university-of-idaho-murders/new-public-defender-appointed-to-represent-bryan-kohberger-in-bid-to-withdraw-guilty-plea)
