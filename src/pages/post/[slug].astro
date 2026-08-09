@@ -3,6 +3,7 @@ import Base from '../../layouts/Base.astro';
 import { getCollection } from 'astro:content';
 import CaptureBlock from '../../components/CaptureBlock.astro';
 import BookCTA from '../../components/BookCTA.astro';
+import SafetyAlert from '../../components/SafetyAlert.astro';
 import { existsSync } from 'node:fs';
 import { resolve } from 'node:path';
 export async function getStaticPaths() {
@@ -27,7 +28,7 @@ function pickOffer(p){
   if (explicit === 'dna' || explicit === 'safety' || explicit === 'jury') return explicit;
   const s = p.slug;
   if (/(dna|genetic-genealog|genealog|family-tree|othram|codis|-fgg-|fgg-|forensic-genetic)/.test(s)) return 'dna';
-  if (/(coercive-control|warning-signs|stay-safe|safety)/.test(s)) return 'safety';
+  if (/(coercive-control|stalking|warning-signs|stay-safe|safety)/.test(s)) return 'safety';
   return 'jury';
 }
 const captureOffer = pickOffer(post);
@@ -79,6 +80,7 @@ const jsonld = faqNode
   : { "@context":"https://schema.org", ...articleNode };
 ---
 <Base title={post.data.seoTitle ?? post.data.title} description={post.data.description} jsonld={jsonld} ogImage={socialImage}>
+  {captureOffer === 'safety' && <SafetyAlert />}
   <article class="post">
     <p class="evidence evidence--accent">{post.data.tag}</p>
     <h1>{post.data.title}</h1>
