@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import CaptureBlock from '../components/CaptureBlock.astro';
 const jsonld = {
   "@context": "https://schema.org",
   "@graph": [
@@ -56,4 +57,13 @@ const jsonld = {
       <p style="font-size:0.8em;opacity:0.6;"><small>Other channels (slower): Email <a href="mailto:cassiancreed@cassiancreed.com">cassiancreed@cassiancreed.com</a> · Google Voice <a href="tel:+14257805244">(425)&nbsp;780-5244</a> · Mail: Cassian Creed, c/o Neural Edge Publishing, PO Box 1039, Mill Creek, WA 98082, United States.</small></p>
     </div>
   </article>
+  <div class="wrap about-next" aria-label="Continue with Cassian Creed">
+    <p><a class="btn" href="/case-files/">Read the case files &rarr;</a> <a class="btn btn--ghost" href="/books/">Browse the books &rarr;</a></p>
+    <CaptureBlock offer="case" content="about" />
+  </div>
 </Base>
+
+<style>
+  .about-next{margin-top:12px}
+  .about-next>p{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:22px}
+</style>
