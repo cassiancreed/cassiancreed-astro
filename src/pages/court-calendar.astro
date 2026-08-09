@@ -9,8 +9,7 @@ import { formatCalendarDate, parseCourtCalendar } from '../data/court-calendar-p
 // before Astro can build or publish the page.
 const calendar = parseCourtCalendar(calendarTsv);
 const { entries, unconfirmed, appeals, completed } = calendar;
-const LAST_VERIFIED = formatCalendarDate(calendar.metadata.last_full_sweep);
-const TARGETED_UPDATE = formatCalendarDate(calendar.metadata.targeted_update);
+const LAST_UPDATED = formatCalendarDate(calendar.metadata.last_updated);
 const PAGE_TITLE = calendar.metadata.page_title;
 const PAGE_DESCRIPTION = calendar.metadata.page_description;
 const localDateParts = Object.fromEntries(
@@ -59,7 +58,7 @@ const genericFaqs = [
   },
   {
     question: 'How are these dates verified?',
-    answer: "Each one traces to a court filing, a prosecutor's office, a state agency record, or courtroom reporting, and each card names its source and the date we last checked it.",
+    answer: "Each one traces to a court filing, a prosecutor's office, a state agency record, or courtroom reporting. We review the calendar daily, and each entry names its source.",
   },
 ];
 const allFaqs = [...caseFaqs, ...genericFaqs];
@@ -83,7 +82,7 @@ const jsonld = {
       description: PAGE_DESCRIPTION,
       isPartOf: { '@id': 'https://cassiancreed.com/#website' },
       publisher: { '@id': 'https://cassiancreed.com/#org' },
-      dateModified: calendar.metadata.targeted_update,
+      dateModified: calendar.metadata.last_updated,
       mainEntity: { '@id': 'https://cassiancreed.com/court-calendar#schedule' },
     },
     {
@@ -165,7 +164,7 @@ const jsonld = {
       ) : 'No confirmed future court dates are currently listed.'}
     </p>
     <p class="cal-fresh">
-      <strong>Targeted update: {TARGETED_UPDATE}. Last full sweep: {LAST_VERIFIED}.</strong> Court dates move. Every entry below carries its source and the date <em>that entry</em> was last verified &mdash; we do not re-date a card nobody re-checked. Confirm with the court before you travel.
+      <strong>Updated: {LAST_UPDATED}.</strong> Court dates move. Confirm with the court before you travel.
     </p>
   </section>
 
@@ -173,7 +172,7 @@ const jsonld = {
     <h2 id="about-this-calendar" class="cal-notice__h">About this calendar</h2>
     <div class="cal-notice">
       <p>
-        <strong>About this calendar:</strong> Neural Edge Publishing provides this calendar as a best-effort informational resource for readers following publicly reported court proceedings and case developments. Inclusion does not imply endorsement, guilt, credibility, or editorial approval. Allegations, arrests, and charges are not convictions. Court dates, legal status, and other information may change. Each entry identifies the sources and date used for its latest review. Readers should consult the linked court or government source for the most current official information and may report a correction through the correction link provided.
+        <strong>About this calendar:</strong> Neural Edge Publishing provides this calendar as a best-effort informational resource for readers following publicly reported court proceedings and case developments. Inclusion does not imply endorsement, guilt, credibility, or editorial approval. Allegations, arrests, and charges are not convictions. Court dates, legal status, and other information may change. The page's Updated date marks its latest daily review, and each entry identifies its sources. Readers should consult the linked court or government source for the most current official information and may report a correction through the correction link provided.
       </p>
       <p class="cal-notice__links">
         <a href="/court-calendar-policy/">Read the full Court Calendar and Case-Tracking Policy</a>
@@ -197,7 +196,6 @@ const jsonld = {
           <p class="card__detail">{e.detail}</p>
           {e.nextNote && <p class="card__nodate"><span class="card__k">Next court date</span> {e.nextNote}</p>}
           <p class="card__meta">
-            <span class="card__verified">Last verified: {e.verified || LAST_VERIFIED}</span>
             <span class="card__change">All dates are subject to change by the court.</span>
           </p>
           <p class="card__src">
@@ -257,7 +255,7 @@ const jsonld = {
         {e.docket && <p class="row__docket">{e.docket}</p>}
         <p class="row__status">{e.status}</p>
         {e.nextNote && <p class="row__nodate"><strong>Next court date:</strong> {e.nextNote}</p>}
-        <p class="row__meta">Last verified: {e.verified || LAST_VERIFIED} &middot; subject to change by the court &middot; Source: <a href={e.src} target="_blank" rel="noopener noreferrer">{e.srcLabel}</a></p>
+        <p class="row__meta">Subject to change by the court &middot; Source: <a href={e.src} target="_blank" rel="noopener noreferrer">{e.srcLabel}</a></p>
         <p class="row__links">{e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : <span class="card__soon">Our case file on this is in progress.</span>} {e.link2 && <a href={e.link2}>{e.linkText2} &rarr;</a>} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <a class="row__help" href={CORRECTION_MAILTO}>Report a correction</a></p>
       </div>
     ))}
@@ -273,7 +271,7 @@ const jsonld = {
         {e.docket && <p class="row__docket">{e.docket}</p>}
         <p class="row__status">{e.status}</p>
         {e.nextNote && <p class="row__nodate"><strong>Next court date:</strong> {e.nextNote}</p>}
-        <p class="row__meta">Last verified: {e.verified || LAST_VERIFIED} &middot; subject to change by the court &middot; Source: <a href={e.src} target="_blank" rel="noopener noreferrer">{e.srcLabel}</a></p>
+        <p class="row__meta">Subject to change by the court &middot; Source: <a href={e.src} target="_blank" rel="noopener noreferrer">{e.srcLabel}</a></p>
         <p class="row__links">
           {e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : <span class="card__soon">Our case file on this is in progress.</span>}
           <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <a class="row__help" href={CORRECTION_MAILTO}>Report a correction</a>
@@ -292,7 +290,7 @@ const jsonld = {
         {e.docket && <p class="row__docket">{e.docket}</p>}
         <p class="row__status">{e.status}</p>
         {e.nextNote && <p class="row__nodate"><strong>Next court date:</strong> {e.nextNote}</p>}
-        <p class="row__meta">Last verified: {e.verified || LAST_VERIFIED} &middot; subject to change by the court &middot; Source: <a href={e.src} target="_blank" rel="noopener noreferrer">{e.srcLabel}</a></p>
+        <p class="row__meta">Subject to change by the court &middot; Source: <a href={e.src} target="_blank" rel="noopener noreferrer">{e.srcLabel}</a></p>
         <p class="row__links">{e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : <span class="card__soon">Our case file on this is in progress.</span>} {e.link2 && <a href={e.link2}>{e.linkText2} &rarr;</a>} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <a class="row__help" href={CORRECTION_MAILTO}>Report a correction</a></p>
       </div>
     ))}
@@ -305,7 +303,7 @@ const jsonld = {
         <p class="row__status">{e.status}</p>
         {e.nextNote && <p class="row__nodate"><strong>Next court date:</strong> {e.nextNote}</p>}
         <p class="row__note">{e.note}</p>
-        <p class="row__meta">Last verified: {e.verified || LAST_VERIFIED} &middot; subject to change by the court &middot; Source: <a href={e.src} target="_blank" rel="noopener noreferrer">{e.srcLabel}</a> ({e.srcType}){e.src2 && <span class="row__src2"> &middot; Also: <a href={e.src2} target="_blank" rel="noopener noreferrer">{e.srcLabel2}</a></span>}</p>
+        <p class="row__meta">Subject to change by the court &middot; Source: <a href={e.src} target="_blank" rel="noopener noreferrer">{e.srcLabel}</a> ({e.srcType}){e.src2 && <span class="row__src2"> &middot; Also: <a href={e.src2} target="_blank" rel="noopener noreferrer">{e.srcLabel2}</a></span>}</p>
         <p class="row__links">{e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : <span class="card__soon">Our case file on this is in progress.</span>} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <a class="row__help" href={CORRECTION_MAILTO}>Report a correction</a></p>
       </div>
     ))}
@@ -324,7 +322,7 @@ const jsonld = {
         <p class="row__status">{e.status}</p>
         {e.nextNote && <p class="row__nodate"><strong>Next court date:</strong> {e.nextNote}</p>}
         <p class="row__note">{e.note}</p>
-        <p class="row__meta">Last verified: {e.verified || LAST_VERIFIED} &middot; subject to change by the court &middot; Source: <a href={e.src} target="_blank" rel="noopener noreferrer">{e.srcLabel}</a> ({e.srcType}){e.src2 && <span class="row__src2"> &middot; Also: <a href={e.src2} target="_blank" rel="noopener noreferrer">{e.srcLabel2}</a></span>}</p>
+        <p class="row__meta">Subject to change by the court &middot; Source: <a href={e.src} target="_blank" rel="noopener noreferrer">{e.srcLabel}</a> ({e.srcType}){e.src2 && <span class="row__src2"> &middot; Also: <a href={e.src2} target="_blank" rel="noopener noreferrer">{e.srcLabel2}</a></span>}</p>
         <p class="row__links">
           {e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : <span class="card__soon">Our case file on this is in progress.</span>}
           <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <a class="row__help" href={CORRECTION_MAILTO}>Report a correction</a>
@@ -345,7 +343,7 @@ const jsonld = {
         <p class="row__status">{e.status}</p>
         {e.nextNote && <p class="row__nodate"><strong>Next court date:</strong> {e.nextNote}</p>}
         <p class="row__note">{e.note}</p>
-        <p class="row__meta">Last verified: {e.verified || LAST_VERIFIED} &middot; Source: <a href={e.src} target="_blank" rel="noopener noreferrer">{e.srcLabel}</a> ({e.srcType}){e.src2 && <span class="row__src2"> &middot; Also: <a href={e.src2} target="_blank" rel="noopener noreferrer">{e.srcLabel2}</a></span>}</p>
+        <p class="row__meta">Source: <a href={e.src} target="_blank" rel="noopener noreferrer">{e.srcLabel}</a> ({e.srcType}){e.src2 && <span class="row__src2"> &middot; Also: <a href={e.src2} target="_blank" rel="noopener noreferrer">{e.srcLabel2}</a></span>}</p>
         <p class="row__links">{e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : <span class="card__soon">Our case file on this is in progress.</span>} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <a class="row__help" href={CORRECTION_MAILTO}>Report a correction</a></p>
       </div>
     ))}
@@ -404,7 +402,7 @@ const jsonld = {
         </tbody>
       </table>
     </div>
-    <p class="cal-note evidence">Targeted update: {TARGETED_UPDATE}. Last full sweep: {LAST_VERIFIED}. Each entry above carries its own last-verified date. All dates are subject to change by the court. <a href={CORRECTION_MAILTO}>Report a correction</a>.</p>
+    <p class="cal-note evidence">Updated: {LAST_UPDATED}. All dates are subject to change by the court. <a href={CORRECTION_MAILTO}>Report a correction</a>.</p>
   </section>
 
   <section class="wrap cal-sec" aria-labelledby="how-we-verify">
@@ -416,7 +414,7 @@ const jsonld = {
         <li><strong>The source is never us.</strong> Each date traces to a court filing, a prosecutor's office, a state agency record, or a reporter who was in the room. We do not cite our own articles as the source for a date.</li>
         <li><strong>We name the source type.</strong> A district attorney's announcement and a news report are not the same thing, so we label which one you are looking at.</li>
         <li><strong>No date, no entry.</strong> If a case is active but nothing is scheduled, it goes in <a href="#unconfirmed">Dates Not Yet Confirmed</a> and stays there. We would rather say "we don't know" than guess.</li>
-        <li><strong>We re-check before we publish, and we date the check.</strong> Every card carries the date it was last verified.</li>
+        <li><strong>We review the calendar daily.</strong> We re-check every entry before publishing the page's Updated date.</li>
         <li><strong>Legal status is stated exactly.</strong> Charged is not convicted. A plea is not a verdict. An appeal is not a retrial.</li>
         <li><strong>A press conference is not a hearing.</strong> Briefings, filing deadlines, and announcements do not go on the calendar. Only proceedings a court has actually set do.</li>
       </ol>
@@ -440,7 +438,7 @@ const jsonld = {
       <p>Yes, and they often do. Hearings get continued, trials get pushed, and courts reschedule with little notice. Treat every date here as the best current information, not a promise.</p>
 
       <h3>How are these dates verified?</h3>
-      <p>Each one traces to a court filing, a prosecutor's office, a state agency record, or courtroom reporting, and each card names its source and the date we last checked it. See <a href="#how-we-verify">How We Verify Court Dates</a>.</p>
+      <p>Each one traces to a court filing, a prosecutor's office, a state agency record, or courtroom reporting. We review the calendar daily, and each entry names its source. See <a href="#how-we-verify">How We Verify Court Dates</a>.</p>
     </div>
   </section>
 
@@ -486,7 +484,7 @@ const jsonld = {
     .card__detail,.row__note{font-size:14px;color:var(--ink-2);margin:0 0 12px;line-height:1.5}
     .card__k{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);display:block;margin-bottom:2px}
     .card__meta{display:flex;flex-direction:column;gap:2px;margin:0 0 10px}
-    .card__verified,.card__change,.row__meta{font-family:var(--mono);font-size:11px;color:var(--ink-3);letter-spacing:.03em}
+    .card__change,.row__meta{font-family:var(--mono);font-size:11px;color:var(--ink-3);letter-spacing:.03em}
     .card__src{font-size:13px;margin:0 0 12px}
     .card__src a,.row__meta a{color:var(--accent);text-decoration:underline;text-underline-offset:2px}
     .card__srctype{display:block;font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:var(--ink-3);margin-top:3px}
