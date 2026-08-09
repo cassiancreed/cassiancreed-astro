@@ -1,0 +1,35 @@
+<aside class="safety-alert" aria-labelledby="safety-alert-title">
+  <div class="safety-alert__copy">
+    <strong id="safety-alert-title">Could someone be monitoring this device?</strong>
+    <span>Consider using a safer device they have not accessed. Changing settings, deleting history, or removing a tracker can sometimes alert the person monitoring you.</span>
+    <span class="safety-alert__limit">Quick Exit changes the screen. It cannot erase browser history, network records, account activity, or monitoring software.</span>
+  </div>
+  <button class="safety-exit" data-quick-exit type="button" aria-label="Quickly leave this page and open a weather website">Quick Exit</button>
+</aside>
+
+<script is:inline>
+  (function () {
+    var exits = document.querySelectorAll('[data-quick-exit]');
+    var lastEscape = 0;
+    function leaveSafetyPage() {
+      window.location.replace('https://weather.com/');
+    }
+    exits.forEach(function (exit) { exit.addEventListener('click', leaveSafetyPage); });
+    document.addEventListener('keydown', function (event) {
+      if (event.key !== 'Escape') return;
+      var now = Date.now();
+      if (now - lastEscape < 1000) leaveSafetyPage();
+      lastEscape = now;
+    });
+  })();
+</script>
+
+<style>
+  .safety-alert{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:center;gap:18px;padding:12px 20px;background:#241b19;color:#fff;border-bottom:2px solid #d9a65c;box-shadow:0 4px 18px rgba(0,0,0,.22)}
+  .safety-alert__copy{display:flex;flex-direction:column;gap:2px;max-width:930px;font-size:.91rem;line-height:1.35}
+  .safety-alert__copy strong{color:#fff;font-size:1rem}
+  .safety-alert__limit{color:#ddd3ca;font-size:.82rem}
+  .safety-exit{flex:0 0 auto;min-width:112px;min-height:48px;padding:10px 18px;border:2px solid #fff;border-radius:7px;background:#fff;color:#3a1713;font:inherit;font-weight:800;cursor:pointer}
+  .safety-exit:hover,.safety-exit:focus-visible{background:#f6dfb9;color:#24100d;outline:3px solid #d9a65c;outline-offset:2px}
+  @media(max-width:720px){.safety-alert{align-items:flex-start;padding:10px 12px;gap:10px}.safety-alert__copy{font-size:.79rem}.safety-alert__limit{font-size:.72rem}.safety-exit{min-width:92px;padding:9px 10px}}
+</style>
