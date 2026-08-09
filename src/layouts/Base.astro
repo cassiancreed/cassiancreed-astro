@@ -20,6 +20,7 @@ const orgLd = {
   "correctionsPolicy": "https://cassiancreed.com/about/",
   "sameAs": [
     "https://x.com/CassianCreed",
+    "https://www.tiktok.com/@cassiancreed",
     "https://cassiancreed.beehiiv.com"
   ]
 };
@@ -39,7 +40,10 @@ const personLd = {
     "investigative timelines",
     "victim-centered storytelling"
   ],
-  "sameAs": [ "https://x.com/CassianCreed" ]
+  "sameAs": [
+    "https://x.com/CassianCreed",
+    "https://www.tiktok.com/@cassiancreed"
+  ]
 };
 
 // Active-nav highlight (NEP-REV-CWK-0717AF): mark the current page's nav item so
@@ -48,7 +52,7 @@ const navPath = (Astro.url.pathname.replace(/\/+$/, '') || '/');
 const navItems = [
   { href: '/',                      label: 'Home' },
   { href: '/start-here/',          label: 'Start Here' },
-  { href: '/case-files/',          label: 'Case Files' },
+  { href: '/case-files/',          label: 'Blog' },
   { href: '/guides/',              label: 'Guides' },
   { href: '/safety/',              label: 'Stay Safe' },
   { href: '/court-calendar/',      label: 'Court Calendar' },
@@ -213,7 +217,7 @@ function navActive(href){
   <footer class="site-foot"><div class="site-foot__inner">
     <span class="evidence">© 2026 Neural Edge Publishing</span>
     <span class="site-foot__note">Sourced · victim-centered · no gratuitous detail.</span>
-            <span class="site-foot__social"><a href="/explainers/">Explainers</a> · <a href="/guides/">Guides</a> · <a href="/glossary/">Glossary</a> · <a href="/case-solver/">Case Solver</a> · <a href="/forensic-tools/">Forensic Tools</a> · <a href="/safety/">Stay Safe</a> · <a href="/support/">Support</a> · <a href="/mission/">Mission</a> · <a href="/about/">About</a> · <a href="https://x.com/CassianCreed">Follow on X</a> · <a href="https://cassiancreed.beehiiv.com/subscribe?utm_source=website&utm_medium=footer&utm_campaign=lm_case_how-to-read-a-case">Free newsletter</a></span>
+            <span class="site-foot__social"><a href="/explainers/">Explainers</a> · <a href="/guides/">Guides</a> · <a href="/glossary/">Glossary</a> · <a href="/case-solver/">Case Solver</a> · <a href="/forensic-tools/">Forensic Tools</a> · <a href="/safety/">Stay Safe</a> · <a href="/support/">Support</a> · <a href="/mission/">Mission</a> · <a href="/about/">About</a> · <a href="https://x.com/CassianCreed">Follow on X</a> · <a href="https://www.tiktok.com/@cassiancreed">Follow on TikTok</a> · <a href="https://cassiancreed.beehiiv.com/subscribe?utm_source=website&utm_medium=footer&utm_campaign=lm_case_how-to-read-a-case">Free newsletter</a></span>
   </div></footer>
   <script is:inline>
   (function(){
