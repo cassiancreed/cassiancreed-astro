@@ -7,6 +7,9 @@ const featured = posts.find(p=>p.data.featured) || posts[0];
 const rest = posts.filter(p=> featured && p.slug!==featured.slug && p.slug!=='nancy-guthrie-abduction-what-we-know').slice(0,8);
 const cfCount = posts.filter(p=>p.data.tag==='Case Files').length;
 const short = (t)=> t.split(':')[0];
+const HOME_FORM_ID = '4d0df7d0-f274-4901-a457-091f80cecef0';
+const HOME_OFFER_ID = 'case_how_to_read_a_case_v1';
+const HOME_HERO_BASE = `https://subscribe-forms.beehiiv.com/${HOME_FORM_ID}?utm_source=website&utm_medium=hero&utm_campaign=lm_case_how-to-read-a-case`;
 // CONVERSION-FIRST RANK 1 (2026-07-28): the home shelf held exactly one entry,
 // "The Trail", and the whole shop section below was written around it (its
 // price, its cover, its "under $2" benefit copy). The title is held for
@@ -40,7 +43,12 @@ const jsonld = {
         <div class="hero__capture">
           <iframe
             class="hero__embed"
-            src="https://subscribe-forms.beehiiv.com/4d0df7d0-f274-4901-a457-091f80cecef0?utm_source=website&utm_medium=hero&utm_campaign=lm_case_how-to-read-a-case"
+            data-nep-base-src={HOME_HERO_BASE}
+            data-nep-campaign="lm_case_how-to-read-a-case"
+            data-nep-conversion-page="/"
+            data-nep-cta-id="home_hero"
+            data-nep-form-id={HOME_FORM_ID}
+            data-nep-offer-id={HOME_OFFER_ID}
             title="Get the free guide"
             loading="eager"
             scrolling="no"
@@ -48,6 +56,49 @@ const jsonld = {
           ></iframe>
           <noscript><a class="btn" href="https://cassiancreed.beehiiv.com/subscribe?utm_source=website&utm_medium=hero&utm_campaign=lm_case_how-to-read-a-case">Get the free guide &rarr;</a></noscript>
         </div>
+        <script is:inline>
+          (function(){
+            var iframe=document.querySelector('iframe.hero__embed'); if(!iframe)return;
+            var o=window.NEP_ORIGIN||null;
+            try{
+              var u=new URL(iframe.getAttribute('data-nep-base-src'));
+              if(o&&o.s){
+                [['utm_source','s'],['utm_medium','m'],['utm_campaign','c'],['utm_content','u'],['utm_term','k']].forEach(function(pair){
+                  var value=o[pair[1]]||'';
+                  if(value){u.searchParams.set(pair[0],value);}else{u.searchParams.delete(pair[0]);}
+                });
+              }
+              iframe.src=u.toString();
+            }catch(e){iframe.src=iframe.getAttribute('data-nep-base-src');}
+
+            function fire(name){
+              if(typeof window.gtag!=='function')return;
+              var a=window.NEP_ORIGIN||{};
+              window.gtag('event',name,{
+                page_path:location.pathname,
+                origin_source:a.s||'(direct)',
+                origin_medium:a.m||'(none)',
+                origin_campaign:a.c||'(none)',
+                origin_content:a.u||'(none)',
+                origin_term:a.k||'(none)',
+                origin_landing_page:a.p||'(unknown)',
+                conversion_page:iframe.dataset.nepConversionPage,
+                cta_id:iframe.dataset.nepCtaId,
+                form_id:iframe.dataset.nepFormId,
+                offer_id:iframe.dataset.nepOfferId
+              });
+            }
+            fire('capture_view');
+            var engaged=false;
+            window.addEventListener('blur',function(){
+              if(!engaged&&document.activeElement===iframe){engaged=true;fire('capture_form_engage');}
+            });
+            iframe.addEventListener('load',function(){
+              var href=''; try{href=iframe.contentWindow.location.href;}catch(e){return;}
+              if(href.indexOf('subscribed=1')!==-1){fire('capture_success');}
+            });
+          })();
+        </script>
         <p class="hero__trust">Free forever &middot; unsubscribe anytime &middot; <a href="/start-here/">new here? start here &rarr;</a></p>
         <ul class="hero__chips" aria-label="What makes these case files different">
           <li>Sourced from the public record</li>

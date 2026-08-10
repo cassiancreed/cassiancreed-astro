@@ -29,6 +29,7 @@ const OFFERS = {
     formId: JURY_FORM,        // reuses the single live subscribe form (copy+UTM matched)
     formMatched: true,
     campaign: 'lm_case_how-to-read-a-case',
+    offerId: 'case_how_to_read_a_case_v1',
     headline: 'Everyone has an opinion on a case. Here’s how to actually read one.',
     subtext: 'A charge isn’t a conviction. A theory isn’t proof. Get the free guide — we’ll send How to Read a Case Like the Court Does — a plain-language framework for weighing evidence instead of guessing, the real difference between proof and speculation, and what a verdict actually settles (and what it doesn’t) — plus how each new case’s evidence actually breaks down, using the same framework. No weekly blast; unsubscribe anytime.',
     button: 'Get the free guide',
@@ -37,6 +38,7 @@ const OFFERS = {
     formId: DNA_FORM,         // dedicated form, live 2026-07-18 (0718M)
     formMatched: true,
     campaign: 'lm_dna_how-dna-remembers',
+    offerId: 'dna_how_dna_remembers_v1',
     headline: 'The science that gives cold cases a name.',
     subtext: 'A DNA match is a lead, not a verdict. Get the free guide — we’ll send the printable How DNA Remembers guide — how shared DNA narrows a family tree into a name, the real difference between a CODIS hit and forensic genetic genealogy, and exactly what a match can (and can’t) prove in court — plus the next real identification the moment it’s confirmed. No weekly blast; unsubscribe anytime.',
     button: 'Get the free guide',
@@ -45,6 +47,7 @@ const OFFERS = {
     formId: SAFETY_FORM,      // dedicated form, live 2026-07-18 (0718M)
     formMatched: true,
     campaign: 'lm_safety_stay-safe-field-guide',
+    offerId: 'safety_stay_safe_field_guide_v1',
     // Rex requirement: crisis hotlines must be visible ON-PAGE, ungated,
     // BEFORE any signup ask. Rendered via `safetyLine` below the subtext.
     safetyLine: 'Immediate physical danger: call 911 or local emergency services. Suicide, mental-health, or substance-use crisis support: call or text 988. No signup is required for help.',
@@ -87,6 +90,8 @@ const resolvedButton   = button   ?? o.button;
 // Ungated crisis line (safety offer only). Always rendered before signup.
 const safetyLine       = (o as { safetyLine?: string }).safetyLine;
 const safetyOffer      = offer === 'safety';
+const conversionPage   = Astro.url.pathname;
+const ctaId            = content || 'capture_block';
 
 // Fallback / non-embed link. encodeURIComponent guards odd campaign strings.
 const subscribeHref =
@@ -143,6 +148,10 @@ const embedSrc =
             <iframe
               class="capture__embed"
               data-nep-campaign={camp}
+              data-nep-conversion-page={conversionPage}
+              data-nep-cta-id={ctaId}
+              data-nep-form-id={o.formId}
+              data-nep-offer-id={o.offerId}
               src={embedSrc}
               title={resolvedButton}
               loading="lazy"
@@ -151,7 +160,7 @@ const embedSrc =
             ></iframe>
           </div>
           <p class="capture__fallback">
-            Form not loading? <a href={subscribeHref} target="_blank" rel="noopener noreferrer">{resolvedButton} &rarr;</a>
+            Form not loading? <a href={subscribeHref} data-nep-campaign={camp} data-nep-conversion-page={conversionPage} data-nep-cta-id={`${ctaId}_fallback`} data-nep-form-id={o.formId} data-nep-offer-id={o.offerId} target="_blank" rel="noopener noreferrer">{resolvedButton} &rarr;</a>
           </p>
           <p class="capture__helper">After submitting, follow Beehiiv&rsquo;s on-screen confirmation instructions and check the email address you provided.</p>
           <div class="capture__success" role="status" hidden>
@@ -159,7 +168,7 @@ const embedSrc =
           </div>
         </>
       ) : (
-        <a class="capture__button" data-nep-campaign={camp} href={subscribeHref} target="_blank" rel="noopener noreferrer">{resolvedButton} &rarr;</a>
+        <a class="capture__button" data-nep-campaign={camp} data-nep-conversion-page={conversionPage} data-nep-cta-id={ctaId} data-nep-form-id={o.formId} data-nep-offer-id={o.offerId} href={subscribeHref} target="_blank" rel="noopener noreferrer">{resolvedButton} &rarr;</a>
       )}
     </div>
   </div>
@@ -206,31 +215,30 @@ const embedSrc =
       origin_source:   o.s || '(direct)',
       origin_medium:   o.m || '(none)',
       origin_campaign: o.c || '(none)',
+      origin_content:  o.u || '(none)',
+      origin_term:     o.k || '(none)',
+      origin_landing_page: o.p || '(unknown)',
+      conversion_page: (el && el.getAttribute('data-nep-conversion-page')) || location.pathname,
+      cta_id: (el && el.getAttribute('data-nep-cta-id')) || '(unknown)',
+      form_id: (el && el.getAttribute('data-nep-form-id')) || '(unknown)',
+      offer_id: (el && el.getAttribute('data-nep-offer-id')) || '(unknown)',
       capture_offer: (el && el.getAttribute('data-nep-campaign')) || '(unknown)'
     });
   }
 
-  // ORIGIN FORWARDING. The form URL's utm_source/medium/campaign are LEFT
-  // ALONE so every existing Beehiiv report keeps working; the visitor's
-  // first-touch origin is folded into utm_content, which is already
-  // per-placement and therefore free to extend. Result: a Beehiiv subscription
-  // record reads e.g.
-  //   utm_content = post_<slug>.src-spotify.mdm-podcast.cmp-irasema_chavez_update
-  // which is a recoverable, greppable Spotify-origin signup.
-  function clean(v){ return String(v||'').toLowerCase().replace(/[^a-z0-9_-]/g,'').slice(0,32); }
-  function originSuffix(){
-    var o = origin(); if (!o) return '';
-    var s = clean(o.s); if (!s) return '';
-    return '.src-' + s + (clean(o.m) ? '.mdm-' + clean(o.m) : '') + (clean(o.c) ? '.cmp-' + clean(o.c) : '');
-  }
+  // ACQUISITION FORWARDING. If the visitor arrived with campaign UTMs, forward
+  // those exact acquisition values to Beehiiv. Do not replace them with the
+  // conversion hop (website/capture/offer campaign). Page, CTA, form and offer
+  // identity remain separate in the data-nep-* attributes and GA4 event above.
   function stamp(el, attr){
-    var sfx = originSuffix(); if (!sfx) return;
+    var o = origin(); if (!o || !o.s) return;
     var raw = el.getAttribute(attr); if (!raw) return;
     try {
       var u = new URL(raw, location.origin);
-      var c = u.searchParams.get('utm_content') || '';
-      if (c.indexOf('.src-') !== -1) return;       // already stamped
-      u.searchParams.set('utm_content', c + sfx);
+      [['utm_source','s'],['utm_medium','m'],['utm_campaign','c'],['utm_content','u'],['utm_term','k']].forEach(function(pair){
+        var value=o[pair[1]]||'';
+        if(value){u.searchParams.set(pair[0],value);}else{u.searchParams.delete(pair[0]);}
+      });
       el.setAttribute(attr, u.toString());
     } catch(e){}
   }
