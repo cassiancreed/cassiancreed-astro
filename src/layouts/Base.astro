@@ -226,12 +226,13 @@ const exploreActive = resolvedExplore.some(i => navActive(i.href));
        was indistinguishable, inside Beehiiv, from one who arrived from anywhere
        else. And an inbound UTM was lost the moment the visitor clicked to a
        second page.
-       What this does: stores FIRST-TOUCH origin for the session (first touch
-       wins, so Spotify stays credited if the visitor wanders the site before
-       subscribing), exposes it as window.NEP_ORIGIN for CaptureBlock to fold
-       into the form's utm_content, and fires one explicit `origin_visit` event
-       so campaign-origin visits are recoverable as an EVENT, not only as GA4
-       session-source dimensions. No new analytics vendor; existing gtag only.
+       What this does: stores FIRST-TOUCH acquisition for the session (first
+       touch wins, so Spotify stays credited if the visitor wanders the site
+       before subscribing), exposes it as window.NEP_ORIGIN for the homepage
+       hero and CaptureBlock to forward without rewriting it as "website", and
+       fires one explicit `origin_visit` event. Conversion page/CTA/form/offer
+       identity is carried separately in data attributes and GA4 parameters.
+       No new analytics vendor; existing gtag only.
        ─────────────────────────────────────────────────────────────────────── -->
   <script is:inline>
   (function(){
@@ -248,6 +249,8 @@ const exploreActive = resolvedExplore.some(i => navActive(i.href));
           s: inbound.utm_source   || '',
           m: inbound.utm_medium   || '',
           c: inbound.utm_campaign || '',
+          u: inbound.utm_content  || '',
+          k: inbound.utm_term     || '',
           p: location.pathname,
           t: Math.round(Date.now()/1000)
         };
@@ -259,6 +262,9 @@ const exploreActive = resolvedExplore.some(i => navActive(i.href));
           origin_source:   inbound.utm_source   || '(none)',
           origin_medium:   inbound.utm_medium   || '(none)',
           origin_campaign: inbound.utm_campaign || '(none)',
+          origin_content:  inbound.utm_content  || '(none)',
+          origin_term:     inbound.utm_term     || '(none)',
+          origin_landing_page: location.pathname,
           page_path: location.pathname
         });
       }
@@ -347,7 +353,29 @@ if(typeof gtag!=='undefined'){gtag('event','capture_outbound',{link_url:s.href,m
     // in-iframe "Reference ID" text.
     if(window.location.search.includes('subscribed=1')){
       function fs(){
-        if(typeof gtag!=='undefined'){gtag('event','sign_up',{method:'beehiiv'});}
+        var frame=null, parentOrigin=window.NEP_ORIGIN||null;
+        try{
+          if(window.parent!==window){
+            frame=window.frameElement;
+            parentOrigin=window.parent.NEP_ORIGIN||parentOrigin;
+          }
+        }catch(e){}
+        var o=parentOrigin||{};
+        if(typeof gtag!=='undefined'){
+          gtag('event','sign_up',{
+            method:'beehiiv',
+            acquisition_source:o.s||'(direct)',
+            acquisition_medium:o.m||'(none)',
+            acquisition_campaign:o.c||'(none)',
+            acquisition_content:o.u||'(none)',
+            acquisition_term:o.k||'(none)',
+            acquisition_landing_page:o.p||'(unknown)',
+            conversion_page:frame&&frame.dataset.nepConversionPage||location.pathname,
+            cta_id:frame&&frame.dataset.nepCtaId||'(unknown)',
+            form_id:frame&&frame.dataset.nepFormId||'(unknown)',
+            offer_id:frame&&frame.dataset.nepOfferId||'(unknown)'
+          });
+        }
         document.querySelectorAll('.capture__success').forEach(function(ok){
           ok.hidden=false;
           var cta=ok.closest('.capture-cta')||ok.parentNode;
