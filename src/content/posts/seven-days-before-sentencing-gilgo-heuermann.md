@@ -4,6 +4,9 @@ description: "Seven days before Rex Heuermann's sentencing, the Gilgo case recor
 pubDate: 2026-06-10
 tag: "Case Files"
 featured: false
+archived: true
+archiveNote: "This pre-sentencing countdown is preserved for context. Sentencing has occurred, and the linked replacement contains the confirmed outcome."
+replacementPath: "/post/rex-heuermann-sentencing-june-17-what-the-plea-established/"
 victim: "Melissa Barthelemy, Maureen Brainard-Barnes, Megan Waterman, Amber Lynn Costello, Jessica Taylor, Valerie Mack, Karen Vergata, Sandra Costilla"
 incidentDate: ""
 location: "Gilgo Beach, New York"
@@ -16,7 +19,7 @@ coverAlt: "Cover art for The Gilgo Blueprint: Rex Heuermann and the Forensic Rev
 *Published June 10, 2026 · Neural Edge Publishing · Cassian Creed*
 
 <div class="post__updates">
-<p><strong>Update — as of June 26, 2026:</strong> The sentencing has happened. On June 17, 2026, Rex Heuermann was sentenced to life in prison without the possibility of parole, and the victims' families delivered impact statements in court. This post was published before that date as part of our seven-day coverage; the original countdown framing is preserved below for the record. For the confirmed sentencing outcome, see <a href="/blog/rex-heuermann-sentencing-june-17-what-the-plea-established/">Rex Heuermann Sentenced: What the Plea Established</a>.</p>
+<p><strong>Update — as of June 26, 2026:</strong> The sentencing has happened. On June 17, 2026, Rex Heuermann was sentenced to life in prison without the possibility of parole, and the victims' families delivered impact statements in court. This post was published before that date as part of our seven-day coverage; the original countdown framing is preserved below for the record. For the confirmed sentencing outcome, see <a href="/post/rex-heuermann-sentencing-june-17-what-the-plea-established/">Rex Heuermann Sentenced: What the Plea Established</a>.</p>
 </div>
 
 ---
@@ -114,4 +117,3 @@ Get the free guide — we'll send you *How to Read a Case Like the Court Does*, 
 ---
 
 *Every factual claim in this post is tied to public records or verified reporting. A.I. is used only as a disclosed analytical lens for organizing public-record material — it is not the narrator, authorial voice, or substitute for editorial judgment. Victims first. Public record first.*
-

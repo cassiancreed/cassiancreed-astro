@@ -5,6 +5,9 @@ description: "Nestor Hernandez Melgar is due for sentencing July 22. See the ver
 pubDate: 2026-07-18
 tag: Case Files
 featured: false
+archived: true
+archiveNote: "This sentencing-day primer is preserved for context. The linked replacement contains the confirmed sentence."
+replacementPath: "/post/nestor-hernandez-melgar-sentencing/"
 capture: "case"
 ---
 

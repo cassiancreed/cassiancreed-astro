@@ -13,7 +13,7 @@ cover: "/covers/generated-image.png"
 capture: "dna"
 ---
 
-# Study Guide: The Identification of Cheryl Lynn Edwards
+## Study Guide: The Identification of Cheryl Lynn Edwards
 
 Use this study guide to review the key facts of the Cheryl Lynn Edwards case, the forensic methods involved, and the questions worth thinking through. It is built for careful study, not for spectacle.
 

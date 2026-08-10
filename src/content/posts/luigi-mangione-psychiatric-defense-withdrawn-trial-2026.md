@@ -11,7 +11,7 @@ jurisdiction: Federal (SDNY) + New York State
 status: Awaiting trial; state murder trial scheduled September 8, 2026; psychiatric defense withdrawn
 ---
 
-# The Two Trials of Luigi Mangione: CEO Killer, Courtroom Defendant
+## The Two Trials of Luigi Mangione: CEO Killer, Courtroom Defendant
 
 At 6:44 a.m. on December 4, 2024, the glass-and-steel anonymity of the healthcare elite was pierced by a 3D-printed ghost. Outside the New York Hilton Midtown, Brian Thompson, the CEO of UnitedHealthcare, was walking toward an investor conference when a masked figure emerged from between two parked cars. With a suppressed 9mm pistol, the assailant fired multiple rounds into Thompson's back and leg, then vanished into the morning mist of Central Park on an electric bicycle.
 

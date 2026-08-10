@@ -9,7 +9,7 @@ import { resolve } from 'node:path';
 export async function getStaticPaths() {
   const posts = await getCollection('posts');
   // Nancy Guthrie coverage is excluded from related-content rails by standing order; the pages themselves stay live.
-  const caseFiles = posts.filter(p => p.data.tag === 'Case Files' && !p.slug.startsWith('nancy-guthrie-'));
+  const caseFiles = posts.filter(p => p.data.tag === 'Case Files' && !p.data.archived && !p.slug.startsWith('nancy-guthrie-'));
   return posts.map(p => {
     const idx = caseFiles.findIndex(o => o.slug === p.slug);
     let rel = [];
@@ -79,12 +79,18 @@ const jsonld = faqNode
   ? { "@context":"https://schema.org", "@graph": [articleNode, faqNode] }
   : { "@context":"https://schema.org", ...articleNode };
 ---
-<Base title={post.data.seoTitle ?? post.data.title} description={post.data.description} jsonld={jsonld} ogImage={socialImage}>
+<Base title={post.data.seoTitle ?? post.data.title} description={post.data.description} jsonld={jsonld} ogImage={socialImage} ogType="article" noindex={post.data.archived}>
   {captureOffer === 'safety' && <SafetyAlert />}
   <article class="post">
     <p class="evidence evidence--accent">{post.data.tag}</p>
     <h1>{post.data.title}</h1>
 <p class="post__dates"><time datetime={post.data.pubDate.toISOString().slice(0,10)}>Published {post.data.pubDate.toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'})}</time>{post.data.updatedDate && <> · <time datetime={post.data.updatedDate.toISOString().slice(0,10)}>Updated {post.data.updatedDate.toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'})}</time></>}</p>
+    {post.data.archived && (
+      <aside class="post__archive" aria-label="Archive notice">
+        <strong>Archive notice.</strong> {post.data.archiveNote ?? 'This page is preserved for context and is not part of current reporting or promotion.'}
+        {post.data.replacementPath && <> <a href={post.data.replacementPath}>Read the current coverage &rarr;</a></>}
+      </aside>
+    )}
     {isCase && <p class="post__note">A note before you read: this is a true account of real people and a real crime. We tell it with care — centered on the victims, grounded in the record, and without gratuitous detail.</p>}
     {post.data.victim && (
       <aside class="case-facts">
@@ -107,7 +113,7 @@ const jsonld = faqNode
         <a class="btn buybox__btn" href={post.data.buyUrl} target="_blank" rel="noopener noreferrer">{post.data.buyPrice ? ("Buy the ebook — " + post.data.buyPrice + " →") : "Buy the ebook →"}</a>
       </aside>
     )}
-    {isCase && <p class="post__crisis"><strong>If you need support.</strong> 988 Suicide &amp; Crisis Lifeline (call or text 988) · National Domestic Violence Hotline 1-800-799-7233 (text START to 88788) · RAINN 1-800-656-HOPE (4673).</p>}
+    {isCase && <p class="post__crisis"><strong>If you need support.</strong> For immediate physical danger or urgent medical help, call 911 or local emergency services when it is safe to do so. For suicide, mental-health, or substance-use crisis support, call or text 988. <a href="/safety/#immediate-help">Open the ungated Stay Safe resources</a>.</p>}
     <p class="post__resources"><a href="/support/">Victim &amp; Reader Resources</a> &mdash; free, confidential help for victims, families, and readers.</p>
   </article>
 
@@ -123,8 +129,8 @@ const jsonld = faqNode
     </div>
   </section></div>
 
-  <div class="wrap"><nav class="share" aria-label="Share this case file">
-    <span class="share__label">Share this case file</span>
+  <div class="wrap"><nav class="share" aria-label={`Share this ${isCase ? 'case file' : 'explainer'}`}>
+    <span class="share__label">Share this {isCase ? 'case file' : 'explainer'}</span>
     <a class="share__btn" href={`https://twitter.com/intent/tweet?text=${shareT}&url=${mk('x')}`} target="_blank" rel="noopener noreferrer">X / Twitter</a>
     <a class="share__btn" href={`https://www.facebook.com/sharer/sharer.php?u=${mk('facebook')}`} target="_blank" rel="noopener noreferrer">Facebook</a>
     <a class="share__btn" href={`https://www.pinterest.com/pin/create/button/?url=${mk('pinterest')}&description=${shareT}`} target="_blank" rel="noopener noreferrer">Pinterest</a>
@@ -141,6 +147,9 @@ const jsonld = faqNode
 
 <style>
   .share{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin:8px 0 0}
+  .post__archive{margin:0 0 26px;padding:16px 18px;border:1px solid rgba(217,166,92,.55);border-left:4px solid #d9a65c;border-radius:8px;background:var(--bg-2);color:var(--ink-2)}
+  .post__archive strong{color:var(--ink)}
+  .post__archive a{color:var(--accent);text-decoration:underline}
   .share__label{font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-2)}
   .share__btn{font-size:13px;text-decoration:none;border:1px solid rgba(224,86,59,.4);border-radius:20px;padding:6px 13px;color:var(--ink);transition:background .15s}
   .share__btn:hover{background:rgba(224,86,59,.12)}

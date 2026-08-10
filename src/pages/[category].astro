@@ -12,7 +12,7 @@ export async function getStaticPaths() {
 
 const { tag, label } = Astro.props;
 const posts = (await getCollection('posts'))
-  .filter((post) => post.data.tag === tag)
+  .filter((post) => post.data.tag === tag && !post.data.archived)
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
 const formatDate = (date) => new Intl.DateTimeFormat('en-US', {

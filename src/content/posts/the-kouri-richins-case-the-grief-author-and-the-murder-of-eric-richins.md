@@ -22,7 +22,7 @@ cover: "/covers/are-you-with-me.jpg"
 coverAlt: "Typographic title treatment in warm serif lettering on a deep navy background."
 ---
 
-# The Kouri Richins Case: The Grief Author and the Murder of Eric Richins
+## The Kouri Richins Case: The Grief Author and the Murder of Eric Richins
 
 In 2026, a Utah jury convicted Kouri Richins of aggravated murder for killing her husband, Eric — the same man whose death she had publicly mourned, and about whom she had written a children's picture book on grief. On May 13, 2026 — Eric's birthday — she was sentenced to life in prison without the possibility of parole. Her appeal is pending.
 
