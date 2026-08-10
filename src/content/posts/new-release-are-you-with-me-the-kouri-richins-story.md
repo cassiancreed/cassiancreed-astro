@@ -4,6 +4,9 @@ description: "Kouri Richins, a Utah grief-book author, was convicted in 2026 of 
 pubDate: 2026-05-30
 tag: "Case Files"
 featured: true
+archived: true
+archiveNote: "This retired release announcement is preserved for context. The title is not part of NEP's currently verified product line."
+replacementPath: "/post/kouri-richins-eric-richins-murder/"
 victim: "Eric Richins, 39"
 incidentDate: "March 2022"
 location: "Kamas, Summit County, Utah"

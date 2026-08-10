@@ -4,6 +4,9 @@ description: "Rex Heuermann pleaded guilty to the Gilgo Beach murders and is sen
 pubDate: 2026-06-03
 tag: "Case Files"
 featured: true
+archived: true
+archiveNote: "This pre-sentencing explainer is preserved for context. Sentencing has occurred, and the linked replacement contains the confirmed outcome."
+replacementPath: "/post/rex-heuermann-sentencing-june-17-what-the-plea-established/"
 victim: "Melissa Barthelemy, Maureen Brainard-Barnes, Megan Waterman, Amber Lynn Costello, Jessica Taylor, Sandra Costilla, Valerie Mack, Karen Vergata"
 incidentDate: "1990s–2010"
 location: "Long Island, New York"
@@ -15,7 +18,7 @@ coverAlt: "A desolate barrier-island causeway at dusk, a single distant streetli
 
 
 <div class="post__updates">
-<p><strong>Update — as of June 26, 2026:</strong> Rex Heuermann was sentenced on June 17, 2026 to life in prison without the possibility of parole, and the victims' families delivered impact statements in court. This explainer was published before that date to set expectations; the confirmed outcome is covered in <a href="/blog/rex-heuermann-sentencing-june-17-what-the-plea-established/">Rex Heuermann Sentenced: What the Plea Established</a>.</p>
+<p><strong>Update — as of June 26, 2026:</strong> Rex Heuermann was sentenced on June 17, 2026 to life in prison without the possibility of parole, and the victims' families delivered impact statements in court. This explainer was published before that date to set expectations; the confirmed outcome is covered in <a href="/post/rex-heuermann-sentencing-june-17-what-the-plea-established/">Rex Heuermann Sentenced: What the Plea Established</a>.</p>
 </div>
 
 On **June 17, 2026**, Rex Heuermann was sentenced in the Gilgo Beach serial killings — and for the first time, the families of the women he admitted killing were able to speak directly to the court. This was not a trial or a question of guilt: on April 8, 2026, Heuermann **pleaded guilty** to murdering seven women and admitted to causing the death of an eighth. What remained was the reckoning.

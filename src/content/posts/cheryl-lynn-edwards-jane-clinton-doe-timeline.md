@@ -13,7 +13,7 @@ cover: /covers/generated-image.png
 capture: "dna"
 ---
 
-# Cheryl Lynn Edwards Case Timeline: From Jane Clinton Doe to a Name
+## Cheryl Lynn Edwards Case Timeline: From Jane Clinton Doe to a Name
 
 For nearly fifty years, this case had no name attached to it. The timeline below lays out what is known, in order, from her birth to her identification in 2026.
 

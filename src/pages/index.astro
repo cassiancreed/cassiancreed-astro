@@ -2,7 +2,7 @@
 import Base from '../layouts/Base.astro';
 import { getCollection } from 'astro:content';
 import CaptureBlock from '../components/CaptureBlock.astro';
-const posts = (await getCollection('posts')).sort((a,b)=> b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const posts = (await getCollection('posts')).filter(p => !p.data.archived).sort((a,b)=> b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 const featured = posts.find(p=>p.data.featured) || posts[0];
 const rest = posts.filter(p=> featured && p.slug!==featured.slug && p.slug!=='nancy-guthrie-abduction-what-we-know').slice(0,8);
 const cfCount = posts.filter(p=>p.data.tag==='Case Files').length;
@@ -30,7 +30,7 @@ const jsonld = {
       <div class="hero__copy">
         <p class="evidence evidence--accent">Sourced true crime &middot; victim-first</p>
         <h1>True crime that respects the victims.</h1>
-        <p class="hero__lede">Full, primary-source case files for readers who want to understand cases, not consume them. Every victim named in life first &mdash; and with each one, what it teaches about keeping the people you love safe.</p>
+        <p class="hero__lede">Source-led case files for readers who want to understand cases, not consume them. We name victims in life first, distinguish the record from analysis, and explain practical lessons only when the evidence supports them.</p>
         {/* SUPPORTED BEEHIIV EMBED (NEP-FIX-CWK-0718R). subscribe-forms.beehiiv.com
             is the v2 form-builder endpoint and renders the DASHBOARD styling
             (verified live: #A8503A button, "Get the free guide."). The native POST
@@ -76,7 +76,7 @@ const jsonld = {
     <p class="nmv__copy">We do not publish cases as entertainment. When the public record supports a practical lesson, we explain the documented pattern and its limits. No case predicts another, and responsibility always belongs to the person who causes harm.</p>
     <p class="nmv__cta">
       <a class="btn nmv__btn" href="/safety/">Read Stay Safe &rarr;</a>
-      <a class="nmv__alt" href="/safety/#resources">Need help now? Real resources &rarr;</a>
+      <a class="nmv__alt" href="/safety/#immediate-help">Need help now? Real resources &rarr;</a>
     </p>
   </section>
 
@@ -202,7 +202,7 @@ const jsonld = {
         <p class="evidence evidence--accent">Who's behind the case files</p>
         <h2 class="author__name">Cassian Creed</h2>
         <p class="author__role">Author and independent case analyst, Neural Edge Publishing</p>
-        <p class="author__bio">Cassian Creed writes victim-first true crime built entirely on the public record — court filings, verdicts, and verified reporting. The work separates what is proven from what is disputed, names the people at the center in life first, and corrects what it gets wrong. The analytical reads are produced with A.I. AL, a disclosed, human-overseen method that is not affiliated with law enforcement and never asserts the guilt of anyone not convicted.</p>
+        <p class="author__bio">Cassian Creed writes victim-first true crime grounded in court records, official sources, and verified reporting. The work separates what is proven from what is disputed, names the people at the center in life first, and corrects what it gets wrong. A.I. AL is a disclosed, human-overseen analytical framework—not law enforcement, a forensic laboratory, or a substitute for the record.</p>
         <a class="btn btn--ghost" href="/about/">Read the method, sourcing &amp; corrections policy &rarr;</a>
       </div>
     </section>

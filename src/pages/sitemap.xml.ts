@@ -21,7 +21,7 @@ function redirectedPaths() {
 
 export async function GET(context: any) {
   const site = context.site?.href || 'https://cassiancreed.com/';
-  const posts = await getCollection('posts');
+  const posts = (await getCollection('posts')).filter(p => !p.data.archived);
   const redirects = redirectedPaths();
   const paths = ['', 'case-files/', 'explainers/', 'start-here/', 'books/', 'about/', 'trending/', 'case-solver/', 'forensic-tools/', 'safety/', 'support/', 'ai-al/', 'guides/', 'how-dna-remembers/', 'glossary/', 'how-forensic-genetic-genealogy-works/', 'codis-vs-forensic-genetic-genealogy/', 'how-othram-works-in-a-case/', 'is-fgg-evidence-or-just-a-lead/', 'is-forensic-genetic-genealogy-legal/', 'baby-jacob-round-lake-beach-genetic-genealogy/', 'court-calendar/', 'court-calendar-policy/', 'voir-dire-simulator/', 'mission/']
     .concat(posts.map(p => `post/${p.slug}/`));

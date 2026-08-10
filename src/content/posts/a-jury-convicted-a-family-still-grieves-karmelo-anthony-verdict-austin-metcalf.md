@@ -101,4 +101,4 @@ If you follow cases like Austin's — where the evidence matters, the families m
 
 **[Get the free guide — no spam, just the case.](https://cassiancreed.beehiiv.com/subscribe?utm_source=website&utm_medium=post_cta&utm_campaign=karmelo_verdict)**
 
-For our full catalog of true-crime case books, visit [cassiancreed.com/books](/books/).
+For our verified courtroom guide, visit [Jury Chess](/books/#jury-chess).

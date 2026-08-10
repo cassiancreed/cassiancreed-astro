@@ -11,7 +11,7 @@ jurisdiction: U.S. Supreme Court
 status: Conviction reinstated 6-3, June 22, 2026 (McCarthy v. Hernandez)
 ---
 
-# Etan Patz: What Happened, Who Killed Him, and Why the Supreme Court Reinstated the Conviction in 2026
+## Etan Patz: What Happened, Who Killed Him, and Why the Supreme Court Reinstated the Conviction in 2026
 
 On the morning of May 25, 1979, a six-year-old boy named Etan Patz left his family's apartment in SoHo, Manhattan, and walked toward his school bus stop alone for the very first time. It was a two-block journey. He never arrived. For forty-seven years, the question of what happened to Etan Patz haunted a city, reshaped how America protects its children, and wound through three trials and the highest court in the land.
 

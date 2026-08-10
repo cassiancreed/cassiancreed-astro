@@ -4,6 +4,9 @@ description: "A running watchlist of the most-followed U.S. criminal cases in 20
 pubDate: 2026-05-31
 tag: "Case Files"
 featured: false
+archived: true
+archiveNote: "This dated watchlist is preserved for context. Use the Court Calendar for current, source-linked schedules and case status."
+replacementPath: "/court-calendar/"
 ---
 
 The cases worth following, kept current. This is our running watchlist of the most-followed U.S. criminal cases — trials about to start, verdicts pending, sentencings on the calendar, and appeals that could reopen settled questions. We write victim-first: every case here is, first, about the people who were lost. Everyone charged but not yet convicted is presumed innocent. Bookmark this page and check back — the calendar moves. Last verified: June 23, 2026.

@@ -8,7 +8,7 @@ import { getCollection } from 'astro:content';
 // Counts are pulled live from the content collection so this page can never go
 // stale as posts are added. Add a new guide by appending to `guides` below.
 
-const posts = await getCollection('posts');
+const posts = (await getCollection('posts')).filter(p => !p.data.archived);
 const caseFiles = posts.filter(p => p.data.tag === 'Case Files');
 const explainers = posts.filter(p => p.data.tag === 'Explainers');
 
@@ -65,7 +65,7 @@ const guides = [
 ---
 <Base
   title="Resources & Guides — Safety Guide, Glossary, Forensic Explainers & Tools | Cassian Creed"
-  description="The Cassian Creed library: a free personal safety guide, a plain-English courtroom glossary, forensic explainers, the Voir Dire Simulator, the Case Solver, and a verified court calendar — alongside our case files and books."
+  description="Free safety and courtroom guides, forensic explainers, interactive tools, a verified court calendar, case files, and Jury Chess."
 >
   <section class="hero wrap">
     <p class="evidence evidence--accent">The Library</p>
@@ -103,9 +103,9 @@ const guides = [
       <p>{explainers.length} plain-language explainers on how the science and the system actually work &mdash; genetic genealogy, false confessions, coercive control, forensic evidence, and the courtroom process itself.</p>
       <p><a class="btn btn--ghost" href="/explainers/">Browse all explainers &rarr;</a></p>
 
-      <h2 id="the-books">The books</h2>
-      <p>Long-form work under the Cassian Creed byline, built the same way as the case files &mdash; from the record, for the victim.</p>
-      <p><a class="btn btn--ghost" href="/books/">See the books &rarr;</a></p>
+      <h2 id="jury-chess">Jury Chess</h2>
+      <p>The verified Cassian Creed courtroom guide explains how criminal jury trials work, from jury selection through verdict.</p>
+      <p><a class="btn btn--ghost" href="/books/">Explore Jury Chess &rarr;</a></p>
 
       <p class="post__note">New here? <a href="/start-here/">Start Here</a> is the shortest path in. Or read our <a href="/mission/">mission</a> &mdash; victim-centered, evidence-first, and accountable.</p>
     </div>

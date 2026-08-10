@@ -13,7 +13,7 @@ cover: /covers/generated-image.png
 capture: "dna"
 ---
 
-# Jane Clinton Doe Identified as Cheryl Lynn Edwards: Frequently Asked Questions
+## Jane Clinton Doe Identified as Cheryl Lynn Edwards: Frequently Asked Questions
 
 For decades she was known only as Jane Clinton Doe. In June 2026, she got her name back. This FAQ answers the most common questions about the case in plain language.
 
