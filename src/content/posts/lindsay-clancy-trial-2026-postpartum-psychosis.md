@@ -2,7 +2,7 @@
 title: "Postpartum psychosis and criminal responsibility: A careful guide to the Lindsay Clancy case"
 description: "A victim-first, clinically grounded guide to postpartum psychosis, Massachusetts's lack-of-criminal-responsibility standard, and which claims in the Lindsay Clancy case remain disputed."
 pubDate: 2026-06-23
-updatedDate: 2026-07-15
+updatedDate: 2026-08-12
 tag: Case Files
 featured: false
 victim: Cora Clancy, 5; Dawson Clancy, 3; Callan Clancy, 8 months
@@ -18,7 +18,9 @@ jurisdiction: Plymouth County Superior Court, Massachusetts
 
 > **Looking for current court status?** See the [Lindsay Clancy trial tracker](/post/lindsay-clancy-trial/) for the latest verified schedule, rulings, charges, and verdict status.
 >
-> **Last verified:** July 15, 2026.
+> **Last verified:** August 12, 2026.
+
+> **New testimony:** Read what Rebecca Jollotta’s Day 12 evidence [did—and did not—establish](/post/lindsay-clancy-trial-day-12-medication-testimony/).
 
 Cora, 5, Dawson, 3, and Callan, 8 months, died after events at their Duxbury home in January 2023. Their mother, Lindsay Clancy, has pleaded not guilty to three counts of first-degree murder. **PROSECUTION:** Prosecutors allege she acted deliberately. **DEFENSE:** Her lawyers argue she experienced postpartum psychosis and lacked criminal responsibility. A jury has not decided those disputed questions.
 
@@ -62,9 +64,9 @@ A person can have a serious diagnosis without meeting that legal test. Conversel
 
 ## What would happen after an acquittal based on lack of criminal responsibility?
 
-It would not produce ordinary immediate release. Massachusetts law authorizes hospitalization for observation and examination and a subsequent judicial commitment process. Continued commitment depends on the statutory criteria and court findings.
+It would not mean automatic release. Massachusetts General Laws chapter 123, section 16 allows the court to order hospitalization for observation and examination for up to 40 days. Any later commitment requires a petition, hearing, and the findings required by law.
 
-That process is separate from a prison sentence. It is also more precise to describe the result as an acquittal based on lack of criminal responsibility rather than use stigmatizing shorthand.
+The statute uses **may**, not **must**, for the initial observation order. It is therefore inaccurate to describe immediate hospitalization or long-term commitment as automatic in every case. The process is court-supervised and separate from a prison sentence.
 
 ## Why are medication and treatment claims treated cautiously?
 

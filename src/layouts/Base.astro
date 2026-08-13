@@ -100,21 +100,28 @@ const navItems = [
   // CONVERSION-FIRST RANK 1 (2026-07-28): the '/the-trail/' nav item was
   // removed with The Trail's landing page while the title is held for
   // worthiness review. /the-trail/ now 301s (see netlify.toml).
-  { href: '/books/',               label: 'Jury Chess' },
+  // NAV REPAIR (2026-08-12): label describes the category (Books); Jury Chess
+  // remains the featured product inside the /books/ page itself.
+  { href: '/books/',               label: 'Books' },
   { href: '/about/',               label: 'About' },
   { href: '/#free-guide',           label: 'Free Guide' },
 ];
+// NAV REPAIR (2026-08-12): desktop reads
+// Blog | Court Calendar | Stay Safe | Explore | Books | About | Free Guide.
+// Court Calendar was promoted out of Explore; the /case-files/ hub is labeled
+// Blog (one hub, one label — never both Blog and Case Files); /books/ is
+// labeled by category, with Jury Chess featured inside the page.
 const desktopPrimary = [
-  { href: '/case-files/', label: 'Case Files' },
-  { href: '/books/', label: 'Jury Chess' },
+  { href: '/case-files/', label: 'Blog' },
+  { href: '/court-calendar/', label: 'Court Calendar' },
   { href: '/safety/', label: 'Stay Safe' },
+  { href: '/books/', label: 'Books' },
   { href: '/about/', label: 'About' },
   { href: '/#free-guide', label: 'Free Guide', cta: true },
 ];
 const exploreItems = [
   { href: '/start-here/', label: 'Start Here' },
   { href: '/guides/', label: 'Guides' },
-  { href: '/court-calendar/', label: 'Court Calendar' },
   { href: '/voir-dire-simulator/', label: 'Jury Simulator' },
   { href: '/ai-al/', label: 'A.I. AL' },
 ];
@@ -296,7 +303,7 @@ const exploreActive = resolvedExplore.some(i => navActive(i.href));
       <summary>Menu</summary>
       <nav class="nav-menu__panel" aria-label="Mobile primary">
         {resolvedNav.map(i => (
-          <a href={i.href} class:list={[navActive(i.href) && 'active', i.label === 'Free Guide' && 'nav__cta']} aria-current={navActive(i.href) ? 'page' : undefined}>{i.label === 'Books' ? 'Jury Chess' : i.label}</a>
+          <a href={i.href} class:list={[navActive(i.href) && 'active', i.label === 'Free Guide' && 'nav__cta']} aria-current={navActive(i.href) ? 'page' : undefined}>{i.label}</a>
         ))}
       </nav>
     </details>
