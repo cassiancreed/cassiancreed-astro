@@ -1,0 +1,167 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cassiancreed.com/schemas/nep-court-command-intake-v1.json",
+  "title": "NEP Court Command Intake Bundle",
+  "description": "Input contract for the 15-minute CassianCreed.com court publishing fast lane.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["bundleVersion", "generatedAt", "generator", "requestedMode", "cases"],
+  "properties": {
+    "bundleVersion": { "const": "1.0" },
+    "generatedAt": { "type": "string", "format": "date-time" },
+    "generator": { "type": "string", "minLength": 1 },
+    "requestedMode": {
+      "type": "string",
+      "enum": ["auto", "calendar-only", "website-fast", "full-bnb"],
+      "default": "auto"
+    },
+    "researchWindow": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "properties": {
+        "start": { "type": ["string", "null"], "format": "date-time" },
+        "end": { "type": ["string", "null"], "format": "date-time" }
+      }
+    },
+    "pronunciations": {
+      "type": "array",
+      "maxItems": 0,
+      "default": []
+    },
+    "cases": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 20,
+      "items": { "$ref": "#/$defs/caseCandidate" }
+    }
+  },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["url", "sourceType"],
+      "properties": {
+        "url": { "type": "string", "format": "uri" },
+        "title": { "type": ["string", "null"] },
+        "publisher": { "type": ["string", "null"] },
+        "publishedAt": { "type": ["string", "null"], "format": "date-time" },
+        "accessedAt": { "type": ["string", "null"], "format": "date-time" },
+        "sourceType": {
+          "type": "string",
+          "enum": ["court", "government", "filing", "party-statement", "reporting", "social", "other"]
+        },
+        "establishes": { "type": ["string", "null"] },
+        "isPrimary": { "type": "boolean", "default": false }
+      }
+    },
+    "trendSignal": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ecosystem", "observedAt", "direction", "sourceUrl"],
+      "properties": {
+        "ecosystem": { "type": "string" },
+        "observedAt": { "type": "string", "format": "date-time" },
+        "direction": { "type": "string", "enum": ["rising", "stable", "falling", "unknown"] },
+        "metricName": { "type": ["string", "null"] },
+        "metricValue": { "type": ["number", "string", "null"] },
+        "sourceUrl": { "type": "string", "format": "uri" },
+        "notes": { "type": ["string", "null"] }
+      }
+    },
+    "mediaItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["title", "outlet", "url", "publishedAt"],
+      "properties": {
+        "title": { "type": "string" },
+        "outlet": { "type": "string" },
+        "url": { "type": "string", "format": "uri" },
+        "publishedAt": { "type": "string", "format": "date-time" },
+        "summary": { "type": ["string", "null"] },
+        "coverageAngle": { "type": ["string", "null"] }
+      }
+    },
+    "courtEvent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["eventType", "date", "dateStatus", "timeStatus", "sourceUrl"],
+      "properties": {
+        "eventType": { "type": "string" },
+        "date": { "type": "string", "format": "date" },
+        "dateStatus": { "type": "string", "enum": ["confirmed", "tentative", "superseded", "not publicly verified"] },
+        "time": { "type": ["string", "null"], "pattern": "^([01]\\d|2[0-3]):[0-5]\\d(:[0-5]\\d)?$" },
+        "timezone": { "type": ["string", "null"], "description": "Court-local IANA timezone, for example America/New_York." },
+        "timeStatus": { "type": "string", "enum": ["confirmed", "tentative", "superseded", "not publicly verified"] },
+        "court": { "type": ["string", "null"] },
+        "location": { "type": ["string", "null"] },
+        "docket": { "type": ["string", "null"] },
+        "proceduralStage": { "type": ["string", "null"] },
+        "status": { "type": "string", "enum": ["confirmed", "tentative", "rescheduled", "continued", "completed", "cancelled", "unknown"] },
+        "sourceUrl": { "type": "string", "format": "uri" },
+        "sourceTitle": { "type": ["string", "null"] },
+        "verifiedAt": { "type": ["string", "null"], "format": "date-time" },
+        "whyItMatters": { "type": ["string", "null"] }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "timeStatus": { "const": "not publicly verified" } } },
+          "then": { "properties": { "time": { "type": "null" } } }
+        },
+        {
+          "if": { "properties": { "timeStatus": { "const": "confirmed" } } },
+          "then": { "required": ["time", "timezone"] }
+        }
+      ]
+    },
+    "priorCoverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["url", "contentType"],
+      "properties": {
+        "url": { "type": "string", "format": "uri" },
+        "contentType": { "type": "string", "enum": ["article", "court-calendar", "book", "podcast", "youtube", "social", "other"] },
+        "title": { "type": ["string", "null"] },
+        "needsRefresh": { "type": ["boolean", "null"] }
+      }
+    },
+    "asset": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["filename", "assetType"],
+      "properties": {
+        "filename": { "type": "string" },
+        "assetType": { "type": "string", "enum": ["artwork", "court-document", "screenshot", "other"] },
+        "approvedForPublication": { "type": "boolean", "default": false },
+        "altText": { "type": ["string", "null"] },
+        "notes": { "type": ["string", "null"] }
+      }
+    },
+    "caseCandidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["candidateId", "caseName", "observedAt", "trendSignals", "mediaCoverage", "courtEvents", "sources"],
+      "properties": {
+        "candidateId": { "type": "string", "minLength": 1 },
+        "caseName": { "type": "string", "minLength": 1 },
+        "aliases": { "type": "array", "items": { "type": "string" }, "default": [] },
+        "observedAt": { "type": "string", "format": "date-time" },
+        "caseType": { "type": ["string", "null"], "enum": ["criminal", "civil", "appellate", "inquest", "other", null] },
+        "country": { "type": ["string", "null"] },
+        "jurisdiction": { "type": ["string", "null"] },
+        "court": { "type": ["string", "null"] },
+        "division": { "type": ["string", "null"] },
+        "docket": { "type": ["string", "null"] },
+        "proceduralStage": { "type": ["string", "null"] },
+        "currentHook": { "type": ["string", "null"] },
+        "recommendedAngle": { "type": ["string", "null"] },
+        "trendSignals": { "type": "array", "items": { "$ref": "#/$defs/trendSignal" }, "default": [] },
+        "mediaCoverage": { "type": "array", "items": { "$ref": "#/$defs/mediaItem" }, "default": [] },
+        "courtEvents": { "type": "array", "items": { "$ref": "#/$defs/courtEvent" }, "default": [] },
+        "sources": { "type": "array", "items": { "$ref": "#/$defs/source" }, "default": [] },
+        "priorCoverage": { "type": "array", "items": { "$ref": "#/$defs/priorCoverage" }, "default": [] },
+        "assets": { "type": "array", "items": { "$ref": "#/$defs/asset" }, "default": [] },
+        "notes": { "type": ["string", "null"] }
+      }
+    }
+  }
+}
