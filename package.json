@@ -8,7 +8,8 @@
     "preview": "astro preview",
     "calendar:check": "node scripts/validate-court-calendar.mjs",
     "posts:check": "node scripts/validate-post-archive.mjs",
-    "site:check": "node scripts/validate-site.mjs"
+    "site:check": "node scripts/validate-site.mjs",
+    "court-command:check": "node scripts/validate-court-command-bundle.mjs"
   },
   "dependencies": {
     "@astrojs/mdx": "^3.1.9",
