@@ -33,15 +33,21 @@ Validation: npm run build
 Agent internet: limited to required court, reporting, GitHub, CassianCreed.com, and Netlify domains
 ```
 
-### One-prompt operation
+### Natural-language operation
 
-Cassian uploads the bundle and says:
+Cassian can simply say:
 
 ```text
-Court Command: publish the highest-CRUNCH website update from the attached bundle.
+I want to update the court calendar.
 ```
 
-Codex must then execute the complete website lane without returning intermediate prompts, asking Cassian to move files, or creating a local-only branch.
+If no materials are attached, ask once:
+
+```text
+Send me the trending cases, media coverage, upcoming court events, and any artwork or drafts you have. Any format is fine.
+```
+
+When the materials arrive, begin automatically. Do not require another command, a schema, or technical instructions. If usable materials are already attached, start immediately.
 
 ### Deterministic work versus AI judgment
 
@@ -78,19 +84,11 @@ This division reduces hallucination risk and prevents the agent from spending ti
 
 This design makes the task recoverable from GitHub even if the agent session ends unexpectedly.
 
-## Operator trigger
+## Natural-language start
 
-Use either command:
+No command syntax is required. Any clear intent to update, refresh, fix, or maintain the court calendar starts intake. If materials are absent, ask once for them. If materials are present, start immediately.
 
-```text
-Court Command: [case name] — [what happened or what is scheduled] — [optional source link or attachment]
-```
-
-```text
-Publish court update: [paste anything you have]
-```
-
-These commands authorize the system to research and verify the case, update the website repository, create and push a remote branch, open a pull request, run validation, merge after all gates pass, allow the normal Netlify production deployment, and verify the live result. They do not authorize unrelated site changes or social publication.
+The request plus the supplied materials authorizes the system to research and verify the case, update the website repository, create and push a remote branch, open a pull request, run validation, merge after all gates pass, allow the normal Netlify production deployment, and verify the live result. It does not authorize unrelated site changes or social publication.
 
 ## Fifteen-minute fast lane
 
@@ -381,10 +379,10 @@ For the August 14 Luigi Mangione update, start again from current `main` inside 
 
 ## Operator experience
 
-Cassian's normal interaction should be only:
+Cassian's normal interaction should be conversational:
 
 ```text
-Court Command: [case or information]
+I want to update the court calendar.
 ```
 
 The system should return either a live publication receipt or one exact blocker that requires Cassian's authority. It must not return a chain of copy-and-paste prompts, repeated login requests, speculative success messages, or a partially completed local-only branch.
