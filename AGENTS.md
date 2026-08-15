@@ -8,7 +8,7 @@ Convert an attached NEP Court Command intake bundle into a verified CassianCreed
 
 ## Trigger and authorization
 
-The exact phrase `Court Command` authorizes, for the supplied case bundle only:
+No magic phrase is required. Natural requests such as `I want to update the court calendar`, `Update the court calendar`, `Refresh our court calendar`, or `Fix the court calendar` activate this workflow. `Court Command` remains a backward-compatible alias.\n\nIf the request contains no research, links, or files, reply only: `Send me the trending cases, media coverage, upcoming court events, and any artwork or drafts you have. Any format is fine.` When the user supplies the materials, begin automatically without requiring another command or confirmation. If usable materials are already attached, begin immediately.\n\nThe natural-language request plus the supplied materials authorizes, for those materials only:
 
 - verification and drafting;
 - court-calendar and directly affected article changes;
