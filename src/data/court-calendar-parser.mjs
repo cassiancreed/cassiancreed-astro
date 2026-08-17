@@ -7,6 +7,7 @@ const COLUMNS = [
 
 const VALID_SECTIONS = new Set(['meta', 'scheduled', 'unconfirmed', 'appeal', 'completed']);
 const VALID_GROUPS = new Set(['next', 'trials', 'hearings', 'sentencing']);
+const VALID_TIME_STATUSES = new Set(['confirmed', 'tentative', 'superseded', 'not publicly verified']);
 const DATE_METADATA = new Set(['last_updated']);
 const TEXT_METADATA = new Set(['page_title', 'page_description']);
 const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
