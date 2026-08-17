@@ -28,6 +28,7 @@ const BUILD_DATE = `${localDateParts.year}-${localDateParts.month}-${localDatePa
 const CORRECTION_EMAIL = 'cassiancreed@cassiancreed.com';
 
 const NO_DATE = 'No confirmed upcoming court date found.';
+const TIME_NOT_VERIFIED = 'The time has not been publicly verified.';
 
 // An entry disappears only when it is finished, never merely because its start
 // date has passed. `ongoing: true` pins a proceeding that is actively running;
@@ -190,6 +191,7 @@ const jsonld = {
           <p class="card__type">{e.proceeding}</p>
           <h3 class="card__case">{e.case}</h3>
           <p class="card__when"><time datetime={e.dateISO}>{e.dateText}</time></p>
+          {e.timeStatus === 'not publicly verified' && <p class="card__nodate">{TIME_NOT_VERIFIED}</p>}
           <p class="card__court">{e.court}</p>
           {e.docket && <p class="card__docket">{e.docket}</p>}
           <p class="card__status"><span class="card__k">Status</span> {e.status}</p>
@@ -252,6 +254,7 @@ const jsonld = {
         <p class="row__type">{e.proceeding}</p>
         <h3 class="row__case">{e.case}</h3>
         <p class="row__when"><time datetime={e.dateISO}>{e.dateText}</time> &middot; {e.court}</p>
+        {e.timeStatus === 'not publicly verified' && <p class="row__nodate">{TIME_NOT_VERIFIED}</p>}
         {e.docket && <p class="row__docket">{e.docket}</p>}
         <p class="row__status">{e.status}</p>
         {e.nextNote && <p class="row__nodate"><strong>Next court date:</strong> {e.nextNote}</p>}
@@ -268,6 +271,7 @@ const jsonld = {
         <p class="row__type">{e.proceeding}</p>
         <h3 class="row__case">{e.case}</h3>
         <p class="row__when"><time datetime={e.dateISO}>{e.dateText}</time> &middot; {e.court}</p>
+        {e.timeStatus === 'not publicly verified' && <p class="row__nodate">{TIME_NOT_VERIFIED}</p>}
         {e.docket && <p class="row__docket">{e.docket}</p>}
         <p class="row__status">{e.status}</p>
         {e.nextNote && <p class="row__nodate"><strong>Next court date:</strong> {e.nextNote}</p>}
@@ -287,6 +291,7 @@ const jsonld = {
         <p class="row__type">{e.proceeding}</p>
         <h3 class="row__case">{e.case}</h3>
         <p class="row__when"><time datetime={e.dateISO}>{e.dateText}</time> &middot; {e.court}</p>
+        {e.timeStatus === 'not publicly verified' && <p class="row__nodate">{TIME_NOT_VERIFIED}</p>}
         {e.docket && <p class="row__docket">{e.docket}</p>}
         <p class="row__status">{e.status}</p>
         {e.nextNote && <p class="row__nodate"><strong>Next court date:</strong> {e.nextNote}</p>}

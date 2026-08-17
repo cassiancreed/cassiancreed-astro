@@ -1,5 +1,5 @@
 const COLUMNS = [
-  'section', 'id', 'case', 'proceeding', 'date_iso', 'date_text', 'court', 'docket',
+  'section', 'id', 'case', 'proceeding', 'date_iso', 'date_text', 'timezone', 'time_status', 'court', 'docket',
   'verified', 'ongoing', 'groups', 'status', 'detail', 'next_note', 'source_url',
   'source_label', 'source_type', 'source2_url', 'source2_label', 'internal_link',
   'internal_link_text', 'internal_link2', 'internal_link2_text', 'faq_question',
@@ -7,6 +7,7 @@ const COLUMNS = [
 
 const VALID_SECTIONS = new Set(['meta', 'scheduled', 'unconfirmed', 'appeal', 'completed']);
 const VALID_GROUPS = new Set(['next', 'trials', 'hearings', 'sentencing']);
+const VALID_TIME_STATUSES = new Set(['confirmed', 'tentative', 'superseded', 'not publicly verified']);
 const DATE_METADATA = new Set(['last_updated']);
 const TEXT_METADATA = new Set(['page_title', 'page_description']);
 const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
@@ -67,6 +68,12 @@ export function parseCourtCalendar(tsv) {
     checkUrl(row.internal_link, 'internal_link', line, true);
     checkUrl(row.internal_link2, 'internal_link2', line, true);
 
+    if (row.time_status && !VALID_TIME_STATUSES.has(row.time_status)) fail(line, `invalid time_status "${row.time_status}"`);
+    if (row.timezone) {
+      try { new Intl.DateTimeFormat('en-US', { timeZone: row.timezone }).format(); }
+      catch { fail(line, `invalid IANA timezone "${row.timezone}"`); }
+    }
+
     if (row.section === 'scheduled') {
       requireFields(row, ['date_iso', 'date_text', 'detail', 'groups'], line);
       if (!DATE_RE.test(row.date_iso)) fail(line, `date_iso must be YYYY-MM-DD`);
@@ -86,7 +93,8 @@ export function parseCourtCalendar(tsv) {
 
   const scheduled = parsed.filter((r) => r.section === 'scheduled').map((r) => ({
     id: r.id, case: r.case, proceeding: r.proceeding, dateISO: r.date_iso,
-    dateText: r.date_text, court: r.court, docket: r.docket || null,
+    dateText: r.date_text, timezone: r.timezone || null, timeStatus: r.time_status || null,
+    court: r.court, docket: r.docket || null,
     verified: r.verified || null, ongoing: r.ongoing === 'true',
     groups: r.groups.split('|').filter(Boolean), status: r.status, detail: r.detail,
     nextNote: r.next_note || null, src: r.source_url, srcLabel: r.source_label,
@@ -98,7 +106,8 @@ export function parseCourtCalendar(tsv) {
 
   const passive = (section) => parsed.filter((r) => r.section === section).map((r) => ({
     id: r.id, case: r.case, type: section === 'appeal' ? r.proceeding : null,
-    where: r.court, docket: r.docket || null, verified: r.verified || null,
+    where: r.court, timezone: r.timezone || null, timeStatus: r.time_status || null,
+    docket: r.docket || null, verified: r.verified || null,
     status: r.status, note: r.detail, nextNote: r.next_note || null,
     src: r.source_url, srcLabel: r.source_label, srcType: r.source_type,
     src2: r.source2_url || null, srcLabel2: r.source2_label || null,
