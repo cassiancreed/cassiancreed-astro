@@ -2,14 +2,14 @@
 title: "Lindsay Clancy trial tracker: Charges, court rulings and verdict status"
 description: "A carefully sourced tracker for Lindsay Clancy's Massachusetts murder trial, including verdict status, charges, court rulings and the legal standard for lack of criminal responsibility."
 pubDate: 2026-07-15
-updatedDate: 2026-07-15
+updatedDate: 2026-08-12
 tag: Case Files
 featured: false
 victim: Cora Clancy, 5; Dawson Clancy, 3; Callan Clancy, 8 months
 incidentDate: January 2023
 location: Duxbury, Massachusetts
 jurisdiction: Plymouth County Superior Court, Massachusetts
-status: "Pretrial; jury selection scheduled July 20, 2026. No verdict."
+status: "Active jury trial as of August 12, 2026; no verdict"
 ---
 
 <div class="status-box" style="border:1px solid var(--rule,#e4e0d9);border-left:4px solid var(--accent,#b91c1c);background:var(--card,#faf9f7);padding:1rem 1.25rem;margin:1.5rem 0;border-radius:6px;font-size:.95rem">
@@ -25,14 +25,14 @@ Cassian Creed maintains this Neural Edge Publishing tracker by checking court re
 <p style="margin-top:0"><strong>Trial status</strong></p>
 <p><strong>Has there been a verdict? No.</strong></p>
 <ul>
-<li><strong>Current phase:</strong> Pretrial; jury selection is scheduled to begin Monday, July 20, 2026.</li>
+<li><strong>Current phase:</strong> Jury trial; witness testimony was ongoing as of August 12, 2026.</li>
 <li><strong>Court:</strong> Plymouth Superior Court.</li>
 <li><strong>Judge:</strong> William F. Sullivan.</li>
 <li><strong>Charges now pending:</strong> Three counts of first-degree murder.</li>
 <li><strong>Plea:</strong> Not guilty.</li>
 <li><strong>Planned jury panel:</strong> 18 people — 12 jurors and six alternates.</li>
 <li><strong>Estimated trial length:</strong> Roughly six to eight weeks.</li>
-<li><strong>Last verified:</strong> July 15, 2026.</li>
+<li><strong>Last verified:</strong> August 12, 2026.</li>
 </ul>
 <p style="margin-bottom:0">A jury has not heard the full evidence or decided whether prosecutors can prove the charges and criminal responsibility beyond a reasonable doubt.</p>
 </div>
@@ -49,11 +49,11 @@ Cora, 5, Dawson, 3, and Callan, 8 months, died after events at their Duxbury hom
 
 | Item | Status | What is established |
 |---|---|---|
-| Verdict | **VERIFIED** | No verdict has been returned. The trial had not begun as of the July 15 verification. |
+| Verdict | **VERIFIED** | No verdict has been returned. The trial was ongoing as of the August 12 verification. |
 | Pending charges | **VERIFIED** | Three counts of first-degree murder. |
 | Removed counts | **VERIFIED** | Prosecutors filed a *nolle prosequi* on July 9 for three separate strangulation counts, describing them as redundant because the alleged conduct was subsumed within the murder charges. That filing reduced the count total; it was not an exoneration on the remaining charges. |
 | Plea | **VERIFIED** | Not guilty. |
-| Trial start | **VERIFIED** | Jury selection is scheduled for July 20, 2026. |
+| Trial start | **VERIFIED** | Jury selection was scheduled to begin July 20, 2026; the trial is under way, with witness testimony ongoing as of August 12, 2026. |
 | Court and judge | **VERIFIED** | Plymouth Superior Court; Judge William F. Sullivan. |
 | Jury | **VERIFIED** | The court plans to seat 18 people: 12 jurors and six alternates. |
 | Expected duration | **VERIFIED** | Court reporting describes an estimate of approximately six to eight weeks, or up to eight weeks. |
@@ -97,7 +97,7 @@ This ledger is for editors and readers who encounter assertions circulating arou
 
 ### Has there been a verdict?
 
-No. Jury selection is scheduled to begin July 20, 2026. A jury has not decided the charges or the contested criminal-responsibility issue.
+No. The trial was ongoing as of August 12, 2026, and a jury had not decided the charges or the contested criminal-responsibility issue.
 
 ### What charges does Lindsay Clancy face?
 
@@ -121,7 +121,7 @@ The prosecution must prove every element of the charged offenses beyond a reason
 
 ### Would an acquittal based on lack of criminal responsibility mean immediate release?
 
-No. Massachusetts law provides for court-ordered hospitalization for observation and examination after such an acquittal, followed by a judicial commitment process. The outcome is not ordinary immediate release; the statute allows continued civil commitment when the legal criteria are met.
+No. Massachusetts General Laws chapter 123, section 16 provides a court-supervised process. After an acquittal based on lack of criminal responsibility, the court **may** order hospitalization for observation and examination for up to 40 days. Any later commitment requires a petition, hearing, and the findings required by law. The statute does not support describing immediate hospitalization or long-term commitment as an automatic result in every case, and the verdict would not mean automatic release.
 
 ### Will jurors hear the 911 call?
 
@@ -129,9 +129,13 @@ The judge has ruled that they may. This tracker does not autoplay the recording 
 
 ### What happens next?
 
-Jury selection is scheduled for Monday, July 20, 2026. The status box is reverified against the court calendar and same-day pool reporting before each update.
+Witness testimony continues in Plymouth Superior Court. The status box is reverified against the court calendar and same-day pool reporting before each update.
 
 ## Update log
+
+### August 12, 2026 — Clinical testimony remains evidence, not a verdict
+
+**VERIFIED:** The trial remains ongoing with no verdict. Psychiatric nurse practitioner Rebecca Jollotta testified about Clancy’s late-2022 symptoms, medication concerns, treatment communications, and the absence of psychosis she observed during the encounters she described. Her testimony does not independently determine diagnosis at another time or Massachusetts criminal responsibility. Read the [Day 12 evidence analysis](/post/lindsay-clancy-trial-day-12-medication-testimony/).
 
 ### July 15, 2026 — No verdict; trial start remains scheduled
 
@@ -182,7 +186,7 @@ Court schedules and evidentiary plans can change. This tracker distinguishes wha
   "headline": "Lindsay Clancy trial tracker: Charges, court rulings and verdict status",
   "description": "A carefully sourced tracker for Lindsay Clancy's Massachusetts murder trial, including verdict status, charges, court rulings and the legal standard for lack of criminal responsibility.",
   "datePublished": "2026-07-15",
-  "dateModified": "2026-07-15",
+  "dateModified": "2026-08-12",
   "author": { "@type": "Person", "name": "Cassian Creed", "url": "https://cassiancreed.com/about/" },
   "publisher": { "@type": "Organization", "name": "Neural Edge Publishing", "url": "https://cassiancreed.com/" },
   "articleSection": "Crime and Courts",

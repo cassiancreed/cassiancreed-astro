@@ -3,19 +3,20 @@ title: "The Legal Nexus of Postpartum Mental Health: An Investigative Report on 
 seoTitle: "Lindsay Clancy Trial: Psychiatric Evidence and the Law"
 description: "The Lindsay Clancy trial turns on a precise question: how psychiatric evidence, postpartum psychosis, and Massachusetts criminal-responsibility law fit together."
 pubDate: 2026-08-09
+updatedDate: 2026-08-12
 tag: "Case Files"
 featured: false
 victim: "Cora Clancy, 5; Dawson Clancy, 3; Callan Clancy, 8 months"
 incidentDate: "January 24, 2023"
 location: "Duxbury, Massachusetts"
 jurisdiction: "Plymouth County Superior Court, Massachusetts"
-status: "Active jury trial as of August 8, 2026; defense case incomplete; no verdict"
+status: "Active jury trial as of August 12, 2026; no verdict"
 cover: "/og.png"
 ---
 
 <div class="status-box" style="border:1px solid var(--rule,#e4e0d9);border-left:4px solid var(--accent,#b91c1c);background:var(--card,#faf9f7);padding:1rem 1.25rem;margin:1.5rem 0;border-radius:6px;font-size:.95rem">
 <strong>Content note:</strong> This report discusses the deaths of children, a suicide attempt, and severe postpartum mental illness. It contains no graphic descriptions.<br><br>
-<strong>Research cutoff:</strong> August 8, 2026. The trial was active, the defense case was incomplete, and no verdict had been returned.
+<strong>Verified through:</strong> August 12, 2026. The trial was ongoing and no verdict had been returned. Dated statements below reflect the reporting available on the dates they name.
 </div>
 
 The Lindsay Clancy trial in Plymouth Superior Court is more than a factual inquiry into the deaths of three children. Because the defense does not dispute physical causation, the central contested question is whether the Commonwealth can prove beyond a reasonable doubt that Clancy was criminally responsible when Cora, Dawson, and Callan died.
@@ -40,6 +41,12 @@ Once lack of criminal responsibility is properly raised, the defense does not ca
 As of the cutoff, the case was an active jury trial before Judge William F. Sullivan in Plymouth Superior Court. Jurors had visited the former Duxbury home and followed the route associated with Patrick Clancy's errands. The visit supplied context; it did not establish the prosecution's interpretation of those errands.
 
 For current developments after the cutoff, use the site's [dated trial tracker](/post/lindsay-clancy-trial/).
+
+## Day 12 update: what Rebecca Jollotta’s testimony adds
+
+Psychiatric nurse practitioner Rebecca Jollotta described Clancy’s late-2022 treatment for anxiety, depression, insomnia, severe distress, intrusive thoughts, suicidal thoughts, and medication concerns. She testified that she did not observe psychosis during the encounters she described and that Clancy did not disclose a plan to harm herself or her children during that treatment window.
+
+That testimony is probative but limited. It records one clinician’s observations during particular encounters; it does not independently establish or disprove Clancy’s mental state on January 24, 2023, medication causation, malpractice, planning, or Massachusetts criminal responsibility. Read the [full Day 12 evidence analysis](/post/lindsay-clancy-trial-day-12-medication-testimony/).
 
 ## 2. The clinical and legal distinction: postpartum psychosis
 
@@ -103,7 +110,7 @@ Separate civil litigation concerning medical care must also remain separate from
 
 ## 7. Verdict paths and post-trial procedure
 
-A finding that a defendant was not criminally responsible does not mean ordinary immediate release. Under [Massachusetts General Laws chapter 123, section 16](https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXVII/Chapter123/Section16), such a verdict begins a court-supervised process involving examination, hospitalization, and possible civil commitment. Continued confinement depends on statutory criteria and later judicial findings.
+[Massachusetts General Laws chapter 123, section 16](https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXVII/Chapter123/Section16) provides a court-supervised process. After an acquittal based on lack of criminal responsibility, the court **may** order hospitalization for observation and examination for up to 40 days. Any later commitment requires a petition, hearing, and the findings required by law. The statute does not support describing immediate hospitalization or long-term commitment as an automatic result in every case, and the verdict would not mean automatic release.
 
 If jurors instead return a guilty verdict, sentencing would depend on the offenses of conviction and the governing statutes. No sentencing outcome should be predicted before a verdict.
 
@@ -124,6 +131,8 @@ The legal question is precise: not whether postpartum psychosis exists, and not 
 - [Associated Press: nanny testimony](https://apnews.com/article/40a61e511f7deb750f4cdaeb192e538d)
 - [Associated Press: psychiatric-care testimony](https://apnews.com/article/lindsay-clancy-murder-trial-psychiatric-hospital-c977c42546d3b496df6d44924149451b)
 - [ABC News: toxicology testimony](https://abcnews.com/GMA/News/lindsay-clancy-trial-toxicology-expert-testifies-drug-levels/story?id=135394092)
+- [ABC News: Rebecca Jollotta testimony, August 11, 2026](https://abcnews.com/GMA/News/feel-die-lindsay-clancys-nurse-practitioner-testifies-clancy/story?id=135555293)
+- [CNN report syndicated by KVIA: medication questions and Jollotta testimony, August 11, 2026](https://kvia.com/cnn-national/2026/08/11/lindsay-clancy-murder-trial-resumes-with-testimony-from-psychiatric-nurse-who-examined-her/)
 - [WCVB: disputed courtroom microphone phrase](https://www.wcvb.com/article/clancy-trial-shut-her-up-hot-mic/73378816)
 - [National Institute of Mental Health: perinatal depression and postpartum-psychosis guidance](https://www.nimh.nih.gov/health/publications/perinatal-depression)
 - [Postpartum Support International: postpartum psychosis help](https://postpartum.net/get-help/postpartum-psychosis-help/)
