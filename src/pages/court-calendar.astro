@@ -175,8 +175,12 @@ const jsonld = {
       <p>
         <strong>About this calendar:</strong> Neural Edge Publishing provides this calendar as a best-effort informational resource for readers following publicly reported court proceedings and case developments. Inclusion does not imply endorsement, guilt, credibility, or editorial approval. Allegations, arrests, and charges are not convictions. Court dates, legal status, and other information may change. The page's Updated date marks its latest daily review, and each entry identifies its sources. Readers should consult the linked court or government source for the most current official information and may report a correction through the correction link provided.
       </p>
+      <p>
+        <strong>United States proceedings only:</strong> matters outside the United States are tracked on our companion <a href="/international-court-watch/">International Court Watch</a>, kept separate so a foreign appeal is never mistaken for a US hearing.
+      </p>
       <p class="cal-notice__links">
         <a href="/court-calendar-policy/">Read the full Court Calendar and Case-Tracking Policy</a>
+        <a href="/international-court-watch/">International Court Watch</a>
         <span>Report corrections: {CORRECTION_EMAIL}</span>
       </p>
     </div>
@@ -408,6 +412,7 @@ const jsonld = {
       </table>
     </div>
     <p class="cal-note evidence">Updated: {LAST_UPDATED}. All dates are subject to change by the court. Corrections: {CORRECTION_EMAIL}.</p>
+    <p class="cal-note evidence">Tracking a case outside the United States? See the <a href="/international-court-watch/">International Court Watch</a>.</p>
   </section>
 
   <section class="wrap cal-sec" aria-labelledby="how-we-verify">
@@ -421,6 +426,7 @@ const jsonld = {
         <li><strong>No date, no entry.</strong> If a case is active but nothing is scheduled, it goes in <a href="#unconfirmed">Dates Not Yet Confirmed</a> and stays there. We would rather say "we don't know" than guess.</li>
         <li><strong>We review the calendar daily.</strong> We re-check every entry before publishing the page's Updated date.</li>
         <li><strong>Legal status is stated exactly.</strong> Charged is not convicted. A plea is not a verdict. An appeal is not a retrial.</li>
+        <li><strong>Foreign matters get their own page.</strong> Court structures and publication practices differ enough abroad that listing them here would mislead. They go on the <a href="/international-court-watch/">International Court Watch</a> under the same sourcing rule.</li>
         <li><strong>A press conference is not a hearing.</strong> Briefings, filing deadlines, and announcements do not go on the calendar. Only proceedings a court has actually set do.</li>
       </ol>
       <p>Even so: courts continue courts. If you plan to attend, call the clerk's office first.</p>
