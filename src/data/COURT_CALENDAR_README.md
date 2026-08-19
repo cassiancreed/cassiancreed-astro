@@ -37,3 +37,36 @@ facts, dates, FAQ copy, or hero-summary copy directly to the Astro page.
 
 The page automatically sorts court dates, builds the next-dates summary, renders
 case cards and FAQs, and updates structured data from this table.
+
+## International Court Watch
+
+`international-watch.tsv` is the single source of truth for the companion page at
+`/international-court-watch/`. It exists because matters outside the United States
+use different court structures, terminology, and publication practices, and mixing
+them into the US calendar would mislead readers. The US calendar links across to it
+and it links back.
+
+1. Edit `international-watch.tsv`, then run `npm run intl:check`. The site build
+   runs the same check and will stop if the table is malformed.
+2. Set every reviewed row's `verified` date and the `last_updated` metadata row to
+   that day's publication date, exactly as with the US calendar.
+
+### Row rules
+
+- `section`: `meta`, `listed`, `monitoring`, or `concluded`.
+- `listed` is reserved for matters where a named court or tribunal has published
+  the date itself. Those rows require `date_iso`, `date_text`, `court`, a
+  `time_status` of `confirmed`, and a `source_type` of `court listing`,
+  `court filing`, or `court record`.
+- `monitoring` rows must not carry `date_iso`. A date reported only by media goes
+  in `next_note`, described as reported rather than listed, so the page never
+  implies a court has scheduled something it has not.
+- `court` is optional on purpose. Some monitored matters are police searches or
+  investigations with no court proceeding at all, and the page says so rather than
+  implying one exists.
+- `country` is required on every non-meta row and drives the country count in the
+  page summary.
+- `time_status`: `confirmed`, `tentative`, `reported only`, or
+  `not publicly verified`.
+- Every non-meta row requires a `verified` date, `detail`, and a primary source.
+- Source and internal-link rules match the US calendar above.

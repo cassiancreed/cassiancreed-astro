@@ -1,0 +1,385 @@
+---
+import Base from '../layouts/Base.astro';
+
+import watchTsv from '../data/international-watch.tsv?raw';
+import { formatWatchDate, parseInternationalWatch } from '../data/international-watch-parser.mjs';
+
+// All editable content for this page lives in one spreadsheet-style TSV file.
+// Edit src/data/international-watch.tsv; the parser validates every row before
+// Astro can build or publish the page. Never put case facts in this component.
+const watch = parseInternationalWatch(watchTsv);
+const { listed, monitoring, concluded } = watch;
+const LAST_UPDATED = formatWatchDate(watch.metadata.last_updated);
+const PAGE_TITLE = watch.metadata.page_title;
+const PAGE_DESCRIPTION = watch.metadata.page_description;
+
+const localDateParts = Object.fromEntries(
+  new Intl.DateTimeFormat('en-US', {
+    timeZone: 'America/Los_Angeles',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+  })
+    .formatToParts(new Date())
+    .filter((part) => part.type !== 'literal')
+    .map((part) => [part.type, part.value]),
+);
+const BUILD_DATE = `${localDateParts.year}-${localDateParts.month}-${localDateParts.day}`;
+
+const CORRECTION_EMAIL = 'cassiancreed@cassiancreed.com';
+const NO_DATE = 'No confirmed upcoming court date found.';
+
+const upcoming = listed.filter((e) => e.dateISO >= BUILD_DATE);
+const countries = [...new Set([...listed, ...monitoring, ...concluded].map((e) => e.country))].sort();
+
+const faqRows = [...listed, ...monitoring, ...concluded].filter((row) => row.faqQuestion);
+const faqAnswer = (row) => (row.dateText ? `${row.dateText}. ${row.status}` : row.status);
+const allFaqs = [
+  ...faqRows.map((row) => ({ question: row.faqQuestion, answer: faqAnswer(row) })),
+  {
+    question: 'Why are these cases not on the main court calendar?',
+    answer: 'The court calendar covers United States proceedings. These matters run under other countries\u2019 legal systems, where the court structures, terminology and publication practices differ. Keeping them separate stops a foreign appeal from being read as a US hearing.',
+  },
+  {
+    question: 'Can these dates change?',
+    answer: 'Yes. Courts in every country continue and relist matters with little notice. Treat every date here as the best current information, not a promise.',
+  },
+];
+
+const jsonld = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    { '@type': 'Organization', '@id': 'https://cassiancreed.com/#org' },
+    {
+      '@type': 'WebSite',
+      '@id': 'https://cassiancreed.com/#website',
+      url: 'https://cassiancreed.com/',
+      name: 'Cassian Creed',
+      publisher: { '@id': 'https://cassiancreed.com/#org' },
+    },
+    {
+      '@type': 'CollectionPage',
+      '@id': 'https://cassiancreed.com/international-court-watch#page',
+      url: 'https://cassiancreed.com/international-court-watch',
+      name: PAGE_TITLE,
+      description: PAGE_DESCRIPTION,
+      isPartOf: { '@id': 'https://cassiancreed.com/#website' },
+      publisher: { '@id': 'https://cassiancreed.com/#org' },
+      dateModified: watch.metadata.last_updated,
+      mainEntity: { '@id': 'https://cassiancreed.com/international-court-watch#schedule' },
+    },
+    {
+      '@type': 'ItemList',
+      '@id': 'https://cassiancreed.com/international-court-watch#schedule',
+      name: 'Listed international court dates',
+      itemListOrder: 'https://schema.org/ItemListOrderAscending',
+      numberOfItems: listed.length,
+      itemListElement: listed.map((e, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        item: {
+          '@type': 'Event',
+          '@id': `https://cassiancreed.com/international-court-watch#${e.id}`,
+          name: `${e.case} — ${e.matter}`,
+          startDate: e.dateISO,
+          eventStatus: 'https://schema.org/EventScheduled',
+          eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+          location: {
+            '@type': 'Place',
+            name: e.court,
+            address: { '@type': 'PostalAddress', addressCountry: e.country },
+          },
+          description: e.status,
+          url: `https://cassiancreed.com/international-court-watch#${e.id}`,
+          about: { '@type': 'Thing', name: e.case },
+          isAccessibleForFree: true,
+        },
+      })),
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': 'https://cassiancreed.com/international-court-watch#breadcrumb',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://cassiancreed.com/' },
+        { '@type': 'ListItem', position: 2, name: 'True Crime Court Calendar', item: 'https://cassiancreed.com/court-calendar' },
+        { '@type': 'ListItem', position: 3, name: 'International Court Watch', item: 'https://cassiancreed.com/international-court-watch' },
+      ],
+    },
+    {
+      '@type': 'FAQPage',
+      '@id': 'https://cassiancreed.com/international-court-watch#faq',
+      mainEntity: allFaqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+      })),
+    },
+  ],
+};
+---
+<Base
+  title={PAGE_TITLE}
+  description={PAGE_DESCRIPTION}
+  jsonld={jsonld}
+  internalLinksOnly
+>
+  <section class="hero wrap">
+    <p class="evidence evidence--accent">International Watch List</p>
+    <h1>{PAGE_TITLE}</h1>
+    <p class="cal-answer">
+      {upcoming.length ? (
+        <>
+          <strong>Next listed:</strong>{' '}
+          {upcoming.map((entry, index) => (
+            <span><strong>{entry.dateText}</strong>: {entry.case} — {entry.matter}{index < upcoming.length - 1 ? '; ' : '.'}</span>
+          ))}
+        </>
+      ) : 'No confirmed future dates are currently listed.'}
+    </p>
+    <p class="cal-fresh">
+      <strong>Updated: {LAST_UPDATED}.</strong> Currently tracking {countries.length} countries: {countries.join(', ')}.
+    </p>
+  </section>
+
+  <section class="wrap cal-sec" aria-labelledby="about-this-list">
+    <h2 id="about-this-list" class="cal-notice__h">About this list</h2>
+    <div class="cal-notice">
+      <p>
+        <strong>About this list:</strong> Our <a href="/court-calendar/">True Crime Court Calendar</a> covers United States proceedings. This page is its companion for matters outside the United States, kept separate because foreign court structures, terminology and publication practices differ enough that mixing them would mislead readers. Neural Edge Publishing provides it as a best-effort informational resource. Inclusion does not imply endorsement, guilt, credibility, or editorial approval. Allegations, arrests, and charges are not convictions. Court dates and legal status may change. The page&rsquo;s Updated date marks its latest review, and each entry identifies its sources. Consult the linked court or government source for the most current official information, and report a correction using the link below.
+      </p>
+      <p class="cal-notice__links">
+        <a href="/court-calendar-policy/">Read the full Court Calendar and Case-Tracking Policy</a>
+        <a href="/court-calendar/">Back to the US Court Calendar</a>
+        <span>Report corrections: {CORRECTION_EMAIL}</span>
+      </p>
+    </div>
+  </section>
+
+  <section class="wrap cal-sec" aria-labelledby="listed-dates">
+    <h2 id="listed-dates">Listed Court Dates</h2>
+    <p class="cal-sub">A matter reaches this section only when a named court or tribunal has published the date. Everything else is below.</p>
+    <div class="cards">
+      {listed.map((e) => (
+        <article class="card" id={e.id}>
+          <p class="card__type">{e.country}</p>
+          <h3 class="card__case">{e.case}</h3>
+          <p class="card__when"><time datetime={e.dateISO}>{e.dateText}</time></p>
+          <p class="card__court">{e.court}</p>
+          {e.docket && <p class="card__docket">{e.docket}</p>}
+          <p class="card__status"><span class="card__k">Matter</span> {e.matter}</p>
+          <p class="card__status"><span class="card__k">Status</span> {e.status}</p>
+          <p class="card__detail">{e.detail}</p>
+          {e.nextNote && <p class="card__nodate"><span class="card__k">What comes next</span> {e.nextNote}</p>}
+          <p class="card__meta">
+            <span class="card__change">All dates are subject to change by the court.</span>
+            {e.verified && <span class="card__change">Verified {e.verified}</span>}
+          </p>
+          <p class="card__src">
+            <span class="card__k">Source</span>
+            <span>{e.srcLabel}</span>
+            <span class="card__srctype">{e.srcType}</span>
+            {e.src2 && <span class="card__src2">{e.srcLabel2}</span>}
+          </p>
+          <p class="card__links">
+            {e.link ? (
+              <a class="card__read" href={e.link}>{e.linkText} &rarr;</a>
+            ) : (
+              <span class="card__soon">Our case file on this is in progress.</span>
+            )}
+            <a class="card__help" href="/support/">Victim &amp; Reader Resources</a>
+            <span class="card__help">Corrections: {CORRECTION_EMAIL}</span>
+          </p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="wrap cal-sec" aria-labelledby="monitoring">
+    <h2 id="monitoring">Monitored, No Confirmed Date</h2>
+    <p class="cal-sub">These are being followed, but no court has published a date. Some have no court proceeding at all, and we say so rather than implying one exists.</p>
+    {monitoring.map((e) => (
+      <div class="row row--muted" id={e.id}>
+        <p class="row__type">{e.country} &middot; No date set</p>
+        <h3 class="row__case">{e.case}</h3>
+        <p class="row__when">{e.court || 'No court proceeding. Investigation or search only.'}</p>
+        {e.docket && <p class="row__docket">{e.docket}</p>}
+        <p class="row__nodate"><strong>Next court date</strong> {e.nextNote || NO_DATE}</p>
+        <p class="row__status"><strong>Matter:</strong> {e.matter}</p>
+        <p class="row__status">{e.status}</p>
+        <p class="row__note">{e.detail}</p>
+        <p class="row__meta">Subject to change &middot; Source: {e.srcLabel} ({e.srcType}){e.src2 && <span class="row__src2"> &middot; Also: {e.srcLabel2}</span>}{e.verified && <span class="row__src2"> &middot; Verified {e.verified}</span>}</p>
+        <p class="row__links">
+          {e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : <span class="card__soon">Our case file on this is in progress.</span>}
+          <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <span class="row__help">Corrections: {CORRECTION_EMAIL}</span>
+        </p>
+      </div>
+    ))}
+  </section>
+
+  <section class="wrap cal-sec" aria-labelledby="concluded">
+    <h2 id="concluded">Concluded</h2>
+    <p class="cal-sub">Listed because renewed attention, usually a documentary, can make a finished matter look active.</p>
+    {concluded.map((e) => (
+      <div class="row row--done" id={e.id}>
+        <p class="row__type">{e.country} &middot; Concluded</p>
+        <h3 class="row__case">{e.case}</h3>
+        <p class="row__when">{e.court || 'Court not publicly identified.'}</p>
+        {e.docket && <p class="row__docket">{e.docket}</p>}
+        <p class="row__nodate"><strong>Next court date</strong> {e.nextNote || NO_DATE}</p>
+        <p class="row__status"><strong>Matter:</strong> {e.matter}</p>
+        <p class="row__status">{e.status}</p>
+        <p class="row__note">{e.detail}</p>
+        <p class="row__meta">Source: {e.srcLabel} ({e.srcType}){e.src2 && <span class="row__src2"> &middot; Also: {e.srcLabel2}</span>}{e.verified && <span class="row__src2"> &middot; Verified {e.verified}</span>}</p>
+        <p class="row__links">
+          {e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : <span class="card__soon">Our case file on this is in progress.</span>}
+          <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <span class="row__help">Corrections: {CORRECTION_EMAIL}</span>
+        </p>
+      </div>
+    ))}
+  </section>
+
+  <section class="wrap cal-sec" aria-labelledby="at-a-glance">
+    <h2 id="at-a-glance">At a Glance</h2>
+    <div class="cal-scroll">
+      <table class="cal-table">
+        <thead>
+          <tr>
+            <th scope="col">Case</th>
+            <th scope="col">Country</th>
+            <th scope="col">Court or agency</th>
+            <th scope="col">Date</th>
+            <th scope="col">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {listed.map((e) => (
+            <tr>
+              <td class="t-case">{e.case}</td>
+              <td>{e.country}</td>
+              <td>{e.court}</td>
+              <td><time datetime={e.dateISO}>{e.dateText}</time></td>
+              <td class="t-status">{e.status}</td>
+            </tr>
+          ))}
+          {monitoring.map((e) => (
+            <tr>
+              <td class="t-case">{e.case}</td>
+              <td>{e.country}</td>
+              <td>{e.court || 'No court proceeding'}</td>
+              <td class="t-none">{NO_DATE}</td>
+              <td class="t-status">{e.status}</td>
+            </tr>
+          ))}
+          {concluded.map((e) => (
+            <tr>
+              <td class="t-case">{e.case}</td>
+              <td>{e.country}</td>
+              <td>{e.court || 'Court not publicly identified'}</td>
+              <td class="t-none">Concluded</td>
+              <td class="t-status">{e.status}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p class="cal-note evidence">Updated: {LAST_UPDATED}. All dates are subject to change by the court. Corrections: {CORRECTION_EMAIL}.</p>
+  </section>
+
+  <section class="wrap cal-sec" aria-labelledby="how-we-verify-intl">
+    <h2 id="how-we-verify-intl">How We Verify International Dates</h2>
+    <div class="prose">
+      <p>The rule that governs our US calendar governs this page too: a date is published only when we can point to where it came from. Foreign matters make that harder, not optional.</p>
+      <ol>
+        <li><strong>The court&rsquo;s own listing wins.</strong> Where a court publishes a daily list, that is the source. A wire report of a date is not the same thing as the court publishing it.</li>
+        <li><strong>Reported dates stay unlisted.</strong> When only a news outlet has a date, the matter goes in <a href="#monitoring">Monitored, No Confirmed Date</a> and the reported date is described there. It does not become a sitting.</li>
+        <li><strong>We do not translate a foreign procedure into a US one.</strong> A magistrates court mention, an appeal for leave, and a Dika-stage appeal are not arraignments, hearings, or retrials. We use the system&rsquo;s own terms.</li>
+        <li><strong>An investigation is not a case.</strong> Where police are searching or investigating and no court is seised of the matter, we say there is no court proceeding rather than leaving a blank that reads like one.</li>
+        <li><strong>Identification is a fact that needs its own source.</strong> Remains that are believed to be someone are not remains that have been identified, and we hold those apart.</li>
+        <li><strong>Legal status is stated exactly.</strong> Charged is not convicted. An appeal is not an acquittal. A served sentence is not an open case.</li>
+      </ol>
+      <p>The full <a href="/court-calendar-policy/">Court Calendar and Case-Tracking Policy</a> sets out what inclusion does and does not mean and how to report a correction. If something here is wrong, email {CORRECTION_EMAIL} and we will fix it.</p>
+    </div>
+  </section>
+
+  <section class="wrap cal-sec" aria-labelledby="faq">
+    <h2 id="faq">FAQ</h2>
+    <div class="prose faq">
+      {allFaqs.map((faq) => (
+        <>
+          <h3>{faq.question}</h3>
+          <p>{faq.answer}</p>
+        </>
+      ))}
+    </div>
+  </section>
+
+  <section class="wrap cal-sec">
+    <p class="cal-help">
+      True crime is about real people. If a case on this page touches something in your own life, our <a href="/support/">Victim &amp; Reader Resources</a> page lists free, confidential help.
+    </p>
+  </section>
+
+  <style>
+    .cal-notice__h{font-family:var(--serif);font-size:26px;font-weight:600;margin:0 0 14px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+    .cal-notice{background:var(--bg-2);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:10px;padding:18px 20px}
+    .cal-notice p{margin:0;color:var(--ink-2);font-size:15px;line-height:1.65;max-width:74ch}
+    .cal-notice strong{color:var(--ink)}
+    .cal-notice a{color:var(--accent)}
+    .cal-notice__links{display:flex;flex-wrap:wrap;gap:18px;margin-top:14px!important;padding-top:12px;border-top:1px solid var(--line)}
+    .cal-notice__links a{color:var(--accent);font-size:14px;text-decoration:none}
+    .cal-notice__links a:hover{text-decoration:underline}
+    .card__docket,.row__docket{font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;color:var(--ink-3);margin:0 0 10px}
+    .card__nodate,.row__nodate{font-size:14px;color:var(--ink-2);margin:0 0 12px;line-height:1.5;padding:9px 12px;background:var(--bg-3);border-radius:7px}
+    .card__nodate strong,.row__nodate strong{color:var(--ink);font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;display:block;margin-bottom:3px}
+    .card__src2{display:block;margin-top:6px}
+    .cal-answer{font-size:19px;color:var(--ink);max-width:68ch;margin:18px 0 0;line-height:1.6}
+    .cal-answer strong{color:var(--accent)}
+    .cal-fresh{font-size:15px;color:var(--ink-2);max-width:68ch;margin:14px 0 0}
+    .cal-fresh strong{color:var(--ink)}
+    .cal-sec{margin:44px auto 0}
+    .cal-sec h2{font-family:var(--serif);font-size:26px;font-weight:600;margin:0 0 6px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+    .cal-sub{color:var(--ink-2);font-size:15px;margin:0 0 18px;max-width:66ch}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px;margin-top:18px}
+    .card{background:var(--bg-2);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:10px;padding:20px}
+    .card__type,.row__type{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin:0 0 8px}
+    .card__case,.row__case{font-family:var(--serif);font-size:21px;font-weight:600;margin:0 0 6px;color:var(--ink)}
+    .card__when{font-family:var(--mono);font-size:15px;color:var(--ink);margin:0 0 4px}
+    .card__court,.row__when{color:var(--ink-2);font-size:14px;margin:0 0 12px}
+    .card__status,.row__status{font-size:15px;color:var(--ink);margin:0 0 10px;line-height:1.5}
+    .card__detail,.row__note{font-size:14px;color:var(--ink-2);margin:0 0 12px;line-height:1.5}
+    .card__k{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);display:block;margin-bottom:2px}
+    .card__meta{display:flex;flex-direction:column;gap:2px;margin:0 0 10px}
+    .card__change,.row__meta{font-family:var(--mono);font-size:11px;color:var(--ink-3);letter-spacing:.03em}
+    .card__src{font-size:13px;margin:0 0 12px}
+    .card__srctype{display:block;font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:var(--ink-3);margin-top:3px}
+    .card__links,.row__links{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin:0;padding-top:12px;border-top:1px solid var(--line)}
+    .card__read,.row__links a{color:var(--accent);text-decoration:none;font-size:14px}
+    .card__read:hover,.row__links a:hover{text-decoration:underline}
+    .card__help,.row__help{color:var(--ink-2)!important;font-size:13px}
+    .card__soon{color:var(--ink-3);font-size:13px}
+    .row{padding:18px 0;border-bottom:1px solid var(--line)}
+    .row:last-child{border-bottom:0}
+    .row--muted .row__type{color:var(--ink-3)}
+    .row--done .row__type{color:#5fae7e}
+    .row__status strong{color:var(--ink)}
+    .row__meta{display:block;margin:0 0 10px}
+    .row__src2{color:var(--ink-3)}
+    .cal-scroll{overflow-x:auto;margin:18px 0 12px;background:var(--bg-2);border:1px solid var(--line);border-radius:10px}
+    .cal-table{width:100%;min-width:900px;border-collapse:collapse;font-size:14px}
+    .cal-table th{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);text-align:left;padding:13px 16px;background:var(--bg-3);border-bottom:1px solid var(--line-strong)}
+    .cal-table td{padding:13px 16px;border-top:1px solid var(--line);vertical-align:top;color:var(--ink-2)}
+    .t-case{font-family:var(--serif);font-weight:600;font-size:16px;color:var(--ink)}
+    .t-none{font-family:var(--mono);font-size:11.5px;color:var(--ink-3)}
+    .t-status{max-width:34ch}
+    .cal-note{display:block;margin:0 0 8px;color:var(--ink-3)}
+    .prose p,.prose li{color:var(--ink-2);line-height:1.65;max-width:70ch}
+    .prose strong{color:var(--ink)}
+    .prose ol{padding-left:20px}
+    .prose li{margin-bottom:10px}
+    .prose a{color:var(--accent)}
+    .faq h3{font-family:var(--serif);font-size:18px;font-weight:600;color:var(--ink);margin:22px 0 6px}
+    .cal-help{margin:36px 0 44px;padding:16px 18px;background:var(--bg-2);border:1px solid var(--line);border-radius:10px;font-size:15px;color:var(--ink-2)}
+    .cal-help a{color:var(--accent)}
+    @media(max-width:680px){.cards{grid-template-columns:1fr}}
+  </style>
+</Base>
