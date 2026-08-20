@@ -19,7 +19,10 @@ facts, dates, FAQ copy, or hero-summary copy directly to the Astro page.
 
 ## Row rules
 
-- `section`: `meta`, `scheduled`, `unconfirmed`, `appeal`, or `completed`.
+- `section`: `meta`, `scheduled`, `unconfirmed`, `appeal`, `investigation`, or `completed`.
+  - `scheduled` rows carry a real date and render under **In Court Now** when `ongoing` is `true`, otherwise under **Upcoming Dates**.
+  - `appeal` rows render under **Awaiting Decision**: argued, filed, or fully briefed and now waiting on a court. No date.
+  - `investigation` rows render under **Active Investigations — No Court Proceeding**. These are matters where no court has scheduled anything and often no one has been charged. The parser rejects an `investigation` row that carries `date_iso` or `groups`, and requires `detail`, so the page can never imply a proceeding that does not exist. Where a suspect has been booked but no court setting is published, say so in `detail` and keep the charging language in allegation form.
 - The `page_title` and `page_description` metadata rows control the public page
   title and search/social description, including the calendar year.
 - Scheduled rows require `date_iso`, `date_text`, `detail`, and `groups`.

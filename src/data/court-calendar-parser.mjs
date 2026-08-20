@@ -5,7 +5,7 @@ const COLUMNS = [
   'internal_link_text', 'internal_link2', 'internal_link2_text', 'faq_question',
 ];
 
-const VALID_SECTIONS = new Set(['meta', 'scheduled', 'unconfirmed', 'appeal', 'completed']);
+const VALID_SECTIONS = new Set(['meta', 'scheduled', 'unconfirmed', 'appeal', 'investigation', 'completed']);
 const VALID_GROUPS = new Set(['next', 'trials', 'hearings', 'sentencing']);
 const VALID_TIME_STATUSES = new Set(['confirmed', 'tentative', 'superseded', 'not publicly verified']);
 const DATE_METADATA = new Set(['last_updated']);
@@ -74,6 +74,15 @@ export function parseCourtCalendar(tsv) {
       catch { fail(line, `invalid IANA timezone "${row.timezone}"`); }
     }
 
+    // Investigation rows describe matters with no court proceeding at all. They
+    // must never carry a date, so the page cannot imply a court has scheduled
+    // something it has not.
+    if (row.section === 'investigation') {
+      requireFields(row, ['detail'], line);
+      if (row.date_iso) fail(line, 'investigation rows must not carry date_iso — there is no court proceeding');
+      if (row.groups) fail(line, 'investigation rows must not use display groups');
+    }
+
     if (row.section === 'scheduled') {
       requireFields(row, ['date_iso', 'date_text', 'detail', 'groups'], line);
       if (!DATE_RE.test(row.date_iso)) fail(line, `date_iso must be YYYY-MM-DD`);
@@ -120,6 +129,7 @@ export function parseCourtCalendar(tsv) {
     entries: scheduled,
     unconfirmed: passive('unconfirmed'),
     appeals: passive('appeal'),
+    investigations: passive('investigation'),
     completed: passive('completed'),
   };
 }
