@@ -29,6 +29,17 @@ const BUILD_DATE = `${localDateParts.year}-${localDateParts.month}-${localDatePa
 const CORRECTION_EMAIL = 'cassiancreed@cassiancreed.com';
 const NO_DATE = 'No confirmed upcoming court date found.';
 
+// Case-guide links live here rather than in the TSV because the TSV's
+// internal_link column is deliberately restricted to same-site paths. These are
+// our own products, keyed by row id, so a row never silently inherits a book
+// that is not about it.
+const CASE_GUIDES = {
+  'patterson-appeal': {
+    url: 'https://cassiancreed.beehiiv.com/products/case-chess-erin-patterson',
+    text: 'Case Chess: The Erin Patterson Case',
+  },
+};
+
 const upcoming = listed.filter((e) => e.dateISO >= BUILD_DATE);
 const countries = [...new Set([...listed, ...monitoring, ...concluded].map((e) => e.country))].sort();
 
@@ -210,7 +221,8 @@ const jsonld = {
         <p class="row__meta">Subject to change &middot; Source: {e.srcLabel} ({e.srcType}){e.src2 && <span class="row__src2"> &middot; Also: {e.srcLabel2}</span>}{e.verified && <span class="row__src2"> &middot; Verified {e.verified}</span>}</p>
         <p class="row__links">
           {e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : <span class="card__soon">Our case file on this is in progress.</span>}
-          <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <span class="row__help">Corrections: {CORRECTION_EMAIL}</span>
+          {CASE_GUIDES[e.id] && <a href={CASE_GUIDES[e.id].url} target="_blank" rel="noopener noreferrer">{CASE_GUIDES[e.id].text} &rarr;</a>}
+          <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <a class="row__help" href="/support/">Report a correction</a>
         </p>
       </div>
     ))}
@@ -232,7 +244,8 @@ const jsonld = {
         <p class="row__meta">Source: {e.srcLabel} ({e.srcType}){e.src2 && <span class="row__src2"> &middot; Also: {e.srcLabel2}</span>}{e.verified && <span class="row__src2"> &middot; Verified {e.verified}</span>}</p>
         <p class="row__links">
           {e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : <span class="card__soon">Our case file on this is in progress.</span>}
-          <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <span class="row__help">Corrections: {CORRECTION_EMAIL}</span>
+          {CASE_GUIDES[e.id] && <a href={CASE_GUIDES[e.id].url} target="_blank" rel="noopener noreferrer">{CASE_GUIDES[e.id].text} &rarr;</a>}
+          <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <a class="row__help" href="/support/">Report a correction</a>
         </p>
       </div>
     ))}

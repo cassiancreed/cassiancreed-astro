@@ -8,7 +8,7 @@ import { formatCalendarDate, parseCourtCalendar } from '../data/court-calendar-p
 // Replace or edit src/data/court-calendar.tsv; the parser validates every row
 // before Astro can build or publish the page.
 const calendar = parseCourtCalendar(calendarTsv);
-const { entries, unconfirmed, appeals, completed } = calendar;
+const { entries, unconfirmed, appeals, investigations, completed } = calendar;
 const LAST_UPDATED = formatCalendarDate(calendar.metadata.last_updated);
 const PAGE_TITLE = calendar.metadata.page_title;
 const PAGE_DESCRIPTION = calendar.metadata.page_description;
@@ -36,12 +36,17 @@ const TIME_NOT_VERIFIED = 'The time has not been publicly verified.';
 const isUpcoming = (e) => e.ongoing === true || e.dateISO >= BUILD_DATE;
 const byGroup = (g) => entries.filter((e) => e.groups.includes(g) && isUpcoming(e));
 const nextDates = byGroup('next').sort((a, b) => a.dateISO.localeCompare(b.dateISO));
-const heroDates = nextDates.filter((e) => e.dateISO >= BUILD_DATE).slice(0, 6);
+// Readers arrive asking one of two questions: what is happening in a courtroom
+// right now, and what is on a calendar next. `ongoing` splits the two.
+const inCourtNow = nextDates.filter((e) => e.ongoing === true);
+const upcomingDates = nextDates.filter((e) => e.ongoing !== true);
+const heroDates = upcomingDates.filter((e) => e.dateISO >= BUILD_DATE).slice(0, 6);
 
 const faqRows = [
   ...entries.map((row) => ({ ...row, section: 'scheduled' })),
   ...unconfirmed.map((row) => ({ ...row, section: 'unconfirmed' })),
   ...appeals.map((row) => ({ ...row, section: 'appeal' })),
+  ...investigations.map((row) => ({ ...row, section: 'investigation' })),
   ...completed.map((row) => ({ ...row, section: 'completed' })),
 ];
 const faqAnswer = (row) => {
@@ -165,7 +170,13 @@ const jsonld = {
       ) : 'No confirmed future court dates are currently listed.'}
     </p>
     <p class="cal-fresh">
-      <strong>Updated: {LAST_UPDATED}.</strong> Court dates move. Confirm with the court before you travel.
+      <strong>Last updated: {LAST_UPDATED}.</strong> Court dates move. Confirm with the court before you travel.
+    </p>
+    <p class="cal-presumption">
+      All defendants are presumed innocent unless and until convicted, each on the evidence in their own trial. Court dates move &mdash; confirm with the court.
+    </p>
+    <p class="cal-fresh">
+      Something wrong on this page? <a href="/support/">Report a correction</a>.
     </p>
   </section>
 
@@ -181,16 +192,55 @@ const jsonld = {
       <p class="cal-notice__links">
         <a href="/court-calendar-policy/">Read the full Court Calendar and Case-Tracking Policy</a>
         <a href="/international-court-watch/">International Court Watch</a>
-        <span>Report corrections: {CORRECTION_EMAIL}</span>
+        <a href="/support/">Report a correction</a>
+        <span>Corrections: {CORRECTION_EMAIL}</span>
       </p>
     </div>
   </section>
 
-  <section class="wrap cal-sec" aria-labelledby="next-dates">
-    <h2 id="next-dates">Next Court Dates</h2>
-    <p class="cal-sub">Everything currently on a calendar, in date order.</p>
+  <section class="wrap cal-sec" aria-labelledby="in-court-now">
+    <h2 id="in-court-now">In Court Now</h2>
+    <p class="cal-sub">Trials and proceedings actively underway, including matters where a verdict could come at any time.</p>
     <div class="cards">
-      {nextDates.map((e) => (
+      {inCourtNow.map((e) => (
+        <article class="card card--live" id={e.id}>
+          <p class="card__type">{e.proceeding}</p>
+          <h3 class="card__case">{e.case}</h3>
+          <p class="card__when"><span class="card__k">Proceeding began</span><time datetime={e.dateISO}>{e.dateText}</time></p>
+          <p class="card__court">{e.court}</p>
+          {e.docket && <p class="card__docket">{e.docket}</p>}
+          <p class="card__status"><span class="card__k">Status</span> {e.status}</p>
+          <p class="card__detail">{e.detail}</p>
+          {e.nextNote && <p class="card__nodate"><span class="card__k">Next development</span> {e.nextNote}</p>}
+          <p class="card__meta">
+            <span class="card__change">All dates are subject to change by the court.</span>
+          </p>
+          <p class="card__src">
+            <span class="card__k">Source</span>
+            <span>{e.srcLabel}</span>
+            <span class="card__srctype">{e.srcType}</span>
+            {e.src2 && <span class="card__src2">{e.srcLabel2}</span>}
+          </p>
+          <p class="card__links">
+            {e.link ? (
+              <a class="card__read" href={e.link}>{e.linkText} &rarr;</a>
+            ) : (
+              <span class="card__soon">Our case file on this is in progress.</span>
+            )}
+            {e.link2 && <a class="card__read" href={e.link2}>{e.linkText2} &rarr;</a>}
+            <a class="card__help" href="/support/">Victim &amp; Reader Resources</a>
+            <a class="card__help" href="/support/">Report a correction</a>
+          </p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="wrap cal-sec" aria-labelledby="next-dates">
+    <h2 id="next-dates">Upcoming Dates</h2>
+    <p class="cal-sub">Hard dates ahead, in date order. Every date traces to a named source.</p>
+    <div class="cards">
+      {upcomingDates.map((e) => (
         <article class="card" id={e.id}>
           <p class="card__type">{e.proceeding}</p>
           <h3 class="card__case">{e.case}</h3>
@@ -218,7 +268,7 @@ const jsonld = {
             )}
             {e.link2 && <a class="card__read" href={e.link2}>{e.linkText2} &rarr;</a>}
             <a class="card__help" href="/support/">Victim &amp; Reader Resources</a>
-            <span class="card__help">Corrections: {CORRECTION_EMAIL}</span>
+            <a class="card__help" href="/support/">Report a correction</a>
           </p>
         </article>
       ))}
@@ -261,9 +311,9 @@ const jsonld = {
         {e.timeStatus === 'not publicly verified' && <p class="row__nodate">{TIME_NOT_VERIFIED}</p>}
         {e.docket && <p class="row__docket">{e.docket}</p>}
         <p class="row__status">{e.status}</p>
-        {e.nextNote && <p class="row__nodate"><strong>Next court date:</strong> {e.nextNote}</p>}
+        {e.nextNote && <p class="row__nodate"><strong>Expected next step:</strong> {e.nextNote}</p>}
         <p class="row__meta">Subject to change by the court &middot; Source: {e.srcLabel}</p>
-        <p class="row__links">{e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : <span class="card__soon">Our case file on this is in progress.</span>} {e.link2 && <a href={e.link2}>{e.linkText2} &rarr;</a>} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <span class="row__help">Corrections: {CORRECTION_EMAIL}</span></p>
+        <p class="row__links">{e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : <span class="card__soon">Our case file on this is in progress.</span>} {e.link2 && <a href={e.link2}>{e.linkText2} &rarr;</a>} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <a class="row__help" href="/support/">Report a correction</a></p>
       </div>
     ))}
   </section>
@@ -278,18 +328,18 @@ const jsonld = {
         {e.timeStatus === 'not publicly verified' && <p class="row__nodate">{TIME_NOT_VERIFIED}</p>}
         {e.docket && <p class="row__docket">{e.docket}</p>}
         <p class="row__status">{e.status}</p>
-        {e.nextNote && <p class="row__nodate"><strong>Next court date:</strong> {e.nextNote}</p>}
+        {e.nextNote && <p class="row__nodate"><strong>Expected next step:</strong> {e.nextNote}</p>}
         <p class="row__meta">Subject to change by the court &middot; Source: {e.srcLabel}</p>
         <p class="row__links">
           {e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : <span class="card__soon">Our case file on this is in progress.</span>}
-          <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <span class="row__help">Corrections: {CORRECTION_EMAIL}</span>
+          <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <a class="row__help" href="/support/">Report a correction</a>
         </p>
       </div>
     ))}
   </section>
 
   <section class="wrap cal-sec" aria-labelledby="sentencing">
-    <h2 id="sentencing">Sentencing &amp; Appeals</h2>
+    <h2 id="sentencing">Sentencing</h2>
     {byGroup('sentencing').map((e) => (
       <div class="row">
         <p class="row__type">{e.proceeding}</p>
@@ -298,22 +348,45 @@ const jsonld = {
         {e.timeStatus === 'not publicly verified' && <p class="row__nodate">{TIME_NOT_VERIFIED}</p>}
         {e.docket && <p class="row__docket">{e.docket}</p>}
         <p class="row__status">{e.status}</p>
-        {e.nextNote && <p class="row__nodate"><strong>Next court date:</strong> {e.nextNote}</p>}
+        {e.nextNote && <p class="row__nodate"><strong>Expected next step:</strong> {e.nextNote}</p>}
         <p class="row__meta">Subject to change by the court &middot; Source: {e.srcLabel}</p>
-        <p class="row__links">{e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : <span class="card__soon">Our case file on this is in progress.</span>} {e.link2 && <a href={e.link2}>{e.linkText2} &rarr;</a>} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <span class="row__help">Corrections: {CORRECTION_EMAIL}</span></p>
+        <p class="row__links">{e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : <span class="card__soon">Our case file on this is in progress.</span>} {e.link2 && <a href={e.link2}>{e.linkText2} &rarr;</a>} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <a class="row__help" href="/support/">Report a correction</a></p>
       </div>
     ))}
+  </section>
+
+  <section class="wrap cal-sec" aria-labelledby="awaiting-decision">
+    <h2 id="awaiting-decision">Awaiting Decision</h2>
+    <p class="cal-sub">Argued, filed, or fully briefed &mdash; now waiting on a court. Courts rarely announce when a reserved ruling will land.</p>
     {appeals.map((e) => (
-      <div class="row">
+      <div class="row" id={e.id}>
         <p class="row__type">{e.type || 'Post-conviction motions'}</p>
         <h3 class="row__case">{e.case}</h3>
         <p class="row__when">{e.where}</p>
-        <p class="row__nodate"><strong>Next court date:</strong> {NO_DATE}</p>
+        {e.docket && <p class="row__docket">{e.docket}</p>}
         <p class="row__status">{e.status}</p>
-        {e.nextNote && <p class="row__nodate"><strong>Next court date:</strong> {e.nextNote}</p>}
+        <p class="row__nodate"><strong>Expected development:</strong> {e.nextNote || NO_DATE}</p>
         <p class="row__note">{e.note}</p>
         <p class="row__meta">Subject to change by the court &middot; Source: {e.srcLabel} ({e.srcType}){e.src2 && <span class="row__src2"> &middot; Also: {e.srcLabel2}</span>}</p>
-        <p class="row__links">{e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : <span class="card__soon">Our case file on this is in progress.</span>} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <span class="row__help">Corrections: {CORRECTION_EMAIL}</span></p>
+        <p class="row__links">{e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : <span class="card__soon">Our case file on this is in progress.</span>} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <a class="row__help" href="/support/">Report a correction</a></p>
+      </div>
+    ))}
+    <p class="cal-note evidence">Reserved decisions in matters outside the United States, including the Erin Patterson appeal, are tracked on the <a href="/international-court-watch/">International Court Watch</a>.</p>
+  </section>
+
+  <section class="wrap cal-sec" aria-labelledby="investigations">
+    <h2 id="investigations">Active Investigations &mdash; No Court Proceeding</h2>
+    <p class="cal-sub">These matters are under investigation. No court has scheduled anything, and in several no one has been charged. They are listed here because readers look for them, and separated so nothing on this page implies a proceeding that does not exist.</p>
+    {investigations.map((e) => (
+      <div class="row row--muted" id={e.id}>
+        <p class="row__type">Investigation &middot; no court proceeding</p>
+        <h3 class="row__case">{e.case}</h3>
+        <p class="row__when">{e.where}</p>
+        <p class="row__status">{e.status}</p>
+        <p class="row__nodate"><strong>Next development to verify:</strong> {e.nextNote || 'Not yet identified.'}</p>
+        <p class="row__note">{e.note}</p>
+        <p class="row__meta">No court date exists for this matter &middot; Source: {e.srcLabel} ({e.srcType}){e.src2 && <span class="row__src2"> &middot; Also: {e.srcLabel2}</span>}</p>
+        <p class="row__links">{e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : <span class="card__soon">Our case file on this is in progress.</span>} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <a class="row__help" href="/support/">Report a correction</a></p>
       </div>
     ))}
   </section>
@@ -329,12 +402,12 @@ const jsonld = {
         {e.docket && <p class="row__docket">{e.docket}</p>}
         <p class="row__nodate"><strong>Next court date:</strong> {NO_DATE}</p>
         <p class="row__status">{e.status}</p>
-        {e.nextNote && <p class="row__nodate"><strong>Next court date:</strong> {e.nextNote}</p>}
+        {e.nextNote && <p class="row__nodate"><strong>Expected next step:</strong> {e.nextNote}</p>}
         <p class="row__note">{e.note}</p>
         <p class="row__meta">Subject to change by the court &middot; Source: {e.srcLabel} ({e.srcType}){e.src2 && <span class="row__src2"> &middot; Also: {e.srcLabel2}</span>}</p>
         <p class="row__links">
           {e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : <span class="card__soon">Our case file on this is in progress.</span>}
-          <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <span class="row__help">Corrections: {CORRECTION_EMAIL}</span>
+          <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <a class="row__help" href="/support/">Report a correction</a>
         </p>
       </div>
     ))}
@@ -350,10 +423,10 @@ const jsonld = {
         {e.docket && <p class="row__docket">{e.docket}</p>}
         <p class="row__nodate"><strong>Next court date:</strong> {NO_DATE}</p>
         <p class="row__status">{e.status}</p>
-        {e.nextNote && <p class="row__nodate"><strong>Next court date:</strong> {e.nextNote}</p>}
+        {e.nextNote && <p class="row__nodate"><strong>Expected next step:</strong> {e.nextNote}</p>}
         <p class="row__note">{e.note}</p>
         <p class="row__meta">Source: {e.srcLabel} ({e.srcType}){e.src2 && <span class="row__src2"> &middot; Also: {e.srcLabel2}</span>}</p>
-        <p class="row__links">{e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : <span class="card__soon">Our case file on this is in progress.</span>} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <span class="row__help">Corrections: {CORRECTION_EMAIL}</span></p>
+        <p class="row__links">{e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : <span class="card__soon">Our case file on this is in progress.</span>} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <a class="row__help" href="/support/">Report a correction</a></p>
       </div>
     ))}
   </section>
@@ -386,6 +459,15 @@ const jsonld = {
               <td class="t-case">{e.case}</td>
               <td>{e.type || 'Post-conviction motions'}</td>
               <td class="t-none">{NO_DATE}</td>
+              <td>{e.where}</td>
+              <td class="t-status">{e.status}</td>
+            </tr>
+          ))}
+          {investigations.map((e) => (
+            <tr>
+              <td class="t-case">{e.case}</td>
+              <td>Investigation &mdash; no court proceeding</td>
+              <td class="t-none">None; no court proceeding exists.</td>
               <td>{e.where}</td>
               <td class="t-status">{e.status}</td>
             </tr>
@@ -427,6 +509,7 @@ const jsonld = {
         <li><strong>We review the calendar daily.</strong> We re-check every entry before publishing the page's Updated date.</li>
         <li><strong>Legal status is stated exactly.</strong> Charged is not convicted. A plea is not a verdict. An appeal is not a retrial.</li>
         <li><strong>Foreign matters get their own page.</strong> Court structures and publication practices differ enough abroad that listing them here would mislead. They go on the <a href="/international-court-watch/">International Court Watch</a> under the same sourcing rule.</li>
+        <li><strong>An investigation is not a case in court.</strong> Matters where police are still working and no court has scheduled anything are kept in <a href="#investigations">Active Investigations</a>, labelled as having no court proceeding. Several involve no charged person at all, and the page says so rather than implying a docket exists.</li>
         <li><strong>A press conference is not a hearing.</strong> Briefings, filing deadlines, and announcements do not go on the calendar. Only proceedings a court has actually set do.</li>
       </ol>
       <p>Even so: courts continue courts. If you plan to attend, call the clerk's office first.</p>
@@ -482,6 +565,10 @@ const jsonld = {
     .cal-answer strong{color:var(--accent)}
     .cal-fresh{font-size:15px;color:var(--ink-2);max-width:68ch;margin:14px 0 0}
     .cal-fresh strong{color:var(--ink)}
+    .cal-fresh a{color:var(--accent)}
+    .cal-presumption{font-size:14.5px;line-height:1.6;color:var(--ink-2);max-width:68ch;margin:14px 0 0;padding:12px 14px;background:var(--bg-2);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:8px}
+    .card--live{border-left-color:#c2593f}
+    .card--live .card__type{color:#d2694c}
     .cal-sec{margin:44px auto 0}
     .cal-sec h2{font-family:var(--serif);font-size:26px;font-weight:600;margin:0 0 6px;padding-bottom:10px;border-bottom:1px solid var(--line)}
     .cal-sub{color:var(--ink-2);font-size:15px;margin:0 0 18px;max-width:66ch}

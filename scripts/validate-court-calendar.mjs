@@ -5,6 +5,6 @@ const file = new URL('../src/data/court-calendar.tsv', import.meta.url);
 const data = parseCourtCalendar(fs.readFileSync(file, 'utf8'));
 console.log(
   `Court calendar valid: ${data.entries.length} scheduled, ` +
-  `${data.unconfirmed.length} unconfirmed, ${data.appeals.length} appeals, ` +
-  `${data.completed.length} completed.`,
+  `${data.unconfirmed.length} unconfirmed, ${data.appeals.length} awaiting decision, ` +
+  `${data.investigations.length} investigations, ${data.completed.length} completed.`,
 );
