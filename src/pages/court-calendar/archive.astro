@@ -1,0 +1,110 @@
+---
+import Base from '../../layouts/Base.astro';
+
+import archiveTsv from '../../data/court-calendar-archive.tsv?raw';
+import { formatCalendarDate, parseCourtCalendar } from '../../data/court-calendar-parser.mjs';
+
+// Retired calendar entries live in their own spreadsheet-style TSV file and are
+// parsed and validated by exactly the same parser as the live calendar, so an
+// archived entry cannot quietly lose its sourcing on the way in. Move a row out
+// of src/data/court-calendar.tsv and into src/data/court-calendar-archive.tsv
+// verbatim; do not rewrite it, and do not drop its source columns.
+const archive = parseCourtCalendar(archiveTsv);
+const retired = archive.completed;
+const LAST_UPDATED = formatCalendarDate(archive.metadata.last_updated);
+const PAGE_TITLE = archive.metadata.page_title;
+const PAGE_DESCRIPTION = archive.metadata.page_description;
+
+const CORRECTION_EMAIL = 'cassiancreed@cassiancreed.com';
+const NO_DATE = 'No further court date. This matter is closed.';
+
+const jsonld = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: PAGE_TITLE,
+  description: PAGE_DESCRIPTION,
+  url: 'https://cassiancreed.com/court-calendar/archive/',
+  isPartOf: { '@type': 'WebPage', url: 'https://cassiancreed.com/court-calendar/' },
+  dateModified: archive.metadata.last_updated,
+  publisher: { '@id': 'https://cassiancreed.com/#org' },
+};
+---
+
+<Base title={PAGE_TITLE} description={PAGE_DESCRIPTION} jsonld={jsonld} internalLinksOnly>
+  <section class="hero wrap">
+    <h1>Court Calendar Archive</h1>
+    <p class="cal-answer">
+      These matters have finished and have been closed long enough to leave the
+      <a href="/court-calendar/#completed">Recently Completed</a> section of the
+      <a href="/court-calendar/">court calendar</a>. They are kept here in full, with the
+      sources they were published under, because a page that once carried a claim should
+      still show it.
+    </p>
+    <p class="cal-fresh"><strong>Updated:</strong> {LAST_UPDATED} &middot; {retired.length} archived {retired.length === 1 ? 'matter' : 'matters'}</p>
+  </section>
+
+  <section class="wrap cal-sec" aria-labelledby="why-archive">
+    <h2 id="why-archive">Why this page exists</h2>
+    <div class="prose">
+      <p>An entry leaves the live calendar when there is nothing left for a court to do and enough time has passed that it is no longer news. That is a housekeeping decision, not a retraction. Nothing here has been withdrawn, corrected away, or found to be wrong.</p>
+      <p>Reader demand plays no part in what gets archived and what stays. If a matter is still open, still awaiting a ruling, or still inside its appeal window, it belongs on the live calendar and it stays there, however quiet it has become.</p>
+      <p>If you believe something on this page is inaccurate, tell us and we will correct it here rather than delete it. Corrections: {CORRECTION_EMAIL}.</p>
+    </div>
+  </section>
+
+  <section class="wrap cal-sec" aria-labelledby="archived">
+    <h2 id="archived">Archived Matters</h2>
+    <p class="cal-sub">Listed most recently archived first. Each entry is the text that was live on the court calendar, unchanged.</p>
+    {retired.map((e) => (
+      <div class="row row--done" id={e.id}>
+        <p class="row__type">Concluded &middot; archived</p>
+        <h3 class="row__case">{e.case}</h3>
+        <p class="row__when">{e.where}</p>
+        {e.docket && <p class="row__docket">{e.docket}</p>}
+        <p class="row__nodate"><strong>Next court date:</strong> {NO_DATE}</p>
+        <p class="row__status">{e.status}</p>
+        {e.nextNote && <p class="row__nodate"><strong>Expected next step:</strong> {e.nextNote}</p>}
+        <p class="row__note">{e.note}</p>
+        {e.verified && <p class="row__meta">Last verified on the live calendar: {e.verified}</p>}
+        <p class="row__meta">Source: {e.srcLabel} ({e.srcType}){e.src2 && <span class="row__src2"> &middot; Also: {e.srcLabel2}</span>}</p>
+        <p class="row__links">{e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : <span class="card__soon">Our case file on this is in progress.</span>} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <a class="row__help" href="/support/">Report a correction</a></p>
+      </div>
+    ))}
+  </section>
+
+  <section class="wrap cal-help">
+    <p>Looking for a live proceeding? Go back to the <a href="/court-calendar/">court calendar</a>. Tracking a case outside the United States? See the <a href="/international-court-watch/">International Court Watch</a>. Our sourcing and correction rules are in the <a href="/court-calendar-policy/">Court Calendar and Case-Tracking Policy</a>.</p>
+  </section>
+
+  <style>
+    .hero{padding:44px 0 8px}
+    .cal-answer{font-size:19px;color:var(--ink);max-width:68ch;margin:18px 0 0;line-height:1.6}
+    .cal-answer a{color:var(--accent)}
+    .cal-fresh{font-size:15px;color:var(--ink-2);max-width:68ch;margin:14px 0 0}
+    .cal-fresh strong{color:var(--ink)}
+    .cal-sec{margin:44px auto 0}
+    .cal-sec h2{font-family:var(--serif);font-size:26px;font-weight:600;margin:0 0 6px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+    .cal-sub{color:var(--ink-2);font-size:15px;margin:0 0 18px;max-width:66ch}
+    .row{padding:18px 0;border-bottom:1px solid var(--line)}
+    .row:last-child{border-bottom:0}
+    .row__type{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#5fae7e;margin:0 0 8px}
+    .row__case{font-family:var(--serif);font-size:21px;font-weight:600;margin:0 0 6px;color:var(--ink)}
+    .row__when{color:var(--ink-2);font-size:14px;margin:0 0 12px}
+    .row__docket{font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;color:var(--ink-3);margin:0 0 10px}
+    .row__nodate{font-size:14px;color:var(--ink-2);margin:0 0 12px;line-height:1.5;padding:9px 12px;background:var(--bg-3);border-radius:7px}
+    .row__nodate strong{color:var(--ink);font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;display:block;margin-bottom:3px}
+    .row__status{font-size:15px;color:var(--ink);margin:0 0 10px;line-height:1.5}
+    .row__note{font-size:14px;color:var(--ink-2);margin:0 0 12px;line-height:1.5}
+    .row__meta{display:block;font-family:var(--mono);font-size:11px;color:var(--ink-3);letter-spacing:.03em;margin:0 0 10px}
+    .row__src2{display:block;margin-top:6px}
+    .row__links{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin:0;padding-top:12px;border-top:1px solid var(--line)}
+    .row__links a{color:var(--accent);text-decoration:none;font-size:14px}
+    .row__links a:hover{text-decoration:underline}
+    .row__help{color:var(--ink-2)!important;font-size:13px}
+    .card__soon{color:var(--ink-3);font-size:13px}
+    .prose p{color:var(--ink-2);line-height:1.65;max-width:70ch}
+    .prose a{color:var(--accent)}
+    .cal-help{margin:36px 0 44px;padding:16px 18px;background:var(--bg-2);border:1px solid var(--line);border-radius:10px;font-size:15px;color:var(--ink-2)}
+    .cal-help a{color:var(--accent)}
+  </style>
+</Base>

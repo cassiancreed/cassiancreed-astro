@@ -26,8 +26,13 @@ facts, dates, FAQ copy, or hero-summary copy directly to the Astro page.
 - The `page_title` and `page_description` metadata rows control the public page
   title and search/social description, including the calendar year.
 - Scheduled rows require `date_iso`, `date_text`, `detail`, and `groups`.
-- `groups` uses `|` between values. Every scheduled row must include `next`;
-  optional display groups are `trials`, `hearings`, and `sentencing`.
+- `groups` uses `|` between values. Every scheduled row must include `next`.
+  The optional `trials`, `hearings`, and `sentencing` display groups are retired:
+  they printed the same proceeding a second and third time on the page, the
+  copies drifted apart, and one copy was always the stale one. The parser still
+  accepts the values so old exports do not break, but nothing renders from them.
+  Every proceeding is now written out once, indexed once in the case-by-case
+  table, and referenced from the FAQ by link.
 - `ongoing` is either blank or `true`. Use `true` only while a proceeding is
   actively underway, so it remains visible after its start date.
 - `faq_question` is optional. When present, the page and its search-engine FAQ
@@ -37,6 +42,32 @@ facts, dates, FAQ copy, or hero-summary copy directly to the Astro page.
 - Internal-link fields must contain a same-site path beginning with `/`. The
   validator rejects external URLs so calendar links cannot send readers away.
 - Do not put tabs or hard line breaks inside a cell.
+
+## Retiring an entry to the archive
+
+A `completed` row leaves the live page only when the matter is finished and has
+been closed long enough that it is no longer news. Nothing is deleted.
+
+1. Cut the entire row out of `court-calendar.tsv`.
+2. Paste it, unchanged, into `court-calendar-archive.tsv`. Keep the `completed`
+   section value, the `verified` date, and both source columns. Do not rewrite
+   the text on the way in; the archive's purpose is that a page which once
+   carried a claim still shows it.
+3. Run `npm run archive:check`. It rejects an archived row that lost its source
+   or its verified date, and it rejects any id that exists in both files.
+
+Do not archive a matter that is still awaiting a ruling, still inside an appeal
+window, or otherwise still open, however quiet it has become. Reader demand is
+never a reason to archive or to keep an entry.
+
+## Do not delete a stale row to make a date go away
+
+A scheduled row whose date has passed and whose `ongoing` is blank stops
+rendering. That silence is a trap: the row is still in the file, still says a
+proceeding is coming, and nobody notices. When a date passes, either move the
+row forward with a sourced new date, set `ongoing` to `true` while the
+proceeding is actually running, or move it to `unconfirmed` or `completed`.
+Never leave a forward-looking date in the file after it has arrived.
 
 The page automatically sorts court dates, builds the next-dates summary, renders
 case cards and FAQs, and updates structured data from this table.

@@ -284,6 +284,8 @@ npm run build
 The existing `npm run build` also runs the full site validation. The package must pass:
 
 - calendar schema and date validation;
+- court calendar archive validation, including the rule that no case id may exist
+  in both `court-calendar.tsv` and `court-calendar-archive.tsv`;
 - post archive validation;
 - Astro production build;
 - broken-link validation;

@@ -49,13 +49,32 @@ const faqRows = [
   ...investigations.map((row) => ({ ...row, section: 'investigation' })),
   ...completed.map((row) => ({ ...row, section: 'completed' })),
 ];
+// Every proceeding is written out once, in its own entry. A FAQ answer is a
+// pointer to that one entry, not a second copy of it: it carries the date, the
+// court, and the legal posture, and then links to the canonical entry for the
+// rest. The posture is never trimmed, because that is where the presumption of
+// innocence and the charged-is-not-convicted language live.
 const faqAnswer = (row) => {
-  if (row.section === 'scheduled') return `${row.dateText} at ${row.court}. ${row.status} ${row.detail}`;
-  return `${row.status} ${row.note}`;
+  if (row.section === 'scheduled') return `${row.dateText} at ${row.court}. ${row.status}`;
+  return row.status;
 };
+// Ids only resolve for entries the page actually renders, so a FAQ never links
+// to an anchor that is not there.
+const renderedIds = new Set([
+  ...nextDates.map((e) => e.id),
+  ...unconfirmed.map((e) => e.id),
+  ...appeals.map((e) => e.id),
+  ...investigations.map((e) => e.id),
+  ...completed.map((e) => e.id),
+]);
 const caseFaqs = faqRows
   .filter((row) => row.faqQuestion)
-  .map((row) => ({ question: row.faqQuestion, answer: faqAnswer(row) }));
+  .map((row) => ({
+    question: row.faqQuestion,
+    answer: faqAnswer(row),
+    anchor: renderedIds.has(row.id) ? `#${row.id}` : null,
+    caseName: row.case,
+  }));
 const genericFaqs = [
   {
     question: 'Can these dates change?',
@@ -192,6 +211,7 @@ const jsonld = {
       <p class="cal-notice__links">
         <a href="/court-calendar-policy/">Read the full Court Calendar and Case-Tracking Policy</a>
         <a href="/international-court-watch/">International Court Watch</a>
+        <a href="/court-calendar/archive/">Archive of closed cases</a>
         <a href="/support/">Report a correction</a>
         <span>Corrections: {CORRECTION_EMAIL}</span>
       </p>
@@ -301,60 +321,6 @@ const jsonld = {
     </div>
   </section>
 
-  <section class="wrap cal-sec" aria-labelledby="upcoming-trials">
-    <h2 id="upcoming-trials">Upcoming Trials</h2>
-    {byGroup('trials').map((e) => (
-      <div class="row">
-        <p class="row__type">{e.proceeding}</p>
-        <h3 class="row__case">{e.case}</h3>
-        <p class="row__when"><time datetime={e.dateISO}>{e.dateText}</time> &middot; {e.court}</p>
-        {e.timeStatus === 'not publicly verified' && <p class="row__nodate">{TIME_NOT_VERIFIED}</p>}
-        {e.docket && <p class="row__docket">{e.docket}</p>}
-        <p class="row__status">{e.status}</p>
-        {e.nextNote && <p class="row__nodate"><strong>Expected next step:</strong> {e.nextNote}</p>}
-        <p class="row__meta">Subject to change by the court &middot; Source: {e.srcLabel}</p>
-        <p class="row__links">{e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : <span class="card__soon">Our case file on this is in progress.</span>} {e.link2 && <a href={e.link2}>{e.linkText2} &rarr;</a>} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <a class="row__help" href="/support/">Report a correction</a></p>
-      </div>
-    ))}
-  </section>
-
-  <section class="wrap cal-sec" aria-labelledby="hearings">
-    <h2 id="hearings">Hearings &amp; Pretrial</h2>
-    {byGroup('hearings').map((e) => (
-      <div class="row">
-        <p class="row__type">{e.proceeding}</p>
-        <h3 class="row__case">{e.case}</h3>
-        <p class="row__when"><time datetime={e.dateISO}>{e.dateText}</time> &middot; {e.court}</p>
-        {e.timeStatus === 'not publicly verified' && <p class="row__nodate">{TIME_NOT_VERIFIED}</p>}
-        {e.docket && <p class="row__docket">{e.docket}</p>}
-        <p class="row__status">{e.status}</p>
-        {e.nextNote && <p class="row__nodate"><strong>Expected next step:</strong> {e.nextNote}</p>}
-        <p class="row__meta">Subject to change by the court &middot; Source: {e.srcLabel}</p>
-        <p class="row__links">
-          {e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : <span class="card__soon">Our case file on this is in progress.</span>}
-          <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <a class="row__help" href="/support/">Report a correction</a>
-        </p>
-      </div>
-    ))}
-  </section>
-
-  <section class="wrap cal-sec" aria-labelledby="sentencing">
-    <h2 id="sentencing">Sentencing</h2>
-    {byGroup('sentencing').map((e) => (
-      <div class="row">
-        <p class="row__type">{e.proceeding}</p>
-        <h3 class="row__case">{e.case}</h3>
-        <p class="row__when"><time datetime={e.dateISO}>{e.dateText}</time> &middot; {e.court}</p>
-        {e.timeStatus === 'not publicly verified' && <p class="row__nodate">{TIME_NOT_VERIFIED}</p>}
-        {e.docket && <p class="row__docket">{e.docket}</p>}
-        <p class="row__status">{e.status}</p>
-        {e.nextNote && <p class="row__nodate"><strong>Expected next step:</strong> {e.nextNote}</p>}
-        <p class="row__meta">Subject to change by the court &middot; Source: {e.srcLabel}</p>
-        <p class="row__links">{e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : <span class="card__soon">Our case file on this is in progress.</span>} {e.link2 && <a href={e.link2}>{e.linkText2} &rarr;</a>} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <a class="row__help" href="/support/">Report a correction</a></p>
-      </div>
-    ))}
-  </section>
-
   <section class="wrap cal-sec" aria-labelledby="awaiting-decision">
     <h2 id="awaiting-decision">Awaiting Decision</h2>
     <p class="cal-sub">Argued, filed, or fully briefed &mdash; now waiting on a court. Courts rarely announce when a reserved ruling will land.</p>
@@ -395,7 +361,7 @@ const jsonld = {
     <h2 id="unconfirmed">Dates Not Yet Confirmed</h2>
     <p class="cal-sub">These cases are being tracked, but no date is on a public calendar. We do not publish a date until we can point to where it came from.</p>
     {unconfirmed.map((e) => (
-      <div class="row row--muted">
+      <div class="row row--muted" id={e.id}>
         <p class="row__type">No date set</p>
         <h3 class="row__case">{e.case}</h3>
         <p class="row__when">{e.where}</p>
@@ -415,8 +381,9 @@ const jsonld = {
 
   <section class="wrap cal-sec" aria-labelledby="completed">
     <h2 id="completed">Recently Completed</h2>
+    <p class="cal-sub">Matters that finished recently. Nothing is deleted when it ages out of this list &mdash; it moves, in full and with its sources, to the <a href="/court-calendar/archive/">court calendar archive</a>.</p>
     {completed.map((e) => (
-      <div class="row row--done">
+      <div class="row row--done" id={e.id}>
         <p class="row__type">Concluded</p>
         <h3 class="row__case">{e.case}</h3>
         <p class="row__when">{e.where}</p>
@@ -433,6 +400,7 @@ const jsonld = {
 
   <section class="wrap cal-sec" aria-labelledby="case-by-case">
     <h2 id="case-by-case">Case-by-Case Schedule</h2>
+    <p class="cal-sub">One row per matter, as an index only. The legal posture, the detail and the source live in the full entry, which each row links to, so there is one authoritative version of every case and not two that can drift apart.</p>
     <div class="cal-scroll">
       <table class="cal-table">
         <thead>
@@ -441,7 +409,7 @@ const jsonld = {
             <th scope="col">Proceeding</th>
             <th scope="col">Date</th>
             <th scope="col">Court</th>
-            <th scope="col">Status</th>
+            <th scope="col">Full entry</th>
           </tr>
         </thead>
         <tbody>
@@ -451,7 +419,7 @@ const jsonld = {
               <td>{e.proceeding}</td>
               <td><time datetime={e.dateISO}>{e.dateText}</time></td>
               <td>{e.court}</td>
-              <td class="t-status">{e.status}</td>
+              <td><a href={`#${e.id}`}>Status and source &rarr;</a></td>
             </tr>
           ))}
           {appeals.map((e) => (
@@ -460,7 +428,7 @@ const jsonld = {
               <td>{e.type || 'Post-conviction motions'}</td>
               <td class="t-none">{NO_DATE}</td>
               <td>{e.where}</td>
-              <td class="t-status">{e.status}</td>
+              <td><a href={`#${e.id}`}>Status and source &rarr;</a></td>
             </tr>
           ))}
           {investigations.map((e) => (
@@ -469,16 +437,16 @@ const jsonld = {
               <td>Investigation &mdash; no court proceeding</td>
               <td class="t-none">None; no court proceeding exists.</td>
               <td>{e.where}</td>
-              <td class="t-status">{e.status}</td>
+              <td><a href={`#${e.id}`}>Status and source &rarr;</a></td>
             </tr>
           ))}
           {unconfirmed.map((e) => (
             <tr>
               <td class="t-case">{e.case}</td>
-              <td class="t-none">&mdash;</td>
+              <td>{e.proceeding || '\u2014'}</td>
               <td class="t-none">{NO_DATE}</td>
               <td>{e.where}</td>
-              <td class="t-status">{e.status}</td>
+              <td><a href={`#${e.id}`}>Status and source &rarr;</a></td>
             </tr>
           ))}
           {completed.map((e) => (
@@ -487,14 +455,14 @@ const jsonld = {
               <td>Concluded</td>
               <td class="t-none">{NO_DATE}</td>
               <td>{e.where}</td>
-              <td class="t-status">{e.status}</td>
+              <td><a href={`#${e.id}`}>Status and source &rarr;</a></td>
             </tr>
           ))}
         </tbody>
       </table>
     </div>
     <p class="cal-note evidence">Updated: {LAST_UPDATED}. All dates are subject to change by the court. Corrections: {CORRECTION_EMAIL}.</p>
-    <p class="cal-note evidence">Tracking a case outside the United States? See the <a href="/international-court-watch/">International Court Watch</a>.</p>
+    <p class="cal-note evidence">Tracking a case outside the United States? See the <a href="/international-court-watch/">International Court Watch</a>. Cases that have finished and aged out of this page are kept in full in the <a href="/court-calendar/archive/">archive</a>.</p>
   </section>
 
   <section class="wrap cal-sec" aria-labelledby="how-we-verify">
@@ -506,7 +474,9 @@ const jsonld = {
         <li><strong>The source is never us.</strong> Each date traces to a court filing, a prosecutor's office, a state agency record, or a reporter who was in the room. We do not cite our own articles as the source for a date.</li>
         <li><strong>We name the source type.</strong> A district attorney's announcement and a news report are not the same thing, so we label which one you are looking at.</li>
         <li><strong>No date, no entry.</strong> If a case is active but nothing is scheduled, it goes in <a href="#unconfirmed">Dates Not Yet Confirmed</a> and stays there. We would rather say "we don't know" than guess.</li>
-        <li><strong>We review the calendar daily.</strong> We re-check every entry before publishing the page's Updated date.</li>
+        <li><strong>We review the calendar daily.</strong> We re-check every entry before publishing the page's Updated date. Each entry also carries its own verification date, and we do not move that date forward unless we actually re-checked the entry against a source that day.</li>
+        <li><strong>Nothing is quietly deleted.</strong> When a matter is finished and has been closed long enough to leave <a href="#completed">Recently Completed</a>, it moves to the <a href="/court-calendar/archive/">archive</a> with its text and sources intact, so a page that once carried a claim still shows it.</li>
+        <li><strong>Each proceeding appears once.</strong> A hearing is written out in one entry, indexed once in the <a href="#case-by-case">case-by-case table</a>, and referenced from the FAQ by link. We do not restate the same proceeding in several places, because copies drift apart and one of them ends up wrong.</li>
         <li><strong>Legal status is stated exactly.</strong> Charged is not convicted. A plea is not a verdict. An appeal is not a retrial.</li>
         <li><strong>Foreign matters get their own page.</strong> Court structures and publication practices differ enough abroad that listing them here would mislead. They go on the <a href="/international-court-watch/">International Court Watch</a> under the same sourcing rule.</li>
         <li><strong>An investigation is not a case in court.</strong> Matters where police are still working and no court has scheduled anything are kept in <a href="#investigations">Active Investigations</a>, labelled as having no court proceeding. Several involve no charged person at all, and the page says so rather than implying a docket exists.</li>
@@ -524,7 +494,10 @@ const jsonld = {
       {caseFaqs.map((faq) => (
         <>
           <h3>{faq.question}</h3>
-          <p>{faq.answer}</p>
+          <p>
+            {faq.answer}
+            {faq.anchor && <> <a href={faq.anchor}>Read the full {faq.caseName} entry &rarr;</a></>}
+          </p>
         </>
       ))}
 
