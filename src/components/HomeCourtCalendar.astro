@@ -2,6 +2,13 @@
 import calendarTsv from '../data/court-calendar.tsv?raw';
 import { formatCalendarDate, parseCourtCalendar } from '../data/court-calendar-parser.mjs';
 
+interface Props {
+  fullPage?: boolean;
+}
+
+const { fullPage = false } = Astro.props;
+const CalendarHeading = fullPage ? 'h1' : 'h2';
+
 const CASE_ALERT_FORM_ID = '4d0df7d0-f274-4901-a457-091f80cecef0';
 const calendar = parseCourtCalendar(calendarTsv);
 const lastUpdated = formatCalendarDate(calendar.metadata.last_updated);
@@ -63,14 +70,14 @@ const initialMonthLabel = new Intl.DateTimeFormat('en-US', {
 }).format(firstOfMonth);
 ---
 
-<section class="home-calendar wrap" aria-labelledby="home-calendar-title" data-home-calendar data-build-date={buildDate}>
+<section class:list={['home-calendar', 'wrap', fullPage && 'home-calendar--full']} aria-labelledby="home-calendar-title" data-home-calendar data-build-date={buildDate}>
   <div class="home-calendar__heading">
     <div>
       <p class="evidence evidence--accent">Updated {lastUpdated}</p>
-      <h2 id="home-calendar-title">Court Calendar</h2>
-      <p>Verified hearings, trials, and rulings worth following. Dates can change; each entry connects back to the public record and our related coverage.</p>
+      <CalendarHeading id="home-calendar-title">Court Calendar</CalendarHeading>
+      <p>{fullPage ? 'Choose a date to see the proceedings scheduled for that day. Use the arrows to move between months.' : 'Verified hearings, trials, and rulings worth following. Dates can change; each entry connects back to the public record and our related coverage.'}</p>
     </div>
-    <a class="home-calendar__full-link" href="/court-calendar/">View the full calendar &rarr;</a>
+    {!fullPage && <a class="home-calendar__full-link" href="/court-calendar/">View the full calendar &rarr;</a>}
   </div>
 
   {ongoingEntries.length > 0 && (
@@ -345,8 +352,9 @@ const initialMonthLabel = new Intl.DateTimeFormat('en-US', {
 
 <style is:global>
   .home-calendar{margin:38px auto 14px;padding:30px;background:var(--bg-2);border:1px solid var(--line);border-top:3px solid var(--accent);border-radius:14px;box-shadow:var(--shadow)}
+  .home-calendar--full{margin-top:26px;padding:34px}
   .home-calendar__heading{display:flex;align-items:end;justify-content:space-between;gap:28px}
-  .home-calendar__heading h2{font-family:var(--serif);font-size:clamp(34px,5vw,48px);line-height:1;margin:0 0 8px}
+  .home-calendar__heading h1,.home-calendar__heading h2{font-family:var(--serif);font-size:clamp(34px,5vw,48px);line-height:1;margin:0 0 8px}
   .home-calendar__heading>div>p:last-child{max-width:72ch;margin:0;color:var(--ink-2);line-height:1.55}
   .home-calendar__full-link{flex:0 0 auto;color:var(--accent);font-family:var(--mono);font-size:12px;text-decoration:none}
   .home-calendar__now{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center;margin-top:24px;padding:14px 16px;background:rgba(232,93,61,.08);border:1px solid rgba(232,93,61,.25);border-radius:10px}
@@ -401,6 +409,7 @@ const initialMonthLabel = new Intl.DateTimeFormat('en-US', {
   .case-alert__success{margin:20px 0 0;padding:14px;border-left:3px solid var(--accent);background:rgba(232,93,61,.08)}
   @media(max-width:760px){
     .home-calendar{margin-top:24px;padding:22px 14px}
+    .home-calendar--full{margin-top:14px}
     .home-calendar__heading{align-items:flex-start;flex-direction:column;gap:12px}
     .home-calendar__now{grid-template-columns:1fr;gap:9px}
     .home-calendar__now-list{display:grid}
