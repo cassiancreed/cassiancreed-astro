@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import { getCollection } from 'astro:content';
 import CaptureBlock from '../components/CaptureBlock.astro';
+import HomeCourtCalendar from '../components/HomeCourtCalendar.astro';
 const posts = (await getCollection('posts')).filter(p => !p.data.archived).sort((a,b)=> b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 const featured = posts.find(p=>p.data.featured) || posts[0];
 const rest = posts.filter(p=> featured && p.slug!==featured.slug && p.slug!=='nancy-guthrie-abduction-what-we-know').slice(0,8);
@@ -32,8 +33,8 @@ const jsonld = {
     <div class="wrap">
       <div class="hero__copy">
         <p class="evidence evidence--accent">Sourced true crime &middot; victim-first</p>
-        <h1>True crime that respects the victims.</h1>
-        <p class="hero__lede">Source-led case files for readers who want to understand cases, not consume them. We name victims in life first, distinguish the record from analysis, and explain practical lessons only when the evidence supports them.</p>
+        <h1>True crime that respects the victims&mdash;and follows the record.</h1>
+        <p class="hero__lede">Source-led case files and a court calendar updated as proceedings change. We name victims in life first, distinguish the record from analysis, and explain practical lessons only when the evidence supports them.</p>
         {/* SUPPORTED BEEHIIV EMBED (NEP-FIX-CWK-0718R). subscribe-forms.beehiiv.com
             is the v2 form-builder endpoint and renders the DASHBOARD styling
             (verified live: #A8503A button, "Get the free guide."). The native POST
@@ -121,6 +122,8 @@ const jsonld = {
       </div>
     </div>
   </section>
+
+  <HomeCourtCalendar />
 
   <section class="nmv wrap" aria-labelledby="record-without-blame">
     <h2 class="nmv__h" id="record-without-blame">What the record can teach us&mdash;without blaming the victim.</h2>

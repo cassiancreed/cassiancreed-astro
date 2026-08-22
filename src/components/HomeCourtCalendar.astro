@@ -1,0 +1,420 @@
+---
+import calendarTsv from '../data/court-calendar.tsv?raw';
+import { formatCalendarDate, parseCourtCalendar } from '../data/court-calendar-parser.mjs';
+
+const CASE_ALERT_FORM_ID = '4d0df7d0-f274-4901-a457-091f80cecef0';
+const calendar = parseCourtCalendar(calendarTsv);
+const lastUpdated = formatCalendarDate(calendar.metadata.last_updated);
+const localDateParts = Object.fromEntries(
+  new Intl.DateTimeFormat('en-US', {
+    timeZone: 'America/Los_Angeles',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+  })
+    .formatToParts(new Date())
+    .filter((part) => part.type !== 'literal')
+    .map((part) => [part.type, part.value]),
+);
+const buildDate = `${localDateParts.year}-${localDateParts.month}-${localDateParts.day}`;
+const visibleEntries = calendar.entries
+  .filter((entry) => entry.ongoing || entry.dateISO >= buildDate)
+  .sort((a, b) => a.dateISO.localeCompare(b.dateISO));
+const ongoingEntries = visibleEntries.filter((entry) => entry.ongoing);
+const selectedEntry = visibleEntries.find((entry) => !entry.ongoing && entry.dateISO >= buildDate) ?? ongoingEntries[0] ?? null;
+
+const clientEntries = visibleEntries.map((entry) => ({
+  id: entry.id,
+  caseName: entry.case,
+  calendarLabel: entry.case.split(' — ')[0],
+  proceeding: entry.proceeding,
+  dateISO: entry.dateISO,
+  dateText: entry.dateText,
+  timeStatus: entry.timeStatus,
+  court: entry.court,
+  status: entry.status,
+  ongoing: entry.ongoing,
+  link: entry.link,
+  linkText: entry.linkText,
+}));
+
+const dateKey = (date) => date.toISOString().slice(0, 10);
+const firstOfMonth = new Date(`${buildDate.slice(0, 7)}-01T00:00:00Z`);
+const gridStart = new Date(firstOfMonth);
+gridStart.setUTCDate(1 - firstOfMonth.getUTCDay());
+const serverDays = Array.from({ length: 42 }, (_, index) => {
+  const date = new Date(gridStart);
+  date.setUTCDate(gridStart.getUTCDate() + index);
+  const key = dateKey(date);
+  return {
+    key,
+    day: date.getUTCDate(),
+    inMonth: date.getUTCMonth() === firstOfMonth.getUTCMonth(),
+    entries: clientEntries.filter((entry) => entry.dateISO === key),
+  };
+});
+const initialSelectedDate = selectedEntry?.dateISO ?? buildDate;
+const initialSelectedEntries = clientEntries.filter((entry) => entry.dateISO === initialSelectedDate);
+const initialSelectedLabel = new Intl.DateTimeFormat('en-US', {
+  weekday: 'long', month: 'long', day: 'numeric', timeZone: 'UTC',
+}).format(new Date(`${initialSelectedDate}T00:00:00Z`));
+const initialMonthLabel = new Intl.DateTimeFormat('en-US', {
+  month: 'long', year: 'numeric', timeZone: 'UTC',
+}).format(firstOfMonth);
+---
+
+<section class="home-calendar wrap" aria-labelledby="home-calendar-title" data-home-calendar data-build-date={buildDate}>
+  <div class="home-calendar__heading">
+    <div>
+      <p class="evidence evidence--accent">Updated {lastUpdated}</p>
+      <h2 id="home-calendar-title">Court Calendar</h2>
+      <p>Verified hearings, trials, and rulings worth following. Dates can change; each entry connects back to the public record and our related coverage.</p>
+    </div>
+    <a class="home-calendar__full-link" href="/court-calendar/">View the full calendar &rarr;</a>
+  </div>
+
+  {ongoingEntries.length > 0 && (
+    <div class="home-calendar__now" aria-label="In court now">
+      <span class="home-calendar__live">In court now</span>
+      <div class="home-calendar__now-list">
+        {ongoingEntries.slice(0, 3).map((entry) => (
+          <a href={`/court-calendar/#${entry.id}`}><strong>{entry.case}</strong><span>{entry.proceeding}</span></a>
+        ))}
+      </div>
+    </div>
+  )}
+
+  <div class="home-calendar__controls" aria-label="Calendar controls">
+    <button type="button" class="home-calendar__month-button" data-calendar-prev aria-label="Previous month">&larr; <span>Previous</span></button>
+    <h3 data-calendar-month aria-live="polite">{initialMonthLabel}</h3>
+    <div class="home-calendar__controls-right">
+      <button type="button" class="home-calendar__today" data-calendar-today>Today</button>
+      <button type="button" class="home-calendar__month-button" data-calendar-next aria-label="Next month"><span>Next</span> &rarr;</button>
+    </div>
+  </div>
+
+  <div class="home-calendar__layout">
+    <div class="home-calendar__month" role="grid" aria-labelledby="home-calendar-title">
+      <div class="home-calendar__weekdays" role="row">
+        {['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'].map((day) => (
+          <span role="columnheader"><span class="home-calendar__day-wide">{day}</span><span class="home-calendar__day-short">{day.charAt(0)}</span></span>
+        ))}
+      </div>
+      <div class="home-calendar__days" data-calendar-days>
+        {serverDays.map((day) => (
+          <button
+            type="button"
+            class:list={[
+              'home-calendar__day',
+              !day.inMonth && 'is-outside',
+              day.key === buildDate && 'is-today',
+              day.key === initialSelectedDate && 'is-selected',
+              day.entries.length > 0 && 'has-events',
+            ]}
+            data-calendar-date={day.key}
+            aria-label={`${day.key}${day.entries.length ? `, ${day.entries.length} proceeding${day.entries.length > 1 ? 's' : ''}` : ''}`}
+          >
+            <span class="home-calendar__day-number">{day.day}</span>
+            {day.entries[0] && <span class="home-calendar__event-label">{day.entries[0].calendarLabel}</span>}
+            {day.entries.length > 1 && <span class="home-calendar__event-count">+{day.entries.length - 1} more</span>}
+          </button>
+        ))}
+      </div>
+    </div>
+
+    <aside class="home-calendar__agenda" aria-labelledby="home-calendar-agenda-title">
+      <p class="evidence evidence--accent">Selected date</p>
+      <h3 id="home-calendar-agenda-title" data-calendar-agenda-title>{initialSelectedLabel}</h3>
+      <div data-calendar-agenda aria-live="polite">
+        {initialSelectedEntries.length > 0 ? initialSelectedEntries.map((entry) => (
+          <article class="home-calendar__agenda-item">
+            <p class="home-calendar__agenda-time">{entry.dateText}</p>
+            <h4>{entry.caseName}</h4>
+            <p class="home-calendar__agenda-type">{entry.proceeding}</p>
+            <p class="home-calendar__agenda-court">{entry.court}</p>
+            <div class="home-calendar__agenda-actions">
+              {entry.link && <a href={entry.link}>{entry.linkText || 'Read the case'} &rarr;</a>}
+              <a href={`/court-calendar/#${entry.id}`}>Calendar details &rarr;</a>
+              <button type="button" data-case-alert data-case-id={entry.id} data-case-name={entry.caseName}>Get updates on this case</button>
+            </div>
+          </article>
+        )) : <p class="home-calendar__empty">No tracked proceeding is currently scheduled for this date.</p>}
+      </div>
+    </aside>
+  </div>
+
+  <p class="home-calendar__note">All defendants are presumed innocent unless and until convicted. Court dates move&mdash;confirm with the court before traveling.</p>
+
+  <script type="application/json" data-calendar-json set:html={JSON.stringify(clientEntries)}></script>
+
+  <dialog class="case-alert" data-case-alert-dialog aria-labelledby="case-alert-title">
+    <div class="case-alert__inner">
+      <form method="dialog" class="case-alert__close-form">
+        <button type="submit" class="case-alert__close" aria-label="Close case updates form">&times;</button>
+      </form>
+      <p class="evidence evidence--accent">Case alerts</p>
+      <h2 id="case-alert-title">Get updates on <span data-case-alert-name>this case</span>.</h2>
+      <p class="case-alert__copy">Enter your email to receive significant updates on this case and Cassian Creed&rsquo;s evidence-first newsletter. You&rsquo;ll also receive the free <em>How to Read a Case Like the Court Does</em> guide. Unsubscribe anytime.</p>
+      <div class="case-alert__embed-window" data-case-alert-embed-window>
+        <iframe
+          class="case-alert__embed"
+          data-case-alert-form
+          data-form-base={`https://subscribe-forms.beehiiv.com/v3/forms/${CASE_ALERT_FORM_ID}?utm_source=website&utm_medium=case_alert&utm_campaign=court_calendar_case_alerts`}
+          title="Subscribe for case updates"
+          loading="lazy"
+          scrolling="no"
+          frameborder="0"
+        ></iframe>
+      </div>
+      <p class="case-alert__fallback">Form not loading? <a data-case-alert-fallback href="https://cassiancreed.beehiiv.com/subscribe?utm_source=website&amp;utm_medium=case_alert&amp;utm_campaign=court_calendar_case_alerts" target="_blank" rel="noopener noreferrer">Subscribe for case updates &rarr;</a></p>
+      <p class="case-alert__helper">After submitting, follow Beehiiv&rsquo;s confirmation instructions and check your inbox.</p>
+      <p class="case-alert__success" data-case-alert-success role="status" hidden><strong>Submission received.</strong> Check your inbox to confirm your subscription.</p>
+    </div>
+  </dialog>
+</section>
+
+<script>
+  const root = document.querySelector('[data-home-calendar]');
+  if (root) {
+    const entries = JSON.parse(root.querySelector('[data-calendar-json]')?.textContent || '[]');
+    const buildDate = root.getAttribute('data-build-date');
+    const buildParts = buildDate.split('-').map(Number);
+    let shown = new Date(buildParts[0], buildParts[1] - 1, 1);
+    let selectedDate = entries.find((entry) => !entry.ongoing && entry.dateISO >= buildDate)?.dateISO || buildDate;
+    const monthLabel = root.querySelector('[data-calendar-month]');
+    const days = root.querySelector('[data-calendar-days]');
+    const agendaTitle = root.querySelector('[data-calendar-agenda-title]');
+    const agenda = root.querySelector('[data-calendar-agenda]');
+    const alertDialog = root.querySelector('[data-case-alert-dialog]');
+    const alertName = root.querySelector('[data-case-alert-name]');
+    const alertForm = root.querySelector('[data-case-alert-form]');
+    const alertFallback = root.querySelector('[data-case-alert-fallback]');
+    const alertSuccess = root.querySelector('[data-case-alert-success]');
+    const alertEmbedWindow = root.querySelector('[data-case-alert-embed-window]');
+    const pad = (value) => String(value).padStart(2, '0');
+    const keyFor = (date) => `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}`;
+    const monthFormatter = new Intl.DateTimeFormat('en-US', { month: 'long', year: 'numeric' });
+    const dateFormatter = new Intl.DateTimeFormat('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
+
+    function createActionLink(href, label) {
+      const link = document.createElement('a');
+      link.href = href;
+      link.textContent = `${label} →`;
+      return link;
+    }
+
+    function openAlert(entry) {
+      if (!alertDialog || !alertForm || !alertFallback) return;
+      alertName.textContent = entry.caseName;
+      const content = `case_alert_${entry.id}`;
+      const formUrl = new URL(alertForm.getAttribute('data-form-base'));
+      formUrl.searchParams.set('utm_content', content);
+      alertForm.src = formUrl.toString();
+      const fallbackUrl = new URL('https://cassiancreed.beehiiv.com/subscribe');
+      fallbackUrl.searchParams.set('utm_source', 'website');
+      fallbackUrl.searchParams.set('utm_medium', 'case_alert');
+      fallbackUrl.searchParams.set('utm_campaign', 'court_calendar_case_alerts');
+      fallbackUrl.searchParams.set('utm_content', content);
+      alertFallback.href = fallbackUrl.toString();
+      alertSuccess.hidden = true;
+      alertEmbedWindow.hidden = false;
+      alertDialog.showModal();
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', 'case_alert_open', { case_id: entry.id, case_name: entry.caseName, page_path: location.pathname });
+      }
+    }
+
+    function renderAgenda(key) {
+      selectedDate = key;
+      const date = new Date(`${key}T12:00:00`);
+      agendaTitle.textContent = dateFormatter.format(date);
+      agenda.replaceChildren();
+      const selectedEntries = entries.filter((entry) => entry.dateISO === key);
+      if (!selectedEntries.length) {
+        const empty = document.createElement('p');
+        empty.className = 'home-calendar__empty';
+        empty.textContent = 'No tracked proceeding is currently scheduled for this date.';
+        agenda.append(empty);
+        return;
+      }
+      selectedEntries.forEach((entry) => {
+        const article = document.createElement('article');
+        article.className = 'home-calendar__agenda-item';
+        const dateText = document.createElement('p');
+        dateText.className = 'home-calendar__agenda-time';
+        dateText.textContent = entry.dateText;
+        const title = document.createElement('h4');
+        title.textContent = entry.caseName;
+        const type = document.createElement('p');
+        type.className = 'home-calendar__agenda-type';
+        type.textContent = entry.proceeding;
+        const court = document.createElement('p');
+        court.className = 'home-calendar__agenda-court';
+        court.textContent = entry.court;
+        const actions = document.createElement('div');
+        actions.className = 'home-calendar__agenda-actions';
+        if (entry.link) actions.append(createActionLink(entry.link, entry.linkText || 'Read the case'));
+        actions.append(createActionLink(`/court-calendar/#${entry.id}`, 'Calendar details'));
+        const alertButton = document.createElement('button');
+        alertButton.type = 'button';
+        alertButton.textContent = 'Get updates on this case';
+        alertButton.addEventListener('click', () => openAlert(entry));
+        actions.append(alertButton);
+        article.append(dateText, title, type, court, actions);
+        agenda.append(article);
+      });
+    }
+
+    function renderMonth() {
+      monthLabel.textContent = monthFormatter.format(shown);
+      const first = new Date(shown.getFullYear(), shown.getMonth(), 1);
+      const start = new Date(shown.getFullYear(), shown.getMonth(), 1 - first.getDay());
+      days.replaceChildren();
+      for (let index = 0; index < 42; index += 1) {
+        const date = new Date(start);
+        date.setDate(start.getDate() + index);
+        const key = keyFor(date);
+        const dateEntries = entries.filter((entry) => entry.dateISO === key);
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'home-calendar__day';
+        button.setAttribute('data-calendar-date', key);
+        if (date.getMonth() !== shown.getMonth()) button.classList.add('is-outside');
+        if (key === keyFor(new Date())) button.classList.add('is-today');
+        if (key === selectedDate) button.classList.add('is-selected');
+        if (dateEntries.length) button.classList.add('has-events');
+        button.setAttribute('role', 'gridcell');
+        button.setAttribute('aria-label', `${dateFormatter.format(date)}${dateEntries.length ? `, ${dateEntries.length} proceeding${dateEntries.length > 1 ? 's' : ''}` : ''}`);
+        const number = document.createElement('span');
+        number.className = 'home-calendar__day-number';
+        number.textContent = String(date.getDate());
+        button.append(number);
+        if (dateEntries[0]) {
+          const label = document.createElement('span');
+          label.className = 'home-calendar__event-label';
+          label.textContent = dateEntries[0].calendarLabel;
+          button.append(label);
+        }
+        if (dateEntries.length > 1) {
+          const count = document.createElement('span');
+          count.className = 'home-calendar__event-count';
+          count.textContent = `+${dateEntries.length - 1} more`;
+          button.append(count);
+        }
+        button.addEventListener('click', () => {
+          renderAgenda(key);
+          renderMonth();
+        });
+        days.append(button);
+      }
+    }
+
+    root.querySelector('[data-calendar-prev]')?.addEventListener('click', () => {
+      shown = new Date(shown.getFullYear(), shown.getMonth() - 1, 1);
+      renderMonth();
+    });
+    root.querySelector('[data-calendar-next]')?.addEventListener('click', () => {
+      shown = new Date(shown.getFullYear(), shown.getMonth() + 1, 1);
+      renderMonth();
+    });
+    root.querySelector('[data-calendar-today]')?.addEventListener('click', () => {
+      const today = new Date();
+      shown = new Date(today.getFullYear(), today.getMonth(), 1);
+      renderAgenda(keyFor(today));
+      renderMonth();
+    });
+    root.querySelectorAll('[data-case-alert]').forEach((button) => {
+      button.addEventListener('click', () => {
+        const entry = entries.find((item) => item.id === button.getAttribute('data-case-id'));
+        if (entry) openAlert(entry);
+      });
+    });
+    alertDialog?.addEventListener('click', (event) => {
+      if (event.target === alertDialog) alertDialog.close();
+    });
+    alertForm?.addEventListener('load', () => {
+      let href;
+      try { href = alertForm.contentWindow.location.href; } catch (error) { return; }
+      if (!href || !href.includes('subscribed=1')) return;
+      alertEmbedWindow.hidden = true;
+      alertSuccess.hidden = false;
+    });
+    renderMonth();
+  }
+</script>
+
+<style is:global>
+  .home-calendar{margin:38px auto 14px;padding:30px;background:var(--bg-2);border:1px solid var(--line);border-top:3px solid var(--accent);border-radius:14px;box-shadow:var(--shadow)}
+  .home-calendar__heading{display:flex;align-items:end;justify-content:space-between;gap:28px}
+  .home-calendar__heading h2{font-family:var(--serif);font-size:clamp(34px,5vw,48px);line-height:1;margin:0 0 8px}
+  .home-calendar__heading>div>p:last-child{max-width:72ch;margin:0;color:var(--ink-2);line-height:1.55}
+  .home-calendar__full-link{flex:0 0 auto;color:var(--accent);font-family:var(--mono);font-size:12px;text-decoration:none}
+  .home-calendar__now{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center;margin-top:24px;padding:14px 16px;background:rgba(232,93,61,.08);border:1px solid rgba(232,93,61,.25);border-radius:10px}
+  .home-calendar__live{color:var(--accent);font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+  .home-calendar__now-list{display:flex;flex-wrap:wrap;gap:10px 24px}
+  .home-calendar__now-list a{display:flex;flex-direction:column;color:var(--ink);font-size:13px;text-decoration:none}
+  .home-calendar__now-list span{color:var(--ink-3);font-size:11px}
+  .home-calendar__controls{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;margin-top:24px;padding:13px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .home-calendar__controls h3{margin:0;font-family:var(--serif);font-size:24px;text-align:center}
+  .home-calendar__controls button{border:0;background:transparent;color:var(--ink-2);cursor:pointer;font:inherit;padding:8px}
+  .home-calendar__month-button:first-child{justify-self:start}
+  .home-calendar__controls-right{display:flex;justify-content:flex-end;gap:12px}
+  .home-calendar__today{font-family:var(--mono)!important;font-size:11px!important;text-transform:uppercase}
+  .home-calendar__layout{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:26px;margin-top:20px}
+  .home-calendar__weekdays,.home-calendar__days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr))}
+  .home-calendar__weekdays>span{padding:0 5px 8px;color:var(--ink-3);font-family:var(--mono);font-size:10px;letter-spacing:.05em;text-align:center;text-transform:uppercase}
+  .home-calendar__day-short{display:none}
+  .home-calendar__day{min-height:88px;padding:8px;border:0;border-top:1px solid var(--line);border-right:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer;text-align:left;overflow:hidden}
+  .home-calendar__day:nth-child(7n+1){border-left:1px solid var(--line)}
+  .home-calendar__day:nth-last-child(-n+7){border-bottom:1px solid var(--line)}
+  .home-calendar__day:hover{background:rgba(232,93,61,.06)}
+  .home-calendar__day.is-outside{color:var(--ink-3);opacity:.55}
+  .home-calendar__day.is-selected{background:rgba(232,93,61,.1);box-shadow:inset 0 0 0 2px var(--accent)}
+  .home-calendar__day.is-today .home-calendar__day-number{display:inline-grid;width:25px;height:25px;place-items:center;border-radius:50%;background:var(--ink);color:var(--bg)}
+  .home-calendar__day-number{font-family:var(--mono);font-size:11px}
+  .home-calendar__event-label,.home-calendar__event-count{display:block;margin-top:7px;color:var(--accent);font-size:10px;line-height:1.25;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .home-calendar__event-count{margin-top:3px;color:var(--ink-3)}
+  .home-calendar__agenda{padding-left:24px;border-left:1px solid var(--line)}
+  .home-calendar__agenda>h3{margin:0 0 17px;font-family:var(--serif);font-size:28px;line-height:1.05}
+  .home-calendar__agenda-item{padding:16px 0;border-top:1px solid var(--line)}
+  .home-calendar__agenda-item:first-child{border-top-color:var(--accent)}
+  .home-calendar__agenda-time{margin:0 0 7px;color:var(--accent);font-family:var(--mono);font-size:10px;line-height:1.4;text-transform:uppercase}
+  .home-calendar__agenda-item h4{margin:0 0 4px;font-family:var(--serif);font-size:21px;line-height:1.1}
+  .home-calendar__agenda-type{margin:0 0 6px;color:var(--ink-2);font-size:13px;line-height:1.4}
+  .home-calendar__agenda-court{margin:0 0 12px;color:var(--ink-3);font-size:11px;line-height:1.4}
+  .home-calendar__agenda-actions{display:flex;flex-direction:column;align-items:flex-start;gap:8px}
+  .home-calendar__agenda-actions a,.home-calendar__agenda-actions button{border:0;background:transparent;color:var(--ink-2);cursor:pointer;font:inherit;font-size:12px;padding:0;text-decoration:none;text-align:left}
+  .home-calendar__agenda-actions button{color:var(--accent);font-weight:700}
+  .home-calendar__empty{color:var(--ink-3);font-size:13px;line-height:1.5}
+  .home-calendar__note{margin:18px 0 0;color:var(--ink-3);font-family:var(--mono);font-size:10px;line-height:1.5}
+  .case-alert{width:min(620px,calc(100% - 28px));padding:0;border:1px solid var(--line);border-radius:14px;background:var(--bg-2);color:var(--ink);box-shadow:0 28px 90px rgba(0,0,0,.7)}
+  .case-alert::backdrop{background:rgba(7,5,4,.78)}
+  .case-alert__inner{position:relative;padding:30px}
+  .case-alert__close-form{position:absolute;top:12px;right:12px;margin:0}
+  .case-alert__close{width:38px;height:38px;border:0;background:transparent;color:var(--ink-2);cursor:pointer;font-size:28px;line-height:1}
+  .case-alert h2{margin:0 40px 10px 0;font-family:var(--serif);font-size:34px;line-height:1.08}
+  .case-alert__copy{margin:0;color:var(--ink-2);line-height:1.55}
+  .case-alert__embed-window{position:relative;width:min(400px,100%);height:64px;margin-top:20px;overflow:hidden}
+  .case-alert__embed{position:absolute;top:-80px;left:-80px;width:calc(100% + 160px);height:207px;border:0}
+  .case-alert__fallback,.case-alert__helper{margin:10px 0 0;color:var(--ink-3);font-size:11px;line-height:1.45}
+  .case-alert__fallback a{color:var(--accent)}
+  .case-alert__success{margin:20px 0 0;padding:14px;border-left:3px solid var(--accent);background:rgba(232,93,61,.08)}
+  @media(max-width:760px){
+    .home-calendar{margin-top:24px;padding:22px 14px}
+    .home-calendar__heading{align-items:flex-start;flex-direction:column;gap:12px}
+    .home-calendar__now{grid-template-columns:1fr;gap:9px}
+    .home-calendar__now-list{display:grid}
+    .home-calendar__controls button span,.home-calendar__today{display:none}
+    .home-calendar__controls h3{font-size:21px}
+    .home-calendar__layout{grid-template-columns:1fr}
+    .home-calendar__agenda{padding:20px 0 0;border-top:1px solid var(--line);border-left:0}
+    .home-calendar__day-wide{display:none}
+    .home-calendar__day-short{display:inline}
+    .home-calendar__day{min-height:49px;padding:5px;text-align:center}
+    .home-calendar__event-label,.home-calendar__event-count{display:none}
+    .home-calendar__day.has-events::after{display:block;width:5px;height:5px;margin:5px auto 0;border-radius:50%;background:var(--accent);content:""}
+    .case-alert__inner{padding:24px 18px}
+    .case-alert h2{font-size:29px}
+  }
+  @media(prefers-reduced-motion:reduce){.home-calendar__day{scroll-behavior:auto}}
+</style>
