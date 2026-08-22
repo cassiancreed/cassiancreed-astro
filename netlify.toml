@@ -5,6 +5,20 @@
 [build.environment]
   NODE_VERSION = "20"
 
+# One worldwide court calendar. Preserve older inbound links to the former
+# international-only view without maintaining a second public calendar.
+[[redirects]]
+  from = "/international-court-watch"
+  to = "/court-calendar/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/international-court-watch/"
+  to = "/court-calendar/"
+  status = 301
+  force = true
+
 # --- No Accident withdrawal (NEP-CWK-NO-ACCIDENT-WEBSITE-REMOVAL-0726) ---
 # The title is withdrawn from the site by ruling. Its former post URL was
 # already deleted from src/content/posts/ in commit 2e6e2f4 and has been
