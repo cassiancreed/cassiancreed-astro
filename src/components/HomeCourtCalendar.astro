@@ -153,7 +153,7 @@ const visibleDayEntries = (entries) => {
         <div class="home-calendar__pending" id="trending-worldwide" aria-label="Trending cases awaiting a new court date">
           <span>Trending &middot; no court date currently available</span>
           {datePendingTrendCandidates.map((entry) => (
-            <a class:list={[entry.hasExplainer && 'is-explainer']} href={`/court-calendar/#${entry.id}`} aria-label={`Open ${entry.caseName} calendar details`}><strong>{entry.caseName}</strong><span>View case &rarr;</span></a>
+            <a class:list={[entry.hasExplainer && 'is-explainer']} href={`/court-calendar/#${entry.id}`} aria-label={`Open ${entry.caseName} calendar details`}><strong>{entry.caseName}</strong></a>
           ))}
         </div>
       )}
