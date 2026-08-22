@@ -6,6 +6,7 @@
 // in the agenda; this score controls only limited month-grid prominence.
 const DISPLAY_PRIORITY = new Map([
   ['clancy-trial', 100],
+  ['clancy-closings-tentative', 100],
   ['mangione-state-double-jeopardy-hearing', 98],
   ['mangione-federal-sentencing', 98],
   ['anthony-new-trial', 96],

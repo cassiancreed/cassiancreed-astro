@@ -6,6 +6,17 @@ These instructions govern repository-wide Court Command work for `cassiancreed/c
 
 Convert an attached NEP Court Command intake bundle into a verified CassianCreed.com court-calendar update and, when justified, a focused article or article refresh. Complete the remote GitHub and production-deployment workflow without local-only work or user handoffs.
 
+## Canonical case-handling doctrine
+
+Before classifying, naming, describing, illustrating, tagging, or promoting any case, read and apply [`docs/NEP-Case-Handling-Doctrine-v2.0.md`](docs/NEP-Case-Handling-Doctrine-v2.0.md). It is the sole authoritative NEP case-handling doctrine and supersedes the former L1–L4 v1.0 doctrine and any abbreviated summary that conflicts with it.
+
+- There is one worldwide doctrine. Never create separate domestic and international versions.
+- Jurisdiction modules supply local legal requirements and govern when local law conflicts with house style.
+- Assign the current L1, L2-provisional, L2-active, L2-denovo, L3, L4, or L4-provisional posture from the official record and apply any `-A`, `-R`, `-X`, or `-J` modifiers.
+- Exact charges, including first-degree murder charges, may and should be stated when verified. For an L3 case, write “charged with,” “accused of,” or “prosecutors allege”; never build guilt into the case name, headline, metadata, alt text, or imagery.
+- Apply status-true wording everywhere, including the calendar label, selected-date panel, case file, article, email, social copy, artwork prompt, structured data, search description, and internal link text.
+- Risk changes treatment, not inclusion. Production priority and visual prominence remain separate from legal posture.
+
 ## Trigger and authorization
 
 No magic phrase is required. Natural requests such as `I want to update the court calendar`, `Update the court calendar`, `Refresh our court calendar`, or `Fix the court calendar` activate this workflow. `Court Command` remains a backward-compatible alias.
@@ -53,6 +64,7 @@ If any step fails, stop with `REPOSITORY ACCESS BLOCKED`. Do not continue in an 
 - Preserve source URLs and a precise research cutoff.
 - Separate allegations, disputed assertions, admitted facts, rulings, pleas, verdicts, and sentences.
 - Preserve the presumption of innocence where applicable.
+- Verify and record the current case-handling level and modifiers under the canonical doctrine before publication.
 - Never invent a docket, charge, courtroom, event, date, time, quotation, or procedural status.
 
 ## Dates and times
