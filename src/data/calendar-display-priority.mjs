@@ -18,9 +18,14 @@ const DISPLAY_PRIORITY = new Map([
   ['gardner-trial', 84],
   ['unconfirmed-6', 82],
   ['davis-tupac-openings', 80],
+  ['oreilly-melbourne', 72],
   ['inv-nancy-guthrie', 68],
+  ['turner-dore', 64],
   ['unconfirmed-3', 44],
   ['patterson-appeal', 30],
+  ['pike-execution', 28],
+  ['alexander-brothers-sentencing', 12],
+  ['gregg-appeal-decision', 8],
 ]);
 
 export const calendarDisplayPriority = (entry) => DISPLAY_PRIORITY.get(entry.id) ?? 0;
