@@ -17,6 +17,80 @@ facts, dates, FAQ copy, or hero-summary copy directly to the Astro page.
 6. Run `npm run calendar:check`. The normal site build runs the same check
    automatically and will stop if the table is malformed.
 
+## Permanent display rules
+
+- The public calendar is one worldwide calendar. Never create separate visual
+  tiers, badges, compact treatments, or prominence rules for US versus
+  international cases.
+- The NEP L1-L4 level controls how a case is described and handled; it never
+  determines whether a meaningful trending case is tracked. Risk changes treatment,
+  not inclusion. No meaningful case may silently disappear because of age, posture,
+  anonymity, acquittal, dismissal, reversal, or perceived production risk.
+- Keep three decisions separate: (1) inclusion comes from meaningful case relevance,
+  (2) legal wording comes from the verified L1-L4 posture, and (3) visual prominence
+  and production priority come from worldwide commercial demand. Never use a legal
+  level as a demand penalty or use demand to change legal wording.
+- A case with a known court date appears in its correct date square. Do not also
+  repeat it in a separate Trending section.
+- A strongly trending case without a published next date may appear in the slim,
+  clickable exception row inside the calendar. Label it clearly as **Trending —
+  no court date currently available**. Never invent or infer a date to place it
+  in a square.
+- The numerical commercial-demand score is the baseline editorial prominence
+  signal in crowded date squares. It measures worldwide revenue opportunity, not
+  US attention alone: combine audience volume, geographic spread, purchasing power,
+  purchase intent, and current momentum. A smaller high-intent audience may outrank
+  a larger low-value audience. Never boost or suppress a case merely because it is
+  US or international.
+- The commercial-demand score controls which names naturally fit in the limited
+  space, their order, font size and weight, and warm color intensity. Do not assign
+  orange, white, large, or small treatments merely from first/second position or
+  geography.
+- A verified, live paid explainer is the one deliberate commercial exception. Give
+  it the teal **Explainer** treatment and guarantee the highest-trending explainer
+  one visible slot when a date has more cases than the square can show. The case's
+  font size and natural rank still come from its real trend score, so the promotion
+  never falsely claims greater trend strength. Never add this treatment before the
+  public checkout and delivered file have both been tested.
+- All proceedings remain available when the reader selects a date, even when a
+  lower-trending name does not fit in the month-grid square.
+- Keep the page title, navigation, controls, and exception row compact so the
+  maximum practical portion of the month is visible without scrolling.
+- `calendar-display-priority.mjs` holds the current commercial-demand scores.
+  Refresh them whenever the worldwide demand scan changes; the calendar presentation
+  responds automatically. The 2026-08-22 `Demand_Order` values remain a provisional
+  baseline until they are augmented with credible worldwide purchasing-power and
+  purchase-intent evidence. Do not present that provisional order as a worldwide
+  revenue ranking. Never expose the score, order, demand signal, source ecosystem,
+  or internal flags on the public page.
+
+## L1-L4 case-handling doctrine
+
+Assign the level from the current official record and use status-true language in
+the calendar, case file, headlines, metadata, alt text, explainers, and promotion.
+Do not infer a level from reporting shorthand or audience commentary.
+
+- **L1 — standing conviction; direct review complete or waived.** State the
+  verified conviction, offense, plea or verdict, and sentence as facts within the
+  judgment's actual limits. Do not convert every allegation into an established fact.
+- **L2 — standing conviction; material challenge pending.** State both the standing
+  conviction and the pending appeal, habeas petition, post-conviction petition,
+  new-trial motion, plea-withdrawal effort, innocence claim, or other serious
+  challenge. Do not imply the conviction has disappeared or predict the result.
+- **L3 — arrested, charged, indicted, arraigned, bound over, or on trial; no
+  conviction.** Use allegation language, state the exact plea, preserve the
+  presumption of innocence, and distinguish allegations, testimony, advocacy, and
+  findings. Never use guilt imagery or stronger metadata than the legal record.
+- **L4 — no standing conviction.** Lead with the precise supported disposition:
+  acquitted, dismissed, uncharged, vacated, reversed, cleared, exonerated, or
+  unsolved. Never imply "guilty but escaped" or revive obsolete guilt framing.
+
+Change a level only when the legal posture changes. A new formal charge may move an
+L4 matter to L3; a valid conviction moves L3 to L1 or L2; a material challenge moves
+L1 to L2; and an acquittal, dismissal, vacatur, or reversal may move a matter to L4.
+The level never removes the case from NEP intelligence, the calendar, or its case
+file.
+
 ## Row rules
 
 - `section`: `meta`, `scheduled`, `unconfirmed`, `appeal`, `investigation`, or `completed`.
@@ -74,11 +148,12 @@ case cards and FAQs, and updates structured data from this table.
 
 ## International Court Watch
 
-`international-watch.tsv` is the single source of truth for the companion page at
-`/international-court-watch/`. It exists because matters outside the United States
-use different court structures, terminology, and publication practices, and mixing
-them into the US calendar would mislead readers. The US calendar links across to it
-and it links back.
+`international-watch.tsv` is the single source of truth for non-US verification
+fields because different jurisdictions use different court structures, terminology,
+and publication practices. The public `/court-calendar/` merges those verified rows
+into one worldwide display. Geography never determines prominence; the display rank
+comes from the current trend-priority map, while country and court remain visible as
+factual details. `/international-court-watch/` remains a deeper source view.
 
 1. Edit `international-watch.tsv`, then run `npm run intl:check`. The site build
    runs the same check and will stop if the table is malformed.

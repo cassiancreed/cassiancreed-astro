@@ -4,13 +4,84 @@ import HomeCourtCalendar from '../components/HomeCourtCalendar.astro';
 
 import calendarTsv from '../data/court-calendar.tsv?raw';
 import { formatCalendarDate, parseCourtCalendar } from '../data/court-calendar-parser.mjs';
+import internationalTsv from '../data/international-watch.tsv?raw';
+import { parseInternationalWatch } from '../data/international-watch-parser.mjs';
+import { rankByTrend, rankCalendarEntries } from '../data/calendar-display-priority.mjs';
 
 // All editable calendar content lives in one spreadsheet-style TSV file.
 // Replace or edit src/data/court-calendar.tsv; the parser validates every row
 // before Astro can build or publish the page.
 const calendar = parseCourtCalendar(calendarTsv);
-const { entries, unconfirmed, appeals, investigations, completed } = calendar;
-const LAST_UPDATED = formatCalendarDate(calendar.metadata.last_updated);
+const international = parseInternationalWatch(internationalTsv);
+const toScheduled = (entry) => ({
+  id: entry.id,
+  case: entry.case,
+  proceeding: entry.matter,
+  dateISO: entry.dateISO,
+  dateText: entry.dateText,
+  timezone: entry.timezone,
+  timeStatus: entry.timeStatus,
+  court: entry.court,
+  docket: entry.docket,
+  verified: entry.verified,
+  ongoing: false,
+  groups: ['next'],
+  status: entry.status,
+  detail: entry.detail,
+  nextNote: entry.nextNote,
+  src: entry.src,
+  srcLabel: entry.srcLabel,
+  srcType: entry.srcType,
+  src2: entry.src2,
+  srcLabel2: entry.srcLabel2,
+  link: entry.link,
+  linkText: entry.linkText,
+  link2: null,
+  linkText2: null,
+  faqQuestion: entry.faqQuestion,
+  country: entry.country,
+});
+const toPassive = (entry, section) => ({
+  id: entry.id,
+  case: entry.case,
+  type: section === 'appeal' ? entry.matter : null,
+  proceeding: entry.matter,
+  where: entry.court ? `${entry.court}, ${entry.country}` : `${entry.country} — no court proceeding`,
+  timezone: entry.timezone,
+  timeStatus: entry.timeStatus,
+  docket: entry.docket,
+  verified: entry.verified,
+  status: entry.status,
+  note: entry.detail,
+  nextNote: entry.nextNote,
+  src: entry.src,
+  srcLabel: entry.srcLabel,
+  srcType: entry.srcType,
+  src2: entry.src2,
+  srcLabel2: entry.srcLabel2,
+  link: entry.link,
+  linkText: entry.linkText,
+  faqQuestion: entry.faqQuestion,
+  country: entry.country,
+});
+const internationalAppeals = international.monitoring.filter((entry) => /appeal|decision reserved/i.test(entry.matter));
+const internationalUndated = international.monitoring.filter((entry) => !internationalAppeals.includes(entry));
+const entries = [...calendar.entries, ...international.listed.map(toScheduled)];
+const appeals = rankByTrend([...calendar.appeals, ...internationalAppeals.map((entry) => toPassive(entry, 'appeal'))]);
+const unconfirmed = rankByTrend([
+  ...calendar.unconfirmed,
+  ...internationalUndated.filter((entry) => entry.court).map((entry) => toPassive(entry, 'unconfirmed')),
+]);
+const investigations = rankByTrend([
+  ...calendar.investigations,
+  ...internationalUndated.filter((entry) => !entry.court).map((entry) => toPassive(entry, 'investigation')),
+]);
+const completed = rankByTrend([
+  ...calendar.completed,
+  ...international.concluded.map((entry) => toPassive(entry, 'completed')),
+]);
+const latestReview = [calendar.metadata.last_updated, international.metadata.last_updated].sort().at(-1);
+const LAST_UPDATED = formatCalendarDate(latestReview);
 const PAGE_TITLE = calendar.metadata.page_title;
 const PAGE_DESCRIPTION = calendar.metadata.page_description;
 const localDateParts = Object.fromEntries(
@@ -36,7 +107,7 @@ const TIME_NOT_VERIFIED = 'The time has not been publicly verified.';
 // finished matters are moved by hand into `completed`, never dropped silently.
 const isUpcoming = (e) => e.ongoing === true || e.dateISO >= BUILD_DATE;
 const byGroup = (g) => entries.filter((e) => e.groups.includes(g) && isUpcoming(e));
-const nextDates = byGroup('next').sort((a, b) => a.dateISO.localeCompare(b.dateISO));
+const nextDates = rankCalendarEntries(byGroup('next'));
 // Readers arrive asking one of two questions: what is happening in a courtroom
 // right now, and what is on a calendar next. `ongoing` splits the two.
 const inCourtNow = nextDates.filter((e) => e.ongoing === true);
@@ -87,6 +158,13 @@ const genericFaqs = [
 ];
 const allFaqs = [...caseFaqs, ...genericFaqs];
 
+const CASE_GUIDES = {
+  'patterson-appeal': {
+    url: 'https://cassiancreed.beehiiv.com/products/case-chess-erin-patterson',
+    text: 'Read the Erin Patterson case explainer — $2.99',
+  },
+};
+
 const jsonld = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -106,7 +184,7 @@ const jsonld = {
       description: PAGE_DESCRIPTION,
       isPartOf: { '@id': 'https://cassiancreed.com/#website' },
       publisher: { '@id': 'https://cassiancreed.com/#org' },
-      dateModified: calendar.metadata.last_updated,
+      dateModified: latestReview,
       mainEntity: { '@id': 'https://cassiancreed.com/court-calendar#schedule' },
     },
     {
@@ -137,7 +215,7 @@ const jsonld = {
                 '@type': 'PostalAddress',
                 addressLocality: locality,
                 addressRegion: region,
-                addressCountry: 'US',
+                addressCountry: e.country || 'US',
               },
             },
             description: e.status,
@@ -180,7 +258,7 @@ const jsonld = {
   <nav class="wrap cal-quick-links" aria-label="Court calendar resources">
     <a href="#in-court-now">In court now</a>
     <a href="#next-dates">Detailed entries</a>
-    <a href="/international-court-watch/">International court watch</a>
+    <a href="#trending-worldwide">Trending worldwide</a>
     <a href="/court-calendar/archive/">Closed cases</a>
     <a href="/support/">Report a correction</a>
   </nav>
@@ -301,10 +379,9 @@ const jsonld = {
         <p class="row__nodate"><strong>Expected development:</strong> {e.nextNote || NO_DATE}</p>
         <p class="row__note">{e.note}</p>
         <p class="row__meta">Subject to change by the court &middot; Source: {e.srcLabel} ({e.srcType}){e.src2 && <span class="row__src2"> &middot; Also: {e.srcLabel2}</span>}</p>
-        <p class="row__links">{e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : <span class="card__soon">Our case file on this is in progress.</span>} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <a class="row__help" href="/support/">Report a correction</a></p>
+        <p class="row__links">{e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : !CASE_GUIDES[e.id] && <span class="card__soon">Our case file on this is in progress.</span>} {CASE_GUIDES[e.id] && <a class="row__explainer" href={CASE_GUIDES[e.id].url} target="_blank" rel="noopener noreferrer">{CASE_GUIDES[e.id].text} &rarr;</a>} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <a class="row__help" href="/support/">Report a correction</a></p>
       </div>
     ))}
-    <p class="cal-note evidence">Reserved decisions in matters outside the United States, including the Erin Patterson appeal, are tracked on the <a href="/international-court-watch/">International Court Watch</a>.</p>
   </section>
 
   <section class="wrap cal-sec" aria-labelledby="investigations">
@@ -429,7 +506,7 @@ const jsonld = {
       </table>
     </div>
     <p class="cal-note evidence">Updated: {LAST_UPDATED}. All dates are subject to change by the court. Corrections: {CORRECTION_EMAIL}.</p>
-    <p class="cal-note evidence">Tracking a case outside the United States? See the <a href="/international-court-watch/">International Court Watch</a>. Cases that have finished and aged out of this page are kept in full in the <a href="/court-calendar/archive/">archive</a>.</p>
+    <p class="cal-note evidence">This calendar tracks cases worldwide in one view. Cases that have finished and aged out of this page are kept in full in the <a href="/court-calendar/archive/">archive</a>.</p>
   </section>
 
   <section class="wrap cal-sec" aria-labelledby="how-we-verify">
@@ -445,7 +522,7 @@ const jsonld = {
         <li><strong>Nothing is quietly deleted.</strong> When a matter is finished and has been closed long enough to leave <a href="#completed">Recently Completed</a>, it moves to the <a href="/court-calendar/archive/">archive</a> with its text and sources intact, so a page that once carried a claim still shows it.</li>
         <li><strong>Each proceeding appears once.</strong> A hearing is written out in one entry, indexed once in the <a href="#case-by-case">case-by-case table</a>, and referenced from the FAQ by link. We do not restate the same proceeding in several places, because copies drift apart and one of them ends up wrong.</li>
         <li><strong>Legal status is stated exactly.</strong> Charged is not convicted. A plea is not a verdict. An appeal is not a retrial.</li>
-        <li><strong>Foreign matters get their own page.</strong> Court structures and publication practices differ enough abroad that listing them here would mislead. They go on the <a href="/international-court-watch/">International Court Watch</a> under the same sourcing rule.</li>
+        <li><strong>Worldwide cases share one display.</strong> Jurisdiction changes how we verify and describe a proceeding, but it does not determine prominence. Court and country appear as factual details; current worldwide interest determines which tracked cases receive the most visible positions.</li>
         <li><strong>An investigation is not a case in court.</strong> Matters where police are still working and no court has scheduled anything are kept in <a href="#investigations">Active Investigations</a>, labelled as having no court proceeding. Several involve no charged person at all, and the page says so rather than implying a docket exists.</li>
         <li><strong>A press conference is not a hearing.</strong> Briefings, filing deadlines, and announcements do not go on the calendar. Only proceedings a court has actually set do.</li>
       </ol>
@@ -532,6 +609,8 @@ const jsonld = {
     .card__links,.row__links{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin:0;padding-top:12px;border-top:1px solid var(--line)}
     .card__read,.row__links a{color:var(--accent);text-decoration:none;font-size:14px}
     .card__read:hover,.row__links a:hover{text-decoration:underline}
+    .row__links a.row__explainer{display:inline-flex;align-items:center;min-height:40px;margin-right:4px;padding:8px 14px;border:1px solid rgba(78,214,190,.72);border-radius:7px;background:rgb(78 214 190);box-shadow:0 8px 24px rgba(36,166,145,.16);color:#0d1714!important;font-size:14px;font-weight:800;line-height:1.25;text-decoration:none}
+    .row__links a.row__explainer:hover{background:rgb(103 226 204);text-decoration:none;transform:translateY(-1px)}
     .card__help,.row__help{color:var(--ink-2)!important;font-size:13px}
     .card__soon{color:var(--ink-3);font-size:13px}
     .row{padding:18px 0;border-bottom:1px solid var(--line)}
