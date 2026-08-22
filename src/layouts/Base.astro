@@ -90,11 +90,11 @@ const personLd = {
 const navPath = (Astro.url.pathname.replace(/\/+$/, '') || '/');
 const navItems = [
   { href: '/',                      label: 'Home' },
+  { href: '/court-calendar/',      label: 'Court Calendar' },
   { href: '/start-here/',          label: 'Start Here' },
   { href: '/case-files/',          label: 'Blog' },
   { href: '/guides/',              label: 'Guides' },
   { href: '/safety/',              label: 'Stay Safe' },
-  { href: '/court-calendar/',      label: 'Court Calendar' },
   { href: '/international-court-watch/', label: 'International Watch' },
   { href: '/voir-dire-simulator/', label: 'Jury Simulator' },
   { href: '/ai-al/',               label: 'A.I. AL' },
@@ -106,6 +106,7 @@ const navItems = [
   { href: '/#free-guide',           label: 'Free Guide' },
 ];
 const desktopPrimary = [
+  { href: '/court-calendar/', label: 'Court Calendar' },
   { href: '/case-files/', label: 'Case Files' },
   { href: '/books/', label: 'Jury Chess' },
   { href: '/safety/', label: 'Stay Safe' },
@@ -115,7 +116,6 @@ const desktopPrimary = [
 const exploreItems = [
   { href: '/start-here/', label: 'Start Here' },
   { href: '/guides/', label: 'Guides' },
-  { href: '/court-calendar/', label: 'Court Calendar' },
   { href: '/international-court-watch/', label: 'International Watch' },
   { href: '/voir-dire-simulator/', label: 'Jury Simulator' },
   { href: '/ai-al/', label: 'A.I. AL' },
