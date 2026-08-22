@@ -102,7 +102,7 @@ const navItems = [
   // worthiness review. /the-trail/ now 301s (see netlify.toml).
   { href: '/books/',               label: 'Jury Chess' },
   { href: '/about/',               label: 'About' },
-  { href: '/#free-guide',           label: 'Free Guide' },
+  { href: '/#free-guide',           label: 'Court Updates', cta: true },
 ];
 const desktopPrimary = [
   { href: '/court-calendar/', label: 'Court Calendar' },
@@ -110,7 +110,7 @@ const desktopPrimary = [
   { href: '/books/', label: 'Jury Chess' },
   { href: '/safety/', label: 'Stay Safe' },
   { href: '/about/', label: 'About' },
-  { href: '/#free-guide', label: 'Free Guide', cta: true },
+  { href: '/#free-guide', label: 'Court Updates', cta: true },
 ];
 const exploreItems = [
   { href: '/start-here/', label: 'Start Here' },
@@ -296,7 +296,7 @@ const exploreActive = resolvedExplore.some(i => navActive(i.href));
       <summary>Menu</summary>
       <nav class="nav-menu__panel" aria-label="Mobile primary">
         {resolvedNav.map(i => (
-          <a href={i.href} class:list={[navActive(i.href) && 'active', i.label === 'Free Guide' && 'nav__cta']} aria-current={navActive(i.href) ? 'page' : undefined}>{i.label === 'Books' ? 'Jury Chess' : i.label}</a>
+          <a href={i.href} class:list={[navActive(i.href) && 'active', i.cta && 'nav__cta']} aria-current={navActive(i.href) ? 'page' : undefined}>{i.label === 'Books' ? 'Jury Chess' : i.label}</a>
         ))}
       </nav>
     </details>
