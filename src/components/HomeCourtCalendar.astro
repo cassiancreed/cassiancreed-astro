@@ -9,7 +9,7 @@ interface Props {
 const { fullPage = false } = Astro.props;
 const CalendarHeading = fullPage ? 'h1' : 'h2';
 
-const CASE_ALERT_FORM_ID = '4d0df7d0-f274-4901-a457-091f80cecef0';
+const CALENDAR_ALERT_FORM_ID = '4d7c7c61-f04c-4870-bf20-f1af8a540e0f';
 const calendar = parseCourtCalendar(calendarTsv);
 const lastUpdated = formatCalendarDate(calendar.metadata.last_updated);
 const localDateParts = Object.fromEntries(
@@ -142,7 +142,7 @@ const initialMonthLabel = new Intl.DateTimeFormat('en-US', {
             <div class="home-calendar__agenda-actions">
               {entry.link && <a href={entry.link}>{entry.linkText || 'Read the case'} &rarr;</a>}
               <a href={`/court-calendar/#${entry.id}`}>Calendar details &rarr;</a>
-              <button type="button" data-case-alert data-case-id={entry.id} data-case-name={entry.caseName}>Get updates on this case</button>
+              <button type="button" data-calendar-alert>Get court calendar updates</button>
             </div>
           </article>
         )) : <p class="home-calendar__empty">No tracked proceeding is currently scheduled for this date.</p>}
@@ -154,28 +154,28 @@ const initialMonthLabel = new Intl.DateTimeFormat('en-US', {
 
   <script type="application/json" data-calendar-json set:html={JSON.stringify(clientEntries)}></script>
 
-  <dialog class="case-alert" data-case-alert-dialog aria-labelledby="case-alert-title">
+  <dialog class="case-alert" data-calendar-alert-dialog aria-labelledby="calendar-alert-title">
     <div class="case-alert__inner">
       <form method="dialog" class="case-alert__close-form">
-        <button type="submit" class="case-alert__close" aria-label="Close case updates form">&times;</button>
+        <button type="submit" class="case-alert__close" aria-label="Close court calendar updates form">&times;</button>
       </form>
-      <p class="evidence evidence--accent">Case alerts</p>
-      <h2 id="case-alert-title">Get updates on <span data-case-alert-name>this case</span>.</h2>
-      <p class="case-alert__copy">Enter your email to receive significant updates on this case and Cassian Creed&rsquo;s evidence-first newsletter. You&rsquo;ll also receive the free <em>How to Read a Case Like the Court Does</em> guide. Unsubscribe anytime.</p>
+      <p class="evidence evidence--accent">Calendar alerts</p>
+      <h2 id="calendar-alert-title">Get Court Calendar Updates</h2>
+      <p class="case-alert__copy">Get a short email when we change a court date, time, location, or phase. No free guide. No daily emails.</p>
       <div class="case-alert__embed-window" data-case-alert-embed-window>
         <iframe
           class="case-alert__embed"
-          data-case-alert-form
-          data-form-base={`https://subscribe-forms.beehiiv.com/v3/forms/${CASE_ALERT_FORM_ID}?utm_source=website&utm_medium=case_alert&utm_campaign=court_calendar_case_alerts`}
-          title="Subscribe for case updates"
+          data-calendar-alert-form
+          data-form-base={`https://subscribe-forms.beehiiv.com/v3/forms/${CALENDAR_ALERT_FORM_ID}?utm_source=website&utm_medium=calendar_alert&utm_campaign=court_calendar_updates`}
+          title="Subscribe for court calendar updates"
           loading="lazy"
           scrolling="no"
           frameborder="0"
         ></iframe>
       </div>
-      <p class="case-alert__fallback">Form not loading? <a data-case-alert-fallback href="https://cassiancreed.beehiiv.com/subscribe?utm_source=website&amp;utm_medium=case_alert&amp;utm_campaign=court_calendar_case_alerts" target="_blank" rel="noopener noreferrer">Subscribe for case updates &rarr;</a></p>
-      <p class="case-alert__helper">After submitting, follow Beehiiv&rsquo;s confirmation instructions and check your inbox.</p>
-      <p class="case-alert__success" data-case-alert-success role="status" hidden><strong>Submission received.</strong> Check your inbox to confirm your subscription.</p>
+      <p class="case-alert__fallback">Form not loading? <a data-calendar-alert-fallback href={`https://subscribe-forms.beehiiv.com/v3/forms/${CALENDAR_ALERT_FORM_ID}?utm_source=website&amp;utm_medium=calendar_alert&amp;utm_campaign=court_calendar_updates`} target="_blank" rel="noopener noreferrer">Get court calendar updates &rarr;</a></p>
+      <p class="case-alert__helper">You can unsubscribe from any email.</p>
+      <p class="case-alert__success" data-calendar-alert-success role="status" hidden><strong>You&rsquo;re on the list.</strong> Watch your inbox for court calendar updates.</p>
     </div>
   </dialog>
 </section>
@@ -192,11 +192,10 @@ const initialMonthLabel = new Intl.DateTimeFormat('en-US', {
     const days = root.querySelector('[data-calendar-days]');
     const agendaTitle = root.querySelector('[data-calendar-agenda-title]');
     const agenda = root.querySelector('[data-calendar-agenda]');
-    const alertDialog = root.querySelector('[data-case-alert-dialog]');
-    const alertName = root.querySelector('[data-case-alert-name]');
-    const alertForm = root.querySelector('[data-case-alert-form]');
-    const alertFallback = root.querySelector('[data-case-alert-fallback]');
-    const alertSuccess = root.querySelector('[data-case-alert-success]');
+    const alertDialog = root.querySelector('[data-calendar-alert-dialog]');
+    const alertForm = root.querySelector('[data-calendar-alert-form]');
+    const alertFallback = root.querySelector('[data-calendar-alert-fallback]');
+    const alertSuccess = root.querySelector('[data-calendar-alert-success]');
     const alertEmbedWindow = root.querySelector('[data-case-alert-embed-window]');
     const pad = (value) => String(value).padStart(2, '0');
     const keyFor = (date) => `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}`;
@@ -210,24 +209,15 @@ const initialMonthLabel = new Intl.DateTimeFormat('en-US', {
       return link;
     }
 
-    function openAlert(entry) {
+    function openAlert() {
       if (!alertDialog || !alertForm || !alertFallback) return;
-      alertName.textContent = entry.caseName;
-      const content = `case_alert_${entry.id}`;
       const formUrl = new URL(alertForm.getAttribute('data-form-base'));
-      formUrl.searchParams.set('utm_content', content);
       alertForm.src = formUrl.toString();
-      const fallbackUrl = new URL('https://cassiancreed.beehiiv.com/subscribe');
-      fallbackUrl.searchParams.set('utm_source', 'website');
-      fallbackUrl.searchParams.set('utm_medium', 'case_alert');
-      fallbackUrl.searchParams.set('utm_campaign', 'court_calendar_case_alerts');
-      fallbackUrl.searchParams.set('utm_content', content);
-      alertFallback.href = fallbackUrl.toString();
       alertSuccess.hidden = true;
       alertEmbedWindow.hidden = false;
       alertDialog.showModal();
       if (typeof window.gtag === 'function') {
-        window.gtag('event', 'case_alert_open', { case_id: entry.id, case_name: entry.caseName, page_path: location.pathname });
+        window.gtag('event', 'calendar_alert_open', { page_path: location.pathname });
       }
     }
 
@@ -264,8 +254,8 @@ const initialMonthLabel = new Intl.DateTimeFormat('en-US', {
         actions.append(createActionLink(`/court-calendar/#${entry.id}`, 'Calendar details'));
         const alertButton = document.createElement('button');
         alertButton.type = 'button';
-        alertButton.textContent = 'Get updates on this case';
-        alertButton.addEventListener('click', () => openAlert(entry));
+        alertButton.textContent = 'Get court calendar updates';
+        alertButton.addEventListener('click', openAlert);
         actions.append(alertButton);
         article.append(dateText, title, type, court, actions);
         agenda.append(article);
@@ -330,12 +320,7 @@ const initialMonthLabel = new Intl.DateTimeFormat('en-US', {
       renderAgenda(keyFor(today));
       renderMonth();
     });
-    root.querySelectorAll('[data-case-alert]').forEach((button) => {
-      button.addEventListener('click', () => {
-        const entry = entries.find((item) => item.id === button.getAttribute('data-case-id'));
-        if (entry) openAlert(entry);
-      });
-    });
+    root.querySelectorAll('[data-calendar-alert]').forEach((button) => button.addEventListener('click', openAlert));
     alertDialog?.addEventListener('click', (event) => {
       if (event.target === alertDialog) alertDialog.close();
     });
