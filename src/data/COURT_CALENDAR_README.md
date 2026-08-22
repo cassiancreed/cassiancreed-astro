@@ -64,32 +64,35 @@ facts, dates, FAQ copy, or hero-summary copy directly to the Astro page.
   revenue ranking. Never expose the score, order, demand signal, source ecosystem,
   or internal flags on the public page.
 
-## L1-L4 case-handling doctrine
+## Canonical case-handling doctrine
 
-Assign the level from the current official record and use status-true language in
-the calendar, case file, headlines, metadata, alt text, explainers, and promotion.
-Do not infer a level from reporting shorthand or audience commentary.
+[`docs/NEP-Case-Handling-Doctrine-v2.0.md`](../../docs/NEP-Case-Handling-Doctrine-v2.0.md)
+is the sole authoritative doctrine. It supersedes the former domestic-first L1–L4
+v1.0 text and every shortened summary. Read the complete doctrine before assigning
+posture or publishing wording.
 
-- **L1 — standing conviction; direct review complete or waived.** State the
-  verified conviction, offense, plea or verdict, and sentence as facts within the
-  judgment's actual limits. Do not convert every allegation into an established fact.
-- **L2 — standing conviction; material challenge pending.** State both the standing
-  conviction and the pending appeal, habeas petition, post-conviction petition,
-  new-trial motion, plea-withdrawal effort, innocence claim, or other serious
-  challenge. Do not imply the conviction has disappeared or predict the result.
-- **L3 — arrested, charged, indicted, arraigned, bound over, or on trial; no
-  conviction.** Use allegation language, state the exact plea, preserve the
-  presumption of innocence, and distinguish allegations, testimony, advocacy, and
-  findings. Never use guilt imagery or stronger metadata than the legal record.
-- **L4 — no standing conviction.** Lead with the precise supported disposition:
-  acquitted, dismissed, uncharged, vacated, reversed, cleared, exonerated, or
-  unsolved. Never imply "guilty but escaped" or revive obsolete guilt framing.
+- **L1:** conviction stands and review is complete, expired, or waived.
+- **L2-provisional:** conviction stands, the challenge window remains open, and no
+  challenge has been recorded. State the conviction as fact plus the open-window note.
+- **L2-active:** conviction stands and a material challenge is pending.
+- **L2-denovo:** conviction stands, but the appeal is a fresh hearing that may
+  re-decide the facts and replace the first-instance judgment.
+- **L3:** prosecution or formal investigation is underway and no valid conviction
+  exists. Exact verified charges—including first-degree murder—may be stated, but
+  they must be attributed: “charged with,” “accused of,” or “prosecutors allege.”
+  Do not encode guilt in names, headlines, metadata, alt text, or imagery.
+- **L4:** no standing conviction and the disposition is final. Lead with the exact
+  supported disposition and do not revive obsolete guilt framing.
+- **L4-provisional:** an acquittal stands but the prosecution may still appeal. Lead
+  with the acquittal, state that it is not final, and do not call the person cleared
+  or exonerated.
+- Apply `-A` (in absentia), `-R` (reliability-flagged), `-X` (restricted), and `-J`
+  (juvenile) modifiers whenever supported.
 
-Change a level only when the legal posture changes. A new formal charge may move an
-L4 matter to L3; a valid conviction moves L3 to L1 or L2; a material challenge moves
-L1 to L2; and an acquittal, dismissal, vacatur, or reversal may move a matter to L4.
-The level never removes the case from NEP intelligence, the calendar, or its case
-file.
+There is one doctrine for every jurisdiction. Jurisdiction modules supply local-law
+requirements and govern when local law conflicts with house style. Finality must be
+established under the deciding legal system's own rules. Unknown finality defaults
+to open. The level controls treatment, never inclusion or commercial prominence.
 
 ## Row rules
 

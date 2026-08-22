@@ -258,7 +258,6 @@ const jsonld = {
   <nav class="wrap cal-quick-links" aria-label="Court calendar resources">
     <a href="#in-court-now">In court now</a>
     <a href="#next-dates">Detailed entries</a>
-    <a href="#trending-worldwide">Trending worldwide</a>
     <a href="/court-calendar/archive/">Closed cases</a>
     <a href="/support/">Report a correction</a>
   </nav>
@@ -310,6 +309,7 @@ const jsonld = {
           <p class="card__type">{e.proceeding}</p>
           <h3 class="card__case">{e.case}</h3>
           <p class="card__when"><time datetime={e.dateISO}>{e.dateText}</time></p>
+          {e.timeStatus === 'tentative' && <p class="card__nodate"><strong>Tentative:</strong> This expected date is sourced but not yet confirmed by the court.</p>}
           {e.timeStatus === 'not publicly verified' && <p class="card__nodate">{TIME_NOT_VERIFIED}</p>}
           <p class="card__court">{e.court}</p>
           {e.docket && <p class="card__docket">{e.docket}</p>}
@@ -517,14 +517,14 @@ const jsonld = {
       <ol>
         <li><strong>The source is never us.</strong> Each date traces to a court filing, a prosecutor's office, a state agency record, or a reporter who was in the room. We do not cite our own articles as the source for a date.</li>
         <li><strong>We name the source type.</strong> A district attorney's announcement and a news report are not the same thing, so we label which one you are looking at.</li>
-        <li><strong>No date, no entry.</strong> If a case is active but nothing is scheduled, it goes in <a href="#unconfirmed">Dates Not Yet Confirmed</a> and stays there. We would rather say "we don't know" than guess.</li>
+        <li><strong>No sourced date, no dated entry.</strong> If a case is active but nothing is scheduled or credibly expected on a specific date, it goes in <a href="#unconfirmed">Dates Not Yet Confirmed</a>. A sourced expectation may appear as <em>Tentative</em>, but it is never presented as confirmed.</li>
         <li><strong>We review the calendar daily.</strong> We re-check every entry before publishing the page's Updated date. Each entry also carries its own verification date, and we do not move that date forward unless we actually re-checked the entry against a source that day.</li>
         <li><strong>Nothing is quietly deleted.</strong> When a matter is finished and has been closed long enough to leave <a href="#completed">Recently Completed</a>, it moves to the <a href="/court-calendar/archive/">archive</a> with its text and sources intact, so a page that once carried a claim still shows it.</li>
         <li><strong>Each proceeding appears once.</strong> A hearing is written out in one entry, indexed once in the <a href="#case-by-case">case-by-case table</a>, and referenced from the FAQ by link. We do not restate the same proceeding in several places, because copies drift apart and one of them ends up wrong.</li>
         <li><strong>Legal status is stated exactly.</strong> Charged is not convicted. A plea is not a verdict. An appeal is not a retrial.</li>
         <li><strong>Worldwide cases share one display.</strong> Jurisdiction changes how we verify and describe a proceeding, but it does not determine prominence. Court and country appear as factual details; current worldwide interest determines which tracked cases receive the most visible positions.</li>
         <li><strong>An investigation is not a case in court.</strong> Matters where police are still working and no court has scheduled anything are kept in <a href="#investigations">Active Investigations</a>, labelled as having no court proceeding. Several involve no charged person at all, and the page says so rather than implying a docket exists.</li>
-        <li><strong>A press conference is not a hearing.</strong> Briefings, filing deadlines, and announcements do not go on the calendar. Only proceedings a court has actually set do.</li>
+        <li><strong>A press conference is not a hearing.</strong> Briefings and announcements do not go on the calendar. Confirmed court proceedings and clearly labelled, sourced tentative court events do.</li>
       </ol>
       <p>Even so: courts continue courts. If you plan to attend, call the clerk's office first.</p>
       <p>The full <a href="/court-calendar-policy/">Court Calendar and Case-Tracking Policy</a> sets out what inclusion on this page does and does not mean, what every entry must show before it is published, and how to report a correction. If something here is wrong, email {CORRECTION_EMAIL} and we will fix it.</p>
