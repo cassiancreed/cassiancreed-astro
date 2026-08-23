@@ -139,10 +139,10 @@ const embedSrc =
               control row now sits at y=213..259 inside a 339px document.
                 · HORIZONTAL — 80px of padding each side eats the width. In a
                   298px-wide frame the email input collapsed to 65px.
-              Fix: give the iframe a document 160px WIDER and 339px tall, then
-              shift it up/left inside a clipping window so the padding is
-              cropped and only the control row shows. The window keeps the old
-              64px height, so nothing else on the page moves.
+              Fix: keep the standard guide forms at their original y=80 crop,
+              but give the calendar iframe a 339px document and shift it to its
+              y=213 control row. The clipping window remains 64px tall, so the
+              page layout does not move.
               Window max-width is 400px ON PURPOSE: the form's own max-width is
               400px and it centres inside the padded box once that box exceeds
               400px, which would reintroduce a left gap. Capping the window at
@@ -151,7 +151,10 @@ const embedSrc =
               every width. Verified alignment at 342 / 502 / 620 / 760px.
               If the form ever looks off-centre or clipped again, re-measure
               both the control-row position and the theme padding first. */}
-          <div class="capture__embed-window">
+          <div class:list={[
+            'capture__embed-window',
+            { 'capture__embed-window--calendar': offer === 'calendar' },
+          ]}>
             <iframe
               class="capture__embed"
               data-nep-campaign={camp}
@@ -388,15 +391,24 @@ const embedSrc =
      alone so the older pages that depend on it do not change. */
   .capture__embed-window .capture__embed {
     position: absolute;
-    top: -205px;         /* control row starts at y=213; leave 8px above it */
+    top: -72px;          /* standard forms: controls start at y=80 */
     left: -80px;         /* crops the theme's 80px left padding exactly */
     width: calc(100% + 160px);   /* +160 = the left AND right padding */
     max-width: none;     /* releases global.css's 460px clamp */
-    height: 339px;       /* the form document's full natural height */
+    height: 207px;       /* standard form document's natural height */
     border: 0;
     margin: 0;
     background: transparent;
     color-scheme: light;
+  }
+
+  /* The Court Calendar Updates form includes its own heading and description,
+     which move its controls lower than the three standard guide forms. Scope
+     the deeper crop to this form so the case, DNA, and safety captures retain
+     their original y=80 control row. */
+  .capture__embed-window--calendar .capture__embed {
+    top: -205px;
+    height: 339px;
   }
 
   .capture__fallback {
