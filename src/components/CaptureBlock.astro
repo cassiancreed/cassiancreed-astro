@@ -134,16 +134,12 @@ const embedSrc =
         <>
           {/* FORM VISIBILITY FIX — NEP-CWK-IRASEMA-FULL-FIX-DEPLOY-0726.
               The Beehiiv v2 theme wraps this form in 80px of padding on ALL
-              FOUR sides (measured live 2026-07-26 on the form itself, not
-              inferred). Two consequences, both live since 2026-07-18:
-                · VERTICAL — the form's control row sits at y=80..127 inside a
-                  207px document. The old iframe was height:64px with scrolling
-                  off, so the only visible slice was the top padding: no email
-                  field, no button, just the "Form not loading?" fallback. That
-                  is the reported live breakage.
+              FOUR sides. Beehiiv can change the content above the controls
+              without changing the form id. Re-measured live 2026-08-23: the
+              control row now sits at y=213..259 inside a 339px document.
                 · HORIZONTAL — 80px of padding each side eats the width. In a
                   298px-wide frame the email input collapsed to 65px.
-              Fix: give the iframe a document 160px WIDER and 207px tall, then
+              Fix: give the iframe a document 160px WIDER and 339px tall, then
               shift it up/left inside a clipping window so the padding is
               cropped and only the control row shows. The window keeps the old
               64px height, so nothing else on the page moves.
@@ -153,8 +149,8 @@ const embedSrc =
               400px keeps iframe width <= 560px, where the form still fills the
               box and starts at exactly x=80 — so the -80px crop stays exact at
               every width. Verified alignment at 342 / 502 / 620 / 760px.
-              If the form ever looks off-centre or clipped again, re-measure the
-              theme padding FIRST — that is the number this crop depends on. */}
+              If the form ever looks off-centre or clipped again, re-measure
+              both the control-row position and the theme padding first. */}
           <div class="capture__embed-window">
             <iframe
               class="capture__embed"
@@ -392,11 +388,11 @@ const embedSrc =
      alone so the older pages that depend on it do not change. */
   .capture__embed-window .capture__embed {
     position: absolute;
-    top: -72px;          /* crops the theme's 80px top padding, leaving 8px */
+    top: -205px;         /* control row starts at y=213; leave 8px above it */
     left: -80px;         /* crops the theme's 80px left padding exactly */
     width: calc(100% + 160px);   /* +160 = the left AND right padding */
     max-width: none;     /* releases global.css's 460px clamp */
-    height: 207px;       /* the form document's full natural height */
+    height: 339px;       /* the form document's full natural height */
     border: 0;
     margin: 0;
     background: transparent;
