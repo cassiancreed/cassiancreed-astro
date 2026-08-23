@@ -272,15 +272,22 @@ const jsonld = {
   if (search instanceof HTMLInputElement) search.addEventListener('input', () => {
     const query = search.value.trim().toLowerCase();
     let visible = 0;
+    const visibleIds = [];
     buttons.forEach((button) => {
       const matches = !query || (button.getAttribute('data-search') || '').includes(query);
       button.hidden = !matches;
       const id = button.getAttribute('data-case-id');
       const marker = id ? markers.get(id) : null;
       if (marker && map) matches ? marker.addTo(map) : marker.removeFrom(map);
-      if (matches) visible += 1;
+      if (matches) {
+        visible += 1;
+        if (id) visibleIds.push(id);
+      }
     });
     if (searchStatus) searchStatus.textContent = `${visible} ${visible === 1 ? 'case' : 'cases'} shown`;
+    const selected = buttons.find((button) => button.getAttribute('aria-selected') === 'true');
+    if (visibleIds.length && (!selected || selected.hidden)) selectCase(visibleIds[0], 'search');
+    if (!visibleIds.length) panels.forEach((panel) => { panel.hidden = true; });
   });
 
   document.querySelectorAll('.mp-card-actions a').forEach((link) => link.addEventListener('click', () => {
