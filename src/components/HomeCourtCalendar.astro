@@ -19,12 +19,22 @@ const CASE_BOOKS = new Map([
   ['clancy-closings-tentative', {
     title: 'The Lindsay Clancy Trial',
     price: '$4.99',
-    url: 'https://cassiancreed.beehiiv.com/products/lindsay-clancy-trial-book?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=lindsay_clancy_trial_book&utm_content=selected_case',
+    eyebrow: 'New · Case Chess',
+    tagline: 'The law, the medical evidence, and the decisions jurors must make—explained before the verdict.',
+    format: 'Instant PDF',
+    cover: '/covers/lindsay-clancy-trial.jpg',
+    coverAlt: 'Book cover of The Lindsay Clancy Trial by Cassian Creed, showing chess pieces on a dark chessboard',
+    url: 'https://cassiancreed.beehiiv.com/products/lindsay-clancy-trial-book?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=lindsay_clancy_trial_book&utm_content=selected_case_banner',
   }],
   ['clancy-trial', {
     title: 'The Lindsay Clancy Trial',
     price: '$4.99',
-    url: 'https://cassiancreed.beehiiv.com/products/lindsay-clancy-trial-book?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=lindsay_clancy_trial_book&utm_content=selected_case',
+    eyebrow: 'New · Case Chess',
+    tagline: 'The law, the medical evidence, and the decisions jurors must make—explained before the verdict.',
+    format: 'Instant PDF',
+    cover: '/covers/lindsay-clancy-trial.jpg',
+    coverAlt: 'Book cover of The Lindsay Clancy Trial by Cassian Creed, showing chess pieces on a dark chessboard',
+    url: 'https://cassiancreed.beehiiv.com/products/lindsay-clancy-trial-book?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=lindsay_clancy_trial_book&utm_content=selected_case_banner',
   }],
 ]);
 const calendar = parseCourtCalendar(calendarTsv);
@@ -243,11 +253,22 @@ const visibleDayEntries = (entries) => {
             <h4>{entry.calendarLabel}</h4>
             <p class="home-calendar__agenda-type">{entry.proceeding}</p>
             <p class="home-calendar__agenda-status">{entry.agendaSummary}</p>
+            {entry.book && (
+              <aside class="home-calendar__book-promo" aria-label={`Featured book: ${entry.book.title}`}>
+                <img src={entry.book.cover} alt={entry.book.coverAlt} width="1200" height="1800" loading="lazy" />
+                <div class="home-calendar__book-copy">
+                  <p class="home-calendar__book-eyebrow">{entry.book.eyebrow}</p>
+                  <h5>{entry.book.title}</h5>
+                  <p class="home-calendar__book-tagline">{entry.book.tagline}</p>
+                  <p class="home-calendar__book-offer"><strong>{entry.book.price}</strong><span>{entry.book.format}</span></p>
+                  <a href={entry.book.url} target="_blank" rel="noopener noreferrer">Get the trial guide <span aria-hidden="true">&rarr;</span></a>
+                </div>
+              </aside>
+            )}
             <p class="home-calendar__agenda-court">{entry.court}</p>
             <p class="home-calendar__agenda-source"><span>Source:</span> <a href={entry.sourceUrl} target="_blank" rel="noopener noreferrer">{entry.sourceLabel}</a></p>
             <div class="home-calendar__agenda-actions">
               {entry.link && <a href={entry.link}>{entry.linkText || 'Read the case'} &rarr;</a>}
-              {entry.book && <a href={entry.book.url} target="_blank" rel="noopener noreferrer">Get the book &mdash; {entry.book.price} &rarr;</a>}
               <a href={`/court-calendar/#${entry.id}`}>Calendar details &rarr;</a>
               <button type="button" data-calendar-alert>Get court calendar updates</button>
             </div>
@@ -336,6 +357,43 @@ const visibleDayEntries = (entries) => {
       return link;
     }
 
+    function createBookPromo(book) {
+      const promo = document.createElement('aside');
+      promo.className = 'home-calendar__book-promo';
+      promo.setAttribute('aria-label', `Featured book: ${book.title}`);
+      const cover = document.createElement('img');
+      cover.src = book.cover;
+      cover.alt = book.coverAlt;
+      cover.width = 1200;
+      cover.height = 1800;
+      cover.loading = 'lazy';
+      const copy = document.createElement('div');
+      copy.className = 'home-calendar__book-copy';
+      const eyebrow = document.createElement('p');
+      eyebrow.className = 'home-calendar__book-eyebrow';
+      eyebrow.textContent = book.eyebrow;
+      const title = document.createElement('h5');
+      title.textContent = book.title;
+      const tagline = document.createElement('p');
+      tagline.className = 'home-calendar__book-tagline';
+      tagline.textContent = book.tagline;
+      const offer = document.createElement('p');
+      offer.className = 'home-calendar__book-offer';
+      const price = document.createElement('strong');
+      price.textContent = book.price;
+      const format = document.createElement('span');
+      format.textContent = book.format;
+      offer.append(price, format);
+      const cta = document.createElement('a');
+      cta.href = book.url;
+      cta.target = '_blank';
+      cta.rel = 'noopener noreferrer';
+      cta.textContent = 'Get the trial guide →';
+      copy.append(eyebrow, title, tagline, offer, cta);
+      promo.append(cover, copy);
+      return promo;
+    }
+
     function openAlert() {
       if (!alertDialog || !alertForm || !alertFallback) return;
       const formUrl = new URL(alertForm.getAttribute('data-form-base'));
@@ -395,12 +453,6 @@ const visibleDayEntries = (entries) => {
         const actions = document.createElement('div');
         actions.className = 'home-calendar__agenda-actions';
         if (entry.link) actions.append(createActionLink(entry.link, entry.linkText || 'Read the case'));
-        if (entry.book) {
-          const bookLink = createActionLink(entry.book.url, `Get the book — ${entry.book.price}`);
-          bookLink.target = '_blank';
-          bookLink.rel = 'noopener noreferrer';
-          actions.append(bookLink);
-        }
         actions.append(createActionLink(`/court-calendar/#${entry.id}`, 'Calendar details'));
         const alertButton = document.createElement('button');
         alertButton.type = 'button';
@@ -409,7 +461,9 @@ const visibleDayEntries = (entries) => {
         actions.append(alertButton);
         article.append(dateText);
         if (entry.timeStatus === 'tentative') article.append(tentative);
-        article.append(title, type, status, court, source, actions);
+        article.append(title, type, status);
+        if (entry.book) article.append(createBookPromo(entry.book));
+        article.append(court, source, actions);
         agenda.append(article);
       });
     }
@@ -597,6 +651,19 @@ const visibleDayEntries = (entries) => {
   .home-calendar__agenda-item h4{margin:0 0 4px;font-family:var(--serif);font-size:21px;line-height:1.1}
   .home-calendar__agenda-type{margin:0 0 6px;color:var(--ink-2);font-size:13px;line-height:1.4}
   .home-calendar__agenda-status{margin:0 0 9px;color:var(--ink-2);font-size:11.5px;line-height:1.5}
+  .home-calendar__book-promo{position:relative;display:grid;grid-template-columns:76px minmax(0,1fr);gap:12px;margin:14px 0 16px;padding:12px;border:1px solid rgba(214,172,92,.58);border-radius:10px;background:linear-gradient(145deg,rgba(214,172,92,.16),rgba(18,15,13,.98) 58%);box-shadow:0 12px 28px rgba(0,0,0,.28);overflow:hidden}
+  .home-calendar__book-promo::after{position:absolute;inset:0 0 auto;height:2px;background:linear-gradient(90deg,#d6ac5c,#f2d49a,transparent);content:""}
+  .home-calendar__book-promo img{display:block;width:76px;height:auto;aspect-ratio:2/3;border:1px solid rgba(242,212,154,.42);border-radius:4px;object-fit:cover;box-shadow:0 7px 18px rgba(0,0,0,.48)}
+  .home-calendar__book-copy{min-width:0}
+  .home-calendar__book-eyebrow{margin:1px 0 4px;color:#e6bd6d;font-family:var(--mono);font-size:8px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+  .home-calendar__book-copy h5{margin:0 0 5px;color:#fff4df;font-family:var(--serif);font-size:17px;line-height:1.08}
+  .home-calendar__book-tagline{margin:0 0 8px;color:var(--ink-2);font-size:10px;line-height:1.38}
+  .home-calendar__book-offer{display:flex;align-items:center;gap:7px;margin:0 0 8px;color:#f2d49a;font-size:10px}
+  .home-calendar__book-offer strong{font-family:var(--serif);font-size:16px;line-height:1}
+  .home-calendar__book-offer span{padding-left:7px;border-left:1px solid rgba(214,172,92,.45);font-family:var(--mono);font-size:8px;letter-spacing:.06em;text-transform:uppercase}
+  .home-calendar__book-copy>a{display:block;padding:8px 10px;border-radius:6px;background:#e85d3d;color:#fff7ee;font-family:var(--mono);font-size:9px;font-weight:800;letter-spacing:.035em;text-align:center;text-decoration:none;text-transform:uppercase;box-shadow:0 5px 14px rgba(232,93,61,.22)}
+  .home-calendar__book-copy>a:hover{background:#f06d4d}
+  .home-calendar__book-copy>a:focus-visible{outline:2px solid #f2d49a;outline-offset:3px}
   .home-calendar__agenda-court{margin:0 0 12px;color:var(--ink-3);font-size:11px;line-height:1.4}
   .home-calendar__agenda-source{margin:0 0 12px;color:var(--ink-3);font-size:10px;line-height:1.45}
   .home-calendar__agenda-source span{font-family:var(--mono);text-transform:uppercase}
@@ -638,6 +705,11 @@ const visibleDayEntries = (entries) => {
     .home-calendar__ongoing{gap:7px;margin-bottom:7px;padding:6px 7px}
     .home-calendar__ongoing a{font-size:10px}
     .home-calendar__agenda{padding:20px 0 0;border-top:1px solid var(--line);border-left:0}
+    .home-calendar__book-promo{grid-template-columns:88px minmax(0,1fr);gap:14px;padding:14px}
+    .home-calendar__book-promo img{width:88px}
+    .home-calendar__book-copy h5{font-size:20px}
+    .home-calendar__book-tagline{font-size:11px}
+    .home-calendar__book-copy>a{font-size:10px}
     .home-calendar__day-wide{display:none}
     .home-calendar__day-short{display:inline}
     .home-calendar__day,.home-calendar--full .home-calendar__day{min-height:58px;padding:5px;text-align:center}
@@ -648,3 +720,4 @@ const visibleDayEntries = (entries) => {
   }
   @media(prefers-reduced-motion:reduce){.home-calendar__day{scroll-behavior:auto}}
 </style>
+
