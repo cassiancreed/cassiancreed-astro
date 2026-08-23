@@ -91,6 +91,7 @@ const navPath = (Astro.url.pathname.replace(/\/+$/, '') || '/');
 const navItems = [
   { href: '/',                      label: 'Home' },
   { href: '/court-calendar/',      label: 'Court Calendar' },
+  { href: '/missing-persons/',     label: 'Missing Persons' },
   { href: '/start-here/',          label: 'Start Here' },
   { href: '/case-files/',          label: 'Blog' },
   { href: '/guides/',              label: 'Guides' },
@@ -106,6 +107,7 @@ const navItems = [
 ];
 const desktopPrimary = [
   { href: '/court-calendar/', label: 'Court Calendar' },
+  { href: '/missing-persons/', label: 'Missing Persons' },
   { href: '/case-files/', label: 'Case Files' },
   { href: '/books/', label: 'Jury Chess' },
   { href: '/safety/', label: 'Stay Safe' },
@@ -115,6 +117,7 @@ const desktopPrimary = [
 const exploreItems = [
   { href: '/start-here/', label: 'Start Here' },
   { href: '/guides/', label: 'Guides' },
+  { href: '/how-forensic-genetic-genealogy-works/', label: 'Forensic Genealogy' },
   { href: '/voir-dire-simulator/', label: 'Jury Simulator' },
   { href: '/ai-al/', label: 'A.I. AL' },
 ];
@@ -305,7 +308,7 @@ const exploreActive = resolvedExplore.some(i => navActive(i.href));
   <footer class="site-foot"><div class="site-foot__inner">
     <span class="evidence">© 2026 Neural Edge Publishing</span>
     <span class="site-foot__note">Sourced · victim-centered · no gratuitous detail.</span>
-            <span class="site-foot__social"><a href="/explainers/">Explainers</a> · <a href="/guides/">Guides</a> · <a href="/glossary/">Glossary</a> · <a href="/case-solver/">Case Solver</a> · <a href="/forensic-tools/">Forensic Tools</a> · <a href="/safety/">Stay Safe</a> · <a href="/support/">Support</a> · <a href="/mission/">Mission</a> · <a href="/about/">About</a>{internalLinksOnly ? <> · Follow on X · Follow on TikTok · Free newsletter</> : <> · <a href="https://x.com/CassianCreed">Follow on X</a> · <a href="https://www.tiktok.com/@cassiancreed">Follow on TikTok</a> · <a href="/#free-guide">Free newsletter</a></>}</span>
+            <span class="site-foot__social"><a href="/missing-persons/">Missing Persons</a> · <a href="/explainers/">Explainers</a> · <a href="/guides/">Guides</a> · <a href="/glossary/">Glossary</a> · <a href="/case-solver/">Case Solver</a> · <a href="/forensic-tools/">Forensic Tools</a> · <a href="/safety/">Stay Safe</a> · <a href="/support/">Support</a> · <a href="/mission/">Mission</a> · <a href="/about/">About</a>{internalLinksOnly ? <> · Follow on X · Follow on TikTok · Free newsletter</> : <> · <a href="https://x.com/CassianCreed">Follow on X</a> · <a href="https://www.tiktok.com/@cassiancreed">Follow on TikTok</a> · <a href="/#free-guide">Free newsletter</a></>}</span>
   </div></footer>
   <script is:inline>
   (function(){

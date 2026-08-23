@@ -4,11 +4,12 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "astro dev",
-    "build": "npm run canon:check && npm run calendar:check && npm run archive:check && npm run intl:check && npm run posts:check && astro build && npm run site:check",
+    "build": "npm run canon:check && npm run calendar:check && npm run archive:check && npm run intl:check && npm run missing:check && npm run posts:check && astro build && npm run site:check",
     "preview": "astro preview",
     "calendar:check": "node scripts/validate-court-calendar.mjs",
     "archive:check": "node scripts/validate-court-calendar-archive.mjs",
     "intl:check": "node scripts/validate-international-watch.mjs",
+    "missing:check": "node scripts/validate-missing-persons.mjs",
     "posts:check": "node scripts/validate-post-archive.mjs",
     "site:check": "node scripts/validate-site.mjs",
     "canon:check": "node scripts/validate-case-handling-canon.mjs",
@@ -18,6 +19,7 @@
     "@astrojs/mdx": "^3.1.9",
     "@astrojs/rss": "^4.0.0",
     "@astrojs/sitemap": "^3.2.0",
-    "astro": "^4.16.0"
+    "astro": "^4.16.0",
+    "leaflet": "^1.9.4"
   }
 }

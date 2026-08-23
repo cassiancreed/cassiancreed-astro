@@ -1,0 +1,351 @@
+---
+import Base from '../layouts/Base.astro';
+import missingTsv from '../data/missing-persons.tsv?raw';
+import { formatMissingDate, parseMissingPersons } from '../data/missing-persons-parser.mjs';
+import 'leaflet/dist/leaflet.css';
+
+const missing = parseMissingPersons(missingTsv);
+const active = missing.active;
+const resolved = missing.resolved;
+const first = active[0] ?? null;
+const verifiedThrough = formatMissingDate(missing.metadata.last_updated);
+const mapCases = active.map((entry) => ({
+  id: entry.id,
+  name: entry.name,
+  status: entry.status,
+  statusLabel: entry.statusLabel,
+  location: entry.approx_location,
+  latitude: entry.latitude,
+  longitude: entry.longitude,
+}));
+const safeJson = JSON.stringify(mapCases).replace(/</g, '\\u003c');
+const followBase = 'https://cassiancreed.beehiiv.com/subscribe?utm_source=website&utm_medium=missing_person_map&utm_campaign=missing_person_updates';
+const followHref = first ? `${followBase}&utm_content=missing_person_${encodeURIComponent(first.follow_key)}` : followBase;
+const jsonld = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'Missing Persons Map',
+  description: 'A free, verified map of selected active missing-person cases with official sources and tip routes.',
+  url: 'https://cassiancreed.com/missing-persons/',
+  isPartOf: { '@id': 'https://cassiancreed.com/#org' },
+  dateModified: missing.metadata.last_updated,
+};
+---
+
+<Base
+  title="Missing Persons Map"
+  description="A free, verified map of selected missing-person cases. See current status, investigating agencies, official sources, and authorized tip routes."
+  jsonld={jsonld}
+>
+  <section class="mp-hero">
+    <div class="wrap mp-hero__inner">
+      <div>
+        <p class="evidence evidence--accent">NEP Missing Persons</p>
+        <h1>Every missing person is a person—not a mystery character.</h1>
+        <p class="mp-hero__lede">Explore selected cases through verified public information. The map uses approximate locations for context and sends every lead directly to the investigating agency or authorized tipline.</p>
+      </div>
+      <aside class="mp-trust" aria-label="Missing Persons Map safeguards">
+        <p><strong>{active.length}</strong> active {active.length === 1 ? 'case' : 'cases'}</p>
+        <p><strong>{resolved.length}</strong> resolved {resolved.length === 1 ? 'case' : 'cases'} archived</p>
+        <p>Status reviewed through <strong>{verifiedThrough}</strong></p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="wrap mp-alert" aria-label="Important tip information">
+    <strong>NEP is not law enforcement and does not receive tips.</strong>
+    <span>If you have information, use the official contact shown on that person&rsquo;s card. Call 911 or local emergency services for an immediate emergency.</span>
+  </section>
+
+  <section class="wrap mp-explorer" aria-labelledby="map-heading">
+    <div class="mp-explorer__head">
+      <div>
+        <p class="evidence">Find a case</p>
+        <h2 id="map-heading">Missing Persons Map</h2>
+      </div>
+      <p>Markers show an approximate city, county, or regional center&mdash;never a private address or active search location.</p>
+    </div>
+
+    {active.length > 0 ? (
+      <>
+        <div class="mp-search" role="search">
+          <label for="missing-search">Search by person, location, agency, or status</label>
+          <input id="missing-search" type="search" placeholder="Search missing-person cases…" autocomplete="off" />
+          <p id="missing-search-status" aria-live="polite">{active.length} {active.length === 1 ? 'case' : 'cases'} shown</p>
+        </div>
+
+        <div class="mp-workspace">
+          <div class="mp-map-wrap">
+            <div id="missing-map" class="mp-map" aria-label="Map of approximate last-known locations"></div>
+            <noscript><p class="mp-noscript">The interactive map requires JavaScript. Every case remains available in the accessible list beside it.</p></noscript>
+            <div class="mp-case-list" role="listbox" aria-label="Active missing-person cases">
+              {active.map((entry, index) => (
+                <button
+                  class="mp-case-button"
+                  type="button"
+                  data-case-id={entry.id}
+                  data-search={`${entry.name} ${entry.approx_location} ${entry.investigating_agency} ${entry.statusLabel}`.toLowerCase()}
+                  aria-selected={index === 0 ? 'true' : 'false'}
+                >
+                  <span class={`mp-status-dot mp-status-dot--${entry.status}`} aria-hidden="true"></span>
+                  <span><strong>{entry.name}</strong><small>{entry.statusLabel} · {entry.approx_location}</small></span>
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div class="mp-detail" aria-live="polite">
+            {active.map((entry, index) => (
+              <article class="mp-status-card" data-case-panel={entry.id} hidden={index !== 0}>
+                <div class="mp-status-card__top">
+                  <span class={`mp-status-pill mp-status-pill--${entry.status}`}>{entry.statusLabel}</span>
+                  <span class="mp-verified">Status verified as of {formatMissingDate(entry.verification_date)}</span>
+                </div>
+                <h3 tabindex="-1">{entry.name}</h3>
+                <p class="mp-summary">{entry.summary}</p>
+                <dl>
+                  <div><dt>Approximate location</dt><dd>{entry.approx_location}</dd></div>
+                  <div><dt>Date missing</dt><dd>{formatMissingDate(entry.date_missing)}</dd></div>
+                  <div><dt>Verified status</dt><dd>{entry.statusLabel} <span class="mp-agency-status">(agency lists: {entry.agency_status})</span></dd></div>
+                  <div><dt>Investigating agency</dt><dd>{entry.investigating_agency}</dd></div>
+                  {entry.case_number && <div><dt>Official case number</dt><dd>{entry.case_number}</dd></div>}
+                </dl>
+                <div class="mp-card-actions">
+                  <a class="btn" href={entry.tip_url}>{entry.tip_label}</a>
+                  {entry.tip_phone && <a class="btn btn--ghost" href={`tel:${entry.tip_phone.replace(/[^+\d]/g, '')}`}>Call {entry.tip_phone}</a>}
+                  <button class="mp-follow-button" type="button" data-follow-case={entry.id} data-follow-key={entry.follow_key} data-follow-name={entry.name}>Follow this case</button>
+                </div>
+                <p class="mp-sources">
+                  Official verification: <a href={entry.source_url}>{entry.source_label}</a>
+                  {entry.source2_url && <> · <a href={entry.source2_url}>{entry.source2_label}</a></>}
+                </p>
+                {entry.article_path ? (
+                  <a class="mp-article-link" href={entry.article_path}>Read the dated NEP case article <span aria-hidden="true">→</span></a>
+                ) : (
+                  <p class="mp-article-pending">NEP has not yet published a dated case article. The official source above is the current record.</p>
+                )}
+              </article>
+            ))}
+          </div>
+        </div>
+        <script id="missing-person-data" type="application/json" set:html={safeJson}></script>
+      </>
+    ) : (
+      <p class="mp-empty">No case has completed NEP&rsquo;s verification gate yet. The map will never publish a placeholder or unverified person.</p>
+    )}
+  </section>
+
+  <section class="wrap mp-follow" id="follow-missing-person" aria-labelledby="follow-heading">
+    <div>
+      <p class="evidence evidence--accent">Verified updates</p>
+      <h2 id="follow-heading">Is there a particular case you&rsquo;d like to follow?</h2>
+      <p>Select a person on the map, then subscribe. NEP records the selected case as an interest signal so verified updates can be prioritized. This is not a tip form, and subscribing is never required to see case information.</p>
+      <p class="mp-follow__selection">Selected case: <strong id="follow-case-name">{first?.name ?? 'No case selected'}</strong></p>
+    </div>
+    <a id="missing-follow-link" class="btn mp-follow__button" href={followHref}>Get missing-person updates</a>
+  </section>
+
+  {resolved.length > 0 && (
+    <section class="wrap mp-resolved" aria-labelledby="resolved-heading">
+      <p class="evidence">Resolved archive</p>
+      <h2 id="resolved-heading">Located and resolved cases</h2>
+      <p>Resolved entries leave the active map promptly. Their status remains visible here without rewriting the original dated reporting.</p>
+      <div class="mp-resolved__grid">
+        {resolved.map((entry) => (
+          <article>
+            <span class={`mp-status-pill mp-status-pill--${entry.status}`}>{entry.statusLabel}</span>
+            <h3>{entry.name}</h3>
+            <p>Status verified as of {formatMissingDate(entry.verification_date)}.</p>
+            <a href={entry.source_url}>Official source <span aria-hidden="true">→</span></a>
+          </article>
+        ))}
+      </div>
+    </section>
+  )}
+
+  <section class="wrap mp-bridges" aria-label="Related public-interest resources">
+    <article class="mp-bridge">
+      <p class="evidence evidence--accent">How this stays free</p>
+      <h2>Publishing supports the public-service work.</h2>
+      <p>Cassian Creed&rsquo;s paid books and explainers help support the research, verification, and technology that keep this Missing Persons Map free. Missing-person information will never be placed behind a paywall, and all leads are directed to the appropriate authorities.</p>
+      <a href="/books/">See Cassian Creed&rsquo;s books <span aria-hidden="true">→</span></a>
+    </article>
+    <article class="mp-bridge">
+      <p class="evidence evidence--accent">Genealogy and identification</p>
+      <h2>How a family tree can help restore a name.</h2>
+      <p>Forensic genetic genealogy can help generate an identification lead, but it is not proof by itself and does not apply to every missing-person case. Learn how the process works, what ethical databases permit, and how laboratories such as Othram contribute.</p>
+      <p class="mp-bridge__links"><a href="/how-forensic-genetic-genealogy-works/">How forensic genetic genealogy works</a> · <a href="/how-othram-works-in-a-case/">How Othram works in a case</a> · <a href="/how-dna-remembers/">How DNA remembers</a></p>
+    </article>
+  </section>
+
+  <section class="wrap mp-method" aria-labelledby="method-heading">
+    <p class="evidence">The standard</p>
+    <h2 id="method-heading">Verified, restrained, and useful.</h2>
+    <div class="mp-method__grid">
+      <p><strong>Authority first.</strong> Every published record starts with an investigating agency or authoritative missing-person system.</p>
+      <p><strong>Status means exactly what it says.</strong> Missing does not automatically mean abducted; recovered deceased does not mean homicide.</p>
+      <p><strong>Privacy over spectacle.</strong> No private addresses, sensitive search locations, fabricated likenesses, or unverified accusations.</p>
+      <p><strong>Tips go to investigators.</strong> NEP provides context and amplification, never a competing tip inbox.</p>
+    </div>
+  </section>
+</Base>
+
+<script>
+  import L from 'leaflet';
+
+  const dataNode = document.querySelector('#missing-person-data');
+  const mapNode = document.querySelector('#missing-map');
+  const cases = dataNode ? JSON.parse(dataNode.textContent || '[]') : [];
+  const buttons = Array.from(document.querySelectorAll('[data-case-id]'));
+  const panels = Array.from(document.querySelectorAll('[data-case-panel]'));
+  const followButtons = Array.from(document.querySelectorAll('[data-follow-case]'));
+  const search = document.querySelector('#missing-search');
+  const searchStatus = document.querySelector('#missing-search-status');
+  const followName = document.querySelector('#follow-case-name');
+  const followLink = document.querySelector('#missing-follow-link');
+  const followSection = document.querySelector('#follow-missing-person');
+  const markers = new Map();
+  let map;
+
+  function record(name, params = {}) {
+    if (typeof window.gtag === 'function') window.gtag('event', name, { page_path: location.pathname, ...params });
+  }
+
+  function selectCase(id, source = 'list') {
+    buttons.forEach((button) => button.setAttribute('aria-selected', button.getAttribute('data-case-id') === id ? 'true' : 'false'));
+    panels.forEach((panel) => { panel.hidden = panel.getAttribute('data-case-panel') !== id; });
+    const selected = cases.find((entry) => entry.id === id);
+    if (selected && map && source !== 'map') map.panTo([selected.latitude, selected.longitude]);
+    record('missing_case_select', { case_id: id, selection_source: source });
+  }
+
+  function setFollow(id, key, name) {
+    if (followName) followName.textContent = name;
+    if (followLink instanceof HTMLAnchorElement) {
+      const url = new URL(followLink.href);
+      url.searchParams.set('utm_content', `missing_person_${key}`);
+      followLink.href = url.toString();
+      followLink.setAttribute('data-case-id', id);
+    }
+  }
+
+  buttons.forEach((button) => button.addEventListener('click', () => {
+    const id = button.getAttribute('data-case-id');
+    if (id) selectCase(id, 'list');
+  }));
+
+  followButtons.forEach((button) => button.addEventListener('click', () => {
+    const id = button.getAttribute('data-follow-case') || '';
+    const key = button.getAttribute('data-follow-key') || id;
+    const name = button.getAttribute('data-follow-name') || 'Selected case';
+    setFollow(id, key, name);
+    followSection?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    record('missing_case_follow_intent', { case_id: id });
+  }));
+
+  if (followLink) followLink.addEventListener('click', () => {
+    record('missing_case_follow_click', { case_id: followLink.getAttribute('data-case-id') || cases[0]?.id || '(none)' });
+  });
+
+  if (mapNode && cases.length) {
+    map = L.map(mapNode, { scrollWheelZoom: false, minZoom: 2 }).setView([39.5, -98.35], 4);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 18,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>',
+    }).addTo(map);
+
+    cases.forEach((entry) => {
+      const icon = L.divIcon({
+        className: 'mp-marker-shell',
+        html: `<span class="mp-marker mp-marker--${entry.status}" aria-hidden="true"></span>`,
+        iconSize: [30, 30],
+        iconAnchor: [15, 15],
+      });
+      const marker = L.marker([entry.latitude, entry.longitude], { icon, title: `${entry.name} — ${entry.statusLabel}` })
+        .addTo(map)
+        .bindTooltip(`${entry.name}<br>${entry.location}`);
+      marker.on('click', () => selectCase(entry.id, 'map'));
+      markers.set(entry.id, marker);
+    });
+  }
+
+  if (search instanceof HTMLInputElement) search.addEventListener('input', () => {
+    const query = search.value.trim().toLowerCase();
+    let visible = 0;
+    const visibleIds = [];
+    buttons.forEach((button) => {
+      const matches = !query || (button.getAttribute('data-search') || '').includes(query);
+      button.hidden = !matches;
+      const id = button.getAttribute('data-case-id');
+      const marker = id ? markers.get(id) : null;
+      if (marker && map) matches ? marker.addTo(map) : marker.removeFrom(map);
+      if (matches) {
+        visible += 1;
+        if (id) visibleIds.push(id);
+      }
+    });
+    if (searchStatus) searchStatus.textContent = `${visible} ${visible === 1 ? 'case' : 'cases'} shown`;
+    const selected = buttons.find((button) => button.getAttribute('aria-selected') === 'true');
+    if (visibleIds.length && (!selected || selected.hidden)) selectCase(visibleIds[0], 'search');
+    if (!visibleIds.length) panels.forEach((panel) => { panel.hidden = true; });
+  });
+
+  document.querySelectorAll('.mp-card-actions a').forEach((link) => link.addEventListener('click', () => {
+    const panel = link.closest('[data-case-panel]');
+    record('missing_official_contact_click', { case_id: panel?.getAttribute('data-case-panel') || '(unknown)' });
+  }));
+</script>
+
+<style>
+  .mp-hero{border-bottom:1px solid var(--line);background:radial-gradient(90% 100% at 85% 0,rgba(95,174,126,.12),transparent 60%),var(--bg);padding:64px 0 42px}
+  .mp-hero__inner{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:48px;align-items:end}
+  .mp-hero h1{font-family:var(--serif);font-size:clamp(38px,5.8vw,66px);line-height:1.02;max-width:16ch;margin:12px 0 0}
+  .mp-hero__lede{font-size:clamp(17px,2vw,20px);color:var(--ink-2);max-width:64ch;margin:20px 0 0}
+  .mp-trust{border:1px solid rgba(95,174,126,.34);border-radius:10px;background:rgba(17,28,24,.7);padding:20px}
+  .mp-trust p{margin:0;padding:9px 0;color:var(--ink-2);font-size:14px;border-bottom:1px solid var(--line)}
+  .mp-trust p:last-child{border-bottom:0}.mp-trust strong{color:var(--ink)}
+  .mp-alert{display:grid;gap:4px;margin-top:26px;padding-top:16px;padding-bottom:16px;border-left:3px solid var(--accent);background:var(--bg-2);color:var(--ink-2)}
+  .mp-alert strong{color:var(--ink)}
+  .mp-explorer{padding-top:52px}
+  .mp-explorer__head{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:22px}
+  .mp-explorer__head h2,.mp-follow h2,.mp-resolved h2,.mp-bridge h2,.mp-method h2{font-family:var(--serif);font-size:clamp(28px,4vw,42px);line-height:1.08;margin:6px 0 0}
+  .mp-explorer__head>p{max-width:48ch;color:var(--ink-3);font-size:13px;margin:0}
+  .mp-search{display:grid;grid-template-columns:1fr auto;gap:8px 18px;margin-bottom:16px}
+  .mp-search label{grid-column:1/-1;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)}
+  .mp-search input{width:100%;min-height:48px;background:var(--bg-2);border:1px solid rgba(255,255,255,.14);border-radius:8px;padding:11px 14px;color:var(--ink);font:inherit}
+  .mp-search p{font-family:var(--mono);font-size:11px;color:var(--ink-3);align-self:center;margin:0;white-space:nowrap}
+  .mp-workspace{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(330px,.75fr);gap:18px;align-items:start}
+  .mp-map-wrap{min-width:0}.mp-map{height:460px;border:1px solid var(--line);border-radius:12px;background:#191b1a;z-index:1}
+  :global(.leaflet-container){font-family:var(--sans);background:#191b1a}
+  :global(.leaflet-tile){filter:saturate(.52) brightness(.72) contrast(1.08)}
+  :global(.leaflet-control-attribution){font-size:10px!important}
+  :global(.mp-marker-shell){background:transparent;border:0}
+  :global(.mp-marker){display:block;width:22px;height:22px;margin:4px;border:3px solid #f4efe8;border-radius:50% 50% 50% 8px;transform:rotate(-45deg);background:var(--accent);box-shadow:0 3px 12px rgba(0,0,0,.55)}
+  :global(.mp-marker--endangered),:global(.mp-marker--abducted){background:#d9a441}
+  .mp-case-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:10px}
+  .mp-case-button{display:flex;align-items:flex-start;gap:10px;text-align:left;background:var(--bg-2);border:1px solid var(--line);border-radius:8px;color:var(--ink);padding:11px 12px;cursor:pointer}
+  .mp-case-button[aria-selected="true"]{border-color:var(--accent);background:rgba(224,86,59,.08)}
+  .mp-case-button[hidden]{display:none}.mp-case-button strong,.mp-case-button small{display:block}.mp-case-button strong{font-size:14px;line-height:1.25}.mp-case-button small{color:var(--ink-3);font-size:11px;line-height:1.4;margin-top:4px}
+  .mp-status-dot{width:10px;height:10px;flex:0 0 auto;border-radius:50%;background:var(--accent);margin-top:5px}.mp-status-dot--endangered,.mp-status-dot--abducted{background:#d9a441}
+  .mp-status-card{border:1px solid var(--line);border-top:3px solid var(--accent);border-radius:10px;background:var(--bg-2);padding:22px}
+  .mp-status-card[hidden]{display:none}.mp-status-card__top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .mp-status-pill{display:inline-block;border:1px solid rgba(224,86,59,.45);border-radius:999px;color:#f0a696;background:rgba(224,86,59,.09);padding:5px 10px;font-family:var(--mono);font-size:10px;letter-spacing:.09em;text-transform:uppercase}
+  .mp-status-pill--located_safe,.mp-status-pill--resolved{border-color:rgba(95,174,126,.45);color:#9bd4b2;background:rgba(95,174,126,.09)}
+  .mp-status-pill--recovered_deceased{border-color:rgba(184,177,168,.36);color:var(--ink-2);background:rgba(184,177,168,.06)}
+  .mp-verified{font-family:var(--mono);font-size:10px;color:var(--ink-3)}
+  .mp-status-card h3{font-family:var(--serif);font-size:34px;line-height:1.05;margin:18px 0 10px}
+  .mp-summary{color:var(--ink-2);font-size:14px;line-height:1.55;margin:0 0 20px}
+  .mp-status-card dl{display:grid;gap:0;margin:0}.mp-status-card dl div{display:grid;grid-template-columns:125px 1fr;gap:12px;padding:10px 0;border-top:1px solid var(--line)}
+  .mp-status-card dt{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}.mp-status-card dd{margin:0;font-size:13px;line-height:1.45}.mp-agency-status{color:var(--ink-3)}
+  .mp-card-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}.mp-card-actions .btn{font-size:12px;padding:9px 12px}
+  .mp-follow-button{border:0;background:transparent;color:var(--accent);font:600 12px var(--sans);padding:9px 6px;cursor:pointer}
+  .mp-sources,.mp-article-pending{font-size:11px;line-height:1.5;color:var(--ink-3);margin:16px 0 0}.mp-sources a,.mp-article-link{color:var(--accent);text-decoration:underline}.mp-article-link{display:inline-block;margin-top:12px;font-size:13px}.mp-article-pending{font-style:italic}
+  .mp-noscript,.mp-empty{padding:18px;background:var(--bg-2);color:var(--ink-2);border:1px dashed var(--line);border-radius:8px}
+  .mp-follow{display:grid;grid-template-columns:1fr auto;gap:34px;align-items:center;margin-top:54px;padding-top:28px;padding-bottom:28px;border:1px solid rgba(224,86,59,.3);border-left:3px solid var(--accent);border-radius:10px;background:var(--bg-2)}
+  .mp-follow p{max-width:68ch;color:var(--ink-2);margin:12px 0 0}.mp-follow__selection strong{color:var(--ink)}.mp-follow__button{white-space:nowrap}
+  .mp-resolved{padding-top:54px}.mp-resolved>p{color:var(--ink-2);max-width:70ch}.mp-resolved__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.mp-resolved article{padding:18px;border:1px solid var(--line);border-radius:8px;background:var(--bg-2)}.mp-resolved h3{font-family:var(--serif);font-size:24px;margin:12px 0 6px}.mp-resolved article p{color:var(--ink-3);font-size:13px}.mp-resolved a{color:var(--accent);font-size:13px}
+  .mp-bridges{display:grid;grid-template-columns:1fr 1fr;gap:18px;padding-top:56px}.mp-bridge{padding:28px;border:1px solid var(--line);border-radius:10px;background:linear-gradient(145deg,var(--bg-2),#12100e)}.mp-bridge h2{font-size:32px}.mp-bridge>p:not(.evidence){color:var(--ink-2);font-size:15px}.mp-bridge>a,.mp-bridge__links a{color:var(--accent);text-decoration:underline}.mp-bridge__links{line-height:1.8}
+  .mp-method{padding-top:56px}.mp-method__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px 24px;margin-top:18px}.mp-method__grid p{margin:0;padding:16px 0;border-top:1px solid var(--line);color:var(--ink-2)}.mp-method__grid strong{color:var(--ink)}
+  @media(max-width:900px){.mp-hero__inner,.mp-workspace{grid-template-columns:1fr}.mp-trust{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.mp-trust p{border:0}.mp-detail{min-height:0}.mp-bridges{grid-template-columns:1fr}.mp-map{height:420px}}
+  @media(max-width:640px){.mp-hero{padding:44px 0 30px}.mp-hero__inner{gap:26px}.mp-trust{grid-template-columns:1fr;gap:0}.mp-trust p{border-bottom:1px solid var(--line)}.mp-explorer__head{display:block}.mp-explorer__head>p{margin-top:12px}.mp-search{grid-template-columns:1fr}.mp-search label{grid-column:auto}.mp-case-list{grid-template-columns:1fr}.mp-map{height:340px}.mp-status-card dl div{grid-template-columns:1fr;gap:4px}.mp-follow{grid-template-columns:1fr;gap:18px}.mp-follow__button{justify-self:start}.mp-method__grid,.mp-resolved__grid{grid-template-columns:1fr}}
+</style>
