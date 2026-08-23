@@ -7,14 +7,16 @@
 // distinct utm_campaign so attribution stays clean per magnet.
 //
 // ✅ BEEHIIV FORM REALITY (updated 2026-07-18, flight 0718M): the publication now
-// has THREE live subscribe forms — case/Jury (4d0df7d0), How DNA Remembers
-// (6102d20f) and Stay Safe Field Guide (32e7f9bd). Every offer is therefore
+// has FOUR live subscribe forms — case/Jury (4d0df7d0), How DNA Remembers
+// (6102d20f), Stay Safe Field Guide (32e7f9bd), and Court Calendar Updates
+// (4d7c7c61). Every offer is therefore
 // formMatched:true and delivery matches the pitch. Never invent a form id.
 // ─────────────────────────────────────────────────────────────────────────────
 
 const JURY_FORM   = '4d0df7d0-f274-4901-a457-091f80cecef0';
 const DNA_FORM    = '6102d20f-cfb4-46fa-88db-dbeae2d63094';  // "How DNA Remembers"      (0718M)
 const SAFETY_FORM = '32e7f9bd-83d8-4945-a3c2-7b9cbc649bd1';  // "Stay Safe Field Guide"  (0718M)
+const CALENDAR_FORM = '4d7c7c61-f04c-4870-bf20-f1af8a540e0f'; // Court Calendar Updates
 
 
 // ── Converged offers (isweat: all three ship ≥8.0, Rex+Banks PASS) ──
@@ -55,13 +57,22 @@ const OFFERS = {
     subtext: 'Use this optional subscription form to request the printable Stay Safe Field Guide and receive NEP updates. Updates may include This Week in Court, plain-English explainers, and practical safety guidance—without sensationalism or victim blame. This email is not emergency support or a personalized safety plan. Unsubscribe anytime.',
     button: 'Get the free guide',
   },
+  calendar: {
+    formId: CALENDAR_FORM,
+    formMatched: true,
+    campaign: 'court_calendar_updates',
+    offerId: 'court_calendar_updates_v1',
+    headline: 'Is there a particular case you’d like to follow?',
+    subtext: 'Get a short email when a tracked court date, time, location, or phase changes. No free guide. No daily emails. Unsubscribe anytime.',
+    button: 'Follow court cases',
+  },
 };
 // Back-compat alias: legacy pages/posts still pass offer="jury".
 OFFERS.jury = OFFERS.case;
 
 export interface Props {
-  /** Topic-matched magnet: 'case' (cases/trials/home; 'jury' is a back-compat alias), 'dna' (genealogy), 'safety'. */
-  offer?: 'case' | 'jury' | 'dna' | 'safety';
+  /** Topic-matched signup: 'case' (cases/trials/home; 'jury' is a back-compat alias), 'dna' (genealogy), 'safety', 'calendar' (court updates). */
+  offer?: 'case' | 'jury' | 'dna' | 'safety' | 'calendar';
   /** Optional UTM override. Defaults to the offer's own campaign. */
   campaign?: string;
   /** Optional per-placement copy overrides (win over the offer defaults). */
@@ -387,65 +398,3 @@ const embedSrc =
     max-width: none;     /* releases global.css's 460px clamp */
     height: 207px;       /* the form document's full natural height */
     border: 0;
-    margin: 0;
-    background: transparent;
-    color-scheme: light;
-  }
-
-  .capture__fallback {
-    margin: 0.5rem 0 0;
-    font-size: 0.85rem;
-    color: var(--ink-2);
-  }
-  .capture__fallback a { color: var(--accent); }
-
-  .capture__helper {
-    margin: 0.5rem 0 0;
-    font-size: 0.85rem;
-    line-height: 1.5;
-    color: var(--ink-2);
-  }
-
-  /* Shown only after a genuine same-origin success redirect (see script). */
-  .capture__success {
-    margin: 0.35rem 0 0;
-    padding: 0.85rem 1rem;
-    background: rgba(95, 174, 126, 0.14);
-    border: 1px solid rgba(95, 174, 126, 0.55);
-    border-radius: 8px;
-    color: var(--ink);
-    font-size: 1rem;
-    line-height: 1.5;
-  }
-  .capture__success strong { color: var(--ink); }
-
-  .capture__button {
-    display: flex;               /* full-width, centered on mobile */
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    min-height: 44px;            /* accessible tap target */
-    padding: 0.75rem 1.5rem;
-    box-sizing: border-box;
-    background: var(--accent);
-    color: var(--bg);            /* near-black on --accent ≈ 4.98:1 — AA */
-    font-family: var(--mono);
-    font-weight: 700;
-    font-size: 1rem;
-    letter-spacing: 0.02em;
-    text-decoration: none;
-    text-align: center;
-    border-radius: 8px;
-    transition: filter 0.15s ease, transform 0.05s ease;
-  }
-
-  .capture__button:hover { filter: brightness(1.08); }
-  .capture__button:active { transform: translateY(1px); }
-  .capture__button:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
-
-  @media (min-width: 640px) {
-    .capture { padding: 2.25rem 2rem; }
-    .capture__headline { font-size: 1.9rem; }
-    .capture__button { width: auto; min-width: 240px; align-self: flex-start; }
-  }
-</style>
