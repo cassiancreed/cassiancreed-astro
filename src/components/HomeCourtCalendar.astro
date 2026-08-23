@@ -14,7 +14,19 @@ const CalendarHeading = fullPage ? 'h1' : 'h2';
 
 const CALENDAR_ALERT_FORM_ID = '4d7c7c61-f04c-4870-bf20-f1af8a540e0f';
 // Add a case only after its paid explainer has a verified public checkout URL.
-const LIVE_EXPLAINER_IDS = new Set(['patterson-appeal']);
+const LIVE_EXPLAINER_IDS = new Set(['patterson-appeal', 'clancy-closings-tentative', 'clancy-trial']);
+const CASE_BOOKS = new Map([
+  ['clancy-closings-tentative', {
+    title: 'The Lindsay Clancy Trial',
+    price: '$4.99',
+    url: 'https://cassiancreed.beehiiv.com/products/lindsay-clancy-trial-book?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=lindsay_clancy_trial_book&utm_content=selected_case',
+  }],
+  ['clancy-trial', {
+    title: 'The Lindsay Clancy Trial',
+    price: '$4.99',
+    url: 'https://cassiancreed.beehiiv.com/products/lindsay-clancy-trial-book?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=lindsay_clancy_trial_book&utm_content=selected_case',
+  }],
+]);
 const calendar = parseCourtCalendar(calendarTsv);
 const international = parseInternationalWatch(internationalTsv);
 const lastUpdated = formatCalendarDate(calendar.metadata.last_updated);
@@ -92,6 +104,7 @@ const clientEntries = visibleEntries.map((entry) => ({
   sourceLabel: entry.srcLabel,
   link: entry.link,
   linkText: entry.linkText,
+  book: CASE_BOOKS.get(entry.id) || null,
 }));
 
 const searchCases = Array.from(new Map([
@@ -234,6 +247,7 @@ const visibleDayEntries = (entries) => {
             <p class="home-calendar__agenda-source"><span>Source:</span> <a href={entry.sourceUrl} target="_blank" rel="noopener noreferrer">{entry.sourceLabel}</a></p>
             <div class="home-calendar__agenda-actions">
               {entry.link && <a href={entry.link}>{entry.linkText || 'Read the case'} &rarr;</a>}
+              {entry.book && <a href={entry.book.url} target="_blank" rel="noopener noreferrer">Get the book &mdash; {entry.book.price} &rarr;</a>}
               <a href={`/court-calendar/#${entry.id}`}>Calendar details &rarr;</a>
               <button type="button" data-calendar-alert>Get court calendar updates</button>
             </div>
@@ -381,6 +395,12 @@ const visibleDayEntries = (entries) => {
         const actions = document.createElement('div');
         actions.className = 'home-calendar__agenda-actions';
         if (entry.link) actions.append(createActionLink(entry.link, entry.linkText || 'Read the case'));
+        if (entry.book) {
+          const bookLink = createActionLink(entry.book.url, `Get the book — ${entry.book.price}`);
+          bookLink.target = '_blank';
+          bookLink.rel = 'noopener noreferrer';
+          actions.append(bookLink);
+        }
         actions.append(createActionLink(`/court-calendar/#${entry.id}`, 'Calendar details'));
         const alertButton = document.createElement('button');
         alertButton.type = 'button';

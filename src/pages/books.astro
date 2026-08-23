@@ -14,6 +14,17 @@ const jsonld = [
   {
     "@context": "https://schema.org",
     "@type": "Book",
+    "name": "The Lindsay Clancy Trial",
+    "author": { "@id": "https://cassiancreed.com/#cassian-creed" },
+    "publisher": { "@id": "https://cassiancreed.com/#org" },
+    "bookFormat": "https://schema.org/EBook",
+    "inLanguage": "en-US",
+    "genre": ["True Crime", "Law", "Psychology", "Nonfiction"],
+    "offers": [{ "@type": "Offer", "price": "4.99", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://cassiancreed.beehiiv.com/products/lindsay-clancy-trial-book", "seller": { "@id": "https://cassiancreed.com/#org" } }]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Book",
     "name": "Jury Chess: How Criminal Jury Trials Actually Work",
     "author": { "@id": "https://cassiancreed.com/#cassian-creed" },
     "publisher": { "@id": "https://cassiancreed.com/#org" },
@@ -28,11 +39,11 @@ const jsonld = [
   // the Offer, or the product URL.
 ];
 ---
-<Base title="Jury Chess: How Criminal Jury Trials Work" description="Jury Chess explains how criminal jury trials work—from jury selection and evidence rules through instructions, deliberations, and verdict." jsonld={jsonld}>
+<Base title="Books by Cassian Creed | Evidence-Led True Crime" description="Evidence-led books from Cassian Creed, including The Lindsay Clancy Trial and Jury Chess, available as instant PDF downloads." jsonld={jsonld}>
   <section class="bk-hero wrap">
-    <h1 class="bk-hero__h">Jury Chess</h1>
-    <p class="bk-hero__sub">How criminal jury trials actually work</p>
-    <p class="bk-hero__p">The verified Cassian Creed book for readers who want to understand the courtroom process: what jurors may consider, how evidence reaches them, and how a criminal case moves from jury selection to verdict.</p>
+    <h1 class="bk-hero__h">Books by Cassian Creed</h1>
+    <p class="bk-hero__sub">Evidence-led true crime and courtroom guides</p>
+    <p class="bk-hero__p">Sourced, plain-language books for readers who want to understand the record, the law, and what a jury is actually being asked to decide.</p>
   </section>
 
   <div class="wrap"><div class="shelf">
@@ -47,6 +58,22 @@ const jsonld = [
         .bk--rust / .bk--steel / .bk--square theme rules are retained in the
         stylesheet below and are unused until a title reclaims them. Do not
         restore either card until Cassian approves the title's return. */}
+
+    <div class="bk bk--ink" id="lindsay-clancy-trial">
+      <div class="bk__cover bk__cover--art">
+        <span class="bk__ribbon bk__ribbon--live">New release</span>
+        <img class="bk__img" src="/covers/lindsay-clancy-trial.jpg" alt="Book cover of The Lindsay Clancy Trial by Cassian Creed, showing chess pieces on a dark chessboard" width="1200" height="1800" loading="eager" />
+      </div>
+      <div class="bk__meta">
+        <h2 class="bk__title">The Lindsay Clancy Trial</h2>
+        <p class="bk__hook">Before the verdict, what exactly must jurors decide?</p>
+        <p class="bk__desc">A pre-verdict, evidence-led guide to the law, medicine, and courtroom record. It separates postpartum psychosis from postpartum depression, explains Massachusetts&rsquo; criminal-responsibility test and burden of proof, and maps the consequences of each possible verdict without predicting the jury. Verified through 2:45 p.m. ET on August 23, 2026. Educational, not legal or medical advice.</p>
+        <div class="bk__cta">
+          <p class="bk__price">$4.99</p>
+          <a class="btn bk__buy" href="https://cassiancreed.beehiiv.com/products/lindsay-clancy-trial-book?utm_source=cassiancreed.com&amp;utm_medium=books_page&amp;utm_campaign=lindsay_clancy_trial_book" target="_blank" rel="noopener noreferrer">Get the book &rarr;</a>
+        </div>
+      </div>
+    </div>
 
     <div class="bk bk--ink" id="jury-chess">
       <div class="bk__cover bk__cover--art">
@@ -95,7 +122,7 @@ const jsonld = [
     </div>
     <div class="bk-faq__item">
       <h3>What format will I receive?</h3>
-      <p><em>Jury Chess</em> is delivered as a PDF that opens on phones, tablets, and computers. The free Voir Dire guide is delivered by email.</p>
+      <p><em>The Lindsay Clancy Trial</em> and <em>Jury Chess</em> are delivered as PDFs that open on phones, tablets, and computers. The free Voir Dire guide is delivered by email.</p>
     </div>
     <div class="bk-faq__item">
       <h3>What if I need help or want to request a refund?</h3>
