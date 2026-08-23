@@ -32,7 +32,7 @@ const searchText = (post) => [
 ].filter(Boolean).join(' ').toLowerCase();
 
 const archiveDescription = tag === 'Case Files'
-  ? 'Search every sourced, victim-centered case file. New reporting appears first; older coverage remains available for readers and search engines.'
+  ? 'Browse dated, sourced, victim-centered case files. Each article is a snapshot of the verified record on its publication date; for current court dates and case status, use the Court Calendar.'
   : 'Browse plain-language explainers of evidence, criminal law, forensic science, and the court process.';
 ---
 <Base title={`${label} — Cassian Creed`} description={archiveDescription}>
@@ -44,8 +44,8 @@ const archiveDescription = tag === 'Case Files'
   </section>
 
   {tag === 'Case Files' && (
-    <section class="wrap archive-capture" aria-label="Get the free guide">
-      <CaptureBlock offer="case" content="category_case_files" />
+    <section class="wrap archive-capture" aria-label="Follow court cases by email">
+      <CaptureBlock offer="calendar" content="category_case_files" />
     </section>
   )}
 
@@ -53,9 +53,9 @@ const archiveDescription = tag === 'Case Files'
     <div class="archive__heading">
       <div>
         <span class="evidence">Browse the archive</span>
-        <h2 id="archive-heading">Latest reporting</h2>
+        <h2 id="archive-heading">Case files by publication date</h2>
       </div>
-      <span class="archive__order">Newest first</span>
+      <span class="archive__order">Newest publication first</span>
     </div>
 
     <div class="archive-search" role="search">
