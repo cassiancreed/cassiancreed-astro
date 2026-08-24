@@ -204,6 +204,8 @@ img{max-width:100%}
 .hero__capture .btn{padding:14px 22px;font-size:15px;text-align:center}
 .hero__trust{color:var(--ink-3);font-size:13px;margin:14px 0 0}
 .hero__trust a{color:var(--accent)}
+.hero__fallback{color:var(--ink-3);font-size:11px;line-height:1.45;margin:10px 0 0}
+.hero__fallback a{color:var(--accent)}
 @media(min-width:620px){
   .hero{padding:72px 0 48px}
   .hero__capture{flex-direction:row}

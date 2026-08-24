@@ -10,7 +10,10 @@ const cfCount = posts.filter(p=>p.data.tag==='Case Files').length;
 const short = (t)=> t.split(':')[0];
 const HOME_FORM_ID = '4d0df7d0-f274-4901-a457-091f80cecef0';
 const HOME_OFFER_ID = 'case_how_to_read_a_case_v1';
-const HOME_HERO_BASE = `https://subscribe-forms.beehiiv.com/${HOME_FORM_ID}?utm_source=website&utm_medium=hero&utm_campaign=lm_case_how-to-read-a-case`;
+// NEP-FIX-0824: normalized to the /v3/forms/ endpoint used by every other embed
+// on the site (CaptureBlock, HomeCourtCalendar). The bare /<id> path is the
+// legacy v2 alias; both resolve 200 but only one path should be in use.
+const HOME_HERO_BASE = `https://subscribe-forms.beehiiv.com/v3/forms/${HOME_FORM_ID}?utm_source=website&utm_medium=hero&utm_campaign=lm_case_how-to-read-a-case`;
 // CONVERSION-FIRST RANK 1 (2026-07-28): the home shelf held exactly one entry,
 // "The Trail", and the whole shop section below was written around it (its
 // price, its cover, its "under $2" benefit copy). The title is held for
@@ -44,6 +47,7 @@ const jsonld = {
         <div class="hero__capture">
           <iframe
             class="hero__embed"
+            src={HOME_HERO_BASE}
             data-nep-base-src={HOME_HERO_BASE}
             data-nep-campaign="lm_case_how-to-read-a-case"
             data-nep-conversion-page="/"
@@ -55,8 +59,9 @@ const jsonld = {
             scrolling="no"
             frameborder="0"
           ></iframe>
-          <noscript><a class="btn" href="https://cassiancreed.beehiiv.com/subscribe?utm_source=website&utm_medium=hero&utm_campaign=lm_case_how-to-read-a-case">Get the free guide &rarr;</a></noscript>
+          <noscript><a class="btn" href={HOME_HERO_BASE}>Get the free guide &rarr;</a></noscript>
         </div>
+        <p class="hero__fallback">Form not loading? <a href={HOME_HERO_BASE} target="_blank" rel="noopener noreferrer">Get the free guide &rarr;</a></p>
         <script is:inline>
           (function(){
             var iframe=document.querySelector('iframe.hero__embed'); if(!iframe)return;
