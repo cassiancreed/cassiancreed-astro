@@ -2,7 +2,7 @@
 title: "Postpartum psychosis and criminal responsibility: A careful guide to the Lindsay Clancy case"
 description: "A victim-first, clinically grounded guide to postpartum psychosis, Massachusetts's lack-of-criminal-responsibility standard, and which claims in the Lindsay Clancy case remain disputed."
 pubDate: 2026-06-23
-updatedDate: 2026-07-15
+updatedDate: 2026-08-24
 tag: Case Files
 featured: false
 victim: Cora Clancy, 5; Dawson Clancy, 3; Callan Clancy, 8 months
@@ -18,7 +18,9 @@ jurisdiction: Plymouth County Superior Court, Massachusetts
 
 > **Looking for current court status?** See the [Lindsay Clancy trial tracker](/post/lindsay-clancy-trial/) for the latest verified schedule, rulings, charges, and verdict status.
 >
-> **Last verified:** July 15, 2026.
+> **Current posture:** Court adjourned August 24 with the Commonwealth’s rebuttal case unfinished. The jury was excused until Tuesday morning. No verdict has been returned.
+>
+> **Last verified:** August 24, 2026.
 
 Cora, 5, Dawson, 3, and Callan, 8 months, died after events at their Duxbury home in January 2023. Their mother, Lindsay Clancy, has pleaded not guilty to three counts of first-degree murder. **PROSECUTION:** Prosecutors allege she acted deliberately. **DEFENSE:** Her lawyers argue she experienced postpartum psychosis and lacked criminal responsibility. A jury has not decided those disputed questions.
 
@@ -32,7 +34,7 @@ This primer explains the clinical term postpartum psychosis and the separate Mas
 
 ## What is established, and what remains disputed?
 
-**VERIFIED:** Clancy has pleaded not guilty to three counts of first-degree murder. The defense has put lack of criminal responsibility at issue. Massachusetts law places the beyond-a-reasonable-doubt burden on the Commonwealth once that issue is properly raised.
+**VERIFIED:** Clancy has pleaded not guilty to three counts of first-degree murder. The defense has put lack of criminal responsibility at issue. Massachusetts law places the beyond-a-reasonable-doubt burden on the Commonwealth once that issue is properly raised. The defense rested August 21; the Commonwealth’s rebuttal remained unfinished when court adjourned August 24; no verdict has been returned.
 
 **PROSECUTION:** Prosecutors contend that the evidence will prove the charged offenses and criminal responsibility.
 
@@ -96,6 +98,7 @@ This primer does not carry a running schedule or live verdict box. See the [tria
 
 ## Sources
 
+- [Day 19 live courtroom updates through adjournment — CT Insider, August 24, 2026](https://www.ctinsider.com/news/article/lindsay-clancy-trial-live-updates-08-24-26-22398040.php)
 - [Final pretrial hearing and rulings — Boston.com, July 13, 2026](https://www.boston.com/news/crime/2026/07/13/lindsay-clancy-final-pretrial-hearing/)
 - [Model Jury Instructions on Homicide — Criminal Responsibility (McHoul) — Massachusetts Trial Court](https://www.mass.gov/info-details/model-jury-instructions-on-homicide-i-criminal-responsibility)
 - [M.G.L. c. 123, § 16 — post-acquittal observation and commitment](https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXVII/Chapter123/Section16)
