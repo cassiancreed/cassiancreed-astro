@@ -2,14 +2,14 @@
 title: "Lindsay Clancy trial tracker: Charges, court rulings and verdict status"
 description: "A carefully sourced tracker for Lindsay Clancy's Massachusetts murder trial, including verdict status, charges, court rulings and the legal standard for lack of criminal responsibility."
 pubDate: 2026-07-15
-updatedDate: 2026-08-23
+updatedDate: 2026-08-24
 tag: Case Files
 featured: false
 victim: Cora Clancy, 5; Dawson Clancy, 3; Callan Clancy, 8 months
 incidentDate: January 2023
 location: Duxbury, Massachusetts
 jurisdiction: Plymouth County Superior Court, Massachusetts
-status: "On trial; defense rested August 21, 2026; prosecution rebuttal underway; no verdict."
+status: "On trial; prosecution rebuttal continued August 24, 2026; no verdict."
 ---
 
 <div class="status-box" style="border:1px solid var(--rule,#e4e0d9);border-left:4px solid var(--accent,#b91c1c);background:var(--card,#faf9f7);padding:1rem 1.25rem;margin:1.5rem 0;border-radius:6px;font-size:.95rem">
@@ -25,13 +25,13 @@ Cassian Creed maintains this Neural Edge Publishing tracker by checking court re
 <p style="margin-top:0"><strong>Trial status</strong></p>
 <p><strong>Has there been a verdict? No.</strong></p>
 <ul>
-<li><strong>Current phase:</strong> The defense rested Friday, August 21. Prosecutors then began their rebuttal case.</li>
+<li><strong>Current phase:</strong> The defense rested Friday, August 21. Prosecutors were still presenting rebuttal witnesses on Monday, August 24.</li>
 <li><strong>Court:</strong> Plymouth Superior Court.</li>
 <li><strong>Judge:</strong> William F. Sullivan.</li>
 <li><strong>Charges now pending:</strong> Three counts of first-degree murder.</li>
 <li><strong>Plea:</strong> Not guilty.</li>
-<li><strong>Next expected step:</strong> Rebuttal testimony is expected to continue Monday, August 24. Judge William F. Sullivan said closing arguments would likely be held Tuesday, August 25, but that date remains tentative and the time has not been publicly verified.</li>
-<li><strong>Last verified:</strong> August 23, 2026, against courtroom reporting published August 21.</li>
+<li><strong>Next expected step:</strong> Continued Commonwealth rebuttal testimony. At least one additional rebuttal witness was expected after Dr. Kirk Heilbrun. Judge William F. Sullivan indicated closing arguments could follow as early as Tuesday, August 25, but that date remains tentative and the time has not been publicly verified.</li>
+<li><strong>Last verified:</strong> August 24, 2026, against same-day in-court reporting through 2:38 p.m. ET.</li>
 </ul>
 <p style="margin-bottom:0">The jury has not begun deliberations and has returned no verdict. Clancy remains presumed innocent unless and until the jury finds otherwise.</p>
 </div>
@@ -48,13 +48,13 @@ Cora, 5, Dawson, 3, and Callan, 8 months, died after events at their Duxbury hom
 
 | Item | Status | What is established |
 |---|---|---|
-| Verdict | **VERIFIED** | No verdict has been returned. The jury had not begun deliberations as of the August 23 verification. |
+| Verdict | **VERIFIED** | No verdict has been returned. The jury had not begun deliberations as of the August 24 verification. |
 | Pending charges | **VERIFIED** | Three counts of first-degree murder. |
 | Removed counts | **VERIFIED** | Prosecutors filed a *nolle prosequi* on July 9 for three separate strangulation counts, describing them as redundant because the alleged conduct was subsumed within the murder charges. That filing reduced the count total; it was not an exoneration on the remaining charges. |
 | Plea | **VERIFIED** | Not guilty. |
-| Trial posture | **VERIFIED** | Opening statements began July 27. The prosecution rested August 17, the defense rested August 21, and prosecution rebuttal testimony then began. |
+| Trial posture | **VERIFIED** | Opening statements began July 27. The prosecution rested August 17, the defense rested August 21, and prosecution rebuttal testimony remained underway August 24. |
 | Court and judge | **VERIFIED** | Plymouth Superior Court; Judge William F. Sullivan. |
-| Next expected step | **TENTATIVE** | Testimony is expected to continue August 24. Judge Sullivan said closing arguments would likely be held August 25; the court may change that schedule, and the time has not been publicly verified. |
+| Next expected step | **TENTATIVE** | The next verified phase is continued Commonwealth rebuttal testimony. Closing arguments may follow as early as August 25, but that date remains tentative and the time has not been publicly verified. |
 | Defense counsel | **VERIFIED** | Kevin Reddington. |
 | Core defense | **DEFENSE** | Lack of criminal responsibility, tied to the defense's contention that Clancy experienced postpartum psychosis and that alleged overmedication affected her condition. |
 | Burden on criminal responsibility | **VERIFIED** | Once evidence fairly raises lack of criminal responsibility, Massachusetts law requires the Commonwealth to prove beyond a reasonable doubt that the defendant was criminally responsible. |
@@ -83,7 +83,9 @@ A clinical diagnosis and a legal finding are not the same thing. Experts may add
 
 The prosecution rested August 17. After several days of defense testimony about Clancy's mental state and treatment history, the defense rested August 21 following testimony from forensic psychiatrist Dr. Phillip Resnick. Resnick testified for the defense that Clancy was psychotic and not in control of her actions. That testimony is an expert opinion offered by the defense, not a court finding.
 
-Prosecutors then began a rebuttal case. Forensic psychiatrist Dr. Avram Mack testified that Clancy experienced major depression but that he found no evidence of psychosis or mania leading up to the children's deaths. He testified that she retained the capacity to understand wrongfulness and conform her behavior to the law. That testimony is a prosecution expert opinion, not a verdict.
+Prosecutors then began a rebuttal case. Forensic psychiatrist Dr. Avram Mack testified that Clancy experienced major depression but that he found no evidence of psychosis or mania leading up to the children's deaths. His testimony concluded August 24. Forensic psychologist Dr. Kirk Heilbrun then testified for the Commonwealth and was still on direct examination during the afternoon session. Their conclusions are prosecution expert opinions, not court findings or a verdict.
+
+Judge Sullivan denied a defense request for a mistrial after challenged testimony referred to Catholic doctrine. The denial means the trial continues; it is not a ruling on guilt or criminal responsibility.
 
 The competing psychiatric opinions do not replace the jury's task. Jurors must apply Judge Sullivan's final instructions to all admitted evidence and decide separately whether the Commonwealth proved the charged offenses and criminal responsibility beyond a reasonable doubt.
 
@@ -103,7 +105,7 @@ This ledger is for editors and readers who encounter assertions circulating arou
 
 ### Has there been a verdict?
 
-No. The defense rested August 21 and the prosecution began rebuttal testimony. The jury has not begun deliberations or decided the charges or the contested criminal-responsibility issue.
+No. The defense rested August 21, and prosecution rebuttal testimony was still underway August 24. The jury has not begun deliberations or decided the charges or the contested criminal-responsibility issue.
 
 ### What charges does Lindsay Clancy face?
 
@@ -135,9 +137,13 @@ The judge has ruled that they may. This tracker does not autoplay the recording 
 
 ### What happens next?
 
-Rebuttal testimony is expected to continue Monday, August 24. Judge Sullivan said closing arguments would likely be held Tuesday, August 25, after which the judge would instruct the jury and deliberations could begin. The closing-argument date is an expected setting, not a confirmed public court-calendar entry, and the time has not been publicly verified.
+The next verified event is continued Commonwealth rebuttal testimony. Dr. Kirk Heilbrun was still testifying August 24, and at least one additional rebuttal witness was expected. Judge Sullivan indicated closing arguments could follow as early as Tuesday, August 25, but that date is tentative, not a confirmed public court-calendar entry, and the time has not been publicly verified. Jury instructions and deliberations follow only after the evidence closes.
 
 ## Update log
+
+### August 24, 2026 — Rebuttal continued; closing date remains tentative
+
+**VERIFIED:** Dr. Avram Mack’s testimony concluded, and Dr. Kirk Heilbrun was still testifying for the Commonwealth during the afternoon session. Judge Sullivan denied a defense mistrial request. At least one further rebuttal witness was expected. No verdict has been returned, the jury has not begun deliberations, and any August 25 closing-argument setting remains tentative with no publicly verified time.
 
 ### August 23, 2026 — Defense rested; prosecution rebuttal underway
 
@@ -186,6 +192,7 @@ Court schedules and evidentiary plans can change. This tracker distinguishes wha
 - [Autopsy-photograph and home-view rulings — WHDH, June 18, 2026](https://whdh.com/news/autopsy-images-of-lindsay-clancys-children-911-call-can-be-used-in-murder-trial/)
 - [Admission of the 911 call — WCVB, June 29, 2026](https://www.wcvb.com/article/lindsay-clancy-911-call-allowed-evidence/71773039)
 - [Defense rests and prosecution rebuttal begins — Associated Press via ABC7 New York, August 21, 2026](https://abc7ny.com/post/lindsay-clancy-trial-day-18-defense-could-rest-case-friday/19713230/)
+- [Same-day rebuttal testimony and tentative closing schedule — Boston 25 News live blog, August 24, 2026](https://www.boston25news.com/news/local/lindsay-clancy-trial-live-updates-prosecutors-expected-call-final-rebuttal-witnesses/BBNWTJG34VFCFNKSHU26BIEHTA/)
 - [Rebuttal testimony and expected closing-argument schedule — The Guardian, August 21, 2026](https://www.theguardian.com/us-news/2026/aug/21/lindsay-clancy-murder-trial-update)
 - [Model Jury Instructions on Homicide — Criminal Responsibility (McHoul) — Massachusetts Trial Court](https://www.mass.gov/info-details/model-jury-instructions-on-homicide-i-criminal-responsibility)
 - [M.G.L. c. 123, § 16 — post-acquittal observation and commitment](https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXVII/Chapter123/Section16)
@@ -202,7 +209,7 @@ Court schedules and evidentiary plans can change. This tracker distinguishes wha
   "headline": "Lindsay Clancy trial tracker: Charges, court rulings and verdict status",
   "description": "A carefully sourced tracker for Lindsay Clancy's Massachusetts murder trial, including verdict status, charges, court rulings and the legal standard for lack of criminal responsibility.",
   "datePublished": "2026-07-15",
-  "dateModified": "2026-08-23",
+  "dateModified": "2026-08-24",
   "author": { "@type": "Person", "name": "Cassian Creed", "url": "https://cassiancreed.com/about/" },
   "publisher": { "@type": "Organization", "name": "Neural Edge Publishing", "url": "https://cassiancreed.com/" },
   "articleSection": "Crime and Courts",
