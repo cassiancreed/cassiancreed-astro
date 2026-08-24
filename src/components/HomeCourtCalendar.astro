@@ -13,6 +13,7 @@ const { fullPage = false } = Astro.props;
 const CalendarHeading = fullPage ? 'h1' : 'h2';
 
 const CALENDAR_ALERT_FORM_ID = '4d7c7c61-f04c-4870-bf20-f1af8a540e0f';
+const CALENDAR_ALERT_URL = `https://subscribe-forms.beehiiv.com/v3/forms/${CALENDAR_ALERT_FORM_ID}?utm_source=website&utm_medium=calendar_alert&utm_campaign=court_calendar_updates`;
 // Add a case only after its paid explainer has a verified public checkout URL.
 const LIVE_EXPLAINER_IDS = new Set(['patterson-appeal', 'clancy-closings-tentative', 'clancy-trial']);
 const CASE_BOOKS = new Map([
@@ -271,6 +272,10 @@ const visibleDayEntries = (entries) => {
               {entry.link && <a href={entry.link}>{entry.linkText || 'Read the case'} &rarr;</a>}
               <a href={`/court-calendar/#${entry.id}`}>Calendar details &rarr;</a>
               <button type="button" data-calendar-alert>Get court calendar updates</button>
+              {/* NEP-FIX-0824: the alert form lives in a JS-opened <dialog>. Without
+                  this no-JS anchor the calendar signup is unreachable when scripts
+                  fail or are blocked. */}
+              <noscript><a class="home-calendar__alert-noscript" href={CALENDAR_ALERT_URL} target="_blank" rel="noopener noreferrer">Get court calendar updates &rarr;</a></noscript>
             </div>
           </article>
         )) : <p class="home-calendar__empty">No tracked proceeding is currently scheduled for this date.</p>}
@@ -683,6 +688,7 @@ const visibleDayEntries = (entries) => {
   .case-alert__embed-window{position:relative;width:min(400px,100%);height:64px;margin-top:20px;overflow:hidden}
   .case-alert__embed{position:absolute;top:-80px;left:-80px;width:calc(100% + 160px);height:207px;border:0}
   .case-alert__fallback,.case-alert__helper{margin:10px 0 0;color:var(--ink-3);font-size:11px;line-height:1.45}
+  .home-calendar__alert-noscript{color:var(--accent)}
   .case-alert__fallback a{color:var(--accent)}
   .case-alert__success{margin:20px 0 0;padding:14px;border-left:3px solid var(--accent);background:rgba(232,93,61,.08)}
   @media(max-width:760px){

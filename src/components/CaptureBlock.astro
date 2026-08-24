@@ -105,8 +105,14 @@ const conversionPage   = Astro.url.pathname;
 const ctaId            = content || 'capture_block';
 
 // Fallback / non-embed link. encodeURIComponent guards odd campaign strings.
+// NEP-FIX-0824: this used to point at cassiancreed.beehiiv.com/subscribe — the
+// GENERIC publication signup page, which carries NO form attribution. A reader
+// who took the fallback was created with no embed source, so no form-scoped
+// delivery automation could fire and no guide was ever sent. It now points at
+// the same form-specific /v3/forms/ URL the iframe uses, so the fallback path
+// enrolls identically to the embed path.
 const subscribeHref =
-  `https://cassiancreed.beehiiv.com/subscribe?utm_source=website&utm_medium=capture&utm_campaign=${encodeURIComponent(camp)}${utmContent}`;
+  `${EMBED_BASE}/${o.formId}?utm_source=website&utm_medium=capture&utm_campaign=${encodeURIComponent(camp)}${utmContent}`;
 
 // SUPPORTED BEEHIIV TRANSPORT (NEP-FIX-CWK-0718R).
 // subscribe-forms.beehiiv.com is the v2 form-builder embed: it renders the
