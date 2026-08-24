@@ -19,7 +19,7 @@ const LIVE_EXPLAINER_IDS = new Set(['patterson-appeal', 'clancy-closings-tentati
 const CASE_BOOKS = new Map([
   ['clancy-closings-tentative', {
     title: 'The Lindsay Clancy Trial',
-    price: '$4.99',
+    price: '$2.99',
     eyebrow: 'New · Case Chess',
     tagline: 'The law, the medical evidence, and the decisions jurors must make—explained before the verdict.',
     format: 'Instant PDF',
@@ -29,7 +29,7 @@ const CASE_BOOKS = new Map([
   }],
   ['clancy-trial', {
     title: 'The Lindsay Clancy Trial',
-    price: '$4.99',
+    price: '$2.99',
     eyebrow: 'New · Case Chess',
     tagline: 'The law, the medical evidence, and the decisions jurors must make—explained before the verdict.',
     format: 'Instant PDF',
@@ -69,7 +69,7 @@ const ongoingEntries = [...visibleEntries]
   .filter((entry) => entry.ongoing)
   .sort((a, b) => calendarDisplayPriority(b) - calendarDisplayPriority(a));
 const preferredCalendarLabels = new Map([
-  ['banks-federal-trial', 'Lil Durk trial'],
+  ['banks-federal-trial', 'Lil Durk opening statements'],
   ['bridegan-fernandez-trial', 'Jared Bridegan case'],
   ['davis-tupac-openings', 'Tupac murder trial'],
   ['flynn-final-pretrial', 'Ashley Flynn case'],
