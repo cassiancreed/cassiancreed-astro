@@ -130,6 +130,21 @@ const jsonld = {
 
   <HomeCourtCalendar />
 
+  <section class="genealogy-home wrap" aria-labelledby="genealogy-home-title">
+    <div class="genealogy-home__signal" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <div class="genealogy-home__copy">
+      <p class="evidence evidence--accent">A Cassian Creed specialty</p>
+      <h2 id="genealogy-home-title">When DNA finds a family tree</h2>
+      <p>Investigative genetic genealogy can restore a name, reopen a cold case, or point investigators toward someone who was never in a criminal database. Learn the science, follow the cases, and understand why the result is a lead—not a verdict.</p>
+      <div class="genealogy-home__actions">
+        <a class="btn" href="/genealogy/">Explore Genetic Genealogy →</a>
+        <a class="genealogy-home__alt" href="/the-names-genetic-genealogy-gave-back/">The names it gave back →</a>
+      </div>
+    </div>
+  </section>
+
   <section class="nmv wrap" aria-labelledby="record-without-blame">
     <h2 class="nmv__h" id="record-without-blame">What the record can teach us&mdash;without blaming the victim.</h2>
     <p class="nmv__copy">We do not publish cases as entertainment. When the public record supports a practical lesson, we explain the documented pattern and its limits. No case predicts another, and responsibility always belongs to the person who causes harm.</p>
@@ -272,6 +287,23 @@ const jsonld = {
 </Base>
 
 <style>
+  .genealogy-home{position:relative;display:grid;grid-template-columns:minmax(220px,.68fr) 1.32fr;gap:42px;align-items:center;margin-top:34px;margin-bottom:18px;padding:38px;background:linear-gradient(135deg,#211713,#14110f 68%);border:1px solid rgba(224,86,59,.3);border-radius:14px;overflow:hidden}
+  .genealogy-home::after{content:"";position:absolute;right:-90px;top:-110px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(224,86,59,.12),transparent 68%);pointer-events:none}
+  .genealogy-home__signal{display:grid;gap:16px;padding:20px 0}
+  .genealogy-home__signal span{display:block;height:2px;background:linear-gradient(90deg,transparent,var(--accent) 25%,rgba(224,86,59,.2));transform-origin:left}
+  .genealogy-home__signal span:nth-child(1){width:72%}
+  .genealogy-home__signal span:nth-child(2){width:94%;margin-left:6%}
+  .genealogy-home__signal span:nth-child(3){width:80%;margin-left:18%}
+  .genealogy-home__signal span:nth-child(4){width:100%}
+  .genealogy-home__signal span:nth-child(5){width:66%;margin-left:28%}
+  .genealogy-home__copy{position:relative;z-index:1}
+  .genealogy-home h2{font-family:var(--serif);font-size:clamp(34px,4.5vw,52px);line-height:1;margin:8px 0 14px}
+  .genealogy-home__copy>p:not(.evidence){max-width:64ch;color:var(--ink-2);margin:0 0 22px}
+  .genealogy-home__actions{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+  .genealogy-home__alt{font-size:14px;color:var(--ink-2);border-bottom:1px solid var(--line)}
+  .genealogy-home__alt:hover{color:var(--accent)}
+  @media(max-width:720px){.genealogy-home{grid-template-columns:1fr;padding:26px;gap:12px}.genealogy-home__signal{max-width:260px;padding:0}.genealogy-home__actions .btn{width:100%;text-align:center}}
+
   .nmv{margin:34px auto 8px;padding:26px 28px;background:var(--bg-2);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:12px}
   .nmv__h{font-family:var(--serif);font-size:30px;font-weight:700;letter-spacing:.01em;text-transform:uppercase;margin:0 0 12px;color:var(--ink)}
   .nmv__copy{margin:0 0 18px;font-size:17px;line-height:1.6;color:var(--ink-2);max-width:70ch}
