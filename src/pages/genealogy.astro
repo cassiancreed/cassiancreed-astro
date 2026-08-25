@@ -1,0 +1,234 @@
+---
+import Base from '../layouts/Base.astro';
+import CaptureBlock from '../components/CaptureBlock.astro';
+
+const jsonld = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Investigative Genetic Genealogy",
+  "description": "A victim-first learning hub for investigative genetic genealogy, DNA identification, privacy, legal limits, laboratories, and case studies.",
+  "url": "https://cassiancreed.com/genealogy/",
+  "isPartOf": { "@id": "https://cassiancreed.com/#org" },
+  "about": [
+    { "@type": "Thing", "name": "Investigative genetic genealogy" },
+    { "@type": "Thing", "name": "Forensic genetic genealogy" },
+    { "@type": "Thing", "name": "Unidentified persons" },
+    { "@type": "Thing", "name": "Cold cases" }
+  ]
+};
+---
+
+<Base
+  title="Investigative Genetic Genealogy"
+  description="Understand investigative genetic genealogy: how DNA and family trees generate leads, restore names, reopen cold cases, and raise important privacy questions."
+  jsonld={jsonld}
+>
+  <section class="igg-hero">
+    <div class="wrap igg-hero__grid">
+      <div>
+        <p class="evidence evidence--accent">A Cassian Creed specialty</p>
+        <h1>Investigative Genetic Genealogy</h1>
+        <p class="igg-hero__lede">DNA can point toward relatives. Genealogy can reconstruct the family. Investigators must still prove the case.</p>
+        <p class="igg-hero__copy">This is the clear, victim-first guide to the method changing cold-case investigations and restoring names to unidentified people—without turning an investigative lead into a claim of guilt.</p>
+        <div class="igg-actions">
+          <a class="btn" href="/how-forensic-genetic-genealogy-works/">Start with how it works →</a>
+          <a class="btn btn--ghost" href="/the-names-genetic-genealogy-gave-back/">See the names it gave back →</a>
+        </div>
+      </div>
+
+      <div class="igg-map" aria-label="The investigative genetic genealogy process">
+        <div class="igg-map__node"><span>01</span><strong>DNA profile</strong><small>A detailed SNP profile is developed from evidence or unidentified remains.</small></div>
+        <div class="igg-map__line" aria-hidden="true"></div>
+        <div class="igg-map__node"><span>02</span><strong>Relative matches</strong><small>Permitted databases may reveal people who share portions of DNA.</small></div>
+        <div class="igg-map__line" aria-hidden="true"></div>
+        <div class="igg-map__node"><span>03</span><strong>Family trees</strong><small>Genealogists combine genetic relationships with public records.</small></div>
+        <div class="igg-map__line" aria-hidden="true"></div>
+        <div class="igg-map__node igg-map__node--last"><span>04</span><strong>Independent confirmation</strong><small>The lead must be tested through lawful, conventional investigative work.</small></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap igg-rule" aria-label="The central rule">
+    <p class="evidence">The rule that keeps the reporting honest</p>
+    <blockquote>Genealogy can generate a powerful lead. It does not, by itself, establish identity or guilt.</blockquote>
+  </section>
+
+  <section class="wrap igg-section" aria-labelledby="choose-path">
+    <div class="igg-section__head">
+      <div>
+        <p class="evidence evidence--accent">Learn the method</p>
+        <h2 id="choose-path">Choose your starting point</h2>
+      </div>
+      <p>Begin with the science, follow the investigation, or go directly to the legal and privacy questions.</p>
+    </div>
+
+    <div class="igg-grid">
+      <a class="igg-card igg-card--feature" href="/how-dna-remembers/">
+        <span class="igg-card__kicker">Start here</span>
+        <h3>How DNA Remembers</h3>
+        <p>Understand inheritance, cousin matching, centimorgans, and why a relative can help identify someone who never tested.</p>
+        <span class="igg-card__go">Learn the DNA foundation →</span>
+      </a>
+      <a class="igg-card" href="/the-five-steps-of-forensic-genetic-genealogy/">
+        <span class="igg-card__kicker">The workflow</span>
+        <h3>The Five Steps</h3>
+        <p>From a difficult sample to a family-tree lead—and the confirmation work that must follow.</p>
+        <span class="igg-card__go">Follow the process →</span>
+      </a>
+      <a class="igg-card" href="/codis-vs-forensic-genetic-genealogy/">
+        <span class="igg-card__kicker">The distinction</span>
+        <h3>CODIS vs. Genealogy</h3>
+        <p>Two different DNA systems, two different kinds of profiles, and two very different outputs.</p>
+        <span class="igg-card__go">Compare the systems →</span>
+      </a>
+      <a class="igg-card" href="/is-fgg-evidence-or-just-a-lead/">
+        <span class="igg-card__kicker">The legal limit</span>
+        <h3>Evidence—or Just a Lead?</h3>
+        <p>Why a family-tree hypothesis cannot substitute for direct testing and courtroom proof.</p>
+        <span class="igg-card__go">Understand the limit →</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="igg-names">
+    <div class="wrap igg-names__grid">
+      <div>
+        <p class="evidence evidence--accent">The work that matters most</p>
+        <h2>A name returned is not a footnote.</h2>
+        <p>Genealogy is often promoted as a way to catch offenders. Its most humane achievement may be simpler: reconnecting an unidentified person with the name, family, and history that were always theirs.</p>
+        <a class="btn" href="/the-names-genetic-genealogy-gave-back/">Read the restored-name stories →</a>
+      </div>
+      <div class="igg-names__list">
+        <a href="/baby-jacob-round-lake-beach-genetic-genealogy/"><span>Case file</span><strong>Jacob Hope: a child’s name restored</strong></a>
+        <a href="/post/baby-boy-doe-mansfield-1985/"><span>Active case</span><strong>Baby Boy Doe—Mansfield, 1985</strong></a>
+        <a href="/how-othram-works-in-a-case/"><span>Lab explainer</span><strong>How Othram fits into an investigation</strong></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap igg-section" aria-labelledby="casework">
+    <div class="igg-section__head">
+      <div>
+        <p class="evidence evidence--accent">See it in the record</p>
+        <h2 id="casework">Cases and investigations</h2>
+      </div>
+      <p>Case files separate what genealogy contributed from what investigators later confirmed.</p>
+    </div>
+    <div class="igg-grid igg-grid--cases">
+      <a class="igg-card" href="/post/the-murder-of-rachel-morin-how-her-killer-was-found/">
+        <span class="igg-card__kicker">Rachel Morin</span>
+        <h3>A family-tree lead across jurisdictions</h3>
+        <p>How investigators connected forensic evidence, genealogy, and conventional police work.</p>
+        <span class="igg-card__go">Read the case →</span>
+      </a>
+      <a class="igg-card" href="/post/the-golden-state-killer-how-genetic-genealogy-caught-joseph-deangelo/">
+        <span class="igg-card__kicker">Golden State Killer</span>
+        <h3>The case that changed public awareness</h3>
+        <p>The investigation that made genetic genealogy famous—and the direct-DNA confirmation that followed.</p>
+        <span class="igg-card__go">Read the case →</span>
+      </a>
+      <a class="igg-card" href="/post/othram-genetic-genealogy-leslie-preer-cold-case/">
+        <span class="igg-card__kicker">Leslie Preer</span>
+        <h3>A cold case reopened through kinship</h3>
+        <p>A victim-first account of what advanced testing contributed and what it did not prove alone.</p>
+        <span class="igg-card__go">Read the case →</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="wrap igg-section igg-questions" aria-labelledby="questions">
+    <div class="igg-section__head">
+      <div>
+        <p class="evidence evidence--accent">Know the boundaries</p>
+        <h2 id="questions">Privacy, permission, and law</h2>
+      </div>
+      <p>The power of shared DNA reaches beyond the person who uploads it. These guides explain the tradeoffs without pretending they are simple.</p>
+    </div>
+    <div class="igg-links">
+      <a href="/is-forensic-genetic-genealogy-legal/"><strong>Is forensic genetic genealogy legal?</strong><span>Rules, warrants, policies, and limits →</span></a>
+      <a href="/the-dna-privacy-checklist/"><strong>The DNA privacy checklist</strong><span>Questions to ask before uploading →</span></a>
+      <a href="/database-permission-comparison/"><strong>Database permission comparison</strong><span>Not every service permits the same searches →</span></a>
+      <a href="/whose-consent-travels-across-borders/"><strong>Whose consent travels?</strong><span>How one person’s choice can implicate relatives →</span></a>
+    </div>
+  </section>
+
+  <section class="wrap igg-close">
+    <p class="evidence">Our approach</p>
+    <h2>Evidence first. People before case numbers.</h2>
+    <p>Cassian Creed covers investigative genetic genealogy because it sits at the intersection of science, family history, missing-person work, and justice. We identify uncertainty, distinguish leads from proof, and center the people whose names the work is trying to restore.</p>
+    <p><a href="/missing-persons/">Explore the Missing Persons Map →</a> <span aria-hidden="true">·</span> <a href="/guides/">Browse all resources and guides →</a></p>
+  </section>
+
+  <div class="wrap"><section class="subscribe" id="free-guide">
+    <CaptureBlock offer="dna" content="genealogy_hub" />
+  </section></div>
+</Base>
+
+<style>
+  .igg-hero{position:relative;overflow:hidden;padding:72px 0 58px;background:
+    radial-gradient(circle at 78% 28%,rgba(224,86,59,.16),transparent 28%),
+    linear-gradient(145deg,#191512 0%,#100e0d 72%);border-bottom:1px solid var(--line)}
+  .igg-hero::before{content:"";position:absolute;inset:0;opacity:.2;background-image:
+    linear-gradient(90deg,transparent 49.7%,rgba(255,255,255,.12) 50%,transparent 50.3%);
+    background-size:56px 100%;pointer-events:none}
+  .igg-hero__grid{position:relative;display:grid;grid-template-columns:minmax(0,1.08fr) minmax(330px,.92fr);gap:64px;align-items:center}
+  .igg-hero h1{font-family:var(--serif);font-size:clamp(48px,7vw,82px);line-height:.94;margin:12px 0 22px;max-width:10ch}
+  .igg-hero__lede{font-family:var(--serif);font-size:clamp(24px,3vw,34px);line-height:1.18;color:var(--ink);max-width:24ch;margin:0 0 18px}
+  .igg-hero__copy{max-width:62ch;color:var(--ink-2);margin:0 0 28px}
+  .igg-actions{display:flex;flex-wrap:wrap;gap:12px}
+  .igg-map{padding:24px;background:rgba(20,17,15,.8);border:1px solid rgba(224,86,59,.34);border-radius:16px;box-shadow:0 28px 70px rgba(0,0,0,.35)}
+  .igg-map__node{display:grid;grid-template-columns:38px 1fr;column-gap:12px;align-items:start}
+  .igg-map__node span{grid-row:1/3;display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--accent);color:#190f0b;font:700 11px var(--mono)}
+  .igg-map__node strong{font-family:var(--serif);font-size:22px;line-height:1.1}
+  .igg-map__node small{display:block;color:var(--ink-2);font-size:13px;line-height:1.5;margin-top:4px}
+  .igg-map__line{height:26px;width:1px;background:linear-gradient(var(--accent),rgba(224,86,59,.18));margin:5px 0 5px 17px}
+  .igg-rule{padding-top:46px;padding-bottom:18px}
+  .igg-rule blockquote{font-family:var(--serif);font-size:clamp(28px,4vw,44px);line-height:1.18;max-width:25ch;margin:8px 0;padding-left:22px;border-left:3px solid var(--accent)}
+  .igg-section{padding-top:58px;padding-bottom:24px}
+  .igg-section__head{display:flex;justify-content:space-between;gap:36px;align-items:end;margin-bottom:26px;padding-bottom:18px;border-bottom:1px solid var(--line)}
+  .igg-section__head h2,.igg-names h2,.igg-close h2{font-family:var(--serif);font-size:clamp(32px,4.4vw,48px);line-height:1.02;margin:8px 0 0}
+  .igg-section__head>p{max-width:48ch;color:var(--ink-2);margin:0}
+  .igg-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+  .igg-card{display:flex;flex-direction:column;min-height:285px;padding:24px;background:var(--bg-2);border:1px solid var(--line);border-radius:12px;transition:transform .16s,border-color .16s,background .16s}
+  .igg-card:hover{transform:translateY(-4px);border-color:rgba(224,86,59,.5);background:var(--bg-3)}
+  .igg-card--feature{background:linear-gradient(145deg,rgba(224,86,59,.16),var(--bg-2));border-color:rgba(224,86,59,.35)}
+  .igg-card__kicker{font:500 10px var(--mono);letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
+  .igg-card h3{font-family:var(--serif);font-size:28px;line-height:1.05;margin:16px 0 12px}
+  .igg-card p{color:var(--ink-2);font-size:15px;line-height:1.55;margin:0 0 22px}
+  .igg-card__go{margin-top:auto;font-size:13px;color:var(--ink);border-top:1px solid var(--line);padding-top:14px}
+  .igg-names{margin:58px 0 4px;padding:58px 0;background:linear-gradient(110deg,#211814,#151210 65%);border-block:1px solid var(--line)}
+  .igg-names__grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:64px;align-items:center}
+  .igg-names p:not(.evidence){color:var(--ink-2);max-width:56ch}
+  .igg-names__list{display:grid;gap:10px}
+  .igg-names__list a{display:grid;grid-template-columns:110px 1fr;gap:18px;align-items:center;padding:18px 20px;background:rgba(20,17,15,.72);border:1px solid var(--line);border-radius:9px}
+  .igg-names__list a:hover{border-color:rgba(224,86,59,.5)}
+  .igg-names__list span{font:500 10px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+  .igg-names__list strong{font-family:var(--serif);font-size:22px;line-height:1.15}
+  .igg-grid--cases{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .igg-links{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .igg-links a{display:flex;justify-content:space-between;gap:20px;padding:20px 22px;border:1px solid var(--line);border-radius:9px;background:var(--bg-2)}
+  .igg-links a:hover{border-color:rgba(224,86,59,.5)}
+  .igg-links span{color:var(--ink-2);font-size:13px;text-align:right}
+  .igg-close{margin-top:58px;margin-bottom:52px;padding:34px;border:1px solid rgba(224,86,59,.35);border-radius:14px;background:linear-gradient(145deg,rgba(224,86,59,.08),transparent)}
+  .igg-close>p:not(.evidence){max-width:74ch;color:var(--ink-2)}
+  .igg-close a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+  @media(max-width:900px){
+    .igg-hero__grid,.igg-names__grid{grid-template-columns:1fr;gap:38px}
+    .igg-grid{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:640px){
+    .igg-hero{padding:52px 0 40px}
+    .igg-hero h1{font-size:50px}
+    .igg-actions .btn{width:100%;text-align:center}
+    .igg-section__head{display:block}
+    .igg-section__head>p{margin-top:14px}
+    .igg-grid,.igg-grid--cases,.igg-links{grid-template-columns:1fr}
+    .igg-card{min-height:0}
+    .igg-names{padding:42px 0}
+    .igg-names__list a{grid-template-columns:1fr;gap:5px}
+    .igg-links a{display:block}
+    .igg-links span{display:block;text-align:left;margin-top:8px}
+    .igg-close{padding:24px}
+  }
+  @media(prefers-reduced-motion:reduce){.igg-card{transition:none}.igg-card:hover{transform:none}}
+</style>
