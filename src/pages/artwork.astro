@@ -1,0 +1,149 @@
+---
+import Base from '../layouts/Base.astro';
+
+const assets = [
+  {
+    src: '/artwork/cassian-creed-victim-first-banner.webp',
+    title: 'Victim-first banner',
+    category: 'Headers and banners',
+    ratio: '3:1',
+    alt: 'Cassian Creed brand banner with a dark bronze feather-and-circuit motif and the words True crime that respects victims.',
+    use: 'Website headers, profile banners, and publication identity.',
+  },
+  {
+    src: '/artwork/cassian-creed-start-here.webp',
+    title: 'Start Here',
+    category: 'Social and promotional',
+    ratio: '16:9',
+    alt: 'Dark editorial graphic introducing Cassian Creed and inviting readers to start with sourced, victim-first true crime.',
+    use: 'Pinned posts, orientation posts, and social introductions.',
+  },
+  {
+    src: '/artwork/cassian-creed-illustrated-portrait.webp',
+    title: 'Cassian Creed illustrated portrait',
+    category: 'Brand identity',
+    ratio: '1:1',
+    alt: 'Illustrated square portrait representing the Cassian Creed editorial byline.',
+    use: 'Profile images and author-brand identification. This is an illustration, not a documentary photograph.',
+  },
+  {
+    src: '/artwork/fingerprint-circuit-identity.webp',
+    title: 'Fingerprint circuit identity',
+    category: 'Forensic genealogy',
+    ratio: '1:1',
+    alt: 'Gold fingerprint merging into electronic circuit lines on a black background.',
+    use: 'Forensic genealogy, identity, DNA, and evidence explainers.',
+  },
+  {
+    src: '/artwork/feather-dna-identity.webp',
+    title: 'Feather and DNA identity',
+    category: 'Forensic genealogy',
+    ratio: '1:1',
+    alt: 'Gold feather containing a subtle DNA double helix on a black background.',
+    use: 'DNA inheritance and investigative genetic genealogy coverage.',
+  },
+  {
+    src: '/artwork/minimal-feather-circuit-mark.webp',
+    title: 'Minimal feather-circuit mark',
+    category: 'Legacy identity',
+    ratio: '1:1',
+    alt: 'Minimal gold feather connected to four circuit traces on a dark background.',
+    use: 'Alternate identity mark and restrained social artwork.',
+  },
+];
+---
+<Base
+  title="Artwork Library"
+  description="Approved Cassian Creed artwork for brand, social, forensic-genealogy, and editorial use, with formats and accessibility descriptions."
+  ogImage="/artwork/cassian-creed-victim-first-banner.webp"
+>
+  <section class="hero wrap">
+    <p class="evidence evidence--accent">Approved assets</p>
+    <h1>Artwork Library</h1>
+    <p class="hero__lede">The working visual archive for Cassian Creed and Neural Edge Publishing. Each approved asset includes its intended use and accessibility description.</p>
+  </section>
+
+  <article class="post">
+    <div class="post__content">
+      <p>These files are organized for consistent editorial use. The illustrated portrait is a brand persona, not a documentary photograph. Retired concepts and internal screenshots are deliberately excluded from this public collection.</p>
+      <div class="library-note">
+        <strong>Using an asset?</strong> Keep the supplied proportions, do not add case-specific claims to a brand mark, and retain enough contrast for the text or interface around it.
+      </div>
+    </div>
+  </article>
+
+  <section class="wrap artwork-grid" aria-label="Approved Cassian Creed artwork">
+    {assets.map(asset => (
+      <figure class="artwork-card">
+        <a class="artwork-preview" href={asset.src} aria-label={`Open full-size ${asset.title}`}>
+          <img src={asset.src} alt={asset.alt} loading="lazy" decoding="async" />
+        </a>
+        <figcaption>
+          <p class="artwork-meta">{asset.category} · {asset.ratio}</p>
+          <h2>{asset.title}</h2>
+          <p>{asset.use}</p>
+          <p class="artwork-alt"><strong>Alt text:</strong> {asset.alt}</p>
+          <a class="artwork-link" href={asset.src} download>Download WebP →</a>
+        </figcaption>
+      </figure>
+    ))}
+  </section>
+
+  <article class="post">
+    <div class="post__content">
+      <h2>Archive policy</h2>
+      <p>Approved work remains available here even when it is no longer the current profile image or banner. Superseded, misspelled, interface-only, and explicitly retired concepts are kept in the internal archive instead of being presented as active brand assets.</p>
+      <p class="post__note">Need the underlying master file or a platform-specific crop? Use the internal Cassian Creed Artwork Library catalog.</p>
+    </div>
+  </article>
+</Base>
+
+<style>
+  .artwork-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.4rem;
+    margin-bottom: 3rem;
+  }
+  .artwork-card {
+    margin: 0;
+    overflow: hidden;
+    border: 1px solid var(--rule, #3a332c);
+    border-radius: 12px;
+    background: var(--card, #1a1613);
+  }
+  .artwork-preview {
+    display: grid;
+    place-items: center;
+    min-height: 18rem;
+    padding: 1rem;
+    background: #090806;
+  }
+  .artwork-preview img {
+    display: block;
+    width: 100%;
+    max-height: 32rem;
+    object-fit: contain;
+  }
+  figcaption { padding: 1.1rem 1.2rem 1.3rem; }
+  figcaption h2 { margin: .2rem 0 .55rem; font-size: 1.25rem; }
+  figcaption p { margin: .45rem 0; }
+  .artwork-meta {
+    color: var(--accent, #e0563b);
+    font-size: .78rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+  .artwork-alt { color: var(--ink-2, #b8b1a8); font-size: .9rem; }
+  .artwork-link { display: inline-block; margin-top: .55rem; font-weight: 700; }
+  .library-note {
+    border-left: 4px solid var(--accent, #e0563b);
+    padding: .9rem 1rem;
+    background: var(--card, #1a1613);
+  }
+  @media (max-width: 760px) {
+    .artwork-grid { grid-template-columns: 1fr; }
+    .artwork-preview { min-height: 12rem; }
+  }
+</style>
