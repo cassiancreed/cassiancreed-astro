@@ -25,6 +25,7 @@ Active-case pages can change. Re-fetch the canonical page at citation time and p
 
 - [Case Files](https://cassiancreed.com/case-files/): Canonical library of sourced, victim-first case reporting.
 - [Resources and Guides](https://cassiancreed.com/guides/): Guides, explainers, reference material, and interactive tools.
+- [Investigative Genetic Genealogy](https://cassiancreed.com/genealogy/): Canonical specialty hub for DNA inheritance, family-tree lead generation, restored identities, case studies, privacy, law, and the distinction between a lead and proof.
 - [Explainers](https://cassiancreed.com/explainers/): Plain-language explanations of forensic science, legal process, and investigative methods.
 - [True-Crime and Courtroom Glossary](https://cassiancreed.com/glossary/): Legal and forensic terms defined in context.
 - [Court Calendar](https://cassiancreed.com/court-calendar/): Current hearing and trial dates, each tied to an identified outside source; verify the last-checked date before citing.
