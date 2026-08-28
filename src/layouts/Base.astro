@@ -335,10 +335,13 @@ const exploreActive = resolvedExplore.some(i => navActive(i.href));
         }
       } catch(e) {}
     });
-// Beehiiv signup/subscribe outbound tracking (NEP-GA4FIX-CMT-0708A)
+// Beehiiv signup/subscribe outbound tracking (NEP-GA4FIX-CMT-0708A).
+// CaptureBlock uses Beehiiv's dedicated subscribe-forms host; keep both the
+// legacy publication URL and the active form host observable.
 document.addEventListener('click',function(e){
 var s=e.target.closest('a');
-if(s&&s.href&&s.href.indexOf('cassiancreed.beehiiv.com')!==-1&&s.href.indexOf('/products/')===-1&&(s.href.indexOf('/subscribe')!==-1||s.href.indexOf('/signup')!==-1||s.href.indexOf('subscribed')!==-1)){
+var signupHost=s&&s.href&&(s.href.indexOf('subscribe-forms.beehiiv.com')!==-1||s.href.indexOf('cassiancreed.beehiiv.com')!==-1);
+if(signupHost&&s.href.indexOf('/products/')===-1&&(s.href.indexOf('/v3/forms/')!==-1||s.href.indexOf('/subscribe')!==-1||s.href.indexOf('/signup')!==-1||s.href.indexOf('subscribed')!==-1)){
 if(typeof gtag!=='undefined'){gtag('event','capture_outbound',{link_url:s.href,method:'beehiiv'});}
 }
 });
@@ -357,36 +360,22 @@ if(typeof gtag!=='undefined'){gtag('event','capture_outbound',{link_url:s.href,m
         }
       }
     });
-    // GA4 sign_up — fires when Beehiiv redirects the top window to /?subscribed=1.
-    // DG5 (NEP-OPS-CWK-0719SP): the SAME signal also reveals the styled
+    // A Beehiiv redirect proves only that the browser reached a success route;
+    // it does not prove the subscription is confirmed and active. The signed
+    // server webhook is the sole GA4 sign_up writer. This browser path only
+    // reveals the styled success state.
+    // DG5 (NEP-OPS-CWK-0719SP): the redirect signal reveals the styled
     // .capture__success panel and hides the now-redundant form + helper line,
     // so returning subscribers see "You're in." instead of Beehiiv's raw
     // in-iframe "Reference ID" text.
     if(window.location.search.includes('subscribed=1')){
       function fs(){
-        var frame=null, parentOrigin=window.NEP_ORIGIN||null;
+        var frame=null;
         try{
           if(window.parent!==window){
             frame=window.frameElement;
-            parentOrigin=window.parent.NEP_ORIGIN||parentOrigin;
           }
         }catch(e){}
-        var o=parentOrigin||{};
-        if(typeof gtag!=='undefined'){
-          gtag('event','sign_up',{
-            method:'beehiiv',
-            acquisition_source:o.s||'(direct)',
-            acquisition_medium:o.m||'(none)',
-            acquisition_campaign:o.c||'(none)',
-            acquisition_content:o.u||'(none)',
-            acquisition_term:o.k||'(none)',
-            acquisition_landing_page:o.p||'(unknown)',
-            conversion_page:frame&&frame.dataset.nepConversionPage||location.pathname,
-            cta_id:frame&&frame.dataset.nepCtaId||'(unknown)',
-            form_id:frame&&frame.dataset.nepFormId||'(unknown)',
-            offer_id:frame&&frame.dataset.nepOfferId||'(unknown)'
-          });
-        }
         document.querySelectorAll('.capture__success').forEach(function(ok){
           ok.hidden=false;
           var cta=ok.closest('.capture-cta')||ok.parentNode;
