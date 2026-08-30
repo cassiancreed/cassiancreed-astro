@@ -78,7 +78,27 @@ img{max-width:100%}
 .post__content h2{font-family:var(--serif);font-weight:600;font-size:27px;margin:34px 0 10px}
 .post__content p{margin:0 0 18px}
 .post__content a{color:var(--accent);text-decoration:underline}
+.post__content table{display:block;width:100%;max-width:100%;overflow-x:auto;border-collapse:collapse;-webkit-overflow-scrolling:touch}
+.post__content th,.post__content td{min-width:0;padding:8px 10px;border:1px solid var(--line);vertical-align:top;overflow-wrap:anywhere}
+.post__content th{background:var(--bg-3);text-align:left}
+.clancy-offer{min-width:0;max-width:100%;overflow:hidden;margin:30px 0;padding:22px;background:linear-gradient(145deg,rgba(224,86,59,.12),var(--bg-3));border:1px solid rgba(224,86,59,.48);border-radius:12px}
+.clancy-offer__eyebrow{margin:0 0 6px!important;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.post__content .clancy-offer__title{margin:0 0 8px;font-size:clamp(23px,4vw,29px);line-height:1.15}
+.clancy-offer__copy{margin:0 0 16px!important;color:var(--ink-2);font-size:15px;line-height:1.55}
+.clancy-offer__actions{display:flex;min-width:0;flex-wrap:wrap;align-items:center;gap:12px 16px}
+.post__content .clancy-offer__primary{max-width:100%;color:#1a0f0a;text-decoration:none;text-align:center;white-space:normal;overflow-wrap:anywhere}
+.post__content .clancy-offer__secondary{max-width:100%;color:var(--ink-2);font-size:14px;text-underline-offset:3px;overflow-wrap:anywhere}
+.post__content .clancy-offer__secondary:hover{color:var(--accent)}
 .post__crisis{border-top:1px solid var(--line);margin-top:36px;padding-top:18px;color:var(--ink-2);font-size:14px}
+@media(max-width:560px){
+  .post{padding-right:16px;padding-left:16px}
+  .post__content table{font-size:12.5px;line-height:1.4}
+  .post__content th,.post__content td{padding:7px 8px}
+  .clancy-offer{padding:18px 16px}
+  .clancy-offer__actions{display:grid;grid-template-columns:minmax(0,1fr)}
+  .post__content .clancy-offer__primary,.post__content .clancy-offer__secondary{width:100%}
+  .post__content .clancy-offer__secondary{display:block;padding:8px 2px;text-align:center}
+}
 
 /* footer */
 .site-foot{border-top:1px solid var(--line);margin-top:64px}
@@ -356,6 +376,7 @@ h1,h2,h3{letter-spacing:-.012em}
   transition:color .15s,text-decoration-color .15s;
 }
 .post__content a:hover{color:#ff7d5e}
+.post__content .clancy-offer__primary:hover{color:#1a0f0a}
 
 /* header: cleaner sticky bar with deeper blur */
 .site-head{background:rgba(19,16,14,.72);backdrop-filter:saturate(140%) blur(12px);border-bottom:1px solid var(--line)}
