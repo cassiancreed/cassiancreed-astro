@@ -253,6 +253,36 @@ Court schedules and evidentiary plans can change. This tracker distinguishes wha
 }
 </script>
 
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Has there been a verdict in the Lindsay Clancy trial?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No verdict had been returned when jurors completed their second day of deliberations Friday, August 28, 2026." }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens next in the Lindsay Clancy trial?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Deliberations are scheduled to resume Monday, August 31, 2026, at 9:00 a.m. Eastern Time in Plymouth Superior Court. Court schedules can change." }
+    },
+    {
+      "@type": "Question",
+      "name": "What charges does Lindsay Clancy face?",
+      "acceptedAnswer": { "@type": "Answer", "text": "She faces three counts of first-degree murder and has pleaded not guilty. No verdict had been returned when court recessed August 28, 2026." }
+    },
+    {
+      "@type": "Question",
+      "name": "Who has the burden of proof on criminal responsibility?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The Commonwealth must prove every element of the charged offenses beyond a reasonable doubt and, once lack of criminal responsibility is fairly raised, must also prove criminal responsibility beyond a reasonable doubt." }
+    }
+  ]
+}
+</script>
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
