@@ -31,7 +31,7 @@ const jsonld = [
     "bookFormat": "https://schema.org/EBook",
     "inLanguage": "en-US",
     "genre": ["Law", "Nonfiction"],
-    "offers": [{ "@type": "Offer", "price": "3.99", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://cassiancreed.beehiiv.com/products/jury-chess", "seller": { "@id": "https://cassiancreed.com/#org" } }]
+    "offers": [{ "@type": "Offer", "price": "4.99", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://cassiancreed.beehiiv.com/products/jury-chess", "seller": { "@id": "https://cassiancreed.com/#org" } }]
   }
   // NEP-CWK-NO-ACCIDENT-WEBSITE-REMOVAL-0726: the third Book node
   // ("No Accident: The Mackenzie Shirilla Story") was removed with its catalog
@@ -39,7 +39,7 @@ const jsonld = [
   // the Offer, or the product URL.
 ];
 ---
-<Base title="Books by Cassian Creed | Evidence-Led True Crime" description="Evidence-led books from Cassian Creed, including The Lindsay Clancy Trial and Jury Chess, available as instant PDF downloads." jsonld={jsonld}>
+<Base title="Books by Cassian Creed | Evidence-Led True Crime" description="Evidence-led books from Cassian Creed, including The Lindsay Clancy Trial and Jury Chess, available as PDF downloads." jsonld={jsonld}>
   <section class="bk-hero wrap">
     <h1 class="bk-hero__h">Books by Cassian Creed</h1>
     <p class="bk-hero__sub">Evidence-led true crime and courtroom guides</p>
@@ -72,6 +72,12 @@ const jsonld = [
           <p class="bk__price">$2.99</p>
           <a class="btn bk__buy" href="https://cassiancreed.beehiiv.com/products/lindsay-clancy-trial-book?utm_source=cassiancreed.com&amp;utm_medium=books_page&amp;utm_campaign=lindsay_clancy_trial_book" target="_blank" rel="noopener noreferrer">Get the book &rarr;</a>
         </div>
+        <aside class="bk__next" aria-labelledby="clancy-next-title">
+          <p class="bk__next-label">Continue with Jury Chess</p>
+          <h3 class="bk__next-title" id="clancy-next-title">Now follow the whole trial, not just this case.</h3>
+          <p class="bk__next-copy"><em>The Lindsay Clancy Trial</em> explains the questions in this courtroom. <em>Jury Chess: How Criminal Jury Trials Actually Work</em> gives you the larger framework—from jury selection and evidence disputes through instructions, deliberations, and verdict—so you can read the next case with the same discipline.</p>
+          <a class="bk__next-link" href="https://cassiancreed.beehiiv.com/products/jury-chess?utm_source=cassiancreed.com&amp;utm_medium=books_page_cross_sell&amp;utm_campaign=clancy_to_jury_chess" target="_blank" rel="noopener noreferrer">Continue with Jury Chess &rarr;</a>
+        </aside>
       </div>
     </div>
 
@@ -85,7 +91,7 @@ const jsonld = [
         <p class="bk__hook">A criminal jury trial is not a television story or a public vote.</p>
         <p class="bk__desc">It is a controlled legal process shaped by burdens of proof, evidence rules, courtroom roles, jury instructions, and the limits of the admitted record. <em>Jury Chess</em> explains how that process works from jury selection through verdict—how to separate evidence from argument, follow objections and rulings, evaluate forensic claims carefully, and avoid treating allegations or public commentary as proof. Written for readers who follow criminal trials, with practical “Watch for This” exercises and 212 source notes. This book is for general education and is not legal advice.</p>
         <div class="bk__cta">
-          <p class="bk__price">$3.99</p>
+          <p class="bk__price">$4.99</p>
           <a class="btn bk__buy" href="https://cassiancreed.beehiiv.com/products/jury-chess" target="_blank" rel="noopener noreferrer">Get the book →</a>
         </div>
       </div>
@@ -110,7 +116,7 @@ const jsonld = [
   </section></div>
 
   {/* JURY CHESS shipped 2026-07-26: the "Coming soon" block that stood here was
-      replaced by a live shelf card above ($3.99, Beehiiv direct checkout). The
+      replaced by a live shelf card above ($4.99, Beehiiv direct checkout). The
       .coming* theme rules are retained in the stylesheet below and are unused
       until a future title claims them. */}
 
@@ -118,7 +124,7 @@ const jsonld = [
     <h2 class="bk-faq__h">Frequently Asked Questions</h2>
     <div class="bk-faq__item">
       <h3>How does delivery work?</h3>
-      <p>Complete the purchase through the secure Stripe checkout. Your book is available as an instant download as soon as the purchase is complete.</p>
+      <p>Complete the purchase on the Beehiiv product page. Each paid title is listed there as a File / Download product. Follow the delivery instructions shown after checkout; if a download is missing, email <a href="mailto:cassiancreed@cassiancreed.com">cassiancreed@cassiancreed.com</a>.</p>
     </div>
     <div class="bk-faq__item">
       <h3>What format will I receive?</h3>
@@ -159,6 +165,12 @@ const jsonld = [
   .bk__cta{margin-top:auto;display:flex;gap:14px;align-items:center}
   .bk__price{margin:0;font-family:var(--mono,'JetBrains Mono',monospace);font-weight:700;font-size:20px;color:var(--ink)}
   .bk__price--free{color:#5fae7e}
+  .bk__next{margin-top:2px;padding:14px 15px;border:1px solid rgba(224,86,59,.45);border-radius:10px;background:rgba(224,86,59,.07)}
+  .bk__next-label{margin:0 0 5px;font-family:var(--mono,'JetBrains Mono',monospace);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent,#e0563b)}
+  .bk__next-title{margin:0 0 6px;font-family:var(--serif);font-weight:600;font-size:17px;line-height:1.3}
+  .bk__next-copy{margin:0 0 8px;font-size:13.5px;line-height:1.5;color:var(--ink-2)}
+  .bk__next-link{font-weight:700;color:var(--accent,#e0563b);text-underline-offset:3px}
+  .bk__next-link:focus-visible{outline:2px solid currentColor;outline-offset:3px;border-radius:2px}
   .guide-offer{background:var(--bg-3,#15110e);border:1px solid rgba(95,174,126,.5);border-radius:14px;padding:26px 28px;margin:30px 0 8px;display:flex;flex-direction:column;gap:10px}
   .guide-offer__h{font-family:var(--serif);font-weight:600;font-size:26px;margin:0}
   .guide-offer__p{margin:0;font-size:15px;line-height:1.55;color:var(--ink-2);max-width:70ch}
