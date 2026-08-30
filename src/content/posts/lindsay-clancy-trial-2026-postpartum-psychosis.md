@@ -128,3 +128,32 @@ This primer does not carry a running schedule or live verdict box. See the [tria
 - [Postpartum Support International — postpartum psychosis information](https://postpartum.net/get-help/postpartum-psychosis-help/)
 - [ACOG — perinatal mental-health screening](https://www.acog.org/programs/perinatal-mental-health/patient-screening)
 - [Civil malpractice complaint allegations — Boston.com, January 27, 2026](https://www.boston.com/news/crime/2026/01/27/lindsay-clancy-malpractice-lawsuit/)
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is postpartum psychosis?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Postpartum psychosis is a rare, severe psychiatric emergency that can involve delusions, hallucinations, mania, severe confusion, or rapidly changing mood after childbirth. A diagnosis alone does not decide criminal responsibility." }
+    },
+    {
+      "@type": "Question",
+      "name": "How is a diagnosis different from lack of criminal responsibility?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A clinical diagnosis describes a health condition. Massachusetts lack-of-criminal-responsibility law asks a separate legal question about whether, because of mental disease or defect, the defendant lacked substantial capacity to appreciate the wrongfulness of the conduct or to conform conduct to the law." }
+    },
+    {
+      "@type": "Question",
+      "name": "What would happen after an acquittal based on lack of criminal responsibility?",
+      "acceptedAnswer": { "@type": "Answer", "text": "An acquittal based on lack of criminal responsibility does not necessarily mean immediate release. Massachusetts law provides for post-acquittal observation and possible civil commitment proceedings." }
+    },
+    {
+      "@type": "Question",
+      "name": "Where can I find current Lindsay Clancy trial developments?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The separate Lindsay Clancy trial tracker carries dated court updates, charges, rulings, and verdict status. No verdict had been returned when court recessed August 28, 2026." }
+    }
+  ]
+}
+</script>
