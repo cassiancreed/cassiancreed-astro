@@ -59,6 +59,16 @@ Cora, 5, Dawson, 3, and Callan, 8 months, died after events at their Duxbury hom
 | Core defense | **DEFENSE** | Lack of criminal responsibility, tied to the defense's contention that Clancy experienced postpartum psychosis and that alleged overmedication affected her condition. |
 | Burden on criminal responsibility | **VERIFIED** | Once evidence fairly raises lack of criminal responsibility, Massachusetts law requires the Commonwealth to prove beyond a reasonable doubt that the defendant was criminally responsible. |
 
+<aside class="clancy-offer" aria-labelledby="clancy-offer-tracker-top">
+<p class="clancy-offer__eyebrow">Case explainer · $2.99</p>
+<h2 class="clancy-offer__title" id="clancy-offer-tracker-top">The Lindsay Clancy Trial</h2>
+<p class="clancy-offer__copy">Take the sourced framework offline: a focused guide to the evidence lanes, psychiatric testimony, and Massachusetts criminal-responsibility standard—without turning disputed claims into facts.</p>
+<div class="clancy-offer__actions">
+<a class="btn clancy-offer__primary" href="https://cassiancreed.beehiiv.com/products/lindsay-clancy-trial-book?utm_source=cassiancreed.com&amp;utm_medium=clancy_article&amp;utm_campaign=clancy_explainer&amp;utm_content=trial_tracker" target="_blank" rel="noopener noreferrer" data-book-key="lindsay-clancy-trial" data-cta-placement="top">Get the Clancy explainer — $2.99 →</a>
+<a class="clancy-offer__secondary" href="https://cassiancreed.beehiiv.com/products/jury-chess?utm_source=cassiancreed.com&amp;utm_medium=clancy_article&amp;utm_campaign=clancy_explainer&amp;utm_content=trial_tracker" target="_blank" rel="noopener noreferrer" data-book-key="jury-chess" data-cta-placement="top">Broader courtroom guide: Jury Chess — $4.99 →</a>
+</div>
+</aside>
+
 ## What the jury must decide
 
 The criminal trial is not a general referendum on postpartum mental illness. It concerns specific charges, evidence, and legal instructions.
@@ -176,6 +186,16 @@ The jury was excused until Tuesday morning. The next verified event is completio
 ## Reader note
 
 Court schedules and evidentiary plans can change. This tracker distinguishes what happened in court from what either side says the evidence means. Corrections identify the changed fact, the source, and the time of the update. For the wider context on postpartum psychosis and the Massachusetts legal test, see the primer on [how postpartum psychosis differs from the legal test for criminal responsibility](/post/lindsay-clancy-trial-2026-postpartum-psychosis/).
+
+<aside class="clancy-offer clancy-offer--end" aria-labelledby="clancy-offer-tracker-end">
+<p class="clancy-offer__eyebrow">Keep the evidence framework</p>
+<h2 class="clancy-offer__title" id="clancy-offer-tracker-end">The Lindsay Clancy Trial — $2.99</h2>
+<p class="clancy-offer__copy">Keep the case-specific explainer beside you while you follow the court record.</p>
+<div class="clancy-offer__actions">
+<a class="btn clancy-offer__primary" href="https://cassiancreed.beehiiv.com/products/lindsay-clancy-trial-book?utm_source=cassiancreed.com&amp;utm_medium=clancy_article&amp;utm_campaign=clancy_explainer&amp;utm_content=trial_tracker" target="_blank" rel="noopener noreferrer" data-book-key="lindsay-clancy-trial" data-cta-placement="end">Get the Clancy explainer — $2.99 →</a>
+<a class="clancy-offer__secondary" href="https://cassiancreed.beehiiv.com/products/jury-chess?utm_source=cassiancreed.com&amp;utm_medium=clancy_article&amp;utm_campaign=clancy_explainer&amp;utm_content=trial_tracker" target="_blank" rel="noopener noreferrer" data-book-key="jury-chess" data-cta-placement="end">Broader courtroom guide: Jury Chess — $4.99 →</a>
+</div>
+</aside>
 
 <div class="capture-cta" style="border:1px solid var(--rule,#3a332c);border-left:4px solid var(--accent,#e0563b);background:var(--card,#1a1613);color:var(--ink,#f6f1ea);padding:1.25rem 1.5rem;margin:1.75rem 0;border-radius:8px">
 <p style="margin:0 0 .4rem;font-size:1.12rem;font-weight:700;line-height:1.3">Get the case files the news won't run — free, straight to your inbox.</p>
