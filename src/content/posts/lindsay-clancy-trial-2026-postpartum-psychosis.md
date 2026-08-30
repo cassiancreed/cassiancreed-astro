@@ -42,6 +42,16 @@ This primer explains the clinical term postpartum psychosis and the separate Mas
 
 **REPORTED-NOT-CONFIRMED / NOT-ADJUDICATED:** Medication counts, the precise number of help-seeking contacts, and allegations about an auditory command appear in attorney statements or civil pleadings. They should not be presented as findings in the criminal case.
 
+<aside class="clancy-offer" aria-labelledby="clancy-offer-primer-top">
+<p class="clancy-offer__eyebrow">Case explainer · $2.99</p>
+<h2 class="clancy-offer__title" id="clancy-offer-primer-top">The Lindsay Clancy Trial</h2>
+<p class="clancy-offer__copy">Take the sourced framework offline: a focused guide to the evidence lanes, psychiatric testimony, and Massachusetts criminal-responsibility standard—without turning disputed claims into facts.</p>
+<div class="clancy-offer__actions">
+<a class="btn clancy-offer__primary" href="https://cassiancreed.beehiiv.com/products/lindsay-clancy-trial-book?utm_source=cassiancreed.com&amp;utm_medium=clancy_article&amp;utm_campaign=clancy_explainer&amp;utm_content=case_primer" target="_blank" rel="noopener noreferrer" data-book-key="lindsay-clancy-trial" data-cta-placement="top">Get the Clancy explainer — $2.99 →</a>
+<a class="clancy-offer__secondary" href="https://cassiancreed.beehiiv.com/products/jury-chess?utm_source=cassiancreed.com&amp;utm_medium=clancy_article&amp;utm_campaign=clancy_explainer&amp;utm_content=case_primer" target="_blank" rel="noopener noreferrer" data-book-key="jury-chess" data-cta-placement="top">Broader courtroom guide: Jury Chess — $4.99 →</a>
+</div>
+</aside>
+
 ## What is postpartum psychosis?
 
 Postpartum psychosis is a rare and serious perinatal mental-health emergency. Symptoms can include severe confusion, loss of contact with reality, delusions, hallucinations, paranoia, rapidly changing mood, agitation, or markedly disorganized behavior. Symptoms can vary, and only qualified clinicians can diagnose an individual.
@@ -85,6 +95,16 @@ Look for clear labels:
 - **NOT-VERIFIED** for claims that lack adequate sourcing.
 
 Also look for a visible verification date. Court schedules change, and a live case should never be summarized as though a jury has already ruled.
+
+<aside class="clancy-offer clancy-offer--end" aria-labelledby="clancy-offer-primer-end">
+<p class="clancy-offer__eyebrow">Keep the evidence framework</p>
+<h2 class="clancy-offer__title" id="clancy-offer-primer-end">The Lindsay Clancy Trial — $2.99</h2>
+<p class="clancy-offer__copy">Keep the clinical and legal standards separate while you follow the case-specific evidence.</p>
+<div class="clancy-offer__actions">
+<a class="btn clancy-offer__primary" href="https://cassiancreed.beehiiv.com/products/lindsay-clancy-trial-book?utm_source=cassiancreed.com&amp;utm_medium=clancy_article&amp;utm_campaign=clancy_explainer&amp;utm_content=case_primer" target="_blank" rel="noopener noreferrer" data-book-key="lindsay-clancy-trial" data-cta-placement="end">Get the Clancy explainer — $2.99 →</a>
+<a class="clancy-offer__secondary" href="https://cassiancreed.beehiiv.com/products/jury-chess?utm_source=cassiancreed.com&amp;utm_medium=clancy_article&amp;utm_campaign=clancy_explainer&amp;utm_content=case_primer" target="_blank" rel="noopener noreferrer" data-book-key="jury-chess" data-cta-placement="end">Broader courtroom guide: Jury Chess — $4.99 →</a>
+</div>
+</aside>
 
 ## Where can I find current trial developments?
 
