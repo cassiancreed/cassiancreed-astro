@@ -306,6 +306,11 @@ const visibleDayEntries = (entries) => {
           <iframe
             class="case-alert__embed"
             data-calendar-alert-form
+            data-nep-campaign="court_calendar_updates"
+            data-nep-conversion-page={Astro.url.pathname}
+            data-nep-cta-id="court_calendar_alert"
+            data-nep-form-id={CALENDAR_ALERT_FORM_ID}
+            data-nep-offer-id="court_calendar_updates"
             data-form-base={`https://subscribe-forms.beehiiv.com/v3/forms/${CALENDAR_ALERT_FORM_ID}?utm_source=website&utm_medium=calendar_alert&utm_campaign=court_calendar_updates`}
             title="Subscribe for court calendar updates"
             loading="lazy"
@@ -313,7 +318,7 @@ const visibleDayEntries = (entries) => {
             frameborder="0"
           ></iframe>
         </div>
-        <p class="case-alert__fallback">Form not loading? <a data-calendar-alert-fallback href={`https://subscribe-forms.beehiiv.com/v3/forms/${CALENDAR_ALERT_FORM_ID}?utm_source=website&amp;utm_medium=calendar_alert&amp;utm_campaign=court_calendar_updates`} target="_blank" rel="noopener noreferrer">Get court calendar updates &rarr;</a></p>
+        <p class="case-alert__fallback">Form not loading? <a data-calendar-alert-fallback data-nep-campaign="court_calendar_updates" data-nep-conversion-page={Astro.url.pathname} data-nep-cta-id="court_calendar_alert_fallback" data-nep-form-id={CALENDAR_ALERT_FORM_ID} data-nep-offer-id="court_calendar_updates" href={`https://subscribe-forms.beehiiv.com/v3/forms/${CALENDAR_ALERT_FORM_ID}?utm_source=website&amp;utm_medium=calendar_alert&amp;utm_campaign=court_calendar_updates`} target="_blank" rel="noopener noreferrer">Get court calendar updates &rarr;</a></p>
         <p class="case-alert__helper">You can unsubscribe from any email.</p>
         <p class="case-alert__success" data-calendar-alert-success role="status" hidden><strong>You&rsquo;re on the list.</strong> Watch your inbox for court calendar updates.</p>
       </div>
