@@ -2,7 +2,7 @@
 title: "Postpartum psychosis and criminal responsibility: A careful guide to the Lindsay Clancy case"
 description: "A victim-first, clinically grounded guide to postpartum psychosis, Massachusetts's lack-of-criminal-responsibility standard, and which claims in the Lindsay Clancy case remain disputed."
 pubDate: 2026-06-23
-updatedDate: 2026-08-24
+updatedDate: 2026-08-30
 tag: Case Files
 featured: false
 victim: Cora Clancy, 5; Dawson Clancy, 3; Callan Clancy, 8 months
@@ -18,9 +18,9 @@ jurisdiction: Plymouth County Superior Court, Massachusetts
 
 > **Looking for current court status?** See the [Lindsay Clancy trial tracker](/post/lindsay-clancy-trial/) for the latest verified schedule, rulings, charges, and verdict status.
 >
-> **Current posture:** Court adjourned August 24 with the Commonwealth’s rebuttal case unfinished. The jury was excused until Tuesday morning. No verdict has been returned.
+> **Current posture:** Closing arguments are complete. Jurors finished their second day of deliberations Friday, August 28, without a verdict. Deliberations are scheduled to resume Monday, August 31, at 9:00 a.m. ET.
 >
-> **Last verified:** August 24, 2026.
+> **Last verified:** August 30, 2026.
 
 Cora, 5, Dawson, 3, and Callan, 8 months, died after events at their Duxbury home in January 2023. Their mother, Lindsay Clancy, has pleaded not guilty to three counts of first-degree murder. **PROSECUTION:** Prosecutors allege she acted deliberately. **DEFENSE:** Her lawyers argue she experienced postpartum psychosis and lacked criminal responsibility. A jury has not decided those disputed questions.
 
@@ -34,13 +34,23 @@ This primer explains the clinical term postpartum psychosis and the separate Mas
 
 ## What is established, and what remains disputed?
 
-**VERIFIED:** Clancy has pleaded not guilty to three counts of first-degree murder. The defense has put lack of criminal responsibility at issue. Massachusetts law places the beyond-a-reasonable-doubt burden on the Commonwealth once that issue is properly raised. The defense rested August 21; the Commonwealth’s rebuttal remained unfinished when court adjourned August 24; no verdict has been returned.
+**VERIFIED:** Clancy has pleaded not guilty to three counts of first-degree murder. The defense has put lack of criminal responsibility at issue. Massachusetts law places the beyond-a-reasonable-doubt burden on the Commonwealth once that issue is properly raised. Closing arguments are complete; jurors deliberated August 27–28 and recessed for the weekend without a verdict.
 
-**PROSECUTION:** Prosecutors contend that the evidence will prove the charged offenses and criminal responsibility.
+**PROSECUTION:** Prosecutors argued that the admitted evidence proved the charged offenses and criminal responsibility.
 
 **DEFENSE:** Clancy's lawyers contend that she experienced postpartum psychosis, lacked criminal responsibility, and was affected by alleged overmedication.
 
 **REPORTED-NOT-CONFIRMED / NOT-ADJUDICATED:** Medication counts, the precise number of help-seeking contacts, and allegations about an auditory command appear in attorney statements or civil pleadings. They should not be presented as findings in the criminal case.
+
+<aside class="clancy-offer" aria-labelledby="clancy-offer-primer-top">
+<p class="clancy-offer__eyebrow">Case explainer · $2.99</p>
+<h2 class="clancy-offer__title" id="clancy-offer-primer-top">The Lindsay Clancy Trial</h2>
+<p class="clancy-offer__copy">Take the sourced framework offline: a focused guide to the evidence lanes, psychiatric testimony, and Massachusetts criminal-responsibility standard—without turning disputed claims into facts.</p>
+<div class="clancy-offer__actions">
+<a class="btn clancy-offer__primary" href="https://cassiancreed.beehiiv.com/products/lindsay-clancy-trial-book?utm_source=cassiancreed.com&amp;utm_medium=clancy_article&amp;utm_campaign=clancy_explainer&amp;utm_content=case_primer" target="_blank" rel="noopener noreferrer" data-book-key="lindsay-clancy-trial" data-cta-placement="top">Get the Clancy explainer — $2.99 →</a>
+<a class="clancy-offer__secondary" href="https://cassiancreed.beehiiv.com/products/jury-chess?utm_source=cassiancreed.com&amp;utm_medium=clancy_article&amp;utm_campaign=clancy_explainer&amp;utm_content=case_primer" target="_blank" rel="noopener noreferrer" data-book-key="jury-chess" data-cta-placement="top">Broader courtroom guide: Jury Chess — $4.99 →</a>
+</div>
+</aside>
 
 ## What is postpartum psychosis?
 
@@ -70,7 +80,7 @@ That process is separate from a prison sentence. It is also more precise to desc
 
 ## Why are medication and treatment claims treated cautiously?
 
-The defense and civil plaintiffs have alleged that Clancy was overmedicated or inadequately treated. Reporting has also repeated a defense claim about the number of medications and allegations that she sought help repeatedly. Those matters may become evidence, be disputed, or be limited by the judge. Until they are admitted and tested, they remain attributed claims rather than established criminal facts.
+The defense and civil plaintiffs have alleged that Clancy was overmedicated or inadequately treated. Reporting has also repeated a defense claim about the number of medications and allegations that she sought help repeatedly. Those claims should remain attributed unless the cited trial record or another reliable source independently establishes them; they are not themselves court findings.
 
 The same caution applies to an allegation in a civil complaint that she heard a male voice. A pleading records what a party alleges; it is not a court finding.
 
@@ -86,6 +96,16 @@ Look for clear labels:
 
 Also look for a visible verification date. Court schedules change, and a live case should never be summarized as though a jury has already ruled.
 
+<aside class="clancy-offer clancy-offer--end" aria-labelledby="clancy-offer-primer-end">
+<p class="clancy-offer__eyebrow">Keep the evidence framework</p>
+<h2 class="clancy-offer__title" id="clancy-offer-primer-end">The Lindsay Clancy Trial — $2.99</h2>
+<p class="clancy-offer__copy">Keep the clinical and legal standards separate while you follow the case-specific evidence.</p>
+<div class="clancy-offer__actions">
+<a class="btn clancy-offer__primary" href="https://cassiancreed.beehiiv.com/products/lindsay-clancy-trial-book?utm_source=cassiancreed.com&amp;utm_medium=clancy_article&amp;utm_campaign=clancy_explainer&amp;utm_content=case_primer" target="_blank" rel="noopener noreferrer" data-book-key="lindsay-clancy-trial" data-cta-placement="end">Get the Clancy explainer — $2.99 →</a>
+<a class="clancy-offer__secondary" href="https://cassiancreed.beehiiv.com/products/jury-chess?utm_source=cassiancreed.com&amp;utm_medium=clancy_article&amp;utm_campaign=clancy_explainer&amp;utm_content=case_primer" target="_blank" rel="noopener noreferrer" data-book-key="jury-chess" data-cta-placement="end">Broader courtroom guide: Jury Chess — $4.99 →</a>
+</div>
+</aside>
+
 ## Where can I find current trial developments?
 
 This primer does not carry a running schedule or live verdict box. See the [trial tracker](/post/lindsay-clancy-trial/) for current status, dated court updates, charges, and rulings.
@@ -99,9 +119,41 @@ This primer does not carry a running schedule or live verdict box. See the [tria
 ## Sources
 
 - [Day 19 live courtroom updates through adjournment — CT Insider, August 24, 2026](https://www.ctinsider.com/news/article/lindsay-clancy-trial-live-updates-08-24-26-22398040.php)
+- [Second day of deliberations ended without a verdict — Associated Press, August 28, 2026](https://apnews.com/article/e9d58e81851b146736efe94f26956cd6)
+- [Friday recess and Monday-resumption reporting — Boston 25 News, August 28, 2026](https://www.boston25news.com/news/local/jury-unable-reach-verdict-day-2-deliberations/EXKB7ZXRBRF2NLTYJC5QEXAFGM/)
+- [Monday, August 31 session — Massachusetts Trial Court Daily List](https://www.masscourts.org/reports/DailyList_Site1186.pdf)
 - [Final pretrial hearing and rulings — Boston.com, July 13, 2026](https://www.boston.com/news/crime/2026/07/13/lindsay-clancy-final-pretrial-hearing/)
 - [Model Jury Instructions on Homicide — Criminal Responsibility (McHoul) — Massachusetts Trial Court](https://www.mass.gov/info-details/model-jury-instructions-on-homicide-i-criminal-responsibility)
 - [M.G.L. c. 123, § 16 — post-acquittal observation and commitment](https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXVII/Chapter123/Section16)
 - [Postpartum Support International — postpartum psychosis information](https://postpartum.net/get-help/postpartum-psychosis-help/)
 - [ACOG — perinatal mental-health screening](https://www.acog.org/programs/perinatal-mental-health/patient-screening)
 - [Civil malpractice complaint allegations — Boston.com, January 27, 2026](https://www.boston.com/news/crime/2026/01/27/lindsay-clancy-malpractice-lawsuit/)
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is postpartum psychosis?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Postpartum psychosis is a rare, severe psychiatric emergency that can involve delusions, hallucinations, mania, severe confusion, or rapidly changing mood after childbirth. A diagnosis alone does not decide criminal responsibility." }
+    },
+    {
+      "@type": "Question",
+      "name": "How is a diagnosis different from lack of criminal responsibility?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A clinical diagnosis describes a health condition. Massachusetts lack-of-criminal-responsibility law asks a separate legal question about whether, because of mental disease or defect, the defendant lacked substantial capacity to appreciate the wrongfulness of the conduct or to conform conduct to the law." }
+    },
+    {
+      "@type": "Question",
+      "name": "What would happen after an acquittal based on lack of criminal responsibility?",
+      "acceptedAnswer": { "@type": "Answer", "text": "An acquittal based on lack of criminal responsibility does not necessarily mean immediate release. Massachusetts law provides for post-acquittal observation and possible civil commitment proceedings." }
+    },
+    {
+      "@type": "Question",
+      "name": "Where can I find current Lindsay Clancy trial developments?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The separate Lindsay Clancy trial tracker carries dated court updates, charges, rulings, and verdict status. No verdict had been returned when court recessed August 28, 2026." }
+    }
+  ]
+}
+</script>
