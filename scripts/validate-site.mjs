@@ -70,6 +70,46 @@ for (const [route, file] of routes) {
   }
 }
 
+const juryChessProductUrl = 'https://cassiancreed.beehiiv.com/products/jury-chess';
+const expectedJuryChessCheckoutCtas = new Map([
+  ['/', [
+    `${juryChessProductUrl}?utm_source=website&utm_medium=homepage&utm_campaign=jury_chess`,
+  ]],
+  ['/books/', [
+    `${juryChessProductUrl}?utm_source=cassiancreed.com&utm_medium=books_page_cross_sell&utm_campaign=clancy_to_jury_chess`,
+    `${juryChessProductUrl}?utm_source=cassiancreed.com&utm_medium=books_page&utm_campaign=jury_chess`,
+  ]],
+  ['/post/anatomy-of-a-murder-trial-hernandez-melgar/', [
+    `${juryChessProductUrl}?utm_source=website&utm_medium=book_cta&utm_campaign=melgar_cluster&utm_content=anatomy-of-a-murder-trial-hernandez-melgar_mid`,
+    `${juryChessProductUrl}?utm_source=website&utm_medium=book_cta&utm_campaign=melgar_cluster&utm_content=anatomy-of-a-murder-trial-hernandez-melgar_end`,
+  ]],
+  ['/post/how-washington-courts-work-hernandez-melgar/', [
+    `${juryChessProductUrl}?utm_source=website&utm_medium=book_cta&utm_campaign=melgar_cluster&utm_content=how-washington-courts-work-hernandez-melgar_mid`,
+    `${juryChessProductUrl}?utm_source=website&utm_medium=book_cta&utm_campaign=melgar_cluster&utm_content=how-washington-courts-work-hernandez-melgar_end`,
+  ]],
+  ['/post/murder-staged-as-suicide-hernandez-melgar/', [
+    `${juryChessProductUrl}?utm_source=website&utm_medium=book_cta&utm_campaign=melgar_cluster&utm_content=murder-staged-as-suicide-hernandez-melgar_mid`,
+    `${juryChessProductUrl}?utm_source=website&utm_medium=book_cta&utm_campaign=melgar_cluster&utm_content=murder-staged-as-suicide-hernandez-melgar_end`,
+  ]],
+  ['/post/this-week-in-court-august-30-2026/', [
+    `${juryChessProductUrl}?utm_source=website&utm_medium=book_cta&utm_campaign=twic_to_jury_chess&utm_content=this-week-in-court-august-30-2026_end`,
+  ]],
+]);
+
+let juryChessCheckoutCtaCount = 0;
+for (const [route, file] of routes) {
+  const html = await readFile(file, 'utf8');
+  const actual = [...html.matchAll(/<a\b[^>]*\bhref="([^"]*)"/gi)]
+    .map(match => match[1].replace(/&amp;/g, '&'))
+    .filter(href => href.startsWith(juryChessProductUrl));
+  const expected = expectedJuryChessCheckoutCtas.get(route) ?? [];
+  juryChessCheckoutCtaCount += actual.length;
+  if (actual.length !== expected.length || actual.some((href, index) => href !== expected[index])) {
+    failures.push(`${route}: Jury Chess checkout CTAs do not match the attribution contract; expected ${JSON.stringify(expected)}, found ${JSON.stringify(actual)}`);
+  }
+}
+if (juryChessCheckoutCtaCount !== 10) failures.push(`expected 10 Jury Chess checkout CTAs, found ${juryChessCheckoutCtaCount}`);
+
 if (!existsSync(path.join(root, 'favicon.svg'))) failures.push('favicon.svg missing');
 if (failures.length) {
   console.error(`Site validation failed (${failures.length}):\n${failures.join('\n')}`);
