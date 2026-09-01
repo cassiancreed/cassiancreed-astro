@@ -140,6 +140,46 @@ test('missing parent gtag does not mark a converted frame dispatched', () => {
   assert.equal(frame.dataset.nepSignupFired, undefined);
 });
 
+test('blocked localStorage getter does not abort iframe attribution', () => {
+  const frame = new MockFrame({
+    attrs: { src: 'https://subscribe-forms.beehiiv.com/v3/forms/storage-blocked' },
+    resultUrl: 'https://cassiancreed.com/?subscribed=1',
+  });
+  const events = [];
+  const document = {
+    querySelectorAll: () => [frame],
+    addEventListener() {},
+  };
+  const window = {
+    location: new URL('https://cassiancreed.com/post/example/'),
+    gtag: (...args) => events.push(args),
+  };
+  Object.defineProperty(window, 'localStorage', {
+    get() { throw new DOMException('Blocked', 'SecurityError'); },
+  });
+  window.top = window;
+
+  assert.doesNotThrow(() => initBeehiivParentSignup({ window, document, now: () => 1_000_000 }));
+  frame.dispatchLoad();
+  assert.equal(events.length, 1);
+  assert.equal(events[0][2].form_id, 'storage-blocked');
+});
+
+test('product links never create fallback signup markers', () => {
+  const storage = new MemoryStorage();
+  const source = harness({ storage });
+  const product = {
+    href: 'https://cassiancreed.beehiiv.com/products/jury-chess?utm_campaign=book',
+    dataset: {},
+    closest: () => product,
+  };
+  source.listeners.get('click')({ target: product });
+  assert.equal(storage.getItem('nep_signup_pending_v1'), null);
+
+  const result = harness({ href: 'https://cassiancreed.com/?subscribed=1', storage });
+  assert.equal(result.events.length, 0);
+});
+
 test('fallback marker is one-use; direct and reloaded result URLs emit zero', () => {
   const direct = harness({ href: 'https://cassiancreed.com/?subscribed=1' });
   assert.equal(direct.events.length, 0);
@@ -158,6 +198,32 @@ test('fallback marker is one-use; direct and reloaded result URLs emit zero', ()
   assert.equal(result.events[0][2].cta_id, 'fallback_cta');
   const reload = harness({ href: 'https://cassiancreed.com/?subscribed=1', storage });
   assert.equal(reload.events.length, 0);
+});
+
+test('malformed, nonfinite, future, and expired fallback markers emit zero', () => {
+  const markers = [
+    { label: 'malformed', createdAt: 'not-a-number' },
+    { label: 'nonfinite', rawCreatedAt: '1e400' },
+    { label: 'future', createdAt: 1_000_001 },
+    { label: 'expired', createdAt: -800_001 },
+  ];
+
+  for (const marker of markers) {
+    const storage = new MemoryStorage();
+    const meta = JSON.stringify({
+      conversion_page: '/post/example/',
+      cta_id: 'fallback_cta',
+      form_id: 'fallback-form',
+      offer_id: 'guide',
+      capture_offer: 'fallback_campaign',
+    });
+    const createdAt = marker.rawCreatedAt ?? JSON.stringify(marker.createdAt);
+    storage.setItem('nep_signup_pending_v1', `{"created_at":${createdAt},"meta":${meta}}`);
+
+    const result = harness({ href: 'https://cassiancreed.com/?subscribed=1', storage });
+    assert.equal(result.events.length, 0, marker.label);
+    assert.equal(storage.getItem('nep_signup_pending_v1'), null, marker.label);
+  }
 });
 
 test('source invariant leaves one signup writer and preserves diagnostics', async () => {

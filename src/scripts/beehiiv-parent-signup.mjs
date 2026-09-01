@@ -15,7 +15,10 @@ export function initBeehiivParentSignup(options = {}) {
   const win = options.window || window;
   const doc = options.document || document;
   const now = options.now || (() => Date.now());
-  const storage = options.storage === undefined ? win.localStorage : options.storage;
+  let storage = options.storage;
+  if (storage === undefined) {
+    try { storage = win.localStorage; } catch { storage = null; }
+  }
 
   function metadata(element, rawUrl) {
     const url = parseUrl(rawUrl, win.location.href);
@@ -94,8 +97,12 @@ export function initBeehiivParentSignup(options = {}) {
   if (win.top === win && isBeehiivSignupResult(win.location.href, win.location.origin, win.location.href)) {
     let pending = null;
     try { pending = JSON.parse(storage?.getItem(PENDING_KEY) || 'null'); } catch {}
-    const age = pending ? now() - pending.created_at : -1;
-    if (!pending || !pending.meta || age < 0 || age > PENDING_TTL_MS) {
+    const createdAt = pending?.created_at;
+    const checkedAt = now();
+    const age = typeof createdAt === 'number' && Number.isFinite(createdAt) && Number.isFinite(checkedAt)
+      ? checkedAt - createdAt
+      : Number.NaN;
+    if (!pending || !pending.meta || !Number.isFinite(age) || age < 0 || age > PENDING_TTL_MS) {
       try { storage?.removeItem(PENDING_KEY); } catch {}
     } else if (fireSignup(pending.meta)) {
       try { storage?.removeItem(PENDING_KEY); } catch {}
