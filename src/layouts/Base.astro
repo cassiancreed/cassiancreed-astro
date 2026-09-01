@@ -342,7 +342,8 @@ if(s&&s.href&&s.href.indexOf('cassiancreed.beehiiv.com')!==-1&&s.href.indexOf('/
 if(typeof gtag!=='undefined'){gtag('event','capture_outbound',{link_url:s.href,method:'beehiiv'});}
 }
 });
-    // Beehiiv buy tracking — fires on any beehiiv.com product link click
+    // Beehiiv product outbound tracking. A click leaves this site for a product
+    // page; it does not prove that Beehiiv checkout has begun.
     document.addEventListener('click',function(e){
       var a=e.target.closest('a');
       if(a&&a.href&&a.href.includes('cassiancreed.beehiiv.com/products/')){
@@ -353,7 +354,6 @@ if(typeof gtag!=='undefined'){gtag('event','capture_outbound',{link_url:s.href,m
             book_key:a.dataset.bookKey||'(not_set)',
             cta_placement:a.dataset.ctaPlacement||'(not_set)'
           });
-          gtag('event','begin_checkout',{currency:'USD'});
         }
       }
     });
