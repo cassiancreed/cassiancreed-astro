@@ -3,6 +3,7 @@ title: "This Week in Court: Five Major Criminal Cases to Watch, August 30–Sept
 seoTitle: "This Week in Court: Clancy, Davis, and Major Cases Watch"
 description: "A victim-first look at five major criminal cases from August 30–September 5, 2026, including Lindsay Clancy's deliberations and the Tupac Shakur murder trial."
 pubDate: 2026-08-30
+updatedDate: 2026-09-01
 tag: Case Files
 featured: false
 capture: "jury"
@@ -15,6 +16,12 @@ relatedBook:
 <div class="status-box" style="border:1px solid var(--rule,#e4e0d9);border-left:4px solid var(--accent,#b91c1c);background:var(--card,#faf9f7);padding:1rem 1.25rem;margin:1.5rem 0;border-radius:6px;font-size:.95rem">
 <strong>Content advisory:</strong> This briefing discusses the deaths of children and allegations of murder. It contains no graphic imagery. Please take care while reading.
 </div>
+
+## Current postscript — September 1, 2026
+
+This briefing preserves what was known at its August 29 reporting cutoff. Tupac Shakur was 25 when he was killed in Las Vegas in 1996. On August 31, a Clark County jury found Duane “Keffe D” Davis guilty of **first-degree murder with the use of a deadly weapon**. Prosecutors did not contend that Davis personally fired the fatal shots; they argued that he was criminally responsible under Nevada's principal-liability law. The exact verdict form and jury instructions were not publicly available in the sources reviewed, so the linked explainer describes [NRS § 195.020](https://www.leg.state.nv.us/nrs/nrs-195.html#NRS195Sec020) as general Nevada law rather than as the jury's verified instruction. Sentencing is set for October 13, 2026. No hearing time has been publicly verified, and no sentence has been imposed.
+
+Prosecutors said they would dismiss the separate gang-enhancement allegation because of witness-logistics problems; no written dismissal order or docket entry was reviewed for this postscript. Davis stated that he intends to appeal. The period for direct appeal remains open, and no notice of appeal was verified as of the September 1 factual cutoff. [Read the current principal-liability explainer and case status](/post/tupac-shakur-keffe-d-charged-not-shooter/).
 
 Five major criminal proceedings move forward this week across the United States. Each case involves gravity and significant public interest, but each sits at a different stage of the judicial process.
 
@@ -153,6 +160,10 @@ If one of these legal stages deserves a deeper explainer, leave the case name in
 - [Massachusetts Trial Court, Plymouth County daily list for August 31, 2026](https://www.masscourts.org/reports/DailyList_Site1186.pdf)
 - [NBC Connecticut, Clancy deliberations and August 31 resumption](https://www.nbcconnecticut.com/news/national-international/lindsay-clancy-verdict-watch-jury-deliberations/3769550/)
 - [Associated Press, Davis defense rests and closing arguments are scheduled](https://apnews.com/article/tupac-shakur-duane-keffe-d-davis-01cf59fb7a4d9c4bb974e584bb4676f0)
+- [Associated Press, Davis verdict and prosecution theory](https://apnews.com/article/tupac-shakur-trial-las-vegas-duane-davis-0b0b080d73f91cd122b6dd438e5bbb80)
+- [Court TV, Davis verdict, sentencing date, gang-allegation statement, and announced appeal](https://www.courttv.com/news/duane-keffe-d-davis-says-id-like-to-have-my-stuff-back-after-jury-convicts-him-of-murdering-tupac/)
+- [News 3 Las Vegas, Davis verdict and October 13 sentencing date](https://news3lv.com/news/local/jury-closing-arguments-tupac-shakur-murder-trial-duane-davis-keffe-d-las-vegas-clark-county-nevada-court-livestream)
+- [Nevada Legislature, NRS § 195.020](https://www.leg.state.nv.us/nrs/nrs-195.html#NRS195Sec020)
 - [U.S. District Court, Central District of California trial calendar](https://apps.cacd.uscourts.gov/JpsApi/File/75d7eb18-dc9f-4ce6-cb0b-08defd365623)
 - [Los Angeles County District Attorney, charges in the Celeste Rivas Hernandez case](https://da.lacounty.gov/about/inside-LADA/singer-d4vd-charged-capital-murder-14-year-old-girl)
 - [Utah County Attorney, September 1 preliminary-hearing argument notice](https://atty.utahcounty.gov/media/ckpr/135)
