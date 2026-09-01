@@ -1,72 +1,95 @@
 ---
-title: "Why Keffe D Can Be Charged Without Being the Shooter"
-seoTitle: "Why Keffe D Can Be Charged Without Being the Shooter"
-description: "Nevada law can treat an alleged aider or encourager as a principal. What prosecutors still must prove in the pending Duane Davis case."
+title: "Duane Davis Convicted in Tupac Shakur Killing: Principal Liability Explained"
+seoTitle: "Duane Davis Conviction: Nevada Principal Liability"
+description: "A Nevada jury convicted Duane “Keffe D” Davis of first-degree murder with a deadly weapon. What principal liability meant and what happens next."
 pubDate: 2026-08-06
-updatedDate: 2026-08-10
+updatedDate: 2026-09-01
 tag: "Explainers"
 featured: false
 victim: "Tupac Shakur"
 incidentDate: "September 7, 1996"
 location: "Las Vegas, Nevada"
 jurisdiction: "Clark County, Nevada"
-status: "Pending trial"
+status: "Convicted August 31, 2026; sentencing set for October 13, 2026; no sentence imposed"
 ---
 
-Duane “Keffe D” Davis is charged in Nevada with murder in the 1996 death of Tupac Shakur. He has pleaded not guilty and is presumed innocent. The case remains pending, and hearing or trial dates can change. Check the [Cassian Creed court calendar](/court-calendar/) and the [Clark County court’s case and calendar inquiry](https://www.clarkcountycourts.us/departments/clerk/case-calendar-inquiry/) for current scheduling.
+Tupac Shakur was 25 when he was killed in Las Vegas in 1996. On August 31, 2026, a Clark County jury found Duane “Keffe D” Davis guilty of one count of first-degree murder with a deadly weapon in Shakur’s killing.
 
-The central legal point is narrower than much of the coverage suggests: Nevada law does not require the state to prove that a defendant personally fired the fatal shot in every murder prosecution. It does require the state to prove the charged defendant’s criminal responsibility beyond a reasonable doubt.
+Prosecutors did not allege that Davis personally fired the fatal shots. They argued that he was criminally responsible for the killing under Nevada’s principal-liability law. The jury returned a guilty verdict after hearing the prosecution’s evidence and the defense’s challenges to it.
+
+After the verdict, prosecutors announced that they would not pursue the separate gang enhancement because of witness-logistics problems. Judge Carli Kierny set sentencing for October 13, 2026. No hearing time has been publicly verified, and no sentence has been imposed.
+
+Davis stated in court that he intends to appeal. That is an announced intention, not a filed appeal. Check the [Cassian Creed court calendar](/court-calendar/) and the [Clark County court’s case and calendar inquiry](https://www.clarkcountycourts.us/departments/clerk/case-calendar-inquiry/) for the current case status.
 
 ## What Nevada’s principal-liability law says
 
 [Nevada Revised Statutes § 195.020](https://www.leg.state.nv.us/nrs/nrs-195.html#NRS195Sec020) provides that a person who directly commits a crime—or who aids, abets, counsels, encourages, hires, commands, induces, or otherwise procures its commission—may be prosecuted as a principal.
 
-That rule does not make presence, association, or a prosecution label enough. Nor does an allegation that someone supplied a weapon automatically establish murder liability. The jury must decide whether the evidence proves the required conduct and state of mind beyond a reasonable doubt.
+That rule does not make presence, association, or an accusation enough. The state still must prove the defendant’s legally sufficient participation and required mental state beyond a reasonable doubt. In Davis’s case, the jury found the proof sufficient under the court’s instructions even though prosecutors did not identify him as the person who fired the fatal shots.
 
-## What the state must prove
+## What the verdict established—and what it did not
 
-The prosecution’s theory is an allegation, not an established fact. Prosecutors must connect Davis to the charged offense with admissible evidence and prove every required element. Nevada’s murder statute, [NRS § 200.030](https://www.leg.state.nv.us/nrs/nrs-200.html#NRS200Sec030), defines first-degree murder and its penalties. A separate statute, [NRS § 193.165](https://www.leg.state.nv.us/nrs/nrs-193.html#NRS193Sec165), addresses an additional penalty for the use of a deadly weapon in specified circumstances.
+The jury found Davis guilty of one count of first-degree murder with a deadly weapon. Nevada’s murder statute, [NRS § 200.030](https://www.leg.state.nv.us/nrs/nrs-200.html#NRS200Sec030), defines first-degree murder and its penalties. [NRS § 193.165](https://www.leg.state.nv.us/nrs/nrs-193.html#NRS193Sec165) addresses an additional penalty for the use of a deadly weapon in specified circumstances.
 
-The jury’s task is not to resolve every disputed story surrounding Shakur’s death. It is to decide whether the admissible evidence proves Davis’s charged criminal responsibility under the judge’s instructions.
+The verdict established Davis’s criminal responsibility for the count tried. It did not, by itself, identify who fired the shots or resolve every disputed historical account surrounding Shakur’s killing.
 
-## Why public statements are not self-proving
+The verdict also is not a sentence. Sentencing remains scheduled for October 13, and no publicly verified hearing time or sentence exists as of this update.
 
-Public interviews, a book, or other statements may be offered as evidence, but their existence does not settle the case. The parties can dispute whether a statement is authentic, accurate, voluntary, protected by an agreement, taken out of context, exaggerated, or independently corroborated. The judge decides admissibility questions; the jury generally decides the weight of admitted evidence.
+## How Davis’s public statements were used
 
-The age of the case also matters to how each side may test the record. Lost evidence, unavailable witnesses, faded memories, and the absence of a recovered weapon can affect the arguments. None of those circumstances automatically proves guilt or innocence.
+The Associated Press reported that prosecutors relied heavily on Davis’s repeated public statements, recorded interviews, and memoir. Prosecutors argued that those statements placed him inside the Cadillac from which the shots were fired and supported their account of his role.
 
-## The clean way to follow the trial
+The defense argued that the statements were dramatized or fabricated for profit and emphasized the absence of physical evidence connecting Davis to the shooting. The judge determined which evidence the jury could hear, and the jury assessed its weight.
 
-Separate four things whenever new coverage appears:
+The guilty verdict means the jury found sufficient proof for the charged count. It does not make every disputed statement or historical claim independently established fact.
 
-1. **The charge:** what the state has formally alleged.
-2. **The ruling:** what the judge has decided about procedure or admissibility.
-3. **The evidence:** what has actually been admitted in court.
-4. **The verdict:** what the jury ultimately finds, if the case reaches a verdict.
+## Separate the verdict, sentence, and any appeal
 
-Until a verdict, Davis remains presumed innocent. A charging theory explains why a prosecution is legally possible; it does not establish that the theory is true.
+The case now has four distinct stages:
+
+1. **Verdict:** The jury found Davis guilty of first-degree murder with a deadly weapon.
+2. **Separate enhancement:** Prosecutors announced that they would not pursue the separate gang enhancement.
+3. **Sentencing:** Set for October 13, 2026; no hearing time has been publicly verified and no sentence has been imposed.
+4. **Appeal:** Davis stated that he intends to appeal, but an intention is not a filed appeal.
+
+The correct present posture is convicted, sentencing pending.
 
 ## Frequently asked questions
 
 **Can someone be convicted of murder without firing the gun?**
 
-Potentially. Nevada law permits prosecution as a principal for specified forms of assistance or encouragement. The state must still prove the defendant’s own legally sufficient participation and the required mental state beyond a reasonable doubt.
+Yes. Nevada principal-liability law permits conviction when the state proves qualifying assistance, encouragement, command, or other legally sufficient participation and the required mental state beyond a reasonable doubt. In Davis’s case, prosecutors did not allege that he fired the fatal shots, and the jury nevertheless returned a guilty verdict.
 
 **Does supplying a weapon automatically prove murder?**
 
-No. That would be an allegation requiring proof and context. The jury must apply the law in the judge’s instructions to the admitted evidence.
+No. Supplying a weapon does not create automatic murder liability. A jury must consider the admitted evidence and find every required element under the court’s instructions. The Davis verdict reflects the jury’s decision on the full case presented, not a rule that one alleged act automatically proves murder.
 
-**Does a memoir or interview count as a confession?**
+**How were Davis’s memoir and interviews used at trial?**
 
-That characterization is disputed. Courts determine whether particular statements may be admitted, and jurors assess the meaning and weight of statements they are allowed to hear.
+Prosecutors relied on Davis’s public statements and memoir as evidence of his involvement. The defense argued that those accounts were fictionalized or exaggerated for profit. The jury was responsible for deciding the weight of the admitted evidence.
 
-**Does the state have to identify the shooter?**
+**Did the verdict identify the shooter?**
 
-The precise proof required will depend on the charges, the evidence, and the jury instructions. Principal liability can apply to someone who did not personally commit every physical act, but the state must still prove the charged defendant’s responsibility beyond a reasonable doubt.
+No public verdict finding reviewed for this update identifies who fired the fatal shots. Nevada principal liability did not require the state to prove that Davis personally performed every physical act. The verdict established his criminal responsibility for the charged count.
 
-## Primary legal sources
+**Has Davis been sentenced?**
 
-- [Nevada Revised Statutes, Chapter 195](https://www.leg.state.nv.us/nrs/nrs-195.html)
-- [Nevada Revised Statutes, Chapter 200](https://www.leg.state.nv.us/nrs/nrs-200.html)
-- [Nevada Revised Statutes, Chapter 193](https://www.leg.state.nv.us/nrs/nrs-193.html)
+No. Judge Carli Kierny set sentencing for October 13, 2026. No hearing time has been publicly verified, and no sentence has been imposed.
+
+**What happened to the gang enhancement?**
+
+After the guilty verdict, prosecutors announced that they would not pursue the separate gang enhancement because of witness-logistics problems. Without a written docket entry or order, that should not be described as a formally dismissed enhancement.
+
+**Has Davis appealed?**
+
+Davis stated in court that he intends to appeal. Court TV reported that the judge explained that he would need to wait until after sentencing. No filed appeal was verified for this update.
+
+## Sources and primary law
+
+- [Nevada Revised Statutes § 195.020 — principals](https://www.leg.state.nv.us/nrs/nrs-195.html#NRS195Sec020)
+- [Nevada Revised Statutes § 200.030 — murder](https://www.leg.state.nv.us/nrs/nrs-200.html#NRS200Sec030)
+- [Nevada Revised Statutes § 193.165 — use of a deadly weapon](https://www.leg.state.nv.us/nrs/nrs-193.html#NRS193Sec165)
+- [Associated Press — verdict and trial evidence](https://apnews.com/article/tupac-shakur-trial-las-vegas-duane-davis-0b0b080d73f91cd122b6dd438e5bbb80)
+- [Court TV — enhancement decision, sentencing, and stated appeal intention](https://www.courttv.com/news/duane-keffe-d-davis-says-id-like-to-have-my-stuff-back-after-jury-convicts-him-of-murdering-tupac/)
+- [News 3 Las Vegas — verdict and October 13 sentencing setting](https://news3lv.com/news/local/jury-closing-arguments-tupac-shakur-murder-trial-duane-davis-keffe-d-las-vegas-clark-county-nevada-court-livestream)
 - [Clark County District Court case and calendar inquiry](https://www.clarkcountycourts.us/departments/clerk/case-calendar-inquiry/)
