@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import HomeCourtCalendar from '../components/HomeCourtCalendar.astro';
+import CaptureBlock from '../components/CaptureBlock.astro';
 
 import calendarTsv from '../data/court-calendar.tsv?raw';
 import { formatCalendarDate, parseCourtCalendar } from '../data/court-calendar-parser.mjs';
@@ -340,17 +341,8 @@ const jsonld = {
     </div>
   </section>
 
-  <section class="wrap cal-sec">
-    <div class="capture-cta" aria-label="Stay current on this court calendar and get the free case-reading guide">
-      <p class="capture-cta__eyebrow">Came here for a date?</p>
-      <h2 class="capture-cta__head">We&rsquo;ll keep you current on the calendar.</h2>
-      <p class="capture-cta__body">
-        Court dates move &mdash; and so does what a hearing actually settles. We&rsquo;ll send you <em>How to Read a Case Like the Court Does</em> &mdash; a plain-language framework for weighing evidence instead of guessing, and what a verdict really settles (and what it doesn&rsquo;t) &mdash; plus calendar updates when dates change. No weekly blast; unsubscribe anytime.
-      </p>
-      <a class="capture-cta__btn" href="/#free-guide">
-        Get the guide &amp; date updates
-      </a>
-    </div>
+  <section class="wrap cal-sec" id="court-updates">
+    <CaptureBlock offer="calendar" content="court_calendar_page" />
   </section>
 
   <section class="wrap cal-sec">
