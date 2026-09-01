@@ -17,17 +17,13 @@ relatedBook:
 <strong>Content advisory:</strong> This briefing discusses the deaths of children and allegations of murder. It contains no graphic imagery. Please take care while reading.
 </div>
 
-## Current postscript — September 1, 2026
-
-This briefing preserves what was known at its August 29 reporting cutoff. Tupac Shakur was 25 when he was killed in Las Vegas in 1996. On August 31, a Clark County jury found Duane “Keffe D” Davis guilty of **first-degree murder with the use of a deadly weapon**. Prosecutors did not contend that Davis personally fired the fatal shots; they argued that he was criminally responsible under Nevada's principal-liability law. The exact verdict form and jury instructions were not publicly available in the sources reviewed, so the linked explainer describes [NRS § 195.020](https://www.leg.state.nv.us/nrs/nrs-195.html#NRS195Sec020) as general Nevada law rather than as the jury's verified instruction. Sentencing is set for October 13, 2026. No hearing time has been publicly verified, and no sentence has been imposed.
-
-Prosecutors said they would dismiss the separate gang-enhancement allegation because of witness-logistics problems; no written dismissal order or docket entry was reviewed for this postscript. Davis stated that he intends to appeal. The period for direct appeal remains open, and no notice of appeal was verified as of the September 1 factual cutoff. [Read the current principal-liability explainer and case status](/post/tupac-shakur-keffe-d-charged-not-shooter/).
-
 Five major criminal proceedings move forward this week across the United States. Each case involves gravity and significant public interest, but each sits at a different stage of the judicial process.
 
 This week, the legal landscape is defined by five distinct tasks: a jury's final deliberations, closing arguments, the continued presentation of federal evidence, an arraignment after a judge held a defendant to answer, and a judicial determination of probable cause.
 
 This briefing covers court activity scheduled from Sunday, August 30, through Saturday, September 5, 2026. The reporting cutoff is Saturday afternoon, August 29. Court schedules are fluid—particularly when juries are deliberating—so dates and times may change. Every defendant discussed below faces unresolved charges and is presumed innocent. Allegations and prosecution claims are not established facts unless admitted evidence or a final judgment establishes them.
+
+**Update note — September 1, 2026:** This briefing is preserved as an August 29 snapshot. The Davis section now begins with a post-verdict update; the original preview remains below for historical context.
 
 ## Lindsay Clancy: Jury Deliberations Resume in Massachusetts
 
@@ -55,7 +51,13 @@ Deliberation length does not reliably predict a verdict, a deadlock, or a mistri
 
 ## Duane “Keffe D” Davis: Closing Arguments in Nevada
 
-### Current posture
+### Verdict postscript — September 1, 2026
+
+Tupac Shakur was killed in Las Vegas in 1996. On August 31, a Clark County jury found Duane “Keffe D” Davis guilty of **first-degree murder with the use of a deadly weapon**. Prosecutors did not contend that Davis personally fired the fatal shots; they argued that he orchestrated the killing and was criminally responsible under their principal-liability theory. The exact verdict form and jury instructions were not publicly available in the sources reviewed, so this postscript does not attribute a specific instruction to the jury. Sentencing is set for October 13, 2026. No hearing time has been publicly verified, and no sentence has been imposed.
+
+Prosecutors said they would dismiss the separate gang-enhancement allegation because of witness-logistics problems; no written dismissal order or docket entry was reviewed for this postscript. Davis stated that he intends to appeal; this postscript does not characterize an appeal as pending.
+
+### Original briefing posture — August 29 reporting cutoff
 
 The trial of Duane “Keffe D” Davis in Clark County, Nevada, concerning Tupac Shakur's 1996 death is moving to closing arguments. The defense rested Thursday after calling three witnesses. Davis did not testify, as is his constitutional right.
 
@@ -71,7 +73,7 @@ Closing arguments are scheduled for **Monday, August 31**. The start time has no
 - **The parties' framing:** How each side interprets the admitted evidence.
 - **Start of deliberations:** The point at which the case is formally submitted to the jury.
 
-Closing arguments are not evidence. Jurors also may not treat Davis's decision not to testify as evidence or as an inference of guilt. Read more about [why Davis is charged even though prosecutors do not call him the shooter](/post/tupac-shakur-keffe-d-charged-not-shooter/).
+Closing arguments are not evidence. Jurors also may not treat Davis's decision not to testify as evidence or as an inference of guilt. Read more about [how Nevada principal liability applied in the Davis case](/post/tupac-shakur-keffe-d-charged-not-shooter/).
 
 ## Durk Banks, Known as Lil Durk: Evidence and Credibility in Federal Court
 
@@ -163,7 +165,6 @@ If one of these legal stages deserves a deeper explainer, leave the case name in
 - [Associated Press, Davis verdict and prosecution theory](https://apnews.com/article/tupac-shakur-trial-las-vegas-duane-davis-0b0b080d73f91cd122b6dd438e5bbb80)
 - [Court TV, Davis verdict, sentencing date, gang-allegation statement, and announced appeal](https://www.courttv.com/news/duane-keffe-d-davis-says-id-like-to-have-my-stuff-back-after-jury-convicts-him-of-murdering-tupac/)
 - [News 3 Las Vegas, Davis verdict and October 13 sentencing date](https://news3lv.com/news/local/jury-closing-arguments-tupac-shakur-murder-trial-duane-davis-keffe-d-las-vegas-clark-county-nevada-court-livestream)
-- [Nevada Legislature, NRS § 195.020](https://www.leg.state.nv.us/nrs/nrs-195.html#NRS195Sec020)
 - [U.S. District Court, Central District of California trial calendar](https://apps.cacd.uscourts.gov/JpsApi/File/75d7eb18-dc9f-4ce6-cb0b-08defd365623)
 - [Los Angeles County District Attorney, charges in the Celeste Rivas Hernandez case](https://da.lacounty.gov/about/inside-LADA/singer-d4vd-charged-capital-murder-14-year-old-girl)
 - [Utah County Attorney, September 1 preliminary-hearing argument notice](https://atty.utahcounty.gov/media/ckpr/135)
