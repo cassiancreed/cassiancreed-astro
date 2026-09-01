@@ -46,6 +46,12 @@ const isCase = post.data.tag === 'Case Files';
 const pageUrl = new URL(Astro.url.pathname, Astro.site).href;
 const mk = (m) => encodeURIComponent(pageUrl + '?utm_source=' + m + '&utm_medium=social_share');
 const shareT = encodeURIComponent(post.data.title);
+const postDateFormatter = new Intl.DateTimeFormat('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+  timeZone: 'UTC',
+});
 const articleNode = {
   "@type":"Article",
   "headline": post.data.title,
@@ -84,7 +90,7 @@ const jsonld = faqNode
   <article class="post">
     <p class="evidence evidence--accent">{post.data.tag}</p>
     <h1>{post.data.title}</h1>
-<p class="post__dates"><time datetime={post.data.pubDate.toISOString().slice(0,10)}>Published {post.data.pubDate.toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'})}</time>{post.data.updatedDate && <> · <time datetime={post.data.updatedDate.toISOString().slice(0,10)}>Updated {post.data.updatedDate.toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'})}</time></>}</p>
+<p class="post__dates"><time datetime={post.data.pubDate.toISOString().slice(0,10)}>Published {postDateFormatter.format(post.data.pubDate)}</time>{post.data.updatedDate && <> · <time datetime={post.data.updatedDate.toISOString().slice(0,10)}>Updated {postDateFormatter.format(post.data.updatedDate)}</time></>}</p>
     {post.data.archived && (
       <aside class="post__archive" aria-label="Archive notice">
         <strong>Archive notice.</strong> {post.data.archiveNote ?? 'This page is preserved for context and is not part of current reporting or promotion.'}
