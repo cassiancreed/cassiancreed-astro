@@ -31,7 +31,7 @@ The exact verdict form and jury instructions were not publicly available in the 
 
 ## What the verdict established—and what it did not
 
-The jury found Davis guilty of one count of first-degree murder with the use of a deadly weapon. The case concerns conduct from 1996. [NRS § 193.070](https://www.leg.state.nv.us/nrs/nrs-193.html#NRS193Sec070) provides that a past offense is governed and punished under the law existing when it was committed. This article therefore does not use current penalty provisions to calculate or characterize Davis’s possible sentence.
+The jury found Davis guilty of one count of first-degree murder with the use of a deadly weapon. The case concerns conduct from 1996. Because the exact verdict form, jury instructions, and controlling 1996 penalty provisions were not publicly available in the sources reviewed, this article does not calculate or characterize Davis’s possible sentence.
 
 The verdict established Davis’s criminal responsibility for the count tried. Prosecutors did not contend that he fired the fatal shots, and no public verdict finding reviewed for this update identifies who did. The verdict does not resolve every disputed historical account surrounding Shakur’s killing.
 
@@ -89,7 +89,6 @@ Davis stated in court that he intends to appeal. No notice of appeal was verifie
 ## Sources and primary law
 
 - [Nevada Revised Statutes § 195.020 — principals](https://www.leg.state.nv.us/nrs/nrs-195.html#NRS195Sec020)
-- [Nevada Revised Statutes § 193.070 — effect upon past offenses](https://www.leg.state.nv.us/nrs/nrs-193.html#NRS193Sec070)
 - [Nevada Rule of Appellate Procedure 4 — criminal notice-of-appeal timing](https://nvcourts.gov/__data/assets/pdf_file/0014/40721/NRAP_4_-_Criminal_Sections_3-14-23_CLEAN.pdf)
 - [Associated Press — verdict and trial evidence](https://apnews.com/article/tupac-shakur-trial-las-vegas-duane-davis-0b0b080d73f91cd122b6dd438e5bbb80)
 - [Court TV — enhancement decision, sentencing, and stated appeal intention](https://www.courttv.com/news/duane-keffe-d-davis-says-id-like-to-have-my-stuff-back-after-jury-convicts-him-of-murdering-tupac/)
