@@ -110,6 +110,88 @@ for (const [route, file] of routes) {
 }
 if (juryChessCheckoutCtaCount !== 10) failures.push(`expected 10 Jury Chess checkout CTAs, found ${juryChessCheckoutCtaCount}`);
 
+const beehiivProductUrlPrefix = 'https://cassiancreed.beehiiv.com/products/';
+const expectedProductMetadata = new Map([
+  ['/books/', [
+    {
+      href: 'https://cassiancreed.beehiiv.com/products/lindsay-clancy-trial-book?utm_source=cassiancreed.com&utm_medium=books_page&utm_campaign=lindsay_clancy_trial_book',
+      bookKey: 'lindsay-clancy-trial-book',
+      placement: 'books_page_primary',
+    },
+    {
+      href: `${juryChessProductUrl}?utm_source=cassiancreed.com&utm_medium=books_page_cross_sell&utm_campaign=clancy_to_jury_chess`,
+      bookKey: 'jury-chess',
+      placement: 'books_page_cross_sell',
+    },
+    {
+      href: `${juryChessProductUrl}?utm_source=cassiancreed.com&utm_medium=books_page&utm_campaign=jury_chess`,
+      bookKey: 'jury-chess',
+      placement: 'books_page_primary',
+    },
+    {
+      href: 'https://cassiancreed.beehiiv.com/products/voir-dire-the-free-guide',
+      bookKey: 'not_applicable',
+      placement: 'books_page_free_guide',
+    },
+  ]],
+  ['/court-calendar/', [
+    {
+      href: 'https://cassiancreed.beehiiv.com/products/case-chess-erin-patterson',
+      bookKey: 'case-chess-erin-patterson',
+      placement: 'court_calendar_case_guide',
+    },
+  ]],
+  ['/international-court-watch/', [
+    {
+      href: 'https://cassiancreed.beehiiv.com/products/case-chess-erin-patterson',
+      bookKey: 'case-chess-erin-patterson',
+      placement: 'international_watch_case_guide',
+    },
+  ]],
+]);
+
+const attributesFromAnchor = (anchor) => Object.fromEntries(
+  [...anchor.matchAll(/\b([\w:-]+)="([^"]*)"/g)].map(([, name, value]) => [name, value.replace(/&amp;/g, '&')]),
+);
+
+let beehiivProductAnchorCount = 0;
+let notApplicableBookKeyCount = 0;
+for (const [route, file] of routes) {
+  const html = await readFile(file, 'utf8');
+  const productAnchors = [...html.matchAll(/<a\b[^>]*>/gi)]
+    .map(([anchor]) => attributesFromAnchor(anchor))
+    .filter(({ href = '' }) => href.startsWith(beehiivProductUrlPrefix));
+  beehiivProductAnchorCount += productAnchors.length;
+
+  for (const anchor of productAnchors) {
+    const bookKey = anchor['data-book-key'];
+    const placement = anchor['data-cta-placement'];
+    if (!bookKey || bookKey === '(not_set)' || !placement || placement === '(not_set)') {
+      failures.push(`${route}: Beehiiv product CTA is missing analytics metadata for ${anchor.href}`);
+    }
+    if (bookKey === 'not_applicable') {
+      notApplicableBookKeyCount += 1;
+      if (anchor.href !== 'https://cassiancreed.beehiiv.com/products/voir-dire-the-free-guide') {
+        failures.push(`${route}: data-book-key="not_applicable" is reserved for the free Voir Dire guide`);
+      }
+    }
+  }
+
+  for (const expected of expectedProductMetadata.get(route) ?? []) {
+    const matches = productAnchors.filter(({ href }) => href === expected.href);
+    if (matches.length !== 1) {
+      failures.push(`${route}: expected one product CTA for ${expected.href}, found ${matches.length}`);
+      continue;
+    }
+    const [actual] = matches;
+    if (actual['data-book-key'] !== expected.bookKey || actual['data-cta-placement'] !== expected.placement) {
+      failures.push(`${route}: product CTA metadata mismatch for ${expected.href}; expected ${expected.bookKey}/${expected.placement}, found ${actual['data-book-key']}/${actual['data-cta-placement']}`);
+    }
+  }
+}
+if (beehiivProductAnchorCount !== 14) failures.push(`expected 14 Beehiiv product CTAs, found ${beehiivProductAnchorCount}`);
+if (notApplicableBookKeyCount !== 1) failures.push(`expected one non-book Beehiiv product CTA, found ${notApplicableBookKeyCount}`);
+
 if (!existsSync(path.join(root, 'favicon.svg'))) failures.push('favicon.svg missing');
 if (failures.length) {
   console.error(`Site validation failed (${failures.length}):\n${failures.join('\n')}`);
