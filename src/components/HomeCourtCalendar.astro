@@ -26,6 +26,8 @@ const CASE_BOOKS = new Map([
     cover: '/covers/lindsay-clancy-trial.jpg',
     coverAlt: 'Book cover of The Lindsay Clancy Trial by Cassian Creed, showing chess pieces on a dark chessboard',
     url: 'https://cassiancreed.beehiiv.com/products/lindsay-clancy-trial-book?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=lindsay_clancy_trial_book&utm_content=selected_case_banner',
+    bookKey: 'lindsay-clancy-trial-book',
+    placement: 'calendar_selected_case_banner',
   }],
   ['clancy-trial', {
     title: 'The Lindsay Clancy Trial',
@@ -36,6 +38,8 @@ const CASE_BOOKS = new Map([
     cover: '/covers/lindsay-clancy-trial.jpg',
     coverAlt: 'Book cover of The Lindsay Clancy Trial by Cassian Creed, showing chess pieces on a dark chessboard',
     url: 'https://cassiancreed.beehiiv.com/products/lindsay-clancy-trial-book?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=lindsay_clancy_trial_book&utm_content=selected_case_banner',
+    bookKey: 'lindsay-clancy-trial-book',
+    placement: 'calendar_selected_case_banner',
   }],
 ]);
 const calendar = parseCourtCalendar(calendarTsv);
@@ -262,7 +266,7 @@ const visibleDayEntries = (entries) => {
                   <h5>{entry.book.title}</h5>
                   <p class="home-calendar__book-tagline">{entry.book.tagline}</p>
                   <p class="home-calendar__book-offer"><strong>{entry.book.price}</strong><span>{entry.book.format}</span></p>
-                  <a href={entry.book.url} target="_blank" rel="noopener noreferrer">Get the trial guide <span aria-hidden="true">&rarr;</span></a>
+                  <a href={entry.book.url} target="_blank" rel="noopener noreferrer" data-book-key={entry.book.bookKey} data-cta-placement={entry.book.placement}>Get the trial guide <span aria-hidden="true">&rarr;</span></a>
                 </div>
               </aside>
             )}
@@ -407,6 +411,8 @@ const visibleDayEntries = (entries) => {
       cta.href = book.url;
       cta.target = '_blank';
       cta.rel = 'noopener noreferrer';
+      cta.dataset.bookKey = book.bookKey;
+      cta.dataset.ctaPlacement = book.placement;
       cta.textContent = 'Get the trial guide →';
       copy.append(eyebrow, title, tagline, offer, cta);
       promo.append(cover, copy);
