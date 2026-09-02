@@ -105,7 +105,7 @@ const navItems = [
   // worthiness review. /the-trail/ now 301s (see netlify.toml).
   { href: '/books/',               label: 'Jury Chess' },
   { href: '/about/',               label: 'About' },
-  { href: '/#free-guide',           label: 'Court Updates', cta: true },
+  { href: '/court-calendar/#court-updates', label: 'Court Updates', cta: true },
 ];
 const desktopPrimary = [
   { href: '/court-calendar/', label: 'Court Calendar' },
@@ -113,7 +113,7 @@ const desktopPrimary = [
   { href: '/genealogy/', label: 'Genealogy' },
   { href: '/case-files/', label: 'Case Files' },
   { href: '/books/', label: 'Jury Chess' },
-  { href: '/#free-guide', label: 'Court Updates', cta: true },
+  { href: '/court-calendar/#court-updates', label: 'Court Updates', cta: true },
 ];
 const exploreItems = [
   { href: '/start-here/', label: 'Start Here' },
@@ -124,21 +124,9 @@ const exploreItems = [
   { href: '/ai-al/', label: 'A.I. AL' },
   { href: '/about/', label: 'About' },
 ];
-// NEP-CWK-IRASEMA-CONVERSION-RESCUE-0726 — CTA ROUTE REPAIR.
-// On a post page the primary email CTA already lives on THIS page at
-// `#free-guide` (see post/[slug].astro), but the nav item routed the visitor
-// OFF the page to /books/#free-guide — i.e. the one always-visible, above-the-
-// fold path to the primary conversion pushed people away from the case they
-// came to read. On /post/* the item now targets the on-page anchor.
-// No wording changed; link target only.
-const isPostPage = navPath.startsWith('/post/');
-const resolvedNav = navItems.map(i =>
-  (isPostPage && i.href === '/#free-guide') ? { ...i, href: '#free-guide' } : i
-);
-const resolveItem = (i) =>
-  (isPostPage && i.href === '/#free-guide') ? { ...i, href: '#free-guide' } : i;
-const resolvedDesktopPrimary = desktopPrimary.map(resolveItem);
-const resolvedExplore = exploreItems.map(resolveItem);
+const resolvedNav = navItems;
+const resolvedDesktopPrimary = desktopPrimary;
+const resolvedExplore = exploreItems;
 // Standalone pages that are not themselves a nav item highlight their nav
 // CATEGORY, so no page ever renders with zero highlighted nav item
 // (NEP-FIX-CWK-0718L). Add new standalone pages here when they ship.
@@ -220,13 +208,24 @@ const exploreActive = resolvedExplore.some(i => navActive(i.href));
   <script type="application/ld+json" set:html={JSON.stringify(orgLd)} />
   <script type="application/ld+json" set:html={JSON.stringify(personLd)} />
   {jsonld && <script type="application/ld+json" set:html={JSON.stringify(jsonld)} />}
-  <!-- Google Analytics 4 (property: Neural Edge Publishing) -->
-  <script async is:inline src="https://www.googletagmanager.com/gtag/js?id=G-5D0DX6WFW4"></script>
+  <!-- Google Analytics 4 (property: Neural Edge Publishing).
+       Load only on canonical production hosts so branch/deploy previews do not
+       manufacture new users or contaminate retention cohorts. -->
   <script is:inline>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-5D0DX6WFW4');
+    (function () {
+      var isTopLevel = window.top === window;
+      if (!isTopLevel) return;
+      var host = location.hostname;
+      if (host !== 'cassiancreed.com' && host !== 'www.cassiancreed.com') return;
+      var loader = document.createElement('script');
+      loader.async = true;
+      loader.src = 'https://www.googletagmanager.com/gtag/js?id=G-5D0DX6WFW4';
+      document.head.appendChild(loader);
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function(){ window.dataLayer.push(arguments); };
+      window.gtag('js', new Date());
+      window.gtag('config', 'G-5D0DX6WFW4', { send_page_view: isTopLevel });
+    })();
   </script>
   <!-- ───────────────────────────────────────────────────────────────────────
        ORIGIN CAPTURE — NEP-CWK-IRASEMA-CONVERSION-RESCUE-0726
@@ -357,46 +356,12 @@ if(typeof gtag!=='undefined'){gtag('event','capture_outbound',{link_url:s.href,m
         }
       }
     });
-    // GA4 sign_up — fires when Beehiiv redirects the top window to /?subscribed=1.
-    // DG5 (NEP-OPS-CWK-0719SP): the SAME signal also reveals the styled
-    // .capture__success panel and hides the now-redundant form + helper line,
-    // so returning subscribers see "You're in." instead of Beehiiv's raw
-    // in-iframe "Reference ID" text.
-    if(window.location.search.includes('subscribed=1')){
-      function fs(){
-        var frame=null, parentOrigin=window.NEP_ORIGIN||null;
-        try{
-          if(window.parent!==window){
-            frame=window.frameElement;
-            parentOrigin=window.parent.NEP_ORIGIN||parentOrigin;
-          }
-        }catch(e){}
-        var o=parentOrigin||{};
-        if(typeof gtag!=='undefined'){
-          gtag('event','sign_up',{
-            method:'beehiiv',
-            acquisition_source:o.s||'(direct)',
-            acquisition_medium:o.m||'(none)',
-            acquisition_campaign:o.c||'(none)',
-            acquisition_content:o.u||'(none)',
-            acquisition_term:o.k||'(none)',
-            acquisition_landing_page:o.p||'(unknown)',
-            conversion_page:frame&&frame.dataset.nepConversionPage||location.pathname,
-            cta_id:frame&&frame.dataset.nepCtaId||'(unknown)',
-            form_id:frame&&frame.dataset.nepFormId||'(unknown)',
-            offer_id:frame&&frame.dataset.nepOfferId||'(unknown)'
-          });
-        }
-        document.querySelectorAll('.capture__success').forEach(function(ok){
-          ok.hidden=false;
-          var cta=ok.closest('.capture-cta')||ok.parentNode;
-          if(cta){cta.querySelectorAll('.capture__embed-window,.capture__embed,.capture__fallback,.capture__helper').forEach(function(el){el.hidden=true;});}
-        });
-      }
-      if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',fs);}else{fs();}
-    }
   })();
   </script>
+<script>
+  import { initBeehiivParentSignup } from '../scripts/beehiiv-parent-signup.mjs';
+  initBeehiivParentSignup();
+</script>
 <script>
   document.addEventListener('click', function (e) {
     var a = e.target.closest && e.target.closest('.capture-cta a');
