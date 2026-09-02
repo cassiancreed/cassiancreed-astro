@@ -271,11 +271,17 @@ const visibleDayEntries = (entries) => {
             <div class="home-calendar__agenda-actions">
               {entry.link && <a href={entry.link}>{entry.linkText || 'Read the case'} &rarr;</a>}
               <a href={`/court-calendar/#${entry.id}`}>Calendar details &rarr;</a>
-              <button type="button" data-calendar-alert>Get court calendar updates</button>
-              {/* NEP-FIX-0824: the alert form lives in a JS-opened <dialog>. Without
-                  this no-JS anchor the calendar signup is unreachable when scripts
-                  fail or are blocked. */}
-              <noscript><a class="home-calendar__alert-noscript" href={CALENDAR_ALERT_URL} target="_blank" rel="noopener noreferrer">Get court calendar updates &rarr;</a></noscript>
+              {fullPage ? (
+                <a href="#court-updates">Get court calendar updates &rarr;</a>
+              ) : (
+                <>
+                  <button type="button" data-calendar-alert>Get court calendar updates</button>
+                  {/* NEP-FIX-0824: the alert form lives in a JS-opened <dialog>. Without
+                      this no-JS anchor the calendar signup is unreachable when scripts
+                      fail or are blocked. */}
+                  <noscript><a class="home-calendar__alert-noscript" href={CALENDAR_ALERT_URL} target="_blank" rel="noopener noreferrer">Get court calendar updates &rarr;</a></noscript>
+                </>
+              )}
             </div>
           </article>
         )) : <p class="home-calendar__empty">No tracked proceeding is currently scheduled for this date.</p>}
@@ -287,35 +293,43 @@ const visibleDayEntries = (entries) => {
   <script type="application/json" data-calendar-json set:html={JSON.stringify(clientEntries)}></script>
   <script type="application/json" data-calendar-search-json set:html={JSON.stringify(searchCases)}></script>
 
-  <dialog class="case-alert" data-calendar-alert-dialog aria-labelledby="calendar-alert-title">
-    <div class="case-alert__inner">
-      <form method="dialog" class="case-alert__close-form">
-        <button type="submit" class="case-alert__close" aria-label="Close court calendar updates form">&times;</button>
-      </form>
-      <p class="evidence evidence--accent">Calendar alerts</p>
-      <h2 id="calendar-alert-title">Get Court Calendar Updates</h2>
-      <p class="case-alert__copy">Get a short email when we change a court date, time, location, or phase. No free guide. No daily emails.</p>
-      <div class="case-alert__embed-window" data-case-alert-embed-window>
-        <iframe
-          class="case-alert__embed"
-          data-calendar-alert-form
-          data-form-base={`https://subscribe-forms.beehiiv.com/v3/forms/${CALENDAR_ALERT_FORM_ID}?utm_source=website&utm_medium=calendar_alert&utm_campaign=court_calendar_updates`}
-          title="Subscribe for court calendar updates"
-          loading="lazy"
-          scrolling="no"
-          frameborder="0"
-        ></iframe>
+  {!fullPage && (
+    <dialog class="case-alert" data-calendar-alert-dialog aria-labelledby="calendar-alert-title">
+      <div class="case-alert__inner">
+        <form method="dialog" class="case-alert__close-form">
+          <button type="submit" class="case-alert__close" aria-label="Close court calendar updates form">&times;</button>
+        </form>
+        <p class="evidence evidence--accent">Calendar alerts</p>
+        <h2 id="calendar-alert-title">Get Court Calendar Updates</h2>
+        <p class="case-alert__copy">Get a short email when we change a court date, time, location, or phase. No free guide. No daily emails.</p>
+        <div class="case-alert__embed-window" data-case-alert-embed-window>
+          <iframe
+            class="case-alert__embed"
+            data-calendar-alert-form
+            data-nep-campaign="court_calendar_updates"
+            data-nep-conversion-page={Astro.url.pathname}
+            data-nep-cta-id="court_calendar_alert"
+            data-nep-form-id={CALENDAR_ALERT_FORM_ID}
+            data-nep-offer-id="court_calendar_updates"
+            data-form-base={`https://subscribe-forms.beehiiv.com/v3/forms/${CALENDAR_ALERT_FORM_ID}?utm_source=website&utm_medium=calendar_alert&utm_campaign=court_calendar_updates`}
+            title="Subscribe for court calendar updates"
+            loading="lazy"
+            scrolling="no"
+            frameborder="0"
+          ></iframe>
+        </div>
+        <p class="case-alert__fallback">Form not loading? <a data-calendar-alert-fallback data-nep-campaign="court_calendar_updates" data-nep-conversion-page={Astro.url.pathname} data-nep-cta-id="court_calendar_alert_fallback" data-nep-form-id={CALENDAR_ALERT_FORM_ID} data-nep-offer-id="court_calendar_updates" href={`https://subscribe-forms.beehiiv.com/v3/forms/${CALENDAR_ALERT_FORM_ID}?utm_source=website&amp;utm_medium=calendar_alert&amp;utm_campaign=court_calendar_updates`} target="_blank" rel="noopener noreferrer">Get court calendar updates &rarr;</a></p>
+        <p class="case-alert__helper">You can unsubscribe from any email.</p>
+        <p class="case-alert__success" data-calendar-alert-success role="status" hidden><strong>You&rsquo;re on the list.</strong> Watch your inbox for court calendar updates.</p>
       </div>
-      <p class="case-alert__fallback">Form not loading? <a data-calendar-alert-fallback href={`https://subscribe-forms.beehiiv.com/v3/forms/${CALENDAR_ALERT_FORM_ID}?utm_source=website&amp;utm_medium=calendar_alert&amp;utm_campaign=court_calendar_updates`} target="_blank" rel="noopener noreferrer">Get court calendar updates &rarr;</a></p>
-      <p class="case-alert__helper">You can unsubscribe from any email.</p>
-      <p class="case-alert__success" data-calendar-alert-success role="status" hidden><strong>You&rsquo;re on the list.</strong> Watch your inbox for court calendar updates.</p>
-    </div>
-  </dialog>
+    </dialog>
+  )}
 </section>
 
 <script>
   const root = document.querySelector('[data-home-calendar]');
   if (root) {
+    const fullPage = root.classList.contains('home-calendar--full');
     const entries = JSON.parse(root.querySelector('[data-calendar-json]')?.textContent || '[]');
     const searchCases = JSON.parse(root.querySelector('[data-calendar-search-json]')?.textContent || '[]');
     const buildDate = root.getAttribute('data-build-date');
@@ -459,11 +473,15 @@ const visibleDayEntries = (entries) => {
         actions.className = 'home-calendar__agenda-actions';
         if (entry.link) actions.append(createActionLink(entry.link, entry.linkText || 'Read the case'));
         actions.append(createActionLink(`/court-calendar/#${entry.id}`, 'Calendar details'));
-        const alertButton = document.createElement('button');
-        alertButton.type = 'button';
-        alertButton.textContent = 'Get court calendar updates';
-        alertButton.addEventListener('click', openAlert);
-        actions.append(alertButton);
+        if (fullPage) {
+          actions.append(createActionLink('#court-updates', 'Get court calendar updates'));
+        } else {
+          const alertButton = document.createElement('button');
+          alertButton.type = 'button';
+          alertButton.textContent = 'Get court calendar updates';
+          alertButton.addEventListener('click', openAlert);
+          actions.append(alertButton);
+        }
         article.append(dateText);
         if (entry.timeStatus === 'tentative') article.append(tentative);
         article.append(title, type, status);
@@ -586,17 +604,19 @@ const visibleDayEntries = (entries) => {
         openSearchResult();
       }
     });
-    root.querySelectorAll('[data-calendar-alert]').forEach((button) => button.addEventListener('click', openAlert));
-    alertDialog?.addEventListener('click', (event) => {
-      if (event.target === alertDialog) alertDialog.close();
-    });
-    alertForm?.addEventListener('load', () => {
-      let href;
-      try { href = alertForm.contentWindow.location.href; } catch (error) { return; }
-      if (!href || !href.includes('subscribed=1')) return;
-      alertEmbedWindow.hidden = true;
-      alertSuccess.hidden = false;
-    });
+    if (!fullPage) {
+      root.querySelectorAll('[data-calendar-alert]').forEach((button) => button.addEventListener('click', openAlert));
+      alertDialog?.addEventListener('click', (event) => {
+        if (event.target === alertDialog) alertDialog.close();
+      });
+      alertForm?.addEventListener('load', () => {
+        let href;
+        try { href = alertForm.contentWindow.location.href; } catch (error) { return; }
+        if (!href || !href.includes('subscribed=1')) return;
+        alertEmbedWindow.hidden = true;
+        alertSuccess.hidden = false;
+      });
+    }
     renderMonth();
   }
 </script>
@@ -726,4 +746,3 @@ const visibleDayEntries = (entries) => {
   }
   @media(prefers-reduced-motion:reduce){.home-calendar__day{scroll-behavior:auto}}
 </style>
-
