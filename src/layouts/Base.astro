@@ -220,13 +220,22 @@ const exploreActive = resolvedExplore.some(i => navActive(i.href));
   <script type="application/ld+json" set:html={JSON.stringify(orgLd)} />
   <script type="application/ld+json" set:html={JSON.stringify(personLd)} />
   {jsonld && <script type="application/ld+json" set:html={JSON.stringify(jsonld)} />}
-  <!-- Google Analytics 4 (property: Neural Edge Publishing) -->
-  <script async is:inline src="https://www.googletagmanager.com/gtag/js?id=G-5D0DX6WFW4"></script>
+  <!-- Google Analytics 4 (property: Neural Edge Publishing).
+       Load only on canonical production hosts so branch/deploy previews do not
+       manufacture new users or contaminate retention cohorts. -->
   <script is:inline>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-5D0DX6WFW4');
+    (function () {
+      var host = location.hostname;
+      if (host !== 'cassiancreed.com' && host !== 'www.cassiancreed.com') return;
+      var loader = document.createElement('script');
+      loader.async = true;
+      loader.src = 'https://www.googletagmanager.com/gtag/js?id=G-5D0DX6WFW4';
+      document.head.appendChild(loader);
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function(){ window.dataLayer.push(arguments); };
+      window.gtag('js', new Date());
+      window.gtag('config', 'G-5D0DX6WFW4');
+    })();
   </script>
   <!-- ───────────────────────────────────────────────────────────────────────
        ORIGIN CAPTURE — NEP-CWK-IRASEMA-CONVERSION-RESCUE-0726

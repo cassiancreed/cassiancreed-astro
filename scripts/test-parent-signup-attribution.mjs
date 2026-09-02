@@ -240,3 +240,24 @@ test('source invariant leaves one signup writer and preserves diagnostics', asyn
   assert.match(files[3], /capture_success/);
   assert.match(files[4], /capture_success/);
 });
+
+
+test('GA4 loader is gated to the two canonical production hosts', async () => {
+  const base = await readFile(new URL('../src/layouts/Base.astro', import.meta.url), 'utf8');
+  assert.doesNotMatch(base, /<script[^>]+src=["']https:\/\/www\.googletagmanager\.com\/gtag\/js/);
+  assert.match(base, /host !== 'cassiancreed\.com' && host !== 'www\.cassiancreed\.com'/);
+  assert.match(base, /document\.head\.appendChild\(loader\)/);
+
+  const shouldLoad = (host) => host === 'cassiancreed.com' || host === 'www.cassiancreed.com';
+  assert.equal(shouldLoad('cassiancreed.com'), true);
+  assert.equal(shouldLoad('www.cassiancreed.com'), true);
+  for (const host of [
+    'deploy-preview-149--sunny-tulumba-9894fe.netlify.app',
+    'branch-name--sunny-tulumba-9894fe.netlify.app',
+    'localhost',
+    '127.0.0.1',
+    'cassiancreed.com.example.org',
+  ]) {
+    assert.equal(shouldLoad(host), false, host);
+  }
+});
