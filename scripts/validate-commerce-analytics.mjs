@@ -5,7 +5,7 @@ const sourceRoot = path.resolve('src');
 const distRoot = path.resolve('dist');
 const failures = [];
 const handlerStartMarker = '// Beehiiv product outbound tracking.';
-const handlerEndMarker = '// GA4 sign_up';
+const handlerEndMarker = '  })();\n  </script>';
 
 async function walk(directory) {
   const files = [];
