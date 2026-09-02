@@ -4,6 +4,12 @@ import path from 'node:path';
 
 const root = path.resolve('dist');
 const failures = [];
+const postDateFormatter = new Intl.DateTimeFormat('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+  timeZone: 'UTC',
+});
 
 async function walk(dir) {
   const out = [];
@@ -68,6 +74,19 @@ for (const [route, file] of routes) {
   for (const phrase of ['ESTABLISHED FACT', 'PROSECUTION ALLEGATION', 'DEFENSE ARGUMENT', 'within a minute']) {
     if (html.includes(phrase)) failures.push(`${route}: forbidden public phrase “${phrase}”`);
   }
+  if (route.startsWith('/post/')) {
+    const dateRow = html.match(/<p\s+class="post__dates"[^>]*>([\s\S]*?)<\/p>/i)?.[1];
+    if (!dateRow) failures.push(`${route}: post date row missing`);
+    const times = [...(dateRow?.matchAll(/<time\s+datetime="(\d{4}-\d{2}-\d{2})"[^>]*>([\s\S]*?)<\/time>/gi) ?? [])];
+    if (dateRow && times.length === 0) failures.push(`${route}: post date time element missing`);
+    for (const time of times) {
+      const [, datetime, visible] = time;
+      const label = decode(visible);
+      const prefix = label.match(/^(Published|Updated)\s+/)?.[1];
+      const expected = prefix && `${prefix} ${postDateFormatter.format(new Date(`${datetime}T00:00:00.000Z`))}`;
+      if (!expected || label !== expected) failures.push(`${route}: post date mismatch (${label} != ${expected ?? datetime})`);
+    }
+  }
 }
 
 if (!existsSync(path.join(root, 'favicon.svg'))) failures.push('favicon.svg missing');
@@ -75,4 +94,4 @@ if (failures.length) {
   console.error(`Site validation failed (${failures.length}):\n${failures.join('\n')}`);
   process.exit(1);
 }
-console.log(`Site validation passed: ${htmlFiles.length} HTML pages; titles, descriptions, H1s, image alts, IDs, links, anchors, and policy phrases checked.`);
+console.log(`Site validation passed: ${htmlFiles.length} HTML pages; titles, descriptions, H1s, image alts, IDs, links, anchors, post dates, and policy phrases checked.`);
