@@ -212,11 +212,9 @@ const embedSrc =
       var fb = cta.querySelector('.capture__fallback'); if (fb) fb.hidden = true;
       var hp = cta.querySelector('.capture__helper');  if (hp) hp.hidden = true;
       // NEP-CWK-IRASEMA-CONVERSION-RESCUE-0726 — attributable success.
-      // The in-iframe success page loads Base.astro and fires its own GA4
-      // sign_up, but attributed to page "/" (the iframe's URL), NOT the case
-      // page the visitor actually converted on. This parent-side event carries
-      // the true page_path and the campaign origin, so a signup can be traced
-      // back to the post AND to Spotify.
+      // Base.astro observes this same verified redirect in the parent and owns
+      // the single sign_up event. Keep capture_success as a diagnostic event
+      // for the form UI and funnel without duplicating the conversion.
       fire('capture_success', iframe);
     });
   }
