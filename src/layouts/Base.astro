@@ -225,6 +225,8 @@ const exploreActive = resolvedExplore.some(i => navActive(i.href));
        manufacture new users or contaminate retention cohorts. -->
   <script is:inline>
     (function () {
+      var isTopLevel = window.top === window;
+      if (!isTopLevel) return;
       var host = location.hostname;
       if (host !== 'cassiancreed.com' && host !== 'www.cassiancreed.com') return;
       var loader = document.createElement('script');
@@ -234,7 +236,7 @@ const exploreActive = resolvedExplore.some(i => navActive(i.href));
       window.dataLayer = window.dataLayer || [];
       window.gtag = function(){ window.dataLayer.push(arguments); };
       window.gtag('js', new Date());
-      window.gtag('config', 'G-5D0DX6WFW4');
+      window.gtag('config', 'G-5D0DX6WFW4', { send_page_view: isTopLevel });
     })();
   </script>
   <!-- ───────────────────────────────────────────────────────────────────────

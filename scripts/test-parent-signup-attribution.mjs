@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import test from 'node:test';
+import { runInNewContext } from 'node:vm';
 import { initBeehiivParentSignup, isBeehiivSignupResult } from '../src/scripts/beehiiv-parent-signup.mjs';
 
 class MemoryStorage {
@@ -242,22 +243,42 @@ test('source invariant leaves one signup writer and preserves diagnostics', asyn
 });
 
 
-test('GA4 loader is gated to the two canonical production hosts', async () => {
+test('GA4 loader and page_view are gated to canonical top-level pages', async () => {
   const base = await readFile(new URL('../src/layouts/Base.astro', import.meta.url), 'utf8');
   assert.doesNotMatch(base, /<script[^>]+src=["']https:\/\/www\.googletagmanager\.com\/gtag\/js/);
+  assert.match(base, /var isTopLevel = window\.top === window;/);
+  assert.match(base, /if \(!isTopLevel\) return;/);
   assert.match(base, /host !== 'cassiancreed\.com' && host !== 'www\.cassiancreed\.com'/);
   assert.match(base, /document\.head\.appendChild\(loader\)/);
+  assert.match(base, /gtag\('config', 'G-5D0DX6WFW4', \{ send_page_view: isTopLevel \}\)/);
 
-  const shouldLoad = (host) => host === 'cassiancreed.com' || host === 'www.cassiancreed.com';
-  assert.equal(shouldLoad('cassiancreed.com'), true);
-  assert.equal(shouldLoad('www.cassiancreed.com'), true);
-  for (const host of [
-    'deploy-preview-149--sunny-tulumba-9894fe.netlify.app',
-    'branch-name--sunny-tulumba-9894fe.netlify.app',
-    'localhost',
-    '127.0.0.1',
-    'cassiancreed.com.example.org',
-  ]) {
-    assert.equal(shouldLoad(host), false, host);
-  }
+  const inline = base.match(/<!-- Google Analytics 4[\s\S]*?<script is:inline>\s*([\s\S]*?)\s*<\/script>/)?.[1];
+  assert.ok(inline, 'GA4 inline loader script not found');
+  const execute = ({ host, isTopLevel }) => {
+    const appended = [];
+    const window = {};
+    window.top = isTopLevel ? window : {};
+    const document = {
+      createElement: () => ({}),
+      head: { appendChild: (node) => appended.push(node) },
+    };
+    runInNewContext(inline, { Date, document, location: { hostname: host }, window });
+    return { appended, dataLayer: window.dataLayer || [] };
+  };
+
+  const canonical = execute({ host: 'cassiancreed.com', isTopLevel: true });
+  assert.equal(canonical.appended.length, 1);
+  assert.equal(canonical.appended[0].src, 'https://www.googletagmanager.com/gtag/js?id=G-5D0DX6WFW4');
+  assert.equal(canonical.dataLayer.length, 2);
+  assert.equal(canonical.dataLayer[1][0], 'config');
+  assert.equal(canonical.dataLayer[1][1], 'G-5D0DX6WFW4');
+  assert.deepEqual({ ...canonical.dataLayer[1][2] }, { send_page_view: true });
+
+  const iframe = execute({ host: 'cassiancreed.com', isTopLevel: false });
+  assert.equal(iframe.appended.length, 0);
+  assert.equal(iframe.dataLayer.length, 0);
+
+  const preview = execute({ host: 'deploy-preview-149--sunny-tulumba-9894fe.netlify.app', isTopLevel: true });
+  assert.equal(preview.appended.length, 0);
+  assert.equal(preview.dataLayer.length, 0);
 });
