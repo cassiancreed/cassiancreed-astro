@@ -163,6 +163,8 @@ const CASE_GUIDES = {
   'patterson-appeal': {
     url: 'https://cassiancreed.beehiiv.com/products/case-chess-erin-patterson',
     text: 'Read the Erin Patterson case explainer — $2.99',
+    bookKey: 'case-chess-erin-patterson',
+    placement: 'court_calendar_case_guide',
   },
 };
 
@@ -371,7 +373,7 @@ const jsonld = {
         <p class="row__nodate"><strong>Expected development:</strong> {e.nextNote || NO_DATE}</p>
         <p class="row__note">{e.note}</p>
         <p class="row__meta">Subject to change by the court &middot; Source: {e.srcLabel} ({e.srcType}){e.src2 && <span class="row__src2"> &middot; Also: {e.srcLabel2}</span>}</p>
-        <p class="row__links">{e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : !CASE_GUIDES[e.id] && <span class="card__soon">Our case file on this is in progress.</span>} {CASE_GUIDES[e.id] && <a class="row__explainer" href={CASE_GUIDES[e.id].url} target="_blank" rel="noopener noreferrer">{CASE_GUIDES[e.id].text} &rarr;</a>} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <a class="row__help" href="/support/">Report a correction</a></p>
+        <p class="row__links">{e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : !CASE_GUIDES[e.id] && <span class="card__soon">Our case file on this is in progress.</span>} {CASE_GUIDES[e.id] && <a class="row__explainer" href={CASE_GUIDES[e.id].url} target="_blank" rel="noopener noreferrer" data-book-key={CASE_GUIDES[e.id].bookKey} data-cta-placement={CASE_GUIDES[e.id].placement}>{CASE_GUIDES[e.id].text} &rarr;</a>} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <a class="row__help" href="/support/">Report a correction</a></p>
       </div>
     ))}
   </section>
