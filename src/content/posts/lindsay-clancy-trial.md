@@ -2,14 +2,14 @@
 title: "Lindsay Clancy trial tracker: Charges, court rulings and verdict status"
 description: "A carefully sourced tracker for Lindsay Clancy's Massachusetts murder trial, including verdict status, charges, court rulings and the legal standard for lack of criminal responsibility."
 pubDate: 2026-07-15
-updatedDate: 2026-08-24
+updatedDate: 2026-09-02
 tag: Case Files
 featured: false
 victim: Cora Clancy, 5; Dawson Clancy, 3; Callan Clancy, 8 months
 incidentDate: January 2023
 location: Duxbury, Massachusetts
 jurisdiction: Plymouth County Superior Court, Massachusetts
-status: "On trial; court adjourned August 24 with prosecution rebuttal unfinished; no verdict."
+status: "Jury deliberations entered a fifth day after an impasse note; jurors were questioned following an alleged filming incident; no verdict or mistrial."
 ---
 
 <div class="status-box" style="border:1px solid var(--rule,#e4e0d9);border-left:4px solid var(--accent,#b91c1c);background:var(--card,#faf9f7);padding:1rem 1.25rem;margin:1.5rem 0;border-radius:6px;font-size:.95rem">
@@ -25,15 +25,16 @@ Cassian Creed maintains this Neural Edge Publishing tracker by checking court re
 <p style="margin-top:0"><strong>Trial status</strong></p>
 <p><strong>Has there been a verdict? No.</strong></p>
 <ul>
-<li><strong>Current phase:</strong> Court adjourned Monday, August 24 with the Commonwealth’s rebuttal case unfinished. The jury was excused until Tuesday morning.</li>
+<li><strong>Current phase:</strong> Jurors resumed deliberations Wednesday, September 2, for a fifth day after reporting Tuesday that they were unable to reach a unanimous decision.</li>
 <li><strong>Court:</strong> Plymouth Superior Court.</li>
 <li><strong>Judge:</strong> William F. Sullivan.</li>
 <li><strong>Charges now pending:</strong> Three counts of first-degree murder.</li>
-<li><strong>Plea:</strong> Not guilty.</li>
-<li><strong>Next expected step:</strong> Dr. Kirk Heilbrun is expected to finish his testimony Tuesday, followed by one additional Commonwealth rebuttal witness. Closing arguments may follow, but the August 25 setting remains tentative and no start time has been publicly verified.</li>
-<li><strong>Last verified:</strong> August 24, 2026, against same-day courtroom reporting and the court-pool stream through adjournment.</li>
+<li><strong>Plea:</strong> Not guilty by reason of lack of criminal responsibility.</li>
+<li><strong>Juror-protection issue:</strong> The judge questioned jurors and alternates individually after a woman was accused of filming jurors outside the courthouse. The panel then resumed deliberations. The allegation is a separate pending matter and is not proof about Clancy’s case.</li>
+<li><strong>Next expected step:</strong> Deliberations continue. The court has announced no verdict or mistrial, and the timing of any further jury note or decision cannot be predicted.</li>
+<li><strong>Last verified:</strong> September 2, 2026, against Associated Press reporting and Boston 25’s same-day courtroom updates through 11:39 a.m. ET.</li>
 </ul>
-<p style="margin-bottom:0">The jury has not begun deliberations and has returned no verdict. Clancy remains presumed innocent unless and until the jury finds otherwise.</p>
+<p style="margin-bottom:0">An impasse note is not a verdict and does not itself create a mistrial. Clancy remains presumed innocent unless and until the jury finds otherwise.</p>
 </div>
 
 Cora, 5, Dawson, 3, and Callan, 8 months, died after events at their Duxbury home in January 2023. Their mother, Lindsay Clancy, has pleaded not guilty to three counts of first-degree murder. **PROSECUTION:** Prosecutors allege she acted deliberately. **DEFENSE:** Her lawyers argue she experienced postpartum psychosis and lacked criminal responsibility, and they also allege that overmedication contributed to her condition. A jury has not decided those contested claims.
@@ -48,13 +49,13 @@ Cora, 5, Dawson, 3, and Callan, 8 months, died after events at their Duxbury hom
 
 | Item | Status | What is established |
 |---|---|---|
-| Verdict | **VERIFIED** | No verdict has been returned. The jury had not begun deliberations as of the August 24 verification. |
+| Verdict | **VERIFIED** | No verdict has been returned. Jurors resumed a fifth day of deliberations September 2 after reporting an impasse the day before. |
 | Pending charges | **VERIFIED** | Three counts of first-degree murder. |
 | Removed counts | **VERIFIED** | Prosecutors filed a *nolle prosequi* on July 9 for three separate strangulation counts, describing them as redundant because the alleged conduct was subsumed within the murder charges. That filing reduced the count total; it was not an exoneration on the remaining charges. |
 | Plea | **VERIFIED** | Not guilty. |
-| Trial posture | **VERIFIED** | Opening statements began July 27. The prosecution rested August 17, the defense rested August 21, and prosecution rebuttal testimony remained underway August 24. |
+| Trial posture | **VERIFIED** | The evidence and closing arguments are complete. Deliberations began August 27 and entered a fifth day September 2. |
 | Court and judge | **VERIFIED** | Plymouth Superior Court; Judge William F. Sullivan. |
-| Next expected step | **TENTATIVE** | The next verified phase is continued Commonwealth rebuttal testimony. Closing arguments may follow as early as August 25, but that date remains tentative and the time has not been publicly verified. |
+| Next expected step | **VERIFIED** | Deliberations are continuing. No source can reliably predict when the jury will send another note or reach a decision. |
 | Defense counsel | **VERIFIED** | Kevin Reddington. |
 | Core defense | **DEFENSE** | Lack of criminal responsibility, tied to the defense's contention that Clancy experienced postpartum psychosis and that alleged overmedication affected her condition. |
 | Burden on criminal responsibility | **VERIFIED** | Once evidence fairly raises lack of criminal responsibility, Massachusetts law requires the Commonwealth to prove beyond a reasonable doubt that the defendant was criminally responsible. |
@@ -81,13 +82,11 @@ A clinical diagnosis and a legal finding are not the same thing. Experts may add
 
 ## Where the trial stands now
 
-The prosecution rested August 17. After several days of defense testimony about Clancy's mental state and treatment history, the defense rested August 21 following testimony from forensic psychiatrist Dr. Phillip Resnick. Resnick testified for the defense that Clancy was psychotic and not in control of her actions. That testimony is an expert opinion offered by the defense, not a court finding.
+The evidence is closed, the judge has instructed the jury, and deliberations began August 27. On September 1, jurors wrote that after many hours they were unable to reach a unanimous decision. Judge Sullivan acknowledged the trial’s length and complexity and directed them to continue deliberating. That instruction did not declare a mistrial and did not indicate how the case will end.
 
-Prosecutors then began a rebuttal case. Forensic psychiatrist Dr. Avram Mack testified that Clancy experienced major depression but that he found no evidence of psychosis or mania leading up to the children's deaths. His testimony concluded August 24. Forensic psychologist Dr. Kirk Heilbrun then testified for the Commonwealth but had not finished when court adjourned. One additional rebuttal witness was expected. Their conclusions are prosecution expert opinions, not court findings or a verdict.
+Before deliberations resumed September 2, Judge Sullivan questioned each juror and the alternates individually after a woman was accused of filming jurors outside the courthouse. Defense attorney Kevin Reddington told Boston 25 that there were no issues with the panel, and jurors returned to deliberate at about 9:30 a.m. The separate allegation remains unproven unless adjudicated in its own case.
 
-Judge Sullivan denied a defense request for a mistrial after challenged testimony referred to Catholic doctrine, directed jurors to disregard the challenged material, and excused the jury until Tuesday morning. The denial means no mistrial was granted; it is not a ruling on guilt or criminal responsibility.
-
-The competing psychiatric opinions do not replace the jury's task. Jurors must apply Judge Sullivan's final instructions to all admitted evidence and decide separately whether the Commonwealth proved the charged offenses and criminal responsibility beyond a reasonable doubt.
+The jury is weighing the charged offenses and the contested criminal-responsibility question under the court’s instructions. The competing psychiatric opinions remain expert testimony offered by the parties, not court findings. Deliberation length, a jury note, or a reported impasse does not reliably predict guilt, acquittal, a lack-of-criminal-responsibility finding, or a mistrial.
 
 ## Claim-status ledger
 
@@ -105,7 +104,7 @@ This ledger is for editors and readers who encounter assertions circulating arou
 
 ### Has there been a verdict?
 
-No. The defense rested August 21, and prosecution rebuttal testimony was still underway August 24. The jury has not begun deliberations or decided the charges or the contested criminal-responsibility issue.
+No. Jurors resumed a fifth day of deliberations September 2 after reporting the previous day that they were unable to reach a unanimous decision. The judge instructed them to continue. No verdict or mistrial has been announced.
 
 ### What charges does Lindsay Clancy face?
 
@@ -137,9 +136,17 @@ The judge has ruled that they may. This tracker does not autoplay the recording 
 
 ### What happens next?
 
-The jury was excused until Tuesday morning. The next verified event is completion of Dr. Kirk Heilbrun’s testimony followed by one additional Commonwealth rebuttal witness. Closing arguments may follow on August 25, but that remains tentative, not a confirmed public court-calendar setting, and no start time has been publicly verified. Jury instructions and deliberations follow only after the evidence closes.
+Deliberations are continuing. The court may receive another jury note, a verdict, or a renewed report that jurors cannot agree, but no source can reliably predict which will happen or when. A reported impasse does not itself equal a mistrial.
 
 ## Update log
+
+### September 2, 2026 — Fifth day of deliberations; jurors questioned
+
+**VERIFIED:** Judge Sullivan questioned jurors and alternates individually after a woman was accused of filming jurors outside the courthouse. Jurors resumed deliberations at about 9:30 a.m. No verdict or mistrial has been announced. The separate filming allegation remains unproven unless adjudicated.
+
+### September 1, 2026 — Jury reports an impasse
+
+**VERIFIED:** Jurors told the judge they were unable to reach a unanimous decision after many hours of deliberation. Judge Sullivan instructed them to continue. Court ended for the day without a verdict; the note did not itself create a mistrial.
 
 ### August 24, 2026 — Court adjourned with rebuttal unfinished
 
@@ -185,6 +192,9 @@ Court schedules and evidentiary plans can change. This tracker distinguishes wha
 
 ## Sources
 
+- [Fifth-day deliberations and individual juror questioning — Associated Press, September 2, 2026](https://apnews.com/article/6f3a9556fb5d7a2b159b33ac6f2edc2c)
+- [Same-day courtroom updates through 11:39 a.m. ET — Boston 25 News, September 2, 2026](https://www.boston25news.com/news/local/lindsay-clancy-trial-live-updates-deadlocked-jury-returns-5th-day-deliberations/KBFJCBSS6VH4BLJOAW6MO6ZYL4/)
+- [Fourth-day impasse note and adjournment without verdict — CBS Boston, September 1, 2026](https://www.cbsnews.com/boston/news/lindsay-clancy-trial-jury-deliberations-tuesday/)
 - [Final pretrial hearing, jury plan, plea, court, judge, July 20 jury selection — Boston.com, July 13, 2026](https://www.boston.com/news/crime/2026/07/13/lindsay-clancy-final-pretrial-hearing/)
 - [Nolle prosequi and remaining first-degree murder charges — Boston.com, July 9, 2026](https://www.boston.com/news/crime/2026/07/09/lindsay-clancys-strangulation-charges-dropped-ahead-of-murder-trial/)
 - [18-person jury panel and trial-length estimate — Boston 25 News, July 13, 2026](https://www.boston25news.com/news/local/lindsay-clancy-attempts-unusual-legal-strategy-one-week-before-closely-watched-murder-trial-begins/5JB3JWTEY5DXDDUAA7OXT64ZOA/)
@@ -211,7 +221,7 @@ Court schedules and evidentiary plans can change. This tracker distinguishes wha
   "headline": "Lindsay Clancy trial tracker: Charges, court rulings and verdict status",
   "description": "A carefully sourced tracker for Lindsay Clancy's Massachusetts murder trial, including verdict status, charges, court rulings and the legal standard for lack of criminal responsibility.",
   "datePublished": "2026-07-15",
-  "dateModified": "2026-08-24",
+  "dateModified": "2026-09-02",
   "author": { "@type": "Person", "name": "Cassian Creed", "url": "https://cassiancreed.com/about/" },
   "publisher": { "@type": "Organization", "name": "Neural Edge Publishing", "url": "https://cassiancreed.com/" },
   "articleSection": "Crime and Courts",
