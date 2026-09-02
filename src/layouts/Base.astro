@@ -105,7 +105,7 @@ const navItems = [
   // worthiness review. /the-trail/ now 301s (see netlify.toml).
   { href: '/books/',               label: 'Jury Chess' },
   { href: '/about/',               label: 'About' },
-  { href: '/#free-guide',           label: 'Court Updates', cta: true },
+  { href: '/court-calendar/#court-updates', label: 'Court Updates', cta: true },
 ];
 const desktopPrimary = [
   { href: '/court-calendar/', label: 'Court Calendar' },
@@ -113,7 +113,7 @@ const desktopPrimary = [
   { href: '/genealogy/', label: 'Genealogy' },
   { href: '/case-files/', label: 'Case Files' },
   { href: '/books/', label: 'Jury Chess' },
-  { href: '/#free-guide', label: 'Court Updates', cta: true },
+  { href: '/court-calendar/#court-updates', label: 'Court Updates', cta: true },
 ];
 const exploreItems = [
   { href: '/start-here/', label: 'Start Here' },
@@ -124,21 +124,9 @@ const exploreItems = [
   { href: '/ai-al/', label: 'A.I. AL' },
   { href: '/about/', label: 'About' },
 ];
-// NEP-CWK-IRASEMA-CONVERSION-RESCUE-0726 — CTA ROUTE REPAIR.
-// On a post page the primary email CTA already lives on THIS page at
-// `#free-guide` (see post/[slug].astro), but the nav item routed the visitor
-// OFF the page to /books/#free-guide — i.e. the one always-visible, above-the-
-// fold path to the primary conversion pushed people away from the case they
-// came to read. On /post/* the item now targets the on-page anchor.
-// No wording changed; link target only.
-const isPostPage = navPath.startsWith('/post/');
-const resolvedNav = navItems.map(i =>
-  (isPostPage && i.href === '/#free-guide') ? { ...i, href: '#free-guide' } : i
-);
-const resolveItem = (i) =>
-  (isPostPage && i.href === '/#free-guide') ? { ...i, href: '#free-guide' } : i;
-const resolvedDesktopPrimary = desktopPrimary.map(resolveItem);
-const resolvedExplore = exploreItems.map(resolveItem);
+const resolvedNav = navItems;
+const resolvedDesktopPrimary = desktopPrimary;
+const resolvedExplore = exploreItems;
 // Standalone pages that are not themselves a nav item highlight their nav
 // CATEGORY, so no page ever renders with zero highlighted nav item
 // (NEP-FIX-CWK-0718L). Add new standalone pages here when they ship.
