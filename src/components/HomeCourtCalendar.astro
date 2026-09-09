@@ -69,7 +69,7 @@ const ongoingEntries = [...visibleEntries]
   .filter((entry) => entry.ongoing)
   .sort((a, b) => calendarDisplayPriority(b) - calendarDisplayPriority(a));
 const preferredCalendarLabels = new Map([
-  ['banks-federal-trial', 'Lil Durk trial evidence'],
+  ['banks-federal-trial', 'Lil Durk federal trial'],
   ['bridegan-fernandez-trial', 'Jared Bridegan case'],
   ['davis-tupac-openings', 'Tupac murder trial'],
   ['flynn-final-pretrial', 'Ashley Flynn case'],
@@ -726,4 +726,3 @@ const visibleDayEntries = (entries) => {
   }
   @media(prefers-reduced-motion:reduce){.home-calendar__day{scroll-behavior:auto}}
 </style>
-
