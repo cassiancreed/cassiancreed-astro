@@ -100,24 +100,24 @@ const jsonld = {
 
     {active.length > 0 ? (
       <>
-        <div class="mp-search" role="search">
+        <div class="mp-search" role="search" hidden>
           <label for="missing-search">Search by person, location, agency, or status</label>
           <input id="missing-search" type="search" placeholder="Search missing-person cases…" autocomplete="off" />
           <p id="missing-search-status" aria-live="polite">{active.length} {active.length === 1 ? 'case' : 'cases'} shown</p>
         </div>
 
+        <noscript><p class="mp-noscript">The interactive map requires JavaScript. All active case cards are available below, followed by the resolved archive.</p></noscript>
         <div class="mp-workspace">
-          <div class="mp-map-wrap">
+          <div class="mp-map-wrap" hidden>
             <div id="missing-map" class="mp-map" aria-label="Map of approximate last-known locations"></div>
-            <noscript><p class="mp-noscript">The interactive map requires JavaScript. Every case remains available in the accessible list beside it.</p></noscript>
-            <div class="mp-case-list" role="listbox" aria-label="Active missing-person cases">
+            <div class="mp-case-list" role="group" aria-label="Active missing-person cases">
               {active.map((entry, index) => (
                 <button
                   class="mp-case-button"
                   type="button"
                   data-case-id={entry.id}
                   data-search={`${entry.name} ${entry.approx_location} ${entry.investigating_agency} ${entry.statusLabel}`.toLowerCase()}
-                  aria-selected={index === 0 ? 'true' : 'false'}
+                  aria-pressed={index === 0 ? 'true' : 'false'}
                 >
                   <span class={`mp-status-dot mp-status-dot--${entry.status}`} aria-hidden="true"></span>
                   <span><strong>{entry.name}</strong><small>{entry.statusLabel} · {entry.approx_location}</small></span>
@@ -127,8 +127,8 @@ const jsonld = {
           </div>
 
           <div class="mp-detail" aria-live="polite">
-            {active.map((entry, index) => (
-              <article class="mp-status-card" data-case-panel={entry.id} hidden={index !== 0}>
+            {active.map((entry) => (
+              <article class="mp-status-card" data-case-panel={entry.id}>
                 <div class="mp-status-card__top">
                   <span class={`mp-status-pill mp-status-pill--${entry.status}`}>{entry.statusLabel}</span>
                   <span class="mp-verified">Status verified as of {formatMissingDate(entry.verification_date)}</span>
@@ -145,7 +145,7 @@ const jsonld = {
                 <div class="mp-card-actions">
                   <a class="btn" href={entry.tip_url}>{entry.tip_label}</a>
                   {entry.tip_phone && <a class="btn btn--ghost" href={`tel:${entry.tip_phone.replace(/[^+\d]/g, '')}`}>Call {entry.tip_phone}</a>}
-                  <button class="mp-follow-button" type="button" data-follow-case={entry.id} data-follow-key={entry.follow_key} data-follow-name={entry.name}>Follow this case</button>
+                  <button class="mp-follow-button" hidden type="button" data-follow-case={entry.id} data-follow-key={entry.follow_key} data-follow-name={entry.name}>Follow this case</button>
                 </div>
                 <p class="mp-sources">
                   Official verification: <a href={entry.source_url}>{entry.source_label}</a>
@@ -244,7 +244,7 @@ const jsonld = {
   }
 
   function selectCase(id, source = 'list') {
-    buttons.forEach((button) => button.setAttribute('aria-selected', button.getAttribute('data-case-id') === id ? 'true' : 'false'));
+    buttons.forEach((button) => button.setAttribute('aria-pressed', button.getAttribute('data-case-id') === id ? 'true' : 'false'));
     panels.forEach((panel) => { panel.hidden = panel.getAttribute('data-case-panel') !== id; });
     const selected = cases.find((entry) => entry.id === id);
     if (selected && map && source !== 'map') map.panTo([selected.latitude, selected.longitude]);
@@ -278,6 +278,12 @@ const jsonld = {
   if (followLink) followLink.addEventListener('click', () => {
     record('missing_case_follow_click', { case_id: followLink.getAttribute('data-case-id') || cases[0]?.id || '(none)' });
   });
+
+  // Keep all case details readable until interactive controls are available.
+  const workspace = document.querySelector('.mp-workspace');
+  const mapWrap = document.querySelector('.mp-map-wrap');
+  if (mapWrap instanceof HTMLElement) mapWrap.hidden = false;
+  workspace?.classList.add('is-enhanced');
 
   if (mapNode && cases.length) {
     map = L.map(mapNode, { scrollWheelZoom: false, minZoom: 2 }).setView([39.5, -98.35], 4);
@@ -317,10 +323,16 @@ const jsonld = {
       }
     });
     if (searchStatus) searchStatus.textContent = `${visible} ${visible === 1 ? 'case' : 'cases'} shown`;
-    const selected = buttons.find((button) => button.getAttribute('aria-selected') === 'true');
+    const selected = buttons.find((button) => button.getAttribute('aria-pressed') === 'true');
     if (visibleIds.length && (!selected || selected.hidden)) selectCase(visibleIds[0], 'search');
     if (!visibleIds.length) panels.forEach((panel) => { panel.hidden = true; });
   });
+
+  const searchControls = document.querySelector('.mp-search');
+  if (searchControls instanceof HTMLElement) searchControls.hidden = false;
+  followButtons.forEach((button) => { if (button instanceof HTMLElement) button.hidden = false; });
+  // Initial selection changes visibility only after the handlers are installed.
+  panels.forEach((panel, index) => { panel.hidden = index !== 0; });
 
   document.querySelectorAll('.mp-card-actions a').forEach((link) => link.addEventListener('click', () => {
     const panel = link.closest('[data-case-panel]');
@@ -329,6 +341,9 @@ const jsonld = {
 </script>
 
 <style>
+  .mp-search[hidden],.mp-map-wrap[hidden],.mp-follow-button[hidden]{display:none}
+  .mp-workspace:not(.is-enhanced){display:block}
+  .mp-workspace:not(.is-enhanced) .mp-detail{display:grid;gap:18px}
   .mp-hero{border-bottom:1px solid var(--line);background:radial-gradient(90% 100% at 85% 0,rgba(95,174,126,.12),transparent 60%),var(--bg);padding:64px 0 42px}
   .mp-hero__inner{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:48px;align-items:end}
   .mp-hero h1{font-family:var(--serif);font-size:clamp(38px,5.8vw,66px);line-height:1.02;max-width:16ch;margin:12px 0 0}
@@ -362,7 +377,7 @@ const jsonld = {
   :global(.mp-marker--endangered),:global(.mp-marker--abducted){background:#d9a441}
   .mp-case-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:10px}
   .mp-case-button{display:flex;align-items:flex-start;gap:10px;text-align:left;background:var(--bg-2);border:1px solid var(--line);border-radius:8px;color:var(--ink);padding:11px 12px;cursor:pointer}
-  .mp-case-button[aria-selected="true"]{border-color:var(--accent);background:rgba(224,86,59,.08)}
+  .mp-case-button[aria-pressed="true"]{border-color:var(--accent);background:rgba(224,86,59,.08)}
   .mp-case-button[hidden]{display:none}.mp-case-button strong,.mp-case-button small{display:block}.mp-case-button strong{font-size:14px;line-height:1.25}.mp-case-button small{color:var(--ink-3);font-size:11px;line-height:1.4;margin-top:4px}
   .mp-status-dot{width:10px;height:10px;flex:0 0 auto;border-radius:50%;background:var(--accent);margin-top:5px}.mp-status-dot--endangered,.mp-status-dot--abducted{background:#d9a441}
   .mp-status-card{border:1px solid var(--line);border-top:3px solid var(--accent);border-radius:10px;background:var(--bg-2);padding:22px}

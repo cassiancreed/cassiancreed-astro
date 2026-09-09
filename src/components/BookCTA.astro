@@ -24,10 +24,13 @@ const catalog = {
 const selected = catalog[book.key];
 const copy = placement === 'mid' ? book.midCopy : book.endCopy;
 const pageKey = Astro.url.pathname.split('/').filter(Boolean).at(-1) ?? 'unknown';
+const campaign = pageKey === 'this-week-in-court-august-30-2026'
+  ? 'twic_to_jury_chess'
+  : 'melgar_cluster';
 const buyParams = new URLSearchParams({
   utm_source: 'website',
   utm_medium: 'book_cta',
-  utm_campaign: 'melgar_cluster',
+  utm_campaign: campaign,
   utm_content: `${pageKey}_${placement}`,
 });
 const buyUrl = `${selected.buyUrl}?${buyParams}`;

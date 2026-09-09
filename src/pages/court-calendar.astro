@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import HomeCourtCalendar from '../components/HomeCourtCalendar.astro';
+import CaptureBlock from '../components/CaptureBlock.astro';
 
 import calendarTsv from '../data/court-calendar.tsv?raw';
 import { formatCalendarDate, parseCourtCalendar } from '../data/court-calendar-parser.mjs';
@@ -80,6 +81,9 @@ const completed = rankByTrend([
   ...calendar.completed,
   ...international.concluded.map((entry) => toPassive(entry, 'completed')),
 ]);
+const completedNextDateById = new Map([
+  ['salazar-clinkunbroomer-trial', 'Separate sentencing is scheduled for Thursday, October 1, 2026; the time has not been publicly verified.'],
+]);
 const latestReview = [calendar.metadata.last_updated, international.metadata.last_updated].sort().at(-1);
 const LAST_UPDATED = formatCalendarDate(latestReview);
 const PAGE_TITLE = calendar.metadata.page_title;
@@ -158,10 +162,16 @@ const genericFaqs = [
 ];
 const allFaqs = [...caseFaqs, ...genericFaqs];
 
+const COUNTRY_CODES_BY_COURT_SUFFIX = new Map([
+  ['France', 'FR'],
+]);
+
 const CASE_GUIDES = {
   'patterson-appeal': {
     url: 'https://cassiancreed.beehiiv.com/products/case-chess-erin-patterson',
     text: 'Read the Erin Patterson case explainer — $2.99',
+    bookKey: 'case-chess-erin-patterson',
+    placement: 'court_calendar_case_guide',
   },
 };
 
@@ -196,7 +206,9 @@ const jsonld = {
       itemListElement: nextDates.map((e, i) => {
         const parts = e.court.split(', ');
         const locality = parts.length > 2 ? parts[parts.length - 2] : parts[1];
-        const region = parts.length > 2 ? parts[parts.length - 1] : parts[2];
+        const courtSuffix = parts.at(-1);
+        const country = e.country || COUNTRY_CODES_BY_COURT_SUFFIX.get(courtSuffix) || 'US';
+        const region = country === 'US' && parts.length > 2 ? courtSuffix : undefined;
         const caseUrl = e.link ? (e.link.startsWith('http') ? e.link : 'https://cassiancreed.com' + e.link) : null;
         return {
           '@type': 'ListItem',
@@ -215,7 +227,7 @@ const jsonld = {
                 '@type': 'PostalAddress',
                 addressLocality: locality,
                 addressRegion: region,
-                addressCountry: e.country || 'US',
+                addressCountry: country,
               },
             },
             description: e.status,
@@ -340,17 +352,8 @@ const jsonld = {
     </div>
   </section>
 
-  <section class="wrap cal-sec">
-    <div class="capture-cta" aria-label="Stay current on this court calendar and get the free case-reading guide">
-      <p class="capture-cta__eyebrow">Came here for a date?</p>
-      <h2 class="capture-cta__head">We&rsquo;ll keep you current on the calendar.</h2>
-      <p class="capture-cta__body">
-        Court dates move &mdash; and so does what a hearing actually settles. We&rsquo;ll send you <em>How to Read a Case Like the Court Does</em> &mdash; a plain-language framework for weighing evidence instead of guessing, and what a verdict really settles (and what it doesn&rsquo;t) &mdash; plus calendar updates when dates change. No weekly blast; unsubscribe anytime.
-      </p>
-      <a class="capture-cta__btn" href="/#free-guide">
-        Get the guide &amp; date updates
-      </a>
-    </div>
+  <section class="wrap cal-sec" id="court-updates">
+    <CaptureBlock offer="calendar" content="court_calendar_page" />
   </section>
 
   <section class="wrap cal-sec">
@@ -379,7 +382,7 @@ const jsonld = {
         <p class="row__nodate"><strong>Expected development:</strong> {e.nextNote || NO_DATE}</p>
         <p class="row__note">{e.note}</p>
         <p class="row__meta">Subject to change by the court &middot; Source: {e.srcLabel} ({e.srcType}){e.src2 && <span class="row__src2"> &middot; Also: {e.srcLabel2}</span>}</p>
-        <p class="row__links">{e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : !CASE_GUIDES[e.id] && <span class="card__soon">Our case file on this is in progress.</span>} {CASE_GUIDES[e.id] && <a class="row__explainer" href={CASE_GUIDES[e.id].url} target="_blank" rel="noopener noreferrer">{CASE_GUIDES[e.id].text} &rarr;</a>} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <a class="row__help" href="/support/">Report a correction</a></p>
+        <p class="row__links">{e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : !CASE_GUIDES[e.id] && <span class="card__soon">Our case file on this is in progress.</span>} {CASE_GUIDES[e.id] && <a class="row__explainer" href={CASE_GUIDES[e.id].url} target="_blank" rel="noopener noreferrer" data-book-key={CASE_GUIDES[e.id].bookKey} data-cta-placement={CASE_GUIDES[e.id].placement}>{CASE_GUIDES[e.id].text} &rarr;</a>} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <a class="row__help" href="/support/">Report a correction</a></p>
       </div>
     ))}
   </section>
@@ -432,9 +435,10 @@ const jsonld = {
         <h3 class="row__case">{e.case}</h3>
         <p class="row__when">{e.where}</p>
         {e.docket && <p class="row__docket">{e.docket}</p>}
-        <p class="row__nodate"><strong>Next court date:</strong> {NO_DATE}</p>
+        <p class="row__nodate"><strong>Next court date:</strong> {completedNextDateById.get(e.id) || NO_DATE}</p>
         <p class="row__status">{e.status}</p>
         {e.nextNote && <p class="row__nodate"><strong>Expected next step:</strong> {e.nextNote}</p>}
+        {e.id === 'bridegan-fernandez-trial' && <p class="row__meta">Setting source: <a href="https://core.duvalclerk.com/CoreCms.aspx?mode=PublicAccess" target="_blank" rel="noopener noreferrer">Duval County Clerk CORE, docket 16-2023-CF-002862-AXXX-MA</a> (verified August 27, 2026).</p>}
         <p class="row__note">{e.note}</p>
         <p class="row__meta">Source: {e.srcLabel} ({e.srcType}){e.src2 && <span class="row__src2"> &middot; Also: {e.srcLabel2}</span>}</p>
         <p class="row__links">{e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : <span class="card__soon">Our case file on this is in progress.</span>} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <a class="row__help" href="/support/">Report a correction</a></p>
@@ -590,6 +594,8 @@ const jsonld = {
     .card--live{border-left-color:#c2593f}
     .card--live .card__type{color:#d2694c}
     .cal-sec{margin:44px auto 0}
+    #court-updates{scroll-margin-top:96px}
+    .card[id],.row[id]{scroll-margin-top:96px}
     .cal-sec h2{font-family:var(--serif);font-size:26px;font-weight:600;margin:0 0 6px;padding-bottom:10px;border-bottom:1px solid var(--line)}
     .cal-sub{color:var(--ink-2);font-size:15px;margin:0 0 18px;max-width:66ch}
     .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px;margin-top:18px}

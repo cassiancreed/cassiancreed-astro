@@ -70,6 +70,177 @@ for (const [route, file] of routes) {
   }
 }
 
+const juryChessProductUrl = 'https://cassiancreed.beehiiv.com/products/jury-chess';
+const expectedJuryChessCheckoutCtas = new Map([
+  ['/', [
+    `${juryChessProductUrl}?utm_source=website&utm_medium=homepage&utm_campaign=jury_chess&utm_content=homepage_jury_chess_primary`,
+  ]],
+  ['/books/', [
+    `${juryChessProductUrl}?utm_source=cassiancreed.com&utm_medium=books_page_cross_sell&utm_campaign=clancy_to_jury_chess&utm_content=clancy_trial_cross_sell`,
+    `${juryChessProductUrl}?utm_source=cassiancreed.com&utm_medium=books_page&utm_campaign=jury_chess&utm_content=jury_chess_primary`,
+  ]],
+  ['/post/anatomy-of-a-murder-trial-hernandez-melgar/', [
+    `${juryChessProductUrl}?utm_source=website&utm_medium=book_cta&utm_campaign=melgar_cluster&utm_content=anatomy-of-a-murder-trial-hernandez-melgar_mid`,
+    `${juryChessProductUrl}?utm_source=website&utm_medium=book_cta&utm_campaign=melgar_cluster&utm_content=anatomy-of-a-murder-trial-hernandez-melgar_end`,
+  ]],
+  ['/post/how-washington-courts-work-hernandez-melgar/', [
+    `${juryChessProductUrl}?utm_source=website&utm_medium=book_cta&utm_campaign=melgar_cluster&utm_content=how-washington-courts-work-hernandez-melgar_mid`,
+    `${juryChessProductUrl}?utm_source=website&utm_medium=book_cta&utm_campaign=melgar_cluster&utm_content=how-washington-courts-work-hernandez-melgar_end`,
+  ]],
+  ['/post/murder-staged-as-suicide-hernandez-melgar/', [
+    `${juryChessProductUrl}?utm_source=website&utm_medium=book_cta&utm_campaign=melgar_cluster&utm_content=murder-staged-as-suicide-hernandez-melgar_mid`,
+    `${juryChessProductUrl}?utm_source=website&utm_medium=book_cta&utm_campaign=melgar_cluster&utm_content=murder-staged-as-suicide-hernandez-melgar_end`,
+  ]],
+  ['/post/this-week-in-court-august-30-2026/', [
+    `${juryChessProductUrl}?utm_source=website&utm_medium=book_cta&utm_campaign=twic_to_jury_chess&utm_content=this-week-in-court-august-30-2026_end`,
+  ]],
+]);
+
+let juryChessCheckoutCtaCount = 0;
+for (const [route, file] of routes) {
+  const html = await readFile(file, 'utf8');
+  const actual = [...html.matchAll(/<a\b[^>]*\bhref="([^"]*)"/gi)]
+    .map(match => match[1].replace(/&amp;/g, '&'))
+    .filter(href => href.startsWith(juryChessProductUrl));
+  const expected = expectedJuryChessCheckoutCtas.get(route) ?? [];
+  juryChessCheckoutCtaCount += actual.length;
+  if (actual.length !== expected.length || actual.some((href, index) => href !== expected[index])) {
+    failures.push(`${route}: Jury Chess checkout CTAs do not match the attribution contract; expected ${JSON.stringify(expected)}, found ${JSON.stringify(actual)}`);
+  }
+}
+if (juryChessCheckoutCtaCount !== 10) failures.push(`expected 10 Jury Chess checkout CTAs, found ${juryChessCheckoutCtaCount}`);
+
+const beehiivProductUrlPrefix = 'https://cassiancreed.beehiiv.com/products/';
+const expectedProductMetadata = new Map([
+  ['/books/', [
+    {
+      href: 'https://cassiancreed.beehiiv.com/products/lindsay-clancy-trial-book?utm_source=cassiancreed.com&utm_medium=books_page&utm_campaign=lindsay_clancy_trial_book',
+      bookKey: 'lindsay-clancy-trial-book',
+      placement: 'books_page_primary',
+    },
+    {
+      href: `${juryChessProductUrl}?utm_source=cassiancreed.com&utm_medium=books_page_cross_sell&utm_campaign=clancy_to_jury_chess&utm_content=clancy_trial_cross_sell`,
+      bookKey: 'jury-chess',
+      placement: 'books_page_cross_sell',
+    },
+    {
+      href: `${juryChessProductUrl}?utm_source=cassiancreed.com&utm_medium=books_page&utm_campaign=jury_chess&utm_content=jury_chess_primary`,
+      bookKey: 'jury-chess',
+      placement: 'books_page_primary',
+    },
+    {
+      href: 'https://cassiancreed.beehiiv.com/products/voir-dire-the-free-guide',
+      bookKey: 'not_applicable',
+      placement: 'books_page_free_guide',
+    },
+  ]],
+  ['/court-calendar/', [
+    {
+      href: 'https://cassiancreed.beehiiv.com/products/case-chess-erin-patterson',
+      bookKey: 'case-chess-erin-patterson',
+      placement: 'court_calendar_case_guide',
+    },
+  ]],
+  ['/international-court-watch/', [
+    {
+      href: 'https://cassiancreed.beehiiv.com/products/case-chess-erin-patterson',
+      bookKey: 'case-chess-erin-patterson',
+      placement: 'international_watch_case_guide',
+    },
+  ]],
+]);
+
+// Selected-case book banners are driven by dated calendar data. They may be
+// absent after a tracked proceeding rolls out of the visible window, so verify
+// their contract when rendered without treating a time-dependent absence as a
+// site failure.
+const conditionalProductMetadata = new Map([
+  ['/', {
+    href: 'https://cassiancreed.beehiiv.com/products/lindsay-clancy-trial-book?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=lindsay_clancy_trial_book&utm_content=selected_case_banner',
+    bookKey: 'lindsay-clancy-trial-book',
+    placement: 'calendar_selected_case_banner',
+  }],
+  ['/court-calendar/', {
+    href: 'https://cassiancreed.beehiiv.com/products/lindsay-clancy-trial-book?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=lindsay_clancy_trial_book&utm_content=selected_case_banner',
+    bookKey: 'lindsay-clancy-trial-book',
+    placement: 'calendar_selected_case_banner',
+  }],
+]);
+
+const attributesFromAnchor = (anchor) => Object.fromEntries(
+  [...anchor.matchAll(/\b([\w:-]+)="([^"]*)"/g)].map(([, name, value]) => [name, value.replace(/&amp;/g, '&')]),
+);
+
+let beehiivProductAnchorCount = 0;
+let notApplicableBookKeyCount = 0;
+for (const [route, file] of routes) {
+  const html = await readFile(file, 'utf8');
+  const productAnchors = [...html.matchAll(/<a\b[^>]*>/gi)]
+    .map(([anchor]) => attributesFromAnchor(anchor))
+    .filter(({ href = '' }) => href.startsWith(beehiivProductUrlPrefix));
+  beehiivProductAnchorCount += productAnchors.length;
+
+  for (const anchor of productAnchors) {
+    const bookKey = anchor['data-book-key'];
+    const placement = anchor['data-cta-placement'];
+    if (!bookKey || bookKey === '(not_set)' || !placement || placement === '(not_set)') {
+      failures.push(`${route}: Beehiiv product CTA is missing analytics metadata for ${anchor.href}`);
+    }
+    if (bookKey === 'not_applicable') {
+      notApplicableBookKeyCount += 1;
+      if (anchor.href !== 'https://cassiancreed.beehiiv.com/products/voir-dire-the-free-guide') {
+        failures.push(`${route}: data-book-key="not_applicable" is reserved for the free Voir Dire guide`);
+      }
+    }
+  }
+
+  for (const expected of expectedProductMetadata.get(route) ?? []) {
+    const matches = productAnchors.filter(({ href }) => href === expected.href);
+    if (matches.length !== 1) {
+      failures.push(`${route}: expected one product CTA for ${expected.href}, found ${matches.length}`);
+      continue;
+    }
+    const [actual] = matches;
+    if (actual['data-book-key'] !== expected.bookKey || actual['data-cta-placement'] !== expected.placement) {
+      failures.push(`${route}: product CTA metadata mismatch for ${expected.href}; expected ${expected.bookKey}/${expected.placement}, found ${actual['data-book-key']}/${actual['data-cta-placement']}`);
+    }
+  }
+
+  const conditional = conditionalProductMetadata.get(route);
+  if (conditional) {
+    const matches = productAnchors.filter(({ href }) => href === conditional.href);
+    if (matches.length > 1) {
+      failures.push(`${route}: expected at most one conditional product CTA for ${conditional.href}, found ${matches.length}`);
+    }
+    const [actual] = matches;
+    if (actual && (actual['data-book-key'] !== conditional.bookKey || actual['data-cta-placement'] !== conditional.placement)) {
+      failures.push(`${route}: conditional product CTA metadata mismatch for ${conditional.href}; expected ${conditional.bookKey}/${conditional.placement}, found ${actual['data-book-key']}/${actual['data-cta-placement']}`);
+    }
+  }
+}
+if (beehiivProductAnchorCount < 14) failures.push(`expected at least 14 static Beehiiv product CTAs, found ${beehiivProductAnchorCount}`);
+if (notApplicableBookKeyCount !== 1) failures.push(`expected one non-book Beehiiv product CTA, found ${notApplicableBookKeyCount}`);
+
+const courtCalendarHtml = await readFile(routes.get('/court-calendar/'), 'utf8');
+const courtCalendarJsonLd = [...courtCalendarHtml.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
+  .map(([, json]) => JSON.parse(json));
+const courtCalendarGraph = courtCalendarJsonLd.flatMap((entry) => entry['@graph'] ?? []);
+const courtSchedule = courtCalendarGraph.find((entry) => entry['@id'] === 'https://cassiancreed.com/court-calendar#schedule');
+const eventById = (id) => courtSchedule?.itemListElement
+  ?.map(({ item }) => item)
+  .find((item) => item['@id'] === `https://cassiancreed.com/court-calendar#${id}`);
+const aramburuEvent = eventById('aramburu-paris-trial');
+const banksEvent = eventById('banks-federal-trial');
+if (aramburuEvent?.location?.address?.addressCountry !== 'FR') {
+  failures.push('/court-calendar/: Aramburú structured-data country must be FR');
+}
+if (aramburuEvent?.location?.address?.addressLocality !== 'Paris') {
+  failures.push('/court-calendar/: Aramburú structured-data locality must be Paris');
+}
+if (banksEvent?.location?.address?.addressCountry !== 'US') {
+  failures.push('/court-calendar/: domestic structured-data country regression; Banks must remain US');
+}
+
 if (!existsSync(path.join(root, 'favicon.svg'))) failures.push('favicon.svg missing');
 if (failures.length) {
   console.error(`Site validation failed (${failures.length}):\n${failures.join('\n')}`);
