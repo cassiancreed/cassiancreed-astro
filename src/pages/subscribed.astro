@@ -11,18 +11,4 @@ import Base from '../layouts/Base.astro';
       <p><a href="/post/the-taylor-parker-case-the-murder-of-reagan-simmons-hancock-and-where-it-stands-now/">Start here: The Taylor Parker Case →</a></p>
     </div>
   </article>
-  <script is:inline>
-    (function() {
-      function fireSignUp() {
-        if (typeof gtag !== 'undefined') {
-          gtag('event', 'sign_up', { method: 'beehiiv' });
-        }
-      }
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', fireSignUp);
-      } else {
-        fireSignUp();
-      }
-    })();
-  </script>
 </Base>

@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "astro dev",
-    "build": "npm run canon:check && npm run calendar:check && npm run archive:check && npm run intl:check && npm run missing:check && npm run posts:check && astro build && npm run site:check",
+    "build": "npm run canon:check && npm run analytics:check && npm run calendar:check && npm run archive:check && npm run intl:check && npm run missing:check && npm run posts:check && astro build && npm run site:check && npm run commerce-analytics:check",
     "preview": "astro preview",
     "calendar:check": "node scripts/validate-court-calendar.mjs",
     "archive:check": "node scripts/validate-court-calendar-archive.mjs",
@@ -13,7 +13,9 @@
     "posts:check": "node scripts/validate-post-archive.mjs",
     "site:check": "node scripts/validate-site.mjs",
     "canon:check": "node scripts/validate-case-handling-canon.mjs",
-    "court-command:check": "node scripts/validate-court-command-bundle.mjs"
+    "court-command:check": "node scripts/validate-court-command-bundle.mjs",
+    "analytics:check": "node --test scripts/test-parent-signup-attribution.mjs",
+    "commerce-analytics:check": "node scripts/validate-commerce-analytics.mjs"
   },
   "dependencies": {
     "@astrojs/mdx": "^3.1.9",
