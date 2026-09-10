@@ -1,18 +1,19 @@
 ---
 title: "What Actually Happens on Day One of a High-Profile Trial"
-seoTitle: "Lindsay Clancy Trial: Jury Selection Explained"
-description: "What happens when the Lindsay Clancy trial begins July 20: voir dire, alternate jurors, private questioning, and what day one will not include."
+seoTitle: "Lindsay Clancy Jury Selection: How It Works"
+description: "How Lindsay Clancy jury selection began: voir dire, alternate jurors, private questioning, and what the first day of a high-profile trial does not include."
 pubDate: 2026-07-18
+updatedDate: 2026-09-10
 tag: Explainers
 featured: false
 capture: "case"
 ---
 
-Jury selection begins Monday in the Lindsay Clancy case in Plymouth County, Massachusetts — and if you plan to follow the proceedings, understanding what actually happens on day one will help you make sense of what you see, and what you don't.
+Jury selection in the Lindsay Clancy case began July 20 in Plymouth County, Massachusetts. Understanding what happened in that opening phase helps explain what viewers saw, what they did not see, and why the first day of a high-profile trial rarely resembles a televised courtroom drama.
 
 Because day one of a major trial rarely looks like what most people expect. There are no opening statements. No witnesses. No dramatic reveals. What there is, instead, is a careful, methodical process that will shape everything that follows — and it deserves to be understood on its own terms.
 
-For the live case posture, charges, rulings, and schedule, follow [the Lindsay Clancy trial tracker](/post/lindsay-clancy-trial-2026-postpartum-psychosis/) as the proceeding develops.
+For the latest verified case posture and schedule, use the [court calendar](/court-calendar/). The [Lindsay Clancy trial tracker](/post/lindsay-clancy-trial/) provides background and a record of the trial proceedings. The separate [clinical and legal primer](/post/lindsay-clancy-trial-2026-postpartum-psychosis/) explains postpartum psychosis and the Massachusetts criminal-responsibility standard without diagnosing anyone or predicting an outcome.
 
 ## What Jury Selection Really Is — and Why Lawyers Call It De-Selection
 
@@ -24,7 +25,7 @@ Each side has two tools for shaping the jury. The first is a **challenge for cau
 
 Readers can test those choices in the [free Voir Dire Simulator](/voir-dire-simulator/), which shows how cause challenges, peremptory strikes, and Batson limits work together.
 
-What each side is actually trying to do is build a jury that will hear their narrative most openly. The prosecution is typically looking for jurors who trust institutions, follow rules, and are comfortable with the idea of accountability. The defense is often looking for jurors who are skeptical of authority, comfortable with ambiguity, and willing to hold the state to a high standard of proof. Neither side will say this out loud during voir dire. But it is the underlying logic of nearly every question asked.
+What each side is actually trying to do is build a jury that will hear their narrative most openly. The prosecution is typically looking for jurors who trust institutions, follow rules, and are comfortable with the idea of accountability. The defense is often looking for jurors who are skeptical of authority, comfortable with ambiguity, and willing to hold the state to a high standard of proof. Neither side will say this out loud during voir dire. But it is the underlying logic of nearly every question asked. In the Clancy case, questions about mental illness also connected to Massachusetts's separate legal standard for lack of criminal responsibility; our [Massachusetts NGRI explainer](/post/ngri-massachusetts-explainer/) explains that standard and what such a verdict triggers without predicting how any case should be decided.
 
 ## Why Big Trials Use Extra Alternate Jurors — and What Alternates Actually Do
 
@@ -60,7 +61,7 @@ Three questions worth asking of any courtroom report:
 
 **3. Whose voice is centered?** Trial coverage often defaults to the voices of attorneys, analysts, and officials. The people most affected — victims, families, communities — are frequently the last to be heard. Notice who is speaking, and who isn't.
 
-The [court calendar](/court-calendar/) carries the verified July 20 start date and will reflect any publicly confirmed schedule change.
+For the case's current verified posture and next proceeding, use the [court calendar](/court-calendar/). The [Lindsay Clancy trial tracker](/post/lindsay-clancy-trial/) remains useful as background and a record of the trial proceedings. This page remains focused on the jury-selection process rather than serving as a live status report.
 
 Following a trial well means resisting the pull of the daily narrative and keeping your attention on the larger arc. The verdict will not be decided on day one. Neither will your understanding of what happened.
 
