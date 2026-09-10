@@ -8,6 +8,10 @@ import CaptureBlock from '../components/CaptureBlock.astro';
     <h1>New here? Start with these.</h1>
     <p class="sh__lede">Three case files are the best way in — each sourced from the public record, each told victim-first. Read one, then follow the thread into the explainers behind it.</p>
 
+    <section class="subscribe wrap" id="free-guide">
+      <CaptureBlock offer="case" content="start_here" />
+    </section>
+
     <div class="sh__grid">
       <a class="door" href="/post/the-murder-of-rachel-morin-how-her-killer-was-found/">
         <div>
@@ -44,12 +48,7 @@ import CaptureBlock from '../components/CaptureBlock.astro';
       section stood here — heading, cover thumbnail linking to /the-trail/,
       bundle line and buy button. Removed while the title is held for
       worthiness review; recoverable from git history. Nothing was put in its
-      place, so the page runs straight from the "go deeper" step into the free
-      guide capture below. */}
-
-  <section class="subscribe wrap" id="free-guide">
-    <CaptureBlock offer="case" content="start_here" />
-  </section>
+      place. The free-guide capture now appears before the case cards. */}
 </Base>
 
 <style>
