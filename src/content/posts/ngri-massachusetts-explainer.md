@@ -1,18 +1,19 @@
 ---
 title: "'Not Criminally Responsible' Does Not Mean Walking Free: What the Verdict Actually Triggers in Massachusetts"
 pubDate: 2026-07-21
+updatedDate: 2026-09-10
 tag: "Explainers"
 jurisdiction: "Massachusetts"
 capture: "case"
-seoTitle: "NGRI in Massachusetts: What Really Happens After the Verdict"
-description: "A not-guilty-by-reason-of-mental-illness verdict in Massachusetts triggers commitment proceedings, not release. Here is the actual law, step by step."
+seoTitle: "Massachusetts NGRI: What Not Criminally Responsible Means"
+description: "What does not criminally responsible (NGRI) mean in Massachusetts? Learn how observation, commitment hearings, and renewed commitments work after a verdict."
 ---
 
 One claim is circulating every time a Massachusetts murder trial involves a mental-illness defense, and it is wrong: that a verdict of not guilty by reason of lack of criminal responsibility means the defendant "walks free."
 
 That is not what the verdict does. Not in Massachusetts, and not in most American jurisdictions. Here is what the law actually provides — from the statutes and the courts' own model instructions, not from social media.
 
-The claim is circulating right now around Commonwealth v. Clancy in Plymouth County, where jury selection entered its second day this morning — five of eighteen jurors seated after day one, with the defense expected to raise lack of criminal responsibility. Nothing in this explainer weighs that case's evidence or predicts its outcome; it explains the law any Massachusetts jury in such a case is asked to apply.
+This explainer was first published as jury selection began in *Commonwealth v. Clancy* in Plymouth County. Readers who want the procedure behind that opening phase can also see [what happened on day one of jury selection](/post/what-actually-happens-on-day-one-of-a-high-profile-trial/). Nothing here weighs that case's evidence or predicts an outcome; this page explains the law a Massachusetts jury is asked to apply when lack of criminal responsibility is at issue.
 
 ## What the Verdict Means
 
