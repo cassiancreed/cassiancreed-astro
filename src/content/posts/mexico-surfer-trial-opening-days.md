@@ -6,7 +6,7 @@ pubDate: 2026-09-10
 updatedDate: 2026-09-10
 tag: "Explainers"
 featured: false
-cover: "/case-art/mexico-trial-hero-16x9.png"
+cover: "/case-art/mexico-trial-hero-16x9-web.jpg"
 coverAlt: "Three surfboards rest beside a Pacific beach at sunset, with camping gear nearby and a distant civic building on a coastal hillside."
 ---
 
