@@ -44,6 +44,17 @@ for (const [route, file] of routes) {
   if (route !== '/410.html' && (!description || description.length > 160)) failures.push(`${route}: description length ${description.length}`);
   const h1s = [...html.matchAll(/<h1\b/gi)].length;
   if (route !== '/410.html' && h1s !== 1) failures.push(`${route}: expected one h1, found ${h1s}`);
+  for (const [, machineDate, visibleDate] of html.matchAll(/<time\s+datetime="(\d{4}-\d{2}-\d{2})">Published\s+([^<]+)<\/time>/gi)) {
+    const expectedVisibleDate = new Intl.DateTimeFormat('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      timeZone: 'UTC',
+    }).format(new Date(`${machineDate}T00:00:00Z`));
+    if (decode(visibleDate) !== expectedVisibleDate) {
+      failures.push(`${route}: visible publication date ${decode(visibleDate)} does not match datetime ${machineDate}`);
+    }
+  }
   const ids = [...html.matchAll(/\sid="([^"]+)"/g)].map(m => m[1]);
   const duplicateIds = [...new Set(ids.filter((id, i) => ids.indexOf(id) !== i))];
   if (duplicateIds.length) failures.push(`${route}: duplicate ids ${duplicateIds.join(', ')}`);
