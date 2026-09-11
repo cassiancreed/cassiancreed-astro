@@ -2,7 +2,7 @@
 title: "This Week in Court: Five Cases to Watch, September 13–19, 2026"
 seoTitle: "Five Court Cases to Watch: September 13–19, 2026"
 description: "Five scheduled court events for September 13–19, with official sources and a clear explanation of what each hearing can—and cannot—decide."
-pubDate: 2026-09-13
+pubDate: 2026-09-11
 tag: "Case Files"
 featured: false
 capture: "jury"
