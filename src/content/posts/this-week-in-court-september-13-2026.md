@@ -2,7 +2,7 @@
 title: "This Week in Court: Five Cases to Watch, September 13–19, 2026"
 seoTitle: "Five Court Cases to Watch: September 13–19, 2026"
 description: "Five scheduled court events for September 13–19, with official sources and a clear explanation of what each hearing can—and cannot—decide."
-pubDate: 2026-09-13
+pubDate: 2026-09-11
 tag: "Case Files"
 featured: false
 capture: "jury"
@@ -34,13 +34,13 @@ A status hearing lets the judge and the parties address scheduling and the condi
 
 > **Read a case like the court does.** Get the free evidence-reading guide—a plain-language framework for separating allegations, proof, and verdicts. [Get the free guide](/start-here/#free-guide).
 
-## Barry Morphew: What does a status conference decide?
+## Angelo Smith: What can a pretrial conference decide?
 
-A Colorado court order says Barry Morphew was indicted on one count of first-degree murder and entered a not-guilty plea in January. The charge remains unresolved, and Morphew is presumed innocent.
+The Cuyahoga County Clerk of Courts docket lists pending felony charges against Angelo Smith in Case No. CR-26-714090-A. Those charges are allegations, and Smith is presumed innocent unless and until proved guilty.
 
-A virtual status conference is scheduled for **Thursday, September 17, at 1:00 p.m. Mountain** in Alamosa County District Court. The Colorado Judicial Branch’s amended order permits an appearance by Webex.
+A pretrial conference is scheduled for **Wednesday, September 16, at 9:00 a.m. Eastern** in Room 17-B before Judge Jennifer O’Donnell. Court settings can change, so confirm the docket before relying on the date or time.
 
-The court can manage the schedule, motions, and other steps before the trial now set for 2027. A status conference does not decide guilt or predict the result of a later trial. Watch for changed deadlines, discussion of pending motions, and any written order that follows.
+A pretrial conference is an interim proceeding that may address scheduling, motions, and other steps before trial. It is not a trial or verdict. Watch for any trial date, motion ruling, plea, or other disposition reflected in a later docket entry.
 
 ## Lewis Santiago: Sentencing is scheduled, but it has not happened yet
 
@@ -64,7 +64,7 @@ The court can decide Pérez-Fernández’s sentence for the offenses to which he
 
 Pretrial and status hearings usually address procedure, scheduling, or motions. They do not prove a charge. A sentencing hearing follows a plea or conviction, but the sentence is not final until the court imposes it.
 
-This edition covers Sunday, September 13, through Saturday, September 19. The reporting cutoff is September 10, Pacific Time. A published date is something to watch, not a promise that the event will occur exactly as first listed.
+This edition covers Sunday, September 13, through Saturday, September 19. The reporting cutoff is September 11, Pacific Time. A published date is something to watch, not a promise that the event will occur exactly as first listed.
 
 For the current source-linked schedule, return to the [Cassian Creed Court Calendar](/court-calendar/).
 
@@ -74,7 +74,8 @@ For the current source-linked schedule, return to the [Cassian Creed Court Calen
 - [CBS Los Angeles — September 15 setting](https://www.cbsnews.com/losangeles/news/nick-reiner-murder-case-continued-september-attorneys-wait-autopsy-reports-additional-evidence/)
 - [U.S. Department of Justice — Pan Am Flight 103 case information](https://www.justice.gov/usao-dc/attack-pan-am-flight-103)
 - [U.S. District Court minute order dated August 24, 2026](https://www.justice.gov/usao-dc/media/1458996/dl?inline=)
-- [Colorado Judicial Branch — First Amended Omnibus Order](https://www.coloradojudicial.gov/sites/default/files/2026-08/First%20Amended%20Omnibus%20Order.pdf)
+- [Cuyahoga County Clerk of Courts — case docket portal for CR-26-714090-A](https://cpdocket.cp.cuyahogacounty.gov/)
+- [Cuyahoga County Court of Common Pleas — Judge Jennifer O’Donnell, Room 17-B](https://cp.cuyahogacounty.gov/court-resources/judges/judge-jennifer-odonnell/)
 - [Connecticut Division of Criminal Justice — July 21, 2026 release](https://portal.ct.gov/dcj/press-releases/division-of-criminal-justice/07212026santiago)
 - [Drug Enforcement Administration — June 15, 2026 release](https://www.dea.gov/press-releases/2026/06/15/four-defendants-plead-guilty-federal-crimes-related-murder-puerto-rico)
 
