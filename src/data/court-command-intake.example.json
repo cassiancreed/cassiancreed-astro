@@ -1,0 +1,26 @@
+{
+  "bundleVersion": "2.0",
+  "generatedAt": "2026-09-11T18:00:00Z",
+  "pronunciations": [],
+  "cases": [{
+    "caseKey": "example-case",
+    "caseName": "Example Case",
+    "aliases": ["State v. Example"],
+    "legalTruth": { "posture": "Pending; no finding of guilt.", "docket": "EX-1", "verifiedAt": "2026-09-11T18:00:00Z", "sourceUrl": "https://example.com/court" },
+    "demand": { "status": "Observed, not quantified.", "observedAt": "2026-09-11T18:00:00Z", "sourceUrl": "https://example.com/trends" },
+    "commercialOpportunity": { "productFit": "Procedure explainer", "offerUrl": "https://cassiancreed.com/books/" },
+    "publicDisplay": { "summary": "Verified example summary.", "prominence": 50 },
+    "courtEvents": [{ "eventId": "example-hearing", "eventType": "Status hearing", "date": "2026-10-01", "dateStatus": "confirmed", "time": null, "timeStatus": "not publicly verified", "timezone": "America/New_York", "docket": "EX-1", "sourceUrl": "https://example.com/court", "verifiedAt": "2026-09-11T18:00:00Z" }],
+    "predictiveIndicators": [{ "signalId": "example-hearing", "type": "court", "startsAt": "2026-10-01T09:00:00-04:00", "observedAt": "2026-09-11T18:00:00Z", "reliability": "confirmed", "sourceUrl": "https://example.com/court", "windowProfile": "standard-event" }],
+    "demandSignals": [{ "channel": "search", "observation": "Current-status query observed.", "observedAt": "2026-09-11T18:00:00Z", "sourceUrl": "https://example.com/trends" }],
+    "seoLongTail": [{ "query": "example case next court date" }],
+    "paaObserved": [],
+    "paaCandidates": ["When is the next hearing?"],
+    "aeoTargets": [{ "question": "When is the next hearing?", "answerShape": "Date, court, source and caveat." }],
+    "aiSearchPrompts": ["What is the latest verified status of the example case?"],
+    "buyerQuestions": [{ "question": "Where can I read a procedure explainer?", "purchaseIntent": "low", "sourceUrl": "https://example.com/buyer", "observedAt": "2026-09-11T18:00:00Z" }],
+    "canonicalUrls": [{ "role": "case-page", "url": "https://cassiancreed.com/court-calendar/" }],
+    "distributionStatus": [{ "destination": "court-calendar", "status": "queued", "version": "1", "factualCutoff": "2026-09-11T18:00:00Z", "deliveredAt": null }],
+    "fieldFreshness": [{ "fieldPath": "legalTruth.posture", "status": "fresh", "observedAt": "2026-09-11T18:00:00Z", "freshUntil": null, "sourceUrl": "https://example.com/court" }]
+  }]
+}

@@ -4,6 +4,22 @@
 Future calendar updates should change or replace that table only. Do not add case
 facts, dates, FAQ copy, or hero-summary copy directly to the Astro page.
 
+`case-intelligence.json` is the durable upstream intelligence record. It stores
+commercial-demand priority, predictable timing signals, canonical coverage,
+monetization fit, SEO long-tail terms, observed-versus-candidate PAA questions,
+AEO answer targets, AI-search prompts, and downstream distribution state. Capture
+these once at intake and reuse them. Do not make the calendar, newsletter,
+NotebookLM, video, audio, and social lanes rediscover or independently rewrite the
+same case data.
+
+Run `npm run case:packet -- <case-key>` to join the durable intelligence record to
+its current domestic and international Court Calendar rows. The resulting JSON is
+the canonical handoff for every downstream lane. It derives the six event phases
+deterministically and compares field hashes with the distribution ledger. When a
+fact changes, update it once; the regeneration plan names only affected destinations.
+The packet keeps public-source material separate from internal demand and commercial
+decision support. No downstream lane may independently rewrite factual claims.
+
 ## Routine update
 
 1. Open `court-calendar.tsv` in Excel, Numbers, or Google Sheets.
@@ -56,7 +72,8 @@ facts, dates, FAQ copy, or hero-summary copy directly to the Astro page.
   lower-trending name does not fit in the month-grid square.
 - Keep the page title, navigation, controls, and exception row compact so the
   maximum practical portion of the month is visible without scrolling.
-- `calendar-display-priority.mjs` holds the current commercial-demand scores.
+- `case-intelligence.json` holds the current commercial-demand scores;
+  `calendar-display-priority.mjs` is only the read adapter used by the site.
   Refresh them whenever the worldwide demand scan changes; the calendar presentation
   responds automatically. The 2026-08-22 `Demand_Order` values remain a provisional
   baseline until they are augmented with credible worldwide purchasing-power and
