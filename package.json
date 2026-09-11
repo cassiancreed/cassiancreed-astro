@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "astro dev",
-    "build": "npm run canon:check && npm run analytics:check && npm run campaign-aliases:check && npm run calendar:check && npm run archive:check && npm run intl:check && npm run missing:check && npm run posts:check && astro build && npm run site:check && npm run commerce-analytics:check",
+    "build": "npm run canon:check && npm run analytics:check && npm run campaign-aliases:check && npm run intelligence:check && npm run calendar:check && npm run archive:check && npm run intl:check && npm run missing:check && npm run posts:check && astro build && npm run site:check && npm run commerce-analytics:check",
     "preview": "astro preview",
     "calendar:check": "node scripts/validate-court-calendar.mjs",
     "archive:check": "node scripts/validate-court-calendar-archive.mjs",
@@ -14,6 +14,8 @@
     "site:check": "node scripts/validate-site.mjs",
     "canon:check": "node scripts/validate-case-handling-canon.mjs",
     "court-command:check": "node scripts/validate-court-command-bundle.mjs",
+    "intelligence:check": "node scripts/validate-case-intelligence.mjs",
+    "case:packet": "node scripts/build-case-distribution-packet.mjs",
     "analytics:check": "node --test scripts/test-parent-signup-attribution.mjs",
     "campaign-aliases:check": "node scripts/validate-campaign-aliases.mjs",
     "commerce-analytics:check": "node scripts/validate-commerce-analytics.mjs"
