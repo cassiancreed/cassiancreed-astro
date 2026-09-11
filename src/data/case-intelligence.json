@@ -1,0 +1,102 @@
+{
+  "schema_version": "1.0",
+  "updated_at": "2026-09-11T17:29:00Z",
+  "display_priority_by_event": {
+    "clancy-trial": 100,
+    "bridegan-fernandez-trial": 98,
+    "davis-tupac-openings": 96,
+    "salazar-clinkunbroomer-trial": 94,
+    "robinson-bindover-argument": 92,
+    "crum-odom-verdict": 90,
+    "peters-berger-resolution": 88,
+    "bohm-pretrial-motions": 76,
+    "bohm-trial": 76,
+    "sykes-preliminary-setting": 68,
+    "masud-lockerbie-status": 64,
+    "mangione-state-double-jeopardy-hearing": 98,
+    "mangione-federal-sentencing": 98,
+    "anthony-new-trial": 96,
+    "banks-federal-trial": 94,
+    "burke-prelim": 92,
+    "horsch-federal-trial": 90,
+    "inv-alisa-goods": 88,
+    "gardner-jury-selection": 84,
+    "gardner-trial": 84,
+    "unconfirmed-6": 82,
+    "inv-nancy-guthrie": 68,
+    "unconfirmed-3": 44,
+    "pike-execution": 28,
+    "alexander-brothers-sentencing": 12,
+    "gregg-appeal-decision": 8
+  },
+  "cases": [
+    {
+      "case_key": "lindsay-clancy",
+      "case_name": "Lindsay Clancy",
+      "aliases": ["Commonwealth v. Lindsay Clancy"],
+      "calendar_event_ids": ["clancy-trial", "clancy-status-hearing"],
+      "research_cutoff": "2026-09-09T13:18:00Z",
+      "demand": {
+        "direction": "rising",
+        "confidence": "medium",
+        "score_status": "provisional",
+        "source_note": "Existing NEP display-priority baseline plus the September 8 X Radar result; no public volume is asserted."
+      },
+      "predictive_signals": [
+        {
+          "type": "court_event",
+          "starts_at": "2026-09-29T09:00:00-04:00",
+          "timezone": "America/New_York",
+          "reliability": "confirmed",
+          "source_url": "https://www.wcvb.com/article/lindsay-clancy-mistrial-declared-status-hearing/73618227",
+          "note": "Post-mistrial status hearing, trial assignment and Rule 25(b)(2) hearing."
+        }
+      ],
+      "discovery": {
+        "seo_long_tail": [
+          {"query": "Lindsay Clancy next court date September 2026", "intent": "current-status", "priority": 1},
+          {"query": "what happens after a hung jury in the Lindsay Clancy case", "intent": "procedure", "priority": 2},
+          {"query": "can Lindsay Clancy be retried after a mistrial", "intent": "procedure", "priority": 3},
+          {"query": "Lindsay Clancy Rule 25 b 2 hearing explained", "intent": "legal-explainer", "priority": 4},
+          {"query": "Lindsay Clancy September 29 status hearing", "intent": "current-status", "priority": 5},
+          {"query": "Lindsay Clancy retrial decision after mistrial", "intent": "current-status", "priority": 6}
+        ],
+        "paa_observed": [],
+        "paa_candidates": [
+          "When is Lindsay Clancy's next court hearing?",
+          "Can Lindsay Clancy be tried again after a hung jury?",
+          "What happens after a mistrial in Massachusetts?",
+          "What is a Massachusetts Rule 25(b)(2) motion?"
+        ],
+        "aeo_targets": [
+          {"question": "When is Lindsay Clancy's next hearing?", "answer_shape": "Direct date, time, court, proceeding and verification caveat."},
+          {"question": "Did the Lindsay Clancy mistrial end the case?", "answer_shape": "Direct no, followed by the unresolved charges, presumption of innocence and possible next steps."}
+        ],
+        "ai_search_prompts": [
+          "What is the latest verified status of the Lindsay Clancy case, and what court sources support it?",
+          "Explain what can happen after the Lindsay Clancy mistrial under Massachusetts procedure, separating confirmed events from possible outcomes.",
+          "What is scheduled for the September 29, 2026 Lindsay Clancy hearing, and which details remain unverified?",
+          "Compare reliable accounts of the Lindsay Clancy post-mistrial schedule and explain how the date conflict was resolved."
+        ]
+      },
+      "monetization": {
+        "primary_offer_url": "/books/",
+        "product_fit": ["Jury Chess", "paid court-procedure explainer"],
+        "purchase_intent_note": "Procedure questions create a direct bridge to Jury Chess; do not imply that a product answers unverified case facts."
+      },
+      "coverage": {
+        "canonical_url": "/post/lindsay-clancy-trial/",
+        "supporting_urls": ["/post/lindsay-clancy-trial-2026-postpartum-psychosis/"],
+        "last_material_update": "2026-09-09"
+      },
+      "distribution": {
+        "newsletter": "update-required-before-promotion",
+        "website": "current-as-of-cutoff",
+        "youtube": "reuse-canonical-record",
+        "tiktok": "reuse-canonical-record",
+        "spotify": "reuse-canonical-record",
+        "social": "reuse-canonical-record"
+      }
+    }
+  ]
+}
