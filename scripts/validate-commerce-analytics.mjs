@@ -22,6 +22,7 @@ const sourceFiles = (await walk(sourceRoot)).filter((file) => /\.(?:astro|[cm]?[
 const sourceText = (await Promise.all(sourceFiles.map((file) => readFile(file, 'utf8')))).join('\n');
 
 function extractProductClickHandler(text, label) {
+  text = text.replace(/\r\n/g, '\n');
   const start = text.indexOf(handlerStartMarker);
   const end = start === -1 ? -1 : text.indexOf(handlerEndMarker, start);
   if (start === -1 || end === -1) {

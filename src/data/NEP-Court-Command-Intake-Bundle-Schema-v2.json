@@ -1,0 +1,104 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cassiancreed.com/schemas/nep-court-command-intake-v2.json",
+  "title": "NEP Court Command Intake Bundle v2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["bundleVersion", "generatedAt", "pronunciations", "cases"],
+  "properties": {
+    "bundleVersion": { "const": "2.0" },
+    "generatedAt": { "type": "string", "format": "date-time" },
+    "pronunciations": { "type": "array", "maxItems": 0 },
+    "cases": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/case" }
+    }
+  },
+  "$defs": {
+    "url": { "type": "string", "format": "uri", "pattern": "^https?://" },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "verificationState": { "enum": ["confirmed", "tentative", "superseded", "not publicly verified"] },
+    "case": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["caseKey", "caseName", "aliases", "legalTruth", "demand", "commercialOpportunity", "publicDisplay", "courtEvents", "predictiveIndicators", "demandSignals", "seoLongTail", "paaObserved", "paaCandidates", "aeoTargets", "aiSearchPrompts", "buyerQuestions", "canonicalUrls", "distributionStatus", "fieldFreshness"],
+      "properties": {
+        "caseKey": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+        "caseName": { "type": "string", "minLength": 1 },
+        "aliases": { "type": "array", "uniqueItems": true, "items": { "type": "string", "minLength": 1 } },
+        "legalTruth": {
+          "type": "object",
+          "required": ["posture", "verifiedAt", "sourceUrl"],
+          "properties": { "posture": { "type": "string", "minLength": 1 }, "docket": { "type": "string" }, "verifiedAt": { "$ref": "#/$defs/timestamp" }, "sourceUrl": { "$ref": "#/$defs/url" } }
+        },
+        "demand": {
+          "type": "object",
+          "required": ["status", "observedAt", "sourceUrl"],
+          "properties": { "status": { "type": "string", "minLength": 1 }, "observedAt": { "$ref": "#/$defs/timestamp" }, "sourceUrl": { "$ref": "#/$defs/url" } }
+        },
+        "commercialOpportunity": {
+          "type": "object",
+          "required": ["productFit"],
+          "properties": { "productFit": { "type": "string", "minLength": 1 }, "offerUrl": { "$ref": "#/$defs/url" } }
+        },
+        "publicDisplay": {
+          "type": "object",
+          "required": ["summary", "prominence"],
+          "properties": { "summary": { "type": "string", "minLength": 1 }, "prominence": { "type": "integer", "minimum": 0, "maximum": 100 } }
+        },
+        "courtEvents": { "type": "array", "items": { "$ref": "#/$defs/courtEvent" } },
+        "predictiveIndicators": { "type": "array", "items": { "$ref": "#/$defs/indicator" } },
+        "demandSignals": { "type": "array", "items": { "$ref": "#/$defs/demandSignal" } },
+        "seoLongTail": { "type": "array", "items": { "type": "object", "required": ["query"], "properties": { "query": { "type": "string", "minLength": 1 } } } },
+        "paaObserved": { "type": "array", "items": { "type": "object", "required": ["question", "observationUrl", "observedAt"], "properties": { "question": { "type": "string" }, "observationUrl": { "$ref": "#/$defs/url" }, "observedAt": { "$ref": "#/$defs/timestamp" } } } },
+        "paaCandidates": { "type": "array", "uniqueItems": true, "items": { "type": "string", "minLength": 1 } },
+        "aeoTargets": { "type": "array", "items": { "type": "object", "required": ["question", "answerShape"], "properties": { "question": { "type": "string" }, "answerShape": { "type": "string" } } } },
+        "aiSearchPrompts": { "type": "array", "uniqueItems": true, "items": { "type": "string", "minLength": 1 } },
+        "buyerQuestions": { "type": "array", "items": { "$ref": "#/$defs/buyerQuestion" } },
+        "canonicalUrls": { "type": "array", "items": { "type": "object", "required": ["role", "url"], "properties": { "role": { "type": "string" }, "url": { "$ref": "#/$defs/url" } } } },
+        "distributionStatus": { "type": "array", "items": { "$ref": "#/$defs/distribution" } },
+        "fieldFreshness": { "type": "array", "items": { "$ref": "#/$defs/freshness" } }
+      }
+    },
+    "courtEvent": {
+      "type": "object",
+      "required": ["eventId", "eventType", "date", "dateStatus", "time", "timeStatus", "timezone", "sourceUrl", "verifiedAt"],
+      "properties": {
+        "eventId": { "type": "string" }, "eventType": { "type": "string" }, "date": { "type": "string", "format": "date" },
+        "dateStatus": { "$ref": "#/$defs/verificationState" }, "time": { "type": ["string", "null"] },
+        "timeStatus": { "$ref": "#/$defs/verificationState" }, "timezone": { "type": ["string", "null"] },
+        "docket": { "type": "string" }, "sourceUrl": { "$ref": "#/$defs/url" }, "verifiedAt": { "$ref": "#/$defs/timestamp" }
+      }
+    },
+    "indicator": {
+      "type": "object",
+      "required": ["signalId", "type", "startsAt", "observedAt", "reliability", "sourceUrl", "windowProfile"],
+      "properties": {
+        "signalId": { "type": "string" }, "type": { "type": "string" }, "startsAt": { "$ref": "#/$defs/timestamp" },
+        "observedAt": { "$ref": "#/$defs/timestamp" }, "reliability": { "enum": ["confirmed", "reliable", "provisional", "unverified"] },
+        "sourceUrl": { "$ref": "#/$defs/url" }, "windowProfile": { "const": "standard-event" }
+      }
+    },
+    "demandSignal": {
+      "type": "object",
+      "required": ["channel", "observation", "observedAt", "sourceUrl"],
+      "properties": { "channel": { "enum": ["court", "media", "creator", "search", "social", "nep"] }, "observation": { "type": "string" }, "observedAt": { "$ref": "#/$defs/timestamp" }, "sourceUrl": { "$ref": "#/$defs/url" } }
+    },
+    "buyerQuestion": {
+      "type": "object",
+      "required": ["question", "purchaseIntent", "sourceUrl", "observedAt"],
+      "properties": { "question": { "type": "string" }, "purchaseIntent": { "type": "string" }, "sourceUrl": { "$ref": "#/$defs/url" }, "observedAt": { "$ref": "#/$defs/timestamp" } }
+    },
+    "distribution": {
+      "type": "object",
+      "required": ["destination", "status", "version", "factualCutoff"],
+      "properties": { "destination": { "type": "string" }, "status": { "type": "string" }, "version": { "type": "string" }, "factualCutoff": { "$ref": "#/$defs/timestamp" }, "deliveredAt": { "oneOf": [{ "$ref": "#/$defs/timestamp" }, { "type": "null" }] } }
+    },
+    "freshness": {
+      "type": "object",
+      "required": ["fieldPath", "status", "observedAt", "sourceUrl"],
+      "properties": { "fieldPath": { "type": "string" }, "status": { "enum": ["fresh", "stale", "unknown"] }, "observedAt": { "$ref": "#/$defs/timestamp" }, "freshUntil": { "oneOf": [{ "$ref": "#/$defs/timestamp" }, { "type": "null" }] }, "sourceUrl": { "$ref": "#/$defs/url" } }
+    }
+  }
+}

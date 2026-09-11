@@ -13,9 +13,12 @@ NotebookLM, video, audio, and social lanes rediscover or independently rewrite t
 same case data.
 
 Run `npm run case:packet -- <case-key>` to join the durable intelligence record to
-its current Court Calendar rows. The resulting JSON is the canonical handoff for
-every downstream lane. When a fact or date changes, update the source record once
-and regenerate only the outputs that depend on the changed field.
+its current domestic and international Court Calendar rows. The resulting JSON is
+the canonical handoff for every downstream lane. It derives the six event phases
+deterministically and compares field hashes with the distribution ledger. When a
+fact changes, update it once; the regeneration plan names only affected destinations.
+The packet keeps public-source material separate from internal demand and commercial
+decision support. No downstream lane may independently rewrite factual claims.
 
 ## Routine update
 
@@ -69,7 +72,8 @@ and regenerate only the outputs that depend on the changed field.
   lower-trending name does not fit in the month-grid square.
 - Keep the page title, navigation, controls, and exception row compact so the
   maximum practical portion of the month is visible without scrolling.
-- `calendar-display-priority.mjs` holds the current commercial-demand scores.
+- `case-intelligence.json` holds the current commercial-demand scores;
+  `calendar-display-priority.mjs` is only the read adapter used by the site.
   Refresh them whenever the worldwide demand scan changes; the calendar presentation
   responds automatically. The 2026-08-22 `Demand_Order` values remain a provisional
   baseline until they are augmented with credible worldwide purchasing-power and
