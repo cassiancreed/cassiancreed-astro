@@ -4,6 +4,19 @@
 Future calendar updates should change or replace that table only. Do not add case
 facts, dates, FAQ copy, or hero-summary copy directly to the Astro page.
 
+`case-intelligence.json` is the durable upstream intelligence record. It stores
+commercial-demand priority, predictable timing signals, canonical coverage,
+monetization fit, SEO long-tail terms, observed-versus-candidate PAA questions,
+AEO answer targets, AI-search prompts, and downstream distribution state. Capture
+these once at intake and reuse them. Do not make the calendar, newsletter,
+NotebookLM, video, audio, and social lanes rediscover or independently rewrite the
+same case data.
+
+Run `npm run case:packet -- <case-key>` to join the durable intelligence record to
+its current Court Calendar rows. The resulting JSON is the canonical handoff for
+every downstream lane. When a fact or date changes, update the source record once
+and regenerate only the outputs that depend on the changed field.
+
 ## Routine update
 
 1. Open `court-calendar.tsv` in Excel, Numbers, or Google Sheets.
