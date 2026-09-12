@@ -90,6 +90,9 @@ const expectedJuryChessCheckoutCtas = new Map([
     `${juryChessProductUrl}?utm_source=cassiancreed.com&utm_medium=books_page_cross_sell&utm_campaign=clancy_to_jury_chess&utm_content=clancy_trial_cross_sell`,
     `${juryChessProductUrl}?utm_source=cassiancreed.com&utm_medium=books_page&utm_campaign=jury_chess&utm_content=jury_chess_primary`,
   ]],
+  ['/court-calendar/', [
+    `${juryChessProductUrl}?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=jury_chess&utm_content=lil_durk_verdict_entry`,
+  ]],
   ['/post/anatomy-of-a-murder-trial-hernandez-melgar/', [
     `${juryChessProductUrl}?utm_source=website&utm_medium=book_cta&utm_campaign=melgar_cluster&utm_content=anatomy-of-a-murder-trial-hernandez-melgar_mid`,
     `${juryChessProductUrl}?utm_source=website&utm_medium=book_cta&utm_campaign=melgar_cluster&utm_content=anatomy-of-a-murder-trial-hernandez-melgar_end`,
@@ -119,7 +122,7 @@ for (const [route, file] of routes) {
     failures.push(`${route}: Jury Chess checkout CTAs do not match the attribution contract; expected ${JSON.stringify(expected)}, found ${JSON.stringify(actual)}`);
   }
 }
-if (juryChessCheckoutCtaCount !== 10) failures.push(`expected 10 Jury Chess checkout CTAs, found ${juryChessCheckoutCtaCount}`);
+if (juryChessCheckoutCtaCount !== 11) failures.push(`expected 11 Jury Chess checkout CTAs, found ${juryChessCheckoutCtaCount}`);
 
 const beehiivProductUrlPrefix = 'https://cassiancreed.beehiiv.com/products/';
 const expectedProductMetadata = new Map([
@@ -150,6 +153,11 @@ const expectedProductMetadata = new Map([
       href: 'https://cassiancreed.beehiiv.com/products/case-chess-erin-patterson',
       bookKey: 'case-chess-erin-patterson',
       placement: 'court_calendar_case_guide',
+    },
+    {
+      href: `${juryChessProductUrl}?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=jury_chess&utm_content=lil_durk_verdict_entry`,
+      bookKey: 'jury-chess',
+      placement: 'court_calendar_lil_durk_verdict_entry',
     },
   ]],
   ['/international-court-watch/', [
