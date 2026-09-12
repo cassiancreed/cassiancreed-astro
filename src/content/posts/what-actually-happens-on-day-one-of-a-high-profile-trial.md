@@ -3,7 +3,7 @@ title: "What Actually Happens on Day One of a High-Profile Trial"
 seoTitle: "Lindsay Clancy Jury Selection: How It Works"
 description: "How Lindsay Clancy jury selection began: voir dire, alternate jurors, private questioning, and what the first day of a high-profile trial does not include."
 pubDate: 2026-07-18
-updatedDate: 2026-09-10
+updatedDate: 2026-09-12
 tag: Explainers
 featured: false
 capture: "case"
@@ -64,5 +64,11 @@ Three questions worth asking of any courtroom report:
 For the case's current verified posture and next proceeding, use the [court calendar](/court-calendar/). The [Lindsay Clancy trial tracker](/post/lindsay-clancy-trial/) remains useful as background and a record of the trial proceedings. This page remains focused on the jury-selection process rather than serving as a live status report.
 
 Following a trial well means resisting the pull of the daily narrative and keeping your attention on the larger arc. The verdict will not be decided on day one. Neither will your understanding of what happened.
+
+## Follow the Full Trial Process
+
+*Jury Chess: How Criminal Jury Trials Actually Work* follows the machinery from jury selection through evidence disputes, instructions, deliberations, and verdict. It is a plain-language guide for readers who want to understand what a courtroom is doing instead of guessing from a headline.
+
+<a href="https://cassiancreed.beehiiv.com/products/jury-chess?utm_source=cassiancreed.com&amp;utm_medium=day_one_explainer&amp;utm_campaign=jury_chess&amp;utm_content=closing_cta" data-book-key="jury-chess" data-cta-placement="day_one_explainer_closing">Get <em>Jury Chess</em> — $5.99 →</a>
 
 *Cassian Creed publishes victim-first true crime at [cassiancreed.com](https://cassiancreed.com).*

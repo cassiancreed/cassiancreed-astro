@@ -93,6 +93,9 @@ const expectedJuryChessCheckoutCtas = new Map([
   ['/court-calendar/', [
     `${juryChessProductUrl}?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=jury_chess&utm_content=lil_durk_verdict_entry`,
   ]],
+  ['/post/what-actually-happens-on-day-one-of-a-high-profile-trial/', [
+    `${juryChessProductUrl}?utm_source=cassiancreed.com&utm_medium=day_one_explainer&utm_campaign=jury_chess&utm_content=closing_cta`,
+  ]],
   ['/post/anatomy-of-a-murder-trial-hernandez-melgar/', [
     `${juryChessProductUrl}?utm_source=website&utm_medium=book_cta&utm_campaign=melgar_cluster&utm_content=anatomy-of-a-murder-trial-hernandez-melgar_mid`,
     `${juryChessProductUrl}?utm_source=website&utm_medium=book_cta&utm_campaign=melgar_cluster&utm_content=anatomy-of-a-murder-trial-hernandez-melgar_end`,
@@ -114,7 +117,7 @@ let juryChessCheckoutCtaCount = 0;
 for (const [route, file] of routes) {
   const html = await readFile(file, 'utf8');
   const actual = [...html.matchAll(/<a\b[^>]*\bhref="([^"]*)"/gi)]
-    .map(match => match[1].replace(/&amp;/g, '&'))
+    .map(match => match[1].replace(/(?:&amp;|&#x26;)/g, '&'))
     .filter(href => href.startsWith(juryChessProductUrl));
   const expected = expectedJuryChessCheckoutCtas.get(route) ?? [];
   juryChessCheckoutCtaCount += actual.length;
@@ -122,7 +125,7 @@ for (const [route, file] of routes) {
     failures.push(`${route}: Jury Chess checkout CTAs do not match the attribution contract; expected ${JSON.stringify(expected)}, found ${JSON.stringify(actual)}`);
   }
 }
-if (juryChessCheckoutCtaCount !== 11) failures.push(`expected 11 Jury Chess checkout CTAs, found ${juryChessCheckoutCtaCount}`);
+if (juryChessCheckoutCtaCount !== 12) failures.push(`expected 12 Jury Chess checkout CTAs, found ${juryChessCheckoutCtaCount}`);
 
 const beehiivProductUrlPrefix = 'https://cassiancreed.beehiiv.com/products/';
 const expectedProductMetadata = new Map([
@@ -167,6 +170,20 @@ const expectedProductMetadata = new Map([
       placement: 'international_watch_case_guide',
     },
   ]],
+  ['/post/what-actually-happens-on-day-one-of-a-high-profile-trial/', [
+    {
+      href: `${juryChessProductUrl}?utm_source=cassiancreed.com&utm_medium=day_one_explainer&utm_campaign=jury_chess&utm_content=closing_cta`,
+      bookKey: 'jury-chess',
+      placement: 'day_one_explainer_closing',
+    },
+  ]],
+  ['/post/ngri-massachusetts-explainer/', [
+    {
+      href: 'https://cassiancreed.beehiiv.com/products/lindsay-clancy-trial-book?utm_source=cassiancreed.com&utm_medium=ngri_explainer&utm_campaign=lindsay_clancy_trial_book&utm_content=closing_cta',
+      bookKey: 'lindsay-clancy-trial-book',
+      placement: 'ngri_explainer_closing',
+    },
+  ]],
 ]);
 
 // Selected-case book banners are driven by dated calendar data. They may be
@@ -187,7 +204,7 @@ const conditionalProductMetadata = new Map([
 ]);
 
 const attributesFromAnchor = (anchor) => Object.fromEntries(
-  [...anchor.matchAll(/\b([\w:-]+)="([^"]*)"/g)].map(([, name, value]) => [name, value.replace(/&amp;/g, '&')]),
+  [...anchor.matchAll(/\b([\w:-]+)="([^"]*)"/g)].map(([, name, value]) => [name, value.replace(/(?:&amp;|&#x26;)/g, '&')]),
 );
 
 let beehiivProductAnchorCount = 0;
