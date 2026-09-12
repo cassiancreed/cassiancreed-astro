@@ -1,7 +1,7 @@
 ---
 title: "'Not Criminally Responsible' Does Not Mean Walking Free: What the Verdict Actually Triggers in Massachusetts"
 pubDate: 2026-07-21
-updatedDate: 2026-09-10
+updatedDate: 2026-09-12
 tag: "Explainers"
 jurisdiction: "Massachusetts"
 capture: "case"
@@ -66,4 +66,8 @@ Commentary that fails all three is not analysis. It is noise wearing analysis's 
 
 ---
 
-*For evidence-first coverage of how these questions play out in real courtrooms, get the free case guide at cassiancreed.com.*
+## Read the Case in Full Context
+
+*The Lindsay Clancy Trial* follows the public record behind the case, the competing courtroom positions, and the Massachusetts criminal-responsibility questions this explainer introduces. It does not diagnose anyone or predict what a future court will decide.
+
+<a href="https://cassiancreed.beehiiv.com/products/lindsay-clancy-trial-book?utm_source=cassiancreed.com&amp;utm_medium=ngri_explainer&amp;utm_campaign=lindsay_clancy_trial_book&amp;utm_content=closing_cta" data-book-key="lindsay-clancy-trial-book" data-cta-placement="ngri_explainer_closing">Get <em>The Lindsay Clancy Trial</em> — $2.99 →</a>
