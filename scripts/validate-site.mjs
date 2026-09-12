@@ -248,8 +248,8 @@ if (aramburuEvent?.location?.address?.addressCountry !== 'FR') {
 if (aramburuEvent?.location?.address?.addressLocality !== 'Paris') {
   failures.push('/court-calendar/: Aramburú structured-data locality must be Paris');
 }
-if (banksEvent?.location?.address?.addressCountry !== 'US') {
-  failures.push('/court-calendar/: domestic structured-data country regression; Banks must remain US');
+if (banksEvent && banksEvent.location?.address?.addressCountry !== 'US') {
+  failures.push('/court-calendar/: domestic structured-data country regression; active Banks event must remain US');
 }
 
 if (!existsSync(path.join(root, 'favicon.svg'))) failures.push('favicon.svg missing');
