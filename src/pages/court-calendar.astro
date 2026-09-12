@@ -167,6 +167,12 @@ const COUNTRY_CODES_BY_COURT_SUFFIX = new Map([
 ]);
 
 const CASE_GUIDES = {
+  'banks-federal-trial': {
+    url: 'https://cassiancreed.beehiiv.com/products/jury-chess?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=jury_chess&utm_content=lil_durk_verdict_entry',
+    text: 'Learn how criminal jury verdicts work — and what they do not decide. Get Jury Chess — $5.99',
+    bookKey: 'jury-chess',
+    placement: 'court_calendar_lil_durk_verdict_entry',
+  },
   'patterson-appeal': {
     url: 'https://cassiancreed.beehiiv.com/products/case-chess-erin-patterson',
     text: 'Read the Erin Patterson case explainer — $2.99',
@@ -441,7 +447,7 @@ const jsonld = {
         {e.id === 'bridegan-fernandez-trial' && <p class="row__meta">Setting source: <a href="https://core.duvalclerk.com/CoreCms.aspx?mode=PublicAccess" target="_blank" rel="noopener noreferrer">Duval County Clerk CORE, docket 16-2023-CF-002862-AXXX-MA</a> (verified August 27, 2026).</p>}
         <p class="row__note">{e.note}</p>
         <p class="row__meta">Source: {e.srcLabel} ({e.srcType}){e.src2 && <span class="row__src2"> &middot; Also: {e.srcLabel2}</span>}</p>
-        <p class="row__links">{e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : <span class="card__soon">Our case file on this is in progress.</span>} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <a class="row__help" href="/support/">Report a correction</a></p>
+        <p class="row__links">{e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : !CASE_GUIDES[e.id] && <span class="card__soon">Our case file on this is in progress.</span>} {CASE_GUIDES[e.id] && <a class="row__explainer" href={CASE_GUIDES[e.id].url} target="_blank" rel="noopener noreferrer" data-book-key={CASE_GUIDES[e.id].bookKey} data-cta-placement={CASE_GUIDES[e.id].placement}>{CASE_GUIDES[e.id].text} &rarr;</a>} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <a class="row__help" href="/support/">Report a correction</a></p>
       </div>
     ))}
   </section>
