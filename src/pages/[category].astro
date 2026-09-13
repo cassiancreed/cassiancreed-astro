@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import CaptureBlock from '../components/CaptureBlock.astro';
 import { getCollection } from 'astro:content';
+import { comparePostsNewestFirst } from '../utils/content-order';
 
 export async function getStaticPaths() {
   return [
@@ -13,7 +14,7 @@ export async function getStaticPaths() {
 const { tag, label } = Astro.props;
 const posts = (await getCollection('posts'))
   .filter((post) => post.data.tag === tag && !post.data.archived)
-  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+  .sort(comparePostsNewestFirst);
 
 const formatDate = (date) => new Intl.DateTimeFormat('en-US', {
   month: 'short',
@@ -71,7 +72,7 @@ const archiveDescription = tag === 'Case Files'
       {posts.map((post) => (
         <a
           class="archive-card"
-          href={`/post/${post.slug}/`}
+          href={`/post/${post.id}/`}
           data-search={searchText(post)}
         >
           <div
