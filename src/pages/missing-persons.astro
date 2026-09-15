@@ -9,11 +9,12 @@ const active = missing.active;
 const resolved = missing.resolved;
 const first = active[0] ?? null;
 const verifiedThrough = formatMissingDate(missing.metadata.last_updated);
-// BIA supports month precision for these cases. Preserve legacy TSV dates until
-// an investigating-agency source resolves the exact day; do not display them as verified.
+// Official sources leave the exact day unverified or disputed for these cases.
+// Preserve legacy TSV dates, but show the source limitation to readers.
 const qualifiedMissingDates: Record<string, string> = {
   'kendrick-jefferson': 'July 2025 (exact day disputed in official records)',
   'pauline-williams': 'August 2003 (exact day not verified)',
+  'dina-nalani-young': 'August 2026 (NCMEC lists conflicting days)',
 };
 const mapCases = active.map((entry) => ({
   id: entry.id,
