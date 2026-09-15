@@ -1,7 +1,7 @@
 ---
 title: "This Week in Court: Five Cases to Watch, September 13–19, 2026"
 seoTitle: "Five Court Cases to Watch: September 13–19, 2026"
-description: "Five scheduled court events for September 13–19, with official sources and a clear explanation of what each hearing can—and cannot—decide."
+description: "Five court cases for September 13–19, with September 15 scheduling updates and a clear explanation of what hearings can—and cannot—decide."
 pubDate: 2026-09-11
 tag: "Case Files"
 featured: false
@@ -12,7 +12,7 @@ coverAlt: "A courthouse calendar for September 13 through 19 beside five case fo
 
 Court calendars can move. A hearing can be delayed, a courtroom can change, and an unpublished start time can stay unpublished until the last moment.
 
-This guide covers five scheduled court events for September 13–19, 2026, with official sources and the narrow question before each court. A pretrial hearing is not a trial. A status conference is not a verdict. A sentencing date is not a sentence already imposed.
+This guide covers five court cases for September 13–19, 2026, with sourced dates and the narrow question before each court. **September 15 update:** Reiner’s next hearing is October 7; the Pan Am case awaits a confirmed replacement trial schedule. Other entries retain their earlier source checks. A pretrial hearing is not a trial. A status conference is not a verdict. A sentencing date is not a sentence already imposed.
 
 Every unresolved charge remains an allegation. Every person facing an unresolved charge is presumed innocent unless proved guilty in court. Check the [current Court Calendar](/court-calendar/) before relying on any date.
 
@@ -20,17 +20,17 @@ Every unresolved charge remains an allegation. Every person facing an unresolved
 
 The Los Angeles County District Attorney identifies Rob Reiner and Michele Singer Reiner as the two people whose deaths are at issue. The office says a grand-jury indictment against Nick Reiner was unsealed in August. The charges are allegations, and Reiner is presumed innocent.
 
-A post-indictment pretrial hearing is scheduled for **Tuesday, September 15**, in Department 108 at the Clara Shortridge Foltz Criminal Justice Center in Los Angeles. The official announcement reviewed for this edition did not publish a start time.
+The [District Attorney’s September 15 update](https://da.lacounty.gov/media/news/district-attorney-hochman-announces-death-penalty-won-t-be-sought-reiner-murder-case) lists a **Wednesday, October 7 motions hearing**, in Department 108 at the Clara Shortridge Foltz Criminal Justice Center. The time has not been publicly verified. Prosecutors will not seek the death penalty; if convicted as charged, Reiner faces life without parole.
 
 The court can address scheduling and other steps needed before trial. The hearing does not decide guilt, punishment, or the result of a future trial. Watch for new dates, pretrial issues raised by either side, and any later order clarifying the path to trial.
 
-## Pan Am Flight 103: What is scheduled at the next status hearing?
+## Pan Am Flight 103: Has a replacement trial date been confirmed?
 
 The federal case is *United States v. Abu Agila Mohammad Mas’ud Kheir Al-Marimi*. The Justice Department maintains a case-information page for victims, loved ones, and the public.
 
-A status hearing is scheduled for **Tuesday, September 15, at 10:00 a.m. Eastern** in the U.S. District Court for the District of Columbia. The Justice Department says a September 1 hearing was moved to this date at the parties’ joint request. The earlier order named a courtroom for the September 1 setting; the later notice did not repeat that room, so this guide does not carry it forward.
+The Justice Department’s earlier notice scheduled a September 15 status hearing. [Associated Press reported on September 15](https://currently.att.yahoo.com/att/us-judge-eyes-january-trial-162059505.html) that the judge was considering January 19 for jury selection, subject to checking prospective juror availability. This is a reported proposal, not a confirmed replacement trial date.
 
-A status hearing lets the judge and the parties address scheduling and the condition of the pending case. It is not a verdict and does not impose a sentence. Watch for a revised trial schedule, a new case-management order, or clarification of the hearing’s location or format.
+Watch for a court-confirmed schedule. The pending charges remain allegations; the scheduling discussion is not a verdict or a sentence.
 
 > **Read a case like the court does.** Get the free evidence-reading guide—a plain-language framework for separating allegations, proof, and verdicts. [Get the free guide](/start-here/#free-guide).
 
@@ -64,14 +64,17 @@ The court can decide Pérez-Fernández’s sentence for the offenses to which he
 
 Pretrial and status hearings usually address procedure, scheduling, or motions. They do not prove a charge. A sentencing hearing follows a plea or conviction, but the sentence is not final until the court imposes it.
 
-This edition covers Sunday, September 13, through Saturday, September 19. The reporting cutoff is September 11, Pacific Time. A published date is something to watch, not a promise that the event will occur exactly as first listed.
+This edition covers Sunday, September 13, through Saturday, September 19. The original reporting cutoff was September 11, Pacific Time. The Reiner and Pan Am sections were updated September 15; the other entries retain their original checks. A published date is something to watch, not a promise that the event will occur exactly as first listed.
 
 For the current source-linked schedule, return to the [Cassian Creed Court Calendar](/court-calendar/).
 
 ## Sources
 
-- [Los Angeles County District Attorney — Nick Reiner indictment and September 15 pretrial](https://da.lacounty.gov/media/news/nick-reiner-indicted-murder-charges-slaying-parents-rob-and-michele-reiner-brentwood)
-- [CBS Los Angeles — September 15 setting](https://www.cbsnews.com/losangeles/news/nick-reiner-murder-case-continued-september-attorneys-wait-autopsy-reports-additional-evidence/)
+- [Los Angeles County District Attorney — September 15 update and October 7 motions hearing](https://da.lacounty.gov/media/news/district-attorney-hochman-announces-death-penalty-won-t-be-sought-reiner-murder-case)
+- [Associated Press — September 15 Pan Am scheduling report](https://currently.att.yahoo.com/att/us-judge-eyes-january-trial-162059505.html)
+
+- [Los Angeles County District Attorney — Nick Reiner indictment and original September 15 setting](https://da.lacounty.gov/media/news/nick-reiner-indicted-murder-charges-slaying-parents-rob-and-michele-reiner-brentwood)
+- [CBS Los Angeles — historical September 15 setting](https://www.cbsnews.com/losangeles/news/nick-reiner-murder-case-continued-september-attorneys-wait-autopsy-reports-additional-evidence/)
 - [U.S. Department of Justice — Pan Am Flight 103 case information](https://www.justice.gov/usao-dc/attack-pan-am-flight-103)
 - [U.S. District Court minute order dated August 24, 2026](https://www.justice.gov/usao-dc/media/1458996/dl?inline=)
 - [Cuyahoga County Clerk of Courts — case docket portal for CR-26-714090-A](https://cpdocket.cp.cuyahogacounty.gov/)
