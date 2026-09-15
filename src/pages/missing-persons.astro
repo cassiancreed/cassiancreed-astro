@@ -9,6 +9,12 @@ const active = missing.active;
 const resolved = missing.resolved;
 const first = active[0] ?? null;
 const verifiedThrough = formatMissingDate(missing.metadata.last_updated);
+// BIA supports month precision for these cases. Preserve legacy TSV dates until
+// an investigating-agency source resolves the exact day; do not display them as verified.
+const qualifiedMissingDates: Record<string, string> = {
+  'kendrick-jefferson': 'July 2025 (exact day disputed in official records)',
+  'pauline-williams': 'August 2003 (exact day not verified)',
+};
 const mapCases = active.map((entry) => ({
   id: entry.id,
   name: entry.name,
@@ -137,7 +143,7 @@ const jsonld = {
                 <p class="mp-summary">{entry.summary}</p>
                 <dl>
                   <div><dt>Approximate location</dt><dd>{entry.approx_location}</dd></div>
-                  <div><dt>Date missing</dt><dd>{formatMissingDate(entry.date_missing)}</dd></div>
+                  <div><dt>Date missing</dt><dd>{qualifiedMissingDates[entry.id] ?? formatMissingDate(entry.date_missing)}</dd></div>
                   <div><dt>Verified status</dt><dd>{entry.statusLabel} <span class="mp-agency-status">(agency lists: {entry.agency_status})</span></dd></div>
                   <div><dt>Investigating agency</dt><dd>{entry.investigating_agency}</dd></div>
                   {entry.case_number && <div><dt>Official case number</dt><dd>{entry.case_number}</dd></div>}
