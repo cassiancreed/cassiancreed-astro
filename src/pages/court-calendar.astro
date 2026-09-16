@@ -166,6 +166,13 @@ const COUNTRY_CODES_BY_COURT_SUFFIX = new Map([
   ['France', 'FR'],
 ]);
 
+// Some international tribunals sit outside the country whose proceedings
+// they hear. Schema.org PostalAddress fields describe the physical venue,
+// not the case's jurisdiction or country of origin.
+const VENUE_SCHEMA_BY_COURT_SUFFIX = new Map([
+  ['The Hague', { locality: 'The Hague', country: 'NL' }],
+]);
+
 const CASE_GUIDES = {
   'banks-federal-trial': {
     url: 'https://cassiancreed.beehiiv.com/products/jury-chess?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=jury_chess&utm_content=lil_durk_verdict_entry',
@@ -211,9 +218,10 @@ const jsonld = {
       numberOfItems: nextDates.length,
       itemListElement: nextDates.map((e, i) => {
         const parts = e.court.split(', ');
-        const locality = parts.length > 2 ? parts[parts.length - 2] : parts[1];
         const courtSuffix = parts.at(-1);
-        const country = e.country || COUNTRY_CODES_BY_COURT_SUFFIX.get(courtSuffix) || 'US';
+        const venueSchema = VENUE_SCHEMA_BY_COURT_SUFFIX.get(courtSuffix);
+        const locality = venueSchema?.locality || (parts.length > 2 ? parts[parts.length - 2] : parts[1]);
+        const country = venueSchema?.country || e.country || COUNTRY_CODES_BY_COURT_SUFFIX.get(courtSuffix) || 'US';
         const region = country === 'US' && parts.length > 2 ? courtSuffix : undefined;
         const caseUrl = e.link ? (e.link.startsWith('http') ? e.link : 'https://cassiancreed.com' + e.link) : null;
         return {
@@ -299,9 +307,9 @@ const jsonld = {
           </p>
           <p class="card__src">
             <span class="card__k">Source</span>
-            <span>{e.srcLabel}</span>
+            <a href={e.src} target="_blank" rel="noopener noreferrer">{e.srcLabel}</a>
             <span class="card__srctype">{e.srcType}</span>
-            {e.src2 && <span class="card__src2">{e.srcLabel2}</span>}
+            {e.src2 && <span class="card__src2">Also: <a href={e.src2} target="_blank" rel="noopener noreferrer">{e.srcLabel2}</a></span>}
           </p>
           <p class="card__links">
             {e.link ? (
@@ -339,9 +347,9 @@ const jsonld = {
           </p>
           <p class="card__src">
             <span class="card__k">Source</span>
-            <span>{e.srcLabel}</span>
+            <a href={e.src} target="_blank" rel="noopener noreferrer">{e.srcLabel}</a>
             <span class="card__srctype">{e.srcType}</span>
-            {e.src2 && <span class="card__src2">{e.srcLabel2}</span>}
+            {e.src2 && <span class="card__src2">Also: <a href={e.src2} target="_blank" rel="noopener noreferrer">{e.srcLabel2}</a></span>}
           </p>
           <p class="card__links">
             {e.link ? (
@@ -387,7 +395,7 @@ const jsonld = {
         <p class="row__status">{e.status}</p>
         <p class="row__nodate"><strong>Expected development:</strong> {e.nextNote || NO_DATE}</p>
         <p class="row__note">{e.note}</p>
-        <p class="row__meta">Subject to change by the court &middot; Source: {e.srcLabel} ({e.srcType}){e.src2 && <span class="row__src2"> &middot; Also: {e.srcLabel2}</span>}</p>
+        <p class="row__meta">Subject to change by the court &middot; Source: <a href={e.src} target="_blank" rel="noopener noreferrer">{e.srcLabel}</a> ({e.srcType}){e.src2 && <span class="row__src2"> &middot; Also: <a href={e.src2} target="_blank" rel="noopener noreferrer">{e.srcLabel2}</a></span>}</p>
         <p class="row__links">{e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : !CASE_GUIDES[e.id] && <span class="card__soon">Our case file on this is in progress.</span>} {CASE_GUIDES[e.id] && <a class="row__explainer" href={CASE_GUIDES[e.id].url} target="_blank" rel="noopener noreferrer" data-book-key={CASE_GUIDES[e.id].bookKey} data-cta-placement={CASE_GUIDES[e.id].placement}>{CASE_GUIDES[e.id].text} &rarr;</a>} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <a class="row__help" href="/support/">Report a correction</a></p>
       </div>
     ))}
@@ -404,7 +412,7 @@ const jsonld = {
         <p class="row__status">{e.status}</p>
         <p class="row__nodate"><strong>Next development to verify:</strong> {e.nextNote || 'Not yet identified.'}</p>
         <p class="row__note">{e.note}</p>
-        <p class="row__meta">No court date exists for this matter &middot; Source: {e.srcLabel} ({e.srcType}){e.src2 && <span class="row__src2"> &middot; Also: {e.srcLabel2}</span>}</p>
+        <p class="row__meta">No court date exists for this matter &middot; Source: <a href={e.src} target="_blank" rel="noopener noreferrer">{e.srcLabel}</a> ({e.srcType}){e.src2 && <span class="row__src2"> &middot; Also: <a href={e.src2} target="_blank" rel="noopener noreferrer">{e.srcLabel2}</a></span>}</p>
         <p class="row__links">{e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : <span class="card__soon">Our case file on this is in progress.</span>} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <a class="row__help" href="/support/">Report a correction</a></p>
       </div>
     ))}
@@ -423,7 +431,7 @@ const jsonld = {
         <p class="row__status">{e.status}</p>
         {e.nextNote && <p class="row__nodate"><strong>Expected next step:</strong> {e.nextNote}</p>}
         <p class="row__note">{e.note}</p>
-        <p class="row__meta">Subject to change by the court &middot; Source: {e.srcLabel} ({e.srcType}){e.src2 && <span class="row__src2"> &middot; Also: {e.srcLabel2}</span>}</p>
+        <p class="row__meta">Subject to change by the court &middot; Source: <a href={e.src} target="_blank" rel="noopener noreferrer">{e.srcLabel}</a> ({e.srcType}){e.src2 && <span class="row__src2"> &middot; Also: <a href={e.src2} target="_blank" rel="noopener noreferrer">{e.srcLabel2}</a></span>}</p>
         <p class="row__links">
           {e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : <span class="card__soon">Our case file on this is in progress.</span>}
           <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <a class="row__help" href="/support/">Report a correction</a>
@@ -446,7 +454,7 @@ const jsonld = {
         {e.nextNote && <p class="row__nodate"><strong>Expected next step:</strong> {e.nextNote}</p>}
         {e.id === 'bridegan-fernandez-trial' && <p class="row__meta">Setting source: <a href="https://core.duvalclerk.com/CoreCms.aspx?mode=PublicAccess" target="_blank" rel="noopener noreferrer">Duval County Clerk CORE, docket 16-2023-CF-002862-AXXX-MA</a> (verified August 27, 2026).</p>}
         <p class="row__note">{e.note}</p>
-        <p class="row__meta">Source: {e.srcLabel} ({e.srcType}){e.src2 && <span class="row__src2"> &middot; Also: {e.srcLabel2}</span>}</p>
+        <p class="row__meta">Source: <a href={e.src} target="_blank" rel="noopener noreferrer">{e.srcLabel}</a> ({e.srcType}){e.src2 && <span class="row__src2"> &middot; Also: <a href={e.src2} target="_blank" rel="noopener noreferrer">{e.srcLabel2}</a></span>}</p>
         <p class="row__links">{e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : !CASE_GUIDES[e.id] && <span class="card__soon">Our case file on this is in progress.</span>} {CASE_GUIDES[e.id] && <a class="row__explainer" href={CASE_GUIDES[e.id].url} target="_blank" rel="noopener noreferrer" data-book-key={CASE_GUIDES[e.id].bookKey} data-cta-placement={CASE_GUIDES[e.id].placement}>{CASE_GUIDES[e.id].text} &rarr;</a>} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <a class="row__help" href="/support/">Report a correction</a></p>
       </div>
     ))}

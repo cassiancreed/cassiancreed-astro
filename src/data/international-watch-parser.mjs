@@ -81,11 +81,11 @@ export function parseInternationalWatch(tsv) {
     // court or tribunal owns it. Media-reported dates belong in monitoring,
     // described in next_note, never rendered as a listed sitting.
     if (row.section === 'listed') {
-      requireFields(row, ['date_iso', 'date_text', 'court'], line);
+      requireFields(row, ['date_iso', 'date_text', 'court', 'time_status'], line);
       if (!DATE_RE.test(row.date_iso)) fail(line, 'date_iso must be YYYY-MM-DD');
       if (Number.isNaN(Date.parse(`${row.date_iso}T00:00:00Z`))) fail(line, 'date_iso is not a real date');
-      if (row.time_status && row.time_status !== 'confirmed') {
-        fail(line, 'listed rows require time_status "confirmed"; move reported-only dates to monitoring');
+      if (!['confirmed', 'not publicly verified'].includes(row.time_status)) {
+        fail(line, 'listed rows require time_status "confirmed" or "not publicly verified"; move reported-only dates to monitoring');
       }
     }
 

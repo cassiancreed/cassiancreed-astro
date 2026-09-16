@@ -87,7 +87,10 @@ const jsonld = {
       name: 'Listed international court dates',
       itemListOrder: 'https://schema.org/ItemListOrderAscending',
       numberOfItems: listed.length,
-      itemListElement: listed.map((e, i) => ({
+      itemListElement: listed.map((e, i) => {
+        const courtParts = e.court.split(',').map((part) => part.trim());
+        const isTheHague = courtParts.some((part) => part === 'The Hague');
+        return ({
         '@type': 'ListItem',
         position: i + 1,
         item: {
@@ -100,14 +103,18 @@ const jsonld = {
           location: {
             '@type': 'Place',
             name: e.court,
-            address: { '@type': 'PostalAddress', addressCountry: e.country },
+            address: {
+              '@type': 'PostalAddress',
+              ...(isTheHague ? { addressLocality: 'The Hague', addressCountry: 'NL' } : { addressCountry: e.country }),
+            },
           },
           description: e.status,
           url: `https://cassiancreed.com/international-court-watch#${e.id}`,
           about: { '@type': 'Thing', name: e.case },
           isAccessibleForFree: true,
         },
-      })),
+        });
+      }),
     },
     {
       '@type': 'BreadcrumbList',
@@ -189,9 +196,9 @@ const jsonld = {
           </p>
           <p class="card__src">
             <span class="card__k">Source</span>
-            <span>{e.srcLabel}</span>
+            <a href={e.src} target="_blank" rel="noopener noreferrer">{e.srcLabel}</a>
             <span class="card__srctype">{e.srcType}</span>
-            {e.src2 && <span class="card__src2">{e.srcLabel2}</span>}
+            {e.src2 && <span class="card__src2">Also: <a href={e.src2} target="_blank" rel="noopener noreferrer">{e.srcLabel2}</a></span>}
           </p>
           <p class="card__links">
             {e.link ? (
@@ -220,7 +227,7 @@ const jsonld = {
         <p class="row__status"><strong>Matter:</strong> {e.matter}</p>
         <p class="row__status">{e.status}</p>
         <p class="row__note">{e.detail}</p>
-        <p class="row__meta">Subject to change &middot; Source: {e.srcLabel} ({e.srcType}){e.src2 && <span class="row__src2"> &middot; Also: {e.srcLabel2}</span>}{e.verified && <span class="row__src2"> &middot; Verified {e.verified}</span>}</p>
+        <p class="row__meta">Subject to change &middot; Source: <a href={e.src} target="_blank" rel="noopener noreferrer">{e.srcLabel}</a> ({e.srcType}){e.src2 && <span class="row__src2"> &middot; Also: <a href={e.src2} target="_blank" rel="noopener noreferrer">{e.srcLabel2}</a></span>}{e.verified && <span class="row__src2"> &middot; Verified {e.verified}</span>}</p>
         <p class="row__links">
           {e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : <span class="card__soon">Our case file on this is in progress.</span>}
           {CASE_GUIDES[e.id] && <a href={CASE_GUIDES[e.id].url} target="_blank" rel="noopener noreferrer" data-book-key={CASE_GUIDES[e.id].bookKey} data-cta-placement={CASE_GUIDES[e.id].placement}>{CASE_GUIDES[e.id].text} &rarr;</a>}
@@ -243,7 +250,7 @@ const jsonld = {
         <p class="row__status"><strong>Matter:</strong> {e.matter}</p>
         <p class="row__status">{e.status}</p>
         <p class="row__note">{e.detail}</p>
-        <p class="row__meta">Source: {e.srcLabel} ({e.srcType}){e.src2 && <span class="row__src2"> &middot; Also: {e.srcLabel2}</span>}{e.verified && <span class="row__src2"> &middot; Verified {e.verified}</span>}</p>
+        <p class="row__meta">Source: <a href={e.src} target="_blank" rel="noopener noreferrer">{e.srcLabel}</a> ({e.srcType}){e.src2 && <span class="row__src2"> &middot; Also: <a href={e.src2} target="_blank" rel="noopener noreferrer">{e.srcLabel2}</a></span>}{e.verified && <span class="row__src2"> &middot; Verified {e.verified}</span>}</p>
         <p class="row__links">
           {e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : <span class="card__soon">Our case file on this is in progress.</span>}
           {CASE_GUIDES[e.id] && <a href={CASE_GUIDES[e.id].url} target="_blank" rel="noopener noreferrer" data-book-key={CASE_GUIDES[e.id].bookKey} data-cta-placement={CASE_GUIDES[e.id].placement}>{CASE_GUIDES[e.id].text} &rarr;</a>}
