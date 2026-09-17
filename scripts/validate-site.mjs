@@ -90,6 +90,9 @@ const expectedJuryChessCheckoutCtas = new Map([
     `${juryChessProductUrl}?utm_source=cassiancreed.com&utm_medium=books_page_cross_sell&utm_campaign=clancy_to_jury_chess&utm_content=clancy_trial_cross_sell`,
     `${juryChessProductUrl}?utm_source=cassiancreed.com&utm_medium=books_page&utm_campaign=jury_chess&utm_content=jury_chess_primary`,
   ]],
+  ['/books/jury-chess/', [
+    `${juryChessProductUrl}?utm_source=cassiancreed.com&utm_medium=jury_chess_landing&utm_campaign=jury_chess&utm_content=jury_chess_primary`,
+  ]],
   ['/jury-chess-sample/', [
     `${juryChessProductUrl}?utm_source=cassiancreed.com&utm_medium=sample&utm_campaign=jury_chess_sample_v1&utm_content=sample_closing`,
   ]],
@@ -128,10 +131,17 @@ for (const [route, file] of routes) {
     failures.push(`${route}: Jury Chess checkout CTAs do not match the attribution contract; expected ${JSON.stringify(expected)}, found ${JSON.stringify(actual)}`);
   }
 }
-if (juryChessCheckoutCtaCount !== 13) failures.push(`expected 13 Jury Chess checkout CTAs, found ${juryChessCheckoutCtaCount}`);
+if (juryChessCheckoutCtaCount !== 14) failures.push(`expected 14 Jury Chess checkout CTAs, found ${juryChessCheckoutCtaCount}`);
 
 const beehiivProductUrlPrefix = 'https://cassiancreed.beehiiv.com/products/';
 const expectedProductMetadata = new Map([
+  ['/books/jury-chess/', [
+    {
+      href: `${juryChessProductUrl}?utm_source=cassiancreed.com&utm_medium=jury_chess_landing&utm_campaign=jury_chess&utm_content=jury_chess_primary`,
+      bookKey: 'jury-chess',
+      placement: 'jury_chess_landing_primary',
+    },
+  ]],
   ['/jury-chess-sample/', [
     {
       href: `${juryChessProductUrl}?utm_source=cassiancreed.com&utm_medium=sample&utm_campaign=jury_chess_sample_v1&utm_content=sample_closing`,
