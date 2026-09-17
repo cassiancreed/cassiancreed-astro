@@ -17,8 +17,17 @@ concurrency:
 
 jobs:
   build:
+    name: Build (${{ matrix.timezone }})
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        timezone:
+          - UTC
+          - America/Los_Angeles
+    env:
+      TZ: ${{ matrix.timezone }}
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
