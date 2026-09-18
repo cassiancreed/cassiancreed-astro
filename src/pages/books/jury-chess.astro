@@ -50,20 +50,26 @@ const jsonld = {
         </ul>
         <div class="offer">
           <p class="price">$5.99</p>
-          <a class="btn" href={productUrl} target="_blank" rel="noopener noreferrer" data-book-key="jury-chess" data-cta-placement="jury_chess_landing_primary">Get the book →</a>
+          <div class="offer__actions">
+            <a class="btn" href={productUrl} target="_blank" rel="noopener noreferrer" data-book-key="jury-chess" data-cta-placement="jury_chess_landing_primary">Get the full guide →</a>
+            <a class="sample-link" href="/jury-chess-sample/">Read the free sample</a>
+          </div>
         </div>
-        <p class="fine">PDF download. General education, not legal advice.</p>
+        <p class="fine">PDF download · opens on phones, tablets, and computers · general education, not legal advice.</p>
       </div>
     </section>
 
     <section class="why" aria-labelledby="why-title">
       <h2 id="why-title">Read the record, not the rhetoric</h2>
       <p>Why does some information never reach the jury? Why can a judge sustain an objection even when a question sounds important? <em>Jury Chess</em> explains the boundary between what happened and what jurors are legally allowed to consider.</p>
-      <a href="/books/">See all Cassian Creed books →</a>
+      <div class="why__actions">
+        <a class="btn" href="/jury-chess-sample/">Start with the free sample →</a>
+        <a href="/books/">See all Cassian Creed books →</a>
+      </div>
     </section>
   </main>
 </Base>
 
 <style>
-  .jc{max-width:1040px;padding-top:14px;padding-bottom:34px}.crumbs{display:flex;gap:8px;align-items:center;font-size:13px;color:var(--ink-2);margin-bottom:18px}.crumbs a{color:var(--accent,#e0563b)}.hero{display:grid;grid-template-columns:minmax(220px,360px) 1fr;gap:clamp(28px,5vw,58px);align-items:center}.cover{border-radius:14px;overflow:hidden;box-shadow:0 18px 50px rgba(0,0,0,.35);background:#202027}.cover img{display:block;width:100%;height:auto}.kicker{font-family:var(--mono,'JetBrains Mono',monospace);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent,#e0563b);margin:0 0 10px}.copy h1{font-family:var(--serif);font-weight:600;font-size:clamp(34px,5vw,56px);line-height:1.03;margin:0 0 18px}.copy p,.copy li{font-size:16px;line-height:1.6;color:var(--ink-2)}.copy .lede{font-size:20px;line-height:1.45;color:var(--ink);font-weight:650}.copy ul{padding-left:22px;margin:18px 0}.offer{display:flex;align-items:center;gap:18px;margin:24px 0 8px}.price{font-family:var(--mono,'JetBrains Mono',monospace);font-size:24px!important;font-weight:800;color:var(--ink)!important;margin:0}.btn{display:inline-block;padding:12px 20px;border-radius:8px;background:var(--accent,#e0563b);color:#fff;text-decoration:none;font-weight:800}.btn:hover{filter:brightness(1.08)}.btn:focus-visible{outline:3px solid currentColor;outline-offset:4px}.fine{font-size:13px!important}.why{margin-top:44px;padding:26px 28px;border:1px solid var(--line,#2a2521);border-radius:14px;background:var(--bg-2,#191512)}.why h2{font-family:var(--serif);font-size:28px;margin:0 0 8px}.why p{max-width:72ch;color:var(--ink-2);line-height:1.6}.why a{color:var(--accent,#e0563b);font-weight:750}@media(max-width:760px){.hero{grid-template-columns:1fr}.cover{max-width:340px;margin:auto}.copy h1{font-size:38px}.why{padding:20px}}
+  .jc{max-width:1040px;padding-top:14px;padding-bottom:34px}.crumbs{display:flex;gap:8px;align-items:center;font-size:13px;color:var(--ink-2);margin-bottom:18px}.crumbs a{color:var(--accent,#e0563b)}.hero{display:grid;grid-template-columns:minmax(220px,360px) 1fr;gap:clamp(28px,5vw,58px);align-items:center}.cover{border-radius:14px;overflow:hidden;box-shadow:0 18px 50px rgba(0,0,0,.35);background:#202027}.cover img{display:block;width:100%;height:auto}.kicker{font-family:var(--mono,'JetBrains Mono',monospace);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent,#e0563b);margin:0 0 10px}.copy h1{font-family:var(--serif);font-weight:600;font-size:clamp(34px,5vw,56px);line-height:1.03;margin:0 0 18px}.copy p,.copy li{font-size:16px;line-height:1.6;color:var(--ink-2)}.copy .lede{font-size:20px;line-height:1.45;color:var(--ink);font-weight:650}.copy ul{padding-left:22px;margin:18px 0}.offer{display:flex;align-items:flex-start;gap:18px;margin:24px 0 8px}.offer__actions{display:flex;align-items:center;gap:14px;flex-wrap:wrap}.price{font-family:var(--mono,'JetBrains Mono',monospace);font-size:24px!important;font-weight:800;color:var(--ink)!important;margin:8px 0 0}.btn{display:inline-block;padding:12px 20px;border-radius:8px;background:var(--accent,#e0563b);color:#fff!important;text-decoration:none;font-weight:800}.btn:hover{filter:brightness(1.08)}.btn:focus-visible,.sample-link:focus-visible{outline:3px solid currentColor;outline-offset:4px}.sample-link{color:var(--accent,#e0563b);font-weight:800;text-underline-offset:4px}.fine{font-size:13px!important}.why{margin-top:44px;padding:26px 28px;border:1px solid var(--line,#2a2521);border-radius:14px;background:var(--bg-2,#191512)}.why h2{font-family:var(--serif);font-size:28px;margin:0 0 8px}.why p{max-width:72ch;color:var(--ink-2);line-height:1.6}.why a{color:var(--accent,#e0563b);font-weight:750}.why__actions{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:18px}@media(max-width:760px){.hero{grid-template-columns:1fr}.cover{max-width:340px;margin:auto}.copy h1{font-size:38px}.offer{align-items:flex-start}.offer__actions{align-items:flex-start;flex-direction:column}.why{padding:20px}.why__actions{align-items:flex-start;flex-direction:column}}
 </style>
