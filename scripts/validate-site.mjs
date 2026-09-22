@@ -151,11 +151,6 @@ const expectedProductMetadata = new Map([
   ]],
   ['/books/', [
     {
-      href: 'https://cassiancreed.beehiiv.com/products/lindsay-clancy-trial-book?utm_source=cassiancreed.com&utm_medium=books_page&utm_campaign=lindsay_clancy_trial_book',
-      bookKey: 'lindsay-clancy-trial-book',
-      placement: 'books_page_primary',
-    },
-    {
       href: `${juryChessProductUrl}?utm_source=cassiancreed.com&utm_medium=books_page_cross_sell&utm_campaign=clancy_to_jury_chess&utm_content=clancy_trial_cross_sell`,
       bookKey: 'jury-chess',
       placement: 'books_page_cross_sell',
@@ -197,31 +192,13 @@ const expectedProductMetadata = new Map([
       placement: 'day_one_explainer_closing',
     },
   ]],
-  ['/post/ngri-massachusetts-explainer/', [
-    {
-      href: 'https://cassiancreed.beehiiv.com/products/lindsay-clancy-trial-book?utm_source=cassiancreed.com&utm_medium=ngri_explainer&utm_campaign=lindsay_clancy_trial_book&utm_content=closing_cta',
-      bookKey: 'lindsay-clancy-trial-book',
-      placement: 'ngri_explainer_closing',
-    },
-  ]],
 ]);
 
 // Selected-case book banners are driven by dated calendar data. They may be
 // absent after a tracked proceeding rolls out of the visible window, so verify
 // their contract when rendered without treating a time-dependent absence as a
 // site failure.
-const conditionalProductMetadata = new Map([
-  ['/', {
-    href: 'https://cassiancreed.beehiiv.com/products/lindsay-clancy-trial-book?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=lindsay_clancy_trial_book&utm_content=selected_case_banner',
-    bookKey: 'lindsay-clancy-trial-book',
-    placement: 'calendar_selected_case_banner',
-  }],
-  ['/court-calendar/', {
-    href: 'https://cassiancreed.beehiiv.com/products/lindsay-clancy-trial-book?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=lindsay_clancy_trial_book&utm_content=selected_case_banner',
-    bookKey: 'lindsay-clancy-trial-book',
-    placement: 'calendar_selected_case_banner',
-  }],
-]);
+const conditionalProductMetadata = new Map([]);
 
 const attributesFromAnchor = (anchor) => Object.fromEntries(
   [...anchor.matchAll(/\b([\w:-]+)="([^"]*)"/g)].map(([, name, value]) => [name, value.replace(/(?:&amp;|&#x26;)/g, '&')]),
