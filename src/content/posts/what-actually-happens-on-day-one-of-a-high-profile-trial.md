@@ -61,7 +61,7 @@ Three questions worth asking of any courtroom report:
 
 For the case's current verified posture and next proceeding, use the [court calendar](/court-calendar/). The [Lindsay Clancy trial tracker](/post/lindsay-clancy-trial/) remains useful as background and a record of the trial proceedings. This page remains focused on the jury-selection process rather than serving as a live status report.
 
-Following a trial well means resisting the pull of the daily narrative and keeping your attention on the larger arc. The verdict will not be decided on day one. Neither will your understanding of what happened.
+Following a trial well means resisting the pull of the daily narrative and keeping your attention on the larger arc. Jury selection alone does not decide the verdict. Neither will your understanding of what happened.
 
 ## Primary Sources for Massachusetts Procedure
 
