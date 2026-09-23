@@ -157,7 +157,7 @@ const genericFaqs = [
   },
   {
     question: 'How are these dates verified?',
-    answer: "Each one traces to a court filing, a prosecutor's office, a state agency record, or courtroom reporting. We review the calendar daily, and each entry names its source.",
+    answer: "Each one traces to a court filing, a prosecutor's office, a state agency record, or courtroom reporting. Each entry names its source and retains its own verification date. The page update date is not a claim that every entry was rechecked.",
   },
 ];
 const allFaqs = [...caseFaqs, ...genericFaqs];
@@ -528,7 +528,7 @@ const jsonld = {
         <li><strong>The source is never us.</strong> Each date traces to a court filing, a prosecutor's office, a state agency record, or a reporter who was in the room. We do not cite our own articles as the source for a date.</li>
         <li><strong>We name the source type.</strong> A district attorney's announcement and a news report are not the same thing, so we label which one you are looking at.</li>
         <li><strong>No sourced date, no dated entry.</strong> If a case is active but nothing is scheduled or credibly expected on a specific date, it goes in <a href="#unconfirmed">Dates Not Yet Confirmed</a>. A sourced expectation may appear as <em>Tentative</em>, but it is never presented as confirmed.</li>
-        <li><strong>We review the calendar daily.</strong> We re-check every entry before publishing the page's Updated date. Each entry also carries its own verification date, and we do not move that date forward unless we actually re-checked the entry against a source that day.</li>
+        <li><strong>Page updates and source checks have separate dates.</strong> The page's Updated date records the latest calendar change, not a complete review of every entry. Each entry retains its own verification date; we advance that date only after checking that entry against a source. A targeted correction does not refresh unrelated entries.</li>
         <li><strong>Nothing is quietly deleted.</strong> When a matter is finished and has been closed long enough to leave <a href="#completed">Recently Completed</a>, it moves to the <a href="/court-calendar/archive/">archive</a> with its text and sources intact, so a page that once carried a claim still shows it.</li>
         <li><strong>Each proceeding appears once.</strong> A hearing is written out in one entry, indexed once in the <a href="#case-by-case">case-by-case table</a>, and referenced from the FAQ by link. We do not restate the same proceeding in several places, because copies drift apart and one of them ends up wrong.</li>
         <li><strong>Legal status is stated exactly.</strong> Charged is not convicted. A plea is not a verdict. An appeal is not a retrial.</li>
@@ -559,7 +559,7 @@ const jsonld = {
       <p>Yes, and they often do. Hearings get continued, trials get pushed, and courts reschedule with little notice. Treat every date here as the best current information, not a promise.</p>
 
       <h3>How are these dates verified?</h3>
-      <p>Each one traces to a court filing, a prosecutor's office, a state agency record, or courtroom reporting. We review the calendar daily, and each entry names its source. See <a href="#how-we-verify">How We Verify Court Dates</a>.</p>
+      <p>Each one traces to a court filing, a prosecutor's office, a state agency record, or courtroom reporting. Each entry names its source and retains its own verification date. The page update date is not a claim that every entry was rechecked. See <a href="#how-we-verify">How We Verify Court Dates</a>.</p>
     </div>
   </section>
 

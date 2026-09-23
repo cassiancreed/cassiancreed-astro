@@ -68,6 +68,6 @@ Commentary that fails all three is not analysis. It is noise wearing analysis's 
 
 ## Read the Case in Full Context
 
-*The Lindsay Clancy Trial* follows the public record behind the case, the competing courtroom positions, and the Massachusetts criminal-responsibility questions this explainer introduces. It does not diagnose anyone or predict what a future court will decide.
+The Lindsay Clancy case tracker follows the public record, the competing courtroom positions, and the Massachusetts criminal-responsibility questions this explainer introduces. It does not diagnose anyone or predict what a future court will decide.
 
-<a href="https://cassiancreed.beehiiv.com/products/lindsay-clancy-trial-book?utm_source=cassiancreed.com&amp;utm_medium=ngri_explainer&amp;utm_campaign=lindsay_clancy_trial_book&amp;utm_content=closing_cta" data-book-key="lindsay-clancy-trial-book" data-cta-placement="ngri_explainer_closing">Get <em>The Lindsay Clancy Trial</em> — $2.99 →</a>
+[Read the current Lindsay Clancy case tracker](/post/lindsay-clancy-trial/).

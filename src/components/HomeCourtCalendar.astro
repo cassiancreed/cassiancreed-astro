@@ -15,33 +15,10 @@ const CalendarHeading = fullPage ? 'h1' : 'h2';
 const CALENDAR_ALERT_FORM_ID = '4d7c7c61-f04c-4870-bf20-f1af8a540e0f';
 const CALENDAR_ALERT_URL = `https://subscribe-forms.beehiiv.com/v3/forms/${CALENDAR_ALERT_FORM_ID}?utm_source=website&utm_medium=calendar_alert&utm_campaign=court_calendar_updates`;
 // Add a case only after its paid explainer has a verified public checkout URL.
-const LIVE_EXPLAINER_IDS = new Set(['patterson-appeal', 'clancy-closings-tentative', 'clancy-trial']);
-const CASE_BOOKS = new Map([
-  ['clancy-closings-tentative', {
-    title: 'The Lindsay Clancy Trial',
-    price: '$2.99',
-    eyebrow: 'New · Case Chess',
-    tagline: 'The law, the medical evidence, and the decisions jurors must make—explained before the verdict.',
-    format: 'Instant PDF',
-    cover: '/covers/lindsay-clancy-trial.jpg',
-    coverAlt: 'Book cover of The Lindsay Clancy Trial by Cassian Creed, showing chess pieces on a dark chessboard',
-    url: 'https://cassiancreed.beehiiv.com/products/lindsay-clancy-trial-book?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=lindsay_clancy_trial_book&utm_content=selected_case_banner',
-    bookKey: 'lindsay-clancy-trial-book',
-    placement: 'calendar_selected_case_banner',
-  }],
-  ['clancy-trial', {
-    title: 'The Lindsay Clancy Trial',
-    price: '$2.99',
-    eyebrow: 'New · Case Chess',
-    tagline: 'The law, the medical evidence, and the decisions jurors must make—explained before the verdict.',
-    format: 'Instant PDF',
-    cover: '/covers/lindsay-clancy-trial.jpg',
-    coverAlt: 'Book cover of The Lindsay Clancy Trial by Cassian Creed, showing chess pieces on a dark chessboard',
-    url: 'https://cassiancreed.beehiiv.com/products/lindsay-clancy-trial-book?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=lindsay_clancy_trial_book&utm_content=selected_case_banner',
-    bookKey: 'lindsay-clancy-trial-book',
-    placement: 'calendar_selected_case_banner',
-  }],
-]);
+const LIVE_EXPLAINER_IDS = new Set(['patterson-appeal']);
+// Lindsay Clancy sales promotion is paused until the post-mistrial PDF and
+// checkout copy are current. Keep the verified tracker live without a paid CTA.
+const CASE_BOOKS = new Map([]);
 const calendar = parseCourtCalendar(calendarTsv);
 const international = parseInternationalWatch(internationalTsv);
 const lastUpdated = formatCalendarDate(calendar.metadata.last_updated);
