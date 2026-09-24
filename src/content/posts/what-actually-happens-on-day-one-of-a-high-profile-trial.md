@@ -3,7 +3,7 @@ title: "What Actually Happens on Day One of a High-Profile Trial"
 seoTitle: "Lindsay Clancy Jury Selection: How It Works"
 description: "How Lindsay Clancy jury selection began: voir dire, alternate jurors, private questioning, and what the first day of a high-profile trial does not include."
 pubDate: 2026-07-18
-updatedDate: 2026-09-12
+updatedDate: 2026-09-23
 tag: Explainers
 featured: false
 capture: "case"
@@ -11,7 +11,7 @@ capture: "case"
 
 Jury selection in the Lindsay Clancy case began July 20 in Plymouth County, Massachusetts. Understanding what happened in that opening phase helps explain what viewers saw, what they did not see, and why the first day of a high-profile trial rarely resembles a televised courtroom drama.
 
-Because day one of a major trial rarely looks like what most people expect. There are no opening statements. No witnesses. No dramatic reveals. What there is, instead, is a careful, methodical process that will shape everything that follows — and it deserves to be understood on its own terms.
+Day one of a major trial rarely looks like what most people expect. While jury selection is underway, opening statements and witness testimony have not begun. If selection finishes that day, opening statements may follow. What there is, instead, is a careful, methodical process that will shape everything that follows — and it deserves to be understood on its own terms.
 
 For the latest verified case posture and schedule, use the [court calendar](/court-calendar/). The [Lindsay Clancy trial tracker](/post/lindsay-clancy-trial/) provides background and a record of the trial proceedings. The separate [clinical and legal primer](/post/lindsay-clancy-trial-2026-postpartum-psychosis/) explains postpartum psychosis and the Massachusetts criminal-responsibility standard without diagnosing anyone or predicting an outcome.
 
@@ -21,31 +21,29 @@ The phrase "jury selection" implies that attorneys are choosing the people they 
 
 The formal process is called [voir dire](/glossary/#voir-dire), the court-supervised questioning used to identify prospective jurors who cannot decide the case fairly. Prospective jurors are questioned — sometimes briefly, sometimes at length — about their backgrounds, their media exposure to the case, their personal experiences, and their ability to be fair. In a high-profile case, this questioning can be extensive. Jurors may be asked about what they've read, what they believe about the justice system, whether they've had personal experiences with mental illness, domestic violence, or law enforcement, and dozens of other topics depending on the nature of the case.
 
-Each side has two tools for shaping the jury. The first is a **challenge for cause** — an argument that a specific juror cannot be impartial, for a concrete, articulable reason. There is no limit on challenges for cause; if the judge agrees, the juror is dismissed. The second tool is the **peremptory challenge**, which allows each side to dismiss a limited number of jurors without giving any reason at all. The number of peremptory challenges varies by jurisdiction and the severity of the charges.
+Each side has two tools for shaping the jury. A **challenge for cause** asks the judge to remove a prospective juror for a specific reason affecting impartiality. [Massachusetts Rule 20](https://www.mass.gov/rules-of-criminal-procedure/criminal-procedure-rule-20-trial-jurors) sets fixed numbers for peremptory challenges, not a numerical limit on cause challenges.
+
+A **peremptory challenge** lets a party remove a limited number of prospective jurors without a cause-based reason. It does not permit discrimination. [Massachusetts evidence guidance](https://www.mass.gov/guide-to-evidence/section-1116-peremptory-challenges-of-potential-jurors) prohibits strikes based on protected characteristics, including race and sex. The number available depends on the charge and jury size.
 
 Readers can test those choices in the [free Voir Dire Simulator](/voir-dire-simulator/), which shows how cause challenges, peremptory strikes, and Batson limits work together.
 
-What each side is actually trying to do is build a jury that will hear their narrative most openly. The prosecution is typically looking for jurors who trust institutions, follow rules, and are comfortable with the idea of accountability. The defense is often looking for jurors who are skeptical of authority, comfortable with ambiguity, and willing to hold the state to a high standard of proof. Neither side will say this out loud during voir dire. But it is the underlying logic of nearly every question asked. In the Clancy case, questions about mental illness also connected to Massachusetts's separate legal standard for lack of criminal responsibility; our [Massachusetts NGRI explainer](/post/ngri-massachusetts-explainer/) explains that standard and what such a verdict triggers without predicting how any case should be decided.
+The legal goal is an impartial jury that can evaluate the evidence and follow the judge's instructions. Voir dire helps the court identify potential bias and lets the parties exercise lawful challenges. In the Clancy case, questions about mental illness also connected to Massachusetts's separate legal standard for lack of criminal responsibility; our [Massachusetts NGRI explainer](/post/ngri-massachusetts-explainer/) explains that standard and what such a verdict triggers without predicting how any case should be decided.
 
 ## Why Big Trials Use Extra Alternate Jurors — and What Alternates Actually Do
 
-In a standard civil case, you might see six jurors and one or two alternates. In a complex criminal trial — particularly one expected to last weeks or months — courts routinely seat twelve jurors and anywhere from four to eight alternates, sometimes more.
+[Massachusetts law ordinarily requires at least two additional jurors in a twelve-person jury case](https://malegislature.gov/Laws/GeneralLaws/PartIII/TitleII/Chapter234A/Section68). They hear the evidence with everyone else and are not identified as alternates until immediately before deliberations. The statute permits a smaller number for cause and different arrangements by stipulation.
 
-The reason is simple: attrition. A long trial creates real-world complications. Jurors get sick. Family emergencies arise. A juror may be dismissed mid-trial if the judge determines they have violated the court's instructions — by researching the case independently, for example, or by discussing it with someone outside the jury room. In a trial that runs for two months, losing one or two jurors is not unusual. Losing more is possible.
+Extra jurors help a trial continue if a juror becomes unable to serve. Under the usual Massachusetts procedure, the clerk randomly selects the alternates from the available jurors other than the foreperson. Those selected are kept separate from the deliberating jury until a verdict or discharge; they are not simply sent home when deliberations start.
 
-Alternates sit through every moment of the trial — every witness, every exhibit, every argument — just as the seated jurors do. They take notes. They pay attention. The only thing they do not do is deliberate, unless they are called upon to replace a seated juror. Until that moment, they do not know whether they will be needed. In some jurisdictions, alternates are not identified to the jury as alternates, precisely to ensure they remain fully engaged throughout.
-
-When deliberations begin, alternates who are not needed are typically thanked and dismissed. It is a strange position to be in — weeks of careful attention, and then, at the moment it matters most, you are sent home. Many alternates describe it as quietly deflating.
+If a deliberating juror must be replaced, an alternate is selected at random and the reconstituted jury begins deliberations anew. These are Massachusetts rules; other jurisdictions may use different procedures.
 
 ## What the Public Won't See on Day One — and Why That's Normal
 
 If you tune in expecting drama, day one will disappoint you. And that is exactly as it should be.
 
-Jury selection in a high-profile case can take days, sometimes weeks. The public and press may see very little of it. In cases involving sensitive facts, judges often conduct portions of voir dire in private — questioning jurors individually, outside the presence of other prospective jurors, to avoid tainting the pool. Jurors may be asked about deeply personal experiences. That questioning is not a spectacle, and responsible courts treat it accordingly.
+Jury selection can take time. [Massachusetts Rule 20](https://www.mass.gov/rules-of-criminal-procedure/criminal-procedure-rule-20-trial-jurors) requires individual questioning outside the other prospective jurors' presence when outside issues may have affected a juror's impartiality. That protects the jury pool. It does not by itself mean that the public and press are excluded; access is a separate legal question governed by applicable rules and orders.
 
-Beyond jury selection, there are almost always pretrial matters that carry over into the first days of trial: last-minute motions, evidentiary disputes, scheduling questions. These are handled in the courtroom, but often outside the presence of the jury, and sometimes outside the presence of the press and public entirely.
-
-None of this is suspicious. None of it signals that something is being hidden. It is the ordinary machinery of a serious proceeding, running as it is designed to run. The absence of visible action on day one is not a story. It is the process working.
+Motions, evidence questions, and scheduling may also arise around jury selection. A hearing outside the jury's presence is not automatically a closed courtroom. Limited visible activity alone does not establish either misconduct or that every restriction on access is justified.
 
 ## How to Follow Trial Coverage Wisely
 
@@ -63,7 +61,14 @@ Three questions worth asking of any courtroom report:
 
 For the case's current verified posture and next proceeding, use the [court calendar](/court-calendar/). The [Lindsay Clancy trial tracker](/post/lindsay-clancy-trial/) remains useful as background and a record of the trial proceedings. This page remains focused on the jury-selection process rather than serving as a live status report.
 
-Following a trial well means resisting the pull of the daily narrative and keeping your attention on the larger arc. The verdict will not be decided on day one. Neither will your understanding of what happened.
+Following a trial well means resisting the pull of the daily narrative and keeping your attention on the larger arc. Jury selection alone does not decide the verdict. Neither will your understanding of what happened.
+
+## Primary Sources for Massachusetts Procedure
+
+- [Rule 20: Trial Jurors](https://www.mass.gov/rules-of-criminal-procedure/criminal-procedure-rule-20-trial-jurors)
+- [Rule 24: Opening Statements, Arguments, and Jury Instructions](https://www.mass.gov/rules-of-criminal-procedure/criminal-procedure-rule-24-opening-statements-arguments-instructions-to-jury)
+- [General Laws, chapter 234A, section 68](https://malegislature.gov/Laws/GeneralLaws/PartIII/TitleII/Chapter234A/Section68)
+- [Guide to Evidence, section 1116: Peremptory Challenges](https://www.mass.gov/guide-to-evidence/section-1116-peremptory-challenges-of-potential-jurors)
 
 ## Follow the Full Trial Process
 
