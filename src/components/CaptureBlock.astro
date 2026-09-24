@@ -415,6 +415,15 @@ const embedSrc =
     height: 339px;
   }
 
+  /* Reclaim card padding on narrow screens so the embedded guide button label
+     fits without clipping; the iframe crop and form destination stay unchanged. */
+  @media (max-width: 430px) {
+    .capture__embed-window {
+      width: calc(100% + 2.5rem);
+      margin-left: -1.25rem;
+    }
+  }
+
   .capture__fallback {
     margin: 0.5rem 0 0;
     font-size: 0.85rem;
