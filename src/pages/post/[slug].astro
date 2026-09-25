@@ -152,6 +152,10 @@ const jsonld = faqNode
 </Base>
 
 <style>
+  @media(max-width:720px){
+    .post__content :global(table){width:100%;max-width:100%}
+    .post__content :global(th),.post__content :global(td){overflow-wrap:anywhere}
+  }
   .share{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin:8px 0 0}
   .post__archive{margin:0 0 26px;padding:16px 18px;border:1px solid rgba(217,166,92,.55);border-left:4px solid #d9a65c;border-radius:8px;background:var(--bg-2);color:var(--ink-2)}
   .post__archive strong{color:var(--ink)}

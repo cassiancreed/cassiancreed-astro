@@ -327,3 +327,53 @@ test('acquisition landing path rejects protocol-relative roots', async () => {
   assert.equal(events[0][2].origin_landing_page, '/');
   assert.equal(events[0][2].page_path, '/');
 });
+
+async function originHarness(initial = null) {
+  const base = await readFile(new URL('../src/layouts/Base.astro', import.meta.url), 'utf8');
+  const inline = base.match(/ORIGIN CAPTURE[\s\S]*?<script is:inline>\s*([\s\S]*?)\s*<\/script>/)?.[1];
+  const values = new Map(initial === null ? [] : [['nep_origin', JSON.stringify(initial)]]);
+  const events = [];
+  function load(search, pathname = '/court-calendar/') {
+    const window = {};
+    runInNewContext(inline, {
+      Date, URLSearchParams, Math, window, location: { search, pathname },
+      sessionStorage: { getItem: (key) => values.get(key) ?? null, setItem: (key, value) => values.set(key, value) },
+      gtag: (...args) => events.push(args),
+    });
+    return window;
+  }
+  return { load, events, values };
+}
+
+test('origin_visit fires once across tagged reloads and preserves first-touch attribution', async () => {
+  const h = await originHarness();
+  h.load('?utm_source=spotify&utm_campaign=first');
+  h.load('?utm_source=spotify&utm_campaign=first');
+  const next = h.load('?utm_source=facebook&utm_campaign=later', '/books/');
+  assert.equal(h.events.length, 1);
+  assert.equal(h.events[0][2].origin_source, 'spotify');
+  assert.equal(next.NEP_ORIGIN.s, 'spotify');
+  assert.equal(next.NEP_ORIGIN.p, '/court-calendar/');
+});
+
+test('stored acquisition tokens are revalidated before exposure or analytics', async () => {
+  const h = await originHarness({ s: 'spotify', m: 'user@example.com', c: '15551234567', u: '/bad/path', k: {}, p: '//attacker.example/', t: 100 });
+  const page = h.load('?utm_source=facebook');
+  assert.equal(page.NEP_ORIGIN.s, 'spotify');
+  assert.equal(page.NEP_ORIGIN.m, '');
+  assert.equal(page.NEP_ORIGIN.c, '');
+  assert.equal(page.NEP_ORIGIN.u, '');
+  assert.equal(page.NEP_ORIGIN.k, '');
+  assert.equal(page.NEP_ORIGIN.p, '/');
+  assert.equal(h.events[0][2].origin_source, 'spotify');
+  assert.equal(h.events[0][2].origin_medium, '(none)');
+});
+
+test('invalid stored acquisition shapes do not suppress a valid new campaign', async () => {
+  for (const value of [[], 'stale', 42, {}, { s: 'user@example.com' }]) {
+    const h = await originHarness(value);
+    const page = h.load('?utm_source=pinterest');
+    assert.equal(page.NEP_ORIGIN.s, 'pinterest');
+    assert.equal(h.events.length, 1);
+  }
+});

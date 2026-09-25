@@ -268,6 +268,17 @@ const exploreActive = resolvedExplore.some(i => navActive(i.href));
       });
       var KEY = 'nep_origin', stored = null;
       try { stored = JSON.parse(sessionStorage.getItem(KEY) || 'null'); } catch(e){}
+      // Session storage is an input too: older or malformed values must not
+      // bypass the same campaign-token checks applied to inbound URLs.
+      if (stored && typeof stored === 'object' && !Array.isArray(stored)) {
+        var clean = {};
+        ['s','m','c','u','k'].forEach(function(k){ clean[k] = safeCampaignToken(stored[k]); });
+        clean.p = typeof stored.p === 'string' && stored.p.indexOf('/') === 0
+          && stored.p.indexOf('//') !== 0 && !/[?#\\\s]/.test(stored.p) ? stored.p : '/';
+        clean.t = typeof stored.t === 'number' && Number.isFinite(stored.t) ? stored.t : 0;
+        clean.event_sent = stored.event_sent === true;
+        stored = ['s','m','c','u','k'].some(function(k){ return Boolean(clean[k]); }) ? clean : null;
+      } else { stored = null; }
       if (has && !stored) {
         stored = {
           s: inbound.utm_source   || '',
@@ -281,17 +292,21 @@ const exploreActive = resolvedExplore.some(i => navActive(i.href));
         try { sessionStorage.setItem(KEY, JSON.stringify(stored)); } catch(e){}
       }
       window.NEP_ORIGIN = stored || null;
-      if (has && typeof gtag === 'function') {
+      if (has && stored && !stored.event_sent && typeof gtag === 'function') {
         gtag('event','origin_visit',{
-          origin_source:   inbound.utm_source   || '(none)',
-          origin_medium:   inbound.utm_medium   || '(none)',
-          origin_campaign: inbound.utm_campaign || '(none)',
-          origin_content:  inbound.utm_content  || '(none)',
-          origin_term:     inbound.utm_term     || '(none)',
-          origin_landing_page: landingPath,
+          origin_source:   stored.s || '(none)',
+          origin_medium:   stored.m || '(none)',
+          origin_campaign: stored.c || '(none)',
+          origin_content:  stored.u || '(none)',
+          origin_term:     stored.k || '(none)',
+          origin_landing_page: stored.p,
           page_path: landingPath
         });
+        stored.event_sent = true;
       }
+      // No new identifier: the dispatch flag lives in the existing session
+      // record. When storage is blocked, cross-page deduplication is unavailable.
+      try { sessionStorage.setItem(KEY, JSON.stringify(stored)); } catch(e){}
     }catch(e){}
   })();
   </script>
