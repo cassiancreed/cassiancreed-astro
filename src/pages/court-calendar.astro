@@ -412,10 +412,10 @@ const jsonld = {
 
   <section class="wrap cal-sec" aria-labelledby="unconfirmed">
     <h2 id="unconfirmed">Dates Not Yet Confirmed</h2>
-    <p class="cal-sub">These cases are being tracked, but no date is on a public calendar. We do not publish a date until we can point to where it came from.</p>
+    <p class="cal-sub">These cases are being tracked, but an upcoming date has not been confirmed for this calendar. Any reported dates or source conflicts are explained in the entry.</p>
     {unconfirmed.map((e) => (
       <div class="row row--muted" id={e.id}>
-        <p class="row__type">No date set</p>
+        <p class="row__type">{e.id === 'bhatt-jury-selection' ? 'Date not confirmed' : 'No date set'}</p>
         <h3 class="row__case">{e.case}</h3>
         <p class="row__when">{e.where}</p>
         {e.docket && <p class="row__docket">{e.docket}</p>}
