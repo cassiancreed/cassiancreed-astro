@@ -1,22 +1,25 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import CaptureBlock from '../../components/CaptureBlock.astro';
 import BookCTA from '../../components/BookCTA.astro';
 import SafetyAlert from '../../components/SafetyAlert.astro';
+import { compareContentSourcePath } from '../../utils/content-order';
 import { existsSync } from 'node:fs';
 import { resolve } from 'node:path';
 export async function getStaticPaths() {
   const posts = await getCollection('posts');
   // Nancy Guthrie coverage is excluded from related-content rails by standing order; the pages themselves stay live.
-  const caseFiles = posts.filter(p => p.data.tag === 'Case Files' && !p.data.archived && !p.slug.startsWith('nancy-guthrie-'));
+  const caseFiles = posts
+    .filter(p => p.data.tag === 'Case Files' && !p.data.archived && !p.id.startsWith('nancy-guthrie-'))
+    .sort(compareContentSourcePath);
   return posts.map(p => {
-    const idx = caseFiles.findIndex(o => o.slug === p.slug);
+    const idx = caseFiles.findIndex(o => o.id === p.id);
     let rel = [];
     if (idx >= 0) { for (let k = 1; k <= 3; k++) rel.push(caseFiles[(idx + k) % caseFiles.length]); }
     else { rel = caseFiles.slice(0, 3); }
-    rel = rel.filter(r => r && r.slug !== p.slug);
-    return { params: { slug: p.slug }, props: { post: p, related: rel.map(r => ({ slug: r.slug, title: r.data.title })) } };
+    rel = rel.filter(r => r && r.id !== p.id);
+    return { params: { slug: p.id }, props: { post: p, related: rel.map(r => ({ slug: r.id, title: r.data.title })) } };
   });
 }
 const { post, related = [] } = Astro.props;
@@ -32,13 +35,13 @@ const formatDateUtc = (date) => date.toLocaleDateString('en-US', {
 function pickOffer(p){
   const explicit = p.data.capture;
   if (explicit === 'dna' || explicit === 'safety' || explicit === 'jury') return explicit;
-  const s = p.slug;
+  const s = p.id;
   if (/(dna|genetic-genealog|genealog|family-tree|othram|codis|-fgg-|fgg-|forensic-genetic)/.test(s)) return 'dna';
   if (/(coercive-control|stalking|warning-signs|stay-safe|safety)/.test(s)) return 'safety';
   return 'jury';
 }
 const captureOffer = pickOffer(post);
-const requestedOgImage = post.data.cover ?? `/og/${post.slug}.png`;
+const requestedOgImage = post.data.cover ?? `/og/${post.id}.png`;
 const requestedOgPath = requestedOgImage.startsWith('http')
   ? null
   : requestedOgImage.split('?')[0].replace(/^\//, '');
@@ -47,7 +50,7 @@ const requestedOgPath = requestedOgImage.startsWith('http')
 const socialImage = requestedOgPath && existsSync(resolve('public', requestedOgPath))
   ? requestedOgImage
   : '/og.png';
-const { Content } = await post.render();
+const { Content } = await render(post);
 const isCase = post.data.tag === 'Case Files';
 const pageUrl = new URL(Astro.url.pathname, Astro.site).href;
 const mk = (m) => encodeURIComponent(pageUrl + '?utm_source=' + m + '&utm_medium=social_share');
@@ -125,7 +128,7 @@ const jsonld = faqNode
 
   <div class="wrap"><section class="convert" id="free-guide">
     <div class="convert__grid">
-      <CaptureBlock offer={captureOffer} content={'post_' + post.slug} />
+      <CaptureBlock offer={captureOffer} content={'post_' + post.id} />
       {/* CONVERSION-FIRST RANK 1 (2026-07-28): the sitewide `.convert__book`
           aside sold The Trail at $1.99 from the foot of EVERY post. The title
           is held for worthiness review, so the aside was removed and the

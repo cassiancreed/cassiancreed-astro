@@ -20,9 +20,15 @@ const {
 } = Astro.props;
 const BRAND = 'Cassian Creed';
 const BRAND_SUFFIX = ` | ${BRAND}`;
+// Astro 4 decoded legacy named entities passed through component props. Astro 7
+// escapes them as literal text in dynamic metadata, so normalize that legacy
+// authoring form once at the metadata boundary without altering visible copy.
+const normalizeLegacyMetadata = (value: string) => value.replace(/&mdash;/gi, '—');
+const metadataTitle = normalizeLegacyMetadata(title);
+const metadataDescription = normalizeLegacyMetadata(description);
 // Page authors may pass an existing brand suffix while content is migrated.
 // Normalize it, then spend the suffix only when the complete SERP title fits.
-const baseTitle = title
+const baseTitle = metadataTitle
   .trim()
   .replace(/\s*(?:\||—|-)\s*Cassian Creed$/i, '')
   .trim();
@@ -40,7 +46,7 @@ const shorten = (value: string, max: number) => {
 // Search engines may rewrite title links, but concise, page-specific source
 // titles are the strongest signal we control. Preserve the on-page H1 in full.
 const renderedTitle = shorten(proposedTitle, 60);
-const renderedDescription = shorten(description, 160);
+const renderedDescription = shorten(metadataDescription, 160);
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const ogImg = new URL(ogImage, Astro.site).href;
 // Sitewide Organization + Person JSON-LD (AI discoverability, Mantra rule 47).
@@ -186,7 +192,7 @@ const exploreActive = resolvedExplore.some(i => navActive(i.href));
   <link rel="canonical" href={canonical} />
   <meta property="og:type" content={ogType} />
   <meta property="og:title" content={renderedTitle} />
-  <meta property="og:description" content={description} />
+  <meta property="og:description" content={metadataDescription} />
   <meta property="og:url" content={canonical} />
   <meta property="og:site_name" content="Cassian Creed" />
   <meta property="og:image" content={ogImg} />
@@ -195,7 +201,7 @@ const exploreActive = resolvedExplore.some(i => navActive(i.href));
   <meta property="og:image:alt" content={renderedTitle} />
   <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={renderedTitle} />
-    <meta name="twitter:description" content={description} />
+    <meta name="twitter:description" content={metadataDescription} />
   <meta name="twitter:site" content="@CassianCreed" />
   <meta name="twitter:image" content={ogImg} />
   <meta name="twitter:image:alt" content={renderedTitle} />
