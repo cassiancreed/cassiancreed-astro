@@ -72,7 +72,7 @@ Outside the courthouse, Maya's sister, Maricris Drouaillet, said justice had “
 
 That is the part of the case that remains unresolved. A jury has now decided who was responsible for Maya's death, but her family still does not know where she is. Prosecutors and investigators said after the verdict that the search continues.
 
-The [official South County calendar](https://www.sandiego.courts.ca.gov/portal/online/calendar/F_BCCAL3.html), prepared September 24, 2026, at 5:25:16 a.m., lists case SCS319857 for probation hearing and sentencing on **September 29 at 1:30 p.m. Pacific, Department S-05, before Judge Enrique Camarena**. The calendar is subject to change. A reported continuance request has no verified ruling here; the listing does not establish that sentencing will proceed. Court reporting says the separate assault-weapon count was resolved by a guilty plea on July 20. No sentence is reported as imposed here. See the [court calendar](/court-calendar/) for the current tracked setting.
+The [official South County calendar](https://www.sandiego.courts.ca.gov/portal/online/calendar/F_BCCAL2.html), prepared September 26, 2026, at 5:25:12 a.m., lists case SCS319857 for probation hearing and sentencing on **September 29 at 1:30 p.m. Pacific, Department S-05, before Judge Enrique Camarena**. The calendar is subject to change. A reported continuance request has no verified ruling here; the listing does not establish that sentencing will proceed. Court reporting says the separate assault-weapon count was resolved by a guilty plea on July 20. No sentence is reported as imposed here. See the [court calendar](/court-calendar/) for the current tracked setting.
 
 The legal case has reached a major judgment. Maya's case has not reached its final answer.
 
@@ -107,7 +107,7 @@ Maya Millete was a mother of three who disappeared on an ordinary January evenin
 
 ## Sources
 
-- [San Diego Superior Court, September 29 calendar, prepared September 24, 2026](https://www.sandiego.courts.ca.gov/portal/online/calendar/F_BCCAL3.html) — rolling link; reconfirm date before relying on it.
+- [San Diego Superior Court, September 29 calendar, prepared September 26, 2026](https://www.sandiego.courts.ca.gov/portal/online/calendar/F_BCCAL2.html) — rolling link; reconfirm date before relying on it.
 - [San Diego Union-Tribune, July 21 guilty-plea and sentencing report](https://www.sandiegouniontribune.com/2026/07/21/already-convicted-of-murder-in-wifes-disappearance-millete-pleads-guilty-to-assault-weapon-charge/)
 - [FOX 5 report via AOL, September 17 continuance request](https://www.aol.com/articles/larry-millete-seeks-sentencing-delayed-000048000.html)
 
