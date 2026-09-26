@@ -85,7 +85,7 @@ _Verdict-section sources: [San Diego County District Attorney's Office, July 9, 
 ## Frequently Asked Questions
 
 **Has Larry Millete been convicted?**
-Yes. On July 9, 2026, a San Diego County jury found Larry Millete guilty of first-degree murder in the death of his wife, Maya Millete. The official calendar prepared September 24 lists September 29 at 1:30 p.m. Pacific in Department S-05 for probation hearing and sentencing. A reported continuance request remains unresolved here.
+Yes. On July 9, 2026, a San Diego County jury found Larry Millete guilty of first-degree murder in the death of his wife, Maya Millete. The official calendar prepared September 26 lists September 29 at 1:30 p.m. Pacific in Department S-05 for probation hearing and sentencing. A reported continuance request remains unresolved here.
 
 **How can there be a murder trial with no body?**
 California, like every U.S. state, allows murder prosecutions without a recovered body. The state must prove beyond a reasonable doubt — through circumstantial evidence — that the victim is dead and that the defendant caused the death. We cover how that works in our explainer on [convictions without a body](/post/can-you-be-convicted-of-murder-without-a-body/).
