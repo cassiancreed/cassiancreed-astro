@@ -11,6 +11,26 @@ export function isBeehiivSignupResult(rawUrl, siteOrigin, baseUrl) {
   return Boolean(url && url.origin === siteOrigin && url.searchParams.get('subscribed') === '1');
 }
 
+export function isBeehiivSignupLink(rawUrl, baseUrl) {
+  const url = parseUrl(rawUrl, baseUrl);
+  if (!url || url.protocol !== 'https:') return false;
+  return (url.hostname === 'subscribe-forms.beehiiv.com' && /^\/v3\/forms\/[^/]+\/?$/.test(url.pathname))
+    || (url.hostname === 'cassiancreed.beehiiv.com' && /^\/(subscribe|signup)\/?$/.test(url.pathname));
+}
+
+function acquisitionSnapshot(raw) {
+  const source = raw && typeof raw === 'object' && !Array.isArray(raw) ? raw : {};
+  const clean = {};
+  for (const key of ['s', 'm', 'c', 'u', 'k']) {
+    const value = typeof source[key] === 'string' ? source[key].trim() : '';
+    clean[key] = value.length <= 100 && /^[A-Za-z0-9._~-]+$/.test(value)
+      && !/\d{7,}/.test(value) ? value : '';
+  }
+  clean.p = typeof source.p === 'string' && source.p.startsWith('/')
+    && !source.p.startsWith('//') && !/[?#\\\s]/.test(source.p) ? source.p : '';
+  return clean;
+}
+
 export function initBeehiivParentSignup(options = {}) {
   const win = options.window || window;
   const doc = options.document || document;
@@ -32,9 +52,9 @@ export function initBeehiivParentSignup(options = {}) {
     };
   }
 
-  function fireSignup(meta) {
+  function fireSignup(meta, acquisition = win.NEP_ORIGIN) {
     if (typeof win.gtag !== 'function') return false;
-    const origin = win.NEP_ORIGIN || {};
+    const origin = acquisitionSnapshot(acquisition);
     win.gtag('event', 'sign_up', {
       method: 'beehiiv',
       page_path: win.location.pathname,
@@ -84,13 +104,13 @@ export function initBeehiivParentSignup(options = {}) {
     if (!link) return;
     const url = parseUrl(link.href, win.location.href);
     if (!url) return;
-    const isForm = url.hostname === 'subscribe-forms.beehiiv.com' && url.pathname.startsWith('/v3/forms/');
-    const isSignup = url.hostname === 'cassiancreed.beehiiv.com'
-      && !url.pathname.startsWith('/products/')
-      && (/\/(subscribe|signup)/.test(url.pathname) || url.searchParams.has('subscribed'));
-    if (!isForm && !isSignup) return;
+    if (!isBeehiivSignupLink(url.href, win.location.href)) return;
+    // Opening a signup destination is intent, not a confirmed subscription.
+    if (typeof win.gtag === 'function') {
+      win.gtag('event', 'subscribe_click', { link_url: url.href, page_path: win.location.pathname });
+    }
     try {
-      storage?.setItem(PENDING_KEY, JSON.stringify({ created_at: now(), meta: metadata(link, url.href) }));
+      storage?.setItem(PENDING_KEY, JSON.stringify({ created_at: now(), meta: metadata(link, url.href), acquisition: acquisitionSnapshot(win.NEP_ORIGIN) }));
     } catch {}
   });
 
@@ -104,7 +124,7 @@ export function initBeehiivParentSignup(options = {}) {
       : Number.NaN;
     if (!pending || !pending.meta || !Number.isFinite(age) || age < 0 || age > PENDING_TTL_MS) {
       try { storage?.removeItem(PENDING_KEY); } catch {}
-    } else if (fireSignup(pending.meta)) {
+    } else if (fireSignup(pending.meta, pending.acquisition === undefined ? win.NEP_ORIGIN : pending.acquisition)) {
       try { storage?.removeItem(PENDING_KEY); } catch {}
     }
   }
