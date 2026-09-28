@@ -391,13 +391,5 @@ if(typeof gtag!=='undefined'){gtag('event','capture_outbound',{link_url:s.href,m
   import { initBeehiivParentSignup } from '../scripts/beehiiv-parent-signup.mjs';
   initBeehiivParentSignup();
 </script>
-<script>
-  document.addEventListener('click', function (e) {
-    var a = e.target.closest && e.target.closest('.capture-cta a');
-    if (a && typeof window.gtag === 'function') {
-      window.gtag('event', 'subscribe_click', { link_url: a.href, page_path: location.pathname });
-    }
-  }, true);
-</script>
 </body>
 </html>

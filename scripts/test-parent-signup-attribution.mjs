@@ -377,3 +377,38 @@ test('invalid stored acquisition shapes do not suppress a valid new campaign', a
     assert.equal(h.events.length, 1);
   }
 });
+
+test('Court book CTA and guide scroll do not count as subscription clicks; genuine form does', () => {
+  const h = harness();
+  for (const href of ['https://cassiancreed.com/books/', 'https://cassiancreed.com/court-calendar/#free-guide', 'https://cassiancreed.beehiiv.com/products/jury-chess']) {
+    const link = { href, dataset: {}, closest: () => link };
+    h.listeners.get('click')({ target: link });
+  }
+  assert.equal(h.events.length, 0);
+  const link = { href: 'https://subscribe-forms.beehiiv.com/v3/forms/court-form', dataset: {}, closest: () => link };
+  h.listeners.get('click')({ target: link });
+  assert.equal(h.events.length, 1);
+  assert.equal(h.events[0][1], 'subscribe_click');
+});
+
+test('new-tab fallback retains acquisition without session origin and sanitizes stored tokens', () => {
+  const storage = new MemoryStorage();
+  const source = harness({ storage });
+  const link = { href: 'https://subscribe-forms.beehiiv.com/v3/forms/court-form', dataset: {}, closest: () => link };
+  source.listeners.get('click')({ target: link });
+  const pending = JSON.parse(storage.getItem('nep_signup_pending_v1'));
+  pending.acquisition.k = 'person@example.com';
+  storage.setItem('nep_signup_pending_v1', JSON.stringify(pending));
+  const events = [];
+  const window = { location: new URL('https://cassiancreed.com/?subscribed=1'), NEP_ORIGIN: null, gtag: (...args) => events.push(args) };
+  window.top = window;
+  const document = { querySelectorAll: () => [], addEventListener() {} };
+  initBeehiivParentSignup({ window, document, storage, now: () => 1_000_000 });
+  assert.equal(events.length, 1);
+  assert.equal(events[0][1], 'sign_up');
+  assert.equal(events[0][2].acquisition_source, 'spotify');
+  assert.equal(events[0][2].acquisition_campaign, 'case_launch');
+  assert.equal(events[0][2].acquisition_landing_page, '/start-here/');
+  assert.equal(events[0][2].acquisition_term, '(none)');
+  assert.equal(storage.getItem('nep_signup_pending_v1'), null);
+});
