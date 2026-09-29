@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import test from 'node:test';
+import './test-calendar-signup-acquisition.mjs';
 import { runInNewContext } from 'node:vm';
 import { initBeehiivParentSignup, isBeehiivSignupResult } from '../src/scripts/beehiiv-parent-signup.mjs';
 
