@@ -692,8 +692,9 @@ const visibleDayEntries = (entries) => {
   .case-alert__copy{margin:0;color:var(--ink-2);line-height:1.55}
   /* Keep the whole provider form reachable, including optional preferences,
      validation messages and confirmation. Provider content can scroll. */
-  .case-alert__embed-window{width:100%;margin-top:20px}
-  .case-alert__embed{display:block;position:static;width:100%;height:clamp(360px,60dvh,520px);border:0}
+  .case-alert__embed-window{width:100%;height:auto;margin-top:20px;overflow:hidden}
+  /* Compensate only the provider's 80px side gutters, never its content rows. */
+  .case-alert__embed{display:block;position:static;width:calc(100% + 160px);max-width:none;margin-left:-80px;height:clamp(360px,60dvh,520px);border:0}
   @media(max-width:430px){.case-alert__inner{padding:16px}.case-alert h2{font-size:28px}}
   .case-alert__fallback,.case-alert__helper{margin:10px 0 0;color:var(--ink-3);font-size:11px;line-height:1.45}
   .home-calendar__alert-noscript{color:var(--accent)}

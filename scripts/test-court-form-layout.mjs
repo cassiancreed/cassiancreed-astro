@@ -25,13 +25,13 @@ test('only homepage has modal; both Court paths retain standalone fallbacks', ()
  assert.doesNotMatch(calendar, /<dialog[^>]*data-calendar-alert-dialog/);
  for (const html of [home, calendar]) assert.match(html, new RegExp('<a[^>]*href="https://subscribe-forms.beehiiv.com/v3/forms/' + courtId));
 });
-test('Court layout does not crop provider document; narrow-screen override stays scoped', () => {
+test('Court layout preserves full vertical document and compensates provider side gutters', () => {
  const component = read('src/components/CaptureBlock.astro');
- assert.match(component, /\.capture__embed-window--calendar\s*\{[^}]*height: auto;[^}]*overflow: visible;/);
- assert.match(component, /\.capture__embed-window--calendar \.capture__embed\s*\{[^}]*position: static;[^}]*left: auto;[^}]*width: 100%;/);
+ assert.match(component, /\.capture__embed-window--calendar\s*\{[^}]*height: auto;[^}]*overflow: hidden;/);
+ assert.match(component, /\.capture__embed-window--calendar \.capture__embed\s*\{[^}]*position: static;[^}]*top: auto;[^}]*left: auto;[^}]*width: calc\(100% \+ 160px\);[^}]*margin-left: -80px;/);
  assert.match(component, /@media \(max-width: 430px\)[\s\S]*\.capture__embed-window--calendar\s*\{\s*width: 100%;\s*margin-left: 0;/);
  const modal = read('src/components/HomeCourtCalendar.astro');
  assert.match(modal, /max-height:calc\(100dvh - 28px\);overflow:auto/);
- assert.match(modal, /\.case-alert__embed\{[^}]*position:static;[^}]*width:100%;height:clamp\(360px,60dvh,520px\)/);
+ assert.match(modal, /\.case-alert__embed\{[^}]*position:static;[^}]*width:calc\(100% \+ 160px\);max-width:none;margin-left:-80px;height:clamp\(360px,60dvh,520px\)/);
  assert.doesNotMatch(modal, /\.case-alert__embed\{[^}]*top:-/);
 });
