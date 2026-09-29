@@ -308,6 +308,7 @@ const visibleDayEntries = (entries) => {
 </section>
 
 <script>
+  import { calendarSignupUrl } from '../scripts/calendar-signup-acquisition.mjs';
   const root = document.querySelector('[data-home-calendar]');
   if (root) {
     const fullPage = root.classList.contains('home-calendar--full');
@@ -398,8 +399,9 @@ const visibleDayEntries = (entries) => {
 
     function openAlert() {
       if (!alertDialog || !alertForm || !alertFallback) return;
-      const formUrl = new URL(alertForm.getAttribute('data-form-base'));
-      alertForm.src = formUrl.toString();
+      const formUrl = calendarSignupUrl(alertForm.getAttribute('data-form-base'), window.NEP_ORIGIN);
+      alertForm.src = formUrl;
+      alertFallback.href = formUrl;
       alertSuccess.hidden = true;
       alertEmbedWindow.hidden = false;
       alertDialog.showModal();
