@@ -11,7 +11,7 @@
     "intl:check": "node scripts/validate-international-watch.mjs",
     "missing:check": "node scripts/validate-missing-persons.mjs",
     "posts:check": "node scripts/validate-post-archive.mjs",
-    "site:check": "node scripts/validate-site.mjs",
+    "site:check": "node scripts/validate-site.mjs && node --test scripts/test-court-form-layout.mjs",
     "canon:check": "node scripts/validate-case-handling-canon.mjs",
     "court-command:check": "node scripts/validate-court-command-bundle.mjs",
     "court-command:fixture-check": "node scripts/validate-court-command-bundle.mjs src/data/court-command-intake.example.json",

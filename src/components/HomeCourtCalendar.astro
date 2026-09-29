@@ -295,7 +295,7 @@ const visibleDayEntries = (entries) => {
             data-form-base={`https://subscribe-forms.beehiiv.com/v3/forms/${CALENDAR_ALERT_FORM_ID}?utm_source=website&utm_medium=calendar_alert&utm_campaign=court_calendar_updates`}
             title="Subscribe for court calendar updates"
             loading="lazy"
-            scrolling="no"
+            scrolling="auto"
             frameborder="0"
           ></iframe>
         </div>
@@ -683,15 +683,18 @@ const visibleDayEntries = (entries) => {
   .home-calendar__agenda-actions button{color:var(--accent);font-weight:700}
   .home-calendar__empty{color:var(--ink-3);font-size:13px;line-height:1.5}
   .home-calendar__agenda-disclaimer{margin:18px 0 0;padding-top:12px;border-top:1px solid var(--line);color:var(--ink-3);font-family:var(--mono);font-size:9px;line-height:1.5}
-  .case-alert{width:min(620px,calc(100% - 28px));padding:0;border:1px solid var(--line);border-radius:14px;background:var(--bg-2);color:var(--ink);box-shadow:0 28px 90px rgba(0,0,0,.7)}
+  .case-alert{width:min(620px,calc(100% - 28px));max-height:calc(100dvh - 28px);overflow:auto;padding:0;border:1px solid var(--line);border-radius:14px;background:var(--bg-2);color:var(--ink);box-shadow:0 28px 90px rgba(0,0,0,.7)}
   .case-alert::backdrop{background:rgba(7,5,4,.78)}
   .case-alert__inner{position:relative;padding:30px}
   .case-alert__close-form{position:absolute;top:12px;right:12px;margin:0}
-  .case-alert__close{width:38px;height:38px;border:0;background:transparent;color:var(--ink-2);cursor:pointer;font-size:28px;line-height:1}
+  .case-alert__close{width:44px;height:44px;border:0;background:transparent;color:var(--ink-2);cursor:pointer;font-size:28px;line-height:1}
   .case-alert h2{margin:0 40px 10px 0;font-family:var(--serif);font-size:34px;line-height:1.08}
   .case-alert__copy{margin:0;color:var(--ink-2);line-height:1.55}
-  .case-alert__embed-window{position:relative;width:min(400px,100%);height:64px;margin-top:20px;overflow:hidden}
-  .case-alert__embed{position:absolute;top:-80px;left:-80px;width:calc(100% + 160px);height:207px;border:0}
+  /* Keep the whole provider form reachable, including optional preferences,
+     validation messages and confirmation. Provider content can scroll. */
+  .case-alert__embed-window{width:100%;margin-top:20px}
+  .case-alert__embed{display:block;position:static;width:100%;height:clamp(360px,60dvh,520px);border:0}
+  @media(max-width:430px){.case-alert__inner{padding:16px}.case-alert h2{font-size:28px}}
   .case-alert__fallback,.case-alert__helper{margin:10px 0 0;color:var(--ink-3);font-size:11px;line-height:1.45}
   .home-calendar__alert-noscript{color:var(--accent)}
   .case-alert__fallback a{color:var(--accent)}
