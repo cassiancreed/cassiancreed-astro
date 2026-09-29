@@ -264,10 +264,10 @@ const eventById = (id) => courtSchedule?.itemListElement
   .find((item) => item['@id'] === `https://cassiancreed.com/court-calendar#${id}`);
 const aramburuEvent = eventById('aramburu-paris-trial');
 const banksEvent = eventById('banks-federal-trial');
-if (aramburuEvent?.location?.address?.addressCountry !== 'FR') {
+if (aramburuEvent && aramburuEvent.location?.address?.addressCountry !== 'FR') {
   failures.push('/court-calendar/: Aramburú structured-data country must be FR');
 }
-if (aramburuEvent?.location?.address?.addressLocality !== 'Paris') {
+if (aramburuEvent && aramburuEvent.location?.address?.addressLocality !== 'Paris') {
   failures.push('/court-calendar/: Aramburú structured-data locality must be Paris');
 }
 if (banksEvent && banksEvent.location?.address?.addressCountry !== 'US') {
