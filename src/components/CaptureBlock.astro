@@ -138,25 +138,10 @@ const embedSrc =
     <div class="capture-cta">
       {embed ? (
         <>
-          {/* FORM VISIBILITY FIX — NEP-CWK-IRASEMA-FULL-FIX-DEPLOY-0726.
-              The Beehiiv v2 theme wraps this form in 80px of padding on ALL
-              FOUR sides. Beehiiv can change the content above the controls
-              without changing the form id. Re-measured live 2026-08-23: the
-              control row now sits at y=213..259 inside a 339px document.
-                · HORIZONTAL — 80px of padding each side eats the width. In a
-                  298px-wide frame the email input collapsed to 65px.
-              Fix: keep the standard guide forms at their original y=80 crop,
-              but give the calendar iframe a 339px document and shift it to its
-              y=213 control row. The clipping window remains 64px tall, so the
-              page layout does not move.
-              Window max-width is 400px ON PURPOSE: the form's own max-width is
-              400px and it centres inside the padded box once that box exceeds
-              400px, which would reintroduce a left gap. Capping the window at
-              400px keeps iframe width <= 560px, where the form still fills the
-              box and starts at exactly x=80 — so the -80px crop stays exact at
-              every width. Verified alignment at 342 / 502 / 620 / 760px.
-              If the form ever looks off-centre or clipped again, re-measure
-              both the control-row position and the theme padding first. */}
+          {/* Standard guide forms retain their existing crop. Court signup
+              shows the full provider document so preferences, validation and
+              confirmation remain reachable. Verify native responsive layout
+              when the provider's fields or theme change. */}
           <div class:list={[
             'capture__embed-window',
             { 'capture__embed-window--calendar': offer === 'calendar' },
@@ -171,7 +156,7 @@ const embedSrc =
               src={embedSrc}
               title={resolvedButton}
               loading="lazy"
-              scrolling="no"
+              scrolling={offer === 'calendar' ? 'auto' : 'no'}
               frameborder="0"
             ></iframe>
           </div>
@@ -406,13 +391,21 @@ const embedSrc =
     color-scheme: light;
   }
 
-  /* The Court Calendar Updates form includes its own heading and description,
-     which move its controls lower than the three standard guide forms. Scope
-     the deeper crop to this form so the case, DNA, and safety captures retain
-     their original y=80 control row. */
+  /* Court preferences and provider validation need the whole document.
+     Other guide forms retain their existing crop. */
+  .capture__embed-window--calendar {
+    max-width: 600px;
+    height: auto;
+    overflow: hidden;
+  }
   .capture__embed-window--calendar .capture__embed {
-    top: -205px;
-    height: 339px;
+    display: block;
+    position: static;
+    top: auto;
+    left: auto;
+    width: calc(100% + 160px);
+    margin-left: -80px;
+    height: clamp(360px, 60dvh, 520px);
   }
 
   /* Reclaim card padding on narrow screens so the embedded guide button label
@@ -421,6 +414,10 @@ const embedSrc =
     .capture__embed-window {
       width: calc(100% + 2.5rem);
       margin-left: -1.25rem;
+    }
+    .capture__embed-window--calendar {
+      width: 100%;
+      margin-left: 0;
     }
   }
 
