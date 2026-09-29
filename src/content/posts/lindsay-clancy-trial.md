@@ -1,15 +1,15 @@
 ---
 title: "Lindsay Clancy trial tracker: Mistrial, pending charges and next hearing"
-description: "Lindsay Clancy's September 4 mistrial, the charges still pending, the September 29 status and trial-assignment hearing, and the Massachusetts criminal-responsibility standard."
+description: "Lindsay Clancy’s unresolved murder charges after a mistrial, current hearing coverage, and the Massachusetts criminal-responsibility standard."
 pubDate: 2026-07-15
-updatedDate: 2026-09-11
+updatedDate: 2026-09-29
 tag: Case Files
 featured: false
 victim: Cora Clancy, 5; Dawson Clancy, 3; Callan Clancy, 8 months
 incidentDate: January 2023
 location: Duxbury, Massachusetts
 jurisdiction: Plymouth County Superior Court, Massachusetts
-status: "Mistrial declared September 4 after the jury could not agree. Three murder charges remain pending; no conviction or acquittal. A status and trial-assignment hearing is set for September 29 at 9 a.m."
+status: "Mistrial declared September 4. Murder charges remain unresolved; see the current procedural update below."
 ---
 
 <div class="status-box" style="border:1px solid var(--rule,#e4e0d9);border-left:4px solid var(--accent,#b91c1c);background:var(--card,#faf9f7);padding:1rem 1.25rem;margin:1.5rem 0;border-radius:6px;font-size:.95rem">
@@ -30,10 +30,10 @@ Cassian Creed maintains this Neural Edge Publishing tracker using available cour
 <li><strong>Judge:</strong> William F. Sullivan.</li>
 <li><strong>Charges now pending:</strong> Three counts of first-degree murder.</li>
 <li><strong>Plea:</strong> Not guilty by reason of lack of criminal responsibility.</li>
-<li><strong>Next scheduled step:</strong> A status conference and trial-assignment proceeding is set for Tuesday, September 29, 2026, in Plymouth Superior Court. Judge Sullivan set it from the bench when he declared the mistrial. CBS News Boston and WCVB report the time as 9 a.m.; this tracker has no primary docket entry for the time. No retrial date has been set.</li>
-<li><strong>Pending defense motion:</strong> On September 10, defense counsel Kevin Reddington filed a renewed motion for a required finding of not guilty under Massachusetts Rule of Criminal Procedure 25(b)(2), asking the court to enter a finding of not guilty by reason of lack of criminal responsibility on each indictment. He asked that it be heard at the September 29 conference. No ruling has issued.</li>
-<li><strong>Retrial decision:</strong> Plymouth County District Attorney Timothy Cruz has not announced whether his office will retry the case.</li>
-<li><strong>Last verified:</strong> September 11, 2026, against WBUR and NBC10 Boston reporting of the September 10 filing and CBS News Boston and WCVB courtroom reporting of the September 29 setting. No court docket or order has been obtained for this tracker.</li>
+<li><strong>Next step:</strong> See the current procedural update below and the linked Court Calendar.</li>
+<li><strong>Pending defense motion:</strong> The renewed Rule 25(b)(2) request seeks an acquittal; a request is not a judgment.</li>
+
+<li><strong>Current-source cutoff:</strong> September 29, 2026, 10:04 a.m. Pacific. This tracker uses attributed reporting; direct docket access remains unavailable.</li>
 </ul>
 <p style="margin-bottom:0">The mistrial ended this trial without a conviction or acquittal. Clancy remains presumed innocent.</p>
 </div>
@@ -56,10 +56,10 @@ Cora, 5, Dawson, 3, and Callan, 8 months, died after events at their Duxbury hom
 | Plea | **VERIFIED** | Not guilty. |
 | Trial posture | **VERIFIED** | The trial ended September 4 in a mistrial after the jury could not agree. The three murder charges remain pending. |
 | Court and judge | **VERIFIED** | Plymouth Superior Court; Judge William F. Sullivan. |
-| Next scheduled step | **VERIFIED** | A status conference and trial-assignment proceeding is set for September 29, 2026, in Plymouth Superior Court. No retrial date has been set. |
-| Hearing time | **REPORTED, NOT DOCKET-VERIFIED** | CBS News Boston and WCVB report 9 a.m. Eastern. This tracker has not obtained a primary docket entry stating the time. |
-| Pending defense motion | **FILED, NOT RULED** | A renewed Rule 25(b)(2) motion for a required finding of not guilty was filed September 10, seeking a finding of not guilty by reason of lack of criminal responsibility on each indictment. No ruling has issued. |
-| Retrial decision | **NOT ANNOUNCED** | The Plymouth County District Attorney has not said whether the case will be retried. |
+| Next scheduled step | **SEE CURRENT UPDATE** | The procedural update below supersedes the historical September 29 appointment. |
+| Hearing time | **NOT PUBLICLY VERIFIED** | The next reported hearing has no independently verified start time in this tracker. |
+| Pending defense motion | **UNRESOLVED** | A request for acquittal does not resolve the charges. |
+| Retrial decision | **SEE CURRENT UPDATE** | Do not confuse a motions hearing with a retrial. |
 | Defense counsel | **VERIFIED** | Kevin Reddington. |
 | Core defense | **DEFENSE** | Lack of criminal responsibility, tied to the defense's contention that Clancy experienced postpartum psychosis and that alleged overmedication affected her condition. |
 | Burden on criminal responsibility | **VERIFIED** | Once evidence fairly raises lack of criminal responsibility, Massachusetts law requires the Commonwealth to prove beyond a reasonable doubt that the defendant was criminally responsible. |
@@ -88,13 +88,13 @@ A clinical diagnosis and a legal finding are not the same thing. Experts may add
 
 Judge William Sullivan declared a mistrial on September 4 after the jury reported that it could not reach a unanimous verdict. The trial ended without a conviction or acquittal. Clancy remains charged with three counts of first-degree murder, has pleaded not guilty, and remains presumed innocent.
 
-The next courtroom date is a status conference and trial-assignment proceeding on **Tuesday, September 29, 2026**, in Plymouth Superior Court. Judge Sullivan set it from the bench when he declared the mistrial. [CBS News Boston’s courtroom coverage](https://www.cbsnews.com/boston/live-updates/lindsay-clancy-murder-trial-hung-jury-mistrial-verdict-watch-live-updates/) and [WCVB](https://www.wcvb.com/article/lindsay-clancy-mistrial-declared-status-hearing/73618227) both report the time as 9 a.m.; this tracker has not obtained a primary docket entry stating the time. [Associated Press](https://apnews.com/article/lindsay-clancy-mistrial-what-happens-next-e38bef47f5af93bf95aabad272215b45) and [USA Today](https://www.usatoday.com/story/news/crime/2026/09/09/lindsay-clancy-plea-deal-retrial/91659239007/) report the same September 29 status and trial-assignment setting. An earlier [Court TV report](https://www.courttv.com/news/what-happens-next-after-lindsay-clancys-mistrial/) listed September 28; that date is not corroborated by the courtroom reporting of the setting and is not used here.
+### September 29 procedural update
 
-On September 10, defense attorney Kevin Reddington filed a **renewed motion for a required finding of not guilty** under Massachusetts Rule of Criminal Procedure 25(b)(2). The motion petitions Plymouth Superior Court to enter a finding of not guilty by reason of lack of criminal responsibility on each indictment, arguing the Commonwealth's evidence was insufficient, and asks that it be heard at the September 29 conference, as reported by [WBUR](https://www.wbur.org/news/2026/09/10/lindsay-clancy-rule-25b-petition-not-guilty) and [NBC10 Boston](https://www.nbcboston.com/news/local/lindsay-clancy-motion-kevin-reddington-update/4012575/). **DEFENSE:** counsel's position is that a required finding on insufficiency would be an acquittal that bars a retrial. That is an argument, not a ruling. **No judge has ruled on the motion.** A pending motion asking for a finding of not guilty is not a finding of not guilty.
+[AP’s hearing report](https://apnews.com/article/3fc31ae3f8a29667cd1fd342f4ecaed8) describes the defense renewing its acquittal argument. The judge reserved a decision; prosecutors remained undecided about retrying the case.
 
-**PROSECUTION:** Plymouth County District Attorney Timothy Cruz has not announced whether his office will retry the case, and whether lesser charges are under consideration [remains unclear](https://www.usatoday.com/story/news/crime/2026/09/09/lindsay-clancy-plea-deal-retrial/91659239007/). No retrial date exists.
+[The Globe reports further motions on November 2](https://www.bostonglobe.com/2026/09/28/metro/lindsay-clancy-murder-retrial-killing-three-children/).
 
-This tracker's verification limit is unchanged: it works from attributed courtroom reporting, not direct docket access. See the [Court Calendar’s post-mistrial entry](/court-calendar/#clancy-status-hearing) for scheduling updates.
+The [Court Calendar](/court-calendar/#clancy-november-motions) carries the reported setting and verification limits. This tracker has not obtained a primary order or independently confirmed the clock time.
 
 The mistrial did not decide the contested criminal-responsibility question. Competing psychiatric opinions remain testimony offered by the parties, not findings that establish either side’s account.
 
@@ -146,11 +146,15 @@ The judge allowed the recording for the trial that ended in a mistrial. This tra
 
 ### What happens next?
 
-The charges remain pending after the mistrial. The next courtroom date is a status conference and trial-assignment proceeding on September 29, 2026, in Plymouth Superior Court, reported for 9 a.m. Eastern. A renewed Rule 25(b)(2) motion for a required finding of not guilty, filed September 10, is pending and the defense has asked that it be heard then. Prosecutors have not said whether they will seek a retrial. No retrial date has been set, and nothing about the outcome of that hearing can be predicted from what is now on the record.
+See the September 29 procedural update above. Pending applications do not establish an acquittal or conviction, and no outcome is predicted here.
 
 ## Update log
 
 These dated entries record what was known at each cutoff; earlier trial-stage descriptions are historical.
+
+### September 29, 2026 — Current procedural update
+
+Refreshed the current-status sections from the linked hearing reports; older entries below remain historical.
 
 ### September 11, 2026 — September 29 setting confirmed; renewed Rule 25(b)(2) motion filed and pending
 
