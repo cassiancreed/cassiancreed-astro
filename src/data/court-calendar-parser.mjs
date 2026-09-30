@@ -11,6 +11,11 @@ const VALID_TIME_STATUSES = new Set(['confirmed', 'tentative', 'superseded', 'no
 const DATE_METADATA = new Set(['last_updated']);
 const TEXT_METADATA = new Set(['page_title', 'page_description']);
 const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
+const isRealDate = (value) => {
+  if (!DATE_RE.test(value)) return false;
+  const date = new Date(`${value}T00:00:00Z`);
+  return !Number.isNaN(date.getTime()) && date.toISOString().slice(0, 10) === value;
+};
 
 const fail = (line, message) => {
   throw new Error(`court-calendar.tsv line ${line}: ${message}`);
@@ -57,7 +62,7 @@ export function parseCourtCalendar(tsv) {
 
     if (row.section === 'meta') {
       if (![...DATE_METADATA, ...TEXT_METADATA].includes(row.id)) fail(line, `unknown metadata id "${row.id}"`);
-      if (DATE_METADATA.has(row.id) && !DATE_RE.test(row.status)) fail(line, `metadata status must be YYYY-MM-DD`);
+      if (DATE_METADATA.has(row.id) && !isRealDate(row.status)) fail(line, `metadata status must be a real YYYY-MM-DD date`);
       parsed.push({ ...row, line });
       continue;
     }
@@ -67,6 +72,8 @@ export function parseCourtCalendar(tsv) {
     checkUrl(row.source2_url, 'source2_url', line);
     checkUrl(row.internal_link, 'internal_link', line, true);
     checkUrl(row.internal_link2, 'internal_link2', line, true);
+
+    if (row.date_iso && !isRealDate(row.date_iso)) fail(line, 'date_iso must be a real YYYY-MM-DD date');
 
     if (row.time_status && !VALID_TIME_STATUSES.has(row.time_status)) fail(line, `invalid time_status "${row.time_status}"`);
     if (row.timezone) {
@@ -85,8 +92,6 @@ export function parseCourtCalendar(tsv) {
 
     if (row.section === 'scheduled') {
       requireFields(row, ['date_iso', 'date_text', 'detail', 'groups'], line);
-      if (!DATE_RE.test(row.date_iso)) fail(line, `date_iso must be YYYY-MM-DD`);
-      if (Number.isNaN(Date.parse(`${row.date_iso}T00:00:00Z`))) fail(line, `date_iso is not a real date`);
       const groups = row.groups.split('|').filter(Boolean);
       if (!groups.includes('next')) fail(line, 'scheduled rows must include the "next" group');
       for (const group of groups) if (!VALID_GROUPS.has(group)) fail(line, `invalid group "${group}"`);
