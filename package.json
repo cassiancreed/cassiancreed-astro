@@ -9,7 +9,7 @@
     "calendar:check": "node --test scripts/test-court-calendar-dates.mjs && node scripts/validate-court-calendar.mjs",
     "archive:check": "node scripts/validate-court-calendar-archive.mjs",
     "intl:check": "node scripts/validate-international-watch.mjs",
-    "missing:check": "node scripts/validate-missing-persons.mjs",
+    "missing:check": "node scripts/validate-missing-persons.mjs && node --test scripts/test-missing-persons-holds.mjs",
     "posts:check": "node scripts/validate-post-archive.mjs",
     "site:check": "node scripts/validate-site.mjs && node --test scripts/test-court-form-layout.mjs",
     "canon:check": "node scripts/validate-case-handling-canon.mjs",

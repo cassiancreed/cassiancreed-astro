@@ -129,9 +129,11 @@ export function parseMissingPersons(tsv) {
 
   const metadata = Object.fromEntries(parsed.filter((row) => row.kind === 'meta').map((row) => [row.id, row.status]));
   if (!metadata.last_updated) throw new Error('missing-persons.tsv requires metadata row "last_updated"');
-  const allCases = parsed.filter((row) => row.kind === 'case' && row.visibility === 'published');
+  const cases = parsed.filter((row) => row.kind === 'case');
+  const allCases = cases.filter((row) => row.visibility === 'published');
   return {
     metadata,
+    cases,
     allCases,
     active: allCases.filter((row) => row.active),
     resolved: allCases.filter((row) => !row.active),
