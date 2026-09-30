@@ -134,7 +134,7 @@ const jsonld = {
 
           <div class="mp-detail" aria-live="polite">
             {active.map((entry) => (
-              <article class="mp-status-card" data-case-panel={entry.id}>
+              <article id={`missing-${entry.id}`} class="mp-status-card" data-case-panel={entry.id}>
                 <div class="mp-status-card__top">
                   <span class={`mp-status-pill mp-status-pill--${entry.status}`}>{entry.statusLabel}</span>
                   <span class="mp-verified">Status verified as of {formatMissingDate(entry.verification_date)}</span>
@@ -190,7 +190,7 @@ const jsonld = {
       <p>Resolved entries leave the active map promptly. Their status remains visible here without rewriting the original dated reporting.</p>
       <div class="mp-resolved__grid">
         {resolved.map((entry) => (
-          <article>
+          <article id={`missing-${entry.id}`}>
             <span class={`mp-status-pill mp-status-pill--${entry.status}`}>{entry.statusLabel}</span>
             <h3>{entry.name}</h3>
             <p>Status verified as of {formatMissingDate(entry.verification_date)}.</p>

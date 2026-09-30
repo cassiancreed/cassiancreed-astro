@@ -1,0 +1,340 @@
+---
+import Base from '../layouts/Base.astro';
+import CaptureBlock from '../components/CaptureBlock.astro';
+import calendarTsv from '../data/court-calendar.tsv?raw';
+import { formatCalendarDate, parseCourtCalendar } from '../data/court-calendar-parser.mjs';
+import missingTsv from '../data/missing-persons.tsv?raw';
+import { parseMissingPersons } from '../data/missing-persons-parser.mjs';
+
+const calendar = parseCourtCalendar(calendarTsv);
+const missing = parseMissingPersons(missingTsv);
+const dataThrough = [calendar.metadata.last_updated, missing.metadata.last_updated].sort().at(-1);
+
+const MONTHS = new Map([
+  ['January', '01'], ['February', '02'], ['March', '03'], ['April', '04'],
+  ['May', '05'], ['June', '06'], ['July', '07'], ['August', '08'],
+  ['September', '09'], ['October', '10'], ['November', '11'], ['December', '12'],
+]);
+
+const verifiedDate = (value: string | null) => {
+  if (!value) return null;
+  const match = value.match(/^(January|February|March|April|May|June|July|August|September|October|November|December)\s+(\d{1,2}),\s+(\d{4})/);
+  if (!match) return null;
+  return `${match[3]}-${MONTHS.get(match[1])}-${match[2].padStart(2, '0')}`;
+};
+
+const courtSectionLabel = (section: string) => ({
+  scheduled: 'Scheduled proceeding',
+  unconfirmed: 'Outcome not publicly verified',
+  appeal: 'Appeal watch',
+  investigation: 'Investigation watch',
+  completed: 'Confirmed outcome',
+}[section] ?? 'Court update');
+
+const courtRows = [
+  ...calendar.entries.map((entry) => ({ ...entry, section: 'scheduled', note: entry.detail })),
+  ...calendar.unconfirmed.map((entry) => ({ ...entry, section: 'unconfirmed' })),
+  ...calendar.appeals.map((entry) => ({ ...entry, section: 'appeal' })),
+  ...calendar.investigations.map((entry) => ({ ...entry, section: 'investigation' })),
+  ...calendar.completed.map((entry) => ({ ...entry, section: 'completed' })),
+];
+
+const courtChanges = courtRows.flatMap((entry) => {
+  const changed = verifiedDate(entry.verified);
+  if (!changed) return [];
+  const hiddenElapsedSetting = entry.section === 'scheduled'
+    && entry.dateISO < dataThrough
+    && !entry.ongoing;
+  return [{
+    id: `court-${entry.id}`,
+    kind: 'court',
+    changed,
+    label: courtSectionLabel(entry.section),
+    name: entry.case,
+    headline: entry.proceeding,
+    summary: entry.status,
+    detail: entry.note,
+    next: entry.nextNote,
+    pageUrl: hiddenElapsedSetting ? '/court-calendar/' : `/court-calendar/#${entry.id}`,
+    sourceUrl: entry.src,
+    sourceLabel: entry.srcLabel,
+    sourceType: entry.srcType,
+    actionUrl: null,
+    actionLabel: null,
+  }];
+});
+
+const missingChanges = missing.allCases.map((entry) => ({
+  id: `missing-${entry.id}`,
+  kind: 'missing',
+  changed: entry.verification_date,
+  label: entry.active ? 'Active missing-person case' : 'Resolved case',
+  name: entry.name,
+  headline: entry.statusLabel,
+  summary: entry.summary,
+  detail: `${entry.investigating_agency} · ${entry.approx_location}`,
+  next: entry.active ? 'Information should go directly to the authorized agency or tipline.' : 'This case has been removed from the active map and retained in the resolved archive.',
+  pageUrl: `/missing-persons/#missing-${entry.id}`,
+  sourceUrl: entry.source_url,
+  sourceLabel: entry.source_label,
+  sourceType: entry.source_type.replaceAll('_', ' '),
+  actionUrl: entry.active ? entry.tip_url : null,
+  actionLabel: entry.active ? entry.tip_label : null,
+}));
+
+const cutoff = new Date(`${dataThrough}T00:00:00Z`);
+cutoff.setUTCDate(cutoff.getUTCDate() - 6);
+const cutoffISO = cutoff.toISOString().slice(0, 10);
+
+const changes = [...courtChanges, ...missingChanges]
+  .filter((entry) => entry.changed >= cutoffISO && entry.changed <= dataThrough)
+  .sort((a, b) => b.changed.localeCompare(a.changed) || a.name.localeCompare(b.name));
+const todayChanges = changes.filter((entry) => entry.changed === dataThrough);
+const earlierChanges = changes.filter((entry) => entry.changed !== dataThrough);
+const courtCount = changes.filter((entry) => entry.kind === 'court').length;
+const missingCount = changes.filter((entry) => entry.kind === 'missing').length;
+
+const jsonld = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'What Changed Today in True Crime Cases',
+  description: 'Verified court-calendar and missing-person changes, with official sources, verification dates, and what happens next.',
+  url: 'https://cassiancreed.com/today/',
+  dateModified: dataThrough,
+  isPartOf: { '@id': 'https://cassiancreed.com/#website' },
+};
+---
+
+<Base
+  title="What Changed Today in True Crime Cases"
+  description="Verified court and missing-person changes, official sources, and what happens next. Updated from NEP's authoritative case records."
+  jsonld={jsonld}
+>
+  <main class="change-desk">
+    <section class="change-hero">
+      <div class="wrap change-hero__inner">
+        <div>
+          <p class="evidence evidence--accent">NEP Case Status</p>
+          <h1>What changed—and what happens next.</h1>
+          <p class="change-hero__lede">A source-linked desk for verified court-calendar and missing-person changes. No rumor, no crowdsourced accusations, and no outcome inferred from silence.</p>
+        </div>
+        <aside class="change-trust" aria-label="Change Desk coverage">
+          <p><strong>{changes.length}</strong> verified changes in the last seven days</p>
+          <p><strong>{courtCount}</strong> court · <strong>{missingCount}</strong> missing-person</p>
+          <p>Data checked through <strong>{formatCalendarDate(dataThrough)}</strong></p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="wrap change-rules" aria-label="How to read this page">
+      <p><strong>Confirmed means sourced.</strong> Every item links to the record NEP used and keeps its verification date visible.</p>
+      <p><strong>Unknown stays unknown.</strong> An elapsed hearing, removed poster, or missing release does not prove an outcome.</p>
+      <p><strong>Tips go to authorities.</strong> NEP does not receive or evaluate missing-person tips.</p>
+    </section>
+
+    <section class="wrap change-controls" aria-label="Filter verified changes">
+      <div class="change-filters" role="group" aria-label="Change type">
+        <button class="change-filter is-active" type="button" data-change-filter="all" aria-pressed="true">All changes <span>{changes.length}</span></button>
+        <button class="change-filter" type="button" data-change-filter="court" aria-pressed="false">Court <span>{courtCount}</span></button>
+        <button class="change-filter" type="button" data-change-filter="missing" aria-pressed="false">Missing persons <span>{missingCount}</span></button>
+      </div>
+      <p id="change-filter-status" aria-live="polite">Showing all {changes.length} verified changes.</p>
+      <p id="change-return-status" class="change-return" hidden aria-live="polite"></p>
+    </section>
+
+    {changes.length > 0 ? (
+      <div class="wrap change-sections">
+        <section aria-labelledby="today-heading" data-change-section>
+          <div class="change-section-head">
+            <p class="evidence evidence--accent">Latest verification date</p>
+            <h2 id="today-heading">Changed {formatCalendarDate(dataThrough)}</h2>
+            <p>{todayChanges.length === 0 ? 'No published record changed on the latest dataset date.' : `${todayChanges.length} ${todayChanges.length === 1 ? 'record was' : 'records were'} verified on the latest dataset date.`}</p>
+          </div>
+          <div class="change-list">
+            {todayChanges.map((entry) => (
+              <article class={`change-card change-card--${entry.kind}`} data-change-card data-change-kind={entry.kind} data-change-date={entry.changed}>
+                <div class="change-card__meta">
+                  <span class="change-card__kind">{entry.label}</span>
+                  <time datetime={entry.changed}>Verified {formatCalendarDate(entry.changed)}</time>
+                  <span class="change-card__new" hidden>New since your last visit</span>
+                </div>
+                <h3><a href={entry.pageUrl}>{entry.name}</a></h3>
+                <p class="change-card__headline">{entry.headline}</p>
+                <p>{entry.summary}</p>
+                {entry.detail && <p class="change-card__detail">{entry.detail}</p>}
+                {entry.next && <p class="change-card__next"><strong>What happens next:</strong> {entry.next}</p>}
+                <div class="change-card__actions">
+                  <a href={entry.pageUrl}>Open NEP record <span aria-hidden="true">→</span></a>
+                  <a href={entry.sourceUrl}>Verification source: {entry.sourceLabel} <span aria-hidden="true">↗</span></a>
+                  {entry.actionUrl && <a href={entry.actionUrl}>{entry.actionLabel} <span aria-hidden="true">↗</span></a>}
+                </div>
+                <p class="change-card__source">Source type: {entry.sourceType}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        {earlierChanges.length > 0 && (
+          <section aria-labelledby="earlier-heading" data-change-section>
+            <div class="change-section-head">
+              <p class="evidence">Recent verification history</p>
+              <h2 id="earlier-heading">Earlier verified changes</h2>
+              <p>The previous six days remain visible so a missed day does not mean a missed development.</p>
+            </div>
+            <div class="change-list">
+              {earlierChanges.map((entry) => (
+                <article class={`change-card change-card--${entry.kind}`} data-change-card data-change-kind={entry.kind} data-change-date={entry.changed}>
+                  <div class="change-card__meta">
+                    <span class="change-card__kind">{entry.label}</span>
+                    <time datetime={entry.changed}>Verified {formatCalendarDate(entry.changed)}</time>
+                    <span class="change-card__new" hidden>New since your last visit</span>
+                  </div>
+                  <h3><a href={entry.pageUrl}>{entry.name}</a></h3>
+                  <p class="change-card__headline">{entry.headline}</p>
+                  <p>{entry.summary}</p>
+                  {entry.detail && <p class="change-card__detail">{entry.detail}</p>}
+                  {entry.next && <p class="change-card__next"><strong>What happens next:</strong> {entry.next}</p>}
+                  <div class="change-card__actions">
+                    <a href={entry.pageUrl}>Open NEP record <span aria-hidden="true">→</span></a>
+                    <a href={entry.sourceUrl}>Verification source: {entry.sourceLabel} <span aria-hidden="true">↗</span></a>
+                    {entry.actionUrl && <a href={entry.actionUrl}>{entry.actionLabel} <span aria-hidden="true">↗</span></a>}
+                  </div>
+                  <p class="change-card__source">Source type: {entry.sourceType}</p>
+                </article>
+              ))}
+            </div>
+          </section>
+        )}
+      </div>
+    ) : (
+      <section class="wrap change-empty">
+        <h2>No verified change is ready to publish.</h2>
+        <p>The desk stays empty rather than filling the page with rumor or old information. Use the complete <a href="/court-calendar/">Court Calendar</a> or <a href="/missing-persons/">Missing Persons Map</a>.</p>
+      </section>
+    )}
+
+    <section class="wrap change-bridge" aria-label="Complete case services">
+      <article>
+        <p class="evidence evidence--accent">Court Calendar</p>
+        <h2>See every tracked proceeding.</h2>
+        <p>Search verified trial dates, hearings, sentencings, appeals, and proceedings whose outcome is still unknown.</p>
+        <a class="btn btn--ghost" href="/court-calendar/">Open the Court Calendar</a>
+      </article>
+      <article>
+        <p class="evidence evidence--accent">Missing Persons</p>
+        <h2>See the complete verified map.</h2>
+        <p>Review current agency status, approximate location, official source, and the authorized route for information.</p>
+        <a class="btn btn--ghost" href="/missing-persons/">Open the Missing Persons Map</a>
+      </article>
+    </section>
+
+    <section class="wrap change-capture" id="follow-changes">
+      <CaptureBlock
+        offer="calendar"
+        campaign="case_status_updates"
+        content="daily_change_desk"
+        headline="Follow verified changes—not rumors."
+        subtext="Get a short email when a tracked court date, case status, or verified missing-person record materially changes. No daily filler. Unsubscribe anytime."
+        button="Follow verified case changes"
+      />
+    </section>
+  </main>
+</Base>
+
+<script>
+  const cards = Array.from(document.querySelectorAll('[data-change-card]'));
+  const filters = Array.from(document.querySelectorAll('[data-change-filter]'));
+  const filterStatus = document.querySelector('#change-filter-status');
+  const returnStatus = document.querySelector('#change-return-status');
+  const latestDate = document.querySelector('[data-change-date]')?.getAttribute('data-change-date');
+  const storageKey = 'nep-case-status-last-visit';
+
+  function record(name, params = {}) {
+    if (typeof window.gtag === 'function') window.gtag('event', name, { page_path: location.pathname, ...params });
+  }
+
+  function applyFilter(kind) {
+    let shown = 0;
+    cards.forEach((card) => {
+      const visible = kind === 'all' || card.getAttribute('data-change-kind') === kind;
+      card.hidden = !visible;
+      if (visible) shown += 1;
+    });
+    filters.forEach((button) => {
+      const active = button.getAttribute('data-change-filter') === kind;
+      button.classList.toggle('is-active', active);
+      button.setAttribute('aria-pressed', active ? 'true' : 'false');
+    });
+    if (filterStatus) filterStatus.textContent = `Showing ${shown} verified ${shown === 1 ? 'change' : 'changes'}.`;
+    record('case_status_filter', { change_kind: kind, results_shown: shown });
+  }
+
+  filters.forEach((button) => button.addEventListener('click', () => applyFilter(button.getAttribute('data-change-filter') || 'all')));
+
+  try {
+    const previous = localStorage.getItem(storageKey);
+    if (previous) {
+      let newCount = 0;
+      cards.forEach((card) => {
+        const changed = card.getAttribute('data-change-date');
+        const fresh = Boolean(changed && changed > previous);
+        const badge = card.querySelector('.change-card__new');
+        if (badge) badge.hidden = !fresh;
+        if (fresh) newCount += 1;
+      });
+      if (returnStatus) {
+        returnStatus.hidden = false;
+        returnStatus.textContent = newCount > 0
+          ? `${newCount} verified ${newCount === 1 ? 'change is' : 'changes are'} new since your last visit.`
+          : 'No newly dated verified changes since your last visit.';
+      }
+    }
+    if (latestDate) localStorage.setItem(storageKey, latestDate);
+  } catch (error) {
+    // The desk remains fully usable when storage is unavailable.
+  }
+</script>
+
+<style>
+  .change-desk{padding-bottom:56px}
+  .change-hero{padding:72px 0 42px;background:radial-gradient(circle at 85% 20%,rgba(232,93,61,.14),transparent 32%),var(--bg-2);border-bottom:1px solid var(--line)}
+  .change-hero__inner{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(260px,.75fr);gap:36px;align-items:end}
+  .change-hero h1{max-width:760px;margin:10px 0 16px;font-size:clamp(42px,7vw,78px);line-height:.98}
+  .change-hero__lede{max-width:720px;margin:0;color:var(--ink-2);font-size:19px;line-height:1.65}
+  .change-trust{padding:24px;border:1px solid var(--line);border-radius:12px;background:var(--bg-3)}
+  .change-trust p{margin:0;padding:11px 0;border-top:1px solid var(--line);color:var(--ink-2)}
+  .change-trust p:first-child{border-top:0;padding-top:0}.change-trust p:last-child{padding-bottom:0}
+  .change-trust strong{color:var(--ink)}
+  .change-rules{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;padding-top:28px;padding-bottom:28px}
+  .change-rules p{margin:0;padding:18px;border:1px solid var(--line);border-radius:10px;background:var(--bg-2);color:var(--ink-2)}
+  .change-rules strong{color:var(--ink)}
+  .change-controls{padding-top:12px;padding-bottom:30px}
+  .change-filters{display:flex;flex-wrap:wrap;gap:10px}
+  .change-filter{border:1px solid var(--line);border-radius:999px;background:var(--bg-2);color:var(--ink-2);padding:10px 15px;font:inherit;cursor:pointer}
+  .change-filter span{font-family:var(--mono);font-size:11px;margin-left:6px}
+  .change-filter:hover,.change-filter:focus-visible,.change-filter.is-active{border-color:var(--accent);color:var(--ink);background:rgba(232,93,61,.1)}
+  #change-filter-status,.change-return{margin:12px 0 0;color:var(--ink-3);font-family:var(--mono);font-size:12px}
+  .change-return{color:var(--accent)}
+  .change-sections{display:grid;gap:52px}
+  .change-section-head{max-width:760px;margin-bottom:20px}.change-section-head h2{margin:7px 0 8px;font-size:clamp(30px,4vw,48px)}
+  .change-section-head p:last-child{margin:0;color:var(--ink-2)}
+  .change-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+  .change-card{position:relative;padding:25px;border:1px solid var(--line);border-radius:12px;background:var(--bg-2);overflow:hidden}
+  .change-card::before{content:"";position:absolute;inset:0 auto 0 0;width:3px;background:var(--accent)}
+  .change-card--missing::before{background:#5fae7e}
+  .change-card__meta{display:flex;flex-wrap:wrap;gap:8px 13px;align-items:center;margin-bottom:14px;font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+  .change-card__kind{color:var(--accent)}.change-card--missing .change-card__kind{color:#79c793}
+  .change-card__new{padding:4px 7px;border-radius:4px;background:rgba(232,93,61,.15);color:var(--accent)}
+  .change-card h3{margin:0 0 7px;font-size:27px;line-height:1.12}.change-card h3 a{color:var(--ink);text-decoration:none}.change-card h3 a:hover{text-decoration:underline}
+  .change-card__headline{margin:0 0 15px;color:var(--ink);font-weight:700}
+  .change-card p{color:var(--ink-2)}
+  .change-card__detail{font-size:14px}.change-card__next{padding:13px 15px;border-radius:8px;background:var(--bg-3)}.change-card__next strong{color:var(--ink)}
+  .change-card__actions{display:flex;flex-direction:column;align-items:flex-start;gap:8px;margin-top:18px}.change-card__actions a{color:var(--accent);font-weight:700}
+  .change-card__source{margin:14px 0 0;font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-3)}
+  .change-empty{padding-top:36px;padding-bottom:36px}
+  .change-bridge{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:54px}
+  .change-bridge article{padding:28px;border:1px solid var(--line);border-radius:12px;background:var(--bg-3)}.change-bridge h2{margin:7px 0 10px}.change-bridge p:not(.evidence){color:var(--ink-2)}
+  .change-capture{margin-top:42px}
+  @media(max-width:800px){.change-hero__inner,.change-rules,.change-list,.change-bridge{grid-template-columns:1fr}.change-hero{padding-top:48px}.change-trust{max-width:520px}}
+  @media(max-width:520px){.change-card{padding:20px}.change-hero h1{font-size:42px}.change-card h3{font-size:23px}}
+</style>
