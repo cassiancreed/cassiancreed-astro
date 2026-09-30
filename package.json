@@ -6,7 +6,7 @@
     "dev": "astro dev",
     "build": "npm run canon:check && npm run analytics:check && npm run campaign-aliases:check && npm run intelligence:check && npm run court-command:fixture-check && npm run case:packet:test && npm run calendar:check && npm run archive:check && npm run intl:check && npm run missing:check && npm run posts:check && astro build && npm run site:check && npm run commerce-analytics:check",
     "preview": "astro preview",
-    "calendar:check": "node scripts/validate-court-calendar.mjs",
+    "calendar:check": "node --test scripts/test-court-calendar-dates.mjs && node scripts/validate-court-calendar.mjs",
     "archive:check": "node scripts/validate-court-calendar-archive.mjs",
     "intl:check": "node scripts/validate-international-watch.mjs",
     "missing:check": "node scripts/validate-missing-persons.mjs",
