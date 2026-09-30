@@ -14,6 +14,15 @@ The public map is generated from `src/data/missing-persons.tsv`. One published c
 8. Update the `last_updated` metadata row.
 9. Run `npm run missing:check`, then `npm run build`.
 
+## Canceled or withdrawn source assets
+
+A canceled or withdrawn flyer is not proof that a person was located, recovered, or otherwise resolved. Before publication, inspect the current detail page and its image/file name; do not rely on an archive or index listing alone.
+
+- Add the case to `src/data/missing-persons-holds.tsv` when an official detail page serves a canceled or withdrawn asset and no authoritative disposition is available.
+- Keep the case row at an active-type `status`, set `visibility` to `draft`, and state `UNKNOWN` or `disposition pending agency confirmation` in `agency_status`.
+- Do not change the row to `located_safe`, `recovered_deceased`, or `resolved` until the investigating agency or an equivalent authoritative successor record states that outcome.
+- Remove a hold only after recording the authoritative successor evidence in the case row. `npm run missing:check` blocks held cases and any row containing canceled/withdrawn evidence from publication.
+
 ## Status values
 
 `missing`, `endangered`, `involuntarily_missing`, `abducted`, `voluntarily_absent`, `located_safe`, `recovered_deceased`, or `resolved`.
