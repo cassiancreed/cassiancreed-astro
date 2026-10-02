@@ -2,7 +2,7 @@
 title: "Lindsay Clancy trial tracker: Mistrial, pending charges and next hearing"
 description: "Lindsay Clancy’s unresolved murder charges after a mistrial, current hearing coverage, and the Massachusetts criminal-responsibility standard."
 pubDate: 2026-07-15
-updatedDate: 2026-09-29
+updatedDate: 2026-10-02
 tag: Case Files
 featured: false
 victim: Cora Clancy, 5; Dawson Clancy, 3; Callan Clancy, 8 months
@@ -31,9 +31,9 @@ Cassian Creed maintains this Neural Edge Publishing tracker using available cour
 <li><strong>Charges now pending:</strong> Three counts of first-degree murder.</li>
 <li><strong>Plea:</strong> Not guilty by reason of lack of criminal responsibility.</li>
 <li><strong>Next step:</strong> See the current procedural update below and the linked Court Calendar.</li>
-<li><strong>Pending defense motion:</strong> The renewed Rule 25(b)(2) request seeks an acquittal; a request is not a judgment.</li>
+<li><strong>Renewed acquittal request:</strong> Denied October 1, according to AP. This ruling is not a conviction.</li>
 
-<li><strong>Current-source cutoff:</strong> September 29, 2026, 10:04 a.m. Pacific. This tracker uses attributed reporting; direct docket access remains unavailable.</li>
+<li><strong>Current-source cutoff:</strong> October 2, 2026, 1:55 p.m. Pacific. This tracker uses attributed reporting; direct docket access remains unavailable.</li>
 </ul>
 <p style="margin-bottom:0">The mistrial ended this trial without a conviction or acquittal. Clancy remains presumed innocent.</p>
 </div>
@@ -58,7 +58,7 @@ Cora, 5, Dawson, 3, and Callan, 8 months, died after events at their Duxbury hom
 | Court and judge | **VERIFIED** | Plymouth Superior Court; Judge William F. Sullivan. |
 | Next scheduled step | **SEE CURRENT UPDATE** | The procedural update below supersedes the historical September 29 appointment. |
 | Hearing time | **NOT PUBLICLY VERIFIED** | The next reported hearing has no independently verified start time in this tracker. |
-| Pending defense motion | **UNRESOLVED** | A request for acquittal does not resolve the charges. |
+| Renewed acquittal request | **REPORTED RULING** | See the October 1 update below; the charges remain unresolved. |
 | Retrial decision | **SEE CURRENT UPDATE** | Do not confuse a motions hearing with a retrial. |
 | Defense counsel | **VERIFIED** | Kevin Reddington. |
 | Core defense | **DEFENSE** | Lack of criminal responsibility, tied to the defense's contention that Clancy experienced postpartum psychosis and that alleged overmedication affected her condition. |
@@ -88,7 +88,11 @@ A clinical diagnosis and a legal finding are not the same thing. Experts may add
 
 Judge William Sullivan declared a mistrial on September 4 after the jury reported that it could not reach a unanimous verdict. The trial ended without a conviction or acquittal. Clancy remains charged with three counts of first-degree murder, has pleaded not guilty, and remains presumed innocent.
 
-### September 29 procedural update
+### October 1 ruling — checked October 2
+
+[AP reports](https://www.boston.com/news/crime/2026/10/01/judge-denies-defense-motion-asking-lindsay-clancy-be-found-not-guilty-due-to-a-lack-of-evidence/) that Judge Sullivan denied the renewed request for a required finding of not guilty. This is an evidence-sufficiency ruling, not a verdict. The charges remain unresolved.
+
+### September 29 procedural update — historical
 
 [AP’s hearing report](https://apnews.com/article/3fc31ae3f8a29667cd1fd342f4ecaed8) describes the defense renewing its acquittal argument. The judge reserved a decision; prosecutors remained undecided about retrying the case.
 
@@ -146,13 +150,17 @@ The judge allowed the recording for the trial that ended in a mistrial. This tra
 
 ### What happens next?
 
-See the September 29 procedural update above. Pending applications do not establish an acquittal or conviction, and no outcome is predicted here.
+See the October 1 update above and the reported November 2 setting in the Court Calendar. A motions hearing does not establish a retrial date; the clock time remains unverified.
 
 ## Update log
 
 These dated entries record what was known at each cutoff; earlier trial-stage descriptions are historical.
 
-### September 29, 2026 — Current procedural update
+### October 2, 2026 — Ruling and current-status correction
+
+Updated the current-status sections and linked source; earlier entries retain their dated cutoffs.
+
+### September 29, 2026 — Procedural update at that cutoff
 
 Refreshed the current-status sections from the linked hearing reports; older entries below remain historical.
 
@@ -210,6 +218,8 @@ Court schedules and evidentiary plans can change. This tracker distinguishes wha
 
 ## Sources
 
+- [October 1 ruling — Associated Press via Boston.com](https://www.boston.com/news/crime/2026/10/01/judge-denies-defense-motion-asking-lindsay-clancy-be-found-not-guilty-due-to-a-lack-of-evidence/)
+
 - [Mistrial and September 29 hearing — Associated Press, September 5, 2026](https://apnews.com/article/lindsay-clancy-mistrial-what-happens-next-e38bef47f5af93bf95aabad272215b45)
 - [Judge sets September 29 status hearing at 9 a.m. — CBS News Boston, September 4, 2026](https://www.cbsnews.com/boston/live-updates/lindsay-clancy-murder-trial-hung-jury-mistrial-verdict-watch-live-updates/)
 - [Status hearing, trial assignment and Rule 25(b)(2) set for September 29 at 9 a.m. — WCVB, September 4, 2026](https://www.wcvb.com/article/lindsay-clancy-mistrial-declared-status-hearing/73618227)
@@ -245,9 +255,9 @@ Court schedules and evidentiary plans can change. This tracker distinguishes wha
   "url": "https://cassiancreed.com/post/lindsay-clancy-trial/",
   "mainEntityOfPage": { "@type": "WebPage", "@id": "https://cassiancreed.com/post/lindsay-clancy-trial/" },
   "headline": "Lindsay Clancy trial tracker: Mistrial, pending charges and next hearing",
-  "description": "Lindsay Clancy's September 4 mistrial, the charges still pending, the unconfirmed next hearing date, and the Massachusetts criminal-responsibility standard.",
+  "description": "Lindsay Clancy’s unresolved murder charges after a mistrial, current hearing coverage, and the Massachusetts criminal-responsibility standard.",
   "datePublished": "2026-07-15",
-  "dateModified": "2026-09-09",
+  "dateModified": "2026-10-02",
   "author": { "@type": "Person", "name": "Cassian Creed", "url": "https://cassiancreed.com/about/" },
   "publisher": { "@type": "Organization", "name": "Neural Edge Publishing", "url": "https://cassiancreed.com/" },
   "articleSection": "Crime and Courts",
