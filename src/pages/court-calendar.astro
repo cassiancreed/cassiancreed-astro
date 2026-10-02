@@ -82,7 +82,7 @@ const completed = rankByTrend([
   ...international.concluded.map((entry) => toPassive(entry, 'completed')),
 ]);
 const completedNextDateById = new Map([
-  ['salazar-clinkunbroomer-trial', 'Separate sentencing is scheduled for Thursday, October 1, 2026; the time has not been publicly verified.'],
+  ['salazar-clinkunbroomer-trial', calendar.completed.find((entry) => entry.id === 'salazar-clinkunbroomer-trial')?.nextNote],
 ]);
 const latestReview = [calendar.metadata.last_updated, international.metadata.last_updated].sort().at(-1);
 const LAST_UPDATED = formatCalendarDate(latestReview);
@@ -649,3 +649,4 @@ const jsonld = {
     @media(max-width:680px){.cards{grid-template-columns:1fr}}
   </style>
 </Base>
+
