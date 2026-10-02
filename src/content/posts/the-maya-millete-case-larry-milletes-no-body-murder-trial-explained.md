@@ -9,7 +9,7 @@ victim: "Maya 'May' Millete, 39"
 incidentDate: "January 7, 2021"
 location: "Chula Vista, California"
 jurisdiction: "San Diego County, California"
-status: "Larry Millete convicted of first-degree murder July 9, 2026. Official calendar lists September 29, 1:30 p.m. Pacific, Department S-05, for probation hearing and sentencing; reported continuance request remains unresolved here."
+status: "Larry Millete convicted of first-degree murder July 9, 2026. KOGO reports sentencing was delayed to November 2; the replacement court setting and any imposed sentence remain independently unverified here."
 ---
 
 Maya "May" Millete, a 39-year-old mother of three, vanished from her Chula Vista, California home on January 7, 2021. Her husband, Larry Millete, was arrested nine months later and charged with her murder — even though her body has never been found. A jury convicted Larry Millete of first-degree murder on July 9, 2026. Sentencing and potential post-trial review remain open; individual allegations and testimony described below should not be treated as separate court findings.
@@ -50,7 +50,7 @@ These two accounts — a controlling husband who eliminated a wife trying to lea
 
 ## Where the Case Stands Now
 
-Larry Millete's murder trial opened in San Diego County Superior Court in May 2026, after years of pretrial delays. The jury returned a guilty verdict on July 9. The current official calendar lists a probation hearing and sentencing for September 29 at 1:30 p.m. Pacific in Department S-05; a reported request to continue sentencing has no verified disposition here.
+Larry Millete's murder trial opened in San Diego County Superior Court in May 2026, after years of pretrial delays. The jury returned a guilty verdict on July 9. The September 29 sentencing setting has elapsed. [KOGO reported on September 30, citing CBS 8](https://kogo.iheart.com/alternate/amp/2026-09-29-milletes-murder-sentence-delayed/), that sentencing was delayed to November 2. As of the October 2 review, that replacement setting and its clock time have not been independently confirmed against the official court record; no sentence is treated as imposed. See the [Court Calendar](/court-calendar/) for the source and uncertainty labels.
 
 What is settled is the loss. Maya Millete has been missing for more than five years. Her children have grown without her, and her family is still waiting — to learn where she is.
 
@@ -117,3 +117,4 @@ Maya Millete was a mother of three who disappeared on an ordinary January evenin
 - [No signs of struggle found during initial police search of Millete home — CBS 8](https://www.cbs8.com/article/news/investigations/millete/larry-millete-murder-trial-day-5-chula-vista/509-c2fa6ef7-cc8e-49b7-8bbd-b3a866c8a9ea)
 - [Millete trial day 6: Spells, internet searches and attempts to hire a hitman — Fox 5 San Diego](https://fox5sandiego.com/news/local-news/larry-millete-trial-day-6-hitman-spells/)
 - [Murder trial begins for Larry Millete in death of Radford grad Maya Millete — Hawaii News Now](https://www.hawaiinewsnow.com/2026/05/19/murder-trial-begins-larry-millete-death-radford-grad-maya-millete/)
+
