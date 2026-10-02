@@ -117,4 +117,3 @@ Maya Millete was a mother of three who disappeared on an ordinary January evenin
 - [No signs of struggle found during initial police search of Millete home — CBS 8](https://www.cbs8.com/article/news/investigations/millete/larry-millete-murder-trial-day-5-chula-vista/509-c2fa6ef7-cc8e-49b7-8bbd-b3a866c8a9ea)
 - [Millete trial day 6: Spells, internet searches and attempts to hire a hitman — Fox 5 San Diego](https://fox5sandiego.com/news/local-news/larry-millete-trial-day-6-hitman-spells/)
 - [Murder trial begins for Larry Millete in death of Radford grad Maya Millete — Hawaii News Now](https://www.hawaiinewsnow.com/2026/05/19/murder-trial-begins-larry-millete-death-radford-grad-maya-millete/)
-
