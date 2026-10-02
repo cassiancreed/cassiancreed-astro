@@ -9,7 +9,7 @@ victim: "Maya 'May' Millete, 39"
 incidentDate: "January 7, 2021"
 location: "Chula Vista, California"
 jurisdiction: "San Diego County, California"
-status: "Larry Millete convicted of first-degree murder July 9, 2026. Official calendar lists September 29, 1:30 p.m. Pacific, Department S-05, for probation hearing and sentencing; reported continuance request remains unresolved here."
+status: "Larry Millete convicted of first-degree murder July 9, 2026. KOGO reports sentencing was delayed to November 2; the replacement court setting and any imposed sentence remain independently unverified here."
 ---
 
 Maya "May" Millete, a 39-year-old mother of three, vanished from her Chula Vista, California home on January 7, 2021. Her husband, Larry Millete, was arrested nine months later and charged with her murder — even though her body has never been found. A jury convicted Larry Millete of first-degree murder on July 9, 2026. Sentencing and potential post-trial review remain open; individual allegations and testimony described below should not be treated as separate court findings.
@@ -50,7 +50,7 @@ These two accounts — a controlling husband who eliminated a wife trying to lea
 
 ## Where the Case Stands Now
 
-Larry Millete's murder trial opened in San Diego County Superior Court in May 2026, after years of pretrial delays. The jury returned a guilty verdict on July 9. The current official calendar lists a probation hearing and sentencing for September 29 at 1:30 p.m. Pacific in Department S-05; a reported request to continue sentencing has no verified disposition here.
+Larry Millete's murder trial opened in San Diego County Superior Court in May 2026, after years of pretrial delays. The jury returned a guilty verdict on July 9. The September 29 sentencing setting has elapsed. [KOGO reported on September 30, citing CBS 8](https://kogo.iheart.com/alternate/amp/2026-09-29-milletes-murder-sentence-delayed/), that sentencing was delayed to November 2. As of the October 2 review, that replacement setting and its clock time have not been independently confirmed against the official court record; no sentence is treated as imposed. See the [Court Calendar](/court-calendar/) for the source and uncertainty labels.
 
 What is settled is the loss. Maya Millete has been missing for more than five years. Her children have grown without her, and her family is still waiting — to learn where she is.
 
@@ -72,7 +72,7 @@ Outside the courthouse, Maya's sister, Maricris Drouaillet, said justice had “
 
 That is the part of the case that remains unresolved. A jury has now decided who was responsible for Maya's death, but her family still does not know where she is. Prosecutors and investigators said after the verdict that the search continues.
 
-The [official South County calendar](https://www.sandiego.courts.ca.gov/portal/online/calendar/F_BCCAL1.html), prepared September 29, 2026, at 5:25:07 a.m., lists case SCS319857 for probation hearing and sentencing on **September 29 at 1:30 p.m. Pacific, Department S-05, before Judge Enrique Camarena**. The calendar is subject to change. A reported continuance request has no verified ruling here; the listing does not establish that sentencing will proceed. Court reporting says the separate assault-weapon count was resolved by a guilty plea on July 20. No sentence is reported as imposed here. See the [court calendar](/court-calendar/) for the current tracked setting.
+The [official South County calendar](https://www.sandiego.courts.ca.gov/portal/online/calendar/F_BCCAL1.html) previously listed case SCS319857 for September 29 sentencing. That setting has elapsed. KOGO’s September 30 report, citing CBS 8, gives November 2 as the replacement date; this remains a reported setting pending independent confirmation from the court. Court reporting says the separate assault-weapon count was resolved by a guilty plea on July 20. No sentence is recorded as imposed here. See the [court calendar](/court-calendar/) for the current source and uncertainty labels.
 
 The legal case has reached a major judgment. Maya's case has not reached its final answer.
 
@@ -85,7 +85,7 @@ _Verdict-section sources: [San Diego County District Attorney's Office, July 9, 
 ## Frequently Asked Questions
 
 **Has Larry Millete been convicted?**
-Yes. On July 9, 2026, a San Diego County jury found Larry Millete guilty of first-degree murder in the death of his wife, Maya Millete. The official calendar prepared September 29 lists September 29 at 1:30 p.m. Pacific in Department S-05 for probation hearing and sentencing. A reported continuance request remains unresolved here.
+Yes. On July 9, 2026, a San Diego County jury found Larry Millete guilty of first-degree murder in the death of his wife, Maya Millete. KOGO reports that sentencing was delayed to November 2. The replacement setting has not been independently confirmed against the court record here, and no imposed sentence is verified at the October 2 cutoff.
 
 **How can there be a murder trial with no body?**
 California, like every U.S. state, allows murder prosecutions without a recovered body. The state must prove beyond a reasonable doubt — through circumstantial evidence — that the victim is dead and that the defendant caused the death. We cover how that works in our explainer on [convictions without a body](/post/can-you-be-convicted-of-murder-without-a-body/).
