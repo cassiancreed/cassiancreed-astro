@@ -62,7 +62,7 @@ for (const [route, file] of routes) {
     if (!/\salt="[^"]*"/i.test(img[0])) failures.push(`${route}: image missing alt`);
   }
   for (const match of html.matchAll(/href="(\/[^"]*)"/g)) {
-    const raw = match[1];
+    const raw = match[1].replace(/(?:&amp;|&#x26;)/g, '&');
     if (raw.startsWith('//')) continue;
     const [withoutHash, anchor] = raw.split('#');
     const clean = (withoutHash.split('?')[0] || route);
