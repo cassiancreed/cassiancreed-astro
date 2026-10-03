@@ -53,7 +53,7 @@ const jsonld = {
       <aside class="mp-trust" aria-label="Missing Persons Map safeguards">
         <p><strong>{active.length}</strong> active {active.length === 1 ? 'case' : 'cases'}</p>
         <p><strong>{resolved.length}</strong> resolved {resolved.length === 1 ? 'case' : 'cases'} archived</p>
-        <p>Status reviewed through <strong>{verifiedThrough}</strong></p>
+        <p>Latest source review: <strong>{verifiedThrough}</strong></p>
       </aside>
     </div>
   </section>
@@ -61,6 +61,7 @@ const jsonld = {
   <section class="wrap mp-alert" aria-label="Important tip information">
     <strong>NEP is not law enforcement and does not receive tips.</strong>
     <span>If you have information, use the official contact shown on that person&rsquo;s card. Call 911 or local emergency services for an immediate emergency.</span>
+    <span>Each card shows its own verification date. Some sources could not be rechecked in the latest review; an inaccessible or withdrawn notice is not proof that a person has been found.</span>
   </section>
 
   <section class="wrap mp-scale" aria-labelledby="national-scale-heading">
