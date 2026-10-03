@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
+import { unified } from '@astrojs/markdown-remark';
 
 const SITE_HOSTS = new Set(['cassiancreed.com', 'www.cassiancreed.com']);
 
@@ -30,6 +31,6 @@ export default defineConfig({
   site: 'https://cassiancreed.com',
   integrations: [mdx()],
   markdown: {
-    rehypePlugins: [externalLinksInNewTabs],
+    processor: unified({ rehypePlugins: [externalLinksInNewTabs] }),
   },
 });

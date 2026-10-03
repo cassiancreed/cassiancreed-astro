@@ -1,5 +1,7 @@
 import { getCollection } from 'astro:content';
 import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
+import { compareContentSourcePath } from '../utils/content-order';
 
 function normalizePath(path: string) {
   if (!path.startsWith('/') || path.includes('*') || path.includes(':')) return null;
@@ -8,7 +10,7 @@ function normalizePath(path: string) {
 }
 
 function redirectedPaths() {
-  const redirectFile = readFileSync(new URL('../../public/_redirects', import.meta.url), 'utf8');
+  const redirectFile = readFileSync(resolve('public', '_redirects'), 'utf8');
   return new Set(
     redirectFile
       .split(/\r?\n/)
@@ -21,10 +23,10 @@ function redirectedPaths() {
 
 export async function GET(context: any) {
   const site = context.site?.href || 'https://cassiancreed.com/';
-  const posts = (await getCollection('posts')).filter(p => !p.data.archived);
+  const posts = (await getCollection('posts')).filter(p => !p.data.archived).sort(compareContentSourcePath);
   const redirects = redirectedPaths();
   const paths = ['', 'case-files/', 'explainers/', 'start-here/', 'books/', 'about/', 'trending/', 'case-solver/', 'forensic-tools/', 'missing-persons/', 'safety/', 'support/', 'ai-al/', 'guides/', 'how-dna-remembers/', 'glossary/', 'how-forensic-genetic-genealogy-works/', 'codis-vs-forensic-genetic-genealogy/', 'how-othram-works-in-a-case/', 'is-fgg-evidence-or-just-a-lead/', 'is-forensic-genetic-genealogy-legal/', 'baby-jacob-round-lake-beach-genetic-genealogy/', 'court-calendar/', 'court-calendar-policy/', 'voir-dire-simulator/', 'mission/']
-    .concat(posts.map(p => `post/${p.slug}/`));
+    .concat(posts.map(p => `post/${p.id}/`));
   const urls = paths
     .filter(path => !redirects.has(normalizePath(`/${path}`) ?? ''))
     .map(path => `${site}${path}`);
