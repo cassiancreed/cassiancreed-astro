@@ -167,6 +167,36 @@ const COUNTRY_CODES_BY_COURT_SUFFIX = new Map([
 ]);
 
 const CASE_GUIDES = {
+  'mangione-state-double-jeopardy-hearing': {
+    url: 'https://cassiancreed.beehiiv.com/products/brian-thompson-luigi-mangione-two-courts?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=explainer_luigi_v1&utm_content=state_entry',
+    text: 'Understand the Brian Thompson case and its two-court collision — $1.99',
+    bookKey: 'brian-thompson-luigi-mangione-two-courts',
+    placement: 'court_calendar_mangione_state_entry',
+  },
+  'mangione-federal-sentencing': {
+    url: 'https://cassiancreed.beehiiv.com/products/brian-thompson-luigi-mangione-two-courts?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=explainer_luigi_v1&utm_content=federal_entry',
+    text: 'Understand the Brian Thompson case and its two-court collision — $1.99',
+    bookKey: 'brian-thompson-luigi-mangione-two-courts',
+    placement: 'court_calendar_mangione_federal_entry',
+  },
+  'clancy-november-motions': {
+    url: 'https://cassiancreed.beehiiv.com/products/lindsay-clancy-post-mistrial-field-guide?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=explainer_clancy_v1&utm_content=november_entry',
+    text: 'Read the Cora, Dawson and Callan post-mistrial field guide — $1.99',
+    bookKey: 'lindsay-clancy-post-mistrial-field-guide',
+    placement: 'court_calendar_clancy_november_entry',
+  },
+  'clancy-status-hearing': {
+    url: 'https://cassiancreed.beehiiv.com/products/lindsay-clancy-post-mistrial-field-guide?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=explainer_clancy_v1&utm_content=status_entry',
+    text: 'Read the Cora, Dawson and Callan post-mistrial field guide — $1.99',
+    bookKey: 'lindsay-clancy-post-mistrial-field-guide',
+    placement: 'court_calendar_clancy_status_entry',
+  },
+  'clancy-trial': {
+    url: 'https://cassiancreed.beehiiv.com/products/lindsay-clancy-post-mistrial-field-guide?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=explainer_clancy_v1&utm_content=mistrial_entry',
+    text: 'Read the Cora, Dawson and Callan post-mistrial field guide — $1.99',
+    bookKey: 'lindsay-clancy-post-mistrial-field-guide',
+    placement: 'court_calendar_clancy_mistrial_entry',
+  },
   'banks-federal-trial': {
     url: 'https://cassiancreed.beehiiv.com/products/jury-chess?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=jury_chess&utm_content=lil_durk_verdict_entry',
     text: 'Learn how criminal jury verdicts work — and what they do not decide. Get Jury Chess — $5.99',
@@ -180,6 +210,36 @@ const CASE_GUIDES = {
     placement: 'court_calendar_case_guide',
   },
 };
+
+const FEATURED_EXPLAINERS = [
+  {
+    eyebrow: 'The Brian Thompson case',
+    title: 'Luigi Mangione: Two Courts, One Legal Collision',
+    description: 'See the federal plea, the paused New York case, the double-jeopardy fight, and every next turn in one 20-minute visual briefing.',
+    meta: '18 pages · two-court timeline · 12 reader FAQs · instant PDF',
+    cta: 'Understand the whole case — $1.99',
+    url: 'https://cassiancreed.beehiiv.com/products/brian-thompson-luigi-mangione-two-courts?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=explainer_luigi_v1&utm_content=featured_card',
+    bookKey: 'brian-thompson-luigi-mangione-two-courts',
+  },
+  {
+    eyebrow: 'Cora, Dawson and Callan',
+    title: 'The Lindsay Clancy Post-Mistrial Field Guide',
+    description: 'Understand what the mistrial changed, what remains unresolved, and which next ruling actually matters—without guessing from headlines.',
+    meta: '12 pages · legal map · motion tracker · instant PDF',
+    cta: 'Decode the post-mistrial case — $1.99',
+    url: 'https://cassiancreed.beehiiv.com/products/lindsay-clancy-post-mistrial-field-guide?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=explainer_clancy_v1&utm_content=featured_card',
+    bookKey: 'lindsay-clancy-post-mistrial-field-guide',
+  },
+  {
+    eyebrow: 'Eric Richins',
+    title: 'The Evidence-to-Verdict Guide',
+    description: 'Follow the proof from the alleged fentanyl pattern to the murder conviction, then see exactly what the appeal can—and cannot—change.',
+    meta: '11 pages · evidence ledger · appeal decoder · instant PDF',
+    cta: 'Follow the evidence — $1.99',
+    url: 'https://cassiancreed.beehiiv.com/products/eric-richins-kouri-evidence-verdict?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=explainer_kouri_v1&utm_content=featured_card',
+    bookKey: 'eric-richins-kouri-evidence-verdict',
+  },
+];
 
 const jsonld = {
   '@context': 'https://schema.org',
@@ -280,6 +340,25 @@ const jsonld = {
     <a href="/support/">Report a correction</a>
   </nav>
 
+  <section class="wrap cal-sec case-guides" aria-labelledby="case-guides-title">
+    <p class="case-guides__eyebrow">Instant case briefings · $1.99 each</p>
+    <h2 id="case-guides-title">Stop piecing the case together from scattered headlines.</h2>
+    <p class="cal-sub">Choose the case you follow and get the timeline, evidence, legal questions, and next court turn in one clear visual guide. Victim-first, source-linked, non-graphic, and delivered instantly as a PDF.</p>
+    <div class="case-guides__grid">
+      {FEATURED_EXPLAINERS.map((guide) => (
+        <article class="case-guide">
+          <p class="case-guide__eyebrow">{guide.eyebrow}</p>
+          <h3>{guide.title}</h3>
+          <p>{guide.description}</p>
+          <p class="case-guide__meta">{guide.meta}</p>
+          <a href={guide.url} target="_blank" rel="noopener noreferrer" data-book-key={guide.bookKey} data-cta-placement="court_calendar_featured_explainer">
+            {guide.cta} &rarr;
+          </a>
+        </article>
+      ))}
+    </div>
+  </section>
+
   <section class="wrap cal-sec" aria-labelledby="in-court-now">
     <h2 id="in-court-now">In Court Now</h2>
     <p class="cal-sub">Trials and proceedings actively underway, including matters where a verdict could come at any time.</p>
@@ -306,9 +385,10 @@ const jsonld = {
           <p class="card__links">
             {e.link ? (
               <a class="card__read" href={e.link}>{e.linkText} &rarr;</a>
-            ) : (
+            ) : !CASE_GUIDES[e.id] && (
               <span class="card__soon">Our case file on this is in progress.</span>
             )}
+            {CASE_GUIDES[e.id] && <a class="row__explainer" href={CASE_GUIDES[e.id].url} target="_blank" rel="noopener noreferrer" data-book-key={CASE_GUIDES[e.id].bookKey} data-cta-placement={CASE_GUIDES[e.id].placement}>{CASE_GUIDES[e.id].text} &rarr;</a>}
             {e.link2 && <a class="card__read" href={e.link2}>{e.linkText2} &rarr;</a>}
             <a class="card__help" href="/support/">Victim &amp; Reader Resources</a>
             <a class="card__help" href="/support/">Report a correction</a>
@@ -346,9 +426,10 @@ const jsonld = {
           <p class="card__links">
             {e.link ? (
               <a class="card__read" href={e.link}>{e.linkText} &rarr;</a>
-            ) : (
+            ) : !CASE_GUIDES[e.id] && (
               <span class="card__soon">Our case file on this is in progress.</span>
             )}
+            {CASE_GUIDES[e.id] && <a class="row__explainer" href={CASE_GUIDES[e.id].url} target="_blank" rel="noopener noreferrer" data-book-key={CASE_GUIDES[e.id].bookKey} data-cta-placement={CASE_GUIDES[e.id].placement}>{CASE_GUIDES[e.id].text} &rarr;</a>}
             {e.link2 && <a class="card__read" href={e.link2}>{e.linkText2} &rarr;</a>}
             <a class="card__help" href="/support/">Victim &amp; Reader Resources</a>
             <a class="card__help" href="/support/">Report a correction</a>
@@ -597,6 +678,15 @@ const jsonld = {
     .cal-fresh strong{color:var(--ink)}
     .cal-fresh a{color:var(--accent)}
     .cal-presumption{font-size:14.5px;line-height:1.6;color:var(--ink-2);max-width:68ch;margin:14px 0 0;padding:12px 14px;background:var(--bg-2);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:8px}
+    .case-guides{padding:24px;border:1px solid var(--line);border-radius:12px;background:linear-gradient(135deg,var(--bg-2),var(--bg-3))}
+    .case-guides__eyebrow,.case-guide__eyebrow{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin:0 0 8px}
+    .case-guides__grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:20px}
+    .case-guide{display:flex;flex-direction:column;min-height:260px;padding:20px;border:1px solid var(--line);border-top:3px solid var(--accent);border-radius:10px;background:var(--bg)}
+    .case-guide h3{font-family:var(--serif);font-size:22px;line-height:1.18;margin:0 0 10px;color:var(--ink)}
+    .case-guide>p:not(.case-guide__eyebrow){color:var(--ink-2);font-size:14px;line-height:1.55;margin:0 0 18px}
+    .case-guide>p.case-guide__meta{padding-top:12px;border-top:1px solid var(--line);font-family:var(--mono);font-size:11px;line-height:1.5;letter-spacing:.04em;color:var(--ink-3)}
+    .case-guide a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;margin-top:auto;padding:10px 14px;border-radius:7px;background:var(--accent);color:#0d1714;font-size:14px;font-weight:800;text-decoration:none;text-align:center}
+    .case-guide a:hover{background:rgb(103 226 204);transform:translateY(-1px)}
     .card--live{border-left-color:#c2593f}
     .card--live .card__type{color:#d2694c}
     .cal-sec{margin:44px auto 0}
@@ -646,6 +736,7 @@ const jsonld = {
     .faq h3{font-family:var(--serif);font-size:18px;font-weight:600;color:var(--ink);margin:22px 0 6px}
     .cal-help{margin:36px 0 44px;padding:16px 18px;background:var(--bg-2);border:1px solid var(--line);border-radius:10px;font-size:15px;color:var(--ink-2)}
     .cal-help a{color:var(--accent)}
-    @media(max-width:680px){.cards{grid-template-columns:1fr}}
+    @media(max-width:900px){.case-guides__grid{grid-template-columns:1fr}}
+    @media(max-width:680px){.cards{grid-template-columns:1fr}.case-guides{padding:18px}}
   </style>
 </Base>
