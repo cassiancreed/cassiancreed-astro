@@ -215,21 +215,27 @@ const FEATURED_EXPLAINERS = [
   {
     eyebrow: 'The Brian Thompson case',
     title: 'Luigi Mangione: Two Courts, One Legal Collision',
-    description: 'An 18-page visual map of the federal plea, the paused New York case, and every next turn.',
+    description: 'See the federal plea, the paused New York case, the double-jeopardy fight, and every next turn in one 20-minute visual briefing.',
+    meta: '18 pages · two-court timeline · 12 reader FAQs · instant PDF',
+    cta: 'Understand the whole case — $1.99',
     url: 'https://cassiancreed.beehiiv.com/products/brian-thompson-luigi-mangione-two-courts?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=explainer_luigi_v1&utm_content=featured_card',
     bookKey: 'brian-thompson-luigi-mangione-two-courts',
   },
   {
     eyebrow: 'Cora, Dawson and Callan',
     title: 'The Lindsay Clancy Post-Mistrial Field Guide',
-    description: 'A 12-page decoder for the mistrial, the unresolved legal challenges, and what comes next.',
+    description: 'Understand what the mistrial changed, what remains unresolved, and which next ruling actually matters—without guessing from headlines.',
+    meta: '12 pages · legal map · motion tracker · instant PDF',
+    cta: 'Decode the post-mistrial case — $1.99',
     url: 'https://cassiancreed.beehiiv.com/products/lindsay-clancy-post-mistrial-field-guide?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=explainer_clancy_v1&utm_content=featured_card',
     bookKey: 'lindsay-clancy-post-mistrial-field-guide',
   },
   {
     eyebrow: 'Eric Richins',
     title: 'The Evidence-to-Verdict Guide',
-    description: 'An 11-page evidence ledger showing how the circumstantial fentanyl case became a conviction.',
+    description: 'Follow the proof from the alleged fentanyl pattern to the murder conviction, then see exactly what the appeal can—and cannot—change.',
+    meta: '11 pages · evidence ledger · appeal decoder · instant PDF',
+    cta: 'Follow the evidence — $1.99',
     url: 'https://cassiancreed.beehiiv.com/products/eric-richins-kouri-evidence-verdict?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=explainer_kouri_v1&utm_content=featured_card',
     bookKey: 'eric-richins-kouri-evidence-verdict',
   },
@@ -335,17 +341,18 @@ const jsonld = {
   </nav>
 
   <section class="wrap cal-sec case-guides" aria-labelledby="case-guides-title">
-    <p class="case-guides__eyebrow">New reader editions</p>
-    <h2 id="case-guides-title">Get caught up before the next court date.</h2>
-    <p class="cal-sub">Three different case stages, three different visual formats. Each guide is victim-first, source-linked, non-graphic, and priced at $1.99.</p>
+    <p class="case-guides__eyebrow">Instant case briefings · $1.99 each</p>
+    <h2 id="case-guides-title">Stop piecing the case together from scattered headlines.</h2>
+    <p class="cal-sub">Choose the case you follow and get the timeline, evidence, legal questions, and next court turn in one clear visual guide. Victim-first, source-linked, non-graphic, and delivered instantly as a PDF.</p>
     <div class="case-guides__grid">
       {FEATURED_EXPLAINERS.map((guide) => (
         <article class="case-guide">
           <p class="case-guide__eyebrow">{guide.eyebrow}</p>
           <h3>{guide.title}</h3>
           <p>{guide.description}</p>
+          <p class="case-guide__meta">{guide.meta}</p>
           <a href={guide.url} target="_blank" rel="noopener noreferrer" data-book-key={guide.bookKey} data-cta-placement="court_calendar_featured_explainer">
-            Get the guide — $1.99 &rarr;
+            {guide.cta} &rarr;
           </a>
         </article>
       ))}
@@ -677,6 +684,7 @@ const jsonld = {
     .case-guide{display:flex;flex-direction:column;min-height:260px;padding:20px;border:1px solid var(--line);border-top:3px solid var(--accent);border-radius:10px;background:var(--bg)}
     .case-guide h3{font-family:var(--serif);font-size:22px;line-height:1.18;margin:0 0 10px;color:var(--ink)}
     .case-guide>p:not(.case-guide__eyebrow){color:var(--ink-2);font-size:14px;line-height:1.55;margin:0 0 18px}
+    .case-guide>p.case-guide__meta{padding-top:12px;border-top:1px solid var(--line);font-family:var(--mono);font-size:11px;line-height:1.5;letter-spacing:.04em;color:var(--ink-3)}
     .case-guide a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;margin-top:auto;padding:10px 14px;border-radius:7px;background:var(--accent);color:#0d1714;font-size:14px;font-weight:800;text-decoration:none;text-align:center}
     .case-guide a:hover{background:rgb(103 226 204);transform:translateY(-1px)}
     .card--live{border-left-color:#c2593f}
