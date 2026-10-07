@@ -53,6 +53,35 @@ function harness({ frames = [], href = 'https://cassiancreed.com/post/example/',
   return { document, events, listeners, storage, window };
 }
 
+test('middle-button signup records attribution for the new-tab return', () => {
+  const storage = new MemoryStorage();
+  const source = harness({ storage, href: 'https://cassiancreed.com/court-calendar/' });
+  const link = {
+    href: 'https://subscribe-forms.beehiiv.com/v3/forms/court-form',
+    dataset: { nepCtaId: 'court_calendar_page', nepOfferId: 'court_calendar_updates_v1' },
+    closest: () => link,
+  };
+  source.listeners.get('auxclick')?.({ target: link, button: 1 });
+  assert.equal(source.events.length, 1);
+  assert.equal(source.events[0][1], 'subscribe_click');
+  const result = harness({ storage, href: 'https://cassiancreed.com/?subscribed=1' });
+  assert.equal(result.events.length, 1);
+  assert.equal(result.events[0][2].conversion_page, '/court-calendar/');
+  assert.equal(result.events[0][2].cta_id, 'court_calendar_page');
+  assert.equal(result.events[0][2].acquisition_source, 'spotify');
+  assert.equal(storage.getItem('nep_signup_pending_v1'), null);
+});
+
+test('canceled signup clicks and right-button actions do not plant attribution', () => {
+  const h = harness();
+  const link = { href: 'https://subscribe-forms.beehiiv.com/v3/forms/court-form', dataset: {}, closest: () => link };
+  h.listeners.get('click')({ target: link, button: 0, defaultPrevented: true });
+  h.listeners.get('auxclick')?.({ target: link, button: 2 });
+  h.listeners.get('auxclick')?.({ target: link, button: 1, defaultPrevented: true });
+  assert.equal(h.events.length, 0);
+  assert.equal(h.storage.getItem('nep_signup_pending_v1'), null);
+});
+
 test('requires exact same-origin subscribed=1 result', () => {
   assert.equal(isBeehiivSignupResult('https://cassiancreed.com/?subscribed=1', 'https://cassiancreed.com', 'https://cassiancreed.com/'), true);
   assert.equal(isBeehiivSignupResult('https://cassiancreed.com/?not_subscribed=1', 'https://cassiancreed.com', 'https://cassiancreed.com/'), false);
