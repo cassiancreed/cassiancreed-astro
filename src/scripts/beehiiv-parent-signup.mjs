@@ -99,7 +99,8 @@ export function initBeehiivParentSignup(options = {}) {
 
   doc.querySelectorAll(FRAME_SELECTOR).forEach(wireFrame);
 
-  doc.addEventListener('click', (event) => {
+  function trackSignupNavigation(event) {
+    if (event.defaultPrevented) return;
     const link = event.target.closest?.('a[href]');
     if (!link) return;
     const url = parseUrl(link.href, win.location.href);
@@ -112,6 +113,13 @@ export function initBeehiivParentSignup(options = {}) {
     try {
       storage?.setItem(PENDING_KEY, JSON.stringify({ created_at: now(), meta: metadata(link, url.href), acquisition: acquisitionSnapshot(win.NEP_ORIGIN) }));
     } catch {}
+  }
+
+  doc.addEventListener('click', trackSignupNavigation);
+  // Middle-button navigation opens a new tab through auxclick, not click.
+  // Ignore the right-button/context-menu path, which is not navigation.
+  doc.addEventListener('auxclick', (event) => {
+    if (event.button === 1) trackSignupNavigation(event);
   });
 
   if (win.top === win && isBeehiivSignupResult(win.location.href, win.location.origin, win.location.href)) {
