@@ -4,6 +4,15 @@ import Base from '../layouts/Base.astro';
 // Copy is CERTIFIED text: do not paraphrase. Buy buttons use the exact live
 // Beehiiv product URLs. Free guide CTA goes to the guide's own live $0 product
 // checkout (delivery-matched); no anchor bounces on this page.
+const caseGuides = [
+  { id: 'brian-thompson-case', title: 'The Brian Thompson Case: Luigi Mangione, Two Courts', bookKey: 'brian-thompson-luigi-mangione-two-courts', campaign: 'explainer_luigi_v1' },
+  { id: 'lindsay-clancy-trial', title: 'Cora, Dawson and Callan: The Lindsay Clancy Post-Mistrial Field Guide', bookKey: 'lindsay-clancy-post-mistrial-field-guide', campaign: 'explainer_clancy_v1' },
+  { id: 'eric-richins-case', title: 'Eric Richins: The Evidence-to-Verdict Guide', bookKey: 'eric-richins-kouri-evidence-verdict', campaign: 'explainer_kouri_v1' },
+].map((guide) => ({
+  ...guide,
+  url: `https://cassiancreed.beehiiv.com/products/${guide.bookKey}`,
+  buyUrl: `https://cassiancreed.beehiiv.com/products/${guide.bookKey}?utm_source=cassiancreed.com&utm_medium=books_page&utm_campaign=${guide.campaign}&utm_content=books_guide_card`,
+}));
 const jsonld = [
   // CONVERSION-FIRST RANK 1 (2026-07-28): the Book + Offer nodes for
   // "The Trail: The Murder of Rachel Morin" and "The Frame: The Murders of
@@ -11,16 +20,16 @@ const jsonld = [
   // held for worthiness review. Nothing was deleted from source control — the
   // full nodes are recoverable from git history. Do not reinstate either node,
   // its Offer, or its product URL until Cassian approves the title's return.
-  {
+  ...caseGuides.map((guide) => ({
     "@context": "https://schema.org",
     "@type": "Book",
-    "name": "The Lindsay Clancy Trial",
+    "name": guide.title,
     "author": { "@id": "https://cassiancreed.com/#cassian-creed" },
     "publisher": { "@id": "https://cassiancreed.com/#org" },
     "bookFormat": "https://schema.org/EBook",
     "inLanguage": "en-US",
-    "genre": ["True Crime", "Law", "Psychology", "Nonfiction"]
-  },
+    "offers": [{ "@type": "Offer", "price": "1.99", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": guide.url, "seller": { "@id": "https://cassiancreed.com/#org" } }]
+  })),
   {
     "@context": "https://schema.org",
     "@type": "Book",
@@ -38,7 +47,7 @@ const jsonld = [
   // the Offer, or the product URL.
 ];
 ---
-<Base title="Books by Cassian Creed | Evidence-Led True Crime" description="Evidence-led books from Cassian Creed, including The Lindsay Clancy Trial and Jury Chess, available as PDF downloads." jsonld={jsonld}>
+<Base title="Books by Cassian Creed | Evidence-Led True Crime" description="Explore case guides for $1.99 each and Jury Chess from Cassian Creed. Read product details and buy PDF downloads on Beehiiv." jsonld={jsonld}>
   <section class="bk-hero wrap">
     <h1 class="bk-hero__h">Books by Cassian Creed</h1>
     <p class="bk-hero__sub">Evidence-led true crime and courtroom guides</p>
@@ -58,27 +67,27 @@ const jsonld = [
         stylesheet below and are unused until a title reclaims them. Do not
         restore either card until Cassian approves the title's return. */}
 
-    <div class="bk bk--ink" id="lindsay-clancy-trial">
-      <div class="bk__cover bk__cover--art">
-        <span class="bk__ribbon">Update in progress</span>
-        <img class="bk__img" src="/covers/lindsay-clancy-trial.jpg" alt="Book cover of The Lindsay Clancy Trial by Cassian Creed, showing chess pieces on a dark chessboard" width="1200" height="1800" loading="eager" />
-      </div>
-      <div class="bk__meta">
-        <h2 class="bk__title">The Lindsay Clancy Trial</h2>
-        <p class="bk__hook">A post-mistrial edition is being prepared.</p>
-        <p class="bk__desc">The September 4 mistrial changed the case&rsquo;s posture. We have paused this guide while its record, timeline, and next-proceeding information are brought current. Follow the verified tracker for the September 29 status and trial-assignment hearing. Educational, not legal or medical advice.</p>
-        <div class="bk__cta">
-          <p class="bk__price">Temporarily paused</p>
-          <a class="btn bk__buy" href="/post/lindsay-clancy-trial/" data-book-key="not_applicable" data-cta-placement="books_page_clancy_tracker">Read the current case tracker &rarr;</a>
+    {caseGuides.map((guide) => (
+      <div class="bk bk--ink" id={guide.id}>
+        <div class="bk__meta">
+          <p class="bk__hook">Case guide · PDF download</p>
+          <h2 class="bk__title">{guide.title}</h2>
+          <p class="bk__desc">By Cassian Creed. Read what the guide covers and buy it on the product page.</p>
+          <div class="bk__cta">
+            <p class="bk__price">$1.99</p>
+            <a class="btn bk__buy" href={guide.buyUrl} target="_blank" rel="noopener noreferrer" data-book-key={guide.bookKey} data-cta-placement="books_page_guide_card">View guide &amp; buy &rarr;</a>
+          </div>
+          {guide.id === 'lindsay-clancy-trial' && (
+            <aside class="bk__next" aria-labelledby="clancy-next-title">
+              <p class="bk__next-label">Continue with Jury Chess</p>
+              <h3 class="bk__next-title" id="clancy-next-title">Follow the whole trial.</h3>
+              <p class="bk__next-copy"><em>Jury Chess: How Criminal Jury Trials Actually Work</em> explains the process from jury selection through verdict.</p>
+              <a class="bk__next-link" href="https://cassiancreed.beehiiv.com/products/jury-chess?utm_source=cassiancreed.com&amp;utm_medium=books_page_cross_sell&amp;utm_campaign=clancy_to_jury_chess&amp;utm_content=clancy_trial_cross_sell" target="_blank" rel="noopener noreferrer" data-book-key="jury-chess" data-cta-placement="books_page_cross_sell">Continue with Jury Chess &rarr;</a>
+            </aside>
+          )}
         </div>
-        <aside class="bk__next" aria-labelledby="clancy-next-title">
-          <p class="bk__next-label">Continue with Jury Chess</p>
-          <h3 class="bk__next-title" id="clancy-next-title">Now follow the whole trial, not just this case.</h3>
-          <p class="bk__next-copy"><em>The Lindsay Clancy Trial</em> explains the questions in this courtroom. <em>Jury Chess: How Criminal Jury Trials Actually Work</em> gives you the larger framework—from jury selection and evidence disputes through instructions, deliberations, and verdict—so you can read the next case with the same discipline.</p>
-          <a class="bk__next-link" href="https://cassiancreed.beehiiv.com/products/jury-chess?utm_source=cassiancreed.com&amp;utm_medium=books_page_cross_sell&amp;utm_campaign=clancy_to_jury_chess&amp;utm_content=clancy_trial_cross_sell" target="_blank" rel="noopener noreferrer" data-book-key="jury-chess" data-cta-placement="books_page_cross_sell">Continue with Jury Chess &rarr;</a>
-        </aside>
       </div>
-    </div>
+    ))}
 
     <div class="bk bk--ink" id="jury-chess">
       <div class="bk__cover bk__cover--art">
@@ -127,7 +136,7 @@ const jsonld = [
     </div>
     <div class="bk-faq__item">
       <h3>What format will I receive?</h3>
-      <p><em>The Lindsay Clancy Trial</em> and <em>Jury Chess</em> are delivered as PDFs that open on phones, tablets, and computers. The free Voir Dire guide is delivered by email.</p>
+      <p>The case guides and <em>Jury Chess</em> are delivered as PDFs that open on phones, tablets, and computers. The free Voir Dire guide is delivered by email.</p>
     </div>
     <div class="bk-faq__item">
       <h3>What if I need help or want to request a refund?</h3>
