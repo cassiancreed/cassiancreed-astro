@@ -1,0 +1,185 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const LAST_VERIFIED = 'August 27, 2026, 9:06 p.m. PDT';
+const CORRECTION_MAILTO =
+  'mailto:cassiancreed@cassiancreed.com?subject=Jared%20Bridegan%20case%20status%20correction&body=What%20is%20wrong%3A%0D%0AWhat%20the%20correct%20information%20is%3A%0D%0AOfficial%20record%20or%20source%20link%3A%0D%0A';
+---
+
+<Base
+  title="Jared Bridegan Case Status — Working Draft"
+  description="Working draft of the current, source-linked status of the separate Fernandez Saldana, Gardner, and Tenon proceedings in the Jared Bridegan case."
+  noindex
+  internalLinksOnly
+>
+  <article class="status wrap">
+    <aside class="release-gate" aria-labelledby="release-gate-title">
+      <p class="release-gate__eyebrow">Internal working draft · not released</p>
+      <h2 id="release-gate-title">This page is not public-release cleared.</h2>
+      <p>
+        It asks search engines not to index it and is not linked from the public site. Florida
+        counsel review, final iSWEAT 3.8 clearance, and buyer-update fulfillment testing remain
+        open. This page does not promise automatic updates, and its status content contains no
+        purchase or subscription form.
+      </p>
+    </aside>
+
+    <header class="status__header">
+      <p class="evidence evidence--accent">Case Chess · current status</p>
+      <h1>The Jared Bridegan case</h1>
+      <p class="status__lede">
+        Jared Bridegan was a father, husband, designer, and builder. This page keeps the three
+        separate criminal proceedings arising from his February 16, 2022 killing distinct and
+        identifies what the public record does—and does not—establish.
+      </p>
+      <p class="status__verified"><strong>Last verified:</strong> {LAST_VERIFIED}</p>
+    </header>
+
+    <section class="status__principle" aria-labelledby="three-cases">
+      <h2 id="three-cases">Three defendants, three separate proceedings</h2>
+      <p>
+        A jury has returned guilty verdicts in Mario Fernandez Saldana's case. Shanna Gardner and
+        Henry Tenon have separate pending cases. Both have pleaded not guilty and remain presumed
+        innocent. Fernandez Saldana's verdict does not decide either pending case.
+      </p>
+    </section>
+
+    <section class="status-card status-card--convicted" aria-labelledby="fernandez-status">
+      <div class="status-card__head">
+        <div>
+          <p class="status-card__label">Convicted · pre-sentencing</p>
+          <h2 id="fernandez-status">Mario Fernandez Saldana</h2>
+        </div>
+        <span class="posture">Verdict entered</span>
+      </div>
+      <p>
+        On August 26, 2026, a Duval County jury found Fernandez Saldana guilty of first-degree
+        murder and solicitation to commit a capital felony. Formal sentencing has not occurred.
+      </p>
+      <dl class="facts">
+        <div><dt>Docket</dt><dd>16-2023-CF-002862-AXXX-MA</dd></div>
+        <div><dt>Next event</dt><dd>“SENTENCING — TO BE SET” hearing</dd></div>
+        <div><dt>Date and time</dt><dd>October 5, 2026, 9:00 a.m. EDT</dd></div>
+        <div><dt>What it means</dt><dd>A setting hearing, not formal sentencing</dd></div>
+      </dl>
+    </section>
+
+    <section class="status-card" aria-labelledby="gardner-status">
+      <div class="status-card__head">
+        <div>
+          <p class="status-card__label">Pending case · presumed innocent</p>
+          <h2 id="gardner-status">Shanna Gardner</h2>
+        </div>
+        <span class="posture">Case pending</span>
+      </div>
+      <p>
+        Gardner has pleaded not guilty. The charges against her remain allegations, and the court
+        continued her trial on August 27, 2026.
+      </p>
+      <dl class="facts">
+        <div><dt>Docket</dt><dd>16-2023-CF-002862-BXXX-MA</dd></div>
+        <div><dt>Pretrial</dt><dd>October 27, 2026, 9:00 a.m. EDT</dd></div>
+        <div><dt>Jury selection</dt><dd>May 3, 2027; time not publicly verified</dd></div>
+        <div><dt>Trial window</dt><dd>May 10–28, 2027; time not publicly verified</dd></div>
+      </dl>
+    </section>
+
+    <section class="status-card" aria-labelledby="tenon-status">
+      <div class="status-card__head">
+        <div>
+          <p class="status-card__label">Pending case · presumed innocent</p>
+          <h2 id="tenon-status">Henry Tenon</h2>
+        </div>
+        <span class="posture">Case pending</span>
+      </div>
+      <p>
+        Tenon withdrew his earlier guilty plea, was re-indicted, and has pleaded not guilty. His
+        case is separate from the Fernandez Saldana and Gardner proceedings.
+      </p>
+      <dl class="facts">
+        <div><dt>Docket</dt><dd>16-2023-CF-000888-AXXX-MA</dd></div>
+        <div><dt>Pretrial</dt><dd>October 7, 2026, 9:00 a.m. EDT</dd></div>
+        <div><dt>Final pretrial</dt><dd>March 22, 2027; time not publicly verified</dd></div>
+        <div><dt>Jury-selection/trial window</dt><dd>March 29–April 9, 2027; time not publicly verified</dd></div>
+      </dl>
+      <p class="status-card__note">
+        A proposed May 2027 joinder with Gardner has not been verified as a final court schedule.
+      </p>
+    </section>
+
+    <section class="sources" aria-labelledby="sources-title">
+      <h2 id="sources-title">Sources and verification limits</h2>
+      <p>
+        Court schedules can change. This page states a time only when the cited record supports it;
+        otherwise it uses “time not publicly verified.” Check the linked court record before relying
+        on a date.
+      </p>
+      <ul>
+        <li>
+          <a href="https://core.duvalclerk.com/CoreCms.aspx?mode=PublicAccess" rel="noopener noreferrer">
+            Duval County Clerk of Courts CORE public portal
+          </a>
+          — Fernandez Saldana and Tenon dockets, consulted August 27, 2026.
+        </li>
+        <li>
+          <a href="https://sao4th.com/media/pdppobpr/sao4-press-release-jury-finds-mario-fernandez-saldana-guilty-of-murder-for-hire.pdf" rel="noopener noreferrer">
+            Office of the State Attorney, Fourth Judicial Circuit verdict release
+          </a>
+          — August 26, 2026.
+        </li>
+        <li>
+          <a href="https://core.duvalclerk.com/court/case/13705039/docket/235786946/content.pdf" rel="noopener noreferrer">
+            Circuit Court order granting Gardner's continuance
+          </a>
+          — docket entry 851, August 27, 2026.
+        </li>
+        <li>
+          <a href="https://apnews.com/article/44f9fdfbb1e23d8e6075ea03d7fd7a35" rel="noopener noreferrer">
+            Associated Press verdict report
+          </a>
+          — August 26, 2026.
+        </li>
+      </ul>
+      <p class="sources__correction">
+        See something wrong? <a href={CORRECTION_MAILTO}>Report a correction with the supporting record.</a>
+      </p>
+    </section>
+  </article>
+</Base>
+
+<style>
+  .status{max-width:900px;padding-top:38px;padding-bottom:64px}
+  .release-gate{border:2px solid #ba7a36;background:rgba(186,122,54,.1);border-radius:12px;padding:18px 20px;margin-bottom:38px}
+  .release-gate__eyebrow,.status-card__label{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#d39a58;margin:0 0 7px}
+  .release-gate h2{font-family:var(--serif);font-size:23px;margin:0 0 8px}
+  .release-gate p:last-child{color:var(--ink-2);line-height:1.6;margin:0;max-width:74ch}
+  .status__header{padding-bottom:28px;border-bottom:1px solid var(--line)}
+  .status__header h1{font-family:var(--serif);font-size:clamp(38px,7vw,62px);line-height:1;margin:10px 0 16px}
+  .status__lede{font-size:18px;line-height:1.65;color:var(--ink-2);max-width:72ch;margin:0}
+  .status__verified{font-size:13px;color:var(--ink-3);margin:18px 0 0}
+  .status__principle{padding:30px 0 8px}
+  .status__principle h2,.sources h2{font-family:var(--serif);font-size:28px;margin:0 0 10px}
+  .status__principle p,.sources p,.sources li{color:var(--ink-2);line-height:1.65}
+  .status-card{background:var(--bg-2);border:1px solid var(--line);border-left:4px solid #7895aa;border-radius:12px;padding:22px;margin-top:20px}
+  .status-card--convicted{border-left-color:#5fae7e}
+  .status-card__head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px}
+  .status-card h2{font-family:var(--serif);font-size:28px;margin:0}
+  .status-card>p{color:var(--ink-2);line-height:1.65;max-width:72ch}
+  .posture{font-family:var(--mono);font-size:11px;white-space:nowrap;color:var(--ink-2);border:1px solid var(--line);border-radius:999px;padding:6px 9px}
+  .facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:8px;overflow:hidden;margin:18px 0 0}
+  .facts div{background:var(--bg-3);padding:13px 14px}
+  .facts dt{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin-bottom:5px}
+  .facts dd{font-size:14px;line-height:1.5;color:var(--ink);margin:0}
+  .status-card__note{font-size:13px;border-top:1px solid var(--line);padding-top:14px;margin-bottom:0}
+  .sources{border-top:1px solid var(--line);margin-top:38px;padding-top:30px}
+  .sources ul{padding-left:20px}
+  .sources li{margin-bottom:10px}
+  .sources a{color:var(--accent)}
+  .sources__correction{margin-top:22px}
+  @media(max-width:680px){
+    .status{padding-top:24px}
+    .facts{grid-template-columns:1fr}
+    .status-card__head{display:block}
+    .posture{display:inline-block;margin-top:10px}
+  }
+</style>
