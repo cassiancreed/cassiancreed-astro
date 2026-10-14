@@ -528,7 +528,25 @@ const jsonld = {
         {e.id === 'bridegan-fernandez-trial' && <p class="row__meta">Setting source: <a href="https://core.duvalclerk.com/CoreCms.aspx?mode=PublicAccess" target="_blank" rel="noopener noreferrer">Duval County Clerk CORE, docket 16-2023-CF-002862-AXXX-MA</a> (verified August 27, 2026).</p>}
         <p class="row__note">{e.note}</p>
         <p class="row__meta">Source: {e.srcLabel} ({e.srcType}){e.src2 && <span class="row__src2"> &middot; Also: {e.srcLabel2}</span>}</p>
-        <p class="row__links">{e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : !CASE_GUIDES[e.id] && <span class="card__soon">Our case file on this is in progress.</span>} {CASE_GUIDES[e.id] && <a class="row__explainer" href={CASE_GUIDES[e.id].url} target="_blank" rel="noopener noreferrer" data-book-key={CASE_GUIDES[e.id].bookKey} data-cta-placement={CASE_GUIDES[e.id].placement}>{CASE_GUIDES[e.id].text} &rarr;</a>} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <a class="row__help" href="/support/">Report a correction</a></p>
+        {e.id === 'mary-collins-trial' && (
+          <article class="collins-free-update" aria-labelledby="mary-collins-free-update">
+            <h4 id="mary-collins-free-update">Mary Collins: Verdicts and Sentences</h4>
+            <p>By Cassian Creed</p>
+            <p>Mary Collins was 20 when she was killed in March 2020. The Mecklenburg County District Attorney’s October 12, 2026 release reports verdicts and sentences for Lavi Pham and James Salerno after their joint trial, which began September 14 and concluded October 12.</p>
+            <h5>What did the jury decide?</h5>
+            <p>The jury found each defendant guilty of first-degree murder, first-degree kidnapping and concealment of death.</p>
+            <h5>What sentences were reported?</h5>
+            <p>Judge Karen Eady-Williams sentenced each defendant to life in prison without parole for murder, a consecutive term of 73–100 months for kidnapping and a consecutive term of 64–89 months for concealment of death.</p>
+            <h5>Why was Salerno’s fourth charge dismissed?</h5>
+            <p>The release says the court dismissed his accessory-after-the-fact murder charge because the jury convicted him of first-degree murder. The dismissal concerns that fourth charge; the release separately reports his convictions on the other three.</p>
+            <h5>What comes next?</h5>
+            <p>The source establishes the verdicts and sentencing reported on October 12. Later appeal or review proceedings have not been verified for this update. We will list a later court setting when an official source confirms it.</p>
+            <p>Follow sourced proceedings in the free Court Calendar: <a href="https://cassiancreed.com/court-calendar/">https://cassiancreed.com/court-calendar/</a></p>
+            <p>For Court Calendar updates: <a href="https://cassiancreed.com/court-calendar/#court-updates">https://cassiancreed.com/court-calendar/#court-updates</a></p>
+            <p>Primary source: Mecklenburg County District Attorney, October 12, 2026 release, <a href="https://charmeckda.com/wp-content/uploads/2026/10/101226_1.pdf">https://charmeckda.com/wp-content/uploads/2026/10/101226_1.pdf</a></p>
+          </article>
+        )}
+        <p class="row__links">{e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : !CASE_GUIDES[e.id] && e.id !== 'mary-collins-trial' && <span class="card__soon">Our case file on this is in progress.</span>} {CASE_GUIDES[e.id] && <a class="row__explainer" href={CASE_GUIDES[e.id].url} target="_blank" rel="noopener noreferrer" data-book-key={CASE_GUIDES[e.id].bookKey} data-cta-placement={CASE_GUIDES[e.id].placement}>{CASE_GUIDES[e.id].text} &rarr;</a>} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <a class="row__help" href="/support/">Report a correction</a></p>
       </div>
     ))}
   </section>
@@ -651,6 +669,11 @@ const jsonld = {
   </section>
 
   <style>
+    .collins-free-update{margin:20px 0;padding:18px 20px;border:1px solid var(--line);border-radius:10px;background:var(--bg-2);max-width:74ch;overflow-wrap:anywhere}
+    .collins-free-update h4{font-family:var(--serif);font-size:23px;line-height:1.25;margin:0 0 8px;color:var(--ink)}
+    .collins-free-update h5{font-family:var(--serif);font-size:18px;line-height:1.35;margin:20px 0 6px;color:var(--ink)}
+    .collins-free-update p{font-size:15px;line-height:1.65;margin:0 0 12px;color:var(--ink-2)}
+    .collins-free-update a{color:var(--accent);text-decoration:underline;text-underline-offset:2px}
     .cal-quick-links{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:14px;padding:13px 4px;border-bottom:1px solid var(--line)}
     .cal-quick-links a{color:var(--ink-2);font-family:var(--mono);font-size:11px;text-decoration:none;text-transform:uppercase}
     .cal-quick-links a:hover{color:var(--accent)}
