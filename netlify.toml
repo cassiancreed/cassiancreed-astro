@@ -3,7 +3,7 @@
   publish = "dist"
 
 [build.environment]
-  NODE_VERSION = "20"
+  NODE_VERSION = "22.19.0"
 
 # One worldwide court calendar. Preserve older inbound links to the former
 # international-only view without maintaining a second public calendar.

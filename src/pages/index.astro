@@ -3,9 +3,10 @@ import Base from '../layouts/Base.astro';
 import { getCollection } from 'astro:content';
 import CaptureBlock from '../components/CaptureBlock.astro';
 import HomeCourtCalendar from '../components/HomeCourtCalendar.astro';
-const posts = (await getCollection('posts')).filter(p => !p.data.archived).sort((a,b)=> b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+import { comparePostsNewestFirst } from '../utils/content-order';
+const posts = (await getCollection('posts')).filter(p => !p.data.archived).sort(comparePostsNewestFirst);
 const featured = posts.find(p=>p.data.featured) || posts[0];
-const rest = posts.filter(p=> featured && p.slug!==featured.slug && p.slug!=='nancy-guthrie-abduction-what-we-know').slice(0,8);
+const rest = posts.filter(p=> featured && p.id!==featured.id && p.id!=='nancy-guthrie-abduction-what-we-know').slice(0,8);
 const cfCount = posts.filter(p=>p.data.tag==='Case Files').length;
 const short = (t)=> t.split(':')[0];
 const HOME_FORM_ID = '4d0df7d0-f274-4901-a457-091f80cecef0';
@@ -161,7 +162,7 @@ const jsonld = {
 
   {featured && (
   <section class="wrap" aria-label="Featured case file">
-    <a class="feature" href={`/post/${featured.slug}/`}>
+    <a class="feature" href={`/post/${featured.id}/`}>
       <div>
         <p class="evidence evidence--accent">Featured case file</p>
         <h2>{featured.data.title}</h2>
@@ -249,7 +250,7 @@ const jsonld = {
     <div class="grid">
       <a class="card" href="/post/baby-boy-doe-mansfield-1985/"><div class="card__tile"><div class="tile__top"><span class="tile__no">New</span><span class="tile__tag">Case Files</span></div><h3 class="card__title">Baby Boy Doe — Mansfield, 1985</h3></div></a>
       {rest.map((p, i) => (
-      <a class="card" href={`/post/${p.slug}/`}>
+      <a class="card" href={`/post/${p.id}/`}>
         <div class="card__tile">
           <div class="tile__top">
             <span class="tile__no">N&ordm; {String(i+1).padStart(2,'0')}</span>
