@@ -174,3 +174,27 @@
   to = "/post/leslie-preer-murder/"
   status = 301
   force = true
+
+[[redirects]]
+  from = "/post/tupac-shakur-homicide-evidence-evolution"
+  to = "/post/why-was-keffe-d-convicted-tupac-shakur/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/post/tupac-shakur-homicide-evidence-evolution/"
+  to = "/post/why-was-keffe-d-convicted-tupac-shakur/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/post/tupac-shakur-keffe-d-charged-not-shooter"
+  to = "/post/why-was-keffe-d-convicted-tupac-shakur/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/post/tupac-shakur-keffe-d-charged-not-shooter/"
+  to = "/post/why-was-keffe-d-convicted-tupac-shakur/"
+  status = 301
+  force = true

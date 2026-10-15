@@ -5,8 +5,10 @@ export interface Props {
   description?: string;
   jsonld?: object;
   ogImage?: string;
+  ogImageAlt?: string;
   ogType?: 'website' | 'article';
   noindex?: boolean;
+  canonicalPath?: string;
   internalLinksOnly?: boolean;
 }
 const {
@@ -14,8 +16,10 @@ const {
   description = 'Sourced, victim-centered true-crime case files — what happened, and what it teaches about staying safe.',
   jsonld,
   ogImage = '/og.png',
+  ogImageAlt,
   ogType = 'website',
   noindex = false,
+  canonicalPath,
   internalLinksOnly = false,
 } = Astro.props;
 const BRAND = 'Cassian Creed';
@@ -41,7 +45,7 @@ const shorten = (value: string, max: number) => {
 // titles are the strongest signal we control. Preserve the on-page H1 in full.
 const renderedTitle = shorten(proposedTitle, 60);
 const renderedDescription = shorten(description, 160);
-const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const canonical = new URL(canonicalPath ?? Astro.url.pathname, Astro.site).href;
 const ogImg = new URL(ogImage, Astro.site).href;
 // Sitewide Organization + Person JSON-LD (AI discoverability, Mantra rule 47).
 // @id anchors are referenced by Book/Article schema on individual pages.
@@ -194,13 +198,13 @@ const exploreActive = resolvedExplore.some(i => navActive(i.href));
   <meta property="og:image" content={ogImg} />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content={renderedTitle} />
+  <meta property="og:image:alt" content={ogImageAlt ?? renderedTitle} />
   <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={renderedTitle} />
     <meta name="twitter:description" content={description} />
   <meta name="twitter:site" content="@CassianCreed" />
   <meta name="twitter:image" content={ogImg} />
-  <meta name="twitter:image:alt" content={renderedTitle} />
+  <meta name="twitter:image:alt" content={ogImageAlt ?? renderedTitle} />
   <link rel="sitemap" href="/sitemap.xml" />
   <link rel="alternate" type="application/rss+xml" title="Cassian Creed" href="/rss.xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />

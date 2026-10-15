@@ -326,6 +326,8 @@ const jsonld = {
 };
 ---
 <Base
+  ogImage="/og/court-calendar-source-limits.png"
+  ogImageAlt="Court Calendar — Dates, reports and source limits"
   title={PAGE_TITLE}
   description={PAGE_DESCRIPTION}
   jsonld={jsonld}
@@ -514,11 +516,11 @@ const jsonld = {
   </section>
 
   <section class="wrap cal-sec" aria-labelledby="completed">
-    <h2 id="completed">Recently Completed</h2>
-    <p class="cal-sub">Matters that finished recently. Nothing is deleted when it ages out of this list &mdash; it moves, in full and with its sources, to the <a href="/court-calendar/archive/">court calendar archive</a>.</p>
+    <h2 id="completed">Recent outcomes and reports</h2>
+    <p class="cal-sub">Reported outcomes and completed proceedings, with each entry's source and limits retained. Inclusion here does not establish that all review is complete. When an entry ages out of this list, it moves, in full and with its sources, to the <a href="/court-calendar/archive/">court calendar archive</a>.</p>
     {completed.map((e) => (
       <div class="row row--done" id={e.id}>
-        <p class="row__type">Concluded</p>
+        <p class="row__type">{e.id === 'davis-tupac-openings' ? 'Sentencing reported' : 'Concluded'}</p>
         <h3 class="row__case">{e.case}</h3>
         <p class="row__when">{e.where}</p>
         {e.docket && <p class="row__docket">{e.docket}</p>}
@@ -605,7 +607,7 @@ const jsonld = {
           {completed.map((e) => (
             <tr>
               <td class="t-case">{e.case}</td>
-              <td>Concluded</td>
+              <td>{e.id === 'davis-tupac-openings' ? 'Sentencing reported' : 'Concluded'}</td>
               <td class="t-none">{NO_DATE}</td>
               <td>{e.where}</td>
               <td><a href={`#${e.id}`}>Status and source &rarr;</a></td>
@@ -628,9 +630,9 @@ const jsonld = {
         <li><strong>We name the source type.</strong> A district attorney's announcement and a news report are not the same thing, so we label which one you are looking at.</li>
         <li><strong>No sourced date, no dated entry.</strong> If a case is active but nothing is scheduled or credibly expected on a specific date, it goes in <a href="#unconfirmed">Dates Not Yet Confirmed</a>. A sourced expectation may appear as <em>Tentative</em>, but it is never presented as confirmed.</li>
         <li><strong>Page updates and source checks have separate dates.</strong> The page's Updated date records the latest calendar change, not a complete review of every entry. Each entry retains its own verification date; we advance that date only after checking that entry against a source. A targeted correction does not refresh unrelated entries.</li>
-        <li><strong>Nothing is quietly deleted.</strong> When a matter is finished and has been closed long enough to leave <a href="#completed">Recently Completed</a>, it moves to the <a href="/court-calendar/archive/">archive</a> with its text and sources intact, so a page that once carried a claim still shows it.</li>
+        <li><strong>Nothing is quietly deleted.</strong> When an entry leaves <a href="#completed">Recent outcomes and reports</a>, it moves to the <a href="/court-calendar/archive/">archive</a> with its text and sources intact, so a page that once carried a claim still shows it.</li>
         <li><strong>Each proceeding appears once.</strong> A hearing is written out in one entry, indexed once in the <a href="#case-by-case">case-by-case table</a>, and referenced from the FAQ by link. We do not restate the same proceeding in several places, because copies drift apart and one of them ends up wrong.</li>
-        <li><strong>Legal status is stated exactly.</strong> Charged is not convicted. A plea is not a verdict. An appeal is not a retrial.</li>
+        <li><strong>Legal status is stated exactly.</strong> Charged is not convicted. A plea is not a verdict. An appeal seeks review; its procedure depends on the court and jurisdiction.</li>
         <li><strong>Worldwide cases share one display.</strong> Jurisdiction changes how we verify and describe a proceeding, but it does not determine prominence. Court and country appear as factual details; current worldwide interest determines which tracked cases receive the most visible positions.</li>
         <li><strong>An investigation is not a case in court.</strong> Matters where police are still working and no court has scheduled anything are kept in <a href="#investigations">Active Investigations</a>, labelled as having no court proceeding. Several involve no charged person at all, and the page says so rather than implying a docket exists.</li>
         <li><strong>A press conference is not a hearing.</strong> Briefings and announcements do not go on the calendar. Confirmed court proceedings and clearly labelled, sourced tentative court events do.</li>
@@ -664,7 +666,7 @@ const jsonld = {
 
   <section class="wrap cal-sec">
     <p class="cal-help">
-      True crime is about real people. If a case on this page touches something in your own life, our <a href="/support/">Victim &amp; Reader Resources</a> page lists free, confidential help.
+      True crime is about real people. If a case on this page touches something in your own life, visit <a href="/support/">Victim &amp; Reader Resources</a>.
     </p>
   </section>
 

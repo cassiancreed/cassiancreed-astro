@@ -109,21 +109,81 @@
     {
       "case_key": "duane-davis-tupac-shakur",
       "case_name": "Duane Davis — Tupac Shakur case",
-      "aliases": ["State of Nevada v. Duane Davis", "Keffe D"],
-      "calendar_event_ids": ["davis-tupac-openings"],
-      "factual_cutoff": "2026-08-31T23:00:00Z",
-      "legal_truth": { "posture": "Convicted of first-degree murder with use of a deadly weapon; sentencing remains pending.", "docket": "C-23-377407-1", "source_url": "https://apnews.com/article/0b0b080d73f91cd122b6dd438e5bbb80", "verified_at": "2026-08-31T23:00:00Z" },
-      "demand": { "status": "provisional", "direction": "event-driven", "observed_at": "2026-08-31T23:00:00Z", "source_url": "https://apnews.com/article/0b0b080d73f91cd122b6dd438e5bbb80", "note": "Prominence reflects editorial judgment, not public volume." },
-      "commercial_opportunity": { "product_fit": "Verdict and sentencing explainer", "offer_url": "https://cassiancreed.com/books/" },
-      "public_display": { "summary": "Sentencing is scheduled for October 13; the start time has not been publicly verified.", "prominence": 96 },
-      "court_events": [{ "event_id": "davis-tupac-openings", "event_type": "sentencing", "starts_at": "2026-10-13T09:00:00-07:00", "date_status": "confirmed", "time_status": "not publicly verified", "timezone": "America/Los_Angeles", "source_url": "https://apnews.com/article/0b0b080d73f91cd122b6dd438e5bbb80", "verified_at": "2026-08-31T23:00:00Z" }],
-      "predictive_signals": [{ "signal_id": "davis-sentencing", "type": "court", "starts_at": "2026-10-13T09:00:00-07:00", "observed_at": "2026-08-31T23:00:00Z", "reliability": "reliable", "source_url": "https://apnews.com/article/0b0b080d73f91cd122b6dd438e5bbb80", "window_profile": "standard-event" }],
-      "demand_signals": [{ "channel": "media", "observation": "National verdict coverage identifies sentencing as the next event.", "observed_at": "2026-08-31T23:00:00Z", "source_url": "https://apnews.com/article/0b0b080d73f91cd122b6dd438e5bbb80" }],
-      "discovery": { "seo_long_tail": [{ "query": "Duane Davis Tupac sentencing date", "intent": "current-status", "priority": 1 }], "paa_observed": [], "paa_candidates": ["When will Duane Davis be sentenced?"], "aeo_targets": [{ "question": "When is Duane Davis sentencing?", "answer_shape": "Date, court, time caveat and source." }], "ai_search_prompts": ["What is the latest verified status of the Duane Davis Tupac case?"] },
-      "buyer_questions": [{ "question": "How did Nevada principal liability apply?", "purchase_intent": "informational", "source_url": "https://cassiancreed.com/post/tupac-shakur-keffe-d-charged-not-shooter/", "observed_at": "2026-08-31T23:00:00Z" }],
-      "coverage": { "canonical_urls": ["https://cassiancreed.com/post/tupac-shakur-keffe-d-charged-not-shooter/", "https://cassiancreed.com/court-calendar/"], "last_material_update": "2026-08-31" },
-      "field_freshness": [{ "field_path": "court_events", "status": "fresh", "observed_at": "2026-08-31T23:00:00Z", "source_url": "https://apnews.com/article/0b0b080d73f91cd122b6dd438e5bbb80", "fresh_until": null }],
-      "distribution_ledger": []
+      "aliases": [
+        "State of Nevada v. Duane Davis",
+        "Keffe D"
+      ],
+      "calendar_event_ids": [
+        "davis-tupac-openings"
+      ],
+      "factual_cutoff": "2026-10-15T12:24:00-07:00",
+      "legal_truth": {
+        "posture": "L2-provisional — convicted of first-degree murder with a deadly weapon; AP reported 40 years to life on October 13, 2026. Davis says he will appeal; no filed notice was verified by NEP at the factual cutoff.",
+        "docket": "C-23-377407-1",
+        "source_url": "https://toronto.citynews.ca/2026/10/13/duane-keffe-d-davis-faces-life-in-prison-for-orchestrating-murder-of-rapper-tupac-shakur/",
+        "verified_at": "2026-10-15T12:24:00-07:00",
+        "verification_scope": "Dated AP report plus an October 15 check of the court's public CourtFinder page, which did not expose a docket-entry list or a filed notice of appeal. Written judgment, instructions, verdict form, exact sentence components and official parole calculation remain unread or unverified. The current case-handling classification is L2-provisional."
+      },
+      "demand": {
+        "status": "unknown",
+        "direction": "unmeasured",
+        "observed_at": "2026-10-14",
+        "source_url": "https://toronto.citynews.ca/2026/10/13/duane-keffe-d-davis-faces-life-in-prison-for-orchestrating-murder-of-rapper-tupac-shakur/",
+        "note": "The report supplies editorial context; no current demand volume is asserted."
+      },
+      "commercial_opportunity": {
+        "product_fit": "Free reported-sentence and legal-record explainer",
+        "offer_url": "https://cassiancreed.com/post/why-was-keffe-d-convicted-tupac-shakur/"
+      },
+      "public_display": {
+        "summary": "AP reported 40 years to life; appeal plans were reported, and NEP has not confirmed a filed notice.",
+        "prominence": 96
+      },
+      "court_events": [],
+      "predictive_signals": [],
+      "demand_signals": [],
+      "discovery": {
+        "seo_long_tail": [
+          {
+            "query": "Keffe D reported sentence meaning",
+            "intent": "current-status",
+            "priority": 1
+          }
+        ],
+        "paa_observed": [],
+        "paa_candidates": [
+          "What sentence was reported for Keffe D?"
+        ],
+        "aeo_targets": [
+          {
+            "question": "What sentence was reported for Keffe D?",
+            "answer_shape": "AP attribution, reported sentence and explicit record-review limits."
+          }
+        ],
+        "ai_search_prompts": [
+          "What does the reported sentence mean, and what has NEP not verified?"
+        ]
+      },
+      "buyer_questions": [],
+      "coverage": {
+        "canonical_urls": [
+          "https://cassiancreed.com/post/why-was-keffe-d-convicted-tupac-shakur/",
+          "https://cassiancreed.com/court-calendar/#davis-tupac-openings"
+        ],
+        "last_material_update": "2026-10-14"
+      },
+      "field_freshness": [
+        {
+          "field_path": "legal_truth",
+          "status": "unknown",
+          "observed_at": "2026-10-14",
+          "source_url": "https://toronto.citynews.ca/2026/10/13/duane-keffe-d-davis-faces-life-in-prison-for-orchestrating-murder-of-rapper-tupac-shakur/",
+          "fresh_until": null,
+          "note": "AP-attributed report, not a current official docket check. No future setting or filed appeal confirmed."
+        }
+      ],
+      "distribution_ledger": [],
+      "factual_cutoff_scope": "Date of the attributed AP report only; no precise case-record retrieval time is asserted. Editorial reconciliation October 14, 2026."
     },
     {
       "case_key": "fraser-bohm-malibu",
