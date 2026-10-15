@@ -10,6 +10,20 @@ const calendar = parseCourtCalendar(calendarTsv);
 const missing = parseMissingPersons(missingTsv);
 const dataThrough = [calendar.metadata.last_updated, missing.metadata.last_updated].sort().at(-1);
 
+// Calendar destinations follow the current Los Angeles date; the data cutoff stays independent.
+const localDateParts = Object.fromEntries(
+  new Intl.DateTimeFormat('en-US', {
+    timeZone: 'America/Los_Angeles',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+  })
+    .formatToParts(new Date())
+    .filter((part) => part.type !== 'literal')
+    .map((part) => [part.type, part.value]),
+);
+const BUILD_DATE = `${localDateParts.year}-${localDateParts.month}-${localDateParts.day}`;
+
 const MONTHS = new Map([
   ['January', '01'], ['February', '02'], ['March', '03'], ['April', '04'],
   ['May', '05'], ['June', '06'], ['July', '07'], ['August', '08'],
@@ -43,13 +57,13 @@ const courtChanges = courtRows.flatMap((entry) => {
   const changed = verifiedDate(entry.verified);
   if (!changed) return [];
   const hiddenElapsedSetting = entry.section === 'scheduled'
-    && entry.dateISO < dataThrough
+    && entry.dateISO < BUILD_DATE
     && !entry.ongoing;
   return [{
     id: `court-${entry.id}`,
     kind: 'court',
     changed,
-    label: courtSectionLabel(entry.section),
+    label: entry.id === 'davis-tupac-openings' ? 'Sentencing reported' : courtSectionLabel(entry.section),
     name: entry.case,
     headline: entry.proceeding,
     summary: entry.status,

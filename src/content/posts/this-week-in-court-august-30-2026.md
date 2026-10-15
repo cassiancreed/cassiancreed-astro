@@ -64,7 +64,7 @@ Closing arguments are scheduled for **Monday, August 31**. The start time has no
 - **The parties' framing:** How each side interprets the admitted evidence.
 - **Start of deliberations:** The point at which the case is formally submitted to the jury.
 
-Closing arguments are not evidence. Jurors also may not treat Davis's decision not to testify as evidence or as an inference of guilt. Read more about [why Davis is charged even though prosecutors do not call him the shooter](/post/tupac-shakur-keffe-d-charged-not-shooter/).
+Closing arguments are not evidence. Jurors also may not treat Davis's decision not to testify as evidence or as an inference of guilt. Read the current explainer on [why Davis could be convicted without being accused of firing the shots](/post/why-was-keffe-d-convicted-tupac-shakur/).
 
 ## Durk Banks, Known as Lil Durk: Evidence and Credibility in Federal Court
 
