@@ -99,6 +99,12 @@ For the latest status, check our [Court Calendar](/court-calendar/#pike-executio
 
 **See every court date we track:** [Court Calendar](https://cassiancreed.com/court-calendar/).
 
+## Want the Full Case in One Place?
+
+Our **Christa Pike Case Guide (v1)** is a 15-page PDF for $1.99. It has the full timeline from 1995 to this week, every court and official step since Sept. 30, six paths the case could take next, a plain-English glossary and 30 sources. Facts are checked through Oct. 16, 2026.
+
+<a href="https://cassiancreed.beehiiv.com/products/christa-pike-failed-execution-guide?utm_source=cassiancreed.com&amp;utm_medium=post_cta&amp;utm_campaign=explainer_pike_v1&amp;utm_content=pike_free_post_end" data-book-key="christa-pike-failed-execution-guide" data-cta-placement="pike_free_post_end">Get the Christa Pike case guide — $1.99 →</a>
+
 ## Sources
 
 - Tennessee Department of Correction, [Women on Death Row](https://www.tennessee.gov/correction/statistics/death-row-facts/women-on-death-row.html) (offense date, place, 1996 death sentence).

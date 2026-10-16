@@ -77,6 +77,12 @@ Police say Michelle's remains have not been found, and the search continues. Any
 
 **Get free alerts when this case moves:** [Subscribe to Cassian Creed case alerts](https://cassiancreed.beehiiv.com/subscribe).
 
+## Want the Full Case in One Place?
+
+Our **Michelle Parker Case Guide (v1)** is a 14-page PDF for $1.99. It has an hour-by-hour timeline of her last known day, the full 15-year record, how Florida handles murder cases with no body, the next court steps, a glossary and sources. Dale Smith Jr. is charged and presumed innocent. Status as of Oct. 16, 2026.
+
+<a href="https://cassiancreed.beehiiv.com/products/michelle-parker-case-guide?utm_source=cassiancreed.com&amp;utm_medium=post_cta&amp;utm_campaign=explainer_parker_v1&amp;utm_content=parker_free_post_end" data-book-key="michelle-parker-case-guide" data-cta-placement="parker_free_post_end">Get the Michelle Parker case guide — $1.99 →</a>
+
 ## Sources
 
 - Orlando Police news conference coverage: [ClickOrlando / WKMG (Oct. 14, 2026)](https://www.clickorlando.com/news/local/2026/10/14/orlando-police-to-provide-update-on-michelle-parker-missing-woman-case/), [Spectrum News 13 (Oct. 14, 2026)](https://mynews13.com/fl/orlando/news/2026/10/14/orlando-police-arrest-ex-fiance-of-michelle-parker-in-case-of-the-missing-mother), [CBS News (Oct. 14, 2026)](https://www.cbsnews.com/news/michelle-parker-fiancee-orlando-florida-arrest-murder-charge-2011-disappearance-peoples-court/)
