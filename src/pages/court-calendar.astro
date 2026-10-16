@@ -167,6 +167,36 @@ const COUNTRY_CODES_BY_COURT_SUFFIX = new Map([
 ]);
 
 const CASE_GUIDES = {
+  'parker-smith-first-appearance': {
+    url: 'https://cassiancreed.beehiiv.com/products/michelle-parker-case-guide?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=explainer_parker_v1&utm_content=first_appearance_entry',
+    text: 'Get the full Michelle Parker case guide — timeline, Florida no-body law, what comes next — $1.99',
+    bookKey: 'michelle-parker-case-guide',
+    placement: 'court_calendar_parker_first_appearance_entry',
+  },
+  'parker-smith-bond-hearing': {
+    url: 'https://cassiancreed.beehiiv.com/products/michelle-parker-case-guide?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=explainer_parker_v1&utm_content=bond_hearing_entry',
+    text: 'Get the full Michelle Parker case guide — timeline, Florida no-body law, what comes next — $1.99',
+    bookKey: 'michelle-parker-case-guide',
+    placement: 'court_calendar_parker_bond_hearing_entry',
+  },
+  'pike-execution': {
+    url: 'https://cassiancreed.beehiiv.com/products/christa-pike-failed-execution-guide?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=explainer_pike_v1&utm_content=next_step_entry',
+    text: 'Get the full Christa Pike case guide — timeline, every court step, six paths ahead — $1.99',
+    bookKey: 'christa-pike-failed-execution-guide',
+    placement: 'court_calendar_pike_next_step_entry',
+  },
+  'pike-stay-denial-sep23': {
+    url: 'https://cassiancreed.beehiiv.com/products/christa-pike-failed-execution-guide?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=explainer_pike_v1&utm_content=stay_denial_entry',
+    text: 'Get the full Christa Pike case guide — timeline, every court step, six paths ahead — $1.99',
+    bookKey: 'christa-pike-failed-execution-guide',
+    placement: 'court_calendar_pike_stay_denial_entry',
+  },
+  'pike-clemency-denial-sep28': {
+    url: 'https://cassiancreed.beehiiv.com/products/christa-pike-failed-execution-guide?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=explainer_pike_v1&utm_content=clemency_entry',
+    text: 'Get the full Christa Pike case guide — timeline, every court step, six paths ahead — $1.99',
+    bookKey: 'christa-pike-failed-execution-guide',
+    placement: 'court_calendar_pike_clemency_entry',
+  },
   'mangione-state-double-jeopardy-hearing': {
     url: 'https://cassiancreed.beehiiv.com/products/brian-thompson-luigi-mangione-two-courts?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=explainer_luigi_v1&utm_content=state_entry',
     text: 'Understand the Brian Thompson case and its two-court collision — $1.99',
@@ -509,6 +539,7 @@ const jsonld = {
         <p class="row__meta">Subject to change by the court &middot; Source: {e.srcLabel} ({e.srcType}){e.src2 && <span class="row__src2"> &middot; Also: {e.srcLabel2}</span>}</p>
         <p class="row__links">
           {e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : <span class="card__soon">Our case file on this is in progress.</span>}
+          {CASE_GUIDES[e.id] && <a class="row__explainer" href={CASE_GUIDES[e.id].url} target="_blank" rel="noopener noreferrer" data-book-key={CASE_GUIDES[e.id].bookKey} data-cta-placement={CASE_GUIDES[e.id].placement}>{CASE_GUIDES[e.id].text} &rarr;</a>}
           <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <a class="row__help" href="/support/">Report a correction</a>
         </p>
       </div>
