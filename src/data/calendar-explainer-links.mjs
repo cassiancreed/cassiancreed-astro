@@ -727,6 +727,14 @@ const PUBLISHED_POSTS = new Set([
 // Reviewed event matches, not case names or stale IDs. No book is inferred
 // from a hearing's notes, a grand jury, or an appellate reference to a verdict.
 export const JURY_CHESS_ENTRY_IDS = new Set(["clancy-trial","faith-hedgepeth-trial","michael-vaughan-trial","murdaugh-retrial","salazar-clinkunbroomer-trial","gardner-jury-selection","gardner-trial","bridegan-fernandez-trial","goncalves-wsu-trial","bhatt-jury-selection","farwell-jury-trial","farwell-trial-oct19","moore-sherman-trial","carter-brooks-trial","wagner-trial","killins-verdict-sentencing","crum-odom-verdict","elmore-laura-miller-trial","banks-federal-trial","aramburu-paris-trial","bohm-trial","eaton-burlington-trial","brianna-moore-trial","kepner-federal-trial","mary-collins-trial","martin-risner-sentencing","conway-mo3-trial","virzi-trial","ryan-cavett-trial","preston-lord-meisner-trial","preston-lord-five-defendant-trial"]);
+export function juryChessEligible(entry) {
+  if (JURY_CHESS_ENTRY_IDS.has(entry.id)) return true;
+  const event = entry.proceeding || entry.matter || entry.type || '';
+  // New explicitly identified jury phases work automatically. Do not infer a
+  // jury from a generic foreign trial, notes about a prior verdict, or a hearing.
+  if (/grand[- ]jury|no verdict|post[- ]verdict|hearing|motion|appeal|bench trial/i.test(event)) return false;
+  return /\bjury (?:trial|selection|verdict|deliberations?|death(?:-penalty)? recommendation)\b|^(?:guilty |not[- ]guilty )?verdict\b|^deliberations?\b/i.test(event);
+}
 export const JURY_CHESS_LINK = {
   url: 'https://cassiancreed.com/books/',
   text: 'Get Jury Chess',
@@ -791,7 +799,7 @@ export function calendarLinksFor(entry) {
     });
   }
   const links = [...free, ...paid].map(classifyCalendarLink);
-  if (JURY_CHESS_ENTRY_IDS.has(entry.id) && !links.some((link) => link.type === 'book')) links.push({ ...JURY_CHESS_LINK });
+  if (juryChessEligible(entry) && !links.some((link) => link.type === 'book')) links.push({ ...JURY_CHESS_LINK });
   // The existing Jury Chess promo retains its approved wording; its BOOK link
   // now goes to the same Books page as the other trial entries.
   return links.map((link) => link.bookKey === 'jury-chess' ? { ...link, ...JURY_CHESS_LINK, text: link.text } : link)
