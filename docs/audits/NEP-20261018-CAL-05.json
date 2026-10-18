@@ -2,10 +2,10 @@
   "job": "NEP-20261018-CAL-05",
   "reviewRound": 2,
   "draftOnly": true,
-  "headTested": "f2a88efc28ef58ee67daab256d174f8d0d659fdd",
+  "headTested": "362fb72d5a71067aa6a0d65e12b3bd691a4fc657",
   "base": "c7b88e81cf803f05e5f45b5bc48e6f3456f7544b",
-  "commit": "f2a88efc28ef58ee67daab256d174f8d0d659fdd",
-  "checkedAt": "2026-10-18T22:07:59.049Z",
+  "commit": "362fb72d5a71067aa6a0d65e12b3bd691a4fc657",
+  "checkedAt": "2026-10-18T22:56:58.938Z",
   "unchangedTsvs": false,
   "legend": "FREE explainer · $1.99 guide · BOOK",
   "badgeText": "#14110f",
@@ -19,8 +19,8 @@
     "paid": 11.909009545740567,
     "book": 10.636826129488155
   },
-  "bookEntryCount": 9,
-  "newBookEntryCount": 9,
+  "bookEntryCount": 8,
+  "newBookEntryCount": 8,
   "excludedBookIds": [
     "goncalves-wsu-trial",
     "aramburu-paris-trial",
@@ -43,7 +43,8 @@
     "ryan-cavett-trial",
     "killins-verdict-sentencing",
     "eaton-burlington-trial",
-    "banks-federal-trial"
+    "banks-federal-trial",
+    "conway-mo3-trial"
   ],
   "bookEntries": [
     {
@@ -77,11 +78,6 @@
       "event": "Jury death recommendation — sentencing date unverified"
     },
     {
-      "id": "conway-mo3-trial",
-      "case": "Markies Conway (Yella Beezy) — Melvin Noble (MO3) case",
-      "event": "Trial continued — replacement date unverified"
-    },
-    {
       "id": "salazar-clinkunbroomer-trial",
       "case": "Kevin Eduardo Cataneo Salazar — Deputy Ryan Clinkunbroomer case",
       "event": "Sanity-phase verdict — legally sane"
@@ -101,7 +97,7 @@
         "total": 52
       },
       "book": {
-        "total": 20
+        "total": 18
       }
     },
     "/": {
@@ -162,11 +158,11 @@
       "overflow": "none"
     }
   ],
-  "buildRun": "https://github.com/cassiancreed/cassiancreed-astro/actions/runs/39170837605",
+  "buildRun": "https://github.com/cassiancreed/cassiancreed-astro/actions/runs/39174371992",
   "browserRun": "https://github.com/cassiancreed/cassiancreed-astro/actions/runs/39151553103",
   "screenshotsArtifact": "https://github.com/cassiancreed/cassiancreed-astro/actions/runs/39151553103/artifacts/12144808512",
-  "calendarTests": 19,
-  "allNodeTests": 75,
+  "calendarTests": 20,
+  "allNodeTests": 76,
   "bookRule": "Jury Chess only on US criminal jury events. Never civil, foreign, child-victim, juvenile, or cases with a living survivor. Owner may override per case.",
   "allowlistOnly": true,
   "previousBookEntryCount": 26,
@@ -343,6 +339,11 @@
         "url": "https://www.courthousenews.com/rapper-lil-durk-found-of-murder-for-hire/",
         "label": "Courthouse News Service, courtroom verdict report (September 11, 2026)"
       }
+    },
+    {
+      "id": "conway-mo3-trial",
+      "reason": "Living survivor: owner CAL-09 reports that a bystander was wounded in the 2020 I-35 shooting.",
+      "basis": "Owner CAL-09 instruction"
     }
   ],
   "caseReview": [
@@ -742,8 +743,8 @@
         "label": "KERA, courtroom report, September 14, 2026"
       },
       "secondarySource": null,
-      "decision": "keep",
-      "reason": "US criminal jury trial postponed; adult rapper victim MO3 (28) and adult defendant. KERA URL failed full retrieval; FOX 4 courtroom report corroborates jury setting.",
+      "decision": "exclude",
+      "reason": "Living survivor: owner CAL-09 reports that a bystander was wounded in the 2020 I-35 shooting.",
       "supplementarySources": [
         {
           "url": "https://www.fox4news.com/news/yella-beezy-murder-trial-delayed",
@@ -757,7 +758,8 @@
           "date": "2026-09",
           "access": "Search extract reviewed for victim age."
         }
-      ]
+      ],
+      "basis": "Owner CAL-09 instruction; no calendar case facts changed."
     },
     {
       "id": "virzi-trial",
@@ -826,7 +828,7 @@
       "supplementarySources": []
     }
   ],
-  "badgeCountMethod": "CAL-08 counts total badge spans in freshly built HTML. Visibility is not remeasured; historical browser receipts retain their original timestamps.",
+  "badgeCountMethod": "CAL-09 counts total badge spans in freshly built HTML. Historical browser receipts retain their original timestamps.",
   "reviewChecks": {
     "unknownJuryRowsNeverBook": "passed",
     "explicitBooksUrlCannotBypassAllowlist": "passed",
@@ -835,9 +837,10 @@
     "caseFileFallbackPreserved": "passed",
     "originalItalicJuryChessButtonPreserved": true,
     "legendAndColorsUnchanged": true,
-    "noOverflowAt390px": "Historical browser result only; not rerun for CAL-08 data/copy edits.",
+    "noOverflowAt390px": "Historical browser result only; not rerun for CAL-09 link removals.",
     "livingSurvivorIdsNeverBook": "passed",
-    "readerFacingMediaFieldsHaveNoRowNumberReferences": "passed"
+    "readerFacingMediaFieldsHaveNoRowNumberReferences": "passed",
+    "banksStalePromoCannotReappear": "passed"
   },
   "sourceAccessNotes": [
     "All 26 former allowlist TSV rows and their source references were inspected. Unavailable source pages were corroborated with accessible reporting or clearly labeled search extracts; no calendar facts were rewritten.",
@@ -846,9 +849,9 @@
     "Child-victim involvement is a case-level promo exclusion, including related allegations and endangered children; no current charge status is inferred from historical reports."
   ],
   "notes": [
-    "9 BOOK entries. Banks and Eaton are excluded because their cases have living survivors. The previous Banks promo no longer qualifies.",
-    "Built Court Calendar has 20 total BOOK badge spans; Home has 1. These are static totals, not a new visibility measurement.",
-    "Court Calendar TSVs were not edited. Media TSV changed only in the seven owner-requested or row-reference-expansion cells recorded in the MEDIA-01 audit.",
+    "8 BOOK entries. Conway, Banks and Eaton are excluded under the living-survivor rule. The stale Banks case-specific Jury Chess promotion was deleted.",
+    "Built Court Calendar has 18 total BOOK badge spans; Home has 1. These are static totals, not a new visibility measurement.",
+    "CAL-09 changes no TSVs. Prior CAL-08 media changes remain documented in the MEDIA-01 audit.",
     "No merge or production deployment action taken."
   ],
   "cal07": {
@@ -1011,5 +1014,78 @@
       "excludedEntryRenderedBookCheck": "Banks and Eaton detailed entries have no BOOK badge"
     }
   },
-  "unchangedCourtCalendarTsvs": true
+  "unchangedCourtCalendarTsvs": true,
+  "cal09": {
+    "draftPR": 312,
+    "previous": {
+      "head": "f2a88efc28ef58ee67daab256d174f8d0d659fdd",
+      "bookEntryCount": 9,
+      "builtPageBadges": {
+        "/court-calendar/": {
+          "free": {
+            "total": 187
+          },
+          "paid": {
+            "total": 52
+          },
+          "book": {
+            "total": 20
+          }
+        },
+        "/": {
+          "free": {
+            "total": 9
+          },
+          "paid": {
+            "total": 1
+          },
+          "book": {
+            "total": 1
+          }
+        }
+      }
+    },
+    "reason": "Living survivor: owner CAL-09 reports that a bystander was wounded in the 2020 I-35 shooting.",
+    "bookEntryCount": 8,
+    "banksExistingCaseGuideRemoved": true,
+    "unchangedTsvs": true,
+    "validation": {
+      "applicationHead": "362fb72d5a71067aa6a0d65e12b3bd691a4fc657",
+      "run": "https://github.com/cassiancreed/cassiancreed-astro/actions/runs/39174371992",
+      "checkedAt": "2026-10-18T22:56:58.938Z",
+      "build": "passed",
+      "allSuites": {
+        "command": "MEDIA_LINK_CHECK=1 node --test scripts/test-*.mjs",
+        "passed": 76,
+        "failed": 0,
+        "skipped": 0
+      },
+      "calendarTests": 20,
+      "builtPageBadges": {
+        "/court-calendar/": {
+          "free": {
+            "total": 187
+          },
+          "paid": {
+            "total": 52
+          },
+          "book": {
+            "total": 18
+          }
+        },
+        "/": {
+          "free": {
+            "total": 9
+          },
+          "paid": {
+            "total": 1
+          },
+          "book": {
+            "total": 1
+          }
+        }
+      },
+      "browser": "Not rerun; existing browser receipts remain historical."
+    }
+  }
 }
