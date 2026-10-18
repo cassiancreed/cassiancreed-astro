@@ -4,6 +4,5 @@ import { classifyCalendarLink } from '../data/calendar-explainer-links.mjs';
 const { link: rawLink, id } = Astro.props;
 const link = classifyCalendarLink(rawLink);
 ---
-<a id={id} class="calendar-resource" data-link-type={link.type} href={link.url} target={link.paid || link.newTab ? '_blank' : undefined} rel={link.paid || link.newTab ? 'noopener noreferrer' : undefined} data-book-key={link.bookKey} data-cta-placement={link.placement}><span class="calendar-badge" data-link-type={link.type}>{link.badge}</span><span>{link.text} &rarr;</span></a>
+<a id={id} class="calendar-resource" data-link-type={link.type} href={link.url} target={link.paid ? '_blank' : undefined} rel={link.paid ? 'noopener noreferrer' : undefined} data-book-key={link.bookKey} data-cta-placement={link.placement}><span class="calendar-badge" data-link-type={link.type}>{link.badge}</span><span>{link.text} &rarr;</span></a>
 
-{link.preview && <a class="calendar-resource" data-link-type="free" data-guide-preview={link.preview.previewFor} href={link.preview.url} target="_blank" rel="noopener noreferrer"><span class="calendar-badge" data-link-type="free">FREE</span><span>Read page 1 free &rarr;</span></a>}

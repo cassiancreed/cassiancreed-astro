@@ -1,4 +1,3 @@
-import { previewForGuide } from './guide-previews.mjs';
 // NEP-20261018-CAL-04: reviewed case matches shared by every calendar surface.
 // Only live, priced products and non-archived published posts are eligible.
 // Source dates, court times, notes and legal posture remain in the original TSVs.
@@ -736,7 +735,7 @@ export function classifyCalendarLink(link) {
   // A destination that sells a product must never inherit a FREE override.
   const type = isBook ? 'book' : isProduct ? 'paid' : (link.type || 'free');
   const price = product?.price || link.price;
-  return { ...link, type, price, preview: type === 'paid' ? previewForGuide(link) : undefined, paid: type === 'paid', badge: type === 'free' ? 'FREE' : type === 'book' ? 'BOOK' : price ? price + ' GUIDE' : 'GUIDE' };
+  return { ...link, type, price, paid: type === 'paid', badge: type === 'free' ? 'FREE' : type === 'book' ? 'BOOK' : price ? price + ' GUIDE' : 'GUIDE' };
 }
 export function calendarLinkTypesFor(entries) {
   return CALENDAR_LINK_TYPES.filter((type) => entries.some((entry) => (entry.explainerLinks || calendarLinksFor(entry)).some((link) => link.type === type)));
