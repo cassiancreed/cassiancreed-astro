@@ -33,8 +33,9 @@ jobs:
            counts[route]=totals;
            if(route==='/court-calendar/')for(const id of ['banks-federal-trial','eaton-burlington-trial']){
             const start=html.indexOf('id="'+id+'"');assert.ok(start>=0,id+' missing built entry');
-            const snippet=html.slice(start,html.indexOf('</article>',start));
-            assert.doesNotMatch(snippet,/<span\b[^>]*data-link-type="book"/,id+' rendered BOOK');
+            const end=html.indexOf('</div>',start);assert.ok(end>start,id+' missing row end');
+            const snippet=html.slice(start,end);
+            assert.ok(!/<span\b[^>]*data-link-type="book"/.test(snippet),id+' rendered BOOK');
            }
           }
           const file='docs/audits/NEP-20261018-CAL-05.json',a=JSON.parse(readFileSync(file,'utf8'));
