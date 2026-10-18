@@ -96,9 +96,8 @@ const expectedJuryChessCheckoutCtas = new Map([
   ['/jury-chess-sample/', [
     `${juryChessProductUrl}?utm_source=cassiancreed.com&utm_medium=sample&utm_campaign=jury_chess_sample_v1&utm_content=sample_closing`,
   ]],
-  ['/court-calendar/', [
-    `${juryChessProductUrl}?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=jury_chess&utm_content=lil_durk_verdict_entry`,
-  ]],
+  // Calendar BOOK links now route through /books/ (CAL-05).
+  ['/court-calendar/', []],
   ['/post/what-actually-happens-on-day-one-of-a-high-profile-trial/', [
     `${juryChessProductUrl}?utm_source=cassiancreed.com&utm_medium=day_one_explainer&utm_campaign=jury_chess&utm_content=closing_cta`,
   ]],
@@ -131,7 +130,7 @@ for (const [route, file] of routes) {
     failures.push(`${route}: Jury Chess checkout CTAs do not match the attribution contract; expected ${JSON.stringify(expected)}, found ${JSON.stringify(actual)}`);
   }
 }
-if (juryChessCheckoutCtaCount !== 14) failures.push(`expected 14 Jury Chess checkout CTAs, found ${juryChessCheckoutCtaCount}`);
+if (juryChessCheckoutCtaCount !== 13) failures.push(`expected 13 Jury Chess checkout CTAs, found ${juryChessCheckoutCtaCount}`);
 
 const beehiivProductUrlPrefix = 'https://cassiancreed.beehiiv.com/products/';
 const expectedProductMetadata = new Map([
@@ -171,11 +170,7 @@ const expectedProductMetadata = new Map([
       href: 'https://cassiancreed.beehiiv.com/products/case-chess-erin-patterson',
       bookKey: 'case-chess-erin-patterson',
       placement: 'court_calendar_case_guide',
-    },
-    {
-      href: `${juryChessProductUrl}?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=jury_chess&utm_content=lil_durk_verdict_entry`,
-      bookKey: 'jury-chess',
-      placement: 'court_calendar_lil_durk_verdict_entry',
+      count: 2, // Detailed entry and case-by-case list.
     },
   ]],
   ['/international-court-watch/', [
@@ -229,13 +224,14 @@ for (const [route, file] of routes) {
 
   for (const expected of expectedProductMetadata.get(route) ?? []) {
     const matches = productAnchors.filter(({ href }) => href === expected.href);
-    if (matches.length !== 1) {
-      failures.push(`${route}: expected one product CTA for ${expected.href}, found ${matches.length}`);
+    if (matches.length !== (expected.count ?? 1)) {
+      failures.push(`${route}: expected ${expected.count ?? 1} product CTA(s) for ${expected.href}, found ${matches.length}`);
       continue;
     }
-    const [actual] = matches;
-    if (actual['data-book-key'] !== expected.bookKey || actual['data-cta-placement'] !== expected.placement) {
-      failures.push(`${route}: product CTA metadata mismatch for ${expected.href}; expected ${expected.bookKey}/${expected.placement}, found ${actual['data-book-key']}/${actual['data-cta-placement']}`);
+    for (const actual of matches) {
+      if (actual['data-book-key'] !== expected.bookKey || actual['data-cta-placement'] !== expected.placement) {
+        failures.push(`${route}: product CTA metadata mismatch for ${expected.href}; expected ${expected.bookKey}/${expected.placement}, found ${actual['data-book-key']}/${actual['data-cta-placement']}`);
+      }
     }
   }
 

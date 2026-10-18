@@ -724,6 +724,36 @@ const PUBLISHED_POSTS = new Set([
   "/post/why-do-some-murders-go-unsolved-linkage-blindness/",
   "/post/whose-consent-travels-across-borders/"
 ]);
+// Reviewed event matches, not case names or stale IDs. No book is inferred
+// from a hearing's notes, a grand jury, or an appellate reference to a verdict.
+export const JURY_CHESS_ENTRY_IDS = new Set(["faith-hedgepeth-trial","murdaugh-retrial","salazar-clinkunbroomer-trial","bhatt-jury-selection","moore-sherman-trial","killins-verdict-sentencing","banks-federal-trial","bohm-trial","eaton-burlington-trial","mary-collins-trial","martin-risner-sentencing","conway-mo3-trial"]);
+export const JURY_CHESS_EXCLUDED_IDS = new Set(["goncalves-wsu-trial","aramburu-paris-trial","kepner-federal-trial","brianna-moore-trial","clancy-trial","virzi-trial","michael-vaughan-trial","crum-odom-verdict","preston-lord-meisner-trial","preston-lord-five-defendant-trial","elmore-laura-miller-trial","wagner-trial","gardner-jury-selection","gardner-trial","bridegan-fernandez-trial","farwell-jury-trial","farwell-trial-oct19","carter-brooks-trial","ryan-cavett-trial"]);
+// Jury Chess only on US criminal jury events. Never civil, foreign, child-victim or juvenile cases. Owner may override per case.
+export function juryChessEligible(entry) {
+  if (JURY_CHESS_EXCLUDED_IDS.has(entry.id)) return false;
+  return JURY_CHESS_ENTRY_IDS.has(entry.id);
+}
+export const JURY_CHESS_LINK = {
+  url: 'https://cassiancreed.com/books/',
+  text: 'Get Jury Chess',
+  bookKey: 'jury-chess',
+  placement: 'court_calendar_jury_chess',
+  type: 'book',
+  badge: 'BOOK',
+  paid: false,
+};
+export const CALENDAR_LINK_TYPES = ['free', 'paid', 'book'];
+export function classifyCalendarLink(link) {
+  const path = pathKey(link.url);
+  const product = Object.values(LIVE_PRODUCTS).find((item) => pathKey(item.url) === path);
+  const type = link.type || (path === '/books' || link.bookKey === 'jury-chess' || /\/products\/(jury-chess|two-stories-one-verdict)$/.test(path) ? 'book'
+    : /^https:\/\/cassiancreed\.beehiiv\.com\/products\//.test(link.url) ? 'paid' : 'free');
+  const price = product?.price || link.price;
+  return { ...link, type, price, paid: type === 'paid', badge: type === 'free' ? 'FREE' : type === 'book' ? 'BOOK' : price ? price + ' GUIDE' : 'GUIDE' };
+}
+export function calendarLinkTypesFor(entries) {
+  return CALENDAR_LINK_TYPES.filter((type) => entries.some((entry) => (entry.explainerLinks || calendarLinksFor(entry)).some((link) => link.type === type)));
+}
 const byEntry = new Map(CALENDAR_EXPLAINER_CASES.flatMap((item) => item.entryIds.map((id) => [id, item])));
 const pathKey = (url) => url.replace(/^https:\/\/cassiancreed\.com/, '').split('?')[0].replace(/\/$/, '');
 const eligibleFree = (url) => !url.startsWith('/post/') || PUBLISHED_POSTS.has(url.split('?')[0]);
@@ -766,5 +796,11 @@ export function calendarLinksFor(entry) {
       placement: 'court_calendar_' + entry.id.replace(/-/g, '_') + '_entry',
     });
   }
-  return [...free, ...paid];
+  const links = [...free, ...paid].map(classifyCalendarLink);
+  if (juryChessEligible(entry) && !links.some((link) => link.type === 'book')) links.push({ ...JURY_CHESS_LINK });
+  // The existing Jury Chess promo retains its approved wording; its BOOK link
+  // now goes to the same Books page as the other trial entries.
+  return links.filter((link) => link.type !== 'book' || juryChessEligible(entry))
+    .map((link) => link.bookKey === 'jury-chess' ? { ...link, ...JURY_CHESS_LINK, text: link.text } : link)
+    .sort((a, b) => CALENDAR_LINK_TYPES.indexOf(a.type) - CALENDAR_LINK_TYPES.indexOf(b.type));
 }

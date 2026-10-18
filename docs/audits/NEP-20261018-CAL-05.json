@@ -1,0 +1,844 @@
+{
+  "job": "NEP-20261018-CAL-05",
+  "reviewRound": 2,
+  "draftOnly": true,
+  "headTested": "f7c3917c8b396c169b096edf596d908029ad1e96",
+  "base": "c7b88e81cf803f05e5f45b5bc48e6f3456f7544b",
+  "commit": "e921bad1b1bb71de0ad4af7ff8ec96f35d4fe536",
+  "checkedAt": "2026-10-18T17:53:50.220Z",
+  "unchangedTsvs": true,
+  "legend": "FREE explainer · $ guide · BOOK",
+  "badgeText": "#14110f",
+  "colors": {
+    "free": "86efac",
+    "paid": "f6c76b",
+    "book": "d8b4fe"
+  },
+  "contrastRatios": {
+    "free": 13.391551903616213,
+    "paid": 11.909009545740567,
+    "book": 10.636826129488155
+  },
+  "bookEntryCount": 12,
+  "newBookEntryCount": 11,
+  "excludedBookIds": [
+    "goncalves-wsu-trial",
+    "aramburu-paris-trial",
+    "kepner-federal-trial",
+    "brianna-moore-trial",
+    "clancy-trial",
+    "virzi-trial",
+    "michael-vaughan-trial",
+    "crum-odom-verdict",
+    "preston-lord-meisner-trial",
+    "preston-lord-five-defendant-trial",
+    "elmore-laura-miller-trial",
+    "wagner-trial",
+    "gardner-jury-selection",
+    "gardner-trial",
+    "bridegan-fernandez-trial",
+    "farwell-jury-trial",
+    "farwell-trial-oct19",
+    "carter-brooks-trial",
+    "ryan-cavett-trial"
+  ],
+  "bookEntries": [
+    {
+      "id": "faith-hedgepeth-trial",
+      "case": "Miguel Salguero-Olivares — Faith Hedgepeth case",
+      "event": "Murder trial — testimony underway"
+    },
+    {
+      "id": "murdaugh-retrial",
+      "case": "Maggie and Paul Murdaugh — Alex Murdaugh retrial",
+      "event": "Tentative murder retrial"
+    },
+    {
+      "id": "bhatt-jury-selection",
+      "case": "Naresh Bhatt — Mamta Kafle Bhatt case",
+      "event": "Murder trial — testimony underway"
+    },
+    {
+      "id": "bohm-trial",
+      "case": "Fraser Michael Bohm — Malibu PCH crash case",
+      "event": "Trial on murder and gross-negligence vehicular-manslaughter charges"
+    },
+    {
+      "id": "moore-sherman-trial",
+      "case": "Gregory J. Moore — Aliza Sherman case",
+      "event": "Trial postponed — replacement date unverified"
+    },
+    {
+      "id": "martin-risner-sentencing",
+      "case": "Brian Martin — Sgt. Nick Risner case",
+      "event": "Jury death recommendation — sentencing date unverified"
+    },
+    {
+      "id": "conway-mo3-trial",
+      "case": "Markies Conway (Yella Beezy) — Melvin Noble (MO3) case",
+      "event": "Trial continued — replacement date unverified"
+    },
+    {
+      "id": "salazar-clinkunbroomer-trial",
+      "case": "Kevin Eduardo Cataneo Salazar — Deputy Ryan Clinkunbroomer case",
+      "event": "Sanity-phase verdict — legally sane"
+    },
+    {
+      "id": "killins-verdict-sentencing",
+      "case": "Joseph Killins",
+      "event": "Verdict and sentencing — completed"
+    },
+    {
+      "id": "banks-federal-trial",
+      "case": "Durk Devontay Banks, known as Lil Durk — federal criminal trial",
+      "event": "Jury verdict — Banks acquitted; co-defendants convicted on stalking counts"
+    },
+    {
+      "id": "eaton-burlington-trial",
+      "case": "Jason Eaton — Burlington shooting case",
+      "event": "Attempted-murder trial — guilty verdicts"
+    },
+    {
+      "id": "mary-collins-trial",
+      "case": "James Salerno and Lavi Pham — Mary Collins case",
+      "event": "Jury verdicts and sentencing — completed"
+    }
+  ],
+  "builtPageBadges": {
+    "/court-calendar/": {
+      "free": {
+        "total": 183,
+        "visible": 183
+      },
+      "paid": {
+        "total": 52,
+        "visible": 52
+      },
+      "book": {
+        "total": 25,
+        "visible": 24
+      }
+    },
+    "/": {
+      "free": {
+        "total": 4,
+        "visible": 4
+      },
+      "paid": {
+        "total": 1,
+        "visible": 1
+      },
+      "book": {
+        "total": 1,
+        "visible": 0
+      }
+    }
+  },
+  "summaries": [
+    {
+      "width": 1280,
+      "route": "/court-calendar/",
+      "detailCount": 145,
+      "listCount": 145,
+      "selectedCount": 35,
+      "dotCount": 27,
+      "serverRendering": "passed",
+      "colors": "passed",
+      "overflow": "none"
+    },
+    {
+      "width": 1280,
+      "route": "/",
+      "detailCount": 0,
+      "listCount": 0,
+      "selectedCount": 35,
+      "dotCount": 27,
+      "serverRendering": "passed",
+      "colors": "passed",
+      "overflow": "none"
+    },
+    {
+      "width": 390,
+      "route": "/court-calendar/",
+      "detailCount": 145,
+      "listCount": 145,
+      "selectedCount": 35,
+      "dotCount": 27,
+      "serverRendering": "passed",
+      "colors": "passed",
+      "overflow": "none"
+    },
+    {
+      "width": 390,
+      "route": "/",
+      "detailCount": 0,
+      "listCount": 0,
+      "selectedCount": 35,
+      "dotCount": 27,
+      "serverRendering": "passed",
+      "colors": "passed",
+      "overflow": "none"
+    }
+  ],
+  "buildRun": "https://github.com/cassiancreed/cassiancreed-astro/actions/runs/39151553166",
+  "browserRun": "https://github.com/cassiancreed/cassiancreed-astro/actions/runs/39151553103",
+  "screenshotsArtifact": "https://github.com/cassiancreed/cassiancreed-astro/actions/runs/39151553103/artifacts/12144808512",
+  "calendarTests": 17,
+  "allNodeTests": 57,
+  "bookRule": "Jury Chess only on US criminal jury events. Never civil, foreign, child-victim or juvenile cases. Owner may override per case.",
+  "allowlistOnly": true,
+  "previousBookEntryCount": 26,
+  "removedThisRound": [
+    {
+      "id": "virzi-trial",
+      "case": "Nicole Virzi — Leon Katz case",
+      "reason": "Child victim Leon Katz; owner cold-review exclusion.",
+      "source": {
+        "url": "https://ujsportal.pacourts.us/CaseSearch",
+        "publisherAndDate": "Pennsylvania UJS, CP-02-CR-0004996-2024, Calendar Events, read September 29, 2026; reviewed October 2, 2026"
+      },
+      "basis": "Owner cold review plus TSV/source inspection"
+    },
+    {
+      "id": "michael-vaughan-trial",
+      "case": "Stacey Wondra — Michael Vaughan case",
+      "reason": "Child victim Michael Vaughan; owner cold-review exclusion.",
+      "source": {
+        "url": "https://www.courttv.com/news/its-upsetting-missing-boys-mother-reacts-to-decision-to-delay-murder-trial/",
+        "publisherAndDate": "Court TV, courtroom reporting (August 5, 2026)"
+      },
+      "basis": "Owner cold review plus TSV/source inspection"
+    },
+    {
+      "id": "crum-odom-verdict",
+      "case": "Jeffrey Norman Crum Sr. — Jennifer Odom case",
+      "reason": "Child victim Jennifer Odom; owner cold-review exclusion.",
+      "source": {
+        "url": "https://www.sao5.org/jurors-recommend-death-penalty-for-jeffrey-crum/",
+        "publisherAndDate": "Fifth Judicial Circuit State Attorney, jury-recommendation announcement"
+      },
+      "basis": "Owner cold review plus TSV/source inspection"
+    },
+    {
+      "id": "preston-lord-meisner-trial",
+      "case": "Jacob Meisner — Preston Lord case",
+      "reason": "Teen victim Preston Lord; juvenile-at-offense defendants also implicated; owner cold-review exclusion.",
+      "source": {
+        "url": "https://www.courttv.com/news/reluctant-teen-witnesses-in-preston-lord-murder-case-have-been-hanging-up-on-prosecutors-defense/",
+        "publisherAndDate": "Court TV, September 15 hearing and November 3 reset reported September 16, 2026"
+      },
+      "basis": "Owner cold review plus TSV/source inspection"
+    },
+    {
+      "id": "preston-lord-five-defendant-trial",
+      "case": "Treston Billey, Dominic Turner, Taylor Sherman, Talan Renner and Talyn Vigil — Preston Lord case",
+      "reason": "Teen victim Preston Lord; juvenile-at-offense defendants also implicated; owner cold-review exclusion.",
+      "source": {
+        "url": "https://www.courttv.com/news/reluctant-teen-witnesses-in-preston-lord-murder-case-have-been-hanging-up-on-prosecutors-defense/",
+        "publisherAndDate": "Court TV, September 15 hearing and November 17 tentative reset reported September 16, 2026"
+      },
+      "basis": "Owner cold review plus TSV/source inspection"
+    },
+    {
+      "id": "elmore-laura-miller-trial",
+      "case": "James Dolphs Elmore Jr. — Laura Miller case",
+      "reason": "Teen victim Laura Miller; owner cold-review exclusion.",
+      "source": {
+        "url": "https://apnews.com/article/texas-killing-fields-houston-3b81056f4a415308954466fbc553dec7",
+        "publisherAndDate": "Associated Press, manslaughter verdict and sentence report (September 3, 2026)"
+      },
+      "basis": "Owner cold review plus TSV/source inspection"
+    },
+    {
+      "id": "wagner-trial",
+      "case": "George “Billy” Wagner III — Rhoden family killings",
+      "reason": "Rhoden-family killings include child/teen victims; owner cold-review exclusion.",
+      "source": {
+        "url": "https://www.fox19.com/2026/08/18/final-pike-county-massacre-suspect-sends-letter-judge-no-one-explains-anything-me/",
+        "publisherAndDate": "FOX19, motion-to-vacate-venue report (August 18, 2026)"
+      },
+      "basis": "Owner cold review plus TSV/source inspection"
+    },
+    {
+      "id": "gardner-jury-selection",
+      "case": "Jared Bridegan — Shanna Lee Gardner and Henry Arthur Tenon",
+      "reason": "Child endangered in the same shooting: report says Bridegan's toddler daughter was narrowly missed by a bullet. Exclude under case-level child-victim guard even though child-abuse counts were dropped.",
+      "source": {
+        "url": "https://www.news4jax.com/news/local/2026/10/07/accused-gunman-henry-tenon-appears-in-court-for-first-time-under-updated-charges-in-jared-bridegan-murder/",
+        "publisher": "News4JAX",
+        "date": "2026-10-07"
+      },
+      "basis": "Additional source review"
+    },
+    {
+      "id": "gardner-trial",
+      "case": "Shanna Gardner — Jared Bridegan case",
+      "reason": "Same Bridegan shooting endangered his toddler daughter; child-victim guard applies to all dates for this case.",
+      "source": {
+        "url": "https://www.news4jax.com/news/local/2026/10/07/accused-gunman-henry-tenon-appears-in-court-for-first-time-under-updated-charges-in-jared-bridegan-murder/",
+        "publisher": "News4JAX",
+        "date": "2026-10-07"
+      },
+      "basis": "Additional source review"
+    },
+    {
+      "id": "bridegan-fernandez-trial",
+      "case": "Mario Fernandez Saldana — Jared Bridegan case",
+      "reason": "Same Bridegan shooting endangered his toddler daughter; child-victim guard applies despite separate disposition of child-abuse allegations.",
+      "source": {
+        "url": "https://www.news4jax.com/news/local/2026/10/07/accused-gunman-henry-tenon-appears-in-court-for-first-time-under-updated-charges-in-jared-bridegan-murder/",
+        "publisher": "News4JAX",
+        "date": "2026-10-07"
+      },
+      "basis": "Additional source review"
+    },
+    {
+      "id": "farwell-jury-trial",
+      "case": "Matthew Farwell — federal case",
+      "reason": "Trial reporting describes alleged sexual abuse of Birchmore at 15; DOJ case page also links an unborn-baby death indictment. Child-victim guard applies; allegations remain allegations.",
+      "source": {
+        "url": "https://www.boston25news.com/news/local/fbi-details-texts-google-searches-tied-matthew-farwell-court/F5DRBWAHENDQHGFOJWYOZJ2IOE/",
+        "publisher": "Boston 25",
+        "date": "2026-10-16"
+      },
+      "basis": "Additional source review"
+    },
+    {
+      "id": "farwell-trial-oct19",
+      "case": "Matthew Farwell — federal case",
+      "reason": "Same Farwell/Birchmore case: alleged abuse while Birchmore was a minor and an unborn-baby count; excludes continuation date too.",
+      "source": {
+        "url": "https://www.boston25news.com/news/local/fbi-details-texts-google-searches-tied-matthew-farwell-court/F5DRBWAHENDQHGFOJWYOZJ2IOE/",
+        "publisher": "Boston 25",
+        "date": "2026-10-16"
+      },
+      "basis": "Additional source review"
+    },
+    {
+      "id": "carter-brooks-trial",
+      "case": "Desmond Carter — Madison Brooks case",
+      "reason": "WAFB states Carter was 17 at the alleged offense. Adult prosecution does not remove the juvenile-at-offense exclusion.",
+      "source": {
+        "url": "https://www.wafb.com/2026/09/17/trial-tentatively-set-another-co-defendant-madison-brooks-case/",
+        "publisher": "WAFB",
+        "date": "2026-09-17; updated 2026-09-18"
+      },
+      "basis": "Additional source review"
+    },
+    {
+      "id": "ryan-cavett-trial",
+      "case": "Shannon Ryan — Leila Cavett case",
+      "reason": "Cavett's two-year-old son was left alone; trial-opening reporting identifies a related child-neglect allegation. Conservative case-level exclusion; this audit does not assert that the child-neglect count remains pending.",
+      "source": {
+        "url": "https://www.nbcmiami.com/news/local/trial-underway-for-self-proclaimed-witch-charged-in-womans-murder-in-broward/3860660/",
+        "publisher": "NBC Miami",
+        "date": "2026-09"
+      },
+      "basis": "Additional source review"
+    }
+  ],
+  "caseReview": [
+    {
+      "id": "faith-hedgepeth-trial",
+      "case": "Miguel Salguero-Olivares — Faith Hedgepeth case",
+      "event": "Murder trial — testimony underway",
+      "court": "Durham County Superior Court, Durham, NC",
+      "tsvRowRead": true,
+      "tsvSource": {
+        "url": "https://www.wral.com/news/local/dna-expert-returns-stand-faith-hedgepeth-october-2026/",
+        "label": "WRAL, October 15, 2026 — day seven of trial testimony"
+      },
+      "secondarySource": "https://apnews.com/article/3cfd196e47fb7a4bacc671fd389f45dd",
+      "decision": "keep",
+      "reason": "US criminal jury trial; victim reported 19, defendant reported 33 in 2026 and adult at the 2012 offense.",
+      "supplementarySources": [
+        {
+          "url": "https://people.com/man-charged-in-killing-of-unc-student-faith-hedgepeth-pleads-not-guilty-nearly-14-years-after-her-death-12033300",
+          "publisher": "PEOPLE",
+          "date": "2026-08-04",
+          "access": "Search extract reviewed; direct page retrieval blocked."
+        }
+      ]
+    },
+    {
+      "id": "michael-vaughan-trial",
+      "case": "Stacey Wondra — Michael Vaughan case",
+      "event": "Murder and kidnapping trial",
+      "court": "Canyon County District Court, Caldwell, ID",
+      "tsvRowRead": true,
+      "tsvSource": {
+        "url": "https://www.courttv.com/news/its-upsetting-missing-boys-mother-reacts-to-decision-to-delay-murder-trial/",
+        "label": "Court TV, courtroom reporting (August 5, 2026)"
+      },
+      "secondarySource": "https://www.kivitv.com/canyon-county/new-court-filings-outline-whats-next-in-the-michael-vaughan-case",
+      "decision": "exclude",
+      "reason": "Child victim Michael Vaughan; owner cold-review exclusion.",
+      "supplementarySources": []
+    },
+    {
+      "id": "murdaugh-retrial",
+      "case": "Maggie and Paul Murdaugh — Alex Murdaugh retrial",
+      "event": "Tentative murder retrial",
+      "court": "South Carolina Court of General Sessions, Sumter County, SC",
+      "tsvRowRead": true,
+      "tsvSource": {
+        "url": "https://abcnews.com/US/judge-picks-new-location-alex-murdaughs-double-murder/story?id=136286360",
+        "label": "ABC News, September 8, 2026 — Sumter County venue and April 5 retrial"
+      },
+      "secondarySource": "https://abcnews.com/US/alex-murdaugh-back-court-after-south-carolina-supreme/story?id=134260432",
+      "decision": "keep",
+      "reason": "US criminal retrial; ABC identifies Maggie as 52 and Paul as 22. Adult defendant.",
+      "supplementarySources": []
+    },
+    {
+      "id": "salazar-clinkunbroomer-trial",
+      "case": "Kevin Eduardo Cataneo Salazar — Deputy Ryan Clinkunbroomer case",
+      "event": "Sanity-phase verdict — legally sane",
+      "court": "Los Angeles County Superior Court, Department 101, Clara Shortridge Foltz Criminal Justice Center, Los Angeles, CA",
+      "tsvRowRead": true,
+      "tsvSource": {
+        "url": "https://da.lacounty.gov/media/news/man-who-killed-los-angeles-county-sheriff-s-deputy-ryan-clinkunbroomer-found-legally-sane",
+        "label": "Los Angeles County District Attorney, sanity verdict and sentencing announcement (September 2, 2026)"
+      },
+      "secondarySource": null,
+      "decision": "keep",
+      "reason": "US criminal jury sanity phase; DA identifies adult defendant (32) and on-duty deputy victim. No minor victim or defendant identified.",
+      "supplementarySources": []
+    },
+    {
+      "id": "gardner-jury-selection",
+      "case": "Jared Bridegan — Shanna Lee Gardner and Henry Arthur Tenon",
+      "event": "Joint first-degree murder trial — jury selection",
+      "court": "Circuit Court of the Fourth Judicial Circuit, Duval County, Jacksonville, FL",
+      "tsvRowRead": true,
+      "tsvSource": {
+        "url": "https://www.news4jax.com/news/local/2026/10/07/accused-gunman-henry-tenon-appears-in-court-for-first-time-under-updated-charges-in-jared-bridegan-murder/",
+        "label": "News4JAX, October 7, 2026 — joint schedule and current charges"
+      },
+      "secondarySource": "https://www.actionnewsjax.com/news/local/jared-bridegan-murder-shanna-gardner-henry-tenon-be-tried-same-time-may-judge-says/B7C45UN4JFC55DVKMIRFFAAOFE/",
+      "decision": "exclude",
+      "reason": "Child endangered in the same shooting: report says Bridegan's toddler daughter was narrowly missed by a bullet. Exclude under case-level child-victim guard even though child-abuse counts were dropped.",
+      "supplementarySources": [
+        {
+          "url": "https://www.news4jax.com/news/local/2026/10/07/accused-gunman-henry-tenon-appears-in-court-for-first-time-under-updated-charges-in-jared-bridegan-murder/",
+          "publisher": "News4JAX",
+          "date": "2026-10-07"
+        }
+      ]
+    },
+    {
+      "id": "gardner-trial",
+      "case": "Shanna Gardner — Jared Bridegan case",
+      "event": "Evidentiary trial — rescheduled",
+      "court": "Duval County Courthouse, Jacksonville, FL",
+      "tsvRowRead": true,
+      "tsvSource": {
+        "url": "https://core.duvalclerk.com/court/case/13705039/docket/235786946/content.pdf",
+        "label": "Duval County Circuit Court, order granting continuance (August 27, 2026)"
+      },
+      "secondarySource": "https://www.firstcoastnews.com/article/news/local/jared-bridegan-murder-trials/shanna-gardner-trial-2027-jared-bridegan-murder/77-6a780e25-14e6-47f0-973f-efa5a325793e",
+      "decision": "exclude",
+      "reason": "Same Bridegan shooting endangered his toddler daughter; child-victim guard applies to all dates for this case.",
+      "supplementarySources": [
+        {
+          "url": "https://www.news4jax.com/news/local/2026/10/07/accused-gunman-henry-tenon-appears-in-court-for-first-time-under-updated-charges-in-jared-bridegan-murder/",
+          "publisher": "News4JAX",
+          "date": "2026-10-07"
+        }
+      ]
+    },
+    {
+      "id": "bridegan-fernandez-trial",
+      "case": "Mario Fernandez Saldana — Jared Bridegan case",
+      "event": "Guilty verdict — completed",
+      "court": "Duval County Circuit Court, Jacksonville, FL",
+      "tsvRowRead": true,
+      "tsvSource": {
+        "url": "https://sao4th.com/media/pdppobpr/sao4-press-release-jury-finds-mario-fernandez-saldana-guilty-of-murder-for-hire.pdf",
+        "label": "Fourth Judicial Circuit State Attorney, verdict announcement (August 26, 2026)"
+      },
+      "secondarySource": "https://www.actionnewsjax.com/news/local/defense-team-seeks-new-trial-mario-fernandez-saldana-jared-bridegan-murder-case/OSJ35XKYLNFS5HDHY4GN2WK674/",
+      "decision": "exclude",
+      "reason": "Same Bridegan shooting endangered his toddler daughter; child-victim guard applies despite separate disposition of child-abuse allegations.",
+      "supplementarySources": [
+        {
+          "url": "https://www.news4jax.com/news/local/2026/10/07/accused-gunman-henry-tenon-appears-in-court-for-first-time-under-updated-charges-in-jared-bridegan-murder/",
+          "publisher": "News4JAX",
+          "date": "2026-10-07"
+        }
+      ]
+    },
+    {
+      "id": "bhatt-jury-selection",
+      "case": "Naresh Bhatt — Mamta Kafle Bhatt case",
+      "event": "Murder trial — testimony underway",
+      "court": "Prince William Circuit Court, Courtroom 5, Manassas, VA",
+      "tsvRowRead": true,
+      "tsvSource": {
+        "url": "https://www.pwcva.gov/assets/2022-10/CRIMINAL%20DOCKET.pdf",
+        "label": "Prince William Circuit Court, October 13, 2026 criminal docket, page 2; checked October 13, 2026, 09:36:24 PDT"
+      },
+      "secondarySource": "https://northernvirginiamag.com/news/2026/10/08/testimony-begins-in-manassas-park-murder-trial-of-naresh-bhatt/",
+      "decision": "keep",
+      "reason": "US criminal jury trial; named victim Mamta was 28. Reporting describes an adult husband defendant; their daughter is not identified as a charged-offense victim.",
+      "supplementarySources": [
+        {
+          "url": "https://northernvirginiamag.com/news/2026/10/08/testimony-begins-in-manassas-park-murder-trial-of-naresh-bhatt/",
+          "publisher": "Northern Virginia Magazine",
+          "date": "2026-10-08"
+        }
+      ]
+    },
+    {
+      "id": "farwell-jury-trial",
+      "case": "Matthew Farwell — federal case",
+      "event": "Federal jury trial — testimony underway",
+      "court": "U.S. District Court, District of Massachusetts, Boston - Chief Judge Denise J. Casper",
+      "tsvRowRead": true,
+      "tsvSource": {
+        "url": "https://www.justice.gov/usao-ma/united-states-v-matthew-farwell",
+        "label": "U.S. Attorney’s Office, District of Massachusetts — official case page updated October 14, 2026"
+      },
+      "secondarySource": "https://www.boston25news.com/news/local/fbi-details-texts-google-searches-tied-matthew-farwell-court/F5DRBWAHENDQHGFOJWYOZJ2IOE/",
+      "decision": "exclude",
+      "reason": "Trial reporting describes alleged sexual abuse of Birchmore at 15; DOJ case page also links an unborn-baby death indictment. Child-victim guard applies; allegations remain allegations.",
+      "supplementarySources": [
+        {
+          "url": "https://www.boston25news.com/news/local/fbi-details-texts-google-searches-tied-matthew-farwell-court/F5DRBWAHENDQHGFOJWYOZJ2IOE/",
+          "publisher": "Boston 25",
+          "date": "2026-10-16"
+        }
+      ]
+    },
+    {
+      "id": "farwell-trial-oct19",
+      "case": "Matthew Farwell — federal case",
+      "event": "Federal jury trial continues",
+      "court": "U.S. District Court, District of Massachusetts, Boston - Chief Judge Denise J. Casper",
+      "tsvRowRead": true,
+      "tsvSource": {
+        "url": "https://www.boston25news.com/news/local/fbi-details-texts-google-searches-tied-matthew-farwell-court/F5DRBWAHENDQHGFOJWYOZJ2IOE/",
+        "label": "Boston 25, October 16, 2026 - FBI testimony resumes Monday morning"
+      },
+      "secondarySource": "https://www.justice.gov/usao-ma/united-states-v-matthew-farwell",
+      "decision": "exclude",
+      "reason": "Same Farwell/Birchmore case: alleged abuse while Birchmore was a minor and an unborn-baby count; excludes continuation date too.",
+      "supplementarySources": [
+        {
+          "url": "https://www.boston25news.com/news/local/fbi-details-texts-google-searches-tied-matthew-farwell-court/F5DRBWAHENDQHGFOJWYOZJ2IOE/",
+          "publisher": "Boston 25",
+          "date": "2026-10-16"
+        }
+      ]
+    },
+    {
+      "id": "moore-sherman-trial",
+      "case": "Gregory J. Moore — Aliza Sherman case",
+      "event": "Trial postponed — replacement date unverified",
+      "court": "Cuyahoga County Court of Common Pleas, Cleveland, OH",
+      "tsvRowRead": true,
+      "tsvSource": {
+        "url": "https://www.courttv.com/news/jury-selection-canceled-for-divorce-attorney-charged-with-murder-after-his-lawyer-abruptly-withdraws/",
+        "label": "Court TV, September 17 counsel-withdrawal and continuance report"
+      },
+      "secondarySource": "https://www.aol.com/articles/aliza-sherman-murder-trial-delayed-102122000.html",
+      "decision": "keep",
+      "reason": "US criminal jury trial postponed; adult divorce-client victim and adult lawyer defendant (52).",
+      "supplementarySources": []
+    },
+    {
+      "id": "carter-brooks-trial",
+      "case": "Desmond Carter — Madison Brooks case",
+      "event": "Jury trial — newly scheduled",
+      "court": "19th Judicial District Court, Baton Rouge, LA",
+      "tsvRowRead": true,
+      "tsvSource": {
+        "url": "https://www.wafb.com/2026/09/17/trial-tentatively-set-another-co-defendant-madison-brooks-case/",
+        "label": "WAFB, courtroom report confirming December 7 jury-trial setting, September 17, 2026"
+      },
+      "secondarySource": "https://www.wbrz.com/news/trial-date-for-one-of-three-suspects-in-madison-brooks-rape-set-for-december/",
+      "decision": "exclude",
+      "reason": "WAFB states Carter was 17 at the alleged offense. Adult prosecution does not remove the juvenile-at-offense exclusion.",
+      "supplementarySources": [
+        {
+          "url": "https://www.wafb.com/2026/09/17/trial-tentatively-set-another-co-defendant-madison-brooks-case/",
+          "publisher": "WAFB",
+          "date": "2026-09-17; updated 2026-09-18"
+        }
+      ]
+    },
+    {
+      "id": "wagner-trial",
+      "case": "George “Billy” Wagner III — Rhoden family killings",
+      "event": "Jury trial",
+      "court": "Ohio Court of Common Pleas, venue to be determined, OH",
+      "tsvRowRead": true,
+      "tsvSource": {
+        "url": "https://www.fox19.com/2026/08/18/final-pike-county-massacre-suspect-sends-letter-judge-no-one-explains-anything-me/",
+        "label": "FOX19, motion-to-vacate-venue report (August 18, 2026)"
+      },
+      "secondarySource": "https://www.cincinnati.com/story/news/2026/08/05/when-will-billy-wagner-be-tried/91182900007/",
+      "decision": "exclude",
+      "reason": "Rhoden-family killings include child/teen victims; owner cold-review exclusion.",
+      "supplementarySources": []
+    },
+    {
+      "id": "killins-verdict-sentencing",
+      "case": "Joseph Killins",
+      "event": "Verdict and sentencing — completed",
+      "court": "Hillsborough County Circuit Court, Tampa, FL",
+      "tsvRowRead": true,
+      "tsvSource": {
+        "url": "https://www.fox13news.com/news/tampa-man-found-guilty-kidnapping-raping-door-dash-driver",
+        "label": "FOX 13 Tampa Bay, verdict report (August 2026)"
+      },
+      "secondarySource": "https://www.tampabay28.com/news/region-hillsborough/man-sentenced-to-4-life-terms-in-doordash-attack-in-hillsborough-county",
+      "decision": "keep",
+      "reason": "US criminal jury verdict; FOX 13 identifies the assault victim as 20 and Tampa Bay 28 describes the other two victims as women. Adult defendant; no minor victim identified in reviewed reports.",
+      "supplementarySources": []
+    },
+    {
+      "id": "crum-odom-verdict",
+      "case": "Jeffrey Norman Crum Sr. — Jennifer Odom case",
+      "event": "Jury death-penalty recommendation — completed",
+      "court": "Hernando County courthouse, Brooksville, FL",
+      "tsvRowRead": true,
+      "tsvSource": {
+        "url": "https://www.sao5.org/jurors-recommend-death-penalty-for-jeffrey-crum/",
+        "label": "Fifth Judicial Circuit State Attorney, jury-recommendation announcement"
+      },
+      "secondarySource": "https://www.fox13news.com/news/jury-unanimously-recommends-death-penalty-jennifer-odom-convicted-killer",
+      "decision": "exclude",
+      "reason": "Child victim Jennifer Odom; owner cold-review exclusion.",
+      "supplementarySources": []
+    },
+    {
+      "id": "elmore-laura-miller-trial",
+      "case": "James Dolphs Elmore Jr. — Laura Miller case",
+      "event": "Manslaughter verdict and sentence — completed",
+      "court": "122nd District Court, Galveston County, Galveston, TX",
+      "tsvRowRead": true,
+      "tsvSource": {
+        "url": "https://apnews.com/article/texas-killing-fields-houston-3b81056f4a415308954466fbc553dec7",
+        "label": "Associated Press, manslaughter verdict and sentence report (September 3, 2026)"
+      },
+      "secondarySource": "https://www.houstonchronicle.com/news/houston-texas/crime/article/james-elmore-manslaughter-20-year-sentence-22415806.php",
+      "decision": "exclude",
+      "reason": "Teen victim Laura Miller; owner cold-review exclusion.",
+      "supplementarySources": []
+    },
+    {
+      "id": "banks-federal-trial",
+      "case": "Durk Devontay Banks, known as Lil Durk — federal criminal trial",
+      "event": "Jury verdict — Banks acquitted; co-defendants convicted on stalking counts",
+      "court": "United States District Court, Central District of California, Courtroom 10C, Mendez U.S. Courthouse, Los Angeles, CA",
+      "tsvRowRead": true,
+      "tsvSource": {
+        "url": "https://www.courthousenews.com/rapper-lil-durk-found-of-murder-for-hire/",
+        "label": "Courthouse News Service, courtroom verdict report (September 11, 2026)"
+      },
+      "secondarySource": "https://au.rollingstone.com/music/music-news/lil-durk-verdict-quando-rondo-conspiracy-trial-akademiks-100978/",
+      "decision": "keep",
+      "reason": "US criminal jury verdict; CNS identifies Robinson as 24. Adult defendants; no minor victim identified in this trial entry.",
+      "supplementarySources": []
+    },
+    {
+      "id": "bohm-trial",
+      "case": "Fraser Michael Bohm — Malibu PCH crash case",
+      "event": "Trial on murder and gross-negligence vehicular-manslaughter charges",
+      "court": "Los Angeles County Superior Court, Van Nuys, CA",
+      "tsvRowRead": true,
+      "tsvSource": {
+        "url": "https://pepperdine-graphic.com/trial-date-pushed-back-three-months-for-fraser-michael-bohm/",
+        "label": "Pepperdine Graphic, September 2 courtroom report"
+      },
+      "secondarySource": "https://malibutimes.com/bohm-murder-trial-in-pch-crash-that-killed-four-pepperdine-students-postponed-to-december",
+      "decision": "keep",
+      "reason": "US criminal jury trial; victims aged 20/21 and defendant 22 at crash per corroborating reporting.",
+      "supplementarySources": [
+        {
+          "url": "https://mynewsla.com/crime/2023/10/26/bail-hearing-set-for-driver-in-crash-that-killed-4-pepperdine-students/",
+          "publisher": "MyNewsLA / City News Service",
+          "date": "2023-10-26",
+          "access": "Search extract reviewed for ages."
+        }
+      ]
+    },
+    {
+      "id": "eaton-burlington-trial",
+      "case": "Jason Eaton — Burlington shooting case",
+      "event": "Attempted-murder trial — guilty verdicts",
+      "court": "Chittenden Superior Court, Criminal Division, Burlington, VT",
+      "tsvRowRead": true,
+      "tsvSource": {
+        "url": "https://www.vtcourts.gov/courts/court-calendars/cnd_cal.htm",
+        "label": "Vermont Judiciary, September 21 Chittenden Criminal Division calendar"
+      },
+      "secondarySource": "https://apnews.com/article/e45b47e83e9f079817c66cd28a25afbe",
+      "decision": "keep",
+      "reason": "US criminal jury verdict; three adult students, aged 20 at the shooting; adult defendant (48 then, 51 at trial).",
+      "supplementarySources": [
+        {
+          "url": "https://www.nbcnewyork.com/news/national-international/jason-eaton-convicted-burlington-vermont-student-shooting/6550254/",
+          "publisher": "Associated Press via NBC New York",
+          "date": "2026-09-21",
+          "access": "Search extract; direct retrieval 403."
+        },
+        {
+          "url": "https://bostonglobe-prod.cdn.arcpublishing.com/2026/09/21/metro/jason-eaton-guilty-trial/",
+          "publisher": "Boston Globe",
+          "date": "2026-09-21",
+          "access": "Search extract identifies all three victims as 20 at shooting."
+        }
+      ]
+    },
+    {
+      "id": "mary-collins-trial",
+      "case": "James Salerno and Lavi Pham — Mary Collins case",
+      "event": "Jury verdicts and sentencing — completed",
+      "court": "Mecklenburg County Superior Court, Courtroom 5370, Charlotte, NC — Judge Karen Eady-Williams",
+      "tsvRowRead": true,
+      "tsvSource": {
+        "url": "https://charmeckda.com/wp-content/uploads/2026/10/101226_1.pdf",
+        "label": "Mecklenburg County District Attorney, October 12, 2026 release, pages 1–2; complete PDF checked October 13, 2026, 10:48 PDT"
+      },
+      "secondarySource": "https://charmeckda.com/2026/10/12/two-men-sentenced-to-life-in-prison-for-murder-of-charlotte-woman/",
+      "decision": "keep",
+      "reason": "US criminal jury verdict; DA identifies Mary as 20 and defendants as 27/26 at 2026 trial, adults at 2020 offense.",
+      "supplementarySources": []
+    },
+    {
+      "id": "martin-risner-sentencing",
+      "case": "Brian Martin — Sgt. Nick Risner case",
+      "event": "Jury death recommendation — sentencing date unverified",
+      "court": "Colbert County Circuit Court, Alabama",
+      "tsvRowRead": true,
+      "tsvSource": {
+        "url": "https://www.wsfa.com/2026/09/11/jury-recommends-death-penalty-man-convicted-killing-sheffield-police-sergeant/",
+        "label": "WAFF / WSFA, September 11, 2026"
+      },
+      "secondarySource": null,
+      "decision": "keep",
+      "reason": "US criminal jury penalty recommendation; adult police-sergeant victim and adult defendant. No minor victim identified in reviewed trial report.",
+      "supplementarySources": []
+    },
+    {
+      "id": "conway-mo3-trial",
+      "case": "Markies Conway (Yella Beezy) — Melvin Noble (MO3) case",
+      "event": "Trial continued — replacement date unverified",
+      "court": "Dallas County criminal court, Texas — Judge Chika Anyiam",
+      "tsvRowRead": true,
+      "tsvSource": {
+        "url": "https://www.keranews.org/news/2026-09-14/yella-beezy-mo3-dallas-rap-murder-for-hire-trial-delayed",
+        "label": "KERA, courtroom report, September 14, 2026"
+      },
+      "secondarySource": null,
+      "decision": "keep",
+      "reason": "US criminal jury trial postponed; adult rapper victim MO3 (28) and adult defendant. KERA URL failed full retrieval; FOX 4 courtroom report corroborates jury setting.",
+      "supplementarySources": [
+        {
+          "url": "https://www.fox4news.com/news/yella-beezy-murder-trial-delayed",
+          "publisher": "FOX 4 Dallas",
+          "date": "2026-09-14",
+          "access": "Full courtroom report reviewed."
+        },
+        {
+          "url": "https://people.com/man-allegedly-hired-kill-rapper-mo3-found-guilty-capital-murder-sentenced-life-in-prison-12109839",
+          "publisher": "PEOPLE",
+          "date": "2026-09",
+          "access": "Search extract reviewed for victim age."
+        }
+      ]
+    },
+    {
+      "id": "virzi-trial",
+      "case": "Nicole Virzi — Leon Katz case",
+      "event": "October 1 trial setting elapsed — outcome unverified",
+      "court": "Allegheny County Court of Common Pleas, Pittsburgh, PA — Courtroom 327",
+      "tsvRowRead": true,
+      "tsvSource": {
+        "url": "https://ujsportal.pacourts.us/CaseSearch",
+        "label": "Pennsylvania UJS, CP-02-CR-0004996-2024, Calendar Events, read September 29, 2026; reviewed October 2, 2026"
+      },
+      "secondarySource": "https://triblive.com/local/judge-refuses-to-bar-statement-to-police-from-accused-baby-killer-in-shadyside-homicide/",
+      "decision": "exclude",
+      "reason": "Child victim Leon Katz; owner cold-review exclusion.",
+      "supplementarySources": []
+    },
+    {
+      "id": "ryan-cavett-trial",
+      "case": "Shannon Ryan — Leila Cavett case",
+      "event": "Second-degree murder jury verdict — guilty",
+      "court": "Broward County Circuit Court, Fort Lauderdale, FL",
+      "tsvRowRead": true,
+      "tsvSource": {
+        "url": "https://www.local10.com/news/local/2026/09/24/watch-live-jury-to-announce-verdict-in-shannon-ryans-trial-over-21-year-old-mothers-murder/",
+        "label": "Local 10, September 24 guilty-verdict report"
+      },
+      "secondarySource": null,
+      "decision": "exclude",
+      "reason": "Cavett's two-year-old son was left alone; trial-opening reporting identifies a related child-neglect allegation. Conservative case-level exclusion; this audit does not assert that the child-neglect count remains pending.",
+      "supplementarySources": [
+        {
+          "url": "https://www.nbcmiami.com/news/local/trial-underway-for-self-proclaimed-witch-charged-in-womans-murder-in-broward/3860660/",
+          "publisher": "NBC Miami",
+          "date": "2026-09"
+        }
+      ]
+    },
+    {
+      "id": "preston-lord-meisner-trial",
+      "case": "Jacob Meisner — Preston Lord case",
+      "event": "Felony-murder and kidnapping trial",
+      "court": "Maricopa County Superior Court, Phoenix, AZ",
+      "tsvRowRead": true,
+      "tsvSource": {
+        "url": "https://www.courttv.com/news/reluctant-teen-witnesses-in-preston-lord-murder-case-have-been-hanging-up-on-prosecutors-defense/",
+        "label": "Court TV, September 15 hearing and November 3 reset reported September 16, 2026"
+      },
+      "secondarySource": null,
+      "decision": "exclude",
+      "reason": "Teen victim Preston Lord; juvenile-at-offense defendants also implicated; owner cold-review exclusion.",
+      "supplementarySources": []
+    },
+    {
+      "id": "preston-lord-five-defendant-trial",
+      "case": "Treston Billey, Dominic Turner, Taylor Sherman, Talan Renner and Talyn Vigil — Preston Lord case",
+      "event": "Joint felony-murder and kidnapping trial — setting may change",
+      "court": "Maricopa County Superior Court, Phoenix, AZ",
+      "tsvRowRead": true,
+      "tsvSource": {
+        "url": "https://www.courttv.com/news/reluctant-teen-witnesses-in-preston-lord-murder-case-have-been-hanging-up-on-prosecutors-defense/",
+        "label": "Court TV, September 15 hearing and November 17 tentative reset reported September 16, 2026"
+      },
+      "secondarySource": null,
+      "decision": "exclude",
+      "reason": "Teen victim Preston Lord; juvenile-at-offense defendants also implicated; owner cold-review exclusion.",
+      "supplementarySources": []
+    }
+  ],
+  "badgeCountMethod": "Initial server-rendered page with JavaScript disabled. Totals count DOM badges; visible excludes hidden footer badges. Detailed and case-by-case list each carry one BOOK badge per allowlisted entry.",
+  "reviewChecks": {
+    "unknownJuryRowsNeverBook": "passed",
+    "explicitBooksUrlCannotBypassAllowlist": "passed",
+    "allExcludedIdsNeverBook": "passed",
+    "footerOnlyOnDatesWithAllowlistedBook": "passed",
+    "caseFileFallbackPreserved": "passed",
+    "originalItalicJuryChessButtonPreserved": true,
+    "legendAndColorsUnchanged": true,
+    "noOverflowAt390px": "passed"
+  },
+  "sourceAccessNotes": [
+    "All 26 former allowlist TSV rows and their source references were inspected. Unavailable source pages were corroborated with accessible reporting or clearly labeled search extracts; no calendar facts were rewritten.",
+    "Duval PDFs could not be fetched; the accessible October 7 News4JAX report describes the same shooting and toddler endangerment. All three Bridegan entries were excluded.",
+    "KERA original URL failed; FOX 4's September 14 full courtroom report corroborates the Conway trial context. AP/NBC Eaton full articles were blocked; court listing, AP search extracts and Boston Globe search extracts support adult criminal jury eligibility.",
+    "Child-victim involvement is a case-level promo exclusion, including related allegations and endangered children; no current charge status is inferred from historical reports."
+  ],
+  "notes": [
+    "GITHUB_SHA is the synthetic PR merge commit; headTested identifies the feature commit.",
+    "12 BOOK entries: 11 added versus main and the pre-existing Banks promo reclassified.",
+    "The initial selected date has no allowlisted BOOK entry, so its footer is hidden: Court Calendar has 25 DOM BOOK badges, 24 visible; home has one hidden footer badge.",
+    "All three TSVs byte-identical to main/base. No dates, times, case notes, badge words, legend words or colors changed.",
+    "No merge or production deployment action taken."
+  ]
+}
