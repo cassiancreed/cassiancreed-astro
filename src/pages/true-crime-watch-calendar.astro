@@ -1,4 +1,5 @@
 ---
+import CalendarCostBadge from '../components/CalendarCostBadge.astro';
 import Base from '../layouts/Base.astro';
 import CalendarExplainerLink from '../components/CalendarExplainerLink.astro';
 import raw from '../data/media-calendar.tsv?raw';
@@ -23,8 +24,8 @@ function topicFor(row) {
       <h1>True Crime Watch Calendar</h1>
       <p>A US schedule of true-crime shows, films and podcasts. Dates and times may change. This is a schedule, not reviews.</p>
       <p>As of <time datetime={calendar.asOf}>{asOf}</time>.</p>
-      <p><a class="watch-cross-link" href="/court-calendar/">Real cases in court: Court Calendar →</a></p>
-      <p class="calendar-legend"><span><i class="calendar-dot" data-link-type="free" aria-hidden="true"></i>FREE explainer</span><span aria-hidden="true">·</span><span><i class="calendar-dot" data-link-type="paid" aria-hidden="true"></i>$ guide</span><span aria-hidden="true">·</span><span><i class="calendar-dot" data-link-type="book" aria-hidden="true"></i>BOOK</span></p>
+      <p><a class="watch-cross-link" href="/court-calendar/"><CalendarCostBadge url="/court-calendar/" /> Real cases in court: Court Calendar →</a></p>
+      <p class="calendar-legend"><span><i class="calendar-dot" data-link-type="free" aria-hidden="true"></i>FREE = no cost</span><span aria-hidden="true">·</span><span><i class="calendar-dot" data-link-type="paid" aria-hidden="true"></i>$ guide = $1.99</span><span aria-hidden="true">·</span><span><i class="calendar-dot" data-link-type="book" aria-hidden="true"></i>BOOK</span></p>
       <p class="watch-note">Times are shown as listed by the source. ET/PT means the same clock time on the East and West Coast feeds. Check local listings.</p>
       <p class="watch-note">People who are charged or accused are presumed innocent unless and until proven guilty in court.</p>
     </header>
@@ -43,7 +44,7 @@ function topicFor(row) {
               <dl><div><dt>Where</dt><dd>{row.platform}</dd></div><div><dt>Type</dt><dd>{row.type}</dd></div>{topicFor(row) && <div><dt>Topic</dt><dd>{topicFor(row)}</dd></div>}</dl>
               <p class="watch-description">{row.description}</p>
               {row.id === 'media-14' && <p>Oren, Alon and Tal Alexander were found guilty by a federal jury in March 2026. Sentencing is set for Oct 27.</p>}
-              <p class="watch-sources"><a href={row.source_url}>{row.source_label} →</a>{row.source2_url && <><span aria-hidden="true"> · </span><a href={row.source2_url}>{row.source2_label} →</a></>}</p>
+              <p class="watch-sources"><a href={row.source_url}><CalendarCostBadge url={row.source_url} /> {row.source_label} →</a>{row.source2_url && <><span aria-hidden="true"> · </span><a href={row.source2_url}><CalendarCostBadge url={row.source2_url} /> {row.source2_label} →</a></>}</p>
               {['media-01','media-13'].includes(row.id) && <p class="watch-status">The episode time comes from trade sources.</p>}
               {row.id === 'media-08' && <p class="watch-status">The Oct 21 date comes from a trade listing.</p>}
               {row.id === 'media-09' && <p class="watch-status">The Oct 22 date comes from a trade source.</p>}
@@ -54,7 +55,7 @@ function topicFor(row) {
               {row.id === 'media-25' && <p class="watch-status">Not yet confirmed by the network.</p>}
               {row.id === 'media-24' && <p class="watch-status">The time is not yet confirmed by the network.</p>}
               {row.id === 'media-19' && <p class="watch-status">The case details come from one outside listing.</p>}
-              {courtLink && <p><a class="watch-cross-link" href={courtLink.url}>{courtLink.text}</a></p>}
+              {courtLink && <p><a class="watch-cross-link" href={courtLink.url}><CalendarCostBadge url={courtLink.url} /> {courtLink.text}</a></p>}
               {links.length > 0 && <div class="calendar-resource-list">
                 {MEDIA_EXPLAINER_MATCHES[row.id]?.kind === 'topic' && <p class="watch-link-label">Learn the basics</p>}
                 {links.map(link => <CalendarExplainerLink link={link} />)}
