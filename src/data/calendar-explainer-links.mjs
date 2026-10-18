@@ -1,3 +1,4 @@
+import { JURY_CHESS_PRICE_TEXT } from './book-prices.mjs';
 // NEP-20261018-CAL-04: reviewed case matches shared by every calendar surface.
 // Only live, priced products and non-archived published posts are eligible.
 // Source dates, court times, notes and legal posture remain in the original TSVs.
@@ -617,7 +618,7 @@ const LIVE_PRODUCTS = {
   "jury-chess": {
     "url": "https://cassiancreed.beehiiv.com/products/jury-chess",
     "title": "Jury Chess: How Criminal Jury Trials Actually Work",
-    "price": "$5.99"
+    "price": JURY_CHESS_PRICE_TEXT
   },
   "tupac-shakur-keffe-d-case-guide": {
     "url": "https://cassiancreed.beehiiv.com/products/tupac-shakur-keffe-d-case-guide",
@@ -739,7 +740,8 @@ export const JURY_CHESS_LINK = {
   bookKey: 'jury-chess',
   placement: 'court_calendar_jury_chess',
   type: 'book',
-  badge: 'BOOK',
+  price: LIVE_PRODUCTS['jury-chess'].price,
+  badge: 'BOOK ' + LIVE_PRODUCTS['jury-chess'].price,
   paid: false,
 };
 export const CALENDAR_LINK_TYPES = ['free', 'paid', 'book'];
@@ -753,8 +755,10 @@ export function classifyCalendarLink(link) {
   const bookDestination = ((destination.hostname === 'cassiancreed.com' || destination.hostname === 'www.cassiancreed.com') && /^\/books(?:\/|$)/.test(destination.pathname))
     || /\/products\/(jury-chess|two-stories-one-verdict)\/?$/.test(destination.pathname) || link.bookKey === 'jury-chess';
   const type = bookDestination ? 'book' : productDestination ? 'paid' : link.type || 'free';
-  const price = product?.price || link.price;
-  return { ...link, type, price, paid: type === 'paid', badge: type === 'free' ? 'FREE' : type === 'book' ? 'BOOK' : price ? price + ' GUIDE' : 'GUIDE' };
+  const juryChessDestination = link.bookKey === 'jury-chess' || /^\/books(?:\/jury-chess)?\/?$/.test(destination.pathname) || /\/products\/jury-chess\/?$/.test(destination.pathname);
+  const price = product?.price || link.price || (juryChessDestination ? LIVE_PRODUCTS['jury-chess'].price : undefined);
+  if ((type === 'paid' || type === 'book') && !/^\$\d+\.\d{2}$/.test(price || '')) throw new Error('Missing verified calendar product price: ' + link.url);
+  return { ...link, type, price, paid: type === 'paid', badge: type === 'free' ? 'FREE' : type === 'book' ? 'BOOK ' + price : price + ' GUIDE' };
 }
 export function calendarLinkTypesFor(entries) {
   return CALENDAR_LINK_TYPES.filter((type) => entries.some((entry) => (entry.explainerLinks || calendarLinksFor(entry)).some((link) => link.type === type)));
