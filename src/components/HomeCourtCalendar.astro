@@ -469,7 +469,7 @@ const visibleDayEntries = (entries) => {
         source.append(sourcePrefix, sourceLink);
         const actions = document.createElement('div');
         actions.className = 'home-calendar__agenda-actions';
-        for (const link of entry.explainerLinks) {
+        for (const link of entry.explainerLinks.flatMap((link) => link.preview ? [link, link.preview] : [link])) {
           const action = createActionLink(link.url, link.text);
           action.className = 'calendar-resource';
           action.dataset.linkType = link.type;
@@ -482,6 +482,11 @@ const visibleDayEntries = (entries) => {
           action.replaceChildren(badge, label);
           if (link.bookKey) action.dataset.bookKey = link.bookKey;
           if (link.placement) action.dataset.ctaPlacement = link.placement;
+          if (link.newTab) {
+            action.target = '_blank';
+            action.rel = 'noopener noreferrer';
+            action.dataset.guidePreview = link.previewFor;
+          }
           if (link.paid) {
             action.target = '_blank';
             action.rel = 'noopener noreferrer';

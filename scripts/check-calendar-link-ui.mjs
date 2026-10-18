@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import { readFileSync, mkdirSync, writeFileSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import { chromium } from 'playwright';
+import { linksWithGuidePreviews } from '../src/data/guide-previews.mjs';
 import { calendarLinksFor, calendarLinkTypesFor, JURY_CHESS_EXCLUDED_IDS } from '../src/data/calendar-explainer-links.mjs';
 import { parseCourtCalendar } from '../src/data/court-calendar-parser.mjs';
 const base = 'c7b88e81cf803f05e5f45b5bc48e6f3456f7544b';
@@ -40,7 +41,7 @@ for (const width of [1280,390]) {
     const buildDate=await page.locator('[data-home-calendar]').getAttribute('data-build-date');
     const checkLinks=async (scope,expected,label)=>{
       const actual=await scope.locator('a.calendar-resource').evaluateAll(ns=>ns.map(n=>[n.getAttribute('href'),n.dataset.linkType,n.querySelector('.calendar-badge')?.textContent,n.querySelector('span:last-child')?.textContent.trim()]));
-      assert.deepEqual(actual,expected.map(l=>[l.url,l.type,l.badge,l.text+' →']),label);
+      assert.deepEqual(actual,linksWithGuidePreviews(expected).map(l=>[l.url,l.type,l.badge,l.text+' →']),label);
       assert.deepEqual(await scope.locator('.calendar-resource').evaluateAll(ns=>ns.filter(n=>n.scrollWidth>n.clientWidth+2).map(n=>n.textContent)),[],label+' clipping');
     };
     let detailCount=0,listCount=0,selectedCount=0,dotCount=0;

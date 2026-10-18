@@ -79,9 +79,12 @@ Police say Michelle's remains have not been found, and the search continues. Any
 
 ## Want the Full Case in One Place?
 
-Our **Michelle Parker Case Guide (v1)** is a 14-page PDF for $1.99. It has an hour-by-hour timeline of her last known day, the full 15-year record, how Florida handles murder cases with no body, the next court steps, a glossary and sources. Dale Smith Jr. is charged and presumed innocent. Status as of Oct. 16, 2026.
+Our **Both Sides of the Story: Michelle Parker — Can There Be a Murder Case With No Body?** guide is $1.99. Read page 1 free before you buy. Dale Smith Jr. is charged and presumed innocent.
 
-<a href="https://cassiancreed.beehiiv.com/products/michelle-parker-case-guide?utm_source=cassiancreed.com&amp;utm_medium=post_cta&amp;utm_campaign=explainer_parker_v1&amp;utm_content=parker_free_post_end" data-book-key="michelle-parker-case-guide" data-cta-placement="parker_free_post_end">Get the Michelle Parker case guide — $1.99 →</a>
+<div class="guide-preview-offer">
+<a class="calendar-resource" data-link-type="paid" href="https://cassiancreed.beehiiv.com/products/both-sides-michelle-parker-guide-v3?utm_source=cassiancreed.com&amp;utm_medium=post_cta&amp;utm_campaign=explainer_parker_bothsides_v3&amp;utm_content=parker_free_post_end" target="_blank" rel="noopener noreferrer" data-book-key="both-sides-michelle-parker-guide-v3" data-cta-placement="parker_free_post_end"><span class="calendar-badge" data-link-type="paid">$1.99 GUIDE</span><span>Both Sides of the Story: Michelle Parker — Can There Be a Murder Case With No Body? →</span></a>
+<a class="calendar-resource" data-link-type="free" data-guide-preview="both-sides-michelle-parker-guide-v3" href="/previews/michelle-parker-both-sides-v3-preview.pdf" target="_blank" rel="noopener noreferrer"><span class="calendar-badge" data-link-type="free">FREE</span><span>Read page 1 free →</span></a>
+</div>
 
 ## Sources
 

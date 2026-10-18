@@ -72,6 +72,13 @@ A status conference is a short meeting in court. The judge asks both sides, "Whe
 
 We will update our Court Calendar after Monday.
 
+## Want the full case in one place?
+
+<div class="guide-preview-offer">
+<a class="calendar-resource" data-link-type="paid" href="https://cassiancreed.beehiiv.com/products/celeste-rivas-hernandez-d4vd-charges-guide?utm_source=cassiancreed.com&amp;utm_medium=post_cta&amp;utm_campaign=explainer_d4vd_v2&amp;utm_content=d4vd_free_post_end" target="_blank" rel="noopener noreferrer" data-book-key="celeste-rivas-hernandez-d4vd-charges-guide" data-cta-placement="d4vd_free_post_end"><span class="calendar-badge" data-link-type="paid">$1.99 GUIDE</span><span>The Celeste Rivas Hernandez Case: A Plain-English Guide to the D4vd Charges →</span></a>
+<a class="calendar-resource" data-link-type="free" data-guide-preview="celeste-rivas-hernandez-d4vd-charges-guide" href="/previews/d4vd-guide-v2-preview.pdf" target="_blank" rel="noopener noreferrer"><span class="calendar-badge" data-link-type="free">FREE</span><span>Read page 1 free →</span></a>
+</div>
+
 ## Sources
 
 - Boston Globe, "Singer D4vd arrested in death of Celeste Rivas," April 16, 2026: https://www.bostonglobe.com/2026/04/16/arts/david-burke-arrested-los-angeles/
