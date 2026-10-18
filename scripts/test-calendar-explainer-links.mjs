@@ -52,7 +52,7 @@ test('day markers aggregate all entries and retain free, paid, book order', () =
 });
 
 test('review exclusions never receive BOOK links, even when their event is a jury trial', () => {
-  assert.deepEqual([...JURY_CHESS_EXCLUDED_IDS], ["goncalves-wsu-trial","aramburu-paris-trial","kepner-federal-trial","brianna-moore-trial","clancy-trial","virzi-trial","michael-vaughan-trial","crum-odom-verdict","preston-lord-meisner-trial","preston-lord-five-defendant-trial","elmore-laura-miller-trial","wagner-trial","gardner-jury-selection","gardner-trial","bridegan-fernandez-trial","farwell-jury-trial","farwell-trial-oct19","carter-brooks-trial","ryan-cavett-trial"]);
+  assert.deepEqual([...JURY_CHESS_EXCLUDED_IDS], ["goncalves-wsu-trial","aramburu-paris-trial","kepner-federal-trial","brianna-moore-trial","clancy-trial","virzi-trial","michael-vaughan-trial","crum-odom-verdict","preston-lord-meisner-trial","preston-lord-five-defendant-trial","elmore-laura-miller-trial","wagner-trial","gardner-jury-selection","gardner-trial","bridegan-fernandez-trial","farwell-jury-trial","farwell-trial-oct19","carter-brooks-trial","ryan-cavett-trial","killins-verdict-sentencing"]);
   for (const id of JURY_CHESS_EXCLUDED_IDS) {
     const entry = entries.find(e => e.id === id);
     assert.ok(entry, id);
@@ -76,4 +76,13 @@ test('paid and Books destinations cannot be overridden as FREE and always need r
     if(link.type==='paid') assert.match(link.badge,/^\$\d+\.\d{2} GUIDE$/);
     if(link.type==='book') assert.equal(link.badge,'BOOK '+JURY_CHESS_PRICE_TEXT);
   }
+});
+
+test('living-survivor exclusion removes Killins from the 11-entry BOOK allowlist',()=>{
+  const entry=entries.find(e=>e.id==='killins-verdict-sentencing');assert.ok(entry);
+  assert.equal(JURY_CHESS_ENTRY_IDS.size,11);
+  assert.equal(JURY_CHESS_ENTRY_IDS.has(entry.id),false);
+  assert.equal(JURY_CHESS_EXCLUDED_IDS.has(entry.id),true);
+  assert.equal(calendarLinksFor(entry).some(link=>link.type==='book'),false);
+  assert.equal(calendarLinksFor({...entry,link:'/books/',linkText:'Get Jury Chess'}).some(link=>link.type==='book'),false);
 });
