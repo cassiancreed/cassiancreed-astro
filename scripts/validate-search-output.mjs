@@ -26,7 +26,10 @@ export async function validateSearchOutput(routes) {
   const redirects = readRedirectSources();
   const sources = new Map(pageRoutes().map(({ route, source }) => [route, source]));
   for (const file of readdirSync('src/content/posts').filter((file) => /\.mdx?$/.test(file))) {
-    sources.set('/post/' + file.replace(/\.mdx?$/, '') + '/', 'src/content/posts/' + file);
+    const source = 'src/content/posts/' + file;
+    const frontmatter = readFileSync(source, 'utf8').split(/^---\s*$/m)[1] ?? '';
+    const slug = frontmatter.match(/^slug:\s*["']?([^"'\r\n]+)["']?\s*$/m)?.[1]?.trim() ?? file.replace(/\.mdx?$/, '');
+    sources.set('/post/' + slug + '/', source);
   }
   for (const [route, file] of routes) {
     const html = await readFile(file, 'utf8');
