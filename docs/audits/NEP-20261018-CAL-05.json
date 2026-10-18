@@ -1,0 +1,235 @@
+{
+  "job": "NEP-20261018-CAL-05",
+  "draftOnly": true,
+  "headTested": "e11eb1a800b471985fff0dba5ed384b978aba4d5",
+  "base": "c7b88e81cf803f05e5f45b5bc48e6f3456f7544b",
+  "commit": "3931eedef9a8187e23331fe5aba2835ff6763907",
+  "checkedAt": "2026-10-18T17:18:37.560Z",
+  "unchangedTsvs": true,
+  "legend": "FREE explainer · $ guide · BOOK",
+  "badgeText": "#14110f",
+  "colors": {
+    "free": "86efac",
+    "paid": "f6c76b",
+    "book": "d8b4fe"
+  },
+  "contrastRatios": {
+    "free": 13.391551903616213,
+    "paid": 11.909009545740567,
+    "book": 10.636826129488155
+  },
+  "bookEntries": [
+    {
+      "id": "faith-hedgepeth-trial",
+      "case": "Miguel Salguero-Olivares — Faith Hedgepeth case",
+      "event": "Murder trial — testimony underway"
+    },
+    {
+      "id": "michael-vaughan-trial",
+      "case": "Stacey Wondra — Michael Vaughan case",
+      "event": "Murder and kidnapping trial"
+    },
+    {
+      "id": "murdaugh-retrial",
+      "case": "Maggie and Paul Murdaugh — Alex Murdaugh retrial",
+      "event": "Tentative murder retrial"
+    },
+    {
+      "id": "gardner-jury-selection",
+      "case": "Jared Bridegan — Shanna Lee Gardner and Henry Arthur Tenon",
+      "event": "Joint first-degree murder trial — jury selection"
+    },
+    {
+      "id": "gardner-trial",
+      "case": "Shanna Gardner — Jared Bridegan case",
+      "event": "Evidentiary trial — rescheduled"
+    },
+    {
+      "id": "goncalves-wsu-trial",
+      "case": "Goncalves v. Washington State University",
+      "event": "Civil jury trial"
+    },
+    {
+      "id": "bhatt-jury-selection",
+      "case": "Naresh Bhatt — Mamta Kafle Bhatt case",
+      "event": "Murder trial — testimony underway"
+    },
+    {
+      "id": "farwell-jury-trial",
+      "case": "Matthew Farwell — federal case",
+      "event": "Federal jury trial — testimony underway"
+    },
+    {
+      "id": "farwell-trial-oct19",
+      "case": "Matthew Farwell — federal case",
+      "event": "Federal jury trial continues"
+    },
+    {
+      "id": "carter-brooks-trial",
+      "case": "Desmond Carter — Madison Brooks case",
+      "event": "Jury trial — newly scheduled"
+    },
+    {
+      "id": "wagner-trial",
+      "case": "George “Billy” Wagner III — Rhoden family killings",
+      "event": "Jury trial"
+    },
+    {
+      "id": "bohm-trial",
+      "case": "Fraser Michael Bohm — Malibu PCH crash case",
+      "event": "Trial on murder and gross-negligence vehicular-manslaughter charges"
+    },
+    {
+      "id": "brianna-moore-trial",
+      "case": "Brianna Moore — infant-death case",
+      "event": "Jury trial"
+    },
+    {
+      "id": "kepner-federal-trial",
+      "case": "Anna Kepner case — juvenile defendant",
+      "event": "Federal jury trial"
+    },
+    {
+      "id": "preston-lord-meisner-trial",
+      "case": "Jacob Meisner — Preston Lord case",
+      "event": "Felony-murder and kidnapping trial"
+    },
+    {
+      "id": "preston-lord-five-defendant-trial",
+      "case": "Treston Billey, Dominic Turner, Taylor Sherman, Talan Renner and Talyn Vigil — Preston Lord case",
+      "event": "Joint felony-murder and kidnapping trial — setting may change"
+    },
+    {
+      "id": "moore-sherman-trial",
+      "case": "Gregory J. Moore — Aliza Sherman case",
+      "event": "Trial postponed — replacement date unverified"
+    },
+    {
+      "id": "martin-risner-sentencing",
+      "case": "Brian Martin — Sgt. Nick Risner case",
+      "event": "Jury death recommendation — sentencing date unverified"
+    },
+    {
+      "id": "conway-mo3-trial",
+      "case": "Markies Conway (Yella Beezy) — Melvin Noble (MO3) case",
+      "event": "Trial continued — replacement date unverified"
+    },
+    {
+      "id": "virzi-trial",
+      "case": "Nicole Virzi — Leon Katz case",
+      "event": "October 1 trial setting elapsed — outcome unverified"
+    },
+    {
+      "id": "clancy-trial",
+      "case": "Lindsay Clancy",
+      "event": "Murder trial — mistrial declared"
+    },
+    {
+      "id": "salazar-clinkunbroomer-trial",
+      "case": "Kevin Eduardo Cataneo Salazar — Deputy Ryan Clinkunbroomer case",
+      "event": "Sanity-phase verdict — legally sane"
+    },
+    {
+      "id": "bridegan-fernandez-trial",
+      "case": "Mario Fernandez Saldana — Jared Bridegan case",
+      "event": "Guilty verdict — completed"
+    },
+    {
+      "id": "killins-verdict-sentencing",
+      "case": "Joseph Killins",
+      "event": "Verdict and sentencing — completed"
+    },
+    {
+      "id": "crum-odom-verdict",
+      "case": "Jeffrey Norman Crum Sr. — Jennifer Odom case",
+      "event": "Jury death-penalty recommendation — completed"
+    },
+    {
+      "id": "elmore-laura-miller-trial",
+      "case": "James Dolphs Elmore Jr. — Laura Miller case",
+      "event": "Manslaughter verdict and sentence — completed"
+    },
+    {
+      "id": "banks-federal-trial",
+      "case": "Durk Devontay Banks, known as Lil Durk — federal criminal trial",
+      "event": "Jury verdict — Banks acquitted; co-defendants convicted on stalking counts"
+    },
+    {
+      "id": "aramburu-paris-trial",
+      "case": "Loïk Le Priol and co-defendants — Federico Martín Aramburú case",
+      "event": "Paris trial — first-instance verdict delivered"
+    },
+    {
+      "id": "eaton-burlington-trial",
+      "case": "Jason Eaton — Burlington shooting case",
+      "event": "Attempted-murder trial — guilty verdicts"
+    },
+    {
+      "id": "mary-collins-trial",
+      "case": "James Salerno and Lavi Pham — Mary Collins case",
+      "event": "Jury verdicts and sentencing — completed"
+    },
+    {
+      "id": "ryan-cavett-trial",
+      "case": "Shannon Ryan — Leila Cavett case",
+      "event": "Second-degree murder jury verdict — guilty"
+    }
+  ],
+  "summaries": [
+    {
+      "width": 1280,
+      "route": "/court-calendar/",
+      "detailCount": 145,
+      "listCount": 145,
+      "selectedCount": 35,
+      "dotCount": 27,
+      "serverRendering": "passed",
+      "colors": "passed",
+      "overflow": "none"
+    },
+    {
+      "width": 1280,
+      "route": "/",
+      "detailCount": 0,
+      "listCount": 0,
+      "selectedCount": 35,
+      "dotCount": 27,
+      "serverRendering": "passed",
+      "colors": "passed",
+      "overflow": "none"
+    },
+    {
+      "width": 390,
+      "route": "/court-calendar/",
+      "detailCount": 145,
+      "listCount": 145,
+      "selectedCount": 35,
+      "dotCount": 27,
+      "serverRendering": "passed",
+      "colors": "passed",
+      "overflow": "none"
+    },
+    {
+      "width": 390,
+      "route": "/",
+      "detailCount": 0,
+      "listCount": 0,
+      "selectedCount": 35,
+      "dotCount": 27,
+      "serverRendering": "passed",
+      "colors": "passed",
+      "overflow": "none"
+    }
+  ],
+  "buildRun": "https://github.com/cassiancreed/cassiancreed-astro/actions/runs/39148873838",
+  "browserRun": "https://github.com/cassiancreed/cassiancreed-astro/actions/runs/39148873819",
+  "screenshotsArtifact": "https://github.com/cassiancreed/cassiancreed-astro/actions/runs/39148873819/artifacts/12144536733",
+  "calendarTests": 16,
+  "notes": [
+    "GITHUB_SHA is GitHub's synthetic PR merge commit; headTested identifies the feature commit.",
+    "31 Jury Chess BOOK entry links: 30 newly added; Banks existing promo reclassified and routed to Books with its original text retained.",
+    "Free explainers and paid guide labels are unchanged; badge text and required legend/card are additions.",
+    "Temporary audit workflow removed after a successful remote browser run. Playwright installed only on the runner with no saved dependency or lockfile changes.",
+    "No merge or production deployment action taken."
+  ]
+}
