@@ -340,7 +340,7 @@ const jsonld = {
             <span class="card__srctype">{e.srcType}</span>
             {e.src2 && <span class="card__src2">{e.srcLabel2}</span>}
           </p>
-          <p class="card__links">{calendarLinksFor(e).length === 0 && <span class="card__soon">Our case file on this is in progress.</span>} {calendarLinksFor(e).map((link) => <CalendarExplainerLink link={link} />)} <a class="card__help" href="/support/">Victim &amp; Reader Resources</a>
+          <p class="card__links">{calendarLinksFor(e).every((link) => link.type === 'book') && <span class="card__soon">Our case file on this is in progress.</span>} {calendarLinksFor(e).map((link) => <CalendarExplainerLink link={link} />)} <a class="card__help" href="/support/">Victim &amp; Reader Resources</a>
             <a class="card__help" href="/support/">Report a correction</a>
           </p>
         </article>
@@ -373,7 +373,7 @@ const jsonld = {
             <span class="card__srctype">{e.srcType}</span>
             {e.src2 && <span class="card__src2">{e.srcLabel2}</span>}
           </p>
-          <p class="card__links">{calendarLinksFor(e).length === 0 && <span class="card__soon">Our case file on this is in progress.</span>} {calendarLinksFor(e).map((link) => <CalendarExplainerLink link={link} />)} <a class="card__help" href="/support/">Victim &amp; Reader Resources</a>
+          <p class="card__links">{calendarLinksFor(e).every((link) => link.type === 'book') && <span class="card__soon">Our case file on this is in progress.</span>} {calendarLinksFor(e).map((link) => <CalendarExplainerLink link={link} />)} <a class="card__help" href="/support/">Victim &amp; Reader Resources</a>
             <a class="card__help" href="/support/">Report a correction</a>
           </p>
         </article>
@@ -392,7 +392,7 @@ const jsonld = {
       <p class="capture-cta__body">
         Headlines tell you what happened. <em>Jury Chess: How Criminal Jury Trials Actually Work</em> explains the machinery underneath &mdash; jury selection, evidence disputes, cross-examination, jury instructions, deliberations, and the verdict.
       </p>
-      <CalendarExplainerLink id="jury-chess-court-calendar" link={{url: '/books/', text: 'Get Jury Chess', bookKey: 'jury-chess', placement: 'court_calendar_promo'}} />
+      <a class="capture-cta__btn" href="/books/" id="jury-chess-court-calendar" data-book-key="jury-chess" data-cta-placement="court_calendar_promo">Get <em>Jury Chess</em></a>
     </div>
   </section>
 
@@ -409,7 +409,7 @@ const jsonld = {
         <p class="row__nodate"><strong>Expected development:</strong> {e.nextNote || NO_DATE}</p>
         <p class="row__note">{e.note}</p>
         <p class="row__meta">Subject to change by the court &middot; Source: {e.srcLabel} ({e.srcType}){e.src2 && <span class="row__src2"> &middot; Also: {e.srcLabel2}</span>}</p>
-        <p class="row__links">{calendarLinksFor(e).length === 0 && <span class="card__soon">Our case file on this is in progress.</span>} {calendarLinksFor(e).map((link) => <CalendarExplainerLink link={link} />)} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <a class="row__help" href="/support/">Report a correction</a></p>
+        <p class="row__links">{calendarLinksFor(e).every((link) => link.type === 'book') && <span class="card__soon">Our case file on this is in progress.</span>} {calendarLinksFor(e).map((link) => <CalendarExplainerLink link={link} />)} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <a class="row__help" href="/support/">Report a correction</a></p>
       </div>
     ))}
   </section>
@@ -426,7 +426,7 @@ const jsonld = {
         <p class="row__nodate"><strong>Next development to verify:</strong> {e.nextNote || 'Not yet identified.'}</p>
         <p class="row__note">{e.note}</p>
         <p class="row__meta">No court date exists for this matter &middot; Source: {e.srcLabel} ({e.srcType}){e.src2 && <span class="row__src2"> &middot; Also: {e.srcLabel2}</span>}</p>
-        <p class="row__links">{calendarLinksFor(e).length === 0 && <span class="card__soon">Our case file on this is in progress.</span>} {calendarLinksFor(e).map((link) => <CalendarExplainerLink link={link} />)} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <a class="row__help" href="/support/">Report a correction</a></p>
+        <p class="row__links">{calendarLinksFor(e).every((link) => link.type === 'book') && <span class="card__soon">Our case file on this is in progress.</span>} {calendarLinksFor(e).map((link) => <CalendarExplainerLink link={link} />)} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <a class="row__help" href="/support/">Report a correction</a></p>
       </div>
     ))}
   </section>
@@ -445,7 +445,7 @@ const jsonld = {
         {e.nextNote && <p class="row__nodate"><strong>Expected next step:</strong> {e.nextNote}</p>}
         <p class="row__note">{e.note}</p>
         <p class="row__meta">Subject to change by the court &middot; Source: {e.srcLabel} ({e.srcType}){e.src2 && <span class="row__src2"> &middot; Also: {e.srcLabel2}</span>}</p>
-        <p class="row__links">{calendarLinksFor(e).length === 0 && <span class="card__soon">Our case file on this is in progress.</span>} {calendarLinksFor(e).map((link) => <CalendarExplainerLink link={link} />)} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <a class="row__help" href="/support/">Report a correction</a>
+        <p class="row__links">{calendarLinksFor(e).every((link) => link.type === 'book') && <span class="card__soon">Our case file on this is in progress.</span>} {calendarLinksFor(e).map((link) => <CalendarExplainerLink link={link} />)} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <a class="row__help" href="/support/">Report a correction</a>
         </p>
       </div>
     ))}
@@ -484,7 +484,7 @@ const jsonld = {
             <p>Primary source: Mecklenburg County District Attorney, October 12, 2026 release, <a href="https://charmeckda.com/wp-content/uploads/2026/10/101226_1.pdf">https://charmeckda.com/wp-content/uploads/2026/10/101226_1.pdf</a></p>
           </article>
         )}
-        <p class="row__links">{calendarLinksFor(e).length === 0 && e.id !== 'mary-collins-trial' && <span class="card__soon">Our case file on this is in progress.</span>} {calendarLinksFor(e).map((link) => <CalendarExplainerLink link={link} />)} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <a class="row__help" href="/support/">Report a correction</a></p>
+        <p class="row__links">{calendarLinksFor(e).every((link) => link.type === 'book') && e.id !== 'mary-collins-trial' && <span class="card__soon">Our case file on this is in progress.</span>} {calendarLinksFor(e).map((link) => <CalendarExplainerLink link={link} />)} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <a class="row__help" href="/support/">Report a correction</a></p>
       </div>
     ))}
   </section>
