@@ -22,7 +22,7 @@
     "campaign-aliases:check": "node scripts/validate-campaign-aliases.mjs",
     "commerce-analytics:check": "node scripts/validate-commerce-analytics.mjs",
     "media:check": "node --test scripts/test-media-explainer-links.mjs",
-    "media:built-check": "node --test scripts/test-media-built-html.mjs"
+    "media:built-check": "node --test scripts/test-media-built-html.mjs scripts/test-calendar-cost-badges.mjs"
   },
   "dependencies": {
     "@astrojs/mdx": "^3.1.9",
