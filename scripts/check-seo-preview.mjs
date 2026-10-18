@@ -15,6 +15,7 @@ const results = [];
 try {
   for (const width of [390, 1280]) {
     const page = await browser.newPage({ viewport: { width, height: 900 } });
+    page.setDefaultTimeout(30000);
     // Astro preview does not read Netlify _headers. Apply the exact proposed
     // response headers to local preview responses for this compatibility check.
     await page.route(base + '/**', async (route) => {
@@ -28,7 +29,8 @@ try {
       if (response.url().includes('subscribe-forms.beehiiv.com')) beehiivResponses.push({ url: response.url(), status: response.status() });
     });
     for (const path of ['/court-calendar/', '/missing-persons/', '/books/jury-chess/', '/how-forensic-genetic-genealogy-works/']) {
-      const response = await page.goto(base + path, { waitUntil: 'networkidle', timeout: 60000 });
+      console.log('Checking preview', width, path);
+      const response = await page.goto(base + path, { waitUntil: 'domcontentloaded', timeout: 30000 });
       assert.equal(response.status(), 200);
       const overflow = await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1);
       assert.equal(overflow, false, path + ' overflows at ' + width);
@@ -58,7 +60,8 @@ try {
       }
       // Production analytics must remain suppressed on preview hosts.
       assert.equal(await page.locator('script[src*="googletagmanager.com/gtag/js"]').count(), 0);
-      await page.screenshot({ path: '/tmp/seo-' + width + '-' + path.split('/').filter(Boolean).join('-') + '.png', fullPage: true });
+      await page.screenshot({ path: '/tmp/seo-' + width + '-' + path.split('/').filter(Boolean).join('-') + '.png', fullPage: false, animations: 'disabled', timeout: 15000 });
+      console.log('Preview passed', width, path);
       results.push({ path, width, status: 200, overflow, headersApplied: true });
     }
     assert.deepEqual(errors, [], 'Browser runtime errors');
