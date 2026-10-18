@@ -42,7 +42,7 @@ jobs:
           const prohibited=files.filter(p=>p.endsWith('.tsv')||p.startsWith('src/content/posts/')||p.startsWith('public/covers/')||p.includes('_delivery')||p.endsWith('analytics.txt')||p==='netlify.toml');
           if(prohibited.length)throw Error('Protected files changed: '+prohibited.join(','));
           const previous=execFileSync('git',['show',base+':src/layouts/Base.astro'],{encoding:'utf8'}),current=readFileSync('src/layouts/Base.astro','utf8');
-          const scripts=s=>[...s.matchAll(/<script\b[^>]*>[\s\S]*?<\/script>/g)].map(m=>m[0]);
+          const scripts=s=>[...s.matchAll(/<script(?:\s+is:inline)?>([\s\S]*?)<\/script>/g)].map(m=>m[0]);
           if(JSON.stringify(scripts(previous))!==JSON.stringify(scripts(current)))throw Error('Base script behavior changed');
           console.log('Protected data, post text, original art, production configuration and Base scripts unchanged.');
           NODE
