@@ -1,0 +1,258 @@
+{
+  "job": "NEP-20261018-MEDIA-01",
+  "state": "draft-validation-pending",
+  "base": "9a3632ab4de8e0f7088c36096f382310f447c066",
+  "source": {
+    "part": "PART 2 only",
+    "lastVerified": "2026-10-17"
+  },
+  "counts": {
+    "dated": 25,
+    "standing": 3,
+    "rows": 28,
+    "freeLinks": 6,
+    "paidLinks": 0,
+    "bookLinks": 0,
+    "courtLinks": 1
+  },
+  "bookPolicy": "Allowlist-only; empty allowlist. Every first-list row excluded. Never infer eligibility from a title or topic.",
+  "copyNotes": [
+    "All titles, date labels, time labels and descriptions copied exactly from Part 2. 'Same as row' topic references are preserved in TSV and resolved for display.",
+    "Source status qualifications preserved. Enum stores the leading V-OFF, V-TRADE or UNCONF.",
+    "Row 14's supplemental legal-status line follows the owner instruction and the existing Court Calendar entry.",
+    "Weekly slots are finite, with only the dates in the owner list. They do not recur beyond that list.",
+    "Row 17 has three supplied source URLs; the fixed two-source schema retains the release and date/time report. The additional DIRECTV overview is not linked."
+  ],
+  "rows": [
+    {
+      "id": "media-01",
+      "title": "The Pet Cemetery Murders: A Ghost Story — Episode 2",
+      "links": [],
+      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty."
+    },
+    {
+      "id": "media-02",
+      "title": "Snapped: Killer Moms — series premiere",
+      "links": [],
+      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty."
+    },
+    {
+      "id": "media-03",
+      "title": "Catfish Murders — series premiere",
+      "links": [],
+      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty."
+    },
+    {
+      "id": "media-04",
+      "title": "Unknown Serial Killers of America — Season 2 finale",
+      "links": [],
+      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty."
+    },
+    {
+      "id": "media-05",
+      "title": "Snapped — Season 36 finale",
+      "links": [],
+      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty."
+    },
+    {
+      "id": "media-06",
+      "title": "Heart",
+      "links": [],
+      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty."
+    },
+    {
+      "id": "media-07",
+      "title": "Clues (video podcast; host Kaelyn Moore)",
+      "links": [
+        {
+          "url": "/how-forensic-genetic-genealogy-works/",
+          "text": "How Forensic Genetic Genealogy Actually Works",
+          "type": "free",
+          "badge": "FREE",
+          "label": "Learn the basics",
+          "reason": "Main subject: forensic breakthroughs."
+        },
+        {
+          "url": "/post/reading-the-crime-scene-what-forensics-reveals/",
+          "text": "Reading the Crime Scene: What Forensics Can Reveal — and What It Can't",
+          "type": "free",
+          "badge": "FREE",
+          "label": "Learn the basics",
+          "reason": "Main subject: forensic breakthroughs."
+        }
+      ],
+      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty."
+    },
+    {
+      "id": "media-08",
+      "title": "The Serial Killer Connection — Part 3 (final)",
+      "links": [],
+      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty."
+    },
+    {
+      "id": "media-09",
+      "title": "Swipe Right on the Devil",
+      "links": [],
+      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty."
+    },
+    {
+      "id": "media-10",
+      "title": "The Flores Massacre (La Masacre de Flores)",
+      "links": [],
+      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty."
+    },
+    {
+      "id": "media-11",
+      "title": "After the First 48 — Season 13 premiere",
+      "links": [],
+      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty."
+    },
+    {
+      "id": "media-12",
+      "title": "Killer Investigations — Season 2 premiere",
+      "links": [],
+      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty."
+    },
+    {
+      "id": "media-13",
+      "title": "The Pet Cemetery Murders: A Ghost Story — Episode 3 (final)",
+      "links": [],
+      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty."
+    },
+    {
+      "id": "media-14",
+      "title": "The Wolves of Real Estate: The Alexander Brothers",
+      "links": [
+        {
+          "url": "/court-calendar/#alexander-brothers-sentencing",
+          "text": "In court: Oct 27 → Court Calendar",
+          "type": "court-cross-link",
+          "badge": null,
+          "reason": "Same defendants and federal case; October 27 sentencing."
+        }
+      ],
+      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty."
+    },
+    {
+      "id": "media-15",
+      "title": "Snapped: Killer Moms — Season 1",
+      "links": [],
+      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty."
+    },
+    {
+      "id": "media-16",
+      "title": "Catfish Murders — Season 1",
+      "links": [],
+      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty."
+    },
+    {
+      "id": "media-17",
+      "title": "Toxic: What Happened in the Haight House?",
+      "links": [],
+      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty."
+    },
+    {
+      "id": "media-18",
+      "title": "The Fall of El Mayo",
+      "links": [],
+      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty."
+    },
+    {
+      "id": "media-19",
+      "title": "Cannibal Poet",
+      "links": [],
+      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty."
+    },
+    {
+      "id": "media-20",
+      "title": "Unprotected: Murder in Galicia",
+      "links": [],
+      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty."
+    },
+    {
+      "id": "media-21",
+      "title": "Mother Knows Murder (hosts Niecy Nash and Dia Nash)",
+      "links": [],
+      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty."
+    },
+    {
+      "id": "media-22",
+      "title": "Murder in Galicia",
+      "links": [],
+      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty."
+    },
+    {
+      "id": "media-23",
+      "title": "Homicide for the Holidays — Season 6 premiere",
+      "links": [],
+      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty."
+    },
+    {
+      "id": "media-24",
+      "title": "Crime and Punishment in America — Part 1",
+      "links": [
+        {
+          "url": "/post/first-degree-second-degree-manslaughter-what-s-the-difference/",
+          "text": "First-Degree, Second-Degree, Manslaughter: What's the Difference?",
+          "type": "free",
+          "badge": "FREE",
+          "label": "Learn the basics",
+          "reason": "Main subject: US criminal justice."
+        },
+        {
+          "url": "/post/how-investigators-weigh-evidence-plain-english/",
+          "text": "How Investigators Weigh Evidence: The Hidden Logic of Solving a Crime",
+          "type": "free",
+          "badge": "FREE",
+          "label": "Learn the basics",
+          "reason": "Main subject: US criminal justice."
+        }
+      ],
+      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty."
+    },
+    {
+      "id": "media-25",
+      "title": "Crime and Punishment in America — Part 2",
+      "links": [
+        {
+          "url": "/post/first-degree-second-degree-manslaughter-what-s-the-difference/",
+          "text": "First-Degree, Second-Degree, Manslaughter: What's the Difference?",
+          "type": "free",
+          "badge": "FREE",
+          "label": "Learn the basics",
+          "reason": "Main subject: US criminal justice."
+        },
+        {
+          "url": "/post/how-investigators-weigh-evidence-plain-english/",
+          "text": "How Investigators Weigh Evidence: The Hidden Logic of Solving a Crime",
+          "type": "free",
+          "badge": "FREE",
+          "label": "Learn the basics",
+          "reason": "Main subject: US criminal justice."
+        }
+      ],
+      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty."
+    },
+    {
+      "id": "media-s1",
+      "title": "Dateline NBC",
+      "links": [],
+      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty."
+    },
+    {
+      "id": "media-s2",
+      "title": "20/20",
+      "links": [],
+      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty."
+    },
+    {
+      "id": "media-s3",
+      "title": "48 Hours",
+      "links": [],
+      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty."
+    }
+  ],
+  "validation": {
+    "pending": true
+  }
+}
