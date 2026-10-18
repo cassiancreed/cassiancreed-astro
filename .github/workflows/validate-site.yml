@@ -36,3 +36,6 @@ jobs:
 
       - name: Validate and build site
         run: npm run build
+
+      - name: Run Node test suites
+        run: node --test scripts/test-*.mjs
