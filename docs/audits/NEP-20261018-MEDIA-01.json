@@ -745,5 +745,53 @@
         "path": "remove temporary review workflow"
       }
     ]
+  },
+  "cal06": {
+    "rules": "Owner replacement rules",
+    "audit": "docs/audits/NEP-20261018-CAL-06.json",
+    "legend": "FREE explainer · $1.99 guide · BOOK",
+    "mediaExplainerBadges": {
+      "free": 6,
+      "paid": 0,
+      "book": 0
+    },
+    "navigationBadges": false,
+    "bookPriceSource": "src/data/book-prices.mjs",
+    "validationRun": "https://github.com/cassiancreed/cassiancreed-astro/actions/runs/39162048455",
+    "allTestSuites": {
+      "passed": 73,
+      "failed": 0,
+      "skipped": 0
+    },
+    "responsive": [
+      {
+        "route": "/true-crime-watch-calendar/",
+        "width": 1280,
+        "selectedDates": 0,
+        "badges": {
+          "free": 6,
+          "paid": 0,
+          "book": 0
+        },
+        "scopeRules": "passed",
+        "priceBadges": "passed",
+        "ordering": "passed",
+        "overflow": false
+      },
+      {
+        "route": "/true-crime-watch-calendar/",
+        "width": 390,
+        "selectedDates": 0,
+        "badges": {
+          "free": 6,
+          "paid": 0,
+          "book": 0
+        },
+        "scopeRules": "passed",
+        "priceBadges": "passed",
+        "ordering": "passed",
+        "overflow": false
+      }
+    ]
   }
 }
