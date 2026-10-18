@@ -46,7 +46,8 @@ export function isRedirected(route, sources = readRedirectSources()) {
 }
 const gitDates = new Map();
 export function gitLastmod(source) {
-  if (gitDates.has(source)) return gitDates.get(source);
+  const key = resolve(source);
+  if (gitDates.has(key)) return gitDates.get(key);
   let date;
   try {
     const options = { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] };
@@ -58,7 +59,7 @@ export function gitLastmod(source) {
     // Its real change date is unknown; never substitute the checkout's date.
     if (!boundary && /^\d{4}-\d{2}-\d{2}$/.test(value ?? '')) date = value;
   } catch { /* Source dates are omitted when Git history is unavailable. */ }
-  gitDates.set(source, date);
+  gitDates.set(key, date);
   return date;
 }
 export function tsvLastmod(source) {
