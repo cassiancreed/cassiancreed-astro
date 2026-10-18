@@ -273,7 +273,7 @@ const visibleDayEntries = (entries) => {
         )) : <p class="home-calendar__empty">No tracked proceeding is currently scheduled for this date.</p>}
       </div>
       <p class="home-calendar__agenda-disclaimer">All defendants are presumed innocent unless and until convicted. Court dates move&mdash;confirm with the court before traveling.</p>
-      <aside class="calendar-book-card" data-calendar-book-card hidden={initialSelectedEntries.length === 0} aria-label="Jury Chess book">
+      <aside class="calendar-book-card" data-calendar-book-card hidden={!initialSelectedEntries.some((entry) => entry.explainerLinks.some((link) => link.type === 'book'))} aria-label="Jury Chess book">
         <h4>Jury Chess: How Criminal Jury Trials Actually Work</h4>
         <CalendarExplainerLink link={{ ...JURY_CHESS_LINK, placement: 'court_calendar_selected_date_footer' }} />
       </aside>
@@ -429,7 +429,7 @@ const visibleDayEntries = (entries) => {
         .filter((entry) => entry.dateISO === key)
         .sort((a, b) => b.displayPriority - a.displayPriority || a.caseName.localeCompare(b.caseName));
       const bookCard = root.querySelector('[data-calendar-book-card]');
-      if (bookCard) bookCard.hidden = selectedEntries.length === 0;
+      if (bookCard) bookCard.hidden = !selectedEntries.some((entry) => entry.explainerLinks.some((link) => link.type === 'book'));
       if (!selectedEntries.length) {
         const empty = document.createElement('p');
         empty.className = 'home-calendar__empty';
