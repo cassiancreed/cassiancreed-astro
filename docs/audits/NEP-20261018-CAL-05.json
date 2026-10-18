@@ -1,10 +1,11 @@
 {
   "job": "NEP-20261018-CAL-05",
+  "reviewRevision": true,
   "draftOnly": true,
-  "headTested": "e11eb1a800b471985fff0dba5ed384b978aba4d5",
+  "headTested": "032920ee75a9bc0010c02930adfe7548ba135da8",
   "base": "c7b88e81cf803f05e5f45b5bc48e6f3456f7544b",
-  "commit": "3931eedef9a8187e23331fe5aba2835ff6763907",
-  "checkedAt": "2026-10-18T17:18:37.560Z",
+  "commit": "b1d65e587238320fe370baf986dd53cde9cd0657",
+  "checkedAt": "2026-10-18T17:29:25.548Z",
   "unchangedTsvs": true,
   "legend": "FREE explainer · $ guide · BOOK",
   "badgeText": "#14110f",
@@ -18,6 +19,15 @@
     "paid": 11.909009545740567,
     "book": 10.636826129488155
   },
+  "bookEntryCount": 26,
+  "newBookEntryCount": 25,
+  "excludedBookIds": [
+    "goncalves-wsu-trial",
+    "aramburu-paris-trial",
+    "kepner-federal-trial",
+    "brianna-moore-trial",
+    "clancy-trial"
+  ],
   "bookEntries": [
     {
       "id": "faith-hedgepeth-trial",
@@ -43,11 +53,6 @@
       "id": "gardner-trial",
       "case": "Shanna Gardner — Jared Bridegan case",
       "event": "Evidentiary trial — rescheduled"
-    },
-    {
-      "id": "goncalves-wsu-trial",
-      "case": "Goncalves v. Washington State University",
-      "event": "Civil jury trial"
     },
     {
       "id": "bhatt-jury-selection",
@@ -80,16 +85,6 @@
       "event": "Trial on murder and gross-negligence vehicular-manslaughter charges"
     },
     {
-      "id": "brianna-moore-trial",
-      "case": "Brianna Moore — infant-death case",
-      "event": "Jury trial"
-    },
-    {
-      "id": "kepner-federal-trial",
-      "case": "Anna Kepner case — juvenile defendant",
-      "event": "Federal jury trial"
-    },
-    {
       "id": "preston-lord-meisner-trial",
       "case": "Jacob Meisner — Preston Lord case",
       "event": "Felony-murder and kidnapping trial"
@@ -120,11 +115,6 @@
       "event": "October 1 trial setting elapsed — outcome unverified"
     },
     {
-      "id": "clancy-trial",
-      "case": "Lindsay Clancy",
-      "event": "Murder trial — mistrial declared"
-    },
-    {
       "id": "salazar-clinkunbroomer-trial",
       "case": "Kevin Eduardo Cataneo Salazar — Deputy Ryan Clinkunbroomer case",
       "event": "Sanity-phase verdict — legally sane"
@@ -153,11 +143,6 @@
       "id": "banks-federal-trial",
       "case": "Durk Devontay Banks, known as Lil Durk — federal criminal trial",
       "event": "Jury verdict — Banks acquitted; co-defendants convicted on stalking counts"
-    },
-    {
-      "id": "aramburu-paris-trial",
-      "case": "Loïk Le Priol and co-defendants — Federico Martín Aramburú case",
-      "event": "Paris trial — first-instance verdict delivered"
     },
     {
       "id": "eaton-burlington-trial",
@@ -221,15 +206,28 @@
       "overflow": "none"
     }
   ],
-  "buildRun": "https://github.com/cassiancreed/cassiancreed-astro/actions/runs/39148873838",
-  "browserRun": "https://github.com/cassiancreed/cassiancreed-astro/actions/runs/39148873819",
-  "screenshotsArtifact": "https://github.com/cassiancreed/cassiancreed-astro/actions/runs/39148873819/artifacts/12144536733",
-  "calendarTests": 16,
+  "buildRun": "https://github.com/cassiancreed/cassiancreed-astro/actions/runs/39149689273",
+  "browserRun": "https://github.com/cassiancreed/cassiancreed-astro/actions/runs/39149689193",
+  "screenshotsArtifact": "https://github.com/cassiancreed/cassiancreed-astro/actions/runs/39149689193/artifacts/12144897079",
+  "calendarTests": 17,
+  "allNodeTests": 57,
+  "badgeFontSize": "11px",
+  "reviewChecks": {
+    "excludedIdsNeverBook": "passed",
+    "caseFileFallbackWhenOnlyBook": "passed",
+    "maryCollinsGuardRetained": true,
+    "originalJuryChessButtonRestored": true,
+    "footerAfterPresumptionDisclaimer": "passed",
+    "footerHiddenOnEmptyDates": "passed",
+    "legendAriaLabelRemoved": true,
+    "mobile390NoOverflow": "passed",
+    "colorsAndBadgeWordsUnchanged": true
+  },
   "notes": [
-    "GITHUB_SHA is GitHub's synthetic PR merge commit; headTested identifies the feature commit.",
-    "31 Jury Chess BOOK entry links: 30 newly added; Banks existing promo reclassified and routed to Books with its original text retained.",
-    "Free explainers and paid guide labels are unchanged; badge text and required legend/card are additions.",
-    "Temporary audit workflow removed after a successful remote browser run. Playwright installed only on the runner with no saved dependency or lockfile changes.",
+    "GITHUB_SHA is the synthetic PR merge commit; headTested identifies the source branch commit.",
+    "26 BOOK entries: 25 additions and the existing Banks promo reclassified, compared with main.",
+    "All three TSVs remain byte-identical to main/base. Dates, times, case notes, badges, legend words and colors are unchanged.",
+    "The temporary audit workflow is removed after successful verification.",
     "No merge or production deployment action taken."
   ]
 }
