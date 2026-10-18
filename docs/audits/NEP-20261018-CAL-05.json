@@ -6,7 +6,7 @@
   "base": "c7b88e81cf803f05e5f45b5bc48e6f3456f7544b",
   "commit": "f2a88efc28ef58ee67daab256d174f8d0d659fdd",
   "checkedAt": "2026-10-18T22:07:59.049Z",
-  "unchangedTsvs": true,
+  "unchangedTsvs": false,
   "legend": "FREE explainer · $1.99 guide · BOOK",
   "badgeText": "#14110f",
   "colors": {
@@ -95,24 +95,24 @@
   "builtPageBadges": {
     "/court-calendar/": {
       "free": {
-        "total": 0
+        "total": 187
       },
       "paid": {
-        "total": 0
+        "total": 52
       },
       "book": {
-        "total": 0
+        "total": 20
       }
     },
     "/": {
       "free": {
-        "total": 0
+        "total": 9
       },
       "paid": {
-        "total": 0
+        "total": 1
       },
       "book": {
-        "total": 0
+        "total": 1
       }
     }
   },
@@ -847,7 +847,7 @@
   ],
   "notes": [
     "9 BOOK entries. Banks and Eaton are excluded because their cases have living survivors. The previous Banks promo no longer qualifies.",
-    "Built Court Calendar has 0 total BOOK badge spans; Home has 0. These are static totals, not a new visibility measurement.",
+    "Built Court Calendar has 20 total BOOK badge spans; Home has 1. These are static totals, not a new visibility measurement.",
     "Court Calendar TSVs were not edited. Media TSV changed only in the seven owner-requested or row-reference-expansion cells recorded in the MEDIA-01 audit.",
     "No merge or production deployment action taken."
   ],
@@ -977,6 +977,39 @@
         "skipped": 0
       },
       "browser": "Not rerun; existing browser receipts remain historical."
+    },
+    "mediaTsvChanged": true,
+    "badgeCounts": {
+      "applicationHead": "4cde48198f5fb6669d1d05e0b07fca7c56abd125",
+      "run": "https://github.com/cassiancreed/cassiancreed-astro/actions/runs/39171113367",
+      "checkedAt": "2026-10-18T22:11:36.925Z",
+      "selector": "span.calendar-badge[data-link-type]",
+      "values": {
+        "/court-calendar/": {
+          "free": {
+            "total": 187
+          },
+          "paid": {
+            "total": 52
+          },
+          "book": {
+            "total": 20
+          }
+        },
+        "/": {
+          "free": {
+            "total": 9
+          },
+          "paid": {
+            "total": 1
+          },
+          "book": {
+            "total": 1
+          }
+        }
+      },
+      "excludedEntryRenderedBookCheck": "Banks and Eaton detailed entries have no BOOK badge"
     }
-  }
+  },
+  "unchangedCourtCalendarTsvs": true
 }
