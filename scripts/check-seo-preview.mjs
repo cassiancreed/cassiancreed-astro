@@ -41,10 +41,8 @@ try {
       if (path === '/court-calendar/') {
         const frames = page.locator('iframe[src*="subscribe-forms.beehiiv.com"]');
         assert.ok(await frames.count() > 0, 'Beehiiv iframe missing');
-        const frame = page.frames().find((frame) => frame.url().includes('subscribe-forms.beehiiv.com'));
-        assert.ok(frame, 'Beehiiv iframe did not navigate');
-        await frame.waitForLoadState('domcontentloaded', { timeout: 30000 });
-        assert.ok(await frame.locator('form,input').count() > 0, 'Beehiiv form did not render');
+        await frames.first().scrollIntoViewIfNeeded();
+        await page.frameLocator('iframe[src*="subscribe-forms.beehiiv.com"]').first().locator('form,input').first().waitFor({ state: 'attached', timeout: 30000 });
       }
       if (path === '/books/jury-chess/') {
         const checkout = page.locator('a[data-book-key="jury-chess"]').first();
