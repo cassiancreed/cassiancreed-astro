@@ -726,16 +726,12 @@ const PUBLISHED_POSTS = new Set([
 ]);
 // Reviewed event matches, not case names or stale IDs. No book is inferred
 // from a hearing's notes, a grand jury, or an appellate reference to a verdict.
-export const JURY_CHESS_ENTRY_IDS = new Set(["faith-hedgepeth-trial","michael-vaughan-trial","murdaugh-retrial","salazar-clinkunbroomer-trial","gardner-jury-selection","gardner-trial","bridegan-fernandez-trial","bhatt-jury-selection","farwell-jury-trial","farwell-trial-oct19","moore-sherman-trial","carter-brooks-trial","wagner-trial","killins-verdict-sentencing","crum-odom-verdict","elmore-laura-miller-trial","banks-federal-trial","bohm-trial","eaton-burlington-trial","mary-collins-trial","martin-risner-sentencing","conway-mo3-trial","virzi-trial","ryan-cavett-trial","preston-lord-meisner-trial","preston-lord-five-defendant-trial"]);
-export const JURY_CHESS_EXCLUDED_IDS = new Set(["goncalves-wsu-trial","aramburu-paris-trial","kepner-federal-trial","brianna-moore-trial","clancy-trial"]);
+export const JURY_CHESS_ENTRY_IDS = new Set(["faith-hedgepeth-trial","murdaugh-retrial","salazar-clinkunbroomer-trial","bhatt-jury-selection","moore-sherman-trial","killins-verdict-sentencing","banks-federal-trial","bohm-trial","eaton-burlington-trial","mary-collins-trial","martin-risner-sentencing","conway-mo3-trial"]);
+export const JURY_CHESS_EXCLUDED_IDS = new Set(["goncalves-wsu-trial","aramburu-paris-trial","kepner-federal-trial","brianna-moore-trial","clancy-trial","virzi-trial","michael-vaughan-trial","crum-odom-verdict","preston-lord-meisner-trial","preston-lord-five-defendant-trial","elmore-laura-miller-trial","wagner-trial","gardner-jury-selection","gardner-trial","bridegan-fernandez-trial","farwell-jury-trial","farwell-trial-oct19","carter-brooks-trial","ryan-cavett-trial"]);
+// Jury Chess only on US criminal jury events. Never civil, foreign, child-victim or juvenile cases. Owner may override per case.
 export function juryChessEligible(entry) {
   if (JURY_CHESS_EXCLUDED_IDS.has(entry.id)) return false;
-  if (JURY_CHESS_ENTRY_IDS.has(entry.id)) return true;
-  const event = entry.proceeding || entry.matter || entry.type || '';
-  // New explicitly identified jury phases work automatically. Do not infer a
-  // jury from a generic foreign trial, notes about a prior verdict, or a hearing.
-  if (/civil|grand[- ]jury|no verdict|post[- ]verdict|hearing|motion|appeal|bench trial|assize|tribunal|cour d/i.test(event)) return false;
-  return /\bjury (?:trial|selection|verdict|deliberations?|death(?:-penalty)? recommendation)\b|^(?:guilty |not[- ]guilty )?verdict\b|^deliberations?\b/i.test(event);
+  return JURY_CHESS_ENTRY_IDS.has(entry.id);
 }
 export const JURY_CHESS_LINK = {
   url: 'https://cassiancreed.com/books/',
@@ -804,6 +800,7 @@ export function calendarLinksFor(entry) {
   if (juryChessEligible(entry) && !links.some((link) => link.type === 'book')) links.push({ ...JURY_CHESS_LINK });
   // The existing Jury Chess promo retains its approved wording; its BOOK link
   // now goes to the same Books page as the other trial entries.
-  return links.map((link) => link.bookKey === 'jury-chess' ? { ...link, ...JURY_CHESS_LINK, text: link.text } : link)
+  return links.filter((link) => link.type !== 'book' || juryChessEligible(entry))
+    .map((link) => link.bookKey === 'jury-chess' ? { ...link, ...JURY_CHESS_LINK, text: link.text } : link)
     .sort((a, b) => CALENDAR_LINK_TYPES.indexOf(a.type) - CALENDAR_LINK_TYPES.indexOf(b.type));
 }
