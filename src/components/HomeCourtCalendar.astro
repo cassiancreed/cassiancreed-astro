@@ -184,7 +184,7 @@ const visibleDayEntries = (entries) => {
     </div>
   </div>
 
-  <p class="calendar-legend" aria-label="Calendar link types"><span><i class="calendar-dot" data-link-type="free" aria-hidden="true"></i>FREE explainer</span> · <span><i class="calendar-dot" data-link-type="paid" aria-hidden="true"></i>$ guide</span> · <span><i class="calendar-dot" data-link-type="book" aria-hidden="true"></i>BOOK</span></p>
+  <p class="calendar-legend"><span><i class="calendar-dot" data-link-type="free" aria-hidden="true"></i>FREE explainer</span> · <span><i class="calendar-dot" data-link-type="paid" aria-hidden="true"></i>$ guide</span> · <span><i class="calendar-dot" data-link-type="book" aria-hidden="true"></i>BOOK</span></p>
   <div class="home-calendar__layout">
     <div class="home-calendar__month" role="grid" aria-labelledby="home-calendar-title">
       {ongoingNowEntries.length > 0 && (
@@ -272,11 +272,11 @@ const visibleDayEntries = (entries) => {
           </article>
         )) : <p class="home-calendar__empty">No tracked proceeding is currently scheduled for this date.</p>}
       </div>
-      <aside class="calendar-book-card" aria-label="Jury Chess book">
+      <p class="home-calendar__agenda-disclaimer">All defendants are presumed innocent unless and until convicted. Court dates move&mdash;confirm with the court before traveling.</p>
+      <aside class="calendar-book-card" data-calendar-book-card hidden={initialSelectedEntries.length === 0} aria-label="Jury Chess book">
         <h4>Jury Chess: How Criminal Jury Trials Actually Work</h4>
         <CalendarExplainerLink link={{ ...JURY_CHESS_LINK, placement: 'court_calendar_selected_date_footer' }} />
       </aside>
-      <p class="home-calendar__agenda-disclaimer">All defendants are presumed innocent unless and until convicted. Court dates move&mdash;confirm with the court before traveling.</p>
     </aside>
   </div>
 
@@ -428,6 +428,8 @@ const visibleDayEntries = (entries) => {
       const selectedEntries = entries
         .filter((entry) => entry.dateISO === key)
         .sort((a, b) => b.displayPriority - a.displayPriority || a.caseName.localeCompare(b.caseName));
+      const bookCard = root.querySelector('[data-calendar-book-card]');
+      if (bookCard) bookCard.hidden = selectedEntries.length === 0;
       if (!selectedEntries.length) {
         const empty = document.createElement('p');
         empty.className = 'home-calendar__empty';
