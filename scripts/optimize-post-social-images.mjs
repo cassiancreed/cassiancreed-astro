@@ -7,9 +7,9 @@ import { postSocialImage } from '../src/utils/post-social-images.mjs';
 const results = [];
 mkdirSync('public/og', { recursive: true });
 for (const file of readdirSync('src/content/posts').filter((file) => /\.mdx?$/.test(file))) {
-  const slug = file.replace(/\.mdx?$/, '');
   const text = readFileSync(resolve('src/content/posts', file), 'utf8');
   const frontmatter = text.split(/^---\s*$/m)[1] ?? '';
+  const slug = frontmatter.match(/^slug:\s*["']?([^"'\r\n]+)["']?\s*$/m)?.[1]?.trim() ?? file.replace(/\.mdx?$/, '');
   const cover = frontmatter.match(/^cover:\s*(.+?)\s*$/m)?.[1]?.replace(/^["']|["']$/g, '');
   const requested = slug === 'tupac-shakur-homicide-evidence-evolution'
     ? '/og/why-was-keffe-d-convicted-tupac-shakur.png' : cover ?? '/og/' + slug + '.png';
