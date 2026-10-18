@@ -2,12 +2,12 @@
   "job": "NEP-20261018-CAL-05",
   "reviewRound": 2,
   "draftOnly": true,
-  "headTested": "f7c3917c8b396c169b096edf596d908029ad1e96",
+  "headTested": "f3b279bc271f393f17a1d47b05f801e84933a070",
   "base": "c7b88e81cf803f05e5f45b5bc48e6f3456f7544b",
-  "commit": "e921bad1b1bb71de0ad4af7ff8ec96f35d4fe536",
-  "checkedAt": "2026-10-18T17:53:50.220Z",
+  "commit": "f3b279bc271f393f17a1d47b05f801e84933a070",
+  "checkedAt": "2026-10-18T21:07:04.852Z",
   "unchangedTsvs": true,
-  "legend": "FREE explainer · $ guide · BOOK",
+  "legend": "FREE explainer · $1.99 guide · BOOK",
   "badgeText": "#14110f",
   "colors": {
     "free": "86efac",
@@ -19,8 +19,8 @@
     "paid": 11.909009545740567,
     "book": 10.636826129488155
   },
-  "bookEntryCount": 12,
-  "newBookEntryCount": 11,
+  "bookEntryCount": 11,
+  "newBookEntryCount": 10,
   "excludedBookIds": [
     "goncalves-wsu-trial",
     "aramburu-paris-trial",
@@ -40,7 +40,8 @@
     "farwell-jury-trial",
     "farwell-trial-oct19",
     "carter-brooks-trial",
-    "ryan-cavett-trial"
+    "ryan-cavett-trial",
+    "killins-verdict-sentencing"
   ],
   "bookEntries": [
     {
@@ -84,11 +85,6 @@
       "event": "Sanity-phase verdict — legally sane"
     },
     {
-      "id": "killins-verdict-sentencing",
-      "case": "Joseph Killins",
-      "event": "Verdict and sentencing — completed"
-    },
-    {
       "id": "banks-federal-trial",
       "case": "Durk Devontay Banks, known as Lil Durk — federal criminal trial",
       "event": "Jury verdict — Banks acquitted; co-defendants convicted on stalking counts"
@@ -107,30 +103,24 @@
   "builtPageBadges": {
     "/court-calendar/": {
       "free": {
-        "total": 183,
-        "visible": 183
+        "total": 187
       },
       "paid": {
-        "total": 52,
-        "visible": 52
+        "total": 52
       },
       "book": {
-        "total": 25,
-        "visible": 24
+        "total": 24
       }
     },
     "/": {
       "free": {
-        "total": 4,
-        "visible": 4
+        "total": 9
       },
       "paid": {
-        "total": 1,
-        "visible": 1
+        "total": 1
       },
       "book": {
-        "total": 1,
-        "visible": 0
+        "total": 1
       }
     }
   },
@@ -180,11 +170,11 @@
       "overflow": "none"
     }
   ],
-  "buildRun": "https://github.com/cassiancreed/cassiancreed-astro/actions/runs/39151553166",
+  "buildRun": "https://github.com/cassiancreed/cassiancreed-astro/actions/runs/39166357264",
   "browserRun": "https://github.com/cassiancreed/cassiancreed-astro/actions/runs/39151553103",
   "screenshotsArtifact": "https://github.com/cassiancreed/cassiancreed-astro/actions/runs/39151553103/artifacts/12144808512",
-  "calendarTests": 17,
-  "allNodeTests": 57,
+  "calendarTests": 19,
+  "allNodeTests": 74,
   "bookRule": "Jury Chess only on US criminal jury events. Never civil, foreign, child-victim or juvenile cases. Owner may override per case.",
   "allowlistOnly": true,
   "previousBookEntryCount": 26,
@@ -335,6 +325,12 @@
         "date": "2026-09"
       },
       "basis": "Additional source review"
+    },
+    {
+      "id": "killins-verdict-sentencing",
+      "case": "Joseph Killins",
+      "reason": "Living survivor.",
+      "basis": "Owner direction NEP-20261018-CAL-07"
     }
   ],
   "caseReview": [
@@ -593,9 +589,10 @@
         "label": "FOX 13 Tampa Bay, verdict report (August 2026)"
       },
       "secondarySource": "https://www.tampabay28.com/news/region-hillsborough/man-sentenced-to-4-life-terms-in-doordash-attack-in-hillsborough-county",
-      "decision": "keep",
-      "reason": "US criminal jury verdict; FOX 13 identifies the assault victim as 20 and Tampa Bay 28 describes the other two victims as women. Adult defendant; no minor victim identified in reviewed reports.",
-      "supplementarySources": []
+      "decision": "remove",
+      "reason": "Living survivor; owner-approved CAL-07 exclusion.",
+      "supplementarySources": [],
+      "basis": "Owner direction NEP-20261018-CAL-07"
     },
     {
       "id": "crum-odom-verdict",
@@ -817,7 +814,7 @@
       "supplementarySources": []
     }
   ],
-  "badgeCountMethod": "Initial server-rendered page with JavaScript disabled. Totals count DOM badges; visible excludes hidden footer badges. Detailed and case-by-case list each carry one BOOK badge per allowlisted entry.",
+  "badgeCountMethod": "CAL-07 counts total badge spans in freshly built HTML. Visibility is not remeasured; prior browser receipts are retained separately. Main Court Calendar includes detailed/list BOOK links, the existing page promo and the hidden footer.",
   "reviewChecks": {
     "unknownJuryRowsNeverBook": "passed",
     "explicitBooksUrlCannotBypassAllowlist": "passed",
@@ -835,10 +832,80 @@
     "Child-victim involvement is a case-level promo exclusion, including related allegations and endangered children; no current charge status is inferred from historical reports."
   ],
   "notes": [
-    "GITHUB_SHA is the synthetic PR merge commit; headTested identifies the feature commit.",
-    "12 BOOK entries: 11 added versus main and the pre-existing Banks promo reclassified.",
-    "The initial selected date has no allowlisted BOOK entry, so its footer is hidden: Court Calendar has 25 DOM BOOK badges, 24 visible; home has one hidden footer badge.",
-    "All three TSVs byte-identical to main/base. No dates, times, case notes, badge words, legend words or colors changed.",
+    "11 BOOK entries: 10 added versus main plus the existing Banks promo. Killins is excluded for a living survivor.",
+    "Built Court Calendar has 24 total BOOK badge spans. Home has one footer BOOK span; CAL-07 did not remeasure visibility.",
+    "Court Calendar TSVs and media-calendar.tsv were not edited. No dates, times, notes, badge words, legend words or colors changed in CAL-07.",
     "No merge or production deployment action taken."
-  ]
+  ],
+  "cal07": {
+    "reason": "living survivor",
+    "previousBookEntryCount": 12,
+    "bookEntryCount": 11,
+    "draftPR": 312,
+    "validation": {
+      "build": "passed",
+      "allSuites": {
+        "command": "MEDIA_LINK_CHECK=1 node --test scripts/test-*.mjs",
+        "passed": 74,
+        "failed": 0,
+        "skipped": 0
+      },
+      "applicationHead": "f3b279bc271f393f17a1d47b05f801e84933a070",
+      "run": "https://github.com/cassiancreed/cassiancreed-astro/actions/runs/39166357264",
+      "browser": "Not rerun for this allowlist-only removal; existing browser receipts retained with their original timestamps."
+    }
+  },
+  "historicalBrowserReceipt": {
+    "headTested": "f7c3917c8b396c169b096edf596d908029ad1e96",
+    "commit": "e921bad1b1bb71de0ad4af7ff8ec96f35d4fe536",
+    "checkedAt": "2026-10-18T17:53:50.220Z",
+    "browserRun": "https://github.com/cassiancreed/cassiancreed-astro/actions/runs/39151553103",
+    "screenshotsArtifact": "https://github.com/cassiancreed/cassiancreed-astro/actions/runs/39151553103/artifacts/12144808512",
+    "summaries": [
+      {
+        "width": 1280,
+        "route": "/court-calendar/",
+        "detailCount": 145,
+        "listCount": 145,
+        "selectedCount": 35,
+        "dotCount": 27,
+        "serverRendering": "passed",
+        "colors": "passed",
+        "overflow": "none"
+      },
+      {
+        "width": 1280,
+        "route": "/",
+        "detailCount": 0,
+        "listCount": 0,
+        "selectedCount": 35,
+        "dotCount": 27,
+        "serverRendering": "passed",
+        "colors": "passed",
+        "overflow": "none"
+      },
+      {
+        "width": 390,
+        "route": "/court-calendar/",
+        "detailCount": 145,
+        "listCount": 145,
+        "selectedCount": 35,
+        "dotCount": 27,
+        "serverRendering": "passed",
+        "colors": "passed",
+        "overflow": "none"
+      },
+      {
+        "width": 390,
+        "route": "/",
+        "detailCount": 0,
+        "listCount": 0,
+        "selectedCount": 35,
+        "dotCount": 27,
+        "serverRendering": "passed",
+        "colors": "passed",
+        "overflow": "none"
+      }
+    ]
+  }
 }
