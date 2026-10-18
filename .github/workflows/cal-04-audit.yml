@@ -1,0 +1,54 @@
+name: CAL-04 inventory and verification
+on:
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  inventory:
+    if: github.head_ref == 'court/2026-10-18-cal-04-explainer-links'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Inventory repo posts and live Beehiiv store products
+        run: |
+          node --input-type=module <<'JS'
+          import fs from 'node:fs/promises';
+          import path from 'node:path';
+          const walk=async(dir)=>{let out=[];for(const e of await fs.readdir(dir,{withFileTypes:true})){const p=path.join(dir,e.name);if(e.isDirectory())out.push(...await walk(p));else out.push(p)}return out};
+          const files=await walk('src');
+          const candidates=new Set();
+          for(const file of files){
+           const raw=await fs.readFile(file,'utf8');
+           for(const m of raw.matchAll(/https:\/\/cassiancreed\.beehiiv\.com\/products\/[a-z0-9-]+/g))candidates.add(m[0]);
+           if(file.startsWith('src/content/posts/')){
+            const front=raw.match(/^---\r?\n([\s\S]*?)\r?\n---/)?.[1]||'';
+            const field=(key)=>{const m=front.match(new RegExp('^'+key+':\\s*(.*)$','m'));return m?m[1].trim().replace(/^["']|["']$/g,''):null};
+            const slug=field('slug')||path.basename(file).replace(/\.(md|mdx)$/,'');
+            console.log('CAL04_POST '+JSON.stringify({file,slug,title:field('title'),date:field('pubDate'),archived:field('archived'),draft:field('draft'),victim:field('victim'),description:field('description'),status:field('status'),intro:raw.slice(raw.indexOf('---',3)+3).trim().slice(0,550)}));
+           }
+          }
+          const fetched=new Map();
+          async function get(url){try{const r=await fetch(url,{signal:AbortSignal.timeout(30000)});const html=await r.text();return {url,status:r.status,finalUrl:r.url,html}}catch(e){return {url,status:null,error:e.message,html:''}}}
+          for(const url of ['https://cassiancreed.beehiiv.com/products','https://cassiancreed.beehiiv.com/products/','https://cassiancreed.beehiiv.com/','https://cassiancreed.beehiiv.com/sitemap.xml']){
+           const page=await get(url);fetched.set(url,page);
+           const found=[...page.html.matchAll(/(?:https:\/\/cassiancreed\.beehiiv\.com)?\/products\/[a-z0-9-]+/g)].map(m=>m[0].startsWith('http')?m[0]:'https://cassiancreed.beehiiv.com'+m[0]);
+           found.forEach(x=>candidates.add(x));
+           console.log('CAL04_STORE '+JSON.stringify({url,status:page.status,products:[...new Set(found)],length:page.html.length,links:[...page.html.matchAll(/href=["']([^"']+)["']/g)].map(m=>m[1]).filter(x=>/product|store|shop|page=/i.test(x)).slice(0,100)}));
+          }
+          const decode=(s)=>s.replace(/&amp;/g,'&').replace(/&#x27;|&#39;|&apos;/g,"'").replace(/&quot;/g,'"').replace(/&nbsp;/g,' ').replace(/&#(\d+);/g,(_,n)=>String.fromCharCode(Number(n)));
+          async function product(url){
+           const p=await get(url);
+           const text=decode(p.html.replace(/<(script|style)\b[^>]*>[\s\S]*?<\/\1>/gi,' ').replace(/<[^>]+>/g,' ').replace(/\s+/g,' '));
+           const title=decode((p.html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/i)?.[1]||'').replace(/<[^>]+>/g,'').trim());
+           const prices=[...new Set(text.match(/\$\s?\d+(?:,\d{3})*(?:\.\d{2})?/g)||[])];
+           console.log('CAL04_PRODUCT '+JSON.stringify({url,status:p.status,finalUrl:p.finalUrl,title,prices,visible:text.slice(0,2200),error:p.error}));
+          }
+          const list=[...candidates].sort();for(let i=0;i<list.length;i+=6)await Promise.all(list.slice(i,i+6).map(product));
+          console.log('CAL04_INVENTORY_COMPLETE '+JSON.stringify({posts:files.filter(x=>x.startsWith('src/content/posts/')).length,products:list.length}));
+          
+          JS
