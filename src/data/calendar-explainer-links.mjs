@@ -727,10 +727,10 @@ const PUBLISHED_POSTS = new Set([
 ]);
 // Reviewed event matches, not case names or stale IDs. No book is inferred
 // from a hearing's notes, a grand jury, or an appellate reference to a verdict.
-export const JURY_CHESS_ENTRY_IDS = new Set(["faith-hedgepeth-trial","murdaugh-retrial","salazar-clinkunbroomer-trial","bhatt-jury-selection","moore-sherman-trial","banks-federal-trial","bohm-trial","eaton-burlington-trial","mary-collins-trial","martin-risner-sentencing","conway-mo3-trial"]);
+export const JURY_CHESS_ENTRY_IDS = new Set(["faith-hedgepeth-trial","murdaugh-retrial","salazar-clinkunbroomer-trial","bhatt-jury-selection","moore-sherman-trial","bohm-trial","mary-collins-trial","martin-risner-sentencing","conway-mo3-trial"]);
 // killins-verdict-sentencing: living survivor.
-export const JURY_CHESS_EXCLUDED_IDS = new Set(["goncalves-wsu-trial","aramburu-paris-trial","kepner-federal-trial","brianna-moore-trial","clancy-trial","virzi-trial","michael-vaughan-trial","crum-odom-verdict","preston-lord-meisner-trial","preston-lord-five-defendant-trial","elmore-laura-miller-trial","wagner-trial","gardner-jury-selection","gardner-trial","bridegan-fernandez-trial","farwell-jury-trial","farwell-trial-oct19","carter-brooks-trial","ryan-cavett-trial","killins-verdict-sentencing"]);
-// Jury Chess only on US criminal jury events. Never civil, foreign, child-victim or juvenile cases. Owner may override per case.
+export const JURY_CHESS_EXCLUDED_IDS = new Set(["goncalves-wsu-trial","aramburu-paris-trial","kepner-federal-trial","brianna-moore-trial","clancy-trial","virzi-trial","michael-vaughan-trial","crum-odom-verdict","preston-lord-meisner-trial","preston-lord-five-defendant-trial","elmore-laura-miller-trial","wagner-trial","gardner-jury-selection","gardner-trial","bridegan-fernandez-trial","farwell-jury-trial","farwell-trial-oct19","carter-brooks-trial","ryan-cavett-trial","killins-verdict-sentencing","eaton-burlington-trial","banks-federal-trial"]);
+// Jury Chess only on US criminal jury events. Never civil, foreign, child-victim, juvenile, or cases with a living survivor. Owner may override per case.
 export function juryChessEligible(entry) {
   if (JURY_CHESS_EXCLUDED_IDS.has(entry.id)) return false;
   return JURY_CHESS_ENTRY_IDS.has(entry.id);

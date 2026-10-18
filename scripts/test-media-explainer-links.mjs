@@ -92,3 +92,10 @@ test('review source labels and standing topics match their actual sources',()=>{
   assert.equal(abc.source_label,'ABC');
   assert.equal(abc.source_url,'https://abc.com/news/68176c48-d9cc-47a7-a237-d961a53fccaf/category/1138628');
 });
+
+test('reader-facing media fields never expose internal row-number references',()=>{
+  const fields=['date_iso','date_text','time_text','title','platform','type','topic','description','source_label','source2_label','last_verified'];
+  for(const row of rows) for(const field of fields) {
+    assert.doesNotMatch(row[field],/\brow\s+\d+/i,row.id+' '+field);
+  }
+});
