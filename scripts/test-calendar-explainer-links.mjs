@@ -64,3 +64,9 @@ test('review exclusions never receive BOOK links, even when their event is a jur
     assert.equal(juryChessEligible({proceeding}), false, proceeding);
   }
 });
+
+test('product and Books destinations override an erroneous free type',()=>{
+  for(const url of ['https://cassiancreed.beehiiv.com/products/future-guide','https://cassiancreed.beehiiv.com/products/jury-chess','/books/','/books/jury-chess/','https://cassiancreed.com/books/#jury-chess']) {
+    assert.notEqual(classifyCalendarLink({url,type:'free'}).badge,'FREE',url);
+  }
+});
