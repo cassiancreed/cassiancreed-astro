@@ -1,0 +1,47 @@
+name: CAL-07 build and all suites
+on:
+  push:
+    branches: [media/2026-10-18-watch-calendar]
+permissions:
+  contents: read
+concurrency:
+  group: cal07-validation
+  cancel-in-progress: true
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Full build
+        run: npm run build
+      - name: All suites including live URLs
+        run: MEDIA_LINK_CHECK=1 node --test scripts/test-*.mjs
+      - name: Record BOOK entries and built-page badge counts
+        run: |
+          node --input-type=module <<'CAL07_EOF'
+          import { readFileSync } from 'node:fs';
+          import assert from 'node:assert/strict';
+          import { calendarLinksFor, JURY_CHESS_EXCLUDED_IDS } from './src/data/calendar-explainer-links.mjs';
+          import { parseCourtCalendar } from './src/data/court-calendar-parser.mjs';
+          const c=parseCourtCalendar(readFileSync('src/data/court-calendar.tsv','utf8'));
+          const entries=[...c.entries,...c.appeals,...c.unconfirmed,...c.investigations,...c.completed];
+          const bookEntries=entries.filter(e=>calendarLinksFor(e).some(l=>l.type==='book')).map(e=>({id:e.id,case:e.case,event:e.proceeding}));
+          assert.equal(bookEntries.length,11);
+          assert.ok(!bookEntries.some(e=>e.id==='killins-verdict-sentencing'));
+          const counts={};
+          for(const [route,path] of [['/court-calendar/','dist/court-calendar/index.html'],['/','dist/index.html']]) {
+            const html=readFileSync(path,'utf8');
+            counts[route]={};
+            for(const type of ['free','paid','book']) {
+              const badges=[...html.matchAll(/<span\b[^>]*class="calendar-badge"[^>]*data-link-type="([^"]+)"[^>]*>/g)].filter(m=>m[1]===type);
+              counts[route][type]={total:badges.length};
+            }
+          }
+          console.log('CAL07_AUDIT '+JSON.stringify({commit:process.env.GITHUB_SHA,checkedAt:new Date().toISOString(),bookEntryCount:bookEntries.length,newBookEntryCount:bookEntries.length-1,bookEntries,excludedBookIds:[...JURY_CHESS_EXCLUDED_IDS],builtPageBadges:counts}));
+          CAL07_EOF
