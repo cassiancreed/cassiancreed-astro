@@ -1,5 +1,4 @@
 ---
-import CalendarCostBadge from '../components/CalendarCostBadge.astro';
 import '../styles/global.css';
 export interface Props {
   title: string;
@@ -181,7 +180,6 @@ function navActive(href){
   return false;
 }
 const exploreActive = resolvedExplore.some(i => navActive(i.href));
-const calendarCosts = ['/court-calendar/','/true-crime-watch-calendar/'].includes(Astro.url.pathname);
 ---
 <!doctype html>
 <html lang="en">
@@ -321,31 +319,31 @@ const calendarCosts = ['/court-calendar/','/true-crime-watch-calendar/'].include
   })();
   </script>
 </head>
-<body data-calendar-costs={calendarCosts || undefined}>
-  <a class="skip-link" href="#main-content">{calendarCosts && <CalendarCostBadge url="#main-content" />} Skip to main content</a>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <header class="site-head"><div class="site-head__inner">
-    <a class={homeActive ? "brand active" : "brand"} href="/" aria-current={homeActive ? "page" : undefined}>{calendarCosts && <CalendarCostBadge url="/" />} Cassian<br/>Creed</a>
+    <a class={homeActive ? "brand active" : "brand"} href="/" aria-current={homeActive ? "page" : undefined}>Cassian<br/>Creed</a>
     <nav class="nav nav--desktop" aria-label="Primary">
       {resolvedDesktopPrimary.slice(0, 3).map(i => (
-        <a href={i.href} class={navActive(i.href) ? 'active' : undefined} aria-current={navActive(i.href) ? 'page' : undefined}>{calendarCosts && <CalendarCostBadge url={i.href} />} {i.label}</a>
+        <a href={i.href} class={navActive(i.href) ? 'active' : undefined} aria-current={navActive(i.href) ? 'page' : undefined}>{i.label}</a>
       ))}
       <details class="nav__explore">
         <summary class={exploreActive ? 'active' : undefined}>More</summary>
         <div class="nav__panel">
           {resolvedExplore.map(i => (
-            <a href={i.href} class={navActive(i.href) ? 'active' : undefined} aria-current={navActive(i.href) ? 'page' : undefined}>{calendarCosts && <CalendarCostBadge url={i.href} />} {i.label}</a>
+            <a href={i.href} class={navActive(i.href) ? 'active' : undefined} aria-current={navActive(i.href) ? 'page' : undefined}>{i.label}</a>
           ))}
         </div>
       </details>
       {resolvedDesktopPrimary.slice(3).map(i => (
-        <a href={i.href} class:list={[navActive(i.href) && 'active', i.cta && 'nav__cta']} aria-current={navActive(i.href) ? 'page' : undefined}>{calendarCosts && <CalendarCostBadge url={i.href} />} {i.label}</a>
+        <a href={i.href} class:list={[navActive(i.href) && 'active', i.cta && 'nav__cta']} aria-current={navActive(i.href) ? 'page' : undefined}>{i.label}</a>
       ))}
     </nav>
     <details class="nav-menu">
       <summary>Menu</summary>
       <nav class="nav-menu__panel" aria-label="Mobile primary">
         {resolvedNav.map(i => (
-          <a href={i.href} class:list={[navActive(i.href) && 'active', i.cta && 'nav__cta']} aria-current={navActive(i.href) ? 'page' : undefined}>{calendarCosts && <CalendarCostBadge url={i.href} />} {i.label === 'Books' ? 'Jury Chess' : i.label}</a>
+          <a href={i.href} class:list={[navActive(i.href) && 'active', i.cta && 'nav__cta']} aria-current={navActive(i.href) ? 'page' : undefined}>{i.label === 'Books' ? 'Jury Chess' : i.label}</a>
         ))}
       </nav>
     </details>
@@ -354,7 +352,7 @@ const calendarCosts = ['/court-calendar/','/true-crime-watch-calendar/'].include
   <footer class="site-foot"><div class="site-foot__inner">
     <span class="evidence">© 2026 Neural Edge Publishing</span>
     <span class="site-foot__note">Sourced · victim-centered · no gratuitous detail.</span>
-            <span class="site-foot__social"><a href="/today/">{calendarCosts && <CalendarCostBadge url="/today/" />} What Changed</a> · <a href="/missing-persons/">{calendarCosts && <CalendarCostBadge url="/missing-persons/" />} Missing Persons</a> · <a href="/genealogy/">{calendarCosts && <CalendarCostBadge url="/genealogy/" />} Genealogy</a> · <a href="/explainers/">{calendarCosts && <CalendarCostBadge url="/explainers/" />} Explainers</a> · <a href="/guides/">{calendarCosts && <CalendarCostBadge url="/guides/" />} Guides</a> · <a href="/glossary/">{calendarCosts && <CalendarCostBadge url="/glossary/" />} Glossary</a> · <a href="/case-solver/">{calendarCosts && <CalendarCostBadge url="/case-solver/" />} Case Solver</a> · <a href="/forensic-tools/">{calendarCosts && <CalendarCostBadge url="/forensic-tools/" />} Forensic Tools</a> · <a href="/safety/">{calendarCosts && <CalendarCostBadge url="/safety/" />} Stay Safe</a> · <a href="/support/">{calendarCosts && <CalendarCostBadge url="/support/" />} Support</a> · <a href="/mission/">{calendarCosts && <CalendarCostBadge url="/mission/" />} Mission</a> · <a href="/about/">{calendarCosts && <CalendarCostBadge url="/about/" />} About</a>{internalLinksOnly ? <> · Follow on X · Follow on TikTok · Free newsletter</> : <> · <a href="https://x.com/CassianCreed">{calendarCosts && <CalendarCostBadge url="https://x.com/CassianCreed" />} Follow on X</a> · <a href="https://www.tiktok.com/@cassiancreed">{calendarCosts && <CalendarCostBadge url="https://www.tiktok.com/@cassiancreed" />} Follow on TikTok</a> · <a href="/#free-guide">{calendarCosts && <CalendarCostBadge url="/#free-guide" />} Free newsletter</a></>}</span>
+            <span class="site-foot__social"><a href="/today/">What Changed</a> · <a href="/missing-persons/">Missing Persons</a> · <a href="/genealogy/">Genealogy</a> · <a href="/explainers/">Explainers</a> · <a href="/guides/">Guides</a> · <a href="/glossary/">Glossary</a> · <a href="/case-solver/">Case Solver</a> · <a href="/forensic-tools/">Forensic Tools</a> · <a href="/safety/">Stay Safe</a> · <a href="/support/">Support</a> · <a href="/mission/">Mission</a> · <a href="/about/">About</a>{internalLinksOnly ? <> · Follow on X · Follow on TikTok · Free newsletter</> : <> · <a href="https://x.com/CassianCreed">Follow on X</a> · <a href="https://www.tiktok.com/@cassiancreed">Follow on TikTok</a> · <a href="/#free-guide">Free newsletter</a></>}</span>
   </div></footer>
   <script is:inline>
   (function(){
@@ -401,26 +399,5 @@ if(typeof gtag!=='undefined'){gtag('event','capture_outbound',{link_url:s.href,m
   import { initBeehiivParentSignup } from '../scripts/beehiiv-parent-signup.mjs';
   initBeehiivParentSignup();
 </script>
-<script>
-  import { ensureCalendarCostBadges } from '../scripts/calendar-cost-badges.mjs';
-  if (document.body.hasAttribute('data-calendar-costs')) {
-    ensureCalendarCostBadges();
-    let scheduled = false;
-    const observer = new MutationObserver(records => {
-      if (!records.some(record => record.type === 'attributes' || [...record.addedNodes].some(node => node.nodeType === 1))) return;
-      if (scheduled) return;
-      scheduled = true;
-      queueMicrotask(() => { scheduled = false; ensureCalendarCostBadges(); });
-    });
-    observer.observe(document.body,{childList:true,subtree:true,attributes:true,attributeFilter:['href']});
-  }
-</script>
-<style is:global>
-  /* Cost labels must not crowd the shared site navigation on calendar pages. */
-  @media(max-width:1450px){
-    body[data-calendar-costs] .nav--desktop{display:none}
-    body[data-calendar-costs] .nav-menu{display:block}
-  }
-</style>
 </body>
 </html>
