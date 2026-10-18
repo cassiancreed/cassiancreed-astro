@@ -771,7 +771,7 @@ const visibleDayEntries = (entries) => {
     .home-calendar__day-short{display:inline}
     .home-calendar__day,.home-calendar--full .home-calendar__day{min-height:58px;padding:5px;text-align:center}
     .home-calendar__event-label{display:none}
-    .home-calendar__day.has-events::after{display:none}
+    .home-calendar__day.has-events:not(:has(.calendar-dot))::after{display:block;width:5px;height:5px;margin:5px auto 0;border-radius:50%;background:var(--accent);content:""}
     .case-alert__inner{padding:24px 18px}
     .case-alert h2{font-size:29px}
   }
