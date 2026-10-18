@@ -1,4 +1,5 @@
 import test from 'node:test';
+import { JURY_CHESS_PRICE_TEXT } from '../src/data/book-prices.mjs';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { calendarLinksFor, classifyCalendarLink, calendarLinkTypesFor, juryChessEligible, JURY_CHESS_ENTRY_IDS, JURY_CHESS_EXCLUDED_IDS } from '../src/data/calendar-explainer-links.mjs';
@@ -9,7 +10,7 @@ const entries = [...calendar.entries, ...calendar.appeals, ...calendar.unconfirm
 test('classifies destinations with text badges and real catalog prices', () => {
   assert.equal(classifyCalendarLink({url:'/post/example/'}).badge, 'FREE');
   assert.equal(classifyCalendarLink({url:'https://cassiancreed.beehiiv.com/products/case-chess-erin-patterson'}).badge, '$2.99 GUIDE');
-  assert.equal(classifyCalendarLink({url:'/books/'}).badge, 'BOOK');
+  assert.equal(classifyCalendarLink({url:'/books/'}).badge, 'BOOK ' + JURY_CHESS_PRICE_TEXT);
   assert.equal(classifyCalendarLink({url:'https://cassiancreed.beehiiv.com/products/jury-chess'}).type, 'book');
   assert.equal(classifyCalendarLink({url:'https://cassiancreed.beehiiv.com/products/future-guide',price:'$3.99'}).badge, '$3.99 GUIDE');
 });
@@ -31,7 +32,7 @@ test('reviewed jury phases have exactly one approved Books link, including the e
     const links = calendarLinksFor(entry).filter(l=>l.bookKey==='jury-chess');
     assert.equal(links.length,1,id);
     assert.equal(links[0].url,'https://cassiancreed.com/books/',id);
-    assert.equal(links[0].badge,'BOOK',id);
+    assert.equal(links[0].badge,'BOOK ' + JURY_CHESS_PRICE_TEXT,id);
   }
 });
 test('unreviewed jury events never receive BOOK links', () => {
@@ -65,8 +66,14 @@ test('review exclusions never receive BOOK links, even when their event is a jur
   }
 });
 
-test('product and Books destinations override an erroneous free type',()=>{
-  for(const url of ['https://cassiancreed.beehiiv.com/products/future-guide','https://cassiancreed.beehiiv.com/products/jury-chess','/books/','/books/jury-chess/','https://cassiancreed.com/books/#jury-chess']) {
-    assert.notEqual(classifyCalendarLink({url,type:'free'}).badge,'FREE',url);
+test('paid and Books destinations cannot be overridden as FREE and always need real prices',()=>{
+  for(const url of ['https://cassiancreed.beehiiv.com/products/jury-chess','/books/','/books/jury-chess/','https://cassiancreed.com/books/#jury-chess']) {
+    assert.equal(classifyCalendarLink({url,type:'free'}).badge,'BOOK '+JURY_CHESS_PRICE_TEXT,url);
+  }
+  assert.equal(classifyCalendarLink({url:'https://cassiancreed.beehiiv.com/products/future-guide',type:'free',price:'$1.99'}).badge,'$1.99 GUIDE');
+  assert.throws(()=>classifyCalendarLink({url:'https://cassiancreed.beehiiv.com/products/unpriced-guide',type:'free'}),/Missing verified calendar product price/);
+  for(const entry of entries) for(const link of calendarLinksFor(entry)) {
+    if(link.type==='paid') assert.match(link.badge,/^\$\d+\.\d{2} GUIDE$/);
+    if(link.type==='book') assert.equal(link.badge,'BOOK '+JURY_CHESS_PRICE_TEXT);
   }
 });
