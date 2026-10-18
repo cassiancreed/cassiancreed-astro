@@ -2,112 +2,119 @@
   "job": "NEP-20261018-GUIDE-01",
   "draftPR": 314,
   "draftOnly": true,
+  "status": "passed",
   "base": "9a3632ab4de8e0f7088c36096f382310f447c066",
-  "applicationHead": "54596d5510d4cd8fbcc0b261cc01e4c03e1b0b1a",
-  "status": "blocked",
-  "blockedOperation": "Transfer two supplied preview PDF files without publishing signed download credentials or violating the owner's no-computer-use instruction.",
-  "suppliedPreviews": [
-    {
-      "name": "NEP D4vd guide v2 preview 2026-10-18.pdf",
-      "bytes": 324094,
-      "pages": 3,
-      "target": "public/previews/d4vd-guide-v2-preview.pdf",
-      "copied": false
-    },
-    {
-      "name": "NEP Both Sides Michelle Parker guide v3 preview 2026-10-18.pdf",
-      "bytes": 339517,
-      "pages": 3,
-      "target": "public/previews/michelle-parker-both-sides-v3-preview.pdf",
-      "copied": false
-    }
-  ],
+  "applicationHead": "c14938e37c2851406779cfae77a1d03b5bc0021c",
+  "checkedAt": "2026-10-18T23:31:12.373Z",
+  "scope": "Owner split: preview PDFs and links deferred to a separate follow-up. This PR only consolidates Parker v3 and retains the paid post offers/shared badge CSS.",
+  "previews": {
+    "included": false,
+    "linksIncluded": false,
+    "helperRemoved": true,
+    "fileTestRemoved": true,
+    "pdfsWereNeverCommitted": true
+  },
   "changes": [
-    "Single Parker v3 offer replaces both retired Parker offers, retaining matching free explainers first.",
-    "FREE preview links appear directly after the matching D4vd/Parker paid link in server and dynamic calendar views.",
-    "Both free posts use the unchanged shared badge CSS; the D4vd offer is between watch-next and Sources.",
-    "No dates, times, source notes or TSVs changed; main-derived branch stays separate from PR #312."
+    "Both retired Parker destinations replaced by one v3 offer per calendar entry.",
+    "Parker free-post sales link points to v3 with the approved title and $1.99 GUIDE badge.",
+    "D4vd paid-only section remains between watch-next and Sources.",
+    "Calendar badge CSS is reused unchanged by post pages.",
+    "No FREE badge is allowed on a Beehiiv product destination."
   ],
+  "unchangedTsvs": true,
   "validation": {
+    "run": "https://github.com/cassiancreed/cassiancreed-astro/actions/runs/39176735177",
     "build": {
       "command": "npm ci && npm run build",
-      "status": "blocked",
-      "reason": "Site validation reports the missing two preview files at their ten rendered references; Astro renders successfully.",
-      "run": "https://github.com/cassiancreed/cassiancreed-astro/actions/runs/39175006070"
+      "status": "passed"
     },
     "allSuites": {
       "command": "node --test scripts/test-*.mjs",
-      "tests": 64,
-      "passed": 63,
-      "failed": 1,
-      "skipped": 0,
-      "failure": "every preview is an unchanged PDF in the source and built public directory",
-      "run": "https://github.com/cassiancreed/cassiancreed-astro/actions/runs/39175118837"
+      "tests": 62,
+      "passed": 62,
+      "failed": 0,
+      "skipped": 0
     },
-    "uiAndPaidLinks": [
-      {
-        "width": 390,
-        "route": "/court-calendar/",
-        "previews": 7,
-        "overflow": false,
-        "colors": "passed",
-        "adjacent": "passed"
-      },
-      {
-        "width": 390,
-        "route": "/",
-        "previews": 1,
-        "overflow": false,
-        "colors": "passed",
-        "adjacent": "passed"
-      },
-      {
-        "width": 390,
-        "route": "/post/what-happens-at-d4vds-monday-hearing/",
-        "previews": 1,
-        "overflow": false,
-        "colors": "passed",
-        "adjacent": "passed"
-      },
-      {
-        "width": 390,
-        "route": "/post/michelle-parker-case-dale-smith-charged-no-body/",
-        "previews": 1,
-        "overflow": false,
-        "colors": "passed",
-        "adjacent": "passed"
-      },
+    "calendarTests": 17,
+    "offerTests": 5,
+    "calendarUI": [
       {
         "width": 1280,
         "route": "/court-calendar/",
-        "previews": 7,
-        "overflow": false,
+        "detailCount": 145,
+        "listCount": 145,
+        "selectedCount": 35,
+        "dotCount": 27,
+        "serverRendering": "passed",
         "colors": "passed",
-        "adjacent": "passed"
+        "overflow": "none"
       },
       {
         "width": 1280,
         "route": "/",
-        "previews": 1,
-        "overflow": false,
+        "detailCount": 0,
+        "listCount": 0,
+        "selectedCount": 35,
+        "dotCount": 27,
+        "serverRendering": "passed",
         "colors": "passed",
-        "adjacent": "passed"
+        "overflow": "none"
+      },
+      {
+        "width": 390,
+        "route": "/court-calendar/",
+        "detailCount": 145,
+        "listCount": 145,
+        "selectedCount": 35,
+        "dotCount": 27,
+        "serverRendering": "passed",
+        "colors": "passed",
+        "overflow": "none"
+      },
+      {
+        "width": 390,
+        "route": "/",
+        "detailCount": 0,
+        "listCount": 0,
+        "selectedCount": 35,
+        "dotCount": 27,
+        "serverRendering": "passed",
+        "colors": "passed",
+        "overflow": "none"
+      }
+    ],
+    "postUIAndPaidLinks": [
+      {
+        "width": 390,
+        "route": "/post/what-happens-at-d4vds-monday-hearing/",
+        "offers": 1,
+        "previews": 0,
+        "overflow": false,
+        "paidBadge": "passed"
+      },
+      {
+        "width": 390,
+        "route": "/post/michelle-parker-case-dale-smith-charged-no-body/",
+        "offers": 1,
+        "previews": 0,
+        "overflow": false,
+        "paidBadge": "passed"
       },
       {
         "width": 1280,
         "route": "/post/what-happens-at-d4vds-monday-hearing/",
-        "previews": 1,
+        "offers": 1,
+        "previews": 0,
         "overflow": false,
-        "colors": "passed",
-        "adjacent": "passed"
+        "paidBadge": "passed"
       },
       {
         "width": 1280,
         "route": "/post/michelle-parker-case-dale-smith-charged-no-body/",
-        "previews": 1,
+        "offers": 1,
+        "previews": 0,
         "overflow": false,
-        "colors": "passed",
-        "adjacent": "passed"
+        "paidBadge": "passed"
       },
       {
         "url": "https://cassiancreed.beehiiv.com/products/both-sides-michelle-parker-guide-v3",
@@ -121,8 +128,8 @@
       }
     ]
   },
-  "remaining": [
-    "Safely commit the two supplied PDF byte streams unchanged.",
-    "Rerun npm ci && npm run build and all suites; verify both local preview endpoints return 200."
+  "notes": [
+    "No local-computer use, merge, production deployment or production settings change.",
+    "The previous missing-PDF build blocker is resolved by removing previews from this PR, as instructed."
   ]
 }
