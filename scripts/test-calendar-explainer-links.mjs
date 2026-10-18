@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { calendarLinksFor, classifyCalendarLink, calendarLinkTypesFor, juryChessEligible, JURY_CHESS_ENTRY_IDS } from '../src/data/calendar-explainer-links.mjs';
+import { calendarLinksFor, classifyCalendarLink, calendarLinkTypesFor, juryChessEligible, JURY_CHESS_ENTRY_IDS, JURY_CHESS_EXCLUDED_IDS } from '../src/data/calendar-explainer-links.mjs';
 import { parseCourtCalendar } from '../src/data/court-calendar-parser.mjs';
 const calendar = parseCourtCalendar(readFileSync(new URL('../src/data/court-calendar.tsv', import.meta.url), 'utf8'));
 const entries = [...calendar.entries, ...calendar.appeals, ...calendar.unconfirmed, ...calendar.investigations, ...calendar.completed];
@@ -42,4 +42,18 @@ test('new jury events work automatically without linking grand juries or hearing
 test('day markers aggregate all entries and retain free, paid, book order', () => {
   assert.deepEqual(calendarLinkTypesFor([{explainerLinks:[{type:'book'},{type:'free'}]},{explainerLinks:[{type:'paid'}]}]),['free','paid','book']);
   assert.deepEqual(calendarLinkTypesFor([]),[]);
+});
+
+test('review exclusions never receive BOOK links, even when their event is a jury trial', () => {
+  assert.deepEqual([...JURY_CHESS_EXCLUDED_IDS], ["goncalves-wsu-trial","aramburu-paris-trial","kepner-federal-trial","brianna-moore-trial","clancy-trial"]);
+  for (const id of JURY_CHESS_EXCLUDED_IDS) {
+    const entry = entries.find(e => e.id === id);
+    assert.ok(entry, id);
+    assert.equal(JURY_CHESS_ENTRY_IDS.has(id), false, id);
+    assert.equal(juryChessEligible({...entry, proceeding: 'Jury trial'}), false, id);
+    assert.equal(calendarLinksFor(entry).some(link => link.type === 'book'), false, id);
+  }
+  for (const proceeding of ['Civil jury trial', 'Assize jury trial', 'Tribunal jury trial', 'Cour d’assises jury trial']) {
+    assert.equal(juryChessEligible({proceeding}), false, proceeding);
+  }
 });
