@@ -17,7 +17,7 @@
   },
   "bookPolicy": "Allowlist-only; empty allowlist. Every first-list row excluded. Never infer eligibility from a title or topic.",
   "copyNotes": [
-    "All titles, date labels, time labels and descriptions copied exactly from Part 2. 'Same as row' topic references are preserved in TSV and resolved for display.",
+    "Owner-supplied copy is retained except review-approved corrections recorded in reviewRound1 and cal08. Internal row-number topic references are expanded using their referenced entries.",
     "Internal verification codes stay in the TSV only. The public page uses limited plain-language source caveats and never blanket verification claims.",
     "The Alexander supplement uses only the exact review-approved verdict and scheduled-sentencing wording.",
     "Weekly slots are finite, with only the dates in the owner list. They do not recur beyond that list.",
@@ -649,7 +649,8 @@
   "copyVerification": {
     "rowCount": 28,
     "fieldsCompared": 168,
-    "mismatches": []
+    "mismatches": [],
+    "scope": "Historical initial source comparison; subsequent approved changes are recorded in reviewRound1 and cal08."
   },
   "inventory": {
     "sameCasePostCandidates": [],
@@ -793,5 +794,69 @@
         "overflow": false
       }
     ]
+  },
+  "cal08": {
+    "job": "NEP-20261018-CAL-08",
+    "draftPR": 312,
+    "applicationHead": "f2a88efc28ef58ee67daab256d174f8d0d659fdd",
+    "checkedAt": "2026-10-18T22:07:59.049Z",
+    "changes": [
+      {
+        "id": "media-13",
+        "field": "topic",
+        "before": "Same as row 1",
+        "after": "1985 cold case in St. Bernard Parish, Louisiana (victim: Dorothy Lou Thompson)"
+      },
+      {
+        "id": "media-15",
+        "field": "topic",
+        "before": "Same as row 2",
+        "after": "Mothers accused of violent crimes"
+      },
+      {
+        "id": "media-16",
+        "field": "topic",
+        "before": "Same as row 3",
+        "after": "Online lies that led to real harm"
+      },
+      {
+        "id": "media-22",
+        "field": "topic",
+        "before": "Dramatized version of the Isabel Fuentes case (row 20)",
+        "after": "Dramatized version of the Isabel Fuentes case (see the Nov 6 film)"
+      },
+      {
+        "id": "media-25",
+        "field": "time_text",
+        "before": "Per row 24 guide: 8 PM (check local PBS)",
+        "after": "One guide lists 8 PM (check local PBS)"
+      },
+      {
+        "id": "media-25",
+        "field": "topic",
+        "before": "Same as row 24",
+        "after": "History of U.S. criminal justice, colonial era to today"
+      },
+      {
+        "id": "media-25",
+        "field": "description",
+        "before": "Night 2 of 4 (Parts 3–4 fall Nov 18–19, after this window).",
+        "after": "Night 2 of 4 (Parts 3–4 fall Nov 18–19, after Nov 17)."
+      }
+    ],
+    "changedCells": 7,
+    "otherCellsUnchanged": true,
+    "topicExpansion": "media-13 copies media-01; media-15 copies media-02; media-16 copies media-03; media-25 copies media-24. No new topic claims introduced.",
+    "readerFacingRowReferenceGuard": "passed",
+    "validation": {
+      "run": "https://github.com/cassiancreed/cassiancreed-astro/actions/runs/39170837605",
+      "build": "passed",
+      "allSuites": {
+        "command": "MEDIA_LINK_CHECK=1 node --test scripts/test-*.mjs",
+        "passed": 75,
+        "failed": 0,
+        "skipped": 0
+      }
+    }
   }
 }

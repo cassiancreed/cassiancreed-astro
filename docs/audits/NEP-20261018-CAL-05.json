@@ -2,10 +2,10 @@
   "job": "NEP-20261018-CAL-05",
   "reviewRound": 2,
   "draftOnly": true,
-  "headTested": "f3b279bc271f393f17a1d47b05f801e84933a070",
+  "headTested": "f2a88efc28ef58ee67daab256d174f8d0d659fdd",
   "base": "c7b88e81cf803f05e5f45b5bc48e6f3456f7544b",
-  "commit": "f3b279bc271f393f17a1d47b05f801e84933a070",
-  "checkedAt": "2026-10-18T21:07:04.852Z",
+  "commit": "f2a88efc28ef58ee67daab256d174f8d0d659fdd",
+  "checkedAt": "2026-10-18T22:07:59.049Z",
   "unchangedTsvs": true,
   "legend": "FREE explainer · $1.99 guide · BOOK",
   "badgeText": "#14110f",
@@ -19,8 +19,8 @@
     "paid": 11.909009545740567,
     "book": 10.636826129488155
   },
-  "bookEntryCount": 11,
-  "newBookEntryCount": 10,
+  "bookEntryCount": 9,
+  "newBookEntryCount": 9,
   "excludedBookIds": [
     "goncalves-wsu-trial",
     "aramburu-paris-trial",
@@ -41,7 +41,9 @@
     "farwell-trial-oct19",
     "carter-brooks-trial",
     "ryan-cavett-trial",
-    "killins-verdict-sentencing"
+    "killins-verdict-sentencing",
+    "eaton-burlington-trial",
+    "banks-federal-trial"
   ],
   "bookEntries": [
     {
@@ -85,16 +87,6 @@
       "event": "Sanity-phase verdict — legally sane"
     },
     {
-      "id": "banks-federal-trial",
-      "case": "Durk Devontay Banks, known as Lil Durk — federal criminal trial",
-      "event": "Jury verdict — Banks acquitted; co-defendants convicted on stalking counts"
-    },
-    {
-      "id": "eaton-burlington-trial",
-      "case": "Jason Eaton — Burlington shooting case",
-      "event": "Attempted-murder trial — guilty verdicts"
-    },
-    {
       "id": "mary-collins-trial",
       "case": "James Salerno and Lavi Pham — Mary Collins case",
       "event": "Jury verdicts and sentencing — completed"
@@ -103,24 +95,24 @@
   "builtPageBadges": {
     "/court-calendar/": {
       "free": {
-        "total": 187
+        "total": 0
       },
       "paid": {
-        "total": 52
+        "total": 0
       },
       "book": {
-        "total": 24
+        "total": 0
       }
     },
     "/": {
       "free": {
-        "total": 9
+        "total": 0
       },
       "paid": {
-        "total": 1
+        "total": 0
       },
       "book": {
-        "total": 1
+        "total": 0
       }
     }
   },
@@ -170,12 +162,12 @@
       "overflow": "none"
     }
   ],
-  "buildRun": "https://github.com/cassiancreed/cassiancreed-astro/actions/runs/39166357264",
+  "buildRun": "https://github.com/cassiancreed/cassiancreed-astro/actions/runs/39170837605",
   "browserRun": "https://github.com/cassiancreed/cassiancreed-astro/actions/runs/39151553103",
   "screenshotsArtifact": "https://github.com/cassiancreed/cassiancreed-astro/actions/runs/39151553103/artifacts/12144808512",
   "calendarTests": 19,
-  "allNodeTests": 74,
-  "bookRule": "Jury Chess only on US criminal jury events. Never civil, foreign, child-victim or juvenile cases. Owner may override per case.",
+  "allNodeTests": 75,
+  "bookRule": "Jury Chess only on US criminal jury events. Never civil, foreign, child-victim, juvenile, or cases with a living survivor. Owner may override per case.",
   "allowlistOnly": true,
   "previousBookEntryCount": 26,
   "removedThisRound": [
@@ -331,6 +323,26 @@
       "case": "Joseph Killins",
       "reason": "Living survivor.",
       "basis": "Owner direction NEP-20261018-CAL-07"
+    },
+    {
+      "id": "eaton-burlington-trial",
+      "case": "Jason Eaton — Burlington shooting case",
+      "reason": "Living survivors Hisham Awartani, Tahseen Aliahmad and Kinnan Abdalhamid; owner CAL-08 exclusion.",
+      "basis": "Owner direction NEP-20261018-CAL-08",
+      "source": {
+        "url": "https://www.vtcourts.gov/courts/court-calendars/cnd_cal.htm",
+        "label": "Vermont Judiciary, September 21 Chittenden Criminal Division calendar"
+      }
+    },
+    {
+      "id": "banks-federal-trial",
+      "case": "Durk Devontay Banks, known as Lil Durk — federal criminal trial",
+      "reason": "Living survivor Tyquian Bowman (Quando Rondo); owner CAL-08 exclusion.",
+      "basis": "Owner direction NEP-20261018-CAL-08",
+      "source": {
+        "url": "https://www.courthousenews.com/rapper-lil-durk-found-of-murder-for-hire/",
+        "label": "Courthouse News Service, courtroom verdict report (September 11, 2026)"
+      }
     }
   ],
   "caseReview": [
@@ -635,8 +647,8 @@
         "label": "Courthouse News Service, courtroom verdict report (September 11, 2026)"
       },
       "secondarySource": "https://au.rollingstone.com/music/music-news/lil-durk-verdict-quando-rondo-conspiracy-trial-akademiks-100978/",
-      "decision": "keep",
-      "reason": "US criminal jury verdict; CNS identifies Robinson as 24. Adult defendants; no minor victim identified in this trial entry.",
+      "decision": "exclude",
+      "reason": "Living survivor Tyquian Bowman (Quando Rondo); owner CAL-08 exclusion.",
       "supplementarySources": []
     },
     {
@@ -672,8 +684,8 @@
         "label": "Vermont Judiciary, September 21 Chittenden Criminal Division calendar"
       },
       "secondarySource": "https://apnews.com/article/e45b47e83e9f079817c66cd28a25afbe",
-      "decision": "keep",
-      "reason": "US criminal jury verdict; three adult students, aged 20 at the shooting; adult defendant (48 then, 51 at trial).",
+      "decision": "exclude",
+      "reason": "Living survivors Hisham Awartani, Tahseen Aliahmad and Kinnan Abdalhamid; owner CAL-08 exclusion.",
       "supplementarySources": [
         {
           "url": "https://www.nbcnewyork.com/news/national-international/jason-eaton-convicted-burlington-vermont-student-shooting/6550254/",
@@ -814,7 +826,7 @@
       "supplementarySources": []
     }
   ],
-  "badgeCountMethod": "CAL-07 counts total badge spans in freshly built HTML. Visibility is not remeasured; prior browser receipts are retained separately. Main Court Calendar includes detailed/list BOOK links, the existing page promo and the hidden footer.",
+  "badgeCountMethod": "CAL-08 counts total badge spans in freshly built HTML. Visibility is not remeasured; historical browser receipts retain their original timestamps.",
   "reviewChecks": {
     "unknownJuryRowsNeverBook": "passed",
     "explicitBooksUrlCannotBypassAllowlist": "passed",
@@ -823,18 +835,20 @@
     "caseFileFallbackPreserved": "passed",
     "originalItalicJuryChessButtonPreserved": true,
     "legendAndColorsUnchanged": true,
-    "noOverflowAt390px": "passed"
+    "noOverflowAt390px": "Historical browser result only; not rerun for CAL-08 data/copy edits.",
+    "livingSurvivorIdsNeverBook": "passed",
+    "readerFacingMediaFieldsHaveNoRowNumberReferences": "passed"
   },
   "sourceAccessNotes": [
     "All 26 former allowlist TSV rows and their source references were inspected. Unavailable source pages were corroborated with accessible reporting or clearly labeled search extracts; no calendar facts were rewritten.",
     "Duval PDFs could not be fetched; the accessible October 7 News4JAX report describes the same shooting and toddler endangerment. All three Bridegan entries were excluded.",
-    "KERA original URL failed; FOX 4's September 14 full courtroom report corroborates the Conway trial context. AP/NBC Eaton full articles were blocked; court listing, AP search extracts and Boston Globe search extracts support adult criminal jury eligibility.",
+    "Historical source-review note: KERA original URL failed; FOX 4's September 14 full courtroom report corroborates the Conway trial context. AP/NBC Eaton full articles were blocked; court listing, AP search extracts and Boston Globe search extracts support adult criminal jury eligibility. CAL-08 now excludes Eaton because the case has living survivors.",
     "Child-victim involvement is a case-level promo exclusion, including related allegations and endangered children; no current charge status is inferred from historical reports."
   ],
   "notes": [
-    "11 BOOK entries: 10 added versus main plus the existing Banks promo. Killins is excluded for a living survivor.",
-    "Built Court Calendar has 24 total BOOK badge spans. Home has one footer BOOK span; CAL-07 did not remeasure visibility.",
-    "Court Calendar TSVs and media-calendar.tsv were not edited. No dates, times, notes, badge words, legend words or colors changed in CAL-07.",
+    "9 BOOK entries. Banks and Eaton are excluded because their cases have living survivors. The previous Banks promo no longer qualifies.",
+    "Built Court Calendar has 0 total BOOK badge spans; Home has 0. These are static totals, not a new visibility measurement.",
+    "Court Calendar TSVs were not edited. Media TSV changed only in the seven owner-requested or row-reference-expansion cells recorded in the MEDIA-01 audit.",
     "No merge or production deployment action taken."
   ],
   "cal07": {
@@ -907,5 +921,62 @@
         "overflow": "none"
       }
     ]
+  },
+  "cal08": {
+    "draftPR": 312,
+    "prior": {
+      "applicationHead": "f3b279bc271f393f17a1d47b05f801e84933a070",
+      "bookEntryCount": 11,
+      "newBookEntryCount": 10,
+      "builtPageBadges": {
+        "/court-calendar/": {
+          "free": {
+            "total": 187
+          },
+          "paid": {
+            "total": 52
+          },
+          "book": {
+            "total": 24
+          }
+        },
+        "/": {
+          "free": {
+            "total": 9
+          },
+          "paid": {
+            "total": 1
+          },
+          "book": {
+            "total": 1
+          }
+        }
+      }
+    },
+    "removed": [
+      {
+        "id": "eaton-burlington-trial",
+        "reason": "Living survivors Hisham Awartani, Tahseen Aliahmad and Kinnan Abdalhamid; owner CAL-08 exclusion."
+      },
+      {
+        "id": "banks-federal-trial",
+        "reason": "Living survivor Tyquian Bowman (Quando Rondo); owner CAL-08 exclusion."
+      }
+    ],
+    "bookEntryCount": 9,
+    "rule": "Jury Chess only on US criminal jury events. Never civil, foreign, child-victim, juvenile, or cases with a living survivor. Owner may override per case.",
+    "validation": {
+      "applicationHead": "f2a88efc28ef58ee67daab256d174f8d0d659fdd",
+      "run": "https://github.com/cassiancreed/cassiancreed-astro/actions/runs/39170837605",
+      "checkedAt": "2026-10-18T22:07:59.049Z",
+      "build": "passed",
+      "allSuites": {
+        "command": "MEDIA_LINK_CHECK=1 node --test scripts/test-*.mjs",
+        "passed": 75,
+        "failed": 0,
+        "skipped": 0
+      },
+      "browser": "Not rerun; existing browser receipts remain historical."
+    }
   }
 }
