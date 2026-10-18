@@ -1,4 +1,4 @@
-import { readFileSync, readdirSync } from 'node:fs';
+import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import { resolve, relative } from 'node:path';
 import { CONTENT_CATEGORIES } from '../data/content-categories.mjs';
@@ -49,9 +49,14 @@ export function gitLastmod(source) {
   if (gitDates.has(source)) return gitDates.get(source);
   let date;
   try {
-    const result = execFileSync('git', ['log', '-1', '--format=%cs', '--', source],
-      { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim();
-    if (/^\d{4}-\d{2}-\d{2}$/.test(result)) date = result;
+    const options = { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] };
+    const [commit, value] = execFileSync('git',
+      ['log', '-1', '--format=%H %cs', '--', ':(literal)' + source], options).trim().split(/\s+/);
+    const shallowFile = execFileSync('git', ['rev-parse', '--git-path', 'shallow'], options).trim();
+    const boundary = existsSync(shallowFile) && readFileSync(shallowFile, 'utf8').split(/\r?\n/).includes(commit);
+    // A shallow boundary makes every surviving file look newly introduced.
+    // Its real change date is unknown; never substitute the checkout's date.
+    if (!boundary && /^\d{4}-\d{2}-\d{2}$/.test(value ?? '')) date = value;
   } catch { /* Source dates are omitted when Git history is unavailable. */ }
   gitDates.set(source, date);
   return date;
