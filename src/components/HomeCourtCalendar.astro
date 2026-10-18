@@ -1,4 +1,5 @@
 ---
+import CalendarCostBadge from './CalendarCostBadge.astro';
 import calendarTsv from '../data/court-calendar.tsv?raw';
 import CalendarExplainerLink from './CalendarExplainerLink.astro';
 import { calendarLinksFor, calendarLinkTypesFor, JURY_CHESS_LINK } from '../data/calendar-explainer-links.mjs';
@@ -165,7 +166,7 @@ const visibleDayEntries = (entries) => {
         <CalendarHeading id="home-calendar-title">Court Calendar</CalendarHeading>
         {!fullPage && <p>Verified hearings, trials, and rulings worth following. Dates can change; each entry connects back to the public record and our related coverage.</p>}
       </div>
-      {!fullPage && <a class="home-calendar__full-link" href="/court-calendar/">View the full calendar &rarr;</a>}
+      {!fullPage && <a class="home-calendar__full-link" href="/court-calendar/"><CalendarCostBadge url="/court-calendar/" /> View the full calendar &rarr;</a>}
     </div>
 
     <div class="home-calendar__controls" aria-label="Calendar controls">
@@ -184,14 +185,14 @@ const visibleDayEntries = (entries) => {
     </div>
   </div>
 
-  <p class="calendar-legend"><span><i class="calendar-dot" data-link-type="free" aria-hidden="true"></i>FREE explainer</span> · <span><i class="calendar-dot" data-link-type="paid" aria-hidden="true"></i>$ guide</span> · <span><i class="calendar-dot" data-link-type="book" aria-hidden="true"></i>BOOK</span></p>
+  <p class="calendar-legend"><span><i class="calendar-dot" data-link-type="free" aria-hidden="true"></i>FREE = no cost</span> · <span><i class="calendar-dot" data-link-type="paid" aria-hidden="true"></i>$ guide = $1.99</span> · <span><i class="calendar-dot" data-link-type="book" aria-hidden="true"></i>BOOK</span></p>
   <div class="home-calendar__layout">
     <div class="home-calendar__month" role="grid" aria-labelledby="home-calendar-title">
       {ongoingNowEntries.length > 0 && (
         <div class="home-calendar__ongoing" aria-label="Trials currently underway">
           <span>Trials underway</span>
           {ongoingNowEntries.map((entry) => (
-            <a href={`/court-calendar/#${entry.id}`}>{preferredCalendarLabels.get(entry.id) || entry.case.split(' — ')[0]}</a>
+            <a href={`/court-calendar/#${entry.id}`}><CalendarCostBadge url={`/court-calendar/#${entry.id}`} /> {preferredCalendarLabels.get(entry.id) || entry.case.split(' — ')[0]}</a>
           ))}
         </div>
       )}
@@ -248,24 +249,24 @@ const visibleDayEntries = (entries) => {
                   <h5>{entry.book.title}</h5>
                   <p class="home-calendar__book-tagline">{entry.book.tagline}</p>
                   <p class="home-calendar__book-offer"><strong>{entry.book.price}</strong><span>{entry.book.format}</span></p>
-                  <a href={entry.book.url} target="_blank" rel="noopener noreferrer" data-book-key={entry.book.bookKey} data-cta-placement={entry.book.placement}>Get the trial guide <span aria-hidden="true">&rarr;</span></a>
+                  <a href={entry.book.url} target="_blank" rel="noopener noreferrer" data-book-key={entry.book.bookKey} data-cta-placement={entry.book.placement}><CalendarCostBadge url={entry.book.url} /> Get the trial guide <span aria-hidden="true">&rarr;</span></a>
                 </div>
               </aside>
             )}
             <p class="home-calendar__agenda-court">{entry.court}</p>
-            <p class="home-calendar__agenda-source"><span>Source:</span> <a href={entry.sourceUrl} target="_blank" rel="noopener noreferrer">{entry.sourceLabel}</a></p>
+            <p class="home-calendar__agenda-source"><span>Source:</span> <a href={entry.sourceUrl} target="_blank" rel="noopener noreferrer"><CalendarCostBadge url={entry.sourceUrl} /> {entry.sourceLabel}</a></p>
             <div class="home-calendar__agenda-actions">
               {entry.explainerLinks.map((link) => <CalendarExplainerLink link={link} />)}
-              <a href={`/court-calendar/#${entry.id}`}>Calendar details &rarr;</a>
+              <a href={`/court-calendar/#${entry.id}`}><CalendarCostBadge url={`/court-calendar/#${entry.id}`} /> Calendar details &rarr;</a>
               {fullPage ? (
-                <a href="#court-updates">Get court calendar updates &rarr;</a>
+                <a href="#court-updates"><CalendarCostBadge url="#court-updates" /> Get court calendar updates &rarr;</a>
               ) : (
                 <>
-                  <button type="button" data-calendar-alert>Get court calendar updates</button>
+                  <button type="button" data-calendar-alert><CalendarCostBadge url="#court-updates" /> Get court calendar updates</button>
                   {/* NEP-FIX-0824: the alert form lives in a JS-opened <dialog>. Without
                       this no-JS anchor the calendar signup is unreachable when scripts
                       fail or are blocked. */}
-                  <noscript><a class="home-calendar__alert-noscript" href={CALENDAR_ALERT_URL} target="_blank" rel="noopener noreferrer">Get court calendar updates &rarr;</a></noscript>
+                  <noscript><a class="home-calendar__alert-noscript" href={CALENDAR_ALERT_URL} target="_blank" rel="noopener noreferrer"><CalendarCostBadge url={CALENDAR_ALERT_URL} /> Get court calendar updates &rarr;</a></noscript>
                 </>
               )}
             </div>
@@ -308,7 +309,7 @@ const visibleDayEntries = (entries) => {
             frameborder="0"
           ></iframe>
         </div>
-        <p class="case-alert__fallback">Form not loading? <a data-calendar-alert-fallback data-nep-campaign="court_calendar_updates" data-nep-conversion-page={Astro.url.pathname} data-nep-cta-id="court_calendar_alert_fallback" data-nep-form-id={CALENDAR_ALERT_FORM_ID} data-nep-offer-id="court_calendar_updates" href={`https://subscribe-forms.beehiiv.com/v3/forms/${CALENDAR_ALERT_FORM_ID}?utm_source=website&amp;utm_medium=calendar_alert&amp;utm_campaign=court_calendar_updates`} target="_blank" rel="noopener noreferrer">Get court calendar updates &rarr;</a></p>
+        <p class="case-alert__fallback">Form not loading? <a data-calendar-alert-fallback data-nep-campaign="court_calendar_updates" data-nep-conversion-page={Astro.url.pathname} data-nep-cta-id="court_calendar_alert_fallback" data-nep-form-id={CALENDAR_ALERT_FORM_ID} data-nep-offer-id="court_calendar_updates" href={`https://subscribe-forms.beehiiv.com/v3/forms/${CALENDAR_ALERT_FORM_ID}?utm_source=website&amp;utm_medium=calendar_alert&amp;utm_campaign=court_calendar_updates`} target="_blank" rel="noopener noreferrer"><CalendarCostBadge url={`https://subscribe-forms.beehiiv.com/v3/forms/${CALENDAR_ALERT_FORM_ID}?utm_source=website&amp;utm_medium=calendar_alert&amp;utm_campaign=court_calendar_updates`} /> Get court calendar updates &rarr;</a></p>
         <p class="case-alert__helper">You can unsubscribe from any email.</p>
         <p class="case-alert__success" data-calendar-alert-success role="status" hidden><strong>You&rsquo;re on the list.</strong> Watch your inbox for court calendar updates.</p>
       </div>
@@ -317,6 +318,7 @@ const visibleDayEntries = (entries) => {
 </section>
 
 <script>
+  import { appendCalendarCostBadge } from '../scripts/calendar-cost-badges.mjs';
   import { calendarLinkTypesFor } from '../data/calendar-explainer-links.mjs';
   import { calendarSignupUrl } from '../scripts/calendar-signup-acquisition.mjs';
   const root = document.querySelector('[data-home-calendar]');
@@ -365,6 +367,7 @@ const visibleDayEntries = (entries) => {
       const link = document.createElement('a');
       link.href = href;
       link.textContent = `${label} →`;
+      appendCalendarCostBadge(link);
       return link;
     }
 
@@ -402,6 +405,7 @@ const visibleDayEntries = (entries) => {
       cta.dataset.bookKey = book.bookKey;
       cta.dataset.ctaPlacement = book.placement;
       cta.textContent = 'Get the trial guide →';
+      appendCalendarCostBadge(cta, {url:book.url,price:book.price});
       copy.append(eyebrow, title, tagline, offer, cta);
       promo.append(cover, copy);
       return promo;
@@ -464,6 +468,7 @@ const visibleDayEntries = (entries) => {
         sourcePrefix.textContent = 'Source: ';
         const sourceLink = createActionLink(entry.sourceUrl, entry.sourceLabel);
         sourceLink.textContent = entry.sourceLabel;
+        appendCalendarCostBadge(sourceLink);
         sourceLink.target = '_blank';
         sourceLink.rel = 'noopener noreferrer';
         source.append(sourcePrefix, sourceLink);
@@ -473,13 +478,10 @@ const visibleDayEntries = (entries) => {
           const action = createActionLink(link.url, link.text);
           action.className = 'calendar-resource';
           action.dataset.linkType = link.type;
-          const badge = document.createElement('span');
-          badge.className = 'calendar-badge';
-          badge.dataset.linkType = link.type;
-          badge.textContent = link.badge;
           const label = document.createElement('span');
-          label.textContent = action.textContent;
-          action.replaceChildren(badge, label);
+          label.textContent = link.text + ' →';
+          action.replaceChildren(label);
+          appendCalendarCostBadge(action,link);
           if (link.bookKey) action.dataset.bookKey = link.bookKey;
           if (link.placement) action.dataset.ctaPlacement = link.placement;
           if (link.paid) {
@@ -497,6 +499,7 @@ const visibleDayEntries = (entries) => {
           const alertButton = document.createElement('button');
           alertButton.type = 'button';
           alertButton.textContent = 'Get court calendar updates';
+          appendCalendarCostBadge(alertButton,{url:'#court-updates'});
           alertButton.addEventListener('click', openAlert);
           actions.append(alertButton);
         }
