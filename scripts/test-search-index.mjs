@@ -19,10 +19,25 @@ test('noindex detection accepts attribute order and bot directives', () => {
   assert.equal(isNoindex('<meta name="googlebot" content="noindex">'), true);
   assert.equal(isNoindex('<meta name="robots" content="index,follow">'), false);
 });
-test('sitemap parser retains source dates and TSV dates are not build dates', () => {
+test('sitemap parser and both TSV metadata layouts retain their source dates', async () => {
   assert.deepEqual(sitemapEntries('<url><loc>https://cassiancreed.com/</loc><lastmod>2026-06-01</lastmod></url>'),
     [{ url: 'https://cassiancreed.com/', lastmod: '2026-06-01' }]);
-  assert.equal(tsvLastmod('src/data/court-calendar-archive.tsv'), '2026-09-09');
+  const { mkdtempSync, writeFileSync, rmSync } = await import('node:fs');
+  const { tmpdir } = await import('node:os');
+  const { join } = await import('node:path');
+  const directory = mkdtempSync(join(tmpdir(), 'seo-tsv-date-'));
+  const source = join(directory, 'calendar.tsv');
+  try {
+    for (const row of [
+      ['meta', 'last_updated', '', '2020-01-02'],
+      ['meta', 'last_updated', ...Array(11).fill(''), '2020-01-02'],
+    ]) {
+      writeFileSync(source, row.join('\t') + '\n');
+      assert.equal(tsvLastmod(source), '2020-01-02');
+    }
+    writeFileSync(source, 'meta\tpage_title\t\tNo source date\n');
+    assert.equal(tsvLastmod(source), undefined);
+  } finally { rmSync(directory, { recursive: true, force: true }); }
 });
 
 test('Git dates use literal source paths and omit unknown shallow-history dates', async () => {
