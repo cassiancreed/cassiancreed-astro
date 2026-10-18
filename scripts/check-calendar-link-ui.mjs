@@ -32,6 +32,8 @@ for (const width of [1280,390]) {
     await page.waitForSelector('[data-calendar-days] button');
     assert.equal((await page.locator('.calendar-legend').innerText()).replace(/\s+/g,' ').trim(),'FREE explainer · $ guide · BOOK');
     assert.equal(await page.locator('.calendar-book-card').count(),1);
+    assert.equal(await page.locator('.calendar-book-card').isVisible(),await page.locator('[data-calendar-agenda] [data-calendar-entry]').count() > 0);
+    assert.equal(await page.locator('.home-calendar__agenda-disclaimer').evaluate(n=>n.nextElementSibling?.classList.contains('calendar-book-card')),true);
     assert.equal(await page.locator('.calendar-book-card a').getAttribute('href'),'https://cassiancreed.com/books/');
     const raw=JSON.parse(await page.locator('[data-calendar-json]').textContent());
     const buildDate=await page.locator('[data-home-calendar]').getAttribute('data-build-date');
@@ -46,7 +48,12 @@ for (const width of [1280,390]) {
         const detail=page.locator('[id="'+e.id+'"]');
         if(!await detail.count()) continue;
         const scope=detail.locator('.row__links,.card__links').first();
-        if(await scope.count()){await checkLinks(scope,calendarLinksFor(e),'detail '+e.id);detailCount++;}
+        if(await scope.count()){
+          const expected = calendarLinksFor(e);
+          await checkLinks(scope,expected,'detail '+e.id);
+          if(e.id !== 'mary-collins-trial') assert.equal(await scope.locator('.card__soon').count(),expected.every(link=>link.type==='book') ? 1 : 0,'case-file fallback '+e.id);
+          detailCount++;
+        }
         const index=page.locator('[data-calendar-list-entry="'+e.id+'"]');
         if(await index.count()){await checkLinks(index,calendarLinksFor(e),'list '+e.id);listCount++;}
       }
@@ -72,6 +79,7 @@ for (const width of [1280,390]) {
       for(const type of expectedTypes) assert.ok(aria.includes({free:'FREE explainer',paid:'paid guide',book:'BOOK'}[type]),'accessible dot '+date);
       dotCount++;
       await day.click();
+      assert.equal(await page.locator('.calendar-book-card').isVisible(),true);
       for(const e of dayEntries) {
         const item=page.locator('[data-calendar-agenda] [data-calendar-entry="'+e.id+'"]');
         assert.equal(await item.count(),1,e.id);
@@ -79,11 +87,18 @@ for (const width of [1280,390]) {
         selectedCount++;
       }
     }
+    // Select a real empty day, then return to today. BOOK card must hide on empty dates.
+    await page.locator('[data-calendar-today]').click();
+    const emptyDay = page.locator('[data-calendar-date]:not(.has-events)').first();
+    assert.ok(await emptyDay.count());
+    await emptyDay.click();
+    assert.equal(await page.locator('.calendar-book-card').isVisible(),false);
     await page.locator('[data-calendar-today]').click();
     assert.equal(await page.locator('.calendar-book-card').count(),1);
     assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+2),false,'page width '+width+' '+route);
-    const badgeColors=await page.locator('.calendar-badge').evaluateAll(ns=>ns.map(n=>({type:n.dataset.linkType,color:getComputedStyle(n).color,bg:getComputedStyle(n).backgroundColor})));
+    const badgeColors=await page.locator('.calendar-badge').evaluateAll(ns=>ns.map(n=>({type:n.dataset.linkType,color:getComputedStyle(n).color,bg:getComputedStyle(n).backgroundColor,fontSize:getComputedStyle(n).fontSize})));
     for(const b of badgeColors){
+      assert.equal(b.fontSize,'11px');
       assert.equal(b.color,'rgb(20, 17, 15)');
       assert.equal(b.bg,{free:'rgb(134, 239, 172)',paid:'rgb(246, 199, 107)',book:'rgb(216, 180, 254)'}[b.type]);
     }
@@ -95,6 +110,6 @@ for (const width of [1280,390]) {
   await context.close();
 }
 await browser.close();
-const receipt={base,commit:process.env.GITHUB_SHA,checkedAt:new Date().toISOString(),unchangedTsvs:true,legend:'FREE explainer · $ guide · BOOK',badgeText:'#14110f',colors,contrastRatios:ratios,bookEntries,summaries};
+const receipt={base,commit:process.env.GITHUB_SHA,checkedAt:new Date().toISOString(),unchangedTsvs:true,legend:'FREE explainer · $ guide · BOOK',badgeText:'#14110f',colors,contrastRatios:ratios,bookEntryCount:bookEntries.length,newBookEntryCount:bookEntries.length-1,excludedBookIds:["goncalves-wsu-trial","aramburu-paris-trial","kepner-federal-trial","brianna-moore-trial","clancy-trial"],bookEntries,summaries};
 writeFileSync('cal05-receipts/audit.json',JSON.stringify(receipt,null,2));
 console.log('CAL05_AUDIT '+JSON.stringify(receipt));
