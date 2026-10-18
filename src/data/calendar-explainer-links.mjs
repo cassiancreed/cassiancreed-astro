@@ -746,8 +746,13 @@ export const CALENDAR_LINK_TYPES = ['free', 'paid', 'book'];
 export function classifyCalendarLink(link) {
   const path = pathKey(link.url);
   const product = Object.values(LIVE_PRODUCTS).find((item) => pathKey(item.url) === path);
-  const type = link.type || (path === '/books' || link.bookKey === 'jury-chess' || /\/products\/(jury-chess|two-stories-one-verdict)$/.test(path) ? 'book'
-    : /^https:\/\/cassiancreed\.beehiiv\.com\/products\//.test(link.url) ? 'paid' : 'free');
+  // A caller may never label a product checkout or Books destination FREE.
+  let destination;
+  try { destination = new URL(link.url, 'https://cassiancreed.com'); } catch { destination = { hostname:'', pathname:'' }; }
+  const productDestination = destination.hostname.endsWith('.beehiiv.com') && destination.pathname.startsWith('/products/');
+  const bookDestination = ((destination.hostname === 'cassiancreed.com' || destination.hostname === 'www.cassiancreed.com') && /^\/books(?:\/|$)/.test(destination.pathname))
+    || /\/products\/(jury-chess|two-stories-one-verdict)\/?$/.test(destination.pathname) || link.bookKey === 'jury-chess';
+  const type = bookDestination ? 'book' : productDestination ? 'paid' : link.type || 'free';
   const price = product?.price || link.price;
   return { ...link, type, price, paid: type === 'paid', badge: type === 'free' ? 'FREE' : type === 'book' ? 'BOOK' : price ? price + ' GUIDE' : 'GUIDE' };
 }
