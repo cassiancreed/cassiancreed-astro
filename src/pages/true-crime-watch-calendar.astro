@@ -11,37 +11,6 @@ const court = parseCourtCalendar(courtRaw);
 const courtEntries = [...court.entries,...court.appeals,...court.unconfirmed,...court.investigations,...court.completed];
 const today = pacificToday();
 const asOf = new Intl.DateTimeFormat('en-US',{month:'long',day:'numeric',year:'numeric',timeZone:'UTC'}).format(new Date(calendar.asOf+'T12:00:00Z'));
-const statusText = { 'V-OFF':'Verified: official source.', 'V-TRADE':'Verified: trade or news sources.', UNCONF:'Not yet confirmed by the network.' };
-const sourceNotes = {
-  "media-01": "V-OFF (series) / V-TRADE (episode time)",
-  "media-02": "V-OFF",
-  "media-03": "V-OFF",
-  "media-04": "V-OFF",
-  "media-05": "V-OFF",
-  "media-06": "V-OFF",
-  "media-07": "V-OFF (company release)",
-  "media-08": "V-OFF (slot) / V-TRADE (Oct 21 date)",
-  "media-09": "V-OFF (month) / V-TRADE (Oct 22)",
-  "media-10": "V-OFF",
-  "media-11": "V-OFF (via reprint)",
-  "media-12": "V-OFF (via reprint)",
-  "media-13": "V-OFF (series) / V-TRADE (episode time)",
-  "media-14": "V-OFF",
-  "media-15": "V-OFF",
-  "media-16": "V-OFF",
-  "media-17": "V-TRADE (3 sources; official text not read)",
-  "media-18": "V-OFF",
-  "media-19": "V-OFF (date) / topic from 1 non-official source",
-  "media-20": "V-OFF",
-  "media-21": "V-OFF (company release)",
-  "media-22": "V-TRADE (2 sources; Netflix page not read)",
-  "media-23": "V-OFF",
-  "media-24": "V-OFF (date) / time UNCONF",
-  "media-25": "UNCONF (1 non-official source)",
-  "media-s1": "V-TRADE (official NBC schedule page did not load)",
-  "media-s2": "V-OFF (slot)",
-  "media-s3": "V-OFF (season) / V-TRADE (slot)"
-};
 function topicFor(row) {
   const match = row.topic.match(/^Same as row (\d+)$/);
   return match ? calendar.rows.find(item => item.id === 'media-'+match[1].padStart(2,'0'))?.topic : row.topic;
@@ -71,11 +40,18 @@ function topicFor(row) {
             return <article class="watch-row" id={row.id} data-media-dates={JSON.stringify(mediaDates(row))} data-standing={row.standing} hidden={!mediaVisible(row,today)}>
               <p class="watch-date">{row.date_text} · {row.time_text}</p>
               <h3>{row.title}</h3>
-              <dl><div><dt>Where</dt><dd>{row.platform}</dd></div><div><dt>Type</dt><dd>{row.type}</dd></div><div><dt>Topic</dt><dd>{topicFor(row)}</dd></div></dl>
+              <dl><div><dt>Where</dt><dd>{row.platform}</dd></div><div><dt>Type</dt><dd>{row.type}</dd></div>{topicFor(row) && <div><dt>Topic</dt><dd>{topicFor(row)}</dd></div>}</dl>
               <p class="watch-description">{row.description}</p>
-              {row.id === 'media-14' && <p>Oren, Alon and Tal Alexander were found guilty by a federal jury in March 2026. Their convictions stand, with sentencing set for Oct 27.</p>}
+              {row.id === 'media-14' && <p>Oren, Alon and Tal Alexander were found guilty by a federal jury in March 2026. Sentencing is set for Oct 27.</p>}
               <p class="watch-sources"><a href={row.source_url}>{row.source_label} →</a>{row.source2_url && <><span aria-hidden="true"> · </span><a href={row.source2_url}>{row.source2_label} →</a></>}</p>
-              <p class="watch-status" data-status={row.status}>{statusText[row.status]} <span class="watch-source-note">{sourceNotes[row.id]}</span></p>
+              {['media-01','media-13'].includes(row.id) && <p class="watch-status">The episode time comes from trade sources.</p>}
+              {row.id === 'media-08' && <p class="watch-status">The Oct 21 date comes from a trade listing.</p>}
+              {row.id === 'media-09' && <p class="watch-status">The Oct 22 date comes from a trade source.</p>}
+              {row.id === 'media-s3' && <p class="watch-status">The time slot comes from trade sources.</p>}
+              {row.id === 'media-17' && <p class="watch-status">Official text not yet read.</p>}
+              {row.id === 'media-22' && <p class="watch-status">Netflix's own page not yet read.</p>}
+              {row.id === 'media-s1' && <p class="watch-status">From trade sources.</p>}
+              {row.id === 'media-25' && <p class="watch-status">Not yet confirmed by the network.</p>}
               {row.id === 'media-24' && <p class="watch-status">The time is not yet confirmed by the network.</p>}
               {row.id === 'media-19' && <p class="watch-status">The case details come from one outside listing.</p>}
               {courtLink && <p><a class="watch-cross-link" href={courtLink.url}>{courtLink.text}</a></p>}
@@ -127,7 +103,6 @@ function topicFor(row) {
   dt{font-size:14px}dd{margin:0;font-size:15px}
   .watch-description{margin:16px 0}
   .watch-sources{font-size:14px;overflow-wrap:anywhere}
-  .watch-source-note{display:block;font-size:12px}
   .watch-link-label{margin:0;font-size:14px;font-weight:600}
   @media(max-width:600px){.watch-calendar{padding-top:24px}.watch-row{padding:16px}.watch-row h3{font-size:25px}}
 </style>
