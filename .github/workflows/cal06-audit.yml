@@ -1,0 +1,115 @@
+name: CAL-06 replacement-rule validation
+on:
+  push:
+    branches: [media/2026-10-18-watch-calendar]
+permissions:
+  contents: read
+concurrency:
+  group: cal06-validation
+  cancel-in-progress: true
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Full build and HTML badge checks
+        run: npm run build
+      - name: All test suites with live URL checks
+        run: MEDIA_LINK_CHECK=1 node --test scripts/test-*.mjs
+      - name: Install ephemeral browser tools
+        run: |
+          npm install --no-save --package-lock=false playwright
+          npx playwright install --with-deps chromium
+      - name: Local preview and responsive calendar audits
+        run: |
+          cat > scripts/.cal06-ui.mjs <<'CAL06_EOF'
+          import assert from 'node:assert/strict';
+          import { mkdirSync,writeFileSync } from 'node:fs';
+          import { chromium } from 'playwright';
+          import { classifyCalendarLink } from '../src/data/calendar-explainer-links.mjs';
+          import { JURY_CHESS_PRICE_TEXT } from '../src/data/book-prices.mjs';
+          const browser=await chromium.launch();
+          mkdirSync('cal06-receipts',{recursive:true});
+          const summaries=[];
+          for(const width of [1280,390]) {
+            const context=await browser.newContext({viewport:{width,height:1000}});
+            const page=await context.newPage();
+            const errors=[];page.on('pageerror',e=>errors.push(e.message));
+            async function assertRules(label) {
+              const links=await page.locator('a[href]').evaluateAll(ns=>ns.map(n=>({href:n.getAttribute('href'),text:n.textContent.trim(),badges:[...n.querySelectorAll('.calendar-badge')].map(b=>b.textContent),resource:n.classList.contains('calendar-resource'),promo:n.id==='jury-chess-court-calendar',plainNav:!!n.closest('.site-head,.site-foot'),cross:n.classList.contains('watch-cross-link')})));
+              for(const link of links) {
+                if(link.plainNav || link.cross || /Calendar details|What to watch:|Real cases in court:|In court: .*Court Calendar|In court now|Detailed entries|Closed cases|Report a correction/.test(link.text)) assert.deepEqual(link.badges,[],label+' nav '+link.href);
+                if(link.badges.includes('FREE')) {
+                  assert.doesNotMatch(link.href,/\.beehiiv\.com\/products\/|\/books(?:\/|$)/);
+                  assert.ok(link.resource || /court-updates|subscribe-forms\.beehiiv\.com/.test(link.href),label+' free scope '+link.href);
+                }
+                if(link.resource||link.promo)assert.deepEqual(link.badges,[classifyCalendarLink({url:link.href}).badge],label+' '+link.href);
+              }
+              for(const button of await page.locator('button[data-calendar-alert]').all())assert.equal(await button.locator('.calendar-badge').innerText(),'FREE');
+              for(const a of await page.locator('.home-calendar__agenda-actions a[href="#court-updates"]').all())assert.equal(await a.locator('.calendar-badge').innerText(),'FREE');
+              assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+2),false,label+' page overflow');
+              assert.deepEqual(await page.locator('.calendar-resource').evaluateAll(ns=>ns.filter(n=>n.scrollWidth>n.clientWidth+2).map(n=>n.textContent)),[],label+' clipped resource');
+            }
+            for(const route of ['/court-calendar/','/true-crime-watch-calendar/']) {
+              await page.goto('http://127.0.0.1:4321'+route,{waitUntil:'networkidle'});
+              assert.equal((await page.locator('.calendar-legend').innerText()).replace(/\s+/g,' ').trim(),'FREE explainer · $1.99 guide · BOOK');
+              await assertRules(route);
+              let selectedDates=0;
+              if(route==='/court-calendar/') {
+                const raw=JSON.parse(await page.locator('[data-calendar-json]').textContent());
+                const buildDate=await page.locator('[data-home-calendar]').getAttribute('data-build-date');
+                const dates=[...new Set(raw.filter(e=>e.dateISO>=buildDate).map(e=>e.dateISO))].sort();
+                for(const date of dates) {
+                  let n=0;while(!await page.locator('[data-calendar-date="'+date+'"]').count()&&n++<24)await page.locator('[data-calendar-next]').click();
+                  await page.locator('[data-calendar-date="'+date+'"]').click();
+                  await assertRules('selected '+date);
+                  for(const entry of raw.filter(e=>e.dateISO===date)) {
+                    const scope=page.locator('[data-calendar-agenda] [data-calendar-entry="'+entry.id+'"] .home-calendar__agenda-actions');
+                    const kinds=await scope.locator('.calendar-resource').evaluateAll(ns=>ns.map(n=>n.dataset.linkType));
+                    assert.deepEqual(kinds,[...kinds].sort((a,b)=>['free','paid','book'].indexOf(a)-['free','paid','book'].indexOf(b)));
+                  }
+                  selectedDates++;
+                }
+                await page.locator('[data-calendar-today]').click();
+              } else {
+                assert.equal(await page.locator('.watch-row').count(),28);
+                assert.equal(await page.locator('.watch-row .calendar-badge[data-link-type="book"]').count(),0);
+                assert.equal(await page.locator('#media-25 .watch-status').innerText(),'Not yet confirmed by the network.');
+              }
+              const badges={};for(const type of ['free','paid','book'])badges[type]=await page.locator('.calendar-badge[data-link-type="'+type+'"]').count();
+              const colors=await page.locator('.calendar-badge').evaluateAll(ns=>ns.map(n=>({type:n.dataset.linkType,text:n.textContent,bg:getComputedStyle(n).backgroundColor,color:getComputedStyle(n).color})));
+              for(const b of colors){assert.equal(b.color,'rgb(20, 17, 15)');assert.equal(b.bg,{free:'rgb(134, 239, 172)',paid:'rgb(246, 199, 107)',book:'rgb(216, 180, 254)'}[b.type]);if(b.type==='book')assert.equal(b.text,'BOOK '+JURY_CHESS_PRICE_TEXT);}
+              await page.screenshot({path:'cal06-receipts/'+(route.includes('watch')?'watch':'court')+'-'+width+'.png',fullPage:route.includes('watch')});
+              summaries.push({route,width,selectedDates,badges,scopeRules:'passed',priceBadges:'passed',ordering:'passed',overflow:false});
+            }
+            assert.deepEqual(errors,[]);
+            await context.close();
+          }
+          await browser.close();
+          const result={commit:process.env.GITHUB_SHA,checkedAt:new Date().toISOString(),legend:'FREE explainer · $1.99 guide · BOOK',juryChessBadge:'BOOK '+JURY_CHESS_PRICE_TEXT,summaries};
+          writeFileSync('cal06-receipts/audit.json',JSON.stringify(result,null,2));
+          console.log('CAL06_AUDIT '+JSON.stringify(result));
+          
+          CAL06_EOF
+          npm run preview -- --host 127.0.0.1 > /tmp/cal06-preview.log 2>&1 &
+          for attempt in $(seq 1 30); do
+            if curl -fsS http://127.0.0.1:4321/court-calendar/ > /dev/null; then break; fi
+            sleep 1
+          done
+          node scripts/.cal06-ui.mjs
+          node scripts/check-calendar-link-ui.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cal06-replacement-rules
+          path: |
+            cal06-receipts/
+            cal05-receipts/
