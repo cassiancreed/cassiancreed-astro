@@ -802,8 +802,6 @@ export function calendarLinksFor(entry) {
   }
   const links = [...free, ...paid].map(classifyCalendarLink);
   if (juryChessEligible(entry) && !links.some((link) => link.type === 'book')) links.push({ ...JURY_CHESS_LINK });
-  // The existing Jury Chess promo retains its approved wording; its BOOK link
-  // now goes to the same Books page as the other trial entries.
   return links.filter((link) => link.type !== 'book' || juryChessEligible(entry))
     .map((link) => link.bookKey === 'jury-chess' ? { ...link, ...JURY_CHESS_LINK, text: link.text } : link)
     .sort((a, b) => CALENDAR_LINK_TYPES.indexOf(a.type) - CALENDAR_LINK_TYPES.indexOf(b.type));

@@ -100,6 +100,7 @@ test('Banks has no stale case-specific Jury Chess promotion if its exclusions ch
     assert.equal(books.length,1);
     assert.equal(books[0].url,'https://cassiancreed.com/books/');
     assert.equal(books[0].placement,'court_calendar_jury_chess');
+    assert.equal(books[0].text,'Get Jury Chess');
   } finally {
     JURY_CHESS_ENTRY_IDS.clear();for(const id of allowed)JURY_CHESS_ENTRY_IDS.add(id);
     JURY_CHESS_EXCLUDED_IDS.clear();for(const id of excluded)JURY_CHESS_EXCLUDED_IDS.add(id);
