@@ -1,5 +1,6 @@
 ---
 import calendarTsv from '../data/court-calendar.tsv?raw';
+import { calendarLinksFor } from '../data/calendar-explainer-links.mjs';
 import { formatCalendarDate, parseCourtCalendar } from '../data/court-calendar-parser.mjs';
 import internationalTsv from '../data/international-watch.tsv?raw';
 import { parseInternationalWatch } from '../data/international-watch-parser.mjs';
@@ -96,6 +97,7 @@ const clientEntries = visibleEntries.map((entry) => ({
   sourceLabel: entry.srcLabel,
   link: entry.link,
   linkText: entry.linkText,
+  explainerLinks: calendarLinksFor(entry),
   book: CASE_BOOKS.get(entry.id) || null,
 }));
 
@@ -250,7 +252,7 @@ const visibleDayEntries = (entries) => {
             <p class="home-calendar__agenda-court">{entry.court}</p>
             <p class="home-calendar__agenda-source"><span>Source:</span> <a href={entry.sourceUrl} target="_blank" rel="noopener noreferrer">{entry.sourceLabel}</a></p>
             <div class="home-calendar__agenda-actions">
-              {entry.link && <a href={entry.link}>{entry.linkText || 'Read the case'} &rarr;</a>}
+              {entry.explainerLinks.map((link) => <a href={link.url} target={link.paid ? '_blank' : undefined} rel={link.paid ? 'noopener noreferrer' : undefined} data-book-key={link.bookKey} data-cta-placement={link.placement}>{link.text} &rarr;</a>)}
               <a href={`/court-calendar/#${entry.id}`}>Calendar details &rarr;</a>
               {fullPage ? (
                 <a href="#court-updates">Get court calendar updates &rarr;</a>
@@ -456,7 +458,16 @@ const visibleDayEntries = (entries) => {
         source.append(sourcePrefix, sourceLink);
         const actions = document.createElement('div');
         actions.className = 'home-calendar__agenda-actions';
-        if (entry.link) actions.append(createActionLink(entry.link, entry.linkText || 'Read the case'));
+        for (const link of entry.explainerLinks) {
+          const action = createActionLink(link.url, link.text);
+          if (link.paid) {
+            action.target = '_blank';
+            action.rel = 'noopener noreferrer';
+            action.dataset.bookKey = link.bookKey;
+            action.dataset.ctaPlacement = link.placement;
+          }
+          actions.append(action);
+        }
         actions.append(createActionLink(`/court-calendar/#${entry.id}`, 'Calendar details'));
         if (fullPage) {
           actions.append(createActionLink('#court-updates', 'Get court calendar updates'));
