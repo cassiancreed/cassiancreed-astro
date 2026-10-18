@@ -1,0 +1,71 @@
+name: SEO audit verification
+on:
+  push:
+    branches: [seo/2026-10-18-search-and-ai-fixes]
+permissions:
+  contents: write
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - name: Baseline build and sitemap
+        run: |
+          npm ci
+          npm run build
+          cp dist/sitemap.xml /tmp/seo-sitemap-before.xml
+      - name: Apply reviewed SEO fixes
+        run: |
+          node --input-type=module <<'NODE'
+          import {readFileSync,writeFileSync,mkdirSync,unlinkSync} from 'node:fs';
+          import {dirname} from 'node:path';
+          const changes = JSON.parse(readFileSync('.github/seo-audit-patch.json','utf8'));
+          for (const [path,content] of Object.entries(changes)) { mkdirSync(dirname(path),{recursive:true}); writeFileSync(path,content); }
+          unlinkSync('.github/seo-audit-patch.json');
+          NODE
+          node scripts/optimize-post-social-images.mjs
+          node --test scripts/test-search-index.mjs
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src scripts public/og public/robots.txt public/_headers .github/seo-audit-patch.json
+          git commit -m "Fix search discovery, metadata, response headers and social cards"
+          git push origin HEAD:seo/2026-10-18-search-and-ai-fixes
+          echo "SEO_HEAD=$(git rev-parse HEAD)"
+      - name: Build and all Node tests
+        run: |
+          npm ci
+          npm run build
+          node --test scripts/test-*.mjs
+      - name: Install browser tools
+        run: |
+          npm install --no-save --package-lock=false playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Astro preview compatibility checks
+        run: |
+          npm run preview -- --host 127.0.0.1 > /tmp/seo-preview.log 2>&1 &
+          node --input-type=module -e "for(let i=0;i<60;i++){try{const r=await fetch('http://127.0.0.1:4321/');if(r.ok)process.exit(0);}catch{}await new Promise(r=>setTimeout(r,500));}process.exit(1);"
+          node scripts/check-seo-preview.mjs
+      - name: Report sitemap changes
+        run: |
+          node --input-type=module <<'NODE'
+          import {readFileSync,writeFileSync} from 'node:fs';
+          const urls=p=>[...readFileSync(p,'utf8').matchAll(/<loc>([^<]+)<\/loc>/g)].map(m=>m[1]);
+          const before=urls('/tmp/seo-sitemap-before.xml'),after=urls('dist/sitemap.xml');
+          const result={before:before.length,after:after.length,added:after.filter(x=>!before.includes(x)),removed:before.filter(x=>!after.includes(x))};
+          console.log('SEO_SITEMAP='+JSON.stringify(result));writeFileSync('/tmp/seo-sitemap-results.json',JSON.stringify(result,null,2));
+          NODE
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: seo-audit-verification
+          path: |
+            /tmp/seo-*.json
+            /tmp/seo-*.png
+            /tmp/seo-preview.log
