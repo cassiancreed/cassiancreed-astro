@@ -8,26 +8,112 @@ jobs:
   inventory:
     if: github.head_ref == 'court/2026-10-18-cal-04-explainer-links'
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - name: Verify all repo post URLs and Beehiiv storefront discovery
+          cache: npm
+      - run: npm ci
+      - name: Full build including all calendar tests
+        run: npm run build
+      - name: Install remote browser test dependency
         run: |
+          npm install --no-save --package-lock=false playwright
+          if ! command -v google-chrome >/dev/null; then npx playwright install chromium; fi
+      - name: Verify every link and both calendar displays at desktop and mobile widths
+        run: |
+          python3 -m http.server 4173 --directory dist >/tmp/cal04-http.log 2>&1 &
           node --input-type=module <<'JS'
           import fs from 'node:fs/promises';
           import path from 'node:path';
-          async function get(url){try{const r=await fetch(url,{signal:AbortSignal.timeout(30000)});const html=await r.text();return {url,status:r.status,finalUrl:r.url,html}}catch(e){return {url,status:null,error:e.message,html:''}}}
-          const files=await fs.readdir('src/content/posts');
-          const pages=[];
-          for(const name of files){if(!/\.(md|mdx)$/.test(name))continue;const raw=await fs.readFile('src/content/posts/'+name,'utf8');const front=raw.match(/^---\r?\n([\s\S]*?)\r?\n---/)?.[1]||'';const field=(key)=>front.match(new RegExp('^'+key+':\\s*(.*)$','m'))?.[1].trim().replace(/^["']|["']$/g,'');const slug=field('slug')||name.replace(/\.(md|mdx)$/,'');pages.push({slug,archived:field('archived')==='true',draft:field('draft')==='true',url:'https://cassiancreed.com/post/'+slug+'/'});}
-          for(let i=0;i<pages.length;i+=8)await Promise.all(pages.slice(i,i+8).map(async p=>{const r=await get(p.url);console.log('CAL04_FREE '+JSON.stringify({...p,status:r.status,finalUrl:r.finalUrl,error:r.error}));}));
-          for(const suffix of ['/store','/shop','/products','/sitemap.xml']){
-           const r=await get('https://cassiancreed.beehiiv.com'+suffix);
-           const products=[...new Set([...r.html.matchAll(/(?:https:\/\/cassiancreed\.beehiiv\.com)?\/products\/[a-z0-9-]+/g)].map(m=>m[0]))];
-           console.log('CAL04_STOREFRONT '+JSON.stringify({url:r.url,status:r.status,title:r.html.match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1],products,navigation:r.html.match(/.{0,100}(?:store|shop).{0,180}/gi)?.slice(0,20)}));
+          import assert from 'node:assert/strict';
+          import {execFileSync} from 'node:child_process';
+          import {parseCourtCalendar} from './src/data/court-calendar-parser.mjs';
+          import {parseInternationalWatch} from './src/data/international-watch-parser.mjs';
+          import {calendarLinksFor} from './src/data/calendar-explainer-links.mjs';
+          const base='06fb36efc3f23aba431867d5e41f39a205b19d9c';
+          for(const file of ['src/data/court-calendar.tsv','src/data/international-watch.tsv','src/data/court-calendar-archive.tsv']){
+           assert.equal(await fs.readFile(file,'utf8'),execFileSync('git',['show',base+':'+file],{encoding:'utf8'}),file+' changed');
           }
+          console.log('CAL04_DATA_UNCHANGED all calendar TSVs match base byte-for-byte');
+          const data=parseCourtCalendar(await fs.readFile('src/data/court-calendar.tsv','utf8'));
+          const intl=parseInternationalWatch(await fs.readFile('src/data/international-watch.tsv','utf8'));
+          const rows=[...data.entries,...data.unconfirmed,...data.appeals,...data.investigations,...data.completed,...intl.listed,...intl.monitoring,...intl.concluded];
+          const checks=new Map();
+          let matched=0;
+          for(const row of rows){
+           const links=calendarLinksFor(row);
+           if(links.length)matched++;
+           let paidSeen=false;
+           const seen=new Set();
+           for(const link of links){
+            if(link.paid)paidSeen=true;else assert.equal(paidSeen,false,'free after paid '+row.id);
+            const key=link.url.split('?')[0];assert(!seen.has(key),'duplicate '+row.id);seen.add(key);
+            checks.set(link.url.startsWith('/')?'https://cassiancreed.com'+link.url:link.url,link);
+           }
+          }
+          for(const id of ['sophia-sullivan-investigation','completed-2','hart-georgia','fernandez-saldana-sep17-court-appearance']){
+           const row=rows.find(x=>x.id===id);assert(row);assert.equal(calendarLinksFor(row).length,0,'unrelated case acquired links: '+id);
+          }
+          const roundupIds=['farwell-trial-oct19','burke-prelim','sullivan-jury-trial','reiner-criminal-pretrial','reiner-trust-access-oct23','crum-spencer-hearing','robinson-pretrial-conference'];
+          for(const id of roundupIds)assert(calendarLinksFor(rows.find(r=>r.id===id)).some(l=>l.text==='This Week in Court: Oct. 19-23'),id+' missing weekly roundup');
+          const inventory=JSON.parse(await fs.readFile('docs/audits/NEP-20261018-CAL-04.json','utf8'));
+          for(const p of inventory.postInventory.filter(x=>x.archived||x.draft))assert(![...checks.keys()].includes(p.url),'archived/draft linked '+p.url);
+          async function get(url){try{const r=await fetch(url,{signal:AbortSignal.timeout(30000)});return {url,status:r.status,finalUrl:r.url,html:await r.text()}}catch(e){return {url,status:null,error:e.message,html:''}}}
+          const urls=[...checks.keys()];
+          for(let i=0;i<urls.length;i+=6)await Promise.all(urls.slice(i,i+6).map(async url=>{
+           let r=await get(url);if(r.status!==200)r=await get(url);
+           console.log('CAL04_LINK '+JSON.stringify({url,status:r.status,finalUrl:r.finalUrl,error:r.error}));
+           assert.equal(r.status,200,'non-200 '+url);
+           if(checks.get(url).paid){const visible=r.html.replace(/<(script|style)\b[^>]*>[\s\S]*?<\/\1>/gi,' ').replace(/<[^>]+>/g,' ');assert(/\$\s?\d+(?:\.\d{2})?/.test(visible),'no public price '+url)}
+          }));
+          async function walk(dir){let out=[];for(const e of await fs.readdir(dir,{withFileTypes:true})){const p=path.join(dir,e.name);if(e.isDirectory())out.push(...await walk(p));else out.push(p)}return out}
+          const productCandidates=new Set(inventory.productInventory.map(p=>p.url));
+          for(const file of (await walk('dist')).filter(x=>/\.(html|js|json|xml)$/.test(x))){const text=await fs.readFile(file,'utf8');for(const m of text.matchAll(/https:\/\/cassiancreed\.beehiiv\.com\/products\/[a-z0-9-]+/g))productCandidates.add(m[0])}
+          for(const url of productCandidates){if(inventory.productInventory.some(p=>p.url===url))continue;const p=await get(url);const title=(p.html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/i)?.[1]||'').replace(/<[^>]+>/g,'');const visible=p.html.replace(/<(script|style)\b[^>]*>[\s\S]*?<\/\1>/gi,' ').replace(/<[^>]+>/g,' ');console.log('CAL04_EXTRA_PRODUCT '+JSON.stringify({url,status:p.status,title,prices:[...new Set(visible.match(/\$\s?\d+(?:\.\d{2})?/g)||[])]}))}
+          const {chromium}=await import('playwright');
+          const launch=(await fs.access('/usr/bin/google-chrome').then(()=>true,()=>false))?{executablePath:'/usr/bin/google-chrome'}:{};
+          const browser=await chromium.launch({...launch,headless:true,args:['--no-sandbox']});
+          for(const width of [1280,390]){
+           const context=await browser.newContext({viewport:{width,height:900}});
+           await context.route('**/*',route=>route.request().url().startsWith('http://127.0.0.1:4173/')?route.continue():route.abort());
+           const page=await context.newPage();
+           await page.goto('http://127.0.0.1:4173/court-calendar/',{waitUntil:'networkidle'});
+           const client=await page.locator('[data-calendar-json]').evaluate(el=>JSON.parse(el.textContent));
+           for(const e of client)assert.deepEqual(e.explainerLinks,calendarLinksFor(rows.find(r=>r.id===e.id)),e.id+' client/detail mismatch');
+           // Inspect every rendered detailed entry against its expected ordered links.
+           let details=0;
+           for(const row of rows){
+            const node=page.locator('[id="'+row.id+'"]');
+            if(!await node.count())continue;
+            const expected=calendarLinksFor(row);
+            if(!expected.length)continue;
+            const actual=await node.locator('a').evaluateAll(anchors=>anchors.map(a=>({href:a.getAttribute('href'),text:a.textContent.trim().replace(/\s+/g,' ')})));
+            let cursor=-1;
+            for(const link of expected){const index=actual.findIndex((a,i)=>i>cursor&&a.href===link.url);assert(index>cursor,'detailed missing/out-of-order '+row.id+' '+link.url);assert.equal(actual[index].text,(link.text+' →').replace(/\s+/g,' '));cursor=index}
+            details++;
+           }
+           const dates=[...new Set(client.map(e=>e.dateISO))].sort();
+           let agendaChecks=0;
+           for(const date of dates){
+            const build=await page.locator('[data-home-calendar]').getAttribute('data-build-date');
+            if(date<build)continue;
+            let attempts=0;
+            while(!await page.locator('[data-calendar-date="'+date+'"]').count()){assert(attempts++<24,'calendar cannot reach '+date);await page.locator('[data-calendar-next]').click()}
+            await page.locator('[data-calendar-date="'+date+'"]').click();
+            for(const e of client.filter(x=>x.dateISO===date)){
+             const agenda=page.locator('[data-calendar-agenda] [data-calendar-entry="'+e.id+'"]');assert.equal(await agenda.count(),1,'missing agenda '+e.id);
+             const actual=await agenda.locator('.home-calendar__agenda-actions a').evaluateAll(anchors=>anchors.map(a=>({href:a.getAttribute('href'),text:a.textContent.trim().replace(/\s+/g,' '),book:a.dataset.bookKey,placement:a.dataset.ctaPlacement})));
+             for(let index=0;index<e.explainerLinks.length;index++){const l=e.explainerLinks[index];assert.equal(actual[index].href,l.url,e.id+' dynamic URL/order');assert.equal(actual[index].text,(l.text+' →').replace(/\s+/g,' '),e.id+' dynamic text');if(l.paid){assert.equal(actual[index].book,l.bookKey);assert.equal(actual[index].placement,l.placement)}}
+             agendaChecks++;
+            }
+           }
+           console.log('CAL04_BROWSER '+JSON.stringify({width,details,agendaChecks,clientEntries:client.length,c6a:'PASS',dynamicNavigation:'PASS'}));
+           await context.close();
+          }
+          await browser.close();
+          console.log('CAL04_VERIFIED '+JSON.stringify({uniqueLinks:urls.length,matchedEntries:matched,roundupEntries:roundupIds.length,tsvUnchanged:true}));
           
           JS
