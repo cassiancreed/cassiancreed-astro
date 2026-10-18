@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import { breadcrumbList } from '../../utils/page-schema.mjs';
 
 const productUrl = 'https://cassiancreed.beehiiv.com/products/jury-chess?utm_source=cassiancreed.com&utm_medium=jury_chess_landing&utm_campaign=jury_chess&utm_content=jury_chess_primary';
 const jsonld = {
@@ -23,13 +24,16 @@ const jsonld = {
     seller: { '@id': 'https://cassiancreed.com/#org' },
   }],
 };
+const pageJsonld = { '@context': 'https://schema.org', '@graph': [jsonld, breadcrumbList([
+  ['Home', '/'], ['Books', '/books/'], ['Jury Chess', '/books/jury-chess/'],
+], '/books/jury-chess/')] };
 ---
 
 <Base
   title="Jury Chess: How Criminal Jury Trials Actually Work"
   description="A plain-language field guide to criminal jury trials—from jury selection and evidence rules through instructions, deliberations, and verdict."
   ogImage="/covers/jury-chess.jpg"
-  jsonld={jsonld}
+  jsonld={pageJsonld}
 >
   <main class="jc wrap">
     <nav class="crumbs" aria-label="Breadcrumb"><a href="/books/">Books</a><span aria-hidden="true">/</span><span>Jury Chess</span></nav>

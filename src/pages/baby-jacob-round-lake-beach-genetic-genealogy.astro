@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import { pageSchema } from '../utils/page-schema.mjs';
 import CaptureBlock from '../components/CaptureBlock.astro';
 // Discovery-layer case file — "A Name for Baby Jacob" (Round Lake Beach, IL, 2001 infant-Doe IGG cold case).
 // Guardrails (Tier ORANGE): Jennifer Lebron is CHARGED, NOT CONVICTED. "charged"/"alleged" only; no guilt asserted.
@@ -7,8 +8,19 @@ import CaptureBlock from '../components/CaptureBlock.astro';
 // Victim-first: the child, IGG-named "Jacob," is centered. No sensationalizing; cause of death not described.
 // "TWIN" claim EXCLUDED — Baby Boy Doe appears only as a thematic companion, never a literal twin/connected case.
 // Cross-links are by topic (not by brick number) to the live genealogy hub + the Baby Boy Doe case file.
+const jsonld = pageSchema({
+  "type": "Article",
+  "title": "Jacob Hope: A Name for the Round Lake Beach Baby — How Genetic Genealogy Reopened a 2001 Cold Case | Cassian Creed",
+  "description": "The newborn known as 'Jacob Hope,' found in Round Lake Beach in 2001, was identified through investigative genetic genealogy. In July 2026 his mother was charged — stated precisely, presumption of innocence first.",
+  "path": "/baby-jacob-round-lake-beach-genetic-genealogy/",
+  "source": "src/pages/baby-jacob-round-lake-beach-genetic-genealogy.astro",
+  "category": [
+    "Case Files",
+    "/case-files/"
+  ]
+});
 ---
-<Base
+<Base jsonld={jsonld}
   title="Jacob Hope: A Name for the Round Lake Beach Baby &mdash; How Genetic Genealogy Reopened a 2001 Cold Case | Cassian Creed"
   description="The newborn known as 'Jacob Hope,' found in Round Lake Beach in 2001, was identified through investigative genetic genealogy. In July 2026 his mother was charged &mdash; stated precisely, presumption of innocence first."
 >

@@ -1,8 +1,16 @@
 ---
 import Base from '../layouts/Base.astro';
+import { pageSchema } from '../utils/page-schema.mjs';
 import CaptureBlock from '../components/CaptureBlock.astro';
+const jsonld = pageSchema({
+  "type": "WebPage",
+  "title": "Start Here — Cassian Creed",
+  "description": "New to Cassian Creed? Start with three sourced, victim-first case files — then follow the thread into the explainers behind them.",
+  "path": "/start-here/",
+  "source": "src/pages/start-here.astro"
+});
 ---
-<Base title="Start Here — Cassian Creed" description="New to Cassian Creed? Start with three sourced, victim-first case files — then follow the thread into the explainers behind them.">
+<Base jsonld={jsonld} title="Start Here — Cassian Creed" description="New to Cassian Creed? Start with three sourced, victim-first case files — then follow the thread into the explainers behind them.">
   <section class="sh">
     <p class="evidence evidence--accent">Start Here</p>
     <h1>New here? Start with these.</h1>

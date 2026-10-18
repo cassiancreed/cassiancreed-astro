@@ -1,11 +1,23 @@
 ---
 import Base from '../layouts/Base.astro';
+import { pageSchema } from '../utils/page-schema.mjs';
 import CaptureBlock from '../components/CaptureBlock.astro';
 // CODIS vs. forensic genetic genealogy explainer.
 // Guardrail: both methods produce LEADS, not proof. Name CODIS specifically —
 // never "any database." Never imply DNA-relative intent. A lead is not a person.
+const jsonld = pageSchema({
+  "type": "Article",
+  "title": "CODIS vs. Forensic Genetic Genealogy: How Each One Actually Finds People | Cassian Creed",
+  "description": "CODIS and forensic genetic genealogy both use DNA, but they answer different questions and search different databases. Here is the difference in plain English — and why FGG is not just 'CODIS with a bigger database.'",
+  "path": "/codis-vs-forensic-genetic-genealogy/",
+  "source": "src/pages/codis-vs-forensic-genetic-genealogy.astro",
+  "category": [
+    "Genealogy",
+    "/genealogy/"
+  ]
+});
 ---
-<Base
+<Base jsonld={jsonld}
   title="CODIS vs. Forensic Genetic Genealogy: How Each One Actually Finds People | Cassian Creed"
   description="CODIS and forensic genetic genealogy both use DNA, but they answer different questions and search different databases. Here is the difference in plain English — and why FGG is not just 'CODIS with a bigger database.'"
 >

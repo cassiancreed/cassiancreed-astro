@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import { pageSchema } from '../utils/page-schema.mjs';
 import CaptureBlock from '../components/CaptureBlock.astro';
 // Brick 5 — "Is Forensic Genetic Genealogy Legal? What the DOJ Rules Actually Say."
 // Guardrails: the DOJ policy is INTERIM (never "final"). It binds FEDERAL /
@@ -7,8 +8,19 @@ import CaptureBlock from '../components/CaptureBlock.astro';
 // varies and is not covered here. The policy names NO specific database. A
 // genetic match is a LEAD, not proof. Protect innocent relatives. Presumption
 // of innocence first.
+const jsonld = pageSchema({
+  "type": "Article",
+  "title": "Is Forensic Genetic Genealogy Legal? DOJ Rules Explained",
+  "description": "Is forensic genetic genealogy legal? The DOJ's 2019 interim policy governs it at the federal level: a genetic match is only an investigative lead, and no one may be arrested on a genetic association alone. What the rules actually say — explained plainly.",
+  "path": "/is-forensic-genetic-genealogy-legal/",
+  "source": "src/pages/is-forensic-genetic-genealogy-legal.astro",
+  "category": [
+    "Genealogy",
+    "/genealogy/"
+  ]
+});
 ---
-<Base
+<Base jsonld={jsonld}
   title="Is Forensic Genetic Genealogy Legal? DOJ Rules Explained"
   description="Is forensic genetic genealogy legal? The DOJ's 2019 interim policy governs it at the federal level: a genetic match is only an investigative lead, and no one may be arrested on a genetic association alone. What the rules actually say — explained plainly."
 >

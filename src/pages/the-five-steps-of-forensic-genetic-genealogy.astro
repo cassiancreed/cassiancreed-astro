@@ -1,11 +1,23 @@
 ---
 import Base from '../layouts/Base.astro';
+import { pageSchema } from '../utils/page-schema.mjs';
 import CaptureBlock from '../components/CaptureBlock.astro';
 // Genealogy pillar page 1 (CW5a Part 1): method pillar.
 // Guardrail: FGG produces LEADS, not proof. Steps 1-4 never prove identity;
 // Step 5 (conventional confirmation) is what tests the hypothesis.
+const jsonld = pageSchema({
+  "type": "Article",
+  "title": "The Five Steps of Forensic Genetic Genealogy | Cassian Creed",
+  "description": "Forensic genetic genealogy explained as a five-step process: build a dense SNP profile, search only permitted databases, build and test family trees, turn the work into an investigative lead, and confirm through conventional forensic methods.",
+  "path": "/the-five-steps-of-forensic-genetic-genealogy/",
+  "source": "src/pages/the-five-steps-of-forensic-genetic-genealogy.astro",
+  "category": [
+    "Genealogy",
+    "/genealogy/"
+  ]
+});
 ---
-<Base
+<Base jsonld={jsonld}
   title="The Five Steps of Forensic Genetic Genealogy | Cassian Creed"
   description="Forensic genetic genealogy explained as a five-step process: build a dense SNP profile, search only permitted databases, build and test family trees, turn the work into an investigative lead, and confirm through conventional forensic methods."
 >

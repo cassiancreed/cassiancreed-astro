@@ -1,11 +1,23 @@
 ---
 import Base from '../layouts/Base.astro';
+import { pageSchema } from '../utils/page-schema.mjs';
 import CaptureBlock from '../components/CaptureBlock.astro';
 // Canonical hub explainer for forensic / investigative genetic genealogy.
 // Guardrail: this technique produces LEADS, not proof. Never imply DNA-relative
 // intent, and name CODIS specifically — never "any database."
+const jsonld = pageSchema({
+  "type": "Article",
+  "title": "How Forensic Genetic Genealogy Works — Investigative Genetic Genealogy Explained | Cassian Creed",
+  "description": "How forensic genetic genealogy actually works: how investigative genetic genealogy uses DNA to solve cold cases, why it produces leads and not proof, which databases allow law-enforcement searches, and the privacy debate — explained plainly, without the hype.",
+  "path": "/how-forensic-genetic-genealogy-works/",
+  "source": "src/pages/how-forensic-genetic-genealogy-works.astro",
+  "category": [
+    "Genealogy",
+    "/genealogy/"
+  ]
+});
 ---
-<Base
+<Base jsonld={jsonld}
   title="How Forensic Genetic Genealogy Works — Investigative Genetic Genealogy Explained | Cassian Creed"
   description="How forensic genetic genealogy actually works: how investigative genetic genealogy uses DNA to solve cold cases, why it produces leads and not proof, which databases allow law-enforcement searches, and the privacy debate — explained plainly, without the hype."
 >

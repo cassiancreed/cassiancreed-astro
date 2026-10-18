@@ -1,13 +1,25 @@
 ---
 import Base from '../layouts/Base.astro';
+import { pageSchema } from '../utils/page-schema.mjs';
 import CaptureBlock from '../components/CaptureBlock.astro';
 // Brick 3 — "Is Forensic Genetic Genealogy Evidence, or Just a Lead?"
 // Guardrails: LEADS not proof. Keep the DOJ document as "interim" (never "final").
 // "Must not arrest solely" is attributed to DOJ policy — NOT a universal law.
 // nuclear-DNA identify/exclude only. Court, not a family tree, determines guilt.
 // Protect innocent relatives. Zero promotional claims.
+const jsonld = pageSchema({
+  "type": "Article",
+  "title": "Is Forensic Genetic Genealogy Evidence, or Just a Lead? | Cassian Creed",
+  "description": "Forensic genetic genealogy can point investigators toward a person, but is FGG evidence or just an investigative lead? What a family-tree match can and cannot prove in court — explained plainly.",
+  "path": "/is-fgg-evidence-or-just-a-lead/",
+  "source": "src/pages/is-fgg-evidence-or-just-a-lead.astro",
+  "category": [
+    "Genealogy",
+    "/genealogy/"
+  ]
+});
 ---
-<Base
+<Base jsonld={jsonld}
   title="Is Forensic Genetic Genealogy Evidence, or Just a Lead? | Cassian Creed"
   description="Forensic genetic genealogy can point investigators toward a person, but is FGG evidence or just an investigative lead? What a family-tree match can and cannot prove in court &mdash; explained plainly."
 >

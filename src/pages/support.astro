@@ -1,7 +1,15 @@
 ---
 import Base from '../layouts/Base.astro';
+import { pageSchema } from '../utils/page-schema.mjs';
+const jsonld = pageSchema({
+  "type": "WebPage",
+  "title": "Support & Resources — Help for Victims and the Wrongfully Convicted",
+  "description": "Crisis and victim-support resources, our support for innocence and exoneration work and the wrongfully convicted, and how to share information about a case with law enforcement.",
+  "path": "/support/",
+  "source": "src/pages/support.astro"
+});
 ---
-<Base title="Support & Resources — Help for Victims and the Wrongfully Convicted" description="Crisis and victim-support resources, our support for innocence and exoneration work and the wrongfully convicted, and how to share information about a case with law enforcement.">
+<Base jsonld={jsonld} title="Support & Resources — Help for Victims and the Wrongfully Convicted" description="Crisis and victim-support resources, our support for innocence and exoneration work and the wrongfully convicted, and how to share information about a case with law enforcement.">
   <article class="post">
     <p class="evidence evidence--accent">Support &amp; Resources</p>
     <h1>Help for victims — and standing with the wrongfully convicted</h1>
