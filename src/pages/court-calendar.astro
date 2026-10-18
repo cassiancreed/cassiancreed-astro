@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import HomeCourtCalendar from '../components/HomeCourtCalendar.astro';
 import CaptureBlock from '../components/CaptureBlock.astro';
+import { calendarLinksFor } from '../data/calendar-explainer-links.mjs';
 
 import calendarTsv from '../data/court-calendar.tsv?raw';
 import { formatCalendarDate, parseCourtCalendar } from '../data/court-calendar-parser.mjs';
@@ -165,99 +166,6 @@ const allFaqs = [...caseFaqs, ...genericFaqs];
 const COUNTRY_CODES_BY_COURT_SUFFIX = new Map([
   ['France', 'FR'],
 ]);
-
-const CASE_GUIDES = {
-  'burke-prelim': {
-    url: 'https://cassiancreed.beehiiv.com/products/celeste-rivas-hernandez-d4vd-charges-guide?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=explainer_d4vd_v2&utm_content=status_entry',
-    text: 'Read the Celeste Rivas Hernandez case guide — the D4vd charges explained — $1.99',
-    bookKey: 'celeste-rivas-hernandez-d4vd-charges-guide',
-    placement: 'court_calendar_d4vd_status_entry',
-  },
-  'parker-smith-first-appearance': [{
-    url: 'https://cassiancreed.beehiiv.com/products/michelle-parker-case-guide?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=explainer_parker_v1&utm_content=first_appearance_entry',
-    text: 'Get the full Michelle Parker case guide — timeline, Florida no-body law, what comes next — $1.99',
-    bookKey: 'michelle-parker-case-guide',
-    placement: 'court_calendar_parker_first_appearance_entry',
-  }, {
-    url: 'https://cassiancreed.beehiiv.com/products/both-sides-michelle-parker-no-body-guide?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=explainer_parker_bothsides_v2&utm_content=first_appearance_entry',
-    text: 'Both Sides of the Story: Michelle Parker — can there be a murder case with no body? — $1.99',
-    bookKey: 'both-sides-michelle-parker-no-body-guide',
-    placement: 'court_calendar_parker_bothsides_first_appearance_entry',
-  }],
-  'parker-smith-bond-hearing': [{
-    url: 'https://cassiancreed.beehiiv.com/products/michelle-parker-case-guide?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=explainer_parker_v1&utm_content=bond_hearing_entry',
-    text: 'Get the full Michelle Parker case guide — timeline, Florida no-body law, what comes next — $1.99',
-    bookKey: 'michelle-parker-case-guide',
-    placement: 'court_calendar_parker_bond_hearing_entry',
-  }, {
-    url: 'https://cassiancreed.beehiiv.com/products/both-sides-michelle-parker-no-body-guide?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=explainer_parker_bothsides_v2&utm_content=bond_hearing_entry',
-    text: 'Both Sides of the Story: Michelle Parker — can there be a murder case with no body? — $1.99',
-    bookKey: 'both-sides-michelle-parker-no-body-guide',
-    placement: 'court_calendar_parker_bothsides_bond_hearing_entry',
-  }],
-  'pike-execution': {
-    url: 'https://cassiancreed.beehiiv.com/products/christa-pike-failed-execution-guide?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=explainer_pike_v1&utm_content=next_step_entry',
-    text: 'Get the full Christa Pike case guide — timeline, every court step, six paths ahead — $1.99',
-    bookKey: 'christa-pike-failed-execution-guide',
-    placement: 'court_calendar_pike_next_step_entry',
-  },
-  'pike-stay-denial-sep23': {
-    url: 'https://cassiancreed.beehiiv.com/products/christa-pike-failed-execution-guide?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=explainer_pike_v1&utm_content=stay_denial_entry',
-    text: 'Get the full Christa Pike case guide — timeline, every court step, six paths ahead — $1.99',
-    bookKey: 'christa-pike-failed-execution-guide',
-    placement: 'court_calendar_pike_stay_denial_entry',
-  },
-  'pike-clemency-denial-sep28': {
-    url: 'https://cassiancreed.beehiiv.com/products/christa-pike-failed-execution-guide?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=explainer_pike_v1&utm_content=clemency_entry',
-    text: 'Get the full Christa Pike case guide — timeline, every court step, six paths ahead — $1.99',
-    bookKey: 'christa-pike-failed-execution-guide',
-    placement: 'court_calendar_pike_clemency_entry',
-  },
-  'mangione-state-double-jeopardy-hearing': {
-    url: 'https://cassiancreed.beehiiv.com/products/brian-thompson-luigi-mangione-two-courts?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=explainer_luigi_v1&utm_content=state_entry',
-    text: 'Understand the Brian Thompson case and its two-court collision — $1.99',
-    bookKey: 'brian-thompson-luigi-mangione-two-courts',
-    placement: 'court_calendar_mangione_state_entry',
-  },
-  'mangione-federal-sentencing': {
-    url: 'https://cassiancreed.beehiiv.com/products/brian-thompson-luigi-mangione-two-courts?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=explainer_luigi_v1&utm_content=federal_entry',
-    text: 'Understand the Brian Thompson case and its two-court collision — $1.99',
-    bookKey: 'brian-thompson-luigi-mangione-two-courts',
-    placement: 'court_calendar_mangione_federal_entry',
-  },
-  'clancy-november-motions': {
-    url: 'https://cassiancreed.beehiiv.com/products/lindsay-clancy-post-mistrial-field-guide?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=explainer_clancy_v1&utm_content=november_entry',
-    text: 'Read the Cora, Dawson and Callan post-mistrial field guide — $1.99',
-    bookKey: 'lindsay-clancy-post-mistrial-field-guide',
-    placement: 'court_calendar_clancy_november_entry',
-  },
-  'clancy-status-hearing': {
-    url: 'https://cassiancreed.beehiiv.com/products/lindsay-clancy-post-mistrial-field-guide?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=explainer_clancy_v1&utm_content=status_entry',
-    text: 'Read the Cora, Dawson and Callan post-mistrial field guide — $1.99',
-    bookKey: 'lindsay-clancy-post-mistrial-field-guide',
-    placement: 'court_calendar_clancy_status_entry',
-  },
-  'clancy-trial': {
-    url: 'https://cassiancreed.beehiiv.com/products/lindsay-clancy-post-mistrial-field-guide?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=explainer_clancy_v1&utm_content=mistrial_entry',
-    text: 'Read the Cora, Dawson and Callan post-mistrial field guide — $1.99',
-    bookKey: 'lindsay-clancy-post-mistrial-field-guide',
-    placement: 'court_calendar_clancy_mistrial_entry',
-  },
-  'banks-federal-trial': {
-    url: 'https://cassiancreed.beehiiv.com/products/jury-chess?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=jury_chess&utm_content=lil_durk_verdict_entry',
-    text: 'Learn how criminal jury verdicts work — and what they do not decide. Get Jury Chess — $5.99',
-    bookKey: 'jury-chess',
-    placement: 'court_calendar_lil_durk_verdict_entry',
-  },
-  'patterson-appeal': {
-    url: 'https://cassiancreed.beehiiv.com/products/case-chess-erin-patterson',
-    text: 'Read the Erin Patterson case explainer — $2.99',
-    bookKey: 'case-chess-erin-patterson',
-    placement: 'court_calendar_case_guide',
-  },
-};
-
-const caseGuidesFor = (id) => [CASE_GUIDES[id]].flat().filter(Boolean);
 
 const FEATURED_EXPLAINERS = [
   {
@@ -433,15 +341,7 @@ const jsonld = {
             <span class="card__srctype">{e.srcType}</span>
             {e.src2 && <span class="card__src2">{e.srcLabel2}</span>}
           </p>
-          <p class="card__links">
-            {e.link ? (
-              <a class="card__read" href={e.link}>{e.linkText} &rarr;</a>
-            ) : !CASE_GUIDES[e.id] && (
-              <span class="card__soon">Our case file on this is in progress.</span>
-            )}
-            {caseGuidesFor(e.id).map((guide) => <a class="row__explainer" href={guide.url} target="_blank" rel="noopener noreferrer" data-book-key={guide.bookKey} data-cta-placement={guide.placement}>{guide.text} &rarr;</a>)}
-            {e.link2 && <a class="card__read" href={e.link2}>{e.linkText2} &rarr;</a>}
-            <a class="card__help" href="/support/">Victim &amp; Reader Resources</a>
+          <p class="card__links">{calendarLinksFor(e).length === 0 && <span class="card__soon">Our case file on this is in progress.</span>} {calendarLinksFor(e).map((link) => link.paid ? <a class="row__explainer" href={link.url} target="_blank" rel="noopener noreferrer" data-book-key={link.bookKey} data-cta-placement={link.placement}>{link.text} &rarr;</a> : <a class="card__read" href={link.url}>{link.text} &rarr;</a>)} <a class="card__help" href="/support/">Victim &amp; Reader Resources</a>
             <a class="card__help" href="/support/">Report a correction</a>
           </p>
         </article>
@@ -474,15 +374,7 @@ const jsonld = {
             <span class="card__srctype">{e.srcType}</span>
             {e.src2 && <span class="card__src2">{e.srcLabel2}</span>}
           </p>
-          <p class="card__links">
-            {e.link ? (
-              <a class="card__read" href={e.link}>{e.linkText} &rarr;</a>
-            ) : !CASE_GUIDES[e.id] && (
-              <span class="card__soon">Our case file on this is in progress.</span>
-            )}
-            {caseGuidesFor(e.id).map((guide) => <a class="row__explainer" href={guide.url} target="_blank" rel="noopener noreferrer" data-book-key={guide.bookKey} data-cta-placement={guide.placement}>{guide.text} &rarr;</a>)}
-            {e.link2 && <a class="card__read" href={e.link2}>{e.linkText2} &rarr;</a>}
-            <a class="card__help" href="/support/">Victim &amp; Reader Resources</a>
+          <p class="card__links">{calendarLinksFor(e).length === 0 && <span class="card__soon">Our case file on this is in progress.</span>} {calendarLinksFor(e).map((link) => link.paid ? <a class="row__explainer" href={link.url} target="_blank" rel="noopener noreferrer" data-book-key={link.bookKey} data-cta-placement={link.placement}>{link.text} &rarr;</a> : <a class="card__read" href={link.url}>{link.text} &rarr;</a>)} <a class="card__help" href="/support/">Victim &amp; Reader Resources</a>
             <a class="card__help" href="/support/">Report a correction</a>
           </p>
         </article>
@@ -520,7 +412,7 @@ const jsonld = {
         <p class="row__nodate"><strong>Expected development:</strong> {e.nextNote || NO_DATE}</p>
         <p class="row__note">{e.note}</p>
         <p class="row__meta">Subject to change by the court &middot; Source: {e.srcLabel} ({e.srcType}){e.src2 && <span class="row__src2"> &middot; Also: {e.srcLabel2}</span>}</p>
-        <p class="row__links">{e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : !CASE_GUIDES[e.id] && <span class="card__soon">Our case file on this is in progress.</span>} {caseGuidesFor(e.id).map((guide) => <a class="row__explainer" href={guide.url} target="_blank" rel="noopener noreferrer" data-book-key={guide.bookKey} data-cta-placement={guide.placement}>{guide.text} &rarr;</a>)} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <a class="row__help" href="/support/">Report a correction</a></p>
+        <p class="row__links">{calendarLinksFor(e).length === 0 && <span class="card__soon">Our case file on this is in progress.</span>} {calendarLinksFor(e).map((link) => link.paid ? <a class="row__explainer" href={link.url} target="_blank" rel="noopener noreferrer" data-book-key={link.bookKey} data-cta-placement={link.placement}>{link.text} &rarr;</a> : <a class="card__read" href={link.url}>{link.text} &rarr;</a>)} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <a class="row__help" href="/support/">Report a correction</a></p>
       </div>
     ))}
   </section>
@@ -537,7 +429,7 @@ const jsonld = {
         <p class="row__nodate"><strong>Next development to verify:</strong> {e.nextNote || 'Not yet identified.'}</p>
         <p class="row__note">{e.note}</p>
         <p class="row__meta">No court date exists for this matter &middot; Source: {e.srcLabel} ({e.srcType}){e.src2 && <span class="row__src2"> &middot; Also: {e.srcLabel2}</span>}</p>
-        <p class="row__links">{e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : <span class="card__soon">Our case file on this is in progress.</span>} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <a class="row__help" href="/support/">Report a correction</a></p>
+        <p class="row__links">{calendarLinksFor(e).length === 0 && <span class="card__soon">Our case file on this is in progress.</span>} {calendarLinksFor(e).map((link) => link.paid ? <a class="row__explainer" href={link.url} target="_blank" rel="noopener noreferrer" data-book-key={link.bookKey} data-cta-placement={link.placement}>{link.text} &rarr;</a> : <a class="card__read" href={link.url}>{link.text} &rarr;</a>)} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <a class="row__help" href="/support/">Report a correction</a></p>
       </div>
     ))}
   </section>
@@ -556,10 +448,7 @@ const jsonld = {
         {e.nextNote && <p class="row__nodate"><strong>Expected next step:</strong> {e.nextNote}</p>}
         <p class="row__note">{e.note}</p>
         <p class="row__meta">Subject to change by the court &middot; Source: {e.srcLabel} ({e.srcType}){e.src2 && <span class="row__src2"> &middot; Also: {e.srcLabel2}</span>}</p>
-        <p class="row__links">
-          {e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : <span class="card__soon">Our case file on this is in progress.</span>}
-          {caseGuidesFor(e.id).map((guide) => <a class="row__explainer" href={guide.url} target="_blank" rel="noopener noreferrer" data-book-key={guide.bookKey} data-cta-placement={guide.placement}>{guide.text} &rarr;</a>)}
-          <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <a class="row__help" href="/support/">Report a correction</a>
+        <p class="row__links">{calendarLinksFor(e).length === 0 && <span class="card__soon">Our case file on this is in progress.</span>} {calendarLinksFor(e).map((link) => link.paid ? <a class="row__explainer" href={link.url} target="_blank" rel="noopener noreferrer" data-book-key={link.bookKey} data-cta-placement={link.placement}>{link.text} &rarr;</a> : <a class="card__read" href={link.url}>{link.text} &rarr;</a>)} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <a class="row__help" href="/support/">Report a correction</a>
         </p>
       </div>
     ))}
@@ -598,7 +487,7 @@ const jsonld = {
             <p>Primary source: Mecklenburg County District Attorney, October 12, 2026 release, <a href="https://charmeckda.com/wp-content/uploads/2026/10/101226_1.pdf">https://charmeckda.com/wp-content/uploads/2026/10/101226_1.pdf</a></p>
           </article>
         )}
-        <p class="row__links">{e.link ? <a href={e.link}>{e.linkText} &rarr;</a> : !CASE_GUIDES[e.id] && e.id !== 'mary-collins-trial' && <span class="card__soon">Our case file on this is in progress.</span>} {caseGuidesFor(e.id).map((guide) => <a class="row__explainer" href={guide.url} target="_blank" rel="noopener noreferrer" data-book-key={guide.bookKey} data-cta-placement={guide.placement}>{guide.text} &rarr;</a>)} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <a class="row__help" href="/support/">Report a correction</a></p>
+        <p class="row__links">{calendarLinksFor(e).length === 0 && e.id !== 'mary-collins-trial' && <span class="card__soon">Our case file on this is in progress.</span>} {calendarLinksFor(e).map((link) => link.paid ? <a class="row__explainer" href={link.url} target="_blank" rel="noopener noreferrer" data-book-key={link.bookKey} data-cta-placement={link.placement}>{link.text} &rarr;</a> : <a class="card__read" href={link.url}>{link.text} &rarr;</a>)} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <a class="row__help" href="/support/">Report a correction</a></p>
       </div>
     ))}
   </section>
