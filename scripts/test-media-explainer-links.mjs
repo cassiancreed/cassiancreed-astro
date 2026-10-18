@@ -84,3 +84,11 @@ test('every linked explainer and source returns HTTP 200', {skip:process.env.MED
   console.log('MEDIA_HTTP '+JSON.stringify(checks));
   assert.deepEqual(checks.filter(r=>r.status!==200),[]);
 });
+
+test('review source labels and standing topics match their actual sources',()=>{
+  assert.equal(rows.find(r=>r.id==='media-22').source_label,"What's on Netflix");
+  for(const r of rows.filter(r=>r.standing==='yes')) assert.equal(r.topic,'');
+  const abc=rows.find(r=>r.id==='media-s2');
+  assert.equal(abc.source_label,'ABC');
+  assert.equal(abc.source_url,'https://abc.com/news/68176c48-d9cc-47a7-a237-d961a53fccaf/category/1138628');
+});
