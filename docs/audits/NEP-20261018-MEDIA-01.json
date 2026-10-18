@@ -1,6 +1,6 @@
 {
   "job": "NEP-20261018-MEDIA-01",
-  "state": "draft-validation-pending",
+  "state": "draft-validated",
   "base": "9a3632ab4de8e0f7088c36096f382310f447c066",
   "source": {
     "part": "PART 2 only",
@@ -28,37 +28,43 @@
       "id": "media-01",
       "title": "The Pet Cemetery Murders: A Ghost Story — Episode 2",
       "links": [],
-      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty."
+      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty.",
+      "noExplainerReason": "No matching published case explainer or live case guide found; the row is not one of the approved topic matches."
     },
     {
       "id": "media-02",
       "title": "Snapped: Killer Moms — series premiere",
       "links": [],
-      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty."
+      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty.",
+      "noExplainerReason": "No matching published case explainer or live case guide found; the row is not one of the approved topic matches."
     },
     {
       "id": "media-03",
       "title": "Catfish Murders — series premiere",
       "links": [],
-      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty."
+      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty.",
+      "noExplainerReason": "No matching published case explainer or live case guide found; the row is not one of the approved topic matches."
     },
     {
       "id": "media-04",
       "title": "Unknown Serial Killers of America — Season 2 finale",
       "links": [],
-      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty."
+      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty.",
+      "noExplainerReason": "No matching published case explainer or live case guide found; the row is not one of the approved topic matches."
     },
     {
       "id": "media-05",
       "title": "Snapped — Season 36 finale",
       "links": [],
-      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty."
+      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty.",
+      "noExplainerReason": "No matching published case explainer or live case guide found; the row is not one of the approved topic matches."
     },
     {
       "id": "media-06",
       "title": "Heart",
       "links": [],
-      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty."
+      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty.",
+      "noExplainerReason": "No matching published case explainer or live case guide found; the row is not one of the approved topic matches."
     },
     {
       "id": "media-07",
@@ -87,37 +93,43 @@
       "id": "media-08",
       "title": "The Serial Killer Connection — Part 3 (final)",
       "links": [],
-      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty."
+      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty.",
+      "noExplainerReason": "No matching published case explainer or live case guide found; the row is not one of the approved topic matches."
     },
     {
       "id": "media-09",
       "title": "Swipe Right on the Devil",
       "links": [],
-      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty."
+      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty.",
+      "noExplainerReason": "No matching published case explainer or live case guide found; the row is not one of the approved topic matches."
     },
     {
       "id": "media-10",
       "title": "The Flores Massacre (La Masacre de Flores)",
       "links": [],
-      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty."
+      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty.",
+      "noExplainerReason": "No matching published case explainer or live case guide found; the row is not one of the approved topic matches."
     },
     {
       "id": "media-11",
       "title": "After the First 48 — Season 13 premiere",
       "links": [],
-      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty."
+      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty.",
+      "noExplainerReason": "No matching published case explainer or live case guide found; the row is not one of the approved topic matches."
     },
     {
       "id": "media-12",
       "title": "Killer Investigations — Season 2 premiere",
       "links": [],
-      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty."
+      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty.",
+      "noExplainerReason": "No matching published case explainer or live case guide found; the row is not one of the approved topic matches."
     },
     {
       "id": "media-13",
       "title": "The Pet Cemetery Murders: A Ghost Story — Episode 3 (final)",
       "links": [],
-      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty."
+      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty.",
+      "noExplainerReason": "No matching published case explainer or live case guide found; the row is not one of the approved topic matches."
     },
     {
       "id": "media-14",
@@ -137,55 +149,64 @@
       "id": "media-15",
       "title": "Snapped: Killer Moms — Season 1",
       "links": [],
-      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty."
+      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty.",
+      "noExplainerReason": "No matching published case explainer or live case guide found; the row is not one of the approved topic matches."
     },
     {
       "id": "media-16",
       "title": "Catfish Murders — Season 1",
       "links": [],
-      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty."
+      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty.",
+      "noExplainerReason": "No matching published case explainer or live case guide found; the row is not one of the approved topic matches."
     },
     {
       "id": "media-17",
       "title": "Toxic: What Happened in the Haight House?",
       "links": [],
-      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty."
+      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty.",
+      "noExplainerReason": "No matching published case explainer or live case guide found; the row is not one of the approved topic matches."
     },
     {
       "id": "media-18",
       "title": "The Fall of El Mayo",
       "links": [],
-      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty."
+      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty.",
+      "noExplainerReason": "No matching published case explainer or live case guide found; the row is not one of the approved topic matches."
     },
     {
       "id": "media-19",
       "title": "Cannibal Poet",
       "links": [],
-      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty."
+      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty.",
+      "noExplainerReason": "No matching published case explainer or live case guide found; the row is not one of the approved topic matches."
     },
     {
       "id": "media-20",
       "title": "Unprotected: Murder in Galicia",
       "links": [],
-      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty."
+      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty.",
+      "noExplainerReason": "No matching published case explainer or live case guide found; the row is not one of the approved topic matches."
     },
     {
       "id": "media-21",
       "title": "Mother Knows Murder (hosts Niecy Nash and Dia Nash)",
       "links": [],
-      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty."
+      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty.",
+      "noExplainerReason": "No matching published case explainer or live case guide found; the row is not one of the approved topic matches."
     },
     {
       "id": "media-22",
       "title": "Murder in Galicia",
       "links": [],
-      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty."
+      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty.",
+      "noExplainerReason": "No matching published case explainer or live case guide found; the row is not one of the approved topic matches."
     },
     {
       "id": "media-23",
       "title": "Homicide for the Holidays — Season 6 premiere",
       "links": [],
-      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty."
+      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty.",
+      "noExplainerReason": "No matching published case explainer or live case guide found; the row is not one of the approved topic matches."
     },
     {
       "id": "media-24",
@@ -237,22 +258,329 @@
       "id": "media-s1",
       "title": "Dateline NBC",
       "links": [],
-      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty."
+      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty.",
+      "noExplainerReason": "No matching published case explainer or live case guide found; the row is not one of the approved topic matches."
     },
     {
       "id": "media-s2",
       "title": "20/20",
       "links": [],
-      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty."
+      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty.",
+      "noExplainerReason": "No matching published case explainer or live case guide found; the row is not one of the approved topic matches."
     },
     {
       "id": "media-s3",
       "title": "48 Hours",
       "links": [],
-      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty."
+      "noBookReason": "Not an approved US criminal jury-trial row; first-list BOOK allowlist is empty.",
+      "noExplainerReason": "No matching published case explainer or live case guide found; the row is not one of the approved topic matches."
     }
   ],
   "validation": {
-    "pending": true
+    "testedApplicationCommit": "59c601b0d6b83b13cebd07fedcd6beda9118d5f5",
+    "fullBuild": "passed",
+    "allTestSuites": {
+      "passed": 63,
+      "failed": 0,
+      "skipped": 1,
+      "note": "The one live-HTTP test is opt-in in the normal suite. It ran separately with MEDIA_LINK_CHECK=1: all 7 media tests passed, including live HTTP."
+    },
+    "liveLinkTest": {
+      "passed": 7,
+      "failed": 0,
+      "uniqueUrls": 32,
+      "http200": 32,
+      "checks": [
+        {
+          "url": "https://www.broadwayworld.com/bwwtv/article/THE-PET-CEMETERY-MURDERS-A-GHOST-STORY-to-Debut-on-HBO-20260928",
+          "status": 200,
+          "finalUrl": "https://www.broadwayworld.com/bwwtv/article/THE-PET-CEMETERY-MURDERS-A-GHOST-STORY-to-Debut-on-HBO-20260928"
+        },
+        {
+          "url": "https://press.wbd.com/us/media-release/whats-new-hbo-max-october-1",
+          "status": 200,
+          "finalUrl": "https://press.wbd.com/us/media-release/whats-new-hbo-max-october-1"
+        },
+        {
+          "url": "https://www.peacocktv.com/blog/what-to-watch-new-on-peacock",
+          "status": 200,
+          "finalUrl": "https://www.peacocktv.com/blog/what-to-watch-new-on-peacock"
+        },
+        {
+          "url": "https://www.apple.com/tv-pr/news/2026/10/apple-tv-debuts-trailer-for-heart-a-new-apple-original-podcast-hosted-by-karen-kilgariff-premiering-october-19/",
+          "status": 200,
+          "finalUrl": "https://www.apple.com/tv-pr/news/2026/10/apple-tv-debuts-trailer-for-heart-a-new-apple-original-podcast-hosted-by-karen-kilgariff-premiering-october-19/"
+        },
+        {
+          "url": "https://pressroom.versantmedia.com/oxygen/shows/catfish-murders/press-releases/oxygen-unveils-fall-programming-featuring-trio-gripping",
+          "status": 200,
+          "finalUrl": "https://pressroom.versantmedia.com/oxygen/shows/catfish-murders/press-releases/oxygen-unveils-fall-programming-featuring-trio-gripping"
+        },
+        {
+          "url": "https://press.wbd.com/us/media-release/investigation-discovery/investigation-discovery-chronicles-unique-bond-between-survivor-and-serial-killers-ex",
+          "status": 200,
+          "finalUrl": "https://press.wbd.com/us/media-release/investigation-discovery/investigation-discovery-chronicles-unique-bond-between-survivor-and-serial-killers-ex"
+        },
+        {
+          "url": "https://podnews.net/press-release/pave-studios-disney-hulu",
+          "status": 200,
+          "finalUrl": "https://podnews.net/press-release/pave-studios-disney-hulu"
+        },
+        {
+          "url": "https://cassiancreed.com/post/reading-the-crime-scene-what-forensics-reveals/",
+          "status": 200,
+          "finalUrl": "https://cassiancreed.com/post/reading-the-crime-scene-what-forensics-reveals/"
+        },
+        {
+          "url": "https://cassiancreed.com/how-forensic-genetic-genealogy-works/",
+          "status": 200,
+          "finalUrl": "https://cassiancreed.com/how-forensic-genetic-genealogy-works/"
+        },
+        {
+          "url": "https://www.tvmaze.com/shows/94540/the-serial-killer-connection",
+          "status": 200,
+          "finalUrl": "https://www.tvmaze.com/shows/94540/the-serial-killer-connection"
+        },
+        {
+          "url": "https://www.tvline.com/2289301/what-to-watch-week-of-october-18-2026-tv-shows-movies/",
+          "status": 200,
+          "finalUrl": "https://www.tvline.com/2289301/what-to-watch-week-of-october-18-2026-tv-shows-movies/"
+        },
+        {
+          "url": "https://www.broadwayworld.com/bwwtv/article/AE-to-Premiere-SCOTT-PETERSON-THE-NEW-EVIDENCE-Special-and-New-Crime-Series-This-Fall-20260819",
+          "status": 200,
+          "finalUrl": "https://www.broadwayworld.com/bwwtv/article/AE-to-Premiere-SCOTT-PETERSON-THE-NEW-EVIDENCE-Special-and-New-Crime-Series-This-Fall-20260819"
+        },
+        {
+          "url": "https://www.tvinsider.com/network/ae/schedule/",
+          "status": 200,
+          "finalUrl": "https://www.tvinsider.com/network/ae/schedule/"
+        },
+        {
+          "url": "https://www.infobae.com/que-puedo-ver/2026/10/08/la-masacre-de-flores-llega-a-hbo-max-con-el-testimonio-de-matias-bagnato/",
+          "status": 200,
+          "finalUrl": "https://www.infobae.com/que-puedo-ver/2026/10/08/la-masacre-de-flores-llega-a-hbo-max-con-el-testimonio-de-matias-bagnato/"
+        },
+        {
+          "url": "https://www.hulu.com/series/swipe-right-on-the-devil-3cb954b0-2a2b-4601-84b1-5ca6a4e9c7cc",
+          "status": 200,
+          "finalUrl": "https://www.hulu.com/series/swipe-right-on-the-devil-3cb954b0-2a2b-4601-84b1-5ca6a4e9c7cc"
+        },
+        {
+          "url": "https://www.avclub.com/the-wolves-of-real-estate-trailer-peacock",
+          "status": 200,
+          "finalUrl": "https://www.avclub.com/the-wolves-of-real-estate-trailer-peacock"
+        },
+        {
+          "url": "https://cassiancreed.com/court-calendar/",
+          "status": 200,
+          "finalUrl": "https://cassiancreed.com/court-calendar/"
+        },
+        {
+          "url": "http://www.thefutoncritic.com/news/2026/09/29/investigation-discovery-spotlights-the-haight-family-tragedy-in-new-special-toxic-what-happened-in-the-haight-house-425513/20260929id01/",
+          "status": 200,
+          "finalUrl": "http://www.thefutoncritic.com/news/2026/09/29/investigation-discovery-spotlights-the-haight-family-tragedy-in-new-special-toxic-what-happened-in-the-haight-house-425513/20260929id01/"
+        },
+        {
+          "url": "https://about.netflix.com/en/news/la-caida-de-el-mayo-trailer",
+          "status": 200,
+          "finalUrl": "https://about.netflix.com/en/news/la-caida-de-el-mayo-trailer"
+        },
+        {
+          "url": "https://www.aol.com/articles/toxic-happened-haight-house-chilling-115447000.html",
+          "status": 200,
+          "finalUrl": "https://www.aol.com/articles/toxic-happened-haight-house-chilling-115447000.html"
+        },
+        {
+          "url": "https://www.whats-on-netflix.com/coming-soon/whats-coming-to-netflix-in-november-2026/",
+          "status": 200,
+          "finalUrl": "https://www.whats-on-netflix.com/coming-soon/whats-coming-to-netflix-in-november-2026/"
+        },
+        {
+          "url": "https://about.netflix.com/en/news/netflix-premieres-the-documentary-unprotected-murder-in-galicia-on-november-6",
+          "status": 200,
+          "finalUrl": "https://about.netflix.com/en/news/netflix-premieres-the-documentary-unprotected-murder-in-galicia-on-november-6"
+        },
+        {
+          "url": "https://streamingkalender.se/h/2026-10-29-cannibal-poet/",
+          "status": 200,
+          "finalUrl": "https://streamingkalender.se/h/2026-10-29-cannibal-poet/"
+        },
+        {
+          "url": "https://www.pbs.org/video/crime-and-punishment-in-america-extended-trailer/",
+          "status": 200,
+          "finalUrl": "https://www.pbs.org/video/crime-and-punishment-in-america-extended-trailer/"
+        },
+        {
+          "url": "https://www.netflixjunkie.com/netflix-news-netflix-release-list-for-november-2026-every-show-movie-and-documentary/",
+          "status": 200,
+          "finalUrl": "https://www.netflixjunkie.com/netflix-news-netflix-release-list-for-november-2026-every-show-movie-and-documentary/"
+        },
+        {
+          "url": "https://cassiancreed.com/post/how-investigators-weigh-evidence-plain-english/",
+          "status": 200,
+          "finalUrl": "https://cassiancreed.com/post/how-investigators-weigh-evidence-plain-english/"
+        },
+        {
+          "url": "https://www.realityblurred.com/realitytv/2026/09/new-upcoming-documentaries-fall-2026/",
+          "status": 200,
+          "finalUrl": "https://www.realityblurred.com/realitytv/2026/09/new-upcoming-documentaries-fall-2026/"
+        },
+        {
+          "url": "https://cassiancreed.com/post/first-degree-second-degree-manslaughter-what-s-the-difference/",
+          "status": 200,
+          "finalUrl": "https://cassiancreed.com/post/first-degree-second-degree-manslaughter-what-s-the-difference/"
+        },
+        {
+          "url": "https://www.directv.com/insider/fall-tv-lineup/",
+          "status": 200,
+          "finalUrl": "https://www.directv.com/insider/fall-tv-lineup/"
+        },
+        {
+          "url": "https://www.nbcnews.com/dateline",
+          "status": 200,
+          "finalUrl": "https://www.nbcnews.com/dateline"
+        },
+        {
+          "url": "https://abc.com/news/68176c48-d9cc-47a7-a237-d961a53fccaf/category/1138628",
+          "status": 200,
+          "finalUrl": "https://abc.com/news/68176c48-d9cc-47a7-a237-d961a53fccaf/category/1138628"
+        },
+        {
+          "url": "https://www.paramountpressexpress.com/cbs-entertainment/shows/48-hours/releases/?view=113402-48-hours-kicks-off-a-new-season-with-back-to-back-hours-featuring-exclusive-interviews-intriguing-cases-and-the-best-true-crime-reporting",
+          "status": 200,
+          "finalUrl": "https://www.paramountpressexpress.com/cbs-entertainment/shows/48-hours/releases/?view=113402-48-hours-kicks-off-a-new-season-with-back-to-back-hours-featuring-exclusive-interviews-intriguing-cases-and-the-best-true-crime-reporting"
+        }
+      ]
+    },
+    "responsive": {
+      "commit": "59c601b0d6b83b13cebd07fedcd6beda9118d5f5",
+      "checkedAt": "2026-10-18T18:48:28.493Z",
+      "summaries": [
+        {
+          "width": 1280,
+          "renderedRows": 28,
+          "freeBadges": 6,
+          "paidBadges": 0,
+          "bookBadges": 0,
+          "overflow": false,
+          "pacificMidnightHiding": "passed",
+          "finiteStandingHiding": "passed",
+          "consoleErrors": []
+        },
+        {
+          "width": 1024,
+          "renderedRows": 28,
+          "freeBadges": 6,
+          "paidBadges": 0,
+          "bookBadges": 0,
+          "overflow": false,
+          "pacificMidnightHiding": "passed",
+          "finiteStandingHiding": "passed",
+          "consoleErrors": []
+        },
+        {
+          "width": 390,
+          "renderedRows": 28,
+          "freeBadges": 6,
+          "paidBadges": 0,
+          "bookBadges": 0,
+          "overflow": false,
+          "pacificMidnightHiding": "passed",
+          "finiteStandingHiding": "passed",
+          "consoleErrors": []
+        }
+      ],
+      "sameCaseCandidates": []
+    },
+    "calendarRegression": {
+      "unchangedTsvs": true,
+      "summaries": [
+        {
+          "width": 1280,
+          "route": "/court-calendar/",
+          "detailCount": 145,
+          "listCount": 145,
+          "selectedCount": 35,
+          "dotCount": 27,
+          "serverRendering": "passed",
+          "colors": "passed",
+          "overflow": "none"
+        },
+        {
+          "width": 1280,
+          "route": "/",
+          "detailCount": 0,
+          "listCount": 0,
+          "selectedCount": 35,
+          "dotCount": 27,
+          "serverRendering": "passed",
+          "colors": "passed",
+          "overflow": "none"
+        },
+        {
+          "width": 390,
+          "route": "/court-calendar/",
+          "detailCount": 145,
+          "listCount": 145,
+          "selectedCount": 35,
+          "dotCount": 27,
+          "serverRendering": "passed",
+          "colors": "passed",
+          "overflow": "none"
+        },
+        {
+          "width": 390,
+          "route": "/",
+          "detailCount": 0,
+          "listCount": 0,
+          "selectedCount": 35,
+          "dotCount": 27,
+          "serverRendering": "passed",
+          "colors": "passed",
+          "overflow": "none"
+        }
+      ]
+    },
+    "workflowRun": "https://github.com/cassiancreed/cassiancreed-astro/actions/runs/39155750423",
+    "jobId": 117758508048,
+    "copyReadback": {
+      "rowCount": 28,
+      "fieldsCompared": 168,
+      "mismatches": []
+    },
+    "publication": "DRAFT ONLY; not merged; no production deployment requested or performed.",
+    "dateHiding": "Initial build filters plus browser Pacific-date checks on load, every minute, pageshow and visibility return. Standing slots expire after their final listed date.",
+    "readingLevel": "New labels and intro use plain language at grade 7 or below; owner-supplied release copy and published link titles retained exactly.",
+    "badgeComponent": "src/components/CalendarExplainerLink.astro reused unchanged",
+    "sharedColors": {
+      "free": "#86efac",
+      "paid": "#f6c76b",
+      "book": "#d8b4fe",
+      "text": "#14110f"
+    },
+    "contrastRatios": {
+      "free": 13.391551903616213,
+      "paid": 11.909009545740567,
+      "book": 10.636826129488155
+    }
+  },
+  "sourceRepair": {
+    "row": "media-s2",
+    "previousUrl": "https://www.detpress.com/abc/pressrelease/abc-announces-fall-2026-premiere-dates/",
+    "previousStatus": 404,
+    "replacementUrl": "https://abc.com/news/68176c48-d9cc-47a7-a237-d961a53fccaf/category/1138628",
+    "source": "ABC's Fall 2026 Premiere Dates & Primetime TV Schedule!, Jim Donnelly, July 27, 2026",
+    "supports": "20/20 on Fridays at 9 p.m.; all fall times Eastern/Pacific. Schedule copy unchanged."
+  },
+  "copyVerification": {
+    "rowCount": 28,
+    "fieldsCompared": 168,
+    "mismatches": []
+  },
+  "inventory": {
+    "sameCasePostCandidates": [],
+    "method": "Searched full non-archived, non-draft post files for named case identities; checked the existing shared live-product catalog and Court Calendar TSV. No additional same-case NEP post or guide matched.",
+    "knownCourtMatch": "alexander-brothers-sentencing"
   }
 }
