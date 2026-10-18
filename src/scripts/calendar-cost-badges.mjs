@@ -1,5 +1,5 @@
 import { classifyCalendarLink } from '../data/calendar-explainer-links.mjs';
-// Used by dynamic calendar links and by the page-level fallback for future links.
+// Used only by explicit calendar content/signup controls; plain navigation does not call this helper.
 // Existing anchor labels, event handlers, targets and analytics attributes stay intact.
 export function appendCalendarCostBadge(element, rawLink) {
   const url = rawLink?.url || element.getAttribute('href') || '#court-updates';
