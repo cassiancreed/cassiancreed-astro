@@ -52,7 +52,7 @@ test('day markers aggregate all entries and retain free, paid, book order', () =
 });
 
 test('review exclusions never receive BOOK links, even when their event is a jury trial', () => {
-  assert.deepEqual([...JURY_CHESS_EXCLUDED_IDS], ["goncalves-wsu-trial","aramburu-paris-trial","kepner-federal-trial","brianna-moore-trial","clancy-trial","virzi-trial","michael-vaughan-trial","crum-odom-verdict","preston-lord-meisner-trial","preston-lord-five-defendant-trial","elmore-laura-miller-trial","wagner-trial","gardner-jury-selection","gardner-trial","bridegan-fernandez-trial","farwell-jury-trial","farwell-trial-oct19","carter-brooks-trial","ryan-cavett-trial","killins-verdict-sentencing","eaton-burlington-trial","banks-federal-trial"]);
+  assert.deepEqual([...JURY_CHESS_EXCLUDED_IDS], ["goncalves-wsu-trial","aramburu-paris-trial","kepner-federal-trial","brianna-moore-trial","clancy-trial","virzi-trial","michael-vaughan-trial","crum-odom-verdict","preston-lord-meisner-trial","preston-lord-five-defendant-trial","elmore-laura-miller-trial","wagner-trial","gardner-jury-selection","gardner-trial","bridegan-fernandez-trial","farwell-jury-trial","farwell-trial-oct19","carter-brooks-trial","ryan-cavett-trial","killins-verdict-sentencing","eaton-burlington-trial","banks-federal-trial","conway-mo3-trial"]);
   for (const id of JURY_CHESS_EXCLUDED_IDS) {
     const entry = entries.find(e => e.id === id);
     assert.ok(entry, id);
@@ -78,14 +78,30 @@ test('paid and Books destinations cannot be overridden as FREE and always need r
   }
 });
 
-test('living-survivor cases stay outside the nine-entry BOOK allowlist',()=>{
-  assert.equal(JURY_CHESS_ENTRY_IDS.size,9);
-  for(const id of ['killins-verdict-sentencing','eaton-burlington-trial','banks-federal-trial']) {
+test('living-survivor cases stay outside the eight-entry BOOK allowlist',()=>{
+  assert.equal(JURY_CHESS_ENTRY_IDS.size,8);
+  for(const id of ['killins-verdict-sentencing','eaton-burlington-trial','banks-federal-trial','conway-mo3-trial']) {
     const entry=entries.find(e=>e.id===id);assert.ok(entry,id);
     assert.equal(JURY_CHESS_ENTRY_IDS.has(id),false,id);
     assert.equal(JURY_CHESS_EXCLUDED_IDS.has(id),true,id);
     assert.equal(juryChessEligible({...entry,proceeding:'Jury trial'}),false,id);
     assert.equal(calendarLinksFor(entry).some(link=>link.type==='book'),false,id);
     assert.equal(calendarLinksFor({...entry,link:'/books/',linkText:'Get Jury Chess'}).some(link=>link.type==='book'),false,id+' explicit Books link');
+  }
+});
+
+test('Banks has no stale case-specific Jury Chess promotion if its exclusions change',()=>{
+  const allowed=[...JURY_CHESS_ENTRY_IDS],excluded=[...JURY_CHESS_EXCLUDED_IDS];
+  const entry=entries.find(e=>e.id==='banks-federal-trial');assert.ok(entry);
+  try {
+    JURY_CHESS_EXCLUDED_IDS.delete(entry.id);
+    JURY_CHESS_ENTRY_IDS.add(entry.id);
+    const books=calendarLinksFor(entry).filter(link=>link.type==='book');
+    assert.equal(books.length,1);
+    assert.equal(books[0].url,'https://cassiancreed.com/books/');
+    assert.equal(books[0].placement,'court_calendar_jury_chess');
+  } finally {
+    JURY_CHESS_ENTRY_IDS.clear();for(const id of allowed)JURY_CHESS_ENTRY_IDS.add(id);
+    JURY_CHESS_EXCLUDED_IDS.clear();for(const id of excluded)JURY_CHESS_EXCLUDED_IDS.add(id);
   }
 });

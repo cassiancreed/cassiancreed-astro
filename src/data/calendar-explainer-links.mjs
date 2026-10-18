@@ -79,12 +79,6 @@ const EXISTING_CASE_GUIDES = {
     bookKey: 'lindsay-clancy-post-mistrial-field-guide',
     placement: 'court_calendar_clancy_mistrial_entry',
   },
-  'banks-federal-trial': {
-    url: 'https://cassiancreed.beehiiv.com/products/jury-chess?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=jury_chess&utm_content=lil_durk_verdict_entry',
-    text: 'Learn how criminal jury verdicts work — and what they do not decide. Get Jury Chess — $5.99',
-    bookKey: 'jury-chess',
-    placement: 'court_calendar_lil_durk_verdict_entry',
-  },
   'patterson-appeal': {
     url: 'https://cassiancreed.beehiiv.com/products/case-chess-erin-patterson',
     text: 'Read the Erin Patterson case explainer — $2.99',
@@ -727,9 +721,9 @@ const PUBLISHED_POSTS = new Set([
 ]);
 // Reviewed event matches, not case names or stale IDs. No book is inferred
 // from a hearing's notes, a grand jury, or an appellate reference to a verdict.
-export const JURY_CHESS_ENTRY_IDS = new Set(["faith-hedgepeth-trial","murdaugh-retrial","salazar-clinkunbroomer-trial","bhatt-jury-selection","moore-sherman-trial","bohm-trial","mary-collins-trial","martin-risner-sentencing","conway-mo3-trial"]);
+export const JURY_CHESS_ENTRY_IDS = new Set(["faith-hedgepeth-trial","murdaugh-retrial","salazar-clinkunbroomer-trial","bhatt-jury-selection","moore-sherman-trial","bohm-trial","mary-collins-trial","martin-risner-sentencing"]);
 // killins-verdict-sentencing: living survivor.
-export const JURY_CHESS_EXCLUDED_IDS = new Set(["goncalves-wsu-trial","aramburu-paris-trial","kepner-federal-trial","brianna-moore-trial","clancy-trial","virzi-trial","michael-vaughan-trial","crum-odom-verdict","preston-lord-meisner-trial","preston-lord-five-defendant-trial","elmore-laura-miller-trial","wagner-trial","gardner-jury-selection","gardner-trial","bridegan-fernandez-trial","farwell-jury-trial","farwell-trial-oct19","carter-brooks-trial","ryan-cavett-trial","killins-verdict-sentencing","eaton-burlington-trial","banks-federal-trial"]);
+export const JURY_CHESS_EXCLUDED_IDS = new Set(["goncalves-wsu-trial","aramburu-paris-trial","kepner-federal-trial","brianna-moore-trial","clancy-trial","virzi-trial","michael-vaughan-trial","crum-odom-verdict","preston-lord-meisner-trial","preston-lord-five-defendant-trial","elmore-laura-miller-trial","wagner-trial","gardner-jury-selection","gardner-trial","bridegan-fernandez-trial","farwell-jury-trial","farwell-trial-oct19","carter-brooks-trial","ryan-cavett-trial","killins-verdict-sentencing","eaton-burlington-trial","banks-federal-trial","conway-mo3-trial"]);
 // Jury Chess only on US criminal jury events. Never civil, foreign, child-victim, juvenile, or cases with a living survivor. Owner may override per case.
 export function juryChessEligible(entry) {
   if (JURY_CHESS_EXCLUDED_IDS.has(entry.id)) return false;
