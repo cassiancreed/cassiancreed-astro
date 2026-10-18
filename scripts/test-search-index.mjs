@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { normalizePath, redirectSources, isRedirected, tsvLastmod } from '../src/utils/search-index.mjs';
+import { normalizePath, redirectSources, isRedirected, tsvLastmod, gitLastmod } from '../src/utils/search-index.mjs';
 import { isNoindex, sitemapEntries } from './validate-search-output.mjs';
 
 test('redirect exclusions use exact paths, wildcard boundaries and both configuration files', () => {
@@ -23,4 +23,40 @@ test('sitemap parser retains source dates and TSV dates are not build dates', ()
   assert.deepEqual(sitemapEntries('<url><loc>https://cassiancreed.com/</loc><lastmod>2026-06-01</lastmod></url>'),
     [{ url: 'https://cassiancreed.com/', lastmod: '2026-06-01' }]);
   assert.equal(tsvLastmod('src/data/court-calendar-archive.tsv'), '2026-09-09');
+});
+
+test('Git dates use literal source paths and omit unknown shallow-history dates', async () => {
+  const { mkdtempSync, writeFileSync, rmSync } = await import('node:fs');
+  const { tmpdir } = await import('node:os');
+  const { join } = await import('node:path');
+  const { pathToFileURL } = await import('node:url');
+  const { execFileSync } = await import('node:child_process');
+  const fixture = mkdtempSync(join(tmpdir(), 'seo-git-date-'));
+  const originalDirectory = process.cwd();
+  const repo = join(fixture, 'full'), shallow = join(fixture, 'shallow');
+  const git = (args, cwd, date) => execFileSync('git', args, {
+    cwd, stdio: 'pipe', env: { ...process.env,
+      GIT_AUTHOR_NAME: 'Fixture', GIT_AUTHOR_EMAIL: 'fixture@example.invalid',
+      GIT_COMMITTER_NAME: 'Fixture', GIT_COMMITTER_EMAIL: 'fixture@example.invalid',
+      ...(date ? { GIT_AUTHOR_DATE: date, GIT_COMMITTER_DATE: date } : {}),
+    },
+  });
+  try {
+    git(['init', '--quiet', repo], fixture);
+    writeFileSync(join(repo, 'page[old].astro'), 'Old source');
+    git(['add', '--all'], repo);
+    git(['commit', '--quiet', '-m', 'Old page'], repo, '2010-01-02T03:04:05Z');
+    writeFileSync(join(repo, 'other.txt'), 'Unrelated update');
+    git(['add', '--all'], repo);
+    git(['commit', '--quiet', '-m', 'Other update'], repo, '2015-01-02T03:04:05Z');
+    process.chdir(repo);
+    assert.equal(gitLastmod('page[old].astro'), '2010-01-02');
+    git(['clone', '--quiet', '--depth', '1', pathToFileURL(repo).href, shallow], fixture);
+    process.chdir(shallow);
+    // Use the same source path in a different checkout to exercise cache identity too.
+    assert.equal(gitLastmod('page[old].astro'), undefined);
+  } finally {
+    process.chdir(originalDirectory);
+    rmSync(fixture, { recursive: true, force: true });
+  }
 });
