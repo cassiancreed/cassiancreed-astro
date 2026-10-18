@@ -1,4 +1,5 @@
 ---
+import CalendarCostBadge from './CalendarCostBadge.astro';
 // ─────────────────────────────────────────────────────────────────────────────
 // CaptureBlock — per-page lead-magnet matching (NEP-REV-CWK-0717AF)
 //
@@ -123,6 +124,7 @@ const subscribeHref =
 // humans, Kasada wall for bots) and captured zero subscribers — never reinstate it.
 const embedSrc =
   `${EMBED_BASE}/${o.formId}?utm_source=website&utm_medium=capture&utm_campaign=${encodeURIComponent(camp)}${utmContent}`;
+const calendarCosts = ['/court-calendar/','/true-crime-watch-calendar/'].includes(Astro.url.pathname);
 ---
 
 <section class="capture" aria-label="Email newsletter sign-up">
@@ -142,6 +144,7 @@ const embedSrc =
               shows the full provider document so preferences, validation and
               confirmation remain reachable. Verify native responsive layout
               when the provider's fields or theme change. */}
+          {calendarCosts && <p><CalendarCostBadge url={subscribeHref} /></p>}
           <div class:list={[
             'capture__embed-window',
             { 'capture__embed-window--calendar': offer === 'calendar' },
@@ -161,7 +164,7 @@ const embedSrc =
             ></iframe>
           </div>
           <p class="capture__fallback">
-            Form not loading? <a href={subscribeHref} data-nep-campaign={camp} data-nep-conversion-page={conversionPage} data-nep-cta-id={`${ctaId}_fallback`} data-nep-form-id={o.formId} data-nep-offer-id={o.offerId} target="_blank" rel="noopener noreferrer">{resolvedButton} &rarr;</a>
+            Form not loading? <a href={subscribeHref} data-nep-campaign={camp} data-nep-conversion-page={conversionPage} data-nep-cta-id={`${ctaId}_fallback`} data-nep-form-id={o.formId} data-nep-offer-id={o.offerId} target="_blank" rel="noopener noreferrer">{calendarCosts && <CalendarCostBadge url={subscribeHref} />} {resolvedButton} &rarr;</a>
           </p>
           <p class="capture__helper">After submitting, follow Beehiiv&rsquo;s on-screen confirmation instructions and check the email address you provided.</p>
           <div class="capture__success" role="status" hidden>
@@ -169,7 +172,7 @@ const embedSrc =
           </div>
         </>
       ) : (
-        <a class="capture__button" data-nep-campaign={camp} data-nep-conversion-page={conversionPage} data-nep-cta-id={ctaId} data-nep-form-id={o.formId} data-nep-offer-id={o.offerId} href={subscribeHref} target="_blank" rel="noopener noreferrer">{resolvedButton} &rarr;</a>
+        <a class="capture__button" data-nep-campaign={camp} data-nep-conversion-page={conversionPage} data-nep-cta-id={ctaId} data-nep-form-id={o.formId} data-nep-offer-id={o.offerId} href={subscribeHref} target="_blank" rel="noopener noreferrer">{calendarCosts && <CalendarCostBadge url={subscribeHref} />} {resolvedButton} &rarr;</a>
       )}
     </div>
   </div>
