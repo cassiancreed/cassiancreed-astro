@@ -231,7 +231,7 @@ const visibleDayEntries = (entries) => {
       <h3 id="home-calendar-agenda-title" data-calendar-agenda-title>{initialSelectedLabel}</h3>
       <div data-calendar-agenda aria-live="polite">
         {initialSelectedEntries.length > 0 ? initialSelectedEntries.map((entry) => (
-          <article class="home-calendar__agenda-item">
+          <article class="home-calendar__agenda-item" data-calendar-entry={entry.id}>
             <p class="home-calendar__agenda-time">{entry.dateText}</p>
             {entry.timeStatus === 'tentative' && <p class="home-calendar__tentative">Tentative &mdash; subject to confirmation</p>}
             <h4>{entry.calendarLabel}</h4>
@@ -430,6 +430,7 @@ const visibleDayEntries = (entries) => {
       selectedEntries.forEach((entry) => {
         const article = document.createElement('article');
         article.className = 'home-calendar__agenda-item';
+        article.dataset.calendarEntry = entry.id;
         const dateText = document.createElement('p');
         dateText.className = 'home-calendar__agenda-time';
         dateText.textContent = entry.dateText;
