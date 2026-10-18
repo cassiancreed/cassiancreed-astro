@@ -15,6 +15,3 @@ export function appendCalendarCostBadge(element, rawLink) {
   if (element.classList.contains('calendar-resource')) element.dataset.linkType = link.type;
   return badge;
 }
-export function ensureCalendarCostBadges(root = document) {
-  root.querySelectorAll('a[href],button[data-calendar-alert]').forEach(element => appendCalendarCostBadge(element));
-}
