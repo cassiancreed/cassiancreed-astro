@@ -5,7 +5,7 @@ import { JURY_CHESS_PRICE_TEXT } from './book-prices.mjs';
 const EXISTING_CASE_GUIDES = {
   'burke-prelim': {
     url: 'https://cassiancreed.beehiiv.com/products/celeste-rivas-hernandez-d4vd-charges-guide?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=explainer_d4vd_v2&utm_content=status_entry',
-    text: 'Read the Celeste Rivas Hernandez case guide — the D4vd charges explained — $1.99',
+    text: 'Read the Case Chess guide: The D4vd Case — $1.99',
     bookKey: 'celeste-rivas-hernandez-d4vd-charges-guide',
     placement: 'court_calendar_d4vd_status_entry',
   },
@@ -41,37 +41,37 @@ const EXISTING_CASE_GUIDES = {
   },
   'mangione-state-double-jeopardy-hearing': {
     url: 'https://cassiancreed.beehiiv.com/products/brian-thompson-luigi-mangione-two-courts?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=explainer_luigi_v1&utm_content=state_entry',
-    text: 'Understand the Brian Thompson case and its two-court collision — $1.99',
+    text: 'Read the Case Chess guide: The Brian Thompson Case — $1.99',
     bookKey: 'brian-thompson-luigi-mangione-two-courts',
     placement: 'court_calendar_mangione_state_entry',
   },
   'mangione-federal-sentencing': {
     url: 'https://cassiancreed.beehiiv.com/products/brian-thompson-luigi-mangione-two-courts?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=explainer_luigi_v1&utm_content=federal_entry',
-    text: 'Understand the Brian Thompson case and its two-court collision — $1.99',
+    text: 'Read the Case Chess guide: The Brian Thompson Case — $1.99',
     bookKey: 'brian-thompson-luigi-mangione-two-courts',
     placement: 'court_calendar_mangione_federal_entry',
   },
   'clancy-november-motions': {
     url: 'https://cassiancreed.beehiiv.com/products/lindsay-clancy-post-mistrial-field-guide?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=explainer_clancy_v1&utm_content=november_entry',
-    text: 'Read the Cora, Dawson and Callan post-mistrial field guide — $1.99',
+    text: 'Read the Case Chess guide: The Lindsay Clancy Case — $1.99',
     bookKey: 'lindsay-clancy-post-mistrial-field-guide',
     placement: 'court_calendar_clancy_november_entry',
   },
   'clancy-status-hearing': {
     url: 'https://cassiancreed.beehiiv.com/products/lindsay-clancy-post-mistrial-field-guide?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=explainer_clancy_v1&utm_content=status_entry',
-    text: 'Read the Cora, Dawson and Callan post-mistrial field guide — $1.99',
+    text: 'Read the Case Chess guide: The Lindsay Clancy Case — $1.99',
     bookKey: 'lindsay-clancy-post-mistrial-field-guide',
     placement: 'court_calendar_clancy_status_entry',
   },
   'clancy-trial': {
     url: 'https://cassiancreed.beehiiv.com/products/lindsay-clancy-post-mistrial-field-guide?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=explainer_clancy_v1&utm_content=mistrial_entry',
-    text: 'Read the Cora, Dawson and Callan post-mistrial field guide — $1.99',
+    text: 'Read the Case Chess guide: The Lindsay Clancy Case — $1.99',
     bookKey: 'lindsay-clancy-post-mistrial-field-guide',
     placement: 'court_calendar_clancy_mistrial_entry',
   },
   'patterson-appeal': {
     url: 'https://cassiancreed.beehiiv.com/products/case-chess-erin-patterson',
-    text: 'Read the Erin Patterson case explainer — $2.99',
+    text: 'Read the Case Chess guide: The Erin Patterson Case — $2.99',
     bookKey: 'case-chess-erin-patterson',
     placement: 'court_calendar_case_guide',
   },
@@ -560,12 +560,12 @@ const LIVE_PRODUCTS = {
   },
   "celeste-rivas-hernandez-d4vd-charges-guide": {
     "url": "https://cassiancreed.beehiiv.com/products/celeste-rivas-hernandez-d4vd-charges-guide",
-    "title": "The Celeste Rivas Hernandez Case: A Plain-English Guide to the D4vd Charges",
+    "title": "Case Chess: The D4vd Case — What's Actually Happening and What It Means",
     "price": "$1.99"
   },
   "brian-thompson-luigi-mangione-two-courts": {
     "url": "https://cassiancreed.beehiiv.com/products/brian-thompson-luigi-mangione-two-courts",
-    "title": "The Brian Thompson Case: Luigi Mangione, Two Courts",
+    "title": "Case Chess: The Brian Thompson Case — What's Actually Happening and What It Means",
     "price": "$1.99"
   },
   "christa-pike-failed-execution-guide": {
@@ -575,12 +575,12 @@ const LIVE_PRODUCTS = {
   },
   "case-chess-erin-patterson": {
     "url": "https://cassiancreed.beehiiv.com/products/case-chess-erin-patterson",
-    "title": "Case Chess: The Erin Patterson Case",
+    "title": "Case Chess: The Erin Patterson Case — What's Actually Happening and What It Means",
     "price": "$2.99"
   },
   "lindsay-clancy-post-mistrial-field-guide": {
     "url": "https://cassiancreed.beehiiv.com/products/lindsay-clancy-post-mistrial-field-guide",
-    "title": "Cora, Dawson and Callan: The Lindsay Clancy Post-Mistrial Field Guide",
+    "title": "Case Chess: The Lindsay Clancy Case — What's Actually Happening and What It Means",
     "price": "$1.99"
   },
   "jared-bridegan-case-guide-v2": {
@@ -590,7 +590,7 @@ const LIVE_PRODUCTS = {
   },
   "eric-richins-kouri-evidence-verdict": {
     "url": "https://cassiancreed.beehiiv.com/products/eric-richins-kouri-evidence-verdict",
-    "title": "Eric Richins: The Evidence-to-Verdict Guide",
+    "title": "Case Chess: The Eric Richins Case — What's Actually Happening and What It Means",
     "price": "$1.99"
   },
   "jury-chess": {
