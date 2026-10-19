@@ -67,7 +67,7 @@ test('every /previews/ link in dist resolves to a real PDF in dist',()=>{
  assert.ok(seen>=4,'expected preview links in built pages');
  for(const url of Object.values(GUIDE_PREVIEWS))assert.ok(existsSync(join('dist',url)),url);
 });
-test('FREE badge never appears on a Beehiiv URL in sources or built output',()=>{
+test('FREE badge never appears on a Beehiiv product URL in sources or built output',()=>{
  for(const key of keys){
   const links=calendarLinksFor({id:'x',link:productPrefix+key,linkText:'x'});
   for(const l of links)if(l.badge==='FREE')assert.ok(!/beehiiv\.com/.test(l.url),l.url);
@@ -76,7 +76,8 @@ test('FREE badge never appears on a Beehiiv URL in sources or built output',()=>
  for(const root of ['dist','src/content'])for(const file of files(root).filter(f=>/\.(?:html|md)$/.test(f))){
   for(const a of anchors(readFileSync(file,'utf8'))){
    const free=/data-link-type="free"/.test(a.attrs)||/calendar-badge[^>]*>FREE</.test(a.body);
-   if(free)assert.ok(!/beehiiv\.com/i.test(a.href||''),'FREE on Beehiiv '+a.href+' in '+file);
+   // FREE is allowed on the free email sign-up form; never on a Beehiiv product.
+   if(free)assert.ok(!/beehiiv\.com\/products\//i.test(a.href||''),'FREE on Beehiiv product '+a.href+' in '+file);
   }
  }
 });
