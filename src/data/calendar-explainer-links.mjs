@@ -1,3 +1,4 @@
+import { JURY_CHESS_PRICE_TEXT } from './book-prices.mjs';
 // NEP-20261018-CAL-04: reviewed case matches shared by every calendar surface.
 // Only live, priced products and non-archived published posts are eligible.
 // Source dates, court times, notes and legal posture remain in the original TSVs.
@@ -77,12 +78,6 @@ const EXISTING_CASE_GUIDES = {
     text: 'Read the Cora, Dawson and Callan post-mistrial field guide — $1.99',
     bookKey: 'lindsay-clancy-post-mistrial-field-guide',
     placement: 'court_calendar_clancy_mistrial_entry',
-  },
-  'banks-federal-trial': {
-    url: 'https://cassiancreed.beehiiv.com/products/jury-chess?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=jury_chess&utm_content=lil_durk_verdict_entry',
-    text: 'Learn how criminal jury verdicts work — and what they do not decide. Get Jury Chess — $5.99',
-    bookKey: 'jury-chess',
-    placement: 'court_calendar_lil_durk_verdict_entry',
   },
   'patterson-appeal': {
     url: 'https://cassiancreed.beehiiv.com/products/case-chess-erin-patterson',
@@ -617,7 +612,7 @@ const LIVE_PRODUCTS = {
   "jury-chess": {
     "url": "https://cassiancreed.beehiiv.com/products/jury-chess",
     "title": "Jury Chess: How Criminal Jury Trials Actually Work",
-    "price": "$5.99"
+    "price": JURY_CHESS_PRICE_TEXT
   },
   "tupac-shakur-keffe-d-case-guide": {
     "url": "https://cassiancreed.beehiiv.com/products/tupac-shakur-keffe-d-case-guide",
@@ -726,9 +721,10 @@ const PUBLISHED_POSTS = new Set([
 ]);
 // Reviewed event matches, not case names or stale IDs. No book is inferred
 // from a hearing's notes, a grand jury, or an appellate reference to a verdict.
-export const JURY_CHESS_ENTRY_IDS = new Set(["faith-hedgepeth-trial","murdaugh-retrial","salazar-clinkunbroomer-trial","bhatt-jury-selection","moore-sherman-trial","killins-verdict-sentencing","banks-federal-trial","bohm-trial","eaton-burlington-trial","mary-collins-trial","martin-risner-sentencing","conway-mo3-trial"]);
-export const JURY_CHESS_EXCLUDED_IDS = new Set(["goncalves-wsu-trial","aramburu-paris-trial","kepner-federal-trial","brianna-moore-trial","clancy-trial","virzi-trial","michael-vaughan-trial","crum-odom-verdict","preston-lord-meisner-trial","preston-lord-five-defendant-trial","elmore-laura-miller-trial","wagner-trial","gardner-jury-selection","gardner-trial","bridegan-fernandez-trial","farwell-jury-trial","farwell-trial-oct19","carter-brooks-trial","ryan-cavett-trial"]);
-// Jury Chess only on US criminal jury events. Never civil, foreign, child-victim or juvenile cases. Owner may override per case.
+export const JURY_CHESS_ENTRY_IDS = new Set(["faith-hedgepeth-trial","murdaugh-retrial","salazar-clinkunbroomer-trial","bhatt-jury-selection","moore-sherman-trial","bohm-trial","mary-collins-trial","martin-risner-sentencing"]);
+// killins-verdict-sentencing: living survivor.
+export const JURY_CHESS_EXCLUDED_IDS = new Set(["goncalves-wsu-trial","aramburu-paris-trial","kepner-federal-trial","brianna-moore-trial","clancy-trial","virzi-trial","michael-vaughan-trial","crum-odom-verdict","preston-lord-meisner-trial","preston-lord-five-defendant-trial","elmore-laura-miller-trial","wagner-trial","gardner-jury-selection","gardner-trial","bridegan-fernandez-trial","farwell-jury-trial","farwell-trial-oct19","carter-brooks-trial","ryan-cavett-trial","killins-verdict-sentencing","eaton-burlington-trial","banks-federal-trial","conway-mo3-trial"]);
+// Jury Chess only on US criminal jury events. Never civil, foreign, child-victim, juvenile, or cases with a living survivor. Owner may override per case.
 export function juryChessEligible(entry) {
   if (JURY_CHESS_EXCLUDED_IDS.has(entry.id)) return false;
   return JURY_CHESS_ENTRY_IDS.has(entry.id);
@@ -739,17 +735,25 @@ export const JURY_CHESS_LINK = {
   bookKey: 'jury-chess',
   placement: 'court_calendar_jury_chess',
   type: 'book',
-  badge: 'BOOK',
+  price: LIVE_PRODUCTS['jury-chess'].price,
+  badge: 'BOOK ' + LIVE_PRODUCTS['jury-chess'].price,
   paid: false,
 };
 export const CALENDAR_LINK_TYPES = ['free', 'paid', 'book'];
 export function classifyCalendarLink(link) {
   const path = pathKey(link.url);
   const product = Object.values(LIVE_PRODUCTS).find((item) => pathKey(item.url) === path);
-  const type = link.type || (path === '/books' || link.bookKey === 'jury-chess' || /\/products\/(jury-chess|two-stories-one-verdict)$/.test(path) ? 'book'
-    : /^https:\/\/cassiancreed\.beehiiv\.com\/products\//.test(link.url) ? 'paid' : 'free');
-  const price = product?.price || link.price;
-  return { ...link, type, price, paid: type === 'paid', badge: type === 'free' ? 'FREE' : type === 'book' ? 'BOOK' : price ? price + ' GUIDE' : 'GUIDE' };
+  // A caller may never label a product checkout or Books destination FREE.
+  let destination;
+  try { destination = new URL(link.url, 'https://cassiancreed.com'); } catch { destination = { hostname:'', pathname:'' }; }
+  const productDestination = destination.hostname.endsWith('.beehiiv.com') && destination.pathname.startsWith('/products/');
+  const bookDestination = ((destination.hostname === 'cassiancreed.com' || destination.hostname === 'www.cassiancreed.com') && /^\/books(?:\/|$)/.test(destination.pathname))
+    || /\/products\/(jury-chess|two-stories-one-verdict)\/?$/.test(destination.pathname) || link.bookKey === 'jury-chess';
+  const type = bookDestination ? 'book' : productDestination ? 'paid' : link.type || 'free';
+  const juryChessDestination = link.bookKey === 'jury-chess' || /^\/books(?:\/jury-chess)?\/?$/.test(destination.pathname) || /\/products\/jury-chess\/?$/.test(destination.pathname);
+  const price = product?.price || link.price || (juryChessDestination ? LIVE_PRODUCTS['jury-chess'].price : undefined);
+  if ((type === 'paid' || type === 'book') && !/^\$\d+\.\d{2}$/.test(price || '')) throw new Error('Missing verified calendar product price: ' + link.url);
+  return { ...link, type, price, paid: type === 'paid', badge: type === 'free' ? 'FREE' : type === 'book' ? 'BOOK ' + price : price + ' GUIDE' };
 }
 export function calendarLinkTypesFor(entries) {
   return CALENDAR_LINK_TYPES.filter((type) => entries.some((entry) => (entry.explainerLinks || calendarLinksFor(entry)).some((link) => link.type === type)));
@@ -798,8 +802,6 @@ export function calendarLinksFor(entry) {
   }
   const links = [...free, ...paid].map(classifyCalendarLink);
   if (juryChessEligible(entry) && !links.some((link) => link.type === 'book')) links.push({ ...JURY_CHESS_LINK });
-  // The existing Jury Chess promo retains its approved wording; its BOOK link
-  // now goes to the same Books page as the other trial entries.
   return links.filter((link) => link.type !== 'book' || juryChessEligible(entry))
     .map((link) => link.bookKey === 'jury-chess' ? { ...link, ...JURY_CHESS_LINK, text: link.text } : link)
     .sort((a, b) => CALENDAR_LINK_TYPES.indexOf(a.type) - CALENDAR_LINK_TYPES.indexOf(b.type));

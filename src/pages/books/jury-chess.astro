@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import { JURY_CHESS_PRICE, JURY_CHESS_PRICE_TEXT } from '../../data/book-prices.mjs';
 
 const productUrl = 'https://cassiancreed.beehiiv.com/products/jury-chess?utm_source=cassiancreed.com&utm_medium=jury_chess_landing&utm_campaign=jury_chess&utm_content=jury_chess_primary';
 const jsonld = {
@@ -16,7 +17,7 @@ const jsonld = {
   url: 'https://cassiancreed.com/books/jury-chess/',
   offers: [{
     '@type': 'Offer',
-    price: '5.99',
+    price: JURY_CHESS_PRICE,
     priceCurrency: 'USD',
     availability: 'https://schema.org/InStock',
     url: productUrl,
@@ -49,7 +50,7 @@ const jsonld = {
           <li>Use practical “Watch for This” exercises and 212 source notes.</li>
         </ul>
         <div class="offer">
-          <p class="price">$5.99</p>
+          <p class="price">{JURY_CHESS_PRICE_TEXT}</p>
           <div class="offer__actions">
             <a class="btn" href={productUrl} target="_blank" rel="noopener noreferrer" data-book-key="jury-chess" data-cta-placement="jury_chess_landing_primary">Get the full guide →</a>
             <a class="sample-link" href="/jury-chess-sample/">Read the free sample</a>
