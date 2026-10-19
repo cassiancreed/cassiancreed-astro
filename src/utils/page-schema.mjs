@@ -8,11 +8,14 @@ export function breadcrumbList(items, path) {
     })),
   };
 }
-export function pageSchema({ type = 'Article', title, description, path, source, category }) {
+export function pageSchema({ type = 'Article', title, headline, description, path, source, category }) {
   const dateModified = gitLastmod(source);
+  // Search engines expect headline to match the visible H1, without the site suffix.
+  const pageHeadline = (headline ?? title).replace(/\s*\|\s*Cassian Creed\s*$/, '');
+  if (pageHeadline.length > 110) throw new Error(path + ': JSON-LD headline exceeds 110 characters');
   const page = {
     '@type': type, '@id': SITE + path + '#page', url: SITE + path,
-    headline: title, name: title, description,
+    headline: pageHeadline, name: title, description,
     isPartOf: { '@id': SITE + '/#website' },
     publisher: { '@id': SITE + '/#org' },
     ...(type === 'Article' ? {
