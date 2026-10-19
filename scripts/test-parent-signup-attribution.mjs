@@ -200,7 +200,7 @@ test('product links never create fallback signup markers', () => {
   const storage = new MemoryStorage();
   const source = harness({ storage });
   const product = {
-    href: 'https://cassiancreed.beehiiv.com/products/jury-chess?utm_campaign=book',
+    href: 'https://cassiancreed.beehiiv.com/products/jury-chess-authority-edition-v3-2?utm_campaign=book',
     dataset: {},
     closest: () => product,
   };
@@ -411,7 +411,7 @@ test('invalid stored acquisition shapes do not suppress a valid new campaign', a
 
 test('Court book CTA and guide scroll do not count as subscription clicks; genuine form does', () => {
   const h = harness();
-  for (const href of ['https://cassiancreed.com/books/', 'https://cassiancreed.com/court-calendar/#free-guide', 'https://cassiancreed.beehiiv.com/products/jury-chess']) {
+  for (const href of ['https://cassiancreed.com/books/', 'https://cassiancreed.com/court-calendar/#free-guide', 'https://cassiancreed.beehiiv.com/products/jury-chess-authority-edition-v3-2']) {
     const link = { href, dataset: {}, closest: () => link };
     h.listeners.get('click')({ target: link });
   }

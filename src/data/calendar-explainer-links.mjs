@@ -594,7 +594,7 @@ const LIVE_PRODUCTS = {
     "price": "$1.99"
   },
   "jury-chess": {
-    "url": "https://cassiancreed.beehiiv.com/products/jury-chess",
+    "url": "https://cassiancreed.beehiiv.com/products/jury-chess-authority-edition-v3-2",
     "title": "Jury Chess: How Criminal Jury Trials Actually Work",
     "price": JURY_CHESS_PRICE_TEXT
   },
@@ -744,9 +744,9 @@ export function classifyCalendarLink(link) {
   try { destination = new URL(link.url, 'https://cassiancreed.com'); } catch { destination = { hostname:'', pathname:'' }; }
   const productDestination = destination.hostname.endsWith('.beehiiv.com') && destination.pathname.startsWith('/products/');
   const bookDestination = ((destination.hostname === 'cassiancreed.com' || destination.hostname === 'www.cassiancreed.com') && /^\/books(?:\/|$)/.test(destination.pathname))
-    || /\/products\/(jury-chess|two-stories-one-verdict)\/?$/.test(destination.pathname) || link.bookKey === 'jury-chess';
+    || /\/products\/(jury-chess(?:-authority-edition-v[0-9-]+)?|two-stories-one-verdict)\/?$/.test(destination.pathname) || link.bookKey === 'jury-chess';
   const type = bookDestination ? 'book' : productDestination ? 'paid' : link.type || 'free';
-  const juryChessDestination = link.bookKey === 'jury-chess' || /^\/books(?:\/jury-chess)?\/?$/.test(destination.pathname) || /\/products\/jury-chess\/?$/.test(destination.pathname);
+  const juryChessDestination = link.bookKey === 'jury-chess' || /^\/books(?:\/jury-chess)?\/?$/.test(destination.pathname) || /\/products\/jury-chess(?:-authority-edition-v[0-9-]+)?\/?$/.test(destination.pathname);
   const price = product?.price || link.price || (juryChessDestination ? LIVE_PRODUCTS['jury-chess'].price : undefined);
   if ((type === 'paid' || type === 'book') && !/^\$\d+\.\d{2}$/.test(price || '')) throw new Error('Missing verified calendar product price: ' + link.url);
   return { ...link, type, price, paid: type === 'paid', badge: type === 'free' ? 'FREE' : type === 'book' ? 'BOOK ' + price : price + ' GUIDE' };

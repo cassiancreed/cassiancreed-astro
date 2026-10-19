@@ -83,7 +83,7 @@ try {
   // Construct the anchor after listener registration to prove delegated handling
   // of links inserted by client-side components such as HomeCourtCalendar.
   const dynamicProductAnchor = {
-    href: 'https://cassiancreed.beehiiv.com/products/jury-chess?utm_source=dynamic-test',
+    href: 'https://cassiancreed.beehiiv.com/products/jury-chess-authority-edition-v3-2?utm_source=dynamic-test',
     dataset: { bookKey: 'jury-chess', ctaPlacement: 'dynamic-test' },
   };
   dispatch(nestedTargetFor(dynamicProductAnchor));

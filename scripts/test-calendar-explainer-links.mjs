@@ -11,7 +11,7 @@ test('classifies destinations with text badges and real catalog prices', () => {
   assert.equal(classifyCalendarLink({url:'/post/example/'}).badge, 'FREE');
   assert.equal(classifyCalendarLink({url:'https://cassiancreed.beehiiv.com/products/case-chess-erin-patterson'}).badge, '$2.99 GUIDE');
   assert.equal(classifyCalendarLink({url:'/books/'}).badge, 'BOOK ' + JURY_CHESS_PRICE_TEXT);
-  assert.equal(classifyCalendarLink({url:'https://cassiancreed.beehiiv.com/products/jury-chess'}).type, 'book');
+  assert.equal(classifyCalendarLink({url:'https://cassiancreed.beehiiv.com/products/jury-chess-authority-edition-v3-2'}).type, 'book');
   assert.equal(classifyCalendarLink({url:'https://cassiancreed.beehiiv.com/products/future-guide',price:'$3.99'}).badge, '$3.99 GUIDE');
 });
 test('all entry links use free, paid, book order and all paid badges carry a catalog price', () => {
@@ -69,7 +69,7 @@ test('review exclusions never receive BOOK links, even when their event is a jur
 });
 
 test('paid and Books destinations cannot be overridden as FREE and always need real prices',()=>{
-  for(const url of ['https://cassiancreed.beehiiv.com/products/jury-chess','/books/','/books/jury-chess/','https://cassiancreed.com/books/#jury-chess']) {
+  for(const url of ['https://cassiancreed.beehiiv.com/products/jury-chess-authority-edition-v3-2','/books/','/books/jury-chess/','https://cassiancreed.com/books/#jury-chess']) {
     assert.equal(classifyCalendarLink({url,type:'free'}).badge,'BOOK '+JURY_CHESS_PRICE_TEXT,url);
   }
   assert.equal(classifyCalendarLink({url:'https://cassiancreed.beehiiv.com/products/future-guide',type:'free',price:'$1.99'}).badge,'$1.99 GUIDE');

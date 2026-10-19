@@ -74,6 +74,6 @@ Following a trial well means resisting the pull of the daily narrative and keepi
 
 *Jury Chess: How Criminal Jury Trials Actually Work* follows the machinery from jury selection through evidence disputes, instructions, deliberations, and verdict. It is a plain-language guide for readers who want to understand what a courtroom is doing instead of guessing from a headline.
 
-<a href="https://cassiancreed.beehiiv.com/products/jury-chess?utm_source=cassiancreed.com&amp;utm_medium=day_one_explainer&amp;utm_campaign=jury_chess&amp;utm_content=closing_cta" data-book-key="jury-chess" data-cta-placement="day_one_explainer_closing">Get <em>Jury Chess</em> — $5.99 →</a>
+<a href="https://cassiancreed.beehiiv.com/products/jury-chess-authority-edition-v3-2?utm_source=cassiancreed.com&amp;utm_medium=day_one_explainer&amp;utm_campaign=jury_chess&amp;utm_content=closing_cta" data-book-key="jury-chess" data-cta-placement="day_one_explainer_closing">Get <em>Jury Chess</em> — $5.99 →</a>
 
 *Cassian Creed publishes victim-first true crime at [cassiancreed.com](https://cassiancreed.com).*
