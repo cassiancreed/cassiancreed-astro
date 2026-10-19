@@ -30,6 +30,6 @@
     "leaflet": "^1.9.4"
   },
   "devDependencies": {
-    "playwright": "1.56.1"
+    "sharp": "^0.33.5"
   }
 }
