@@ -1,13 +1,26 @@
 ---
 import Base from '../layouts/Base.astro';
+import { pageSchema } from '../utils/page-schema.mjs';
 import CaptureBlock from '../components/CaptureBlock.astro';
 // Brick 2 — "How Othram Works in a Case."
 // Guardrails: LEADS not proof; a possible identity is not proof. Name CODIS/SNP
 // specifically. Accreditation stays SOFT — attribute to Othram, never assert as
 // established fact. Zero promotional/superiority claims. Protect innocent relatives:
 // a database match is a data point, not knowledge or involvement.
+const jsonld = pageSchema({
+  "type": "Article",
+  "title": "How Othram Works in a Case: How a DNA Lab Turns Evidence Into a Lead | Cassian Creed",
+  "headline": "How Othram Works in a Case",
+  "description": "How a forensic DNA lab like Othram turns degraded evidence into a dense SNP profile for genetic genealogy — how a lab helps identify remains and generate investigative leads, and why a lead is not proof. Explained plainly.",
+  "path": "/how-othram-works-in-a-case/",
+  "source": "src/pages/how-othram-works-in-a-case.astro",
+  "category": [
+    "Genealogy",
+    "/genealogy/"
+  ]
+});
 ---
-<Base
+<Base jsonld={jsonld}
   title="How Othram Works in a Case: How a DNA Lab Turns Evidence Into a Lead | Cassian Creed"
   description="How a forensic DNA lab like Othram turns degraded evidence into a dense SNP profile for genetic genealogy — how a lab helps identify remains and generate investigative leads, and why a lead is not proof. Explained plainly."
 >

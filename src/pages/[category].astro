@@ -2,12 +2,10 @@
 import Base from '../layouts/Base.astro';
 import CaptureBlock from '../components/CaptureBlock.astro';
 import { getCollection } from 'astro:content';
+import { CONTENT_CATEGORIES } from '../data/content-categories.mjs';
 
 export async function getStaticPaths() {
-  return [
-    { params: { category: 'case-files' }, props: { tag: 'Case Files', label: 'True Crime Blog' } },
-    { params: { category: 'explainers' }, props: { tag: 'Explainers', label: 'Explainers' } },
-  ];
+  return CONTENT_CATEGORIES.map(({ category, tag, label }) => ({ params: { category }, props: { tag, label } }));
 }
 
 const { tag, label } = Astro.props;

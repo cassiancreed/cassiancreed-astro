@@ -1,12 +1,25 @@
 ---
 import Base from '../layouts/Base.astro';
+import { pageSchema } from '../utils/page-schema.mjs';
 import CaptureBlock from '../components/CaptureBlock.astro';
 // Genealogy pillar page 3 (CW5c): privacy pillar / future lead-magnet source.
 // UPGRADE applied: MyHeritage section replaces the verification caveat with the
 // VERIFIED finding — MyHeritage expressly prohibits law-enforcement/forensic use
 // absent a court order (verbatim Terms Apr 19 2026 / Privacy Jun 1 2026).
+const jsonld = pageSchema({
+  "type": "Article",
+  "title": "The DNA Privacy Checklist | Cassian Creed",
+  "headline": "The DNA Privacy Checklist",
+  "description": "A practical privacy audit for your DNA kit: what GEDmatch, FamilyTreeDNA, Ancestry, 23andMe, and MyHeritage let you control, how to review settings for kits you manage, and what no setting controls. Know what your kit can do before anyone else does.",
+  "path": "/the-dna-privacy-checklist/",
+  "source": "src/pages/the-dna-privacy-checklist.astro",
+  "category": [
+    "Genealogy",
+    "/genealogy/"
+  ]
+});
 ---
-<Base
+<Base jsonld={jsonld}
   title="The DNA Privacy Checklist | Cassian Creed"
   description="A practical privacy audit for your DNA kit: what GEDmatch, FamilyTreeDNA, Ancestry, 23andMe, and MyHeritage let you control, how to review settings for kits you manage, and what no setting controls. Know what your kit can do before anyone else does."
 >

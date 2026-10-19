@@ -31,7 +31,7 @@ for (const width of [1280,390]) {
   for(const route of ['/court-calendar/','/']) {
     await page.goto('http://127.0.0.1:4321'+route,{waitUntil:'networkidle'});
     await page.waitForSelector('[data-calendar-days] button');
-    assert.equal((await page.locator('.calendar-legend').innerText()).replace(/\s+/g,' ').trim(),'FREE explainer · $ guide · BOOK');
+    assert.equal((await page.locator('.calendar-legend').innerText()).replace(/\s+/g,' ').trim(),'FREE explainer · $1.99 guide · BOOK');
     assert.equal(await page.locator('.calendar-book-card').count(),1);
     assert.equal(await page.locator('.calendar-book-card').isVisible(),(await page.locator('[data-calendar-agenda] .calendar-resource[data-link-type="book"]').count()) > 0);
     assert.equal(await page.locator('.home-calendar__agenda-disclaimer').evaluate(n=>n.nextElementSibling?.classList.contains('calendar-book-card')),true);
@@ -118,6 +118,6 @@ for (const width of [1280,390]) {
   await context.close();
 }
 await browser.close();
-const receipt={base,commit:process.env.GITHUB_SHA,checkedAt:new Date().toISOString(),unchangedTsvs:true,legend:'FREE explainer · $ guide · BOOK',badgeText:'#14110f',colors,contrastRatios:ratios,bookEntryCount:bookEntries.length,newBookEntryCount:bookEntries.length-1,excludedBookIds:[...JURY_CHESS_EXCLUDED_IDS],bookEntries,builtPageBadges,summaries};
+const receipt={base,commit:process.env.GITHUB_SHA,checkedAt:new Date().toISOString(),unchangedTsvs:true,legend:'FREE explainer · $1.99 guide · BOOK',badgeText:'#14110f',colors,contrastRatios:ratios,bookEntryCount:bookEntries.length,newBookEntryCount:bookEntries.length-1,excludedBookIds:[...JURY_CHESS_EXCLUDED_IDS],bookEntries,builtPageBadges,summaries};
 writeFileSync('cal05-receipts/audit.json',JSON.stringify(receipt,null,2));
 console.log('CAL05_AUDIT '+JSON.stringify(receipt));

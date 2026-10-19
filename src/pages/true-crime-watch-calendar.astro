@@ -1,0 +1,108 @@
+---
+import Base from '../layouts/Base.astro';
+import CalendarExplainerLink from '../components/CalendarExplainerLink.astro';
+import raw from '../data/media-calendar.tsv?raw';
+import courtRaw from '../data/court-calendar.tsv?raw';
+import { parseMediaCalendar, mediaDates, mediaVisible, pacificToday } from '../data/media-calendar-parser.mjs';
+import { mediaLinksFor, mediaCourtLink, MEDIA_EXPLAINER_MATCHES } from '../data/media-explainer-links.mjs';
+import { parseCourtCalendar } from '../data/court-calendar-parser.mjs';
+const calendar = parseMediaCalendar(raw);
+const court = parseCourtCalendar(courtRaw);
+const courtEntries = [...court.entries,...court.appeals,...court.unconfirmed,...court.investigations,...court.completed];
+const today = pacificToday();
+const asOf = new Intl.DateTimeFormat('en-US',{month:'long',day:'numeric',year:'numeric',timeZone:'UTC'}).format(new Date(calendar.asOf+'T12:00:00Z'));
+function topicFor(row) {
+  const match = row.topic.match(/^Same as row (\d+)$/);
+  return match ? calendar.rows.find(item => item.id === 'media-'+match[1].padStart(2,'0'))?.topic : row.topic;
+}
+---
+<Base title="True Crime Watch Calendar | Cassian Creed" description="US release dates for true-crime shows, films and podcasts. See the sources and read free explainers for the topics we cover.">
+  <section class="wrap watch-calendar">
+    <header>
+      <p class="evidence evidence--accent">What to watch or hear</p>
+      <h1>True Crime Watch Calendar</h1>
+      <p>A US schedule of true-crime shows, films and podcasts. Dates and times may change. This is a schedule, not reviews.</p>
+      <p>As of <time datetime={calendar.asOf}>{asOf}</time>.</p>
+      <p><a class="watch-cross-link" href="/court-calendar/">Real cases in court: Court Calendar →</a></p>
+      <p class="calendar-legend"><span><i class="calendar-dot" data-link-type="free" aria-hidden="true"></i>FREE explainer</span><span aria-hidden="true">·</span><span><i class="calendar-dot" data-link-type="paid" aria-hidden="true"></i>$1.99 guide</span><span aria-hidden="true">·</span><span><i class="calendar-dot" data-link-type="book" aria-hidden="true"></i>BOOK</span></p>
+      <p class="watch-note">Times are shown as listed by the source. ET/PT means the same clock time on the East and West Coast feeds. Check local listings.</p>
+      <p class="watch-note">People who are charged or accused are presumed innocent unless and until proven guilty in court.</p>
+    </header>
+    {['no','yes'].map(standing => (
+      <section class="watch-section" aria-labelledby={standing === 'yes' ? 'weekly-slots' : 'dated-releases'}>
+        <h2 id={standing === 'yes' ? 'weekly-slots' : 'dated-releases'}>{standing === 'yes' ? 'Weekly slots' : 'Coming up'}</h2>
+        {standing === 'yes' && <p>These slots may give way to sports or news. Episode titles are not yet announced.</p>}
+        <p class="watch-empty" hidden={calendar.rows.some(row => row.standing === standing && mediaVisible(row,today))}>No upcoming {standing === 'yes' ? 'slots' : 'releases'} in this list.</p>
+        <div class="watch-list">
+          {calendar.rows.filter(row => row.standing === standing).map(row => {
+            const links = mediaLinksFor(row);
+            const courtLink = mediaCourtLink(row,courtEntries);
+            return <article class="watch-row" id={row.id} data-media-dates={JSON.stringify(mediaDates(row))} data-standing={row.standing} hidden={!mediaVisible(row,today)}>
+              <p class="watch-date">{row.date_text} · {row.time_text}</p>
+              <h3>{row.title}</h3>
+              <dl><div><dt>Where</dt><dd>{row.platform}</dd></div><div><dt>Type</dt><dd>{row.type}</dd></div>{topicFor(row) && <div><dt>Topic</dt><dd>{topicFor(row)}</dd></div>}</dl>
+              <p class="watch-description">{row.description}</p>
+              {row.id === 'media-14' && <p>Oren, Alon and Tal Alexander were found guilty by a federal jury in March 2026. Sentencing is set for Oct 27.</p>}
+              <p class="watch-sources"><a href={row.source_url}>{row.source_label} →</a>{row.source2_url && <><span aria-hidden="true"> · </span><a href={row.source2_url}>{row.source2_label} →</a></>}</p>
+              {['media-01','media-13'].includes(row.id) && <p class="watch-status">The episode time comes from trade sources.</p>}
+              {row.id === 'media-08' && <p class="watch-status">The Oct 21 date comes from a trade listing.</p>}
+              {row.id === 'media-09' && <p class="watch-status">The Oct 22 date comes from a trade source.</p>}
+              {row.id === 'media-s3' && <p class="watch-status">The time slot comes from trade sources.</p>}
+              {row.id === 'media-17' && <p class="watch-status">Official text not yet read.</p>}
+              {row.id === 'media-22' && <p class="watch-status">Netflix's own page not yet read.</p>}
+              {row.id === 'media-s1' && <p class="watch-status">From trade sources.</p>}
+              {row.id === 'media-25' && <p class="watch-status">Not yet confirmed by the network.</p>}
+              {row.id === 'media-24' && <p class="watch-status">The time is not yet confirmed by the network.</p>}
+              {row.id === 'media-19' && <p class="watch-status">The case details come from one outside listing.</p>}
+              {courtLink && <p><a class="watch-cross-link" href={courtLink.url}>{courtLink.text}</a></p>}
+              {links.length > 0 && <div class="calendar-resource-list">
+                {MEDIA_EXPLAINER_MATCHES[row.id]?.kind === 'topic' && <p class="watch-link-label">Learn the basics</p>}
+                {links.map(link => <CalendarExplainerLink link={link} />)}
+              </div>}
+            </article>;
+          })}
+        </div>
+      </section>
+    ))}
+  </section>
+</Base>
+<script>
+  import { pacificToday } from '../data/media-calendar-parser.mjs';
+  // Refresh date visibility in Pacific time on load, at midnight, and on return.
+  // No invented release times or open-ended weekly events.
+  function hidePastMedia() {
+    const today = pacificToday();
+    document.querySelectorAll<HTMLElement>('[data-media-dates]').forEach(row => {
+      row.hidden = !JSON.parse(row.dataset.mediaDates || '[]').some((date:string) => date >= today);
+    });
+    document.querySelectorAll<HTMLElement>('.watch-section').forEach(section => {
+      const empty = section.querySelector<HTMLElement>('.watch-empty');
+      if (empty) empty.hidden = Boolean(section.querySelector('.watch-row:not([hidden])'));
+    });
+  }
+  hidePastMedia();
+  setInterval(hidePastMedia,60000);
+  window.addEventListener('pageshow',hidePastMedia);
+  document.addEventListener('visibilitychange',hidePastMedia);
+</script>
+<style>
+  .watch-calendar{max-width:1000px;padding-top:36px;padding-bottom:56px}
+  h1{font-family:var(--serif);font-size:clamp(36px,6vw,58px);line-height:1.1;margin:12px 0 20px}
+  header>p{max-width:72ch}
+  .watch-cross-link,.watch-sources a{text-decoration:underline;text-underline-offset:3px}
+  .watch-note,.watch-status{font-size:14px}
+  .watch-section{margin-top:36px}
+  .watch-section h2{font-family:var(--serif);font-size:32px;margin-bottom:16px}
+  .watch-list{display:grid;gap:18px}
+  .watch-row{min-width:0;border:1px solid var(--line);border-radius:10px;padding:22px;background:var(--bg-2)}
+  .watch-row[hidden],.watch-empty[hidden]{display:none!important}
+  .watch-row h3{font-family:var(--serif);font-size:28px;line-height:1.25;margin:8px 0 16px;overflow-wrap:anywhere}
+  .watch-date{font-size:15px;font-weight:600;margin:0}
+  dl{margin:0;display:grid;gap:5px}
+  dl>div{display:grid;grid-template-columns:55px minmax(0,1fr);gap:10px}
+  dt{font-size:14px}dd{margin:0;font-size:15px}
+  .watch-description{margin:16px 0}
+  .watch-sources{font-size:14px;overflow-wrap:anywhere}
+  .watch-link-label{margin:0;font-size:14px;font-weight:600}
+  @media(max-width:600px){.watch-calendar{padding-top:24px}.watch-row{padding:16px}.watch-row h3{font-size:25px}}
+</style>

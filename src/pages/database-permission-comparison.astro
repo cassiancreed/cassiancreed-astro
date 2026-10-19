@@ -1,12 +1,25 @@
 ---
 import Base from '../layouts/Base.astro';
+import { pageSchema } from '../utils/page-schema.mjs';
 import CaptureBlock from '../components/CaptureBlock.astro';
 // Genealogy pillar page (CW5a Part 2): database law-enforcement matching comparison.
 // UPGRADE applied: MyHeritage row uses the VERIFIED firm answer (verbatim Terms/
 // Privacy clauses) — MyHeritage expressly prohibits law-enforcement/forensic use
 // absent a court order. Terms updated Apr 19 2026; Privacy updated Jun 1 2026.
+const jsonld = pageSchema({
+  "type": "Article",
+  "title": "Database Permission Comparison: Which DNA Databases Allow Law-Enforcement Matching | Cassian Creed",
+  "headline": "Database Permission Comparison",
+  "description": "A verified comparison of consumer DNA database law-enforcement matching policies — GEDmatch, FamilyTreeDNA, Ancestry, 23andMe, and MyHeritage — covering which allow investigative matching, their consent structures, and what each policy actually means for your kit.",
+  "path": "/database-permission-comparison/",
+  "source": "src/pages/database-permission-comparison.astro",
+  "category": [
+    "Genealogy",
+    "/genealogy/"
+  ]
+});
 ---
-<Base
+<Base jsonld={jsonld}
   title="Database Permission Comparison: Which DNA Databases Allow Law-Enforcement Matching | Cassian Creed"
   description="A verified comparison of consumer DNA database law-enforcement matching policies — GEDmatch, FamilyTreeDNA, Ancestry, 23andMe, and MyHeritage — covering which allow investigative matching, their consent structures, and what each policy actually means for your kit."
 >
