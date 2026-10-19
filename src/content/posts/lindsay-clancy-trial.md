@@ -57,7 +57,7 @@ Cora, 5, Dawson, 3, and Callan, 8 months, died after events at their Duxbury hom
 | Plea | **VERIFIED** | Not guilty. |
 | Trial posture | **VERIFIED** | The trial ended September 4 in a mistrial after the jury could not agree. The three murder charges remain pending. |
 | Court and judge | **VERIFIED** | Plymouth Superior Court; Judge William F. Sullivan. |
-| Next scheduled step | **REPORTED** | A hearing is set for November 2, 2026, before Judge Sullivan. The defense motion to dismiss on double-jeopardy grounds and its request for a limited inquiry into the holdout juror are expected to be heard. |
+| Next scheduled step | **REPORTED** | A hearing is set for November 2, 2026, before Judge Sullivan. The defense motion to dismiss on double-jeopardy grounds (the rule that a person can't be tried twice for the same crime) and its request for a limited inquiry into the holdout juror are expected to be heard. |
 | Hearing time | **NOT PUBLICLY VERIFIED** | The next reported hearing has no independently verified start time in this tracker. |
 | Renewed acquittal request | **REPORTED RULING** | See the October 1 update below; the charges remain unresolved. |
 | Retrial decision | **NOT ANNOUNCED** | As of October 15, 2026, prosecutors had not said whether they will retry the case. A motions hearing is not a retrial. |
