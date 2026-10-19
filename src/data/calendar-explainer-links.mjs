@@ -9,28 +9,18 @@ const EXISTING_CASE_GUIDES = {
     bookKey: 'celeste-rivas-hernandez-d4vd-charges-guide',
     placement: 'court_calendar_d4vd_status_entry',
   },
-  'parker-smith-first-appearance': [{
-    url: 'https://cassiancreed.beehiiv.com/products/michelle-parker-case-guide?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=explainer_parker_v1&utm_content=first_appearance_entry',
-    text: 'Get the full Michelle Parker case guide — timeline, Florida no-body law, what comes next — $1.99',
-    bookKey: 'michelle-parker-case-guide',
-    placement: 'court_calendar_parker_first_appearance_entry',
-  }, {
-    url: 'https://cassiancreed.beehiiv.com/products/both-sides-michelle-parker-no-body-guide?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=explainer_parker_bothsides_v2&utm_content=first_appearance_entry',
-    text: 'Both Sides of the Story: Michelle Parker — can there be a murder case with no body? — $1.99',
-    bookKey: 'both-sides-michelle-parker-no-body-guide',
+  'parker-smith-first-appearance': {
+    url: 'https://cassiancreed.beehiiv.com/products/both-sides-michelle-parker-guide-v3?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=explainer_parker_bothsides_v3&utm_content=first_appearance_entry',
+    text: 'Both Sides of the Story: Michelle Parker — Can There Be a Murder Case With No Body?',
+    bookKey: 'both-sides-michelle-parker-guide-v3',
     placement: 'court_calendar_parker_bothsides_first_appearance_entry',
-  }],
-  'parker-smith-bond-hearing': [{
-    url: 'https://cassiancreed.beehiiv.com/products/michelle-parker-case-guide?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=explainer_parker_v1&utm_content=bond_hearing_entry',
-    text: 'Get the full Michelle Parker case guide — timeline, Florida no-body law, what comes next — $1.99',
-    bookKey: 'michelle-parker-case-guide',
-    placement: 'court_calendar_parker_bond_hearing_entry',
-  }, {
-    url: 'https://cassiancreed.beehiiv.com/products/both-sides-michelle-parker-no-body-guide?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=explainer_parker_bothsides_v2&utm_content=bond_hearing_entry',
-    text: 'Both Sides of the Story: Michelle Parker — can there be a murder case with no body? — $1.99',
-    bookKey: 'both-sides-michelle-parker-no-body-guide',
+  },
+  'parker-smith-bond-hearing': {
+    url: 'https://cassiancreed.beehiiv.com/products/both-sides-michelle-parker-guide-v3?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=explainer_parker_bothsides_v3&utm_content=bond_hearing_entry',
+    text: 'Both Sides of the Story: Michelle Parker — Can There Be a Murder Case With No Body?',
+    bookKey: 'both-sides-michelle-parker-guide-v3',
     placement: 'court_calendar_parker_bothsides_bond_hearing_entry',
-  }],
+  },
   'pike-execution': {
     url: 'https://cassiancreed.beehiiv.com/products/christa-pike-failed-execution-guide?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=explainer_pike_v1&utm_content=next_step_entry',
     text: 'Get the full Christa Pike case guide — timeline, every court step, six paths ahead — $1.99',
@@ -101,8 +91,7 @@ export const CALENDAR_EXPLAINER_CASES = [
       }
     ],
     "paid": [
-      "michelle-parker-case-guide",
-      "both-sides-michelle-parker-no-body-guide"
+      "both-sides-michelle-parker-guide-v3"
     ]
   },
   {
@@ -564,8 +553,8 @@ const LIVE_PRODUCTS = {
     "title": "The Killing of Austin Metcalf: A Plain-Language Guide to the Karmelo Anthony Case (v1)",
     "price": "$1.99"
   },
-  "both-sides-michelle-parker-no-body-guide": {
-    "url": "https://cassiancreed.beehiiv.com/products/both-sides-michelle-parker-no-body-guide",
+  "both-sides-michelle-parker-guide-v3": {
+    "url": "https://cassiancreed.beehiiv.com/products/both-sides-michelle-parker-guide-v3",
     "title": "Both Sides of the Story: Michelle Parker — Can There Be a Murder Case With No Body?",
     "price": "$1.99"
   },
@@ -602,11 +591,6 @@ const LIVE_PRODUCTS = {
   "eric-richins-kouri-evidence-verdict": {
     "url": "https://cassiancreed.beehiiv.com/products/eric-richins-kouri-evidence-verdict",
     "title": "Eric Richins: The Evidence-to-Verdict Guide",
-    "price": "$1.99"
-  },
-  "michelle-parker-case-guide": {
-    "url": "https://cassiancreed.beehiiv.com/products/michelle-parker-case-guide",
-    "title": "The Michelle Parker Case Guide: A Murder Charge With No Body (v1)",
     "price": "$1.99"
   },
   "jury-chess": {
