@@ -369,7 +369,7 @@ const exploreActive = resolvedExplore.some(i => navActive(i.href));
         }
       } catch(e) {}
     });
-// Beehiiv signup/subscribe outbound tracking (NEP-GA4FIX-CMT-0708A)
+// Beehiiv signup/subscribe outbound tracking
 document.addEventListener('click',function(e){
 var s=e.target.closest('a');
 if(s&&s.href&&s.href.indexOf('cassiancreed.beehiiv.com')!==-1&&s.href.indexOf('/products/')===-1&&(s.href.indexOf('/subscribe')!==-1||s.href.indexOf('/signup')!==-1||s.href.indexOf('subscribed')!==-1)){
