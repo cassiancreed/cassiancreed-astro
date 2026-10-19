@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { normalizePath, redirectSources, isRedirected, tsvLastmod, gitLastmod } from '../src/utils/search-index.mjs';
-import { isNoindex, sitemapEntries } from './validate-search-output.mjs';
+import { isNoindex, sitemapEntries, hasInternalTaskId } from './validate-search-output.mjs';
 
 test('redirect exclusions use exact paths, wildcard boundaries and both configuration files', () => {
   const rules = redirectSources('/old /new 301\n/blog/* /case-files/ 301\nhttps://www.cassiancreed.com/* https://cassiancreed.com/:splat 301!',
@@ -73,5 +73,54 @@ test('Git dates use literal source paths and omit unknown shallow-history dates'
   } finally {
     process.chdir(originalDirectory);
     rmSync(fixture, { recursive: true, force: true });
+  }
+});
+
+test('task-ID guard covers HTML comments and inline script comments only', () => {
+  assert.equal(hasInternalTaskId('<!-- NEP-ABC-1 -->'), true);
+  assert.equal(hasInternalTaskId('<script>run(); // tracking (NEP-ABC-1)\n</script>'), true);
+  assert.equal(hasInternalTaskId('<script is:inline>/* NEP-ABC-1 */ run();</script>'), true);
+  assert.equal(hasInternalTaskId('<script>\n  /*\n   * multi-line NEP-ABC-1\n   */\n</script>'), true);
+  assert.equal(hasInternalTaskId('<script>var s = "// NEP-ABC-1"; var u = \'https://x/*NEP-\';</script>'), false);
+  assert.equal(hasInternalTaskId('<script>var r = /\\/\\/NEP-/g; var t = `/* NEP- */`;</script>'), false);
+  assert.equal(hasInternalTaskId('<script>var half = total / 2; // fine\n</script>'), false);
+  assert.equal(hasInternalTaskId('<script type="application/ld+json">{"a":"// NEP-ABC-1"}</script>'), false);
+  assert.equal(hasInternalTaskId('<p>NEP-ABC-1 in visible text is not a comment</p>'), false);
+});
+
+test('metadata-only commits are skipped for Git lastmod', async () => {
+  const { mkdtempSync, writeFileSync, rmSync } = await import('node:fs');
+  const { tmpdir } = await import('node:os');
+  const { join } = await import('node:path');
+  const { execFileSync } = await import('node:child_process');
+  const repo = mkdtempSync(join(tmpdir(), 'seo-git-ignore-'));
+  const originalDirectory = process.cwd();
+  const git = (args, date) => execFileSync('git', args, {
+    cwd: repo, encoding: 'utf8', stdio: 'pipe', env: { ...process.env,
+      GIT_AUTHOR_NAME: 'Fixture', GIT_AUTHOR_EMAIL: 'fixture@example.invalid',
+      GIT_COMMITTER_NAME: 'Fixture', GIT_COMMITTER_EMAIL: 'fixture@example.invalid',
+      ...(date ? { GIT_AUTHOR_DATE: date, GIT_COMMITTER_DATE: date } : {}),
+    },
+  });
+  const commit = (file, text, message, date) => {
+    writeFileSync(join(repo, file), text);
+    git(['add', '--all']); git(['commit', '--quiet', '-m', message], date);
+    return git(['rev-parse', 'HEAD']).trim();
+  };
+  try {
+    git(['init', '--quiet']);
+    commit('a.astro', 'Content', 'Write page', '2011-01-01T00:00:00Z');
+    commit('a.astro', 'Content + schema', 'Add schema\n\n[no-lastmod]', '2012-01-01T00:00:00Z');
+    commit('b.astro', 'Content', 'Write page', '2013-01-01T00:00:00Z');
+    const schemaOnly = commit('b.astro', 'Content + schema', 'Add schema', '2014-01-01T00:00:00Z');
+    commit('c.astro', 'Schema only', 'Add schema [no-lastmod]', '2015-01-01T00:00:00Z');
+    writeFileSync(join(repo, '.lastmod-ignore-revs'), '# metadata-only\n' + schemaOnly + '\n');
+    process.chdir(repo);
+    assert.equal(gitLastmod('a.astro'), '2011-01-01');
+    assert.equal(gitLastmod('b.astro'), '2013-01-01');
+    assert.equal(gitLastmod('c.astro'), undefined);
+  } finally {
+    process.chdir(originalDirectory);
+    rmSync(repo, { recursive: true, force: true });
   }
 });

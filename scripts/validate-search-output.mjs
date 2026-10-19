@@ -12,6 +12,44 @@ export const sitemapEntries = (xml) => [...xml.matchAll(/<url>([\s\S]*?)<\/url>/
   url: entry.match(/<loc>([^<]+)<\/loc>/)?.[1],
   lastmod: entry.match(/<lastmod>([^<]+)<\/lastmod>/)?.[1],
 }));
+// Comments inside inline (non-JSON) scripts, tokenized so that "//" and "/*"
+// inside string, template and regex literals are not mistaken for comments.
+export function inlineScriptComments(html) {
+  const comments = [];
+  for (const [, attrs, code] of html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)) {
+    if (/\bsrc\s*=/i.test(attrs) || /\btype\s*=\s*["']?application\/(?:ld\+)?json/i.test(attrs)) continue;
+    let i = 0, prev = '';
+    while (i < code.length) {
+      const c = code[i], n = code[i + 1];
+      if (c === '/' && n === '/') {
+        const end = code.indexOf('\n', i); const stop = end === -1 ? code.length : end;
+        comments.push(code.slice(i + 2, stop)); i = stop; continue;
+      }
+      if (c === '/' && n === '*') {
+        const end = code.indexOf('*/', i + 2); const stop = end === -1 ? code.length : end + 2;
+        comments.push(code.slice(i + 2, end === -1 ? code.length : end)); i = stop; continue;
+      }
+      if (c === '"' || c === "'" || c === '`' || (c === '/' && /^$|[(,=:[!&|?{};+\-*%<>~^]$/.test(prev))) {
+        let j = i + 1, inClass = false;
+        while (j < code.length) {
+          if (code[j] === '\\') { j += 2; continue; }
+          if (c === '/' && code[j] === '[') inClass = true;
+          else if (c === '/' && code[j] === ']') inClass = false;
+          else if (code[j] === c && !inClass) break;
+          else if (c !== '`' && code[j] === '\n') break;
+          j++;
+        }
+        i = j + 1; prev = c; continue;
+      }
+      if (!/\s/.test(c)) prev = c;
+      i++;
+    }
+  }
+  return comments;
+}
+export const hasInternalTaskId = (html) =>
+  [...html.matchAll(/<!--([\s\S]*?)-->/g)].some(([, comment]) => comment.includes('NEP-')) ||
+  inlineScriptComments(html).some((comment) => comment.includes('NEP-'));
 function postSourceDate(source) {
   const text = readFileSync(source, 'utf8').split(/^---\s*$/m)[1] ?? '';
   return text.match(/^updatedDate:\s*["']?(\d{4}-\d{2}-\d{2})/m)?.[1] ??
@@ -37,8 +75,8 @@ export async function validateSearchOutput(routes) {
     const excluded = isNoindex(html) || EXCLUDED_PATHS.has(normalized) || isRedirected(normalized, redirects);
     if (!excluded && !entryMap.has(normalized)) failures.push(route + ': indexable built page missing from sitemap');
     if (excluded && entryMap.has(normalized)) failures.push(route + ': excluded page in sitemap');
-    if ([...html.matchAll(/<!--([\s\S]*?)-->/g)].some(([, comment]) => comment.includes('NEP-'))) {
-      failures.push(route + ': internal task ID in HTML comment');
+    if (hasInternalTaskId(html)) {
+      failures.push(route + ': internal task ID in HTML or inline script comment');
     }
     const source = sources.get(normalized);
     const expected = source ? source.startsWith('src/content/posts/')

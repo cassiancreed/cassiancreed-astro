@@ -45,19 +45,33 @@ export function isRedirected(route, sources = readRedirectSources()) {
   });
 }
 const gitDates = new Map();
+// Commits that only change metadata (schema, breadcrumbs, canonical tags) are
+// not content changes. Mark them with NO_LASTMOD_TAG in the commit message, or
+// list their full SHAs (one per line, # comments allowed) in LASTMOD_IGNORE_FILE.
+export const NO_LASTMOD_TAG = '[no-lastmod]';
+export const LASTMOD_IGNORE_FILE = '.lastmod-ignore-revs';
+export function readLastmodIgnoreRevs(file = LASTMOD_IGNORE_FILE) {
+  if (!existsSync(file)) return new Set();
+  return new Set(readFileSync(file, 'utf8').split(/\r?\n/)
+    .map((line) => line.replace(/#.*/, '').trim().toLowerCase()).filter(Boolean));
+}
 export function gitLastmod(source) {
   const key = resolve(source);
   if (gitDates.has(key)) return gitDates.get(key);
   let date;
   try {
-    const options = { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] };
-    const [commit, value] = execFileSync('git',
-      ['log', '-1', '--format=%H %cs', '--', ':(literal)' + source], options).trim().split(/\s+/);
+    const options = { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'], maxBuffer: 64 * 1024 * 1024 };
+    const ignored = readLastmodIgnoreRevs();
+    const commits = execFileSync('git', ['log', '--format=%H %cs', '--fixed-strings', '--invert-grep',
+      '--grep=' + NO_LASTMOD_TAG, '--', ':(literal)' + source], options)
+      .split(/\r?\n/).filter(Boolean).map((line) => line.split(/\s+/));
+    const [commit, value] = commits.find(([sha]) => !ignored.has(sha.toLowerCase())) ?? [];
     const shallowFile = execFileSync('git', ['rev-parse', '--git-path', 'shallow'], options).trim();
     const boundary = existsSync(shallowFile) && readFileSync(shallowFile, 'utf8').split(/\r?\n/).includes(commit);
     // A shallow boundary makes every surviving file look newly introduced.
     // Its real change date is unknown; never substitute the checkout's date.
-    if (!boundary && /^\d{4}-\d{2}-\d{2}$/.test(value ?? '')) date = value;
+    // If every commit is metadata-only, the content date is unknown too.
+    if (commit && !boundary && /^\d{4}-\d{2}-\d{2}$/.test(value ?? '')) date = value;
   } catch { /* Source dates are omitted when Git history is unavailable. */ }
   gitDates.set(key, date);
   return date;
