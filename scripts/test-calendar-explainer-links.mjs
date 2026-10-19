@@ -17,7 +17,9 @@ test('classifies destinations with text badges and real catalog prices', () => {
 test('all entry links use free, paid, book order and all paid badges carry a catalog price', () => {
   for (const entry of entries) {
     const links = calendarLinksFor(entry);
-    const ranks = links.map(l => ['free','paid','book'].indexOf(l.type));
+    // A FREE page-1 preview is attached to its paid guide, so it ranks with paid.
+    const ranks = links.map(l => l.preview ? 1 : ['free','paid','book'].indexOf(l.type));
+    links.forEach((l, i) => { if (l.preview) assert.equal(links[i-1]?.bookKey, l.previewFor, entry.id + ' preview follows its paid guide'); });
     assert.deepEqual(ranks, [...ranks].sort((a,b)=>a-b), entry.id);
     for (const link of links) {
       assert.ok(link.badge, entry.id);
