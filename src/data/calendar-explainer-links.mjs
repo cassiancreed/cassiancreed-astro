@@ -238,7 +238,8 @@ export const CALENDAR_EXPLAINER_CASES = [
   {
     "key": "d4vd",
     "entryIds": [
-      "burke-prelim"
+      "burke-prelim",
+      "burke-status-2027-01-11"
     ],
     "free": [
       {
@@ -254,6 +255,7 @@ export const CALENDAR_EXPLAINER_CASES = [
     "key": "bridegan",
     "entryIds": [
       "gardner-pretrial-2026-10-27",
+      "gardner-final-pretrial-2027-04-26",
       "gardner-jury-selection",
       "gardner-trial",
       "bridegan-fernandez-trial"
@@ -379,6 +381,8 @@ export const CALENDAR_EXPLAINER_CASES = [
     "key": "mangione",
     "entryIds": [
       "mangione-state-double-jeopardy-hearing",
+      "mangione-state-prosecution-answer-oct9",
+      "mangione-state-defense-reply-oct30",
       "mangione-federal-sentencing"
     ],
     "free": [
