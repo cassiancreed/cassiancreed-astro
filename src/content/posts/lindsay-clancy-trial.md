@@ -2,14 +2,14 @@
 title: "Lindsay Clancy trial tracker: Mistrial, pending charges and next hearing"
 description: "Lindsay Clancy’s unresolved murder charges after a mistrial, current hearing coverage, and the Massachusetts criminal-responsibility standard."
 pubDate: 2026-07-15
-updatedDate: 2026-10-02
+updatedDate: 2026-10-19
 tag: Case Files
 featured: false
 victim: Cora Clancy, 5; Dawson Clancy, 3; Callan Clancy, 8 months
 incidentDate: January 2023
 location: Duxbury, Massachusetts
 jurisdiction: Plymouth County Superior Court, Massachusetts
-status: "Mistrial declared September 4. Murder charges remain unresolved; see the current procedural update below."
+status: "Mistrial declared September 4. Murder charges remain unresolved. A hearing is set for November 2; no retrial decision has been announced."
 ---
 
 <div class="status-box" style="border:1px solid var(--rule,#e4e0d9);border-left:4px solid var(--accent,#b91c1c);background:var(--card,#faf9f7);padding:1rem 1.25rem;margin:1.5rem 0;border-radius:6px;font-size:.95rem">
@@ -29,11 +29,12 @@ Cassian Creed maintains this Neural Edge Publishing tracker using available cour
 <li><strong>Court:</strong> Plymouth Superior Court.</li>
 <li><strong>Judge:</strong> William F. Sullivan.</li>
 <li><strong>Charges now pending:</strong> Three counts of first-degree murder.</li>
-<li><strong>Plea:</strong> Not guilty by reason of lack of criminal responsibility.</li>
-<li><strong>Next step:</strong> See the current procedural update below and the linked Court Calendar.</li>
+<li><strong>Plea:</strong> Not guilty (her defense: lack of criminal responsibility).</li>
+<li><strong>Next step:</strong> A hearing is set for November 2, 2026, in Plymouth Superior Court before Judge William F. Sullivan, according to the Boston Globe (October 15). The clock time is not publicly verified.</li>
+<li><strong>Retrial decision:</strong> None announced. As of October 15, prosecutors had not said whether they will retry the case.</li>
 <li><strong>Renewed acquittal request:</strong> Denied October 1, according to AP. This ruling is not a conviction.</li>
 
-<li><strong>Current-source cutoff:</strong> October 2, 2026, 1:55 p.m. Pacific. This tracker uses attributed reporting; direct docket access remains unavailable.</li>
+<li><strong>Current-source cutoff:</strong> October 19, 2026. This tracker uses attributed reporting; direct docket access remains unavailable.</li>
 </ul>
 <p style="margin-bottom:0">The mistrial ended this trial without a conviction or acquittal. Clancy remains presumed innocent.</p>
 </div>
@@ -56,10 +57,10 @@ Cora, 5, Dawson, 3, and Callan, 8 months, died after events at their Duxbury hom
 | Plea | **VERIFIED** | Not guilty. |
 | Trial posture | **VERIFIED** | The trial ended September 4 in a mistrial after the jury could not agree. The three murder charges remain pending. |
 | Court and judge | **VERIFIED** | Plymouth Superior Court; Judge William F. Sullivan. |
-| Next scheduled step | **SEE CURRENT UPDATE** | The procedural update below supersedes the historical September 29 appointment. |
+| Next scheduled step | **REPORTED** | A hearing is set for November 2, 2026, before Judge Sullivan. The defense motion to dismiss on double-jeopardy grounds and its request for a limited inquiry into the holdout juror are expected to be heard. |
 | Hearing time | **NOT PUBLICLY VERIFIED** | The next reported hearing has no independently verified start time in this tracker. |
 | Renewed acquittal request | **REPORTED RULING** | See the October 1 update below; the charges remain unresolved. |
-| Retrial decision | **SEE CURRENT UPDATE** | Do not confuse a motions hearing with a retrial. |
+| Retrial decision | **NOT ANNOUNCED** | As of October 15, 2026, prosecutors had not said whether they will retry the case. A motions hearing is not a retrial. |
 | Defense counsel | **VERIFIED** | Kevin Reddington. |
 | Core defense | **DEFENSE** | Lack of criminal responsibility, tied to the defense's contention that Clancy experienced postpartum psychosis and that alleged overmedication affected her condition. |
 | Burden on criminal responsibility | **VERIFIED** | Once evidence fairly raises lack of criminal responsibility, Massachusetts law requires the Commonwealth to prove beyond a reasonable doubt that the defendant was criminally responsible. |
@@ -87,6 +88,14 @@ A clinical diagnosis and a legal finding are not the same thing. Experts may add
 ## Where the case stands now
 
 Judge William Sullivan declared a mistrial on September 4 after the jury reported that it could not reach a unanimous verdict. The trial ended without a conviction or acquittal. Clancy remains charged with three counts of first-degree murder, has pleaded not guilty, and remains presumed innocent.
+
+### November 2 hearing — checked October 19
+
+A hearing is set for November 2, 2026, in Plymouth Superior Court before Judge Sullivan, [the Boston Globe reported October 15](https://www.bostonglobe.com/2026/10/15/metro/lindsay-clancy-holdout-juror-fox-interview/). The clock time is not publicly verified.
+
+**DEFENSE:** Clancy's lawyers ask the judge to dismiss the three murder charges on double-jeopardy grounds. They also ask for a "limited inquiry" into the one juror who did not agree with the other 11, [the Globe reported October 8](https://www.bostonglobe.com/2026/10/08/metro/lindsay-clancy-hearing-dismissal-holdout-juror/). The judge has not ruled on these requests.
+
+As of October 15, prosecutors had not said whether they will retry Clancy. No retrial date is set. Our news checks through October 19 found no newer court action. Clancy remains charged, has pleaded not guilty, and is presumed innocent.
 
 ### October 1 ruling — checked October 2
 
@@ -150,11 +159,15 @@ The judge allowed the recording for the trial that ended in a mistrial. This tra
 
 ### What happens next?
 
-See the October 1 update above and the reported November 2 setting in the Court Calendar. A motions hearing does not establish a retrial date; the clock time remains unverified.
+A hearing is set for November 2, 2026, before Judge Sullivan. The defense motion to dismiss and its request for a limited inquiry into the holdout juror are expected to be heard. As of October 15, prosecutors had not said whether they will retry the case. A motions hearing is not a retrial, and the clock time is not publicly verified.
 
 ## Update log
 
 These dated entries record what was known at each cutoff; earlier trial-stage descriptions are historical.
+
+### October 19, 2026 — November 2 hearing and plea wording
+
+**REPORTED:** A hearing is set for November 2, 2026, in Plymouth Superior Court before Judge Sullivan. It is expected to cover the defense motion to dismiss on double-jeopardy grounds and a requested limited inquiry into the holdout juror (Boston Globe, October 8 and October 15). As of October 15, prosecutors had not announced a retrial decision. **CORRECTION:** The plea line now reads "Not guilty (her defense: lack of criminal responsibility)." Clancy pleaded not guilty; lack of criminal responsibility is her defense, not her plea.
 
 ### October 2, 2026 — Ruling and current-status correction
 
@@ -218,6 +231,8 @@ Court schedules and evidentiary plans can change. This tracker distinguishes wha
 
 ## Sources
 
+- [November 2 hearing; no retrial decision announced; holdout-juror inquiry request — Boston Globe, October 15, 2026](https://www.bostonglobe.com/2026/10/15/metro/lindsay-clancy-holdout-juror-fox-interview/)
+- [Double-jeopardy motion to dismiss and holdout-juror inquiry request — Boston Globe, October 8, 2026](https://www.bostonglobe.com/2026/10/08/metro/lindsay-clancy-hearing-dismissal-holdout-juror/)
 - [October 1 ruling — Associated Press via Boston.com](https://www.boston.com/news/crime/2026/10/01/judge-denies-defense-motion-asking-lindsay-clancy-be-found-not-guilty-due-to-a-lack-of-evidence/)
 
 - [Mistrial and September 29 hearing — Associated Press, September 5, 2026](https://apnews.com/article/lindsay-clancy-mistrial-what-happens-next-e38bef47f5af93bf95aabad272215b45)
@@ -257,7 +272,7 @@ Court schedules and evidentiary plans can change. This tracker distinguishes wha
   "headline": "Lindsay Clancy trial tracker: Mistrial, pending charges and next hearing",
   "description": "Lindsay Clancy’s unresolved murder charges after a mistrial, current hearing coverage, and the Massachusetts criminal-responsibility standard.",
   "datePublished": "2026-07-15",
-  "dateModified": "2026-10-02",
+  "dateModified": "2026-10-19",
   "author": { "@type": "Person", "name": "Cassian Creed", "url": "https://cassiancreed.com/about/" },
   "publisher": { "@type": "Organization", "name": "Neural Edge Publishing", "url": "https://cassiancreed.com/" },
   "articleSection": "Crime and Courts",
