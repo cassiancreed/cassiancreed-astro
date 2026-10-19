@@ -5,8 +5,9 @@ import { getCollection } from 'astro:content';
 import CaptureBlock from '../../components/CaptureBlock.astro';
 import BookCTA from '../../components/BookCTA.astro';
 import SafetyAlert from '../../components/SafetyAlert.astro';
-import { existsSync } from 'node:fs';
-import { resolve } from 'node:path';
+import { postSocialImage } from '../../utils/post-social-images.mjs';
+import { categoryForTag } from '../../data/content-categories.mjs';
+import { breadcrumbList } from '../../utils/page-schema.mjs';
 export async function getStaticPaths() {
   const posts = await getCollection('posts');
   // Nancy Guthrie coverage is excluded from related-content rails by standing order; the pages themselves stay live.
@@ -43,14 +44,7 @@ function pickOffer(p){
 }
 const captureOffer = pickOffer(post);
 const requestedOgImage = isTupacWithdrawal ? '/og/why-was-keffe-d-convicted-tupac-shakur.png' : post.data.cover ?? `/og/${post.slug}.png`;
-const requestedOgPath = requestedOgImage.startsWith('http')
-  ? null
-  : requestedOgImage.split('?')[0].replace(/^\//, '');
-// Never publish a broken social card. Posts with commissioned art retain it;
-// all others use the tested 1200x630 Cassian Creed brand card.
-const socialImage = requestedOgPath && existsSync(resolve('public', requestedOgPath))
-  ? requestedOgImage
-  : '/og.png';
+const socialImage = postSocialImage(post.slug, requestedOgImage);
 const { Content } = await post.render();
 const isCase = post.data.tag === 'Case Files';
 const replacementPost = isTupacWithdrawal ? (await getCollection('posts')).find(p => '/post/' + p.slug + '/' === post.data.replacementPath) : undefined;
@@ -63,8 +57,9 @@ const articleNode = {
   "headline": post.data.title,
   "description": post.data.description,
   "datePublished": post.data.pubDate.toISOString().slice(0,10),
-  "author":{"@type":"Organization","name":"Cassian Creed"},
-  "publisher":{"@type":"Organization","name":"Neural Edge Publishing"},
+  "author":{"@id":"https://cassiancreed.com/#cassian-creed"},
+  "publisher":{"@id":"https://cassiancreed.com/#org"},
+  "image": new URL(socialImage, Astro.site).href,
   "mainEntityOfPage": new URL(Astro.url.pathname, Astro.site).href,
   "articleSection": post.data.tag,
 "dateModified": (post.data.updatedDate ?? post.data.pubDate).toISOString().slice(0,10)
@@ -87,9 +82,13 @@ const faqNode = faq.length ? {
   "@type":"FAQPage",
   "mainEntity": faq.map(f => ({ "@type":"Question", "name": f.q, "acceptedAnswer": { "@type":"Answer", "text": f.a } }))
 } : null;
-const jsonld = isTupacWithdrawal ? undefined : faqNode
-  ? { "@context":"https://schema.org", "@graph": [articleNode, faqNode] }
-  : { "@context":"https://schema.org", ...articleNode };
+const category = categoryForTag(post.data.tag);
+const breadcrumbNode = breadcrumbList([
+  ['Home', '/'], [category.label, '/' + category.category + '/'], [post.data.title, '/post/' + post.slug + '/'],
+], '/post/' + post.slug + '/');
+const jsonld = isTupacWithdrawal ? undefined : {
+  "@context": "https://schema.org", "@graph": [articleNode, breadcrumbNode, ...(faqNode ? [faqNode] : [])],
+};
 ---
 <Base title={post.data.seoTitle ?? post.data.title} description={post.data.description} jsonld={jsonld} ogImage={socialImage} ogImageAlt={replacementPost?.data.title} ogType="article" noindex={post.data.archived} canonicalPath={isTupacWithdrawal ? post.data.replacementPath : undefined}>
   {captureOffer === 'safety' && <SafetyAlert />}

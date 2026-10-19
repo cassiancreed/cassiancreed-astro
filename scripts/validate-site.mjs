@@ -2,6 +2,8 @@ import { readdir, readFile, stat } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import path from 'node:path';
 
+import { validateSearchOutput } from './validate-search-output.mjs';
+
 const root = path.resolve('dist');
 const failures = [];
 
@@ -254,10 +256,10 @@ const courtCalendarHtml = await readFile(routes.get('/court-calendar/'), 'utf8')
 const courtCalendarJsonLd = [...courtCalendarHtml.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
   .map(([, json]) => JSON.parse(json));
 const courtCalendarGraph = courtCalendarJsonLd.flatMap((entry) => entry['@graph'] ?? []);
-const courtSchedule = courtCalendarGraph.find((entry) => entry['@id'] === 'https://cassiancreed.com/court-calendar#schedule');
+const courtSchedule = courtCalendarGraph.find((entry) => entry['@id'] === 'https://cassiancreed.com/court-calendar/#schedule');
 const eventById = (id) => courtSchedule?.itemListElement
   ?.map(({ item }) => item)
-  .find((item) => item['@id'] === `https://cassiancreed.com/court-calendar#${id}`);
+  .find((item) => item['@id'] === `https://cassiancreed.com/court-calendar/#${id}`);
 const aramburuEvent = eventById('aramburu-paris-trial');
 const banksEvent = eventById('banks-federal-trial');
 if (aramburuEvent && aramburuEvent.location?.address?.addressCountry !== 'FR') {
@@ -269,6 +271,8 @@ if (aramburuEvent && aramburuEvent.location?.address?.addressLocality !== 'Paris
 if (banksEvent && banksEvent.location?.address?.addressCountry !== 'US') {
   failures.push('/court-calendar/: domestic structured-data country regression; active Banks event must remain US');
 }
+
+failures.push(...await validateSearchOutput(routes));
 
 if (!existsSync(path.join(root, 'favicon.svg'))) failures.push('favicon.svg missing');
 if (failures.length) {

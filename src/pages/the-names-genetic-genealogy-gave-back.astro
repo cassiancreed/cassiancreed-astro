@@ -1,12 +1,25 @@
 ---
 import Base from '../layouts/Base.astro';
+import { pageSchema } from '../utils/page-schema.mjs';
 import CaptureBlock from '../components/CaptureBlock.astro';
 // Genealogy pillar page 2 (CW5b): name-restoration pillar.
 // Guardrail: identification restores a name; genealogy generates a lead, and the
 // relevant agency makes the official identification. No allegation of guilt by
 // association for open cases (e.g., Fetterolf).
+const jsonld = pageSchema({
+  "type": "Article",
+  "title": "The Names Genetic Genealogy Gave Back | Cassian Creed",
+  "headline": "The Names Genetic Genealogy Gave Back",
+  "description": "Forensic genetic genealogy is known for naming suspects, but its quietest work restores identities to the unidentified dead. Five cases — Marcia King, Renee Nilsson, Gail Johnson, Margaret Fetterolf, and Joseph Serrao — where DNA and family-tree research gave a name back.",
+  "path": "/the-names-genetic-genealogy-gave-back/",
+  "source": "src/pages/the-names-genetic-genealogy-gave-back.astro",
+  "category": [
+    "Genealogy",
+    "/genealogy/"
+  ]
+});
 ---
-<Base
+<Base jsonld={jsonld}
   title="The Names Genetic Genealogy Gave Back | Cassian Creed"
   description="Forensic genetic genealogy is known for naming suspects, but its quietest work restores identities to the unidentified dead. Five cases — Marcia King, Renee Nilsson, Gail Johnson, Margaret Fetterolf, and Joseph Serrao — where DNA and family-tree research gave a name back."
 >

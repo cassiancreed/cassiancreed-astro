@@ -1,6 +1,7 @@
 ---
 import calendarTsv from '../data/court-calendar.tsv?raw';
 import CalendarExplainerLink from './CalendarExplainerLink.astro';
+import CalendarCostBadge from './CalendarCostBadge.astro';
 import { calendarLinksFor, calendarLinkTypesFor, JURY_CHESS_LINK } from '../data/calendar-explainer-links.mjs';
 import { formatCalendarDate, parseCourtCalendar } from '../data/court-calendar-parser.mjs';
 import internationalTsv from '../data/international-watch.tsv?raw';
@@ -184,7 +185,7 @@ const visibleDayEntries = (entries) => {
     </div>
   </div>
 
-  <p class="calendar-legend"><span><i class="calendar-dot" data-link-type="free" aria-hidden="true"></i>FREE explainer</span> · <span><i class="calendar-dot" data-link-type="paid" aria-hidden="true"></i>$ guide</span> · <span><i class="calendar-dot" data-link-type="book" aria-hidden="true"></i>BOOK</span></p>
+  <p class="calendar-legend"><span><i class="calendar-dot" data-link-type="free" aria-hidden="true"></i>FREE explainer</span> · <span><i class="calendar-dot" data-link-type="paid" aria-hidden="true"></i>$1.99 guide</span> · <span><i class="calendar-dot" data-link-type="book" aria-hidden="true"></i>BOOK</span></p>
   <div class="home-calendar__layout">
     <div class="home-calendar__month" role="grid" aria-labelledby="home-calendar-title">
       {ongoingNowEntries.length > 0 && (
@@ -258,14 +259,14 @@ const visibleDayEntries = (entries) => {
               {entry.explainerLinks.map((link) => <CalendarExplainerLink link={link} />)}
               <a href={`/court-calendar/#${entry.id}`}>Calendar details &rarr;</a>
               {fullPage ? (
-                <a href="#court-updates">Get court calendar updates &rarr;</a>
+                <a href="#court-updates"><CalendarCostBadge url="#court-updates" /> Get court calendar updates &rarr;</a>
               ) : (
                 <>
-                  <button type="button" data-calendar-alert>Get court calendar updates</button>
+                  <button type="button" data-calendar-alert><CalendarCostBadge url="#court-updates" /> Get court calendar updates</button>
                   {/* NEP-FIX-0824: the alert form lives in a JS-opened <dialog>. Without
                       this no-JS anchor the calendar signup is unreachable when scripts
                       fail or are blocked. */}
-                  <noscript><a class="home-calendar__alert-noscript" href={CALENDAR_ALERT_URL} target="_blank" rel="noopener noreferrer">Get court calendar updates &rarr;</a></noscript>
+                  <noscript><a class="home-calendar__alert-noscript" href={CALENDAR_ALERT_URL} target="_blank" rel="noopener noreferrer"><CalendarCostBadge url={CALENDAR_ALERT_URL} /> Get court calendar updates &rarr;</a></noscript>
                 </>
               )}
             </div>
@@ -308,7 +309,7 @@ const visibleDayEntries = (entries) => {
             frameborder="0"
           ></iframe>
         </div>
-        <p class="case-alert__fallback">Form not loading? <a data-calendar-alert-fallback data-nep-campaign="court_calendar_updates" data-nep-conversion-page={Astro.url.pathname} data-nep-cta-id="court_calendar_alert_fallback" data-nep-form-id={CALENDAR_ALERT_FORM_ID} data-nep-offer-id="court_calendar_updates" href={`https://subscribe-forms.beehiiv.com/v3/forms/${CALENDAR_ALERT_FORM_ID}?utm_source=website&amp;utm_medium=calendar_alert&amp;utm_campaign=court_calendar_updates`} target="_blank" rel="noopener noreferrer">Get court calendar updates &rarr;</a></p>
+        <p class="case-alert__fallback">Form not loading? <a data-calendar-alert-fallback data-nep-campaign="court_calendar_updates" data-nep-conversion-page={Astro.url.pathname} data-nep-cta-id="court_calendar_alert_fallback" data-nep-form-id={CALENDAR_ALERT_FORM_ID} data-nep-offer-id="court_calendar_updates" href={`https://subscribe-forms.beehiiv.com/v3/forms/${CALENDAR_ALERT_FORM_ID}?utm_source=website&amp;utm_medium=calendar_alert&amp;utm_campaign=court_calendar_updates`} target="_blank" rel="noopener noreferrer"><CalendarCostBadge url={CALENDAR_ALERT_URL} /> Get court calendar updates &rarr;</a></p>
         <p class="case-alert__helper">You can unsubscribe from any email.</p>
         <p class="case-alert__success" data-calendar-alert-success role="status" hidden><strong>You&rsquo;re on the list.</strong> Watch your inbox for court calendar updates.</p>
       </div>
@@ -317,6 +318,7 @@ const visibleDayEntries = (entries) => {
 </section>
 
 <script>
+  import { appendCalendarCostBadge } from '../scripts/calendar-cost-badges.mjs';
   import { calendarLinkTypesFor } from '../data/calendar-explainer-links.mjs';
   import { calendarSignupUrl } from '../scripts/calendar-signup-acquisition.mjs';
   const root = document.querySelector('[data-home-calendar]');
@@ -492,11 +494,14 @@ const visibleDayEntries = (entries) => {
         }
         actions.append(createActionLink(`/court-calendar/#${entry.id}`, 'Calendar details'));
         if (fullPage) {
-          actions.append(createActionLink('#court-updates', 'Get court calendar updates'));
+          const signup = createActionLink('#court-updates', 'Get court calendar updates');
+          appendCalendarCostBadge(signup,{url:'#court-updates'});
+          actions.append(signup);
         } else {
           const alertButton = document.createElement('button');
           alertButton.type = 'button';
           alertButton.textContent = 'Get court calendar updates';
+          appendCalendarCostBadge(alertButton,{url:'#court-updates'});
           alertButton.addEventListener('click', openAlert);
           actions.append(alertButton);
         }

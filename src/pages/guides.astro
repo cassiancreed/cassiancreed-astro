@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import { pageSchema } from '../utils/page-schema.mjs';
 import CaptureBlock from '../components/CaptureBlock.astro';
 import { getCollection } from 'astro:content';
 
@@ -68,8 +69,16 @@ const guides = [
     desc: 'Upcoming hearings and trial dates in the cases we cover — every date tied to an outside source of record, verified daily.',
   },
 ];
+const jsonld = pageSchema({
+  "type": "WebPage",
+  "title": "Resources & Guides — Safety Guide, Glossary, Forensic Explainers & Tools | Cassian Creed",
+  "headline": "Resources & Guides",
+  "description": "Free safety and courtroom guides, forensic explainers, interactive tools, a verified court calendar, case files, and Jury Chess.",
+  "path": "/guides/",
+  "source": "src/pages/guides.astro"
+});
 ---
-<Base
+<Base jsonld={jsonld}
   title="Resources & Guides — Safety Guide, Glossary, Forensic Explainers & Tools | Cassian Creed"
   description="Free safety and courtroom guides, forensic explainers, interactive tools, a verified court calendar, case files, and Jury Chess."
 >

@@ -1,0 +1,6 @@
+---
+import { classifyCalendarLink } from '../data/calendar-explainer-links.mjs';
+const { link, url = '#' } = Astro.props;
+const cost = classifyCalendarLink(link || { url });
+---
+<span class="calendar-badge" data-link-type={cost.type}>{cost.badge}</span>
