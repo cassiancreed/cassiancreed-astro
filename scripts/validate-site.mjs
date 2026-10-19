@@ -83,7 +83,7 @@ for (const [route, file] of routes) {
   }
 }
 
-const juryChessProductUrl = 'https://cassiancreed.beehiiv.com/products/jury-chess';
+const juryChessProductUrl = 'https://cassiancreed.beehiiv.com/products/jury-chess-authority-edition-v3-2';
 const expectedJuryChessCheckoutCtas = new Map([
   ['/', [
     `${juryChessProductUrl}?utm_source=website&utm_medium=homepage&utm_campaign=jury_chess&utm_content=homepage_jury_chess_primary`,
