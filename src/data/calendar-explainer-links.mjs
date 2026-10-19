@@ -733,7 +733,7 @@ export const GUIDE_PREVIEWS = {
   'celeste-rivas-hernandez-d4vd-charges-guide': '/previews/d4vd-guide-v2-preview.pdf',
   'both-sides-michelle-parker-guide-v3': '/previews/michelle-parker-both-sides-v3-preview.pdf',
 };
-export const PREVIEW_LINK_TEXT = 'Read page 1 free';
+export const PREVIEW_LINK_TEXT = 'Read a free sample';
 export function previewLinkFor(paidLink) {
   const url = GUIDE_PREVIEWS[paidLink?.bookKey];
   if (!url) return null;

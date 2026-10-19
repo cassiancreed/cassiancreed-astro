@@ -44,7 +44,7 @@ test('rendered guide offers show prices and each is followed by its FREE page-1 
    const key=new URL(a.href).pathname.split('/').pop(),next=list[i+1];
    assert.ok(next,'preview after '+key+' in '+file);
    assert.equal(next.href,GUIDE_PREVIEWS[key],'preview after '+key+' in '+file);
-   assert.match(next.body,/>FREE</,file);assert.match(next.body,/Read page 1 free (?:→|&rarr;)/,file);
+   assert.match(next.body,/>FREE</,file);assert.match(next.body,/Read a free sample (?:→|&rarr;)/,file);
    assert.match(next.attrs,/target="_blank"/,file);assert.match(next.attrs,/rel="noopener"/,file);
    previews++;
   });
@@ -88,7 +88,7 @@ test('D4vd keeps its paid section before Sources and posts reuse shared badge CS
  assert.ok(s.indexOf(productPrefix+keys[1])<s.indexOf(GUIDE_PREVIEWS[keys[1]]));
  assert.match(readFileSync('src/pages/post/[slug].astro','utf8'),/calendar-explainer-links\.css/);
  assert.match(readFileSync('src/components/CalendarExplainerLink.astro','utf8'),/calendar-explainer-links\.css/);
- assert.equal(PREVIEW_LINK_TEXT,'Read page 1 free');
+ assert.equal(PREVIEW_LINK_TEXT,'Read a free sample');
 });
 test('no old Parker product slugs remain anywhere in sources or built output',()=>{
  for(const root of ['src','public','dist','scripts'])for(const file of files(root)){
