@@ -1,30 +1,16 @@
 ---
 import Base from '../layouts/Base.astro';
+import { pageSchema } from '../utils/page-schema.mjs';
 import CaptureBlock from '../components/CaptureBlock.astro';
-const jsonld = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Person",
-      "@id": "https://cassiancreed.com/#cassian",
-      "name": "Cassian Creed",
-      "jobTitle": "True-crime author and investigator",
-      "url": "https://cassiancreed.com/about/",
-      "description": "Cassian Creed writes sourced, victim-centered true-crime case files for Neural Edge Publishing — primary-source verified, AI-assisted and overseen by humans.",
-      "sameAs": ["https://x.com/CassianCreed", "https://cassiancreed.beehiiv.com/"],
-      "knowsAbout": ["true crime", "criminal justice", "forensic investigation", "investigative genetic genealogy", "victim advocacy"],
-      "worksFor": { "@id": "https://cassiancreed.com/#nep" }
-    },
-    {
-      "@type": "Organization",
-      "@id": "https://cassiancreed.com/#nep",
-      "name": "Neural Edge Publishing",
-      "url": "https://cassiancreed.com/",
-      "description": "An independent true-crime imprint publishing sourced, victim-first case files under the Cassian Creed byline.",
-      "founder": { "@id": "https://cassiancreed.com/#cassian" }
-    }
-  ]
-};
+
+const jsonld = pageSchema({
+  "type": "AboutPage",
+  "title": "About Cassian Creed — Sourced, Victim-First True Crime",
+  "headline": "How we tell these stories",
+  "description": "Who writes Cassian Creed, and how: sourced from the public record, victim-centered, AI-assisted and overseen by humans, and never gratuitous. Meet the true-crime imprint behind the case files.",
+  "path": "/about/",
+  "source": "src/pages/about.astro"
+});
 ---
 <Base title="About Cassian Creed — Sourced, Victim-First True Crime" description="Who writes Cassian Creed, and how: sourced from the public record, victim-centered, AI-assisted and overseen by humans, and never gratuitous. Meet the true-crime imprint behind the case files." jsonld={jsonld}>
   <article class="post">

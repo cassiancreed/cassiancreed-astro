@@ -1,4 +1,7 @@
+import { getCollection } from 'astro:content';
+
 export async function GET(_context: any) {
+  const posts = new Map((await getCollection('posts')).filter((post) => !post.data.archived).map((post) => [post.slug, post]));
   const body = `# Cassian Creed — Neural Edge Publishing
 
 > Cassian Creed is the author byline of Neural Edge Publishing, an independent publisher of sourced, victim-first true-crime case files, court trackers, forensic explainers, and public-safety resources.
@@ -32,6 +35,10 @@ Active-case pages can change. Re-fetch the canonical page at citation time and p
 - [Court Calendar](https://cassiancreed.com/court-calendar/): Current hearing and trial dates, each tied to an identified outside source; verify the last-checked date before citing.
 - [Forensic Tools](https://cassiancreed.com/forensic-tools/): What investigative and forensic methods can establish, and what they cannot.
 
+- [Jury Chess](https://cassiancreed.com/books/jury-chess/): A plain-language guide to criminal jury trials.
+- [Missing Persons](https://cassiancreed.com/missing-persons/): Official case sources and agency tip routes.
+- [What Changed](https://cassiancreed.com/today/): Verified changes in tracked cases.
+
 ## Priority case files and trackers
 
 - [Nestor Hernandez Melgar / Lindsay Geary](https://cassiancreed.com/post/nestor-hernandez-melgar-lindsay-geary-case/): Canonical case hub separating the jury verdict from the medical examiner’s undetermined manner-of-death classification.
@@ -39,7 +46,6 @@ Active-case pages can change. Re-fetch the canonical page at citation time and p
 - [Jacob Hope / Round Lake Beach](https://cassiancreed.com/baby-jacob-round-lake-beach-genetic-genealogy/): Case file on the identification of Jacob Hope, the July 2026 charges, and genetic genealogy as a lead rather than proof.
 - [Taylor Parker Case Update](https://cassiancreed.com/post/the-taylor-parker-case-the-murder-of-reagan-simmons-hancock-and-where-it-stands-now/): July 2026 status of the conviction, Supreme Court proceedings, Texas habeas review, and Netflix's Maternal Instinct, centered on Reagan Simmons-Hancock and Braxlynn.
 - [Lindsay Clancy Trial: Jury Selection Explained](https://cassiancreed.com/post/what-actually-happens-on-day-one-of-a-high-profile-trial/): Plain-language guide to voir dire, alternate jurors, private questioning, and what happens when the Lindsay Clancy trial begins.
-- [Hernandez Melgar Sentencing July 22](https://cassiancreed.com/post/nestor-hernandez-melgar-sentencing-day-primer/): Verified sentencing primer covering Lindsay Geary, the convictions, Washington sentencing ranges, victim-impact statements, allocution, and the judge's decisions.
 - [What Happens When a Jury Deliberates](https://cassiancreed.com/post/what-actually-happens-when-a-jury-deliberates/): Evergreen explainer on jury instructions, juror notes, evidence review, deadlock, hung juries, mistrials, verdicts, and why deliberation time predicts little.
 - [Baby Boy Doe — Mansfield, 1985](https://cassiancreed.com/post/baby-boy-doe-mansfield-1985/): Current case posture for Dianne Curry Peck, the August 31 pretrial setting, and the publicly documented forensic-genetic-genealogy path that reopened the case.
 - [Maya Millete Case: Larry Millete Verdict Update](https://cassiancreed.com/post/the-maya-millete-case-larry-milletes-no-body-murder-trial-explained/): Updated case file covering the first-degree murder verdict, the unresolved sentencing schedule, the continuing search for Maya Millete, and the next legal steps.
@@ -55,5 +61,9 @@ Active-case pages can change. Re-fetch the canonical page at citation time and p
 - [Voir Dire Simulator](https://cassiancreed.com/voir-dire-simulator/): Interactive jury-selection explainer.
 - [Case Solver](https://cassiancreed.com/case-solver/): Interactive reconstruction of how a solved case moved from evidence to identification.
 `;
-  return new Response(body, { headers: { 'Content-Type': 'text/plain; charset=utf-8' } });
+  const currentBody = body.replace(/^- \[([^\]]+)\]\(https:\/\/cassiancreed\.com\/post\/([^/]+)\/\):.*$/gm, (_line, label, slug) => {
+    const post = posts.get(slug);
+    return post ? '- [' + label + '](https://cassiancreed.com/post/' + slug + '/): ' + (post.data.description ?? '') : '';
+  });
+  return new Response(currentBody, { headers: { 'Content-Type': 'text/plain; charset=utf-8' } });
 }

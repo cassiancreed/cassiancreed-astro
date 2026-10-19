@@ -30,5 +30,8 @@
     "@astrojs/sitemap": "^3.2.0",
     "astro": "^4.16.0",
     "leaflet": "^1.9.4"
+  },
+  "devDependencies": {
+    "sharp": "^0.33.5"
   }
 }

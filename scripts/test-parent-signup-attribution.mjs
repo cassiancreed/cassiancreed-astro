@@ -282,7 +282,8 @@ test('GA4 loader and page_view are gated to canonical top-level pages', async ()
   assert.match(base, /document\.head\.appendChild\(loader\)/);
   assert.match(base, /gtag\('config', 'G-5D0DX6WFW4', \{ send_page_view: isTopLevel \}\)/);
 
-  const inline = base.match(/<!-- Google Analytics 4[\s\S]*?<script is:inline>\s*([\s\S]*?)\s*<\/script>/)?.[1];
+  const inline = [...base.matchAll(/<script is:inline>\s*([\s\S]*?)\s*<\/script>/g)]
+    .map((match) => match[1]).find((script) => script.includes('document.head.appendChild(loader)'));
   assert.ok(inline, 'GA4 inline loader script not found');
   const execute = ({ origin, isTopLevel }) => {
     const appended = [];

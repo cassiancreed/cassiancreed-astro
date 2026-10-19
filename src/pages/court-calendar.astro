@@ -202,7 +202,6 @@ const FEATURED_EXPLAINERS = [
 const jsonld = {
   '@context': 'https://schema.org',
   '@graph': [
-    { '@type': 'Organization', '@id': 'https://cassiancreed.com/#org' },
     {
       '@type': 'WebSite',
       '@id': 'https://cassiancreed.com/#website',
@@ -212,18 +211,18 @@ const jsonld = {
     },
     {
       '@type': 'CollectionPage',
-      '@id': 'https://cassiancreed.com/court-calendar#page',
-      url: 'https://cassiancreed.com/court-calendar',
+      '@id': 'https://cassiancreed.com/court-calendar/#page',
+      url: 'https://cassiancreed.com/court-calendar/',
       name: PAGE_TITLE,
       description: PAGE_DESCRIPTION,
       isPartOf: { '@id': 'https://cassiancreed.com/#website' },
       publisher: { '@id': 'https://cassiancreed.com/#org' },
       dateModified: latestReview,
-      mainEntity: { '@id': 'https://cassiancreed.com/court-calendar#schedule' },
+      mainEntity: { '@id': 'https://cassiancreed.com/court-calendar/#schedule' },
     },
     {
       '@type': 'ItemList',
-      '@id': 'https://cassiancreed.com/court-calendar#schedule',
+      '@id': 'https://cassiancreed.com/court-calendar/#schedule',
       name: 'Scheduled court proceedings',
       itemListOrder: 'https://schema.org/ItemListOrderAscending',
       numberOfItems: nextDates.length,
@@ -239,7 +238,7 @@ const jsonld = {
           position: i + 1,
           item: {
             '@type': 'Event',
-            '@id': 'https://cassiancreed.com/court-calendar#' + e.id,
+            '@id': 'https://cassiancreed.com/court-calendar/#' + e.id,
             name: e.case + ' — ' + e.proceeding,
             startDate: e.dateISO,
             eventStatus: 'https://schema.org/EventScheduled',
@@ -255,7 +254,7 @@ const jsonld = {
               },
             },
             description: e.status,
-            url: 'https://cassiancreed.com/court-calendar#' + e.id,
+            url: 'https://cassiancreed.com/court-calendar/#' + e.id,
             about: { '@type': 'Thing', name: e.case },
             isAccessibleForFree: true,
             ...(caseUrl ? { subjectOf: { '@type': 'WebPage', url: caseUrl } } : {}),
@@ -265,15 +264,15 @@ const jsonld = {
     },
     {
       '@type': 'BreadcrumbList',
-      '@id': 'https://cassiancreed.com/court-calendar#breadcrumb',
+      '@id': 'https://cassiancreed.com/court-calendar/#breadcrumb',
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://cassiancreed.com/' },
-        { '@type': 'ListItem', position: 2, name: 'True Crime Court Calendar', item: 'https://cassiancreed.com/court-calendar' },
+        { '@type': 'ListItem', position: 2, name: 'True Crime Court Calendar', item: 'https://cassiancreed.com/court-calendar/' },
       ],
     },
     {
       '@type': 'FAQPage',
-      '@id': 'https://cassiancreed.com/court-calendar#faq',
+      '@id': 'https://cassiancreed.com/court-calendar/#faq',
       mainEntity: allFaqs.map((faq) => ({
         '@type': 'Question',
         name: faq.question,

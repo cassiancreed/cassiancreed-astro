@@ -216,9 +216,9 @@ const exploreActive = resolvedExplore.some(i => navActive(i.href));
   <script type="application/ld+json" set:html={JSON.stringify(orgLd)} />
   <script type="application/ld+json" set:html={JSON.stringify(personLd)} />
   {jsonld && <script type="application/ld+json" set:html={JSON.stringify(jsonld)} />}
-  <!-- Google Analytics 4 (property: Neural Edge Publishing).
+  {/* Google Analytics 4 (property: Neural Edge Publishing).
        Load only on canonical production hosts so branch/deploy previews do not
-       manufacture new users or contaminate retention cohorts. -->
+       manufacture new users or contaminate retention cohorts. */}
   <script is:inline>
     (function () {
       var isTopLevel = window.top === window;
@@ -235,7 +235,7 @@ const exploreActive = resolvedExplore.some(i => navActive(i.href));
       window.gtag('config', 'G-5D0DX6WFW4', { send_page_view: isTopLevel });
     })();
   </script>
-  <!-- ───────────────────────────────────────────────────────────────────────
+  {/* ───────────────────────────────────────────────────────────────────────
        ORIGIN CAPTURE — NEP-CWK-IRASEMA-CONVERSION-RESCUE-0726
        Problem this fixes: inbound campaign UTMs (e.g. a Spotify episode link
        carrying utm_source=spotify) were read by GA4 for the SESSION and then
@@ -251,7 +251,7 @@ const exploreActive = resolvedExplore.some(i => navActive(i.href));
        fires one explicit `origin_visit` event. Conversion page/CTA/form/offer
        identity is carried separately in data attributes and GA4 parameters.
        No new analytics vendor; existing gtag only.
-       ─────────────────────────────────────────────────────────────────────── -->
+       ─────────────────────────────────────────────────────────────────────── */}
   <script is:inline>
   (function(){
     try{
@@ -371,7 +371,7 @@ const exploreActive = resolvedExplore.some(i => navActive(i.href));
         }
       } catch(e) {}
     });
-// Beehiiv signup/subscribe outbound tracking (NEP-GA4FIX-CMT-0708A)
+// Beehiiv signup/subscribe outbound tracking
 document.addEventListener('click',function(e){
 var s=e.target.closest('a');
 if(s&&s.href&&s.href.indexOf('cassiancreed.beehiiv.com')!==-1&&s.href.indexOf('/products/')===-1&&(s.href.indexOf('/subscribe')!==-1||s.href.indexOf('/signup')!==-1||s.href.indexOf('subscribed')!==-1)){

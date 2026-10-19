@@ -4,6 +4,7 @@ import { readFileSync,existsSync } from 'node:fs';
 import { parseMediaCalendar, pacificToday, mediaDates, visibleMediaRows } from '../src/data/media-calendar-parser.mjs';
 import { mediaLinksFor, mediaCourtLink, MEDIA_JURY_CHESS_ENTRY_IDS, MEDIA_JURY_CHESS_EXCLUDED_IDS, classifyMediaLink } from '../src/data/media-explainer-links.mjs';
 import { parseCourtCalendar } from '../src/data/court-calendar-parser.mjs';
+import { indexablePageRoutes } from '../src/utils/search-index.mjs';
 const {rows,asOf} = parseMediaCalendar(readFileSync('src/data/media-calendar.tsv','utf8'));
 const court = parseCourtCalendar(readFileSync('src/data/court-calendar.tsv','utf8'));
 const courts = [...court.entries,...court.appeals,...court.unconfirmed,...court.investigations,...court.completed];
@@ -67,7 +68,7 @@ test('rendered route, sitemap, nav and shared style integration',()=>{
   assert.match(page,/hidePastMedia\(\)/);
   const nav=readFileSync('src/layouts/Base.astro','utf8');
   assert.equal((nav.match(/label: 'True Crime Watch Calendar'/g)||[]).length,2);
-  assert.ok(readFileSync('src/pages/sitemap.xml.ts','utf8').includes("'true-crime-watch-calendar/'"));
+  assert.ok(indexablePageRoutes().some(({route,noindex})=>route==='/true-crime-watch-calendar/'&&!noindex));
   assert.ok(readFileSync('src/pages/llms.txt.ts','utf8').includes('/true-crime-watch-calendar/'));
 });
 test('every linked explainer and source returns HTTP 200', {skip:process.env.MEDIA_LINK_CHECK!=='1', timeout:240000},async()=>{

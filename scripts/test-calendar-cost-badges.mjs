@@ -51,7 +51,7 @@ test('book landing pages and calendar badges use the same existing direct price 
   for(const page of ['books','books/jury-chess']) {
     const html=readFileSync('dist/'+page+'/index.html','utf8');
     assert.ok(html.includes(JURY_CHESS_PRICE_TEXT),page);
-    const ld=[...html.matchAll(/<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)].flatMap(m=>JSON.parse(m[1]));
+    const ld=[...html.matchAll(/<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)].flatMap(m=>JSON.parse(m[1])).flatMap(item=>item['@graph']??[item]);
     const book=ld.find(item=>item.name==='Jury Chess: How Criminal Jury Trials Actually Work');
     assert.ok(book,page);assert.equal(book.offers[0].price,JURY_CHESS_PRICE);
   }
