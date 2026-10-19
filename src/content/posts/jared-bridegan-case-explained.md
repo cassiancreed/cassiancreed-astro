@@ -24,7 +24,7 @@ On the night he died, he had taken his children out for dinner. He dropped off h
 
 A tire was lying in the road on Sanctuary Boulevard. He got out to move it. He was shot there. Police said the tire was put there on purpose to make him stop ([Action News Jax, Sept. 18, 2026](https://www.actionnewsjax.com/news/local/jared-bridegan-murder-2-charges-against-shanna-gardner-dropped-ahead-trial/CLUPHGIER5G6ZGEW3XBPW4RJYY/)). His daughter was not hit.
 
-This case is about Jared first. He was a dad, a husband and a son.
+This case is about Jared first. He was a dad and a husband.
 
 ## Where the case stands today
 
