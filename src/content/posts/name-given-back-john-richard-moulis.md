@@ -2,7 +2,7 @@
 title: "The Man in the Sanford Woods Has a Name: John Richard Moulis"
 seoTitle: "The Man in the Sanford Woods Has a Name: John Moulis"
 description: "Found in Sanford, Florida, in 1997 with no name. DNA testing by Othram and genealogy work by FDLE gave John Richard Moulis his name back."
-pubDate: 2026-10-21
+pubDate: 2026-10-19
 tag: "Case Files"
 featured: false
 victim: "John Richard Moulis, 37"

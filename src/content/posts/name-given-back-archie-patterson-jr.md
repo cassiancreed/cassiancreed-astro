@@ -2,7 +2,7 @@
 title: "The Man Found in Lake Worth in 1983 Has a Name: Archie Patterson Jr."
 seoTitle: "Lake Worth's 1983 John Doe Has a Name: Archie Patterson Jr."
 description: "A man found in a Lake Worth, Florida, waterway in 1983 had no name. Now he does: Archie Patterson Jr. See how DNA work identified him."
-pubDate: 2026-10-23
+pubDate: 2026-10-19
 tag: "Case Files"
 featured: false
 victim: "Archie Patterson Jr., 43"
