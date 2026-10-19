@@ -727,6 +727,18 @@ export const JURY_CHESS_LINK = {
   paid: false,
 };
 export const CALENDAR_LINK_TYPES = ['free', 'paid', 'book'];
+// GUIDE-02: free page-1 previews. Each preview sits right after its paid guide
+// link and is always a local /previews/ PDF, never a Beehiiv product URL.
+export const GUIDE_PREVIEWS = {
+  'celeste-rivas-hernandez-d4vd-charges-guide': '/previews/d4vd-guide-v2-preview.pdf',
+  'both-sides-michelle-parker-guide-v3': '/previews/michelle-parker-both-sides-v3-preview.pdf',
+};
+export const PREVIEW_LINK_TEXT = 'Read page 1 free';
+export function previewLinkFor(paidLink) {
+  const url = GUIDE_PREVIEWS[paidLink?.bookKey];
+  if (!url) return null;
+  return classifyCalendarLink({ url, text: PREVIEW_LINK_TEXT, type: 'free', preview: true, previewFor: paidLink.bookKey, placement: paidLink.placement ? paidLink.placement + '_preview' : undefined });
+}
 export function classifyCalendarLink(link) {
   const path = pathKey(link.url);
   const product = Object.values(LIVE_PRODUCTS).find((item) => pathKey(item.url) === path);
@@ -786,7 +798,12 @@ export function calendarLinksFor(entry) {
   if (juryChessEligible(entry) && !links.some((link) => link.type === 'book')) links.push({ ...JURY_CHESS_LINK });
   // The existing Jury Chess promo retains its approved wording; its BOOK link
   // now goes to the same Books page as the other trial entries.
-  return links.filter((link) => link.type !== 'book' || juryChessEligible(entry))
+  const sorted = links.filter((link) => link.type !== 'book' || juryChessEligible(entry))
     .map((link) => link.bookKey === 'jury-chess' ? { ...link, ...JURY_CHESS_LINK, text: link.text } : link)
     .sort((a, b) => CALENDAR_LINK_TYPES.indexOf(a.type) - CALENDAR_LINK_TYPES.indexOf(b.type));
+  // A free preview follows directly after its paid guide link.
+  return sorted.flatMap((link) => {
+    const preview = link.type === 'paid' ? previewLinkFor(link) : null;
+    return preview ? [link, preview] : [link];
+  });
 }

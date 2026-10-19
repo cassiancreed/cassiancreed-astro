@@ -487,6 +487,10 @@ const visibleDayEntries = (entries) => {
             action.rel = 'noopener noreferrer';
             action.dataset.bookKey = link.bookKey;
             action.dataset.ctaPlacement = link.placement;
+          } else if (link.preview) {
+            action.target = '_blank';
+            action.rel = 'noopener';
+            if (link.previewFor) action.dataset.previewFor = link.previewFor;
           }
           actions.append(action);
         }
