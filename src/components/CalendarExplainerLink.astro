@@ -1,9 +1,10 @@
 ---
+import CalendarCostBadge from './CalendarCostBadge.astro';
 import { classifyCalendarLink } from '../data/calendar-explainer-links.mjs';
 const { link: rawLink, id } = Astro.props;
 const link = classifyCalendarLink(rawLink);
 ---
-<a id={id} class="calendar-resource" data-link-type={link.type} href={link.url} target={link.paid ? '_blank' : undefined} rel={link.paid ? 'noopener noreferrer' : undefined} data-book-key={link.bookKey} data-cta-placement={link.placement}><span class="calendar-badge" data-link-type={link.type}>{link.badge}</span><span>{link.text} &rarr;</span></a>
+<a id={id} class="calendar-resource" data-link-type={link.type} href={link.url} target={link.paid ? '_blank' : undefined} rel={link.paid ? 'noopener noreferrer' : undefined} data-book-key={link.bookKey} data-cta-placement={link.placement}><CalendarCostBadge link={link} /><span>{link.text} &rarr;</span></a>
 
 <style is:global>
   .calendar-resource{display:inline-flex!important;align-items:flex-start!important;gap:7px!important;max-width:100%;min-width:0;color:#f4efe8!important;background:transparent!important;padding:4px 0!important;border:0!important;border-radius:2px!important;box-shadow:none!important;font-size:14px!important;font-weight:500!important;line-height:1.5!important;text-align:left!important;text-transform:none!important;letter-spacing:normal!important;text-decoration:none}

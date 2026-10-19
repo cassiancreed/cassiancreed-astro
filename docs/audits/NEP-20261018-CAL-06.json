@@ -1,0 +1,459 @@
+{
+  "job": "NEP-20261018-CAL-06",
+  "state": "draft-validated",
+  "startingHead": "2519d408ce0d59cace30e891c54a7289760693b9",
+  "rules": "Owner replacement decision: supersedes the initial navigation-wide badge rules.",
+  "scope": {
+    "free": "Only matching free NEP explainers/posts/roundups and free email signup controls.",
+    "plainNavigation": "No badges on navigation, footer links, source citations, Calendar details, What to watch / Real cases in court, or media Court Calendar cross-links.",
+    "paid": "Verified real price followed by GUIDE; existing gold color.",
+    "book": "BOOK followed by verified price; existing purple color; per-entry allowlist unchanged.",
+    "ordering": "Case-specific free explainers first, paid guides immediately after free links, books last."
+  },
+  "legend": "FREE explainer · $1.99 guide · BOOK",
+  "bookPrice": {
+    "source": "Existing price field in src/pages/books/jury-chess.astro and its Book Offer JSON-LD, also present in src/pages/books.astro.",
+    "sharedData": "src/data/book-prices.mjs",
+    "amount": "5.99",
+    "currency": "USD",
+    "badge": "BOOK $5.99",
+    "validation": "Both built book pages' visible prices and JSON-LD offers checked against the shared field."
+  },
+  "colors": {
+    "free": "#86efac",
+    "paid": "#f6c76b",
+    "book": "#d8b4fe",
+    "text": "#14110f"
+  },
+  "styles": "CalendarCostBadge reuses the existing .calendar-badge rules in CalendarExplainerLink.astro. No duplicate badge colors or CSS.",
+  "unchangedData": [
+    {
+      "path": "src/data/court-calendar.tsv",
+      "blob": "0d328390a3f9459686f9f213aed07c575137b81e",
+      "unchanged": true
+    },
+    {
+      "path": "src/data/court-calendar-archive.tsv",
+      "blob": "a935295284ce85c106a7a49dceb68d55bf9f2f9b",
+      "unchanged": true
+    },
+    {
+      "path": "src/data/international-watch.tsv",
+      "blob": "c5c8305ee9c329aa9b2929e987efb43834a0c7f7",
+      "unchanged": true
+    },
+    {
+      "path": "src/data/media-calendar.tsv",
+      "blob": "3e2ab29b7f52ea8cabd453352fb81336c1459e8d",
+      "unchanged": true
+    }
+  ],
+  "validation": {
+    "applicationCommit": "23d914c2c0a635a1c8697847d908db3e467d3280",
+    "build": "passed",
+    "allTestSuites": {
+      "command": "MEDIA_LINK_CHECK=1 node --test scripts/test-*.mjs",
+      "passed": 73,
+      "failed": 0,
+      "skipped": 0
+    },
+    "liveLinks": {
+      "uniqueUrls": 32,
+      "http200": 32,
+      "checks": [
+        {
+          "url": "https://www.peacocktv.com/blog/what-to-watch-new-on-peacock",
+          "status": 200,
+          "finalUrl": "https://www.peacocktv.com/blog/what-to-watch-new-on-peacock"
+        },
+        {
+          "url": "https://press.wbd.com/us/media-release/whats-new-hbo-max-october-1",
+          "status": 200,
+          "finalUrl": "https://press.wbd.com/us/media-release/whats-new-hbo-max-october-1"
+        },
+        {
+          "url": "https://www.broadwayworld.com/bwwtv/article/THE-PET-CEMETERY-MURDERS-A-GHOST-STORY-to-Debut-on-HBO-20260928",
+          "status": 200,
+          "finalUrl": "https://www.broadwayworld.com/bwwtv/article/THE-PET-CEMETERY-MURDERS-A-GHOST-STORY-to-Debut-on-HBO-20260928"
+        },
+        {
+          "url": "https://www.apple.com/tv-pr/news/2026/10/apple-tv-debuts-trailer-for-heart-a-new-apple-original-podcast-hosted-by-karen-kilgariff-premiering-october-19/",
+          "status": 200,
+          "finalUrl": "https://www.apple.com/tv-pr/news/2026/10/apple-tv-debuts-trailer-for-heart-a-new-apple-original-podcast-hosted-by-karen-kilgariff-premiering-october-19/"
+        },
+        {
+          "url": "https://pressroom.versantmedia.com/oxygen/shows/catfish-murders/press-releases/oxygen-unveils-fall-programming-featuring-trio-gripping",
+          "status": 200,
+          "finalUrl": "https://pressroom.versantmedia.com/oxygen/shows/catfish-murders/press-releases/oxygen-unveils-fall-programming-featuring-trio-gripping"
+        },
+        {
+          "url": "https://podnews.net/press-release/pave-studios-disney-hulu",
+          "status": 200,
+          "finalUrl": "https://podnews.net/press-release/pave-studios-disney-hulu"
+        },
+        {
+          "url": "https://press.wbd.com/us/media-release/investigation-discovery/investigation-discovery-chronicles-unique-bond-between-survivor-and-serial-killers-ex",
+          "status": 200,
+          "finalUrl": "https://press.wbd.com/us/media-release/investigation-discovery/investigation-discovery-chronicles-unique-bond-between-survivor-and-serial-killers-ex"
+        },
+        {
+          "url": "https://cassiancreed.com/post/reading-the-crime-scene-what-forensics-reveals/",
+          "status": 200,
+          "finalUrl": "https://cassiancreed.com/post/reading-the-crime-scene-what-forensics-reveals/"
+        },
+        {
+          "url": "https://cassiancreed.com/how-forensic-genetic-genealogy-works/",
+          "status": 200,
+          "finalUrl": "https://cassiancreed.com/how-forensic-genetic-genealogy-works/"
+        },
+        {
+          "url": "https://www.tvmaze.com/shows/94540/the-serial-killer-connection",
+          "status": 200,
+          "finalUrl": "https://www.tvmaze.com/shows/94540/the-serial-killer-connection"
+        },
+        {
+          "url": "https://www.broadwayworld.com/bwwtv/article/AE-to-Premiere-SCOTT-PETERSON-THE-NEW-EVIDENCE-Special-and-New-Crime-Series-This-Fall-20260819",
+          "status": 200,
+          "finalUrl": "https://www.broadwayworld.com/bwwtv/article/AE-to-Premiere-SCOTT-PETERSON-THE-NEW-EVIDENCE-Special-and-New-Crime-Series-This-Fall-20260819"
+        },
+        {
+          "url": "https://www.tvline.com/2289301/what-to-watch-week-of-october-18-2026-tv-shows-movies/",
+          "status": 200,
+          "finalUrl": "https://www.tvline.com/2289301/what-to-watch-week-of-october-18-2026-tv-shows-movies/"
+        },
+        {
+          "url": "https://www.tvinsider.com/network/ae/schedule/",
+          "status": 200,
+          "finalUrl": "https://www.tvinsider.com/network/ae/schedule/"
+        },
+        {
+          "url": "https://www.infobae.com/que-puedo-ver/2026/10/08/la-masacre-de-flores-llega-a-hbo-max-con-el-testimonio-de-matias-bagnato/",
+          "status": 200,
+          "finalUrl": "https://www.infobae.com/que-puedo-ver/2026/10/08/la-masacre-de-flores-llega-a-hbo-max-con-el-testimonio-de-matias-bagnato/"
+        },
+        {
+          "url": "https://www.hulu.com/series/swipe-right-on-the-devil-3cb954b0-2a2b-4601-84b1-5ca6a4e9c7cc",
+          "status": 200,
+          "finalUrl": "https://www.hulu.com/series/swipe-right-on-the-devil-3cb954b0-2a2b-4601-84b1-5ca6a4e9c7cc"
+        },
+        {
+          "url": "https://www.avclub.com/the-wolves-of-real-estate-trailer-peacock",
+          "status": 200,
+          "finalUrl": "https://www.avclub.com/the-wolves-of-real-estate-trailer-peacock"
+        },
+        {
+          "url": "https://cassiancreed.com/court-calendar/",
+          "status": 200,
+          "finalUrl": "https://cassiancreed.com/court-calendar/"
+        },
+        {
+          "url": "http://www.thefutoncritic.com/news/2026/09/29/investigation-discovery-spotlights-the-haight-family-tragedy-in-new-special-toxic-what-happened-in-the-haight-house-425513/20260929id01/",
+          "status": 200,
+          "finalUrl": "http://www.thefutoncritic.com/news/2026/09/29/investigation-discovery-spotlights-the-haight-family-tragedy-in-new-special-toxic-what-happened-in-the-haight-house-425513/20260929id01/"
+        },
+        {
+          "url": "https://about.netflix.com/en/news/la-caida-de-el-mayo-trailer",
+          "status": 200,
+          "finalUrl": "https://about.netflix.com/en/news/la-caida-de-el-mayo-trailer"
+        },
+        {
+          "url": "https://www.aol.com/articles/toxic-happened-haight-house-chilling-115447000.html",
+          "status": 200,
+          "finalUrl": "https://www.aol.com/articles/toxic-happened-haight-house-chilling-115447000.html"
+        },
+        {
+          "url": "https://www.whats-on-netflix.com/coming-soon/whats-coming-to-netflix-in-november-2026/",
+          "status": 200,
+          "finalUrl": "https://www.whats-on-netflix.com/coming-soon/whats-coming-to-netflix-in-november-2026/"
+        },
+        {
+          "url": "https://about.netflix.com/en/news/netflix-premieres-the-documentary-unprotected-murder-in-galicia-on-november-6",
+          "status": 200,
+          "finalUrl": "https://about.netflix.com/en/news/netflix-premieres-the-documentary-unprotected-murder-in-galicia-on-november-6"
+        },
+        {
+          "url": "https://streamingkalender.se/h/2026-10-29-cannibal-poet/",
+          "status": 200,
+          "finalUrl": "https://streamingkalender.se/h/2026-10-29-cannibal-poet/"
+        },
+        {
+          "url": "https://www.netflixjunkie.com/netflix-news-netflix-release-list-for-november-2026-every-show-movie-and-documentary/",
+          "status": 200,
+          "finalUrl": "https://www.netflixjunkie.com/netflix-news-netflix-release-list-for-november-2026-every-show-movie-and-documentary/"
+        },
+        {
+          "url": "https://www.pbs.org/video/crime-and-punishment-in-america-extended-trailer/",
+          "status": 200,
+          "finalUrl": "https://www.pbs.org/video/crime-and-punishment-in-america-extended-trailer/"
+        },
+        {
+          "url": "https://www.realityblurred.com/realitytv/2026/09/new-upcoming-documentaries-fall-2026/",
+          "status": 200,
+          "finalUrl": "https://www.realityblurred.com/realitytv/2026/09/new-upcoming-documentaries-fall-2026/"
+        },
+        {
+          "url": "https://cassiancreed.com/post/first-degree-second-degree-manslaughter-what-s-the-difference/",
+          "status": 200,
+          "finalUrl": "https://cassiancreed.com/post/first-degree-second-degree-manslaughter-what-s-the-difference/"
+        },
+        {
+          "url": "https://cassiancreed.com/post/how-investigators-weigh-evidence-plain-english/",
+          "status": 200,
+          "finalUrl": "https://cassiancreed.com/post/how-investigators-weigh-evidence-plain-english/"
+        },
+        {
+          "url": "https://www.nbcnews.com/dateline",
+          "status": 200,
+          "finalUrl": "https://www.nbcnews.com/dateline"
+        },
+        {
+          "url": "https://www.directv.com/insider/fall-tv-lineup/",
+          "status": 200,
+          "finalUrl": "https://www.directv.com/insider/fall-tv-lineup/"
+        },
+        {
+          "url": "https://abc.com/news/68176c48-d9cc-47a7-a237-d961a53fccaf/category/1138628",
+          "status": 200,
+          "finalUrl": "https://abc.com/news/68176c48-d9cc-47a7-a237-d961a53fccaf/category/1138628"
+        },
+        {
+          "url": "https://www.paramountpressexpress.com/cbs-entertainment/shows/48-hours/releases/?view=113402-48-hours-kicks-off-a-new-season-with-back-to-back-hours-featuring-exclusive-interviews-intriguing-cases-and-the-best-true-crime-reporting",
+          "status": 200,
+          "finalUrl": "https://www.paramountpressexpress.com/cbs-entertainment/shows/48-hours/releases/?view=113402-48-hours-kicks-off-a-new-season-with-back-to-back-hours-featuring-exclusive-interviews-intriguing-cases-and-the-best-true-crime-reporting"
+        }
+      ]
+    },
+    "builtHtmlCostTests": 4,
+    "responsive": {
+      "commit": "23d914c2c0a635a1c8697847d908db3e467d3280",
+      "checkedAt": "2026-10-18T20:11:31.277Z",
+      "legend": "FREE explainer · $1.99 guide · BOOK",
+      "juryChessBadge": "BOOK $5.99",
+      "summaries": [
+        {
+          "route": "/court-calendar/",
+          "width": 1280,
+          "selectedDates": 27,
+          "badges": {
+            "free": 181,
+            "paid": 51,
+            "book": 26
+          },
+          "scopeRules": "passed",
+          "priceBadges": "passed",
+          "ordering": "passed",
+          "overflow": false
+        },
+        {
+          "route": "/true-crime-watch-calendar/",
+          "width": 1280,
+          "selectedDates": 0,
+          "badges": {
+            "free": 6,
+            "paid": 0,
+            "book": 0
+          },
+          "scopeRules": "passed",
+          "priceBadges": "passed",
+          "ordering": "passed",
+          "overflow": false
+        },
+        {
+          "route": "/court-calendar/",
+          "width": 390,
+          "selectedDates": 27,
+          "badges": {
+            "free": 181,
+            "paid": 51,
+            "book": 26
+          },
+          "scopeRules": "passed",
+          "priceBadges": "passed",
+          "ordering": "passed",
+          "overflow": false
+        },
+        {
+          "route": "/true-crime-watch-calendar/",
+          "width": 390,
+          "selectedDates": 0,
+          "badges": {
+            "free": 6,
+            "paid": 0,
+            "book": 0
+          },
+          "scopeRules": "passed",
+          "priceBadges": "passed",
+          "ordering": "passed",
+          "overflow": false
+        }
+      ]
+    },
+    "existingCalendarRegression": {
+      "bookEntryCount": 12,
+      "unchangedTsvs": true,
+      "summaries": [
+        {
+          "width": 1280,
+          "route": "/court-calendar/",
+          "detailCount": 145,
+          "listCount": 145,
+          "selectedCount": 35,
+          "dotCount": 27,
+          "serverRendering": "passed",
+          "colors": "passed",
+          "overflow": "none"
+        },
+        {
+          "width": 1280,
+          "route": "/",
+          "detailCount": 0,
+          "listCount": 0,
+          "selectedCount": 35,
+          "dotCount": 27,
+          "serverRendering": "passed",
+          "colors": "passed",
+          "overflow": "none"
+        },
+        {
+          "width": 390,
+          "route": "/court-calendar/",
+          "detailCount": 145,
+          "listCount": 145,
+          "selectedCount": 35,
+          "dotCount": 27,
+          "serverRendering": "passed",
+          "colors": "passed",
+          "overflow": "none"
+        },
+        {
+          "width": 390,
+          "route": "/",
+          "detailCount": 0,
+          "listCount": 0,
+          "selectedCount": 35,
+          "dotCount": 27,
+          "serverRendering": "passed",
+          "colors": "passed",
+          "overflow": "none"
+        }
+      ]
+    },
+    "runUrl": "https://github.com/cassiancreed/cassiancreed-astro/actions/runs/39162048455",
+    "artifactUrl": "https://github.com/cassiancreed/cassiancreed-astro/actions/runs/39162048455/artifacts/12148942404"
+  },
+  "publication": "PR #312 stays DRAFT. No merge or deployment.",
+  "commits": [
+    {
+      "sha": "34cf878aaf7ff9cfb6df32b013fbf0d5d010d945",
+      "path": "src/components/CalendarCostBadge.astro"
+    },
+    {
+      "sha": "f1da67f87c10dd3f2306f89af39b89b40d828327",
+      "path": "src/scripts/calendar-cost-badges.mjs"
+    },
+    {
+      "sha": "d45d58c1542b8c70cce165fd1978fc8c6ca4c142",
+      "path": "scripts/test-calendar-cost-badges.mjs"
+    },
+    {
+      "sha": "38113a0dfda96730867400c34cad91af15350459",
+      "path": "src/data/calendar-explainer-links.mjs"
+    },
+    {
+      "sha": "f168ae44ae76cd4ec26f492de9232dcbaddbc1e6",
+      "path": "src/components/CalendarExplainerLink.astro"
+    },
+    {
+      "sha": "e9d87f613c6d51d633ad673754be4e02ff948f41",
+      "path": "src/components/HomeCourtCalendar.astro"
+    },
+    {
+      "sha": "9bbbf31a83bc711afdfc7232ce6387170edee425",
+      "path": "src/pages/court-calendar.astro"
+    },
+    {
+      "sha": "591067359654ea36552651c25f6bb8e031e7da91",
+      "path": "src/pages/true-crime-watch-calendar.astro"
+    },
+    {
+      "sha": "d23390715f67334048124a54f27afdd8d11704c2",
+      "path": "src/layouts/Base.astro"
+    },
+    {
+      "sha": "17bfb77d57e99e396c5cdd30e84acc23fe3ceb35",
+      "path": "src/components/CaptureBlock.astro"
+    },
+    {
+      "sha": "5b70df5268fa7346554eceabb29dc8f38d0c44a8",
+      "path": "scripts/test-calendar-explainer-links.mjs"
+    },
+    {
+      "sha": "72bc2c21805cd5dd78ee50206ecdcaeff2489a35",
+      "path": "src/data/book-prices.mjs"
+    },
+    {
+      "sha": "b79e58e7042adff291b282758f2074fb91e4c58d",
+      "path": "src/data/calendar-explainer-links.mjs"
+    },
+    {
+      "sha": "dbdb797f57c67bb8be6a9227d86ea707ebf87309",
+      "path": "src/components/HomeCourtCalendar.astro"
+    },
+    {
+      "sha": "6ab76128a162c567fca647803483f5ab8bd31566",
+      "path": "src/pages/court-calendar.astro"
+    },
+    {
+      "sha": "c0426b9c7c0ac141cef48c5d09499ecd61437113",
+      "path": "src/pages/true-crime-watch-calendar.astro"
+    },
+    {
+      "sha": "5901a94e2828183592a19a0392be4a6d21a66463",
+      "path": "src/layouts/Base.astro"
+    },
+    {
+      "sha": "428b06f01191291162cd37898db45ba4c349b98a",
+      "path": "src/components/CaptureBlock.astro"
+    },
+    {
+      "sha": "7586314a749d86287ccbff68708cdfd42a7c06d6",
+      "path": "src/scripts/calendar-cost-badges.mjs"
+    },
+    {
+      "sha": "671573cc6396698607cec556969213094ee43543",
+      "path": "scripts/test-calendar-explainer-links.mjs"
+    },
+    {
+      "sha": "8e2eee5cd446f5c8d404dce14de837d793ee4be0",
+      "path": "scripts/check-calendar-link-ui.mjs"
+    },
+    {
+      "sha": "d2bee70e97ac6ec33c4ea5d9eb15291402a742b7",
+      "path": "scripts/test-calendar-cost-badges.mjs"
+    },
+    {
+      "sha": "eeac208534f446e1932a73d3e5d313950cafddc8",
+      "path": "package.json minimal test command edit"
+    },
+    {
+      "sha": "05aaad7ffeaeb4e995c987894c0876509023742f",
+      "path": "src/pages/books/jury-chess.astro"
+    },
+    {
+      "sha": "17064de50a011066ed1a7cddd2242e304546244c",
+      "path": "src/pages/books.astro"
+    },
+    {
+      "sha": "23d914c2c0a635a1c8697847d908db3e467d3280",
+      "path": "temporary CAL-06 audit workflow"
+    },
+    {
+      "sha": "b4a416effb30449e0c7db6a28f50c6399916a722",
+      "path": "remove temporary CAL-06 workflow"
+    },
+    {
+      "sha": "0f7b13477575ff39da1166cbfffdd105e3218c7b",
+      "path": "clarify final badge helper scope"
+    }
+  ]
+}

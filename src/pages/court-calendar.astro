@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import CalendarExplainerLink from '../components/CalendarExplainerLink.astro';
+import CalendarCostBadge from '../components/CalendarCostBadge.astro';
 import HomeCourtCalendar from '../components/HomeCourtCalendar.astro';
 import CaptureBlock from '../components/CaptureBlock.astro';
 import { calendarLinksFor } from '../data/calendar-explainer-links.mjs';
@@ -289,6 +290,7 @@ const jsonld = {
   jsonld={jsonld}
   internalLinksOnly
 >
+  <p class="wrap"><a href="/true-crime-watch-calendar/">What to watch: True Crime Watch Calendar →</a></p>
   <HomeCourtCalendar fullPage />
 
   <nav class="wrap cal-quick-links" aria-label="Court calendar resources">
@@ -391,7 +393,7 @@ const jsonld = {
       <p class="capture-cta__body">
         Headlines tell you what happened. <em>Jury Chess: How Criminal Jury Trials Actually Work</em> explains the machinery underneath &mdash; jury selection, evidence disputes, cross-examination, jury instructions, deliberations, and the verdict.
       </p>
-      <a class="capture-cta__btn" href="/books/" id="jury-chess-court-calendar" data-book-key="jury-chess" data-cta-placement="court_calendar_promo">Get <em>Jury Chess</em></a>
+      <a class="capture-cta__btn" href="/books/" id="jury-chess-court-calendar" data-book-key="jury-chess" data-cta-placement="court_calendar_promo"><CalendarCostBadge url="/books/" /> Get <em>Jury Chess</em></a>
     </div>
   </section>
 
