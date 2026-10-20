@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import ReportError from '../components/ReportError.astro';
 export interface Props {
   title: string;
   description?: string;
@@ -352,6 +353,7 @@ const exploreActive = resolvedExplore.some(i => navActive(i.href));
   <footer class="site-foot"><div class="site-foot__inner">
     <span class="evidence">© 2026 Neural Edge Publishing</span>
     <span class="site-foot__note">Sourced · victim-centered · no gratuitous detail.</span>
+    <span class="site-foot__report"><ReportError pageTitle={baseTitle} /></span>
             <span class="site-foot__social"><a href="/today/">What Changed</a> · <a href="/missing-persons/">Missing Persons</a> · <a href="/genealogy/">Genealogy</a> · <a href="/explainers/">Explainers</a> · <a href="/guides/">Guides</a> · <a href="/glossary/">Glossary</a> · <a href="/case-solver/">Case Solver</a> · <a href="/forensic-tools/">Forensic Tools</a> · <a href="/safety/">Stay Safe</a> · <a href="/support/">Support</a> · <a href="/mission/">Mission</a> · <a href="/about/">About</a>{internalLinksOnly ? <> · Follow on X · Follow on TikTok · Free newsletter</> : <> · <a href="https://x.com/CassianCreed">Follow on X</a> · <a href="https://www.tiktok.com/@cassiancreed">Follow on TikTok</a> · <a href="/#free-guide">Free newsletter</a></>}</span>
   </div></footer>
   <script is:inline>
