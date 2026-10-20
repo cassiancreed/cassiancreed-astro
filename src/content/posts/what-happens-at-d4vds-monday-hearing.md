@@ -14,7 +14,7 @@ status: "Charged; pleaded not guilty; presumed innocent"
 
 *Updated Tuesday, October 20, 2026. This story involves the death of a child.*
 
-**Update, October 20, 2026:** Monday's hearing took just minutes. Court TV reported that lawyers for both sides agreed to a trial date in February. The year was not stated, but the next hearing is January 11, 2027, so this points to February 2027. The exact day was not reported. The next status conference is January 11, 2027 (LA Magazine; NBC Los Angeles). He has pleaded not guilty and is presumed innocent.
+**Update, October 20, 2026:** Monday's hearing took just minutes. Court TV reported that lawyers for both sides agreed to a trial date in February. CW39 reported on October 20, 2026 that the trial is scheduled for February 2027. The exact day was not reported. The next status conference is January 11, 2027 (LA Magazine; NBC Los Angeles). He has pleaded not guilty and is presumed innocent.
 
 The singer D4vd goes back to court on Monday, October 19, 2026. It is a short check-in hearing in downtown Los Angeles. It is not a trial. No verdict will come Monday.
 
@@ -45,7 +45,7 @@ Here are the facts from public reports:
 - **Custody.** He is held in jail without bail.
 - **Death penalty.** The district attorney has not decided whether to seek it. The other option, if he is convicted, is life in prison without parole.
 
-As of October 20, 2026, Court TV reported a February trial date (exact day not reported). We found no public report of a death penalty decision.
+As of October 20, 2026, Court TV reported a February trial date, and CW39 reported it is set for February 2027 (exact day not reported). We found no public report of a death penalty decision.
 
 Prosecutors have a theory about why this happened. A theory is not proof. A jury will decide.
 
@@ -67,7 +67,7 @@ A status conference is a short meeting in court. The judge asks both sides, "Whe
 
 ## What to watch for next
 
-- **A trial date.** Court TV reported a February trial date; the exact day was not reported.
+- **A trial date.** Court TV reported a February trial date, and CW39 reported it is February 2027. The exact day was not reported.
 - **The death penalty choice.** The district attorney is still weighing it.
 - **Delays.** A new defense team may ask for more time.
 - **The civil case.** Celeste's parents filed a separate wrongful death lawsuit in September 2026. That is a different case from the criminal one.
@@ -93,5 +93,6 @@ Our Court Calendar lists the January 11, 2027 status conference.
 - Court TV, report on the October 19 hearing and February trial date, October 19, 2026: https://www.courttv.com/news/judge-sets-trial-date-for-singer-d4vd-on-charges-he-killed-missing-teen/
 - LA Magazine, report on the brief October 19 hearing and January 11, 2027 status conference, October 19, 2026: https://lamag.com/crimeinla/d4vds-latest-court-appearance-lasts-just-minutes/
 - NBC Los Angeles, report on the October 19 hearing, plea and custody, October 19, 2026: https://www.nbclosangeles.com/news/local/singer-d4vd-appears-in-court-in-teen-girls-murder-case/3958119/
+- CW39 Houston, report citing Court TV that the trial is scheduled for February 2027, October 20, 2026: https://cw39.com/crime/singer-d4vd-set-february-trial/
 
 **Follow every hearing on our Court Calendar:** https://cassiancreed.com/court-calendar/
