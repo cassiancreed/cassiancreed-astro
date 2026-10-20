@@ -326,7 +326,7 @@ const jsonld = {
         <article class="card card--live" id={e.id}>
           <p class="card__type">{e.proceeding}</p>
           <h3 class="card__case">{e.case}</h3>
-          <p class="card__when"><span class="card__k">Proceeding began</span><time datetime={e.dateISO}>{e.dateText}</time></p>
+          <p class="card__when"><span class="card__k">{e.dateISO > BUILD_DATE ? 'Next listed setting' : 'Listed date'}</span><time datetime={e.dateISO}>{e.dateText}</time></p>
           <p class="card__court">{e.court}</p>
           {e.docket && <p class="card__docket">{e.docket}</p>}
           <p class="card__status"><span class="card__k">Status</span> {e.status}</p>
