@@ -5,6 +5,7 @@ import { getCollection } from 'astro:content';
 import CaptureBlock from '../../components/CaptureBlock.astro';
 import BookCTA from '../../components/BookCTA.astro';
 import SafetyAlert from '../../components/SafetyAlert.astro';
+import ReportError from '../../components/ReportError.astro';
 import { postSocialImage } from '../../utils/post-social-images.mjs';
 import { categoryForTag } from '../../data/content-categories.mjs';
 import { breadcrumbList } from '../../utils/page-schema.mjs';
@@ -124,6 +125,7 @@ const jsonld = isTupacWithdrawal ? undefined : {
         <a class="btn buybox__btn" href={post.data.buyUrl} target="_blank" rel="noopener noreferrer">{post.data.buyPrice ? ("Buy the ebook — " + post.data.buyPrice + " →") : "Buy the ebook →"}</a>
       </aside>
     )}
+    <p class="post__report"><ReportError pageTitle={post.data.title} /></p>
     {isCase && <p class="post__crisis"><strong>If you need support.</strong> For immediate physical danger or urgent medical help, call 911 or local emergency services when it is safe to do so. For suicide, mental-health, or substance-use crisis support, call or text 988. <a href="/safety/#immediate-help">Open the ungated Stay Safe resources</a>.</p>}
     <p class="post__resources"><a href="/support/">Victim &amp; Reader Resources</a>{!isTupacRepair && <> &mdash; free, confidential help for victims, families, and readers.</>}</p>
   </article>
@@ -174,6 +176,7 @@ const jsonld = isTupacWithdrawal ? undefined : {
   .buybox__btn{align-self:flex-start}
   .buybox__alt{display:inline-block;margin-top:10px;font-size:13px;text-decoration:none;color:var(--ink-2)}
   .buybox__alt:hover{color:var(--accent,#e0563b)}
+  .post__report{margin:24px 0 0;font-size:15px;color:var(--ink-2)}
   .related{border-top:1px solid var(--line);padding-top:24px;margin-top:8px}
   .related h2{font-family:var(--serif);font-weight:600;font-size:22px;margin:0 0 14px}
   .related__list{list-style:none;margin:0;padding:0;display:grid;gap:10px}

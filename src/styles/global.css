@@ -84,6 +84,7 @@ img{max-width:100%}
 .site-foot{border-top:1px solid var(--line);margin-top:64px}
 .site-foot__inner{display:flex;justify-content:space-between;align-items:center;padding:22px 24px;flex-wrap:wrap;gap:8px}
 .site-foot__note{color:var(--ink-3);font-size:13px}
+.site-foot__report{font-size:13px}
 
 @media(max-width:860px){.nav--desktop{display:none}.nav-menu{display:block}}
 @media(max-width:760px){.grid{grid-template-columns:1fr 1fr}.site-head__inner{padding:9px 14px}}
