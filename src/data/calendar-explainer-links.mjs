@@ -23,19 +23,19 @@ const EXISTING_CASE_GUIDES = {
   },
   'pike-execution': {
     url: 'https://cassiancreed.beehiiv.com/products/christa-pike-failed-execution-guide?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=explainer_pike_v1&utm_content=next_step_entry',
-    text: 'Get the full Christa Pike case guide — timeline, every court step, six paths ahead — $1.99',
+    text: 'Get Case Chess: The Christa Pike Case — timeline, every court step, six paths ahead — $1.99',
     bookKey: 'christa-pike-failed-execution-guide',
     placement: 'court_calendar_pike_next_step_entry',
   },
   'pike-stay-denial-sep23': {
     url: 'https://cassiancreed.beehiiv.com/products/christa-pike-failed-execution-guide?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=explainer_pike_v1&utm_content=stay_denial_entry',
-    text: 'Get the full Christa Pike case guide — timeline, every court step, six paths ahead — $1.99',
+    text: 'Get Case Chess: The Christa Pike Case — timeline, every court step, six paths ahead — $1.99',
     bookKey: 'christa-pike-failed-execution-guide',
     placement: 'court_calendar_pike_stay_denial_entry',
   },
   'pike-clemency-denial-sep28': {
     url: 'https://cassiancreed.beehiiv.com/products/christa-pike-failed-execution-guide?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=explainer_pike_v1&utm_content=clemency_entry',
-    text: 'Get the full Christa Pike case guide — timeline, every court step, six paths ahead — $1.99',
+    text: 'Get Case Chess: The Christa Pike Case — timeline, every court step, six paths ahead — $1.99',
     bookKey: 'christa-pike-failed-execution-guide',
     placement: 'court_calendar_pike_clemency_entry',
   },
@@ -572,7 +572,7 @@ const WEEKLY_ROUNDUP = {"url":"/post/this-week-in-court-october-19-23-2026/","te
 const LIVE_PRODUCTS = {
   "austin-metcalf-karmelo-anthony-case-guide": {
     "url": "https://cassiancreed.beehiiv.com/products/austin-metcalf-karmelo-anthony-case-guide",
-    "title": "The Killing of Austin Metcalf: A Plain-Language Guide to the Karmelo Anthony Case (v1)",
+    "title": "Case Chess: The Karmelo Anthony Case — What's Actually Happening and What It Means",
     "price": "$1.99"
   },
   "both-sides-michelle-parker-guide-v3": {
@@ -592,7 +592,7 @@ const LIVE_PRODUCTS = {
   },
   "christa-pike-failed-execution-guide": {
     "url": "https://cassiancreed.beehiiv.com/products/christa-pike-failed-execution-guide",
-    "title": "The Christa Pike Case After the Failed Execution: A Plain-English Guide (v1)",
+    "title": "Case Chess: The Christa Pike Case — What's Actually Happening and What It Means",
     "price": "$1.99"
   },
   "case-chess-erin-patterson": {
@@ -607,7 +607,7 @@ const LIVE_PRODUCTS = {
   },
   "jared-bridegan-case-guide-v2": {
     "url": "https://cassiancreed.beehiiv.com/products/jared-bridegan-case-guide-v2",
-    "title": "Case Chess: The Jared Bridegan Case (v2) — One Verdict, One Trial Ahead",
+    "title": "Case Chess: The Jared Bridegan Case — What's Actually Happening and What It Means",
     "price": "$1.99"
   },
   "eric-richins-kouri-evidence-verdict": {
@@ -622,12 +622,12 @@ const LIVE_PRODUCTS = {
   },
   "tupac-shakur-keffe-d-case-guide": {
     "url": "https://cassiancreed.beehiiv.com/products/tupac-shakur-keffe-d-case-guide",
-    "title": "Tupac Shakur and the Keffe D Case: The Complete Case Guide (v1)",
+    "title": "Case Chess: The Tupac Shakur Case — What's Actually Happening and What It Means",
     "price": "$1.99"
   },
   "murdaugh-retrial-guide": {
     "url": "https://cassiancreed.beehiiv.com/products/murdaugh-retrial-guide",
-    "title": "The Murdaugh Retrial Guide (v1): Maggie and Paul, the Overturned Verdict, and What Comes Next",
+    "title": "Case Chess: The Alex Murdaugh Case — What's Actually Happening and What It Means",
     "price": "$1.99"
   }
 };
