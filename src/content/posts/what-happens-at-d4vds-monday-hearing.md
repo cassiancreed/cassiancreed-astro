@@ -75,7 +75,7 @@ We will update our Court Calendar after Monday.
 ## Want the full case in one place?
 
 <div class="guide-offer">
-<a class="calendar-resource" data-link-type="paid" href="https://cassiancreed.beehiiv.com/products/celeste-rivas-hernandez-d4vd-charges-guide?utm_source=cassiancreed.com&amp;utm_medium=post_cta&amp;utm_campaign=explainer_d4vd_v2&amp;utm_content=d4vd_free_post_end" target="_blank" rel="noopener noreferrer" data-book-key="celeste-rivas-hernandez-d4vd-charges-guide" data-cta-placement="d4vd_free_post_end"><span class="calendar-badge" data-link-type="paid">$1.99 GUIDE</span><span>Case Chess: The D4vd Case — What's Actually Happening and What It Means →</span></a>
+<a class="guide-btn" data-link-type="paid" href="https://cassiancreed.beehiiv.com/products/celeste-rivas-hernandez-d4vd-charges-guide?utm_source=cassiancreed.com&amp;utm_medium=post_cta&amp;utm_campaign=explainer_d4vd_v2&amp;utm_content=d4vd_free_post_end" target="_blank" rel="noopener noreferrer" data-book-key="celeste-rivas-hernandez-d4vd-charges-guide" data-cta-placement="d4vd_free_post_end"><span class="calendar-badge" data-link-type="paid" aria-hidden="true">$1.99 GUIDE</span><span>Get the $1.99 guide: Case Chess: The D4vd Case — What's Actually Happening and What It Means →</span></a>
 <a class="calendar-resource" data-link-type="free" href="/previews/d4vd-guide-v2-preview.pdf" target="_blank" rel="noopener" data-preview-for="celeste-rivas-hernandez-d4vd-charges-guide" data-cta-placement="d4vd_free_post_end_preview"><span class="calendar-badge" data-link-type="free">FREE</span><span>Read a free sample →</span></a>
 </div>
 

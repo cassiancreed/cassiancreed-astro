@@ -86,6 +86,12 @@ Look for clear labels:
 
 Also look for a visible verification date. Court schedules change, and a live case should never be summarized as though a jury has already ruled.
 
+## Want the full case in one place?
+
+<div class="guide-offer">
+<a class="guide-btn" data-link-type="paid" href="https://cassiancreed.beehiiv.com/products/lindsay-clancy-post-mistrial-field-guide?utm_source=cassiancreed.com&amp;utm_medium=post_cta&amp;utm_campaign=explainer_clancy_v1&amp;utm_content=clancy_psychosis_free_post_end" target="_blank" rel="noopener noreferrer" data-book-key="lindsay-clancy-post-mistrial-field-guide" data-cta-placement="clancy_psychosis_free_post_end"><span class="calendar-badge" data-link-type="paid" aria-hidden="true">$1.99 GUIDE</span><span>Get the $1.99 guide: Case Chess: The Lindsay Clancy Case — What's Actually Happening and What It Means →</span></a>
+</div>
+
 ## Where can I find current trial developments?
 
 This primer does not carry a running schedule or live verdict box. See the [trial tracker](/post/lindsay-clancy-trial/) for current status, dated court updates, charges, and rulings.

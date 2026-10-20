@@ -57,6 +57,12 @@ No single fact here would convict alone. The power, again, is in **convergence**
 
 Each strand is arguable on its own. Together, a jury found they pointed one way beyond a reasonable doubt. Because the conviction is on appeal, the law's final word is not yet written — and we will say so wherever this case appears. That discipline is the same one that protects the innocent: let the record, not the irony of a grief book, carry the weight.
 
+## Want the full case in one place?
+
+<div class="guide-offer">
+<a class="guide-btn" data-link-type="paid" href="https://cassiancreed.beehiiv.com/products/eric-richins-kouri-evidence-verdict?utm_source=cassiancreed.com&amp;utm_medium=post_cta&amp;utm_campaign=explainer_richins_v1&amp;utm_content=richins_free_post_end" target="_blank" rel="noopener noreferrer" data-book-key="eric-richins-kouri-evidence-verdict" data-cta-placement="richins_free_post_end"><span class="calendar-badge" data-link-type="paid" aria-hidden="true">$1.99 GUIDE</span><span>Get the $1.99 guide: Case Chess: The Eric Richins Case — What's Actually Happening and What It Means →</span></a>
+</div>
+
 ## Why it resonates — handled with care
 
 The "grief author who grieved a man she killed" framing is what made this case viral. We cover it because the audience is here — but the story is not the book gimmick. It is Eric, his three sons, and a family that has had to grieve in public, on a true-crime internet's terms. We keep the focus there.

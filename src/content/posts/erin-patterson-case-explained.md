@@ -110,7 +110,7 @@ It is a country town in Victoria, Australia, about 135 kilometers southeast of M
 ## Want the full case in one place?
 
 <div class="guide-offer">
-<a class="calendar-resource" data-link-type="paid" href="https://cassiancreed.beehiiv.com/products/case-chess-erin-patterson?utm_source=cassiancreed.com&amp;utm_medium=post_cta&amp;utm_campaign=explainer_patterson_v1&amp;utm_content=patterson_free_post_end" target="_blank" rel="noopener noreferrer" data-book-key="case-chess-erin-patterson" data-cta-placement="patterson_free_post_end"><span class="calendar-badge" data-link-type="paid">$2.99 GUIDE</span><span>Case Chess: The Erin Patterson Case — What's Actually Happening and What It Means →</span></a>
+<a class="guide-btn" data-link-type="paid" href="https://cassiancreed.beehiiv.com/products/case-chess-erin-patterson?utm_source=cassiancreed.com&amp;utm_medium=post_cta&amp;utm_campaign=explainer_patterson_v1&amp;utm_content=patterson_free_post_end" target="_blank" rel="noopener noreferrer" data-book-key="case-chess-erin-patterson" data-cta-placement="patterson_free_post_end"><span class="calendar-badge" data-link-type="paid" aria-hidden="true">$2.99 GUIDE</span><span>Get the $2.99 guide: Case Chess: The Erin Patterson Case — What's Actually Happening and What It Means →</span></a>
 </div>
 
 ## Follow the case

@@ -113,6 +113,12 @@ The legal question is precise: not whether postpartum psychosis exists, and not 
 
 > **Follow the verified next step:** [Watch the YouTube report](https://youtu.be/FeYFwanK4_I), [listen on Spotify](https://open.spotify.com/episode/0ts6Gm09jAlK2AEjU93jZW?si=gHJZjPeYQTmSJ7E4YcW2_A), and [bookmark the Lindsay Clancy trial tracker](/post/lindsay-clancy-trial/) for the defense case, final instructions, verdict, and post-verdict analysis.
 
+## Want the full case in one place?
+
+<div class="guide-offer">
+<a class="guide-btn" data-link-type="paid" href="https://cassiancreed.beehiiv.com/products/lindsay-clancy-post-mistrial-field-guide?utm_source=cassiancreed.com&amp;utm_medium=post_cta&amp;utm_campaign=explainer_clancy_v1&amp;utm_content=clancy_nexus_free_post_end" target="_blank" rel="noopener noreferrer" data-book-key="lindsay-clancy-post-mistrial-field-guide" data-cta-placement="clancy_nexus_free_post_end"><span class="calendar-badge" data-link-type="paid" aria-hidden="true">$1.99 GUIDE</span><span>Get the $1.99 guide: Case Chess: The Lindsay Clancy Case — What's Actually Happening and What It Means →</span></a>
+</div>
+
 ## Sources
 
 - [Massachusetts model jury instructions on homicide: criminal responsibility](https://www.mass.gov/info-details/model-jury-instructions-on-homicide-i-criminal-responsibility)
