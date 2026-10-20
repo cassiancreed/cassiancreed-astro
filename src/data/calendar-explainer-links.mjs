@@ -260,10 +260,28 @@ export const CALENDAR_EXPLAINER_CASES = [
       "gardner-trial",
       "bridegan-fernandez-trial"
     ],
-    "free": [],
+    "free": [
+      {
+        "url": "/post/jared-bridegan-case-explained/",
+        "text": "The Jared Bridegan Case: Where It Stands and What Happens Next"
+      }
+    ],
     "paid": [
       "jared-bridegan-case-guide-v2"
     ]
+  },
+  {
+    "key": "patterson",
+    "entryIds": [
+      "patterson-appeal"
+    ],
+    "free": [
+      {
+        "url": "/post/erin-patterson-case-explained/",
+        "text": "The Erin Patterson Case: Where the Appeal Stands Now"
+      }
+    ],
+    "paid": []
   },
   {
     "key": "delphi",
@@ -630,6 +648,7 @@ const PUBLISHED_POSTS = new Set([
   "/post/cheryl-lynn-edwards-jane-clinton-doe-faq/",
   "/post/christa-pike-failed-execution-what-happens-next/",
   "/post/eugene-gligor-leslie-preer/",
+  "/post/erin-patterson-case-explained/",
   "/post/chevy-chase-cold-case-dna/",
   "/post/does-criminal-profiling-actually-work/",
   "/post/etan-patz-supreme-court-2026-conviction-reinstated/",
@@ -651,6 +670,7 @@ const PUBLISHED_POSTS = new Set([
   "/post/lindsay-clancy-trial-postpartum-mental-health-legal-nexus/",
   "/post/jane-hart-benton-county-jane-doe-identified/",
   "/post/jane-hart-1976-case-file/",
+  "/post/jared-bridegan-case-explained/",
   "/post/lindsay-clancy-trial/",
   "/post/maternal-instinct-netflix-forensic-evidence-taylor-parker/",
   "/post/nancy-guthrie-abduction-what-we-know/",
