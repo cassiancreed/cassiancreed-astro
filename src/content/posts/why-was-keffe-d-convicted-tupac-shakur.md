@@ -82,6 +82,12 @@ NEP has not verified an official eligibility calculation. A reported 40-years-to
 **Does filing an appeal cancel a conviction?**
 Filing seeks review; it does not by itself cancel the conviction or sentence. The court’s actual orders and decisions determine what changes.
 
+## Want the full case in one place?
+
+<div class="guide-offer">
+<a class="guide-btn" data-link-type="paid" href="https://cassiancreed.beehiiv.com/products/tupac-shakur-keffe-d-case-guide?utm_source=cassiancreed.com&amp;utm_medium=post_cta&amp;utm_campaign=explainer_tupac_v1&amp;utm_content=tupac_free_post_end" target="_blank" rel="noopener noreferrer" data-book-key="tupac-shakur-keffe-d-case-guide" data-cta-placement="tupac_free_post_end"><span class="calendar-badge" data-link-type="paid" aria-hidden="true">$1.99 GUIDE</span><span>Get the $1.99 guide: Case Chess: The Tupac Shakur Case — What's Actually Happening and What It Means →</span></a>
+</div>
+
 ## Follow the case without guessing
 
 Use the [Court Calendar and its free update signup](https://cassiancreed.com/court-calendar/#court-updates) to follow sourced court developments. Check each entry’s stated verification date and source.

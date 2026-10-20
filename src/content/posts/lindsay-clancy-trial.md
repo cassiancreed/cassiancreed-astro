@@ -111,6 +111,12 @@ The [Court Calendar](/court-calendar/#clancy-november-motions) carries the repor
 
 The mistrial did not decide the contested criminal-responsibility question. Competing psychiatric opinions remain testimony offered by the parties, not findings that establish either side’s account.
 
+## Want the full case in one place?
+
+<div class="guide-offer">
+<a class="guide-btn" data-link-type="paid" href="https://cassiancreed.beehiiv.com/products/lindsay-clancy-post-mistrial-field-guide?utm_source=cassiancreed.com&amp;utm_medium=post_cta&amp;utm_campaign=explainer_clancy_v1&amp;utm_content=clancy_tracker_free_post_end" target="_blank" rel="noopener noreferrer" data-book-key="lindsay-clancy-post-mistrial-field-guide" data-cta-placement="clancy_tracker_free_post_end"><span class="calendar-badge" data-link-type="paid" aria-hidden="true">$1.99 GUIDE</span><span>Get the $1.99 guide: Case Chess: The Lindsay Clancy Case — What's Actually Happening and What It Means →</span></a>
+</div>
+
 ## Claim-status ledger
 
 This ledger is for editors and readers who encounter assertions circulating around the case. Inclusion here does not elevate a claim into fact.

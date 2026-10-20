@@ -47,6 +47,12 @@ The dual-prosecution structure creates a strategic paradox. To succeed with an E
 
 Prosecutors argue the contradiction is insurmountable: a man who manufactured a ghost gun, maintained a fake identity for ten days, used a suppressor, and executed a multi-state escape plan is not a man who lost self-control. The same careful planning that makes him sympathetic to some is the very evidence that defeats his defense.
 
+## Want the full case in one place?
+
+<div class="guide-offer">
+<a class="guide-btn" data-link-type="paid" href="https://cassiancreed.beehiiv.com/products/brian-thompson-luigi-mangione-two-courts?utm_source=cassiancreed.com&amp;utm_medium=post_cta&amp;utm_campaign=explainer_luigi_v1&amp;utm_content=mangione_free_post_end" target="_blank" rel="noopener noreferrer" data-book-key="brian-thompson-luigi-mangione-two-courts" data-cta-placement="mangione_free_post_end"><span class="calendar-badge" data-link-type="paid" aria-hidden="true">$1.99 GUIDE</span><span>Get the $1.99 guide: Case Chess: The Brian Thompson Case — What's Actually Happening and What It Means →</span></a>
+</div>
+
 ## The Folk Hero Phenomenon
 
 Perhaps more jarring than the murder was the "Free Luigi" movement that followed. A GiveSendGo fundraiser for his legal defense surpassed $1.3 million. Polls revealed a stark generational divide: a plurality of respondents aged 18–29 found the killing "acceptable or somewhat acceptable." The cultural response — viral protest songs, look-alike contests in Washington Square Park — represented propaganda of the deed in the social media age.

@@ -98,6 +98,12 @@ Several things follow from the 2026 ruling:
 
 For readers who followed the case as a sealed verdict, this is the essential update: the murder question is, legally, open again.
 
+## Want the full case in one place?
+
+<div class="guide-offer">
+<a class="guide-btn" data-link-type="paid" href="https://cassiancreed.beehiiv.com/products/murdaugh-retrial-guide?utm_source=cassiancreed.com&amp;utm_medium=post_cta&amp;utm_campaign=explainer_murdaugh_v1&amp;utm_content=murdaugh_free_post_end" target="_blank" rel="noopener noreferrer" data-book-key="murdaugh-retrial-guide" data-cta-placement="murdaugh_free_post_end"><span class="calendar-badge" data-link-type="paid" aria-hidden="true">$1.99 GUIDE</span><span>Get the $1.99 guide: Case Chess: The Alex Murdaugh Case — What's Actually Happening and What It Means →</span></a>
+</div>
+
 ## Frequently asked questions
 
 **Was Alex Murdaugh found innocent in 2026?**

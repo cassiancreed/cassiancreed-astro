@@ -569,7 +569,7 @@ const HISTORICAL_ROUNDUPS = [
 ];
 const WEEKLY_ROUNDUP_IDS = new Set(["farwell-trial-oct19","burke-prelim","sullivan-jury-trial","reiner-criminal-pretrial","reiner-trust-access-oct23","crum-spencer-hearing","robinson-pretrial-conference"]);
 const WEEKLY_ROUNDUP = {"url":"/post/this-week-in-court-october-19-23-2026/","text":"This Week in Court: Oct. 19-23"};
-const LIVE_PRODUCTS = {
+export const LIVE_PRODUCTS = {
   "austin-metcalf-karmelo-anthony-case-guide": {
     "url": "https://cassiancreed.beehiiv.com/products/austin-metcalf-karmelo-anthony-case-guide",
     "title": "Case Chess: The Karmelo Anthony Case — What's Actually Happening and What It Means",

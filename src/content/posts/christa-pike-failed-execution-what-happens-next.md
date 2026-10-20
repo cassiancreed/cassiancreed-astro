@@ -103,7 +103,9 @@ For the latest status, check our [Court Calendar](/court-calendar/#pike-executio
 
 Our guide, **Case Chess: The Christa Pike Case — What's Actually Happening and What It Means**, is a 15-page PDF for $1.99. It has the full timeline from 1995 to this week, every court and official step since Sept. 30, six paths the case could take next, a plain-English glossary and 30 sources. Facts are checked through Oct. 16, 2026.
 
-<a href="https://cassiancreed.beehiiv.com/products/christa-pike-failed-execution-guide?utm_source=cassiancreed.com&amp;utm_medium=post_cta&amp;utm_campaign=explainer_pike_v1&amp;utm_content=pike_free_post_end" data-book-key="christa-pike-failed-execution-guide" data-cta-placement="pike_free_post_end">Get Case Chess: The Christa Pike Case — $1.99 →</a>
+<div class="guide-offer">
+<a class="guide-btn" data-link-type="paid" href="https://cassiancreed.beehiiv.com/products/christa-pike-failed-execution-guide?utm_source=cassiancreed.com&amp;utm_medium=post_cta&amp;utm_campaign=explainer_pike_v1&amp;utm_content=pike_free_post_end" target="_blank" rel="noopener noreferrer" data-book-key="christa-pike-failed-execution-guide" data-cta-placement="pike_free_post_end"><span class="calendar-badge" data-link-type="paid" aria-hidden="true">$1.99 GUIDE</span><span>Get the $1.99 guide: Case Chess: The Christa Pike Case — What's Actually Happening and What It Means →</span></a>
+</div>
 
 ## Sources
 

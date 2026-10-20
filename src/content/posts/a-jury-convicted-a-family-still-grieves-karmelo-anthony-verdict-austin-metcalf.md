@@ -79,6 +79,12 @@ Appeals in Texas criminal cases go first to one of the state's intermediate Cour
 
 The verdict of June 9, 2026, may not be the final legal word in this case.
 
+## Want the full case in one place?
+
+<div class="guide-offer">
+<a class="guide-btn" data-link-type="paid" href="https://cassiancreed.beehiiv.com/products/austin-metcalf-karmelo-anthony-case-guide?utm_source=cassiancreed.com&amp;utm_medium=post_cta&amp;utm_campaign=explainer_anthony_v1&amp;utm_content=anthony_free_post_end" target="_blank" rel="noopener noreferrer" data-book-key="austin-metcalf-karmelo-anthony-case-guide" data-cta-placement="anthony_free_post_end"><span class="calendar-badge" data-link-type="paid" aria-hidden="true">$1.99 GUIDE</span><span>Get the $1.99 guide: Case Chess: The Karmelo Anthony Case — What's Actually Happening and What It Means →</span></a>
+</div>
+
 ---
 
 ## Austin Metcalf
@@ -100,5 +106,3 @@ Austin Metcalf was 17. He deserved to come home from that track meet.
 If you follow cases like Austin's — where the evidence matters, the families matter, and the noise should stay out of it — our free newsletter delivers victim-first case files and verdict updates directly to your inbox.
 
 **[Get the free guide — no spam, just the case.](https://cassiancreed.beehiiv.com/subscribe?utm_source=website&utm_medium=post_cta&utm_campaign=karmelo_verdict)**
-
-For our verified courtroom guide, visit [Jury Chess](/books/#jury-chess).

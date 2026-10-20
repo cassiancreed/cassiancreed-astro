@@ -4,6 +4,7 @@ import '../../styles/calendar-explainer-links.css';
 import { getCollection } from 'astro:content';
 import CaptureBlock from '../../components/CaptureBlock.astro';
 import BookCTA from '../../components/BookCTA.astro';
+import GuideCTA from '../../components/GuideCTA.astro';
 import SafetyAlert from '../../components/SafetyAlert.astro';
 import ReportError from '../../components/ReportError.astro';
 import { postSocialImage } from '../../utils/post-social-images.mjs';
@@ -117,6 +118,7 @@ const jsonld = isTupacWithdrawal ? undefined : {
       </aside>
     )}
     <div class="post__content"><Content /></div>
+    {!post.data.archived && <GuideCTA slug={post.slug} />}
     {post.data.relatedBook && <BookCTA book={post.data.relatedBook} placement="end" />}
     {post.data.buyUrl && (
       <aside class="buybox">
