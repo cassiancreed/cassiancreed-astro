@@ -45,7 +45,9 @@ test('built pages show the guide button after the explainer and again at the bot
   for (const slug of Object.keys(POST_GUIDE_CTAS)) {
     const html = readFileSync(`dist/post/${slug}/index.html`, 'utf8');
     const list = anchors(html);
-    for (const placement of ['end', 'bottom']) {
+    const skipBottom = POST_GUIDE_CTAS[slug].skipBottom === true;
+    if (skipBottom) assert.equal(postGuideCta(slug, 'bottom'), null, `${slug}: bottom button must be skipped`);
+    for (const placement of skipBottom ? ['end'] : ['end', 'bottom']) {
       const cta = postGuideCta(slug, placement);
       const matches = list.filter((a) => a.placement === cta.placement && a.href === cta.href);
       assert.equal(matches.length, 1, `${slug}: expected one ${placement} button`);
@@ -53,16 +55,30 @@ test('built pages show the guide button after the explainer and again at the bot
       assert.match(matches[0].attrs, /data-book-key="[^"]+"/);
       assert.equal(text(matches[0].body.replace(/<span[^>]*aria-hidden="true"[^>]*>[\s\S]*?<\/span>/, '')), cta.label);
     }
+    const product = LIVE_PRODUCTS[POST_GUIDE_CTAS[slug].product].url;
+    if (skipBottom) {
+      assert.ok(!html.includes(`${POST_GUIDE_CTAS[slug].key}_free_post_bottom`), `${slug}: bottom button must not render`);
+      assert.ok(!html.includes('class="post-guide-cta"'), `${slug}: bottom box must not render`);
+      assert.equal(list.filter((a) => a.href?.split('?')[0] === product).length, 1, `${slug}: only the in-article button`);
+      continue;
+    }
     const end = html.indexOf(postGuideCta(slug, 'end').placement + '"');
     const bottom = html.indexOf(postGuideCta(slug, 'bottom').placement + '"');
     assert.ok(end > 0 && bottom > end, `${slug}: in-article button must come before the bottom button`);
-    const product = LIVE_PRODUCTS[POST_GUIDE_CTAS[slug].product].url;
     assert.equal(list.filter((a) => a.href?.split('?')[0] === product).length, 2, `${slug}: no duplicate guide buttons`);
   }
 });
 
+test('the Karmelo Anthony post (juvenile case) carries no Jury Chess promotion', () => {
+  const source = sourceBySlug.get('a-jury-convicted-a-family-still-grieves-karmelo-anthony-verdict-austin-metcalf');
+  assert.doesNotMatch(source, /jury[ -]chess/i);
+});
+
 test('no guide button promises an updated file', () => {
   for (const slug of Object.keys(POST_GUIDE_CTAS)) {
-    for (const placement of ['end', 'bottom']) assert.doesNotMatch(postGuideCta(slug, placement).label, /update/i);
+    for (const placement of ['end', 'bottom']) {
+      const cta = postGuideCta(slug, placement);
+      if (cta) assert.doesNotMatch(cta.label, /update/i);
+    }
   }
 });

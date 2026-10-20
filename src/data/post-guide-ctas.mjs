@@ -5,6 +5,7 @@ import { LIVE_PRODUCTS, GUIDE_PREVIEWS, PREVIEW_LINK_TEXT } from './calendar-exp
 // renders nothing. Each post shows the button twice:
 //   'end'    — inside the article, right after the main explainer (markdown block)
 //   'bottom' — after the article body, rendered by GuideCTA.astro
+// A post may set skipBottom: true to show only the in-article button.
 // Jury Chess is a book, not a case guide, and is never placed here.
 export const POST_GUIDE_CTAS = {
   'jared-bridegan-case-explained': { product: 'jared-bridegan-case-guide-v2', campaign: 'explainer_bridegan_v2', key: 'bridegan' },
@@ -16,7 +17,8 @@ export const POST_GUIDE_CTAS = {
   'lindsay-clancy-trial': { product: 'lindsay-clancy-post-mistrial-field-guide', campaign: 'explainer_clancy_v1', key: 'clancy_tracker' },
   'lindsay-clancy-trial-2026-postpartum-psychosis': { product: 'lindsay-clancy-post-mistrial-field-guide', campaign: 'explainer_clancy_v1', key: 'clancy_psychosis' },
   'lindsay-clancy-trial-postpartum-mental-health-legal-nexus': { product: 'lindsay-clancy-post-mistrial-field-guide', campaign: 'explainer_clancy_v1', key: 'clancy_nexus' },
-  'the-lindsay-clancy-case-three-children-one-trial-and-the-questions-massachusetts-must-answer': { product: 'lindsay-clancy-post-mistrial-field-guide', campaign: 'explainer_clancy_v1', key: 'clancy_overview' },
+  // Ends with the children's names; no sales box directly after that line (Claude Ops, Oct 20, 2026).
+  'the-lindsay-clancy-case-three-children-one-trial-and-the-questions-massachusetts-must-answer': { product: 'lindsay-clancy-post-mistrial-field-guide', campaign: 'explainer_clancy_v1', key: 'clancy_overview', skipBottom: true },
   'kouri-richins-eric-richins-murder': { product: 'eric-richins-kouri-evidence-verdict', campaign: 'explainer_richins_v1', key: 'richins' },
   'luigi-mangione-psychiatric-defense-withdrawn-trial-2026': { product: 'brian-thompson-luigi-mangione-two-courts', campaign: 'explainer_luigi_v1', key: 'mangione' },
   'erin-patterson-case-explained': { product: 'case-chess-erin-patterson', campaign: 'explainer_patterson_v1', key: 'patterson' },
@@ -28,6 +30,7 @@ export const POST_GUIDE_PLACEMENTS = ['end', 'bottom'];
 export function postGuideCta(slug, placement) {
   const config = POST_GUIDE_CTAS[slug];
   if (!config || !POST_GUIDE_PLACEMENTS.includes(placement)) return null;
+  if (placement === 'bottom' && config.skipBottom) return null;
   const product = LIVE_PRODUCTS[config.product];
   if (!product || !/^\$\d+\.\d{2}$/.test(product.price || '')) return null;
   const ctaPlacement = `${config.key}_free_post_${placement}`;
