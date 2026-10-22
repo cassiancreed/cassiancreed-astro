@@ -26,7 +26,7 @@ This briefing covers court activity scheduled from Sunday, August 30, through Sa
 
 ### Current posture
 
-In Plymouth County Superior Court, *Commonwealth v. Lindsay Clancy* has reached jury deliberations. Clancy has pleaded not guilty to three counts of first-degree murder in the deaths of Cora, Dawson, and Callan Clancy. The defense contests criminal responsibility, and she remains presumed innocent.
+In Plymouth County Superior Court, *Commonwealth v. Lindsay Clancy* has reached jury deliberations. Clancy has pleaded not guilty to three counts of first-degree murder in the deaths of her three children. The defense contests criminal responsibility, and she remains presumed innocent.
 
 Jurors completed a second full day of deliberations on Friday without reaching a verdict. They requested to review physical evidence. A jury's evidence request is part of the deliberative process; it does not reveal how any juror is voting or predict an outcome.
 
