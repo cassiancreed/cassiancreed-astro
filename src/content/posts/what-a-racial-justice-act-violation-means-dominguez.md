@@ -1,7 +1,7 @@
 ---
 title: "What a Racial Justice Act Violation Means in the Dominguez Retrial"
 seoTitle: "Racial Justice Act Violation: Dominguez Retrial Explained"
-description: "What a Racial Justice Act violation actually means in the Carlos Reales Dominguez retrial — the law, the judge's third finding, the curative remedy, and what happens next."
+description: "What a Racial Justice Act violation actually means in the Carlos Reales Dominguez retrial — the law, the judge's third finding, the curative remedy, and how the retrial ended."
 pubDate: 2026-07-19
 tag: "Explainers"
 featured: false
@@ -10,8 +10,12 @@ victim: "David Breaux; Karim Abou Najm; Kimberlee Guillory (survived)"
 incidentDate: "Spring 2023"
 location: "Davis, California"
 jurisdiction: "Yolo County Superior Court, California"
-status: "Retrial; jury deliberating. No verdict."
+status: "Retrial ended July 21, 2026: guilty of two counts of involuntary manslaughter; acquitted of murder and attempted murder. Found legally insane July 22; committed to a state hospital Aug. 19, 2026."
 ---
+
+*Updated Wednesday, October 21, 2026.*
+
+**Update:** The retrial is over. On July 21, 2026, the jury found Carlos Reales Dominguez guilty of two counts of involuntary manslaughter. It found him not guilty of murder and attempted murder. The judge then found him legally insane and sent him to a state hospital. See [What happened next](#what-happened-next) below. The explainer that follows was first published July 19, 2026, while the jury was still deliberating; we have kept it as written.
 
 David Breaux and Karim Abou Najm were killed in Davis in spring 2023. Kimberlee Guillory survived a third attack. Those harms—and the legal responsibility for them—remain the center of the retrial now before a Yolo County jury.
 
@@ -63,6 +67,19 @@ For Breaux's and Abou Najm's families, for Guillory, for Dominguez and for the p
 
 No verdict should be predicted from the RJA finding. The jury must decide the case from the admissible evidence and the court's instructions.
 
+## What happened next
+
+Status as of October 21, 2026:
+
+- **July 21, 2026 — verdict.** The jury found Dominguez guilty of two counts of involuntary manslaughter. It acquitted him of second-degree murder and of attempted murder. Jurors also found true two enhancements for use of a deadly weapon. [[6]](#src-6)[[8]](#src-8)
+- **July 22, 2026 — sanity ruling.** The sanity question went to the judge, not the jury. Judge Samuel T. McAdam found Dominguez legally insane at the time of the attacks. [[6]](#src-6)[[7]](#src-7)[[9]](#src-9)
+- **August 19, 2026 — commitment.** Judge McAdam committed Dominguez to a state hospital for a minimum of 180 days. [[8]](#src-8)
+- **Next.** Judge McAdam noted that Dominguez has already served more than the maximum sentence for involuntary manslaughter. The Yolo County District Attorney's Office has filed a petition to extend the commitment by two years. Dominguez has a right to a trial on that petition. [[8]](#src-8)
+
+The verdicts and the insanity finding answer the guilt and sanity questions described above. The Racial Justice Act findings did not decide either one.
+
+David Breaux and Karim Abou Najm were killed. Kimberlee Guillory survived. They remain the center of this case.
+
 At Neural Edge Publishing, Cassian Creed writes these explainers to keep the law legible and the record straight — centered on the victims, careful with the people involved, and clear about what a ruling does and does not decide.
 
 ## Sources
@@ -72,3 +89,7 @@ At Neural Edge Publishing, Cassian Creed writes these explainers to keep the law
 3. <span id="src-3"></span>ABC10, "Jury deliberates in retrial of former UC Davis student accused of Davis attacks," July 16, 2026: [abc10.com](https://www.abc10.com/article/news/local/davis/former-uc-davis-student-accused-davis-attacks-as-re-trial-nears-verdict/103-caae7aa8-30e8-4674-b210-90b3b453ed4a)
 4. <span id="src-4"></span>California Penal Code § 745, current text effective January 1, 2026: [leginfo.legislature.ca.gov](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=PEN&sectionNum=745.)
 5. <span id="src-5"></span>California Penal Code § 1026, current text: [leginfo.legislature.ca.gov](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=PEN&sectionNum=1026.)
+6. <span id="src-6"></span>The Davis Enterprise, verdict report, July 21, 2026 (updated July 22): [davisenterprise.com](https://www.davisenterprise.com/news/jury-finds-dominguez-guilty-on-two-counts-of-involuntary-manslaughter/article_67f2e00a-e3ae-426a-a785-bf127c9a6c28.html)
+7. <span id="src-7"></span>California Courts Newsroom, judicial branch release on the insanity ruling, July 22, 2026: [newsroom.courts.ca.gov](https://newsroom.courts.ca.gov/news/dominguez-ruled-insane-will-be-committed-state-hospital-davis-stabbings)
+8. <span id="src-8"></span>Courthouse News Service, commitment-hearing report, August 19, 2026: [courthousenews.com](https://www.courthousenews.com/davis-stabber-committed-to-state-hospital-after-being-found-legally-insane/)
+9. <span id="src-9"></span>Davis Vanguard, insanity-ruling report, July 22, 2026: [davisvanguard.org](https://davisvanguard.org/2026/07/carlos-dominguez-insanity-ruling/)
