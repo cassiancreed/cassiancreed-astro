@@ -4,16 +4,11 @@ export { classifyCalendarLink as classifyMediaLink };
 export const MEDIA_JURY_CHESS_ENTRY_IDS = new Set();
 // Jury Chess only on US criminal jury events. Never civil, foreign, child-victim or juvenile cases. Owner may override per case.
 export const MEDIA_JURY_CHESS_EXCLUDED_IDS = new Set(["media-01","media-02","media-03","media-04","media-05","media-06","media-07","media-08","media-09","media-10","media-11","media-12","media-13","media-14","media-15","media-16","media-17","media-18","media-19","media-20","media-21","media-22","media-23","media-24","media-25","media-s1","media-s2","media-s3"]);
-const forensic = [
-  { url:'/how-forensic-genetic-genealogy-works/', text:'How Forensic Genetic Genealogy Actually Works' },
-  { url:'/post/reading-the-crime-scene-what-forensics-reveals/', text:"Reading the Crime Scene: What Forensics Can Reveal — and What It Can't" },
-];
 const justice = [
   { url:'/post/first-degree-second-degree-manslaughter-what-s-the-difference/', text:"First-Degree, Second-Degree, Manslaughter: What's the Difference?" },
   { url:'/post/how-investigators-weigh-evidence-plain-english/', text:'How Investigators Weigh Evidence: The Hidden Logic of Solving a Crime' },
 ];
 export const MEDIA_EXPLAINER_MATCHES = {
-  'media-07': { kind:'topic', reason:'The main subject is forensic breakthroughs; these explain forensic methods and their limits.', links:forensic },
   'media-24': { kind:'topic', reason:'The main subject is the history of US criminal justice; these explain offense levels and evidence.', links:justice },
   'media-25': { kind:'topic', reason:'Part 2 of the same US criminal-justice series; the same topic matches apply.', links:justice },
 };

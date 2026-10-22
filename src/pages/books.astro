@@ -53,6 +53,8 @@ const jsonld = [
     <h1 class="bk-hero__h">Books by Cassian Creed</h1>
     <p class="bk-hero__sub">Evidence-led true crime and courtroom guides</p>
     <p class="bk-hero__p">Sourced, plain-language books for readers who want to understand the record, the law, and what a jury is actually being asked to decide.</p>
+    {/* C7 (2026-10-22): cross-link to the Watch Calendar. Added line only; certified copy above is unchanged. */}
+    <p class="bk-hero__link"><a href="/true-crime-watch-calendar/">What to watch: True Crime Watch Calendar →</a></p>
   </section>
 
   <div class="wrap"><div class="shelf">
@@ -151,6 +153,9 @@ const jsonld = [
   .bk-hero__h{font-family:var(--serif);font-weight:600;font-size:clamp(30px,4.5vw,46px);line-height:1.08;margin:6px 0 4px}
   .bk-hero__sub{font-family:var(--mono,'JetBrains Mono',monospace);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent,#e0563b);margin:0 0 12px}
   .bk-hero__p{font-size:17px;line-height:1.5;color:var(--ink-1);max-width:62ch}
+  .bk-hero__link{margin:4px 0 0;font-size:15px}
+  .bk-hero__link a{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+  .bk-hero__link a:hover{color:var(--accent,#e0563b)}
   .shelf{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:26px;margin:8px 0}
   .bk{display:flex;flex-direction:column;background:var(--bg-2,#191512);border:1px solid var(--line,#2a2521);border-radius:14px;overflow:hidden;transition:transform .18s,box-shadow .18s}
   .bk:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(0,0,0,.45)}

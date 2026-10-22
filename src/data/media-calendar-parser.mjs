@@ -5,6 +5,22 @@ export function pacificToday(now = new Date()) {
   const part = name => parts.find(p => p.type === name).value;
   return part('year') + '-' + part('month') + '-' + part('day');
 }
+// The as-of stamp is a clock-read time with its UTC offset, stored in the meta
+// row's date_iso cell, e.g. 2026-10-22T12:35:00-07:00. The date part must match
+// the meta row's last_verified date. A date with no time is rejected.
+export const MEDIA_AS_OF_PATTERN = /^(\d{4}-\d{2}-\d{2})T\d{2}:\d{2}(?::\d{2})?[+-]\d{2}:\d{2}$/;
+// Recency rule: past this many days the build warns that the page needs a refresh.
+export const MEDIA_AS_OF_MAX_AGE_DAYS = 7;
+export function formatMediaAsOf(stamp) {
+  const when = new Date(stamp);
+  const date = new Intl.DateTimeFormat('en-US', { timeZone: MEDIA_TIMEZONE, month:'long', day:'numeric', year:'numeric' }).format(when);
+  const time = new Intl.DateTimeFormat('en-US', { timeZone: MEDIA_TIMEZONE, hour:'numeric', minute:'2-digit', hour12:true }).format(when);
+  // Some ICU versions put a narrow no-break space before AM/PM; use a plain space.
+  return (date + ', ' + time + ' PT').replace(/[  ]/g, ' ');
+}
+export function mediaAsOfAgeDays(asOf, today = pacificToday()) {
+  return Math.round((Date.parse(today + 'T00:00:00Z') - Date.parse(asOf + 'T00:00:00Z')) / 86400000);
+}
 export function mediaDates(row) {
   if (row.standing !== 'yes') return [row.date_iso];
   // These are the owner's finite listed slots, never an open-ended recurrence.
@@ -36,5 +52,7 @@ export function parseMediaCalendar(raw) {
   });
   const meta = rows.find(row => row.id === 'meta');
   if (!meta?.last_verified) throw new Error('Missing media as-of date');
-  return { asOf:meta.last_verified, rows:rows.filter(row => row.id !== 'meta') };
+  const stamp = meta.date_iso.match(MEDIA_AS_OF_PATTERN);
+  if (!stamp || stamp[1] !== meta.last_verified || Number.isNaN(Date.parse(meta.date_iso))) throw new Error('Missing media as-of clock time');
+  return { asOf:meta.last_verified, asOfStamp:meta.date_iso, rows:rows.filter(row => row.id !== 'meta') };
 }

@@ -1,34 +1,81 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync,existsSync } from 'node:fs';
-import { parseMediaCalendar, pacificToday, mediaDates, visibleMediaRows } from '../src/data/media-calendar-parser.mjs';
-import { mediaLinksFor, mediaCourtLink, MEDIA_JURY_CHESS_ENTRY_IDS, MEDIA_JURY_CHESS_EXCLUDED_IDS, classifyMediaLink } from '../src/data/media-explainer-links.mjs';
+import { parseMediaCalendar, pacificToday, mediaDates, visibleMediaRows, formatMediaAsOf, mediaAsOfAgeDays, MEDIA_AS_OF_PATTERN, MEDIA_AS_OF_MAX_AGE_DAYS } from '../src/data/media-calendar-parser.mjs';
+import { mediaLinksFor, mediaCourtLink, MEDIA_JURY_CHESS_ENTRY_IDS, MEDIA_JURY_CHESS_EXCLUDED_IDS, MEDIA_EXPLAINER_MATCHES, classifyMediaLink } from '../src/data/media-explainer-links.mjs';
 import { parseCourtCalendar } from '../src/data/court-calendar-parser.mjs';
 import { indexablePageRoutes } from '../src/utils/search-index.mjs';
-const {rows,asOf} = parseMediaCalendar(readFileSync('src/data/media-calendar.tsv','utf8'));
+const {rows,asOf,asOfStamp} = parseMediaCalendar(readFileSync('src/data/media-calendar.tsv','utf8'));
 const court = parseCourtCalendar(readFileSync('src/data/court-calendar.tsv','utf8'));
 const courts = [...court.entries,...court.appeals,...court.unconfirmed,...court.investigations,...court.completed];
-test('complete schedule has valid dates, sources and a fixed as-of date',()=>{
-  assert.equal(rows.length,28); assert.equal(rows.filter(r=>r.standing==='yes').length,3);
-  assert.equal(asOf,'2026-10-17');
-  assert.equal(rows[0].date_iso,'2026-10-18');
-  assert.equal(rows[24].date_iso,'2026-11-17');
+const isRealDate = value => /^\d{4}-\d{2}-\d{2}$/.test(value) && new Date(value+'T12:00:00Z').toISOString().slice(0,10) === value;
+const addDays = (iso,days) => new Date(Date.parse(iso+'T12:00:00Z')+days*86400000).toISOString().slice(0,10);
+// No fixed as-of date: any refresh passes when it follows the format and recency rules.
+test('as-of date and clock-read time follow the format and recency rules',()=>{
+  assert.ok(isRealDate(asOf),'as-of is a real YYYY-MM-DD date: '+asOf);
+  assert.match(asOfStamp,MEDIA_AS_OF_PATTERN,'as-of carries a clock-read time with a UTC offset');
+  assert.equal(asOfStamp.slice(0,10),asOf,'as-of stamp and as-of date agree');
+  assert.equal(pacificToday(new Date(asOfStamp)),asOf,'as-of time falls on the same Pacific day');
+  assert.ok(asOf<=pacificToday(),'as-of date is not in the future');
+  assert.match(formatMediaAsOf(asOfStamp),/^[A-Z][a-z]+ \d{1,2}, \d{4}, \d{1,2}:\d{2} [AP]M PT$/);
+  const age=mediaAsOfAgeDays(asOf);
+  // A loud warning, not a failure, so an old as-of date never blocks an unrelated deploy.
+  if(age>MEDIA_AS_OF_MAX_AGE_DAYS) console.warn(`\nATTENTION: True Crime Watch Calendar as-of date ${asOf} is ${age} days old (limit ${MEDIA_AS_OF_MAX_AGE_DAYS}). Re-check every row, drop past rows, and refresh the as-of time.\n`);
+});
+test('as-of helpers: clock time in Pacific, date-only stamps rejected, age in days',()=>{
+  assert.equal(formatMediaAsOf('2026-10-22T12:35:00-07:00'),'October 22, 2026, 12:35 PM PT');
+  assert.equal(formatMediaAsOf('2026-11-02T09:05-08:00'),'November 2, 2026, 9:05 AM PT');
+  assert.doesNotMatch('2026-10-22',MEDIA_AS_OF_PATTERN);
+  assert.doesNotMatch('2026-10-22T12:35',MEDIA_AS_OF_PATTERN);
+  assert.equal(mediaAsOfAgeDays('2026-10-15','2026-10-22'),7);
+  assert.equal(mediaAsOfAgeDays('2026-10-22','2026-10-22'),0);
+  const lines=readFileSync('src/data/media-calendar.tsv','utf8').split('\n');
+  const withMeta=(dateIso,lastVerified)=>{
+    const meta=lines[1].split('\t');
+    meta[1]=dateIso; meta[13]=lastVerified;
+    return [lines[0],meta.join('\t'),...lines.slice(2)].join('\n');
+  };
+  assert.equal(lines[1].split('\t')[0],'meta');
+  assert.throws(()=>parseMediaCalendar(withMeta('','2026-10-22')),/as-of clock time/);
+  assert.throws(()=>parseMediaCalendar(withMeta('2026-10-22','2026-10-22')),/as-of clock time/);
+  assert.throws(()=>parseMediaCalendar(withMeta('2026-10-21T12:35:00-07:00','2026-10-22')),/as-of clock time/);
+  assert.equal(parseMediaCalendar(withMeta('2026-10-22T08:00-07:00','2026-10-22')).asOfStamp,'2026-10-22T08:00-07:00');
+});
+test('every row has valid dates, sources and copy, and was checked on or before the as-of date',()=>{
+  assert.ok(rows.length>0);
   for(const r of rows) {
-    assert.equal(r.last_verified,'2026-10-17');
-    assert.ok(r.title && r.date_text && r.time_text && r.description);
-    assert.match(r.source_url,/^https?:\/\//);
+    assert.ok(isRealDate(r.date_iso),r.id+' date_iso');
+    assert.ok(isRealDate(r.last_verified),r.id+' last_verified');
+    assert.ok(r.last_verified<=asOf,r.id+' was checked after the as-of date');
+    assert.ok(r.title && r.date_text && r.time_text && r.description,r.id);
+    assert.match(r.source_url,/^https?:\/\//,r.id);
+    if(r.source2_url) assert.match(r.source2_url,/^https?:\/\//,r.id);
   }
+  const dated=rows.filter(r=>r.standing==='no').map(r=>r.date_iso);
+  assert.deepEqual(dated,[...dated].sort(),'dated rows stay in date order');
+});
+test('recency rule: no row is already past on the as-of date',()=>{
+  // Refreshing the as-of date means past rows were dropped in the same change.
+  for(const r of rows) assert.ok(mediaDates(r).some(d=>d>=asOf),r.id+' has no date on or after '+asOf);
+  assert.equal(visibleMediaRows(rows,asOf).length,rows.length);
 });
 test('date hiding uses Pacific midnight, includes today, and ends finite standing slots',()=>{
   assert.equal(pacificToday(new Date('2026-10-19T06:59:59Z')),'2026-10-18');
   assert.equal(pacificToday(new Date('2026-10-19T07:00:00Z')),'2026-10-19');
   assert.equal(pacificToday(new Date('2026-11-02T07:59:59Z')),'2026-11-01');
   assert.equal(pacificToday(new Date('2026-11-02T08:00:00Z')),'2026-11-02');
-  assert.equal(visibleMediaRows(rows,'2026-10-18').length,28);
-  assert.equal(visibleMediaRows(rows,'2026-10-19').length,23);
-  assert.equal(visibleMediaRows(rows,'2026-11-15').length,2);
-  assert.equal(visibleMediaRows(rows,'2026-11-18').length,0);
-  for(const r of visibleMediaRows(rows,'2026-10-26')) assert.ok(mediaDates(r).some(d=>d>='2026-10-26'));
+  const fixture=[
+    {id:'a',standing:'no',date_iso:'2026-10-18',date_text:'Sun Oct 18'},
+    {id:'b',standing:'no',date_iso:'2026-10-19',date_text:'Mon Oct 19'},
+    {id:'c',standing:'yes',date_iso:'2026-10-23',date_text:'Fridays: Oct 23, Oct 30, Nov 6'},
+  ];
+  assert.deepEqual(mediaDates(fixture[2]),['2026-10-23','2026-10-30','2026-11-06']);
+  assert.deepEqual(visibleMediaRows(fixture,'2026-10-18').map(r=>r.id),['a','b','c']);
+  assert.deepEqual(visibleMediaRows(fixture,'2026-10-19').map(r=>r.id),['b','c']);
+  assert.deepEqual(visibleMediaRows(fixture,'2026-11-06').map(r=>r.id),['c']);
+  assert.deepEqual(visibleMediaRows(fixture,'2026-11-07'),[]);
+  const later=addDays(asOf,4);
+  for(const r of visibleMediaRows(rows,later)) assert.ok(mediaDates(r).some(d=>d>=later),r.id);
 });
 test('BOOK is allowlist-only, excluded rows stay excluded even if accidentally added',()=>{
   assert.equal(MEDIA_JURY_CHESS_ENTRY_IDS.size,0);
@@ -41,8 +88,9 @@ test('BOOK is allowlist-only, excluded rows stay excluded even if accidentally a
   for(const id of ['new-jury-trial','juvenile-trial','unsolved-case','foreign-trial','civil-jury']) assert.equal(mediaLinksFor({id,proceeding:'Jury trial'}).some(l=>l.type==='book'),false,id);
 });
 test('honest topic matches only; shared CAL-05 classification and ordering',()=>{
-  assert.deepEqual(rows.filter(r=>mediaLinksFor(r).length).map(r=>r.id),['media-07','media-24','media-25']);
-  assert.equal(rows.flatMap(mediaLinksFor).length,6);
+  assert.deepEqual(rows.filter(r=>mediaLinksFor(r).length).map(r=>r.id),['media-24','media-25']);
+  assert.equal(rows.flatMap(mediaLinksFor).length,4);
+  for(const id of Object.keys(MEDIA_EXPLAINER_MATCHES)) assert.ok(rows.some(r=>r.id===id),'explainer match for a dropped row: '+id);
   for(const link of rows.flatMap(mediaLinksFor)) assert.equal(link.badge,'FREE');
   assert.equal(classifyMediaLink({url:'https://cassiancreed.beehiiv.com/products/example',price:'$1.99'}).badge,'$1.99 GUIDE');
   for(const link of rows.flatMap(mediaLinksFor)) {
@@ -70,6 +118,9 @@ test('rendered route, sitemap, nav and shared style integration',()=>{
   assert.equal((nav.match(/label: 'True Crime Watch Calendar'/g)||[]).length,2);
   assert.ok(indexablePageRoutes().some(({route,noindex})=>route==='/true-crime-watch-calendar/'&&!noindex));
   assert.ok(readFileSync('src/pages/llms.txt.ts','utf8').includes('/true-crime-watch-calendar/'));
+  // C7: the Watch Calendar is linked from the Books page and the Court Calendar.
+  assert.match(readFileSync('src/pages/books.astro','utf8'),/<a href="\/true-crime-watch-calendar\/">/);
+  assert.match(readFileSync('src/pages/court-calendar.astro','utf8'),/<a href="\/true-crime-watch-calendar\/">/);
 });
 test('every linked explainer and source returns HTTP 200', {skip:process.env.MEDIA_LINK_CHECK!=='1', timeout:240000},async()=>{
   const urls=[...new Set(rows.flatMap(r=>[r.source_url,r.source2_url,...mediaLinksFor(r).map(l=>new URL(l.url,'https://cassiancreed.com').href),mediaCourtLink(r,courts)?'https://cassiancreed.com/court-calendar/':'']).filter(Boolean))];

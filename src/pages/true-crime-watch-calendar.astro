@@ -3,14 +3,15 @@ import Base from '../layouts/Base.astro';
 import CalendarExplainerLink from '../components/CalendarExplainerLink.astro';
 import raw from '../data/media-calendar.tsv?raw';
 import courtRaw from '../data/court-calendar.tsv?raw';
-import { parseMediaCalendar, mediaDates, mediaVisible, pacificToday } from '../data/media-calendar-parser.mjs';
+import { parseMediaCalendar, mediaDates, mediaVisible, pacificToday, formatMediaAsOf } from '../data/media-calendar-parser.mjs';
 import { mediaLinksFor, mediaCourtLink, MEDIA_EXPLAINER_MATCHES } from '../data/media-explainer-links.mjs';
 import { parseCourtCalendar } from '../data/court-calendar-parser.mjs';
 const calendar = parseMediaCalendar(raw);
 const court = parseCourtCalendar(courtRaw);
 const courtEntries = [...court.entries,...court.appeals,...court.unconfirmed,...court.investigations,...court.completed];
 const today = pacificToday();
-const asOf = new Intl.DateTimeFormat('en-US',{month:'long',day:'numeric',year:'numeric',timeZone:'UTC'}).format(new Date(calendar.asOf+'T12:00:00Z'));
+// Clock-read as-of time from the meta row, shown in Pacific time.
+const asOf = formatMediaAsOf(calendar.asOfStamp);
 function topicFor(row) {
   const match = row.topic.match(/^Same as row (\d+)$/);
   return match ? calendar.rows.find(item => item.id === 'media-'+match[1].padStart(2,'0'))?.topic : row.topic;
@@ -22,7 +23,7 @@ function topicFor(row) {
       <p class="evidence evidence--accent">What to watch or hear</p>
       <h1>True Crime Watch Calendar</h1>
       <p>A US schedule of true-crime shows, films and podcasts. Dates and times may change. This is a schedule, not reviews.</p>
-      <p>As of <time datetime={calendar.asOf}>{asOf}</time>.</p>
+      <p>As of <time datetime={calendar.asOfStamp}>{asOf}</time>.</p>
       <p><a class="watch-cross-link" href="/court-calendar/">Real cases in court: Court Calendar →</a></p>
       <p class="calendar-legend"><span><i class="calendar-dot" data-link-type="free" aria-hidden="true"></i>FREE explainer</span><span aria-hidden="true">·</span><span><i class="calendar-dot" data-link-type="paid" aria-hidden="true"></i>$1.99 guide</span><span aria-hidden="true">·</span><span><i class="calendar-dot" data-link-type="book" aria-hidden="true"></i>BOOK</span></p>
       <p class="watch-note">Times are shown as listed by the source. ET/PT means the same clock time on the East and West Coast feeds. Check local listings.</p>
@@ -44,8 +45,7 @@ function topicFor(row) {
               <p class="watch-description">{row.description}</p>
               {row.id === 'media-14' && <p>Oren, Alon and Tal Alexander were found guilty by a federal jury in March 2026. Sentencing is set for Oct 27.</p>}
               <p class="watch-sources"><a href={row.source_url}>{row.source_label} →</a>{row.source2_url && <><span aria-hidden="true"> · </span><a href={row.source2_url}>{row.source2_label} →</a></>}</p>
-              {['media-01','media-13'].includes(row.id) && <p class="watch-status">The episode time comes from trade sources.</p>}
-              {row.id === 'media-08' && <p class="watch-status">The Oct 21 date comes from a trade listing.</p>}
+              {row.id === 'media-13' && <p class="watch-status">The episode time comes from trade sources.</p>}
               {row.id === 'media-09' && <p class="watch-status">The Oct 22 date comes from a trade source.</p>}
               {row.id === 'media-s3' && <p class="watch-status">The time slot comes from trade sources.</p>}
               {row.id === 'media-17' && <p class="watch-status">Official text not yet read.</p>}
@@ -53,7 +53,7 @@ function topicFor(row) {
               {row.id === 'media-s1' && <p class="watch-status">From trade sources.</p>}
               {row.id === 'media-25' && <p class="watch-status">Not yet confirmed by the network.</p>}
               {row.id === 'media-24' && <p class="watch-status">The time is not yet confirmed by the network.</p>}
-              {row.id === 'media-19' && <p class="watch-status">The case details come from one outside listing.</p>}
+              {row.id === 'media-19' && <p class="watch-status">The case status comes from news reports.</p>}
               {courtLink && <p><a class="watch-cross-link" href={courtLink.url}>{courtLink.text}</a></p>}
               {links.length > 0 && <div class="calendar-resource-list">
                 {MEDIA_EXPLAINER_MATCHES[row.id]?.kind === 'topic' && <p class="watch-link-label">Learn the basics</p>}
