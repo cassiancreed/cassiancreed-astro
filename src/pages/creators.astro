@@ -7,6 +7,7 @@ import { pageSchema } from '../utils/page-schema.mjs';
 // Buying is NOT open yet. Buy links stay plain "coming soon" text until the
 // Beehiiv products are live (owner step). No Offer schema until then, so the
 // structured data never claims something can be bought.
+// C2b (2026-10-22): cold-eyes fixes 1, 3, 4, 6, 8, 9, 11, 12 applied.
 // Doctrine v2.1 §10: never tell a buyer what they may or may not say; never
 // promise updated files. Never print internal file names in public copy.
 
@@ -28,14 +29,24 @@ const jsonld = pageSchema({
   <article class="post creators">
     <p class="evidence evidence--accent">For creators</p>
     <h1>Court Case Kits for Creators</h1>
-    <p class="post__note">We do the court research. You make the show. Page updated October 21, 2026. Buying is not open yet.</p>
+    <p class="post__note">We do the court research. You make the show. Page updated October 22, 2026.</p>
+
+    <div class="quick" aria-label="The offer at a glance">
+      <ul>
+        <li><strong>What it is:</strong> a PDF research file on one live court case. Every fact links to its source. Our free sample is 6 pages.</li>
+        <li><strong>Price:</strong> $29 for one kit, or $39 a month on the founding plan.</li>
+        <li><strong>Delivery:</strong> a download link right after checkout.</li>
+        <li><strong>Can I buy now?</strong> Not yet. Buying is not open. You can read the free sample today.</li>
+      </ul>
+      <p class="quick__actions"><a class="btn" href={SAMPLE}>Read the free sample kit</a> <a class="quick__ask" href={CONTACT}>Ask about a case you cover</a></p>
+    </div>
 
     <div class="post__content">
       <h2 id="what-is-a-case-kit">What is a case kit?</h2>
-      <p>A case kit is a short research file on one live court case. It is made for people who cover trials on YouTube, TikTok or a podcast. It tells you where the case stands, what happens next, and where each fact comes from. Each kit is 6 to 8 pages, with links to every source.</p>
+      <p>A case kit is a short research file on one live court case. It is made for people who cover trials on YouTube, TikTok or a podcast. It tells you where the case stands, what happens next, and where each fact comes from. Every fact links to its source. Our free sample is 6 pages long.</p>
 
       <h2 id="time-saved">How much time can a kit save?</h2>
-      <p>Court research takes a long time. One true-crime host says a single 45-minute episode can take <a href="https://truecrimeunheard.com/episodes/what-you-dont-hear-on-wednesday-morning/">20 to 60 hours of work</a>. Much of that is finding the case, checking dates, and sorting what each side says.</p>
+      <p>Court research takes a lot of time. You have to find the case, check the dates, and sort what each side says from what a court has found.</p>
       <p>A kit does that first pass for you. You still check the newest news before you post. But you start with the case already sorted, instead of 40 open tabs.</p>
 
       <h2 id="whats-inside">What is inside a kit?</h2>
@@ -56,11 +67,20 @@ const jsonld = pageSchema({
       <p>Kits cover live U.S. criminal cases that we track on our <a href="/court-calendar/">Court Calendar</a>. Our first kits were made for the Faith Hedgepeth, Lindsay Clancy and Lori Vallow Daybell cases. Want a case you cover? <a href={CONTACT}>Tell us which one</a>.</p>
 
       <h2 id="free-sample">Can I see a free sample?</h2>
-      <p>Yes. Our free sample is the kit for the Faith Hedgepeth case, the 2026 Durham County, North Carolina, murder trial. The accused man has pleaded not guilty and is presumed innocent. The sample's facts are as of October 21, 2026, at 10:52 a.m. Pacific time. It is not updated after that, so it shows exactly what a kit looks like on the day it is made.</p>
+      <p>Yes. Our free sample is the kit for the Faith Hedgepeth case, the 2026 Durham County, North Carolina, murder trial. It is a fixed copy. Its facts are as of October 21, 2026, at 10:52 a.m. Pacific time. At that time the accused man had pleaded not guilty and was presumed innocent, and there was no verdict. For where the case stands now, see our <a href="/court-calendar/">Court Calendar</a>.</p>
+      <p>We do not change the sample's facts, so it shows exactly what a kit looks like on the day it is made. If we find an error, we add a dated correction note. The sample also says plainly what we did not check: for this kit, we did not check the court's own case file (the docket).</p>
       <p><a class="btn" href={SAMPLE}>Read the free Hedgepeth sample kit</a></p>
 
-      <h2 id="each-week">What do members get each week?</h2>
-      <p>Members on the founding plan get <strong>Court Week for Creators</strong> every Thursday. It lists the coming week's court dates in the cases we follow, with a source for each date. Members also get each new case kit we release while they are members.</p>
+      <h2 id="each-week">What will members get each week?</h2>
+      <p>The founding plan is not open yet. When it opens, members get <strong>Court Week for Creators</strong> every Thursday. Members also get each new case kit we release while they are members.</p>
+      <p>Each Court Week sheet lists the coming week's court dates in the cases we follow. For each date it shows:</p>
+      <ul class="kit-list">
+        <li>the case, the court and the case number when we found one;</li>
+        <li>the date and time, marked "confirmed," "tentative" or "time not published";</li>
+        <li>where the case stands, in the record's own words;</li>
+        <li>what to check before you go live;</li>
+        <li>a link to each source, and when we last checked it.</li>
+      </ul>
 
       <h2 id="price">How much does it cost?</h2>
       <div class="price-grid">
@@ -73,20 +93,20 @@ const jsonld = pageSchema({
         <div class="price">
           <p class="price__name">Founding plan</p>
           <p class="price__amount">$39<span>/month</span></p>
-          <p class="price__note">Court Week for Creators every Thursday, plus each new kit we release while you are a member.</p>
+          <p class="price__note">When it opens: Court Week for Creators every Thursday, plus each new kit we release while you are a member.</p>
           <p class="price__soon">Join link: coming soon</p>
         </div>
       </div>
-      <p>Buying is not open yet. To hear when it opens, or to ask for a kit on a case you cover, <a href={CONTACT}>email us</a>.</p>
+      <p>Buying is not open yet. Start with the <a href={SAMPLE}>free sample kit</a>. To hear when buying opens, or to ask for a kit on a case you cover, <a href={CONTACT}>email us</a>.</p>
 
       <h2 id="delivery">How does delivery work?</h2>
       <p>You will pay on our newsletter store page. Each kit is a PDF file. After checkout you get a link to download it. Members get each new Court Week sheet and each new kit the same way, as a file to download.</p>
 
       <h2 id="refunds">Can I get a refund?</h2>
-      <p>Our refund terms are not set yet. They will be on the store page before buying opens, so you can read them before you pay.</p>
+      <p>Refund terms will be shown before checkout opens, so you can read them before you pay.</p>
 
       <h2 id="how-fresh">How fresh are the facts?</h2>
-      <p>Every kit shows the exact time its facts were checked. Court cases move fast, and a kit is not changed after that time. For the newest dates, check our free <a href="/court-calendar/">Court Calendar</a> and its "last updated" time.</p>
+      <p>Every kit shows the exact time its facts were checked. Court cases move fast, and a kit's facts are not changed after that time. If we find an error, we add a dated correction note. For the newest dates, open our free <a href="/court-calendar/">Court Calendar</a> and check its "last updated" time.</p>
 
       <h2 id="reuse">Can I use the facts in my videos?</h2>
       <p>Yes. You may use the facts and links in a kit in your own work. Please do not resell or repost the kit itself.</p>
@@ -108,6 +128,13 @@ const jsonld = pageSchema({
   .creators .kit-list li{margin:0 0 8px}
   .creators .post__content a.btn{color:#F6F1EA;background:#A8503A;text-decoration:none}
   .creators .post__content a.btn:hover{color:#F6F1EA}
+  .creators .quick{background:var(--bg-2);border:1px solid var(--line);border-radius:8px;padding:16px 18px;margin:0 0 22px}
+  .creators .quick ul{margin:0 0 12px;padding-left:20px}
+  .creators .quick li{margin:0 0 6px}
+  .creators .quick__actions{margin:0;display:flex;flex-wrap:wrap;gap:12px 18px;align-items:center}
+  .creators .quick a.btn{color:#F6F1EA;background:#A8503A;text-decoration:none}
+  .creators .quick a.btn:hover{color:#F6F1EA}
+  .creators .quick__ask{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
   .price-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:0 0 18px}
   .price{background:var(--bg-2);border:1px solid var(--line);border-radius:8px;padding:18px}
   .price p{margin:0 0 8px}
