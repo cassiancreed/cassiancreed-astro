@@ -85,6 +85,9 @@ img{max-width:100%}
 .site-foot__inner{display:flex;justify-content:space-between;align-items:center;padding:22px 24px;flex-wrap:wrap;gap:8px}
 .site-foot__note{color:var(--ink-3);font-size:13px}
 .site-foot__report{font-size:13px}
+.site-foot__policy{color:var(--ink);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+.site-foot__policy:hover{color:var(--accent)}
+.site-foot__policy:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:2px}
 
 @media(max-width:860px){.nav--desktop{display:none}.nav-menu{display:block}}
 @media(max-width:760px){.grid{grid-template-columns:1fr 1fr}.site-head__inner{padding:9px 14px}}
