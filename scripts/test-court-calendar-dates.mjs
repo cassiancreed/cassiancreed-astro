@@ -30,35 +30,40 @@ assert.ok(labelExpression, 'ongoing date label is sourced from the actual templa
 // The authoritative build separately verifies actual Astro HTML rendering.
 const labelFor = new Function('e', 'BUILD_DATE', `return (${labelExpression});`);
 const ongoingRows = parseCourtCalendar(original).entries.filter(e => e.ongoing === true);
-for (const [buildDate, expected] of [['2026-10-19', 'Next listed setting'], ['2026-10-20', 'Listed date'], ['2026-10-21', 'Listed date']]) {
-  test(`future continuation stays non-occurrence-asserting at build date ${buildDate}`, async () => {
-    const bhatt = ongoingRows.find(e => e.id === 'bhatt-jury-selection');
-    assert.ok(bhatt);
-    assert.equal(labelFor(bhatt, buildDate), expected);
-    assert.equal(bhatt.dateISO, '2026-10-20');
-    assert.match(bhatt.dateText, /October 20, 2026, 9:00 a.m. Eastern/);
-    assert.doesNotMatch(labelFor(bhatt, buildDate), /began|completed|verdict/i);
-    assert.equal(bhatt.ongoing, true);
-  });
-}
-for (const [buildDate, expected] of [['2026-10-21', 'Next listed setting'], ['2026-10-22', 'Listed date'], ['2026-10-23', 'Listed date']]) {
-  test(`Hedgepeth closing-argument setting stays non-occurrence-asserting at build date ${buildDate}`, async () => {
-    const entry = ongoingRows.find(e => e.id === 'faith-hedgepeth-trial');
-    assert.ok(entry);
-    assert.equal(labelFor(entry, buildDate), expected);
-    assert.equal(entry.dateISO, '2026-10-22');
-    assert.match(entry.dateText, /October 22, 2026, 9:30 a.m. Eastern/);
-    assert.doesNotMatch(labelFor(entry, buildDate), /began|completed|verdict/i);
-    assert.equal(entry.ongoing, true);
-  });
-}
-for (const id of ['farwell-jury-trial']) {
-  test(`historical ongoing sibling ${id} retains its explicit date text`, async () => {
-    const entry = ongoingRows.find(e => e.id === id);
-    assert.ok(entry);
-    assert.equal(labelFor(entry, '2026-10-17'), 'Listed date');
-    assert.match(entry.dateText, /Trial opened/);
-    assert.doesNotMatch(labelFor(entry, '2026-10-17'), /began|completed|verdict/i);
+const shiftDay = (iso, days) => new Date(Date.parse(`${iso}T12:00:00Z`) + days * 86400000).toISOString().slice(0, 10);
+const monthDay = iso => new Date(`${iso}T12:00:00Z`).toLocaleDateString('en-US', { timeZone: 'UTC', month: 'long', day: 'numeric' });
+const ZONE_WORDS = {
+  'America/New_York': /^(\(?Eastern\)?|ET|EDT|EST)\b/,
+  'America/Chicago': /^(\(?Central\)?|CT|CDT|CST)\b/,
+  'America/Denver': /^(\(?Mountain\)?|MT|MDT|MST)\b/,
+  'America/Boise': /^(\(?Mountain\)?|MT|MDT|MST)\b/,
+  'America/Los_Angeles': /^(\(?Pacific\)?|PT|PDT|PST)\b/,
+};
+// Fixed sample row: proves the label logic even on a day with no ongoing rows.
+test('ongoing label logic: future date reads as next setting, never as an occurrence', () => {
+  const sample = { dateISO: '2026-10-22', ongoing: true };
+  assert.equal(labelFor(sample, '2026-10-21'), 'Next listed setting');
+  assert.equal(labelFor(sample, '2026-10-22'), 'Listed date');
+  assert.equal(labelFor(sample, '2026-10-23'), 'Listed date');
+});
+// Live rows: values are read from court-calendar.tsv, never pinned here, so a
+// routine row refresh (new session date or time) does not break the build.
+for (const entry of ongoingRows) {
+  test(`ongoing row ${entry.id} keeps a consistent date, time and label`, () => {
+    const day = entry.dateISO;
+    for (const [buildDate, expected] of [[shiftDay(day, -1), 'Next listed setting'], [day, 'Listed date'], [shiftDay(day, 1), 'Listed date']]) {
+      assert.equal(labelFor(entry, buildDate), expected, `${entry.id} at build date ${buildDate}`);
+      assert.doesNotMatch(labelFor(entry, buildDate), /began|completed|verdict/i);
+    }
+    // The visible date text names the same day as the grid date.
+    assert.ok(entry.dateText.includes(monthDay(day)) && entry.dateText.includes(day.slice(0, 4)), `${entry.id}: date text does not name ${day}`);
+    // Any clock time uses the house format and names the row's own time zone.
+    for (const match of entry.dateText.matchAll(/\b(\d{1,2}):(\d{2})\s*([ap])\.m\.\s*/g)) {
+      assert.ok(Number(match[1]) >= 1 && Number(match[1]) <= 12 && Number(match[2]) <= 59, `${entry.id}: bad clock time ${match[0]}`);
+      const zone = ZONE_WORDS[entry.timezone];
+      assert.ok(zone, `${entry.id}: no zone words listed for ${entry.timezone}`);
+      assert.match(entry.dateText.slice(match.index + match[0].length), zone, `${entry.id}: time ${match[0].trim()} must name its time zone`);
+    }
     assert.equal(entry.ongoing, true);
   });
 }
