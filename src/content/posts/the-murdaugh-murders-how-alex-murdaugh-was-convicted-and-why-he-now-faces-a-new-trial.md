@@ -8,11 +8,12 @@ victim: "Maggie Murdaugh and Paul Murdaugh"
 incidentDate: "June 2021"
 location: "Colleton County, South Carolina"
 jurisdiction: "South Carolina state court"
-status: "Murder convictions vacated (May 13, 2026); awaiting retrial — presumed innocent of the murder charges; financial-crime sentences (guilty pleas) remain in force"
+status: "Murder convictions vacated (May 13, 2026); retrial tentatively set for April 5, 2027, in Sumter County — presumed innocent of the murder charges; financial-crime sentences (guilty pleas) remain in force"
 cover: "/case-art/murdaugh-moselle.jpg"
 coverAlt: "An oak-lined lowcountry dirt drive at night, Spanish moss hanging overhead, a single distant yard light at the end of the lane."
 ---
 
+*Updated Wednesday, October 21, 2026: An earlier version said no retrial date had been set. The retrial is now tentatively set for April 5, 2027, in Sumter County, South Carolina. A pretrial hearing is set for November 13, 2026, at 10 a.m. ET. Alex Murdaugh is presumed innocent of the murder charges. Court dates can change. See our [Court Calendar](/court-calendar/#murdaugh-retrial) for the latest (as of October 21, 2026).*
 
 In March 2023, a South Carolina jury convicted disbarred attorney Alex Murdaugh of murdering his wife, Maggie Murdaugh, and their 22-year-old son, Paul Murdaugh, and he was sentenced to two consecutive life terms without parole. On May 13, 2026, the South Carolina Supreme Court unanimously overturned those murder convictions and ordered a new trial, citing jury interference by a county court clerk. Murdaugh remains in prison on separate financial-crimes convictions while the state prepares to retry him for the killings. With the murder convictions vacated, he is — as a matter of law — presumed innocent of those charges unless and until a new jury convicts him.
 
@@ -45,6 +46,10 @@ The financial crimes that ran alongside the murder case produced other victims t
 - **April 2024** — A federal judge sentences Murdaugh to 40 years for federal financial crimes, to run concurrently with the state sentence.
 - **December 2025** — Former Colleton County Clerk of Court Rebecca "Becky" Hill pleads guilty to charges connected to her conduct during the trial and is sentenced to three years of probation.
 - **May 13, 2026** — The South Carolina Supreme Court overturns the murder convictions and orders a new trial.
+- **August 14, 2026** — Judge Debra R. McCaslin rules the retrial will move out of Colleton County. She also allows parts of Murdaugh's first-trial testimony, with limits, and more DNA testing.
+- **September 8, 2026** — Judge McCaslin names Sumter County as the new venue.
+- **November 13, 2026** — Next pretrial hearing, set for 10 a.m. ET.
+- **April 5, 2027** — Retrial tentatively set to begin.
 
 ## The investigation and key evidence
 
@@ -85,7 +90,7 @@ Because Murdaugh pleaded guilty to these crimes, they are not affected by the mu
 
 ## Where things stand now (appeals)
 
-On **May 13, 2026**, the South Carolina Supreme Court unanimously overturned Murdaugh's murder convictions and ordered a new trial. The court did not find him innocent and did not reweigh the kennel video or the forensic evidence. Instead, it ruled that his right to a fair trial by an impartial jury had been compromised by misconduct from the Colleton County Clerk of Court, **Rebecca "Becky" Hill**.
+On **May 13, 2026**, the South Carolina Supreme Court unanimously overturned Murdaugh's murder convictions and ordered a new trial. In Opinion No. 28329, the court reversed the order that had denied him a new trial and sent the case back for one ([*State v. Murdaugh*, Op. No. 28329, May 13, 2026](https://www.courtlistener.com/opinion/10858059/state-v-richard-alexander-murdaugh/)). The court did not find him innocent and did not reweigh the kennel video or the forensic evidence. Instead, it ruled that his right to a fair trial by an impartial jury had been compromised by misconduct from the Colleton County Clerk of Court, **Rebecca "Becky" Hill**.
 
 The justices wrote that Hill "placed her fingers on the scales of justice." Jurors alleged that Hill made comments suggesting they should watch Murdaugh closely and not be "fooled" by the defense — comments that, the court concluded, could have improperly influenced deliberations. Hill, who had also written a book about the trial, pleaded guilty in December 2025 to charges connected to her conduct, including obstruction and misconduct in office, and was sentenced to three years of probation.
 
@@ -93,7 +98,7 @@ Several things follow from the 2026 ruling:
 
 - **He is presumed innocent of the murders.** With the convictions vacated, the murder charges return to pre-trial posture: they are allegations the state must prove again, beyond a reasonable doubt, to a new and impartial jury.
 - **Murdaugh stays in prison.** His separate financial-crimes convictions — the 40-year federal sentence and the 27-year state sentence — were obtained by guilty plea and remain fully in force. The reversal applies only to the murders.
-- **The state intends to retry him.** South Carolina's Attorney General's office has said it will seek to retry Murdaugh for the murders of Maggie and Paul, with the hope of bringing the case back to trial by the end of the year. As of this writing, no new trial date has been set.
+- **The retrial has a tentative date.** The South Carolina Attorney General's office is retrying Murdaugh for the murders of Maggie and Paul. Judge Debra R. McCaslin has tentatively set the retrial for **April 5, 2027** ([ABC News 4, Aug. 11, 2026, updated Aug. 14](https://abcnews4.com/news/local/flurry-of-filings-sets-stage-for-alex-murdaughs-next-court-date-friday)). On September 8, 2026, she moved the case to **Sumter County** ([ABC News, Sept. 8, 2026](https://abcnews.com/US/judge-picks-new-location-alex-murdaughs-double-murder/story?id=136286360)). The next pretrial hearing is **Friday, November 13, 2026, at 10 a.m. ET** ([ABC Columbia, Aug. 14, 2026](https://www.abccolumbia.com/2026/08/14/judge-makes-multiple-rulings-ahead-of-alex-murdaugh-retrial/); [WIS, Sept. 8, 2026](https://www.wistv.com/2026/09/08/alex-murdaugh-retrial-take-place-sumter-county-judge-rules/)). The defense has asked the court to dismiss the indictments. The court has not ruled on that request. Court dates can change. Status as of October 21, 2026.
 - **A retrial would likely look different.** The Supreme Court signaled that prosecutors should sharply limit how much of Murdaugh's financial misconduct they put before a new jury. A retrial would also face the practical challenge of seating impartial jurors in a case this widely publicized.
 
 For readers who followed the case as a sealed verdict, this is the essential update: the murder question is, legally, open again.
@@ -107,7 +112,10 @@ For readers who followed the case as a sealed verdict, this is the essential upd
 ## Frequently asked questions
 
 **Was Alex Murdaugh found innocent in 2026?**
-No. The South Carolina Supreme Court overturned his murder convictions on the grounds that jury interference denied him a fair trial. That is a procedural ruling about how the trial was conducted — not a finding that he did not commit the murders. He is, however, legally presumed innocent of the murder charges unless and until a new jury convicts him. The state plans to retry him.
+No. The South Carolina Supreme Court overturned his murder convictions on the grounds that jury interference denied him a fair trial. That is a procedural ruling about how the trial was conducted — not a finding that he did not commit the murders. He is, however, legally presumed innocent of the murder charges unless and until a new jury convicts him. His retrial is tentatively set for April 5, 2027, in Sumter County.
+
+**When is Alex Murdaugh's retrial?**
+It is tentatively set for April 5, 2027, in Sumter County, South Carolina. A pretrial hearing is set for November 13, 2026, at 10 a.m. ET. Court dates can change. Check our [Court Calendar](/court-calendar/#murdaugh-retrial) for the latest (as of October 21, 2026).
 
 **Is Alex Murdaugh out of prison?**
 No. He remains incarcerated on his financial-crimes convictions: a 40-year federal sentence and a concurrent 27-year state sentence, both obtained by guilty plea and unaffected by the murder appeal.
@@ -129,6 +137,12 @@ The Murdaugh case is frequently consumed as a saga of a fallen family — a fram
 
 ## Sources
 
+- Supreme Court of South Carolina — [*The State v. Richard Alexander Murdaugh*, Opinion No. 28329 (May 13, 2026)](https://www.courtlistener.com/opinion/10858059/state-v-richard-alexander-murdaugh/) (via CourtListener)
+- ABC News 4 (WCIV) — [Flurry of filings sets stage for Alex Murdaugh's next court date Friday](https://abcnews4.com/news/local/flurry-of-filings-sets-stage-for-alex-murdaughs-next-court-date-friday) (Aug. 11, 2026, updated Aug. 14) — tentative April 5, 2027 retrial date
+- ABC Columbia — [same-day courtroom report on the judge's rulings](https://www.abccolumbia.com/2026/08/14/judge-makes-multiple-rulings-ahead-of-alex-murdaugh-retrial/) (Aug. 14, 2026) — November 13 hearing at 10 a.m.
+- WTOP (Associated Press) — [Judge moves Alex Murdaugh retrial from small county, but motion to toss out case will wait](https://wtop.com/national/2026/08/judge-moves-alex-murdaugh-retrial-from-small-county-but-motion-to-toss-out-case-will-wait/) (Aug. 14, 2026)
+- ABC News — [report on the Sumter County venue order and April 5, 2027 retrial](https://abcnews.com/US/judge-picks-new-location-alex-murdaughs-double-murder/story?id=136286360) (Sept. 8, 2026)
+- WIS — [Alex Murdaugh retrial to take place in Sumter County, judge rules](https://www.wistv.com/2026/09/08/alex-murdaugh-retrial-take-place-sumter-county-judge-rules/) (Sept. 8, 2026)
 - U.S. Department of Justice — [Alex Murdaugh Sentenced to 40 Years in Prison for Federal Financial Crimes](https://www.justice.gov/usao-sc/pr/alex-murdaugh-sentenced-40-years-prison-federal-financial-crimes)
 - CNN — [Court overturns Alex Murdaugh's murder convictions and orders new trial](https://www.cnn.com/2026/05/13/us/alex-murdaugh-murder-appeal)
 - CBS News — [Alex Murdaugh murder convictions overturned, new trial ordered](https://www.cbsnews.com/news/alex-murdaugh-murder-convictions-overturned-south-carolina-new-trial/)

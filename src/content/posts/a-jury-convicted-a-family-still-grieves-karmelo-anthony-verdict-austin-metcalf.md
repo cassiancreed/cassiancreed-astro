@@ -8,8 +8,10 @@ victim: "Austin Metcalf, 17"
 incidentDate: "April 2, 2025"
 location: "Frisco, Texas"
 jurisdiction: "Collin County, Texas"
-status: "Convicted of murder and sentenced to 35 years June 9, 2026; appeal available"
+status: "Convicted of murder and sentenced to 35 years June 9, 2026; notice of appeal filed June 10, 2026; motion for new trial denied Aug. 22, 2026; appeal pending"
 ---
+
+*Updated Wednesday, October 21, 2026: An earlier version said an appeal was available. Karmelo Anthony's lawyers filed a notice of appeal on June 10, 2026. On August 22, 2026, retired Judge Michael Chitty denied his motion for a new trial. The murder conviction and 35-year sentence stand while the appeal is pending. Details and sources are in the appeals section below.*
 
 Austin Metcalf was 17 years old. A junior at Memorial High School in Frisco, Texas. The MVP linebacker on his football team. A twin, with a brother named Hunter who was standing right next to him when it happened.
 
@@ -71,13 +73,19 @@ In the punishment phase, both sides present evidence relevant to the sentence: t
 
 ---
 
-## Appeals: What Any Convicted Defendant Can Do
+## Appeals: Where the Case Stands Now
 
-A guilty verdict does not end the legal process. Any defendant convicted of a felony in Texas has the right to appeal the conviction, and that right remains available to Anthony.
+A guilty verdict does not end the legal process. Anthony has appealed. Status as of October 21, 2026:
+
+- **Notice of appeal.** His lawyers filed a notice of appeal on June 10, 2026, the day after the verdict and sentence ([Dallas Observer](https://www.dallasobserver.com/news/karmelo-anthony-appeals-conviction-whats-next-40686354/); [Oxygen, June 12, 2026](https://www.oxygen.com/crime-news/karmelo-anthony-files-notice-to-appeal-austin-metcalf-murder-conviction)).
+- **Motion for new trial denied.** On August 22, 2026, retired Judge Michael Chitty denied Anthony's motion for a new trial after a two-day hearing ([Courthouse News, Aug. 23, 2026](https://courthousenews.com/judge-denies-karmelo-anthonys-motion-for-a-new-trial/); [FOX 4, Aug. 24, 2026](https://www.fox4news.com/news/karmelo-anthony-appeal-whats-next-after-motion-new-trial-was-denied)). The defense had argued that limits on public access to the trial, a broken agreement about evidence and a jury instruction on self-defense made the trial unfair. The judge did not grant relief.
+- **Next step.** The appeal goes to the Fifth Court of Appeals in Dallas ([Courthouse News, Aug. 23, 2026](https://courthousenews.com/judge-denies-karmelo-anthonys-motion-for-a-new-trial/); [FOX 4, Aug. 24, 2026](https://www.fox4news.com/news/karmelo-anthony-appeal-whats-next-after-motion-new-trial-was-denied)). No argument date has been announced, so we cannot say when the appeal will be decided.
+
+The conviction and the 35-year sentence stand. The appeal is still pending, so the case is not fully settled. We will not guess how the appeal ends.
 
 Appeals in Texas criminal cases go first to one of the state's intermediate Courts of Appeals and potentially to the Texas Court of Criminal Appeals. Grounds can include claims that evidence was improperly admitted or excluded, that jury instructions were legally deficient, or that constitutional rights were violated at some point in the proceedings.
 
-The verdict of June 9, 2026, may not be the final legal word in this case.
+See every date we track on our [Court Calendar](/court-calendar/) (as of October 21, 2026).
 
 ## Want the full case in one place?
 
