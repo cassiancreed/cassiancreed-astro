@@ -27,7 +27,7 @@ Victims: the women recovered from Long Island's Gilgo Beach, whose families wait
 
 ## Lindsay Clancy — trial set for July 20, 2026
 
-Victims: Cora, Dawson, and Callan Clancy, her three young children. Status: accused; has pleaded not guilty and is expected to pursue an insanity defense. What's next: trial scheduled to begin July 20, 2026, in Plymouth Superior Court, Massachusetts. Why it matters: a wrenching postpartum-mental-health case reshaping how courts talk about maternal psychosis.
+Victims: her three young children. Status: accused; has pleaded not guilty and is expected to pursue an insanity defense. What's next: trial scheduled to begin July 20, 2026, in Plymouth Superior Court, Massachusetts. Why it matters: a wrenching postpartum-mental-health case reshaping how courts talk about maternal psychosis.
 
 <div class="capture-cta" style="border:1px solid var(--rule,#3a332c);border-left:4px solid var(--accent,#e0563b);background:var(--card,#1a1613);color:var(--ink,#f6f1ea);padding:1.25rem 1.5rem;margin:1.75rem 0;border-radius:8px">
 <p style="margin:0 0 .4rem;font-size:1.12rem;font-weight:700;line-height:1.3">Get the case files the news won't run — free, straight to your inbox.</p>

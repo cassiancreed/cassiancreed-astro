@@ -5,7 +5,7 @@ pubDate: 2026-07-15
 updatedDate: 2026-10-19
 tag: Case Files
 featured: false
-victim: Cora Clancy, 5; Dawson Clancy, 3; Callan Clancy, 8 months
+victim: "Three children, ages 5, 3 and 8 months"
 incidentDate: January 2023
 location: Duxbury, Massachusetts
 jurisdiction: Plymouth County Superior Court, Massachusetts
@@ -39,7 +39,7 @@ Cassian Creed maintains this Neural Edge Publishing tracker using available cour
 <p style="margin-bottom:0">The mistrial ended this trial without a conviction or acquittal. Clancy remains presumed innocent.</p>
 </div>
 
-Cora, 5, Dawson, 3, and Callan, 8 months, died after events at their Duxbury home in January 2023. Their mother, Lindsay Clancy, has pleaded not guilty to three counts of first-degree murder. **PROSECUTION:** Prosecutors allege she acted deliberately. **DEFENSE:** Her lawyers argue she experienced postpartum psychosis and lacked criminal responsibility, and they also allege that overmedication contributed to her condition. A jury has not decided those contested claims.
+Three children, ages 5, 3 and 8 months, died after events at their Duxbury home in January 2023. Their mother, Lindsay Clancy, has pleaded not guilty to three counts of first-degree murder. **PROSECUTION:** Prosecutors allege she acted deliberately. **DEFENSE:** Her lawyers argue she experienced postpartum psychosis and lacked criminal responsibility, and they also allege that overmedication contributed to her condition. A jury has not decided those contested claims.
 
 <div class="capture-cta" style="border:1px solid var(--rule,#3a332c);border-left:4px solid var(--accent,#e0563b);background:var(--card,#1a1613);color:var(--ink,#f6f1ea);padding:1.25rem 1.5rem;margin:1.75rem 0;border-radius:8px">
 <p style="margin:0 0 .4rem;font-size:1.12rem;font-weight:700;line-height:1.3">Get the free guide to reading a case — straight to your inbox.</p>

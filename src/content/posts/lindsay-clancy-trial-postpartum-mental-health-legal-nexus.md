@@ -5,7 +5,7 @@ description: "The Lindsay Clancy trial turns on a precise question: how psychiat
 pubDate: 2026-08-09
 tag: "Case Files"
 featured: false
-victim: "Cora Clancy, 5; Dawson Clancy, 3; Callan Clancy, 8 months"
+victim: "Three children, ages 5, 3 and 8 months"
 incidentDate: "January 24, 2023"
 location: "Duxbury, Massachusetts"
 jurisdiction: "Plymouth County Superior Court, Massachusetts"
@@ -18,7 +18,7 @@ cover: "/og.png"
 <strong>Research cutoff:</strong> August 8, 2026. The trial was active, the defense case was incomplete, and no verdict had been returned.
 </div>
 
-The Lindsay Clancy trial in Plymouth Superior Court is more than a factual inquiry into the deaths of three children. Because the defense does not dispute physical causation, the central contested question is whether the Commonwealth can prove beyond a reasonable doubt that Clancy was criminally responsible when Cora, Dawson, and Callan died.
+The Lindsay Clancy trial in Plymouth Superior Court is more than a factual inquiry into the deaths of three children. Because the defense does not dispute physical causation, the central contested question is whether the Commonwealth can prove beyond a reasonable doubt that Clancy was criminally responsible when the three children died.
 
 That inquiry requires jurors to keep two systems separate. A clinician may diagnose an illness or describe symptoms. A jury must apply Massachusetts law to the admitted evidence and decide whether the prosecution proved criminal responsibility. A diagnosis is evidence; it is not a verdict.
 
@@ -51,12 +51,12 @@ Jurors must decide what weight to give that testimony alongside the rest of the 
 
 ## 3. Chronology of deterioration and psychiatric care
 
-The reported treatment record spans the months after Callan's birth in May 2022 through January 24, 2023. Both sides use that chronology, but they draw different conclusions from it.
+The reported treatment record spans the months after the youngest child's birth in May 2022 through January 24, 2023. Both sides use that chronology, but they draw different conclusions from it.
 
-- **After Callan's birth:** Testimony and records described anxiety, insomnia, intrusive thoughts, and escalating distress.
+- **After the youngest child's birth:** Testimony and records described anxiety, insomnia, intrusive thoughts, and escalating distress.
 - **January 1–5, 2023:** Clancy voluntarily entered McLean Hospital. Treating psychiatrists testified about severe major depressive disorder without psychotic features, medications, risk assessments, and discharge planning.
 - **January 23, 2023:** At a virtual psychiatric appointment one day before the deaths, the clinician described depression but testified that Clancy did not report suicidal or homicidal intent.
-- **January 24, 2023:** Patrick Clancy left the home to collect food and medicine after Lindsay asked him to run the errands. Cora and Dawson died that night. Callan was transported to Boston Children's Hospital and died several days later.
+- **January 24, 2023:** Patrick Clancy left the home to collect food and medicine after Lindsay asked him to run the errands. The two older children died that night. The baby was transported to Boston Children's Hospital and died several days later.
 
 The prosecution cites the January 23 assessment and other behavior as evidence of awareness and deliberate conduct. The defense argues that the longitudinal record shows a worsening illness that was not adequately recognized. These are competing interpretations, not findings this report resolves.
 
