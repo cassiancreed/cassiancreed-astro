@@ -41,7 +41,18 @@ for (const [buildDate, expected] of [['2026-10-19', 'Next listed setting'], ['20
     assert.equal(bhatt.ongoing, true);
   });
 }
-for (const id of ['farwell-jury-trial', 'faith-hedgepeth-trial']) {
+for (const [buildDate, expected] of [['2026-10-21', 'Next listed setting'], ['2026-10-22', 'Listed date'], ['2026-10-23', 'Listed date']]) {
+  test(`Hedgepeth closing-argument setting stays non-occurrence-asserting at build date ${buildDate}`, async () => {
+    const entry = ongoingRows.find(e => e.id === 'faith-hedgepeth-trial');
+    assert.ok(entry);
+    assert.equal(labelFor(entry, buildDate), expected);
+    assert.equal(entry.dateISO, '2026-10-22');
+    assert.match(entry.dateText, /October 22, 2026, 9:30 a.m. Eastern/);
+    assert.doesNotMatch(labelFor(entry, buildDate), /began|completed|verdict/i);
+    assert.equal(entry.ongoing, true);
+  });
+}
+for (const id of ['farwell-jury-trial']) {
   test(`historical ongoing sibling ${id} retains its explicit date text`, async () => {
     const entry = ongoingRows.find(e => e.id === id);
     assert.ok(entry);
