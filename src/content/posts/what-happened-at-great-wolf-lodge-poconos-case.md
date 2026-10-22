@@ -56,7 +56,7 @@ The preliminary hearing is set for **Tuesday, Nov. 3, 2026, at 1 p.m. Eastern** 
 
 It was first set for Oct. 21. Monroe County President Judge Jonathan Mark granted the state's request to move it to the courthouse on Nov. 3. [[7]](#src-7) The Oct. 21 date now shows as "Continued" on the docket.
 
-Some earlier listings showed other dates. When we read the court docket on Oct. 22, Nov. 3 was the only upcoming event listed. [[4]](#src-4)
+Some earlier listings showed other dates. When we read the court docket on Oct. 22, Nov. 3 was the only upcoming event listed. Its status was "Scheduled." [[4]](#src-4)
 
 ## What is a preliminary hearing?
 
@@ -82,7 +82,7 @@ Under Pennsylvania's rules, if prosecutors want to seek the death penalty, they 
 
 ## Can I watch the hearing?
 
-Not on camera. Pennsylvania's court rules bar photos, video and recording of criminal court proceedings. [[11]](#src-11)
+Not on camera. Court rules bar photos and video. A recording made for the court record may not be played in public. [[11]](#src-11)
 
 You can follow the case on the Pennsylvania court portal. The docket numbers are MJ-43303-CR-0000313-2026 and CP-45-MD-0000755-2026. [[4]](#src-4)
 
