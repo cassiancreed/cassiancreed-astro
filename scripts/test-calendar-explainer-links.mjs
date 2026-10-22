@@ -9,7 +9,7 @@ const entries = [...calendar.entries, ...calendar.appeals, ...calendar.unconfirm
 
 test('classifies destinations with text badges and real catalog prices', () => {
   assert.equal(classifyCalendarLink({url:'/post/example/'}).badge, 'FREE');
-  assert.equal(classifyCalendarLink({url:'https://cassiancreed.beehiiv.com/products/case-chess-erin-patterson'}).badge, '$1.99 GUIDE');
+  assert.equal(classifyCalendarLink({url:'https://cassiancreed.beehiiv.com/products/case-chess-erin-patterson'}).badge, '$2.99 GUIDE');
   assert.equal(classifyCalendarLink({url:'/books/'}).badge, 'BOOK ' + JURY_CHESS_PRICE_TEXT);
   assert.equal(classifyCalendarLink({url:'https://cassiancreed.beehiiv.com/products/jury-chess-authority-edition-v3-2'}).type, 'book');
   assert.equal(classifyCalendarLink({url:'https://cassiancreed.beehiiv.com/products/future-guide',price:'$3.99'}).badge, '$3.99 GUIDE');

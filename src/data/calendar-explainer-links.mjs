@@ -71,7 +71,7 @@ const EXISTING_CASE_GUIDES = {
   },
   'patterson-appeal': {
     url: 'https://cassiancreed.beehiiv.com/products/case-chess-erin-patterson',
-    text: 'Read the Case Chess guide: The Erin Patterson Case — $1.99',
+    text: 'Read the Case Chess guide: The Erin Patterson Case — $2.99',
     bookKey: 'case-chess-erin-patterson',
     placement: 'court_calendar_case_guide',
   },
@@ -598,7 +598,7 @@ export const LIVE_PRODUCTS = {
   "case-chess-erin-patterson": {
     "url": "https://cassiancreed.beehiiv.com/products/case-chess-erin-patterson",
     "title": "Case Chess: The Erin Patterson Case — What's Actually Happening and What It Means",
-    "price": "$1.99"
+    "price": "$2.99"
   },
   "lindsay-clancy-post-mistrial-field-guide": {
     "url": "https://cassiancreed.beehiiv.com/products/lindsay-clancy-post-mistrial-field-guide",
