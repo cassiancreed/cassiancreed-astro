@@ -1,0 +1,119 @@
+---
+import Base from '../layouts/Base.astro';
+import ReportError from '../components/ReportError.astro';
+import { pageSchema } from '../utils/page-schema.mjs';
+
+// CREATOR CASE KITS — offer page (Lane C, Creator Desk C2, 2026-10-21).
+// Buying is NOT open yet. Buy links stay plain "coming soon" text until the
+// Beehiiv products are live (owner step). No Offer schema until then, so the
+// structured data never claims something can be bought.
+// Doctrine v2.1 §10: never tell a buyer what they may or may not say; never
+// promise updated files. Never print internal file names in public copy.
+
+const TITLE = 'Court Case Kits for Creators';
+const DESCRIPTION = 'Sourced court case kits for true-crime YouTubers, TikTokers and podcasters. Status, dates, timeline and sources in one file. Free sample inside.';
+const SAMPLE = '/creators/samples/faith-hedgepeth-case-kit.html';
+const CONTACT = 'mailto:cassiancreed@cassiancreed.com?subject=' + encodeURIComponent('Creator case kits');
+
+const jsonld = pageSchema({
+  type: 'WebPage',
+  title: TITLE,
+  headline: TITLE,
+  description: DESCRIPTION,
+  path: '/creators/',
+  source: 'src/pages/creators.astro',
+});
+---
+<Base title={TITLE} description={DESCRIPTION} jsonld={jsonld}>
+  <article class="post creators">
+    <p class="evidence evidence--accent">For creators</p>
+    <h1>Court Case Kits for Creators</h1>
+    <p class="post__note">We do the court research. You make the show. Page updated October 21, 2026. Buying is not open yet.</p>
+
+    <div class="post__content">
+      <h2 id="what-is-a-case-kit">What is a case kit?</h2>
+      <p>A case kit is a short research file on one live court case. It is made for people who cover trials on YouTube, TikTok or a podcast. It tells you where the case stands, what happens next, and where each fact comes from. Each kit is 6 to 8 pages, with links to every source.</p>
+
+      <h2 id="time-saved">How much time can a kit save?</h2>
+      <p>Court research takes a long time. One true-crime host says a single 45-minute episode can take <a href="https://truecrimeunheard.com/episodes/what-you-dont-hear-on-wednesday-morning/">20 to 60 hours of work</a>. Much of that is finding the case, checking dates, and sorting what each side says.</p>
+      <p>A kit does that first pass for you. You still check the newest news before you post. But you start with the case already sorted, instead of 40 open tabs.</p>
+
+      <h2 id="whats-inside">What is inside a kit?</h2>
+      <ul class="kit-list">
+        <li><strong>Facts-as-of stamp.</strong> The date and time the facts were checked, on page one.</li>
+        <li><strong>One-minute brief.</strong> The case in five short lines.</li>
+        <li><strong>Status in the record.</strong> Charges, plea, custody, court, judge and stage, each with its source.</li>
+        <li><strong>What happens next.</strong> The next court step, its time, and whether that time is confirmed or only reported.</li>
+        <li><strong>Timeline.</strong> Dated events from the start of the case to now, each with a source.</li>
+        <li><strong>Established, alleged and still open.</strong> What is not in dispute, what prosecutors say, and what is still unknown, kept apart.</li>
+        <li><strong>Court rulings so far.</strong> Rulings on the process, with a plain note that none is a finding of guilt.</li>
+        <li><strong>People in the record.</strong> Who is who: the judge, the lawyers and the witnesses who testified in open court.</li>
+        <li><strong>Name and fact checks.</strong> Spellings that differ between outlets, and dates that conflict, named instead of guessed.</li>
+        <li><strong>Key sources and gaps.</strong> A source list, plus a plain list of what we could not verify.</li>
+      </ul>
+
+      <h2 id="which-cases">Which cases do kits cover?</h2>
+      <p>Kits cover live U.S. criminal cases that we track on our <a href="/court-calendar/">Court Calendar</a>. Our first kits were made for the Faith Hedgepeth, Lindsay Clancy and Lori Vallow Daybell cases. Want a case you cover? <a href={CONTACT}>Tell us which one</a>.</p>
+
+      <h2 id="free-sample">Can I see a free sample?</h2>
+      <p>Yes. Our free sample is the kit for the Faith Hedgepeth case, the 2026 Durham County, North Carolina, murder trial. The accused man has pleaded not guilty and is presumed innocent. The sample's facts are as of October 21, 2026, at 10:52 a.m. Pacific time. It is not updated after that, so it shows exactly what a kit looks like on the day it is made.</p>
+      <p><a class="btn" href={SAMPLE}>Read the free Hedgepeth sample kit</a></p>
+
+      <h2 id="each-week">What do members get each week?</h2>
+      <p>Members on the founding plan get <strong>Court Week for Creators</strong> every Thursday. It lists the coming week's court dates in the cases we follow, with a source for each date. Members also get each new case kit we release while they are members.</p>
+
+      <h2 id="price">How much does it cost?</h2>
+      <div class="price-grid">
+        <div class="price">
+          <p class="price__name">One case kit</p>
+          <p class="price__amount">$29</p>
+          <p class="price__note">Early price. One kit, one case.</p>
+          <p class="price__soon">Buy link: coming soon</p>
+        </div>
+        <div class="price">
+          <p class="price__name">Founding plan</p>
+          <p class="price__amount">$39<span>/month</span></p>
+          <p class="price__note">Court Week for Creators every Thursday, plus each new kit we release while you are a member.</p>
+          <p class="price__soon">Join link: coming soon</p>
+        </div>
+      </div>
+      <p>Buying is not open yet. To hear when it opens, or to ask for a kit on a case you cover, <a href={CONTACT}>email us</a>.</p>
+
+      <h2 id="delivery">How does delivery work?</h2>
+      <p>You will pay on our newsletter store page. Each kit is a PDF file. After checkout you get a link to download it. Members get each new Court Week sheet and each new kit the same way, as a file to download.</p>
+
+      <h2 id="refunds">Can I get a refund?</h2>
+      <p>Our refund terms are not set yet. They will be on the store page before buying opens, so you can read them before you pay.</p>
+
+      <h2 id="how-fresh">How fresh are the facts?</h2>
+      <p>Every kit shows the exact time its facts were checked. Court cases move fast, and a kit is not changed after that time. For the newest dates, check our free <a href="/court-calendar/">Court Calendar</a> and its "last updated" time.</p>
+
+      <h2 id="reuse">Can I use the facts in my videos?</h2>
+      <p>Yes. You may use the facts and links in a kit in your own work. Please do not resell or repost the kit itself.</p>
+
+      <h2 id="legal-advice">Does a kit tell me what I can say?</h2>
+      <p>No. A kit reports what the court record and named news reports say. It is research, not legal advice. The words you use on air are your call. Everyone charged with a crime is presumed innocent unless proved guilty in court.</p>
+
+      <h2 id="who-makes-it">Who makes the kits?</h2>
+      <p>Neural Edge Publishing, the team behind this site and its <a href="/court-calendar/">Court Calendar</a>. We build from public records, keep claims apart from proven facts, and put victims first. Read <a href="/about/">how we work</a>.</p>
+
+      <h2 id="report-an-error">Found a mistake?</h2>
+      <p>Report an error in any kit or on this page and we will check it against the record. <ReportError pageTitle={TITLE} /></p>
+    </div>
+  </article>
+</Base>
+
+<style>
+  .creators .kit-list{margin:0 0 18px;padding-left:20px}
+  .creators .kit-list li{margin:0 0 8px}
+  .creators .post__content a.btn{color:#F6F1EA;background:#A8503A;text-decoration:none}
+  .creators .post__content a.btn:hover{color:#F6F1EA}
+  .price-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:0 0 18px}
+  .price{background:var(--bg-2);border:1px solid var(--line);border-radius:8px;padding:18px}
+  .price p{margin:0 0 8px}
+  .price__name{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+  .price__amount{font-family:var(--serif);font-size:38px;font-weight:600;line-height:1}
+  .price__amount span{font-size:17px;font-weight:400}
+  .price__soon{font-weight:600;margin-bottom:0}
+  @media (max-width:640px){.price-grid{grid-template-columns:1fr}}
+</style>
