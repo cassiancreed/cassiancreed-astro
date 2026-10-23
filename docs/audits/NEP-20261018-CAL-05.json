@@ -29,7 +29,7 @@
     "clancy-trial",
     "virzi-trial",
     "michael-vaughan-trial",
-    "crum-odom-verdict",
+    "crum-jury-recommendation",
     "preston-lord-meisner-trial",
     "preston-lord-five-defendant-trial",
     "elmore-laura-miller-trial",
@@ -188,7 +188,7 @@
       "basis": "Owner cold review plus TSV/source inspection"
     },
     {
-      "id": "crum-odom-verdict",
+      "id": "crum-jury-recommendation",
       "case": "Jeffrey Norman Crum Sr. — Jennifer Odom case",
       "reason": "Child victim Jennifer Odom; owner cold-review exclusion.",
       "source": {
@@ -608,7 +608,7 @@
       "basis": "Owner direction NEP-20261018-CAL-07"
     },
     {
-      "id": "crum-odom-verdict",
+      "id": "crum-jury-recommendation",
       "case": "Jeffrey Norman Crum Sr. — Jennifer Odom case",
       "event": "Jury death-penalty recommendation — completed",
       "court": "Hernando County courthouse, Brooksville, FL",

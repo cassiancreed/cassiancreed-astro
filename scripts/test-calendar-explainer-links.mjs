@@ -9,7 +9,7 @@ const entries = [...calendar.entries, ...calendar.appeals, ...calendar.unconfirm
 
 test('classifies destinations with text badges and real catalog prices', () => {
   assert.equal(classifyCalendarLink({url:'/post/example/'}).badge, 'FREE');
-  assert.equal(classifyCalendarLink({url:'https://cassiancreed.beehiiv.com/products/case-chess-erin-patterson'}).badge, '$2.99 GUIDE');
+  assert.equal(classifyCalendarLink({url:'https://cassiancreed.beehiiv.com/products/case-chess-erin-patterson'}).badge, '$1.99 GUIDE');
   assert.equal(classifyCalendarLink({url:'/books/'}).badge, 'BOOK ' + JURY_CHESS_PRICE_TEXT);
   assert.equal(classifyCalendarLink({url:'https://cassiancreed.beehiiv.com/products/jury-chess-authority-edition-v3-2'}).type, 'book');
   assert.equal(classifyCalendarLink({url:'https://cassiancreed.beehiiv.com/products/future-guide',price:'$3.99'}).badge, '$3.99 GUIDE');
@@ -54,7 +54,7 @@ test('day markers aggregate all entries and retain free, paid, book order', () =
 });
 
 test('review exclusions never receive BOOK links, even when their event is a jury trial', () => {
-  assert.deepEqual([...JURY_CHESS_EXCLUDED_IDS], ["goncalves-wsu-trial","aramburu-paris-trial","kepner-federal-trial","brianna-moore-trial","clancy-trial","virzi-trial","michael-vaughan-trial","crum-odom-verdict","preston-lord-meisner-trial","preston-lord-five-defendant-trial","elmore-laura-miller-trial","wagner-trial","gardner-jury-selection","gardner-trial","bridegan-fernandez-trial","farwell-jury-trial","farwell-trial-oct19","carter-brooks-trial","ryan-cavett-trial","killins-verdict-sentencing","eaton-burlington-trial","banks-federal-trial","conway-mo3-trial"]);
+  assert.deepEqual([...JURY_CHESS_EXCLUDED_IDS], ["goncalves-wsu-trial","aramburu-paris-trial","kepner-federal-trial","brianna-moore-trial","clancy-trial","virzi-trial","michael-vaughan-trial","crum-jury-recommendation","preston-lord-meisner-trial","preston-lord-five-defendant-trial","elmore-laura-miller-trial","wagner-trial","gardner-jury-selection","gardner-trial","bridegan-fernandez-trial","farwell-jury-trial","farwell-trial-oct19","carter-brooks-trial","ryan-cavett-trial","killins-verdict-sentencing","eaton-burlington-trial","banks-federal-trial","conway-mo3-trial"]);
   for (const id of JURY_CHESS_EXCLUDED_IDS) {
     const entry = entries.find(e => e.id === id);
     assert.ok(entry, id);
