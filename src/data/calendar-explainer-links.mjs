@@ -525,6 +525,21 @@ export const CALENDAR_EXPLAINER_CASES = [
       }
     ],
     "paid": []
+  },
+  {
+    "key": "great-wolf",
+    "entryIds": [
+      "great-wolf-lodge-harrison-preliminary"
+    ],
+    "free": [
+      {
+        "url": "/post/what-happened-at-great-wolf-lodge-poconos-case/",
+        "text": "What Happened at Great Wolf Lodge in the Poconos? The Case Explained"
+      }
+    ],
+    "paid": [
+      "great-wolf-lodge-case-guide"
+    ]
   }
 ];
 const HISTORICAL_ROUNDUPS = [
@@ -629,9 +644,15 @@ export const LIVE_PRODUCTS = {
     "url": "https://cassiancreed.beehiiv.com/products/murdaugh-retrial-guide",
     "title": "Case Chess: The Alex Murdaugh Case — What's Actually Happening and What It Means",
     "price": "$1.99"
+  },
+  "great-wolf-lodge-case-guide": {
+    "url": "https://cassiancreed.beehiiv.com/products/great-wolf-lodge-case-guide",
+    "title": "The Great Wolf Lodge Case Guide",
+    "price": "$1.99"
   }
 };
 const PRODUCT_CAMPAIGNS = {
+  "great-wolf-lodge-case-guide": "explainer_great_wolf_v1",
   "murdaugh-retrial-guide": "explainer_murdaugh_v1",
   "austin-metcalf-karmelo-anthony-case-guide": "explainer_anthony_v1",
   "jared-bridegan-case-guide-v2": "explainer_bridegan_v2",
@@ -717,6 +738,7 @@ const PUBLISHED_POSTS = new Set([
   "/post/warning-signs-the-science-validates-a-safety-system/",
   "/post/two-names-that-come-first-dominic-russo-and-davion-flanagan/",
   "/post/what-happens-at-d4vds-monday-hearing/",
+  "/post/what-happened-at-great-wolf-lodge-poconos-case/",
   "/post/what-a-racial-justice-act-violation-means-dominguez/",
   "/post/what-actually-happens-on-day-one-of-a-high-profile-trial/",
   "/post/what-happened-in-the-idaho-student-murders-the-bryan-kohberger-case-explained/",

@@ -23,6 +23,7 @@ export const POST_GUIDE_CTAS = {
   'luigi-mangione-psychiatric-defense-withdrawn-trial-2026': { product: 'brian-thompson-luigi-mangione-two-courts', campaign: 'explainer_luigi_v1', key: 'mangione' },
   'erin-patterson-case-explained': { product: 'case-chess-erin-patterson', campaign: 'explainer_patterson_v1', key: 'patterson' },
   'michelle-parker-case-dale-smith-charged-no-body': { product: 'both-sides-michelle-parker-guide-v3', campaign: 'explainer_parker_bothsides_v3', key: 'parker' },
+  'what-happened-at-great-wolf-lodge-poconos-case': { product: 'great-wolf-lodge-case-guide', campaign: 'explainer_great_wolf_v1', key: 'great_wolf' },
 };
 
 export const POST_GUIDE_PLACEMENTS = ['end', 'bottom'];
