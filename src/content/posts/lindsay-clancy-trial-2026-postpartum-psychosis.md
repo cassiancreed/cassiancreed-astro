@@ -5,7 +5,7 @@ pubDate: 2026-06-23
 updatedDate: 2026-10-02
 tag: Case Files
 featured: false
-victim: Cora Clancy, 5; Dawson Clancy, 3; Callan Clancy, 8 months
+victim: "Three children, ages 5, 3 and 8 months"
 incidentDate: January 2023
 location: Duxbury, Massachusetts
 jurisdiction: Plymouth County Superior Court, Massachusetts
@@ -22,7 +22,7 @@ jurisdiction: Plymouth County Superior Court, Massachusetts
 >
 > **Procedural status checked:** October 2, 2026, 1:55 p.m. Pacific. The clinical material below is background, not a new clinical assessment.
 
-Cora, 5, Dawson, 3, and Callan, 8 months, died after events at their Duxbury home in January 2023. Their mother, Lindsay Clancy, has pleaded not guilty to three counts of first-degree murder. **PROSECUTION:** Prosecutors allege she acted deliberately. **DEFENSE:** Her lawyers argue she experienced postpartum psychosis and lacked criminal responsibility. A jury has not decided those disputed questions.
+Three children, ages 5, 3 and 8 months, died after events at their Duxbury home in January 2023. Their mother, Lindsay Clancy, has pleaded not guilty to three counts of first-degree murder. **PROSECUTION:** Prosecutors allege she acted deliberately. **DEFENSE:** Her lawyers argue she experienced postpartum psychosis and lacked criminal responsibility. A jury has not decided those disputed questions.
 
 This primer explains the clinical term postpartum psychosis and the separate Massachusetts legal standard for lack of criminal responsibility. It does not diagnose anyone, predict a verdict, or treat a mental-health condition as proof of violence.
 

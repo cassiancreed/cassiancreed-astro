@@ -1,0 +1,72 @@
+---
+import Base from '../layouts/Base.astro';
+import ReportError from '../components/ReportError.astro';
+// CORRECTIONS POLICY (Project F, step F7, 2026-10-22).
+// Plain words at a 6th-grade level, under 400 words. Not legal advice.
+// No promise of updated files: point readers to the live Court Calendar.
+// Any wording change must be logged with a new Last updated date.
+const LAST_UPDATED = 'October 22, 2026';
+const CORRECTIONS_EMAIL = 'cassiancreed@cassiancreed.com';
+---
+<Base
+  title="Corrections Policy"
+  description="How to report an error on CassianCreed.com, and how we check it, fix it and add a dated correction note."
+>
+  <section class="hero wrap">
+    <p class="evidence evidence--accent">Policy</p>
+    <h1>Corrections Policy</h1>
+    <p class="cor-lede">We want every fact on this site to be right. When we get one wrong, we fix it and we say so.</p>
+    <p class="cor-updated"><strong>Last updated: {LAST_UPDATED}.</strong></p>
+  </section>
+
+  <section class="wrap cor-sec" aria-labelledby="report">
+    <h2 id="report">How to report an error</h2>
+    <div class="prose">
+      <p>Our pages have a “Spot an error? Report it” link at the bottom. The link opens an email to {CORRECTIONS_EMAIL} with the page name filled in. You can also write to that address yourself.</p>
+      <p>Tell us what is wrong and what is right. A link to a court record or other source helps most. You do not need one to write. Anyone can report an error: readers, families, lawyers, or the people we write about.</p>
+      <p class="cor-report"><ReportError pageTitle="Corrections Policy" /></p>
+    </div>
+  </section>
+
+  <section class="wrap cor-sec" aria-labelledby="what-we-do">
+    <h2 id="what-we-do">What we do</h2>
+    <div class="prose">
+      <ul>
+        <li><strong>We check the court record first.</strong> Court papers and official sources come before news reports.</li>
+        <li><strong>We fix it fast.</strong> If we got it wrong, we change the page.</li>
+        <li><strong>We add a dated note.</strong> The note says what we changed and when.</li>
+        <li><strong>We never change a legal status quietly.</strong> Words like “charged,” “convicted” and “acquitted” change only when the court record changes, and the page notes the change.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="wrap cor-sec" aria-labelledby="case-changes">
+    <h2 id="case-changes">When a case changes</h2>
+    <div class="prose">
+      <p>Court cases move. When a case on our <a href="/court-calendar/">Court Calendar</a> changes, we update the calendar. The calendar’s “Updated” date shows its latest change.</p>
+      <p>To learn how the calendar works, read the <a href="/court-calendar-policy/">Court Calendar and Case-Tracking Policy</a>.</p>
+    </div>
+  </section>
+
+  <section class="wrap cor-sec" aria-labelledby="books-guides">
+    <h2 id="books-guides">Books and guides</h2>
+    <div class="prose">
+      <p>Our books and guides are files. Each one reflects the facts on the date it was made. We do not promise to send a new file when a case changes. For the latest status, check the live <a href="/court-calendar/">Court Calendar</a> and its “Updated” date.</p>
+    </div>
+  </section>
+
+  <style>
+    .cor-lede{font-size:19px;color:var(--ink);max-width:68ch;margin:18px 0 0;line-height:1.6}
+    .cor-updated{font-size:15px;color:var(--ink-2);max-width:68ch;margin:14px 0 0}
+    .cor-updated strong{color:var(--ink)}
+    .cor-sec{margin:44px auto 0}
+    .cor-sec h2{font-family:var(--serif);font-size:26px;font-weight:600;margin:0 0 14px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+    .prose p,.prose li{color:var(--ink-2);line-height:1.65;max-width:70ch}
+    .prose strong{color:var(--ink)}
+    .prose ul{padding-left:20px;margin:0 0 16px}
+    .prose li{margin-bottom:7px}
+    .prose a{color:var(--accent)}
+    .cor-report{font-size:16px}
+    @media(max-width:680px){.cor-sec h2{font-size:23px}}
+  </style>
+</Base>

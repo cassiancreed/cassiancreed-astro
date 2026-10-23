@@ -5,7 +5,7 @@ pubDate: 2026-05-19
 updatedDate: 2026-10-02
 tag: "Case Files"
 featured: false
-victim: "Cora (5), Dawson (3), and Callan (8 months) Clancy"
+victim: "Three children, ages 5, 3 and 8 months"
 incidentDate: "January 24, 2023"
 location: "Duxbury, Massachusetts"
 jurisdiction: "Plymouth County, Massachusetts"
@@ -14,7 +14,7 @@ cover: "/case-art/lindsay-clancy.jpg"
 coverAlt: "A New England colonial house at winter dusk, one upstairs window warmly lit against the cold grey sky."
 ---
 
-Lindsay Clancy, a former labor-and-delivery nurse from Duxbury, Massachusetts, is accused of killing her three young children — Cora, Dawson, and Callan — at the family's home on January 24, 2023. She pleaded not guilty and faces three counts of first-degree murder, and her attorney has said she will pursue a defense of lack of criminal responsibility rooted in severe postpartum mental illness. The trial ended in a mistrial September 4 without a verdict. Until a jury says otherwise, Clancy is presumed innocent. This case has drawn national attention because it sits at an unbearable intersection: three children are gone, and the woman charged with their deaths was, by multiple accounts, a mother in acute psychiatric crisis who had repeatedly sought help. Both can be true. Holding them together is the only honest way to write about what happened in Duxbury.
+Lindsay Clancy, a former labor-and-delivery nurse from Duxbury, Massachusetts, is accused of killing her three young children at the family's home on January 24, 2023. She pleaded not guilty and faces three counts of first-degree murder, and her attorney has said she will pursue a defense of lack of criminal responsibility rooted in severe postpartum mental illness. The trial ended in a mistrial September 4 without a verdict. Until a jury says otherwise, Clancy is presumed innocent. This case has drawn national attention because it sits at an unbearable intersection: three children are gone, and the woman charged with their deaths was, by multiple accounts, a mother in acute psychiatric crisis who had repeatedly sought help. Both can be true. Holding them together is the only honest way to write about what happened in Duxbury.
 
 ## Current procedural update — October 2, 2026
 
@@ -29,11 +29,11 @@ Lindsay Clancy, a former labor-and-delivery nurse from Duxbury, Massachusetts, i
 - **The defense is lack of criminal responsibility.** If the jury agrees, the verdict would be *"not guilty by reason of lack of criminal responsibility."* This is an argument the defense intends to make — not a finding.
 - **July 13 hearing:** the court **denied** the defense's motion to call lay witnesses to describe their own postpartum experiences (what the parties called a "trial within a trial"). The ruling limits the *form* of that testimony only; expert witnesses may still testify about postpartum psychosis. The court also **denied** sequestration of the jury — a request the defense may renew at empanelment.
 - **July 9:** prosecutors filed a *nolle prosequi* **dismissing the three strangulation counts** as redundant, subsumed under the three first-degree murder counts.
-- **The children remain at the center:** Cora (5), Dawson (3), and Callan (8 months) Clancy.
+- **The children remain at the center:** three children, ages 5, 3 and 8 months.
 
-## Cora, Dawson, and Callan
+## The three children
 
-Before this became a legal story, it was a family. Cora Clancy was 5 years old. Dawson was 3. Callan, the baby, was 8 months old. They were the children of Lindsay and Patrick Clancy, and by the accounts of people who knew the family, they were deeply loved — an ordinary, devoted household in a quiet coastal town. In the days after the children died, Patrick Clancy released a public statement asking the world to extend compassion and to remember his children as they lived. It is worth honoring that request. Cora was old enough to have a personality, friends, favorites. Dawson was a toddler in the middle of everything. Callan never got past his first year. Whatever a courtroom decides about culpability, the center of this story is three children who should be starting kindergarten, preschool, and toddlerhood right now — and are not.
+Before this became a legal story, it was a family. The oldest was 5 years old. The middle child was 3. The baby was 8 months old. They were the children of Lindsay and Patrick Clancy, and by the accounts of people who knew the family, they were deeply loved — an ordinary, devoted household in a quiet coastal town. In the days after the children died, Patrick Clancy released a public statement asking the world to extend compassion and to remember his children as they lived. It is worth honoring that request. The oldest was old enough to have a personality, friends, favorites. The middle child was a toddler in the middle of everything. The baby never got past his first year. Whatever a courtroom decides about culpability, the center of this story is three children who should be starting kindergarten, preschool, and toddlerhood right now — and are not.
 
 ## What Prosecutors Say
 
@@ -57,4 +57,4 @@ What makes the Clancy case so haunting is that it does not appear to be a story 
 
 Massachusetts follows what is commonly called the lacking-criminal-responsibility standard, drawn from Commonwealth v. McHoul. A defendant lacks criminal responsibility if, as a result of mental disease or defect, she lacked substantial capacity either to appreciate the wrongfulness of her conduct or to conform her conduct to the requirements of the law. Once a defendant credibly raises the issue, the burden shifts to the Commonwealth to prove criminal responsibility beyond a reasonable doubt. The defense had asked the court to split the trial into two phases and signaled Clancy would acknowledge causing the deaths if it were divided that way; the judge denied the request, ruling guilt and criminal responsibility are intertwined and must be tried together. The trial required jurors to consider both the charged acts and the disputed issue of criminal responsibility; it ended without a unanimous verdict.
 
-The first trial ended without a verdict. Expert testimony addressed disputed criminal responsibility; it did not produce a unanimous jury finding. The quietest will be the three who cannot speak. So this is where it should end, with their names: Cora, who was 5. Dawson, who was 3. Callan, who was 8 months old. Whatever the jury concludes, the measure of this case — for the courts, for medicine, and for the rest of us — is whether anything learned from it ever keeps another family from this.
+The first trial ended without a verdict. Expert testimony addressed disputed criminal responsibility; it did not produce a unanimous jury finding. The quietest will be the three who cannot speak. So this is where it should end, with them: one child who was 5, one who was 3, and a baby who was 8 months old. Whatever the jury concludes, the measure of this case — for the courts, for medicine, and for the rest of us — is whether anything learned from it ever keeps another family from this.
