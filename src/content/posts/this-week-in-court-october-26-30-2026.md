@@ -40,9 +40,9 @@ Full details: https://cassiancreed.com/court-calendar/
 
 ### Verdict watch — Faith Hedgepeth case (Durham, North Carolina)
 
-**Time:** Time not publicly verified.
+**Time:** Deliberations resume Friday, Oct. 23, at 9:30 a.m. ET (6:30 a.m. PT), Chapelboro reported.
 
-Faith Hedgepeth, 19, was a student at UNC-Chapel Hill. She was found dead in her apartment in September 2012. Miguel Salguero-Olivares is charged with first-degree murder and other charges. He has pleaded not guilty and is presumed innocent. Closing arguments began Thursday, Oct. 22. As of our cutoff, there was no verdict. If the jury has not decided by Monday, deliberations could go on next week.
+Faith Hedgepeth, 19, was a student at UNC-Chapel Hill. She was found dead in her apartment in September 2012. Miguel Salguero-Olivares is charged with first-degree murder and other charges. He has pleaded not guilty and is presumed innocent. Closing arguments were held Thursday, Oct. 22, and the jury began deliberating that afternoon. As of our cutoff, there was no verdict. If the jury has not decided by Monday, deliberations could go on next week.
 
 **What to watch:** The jury's verdict, whenever it comes. A verdict only counts once the court announces it.
 
@@ -50,9 +50,9 @@ Full details: https://cassiancreed.com/court-calendar/
 
 ---
 
-### Monday, Oct. 26 — Corie Walsh, next court date (Will County, Illinois)
+### Monday, Oct. 26 — Corie Walsh, pretrial hearing (Will County, Illinois)
 
-**Time:** Time not publicly verified. This date comes from CBS Chicago, not a court notice.
+**Time:** 9:30 a.m. CT (7:30 a.m. PT), Room 405, per the Will County court schedule.
 
 Corie Walsh of Frankfort, Illinois, is charged with three counts of first-degree murder in the death of her 2-year-old son, Barrett. She pleaded not guilty on Sept. 24. She is presumed innocent.
 
