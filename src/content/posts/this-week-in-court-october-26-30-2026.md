@@ -8,7 +8,9 @@ featured: false
 capture: "jury"
 ---
 
-Two trials go on this week, and a third case may still be with its jury. There is also a hearing in Illinois, a federal sentencing, a busy day in one Florida case, and a filing deadline. Here is who, when, and what to watch.
+**Status as of October 23, 2026:** The Faith Hedgepeth case has a verdict. On Oct. 23, a Durham County jury found Miguel Salguero-Olivares guilty of first-degree murder and three other charges. We changed the Hedgepeth section below to show the verdict. The rest of this post has not changed.
+
+Two trials go on this week. In a third case, a jury reached its verdict on Friday, Oct. 23. There is also a hearing in Illinois, a federal sentencing, a busy day in one Florida case, and a filing deadline. Here is who, when, and what to watch.
 
 *One of these cases involves the death of a child. All times are local court time, with Pacific time next to them. Courts can change dates and times at any time. Check the Court Calendar before you tune in. We list a livestream only when a court or network confirms one, so none are listed here.*
 
@@ -38,13 +40,15 @@ Full details: https://cassiancreed.com/court-calendar/
 
 ---
 
-### Verdict watch — Faith Hedgepeth case (Durham, North Carolina)
+### Verdict — Faith Hedgepeth case (Durham, North Carolina)
 
-**Time:** Deliberations resume Friday, Oct. 23, at 9:30 a.m. ET (6:30 a.m. PT), Chapelboro reported.
+**Time:** The jury's verdict came on Friday, Oct. 23. No appeal court date has been reported.
 
-Faith Hedgepeth, 19, was a student at UNC-Chapel Hill. She was found dead in her apartment in September 2012. Miguel Salguero-Olivares is charged with first-degree murder and other charges. He has pleaded not guilty and is presumed innocent. Closing arguments were held Thursday, Oct. 22, and the jury began deliberating that afternoon. As of our cutoff, there was no verdict. If the jury has not decided by Monday, deliberations could go on next week.
+Faith Hedgepeth, 19, was a student at UNC-Chapel Hill. She was found dead in her apartment in September 2012. On Friday, Oct. 23, 2026, a Durham County jury found Miguel Salguero-Olivares guilty of four charges: first-degree murder, first-degree rape, first-degree sexual offense and first-degree burglary. He was sentenced to life in prison without parole for the murder, plus more prison time on the other charges, WRAL reported. WRAL also reported that he is appealing. His convictions stand while the appeal goes on. Judge Keith Gregory presided.
 
-**What to watch:** The jury's verdict, whenever it comes. A verdict only counts once the court announces it.
+**What to watch:** Any appeal court date. None has been reported.
+
+Sources: [WRAL, Oct. 23, 2026](https://www.wral.com/news/local/faith-hedgepeth-trial-murder-guilty-verdict-october-2026/) · [Associated Press via ABC7, Oct. 23, 2026](https://abc7.com/story/faith-hedgepeth-murder-trial-jury-reaches-verdict-miguel-salguero-olivares-man-accused-killing-unc-student-2012/19973477/)
 
 Full details: https://cassiancreed.com/court-calendar/
 
