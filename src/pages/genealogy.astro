@@ -1,12 +1,22 @@
 ---
 import Base from '../layouts/Base.astro';
 import CaptureBlock from '../components/CaptureBlock.astro';
+import { getCollection } from 'astro:content';
+
+// Genealogy promo (Claude Ops, 2026-10-25): every live post that carries
+// `capture: dna` is a DNA / genealogy case. List them here, newest first, so
+// IGG readers can find them in one place. Teasers reuse each post's own
+// description; no new case claims are made on this page.
+const dnaPosts = (await getCollection('posts'))
+  .filter(p => !p.data.archived && p.data.capture === 'dna')
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const formatDateUtc = (date) => date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric', timeZone: 'UTC' });
 
 const jsonld = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "Investigative Genetic Genealogy",
-  "description": "A victim-first learning hub for investigative genetic genealogy, DNA identification, privacy, legal limits, laboratories, and case studies.",
+  "name": "Investigative Genetic Genealogy (IGG) Cases Explained",
+  "description": "Investigative genetic genealogy cases explained in plain words: how DNA and family trees give a name back, Name Given Back case files, Othram and DNA Doe Project identifications, privacy and legal limits.",
   "url": "https://cassiancreed.com/genealogy/",
   "isPartOf": { "@id": "https://cassiancreed.com/#org" },
   "about": [
@@ -19,8 +29,8 @@ const jsonld = {
 ---
 
 <Base
-  title="Investigative Genetic Genealogy"
-  description="Understand investigative genetic genealogy: how DNA and family trees generate leads, restore names, reopen cold cases, and raise important privacy questions."
+  title="Investigative Genetic Genealogy (IGG) Cases Explained"
+  description="Investigative genetic genealogy cases explained in plain words: how DNA and family trees give a name back, Name Given Back case files, Othram and DNA Doe Project identifications, privacy and legal limits."
   jsonld={jsonld}
 >
   <section class="igg-hero">
@@ -104,6 +114,27 @@ const jsonld = {
         <a href="/how-othram-works-in-a-case/"><span>Lab explainer</span><strong>How Othram fits into an investigation</strong></a>
       </div>
     </div>
+  </section>
+
+  <section class="wrap igg-section" id="dna-cases" aria-labelledby="dna-cases-title">
+    <div class="igg-section__head">
+      <div>
+        <p class="evidence evidence--accent">Newest first</p>
+        <h2 id="dna-cases-title">DNA &amp; genealogy case files</h2>
+      </div>
+      <p>IGG means investigative genetic genealogy. Here is how it works. A lab builds a DNA profile. Genealogists find relatives who share that DNA. They build a family tree. Police or a medical examiner then confirm the name. We cover each new identification as it happens. Each case file says what the DNA showed and what is still unproven. <a href="#free-guide">Get the free DNA guide</a>. We will tell you when the next name is confirmed.</p>
+    </div>
+    <ul class="igg-cases">
+      {dnaPosts.map(p => (
+        <li>
+          <a href={`/post/${p.slug}/`}>
+            <span class="igg-cases__date"><time datetime={p.data.pubDate.toISOString().slice(0,10)}>{formatDateUtc(p.data.pubDate)}</time>{p.data.status && <> · {p.data.status.split(/;|\.\s(?=[A-Z])/)[0]}</>}</span>
+            <strong>{p.data.title}</strong>
+            {p.data.description && <small>{p.data.description}</small>}
+          </a>
+        </li>
+      ))}
+    </ul>
   </section>
 
   <section class="wrap igg-section" aria-labelledby="casework">
@@ -205,6 +236,13 @@ const jsonld = {
   .igg-names__list span{font:500 10px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
   .igg-names__list strong{font-family:var(--serif);font-size:22px;line-height:1.15}
   .igg-grid--cases{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .igg-cases{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .igg-cases a{display:flex;flex-direction:column;gap:6px;height:100%;padding:18px 20px;background:var(--bg-2);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:9px}
+  .igg-cases a:hover{border-color:rgba(224,86,59,.5);background:var(--bg-3)}
+  .igg-cases__date{font:500 10px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+  .igg-cases strong{font-family:var(--serif);font-size:21px;line-height:1.15}
+  .igg-cases small{color:var(--ink-2);font-size:14px;line-height:1.5}
+  .igg-section__head>p a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
   .igg-links{display:grid;grid-template-columns:1fr 1fr;gap:12px}
   .igg-links a{display:flex;justify-content:space-between;gap:20px;padding:20px 22px;border:1px solid var(--line);border-radius:9px;background:var(--bg-2)}
   .igg-links a:hover{border-color:rgba(224,86,59,.5)}
@@ -222,7 +260,7 @@ const jsonld = {
     .igg-actions .btn{width:100%;text-align:center}
     .igg-section__head{display:block}
     .igg-section__head>p{margin-top:14px}
-    .igg-grid,.igg-grid--cases,.igg-links{grid-template-columns:1fr}
+    .igg-grid,.igg-grid--cases,.igg-links,.igg-cases{grid-template-columns:1fr}
     .igg-card{min-height:0}
     .igg-names{padding:42px 0}
     .igg-names__list a{grid-template-columns:1fr;gap:5px}
