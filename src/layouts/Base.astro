@@ -238,7 +238,7 @@ const exploreActive = resolvedExplore.some(i => navActive(i.href));
       try {
         var nepMode = new URLSearchParams(location.search).get('nep');
         if (nepMode === 'internal') localStorage.setItem('nep_internal', '1');
-        if (nepMode === 'off' || location.pathname.replace(/\\/+$/, '') === '/internal-off') {
+        if (nepMode === 'off' || (location.pathname === '/internal-off' || location.pathname === '/internal-off/')) {
           localStorage.removeItem('nep_internal');
         }
         if (localStorage.getItem('nep_internal') === '1') {
