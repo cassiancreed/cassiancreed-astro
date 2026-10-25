@@ -516,9 +516,14 @@ export const CALENDAR_EXPLAINER_CASES = [
     "key": "robinson",
     "entryIds": [
       "robinson-bindover-argument",
-      "robinson-pretrial-conference"
+      "robinson-pretrial-conference",
+      "robinson-trial-schedule-ruling-2026-11-09"
     ],
     "free": [
+      {
+        "url": "/post/tyler-robinson-trial-date-charlie-kirk-case/",
+        "text": "When Is Tyler Robinson's Trial? No Date Yet in the Charlie Kirk Case"
+      },
       {
         "url": "/post/inconclusive-ballistics-explained/",
         "text": "What 'Inconclusive Ballistics' Actually Means in a Criminal Case"
@@ -737,6 +742,7 @@ const PUBLISHED_POSTS = new Set([
   "/post/this-week-in-court-august-30-2026/",
   "/post/warning-signs-the-science-validates-a-safety-system/",
   "/post/two-names-that-come-first-dominic-russo-and-davion-flanagan/",
+  "/post/tyler-robinson-trial-date-charlie-kirk-case/",
   "/post/what-happens-at-d4vds-monday-hearing/",
   "/post/what-happened-at-great-wolf-lodge-poconos-case/",
   "/post/what-a-racial-justice-act-violation-means-dominguez/",
