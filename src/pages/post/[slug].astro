@@ -121,6 +121,11 @@ const jsonld = isTupacWithdrawal ? undefined : {
     <div class="post__content"><Content /></div>
     {!post.data.archived && <GuideCTA slug={post.slug} />}
     {post.data.relatedBook && <BookCTA book={post.data.relatedBook} placement="end" />}
+    {captureOffer === 'dna' && !post.data.archived && (
+      <aside class="post__hub" aria-label="Related DNA identification cases">
+        <strong>Related: more DNA and genealogy cases.</strong> See all our DNA case files, newest first. <a href="/genealogy/#dna-cases">Open the Genealogy &amp; DNA hub &rarr;</a>
+      </aside>
+    )}
     {post.data.buyUrl && (
       <aside class="buybox">
         <p class="buybox__k">The ebook edition</p>
@@ -170,6 +175,9 @@ const jsonld = isTupacWithdrawal ? undefined : {
   .post__archive{margin:0 0 26px;padding:16px 18px;border:1px solid rgba(217,166,92,.55);border-left:4px solid #d9a65c;border-radius:8px;background:var(--bg-2);color:var(--ink-2)}
   .post__archive strong{color:var(--ink)}
   .post__archive a{color:var(--accent);text-decoration:underline}
+  .post__hub{margin:28px 0 8px;padding:16px 18px;border:1px solid rgba(224,86,59,.32);border-left:4px solid var(--accent);border-radius:8px;background:var(--bg-2);color:var(--ink-2)}
+  .post__hub strong{color:var(--ink)}
+  .post__hub a{color:var(--accent);text-decoration:underline}
   .share__label{font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-2)}
   .share__btn{font-size:13px;text-decoration:none;border:1px solid rgba(224,86,59,.4);border-radius:20px;padding:6px 13px;color:var(--ink);transition:background .15s}
   .share__btn:hover{background:rgba(224,86,59,.12)}

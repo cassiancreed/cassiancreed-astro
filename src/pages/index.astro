@@ -7,6 +7,9 @@ const posts = (await getCollection('posts')).filter(p => !p.data.archived).sort(
 const featured = posts.find(p=>p.data.featured) || posts[0];
 const rest = posts.filter(p=> featured && p.slug!==featured.slug && p.slug!=='nancy-guthrie-abduction-what-we-know').slice(0,8);
 const cfCount = posts.filter(p=>p.data.tag==='Case Files').length;
+// Genealogy promo (Claude Ops, 2026-10-25): the three newest DNA / genealogy
+// case files (frontmatter `capture: dna`) link from the home genealogy section.
+const dnaLatest = posts.filter(p=>p.data.capture==='dna').slice(0,3);
 const short = (t)=> t.split(':')[0];
 const HOME_FORM_ID = '4d0df7d0-f274-4901-a457-091f80cecef0';
 const HOME_OFFER_ID = 'case_how_to_read_a_case_v1';
@@ -135,12 +138,21 @@ const jsonld = {
     </div>
     <div class="genealogy-home__copy">
       <p class="evidence evidence--accent">A Cassian Creed specialty</p>
-      <h2 id="genealogy-home-title">When DNA finds a family tree</h2>
+      <h2 id="genealogy-home-title">Genealogy &amp; DNA: when a match finds a family tree</h2>
       <p>Investigative genetic genealogy can restore a name, reopen a cold case, or point investigators toward someone who was never in a criminal database. Learn the science, follow the cases, and understand why the result is a lead—not a verdict.</p>
       <div class="genealogy-home__actions">
-        <a class="btn" href="/genealogy/">Explore Genetic Genealogy →</a>
+        <a class="btn" href="/genealogy/">Explore Genealogy &amp; DNA cases →</a>
         <a class="genealogy-home__alt" href="/the-names-genetic-genealogy-gave-back/">The names it gave back →</a>
       </div>
+      {dnaLatest.length > 0 && (
+        <div class="genealogy-home__latest">
+          <p class="evidence">Newest DNA cases</p>
+          <ul>
+            {dnaLatest.map(p => <li><a href={`/post/${p.slug}/`}>{p.data.title}</a></li>)}
+          </ul>
+          <a class="genealogy-home__alt" href="/genealogy/#dna-cases">All DNA and genealogy cases →</a>
+        </div>
+      )}
     </div>
   </section>
 
@@ -301,6 +313,10 @@ const jsonld = {
   .genealogy-home__actions{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
   .genealogy-home__alt{font-size:14px;color:var(--ink-2);border-bottom:1px solid var(--line)}
   .genealogy-home__alt:hover{color:var(--accent)}
+  .genealogy-home__latest{margin-top:24px;padding-top:18px;border-top:1px solid var(--line)}
+  .genealogy-home__latest ul{list-style:none;margin:8px 0 12px;padding:0;display:grid;gap:8px}
+  .genealogy-home__latest li a{color:var(--ink);border-left:2px solid var(--accent);padding-left:12px;display:inline-block}
+  .genealogy-home__latest li a:hover{color:var(--accent)}
   @media(max-width:720px){.genealogy-home{grid-template-columns:1fr;padding:26px;gap:12px}.genealogy-home__signal{max-width:260px;padding:0}.genealogy-home__actions .btn{width:100%;text-align:center}}
 
   .nmv{margin:34px auto 8px;padding:26px 28px;background:var(--bg-2);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:12px}
