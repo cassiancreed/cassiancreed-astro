@@ -4,6 +4,7 @@
 import '../styles/calendar-explainer-links.css';
 import '../styles/post-guide-cta.css';
 import { postGuideCta } from '../data/post-guide-ctas.mjs';
+import RetailStoreLine from './RetailStoreLine.astro';
 const { slug, placement = 'bottom' } = Astro.props;
 const cta = postGuideCta(slug, placement);
 ---
@@ -14,5 +15,6 @@ const cta = postGuideCta(slug, placement);
       <a class="guide-btn" data-link-type="paid" href={cta.href} target="_blank" rel="noopener noreferrer" data-book-key={cta.bookKey} data-cta-placement={cta.placement}><span class="calendar-badge" data-link-type="paid" aria-hidden="true">{cta.badge}</span><span>{cta.label}</span></a>
       {cta.preview && <a class="calendar-resource" data-link-type="free" href={cta.preview.href} target="_blank" rel="noopener" data-preview-for={cta.bookKey} data-cta-placement={cta.preview.placement}><span class="calendar-badge" data-link-type="free">FREE</span><span>{cta.preview.text} →</span></a>}
     </div>
+    <RetailStoreLine bookKey={cta.bookKey} placement={`${cta.placement}_retail`} />
   </aside>
 )}

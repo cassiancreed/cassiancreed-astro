@@ -102,6 +102,7 @@ Big cases with more than one defendant often take years. Here, charges changed, 
 <div class="guide-offer">
 <a class="guide-btn" data-link-type="paid" href="https://cassiancreed.beehiiv.com/products/jared-bridegan-case-guide-v2?utm_source=cassiancreed.com&amp;utm_medium=post_cta&amp;utm_campaign=explainer_bridegan_v2&amp;utm_content=bridegan_free_post_end" target="_blank" rel="noopener noreferrer" data-book-key="jared-bridegan-case-guide-v2" data-cta-placement="bridegan_free_post_end"><span class="calendar-badge" data-link-type="paid" aria-hidden="true">$1.99 GUIDE</span><span>Get the $1.99 guide: Case Chess: The Jared Bridegan Case — What's Actually Happening and What It Means →</span></a>
 </div>
+<p class="retail-line" data-retail-for="jared-bridegan-case-guide-v2">Also available on <a href="https://www.amazon.com/dp/B0HJFW48RN" target="_blank" rel="noopener noreferrer" data-retail-store="amazon" data-cta-placement="bridegan_free_post_end_retail_amazon">Amazon</a>, <a href="https://books.apple.com/us/book/the-jared-bridegan-case/id6810910691" target="_blank" rel="noopener noreferrer" data-retail-store="apple" data-cta-placement="bridegan_free_post_end_retail_apple">Apple Books</a> and <a href="https://play.google.com/store/books/details?id=Z18LEgAAQBAJ" target="_blank" rel="noopener noreferrer" data-retail-store="google" data-cta-placement="bridegan_free_post_end_retail_google">Google Play</a>.</p>
 
 ## Follow the case
 

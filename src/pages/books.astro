@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import { JURY_CHESS_PRICE, JURY_CHESS_PRICE_TEXT } from '../data/book-prices.mjs';
+import RetailStoreLine from '../components/RetailStoreLine.astro';
 // /books/ store page — rebuilt 0721LS from books_page_copy_CERTIFIED_8.72.md.
 // Copy is CERTIFIED text: do not paraphrase. Buy buttons use the exact live
 // Beehiiv product URLs. Free guide CTA goes to the guide's own live $0 product
@@ -81,6 +82,7 @@ const jsonld = [
             <p class="bk__price">$1.99</p>
             <a class="btn bk__buy" href={guide.buyUrl} target="_blank" rel="noopener noreferrer" data-book-key={guide.bookKey} data-cta-placement="books_page_guide_card">View guide &amp; buy &rarr;</a>
           </div>
+          <RetailStoreLine bookKey={guide.bookKey} placement="books_page_guide_card_retail" />
           {guide.id === 'lindsay-clancy-trial' && (
             <aside class="bk__next" aria-labelledby="clancy-next-title">
               <p class="bk__next-label">Continue with Jury Chess</p>
@@ -106,6 +108,7 @@ const jsonld = [
           <p class="bk__price">{JURY_CHESS_PRICE_TEXT}</p>
           <a class="btn bk__buy" href="https://cassiancreed.beehiiv.com/products/jury-chess-authority-edition-v3-2?utm_source=cassiancreed.com&amp;utm_medium=books_page&amp;utm_campaign=jury_chess&amp;utm_content=jury_chess_primary" target="_blank" rel="noopener noreferrer" data-book-key="jury-chess" data-cta-placement="books_page_primary">Get the book →</a>
         </div>
+        <RetailStoreLine bookKey="jury-chess-authority-edition-v3-2" placement="books_page_primary_retail" />
       </div>
     </div>
 

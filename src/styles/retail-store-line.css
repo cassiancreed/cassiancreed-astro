@@ -1,0 +1,7 @@
+/* Retail store line under a buy button ("Also available on Amazon, Apple Books
+   and Google Play."). Data: src/data/retail-store-links.mjs. */
+.retail-line{margin:10px 0 0;font-size:14px;line-height:1.5;color:var(--ink-2)}
+.retail-line a{color:var(--ink);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.retail-line a:hover{color:var(--accent,#e0563b)}
+.post .retail-line{margin:-8px 0 18px}
+.post-guide-cta .retail-line{margin:10px 0 0}
