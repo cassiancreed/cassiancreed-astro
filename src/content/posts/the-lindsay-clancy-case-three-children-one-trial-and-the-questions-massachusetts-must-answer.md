@@ -52,6 +52,7 @@ What makes the Clancy case so haunting is that it does not appear to be a story 
 <div class="guide-offer">
 <a class="guide-btn" data-link-type="paid" href="https://cassiancreed.beehiiv.com/products/lindsay-clancy-post-mistrial-field-guide?utm_source=cassiancreed.com&amp;utm_medium=post_cta&amp;utm_campaign=explainer_clancy_v1&amp;utm_content=clancy_overview_free_post_end" target="_blank" rel="noopener noreferrer" data-book-key="lindsay-clancy-post-mistrial-field-guide" data-cta-placement="clancy_overview_free_post_end"><span class="calendar-badge" data-link-type="paid" aria-hidden="true">$1.99 GUIDE</span><span>Get the $1.99 guide: Case Chess: The Lindsay Clancy Case — What's Actually Happening and What It Means →</span></a>
 </div>
+<p class="retail-line" data-retail-for="lindsay-clancy-post-mistrial-field-guide">Also available on <a href="https://books.apple.com/us/book/the-lindsay-clancy-trial/id6807760964" target="_blank" rel="noopener noreferrer" data-retail-store="apple" data-cta-placement="clancy_overview_free_post_end_retail_apple">Apple Books</a> and <a href="https://play.google.com/store/books/details?id=BZIIEgAAQBAJ" target="_blank" rel="noopener noreferrer" data-retail-store="google" data-cta-placement="clancy_overview_free_post_end_retail_google">Google Play</a>.</p>
 
 ## The Massachusetts criminal-responsibility standard
 
