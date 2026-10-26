@@ -24,6 +24,7 @@ export const POST_GUIDE_CTAS = {
   'erin-patterson-case-explained': { product: 'case-chess-erin-patterson', campaign: 'explainer_patterson_v1', key: 'patterson' },
   'michelle-parker-case-dale-smith-charged-no-body': { product: 'both-sides-michelle-parker-guide-v3', campaign: 'explainer_parker_bothsides_v3', key: 'parker' },
   'what-happened-at-great-wolf-lodge-poconos-case': { product: 'great-wolf-lodge-case-guide', campaign: 'explainer_great_wolf_v1', key: 'great_wolf' },
+  'tyler-robinson-trial-date-charlie-kirk-case': { product: 'charlie-kirk-case-guide', campaign: 'explainer_robinson_v1', key: 'robinson' },
 };
 
 export const POST_GUIDE_PLACEMENTS = ['end', 'bottom'];
