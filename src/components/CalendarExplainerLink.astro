@@ -1,9 +1,0 @@
----
-import '../styles/calendar-explainer-links.css';
-import CalendarCostBadge from './CalendarCostBadge.astro';
-import { classifyCalendarLink } from '../data/calendar-explainer-links.mjs';
-const { link: rawLink, id } = Astro.props;
-const link = classifyCalendarLink(rawLink);
----
-<a id={id} class="calendar-resource" data-link-type={link.type} href={link.url} target={link.paid || link.preview ? '_blank' : undefined} rel={link.paid ? 'noopener noreferrer' : link.preview ? 'noopener' : undefined} data-book-key={link.bookKey} data-preview-for={link.previewFor} data-cta-placement={link.placement}><CalendarCostBadge link={link} /><span>{link.text} &rarr;</span></a>
-

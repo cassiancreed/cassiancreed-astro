@@ -1,9 +1,0 @@
-# Commits that changed only page metadata (JSON-LD schema, breadcrumbs,
-# canonical/noindex tags), not visible content. src/utils/search-index.mjs
-# skips them when computing sitemap <lastmod> and JSON-LD dateModified.
-# One full commit SHA per line. New metadata-only commits can instead put
-# [no-lastmod] in their commit message.
-# If a branch is squash-merged or rebased, add the new SHA here as well.
-
-# PR #313: Fix search discovery, metadata, response headers and social cards
-ae432fd54e8c3541fb052642e31eee6dd70fb9e7
