@@ -232,6 +232,21 @@ const exploreActive = resolvedExplore.some(i => navActive(i.href));
       document.head.appendChild(loader);
       window.dataLayer = window.dataLayer || [];
       window.gtag = function(){ window.dataLayer.push(arguments); };
+      // NEP owner/AI testing: set the internal traffic type before page_view.
+      // Opt in on any page with ?nep=internal; opt out with ?nep=public,
+      // ?nep=off, or the /internal-off route (Netlify redirects it to
+      // /?nep=public, since no page exists at that path). Storage errors
+      // leave normal tracking.
+      try {
+        var nepMode = new URLSearchParams(location.search).get('nep');
+        if (nepMode === 'internal') localStorage.setItem('nep_internal', '1');
+        if (nepMode === 'public' || nepMode === 'off' || location.pathname === '/internal-off' || location.pathname === '/internal-off/') {
+          localStorage.removeItem('nep_internal');
+        }
+        if (localStorage.getItem('nep_internal') === '1') {
+          window.gtag('set', { traffic_type: 'internal' });
+        }
+      } catch (e) { /* Storage may be blocked. */ }
       window.gtag('js', new Date());
       window.gtag('config', 'G-5D0DX6WFW4', { send_page_view: isTopLevel });
     })();

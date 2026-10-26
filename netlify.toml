@@ -5,6 +5,21 @@
 [build.environment]
   NODE_VERSION = "20"
 
+# NEP internal-traffic switch (GA4 traffic_type=internal, see Base.astro).
+# No page exists at /internal-off, so send it to the homepage with the
+# opt-out flag; the Base.astro script clears localStorage nep_internal there.
+[[redirects]]
+  from = "/internal-off"
+  to = "/?nep=public"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/internal-off/"
+  to = "/?nep=public"
+  status = 302
+  force = true
+
 # One worldwide court calendar. Preserve older inbound links to the former
 # international-only view without maintaining a second public calendar.
 [[redirects]]
