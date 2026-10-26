@@ -8,7 +8,7 @@ featured: false
 capture: "jury"
 ---
 
-**Status as of October 23, 2026:** The Faith Hedgepeth case has a verdict. On Oct. 23, a Durham County jury found Miguel Salguero-Olivares guilty of first-degree murder and three other charges. We changed the Hedgepeth section below to show the verdict. The rest of this post has not changed.
+**Status as of October 23, 2026:** The Faith Hedgepeth case has a verdict. On Oct. 23, a Durham County jury found Miguel Salguero-Olivares guilty of first-degree murder and three other charges. We changed the Hedgepeth section below to show the verdict. On Oct. 25 we corrected the Bridegan section: the murder sentencing was postponed; no new date has been set (Action News Jax, Sept. 29, 2026). The rest of this post has not changed.
 
 Two trials go on this week. In a third case, a jury reached its verdict on Friday, Oct. 23. There is also a hearing in Illinois, a federal sentencing, a busy day in one Florida case, and a filing deadline. Here is who, when, and what to watch.
 
@@ -82,9 +82,9 @@ Full details: https://cassiancreed.com/court-calendar/
 
 **Time:** Not confirmed by the court. Check before you tune in.
 
-Jared Bridegan was shot and killed in Jacksonville Beach in 2022. In August, a jury found Mario Fernandez Saldana guilty of first-degree murder. His lawyers have asked for a new trial. News4JAX reported that his sentencing is set for Oct. 27. In Florida, that charge carries a mandatory life sentence. An older report also listed a 9:00 a.m. ET (6:00 a.m. PT) pretrial hearing that day for Shanna Gardner, Jared's ex-wife. Newer reports do not mention it, so we treat it as unconfirmed. Gardner has pleaded not guilty and is presumed innocent. Her trial is set for May 2027.
+Jared Bridegan was shot and killed in Jacksonville Beach in 2022. In August, a jury found Mario Fernandez Saldana guilty of first-degree murder. His lawyers have asked for a new trial. The murder sentencing was postponed; no new date has been set ([Action News Jax, Sept. 29, 2026](https://www.actionnewsjax.com/news/local/convicted-murderer-mario-fernandez-saldana-pleads-not-guilty-molesting-two-children/PRAELSKKXNHD3D7FQFPNMXZQ6M/)). In Florida, that charge carries a mandatory life sentence. Oct. 27 is his reported court date in separate Florida child-molestation cases, not the murder sentencing. Those charges are allegations; he is presumed innocent on them. An older report also listed a 9:00 a.m. ET (6:00 a.m. PT) pretrial hearing that day for Shanna Gardner, Jared's ex-wife. Newer reports do not mention it, so we treat it as unconfirmed. Gardner has pleaded not guilty and is presumed innocent. Her trial is set for May 2027.
 
-**What to watch:** Whether sentencing goes forward, and any ruling on the new-trial request.
+**What to watch:** Any ruling on the new-trial request, and whether the court sets a new sentencing date.
 
 Case explainer: https://cassiancreed.com/post/jared-bridegan-case-explained/
 
