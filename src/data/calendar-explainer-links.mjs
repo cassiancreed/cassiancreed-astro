@@ -529,7 +529,9 @@ export const CALENDAR_EXPLAINER_CASES = [
         "text": "What 'Inconclusive Ballistics' Actually Means in a Criminal Case"
       }
     ],
-    "paid": []
+    "paid": [
+      "charlie-kirk-case-guide"
+    ]
   },
   {
     "key": "great-wolf",
@@ -654,10 +656,16 @@ export const LIVE_PRODUCTS = {
     "url": "https://cassiancreed.beehiiv.com/products/great-wolf-lodge-case-guide",
     "title": "The Great Wolf Lodge Case Guide",
     "price": "$1.99"
+  },
+  "charlie-kirk-case-guide": {
+    "url": "https://cassiancreed.beehiiv.com/products/charlie-kirk-case-guide",
+    "title": "The Charlie Kirk Case Guide",
+    "price": "$1.99"
   }
 };
 const PRODUCT_CAMPAIGNS = {
   "great-wolf-lodge-case-guide": "explainer_great_wolf_v1",
+  "charlie-kirk-case-guide": "explainer_robinson_v1",
   "murdaugh-retrial-guide": "explainer_murdaugh_v1",
   "austin-metcalf-karmelo-anthony-case-guide": "explainer_anthony_v1",
   "jared-bridegan-case-guide-v2": "explainer_bridegan_v2",

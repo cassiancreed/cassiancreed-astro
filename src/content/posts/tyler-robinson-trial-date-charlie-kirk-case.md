@@ -113,6 +113,12 @@ He is 23. [[4]](#src-4)
 **Was he sentenced?**
 No. There has been no trial and no verdict.
 
+## Want the full case in one place?
+
+<div class="guide-offer">
+<a class="guide-btn" data-link-type="paid" href="https://cassiancreed.beehiiv.com/products/charlie-kirk-case-guide?utm_source=cassiancreed.com&amp;utm_medium=post_cta&amp;utm_campaign=explainer_robinson_v1&amp;utm_content=robinson_free_post_end" target="_blank" rel="noopener noreferrer" data-book-key="charlie-kirk-case-guide" data-cta-placement="robinson_free_post_end"><span class="calendar-badge" data-link-type="paid" aria-hidden="true">$1.99 GUIDE</span><span>Get the $1.99 guide: The Charlie Kirk Case Guide →</span></a>
+</div>
+
 ## Keep track of this case
 
 Court dates move. See the Nov. 9 date and its sources on our [Court Calendar](https://cassiancreed.com/court-calendar/), and check its "last updated" date.
