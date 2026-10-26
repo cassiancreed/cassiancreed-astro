@@ -1,0 +1,3241 @@
+{
+ "states": [
+  {
+   "n": 0,
+   "start": 0.0,
+   "end": 1.9,
+   "card": "hook",
+   "caption": "Today at 10\u00a0a.m. Eastern,"
+  },
+  {
+   "n": 1,
+   "start": 1.9,
+   "end": 3.12,
+   "card": "hook",
+   "caption": "a federal judge is set"
+  },
+  {
+   "n": 2,
+   "start": 3.12,
+   "end": 4.02,
+   "card": "hook",
+   "caption": "to sentence brothers"
+  },
+  {
+   "n": 3,
+   "start": 4.02,
+   "end": 7.0,
+   "card": "hook",
+   "caption": "Oren, Tal and Alon Alexander."
+  },
+  {
+   "n": 4,
+   "start": 7.0,
+   "end": 7.98,
+   "card": "judge",
+   "caption": "Judge Valerie Caproni"
+  },
+  {
+   "n": 5,
+   "start": 7.98,
+   "end": 9.24,
+   "card": "judge",
+   "caption": "will decide in Manhattan"
+  },
+  {
+   "n": 6,
+   "start": 9.24,
+   "end": 10.5,
+   "card": "judge",
+   "caption": "federal court."
+  },
+  {
+   "n": 7,
+   "start": 10.5,
+   "end": 11.58,
+   "card": "verdict",
+   "caption": "On March 9,"
+  },
+  {
+   "n": 8,
+   "start": 11.58,
+   "end": 12.66,
+   "card": "verdict",
+   "caption": "a federal jury found"
+  },
+  {
+   "n": 9,
+   "start": 12.66,
+   "end": 13.76,
+   "card": "verdict",
+   "caption": "the three brothers guilty"
+  },
+  {
+   "n": 10,
+   "start": 13.76,
+   "end": 16.28,
+   "card": "verdict",
+   "caption": "in a sex-trafficking case."
+  },
+  {
+   "n": 11,
+   "start": 16.28,
+   "end": 17.0,
+   "card": "asks1",
+   "caption": "Prosecutors ask for"
+  },
+  {
+   "n": 12,
+   "start": 17.0,
+   "end": 18.3,
+   "card": "asks1",
+   "caption": "life in prison,"
+  },
+  {
+   "n": 13,
+   "start": 18.3,
+   "end": 19.36,
+   "card": "asks1",
+   "caption": "the Associated Press"
+  },
+  {
+   "n": 14,
+   "start": 19.36,
+   "end": 20.86,
+   "card": "asks1",
+   "caption": "and The\u00a0Real\u00a0Deal report."
+  },
+  {
+   "n": 15,
+   "start": 20.86,
+   "end": 22.16,
+   "card": "asks2",
+   "caption": "The defense asks for"
+  },
+  {
+   "n": 16,
+   "start": 22.16,
+   "end": 23.38,
+   "card": "asks2",
+   "caption": "15 years,"
+  },
+  {
+   "n": 17,
+   "start": 23.38,
+   "end": 24.22,
+   "card": "asks2",
+   "caption": "the minimum,"
+  },
+  {
+   "n": 18,
+   "start": 24.22,
+   "end": 26.32,
+   "card": "asks2",
+   "caption": "CNN and The\u00a0Real\u00a0Deal report."
+  },
+  {
+   "n": 19,
+   "start": 26.32,
+   "end": 26.84,
+   "card": "watch1",
+   "caption": "What to watch:"
+  },
+  {
+   "n": 20,
+   "start": 26.84,
+   "end": 28.34,
+   "card": "watch1",
+   "caption": "about 11 women"
+  },
+  {
+   "n": 21,
+   "start": 28.34,
+   "end": 29.94,
+   "card": "watch1",
+   "caption": "are expected to speak,"
+  },
+  {
+   "n": 22,
+   "start": 29.94,
+   "end": 31.54,
+   "card": "watch1",
+   "caption": "The\u00a0Real\u00a0Deal reports."
+  },
+  {
+   "n": 23,
+   "start": 31.54,
+   "end": 32.66,
+   "card": "watch2",
+   "caption": "And CNN reports"
+  },
+  {
+   "n": 24,
+   "start": 32.66,
+   "end": 33.86,
+   "card": "watch2",
+   "caption": "the hearing could run"
+  },
+  {
+   "n": 25,
+   "start": 33.86,
+   "end": 35.36,
+   "card": "watch2",
+   "caption": "into a second day."
+  },
+  {
+   "n": 26,
+   "start": 35.36,
+   "end": 36.68,
+   "card": "end",
+   "caption": "I'm Cassian Creed."
+  },
+  {
+   "n": 27,
+   "start": 36.68,
+   "end": 39.169,
+   "card": "end",
+   "caption": "Court Calendar at cassiancreed.com"
+  }
+ ],
+ "safe": [
+  {
+   "state": 0,
+   "text": "COURT CALENDAR  \u00b7  TUE OCT 27, 2026",
+   "bbox": [
+    72,
+    279,
+    738,
+    311
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 0,
+   "text": "AI voice clone of Cassian Creed",
+   "bbox": [
+    72,
+    1454,
+    557,
+    1480
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 0,
+   "text": "SENTENCING",
+   "bbox": [
+    68,
+    380,
+    896,
+    474
+   ],
+   "safe": true,
+   "words": 1
+  },
+  {
+   "state": 0,
+   "text": "TODAY",
+   "bbox": [
+    68,
+    518,
+    500,
+    612
+   ],
+   "safe": true,
+   "words": 1
+  },
+  {
+   "state": 0,
+   "text": "Oren, Tal and Alon Alexander",
+   "bbox": [
+    72,
+    671,
+    882,
+    725
+   ],
+   "safe": true,
+   "words": 5
+  },
+  {
+   "state": 0,
+   "text": "10 a.m. ET \u00b7 Manhattan federal court",
+   "bbox": [
+    72,
+    754,
+    815,
+    788
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 0,
+   "text": "Prosecutors ask: life.",
+   "bbox": [
+    72,
+    832,
+    532,
+    868
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 0,
+   "text": "Defense asks: 15 years.",
+   "bbox": [
+    72,
+    890,
+    584,
+    935
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 0,
+   "text": "Today at",
+   "bbox": [
+    318,
+    1192,
+    646,
+    1269
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 0,
+   "text": "10\u00a0a.m. Eastern,",
+   "bbox": [
+    181,
+    1289,
+    784,
+    1363
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 1,
+   "text": "COURT CALENDAR  \u00b7  TUE OCT 27, 2026",
+   "bbox": [
+    72,
+    279,
+    738,
+    311
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 1,
+   "text": "AI voice clone of Cassian Creed",
+   "bbox": [
+    72,
+    1454,
+    557,
+    1480
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 1,
+   "text": "SENTENCING",
+   "bbox": [
+    68,
+    380,
+    896,
+    474
+   ],
+   "safe": true,
+   "words": 1
+  },
+  {
+   "state": 1,
+   "text": "TODAY",
+   "bbox": [
+    68,
+    518,
+    500,
+    612
+   ],
+   "safe": true,
+   "words": 1
+  },
+  {
+   "state": 1,
+   "text": "Oren, Tal and Alon Alexander",
+   "bbox": [
+    72,
+    671,
+    882,
+    725
+   ],
+   "safe": true,
+   "words": 5
+  },
+  {
+   "state": 1,
+   "text": "10 a.m. ET \u00b7 Manhattan federal court",
+   "bbox": [
+    72,
+    754,
+    815,
+    788
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 1,
+   "text": "Prosecutors ask: life.",
+   "bbox": [
+    72,
+    832,
+    532,
+    868
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 1,
+   "text": "Defense asks: 15 years.",
+   "bbox": [
+    72,
+    890,
+    584,
+    935
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 1,
+   "text": "a federal judge is set",
+   "bbox": [
+    104,
+    1190,
+    860,
+    1265
+   ],
+   "safe": true,
+   "words": 5
+  },
+  {
+   "state": 2,
+   "text": "COURT CALENDAR  \u00b7  TUE OCT 27, 2026",
+   "bbox": [
+    72,
+    279,
+    738,
+    311
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 2,
+   "text": "AI voice clone of Cassian Creed",
+   "bbox": [
+    72,
+    1454,
+    557,
+    1480
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 2,
+   "text": "SENTENCING",
+   "bbox": [
+    68,
+    380,
+    896,
+    474
+   ],
+   "safe": true,
+   "words": 1
+  },
+  {
+   "state": 2,
+   "text": "TODAY",
+   "bbox": [
+    68,
+    518,
+    500,
+    612
+   ],
+   "safe": true,
+   "words": 1
+  },
+  {
+   "state": 2,
+   "text": "Oren, Tal and Alon Alexander",
+   "bbox": [
+    72,
+    671,
+    882,
+    725
+   ],
+   "safe": true,
+   "words": 5
+  },
+  {
+   "state": 2,
+   "text": "10 a.m. ET \u00b7 Manhattan federal court",
+   "bbox": [
+    72,
+    754,
+    815,
+    788
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 2,
+   "text": "Prosecutors ask: life.",
+   "bbox": [
+    72,
+    832,
+    532,
+    868
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 2,
+   "text": "Defense asks: 15 years.",
+   "bbox": [
+    72,
+    890,
+    584,
+    935
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 2,
+   "text": "to sentence brothers",
+   "bbox": [
+    97,
+    1191,
+    868,
+    1249
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 3,
+   "text": "COURT CALENDAR  \u00b7  TUE OCT 27, 2026",
+   "bbox": [
+    72,
+    279,
+    738,
+    311
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 3,
+   "text": "AI voice clone of Cassian Creed",
+   "bbox": [
+    72,
+    1454,
+    557,
+    1480
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 3,
+   "text": "SENTENCING",
+   "bbox": [
+    68,
+    380,
+    896,
+    474
+   ],
+   "safe": true,
+   "words": 1
+  },
+  {
+   "state": 3,
+   "text": "TODAY",
+   "bbox": [
+    68,
+    518,
+    500,
+    612
+   ],
+   "safe": true,
+   "words": 1
+  },
+  {
+   "state": 3,
+   "text": "Oren, Tal and Alon Alexander",
+   "bbox": [
+    72,
+    671,
+    882,
+    725
+   ],
+   "safe": true,
+   "words": 5
+  },
+  {
+   "state": 3,
+   "text": "10 a.m. ET \u00b7 Manhattan federal court",
+   "bbox": [
+    72,
+    754,
+    815,
+    788
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 3,
+   "text": "Prosecutors ask: life.",
+   "bbox": [
+    72,
+    832,
+    532,
+    868
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 3,
+   "text": "Defense asks: 15 years.",
+   "bbox": [
+    72,
+    890,
+    584,
+    935
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 3,
+   "text": "Oren, Tal and",
+   "bbox": [
+    233,
+    1191,
+    731,
+    1265
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 3,
+   "text": "Alon Alexander.",
+   "bbox": [
+    178,
+    1290,
+    787,
+    1351
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 4,
+   "text": "COURT CALENDAR  \u00b7  TUE OCT 27, 2026",
+   "bbox": [
+    72,
+    279,
+    738,
+    311
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 4,
+   "text": "AI voice clone of Cassian Creed",
+   "bbox": [
+    72,
+    1454,
+    557,
+    1480
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 4,
+   "text": "THE JUDGE",
+   "bbox": [
+    98,
+    360,
+    328,
+    391
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 4,
+   "text": "Valerie Caproni",
+   "bbox": [
+    72,
+    452,
+    846,
+    551
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 4,
+   "text": "U.S. District Judge, S.D.N.Y.",
+   "bbox": [
+    72,
+    587,
+    663,
+    632
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 4,
+   "text": "Courtroom 26A \u00b7 500 Pearl St.",
+   "bbox": [
+    72,
+    658,
+    724,
+    693
+   ],
+   "safe": true,
+   "words": 5
+  },
+  {
+   "state": 4,
+   "text": "Judge Valerie Caproni",
+   "bbox": [
+    97,
+    1189,
+    867,
+    1260
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 5,
+   "text": "COURT CALENDAR  \u00b7  TUE OCT 27, 2026",
+   "bbox": [
+    72,
+    279,
+    738,
+    311
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 5,
+   "text": "AI voice clone of Cassian Creed",
+   "bbox": [
+    72,
+    1454,
+    557,
+    1480
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 5,
+   "text": "THE JUDGE",
+   "bbox": [
+    98,
+    360,
+    328,
+    391
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 5,
+   "text": "Valerie Caproni",
+   "bbox": [
+    72,
+    452,
+    846,
+    551
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 5,
+   "text": "U.S. District Judge, S.D.N.Y.",
+   "bbox": [
+    72,
+    587,
+    663,
+    632
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 5,
+   "text": "Courtroom 26A \u00b7 500 Pearl St.",
+   "bbox": [
+    72,
+    658,
+    724,
+    693
+   ],
+   "safe": true,
+   "words": 5
+  },
+  {
+   "state": 5,
+   "text": "will decide",
+   "bbox": [
+    276,
+    1191,
+    688,
+    1253
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 5,
+   "text": "in Manhattan",
+   "bbox": [
+    227,
+    1289,
+    737,
+    1351
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 6,
+   "text": "COURT CALENDAR  \u00b7  TUE OCT 27, 2026",
+   "bbox": [
+    72,
+    279,
+    738,
+    311
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 6,
+   "text": "AI voice clone of Cassian Creed",
+   "bbox": [
+    72,
+    1454,
+    557,
+    1480
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 6,
+   "text": "THE JUDGE",
+   "bbox": [
+    98,
+    360,
+    328,
+    391
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 6,
+   "text": "Valerie Caproni",
+   "bbox": [
+    72,
+    452,
+    846,
+    551
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 6,
+   "text": "U.S. District Judge, S.D.N.Y.",
+   "bbox": [
+    72,
+    587,
+    663,
+    632
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 6,
+   "text": "Courtroom 26A \u00b7 500 Pearl St.",
+   "bbox": [
+    72,
+    658,
+    724,
+    693
+   ],
+   "safe": true,
+   "words": 5
+  },
+  {
+   "state": 6,
+   "text": "federal court.",
+   "bbox": [
+    214,
+    1193,
+    750,
+    1255
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 7,
+   "text": "COURT CALENDAR  \u00b7  TUE OCT 27, 2026",
+   "bbox": [
+    72,
+    279,
+    738,
+    311
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 7,
+   "text": "AI voice clone of Cassian Creed",
+   "bbox": [
+    72,
+    1454,
+    557,
+    1480
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 7,
+   "text": "THE VERDICT",
+   "bbox": [
+    98,
+    360,
+    369,
+    391
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 7,
+   "text": "March 9, 2026",
+   "bbox": [
+    72,
+    452,
+    790,
+    546
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 7,
+   "text": "A federal jury found the three",
+   "bbox": [
+    72,
+    584,
+    846,
+    637
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 7,
+   "text": "brothers guilty",
+   "bbox": [
+    72,
+    661,
+    465,
+    714
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 7,
+   "text": "Sex-trafficking case",
+   "bbox": [
+    72,
+    745,
+    490,
+    789
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 7,
+   "text": "Counts differ for each brother",
+   "bbox": [
+    72,
+    812,
+    688,
+    847
+   ],
+   "safe": true,
+   "words": 5
+  },
+  {
+   "state": 7,
+   "text": "On March 9,",
+   "bbox": [
+    245,
+    1192,
+    719,
+    1267
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 8,
+   "text": "COURT CALENDAR  \u00b7  TUE OCT 27, 2026",
+   "bbox": [
+    72,
+    279,
+    738,
+    311
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 8,
+   "text": "AI voice clone of Cassian Creed",
+   "bbox": [
+    72,
+    1454,
+    557,
+    1480
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 8,
+   "text": "THE VERDICT",
+   "bbox": [
+    98,
+    360,
+    369,
+    391
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 8,
+   "text": "March 9, 2026",
+   "bbox": [
+    72,
+    452,
+    790,
+    546
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 8,
+   "text": "A federal jury found the three",
+   "bbox": [
+    72,
+    584,
+    846,
+    637
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 8,
+   "text": "brothers guilty",
+   "bbox": [
+    72,
+    661,
+    465,
+    714
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 8,
+   "text": "Sex-trafficking case",
+   "bbox": [
+    72,
+    745,
+    490,
+    789
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 8,
+   "text": "Counts differ for each brother",
+   "bbox": [
+    72,
+    812,
+    688,
+    847
+   ],
+   "safe": true,
+   "words": 5
+  },
+  {
+   "state": 8,
+   "text": "a federal jury found",
+   "bbox": [
+    97,
+    1192,
+    867,
+    1271
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 9,
+   "text": "COURT CALENDAR  \u00b7  TUE OCT 27, 2026",
+   "bbox": [
+    72,
+    279,
+    738,
+    311
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 9,
+   "text": "AI voice clone of Cassian Creed",
+   "bbox": [
+    72,
+    1454,
+    557,
+    1480
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 9,
+   "text": "THE VERDICT",
+   "bbox": [
+    98,
+    360,
+    369,
+    391
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 9,
+   "text": "March 9, 2026",
+   "bbox": [
+    72,
+    452,
+    790,
+    546
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 9,
+   "text": "A federal jury found the three",
+   "bbox": [
+    72,
+    584,
+    846,
+    637
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 9,
+   "text": "brothers guilty",
+   "bbox": [
+    72,
+    661,
+    465,
+    714
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 9,
+   "text": "Sex-trafficking case",
+   "bbox": [
+    72,
+    745,
+    490,
+    789
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 9,
+   "text": "Counts differ for each brother",
+   "bbox": [
+    72,
+    812,
+    688,
+    847
+   ],
+   "safe": true,
+   "words": 5
+  },
+  {
+   "state": 9,
+   "text": "the three",
+   "bbox": [
+    306,
+    1192,
+    658,
+    1253
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 9,
+   "text": "brothers guilty",
+   "bbox": [
+    194,
+    1289,
+    770,
+    1367
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 10,
+   "text": "COURT CALENDAR  \u00b7  TUE OCT 27, 2026",
+   "bbox": [
+    72,
+    279,
+    738,
+    311
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 10,
+   "text": "AI voice clone of Cassian Creed",
+   "bbox": [
+    72,
+    1454,
+    557,
+    1480
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 10,
+   "text": "THE VERDICT",
+   "bbox": [
+    98,
+    360,
+    369,
+    391
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 10,
+   "text": "March 9, 2026",
+   "bbox": [
+    72,
+    452,
+    790,
+    546
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 10,
+   "text": "A federal jury found the three",
+   "bbox": [
+    72,
+    584,
+    846,
+    637
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 10,
+   "text": "brothers guilty",
+   "bbox": [
+    72,
+    661,
+    465,
+    714
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 10,
+   "text": "Sex-trafficking case",
+   "bbox": [
+    72,
+    745,
+    490,
+    789
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 10,
+   "text": "Counts differ for each brother",
+   "bbox": [
+    72,
+    812,
+    688,
+    847
+   ],
+   "safe": true,
+   "words": 5
+  },
+  {
+   "state": 10,
+   "text": "in a",
+   "bbox": [
+    419,
+    1190,
+    546,
+    1249
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 10,
+   "text": "sex-trafficking case.",
+   "bbox": [
+    103,
+    1283,
+    862,
+    1358
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 11,
+   "text": "COURT CALENDAR  \u00b7  TUE OCT 27, 2026",
+   "bbox": [
+    72,
+    279,
+    738,
+    311
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 11,
+   "text": "AI voice clone of Cassian Creed",
+   "bbox": [
+    72,
+    1454,
+    557,
+    1480
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 11,
+   "text": "WHAT EACH SIDE ASKS",
+   "bbox": [
+    98,
+    360,
+    569,
+    391
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 11,
+   "text": "PROSECUTORS ASK",
+   "bbox": [
+    104,
+    460,
+    489,
+    489
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 11,
+   "text": "LIFE",
+   "bbox": [
+    104,
+    523,
+    322,
+    599
+   ],
+   "safe": true,
+   "words": 1
+  },
+  {
+   "state": 11,
+   "text": "in prison",
+   "bbox": [
+    346,
+    558,
+    516,
+    599
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 11,
+   "text": "Per AP and The Real Deal",
+   "bbox": [
+    104,
+    633,
+    564,
+    662
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 11,
+   "text": "Prosecutors ask for",
+   "bbox": [
+    103,
+    1192,
+    862,
+    1253
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 12,
+   "text": "COURT CALENDAR  \u00b7  TUE OCT 27, 2026",
+   "bbox": [
+    72,
+    279,
+    738,
+    311
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 12,
+   "text": "AI voice clone of Cassian Creed",
+   "bbox": [
+    72,
+    1454,
+    557,
+    1480
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 12,
+   "text": "WHAT EACH SIDE ASKS",
+   "bbox": [
+    98,
+    360,
+    569,
+    391
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 12,
+   "text": "PROSECUTORS ASK",
+   "bbox": [
+    104,
+    460,
+    489,
+    489
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 12,
+   "text": "LIFE",
+   "bbox": [
+    104,
+    523,
+    322,
+    599
+   ],
+   "safe": true,
+   "words": 1
+  },
+  {
+   "state": 12,
+   "text": "in prison",
+   "bbox": [
+    346,
+    558,
+    516,
+    599
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 12,
+   "text": "Per AP and The Real Deal",
+   "bbox": [
+    104,
+    633,
+    564,
+    662
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 12,
+   "text": "life in prison,",
+   "bbox": [
+    230,
+    1192,
+    734,
+    1272
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 13,
+   "text": "COURT CALENDAR  \u00b7  TUE OCT 27, 2026",
+   "bbox": [
+    72,
+    279,
+    738,
+    311
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 13,
+   "text": "AI voice clone of Cassian Creed",
+   "bbox": [
+    72,
+    1454,
+    557,
+    1480
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 13,
+   "text": "WHAT EACH SIDE ASKS",
+   "bbox": [
+    98,
+    360,
+    569,
+    391
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 13,
+   "text": "PROSECUTORS ASK",
+   "bbox": [
+    104,
+    460,
+    489,
+    489
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 13,
+   "text": "LIFE",
+   "bbox": [
+    104,
+    523,
+    322,
+    599
+   ],
+   "safe": true,
+   "words": 1
+  },
+  {
+   "state": 13,
+   "text": "in prison",
+   "bbox": [
+    346,
+    558,
+    516,
+    599
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 13,
+   "text": "Per AP and The Real Deal",
+   "bbox": [
+    104,
+    633,
+    564,
+    662
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 13,
+   "text": "the Associated Press",
+   "bbox": [
+    102,
+    1190,
+    862,
+    1247
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 14,
+   "text": "COURT CALENDAR  \u00b7  TUE OCT 27, 2026",
+   "bbox": [
+    72,
+    279,
+    738,
+    311
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 14,
+   "text": "AI voice clone of Cassian Creed",
+   "bbox": [
+    72,
+    1454,
+    557,
+    1480
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 14,
+   "text": "WHAT EACH SIDE ASKS",
+   "bbox": [
+    98,
+    360,
+    569,
+    391
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 14,
+   "text": "PROSECUTORS ASK",
+   "bbox": [
+    104,
+    460,
+    489,
+    489
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 14,
+   "text": "LIFE",
+   "bbox": [
+    104,
+    523,
+    322,
+    599
+   ],
+   "safe": true,
+   "words": 1
+  },
+  {
+   "state": 14,
+   "text": "in prison",
+   "bbox": [
+    346,
+    558,
+    516,
+    599
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 14,
+   "text": "Per AP and The Real Deal",
+   "bbox": [
+    104,
+    633,
+    564,
+    662
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 14,
+   "text": "and The\u00a0Real\u00a0Deal",
+   "bbox": [
+    148,
+    1192,
+    816,
+    1251
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 14,
+   "text": "report.",
+   "bbox": [
+    353,
+    1293,
+    611,
+    1363
+   ],
+   "safe": true,
+   "words": 1
+  },
+  {
+   "state": 15,
+   "text": "COURT CALENDAR  \u00b7  TUE OCT 27, 2026",
+   "bbox": [
+    72,
+    279,
+    738,
+    311
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 15,
+   "text": "AI voice clone of Cassian Creed",
+   "bbox": [
+    72,
+    1454,
+    557,
+    1480
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 15,
+   "text": "WHAT EACH SIDE ASKS",
+   "bbox": [
+    98,
+    360,
+    569,
+    391
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 15,
+   "text": "PROSECUTORS ASK",
+   "bbox": [
+    104,
+    460,
+    489,
+    489
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 15,
+   "text": "LIFE",
+   "bbox": [
+    104,
+    523,
+    322,
+    599
+   ],
+   "safe": true,
+   "words": 1
+  },
+  {
+   "state": 15,
+   "text": "in prison",
+   "bbox": [
+    346,
+    558,
+    516,
+    599
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 15,
+   "text": "Per AP and The Real Deal",
+   "bbox": [
+    104,
+    633,
+    564,
+    662
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 15,
+   "text": "DEFENSE ASKS",
+   "bbox": [
+    104,
+    746,
+    398,
+    775
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 15,
+   "text": "15 YEARS",
+   "bbox": [
+    104,
+    808,
+    592,
+    886
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 15,
+   "text": "the minimum",
+   "bbox": [
+    616,
+    854,
+    876,
+    886
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 15,
+   "text": "Per CNN and The Real Deal",
+   "bbox": [
+    104,
+    919,
+    598,
+    948
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 15,
+   "text": "The defense asks for",
+   "bbox": [
+    98,
+    1191,
+    867,
+    1249
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 16,
+   "text": "COURT CALENDAR  \u00b7  TUE OCT 27, 2026",
+   "bbox": [
+    72,
+    279,
+    738,
+    311
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 16,
+   "text": "AI voice clone of Cassian Creed",
+   "bbox": [
+    72,
+    1454,
+    557,
+    1480
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 16,
+   "text": "WHAT EACH SIDE ASKS",
+   "bbox": [
+    98,
+    360,
+    569,
+    391
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 16,
+   "text": "PROSECUTORS ASK",
+   "bbox": [
+    104,
+    460,
+    489,
+    489
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 16,
+   "text": "LIFE",
+   "bbox": [
+    104,
+    523,
+    322,
+    599
+   ],
+   "safe": true,
+   "words": 1
+  },
+  {
+   "state": 16,
+   "text": "in prison",
+   "bbox": [
+    346,
+    558,
+    516,
+    599
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 16,
+   "text": "Per AP and The Real Deal",
+   "bbox": [
+    104,
+    633,
+    564,
+    662
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 16,
+   "text": "DEFENSE ASKS",
+   "bbox": [
+    104,
+    746,
+    398,
+    775
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 16,
+   "text": "15 YEARS",
+   "bbox": [
+    104,
+    808,
+    592,
+    886
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 16,
+   "text": "the minimum",
+   "bbox": [
+    616,
+    854,
+    876,
+    886
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 16,
+   "text": "Per CNN and The Real Deal",
+   "bbox": [
+    104,
+    919,
+    598,
+    948
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 16,
+   "text": "15 years,",
+   "bbox": [
+    310,
+    1193,
+    654,
+    1271
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 17,
+   "text": "COURT CALENDAR  \u00b7  TUE OCT 27, 2026",
+   "bbox": [
+    72,
+    279,
+    738,
+    311
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 17,
+   "text": "AI voice clone of Cassian Creed",
+   "bbox": [
+    72,
+    1454,
+    557,
+    1480
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 17,
+   "text": "WHAT EACH SIDE ASKS",
+   "bbox": [
+    98,
+    360,
+    569,
+    391
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 17,
+   "text": "PROSECUTORS ASK",
+   "bbox": [
+    104,
+    460,
+    489,
+    489
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 17,
+   "text": "LIFE",
+   "bbox": [
+    104,
+    523,
+    322,
+    599
+   ],
+   "safe": true,
+   "words": 1
+  },
+  {
+   "state": 17,
+   "text": "in prison",
+   "bbox": [
+    346,
+    558,
+    516,
+    599
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 17,
+   "text": "Per AP and The Real Deal",
+   "bbox": [
+    104,
+    633,
+    564,
+    662
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 17,
+   "text": "DEFENSE ASKS",
+   "bbox": [
+    104,
+    746,
+    398,
+    775
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 17,
+   "text": "15 YEARS",
+   "bbox": [
+    104,
+    808,
+    592,
+    886
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 17,
+   "text": "the minimum",
+   "bbox": [
+    616,
+    854,
+    876,
+    886
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 17,
+   "text": "Per CNN and The Real Deal",
+   "bbox": [
+    104,
+    919,
+    598,
+    948
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 17,
+   "text": "the minimum,",
+   "bbox": [
+    211,
+    1192,
+    753,
+    1267
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 18,
+   "text": "COURT CALENDAR  \u00b7  TUE OCT 27, 2026",
+   "bbox": [
+    72,
+    279,
+    738,
+    311
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 18,
+   "text": "AI voice clone of Cassian Creed",
+   "bbox": [
+    72,
+    1454,
+    557,
+    1480
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 18,
+   "text": "WHAT EACH SIDE ASKS",
+   "bbox": [
+    98,
+    360,
+    569,
+    391
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 18,
+   "text": "PROSECUTORS ASK",
+   "bbox": [
+    104,
+    460,
+    489,
+    489
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 18,
+   "text": "LIFE",
+   "bbox": [
+    104,
+    523,
+    322,
+    599
+   ],
+   "safe": true,
+   "words": 1
+  },
+  {
+   "state": 18,
+   "text": "in prison",
+   "bbox": [
+    346,
+    558,
+    516,
+    599
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 18,
+   "text": "Per AP and The Real Deal",
+   "bbox": [
+    104,
+    633,
+    564,
+    662
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 18,
+   "text": "DEFENSE ASKS",
+   "bbox": [
+    104,
+    746,
+    398,
+    775
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 18,
+   "text": "15 YEARS",
+   "bbox": [
+    104,
+    808,
+    592,
+    886
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 18,
+   "text": "the minimum",
+   "bbox": [
+    616,
+    854,
+    876,
+    886
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 18,
+   "text": "Per CNN and The Real Deal",
+   "bbox": [
+    104,
+    919,
+    598,
+    948
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 18,
+   "text": "CNN and",
+   "bbox": [
+    320,
+    1190,
+    645,
+    1249
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 18,
+   "text": "The\u00a0Real\u00a0Deal report.",
+   "bbox": [
+    100,
+    1284,
+    865,
+    1358
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 19,
+   "text": "COURT CALENDAR  \u00b7  TUE OCT 27, 2026",
+   "bbox": [
+    72,
+    279,
+    738,
+    311
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 19,
+   "text": "AI voice clone of Cassian Creed",
+   "bbox": [
+    72,
+    1454,
+    557,
+    1480
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 19,
+   "text": "WHAT TO WATCH",
+   "bbox": [
+    98,
+    360,
+    447,
+    391
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 19,
+   "text": "About 11 women are",
+   "bbox": [
+    104,
+    469,
+    704,
+    517
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 19,
+   "text": "expected to speak",
+   "bbox": [
+    104,
+    546,
+    659,
+    607
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 19,
+   "text": "Per The Real Deal",
+   "bbox": [
+    104,
+    637,
+    391,
+    662
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 19,
+   "text": "What to watch:",
+   "bbox": [
+    181,
+    1193,
+    783,
+    1255
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 20,
+   "text": "COURT CALENDAR  \u00b7  TUE OCT 27, 2026",
+   "bbox": [
+    72,
+    279,
+    738,
+    311
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 20,
+   "text": "AI voice clone of Cassian Creed",
+   "bbox": [
+    72,
+    1454,
+    557,
+    1480
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 20,
+   "text": "WHAT TO WATCH",
+   "bbox": [
+    98,
+    360,
+    447,
+    391
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 20,
+   "text": "About 11 women are",
+   "bbox": [
+    104,
+    469,
+    704,
+    517
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 20,
+   "text": "expected to speak",
+   "bbox": [
+    104,
+    546,
+    659,
+    607
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 20,
+   "text": "Per The Real Deal",
+   "bbox": [
+    104,
+    637,
+    391,
+    662
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 20,
+   "text": "about 11 women",
+   "bbox": [
+    169,
+    1193,
+    796,
+    1255
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 21,
+   "text": "COURT CALENDAR  \u00b7  TUE OCT 27, 2026",
+   "bbox": [
+    72,
+    279,
+    738,
+    311
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 21,
+   "text": "AI voice clone of Cassian Creed",
+   "bbox": [
+    72,
+    1454,
+    557,
+    1480
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 21,
+   "text": "WHAT TO WATCH",
+   "bbox": [
+    98,
+    360,
+    447,
+    391
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 21,
+   "text": "About 11 women are",
+   "bbox": [
+    104,
+    469,
+    704,
+    517
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 21,
+   "text": "expected to speak",
+   "bbox": [
+    104,
+    546,
+    659,
+    607
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 21,
+   "text": "Per The Real Deal",
+   "bbox": [
+    104,
+    637,
+    391,
+    662
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 21,
+   "text": "are expected to speak,",
+   "bbox": [
+    99,
+    1190,
+    866,
+    1257
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 22,
+   "text": "COURT CALENDAR  \u00b7  TUE OCT 27, 2026",
+   "bbox": [
+    72,
+    279,
+    738,
+    311
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 22,
+   "text": "AI voice clone of Cassian Creed",
+   "bbox": [
+    72,
+    1454,
+    557,
+    1480
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 22,
+   "text": "WHAT TO WATCH",
+   "bbox": [
+    98,
+    360,
+    447,
+    391
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 22,
+   "text": "About 11 women are",
+   "bbox": [
+    104,
+    469,
+    704,
+    517
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 22,
+   "text": "expected to speak",
+   "bbox": [
+    104,
+    546,
+    659,
+    607
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 22,
+   "text": "Per The Real Deal",
+   "bbox": [
+    104,
+    637,
+    391,
+    662
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 22,
+   "text": "The\u00a0Real\u00a0Deal reports.",
+   "bbox": [
+    100,
+    1190,
+    865,
+    1260
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 23,
+   "text": "COURT CALENDAR  \u00b7  TUE OCT 27, 2026",
+   "bbox": [
+    72,
+    279,
+    738,
+    311
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 23,
+   "text": "AI voice clone of Cassian Creed",
+   "bbox": [
+    72,
+    1454,
+    557,
+    1480
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 23,
+   "text": "WHAT TO WATCH",
+   "bbox": [
+    98,
+    360,
+    447,
+    391
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 23,
+   "text": "About 11 women are",
+   "bbox": [
+    104,
+    469,
+    704,
+    517
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 23,
+   "text": "expected to speak",
+   "bbox": [
+    104,
+    546,
+    659,
+    607
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 23,
+   "text": "Per The Real Deal",
+   "bbox": [
+    104,
+    637,
+    391,
+    662
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 23,
+   "text": "The hearing could run",
+   "bbox": [
+    104,
+    758,
+    761,
+    820
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 23,
+   "text": "into a second day",
+   "bbox": [
+    104,
+    848,
+    631,
+    909
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 23,
+   "text": "Per CNN",
+   "bbox": [
+    104,
+    939,
+    244,
+    964
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 23,
+   "text": "And CNN reports",
+   "bbox": [
+    144,
+    1192,
+    820,
+    1272
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 24,
+   "text": "COURT CALENDAR  \u00b7  TUE OCT 27, 2026",
+   "bbox": [
+    72,
+    279,
+    738,
+    311
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 24,
+   "text": "AI voice clone of Cassian Creed",
+   "bbox": [
+    72,
+    1454,
+    557,
+    1480
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 24,
+   "text": "WHAT TO WATCH",
+   "bbox": [
+    98,
+    360,
+    447,
+    391
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 24,
+   "text": "About 11 women are",
+   "bbox": [
+    104,
+    469,
+    704,
+    517
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 24,
+   "text": "expected to speak",
+   "bbox": [
+    104,
+    546,
+    659,
+    607
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 24,
+   "text": "Per The Real Deal",
+   "bbox": [
+    104,
+    637,
+    391,
+    662
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 24,
+   "text": "The hearing could run",
+   "bbox": [
+    104,
+    758,
+    761,
+    820
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 24,
+   "text": "into a second day",
+   "bbox": [
+    104,
+    848,
+    631,
+    909
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 24,
+   "text": "Per CNN",
+   "bbox": [
+    104,
+    939,
+    244,
+    964
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 24,
+   "text": "the hearing could run",
+   "bbox": [
+    102,
+    1190,
+    863,
+    1263
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 25,
+   "text": "COURT CALENDAR  \u00b7  TUE OCT 27, 2026",
+   "bbox": [
+    72,
+    279,
+    738,
+    311
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 25,
+   "text": "AI voice clone of Cassian Creed",
+   "bbox": [
+    72,
+    1454,
+    557,
+    1480
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 25,
+   "text": "WHAT TO WATCH",
+   "bbox": [
+    98,
+    360,
+    447,
+    391
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 25,
+   "text": "About 11 women are",
+   "bbox": [
+    104,
+    469,
+    704,
+    517
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 25,
+   "text": "expected to speak",
+   "bbox": [
+    104,
+    546,
+    659,
+    607
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 25,
+   "text": "Per The Real Deal",
+   "bbox": [
+    104,
+    637,
+    391,
+    662
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 25,
+   "text": "The hearing could run",
+   "bbox": [
+    104,
+    758,
+    761,
+    820
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 25,
+   "text": "into a second day",
+   "bbox": [
+    104,
+    848,
+    631,
+    909
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 25,
+   "text": "Per CNN",
+   "bbox": [
+    104,
+    939,
+    244,
+    964
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 25,
+   "text": "into a second day.",
+   "bbox": [
+    129,
+    1192,
+    835,
+    1271
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 26,
+   "text": "COURT CALENDAR  \u00b7  TUE OCT 27, 2026",
+   "bbox": [
+    72,
+    279,
+    738,
+    311
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 26,
+   "text": "AI voice clone of Cassian Creed",
+   "bbox": [
+    72,
+    1454,
+    557,
+    1480
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 26,
+   "text": "Court Calendar \u00b7",
+   "bbox": [
+    72,
+    402,
+    795,
+    471
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 26,
+   "text": "cassiancreed.com",
+   "bbox": [
+    72,
+    511,
+    895,
+    580
+   ],
+   "safe": true,
+   "words": 1
+  },
+  {
+   "state": 26,
+   "text": "Dates and status for each case",
+   "bbox": [
+    72,
+    641,
+    714,
+    676
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 26,
+   "text": "alexander-sentencing-short-v1 \u00b7 Oct 27, 2026",
+   "bbox": [
+    72,
+    719,
+    724,
+    749
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 26,
+   "text": "I'm Cassian Creed.",
+   "bbox": [
+    114,
+    1192,
+    851,
+    1255
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 27,
+   "text": "COURT CALENDAR  \u00b7  TUE OCT 27, 2026",
+   "bbox": [
+    72,
+    279,
+    738,
+    311
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 27,
+   "text": "AI voice clone of Cassian Creed",
+   "bbox": [
+    72,
+    1454,
+    557,
+    1480
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 27,
+   "text": "Court Calendar \u00b7",
+   "bbox": [
+    72,
+    402,
+    795,
+    471
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 27,
+   "text": "cassiancreed.com",
+   "bbox": [
+    72,
+    511,
+    895,
+    580
+   ],
+   "safe": true,
+   "words": 1
+  },
+  {
+   "state": 27,
+   "text": "Dates and status for each case",
+   "bbox": [
+    72,
+    641,
+    714,
+    676
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 27,
+   "text": "alexander-sentencing-short-v1 \u00b7 Oct 27, 2026",
+   "bbox": [
+    72,
+    719,
+    724,
+    749
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 27,
+   "text": "Court Calendar",
+   "bbox": [
+    200,
+    1190,
+    764,
+    1249
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 27,
+   "text": "at cassiancreed.com",
+   "bbox": [
+    98,
+    1283,
+    866,
+    1342
+   ],
+   "safe": true,
+   "words": 2
+  }
+ ],
+ "all_safe": true,
+ "max_words_per_line": 6,
+ "lines_over_7_words": []
+}
