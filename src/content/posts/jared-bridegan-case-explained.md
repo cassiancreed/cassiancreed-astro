@@ -1,8 +1,9 @@
 ---
 title: "The Jared Bridegan Case: Where It Stands and What Happens Next"
-seoTitle: "Jared Bridegan Case Explained: Verdict, Charges and 2027 Trial"
-description: "Jared Bridegan was killed in Jacksonville Beach in February 2022. One man has been convicted. His ex-wife Shanna Gardner and Henry Tenon are charged and face a joint trial in May 2027. Here is where the case stands."
+seoTitle: "Jared Bridegan Case: Verdict, Charges and 2027 Trial"
+description: "Jared Bridegan was killed in Jacksonville Beach in 2022. One man is convicted. Shanna Gardner and Henry Tenon are charged and face a joint trial in May 2027."
 pubDate: 2026-10-19
+updatedDate: 2026-10-25
 tag: "Explainers"
 featured: false
 victim: "Jared Bridegan"
@@ -89,6 +90,14 @@ No court has found her guilty. She is charged with first-degree murder and consp
 ### When is Shanna Gardner's trial?
 
 Jury selection is set for the week of May 3, 2027. Testimony is set to start May 10, 2027. She will be tried together with Henry Tenon.
+
+### What is Shanna Gardner charged with?
+
+A September 2026 indictment charges Shanna Gardner with first-degree murder and conspiracy to commit murder. Two older charges, solicitation and child abuse, were dropped. She has pleaded not guilty and is presumed innocent. Her joint trial with Henry Tenon is set to start May 10, 2027.
+
+### When is Henry Tenon's trial?
+
+Henry Tenon is charged with first-degree murder and possession of a firearm by a convicted felon. He has pleaded not guilty and is presumed innocent. He will be tried together with Shanna Gardner. Jury selection is set for the week of May 3, 2027. The trial is set to start May 10, 2027.
 
 ### Why are Gardner and Tenon being tried together?
 
