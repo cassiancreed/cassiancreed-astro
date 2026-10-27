@@ -1,6 +1,6 @@
 ---
 title: "When Is Tyler Robinson's Trial? No Date Yet in the Charlie Kirk Case"
-seoTitle: "Tyler Robinson Trial Date: What We Know in the Charlie Kirk Case"
+seoTitle: "Tyler Robinson Trial Date: Charlie Kirk Case Update"
 description: "No trial date is set for Tyler Robinson, charged in Charlie Kirk's death. The judge set Nov. 9 to rule. The date plans, charges and what comes next."
 pubDate: 2026-10-24
 tag: "Explainers"

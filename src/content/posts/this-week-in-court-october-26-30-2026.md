@@ -1,7 +1,7 @@
 ---
 title: "This Week in Court: October 26–30, 2026"
 seoTitle: "This Week in Court: Oct. 26–30, 2026 Hearings"
-description: "Court dates to watch Oct. 26–30, 2026: the Alexander brothers' sentencing, the Jared Bridegan case, Corie Walsh, a Mangione filing deadline, and the Farwell and Bhatt trials."
+description: "Court dates Oct. 26–30, 2026: Alexander brothers' sentencing, the Bridegan case, Corie Walsh, a Mangione filing deadline, and the Farwell and Bhatt trials."
 pubDate: 2026-10-23
 tag: "Case Files"
 featured: false
