@@ -547,6 +547,19 @@ export const CALENDAR_EXPLAINER_CASES = [
     "paid": [
       "great-wolf-lodge-case-guide"
     ]
+  },
+  {
+    "key": "alexander",
+    "entryIds": [
+      "alexander-brothers-sentencing"
+    ],
+    "free": [
+      {
+        "url": "/post/alexander-brothers-sentencing-what-sentence-did-they-get/",
+        "text": "Alexander Brothers Sentencing: What Sentence Did They Get?"
+      }
+    ],
+    "paid": []
   }
 ];
 const HISTORICAL_ROUNDUPS = [
@@ -672,6 +685,7 @@ const PRODUCT_CAMPAIGNS = {
   "tupac-shakur-keffe-d-case-guide": "explainer_tupac_v1"
 };
 const PUBLISHED_POSTS = new Set([
+  "/post/alexander-brothers-sentencing-what-sentence-did-they-get/",
   "/post/a-jury-convicted-a-family-still-grieves-karmelo-anthony-verdict-austin-metcalf/",
   "/post/baby-boy-doe-mansfield-1985/",
   "/post/anatomy-of-a-murder-trial-hernandez-melgar/",
