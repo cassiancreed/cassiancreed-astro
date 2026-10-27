@@ -133,6 +133,6 @@ Court dates move. See the Nov. 3 hearing and its source on our [Court Calendar](
 6. <span id="src-6"></span>[18 Pa.C.S. § 2501, Pennsylvania General Assembly](https://www.legis.state.pa.us/WU01/LI/LI/CT/HTM/18/00.025..HTM)
 7. <span id="src-7"></span>[NorthcentralPA.com, Oct. 16, 2026](https://www.northcentralpa.com/news/hearing-set-for-towanda-woman-charged-in-great-wolf-lodge-homicides/article_b605b022-d39e-48df-bfc1-1902f42f8d85.html)
 8. <span id="src-8"></span>[Pa.R.Crim.P. 542, 234 Pa. Code r. 542](https://www.law.cornell.edu/regulations/pennsylvania/234-Pa-Code-r-542)
-9. <span id="src-9"></span>[IBTimes UK](https://www.ibtimes.co.uk/metallica-rose-harrison-pennsylvania-death-penalty-case-1826453)
+9. <span id="src-9"></span>[IBTimes UK, Oct. 19, 2026](https://www.ibtimes.co.uk/metallica-rose-harrison-pennsylvania-death-penalty-case-1826453)
 10. <span id="src-10"></span>[Pa.R.Crim.P. 802, 234 Pa. Code r. 802](https://regulations.justia.com/states/pennsylvania/title-234/chapter-8/part-a/rule-802/)
 11. <span id="src-11"></span>[Pa.R.Crim.P. 112](https://www.courtrules.net/pennsylvania/pa-criminal-procedure/rule-112)
