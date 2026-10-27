@@ -23,7 +23,8 @@ export const POST_GUIDE_CTAS = {
   'luigi-mangione-psychiatric-defense-withdrawn-trial-2026': { product: 'brian-thompson-luigi-mangione-two-courts', campaign: 'explainer_luigi_v1', key: 'mangione' },
   'erin-patterson-case-explained': { product: 'case-chess-erin-patterson', campaign: 'explainer_patterson_v1', key: 'patterson' },
   'michelle-parker-case-dale-smith-charged-no-body': { product: 'both-sides-michelle-parker-guide-v3', campaign: 'explainer_parker_bothsides_v3', key: 'parker' },
-  'what-happened-at-great-wolf-lodge-poconos-case': { product: 'great-wolf-lodge-case-guide', campaign: 'explainer_great_wolf_v1', key: 'great_wolf' },
+  // In-article button sits near the end of this post, so the bottom one read as a duplicate (cold eyes, Oct 27, 2026).
+  'what-happened-at-great-wolf-lodge-poconos-case': { product: 'great-wolf-lodge-case-guide', campaign: 'explainer_great_wolf_v1', key: 'great_wolf', skipBottom: true },
   'tyler-robinson-trial-date-charlie-kirk-case': { product: 'charlie-kirk-case-guide', campaign: 'explainer_robinson_v1', key: 'robinson' },
 };
 

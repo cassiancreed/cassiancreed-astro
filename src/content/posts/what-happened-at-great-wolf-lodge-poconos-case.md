@@ -111,6 +111,12 @@ Tuesday, Nov. 3, 2026, at 1 p.m. Eastern at the Monroe County Courthouse in Stro
 **Is there a threat to the public?**
 Police said there is "no threat to the community."
 
+## Want the full case in one place?
+
+<div class="guide-offer">
+<a class="guide-btn" data-link-type="paid" href="https://cassiancreed.beehiiv.com/products/great-wolf-lodge-case-guide?utm_source=cassiancreed.com&amp;utm_medium=post_cta&amp;utm_campaign=explainer_great_wolf_v1&amp;utm_content=great_wolf_free_post_end" target="_blank" rel="noopener noreferrer" data-book-key="great-wolf-lodge-case-guide" data-cta-placement="great_wolf_free_post_end"><span class="calendar-badge" data-link-type="paid" aria-hidden="true">$1.99 GUIDE</span><span>Get the $1.99 guide: The Great Wolf Lodge Case Guide →</span></a>
+</div>
+
 ## Keep track of this case
 
 Court dates move. See the Nov. 3 hearing and its source on our [Court Calendar](https://cassiancreed.com/court-calendar/), and check its "last updated" date.
