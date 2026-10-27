@@ -111,12 +111,6 @@ Tuesday, Nov. 3, 2026, at 1 p.m. Eastern at the Monroe County Courthouse in Stro
 **Is there a threat to the public?**
 Police said there is "no threat to the community."
 
-## Want the full case in one place?
-
-<div class="guide-offer">
-<a class="guide-btn" data-link-type="paid" href="https://cassiancreed.beehiiv.com/products/great-wolf-lodge-case-guide?utm_source=cassiancreed.com&amp;utm_medium=post_cta&amp;utm_campaign=explainer_great_wolf_v1&amp;utm_content=great_wolf_free_post_end" target="_blank" rel="noopener noreferrer" data-book-key="great-wolf-lodge-case-guide" data-cta-placement="great_wolf_free_post_end"><span class="calendar-badge" data-link-type="paid" aria-hidden="true">$1.99 GUIDE</span><span>Get the $1.99 guide: The Great Wolf Lodge Case Guide →</span></a>
-</div>
-
 ## Keep track of this case
 
 Court dates move. See the Nov. 3 hearing and its source on our [Court Calendar](https://cassiancreed.com/court-calendar/), and check its "last updated" date.
@@ -133,6 +127,6 @@ Court dates move. See the Nov. 3 hearing and its source on our [Court Calendar](
 6. <span id="src-6"></span>[18 Pa.C.S. § 2501, Pennsylvania General Assembly](https://www.legis.state.pa.us/WU01/LI/LI/CT/HTM/18/00.025..HTM)
 7. <span id="src-7"></span>[NorthcentralPA.com, Oct. 16, 2026](https://www.northcentralpa.com/news/hearing-set-for-towanda-woman-charged-in-great-wolf-lodge-homicides/article_b605b022-d39e-48df-bfc1-1902f42f8d85.html)
 8. <span id="src-8"></span>[Pa.R.Crim.P. 542, 234 Pa. Code r. 542](https://www.law.cornell.edu/regulations/pennsylvania/234-Pa-Code-r-542)
-9. <span id="src-9"></span>[IBTimes UK](https://www.ibtimes.co.uk/metallica-rose-harrison-pennsylvania-death-penalty-case-1826453)
+9. <span id="src-9"></span>[IBTimes UK, Oct. 19, 2026](https://www.ibtimes.co.uk/metallica-rose-harrison-pennsylvania-death-penalty-case-1826453)
 10. <span id="src-10"></span>[Pa.R.Crim.P. 802, 234 Pa. Code r. 802](https://regulations.justia.com/states/pennsylvania/title-234/chapter-8/part-a/rule-802/)
 11. <span id="src-11"></span>[Pa.R.Crim.P. 112](https://www.courtrules.net/pennsylvania/pa-criminal-procedure/rule-112)
