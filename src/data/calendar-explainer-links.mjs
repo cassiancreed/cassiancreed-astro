@@ -559,7 +559,9 @@ export const CALENDAR_EXPLAINER_CASES = [
         "text": "Alexander Brothers Sentencing: What Sentence Did They Get?"
       }
     ],
-    "paid": []
+    "paid": [
+      "alexander-brothers-case-guide"
+    ]
   }
 ];
 const HISTORICAL_ROUNDUPS = [
@@ -674,11 +676,17 @@ export const LIVE_PRODUCTS = {
     "url": "https://cassiancreed.beehiiv.com/products/charlie-kirk-case-guide",
     "title": "The Charlie Kirk Case Guide",
     "price": "$1.99"
+  },
+  "alexander-brothers-case-guide": {
+    "url": "https://cassiancreed.beehiiv.com/products/alexander-brothers-case-guide",
+    "title": "The Alexander Brothers: A Reader's Case Guide (2026)",
+    "price": "$1.99"
   }
 };
 const PRODUCT_CAMPAIGNS = {
   "great-wolf-lodge-case-guide": "explainer_great_wolf_v1",
   "charlie-kirk-case-guide": "explainer_robinson_v1",
+  "alexander-brothers-case-guide": "explainer_alexander_v1",
   "murdaugh-retrial-guide": "explainer_murdaugh_v1",
   "austin-metcalf-karmelo-anthony-case-guide": "explainer_anthony_v1",
   "jared-bridegan-case-guide-v2": "explainer_bridegan_v2",

@@ -26,6 +26,8 @@ export const POST_GUIDE_CTAS = {
   // In-article button sits near the end of this post, so the bottom one read as a duplicate (cold eyes, Oct 27, 2026).
   'what-happened-at-great-wolf-lodge-poconos-case': { product: 'great-wolf-lodge-case-guide', campaign: 'explainer_great_wolf_v1', key: 'great_wolf', skipBottom: true },
   'tyler-robinson-trial-date-charlie-kirk-case': { product: 'charlie-kirk-case-guide', campaign: 'explainer_robinson_v1', key: 'robinson' },
+  // Same layout as Great Wolf (in-article button just before the sources), so skip the bottom one too (Oct 27 cold-eyes lesson).
+  'alexander-brothers-sentencing-what-sentence-did-they-get': { product: 'alexander-brothers-case-guide', campaign: 'explainer_alexander_v1', key: 'alexander', skipBottom: true },
 };
 
 export const POST_GUIDE_PLACEMENTS = ['end', 'bottom'];

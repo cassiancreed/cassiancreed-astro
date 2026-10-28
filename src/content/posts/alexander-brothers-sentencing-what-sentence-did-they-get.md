@@ -86,13 +86,17 @@ The free federal docket is on [CourtListener](https://www.courtlistener.com/dock
 **What is still not known?**
 The written judgment, fines, the restitution amount, and the Florida case number and judge.
 
+## Want the full case in one place?
+
+<div class="guide-offer">
+<a class="guide-btn" data-link-type="paid" href="https://cassiancreed.beehiiv.com/products/alexander-brothers-case-guide?utm_source=cassiancreed.com&amp;utm_medium=post_cta&amp;utm_campaign=explainer_alexander_v1&amp;utm_content=alexander_free_post_end" target="_blank" rel="noopener noreferrer" data-book-key="alexander-brothers-case-guide" data-cta-placement="alexander_free_post_end"><span class="calendar-badge" data-link-type="paid" aria-hidden="true">$1.99 GUIDE</span><span>Get the $1.99 guide: The Alexander Brothers: A Reader's Case Guide (2026) →</span></a>
+</div>
+
 ## Keep track of this case
 
 See the sentencing row and its sources on our [Court Calendar](https://cassiancreed.com/court-calendar/), and check its "last updated" date.
 
 **Get free case alerts:** sign up at [cassiancreed.beehiiv.com](https://cassiancreed.beehiiv.com).
-
-<!-- GO-DEEPER CTA (fill when the paid guide is on sale): Go deeper: [PAID GUIDE TITLE] — [PAID GUIDE LINK] -->
 
 ## Sources
 
