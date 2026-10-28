@@ -48,7 +48,7 @@ test('built legal-status copy, empty topics and source labels follow the review'
   // media-14 drops off once Oct 27 has passed; only check its copy while it is listed.
   if(listedIds.has('media-14')) {
     const alexander=text(article('media-14'));
-    assert.ok(alexander.includes('Oren, Alon and Tal Alexander were found guilty by a federal jury in March 2026. Sentencing is set for Oct 27.'));
+    assert.ok(alexander.includes("Oren, Alon and Tal Alexander were found guilty by a federal jury in March 2026. On Oct. 27, 2026, each was sentenced to 30 years in prison, the U.S. Attorney's Office said."));
     assert.doesNotMatch(alexander,/Their convictions stand/);
   }
   for(const id of ['media-s1','media-s2','media-s3']) assert.doesNotMatch(article(id),/<dt[^>]*>Topic<\/dt>/);

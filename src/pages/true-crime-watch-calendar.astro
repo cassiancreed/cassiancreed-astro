@@ -43,7 +43,7 @@ function topicFor(row) {
               <h3>{row.title}</h3>
               <dl><div><dt>Where</dt><dd>{row.platform}</dd></div><div><dt>Type</dt><dd>{row.type}</dd></div>{topicFor(row) && <div><dt>Topic</dt><dd>{topicFor(row)}</dd></div>}</dl>
               <p class="watch-description">{row.description}</p>
-              {row.id === 'media-14' && <p>Oren, Alon and Tal Alexander were found guilty by a federal jury in March 2026. Sentencing is set for Oct 27.</p>}
+              {row.id === 'media-14' && <p>Oren, Alon and Tal Alexander were found guilty by a federal jury in March 2026. On Oct. 27, 2026, each was sentenced to 30 years in prison, the U.S. Attorney's Office said.</p>}
               <p class="watch-sources"><a href={row.source_url}>{row.source_label} →</a>{row.source2_url && <><span aria-hidden="true"> · </span><a href={row.source2_url}>{row.source2_label} →</a></>}</p>
               {row.id === 'media-13' && <p class="watch-status">The episode time comes from trade sources.</p>}
               {row.id === 'media-09' && <p class="watch-status">The Oct 22 date comes from a trade source.</p>}
