@@ -45,9 +45,12 @@ test('built Books page links to the Watch Calendar',()=>{
   assert.match(readFileSync('dist/books/index.html','utf8'),/href="\/true-crime-watch-calendar\/"/);
 });
 test('built legal-status copy, empty topics and source labels follow the review',()=>{
-  const alexander=text(article('media-14'));
-  assert.ok(alexander.includes('Oren, Alon and Tal Alexander were found guilty by a federal jury in March 2026. Sentencing is set for Oct 27.'));
-  assert.doesNotMatch(alexander,/Their convictions stand/);
+  // media-14 drops off once Oct 27 has passed; only check its copy while it is listed.
+  if(listedIds.has('media-14')) {
+    const alexander=text(article('media-14'));
+    assert.ok(alexander.includes('Oren, Alon and Tal Alexander were found guilty by a federal jury in March 2026. Sentencing is set for Oct 27.'));
+    assert.doesNotMatch(alexander,/Their convictions stand/);
+  }
   for(const id of ['media-s1','media-s2','media-s3']) assert.doesNotMatch(article(id),/<dt[^>]*>Topic<\/dt>/);
   assert.doesNotMatch(html,/Weekly true-crime stories/);
   assert.ok(text(article('media-22')).includes("What's on Netflix →"));

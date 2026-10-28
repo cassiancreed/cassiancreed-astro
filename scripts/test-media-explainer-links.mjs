@@ -102,11 +102,22 @@ test('honest topic matches only; shared CAL-05 classification and ordering',()=>
     assert.ok(front.includes('title: '+JSON.stringify(link.text)));
   }
 });
-test('same-case court cross-link resolves to the actual October 27 entry',()=>{
+test('same-case court cross-links resolve to real Court Calendar entries',()=>{
+  // Rows drop off after their date passes, so this test checks every remaining match
+  // instead of hard-coding one row (media-14 blocked refreshes for 3 days in Oct 2026).
   const matched=rows.filter(r=>mediaCourtLink(r,courts));
-  assert.deepEqual(matched.map(r=>r.id),['media-14']);
-  assert.deepEqual(mediaCourtLink(matched[0],courts).url,'/court-calendar/#alexander-brothers-sentencing');
-  assert.equal(mediaCourtLink(matched[0],courts).text,'In court: Oct 27 → Court Calendar');
+  const ids=new Set(courts.map(c=>c.id));
+  for(const r of matched) {
+    const link=mediaCourtLink(r,courts);
+    assert.equal(link.url,'/court-calendar/#'+r.court_calendar_id,r.id);
+    assert.ok(ids.has(r.court_calendar_id),r.id+' links to a real Court Calendar entry');
+    assert.match(link.text,/^In court: [A-Z][a-z]{2} \d{1,2} → Court Calendar$/,r.id);
+  }
+  const alexander=rows.find(r=>r.id==='media-14');
+  if(alexander) {
+    assert.deepEqual(mediaCourtLink(alexander,courts).url,'/court-calendar/#alexander-brothers-sentencing');
+    assert.equal(mediaCourtLink(alexander,courts).text,'In court: Oct 27 → Court Calendar');
+  }
 });
 test('rendered route, sitemap, nav and shared style integration',()=>{
   const page=readFileSync('src/pages/true-crime-watch-calendar.astro','utf8');
