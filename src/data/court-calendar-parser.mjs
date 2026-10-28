@@ -119,7 +119,7 @@ export function parseCourtCalendar(tsv) {
   }));
 
   const passive = (section) => parsed.filter((r) => r.section === section).map((r) => ({
-    id: r.id, case: r.case, type: section === 'appeal' ? r.proceeding : null,
+    id: r.id, case: r.case, type: section === 'appeal' ? r.proceeding : null, dateISO: r.date_iso || null,
     proceeding: r.proceeding, where: r.court, timezone: r.timezone || null, timeStatus: r.time_status || null,
     docket: r.docket || null, verified: r.verified || null,
     status: r.status, note: r.detail, nextNote: r.next_note || null,
