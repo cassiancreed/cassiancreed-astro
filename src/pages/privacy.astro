@@ -64,7 +64,7 @@ const jsonld = pageSchema({
         <li><strong>Purchases.</strong> Our books and guides are sold on Beehiiv’s store pages, not on this site. Beehiiv uses Stripe to take payments. We do not collect your card number on this site. Beehiiv may share order details with us, such as your email address and what you bought.</li>
         <li><strong>Hosting records.</strong> Netlify hosts this site. Like any web host, it handles your IP address and the pages you ask for, so it can send you the site. Netlify’s privacy page says what it keeps. We cannot see that from our own code.</li>
       </ul>
-      <p>We do not run ads. We do not use ad pixels, such as a Meta or TikTok pixel.</p>
+      <p>This site shows no ads. This site has no ad pixels, such as a Meta or TikTok pixel.</p>
     </div>
   </section>
 
@@ -95,11 +95,12 @@ const jsonld = pageSchema({
         <li>Beehiiv, Spotify and YouTube may also set cookies when their parts of a page load.</li>
       </ul>
       <p>We do not show a cookie pop-up. We do not ask first. Analytics start when a page loads on our live site.</p>
-      <p>Our site also saves up to three small notes in your browser. They are not cookies:</p>
+      <p>Our site also saves a few small notes in your browser. They are not cookies:</p>
       <ul>
         <li><strong>How you got here.</strong> If you arrive from a link with campaign tags (for example, from a podcast), we save those tags and the page you landed on. They are kept only while that browser tab is open. We use them to credit your sign-up to the right source. We also pass them to Beehiiv with the sign-up form.</li>
         <li><strong>Sign-up in progress.</strong> When you click a sign-up link, we save a short note on your device. It names the page, the form and the offer. We only use it if you finish signing up within 30 minutes.</li>
         <li><strong>Last visit date.</strong> On the <a href="/today/">What Changed</a> page, we save the date of the newest change you saw. That lets the page show what is new. It stays on your device. We do not send it anywhere.</li>
+        <li><strong>Testing flag.</strong> Only if you open a link with ?nep=internal. It marks the visit as ours in Google Analytics.</li>
       </ul>
     </div>
   </section>
@@ -128,7 +129,7 @@ const jsonld = pageSchema({
   <section class="wrap priv-sec" aria-labelledby="unsubscribe">
     <h2 id="unsubscribe">How to unsubscribe</h2>
     <div class="prose">
-      <p>Every email we send has an unsubscribe link at the bottom. Click it and the emails stop. You can also email us at <a href={`mailto:${EMAIL}`}>{EMAIL}</a> and ask us to take you off the list.</p>
+      <p>Every newsletter email we send has an unsubscribe link at the bottom. Click it and those emails stop. You can also email us at <a href={`mailto:${EMAIL}`}>{EMAIL}</a> and ask us to take you off the list.</p>
     </div>
   </section>
 
