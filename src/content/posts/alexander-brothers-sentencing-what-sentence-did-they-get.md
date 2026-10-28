@@ -8,20 +8,20 @@ featured: false
 victim: "Eleven women who testified (not named)"
 location: "Manhattan, New York"
 jurisdiction: "U.S. District Court, Southern District of New York (No. 1:24-cr-00676)"
-status: "Found guilty by a federal jury on March 9, 2026. Each sentenced to 30 years in prison and 10 years of supervised release on Oct. 27, 2026 (U.S. Attorney, S.D.N.Y.). Written judgment not yet on the public docket. They can still appeal. Oren and Alon also face charges in Florida, where they are presumed innocent."
+status: "Found guilty by a federal jury on March 9, 2026. Each sentenced to 30 years in prison and 10 years of supervised release on Oct. 27, 2026 (U.S. Attorney, S.D.N.Y.). Written judgment not on the CourtListener docket as of Oct. 28, 3:33 PM PT. They can still appeal. Oren and Alon also face charges in Florida, where they are presumed innocent."
 cover: "/case-art/alexander-brothers-sentencing-explainer.png"
 coverAlt: "Dark title card with the words: Case explainer, Neural Edge Publishing. Alexander Brothers Sentencing: 30 Years Each. What the judge decided on Oct 27, 2026, and what happens next. cassiancreed.com."
 ---
 
-*Status as of Oct. 27, 2026, 7:15 PM PT. Court records can change. Check our [Court Calendar](https://cassiancreed.com/court-calendar/) and its "last updated" date.*
+*Status as of Oct. 28, 2026, 3:33 PM PT. Court records can change. Check our [Court Calendar](https://cassiancreed.com/court-calendar/) and its "last updated" date.*
 
 Alon, Oren and Tal Alexander were each sentenced to 30 years in prison on Tuesday, Oct. 27, 2026. Judge Valerie E. Caproni gave the sentences in federal court in Manhattan, CBS News, ABC News and the Associated Press reported. [[1]](#src-1)[[2]](#src-2)[[3]](#src-3) Prosecutors had asked for life. The defense had asked for 15 years. [[2]](#src-2)[[5]](#src-5)
 
-The court's written judgment was not on the public docket as of 3:00 PM PT. [[4]](#src-4)
+The court's written judgment was not on the CourtListener docket as of 3:33 PM PT on Oct. 28. The last filing there was dated Oct. 26. That site can run behind the court's own system. [[17]](#src-17) On Oct. 26, both sides asked the judge to leave the judgment open until forfeiture orders are filed. [[17]](#src-17)
 
 ## Who is this case about?
 
-It starts with the women. Eleven women testified at the five-week trial. More than 70 women came forward to investigators. [[6]](#src-6)[[7]](#src-7) On Tuesday, eleven women spoke in court before the sentence, and a prosecutor read a twelfth woman's statement, AP reported. [[3]](#src-3)
+It starts with the women. Eleven women testified at the trial. More than 70 women came forward to investigators. [[6]](#src-6)[[7]](#src-7) On Tuesday, eleven women spoke in court before the sentence, and a prosecutor read a twelfth woman's statement, AP reported. [[3]](#src-3)
 
 We do not name them. The judge refused to make prosecutors name the speakers ahead of time. She wrote that the victims' rights law "is oriented towards protecting victims." [[4]](#src-4)
 
@@ -41,7 +41,7 @@ The brothers pleaded not guilty and say they are innocent. [[8]](#src-8)[[7]](#s
 
 ## Did each brother get the same sentence?
 
-Yes. Each brother received 30 years in prison. [[1]](#src-1)[[2]](#src-2)[[3]](#src-3) Each also received 10 years of supervised release, the U.S. Attorney's Office said. [[16]](#src-16) Supervised release is a period of court supervision after prison. Fines and how much money goes to victims were not in those reports. They should appear in the written judgment.
+Yes. Each brother received 30 years in prison. [[1]](#src-1)[[2]](#src-2)[[3]](#src-3) Each also received 10 years of supervised release, the U.S. Attorney's Office said. [[16]](#src-16) Supervised release is a period of court supervision after prison. The U.S. Attorney's Office said Alon and Oren were each fined $300,000. Tal was fined $350,000. [[16]](#src-16)[[2]](#src-2) ABC News also reported that Oren must pay another $50,000 right away. It did not say what the money is for. [[2]](#src-2) The amount of money that goes to victims (restitution) has not been set. ABC News reported that lawyers for both sides will work it out. [[2]](#src-2)[[4]](#src-4) The sides are also working out which seized phones, computers and drives the brothers must give up (forfeit). [[17]](#src-17)
 
 ## What did each side ask for?
 
@@ -55,7 +55,7 @@ They are in federal custody. Before sentencing they were held mostly at the Metr
 
 ## Can they appeal?
 
-Yes. They can still appeal. Their lawyers said in March they plan to. [[7]](#src-7) A notice of appeal is the short filing that starts an appeal. In a federal criminal case it is due within 14 days after the written judgment is entered. [[10]](#src-10) No appeal had been filed as of 3:00 PM PT on Oct. 27. [[4]](#src-4)
+Yes. They can still appeal. Their lawyers said in March they plan to. [[7]](#src-7) A notice of appeal is the short filing that starts an appeal. In a federal criminal case it is due within 14 days after the written judgment is entered. [[10]](#src-10) No appeal was on the CourtListener docket as of Oct. 28, 3:33 PM PT. [[4]](#src-4)
 
 ## What happens next?
 
@@ -84,7 +84,7 @@ It is a three-part Peacock docuseries about this real case. It came out Oct. 25,
 The free federal docket is on [CourtListener](https://www.courtlistener.com/docket/69455630/united-states-v-alexander/). Trial transcripts are not public until Jan. 18, 2027. [[4]](#src-4)
 
 **What is still not known?**
-The written judgment, fines, the restitution amount, and the Florida case number and judge.
+The written judgment. The restitution amount. Which seized devices the brothers must give up. The Florida case number and judge.
 
 ## Want the full case in one place?
 
@@ -116,5 +116,6 @@ See the sentencing row and its sources on our [Court Calendar](https://cassiancr
 14. <span id="src-14"></span>[Constitution Annotated, Art. II, §2 — scope of the pardon power (Cornell LII)](https://law.cornell.edu/constitution-conan/article-2/section-2/clause-1/scope-of-pardon-power)
 15. <span id="src-15"></span>[TV Insider — The Wolves of Real Estate](https://www.tvinsider.com/show/the-wolves-of-real-estate-the-alexander-brothers/)
 16. <span id="src-16"></span>[U.S. Attorney's Office, Southern District of New York, Oct. 27, 2026 — sentenced to 30 years in prison](https://www.justice.gov/usao-sdny/pr/alon-oren-and-tal-alexander-sentenced-30-years-prison-decade-long-sex-trafficking-and)
+17. <span id="src-17"></span>[Federal docket, U.S. v. Alexander, Dkt. 582 (U.S. letter on forfeiture and the open judgment, Oct. 26, 2026) (CourtListener); docket checked Oct. 28, 2026, 3:33 PM PT — no filings dated Oct. 27 or later](https://www.courtlistener.com/docket/69455630/582/united-states-v-alexander/)
 
 *By Cassian Creed, Neural Edge Publishing. Spot an error? Email cassiancreed@cassiancreed.com with "Correction" in the subject.*
