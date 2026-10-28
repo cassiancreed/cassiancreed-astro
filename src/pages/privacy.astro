@@ -1,0 +1,183 @@
+---
+import Base from '../layouts/Base.astro';
+import { pageSchema } from '../utils/page-schema.mjs';
+// PRIVACY POLICY (checklist PRIV1, 2026-10-28).
+// Plain words at a 6th-grade level. Not legal advice. No compliance claims.
+// Every statement below was checked against this repo on 2026-10-28:
+//   - Google Analytics 4 (G-5D0DX6WFW4) loads from src/layouts/Base.astro on
+//     cassiancreed.com only. No consent banner. No Do Not Track / GPC check.
+//   - Our own code sets no cookies (no document.cookie). It uses sessionStorage
+//     "nep_origin", localStorage "nep_signup_pending_v1" (30 minutes) and
+//     localStorage "nep-case-status-last-visit" (/today/ only).
+//   - Newsletter forms are Beehiiv iframes (subscribe-forms.beehiiv.com).
+//   - Store checkout is on cassiancreed.beehiiv.com/products/ (not on this site).
+//   - Embeds: Spotify (4 case files), YouTube (1 case file), OpenStreetMap
+//     tiles (/missing-persons/), Google Fonts (every page).
+//   - "Report an error" is a mailto: link. There are no forms on this site.
+//   - Host: Netlify. Whether Netlify Analytics is on is a dashboard setting
+//     that the code cannot show, so this page does not say either way.
+// Any wording change must be logged with a new Last updated date.
+const LAST_UPDATED = 'October 28, 2026';
+const EMAIL = 'cassiancreed@cassiancreed.com';
+
+const jsonld = pageSchema({
+  type: 'WebPage',
+  title: 'Privacy Policy',
+  headline: 'Privacy Policy',
+  description: 'Plain-language privacy policy for CassianCreed.com: what we collect, who gets it, how to unsubscribe, and how to ask us to see or delete your data.',
+  path: '/privacy/',
+  source: 'src/pages/privacy.astro',
+});
+---
+<Base
+  title="Privacy Policy"
+  description="Plain-language privacy policy for CassianCreed.com: what we collect, who gets it, how to unsubscribe, and how to ask us to see or delete your data."
+  jsonld={jsonld}
+>
+  <section class="hero wrap">
+    <p class="evidence evidence--accent">Policy</p>
+    <h1>Privacy Policy</h1>
+    <p class="priv-lede">This page tells you what this site collects, why we collect it, and who else gets it. We use plain words. We only say what the site really does. If we are not sure about something, we say so.</p>
+    <p class="priv-updated"><strong>Last updated {LAST_UPDATED}.</strong></p>
+    <p class="priv-updated">This page is not legal advice.</p>
+  </section>
+
+  <section class="wrap priv-sec" aria-labelledby="who">
+    <h2 id="who">Who we are</h2>
+    <div class="prose">
+      <p>This site is run by Neural Edge Publishing (NEP). NEP is a small, independent true-crime imprint. Our author name is Cassian Creed.</p>
+      <ul>
+        <li><strong>Email:</strong> <a href={`mailto:${EMAIL}`}>{EMAIL}</a></li>
+        <li><strong>Mail:</strong> Neural Edge Publishing, 16232 Bothell Everett Hwy #1039, Mill Creek, WA 98012, United States</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="wrap priv-sec" aria-labelledby="collect">
+    <h2 id="collect">What we collect, and why</h2>
+    <div class="prose">
+      <ul>
+        <li><strong>Your email address, if you sign up.</strong> You type it into a form that belongs to Beehiiv, our newsletter service. We use it to send you the guide or the updates you asked for. The code on our site cannot see what you type into that form. The court-date alert form may also ask which cases you want to follow.</li>
+        <li><strong>Where you signed up.</strong> Our sign-up forms carry tags, such as the page you were on and the name of the offer. Beehiiv may save these with your sign-up. We use them to learn which pages help readers.</li>
+        <li><strong>Visit data.</strong> We use Google Analytics to count visits. It records the pages you view. It records the buttons you click, such as sign-up, store and court-alert buttons. It records how you got here, for example from a social post or a podcast link. It also records your device type, your browser, and your rough location, such as your country or city. We do not link this data to your name or email address.</li>
+        <li><strong>Messages you send us.</strong> If you email us, we get your email address and what you write. We use it to answer you. The “Spot an error? Report it” link at the bottom of each page just opens your own email app. It is not a form.</li>
+        <li><strong>Purchases.</strong> Our books and guides are sold on Beehiiv’s store pages, not on this site. Beehiiv uses Stripe to take payments. We do not collect your card number on this site. Beehiiv may share order details with us, such as your email address and what you bought.</li>
+        <li><strong>Hosting records.</strong> Netlify hosts this site. Like any web host, it handles your IP address and the pages you ask for, so it can send you the site. Netlify’s privacy page says what it keeps. We cannot see that from our own code.</li>
+      </ul>
+      <p>We do not run ads. We do not use ad pixels, such as a Meta or TikTok pixel.</p>
+    </div>
+  </section>
+
+  <section class="wrap priv-sec" aria-labelledby="others">
+    <h2 id="others">Who else gets your data</h2>
+    <div class="prose">
+      <p>When your browser loads content from these companies, they can see things like your IP address and browser type. They have their own rules. We do not control them. Here is who they are and where to read their rules.</p>
+      <ul>
+        <li><strong>Beehiiv.</strong> Newsletter sign-up forms, our emails, and the store. <a href="https://www.beehiiv.com/privacy" target="_blank" rel="noopener noreferrer">Beehiiv privacy page</a></li>
+        <li><strong>Stripe.</strong> Payments in the Beehiiv store. <a href="https://stripe.com/privacy" target="_blank" rel="noopener noreferrer">Stripe privacy page</a></li>
+        <li><strong>Google Analytics.</strong> Visit counts. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google privacy page</a></li>
+        <li><strong>Google Fonts.</strong> The fonts on our pages load from Google. <a href="https://developers.google.com/fonts/faq/privacy" target="_blank" rel="noopener noreferrer">Google Fonts privacy page</a></li>
+        <li><strong>Netlify.</strong> Hosts this site. <a href="https://www.netlify.com/privacy/" target="_blank" rel="noopener noreferrer">Netlify privacy page</a></li>
+        <li><strong>Spotify.</strong> Podcast players on some case files. <a href="https://www.spotify.com/us/legal/privacy-policy/" target="_blank" rel="noopener noreferrer">Spotify privacy page</a></li>
+        <li><strong>YouTube.</strong> Video players on some case files. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google privacy page</a></li>
+        <li><strong>OpenStreetMap.</strong> The map pictures on the <a href="/missing-persons/">Missing Persons</a> page. <a href="https://osmfoundation.org/wiki/Privacy_Policy" target="_blank" rel="noopener noreferrer">OpenStreetMap privacy page</a></li>
+      </ul>
+      <p>Some pages link to other sites, such as X, TikTok and book stores. Those sites only get your data if you click through. Their rules apply there.</p>
+    </div>
+  </section>
+
+  <section class="wrap priv-sec" aria-labelledby="cookies">
+    <h2 id="cookies">Cookies and saved notes</h2>
+    <div class="prose">
+      <p>Our own site code does not set cookies. But other companies’ tools do:</p>
+      <ul>
+        <li>Google Analytics normally sets cookies. Their names start with <code>_ga</code>. They help Google tell one visitor from another. We do not turn this off.</li>
+        <li>Beehiiv, Spotify and YouTube may also set cookies when their parts of a page load.</li>
+      </ul>
+      <p>We do not show a cookie pop-up. We do not ask first. Analytics start when a page loads on our live site.</p>
+      <p>Our site also saves up to three small notes in your browser. They are not cookies:</p>
+      <ul>
+        <li><strong>How you got here.</strong> If you arrive from a link with campaign tags (for example, from a podcast), we save those tags and the page you landed on. They are kept only while that browser tab is open. We use them to credit your sign-up to the right source. We also pass them to Beehiiv with the sign-up form.</li>
+        <li><strong>Sign-up in progress.</strong> When you click a sign-up link, we save a short note on your device. It names the page, the form and the offer. We only use it if you finish signing up within 30 minutes.</li>
+        <li><strong>Last visit date.</strong> On the <a href="/today/">What Changed</a> page, we save the date of the newest change you saw. That lets the page show what is new. It stays on your device. We do not send it anywhere.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="wrap priv-sec" aria-labelledby="optout">
+    <h2 id="optout">How to opt out of analytics</h2>
+    <div class="prose">
+      <ul>
+        <li>Install the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer">Google Analytics opt-out browser add-on</a>.</li>
+        <li>Block or delete cookies in your browser settings.</li>
+        <li>Use a content blocker in your browser.</li>
+      </ul>
+      <p>You can still read the site if you do any of these.</p>
+    </div>
+  </section>
+
+  <section class="wrap priv-sec" aria-labelledby="dnt">
+    <h2 id="dnt">Do Not Track (California note)</h2>
+    <div class="prose">
+      <p>Some browsers send a “Do Not Track” signal. California law asks us to say how we respond to it.</p>
+      <p>Here is our answer: this site does not read that signal. Google Analytics runs the same way whether or not your browser sends it. The site also does not read a “Global Privacy Control” signal.</p>
+      <p>The companies in the list above may collect data about your visits to this site and to other sites. We do not control that. Use the opt-out steps above if you want to limit it.</p>
+    </div>
+  </section>
+
+  <section class="wrap priv-sec" aria-labelledby="unsubscribe">
+    <h2 id="unsubscribe">How to unsubscribe</h2>
+    <div class="prose">
+      <p>Every email we send has an unsubscribe link at the bottom. Click it and the emails stop. You can also email us at <a href={`mailto:${EMAIL}`}>{EMAIL}</a> and ask us to take you off the list.</p>
+    </div>
+  </section>
+
+  <section class="wrap priv-sec" aria-labelledby="your-data">
+    <h2 id="your-data">How to see or delete your data</h2>
+    <div class="prose">
+      <p>Anyone can ask, no matter where you live. Email <a href={`mailto:${EMAIL}`}>{EMAIL}</a>. Write from the address you used to sign up. Tell us what you want: a copy of what we hold, a fix, or deletion.</p>
+      <ul>
+        <li>We can look up and remove your record in our Beehiiv list.</li>
+        <li>We may need to check that the request is really from you.</li>
+        <li>Our analytics are not tied to your name or email. So we usually cannot find one visitor’s record.</li>
+        <li>Data held by Google, Spotify, Stripe and the others above is theirs. Use their privacy pages to ask them.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="wrap priv-sec" aria-labelledby="children">
+    <h2 id="children">Children</h2>
+    <div class="prose">
+      <p>This site is not for children under 13. It covers true-crime cases. We do not knowingly collect information from children under 13. If you think a child gave us their email address, write to us and we will delete it.</p>
+    </div>
+  </section>
+
+  <section class="wrap priv-sec" aria-labelledby="changes">
+    <h2 id="changes">When we change this page</h2>
+    <div class="prose">
+      <p>When we change this page, we change the “Last updated” date at the top. Please check back now and then. If a change is big, we will say so at the top of this page.</p>
+    </div>
+  </section>
+
+  <section class="wrap priv-sec" aria-labelledby="contact">
+    <h2 id="contact">Questions</h2>
+    <div class="prose">
+      <p>Write to us at <a href={`mailto:${EMAIL}`}>{EMAIL}</a> or by mail at Neural Edge Publishing, 16232 Bothell Everett Hwy #1039, Mill Creek, WA 98012, United States.</p>
+    </div>
+  </section>
+
+  <style>
+    .priv-lede{font-size:19px;color:var(--ink);max-width:68ch;margin:18px 0 0;line-height:1.6}
+    .priv-updated{font-size:15px;color:var(--ink-2);max-width:68ch;margin:14px 0 0}
+    .priv-updated strong{color:var(--ink)}
+    .priv-sec{margin:44px auto 0}
+    .priv-sec h2{font-family:var(--serif);font-size:26px;font-weight:600;margin:0 0 14px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+    .prose p,.prose li{color:var(--ink-2);line-height:1.65;max-width:70ch}
+    .prose strong{color:var(--ink)}
+    .prose ul{padding-left:20px;margin:0 0 16px}
+    .prose li{margin-bottom:9px}
+    .prose a{color:var(--accent);overflow-wrap:anywhere}
+    .prose code{font-family:var(--mono);font-size:.92em;color:var(--ink)}
+    @media(max-width:680px){.priv-sec h2{font-size:23px}}
+  </style>
+</Base>
