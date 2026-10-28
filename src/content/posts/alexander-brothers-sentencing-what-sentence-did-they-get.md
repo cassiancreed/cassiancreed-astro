@@ -8,7 +8,7 @@ featured: false
 victim: "Eleven women who testified (not named)"
 location: "Manhattan, New York"
 jurisdiction: "U.S. District Court, Southern District of New York (No. 1:24-cr-00676)"
-status: "Found guilty by a federal jury on March 9, 2026. Each sentenced to 30 years in prison and 10 years of supervised release on Oct. 27, 2026 (U.S. Attorney, S.D.N.Y.). Written judgment not yet on the public docket. They can still appeal. Oren and Alon also face charges in Florida, where they are presumed innocent."
+status: "Found guilty by a federal jury on March 9, 2026. Each sentenced to 30 years in prison and 10 years of supervised release on Oct. 27, 2026 (U.S. Attorney, S.D.N.Y.). Written judgment not on the CourtListener docket as of Oct. 28, 3:33 PM PT. They can still appeal. Oren and Alon also face charges in Florida, where they are presumed innocent."
 cover: "/case-art/alexander-brothers-sentencing-explainer.png"
 coverAlt: "Dark title card with the words: Case explainer, Neural Edge Publishing. Alexander Brothers Sentencing: 30 Years Each. What the judge decided on Oct 27, 2026, and what happens next. cassiancreed.com."
 ---
@@ -41,7 +41,7 @@ The brothers pleaded not guilty and say they are innocent. [[8]](#src-8)[[7]](#s
 
 ## Did each brother get the same sentence?
 
-Yes. Each brother received 30 years in prison. [[1]](#src-1)[[2]](#src-2)[[3]](#src-3) Each also received 10 years of supervised release, the U.S. Attorney's Office said. [[16]](#src-16) Supervised release is a period of court supervision after prison. The U.S. Attorney's Office said Alon and Oren were each fined $300,000. Tal was fined $350,000. [[16]](#src-16)[[2]](#src-2) ABC News also reported that Oren must pay another $50,000 right away because of his conviction for sexual exploitation of a minor. [[2]](#src-2) The amount of money that goes to victims (restitution) has not been set. ABC News reported that lawyers for both sides will work it out. [[2]](#src-2)[[4]](#src-4) The sides are also working out which seized phones, computers and drives the brothers must give up (forfeit). [[17]](#src-17)
+Yes. Each brother received 30 years in prison. [[1]](#src-1)[[2]](#src-2)[[3]](#src-3) Each also received 10 years of supervised release, the U.S. Attorney's Office said. [[16]](#src-16) Supervised release is a period of court supervision after prison. The U.S. Attorney's Office said Alon and Oren were each fined $300,000. Tal was fined $350,000. [[16]](#src-16)[[2]](#src-2) ABC News also reported that Oren must pay another $50,000 right away. It did not say what the money is for. [[2]](#src-2) The amount of money that goes to victims (restitution) has not been set. ABC News reported that lawyers for both sides will work it out. [[2]](#src-2)[[4]](#src-4) The sides are also working out which seized phones, computers and drives the brothers must give up (forfeit). [[17]](#src-17)
 
 ## What did each side ask for?
 
@@ -55,7 +55,7 @@ They are in federal custody. Before sentencing they were held mostly at the Metr
 
 ## Can they appeal?
 
-Yes. They can still appeal. Their lawyers said in March they plan to. [[7]](#src-7) A notice of appeal is the short filing that starts an appeal. In a federal criminal case it is due within 14 days after the written judgment is entered. [[10]](#src-10) No appeal had been filed as of 3:00 PM PT on Oct. 27. [[4]](#src-4)
+Yes. They can still appeal. Their lawyers said in March they plan to. [[7]](#src-7) A notice of appeal is the short filing that starts an appeal. In a federal criminal case it is due within 14 days after the written judgment is entered. [[10]](#src-10) No appeal was on the CourtListener docket as of Oct. 28, 3:33 PM PT. [[4]](#src-4)
 
 ## What happens next?
 
