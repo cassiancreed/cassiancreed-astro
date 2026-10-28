@@ -8,12 +8,12 @@ featured: false
 victim: "Eleven women who testified (not named)"
 location: "Manhattan, New York"
 jurisdiction: "U.S. District Court, Southern District of New York (No. 1:24-cr-00676)"
-status: "Found guilty by a federal jury on March 9, 2026. Each sentenced to 30 years in prison on Oct. 27, 2026, as reported by CBS News, ABC News and AP. Written judgment not yet on the public docket. They can still appeal. Oren and Alon also face charges in Florida, where they are presumed innocent."
+status: "Found guilty by a federal jury on March 9, 2026. Each sentenced to 30 years in prison and 10 years of supervised release on Oct. 27, 2026 (U.S. Attorney, S.D.N.Y.). Written judgment not yet on the public docket. They can still appeal. Oren and Alon also face charges in Florida, where they are presumed innocent."
 cover: "/case-art/alexander-brothers-sentencing-explainer.png"
 coverAlt: "Dark title card with the words: Case explainer, Neural Edge Publishing. Alexander Brothers Sentencing: 30 Years Each. What the judge decided on Oct 27, 2026, and what happens next. cassiancreed.com."
 ---
 
-*Status as of Oct. 27, 2026, 3:15 PM PT. Court records can change. Check our [Court Calendar](https://cassiancreed.com/court-calendar/) and its "last updated" date.*
+*Status as of Oct. 27, 2026, 7:15 PM PT. Court records can change. Check our [Court Calendar](https://cassiancreed.com/court-calendar/) and its "last updated" date.*
 
 Alon, Oren and Tal Alexander were each sentenced to 30 years in prison on Tuesday, Oct. 27, 2026. Judge Valerie E. Caproni gave the sentences in federal court in Manhattan, CBS News, ABC News and the Associated Press reported. [[1]](#src-1)[[2]](#src-2)[[3]](#src-3) Prosecutors had asked for life. The defense had asked for 15 years. [[2]](#src-2)[[5]](#src-5)
 
@@ -41,7 +41,7 @@ The brothers pleaded not guilty and say they are innocent. [[8]](#src-8)[[7]](#s
 
 ## Did each brother get the same sentence?
 
-Yes. Each brother received 30 years in prison, according to every report we read. [[1]](#src-1)[[2]](#src-2)[[3]](#src-3) Other parts of a sentence, like supervised release, fines and how much money goes to victims, were not in those reports. They should appear in the written judgment.
+Yes. Each brother received 30 years in prison. [[1]](#src-1)[[2]](#src-2)[[3]](#src-3) Each also received 10 years of supervised release, the U.S. Attorney's Office said. [[16]](#src-16) Supervised release is a period of court supervision after prison. Fines and how much money goes to victims were not in those reports. They should appear in the written judgment.
 
 ## What did each side ask for?
 
@@ -84,7 +84,7 @@ It is a three-part Peacock docuseries about this real case. It came out Oct. 25,
 The free federal docket is on [CourtListener](https://www.courtlistener.com/docket/69455630/united-states-v-alexander/). Trial transcripts are not public until Jan. 18, 2027. [[4]](#src-4)
 
 **What is still not known?**
-The written judgment, supervised release, fines, the restitution amount, and the Florida case number and judge.
+The written judgment, fines, the restitution amount, and the Florida case number and judge.
 
 ## Keep track of this case
 
@@ -111,5 +111,6 @@ See the sentencing row and its sources on our [Court Calendar](https://cassiancr
 13. <span id="src-13"></span>[Federal Rule of Criminal Procedure 53 (Cornell LII)](https://www.law.cornell.edu/rules/frcrmp/rule_53)
 14. <span id="src-14"></span>[Constitution Annotated, Art. II, §2 — scope of the pardon power (Cornell LII)](https://law.cornell.edu/constitution-conan/article-2/section-2/clause-1/scope-of-pardon-power)
 15. <span id="src-15"></span>[TV Insider — The Wolves of Real Estate](https://www.tvinsider.com/show/the-wolves-of-real-estate-the-alexander-brothers/)
+16. <span id="src-16"></span>[U.S. Attorney's Office, Southern District of New York, Oct. 27, 2026 — sentenced to 30 years in prison](https://www.justice.gov/usao-sdny/pr/alon-oren-and-tal-alexander-sentenced-30-years-prison-decade-long-sex-trafficking-and)
 
 *By Cassian Creed, Neural Edge Publishing. Spot an error? Email cassiancreed@cassiancreed.com with "Correction" in the subject.*
