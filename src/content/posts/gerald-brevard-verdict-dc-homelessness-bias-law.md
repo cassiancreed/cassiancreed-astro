@@ -16,17 +16,17 @@ coverAlt: "A neutral local courthouse plaza beside an open, warmly lit community
 
 *Status as of Oct. 28, 2026, 8:43 PM PT. Court records can change. Check our [Court Calendar](https://cassiancreed.com/court-calendar/) and its "last updated" date.*
 
-A D.C. jury found Gerald Brevard III guilty on Tuesday, Oct. 27, 2026. It found him guilty on 16 counts. The case is about the killing of Morgan Holmes, 54, and the shooting of two other men in March 2022. [[1]](#src-1) He was also found guilty of bias-related hate crimes. The bias was based on the victims' perceived or actual homelessness. [[1]](#src-1)[[2]](#src-2)[[3]](#src-3)
+A D.C. jury found Gerald Brevard III guilty on Tuesday, Oct. 27, 2026. It found him guilty on 16 counts. The case is about Morgan Holmes, 54, a husband, father and grandfather who was killed in March 2022, and two other men who were shot. [[1]](#src-1)[[8]](#src-8) He was also found guilty of bias-related hate crimes. The bias was based on the victims' perceived or actual homelessness. [[1]](#src-1)[[2]](#src-2)[[3]](#src-3)
 
 He has not been sentenced. Judge Neal Kravitz is set to sentence him on Jan. 29, 2027. [[1]](#src-1)[[2]](#src-2) The bias finding does not set that sentence. D.C. law lets the judge give a higher sentence. It does not make the judge do it. [[6]](#src-6)
 
 ## Who is this case about?
 
-It is about Morgan Holmes. WUSA9 reported in 2022 that he was a husband, a father and a grandfather. His family told WUSA9 he served in the Army. [[8]](#src-8) At a memorial service for him, the Rev. Patrick Mahoney spoke about people who are unhoused. He said, "It's very easy for us to forget these are living, breathing human beings whose lives have purpose, dignity, and meaning." [[8]](#src-8)
+It is about Morgan Holmes. WUSA9 reported in 2022 that he was a husband, a father and a grandfather. His family told WUSA9 he served in the Army. [[8]](#src-8) In WUSA9's story on a memorial service for him, the Rev. Patrick Mahoney spoke about people who are unhoused. He said, "It's very easy for us to forget these are living, breathing human beings whose lives have purpose, dignity, and meaning." [[8]](#src-8)
 
 Morgan Holmes was 54 when he was killed on March 9, 2022, at the outdoor camp where he lived on New York Avenue NE in Washington, D.C. [[1]](#src-1)
 
-Two other men were shot in the days before. The sources we checked report one death, Mr. Holmes. [[1]](#src-1)[[2]](#src-2) We do not name the two other men. The U.S. Attorney's Office does not name them, and we do not need their names to explain this verdict. [[1]](#src-1)
+Two other men were shot in the days before. The verdict reports we checked describe one death in this case: Mr. Holmes. [[1]](#src-1)[[2]](#src-2) We do not name the two other men. The U.S. Attorney's Office does not name them, and we do not need their names to explain this verdict. [[1]](#src-1)
 
 ## What did the jury decide?
 
@@ -80,9 +80,9 @@ The time has not been publicly verified. The courtroom has not been publicly ver
 
 ## Can he appeal?
 
-Not yet. He has not been sentenced, so no judgment has been entered. The 30-day appeal clock has not started. [[1]](#src-1)[[9]](#src-9)[[10]](#src-10)
+The appeal comes after sentencing. A notice filed early is treated as filed after the judgment. [[9]](#src-9)
 
-After the judgment is entered, he can file a notice of appeal. In a D.C. criminal case it is due within 30 days after the judgment is entered. A timely new-trial motion can extend that deadline. [[9]](#src-9)[[10]](#src-10)
+He has not been sentenced, so no judgment has been entered. The 30-day appeal clock has not started. [[1]](#src-1)[[9]](#src-9)[[10]](#src-10) In a D.C. criminal case, a notice of appeal is due within 30 days after the judgment is entered. A timely new-trial motion can extend that deadline. [[9]](#src-9)[[10]](#src-10)
 
 As of Oct. 28, 8:43 PM PT, we found no new-trial motion or notice of appeal in the public sources we checked. We could not view the full court docket.
 
@@ -110,7 +110,7 @@ See the sentencing row and its sources on our [Court Calendar](https://cassiancr
 6. <span id="src-6"></span>[U.S. Attorney's Office, District of Columbia — Hate/Bias-Related Crimes overview](https://www.justice.gov/usao-dc/hatebias-related-crimes)
 7. <span id="src-7"></span>[U.S. Attorney's Office, District of Columbia, Sept. 21, 2022 — grand jury returns 17-count indictment charging Gerald Brevard III](https://www.justice.gov/usao-dc/pr/grand-jury-returns-17-count-indictment-charging-gerald-brevard-iii-murder-multiple-counts)
 8. <span id="src-8"></span>[WUSA9, 2022 — memorial service for Morgan Holmes](https://wusa9.com/article/news/local/dc/dc-ministers-vigil-slain-victim-homeless-attacks/65-9305763a-ee83-4612-a351-2b9646d55f32)
-9. <span id="src-9"></span>[D.C. Court of Appeals rules (D.C. Courts, June 2024 compilation), Rule 4(b) — time to file a criminal notice of appeal](https://dccourts.gov/sites/default/files/2024-06/DCCA_Complete_Rules.pdf)
+9. <span id="src-9"></span>[D.C. Court of Appeals Rules (D.C. Courts PDF, revised effective Dec. 1, 2021), Rule 4(b)](https://dccourts.gov/sites/default/files/2024-06/DCCA_Complete_Rules.pdf)
 10. <span id="src-10"></span>[D.C. Court of Appeals Rule 4(b), text copy (CourtRules.net)](https://www.courtrules.net/district_of_columbia/dc-appellate-procedure/rule-4)
 
 *By Cassian Creed, Neural Edge Publishing. Spot an error? Email cassiancreed@cassiancreed.com with "Correction" in the subject.*
