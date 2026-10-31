@@ -24,31 +24,3 @@ https://www.cassiancreed.com/*   https://cassiancreed.com/:splat   301!
 # Jury-intent consolidation (2026-08-08)
 /post/mistrial-vs-hung-jury-what-s-the-difference/   /post/what-actually-happens-when-a-jury-deliberates/   301!
 /post/mistrial-vs-hung-jury-what-s-the-difference    /post/what-actually-happens-when-a-jury-deliberates/   301!
-
-# Minor Shield renames (2026-10-31, Case-Handling Doctrine v2.4 M1/M2/M10c):
-# post titles and slugs no longer name anyone who was under 18 at the time.
-# Old addresses send readers and crawlers to the renamed pages permanently.
-/post/the-lori-vallow-daybell-case-remembering-jj-tylee-and-tammy-behind-the-doomsday-headlines   /post/the-lori-vallow-daybell-case-behind-the-doomsday-headlines/   301!
-/post/the-lori-vallow-daybell-case-remembering-jj-tylee-and-tammy-behind-the-doomsday-headlines/  /post/the-lori-vallow-daybell-case-behind-the-doomsday-headlines/   301!
-/og/the-lori-vallow-daybell-case-remembering-jj-tylee-and-tammy-behind-the-doomsday-headlines.png   /og/the-lori-vallow-daybell-case-behind-the-doomsday-headlines.png   301!
-/post/a-jury-convicted-a-family-still-grieves-karmelo-anthony-verdict-austin-metcalf   /post/frisco-track-meet-case-verdict-what-comes-next/   301!
-/post/a-jury-convicted-a-family-still-grieves-karmelo-anthony-verdict-austin-metcalf/  /post/frisco-track-meet-case-verdict-what-comes-next/   301!
-/post/colt-gray-hearing-what-a-non-negotiated-plea-means   /post/apalachee-high-school-case-what-a-non-negotiated-plea-means/   301!
-/post/colt-gray-hearing-what-a-non-negotiated-plea-means/  /post/apalachee-high-school-case-what-a-non-negotiated-plea-means/   301!
-/post/etan-patz-supreme-court-2026-conviction-reinstated   /post/pedro-hernandez-supreme-court-2026-conviction-reinstated/   301!
-/post/etan-patz-supreme-court-2026-conviction-reinstated/  /post/pedro-hernandez-supreme-court-2026-conviction-reinstated/   301!
-/post/the-delphi-murders-how-libby-german-s-own-phone-helped-convict-richard-allen   /post/the-delphi-murders-how-a-victims-own-phone-helped-convict-richard-allen/   301!
-/post/the-delphi-murders-how-libby-german-s-own-phone-helped-convict-richard-allen/  /post/the-delphi-murders-how-a-victims-own-phone-helped-convict-richard-allen/   301!
-/og/the-delphi-murders-how-libby-german-s-own-phone-helped-convict-richard-allen.png   /og/the-delphi-murders-how-a-victims-own-phone-helped-convict-richard-allen.png   301!
-/post/jane-clinton-doe-identified-cheryl-lynn-edwards   /post/jane-clinton-doe-identified-after-51-years/   301!
-/post/jane-clinton-doe-identified-cheryl-lynn-edwards/  /post/jane-clinton-doe-identified-after-51-years/   301!
-/og/jane-clinton-doe-identified-cheryl-lynn-edwards.jpg   /og/jane-clinton-doe-identified-after-51-years.jpg   301!
-/post/cheryl-lynn-edwards-jane-clinton-doe-faq   /post/jane-clinton-doe-identified-faq/   301!
-/post/cheryl-lynn-edwards-jane-clinton-doe-faq/  /post/jane-clinton-doe-identified-faq/   301!
-/og/cheryl-lynn-edwards-jane-clinton-doe-faq.jpg   /og/jane-clinton-doe-identified-faq.jpg   301!
-/post/cheryl-lynn-edwards-jane-clinton-doe-timeline   /post/jane-clinton-doe-case-timeline/   301!
-/post/cheryl-lynn-edwards-jane-clinton-doe-timeline/  /post/jane-clinton-doe-case-timeline/   301!
-/og/cheryl-lynn-edwards-jane-clinton-doe-timeline.jpg   /og/jane-clinton-doe-case-timeline.jpg   301!
-/post/cheryl-lynn-edwards-study-guide   /post/jane-clinton-doe-identification-study-guide/   301!
-/post/cheryl-lynn-edwards-study-guide/  /post/jane-clinton-doe-identification-study-guide/   301!
-/og/cheryl-lynn-edwards-study-guide.jpg   /og/jane-clinton-doe-identification-study-guide.jpg   301!

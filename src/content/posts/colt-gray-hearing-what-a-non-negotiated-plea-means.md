@@ -1,7 +1,7 @@
 ---
-title: "Apalachee High School Case: What a Non-Negotiated Plea Means"
-seoTitle: "Apalachee High School Case: What a Non-Negotiated Plea Means"
-description: "A non-negotiated plea leaves sentencing entirely to the judge. What the July 2026 hearing in the Apalachee High School shooting case could decide — and the sentence imposed July 28, 2026."
+title: "Colt Gray Hearing: What a Non-Negotiated Plea Means"
+seoTitle: "Colt Gray Hearing: What a Non-Negotiated Plea Means"
+description: "A non-negotiated plea leaves sentencing entirely to the judge. What Friday's Colt Gray hearing can decide, what it can't, and what happens either way."
 pubDate: 2026-07-20
 updatedDate: 2026-10-31
 status: "Pleaded guilty to 55 counts; sentenced July 28, 2026 to life in prison without the possibility of parole (Barrow County Superior Court, Judge Nicholas Primm)."

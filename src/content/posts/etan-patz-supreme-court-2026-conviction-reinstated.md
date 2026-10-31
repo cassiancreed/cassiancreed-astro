@@ -1,17 +1,17 @@
 ---
-title: "1979 SoHo Case: Why the Supreme Court Reinstated Pedro Hernandez's Conviction"
-description: "A 6-year-old boy vanished in SoHo in 1979. The decades-long search, the confession of Pedro Hernandez, and the 6-3 Supreme Court ruling on June 22, 2026 that reinstated his conviction under AEDPA."
+title: "Etan Patz — SCOTUS Reinstates Pedro Hernandez Conviction"
+description: "The milk carton kid who vanished in SoHo in 1979. The decades-long search. The confession of Pedro Hernandez. And the 6-3 Supreme Court ruling on June 22, 2026 that reinstated his conviction under AEDPA."
 pubDate: 2026-06-23
 tag: Verdict
 featured: false
-victim: "A 6-year-old boy"
+victim: Etan Patz, 6
 incidentDate: May 25, 1979
 location: SoHo, Manhattan, New York
 jurisdiction: U.S. Supreme Court
 status: Conviction reinstated 6-3, June 22, 2026 (McCarthy v. Hernandez)
 ---
 
-## The 1979 SoHo Case: What Happened, Who Was Convicted, and Why the Supreme Court Reinstated the Conviction in 2026
+## Etan Patz: What Happened, Who Killed Him, and Why the Supreme Court Reinstated the Conviction in 2026
 
 On the morning of May 25, 1979, a six-year-old boy named Etan Patz left his family's apartment in SoHo, Manhattan, and walked toward his school bus stop alone for the very first time. It was a two-block journey. He never arrived. For forty-seven years, the question of what happened to Etan Patz haunted a city, reshaped how America protects its children, and wound through three trials and the highest court in the land.
 

@@ -1,11 +1,11 @@
 ---
-title: "The Delphi Murders: How a Victim's Own Phone Helped Convict Richard Allen"
-description: "Two girls, ages 13 and 14, were killed near Delphi, Indiana, in 2017. How one girl's own phone recording helped convict Richard Allen — and where his 2026 appeal stands."
-updatedDate: 2026-10-31
+title: "The Delphi Murders: How Libby German's Own Phone Helped Convict Richard Allen"
+description: "Abby Williams and Libby German were killed in 2017. How Libby's own phone recording helped convict Richard Allen — and where the 2026 appeal stands."
 pubDate: 2026-05-17
+updatedDate: 2026-10-31
 tag: "Case Files"
 featured: false
-victim: "Two girls, ages 13 and 14"
+victim: "Abby Williams (13) and Libby German (14)"
 incidentDate: "February 13, 2017"
 location: "Delphi, Indiana"
 jurisdiction: "Indiana state court (Carroll County)"
