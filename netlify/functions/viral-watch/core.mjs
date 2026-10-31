@@ -37,8 +37,10 @@ export function activeWindow(now, hours, maxUntilIso = '') {
   const t = hour * 60 + minute;
   if (t >= toMinutes(hours.start) && t < toMinutes(hours.end)) return { active: true, reason: 'in hours' };
   if (maxUntilIso) {
-    const until = Date.parse(maxUntilIso);
-    if (Number.isNaN(until)) return { active: false, reason: 'outside hours (VIRAL_MAX_UNTIL is not a valid ISO time)' };
+    // An ISO time with no Z or +hh:mm offset is read in the server's zone (UTC on
+    // Netlify), 7-8 hours off from Pacific, so it is refused rather than guessed.
+    const until = /T\d{2}:\d{2}(:\d{2}(\.\d+)?)?(Z|[+-]\d{2}:?\d{2})$/i.test(String(maxUntilIso).trim()) ? Date.parse(maxUntilIso) : NaN;
+    if (Number.isNaN(until)) return { active: false, reason: 'outside hours (VIRAL_MAX_UNTIL is not a valid ISO time with Z or an offset)' };
     const ahead = until - now.getTime();
     if (ahead > 0 && ahead <= (hours.max_until_cap_hours ?? 12) * HOUR) return { active: true, reason: 'VIRAL_MAX_UNTIL night' };
     if (ahead > 0) return { active: false, reason: 'outside hours (VIRAL_MAX_UNTIL too far ahead, ignored)' };
@@ -342,21 +344,35 @@ const NEGATED_STATUS = /\b(pleaded|pled|pleads|plead|found|verdict of|finding of
 
 export function charCount(text) { return [...String(text || '')].length; }
 
+// Link-shaped text. Any word.word with a 2+ letter ending counts (t.me, discord.gg,
+// scam.xyz, an e-mail domain), not only a fixed list of endings, plus "http",
+// "www" and spelled-out "dot com". Over-blocking only costs a redraft.
+const LINK_PATTERNS = [/http/i, /\bwww/i, /[\p{L}\p{N}_-]\.\p{L}{2,}/u, /\bdot\s*(com|net|org|io|co|ly|gg|me|xyz|app|info|biz|link|site|tv|us)\b/i];
+// X treats a # / @ / $ after any non-word character (not only a space) as a
+// hashtag, mention or cashtag. NFKC first, so full-width ＃ ＠ ＄ count too.
+const HASHTAG = /(^|[^\p{L}\p{N}_&])#[\p{L}\p{N}_]+/gu;
+const MENTION = /(^|[^\p{L}\p{N}_])@[A-Za-z0-9_]/u;
+const CASHTAG = /(^|[^\p{L}\p{N}_])\$[A-Za-z][A-Za-z_]{0,5}\b/u;
+const PHONE = /(\+\d[\d\s().-]{7,}\d)|(\(?\b\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}\b)/;
+
 export function checkDraft(text, { level, convicted, cfg, adultTokens = new Set() }) {
   const failed = [];
   const t = String(text || '').trim();
   const c = cfg.council; const s = cfg.safety;
   if (!t) return { pass: false, failed: ['empty draft'] };
+  const n = t.normalize('NFKC');
   const len = charCount(t);
   if (len > c.max_chars) failed.push(`too long: ${len} chars (max ${c.max_chars})`);
-  if (/https?:|www\.|\b[a-z0-9-]+\.(com|net|org|ly|co|io|news|tv|us)\b/i.test(t)) failed.push(level === 'HOT' ? 'link in a reply' : 'link in the text (it goes in the url field)');
-  const tags = (t.match(/(^|\s)#[\p{L}\p{N}_]+/gu) || []).length;
+  if (LINK_PATTERNS.some((re) => re.test(n))) failed.push(level === 'HOT' ? 'link in a reply' : 'link in the text (it goes in the url field)');
+  const tags = (n.match(HASHTAG) || []).length;
   if (tags > c.max_hashtags) failed.push(`${tags} hashtags (max ${c.max_hashtags})`);
-  if (/(^|[^\w])@\w/.test(t)) failed.push('@mention in text');
-  for (const re of compile(s.draft_block_patterns)) { const m = t.match(re); if (m) failed.push(`blocked word "${m[0]}"`); }
-  for (const re of compile(s.bait_patterns)) { const m = t.match(re); if (m) failed.push(`bait "${m[0]}"`); }
+  if (MENTION.test(n)) failed.push('@mention in text');
+  if (CASHTAG.test(n)) failed.push('$cashtag in text');
+  if (PHONE.test(n)) failed.push('phone number in text');
+  for (const re of compile(s.draft_block_patterns)) { const m = n.match(re); if (m) failed.push(`blocked word "${m[0]}"`); }
+  for (const re of compile(s.bait_patterns)) { const m = n.match(re); if (m) failed.push(`bait "${m[0]}"`); }
   if (!convicted) {
-    const stripped = t.replace(NEGATED_STATUS, ' ');
+    const stripped = n.replace(NEGATED_STATUS, ' ');
     for (const re of compile(s.guilt_patterns_unless_convicted)) {
       const m = stripped.match(re);
       if (m) failed.push(`status word "${m[0]}" is stronger than the record (not convicted)`);

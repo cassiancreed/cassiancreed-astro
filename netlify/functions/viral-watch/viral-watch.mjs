@@ -22,15 +22,17 @@ export const config = { schedule: '*/10 * * * *' };
 export const STORE_NAME = 'viral-watch';
 export const DATA_FILES = { calendar: 'src/data/court-calendar.tsv', settings: 'src/data/viral-watch.json' };
 
-const positiveInt = (v, fallback) => (/^\d+$/.test(String(v || '')) && Number(v) > 0 ? Number(v) : fallback);
+// VIRAL_DAILY_CAP=0 means zero alerts (a soft off switch), not the default.
+const wholeNumber = (v, fallback) => (/^\d+$/.test(String(v ?? '').trim()) ? Number(String(v).trim()) : fallback);
+const secret = (v) => String(v || '').trim();
 
 export function readEnv(e = {}) {
   return {
-    xToken: e.X_BEARER_TOKEN || '',
-    anthropicKey: e.ANTHROPIC_API_KEY || '',
-    ntfyTopic: e.NTFY_TOPIC || '',
-    ntfyToken: e.NTFY_TOKEN || '',
-    dailyCap: positiveInt(e.VIRAL_DAILY_CAP, 6),
+    xToken: secret(e.X_BEARER_TOKEN),
+    anthropicKey: secret(e.ANTHROPIC_API_KEY),
+    ntfyTopic: secret(e.NTFY_TOPIC),
+    ntfyToken: secret(e.NTFY_TOKEN),
+    dailyCap: wholeNumber(e.VIRAL_DAILY_CAP, 6),
     modelDraft: e.VIRAL_MODEL_DRAFT || 'claude-sonnet-5-5',
     modelJudge: e.VIRAL_MODEL_JUDGE || 'claude-opus-5-5',
     maxUntil: e.VIRAL_MAX_UNTIL || '',
@@ -67,12 +69,35 @@ const summarizeCouncil = (c) => ({
   usage: c.usage,
 });
 
-export async function runViralWatch({ env, now = new Date(), fetchImpl = fetch, store, files, log = console.log, clock = Date.now, callModel }) {
+// Secret shapes. A token with a space, newline or other control character
+// makes fetch throw an error whose message quotes the whole header value (the
+// secret), so such a value is refused up front. ntfy topics are [-_A-Za-z0-9]{1,64}.
+const TOKEN_SHAPE = /^[\x21-\x7e]+$/;
+const TOPIC_SHAPE = /^[-_A-Za-z0-9]{1,64}$/;
+
+// Every secret value (raw and JSON-escaped) is replaced before anything is
+// logged or written to Blobs, as a second guard behind the shape checks.
+export function makeScrubber(env) {
+  const values = [env.xToken, env.anthropicKey, env.ntfyTopic, env.ntfyToken].filter((v) => v && v.length >= 4);
+  const forms = [...new Set(values.flatMap((v) => [v, JSON.stringify(v).slice(1, -1)]))].sort((a, b) => b.length - a.length);
+  return (s) => {
+    let out = String(s);
+    for (const f of forms) out = out.split(f).join('[redacted]');
+    return out.replace(/"[^"]*" is an invalid header value/g, '"[redacted]" is an invalid header value');
+  };
+}
+
+export async function runViralWatch({ env, now = new Date(), fetchImpl = fetch, store, files, log: rawLog = console.log, clock = Date.now, callModel }) {
   const t0 = clock();
-  if (env.disabled) { log('viral-watch: VIRAL_DISABLED is set — off'); return { status: 'disabled' }; }
+  if (env.disabled) { rawLog('viral-watch: VIRAL_DISABLED is set — off'); return { status: 'disabled' }; }
   const missing = [['X_BEARER_TOKEN', env.xToken], ['ANTHROPIC_API_KEY', env.anthropicKey], ['NTFY_TOPIC', env.ntfyTopic]]
     .filter(([, v]) => !v).map(([k]) => k);
-  if (missing.length) { log(`viral-watch: missing ${missing.join(', ')} — safe no-op`); return { status: 'missing-secrets', missing }; }
+  if (missing.length) { rawLog(`viral-watch: missing ${missing.join(', ')} — safe no-op`); return { status: 'missing-secrets', missing }; }
+  const invalid = [['X_BEARER_TOKEN', env.xToken, TOKEN_SHAPE], ['ANTHROPIC_API_KEY', env.anthropicKey, TOKEN_SHAPE], ['NTFY_TOPIC', env.ntfyTopic, TOPIC_SHAPE], ['NTFY_TOKEN', env.ntfyToken, TOKEN_SHAPE]]
+    .filter(([, v, re]) => v && !re.test(v)).map(([k]) => k);
+  if (invalid.length) { rawLog(`viral-watch: ${invalid.join(', ')} has characters that are not allowed (value not shown) — safe no-op`); return { status: 'invalid-secrets', invalid }; }
+  const scrub = makeScrubber(env);
+  const log = (m) => rawLog(scrub(m));
 
   let cfg; let calendar;
   try {
@@ -92,6 +117,15 @@ export async function runViralWatch({ env, now = new Date(), fetchImpl = fetch, 
   const timeLeft = () => t0 + cfg.limits.run_budget_ms - clock();
   const laDay = core.zonedParts(now, cfg.active_hours.timezone).date;
   const state = core.rollState(await blobs.get('state', { type: 'json' }), { laDay, utc: core.utcDay(now), nowMs, cfg });
+  // Fail safe on storage: every step that costs money or sends an alert is
+  // saved first. If the state cannot be saved, the run stops before spending,
+  // so a broken Blobs store (or a run cut off at 30 s) can never repeat an
+  // alert or skip the daily caps.
+  let saveError = null;
+  const commit = async () => {
+    try { await blobs.setJSON('state', state); return true; } catch (err) { saveError = scrub(err && err.message); return false; }
+  };
+  if (!(await commit())) { log(`viral-watch: cannot save state (${saveError}) — safe no-op`); return { status: 'no-state-write', error: saveError }; }
   const xo = { token: env.xToken, fetchImpl, timeoutMs: cfg.x.timeout_ms };
   // Re-test min_likes once a week in case X turns it (back) on for our tier.
   if (state.flags.min_likes_unsupported && nowMs - Date.parse(state.flags.min_likes_unsupported) > 7 * 24 * core.HOUR) delete state.flags.min_likes_unsupported;
@@ -257,12 +291,18 @@ export async function runViralWatch({ env, now = new Date(), fetchImpl = fetch, 
       continue;
     }
     councilsThisRun += 1; state.daily.councils += 1; p.tried.push(cls.level);
+    state.budget.posts = [...postSeen]; state.budget.users = [...userSeen];
+    if (!(await commit())) { run.errors.push(`state save failed before a council; stopped: ${saveError}`); break; }
     const council = await runCouncil({
       callModel: caller, models: { draft: env.modelDraft, judge: env.modelJudge }, cfg, level: cls.level,
       post: { id: p.id, text: p.text, created_at: p.created_at }, username: p.username, watchCase, adultTokens, timeLeft,
     });
     const entry = { ...base, council: summarizeCouncil(council) };
-    if (!council.send) { lines.push({ ...entry, type: 'near_miss', sent: false, reason: council.reason }); continue; }
+    if (council.send !== true) { lines.push({ ...entry, type: 'near_miss', sent: false, reason: council.reason }); continue; }
+    // Last gate, after both models: the exact text that goes into the link is
+    // checked again by code, so no council path can skip the code checks.
+    const final = core.checkDraft(council.draft, { level: cls.level, convicted: watchCase.convicted, cfg, adultTokens });
+    if (!final.pass) { lines.push({ ...entry, type: 'near_miss', sent: false, reason: `final code check failed: ${final.failed.join('; ')}` }); continue; }
     const payload = core.buildAlert({
       topic: env.ntfyTopic, level: cls.level, caseName: watchCase.name, username: p.username, ageMin: cls.ageMin,
       metrics: cls.metrics, growth: cls.growth, text: council.draft, weighted: council.weighted,
@@ -274,14 +314,28 @@ export async function runViralWatch({ env, now = new Date(), fetchImpl = fetch, 
       lines.push({ ...entry, type: 'alert', sent: false, reason: 'VIRAL_DRY_RUN', alert: shown });
       continue;
     }
+    // Count the alert and save BEFORE sending. If the save fails, nothing is
+    // sent. If the run is cut off after the save, one alert may be lost but
+    // never sent twice.
+    const prevAccount = state.daily.perAccount[p.author_id];
+    const undo = () => {
+      p.alerted = false; alertsThisRun -= 1; state.daily.alerts -= 1; delete state.cooldowns[watchCase.key];
+      if (cls.level === 'HOT') { if (prevAccount === undefined) delete state.daily.perAccount[p.author_id]; else state.daily.perAccount[p.author_id] = prevAccount; }
+    };
+    p.alerted = true; alertsThisRun += 1; state.daily.alerts += 1; state.cooldowns[watchCase.key] = nowMs;
+    if (cls.level === 'HOT') state.daily.perAccount[p.author_id] = (prevAccount || 0) + 1;
+    if (!(await commit())) {
+      undo();
+      lines.push({ ...entry, type: 'near_miss', sent: false, reason: `state save failed before the alert; not sent: ${saveError}`, alert: shown });
+      break;
+    }
     try {
       await x.sendNtfy({ fetchImpl, payload, token: env.ntfyToken });
     } catch (err) {
+      undo();
       lines.push({ ...entry, type: 'near_miss', sent: false, reason: `ntfy failed: ${err.message}`, alert: shown });
       continue;
     }
-    p.alerted = true; alertsThisRun += 1; state.daily.alerts += 1; state.cooldowns[watchCase.key] = nowMs;
-    if (cls.level === 'HOT') state.daily.perAccount[p.author_id] = (state.daily.perAccount[p.author_id] || 0) + 1;
     lines.push({ ...entry, type: 'alert', sent: true, alert: shown });
   }
 
@@ -289,23 +343,25 @@ export async function runViralWatch({ env, now = new Date(), fetchImpl = fetch, 
   state.budget.posts = [...postSeen];
   state.budget.users = [...userSeen];
   Object.assign(run, { tracked: Object.keys(state.tracked).length, councils: councilsThisRun, alerts: alertsThisRun, ms: clock() - t0 });
+  run.errors = run.errors.map(scrub);
   lines.push(run);
   await blobs.setJSON('state', state);
   const logKey = `viral-log/${laDay}`;
   const before = (await blobs.get(logKey)) || '';
-  await blobs.set(logKey, before + lines.map((l) => JSON.stringify(l)).join('\n') + '\n');
+  await blobs.set(logKey, before + lines.map((l) => scrub(JSON.stringify(l))).join('\n') + '\n');
   log(`viral-watch: ${run.watched} cases, ${run.queries} searches, ${run.new_post_reads} new post reads, ${run.tracked} tracked, ${run.candidates} candidates, ${run.councils} councils, ${run.alerts} alerts${run.errors.length ? `, errors: ${run.errors.join(' | ')}` : ''}`);
   return { status: 'ok', run, lines };
 }
 
 export default async function viralWatch() {
+  const env = readEnv(process.env);
   try {
     await runViralWatch({
-      env: readEnv(process.env),
+      env,
       store: () => getStore({ name: STORE_NAME, consistency: 'strong' }),
       files: { calendar: () => readDataFile(DATA_FILES.calendar), settings: () => readDataFile(DATA_FILES.settings) },
     });
   } catch (err) {
-    console.log(`viral-watch: failed — ${err && err.message}`);
+    console.log(makeScrubber(env)(`viral-watch: failed — ${err && err.message}`));
   }
 }

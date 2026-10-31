@@ -22,7 +22,7 @@ The Neural Edge Publishing site (Astro on Netlify). `npm run build` checks and b
 | `ANTHROPIC_API_KEY` | Claude API key |
 | `NTFY_TOPIC` | Your ntfy topic name. Make it long and random. Anyone who knows it can read it. |
 
-Optional: `VIRAL_DAILY_CAP` (default 6), `VIRAL_MODEL_DRAFT` (default `claude-sonnet-5-5`), `VIRAL_MODEL_JUDGE` (default `claude-opus-5-5`), `VIRAL_MAX_UNTIL` (ISO time, like `2026-11-02T23:30:00-08:00`, for a late verdict or TV night; ignored if more than 12 hours ahead), `NTFY_TOKEN` (only for a reserved ntfy topic), `VIRAL_DRY_RUN=1` (does everything but send), `VIRAL_DISABLED=1` (off).
+Optional: `VIRAL_DAILY_CAP` (default 6; `0` means no alerts), `VIRAL_MODEL_DRAFT` (default `claude-sonnet-5-5`), `VIRAL_MODEL_JUDGE` (default `claude-opus-5-5`), `VIRAL_MAX_UNTIL` (ISO time with its offset, like `2026-11-02T23:30:00-08:00`, for a late verdict or TV night; ignored if it has no `Z`/offset or is more than 12 hours ahead), `NTFY_TOKEN` (only for a reserved ntfy topic), `VIRAL_DRY_RUN=1` (does everything but send), `VIRAL_DISABLED=1` (off).
 
 **How to set them in Netlify.** Site configuration → Environment variables → Add a variable. Paste the name and value. Keep the **Functions** scope on. Then trigger a new deploy so the function sees them. Scheduled functions run only on the live (production) deploy, not on deploy previews. To test one run, open the Functions list in Netlify, pick `viral-watch`, and click **Run now**. Set `VIRAL_DRY_RUN=1` first if you want that test to send nothing.
 
