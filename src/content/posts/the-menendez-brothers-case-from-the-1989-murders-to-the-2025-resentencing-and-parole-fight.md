@@ -1,18 +1,21 @@
 ---
 title: "The Menendez Brothers Case: From the 1989 Murders to the 2025 Resentencing and Parole Fight"
-description: "Erik and Lyle Menendez were resentenced in May 2025 to 50-to-life and became parole-eligible. Where the case stands as of June 2026."
+description: "Erik and Lyle Menendez were resentenced in May 2025 to 50-to-life and became parole-eligible. Denied parole in 2025, they are tentatively set to face the parole board again in March 2027."
 pubDate: 2026-05-22
+updatedDate: 2026-10-31
 tag: "Case Files"
 featured: false
 victim: "Jose and Kitty Menendez"
 incidentDate: "August 1989"
 location: "Beverly Hills, California"
 jurisdiction: "Los Angeles County, California"
-status: "Erik and Lyle Menendez convicted (1996), life without parole; 2025 resentencing made them parole-eligible"
+status: "Erik and Lyle Menendez convicted (1996); resentenced May 2025 to 50 years to life; denied parole August 2025; next parole hearings tentatively moved up to March 2027 (AP, Sept. 8, 2026)"
 ---
 
 
-Erik and Lyle Menendez were convicted in 1996 of murdering their parents, José and Kitty Menendez, in 1989 and sentenced to life without the possibility of parole. In May 2025 a Los Angeles judge resentenced them to 50 years to life, making them immediately eligible for parole. As of June 2026, both brothers have been denied parole at their first hearings and a separate bid for a new trial has been rejected, so they remain incarcerated while pursuing clemency and further review.
+Erik and Lyle Menendez were convicted in 1996 of murdering their parents, José and Kitty Menendez, in 1989 and sentenced to life without the possibility of parole. In May 2025 a Los Angeles judge resentenced them to 50 years to life, making them immediately eligible for parole. Both brothers were denied parole at their first hearings in August 2025. A separate bid for a new trial was rejected. On Sept. 8, 2026, the parole board granted their requests for earlier hearings. Their next parole hearings are now set, tentatively, for March 2027 ([AP via NY1, Sept. 8, 2026](https://ny1.com/nyc/all-boroughs/ap-top-news/2026/09/08/erik-and-lyle-menendez-eligible-to-face-parole-board-again-in-spring-2027)). They remain in prison.
+
+*Status as of Oct. 31, 2026 (Pacific). Source: AP, Sept. 8, 2026. Check our [Court Calendar](https://cassiancreed.com/court-calendar/#menendez-parole-watch) for the latest checked status.*
 
 ## What happened
 
@@ -80,14 +83,14 @@ Separately, the brothers' bid for a new trial faltered. A judge denied their hab
 
 ## Where things stand now
 
-As of June 1, 2026, Erik and Lyle Menendez remain incarcerated. Their convictions for the 1989 murders of José and Kitty Menendez stand. The resentencing to 50 years to life made them parole-eligible, but their first parole hearings in August 2025 ended in denials, and their habeas petition seeking a new trial has been rejected.
+As of Oct. 31, 2026, Erik and Lyle Menendez remain incarcerated. Their convictions for the 1989 murders of José and Kitty Menendez stand. The resentencing to 50 years to life made them parole-eligible, but their first parole hearings in August 2025 ended in denials, and their habeas petition seeking a new trial has been rejected.
 
-The avenues that remain are narrow but real: future parole hearings, a possible clemency decision by Governor Newsom, and any further appellate steps their legal team may pursue. Reporting through early 2026 indicated continued attention from the governor's office, but no grant of release had been confirmed. We will update this page as verified outcomes are issued.
+The avenues that remain are narrow but real: future parole hearings, a possible clemency decision by Governor Newsom, and any further appellate steps their legal team may pursue. On Sept. 8, 2026, the parole board granted their petitions for earlier hearings. It moved their next hearings up to March 2027, about 17 months before their August 2028 date ([AP via NY1, Sept. 8, 2026](https://ny1.com/nyc/all-boroughs/ap-top-news/2026/09/08/erik-and-lyle-menendez-eligible-to-face-parole-board-again-in-spring-2027)). That date is tentative. An earlier hearing is not a grant of parole. As of Oct. 31, 2026, no release or clemency has been granted.
 
 ## Frequently asked questions
 
 **Are the Menendez brothers in prison in 2026?**
-Yes. As of June 2026 both Erik and Lyle Menendez remain incarcerated. They were resentenced to 50 years to life in May 2025 and became parole-eligible, but they were denied parole at their first hearings in August 2025.
+Yes. As of Oct. 31, 2026, both Erik and Lyle Menendez remain incarcerated. They were resentenced to 50 years to life in May 2025 and became parole-eligible, but they were denied parole at their first hearings in August 2025. Their next parole hearings are tentatively set for March 2027.
 
 **Why were the Menendez brothers resentenced?**
 A resentencing motion, initially supported under DA George Gascón, led Judge Michael Jesic to reduce their life-without-parole terms to 50 years to life on May 13, 2025, citing their prison records and rehabilitation evidence. The new sentence made them eligible for parole for the first time.
@@ -99,7 +102,7 @@ No. Their habeas corpus petition seeking a new trial — built around a 1988 let
 The defense alleged the brothers suffered years of abuse, including sexual abuse by their father, José Menendez, and argued the killings stemmed from fear. These remain contested allegations and testimony; prosecutors disputed them and pointed to a financial motive.
 
 **Can Governor Newsom release them?**
-California's governor has authority over clemency and a defined role in reviewing parole decisions. As of June 2026, no grant of release or clemency had been confirmed.
+California's governor has authority over clemency and a defined role in reviewing parole decisions. As of Oct. 31, 2026, no grant of release or clemency had been confirmed.
 
 ---
 
@@ -107,6 +110,7 @@ The Menendez case endures because it refuses easy resolution: two people were ki
 
 ## Sources
 
+- [Erik and Lyle Menendez eligible to face parole board again in spring 2027 — AP via NY1, Sept. 8, 2026](https://ny1.com/nyc/all-boroughs/ap-top-news/2026/09/08/erik-and-lyle-menendez-eligible-to-face-parole-board-again-in-spring-2027)
 - [Judge resentences Menendez brothers, making them eligible for parole — NPR](https://www.npr.org/2025/05/14/nx-s1-5397321/judge-resentences-menendez-brothers-making-them-eligible-for-parole)
 - [Menendez brothers resentenced to 50 years to life — CNN](https://www.cnn.com/2025/05/13/us/menendez-brothers-resentencing-hearing)
 - [Erik Menendez denied parole — CNN](https://www.cnn.com/2025/08/21/us/menendez-brothers-parole-hearings)

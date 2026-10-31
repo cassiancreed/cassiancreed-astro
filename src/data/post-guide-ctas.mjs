@@ -10,7 +10,7 @@ import { LIVE_PRODUCTS, GUIDE_PREVIEWS, PREVIEW_LINK_TEXT } from './calendar-exp
 export const POST_GUIDE_CTAS = {
   'jared-bridegan-case-explained': { product: 'jared-bridegan-case-guide-v2', campaign: 'explainer_bridegan_v2', key: 'bridegan' },
   'the-murdaugh-murders-how-alex-murdaugh-was-convicted-and-why-he-now-faces-a-new-trial': { product: 'murdaugh-retrial-guide', campaign: 'explainer_murdaugh_v1', key: 'murdaugh' },
-  'a-jury-convicted-a-family-still-grieves-karmelo-anthony-verdict-austin-metcalf': { product: 'austin-metcalf-karmelo-anthony-case-guide', campaign: 'explainer_anthony_v1', key: 'anthony' },
+  'frisco-track-meet-case-verdict-what-comes-next': { product: 'austin-metcalf-karmelo-anthony-case-guide', campaign: 'explainer_anthony_v1', key: 'anthony' },
   'why-was-keffe-d-convicted-tupac-shakur': { product: 'tupac-shakur-keffe-d-case-guide', campaign: 'explainer_tupac_v1', key: 'tupac' },
   'christa-pike-failed-execution-what-happens-next': { product: 'christa-pike-failed-execution-guide', campaign: 'explainer_pike_v1', key: 'pike' },
   'what-happens-at-d4vds-monday-hearing': { product: 'celeste-rivas-hernandez-d4vd-charges-guide', campaign: 'explainer_d4vd_v2', key: 'd4vd' },
@@ -21,7 +21,7 @@ export const POST_GUIDE_CTAS = {
   'the-lindsay-clancy-case-three-children-one-trial-and-the-questions-massachusetts-must-answer': { product: 'lindsay-clancy-post-mistrial-field-guide', campaign: 'explainer_clancy_v1', key: 'clancy_overview', skipBottom: true },
   'kouri-richins-eric-richins-murder': { product: 'eric-richins-kouri-evidence-verdict', campaign: 'explainer_richins_v1', key: 'richins' },
   'luigi-mangione-psychiatric-defense-withdrawn-trial-2026': { product: 'brian-thompson-luigi-mangione-two-courts', campaign: 'explainer_luigi_v1', key: 'mangione' },
-  'erin-patterson-case-explained': { product: 'case-chess-erin-patterson', campaign: 'explainer_patterson_v1', key: 'patterson' },
+  // erin-patterson-case-explained: guide button off since 2026-10-31 (Oct. 30 appeal ruling came after the guide's edition; cutoff not verifiable).
   'michelle-parker-case-dale-smith-charged-no-body': { product: 'both-sides-michelle-parker-guide-v3', campaign: 'explainer_parker_bothsides_v3', key: 'parker' },
   // In-article button sits near the end of this post, so the bottom one read as a duplicate (cold eyes, Oct 27, 2026).
   'what-happened-at-great-wolf-lodge-poconos-case': { product: 'great-wolf-lodge-case-guide', campaign: 'explainer_great_wolf_v1', key: 'great_wolf', skipBottom: true },

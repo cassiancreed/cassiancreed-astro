@@ -1,12 +1,16 @@
 ---
-title: "Colt Gray Hearing: What a Non-Negotiated Plea Means"
-seoTitle: "Colt Gray Hearing: What a Non-Negotiated Plea Means"
-description: "A non-negotiated plea leaves sentencing entirely to the judge. What Friday's Colt Gray hearing can decide, what it can't, and what happens either way."
+title: "Apalachee High School Case: What a Non-Negotiated Plea Means"
+seoTitle: "Apalachee High School Case: What a Non-Negotiated Plea Means"
+description: "A non-negotiated plea leaves sentencing entirely to the judge. What the July 2026 hearing in the Apalachee High School shooting case could decide — and the sentence imposed July 28, 2026."
 pubDate: 2026-07-20
+updatedDate: 2026-10-31
+status: "Pleaded guilty to 55 counts; sentenced July 28, 2026 to life in prison without the possibility of parole (Barrow County Superior Court, Judge Nicholas Primm)."
 tag: Case Files
 featured: false
 capture: "case"
 ---
+
+**Status as of Oct. 31, 2026 (Pacific):** The defendant, who was 14 at the time of the shooting, pleaded guilty to 55 counts. On July 28, 2026, Barrow County Superior Court Judge Nicholas Primm sentenced him to life in prison without the possibility of parole, after three days of victim impact statements, evidence and expert testimony ([Georgia Public Broadcasting, July 28, 2026](https://www.gpb.org/news/2026/07/28/apalachee-high-school-shooter-16-sentenced-life-without-parole)). We found no later court date. See the [Court Calendar](/court-calendar/#completed-1) for the latest checked status. The explainer below was written before that hearing.
 
 *Before Friday's hearing in Barrow County, here is what a non-negotiated
 plea is, what the hearing can and cannot decide, and what happens in
@@ -170,8 +174,8 @@ records speak.
 - **The sentence, if sentencing proceeds** — decided by Judge Primm
   alone, after argument from both sides.
 
-We will update this page after the hearing with what the record actually
-shows — not before.
+The hearing has happened. The plea was entered and the judge imposed life
+in prison without the possibility of parole on July 28, 2026 ([Georgia Public Broadcasting, July 28, 2026](https://www.gpb.org/news/2026/07/28/apalachee-high-school-shooter-16-sentenced-life-without-parole)).
 
 *For how these proceedings work more generally, see our explainers on
 [what actually happens on day one of a high-profile trial](https://cassiancreed.com/post/what-actually-happens-on-day-one-of-a-high-profile-trial/),

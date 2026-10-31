@@ -2,13 +2,14 @@
 title: "Two Names That Come First: Dominic Russo and Davion Flanagan"
 description: "A dignity-first case file on the 2022 Strongsville crash that killed Dominic Russo and Davion Flanagan, as Netflix's The Crash renews attention."
 pubDate: 2026-05-25
+updatedDate: 2026-10-31
 tag: "Case Files"
 featured: false
 victim: "Dominic Russo (20) and Davion Flanagan (19)"
 incidentDate: "July 31, 2022"
 location: "Strongsville, Ohio"
 jurisdiction: "Cuyahoga County, Ohio"
-status: "Mackenzie Shirilla convicted (2023), 15 years to life; appeal before the Ohio Supreme Court"
+status: "Driver convicted (2023), 15 years to life. Ohio Supreme Court declined to hear the post-conviction appeal June 23, 2026, and denied reconsideration Sept. 1, 2026."
 coverAlt: "A deserted industrial street in the hour before dawn, a lone streetlight casting hard shadows on empty pavement."
 ---
 
@@ -38,7 +39,7 @@ The case was transferred from juvenile court and Shirilla was tried as an adult,
 
 On August 14, 2023, the judge found Shirilla guilty on multiple counts, including murder, felonious assault, and aggravated vehicular homicide. On August 21, 2023, she was sentenced to 15 years to life — two life terms, one for each victim, to be served concurrently — and her driver's license was permanently suspended. In delivering the verdict, the judge stated that the evidence showed intent rather than accident. We do not reproduce viral paraphrases of her remarks as if they were exact quotations; altered versions circulate online, and we will not pass an unverified quote along as verbatim.
 
-Shirilla's convictions have been challenged on appeal. Reported appellate history includes a denial of post-conviction relief and, as recently as 2026, an Eighth District Court of Appeals ruling upholding the denial of a bid for a new trial, with further review sought from the Ohio Supreme Court. Because appellate posture can shift, we note this as the reported status at the time of writing.
+Shirilla's convictions have been challenged on appeal. Reported appellate history includes a denial of post-conviction relief and, as recently as 2026, an Eighth District Court of Appeals ruling upholding the denial of a bid for a new trial, with further review sought from the Ohio Supreme Court. **Status as of Oct. 31, 2026:** the Ohio Supreme Court declined to hear that appeal on June 23, 2026, and on Sept. 1, 2026 it denied a motion asking it to reconsider. That leaves in place the lower-court ruling that the post-conviction challenge was filed one day late ([FOX, Sept. 2, 2026](https://www.fox10phoenix.com/news/ohio-supreme-court-denies-mackenzie-shirillas-latest-appeal-bid-double-murder-case)). The convictions and sentence stand.
 
 ## Why this case resonates — and what the Netflix documentary surfaces
 

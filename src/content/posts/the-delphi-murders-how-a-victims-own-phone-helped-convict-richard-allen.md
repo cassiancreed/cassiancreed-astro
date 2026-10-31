@@ -1,19 +1,20 @@
 ---
-title: "The Delphi Murders: How Libby German's Own Phone Helped Convict Richard Allen"
-description: "Abby Williams and Libby German were killed in 2017. How Libby's own phone recording helped convict Richard Allen — and where the 2026 appeal stands."
+title: "The Delphi Murders: How a Victim's Own Phone Helped Convict Richard Allen"
+description: "Two girls, ages 13 and 14, were killed near Delphi, Indiana, in 2017. How one girl's own phone recording helped convict Richard Allen — and where his 2026 appeal stands."
+updatedDate: 2026-10-31
 pubDate: 2026-05-17
 tag: "Case Files"
 featured: false
-victim: "Abby Williams (13) and Libby German (14)"
+victim: "Two girls, ages 13 and 14"
 incidentDate: "February 13, 2017"
 location: "Delphi, Indiana"
 jurisdiction: "Indiana state court (Carroll County)"
-status: "Richard Allen convicted (2024), 130 years; appeal pending (oral arguments Sept 2026)"
+status: "Richard Allen convicted (2024), 130 years; appeal argued Sept. 21, 2026 before the Court of Appeals of Indiana; no decision reported as of Oct. 31, 2026"
 cover: "/covers/down-the-hill.jpg"
 coverAlt: "An old iron railroad trestle spanning a dark creek at night, its girders vanishing into shadow."
 ---
 
-Richard Allen is the man convicted of murdering Abigail "Abby" Williams, 13, and Liberty "Libby" German, 14, two best friends from Delphi, Indiana, who were killed on February 13, 2017. After more than five years of investigation, Allen — a local pharmacy technician who had lived quietly in the same small town the whole time — was arrested in October 2022. On November 11, 2024, a jury found him guilty on all four counts, and in December 2024 a judge sentenced him to 130 years in prison. Allen has appealed; his case is before the Court of Appeals of Indiana, with oral arguments scheduled for September 21, 2026. That is the legal shape of the story. But the heart of it belongs to two eighth-graders who deserve to be remembered as far more than how they died.
+Richard Allen is the man convicted of murdering Abigail "Abby" Williams, 13, and Liberty "Libby" German, 14, two best friends from Delphi, Indiana, who were killed on February 13, 2017. After more than five years of investigation, Allen — a local pharmacy technician who had lived quietly in the same small town the whole time — was arrested in October 2022. On November 11, 2024, a jury found him guilty on all four counts, and in December 2024 a judge sentenced him to 130 years in prison. Allen has appealed; his case is before the Court of Appeals of Indiana, where oral arguments were heard on September 21, 2026. As of October 31, 2026, no decision has been reported, and the conviction stands. That is the legal shape of the story. But the heart of it belongs to two eighth-graders who deserve to be remembered as far more than how they died.
 
 ## Who Abby and Libby Were
 
@@ -31,6 +32,6 @@ For more than five years, the investigation seemed stalled. Tips poured in by th
 
 ## Where the Case Stands Now
 
-More than seven and a half years passed between the murders and the conviction — years of birthdays, holidays, and graduations the families spent without answers. Richard Allen has appealed. In December 2025, his attorneys filed a brief with the Court of Appeals of Indiana arguing that evidence from the search of his home should have been suppressed, that his in-custody statements were unreliable, and that the trial court wrongly barred an alternative-suspect defense. In March 2026, the Indiana Attorney General's office filed a response urging the court to uphold the conviction. Oral arguments are set for September 21, 2026. A scheduled hearing is not a reversal; as of this writing, the conviction stands.
+More than seven and a half years passed between the murders and the conviction — years of birthdays, holidays, and graduations the families spent without answers. Richard Allen has appealed. In December 2025, his attorneys filed a brief with the Court of Appeals of Indiana arguing that evidence from the search of his home should have been suppressed, that his in-custody statements were unreliable, and that the trial court wrongly barred an alternative-suspect defense. In March 2026, the Indiana Attorney General's office filed a response urging the court to uphold the conviction. Oral arguments were heard on September 21, 2026. An argument is not a ruling; as of October 31, 2026, no decision has been reported and the conviction stands.
 
 It would be easy to let Richard Allen's name dominate this story. But the reason anyone knows the name Delphi is two girls who went for a walk on a winter afternoon and never came home — and one of them, in the last minutes of her life, did something so steady and brave that it helped bring her killer to account. Abby Williams should be in her twenties now, maybe still drawing. Libby German should be too, probably still filming the people she loved. Remember them as kids, not as a case file.

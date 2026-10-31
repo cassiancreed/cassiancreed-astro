@@ -167,21 +167,8 @@ const expectedProductMetadata = new Map([
       placement: 'books_page_free_guide',
     },
   ]],
-  ['/court-calendar/', [
-    {
-      href: 'https://cassiancreed.beehiiv.com/products/case-chess-erin-patterson',
-      bookKey: 'case-chess-erin-patterson',
-      placement: 'court_calendar_case_guide',
-      count: 2, // Detailed entry and case-by-case list.
-    },
-  ]],
-  ['/international-court-watch/', [
-    {
-      href: 'https://cassiancreed.beehiiv.com/products/case-chess-erin-patterson',
-      bookKey: 'case-chess-erin-patterson',
-      placement: 'international_watch_case_guide',
-    },
-  ]],
+  // Patterson guide links on /court-calendar/ and /international-court-watch/
+  // removed 2026-10-31 (appeal decided Oct. 30, after the guide's edition).
   ['/post/what-actually-happens-on-day-one-of-a-high-profile-trial/', [
     {
       href: `${juryChessProductUrl}?utm_source=cassiancreed.com&utm_medium=day_one_explainer&utm_campaign=jury_chess&utm_content=closing_cta`,

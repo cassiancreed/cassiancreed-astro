@@ -1,15 +1,18 @@
 ---
-title: "The Lori Vallow Daybell Case: Remembering JJ, Tylee, and Tammy Behind the \"Doomsday\" Headlines"
-description: "Lori Vallow Daybell was convicted of murdering her children JJ and Tylee and conspiring to kill Tammy Daybell. Their story first — and where the 2026 appeal stands."
+title: "The Lori Vallow Daybell Case: Remembering Her Two Children and Tammy Daybell Behind the \"Doomsday\" Headlines"
+description: "Lori Vallow Daybell was convicted of murdering her two children and conspiring to kill Tammy Daybell. Their story first — and where her Idaho appeal stands."
+updatedDate: 2026-10-31
 pubDate: 2026-05-15
 tag: "Case Files"
 featured: false
-victim: "JJ Vallow (7), Tylee Ryan (16), Tammy Daybell (49)"
+victim: "Her two children (ages 7 and 16) and Tammy Daybell (49)"
 incidentDate: "2019"
 location: "Idaho and Arizona"
 jurisdiction: "Idaho and Arizona state courts"
-status: "Convicted (2023 and 2025); multiple life sentences without parole; Idaho appeal pending"
+status: "Convicted (2023 and 2025); multiple life sentences without parole; Idaho appeal pending; Idaho Supreme Court oral argument set for Nov. 2, 2026"
 ---
+
+*Status as of Oct. 31, 2026 (Pacific): convicted; Idaho appeal pending; oral argument set for Nov. 2, 2026 ([CBS2 News, Sept. 2, 2026](https://idahonews.com/news/local/idaho-supreme-court-to-hear-lori-vallow-daybell-appeal-arguments)). An appeal is not a reversal. See the [Court Calendar](/court-calendar/#vallow-idaho-appeal-argument) for the latest checked status.*
 
 Lori Vallow Daybell was convicted in Idaho in May 2023 of murdering her two children, 7-year-old Joshua "JJ" Vallow and 16-year-old Tylee Ryan, and of conspiring to kill Tammy Daybell, the wife of the man she would marry. She is serving three life sentences without parole in Idaho, plus two additional life sentences imposed in Arizona in 2025 for separate murder conspiracies. As of May 2026, her Idaho convictions are under appeal at the Idaho Supreme Court, but the verdicts and her imprisonment stand. The press calls her the "Doomsday Mom." That label sells, but it pulls attention toward the killer and away from the people who mattered: two children and a schoolteacher who deserved long, ordinary lives. This is their story first.
 
@@ -29,4 +32,4 @@ In May 2023, an Idaho jury convicted Lori of first-degree murder in the deaths o
 
 ## The Appeals, and What Remains
 
-Lori Vallow Daybell is appealing her Idaho convictions, raising claims that the trial court wrongly disqualified her chosen attorney, that her rights were affected during a period when her competency was in question, that Arizona-related evidence was improperly admitted, and that her speedy-trial right was violated. The State of Idaho has filed a lengthy response disputing those claims. As of late May 2026, the appeal is proceeding before the Idaho Supreme Court, with no date set for oral arguments. An appeal is not a reversal — the convictions are intact, and outcomes are uncertain. Whatever the courts decide, nothing in those filings will return what was taken. JJ should be a young man now. Tylee should be deep into her twenties. Tammy should be watching her children grow up. The only legacy worth protecting is theirs: a little brother who loved trains, a big sister who loved him back, and a mother and teacher who simply wanted to live her life. They are the center of this story. They always were.
+Lori Vallow Daybell is appealing her Idaho convictions, raising claims that the trial court wrongly disqualified her chosen attorney, that her rights were affected during a period when her competency was in question, that Arizona-related evidence was improperly admitted, and that her speedy-trial right was violated. The State of Idaho has filed a lengthy response disputing those claims. As of Oct. 31, 2026, the appeal is pending before the Idaho Supreme Court, which has set oral argument for Nov. 2, 2026 ([CBS2 News, Sept. 2, 2026](https://idahonews.com/news/local/idaho-supreme-court-to-hear-lori-vallow-daybell-appeal-arguments)). An appeal is not a reversal — the convictions are intact, and outcomes are uncertain. Whatever the courts decide, nothing in those filings will return what was taken. JJ should be a young man now. Tylee should be deep into her twenties. Tammy should be watching her children grow up. The only legacy worth protecting is theirs: a little brother who loved trains, a big sister who loved him back, and a mother and teacher who simply wanted to live her life. They are the center of this story. They always were.

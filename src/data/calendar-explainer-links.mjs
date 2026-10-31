@@ -69,12 +69,9 @@ const EXISTING_CASE_GUIDES = {
     bookKey: 'lindsay-clancy-post-mistrial-field-guide',
     placement: 'court_calendar_clancy_mistrial_entry',
   },
-  'patterson-appeal': {
-    url: 'https://cassiancreed.beehiiv.com/products/case-chess-erin-patterson',
-    text: 'Read the Case Chess guide: The Erin Patterson Case — $1.99',
-    bookKey: 'case-chess-erin-patterson',
-    placement: 'court_calendar_case_guide',
-  },
+  // patterson-appeal: guide link removed 2026-10-31. The Court of Appeal ruled
+  // Oct. 30, 2026, after the guide's edition; the guide's cutoff date was not
+  // verifiable, so no buy link runs until the listing carries a status note.
 };
 
 export const CALENDAR_EXPLAINER_CASES = [
@@ -188,8 +185,8 @@ export const CALENDAR_EXPLAINER_CASES = [
     ],
     "free": [
       {
-        "url": "/post/a-jury-convicted-a-family-still-grieves-karmelo-anthony-verdict-austin-metcalf/",
-        "text": "A Jury Convicted. A Family Still Grieves. The Trial of Karmelo Anthony Is Over — What Comes Next for Austin Metcalf's Case."
+        "url": "/post/frisco-track-meet-case-verdict-what-comes-next/",
+        "text": "A Jury Convicted. A Family Still Grieves. The 2025 Frisco Track Meet Case: What Comes Next"
       }
     ],
     "paid": [
@@ -278,7 +275,7 @@ export const CALENDAR_EXPLAINER_CASES = [
     "free": [
       {
         "url": "/post/erin-patterson-case-explained/",
-        "text": "The Erin Patterson Case: Where the Appeal Stands Now"
+        "text": "The Erin Patterson Case: Appeal Dismissed, Sentence Raised to Life Without Parole"
       }
     ],
     "paid": []
@@ -290,8 +287,8 @@ export const CALENDAR_EXPLAINER_CASES = [
     ],
     "free": [
       {
-        "url": "/post/the-delphi-murders-how-libby-german-s-own-phone-helped-convict-richard-allen/",
-        "text": "The Delphi Murders: How Libby German's Own Phone Helped Convict Richard Allen"
+        "url": "/post/the-delphi-murders-how-a-victims-own-phone-helped-convict-richard-allen/",
+        "text": "The Delphi Murders: How a Victim's Own Phone Helped Convict Richard Allen"
       }
     ],
     "paid": []
@@ -333,8 +330,8 @@ export const CALENDAR_EXPLAINER_CASES = [
     ],
     "free": [
       {
-        "url": "/post/etan-patz-supreme-court-2026-conviction-reinstated/",
-        "text": "Etan Patz — SCOTUS Reinstates Pedro Hernandez Conviction"
+        "url": "/post/pedro-hernandez-supreme-court-2026-conviction-reinstated/",
+        "text": "1979 SoHo Case: Why the Supreme Court Reinstated Pedro Hernandez's Conviction"
       }
     ],
     "paid": []
@@ -360,8 +357,8 @@ export const CALENDAR_EXPLAINER_CASES = [
     ],
     "free": [
       {
-        "url": "/post/colt-gray-hearing-what-a-non-negotiated-plea-means/",
-        "text": "Colt Gray Hearing: What a Non-Negotiated Plea Means"
+        "url": "/post/apalachee-high-school-case-what-a-non-negotiated-plea-means/",
+        "text": "Apalachee High School Case: What a Non-Negotiated Plea Means"
       }
     ],
     "paid": []
@@ -446,8 +443,8 @@ export const CALENDAR_EXPLAINER_CASES = [
     ],
     "free": [
       {
-        "url": "/post/the-lori-vallow-daybell-case-remembering-jj-tylee-and-tammy-behind-the-doomsday-headlines/",
-        "text": "Read the JJ, Tylee and Tammy Daybell case background"
+        "url": "/post/the-lori-vallow-daybell-case-behind-the-doomsday-headlines/",
+        "text": "Read the Lori Vallow Daybell case background"
       }
     ],
     "paid": []
@@ -694,21 +691,21 @@ const PRODUCT_CAMPAIGNS = {
 };
 const PUBLISHED_POSTS = new Set([
   "/post/alexander-brothers-sentencing-what-sentence-did-they-get/",
-  "/post/a-jury-convicted-a-family-still-grieves-karmelo-anthony-verdict-austin-metcalf/",
+  "/post/frisco-track-meet-case-verdict-what-comes-next/",
   "/post/baby-boy-doe-mansfield-1985/",
   "/post/anatomy-of-a-murder-trial-hernandez-melgar/",
-  "/post/cheryl-lynn-edwards-jane-clinton-doe-timeline/",
+  "/post/jane-clinton-doe-case-timeline/",
   "/post/can-you-be-convicted-of-murder-without-a-body/",
-  "/post/cheryl-lynn-edwards-study-guide/",
+  "/post/jane-clinton-doe-identification-study-guide/",
   "/post/beyond-the-case-file-5-surprising-realities/",
-  "/post/cheryl-lynn-edwards-jane-clinton-doe-faq/",
+  "/post/jane-clinton-doe-identified-faq/",
   "/post/christa-pike-failed-execution-what-happens-next/",
   "/post/eugene-gligor-leslie-preer/",
   "/post/erin-patterson-case-explained/",
   "/post/chevy-chase-cold-case-dna/",
   "/post/does-criminal-profiling-actually-work/",
-  "/post/etan-patz-supreme-court-2026-conviction-reinstated/",
-  "/post/colt-gray-hearing-what-a-non-negotiated-plea-means/",
+  "/post/pedro-hernandez-supreme-court-2026-conviction-reinstated/",
+  "/post/apalachee-high-school-case-what-a-non-negotiated-plea-means/",
   "/post/diddy-s-verdict-explained-what-sean-combs-was-convicted-of-and-what-the-jury-rejected/",
   "/post/how-washington-courts-work-hernandez-melgar/",
   "/post/how-a-family-tree-catches-killers/",
@@ -720,7 +717,7 @@ const PUBLISHED_POSTS = new Set([
   "/post/gilgo-beach-murders-science-unravels-nightmare/",
   "/post/karen-read-was-acquitted-of-killing-john-o-keefe-his-family-is-still-waiting-for-answers/",
   "/post/leslie-preer-murder/",
-  "/post/jane-clinton-doe-identified-cheryl-lynn-edwards/",
+  "/post/jane-clinton-doe-identified-after-51-years/",
   "/post/lindsay-clancy-trial-2026-postpartum-psychosis/",
   "/post/irasema-chavez-mayra-velasquez-arlington-cold-case/",
   "/post/lindsay-clancy-trial-postpartum-mental-health-legal-nexus/",
@@ -750,7 +747,7 @@ const PUBLISHED_POSTS = new Set([
   "/post/the-frame-the-banfield-au-pair-affair-the-full-account/",
   "/post/the-gabby-petito-case-timeline-investigation-and-lasting-impact/",
   "/post/the-gilgo-beach-murders-rex-heuermann-pleads-guilty-and-eight-women-are-finally-named/",
-  "/post/the-delphi-murders-how-libby-german-s-own-phone-helped-convict-richard-allen/",
+  "/post/the-delphi-murders-how-a-victims-own-phone-helped-convict-richard-allen/",
   "/post/the-casey-goodson-jr-case-ex-deputy-jason-meade-reckless-homicide-conviction-explained/",
   "/post/the-frame-christine-banfield-joseph-ryan-fairfax-au-pair-murders/",
   "/post/the-btk-killer-how-dennis-rader-was-finally-caught/",
@@ -762,7 +759,7 @@ const PUBLISHED_POSTS = new Set([
   "/post/the-laci-peterson-case-what-happened-and-where-scott-peterson-s-case-stands-now/",
   "/post/kouri-richins-eric-richins-murder/",
   "/post/the-murder-of-rachel-morin-how-her-killer-was-found/",
-  "/post/the-lori-vallow-daybell-case-remembering-jj-tylee-and-tammy-behind-the-doomsday-headlines/",
+  "/post/the-lori-vallow-daybell-case-behind-the-doomsday-headlines/",
   "/post/the-trail-the-murder-of-rachel-morin-the-full-account/",
   "/post/this-week-in-court-september-13-2026/",
   "/post/the-murder-of-rachel-nickell-how-dna-caught-robert-napper-and-cleared-colin-stagg/",
