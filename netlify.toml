@@ -5,6 +5,13 @@
 [build.environment]
   NODE_VERSION = "20"
 
+# Viral Watch (Route A) scheduled function (netlify/functions/viral-watch/).
+# The schedule lives in the function file (export const config). These data
+# files are read at run time, so they must ride inside the function bundle.
+# Off switch: remove ANTHROPIC_API_KEY or set VIRAL_DISABLED=1 (see README.md).
+[functions."viral-watch"]
+  included_files = ["src/data/court-calendar.tsv", "src/data/viral-watch.json"]
+
 # NEP internal-traffic switch (GA4 traffic_type=internal, see Base.astro).
 # No page exists at /internal-off, so send it to the homepage with the
 # opt-out flag; the Base.astro script clears localStorage nep_internal there.
