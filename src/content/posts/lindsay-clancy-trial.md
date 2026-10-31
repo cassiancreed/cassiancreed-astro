@@ -32,7 +32,7 @@ Cassian Creed maintains this Neural Edge Publishing tracker using available cour
 <li><strong>Plea:</strong> Not guilty (her defense: lack of criminal responsibility).</li>
 <li><strong>Status as of October 31, 2026:</strong> Charged; pleaded not guilty; presumed innocent. No verdict.</li>
 <li><strong>Next step:</strong> A hearing on the defense motion to dismiss on double-jeopardy grounds is set for November 2, 2026, in Plymouth Superior Court before Judge William F. Sullivan (Boston Globe, October 21; Boston.com, October 22). The clock time is not publicly verified.</li>
-<li><strong>Holdout-juror hearing request:</strong> Denied October 21. The judge ruled that information found after the mistrial cannot be used to attack it (WBUR, October 22). This ruling is not a finding of guilt.</li>
+<li><strong>Holdout-juror hearing request:</strong> Denied October 21. The judge ruled that information found after the mistrial cannot be used to attack it (Boston.com and WBUR, October 22). This ruling is not a finding of guilt.</li>
 <li><strong>Retrial decision:</strong> Not formally announced. In a written opposition made public October 28, prosecutors argue the mistrial was proper and ask to continue the case (CBS Boston, October 28).</li>
 <li><strong>Renewed acquittal request:</strong> Denied October 1, according to AP. This ruling is not a conviction.</li>
 
@@ -98,7 +98,7 @@ A hearing is set for November 2, 2026, in Plymouth Superior Court before Judge S
 
 **DEFENSE:** Clancy's lawyers ask the judge to dismiss the three murder charges on double-jeopardy grounds. They also asked for an evidentiary hearing about the one juror who did not agree with the other 11 ([Boston Globe, October 8](https://www.bostonglobe.com/2026/10/08/metro/lindsay-clancy-hearing-dismissal-holdout-juror/)).
 
-**RULING (October 21):** Judge Sullivan denied the request for that evidentiary hearing. He wrote that information found after the mistrial "cannot be used to attack" the finding that a mistrial was needed ([WBUR, October 22](https://www.wbur.org/news/2026/10/22/judge-sullivan-lindsay-clancy-lone-juror-defense-denial)). This ruling is not a finding of guilt. The motion to dismiss itself has not been decided.
+**RULING (October 21):** Judge Sullivan denied the request for that evidentiary hearing. He wrote that information found after the mistrial "cannot be used to attack" the finding that a mistrial was needed ([Boston.com, October 22](https://www.boston.com/news/crime/2026/10/22/lindsay-clancy-judge-denies-evidentiary-hearing-holdout-juror/); [WBUR, October 22](https://www.wbur.org/news/2026/10/22/judge-sullivan-lindsay-clancy-lone-juror-defense-denial)). This ruling is not a finding of guilt. The motion to dismiss itself has not been decided.
 
 **PROSECUTION:** In a written opposition made public October 28, prosecutors argue the mistrial was properly declared because the jury was deadlocked ([CBS Boston, October 28](https://www.cbsnews.com/boston/news/lindsay-clancy-retrial-prosecution-motion/)). They have not formally said whether they will retry Clancy. No retrial date is set. Clancy remains charged, has pleaded not guilty, and is presumed innocent.
 

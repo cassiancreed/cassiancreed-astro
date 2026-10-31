@@ -9,7 +9,7 @@ victim: "Casey Goodson Jr., 23"
 incidentDate: "December 4, 2020"
 location: "Columbus, Ohio"
 jurisdiction: "Franklin County, Ohio"
-status: "Jason Meade convicted of reckless homicide (May 2026); jury deadlocked on the murder count (mistrial). Not yet sentenced; released on $250,000 bond June 30, 2026. Defense motions to dismiss the murder count and for acquittal pending as of July 16, 2026; no third-trial date reported as of Oct. 31, 2026."
+status: "Jason Meade convicted of reckless homicide (May 2026); jury deadlocked on the murder count (mistrial). Not yet sentenced; bond reinstated at $250,000 on June 30, 2026. Defense motions to dismiss the murder count and for acquittal pending as of July 16, 2026; no third-trial date reported as of Oct. 31, 2026."
 ---
 
 *Status as of Oct. 31, 2026 (Pacific). Source: ABC6/WSYX, June 30 and July 16, 2026. Court records can change. Check our [Court Calendar](https://cassiancreed.com/court-calendar/) and its "last updated" date.*
@@ -50,7 +50,7 @@ Cases like this are why independent review of use-of-force matters. The absence 
 
 ## Where the Case Stands Now
 
-Jason Meade stands convicted of reckless homicide. **He has not been sentenced.** His sentencing was set for June 30, 2026. That day, the judge instead reinstated his bond at $250,000, and Meade was released from jail. His lawyers argued he cannot be sentenced until prosecutors decide whether to try the murder count a third time. Prosecutors said they had not decided and gave no timeline ([ABC6, June 30, 2026](https://abc6onyourside.com/news/local/jason-meade-granted-bail-as-prosecutors-weigh-third-murder-trial-franklin-county-sheriff-deputy-crime)). The trial judge, David Young, stepped aside from any third trial. Judge Julie Lynch now has the case. As of July 16, 2026, defense motions to dismiss the murder count and for acquittal were pending ([ABC6, July 16, 2026](https://abc6onyourside.com/newsletter-daily/judge-weighs-bid-to-dismiss-murder-charge-against-ex-franklin-county-deputy-meade)). We found no newer public ruling or third-trial date as of Oct. 31, 2026. On the murder count, Meade is presumed innocent. Casey Goodson Jr.'s family has continued to call for full accountability.
+Jason Meade stands convicted of reckless homicide. **He has not been sentenced.** His sentencing was set for June 30, 2026. That day, the judge instead reinstated his bond at $250,000, which allows his release from jail. His lawyers argued he cannot be sentenced until prosecutors decide whether to try the murder count a third time. Prosecutors said they had not decided and gave no timeline ([ABC6, June 30, 2026](https://abc6onyourside.com/news/local/jason-meade-granted-bail-as-prosecutors-weigh-third-murder-trial-franklin-county-sheriff-deputy-crime)). The trial judge, David Young, stepped aside from any third trial. Judge Julie Lynch now has the case. As of July 16, 2026, defense motions to dismiss the murder count and for acquittal were pending ([ABC6, July 16, 2026](https://abc6onyourside.com/newsletter-daily/judge-weighs-bid-to-dismiss-murder-charge-against-ex-franklin-county-deputy-meade)). We found no newer public ruling or third-trial date as of Oct. 31, 2026. On the murder count, Meade is presumed innocent. Casey Goodson Jr.'s family has continued to call for full accountability.
 
 ## Frequently Asked Questions
 
@@ -67,7 +67,7 @@ No. His first trial, in 2024, also ended in a mistrial when the jury could not r
 No. He was not a suspect in the task-force operation that brought Meade to the area; he was returning to his grandmother's home and was licensed to carry a firearm.
 
 **When is sentencing?**
-No date is set as of Oct. 31, 2026. The June 30, 2026 sentencing became a bond hearing, and Meade was released on $250,000 bond. His lawyers say he cannot be sentenced until prosecutors decide on a third murder trial.
+No date is set as of Oct. 31, 2026. The June 30, 2026 sentencing became a bond hearing, and the judge reinstated his $250,000 bond. His lawyers say he cannot be sentenced until prosecutors decide on a third murder trial.
 
 ---
 

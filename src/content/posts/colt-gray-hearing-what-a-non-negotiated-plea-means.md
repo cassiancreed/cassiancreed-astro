@@ -188,7 +188,8 @@ terms are defined in the [glossary](https://cassiancreed.com/glossary/).*
 
 ---
 
-*Colt Gray is charged, not convicted. He is presumed innocent unless and
-until proven guilty in a court of law. This page describes court
-scheduling and legal process as of July 20, 2026, and will be updated
-after the July 24 hearing.*
+*Status as of Oct. 31, 2026 (Pacific): the defendant pleaded guilty to 55
+counts and was sentenced on July 28, 2026, to life in prison without the
+possibility of parole. The explainer above describes court scheduling and
+legal process as of July 20, 2026, before that hearing. See the
+[Court Calendar](/court-calendar/#completed-1) for the latest checked status.*

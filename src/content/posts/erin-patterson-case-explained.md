@@ -72,11 +72,11 @@ The three judges gave their decision in Melbourne on Friday, Oct. 30, 2026, at 1
 - **Her appeal: dismissed.** The court let her argue two of her seven grounds: the jury's accommodation and the use of her mobile phone data as evidence. It rejected both. It refused to hear the other five. Her convictions stand.
 - **The prosecution's appeal: allowed.** The court set aside the 33-year non-parole period. It re-sentenced her to life in prison without parole. Justice McLeish said parole was not appropriate in this case ([ABC News Australia, Oct. 30, 2026](https://www.abc.net.au/news/2026-10-30/erin-patterson-appeal-decision-live-updates/107322086)).
 
-This summary comes from the court's own notice and ABC's report from the courtroom. We have not yet read the full written judgment.
+This summary comes from ABC's reports from the courtroom. The court's own notice confirms the date and time. We have not yet read the full written judgment.
 
 ## What happens next
 
-Her remaining route is the High Court of Australia. She would first need the court's permission to appeal, called special leave. Legal experts quoted by ABC say the High Court takes very few cases ([ABC News Australia, Oct. 30, 2026](https://www.abc.net.au/news/2026-10-30/erin-patterson-mushroom-murder-appeal-what-next/107315286)).
+Her remaining route is the High Court of Australia. She would first need the court's permission to appeal, called special leave. A legal expert quoted by ABC said the High Court uses "very strict criteria" to choose which cases it will hear ([ABC News Australia, Oct. 30, 2026](https://www.abc.net.au/news/2026-10-30/erin-patterson-mushroom-murder-appeal-what-next/107315286)).
 
 A second appeal in Victoria is possible only with fresh and compelling evidence. An expert quoted by ABC called that "most unlikely" in her case ([ABC News Australia, Oct. 30, 2026](https://www.abc.net.au/news/2026-10-30/erin-patterson-mushroom-murder-appeal-what-next/107315286)).
 
@@ -102,7 +102,7 @@ Yes. On Oct. 30, 2026, the Court of Appeal of Victoria dismissed her appeal agai
 
 ### Can Erin Patterson still appeal?
 
-She can ask the High Court of Australia for special leave to appeal. The High Court takes very few cases. As of Oct. 31, 2026, no request has been reported.
+She can ask the High Court of Australia for special leave to appeal. The High Court uses strict rules to choose which cases it hears. As of Oct. 31, 2026, no request has been reported.
 
 ### Will Erin Patterson get a new trial?
 

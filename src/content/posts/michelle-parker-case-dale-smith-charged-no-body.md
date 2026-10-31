@@ -10,10 +10,10 @@ victim: "Michelle Parker"
 incidentDate: "November 17, 2011 (last seen)"
 location: "Orlando, Florida"
 jurisdiction: "Orange County, Florida (Ninth Judicial Circuit)"
-status: "Dale Smith Jr. charged with second-degree murder; pleaded not guilty; held without bond as of the last report (his lawyer is seeking bond); presumed innocent. Arrest affidavit unsealed Oct. 27, 2026."
+status: "Dale Smith Jr. charged with second-degree murder; pleaded not guilty; held without bond as of the last report (his lawyer is seeking bond); presumed innocent. A judge ordered the arrest affidavit unsealed Oct. 26, 2026; it was released Oct. 27."
 ---
 
-**Status as of October 31, 2026 (Pacific):** On October 27, a judge unsealed the arrest affidavit in the case. It gives investigators' account. It is not proof, and the charge has not been proven in court. Smith's lawyer is seeking bond, Spectrum News 13 reported. Smith has pleaded not guilty and is presumed innocent. We found no new court date as of October 31 ([Spectrum News 13, Oct. 27, 2026](https://mynews13.com/fl/orlando/news/2026/10/27/judge-unseals-affidavit-in-michelle-parker-case); [WFTV, Oct. 27, 2026](https://www.wftv.com/news/local/dale-smith-ii-ordered-surrender-passport-after-second-degree-murder-charge/OXXZJUHEYFHCDKBZOYT2QOWC6U/)).
+**Status as of October 31, 2026 (Pacific):** On October 26, a judge ordered the arrest affidavit in the case unsealed. It was released on October 27 ([FOX 35 Orlando, Oct. 27, 2026](https://www.fox35orlando.com/news/michelle-parker-update-dale-smith-jr-s-46-page-arrest-report-released-heres-what-we-know)). It gives investigators' account. It is not proof, and the charge has not been proven in court. Smith's lawyer is seeking bond, Spectrum News 13 reported. Smith has pleaded not guilty and is presumed innocent. We found no new court date as of October 31 ([Spectrum News 13, Oct. 27, 2026](https://mynews13.com/fl/orlando/news/2026/10/27/judge-unseals-affidavit-in-michelle-parker-case); [WFTV, Oct. 27, 2026](https://www.wftv.com/news/local/dale-smith-ii-ordered-surrender-passport-after-second-degree-murder-charge/OXXZJUHEYFHCDKBZOYT2QOWC6U/)).
 
 **Status as of October 15, 2026, 3:47 p.m. Eastern:** Dale Smith Jr. is charged with second-degree murder in the 2011 disappearance of Michelle Parker. He pleaded not guilty on October 15 and is being held without bond. He is presumed innocent. Michelle has never been found. [See the live case status on our Court Calendar.](/court-calendar/#parker-smith-first-appearance)
 
