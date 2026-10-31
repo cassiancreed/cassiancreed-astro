@@ -70,7 +70,7 @@ test('built pages show the guide button after the explainer and again at the bot
 });
 
 test('the Karmelo Anthony post (juvenile case) carries no Jury Chess promotion', () => {
-  const source = sourceBySlug.get('a-jury-convicted-a-family-still-grieves-karmelo-anthony-verdict-austin-metcalf');
+  const source = sourceBySlug.get('frisco-track-meet-case-verdict-what-comes-next');
   assert.doesNotMatch(source, /jury[ -]chess/i);
 });
 

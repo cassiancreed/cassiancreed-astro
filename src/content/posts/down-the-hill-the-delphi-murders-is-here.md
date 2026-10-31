@@ -6,7 +6,7 @@ tag: "Case Files"
 featured: false
 archived: true
 archiveNote: "This retired release announcement is preserved for context. The title is not part of NEP's currently verified product line."
-replacementPath: "/post/the-delphi-murders-how-libby-german-s-own-phone-helped-convict-richard-allen/"
+replacementPath: "/post/the-delphi-murders-how-a-victims-own-phone-helped-convict-richard-allen/"
 victim: "Abby Williams & Libby German"
 incidentDate: "February 13, 2017"
 location: "Delphi, Indiana"

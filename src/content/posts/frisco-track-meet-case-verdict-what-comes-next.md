@@ -1,10 +1,10 @@
 ---
-title: "A Jury Convicted. A Family Still Grieves. The Trial of Karmelo Anthony Is Over — What Comes Next for Austin Metcalf's Case."
-description: "A Collin County jury convicted Karmelo Anthony of murder on June 9, 2026, rejecting his claim of self-defense in the stabbing death of 17-year-old Austin Metcalf."
+title: "A Jury Convicted. A Family Still Grieves. The 2025 Frisco Track Meet Case: What Comes Next"
+description: "A Collin County jury returned a murder conviction on June 9, 2026, rejecting a self-defense claim in the stabbing death of a 17-year-old student at a 2025 Frisco track meet. Where the appeal stands."
 pubDate: 2026-06-09
 tag: "Case Files"
 featured: false
-victim: "Austin Metcalf, 17"
+victim: "A 17-year-old student"
 incidentDate: "April 2, 2025"
 location: "Frisco, Texas"
 jurisdiction: "Collin County, Texas"

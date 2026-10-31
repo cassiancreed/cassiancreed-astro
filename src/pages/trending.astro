@@ -19,6 +19,20 @@ const trending = [
   { href:"/post/the-lori-vallow-daybell-case-remembering-jj-tylee-and-tammy-behind-the-doomsday-headlines/", status:"APPEAL PENDING", title:"The Lori Vallow Daybell Case", why:"Behind the 'doomsday' headlines — JJ, Tylee, and Tammy, and where the appeal stands." },
   { href:"/post/what-happened-in-the-idaho-student-murders-the-bryan-kohberger-case-explained/", status:"SENTENCED 2025", title:"The Idaho Student Murders", why:"How Bryan Kohberger was caught, pleaded guilty, and was sentenced — the case explained." }
 ];
+// Minor Shield renames (2026-10-31, Case-Handling Doctrine v2.4 M1/M2): point these
+// two cards at the renamed pages and describe the children by role, not by name.
+// Kept apart from the array so status edits to the cards merge cleanly.
+const MINOR_SHIELD_CARDS = {
+  "/post/the-delphi-murders-how-libby-german-s-own-phone-helped-convict-richard-allen/": {
+    href: "/post/the-delphi-murders-how-a-victims-own-phone-helped-convict-richard-allen/",
+    why: "Two girls, 13 and 14, were killed in 2017. Richard Allen was convicted in 2024; his appeal was argued Sept. 21, 2026 and is pending.",
+  },
+  "/post/the-lori-vallow-daybell-case-remembering-jj-tylee-and-tammy-behind-the-doomsday-headlines/": {
+    href: "/post/the-lori-vallow-daybell-case-behind-the-doomsday-headlines/",
+    why: "Behind the 'doomsday' headlines — her two children and Tammy Daybell, and where her Idaho appeal stands.",
+  },
+};
+for (const card of trending) Object.assign(card, MINOR_SHIELD_CARDS[card.href] ?? {});
 ---
 <Base title="Trending True Crime Cases — Cassian Creed" description="The true-crime cases everyone's following right now — trials, verdicts, sentencings, and appeals — each with a sourced, victim-first case file." jsonld={jsonld}>
   <section class="hero wrap">
