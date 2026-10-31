@@ -4,6 +4,10 @@ export const X_BASE = 'https://api.x.com/2';
 export const TWEET_FIELDS = 'created_at,public_metrics,author_id,possibly_sensitive';
 export const USER_FIELDS = 'public_metrics,username';
 
+// note_tweet carries the whole text of a long post. If X ever rejects the field,
+// the run drops it (flag note_tweet_unsupported) and skips posts that may be cut off.
+export const tweetFields = (flags = {}) => (flags.note_tweet_unsupported ? TWEET_FIELDS : `${TWEET_FIELDS},note_tweet`);
+
 export class XError extends Error {
   constructor(status, body) {
     const detail = body?.detail || body?.title || body?.errors?.map((e) => e.message).join('; ') || 'request failed';
@@ -25,21 +29,25 @@ async function xGet(path, params, { token, fetchImpl = fetch, timeoutMs = 6000 }
 // X wants second precision: YYYY-MM-DDTHH:mm:ssZ.
 export const xTime = (ms) => new Date(ms).toISOString().replace(/\.\d{3}Z$/, 'Z');
 
-export function searchRecent(opts, { query, maxResults, sinceId, startTime, expandAuthors }) {
+export function searchRecent(opts, { query, maxResults, sinceId, startTime, expandAuthors, fields = tweetFields() }) {
   return xGet('/tweets/search/recent', {
     query,
     max_results: Math.min(100, Math.max(10, maxResults || 10)),
     since_id: sinceId || undefined,
     start_time: sinceId ? undefined : startTime,
-    'tweet.fields': TWEET_FIELDS,
+    'tweet.fields': fields,
     expansions: expandAuthors ? 'author_id' : undefined,
     'user.fields': expandAuthors ? USER_FIELDS : undefined,
   }, opts);
 }
 
-export function lookupPosts(opts, ids) {
-  return xGet('/tweets', { ids: ids.slice(0, 100).join(','), 'tweet.fields': TWEET_FIELDS }, opts);
+export function lookupPosts(opts, ids, fields = tweetFields()) {
+  return xGet('/tweets', { ids: ids.slice(0, 100).join(','), 'tweet.fields': fields }, opts);
 }
+
+// A 400 that names note_tweet means this API version will not send the field.
+export const rejectsNoteTweet = (err) => err instanceof XError && err.status === 400
+  && /note_tweet/i.test(JSON.stringify(err.body || {}) + err.message);
 
 export function lookupUsers(opts, ids) {
   return xGet('/users', { ids: ids.slice(0, 100).join(','), 'user.fields': USER_FIELDS }, opts);

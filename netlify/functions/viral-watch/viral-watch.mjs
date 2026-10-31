@@ -127,8 +127,10 @@ export async function runViralWatch({ env, now = new Date(), fetchImpl = fetch, 
   };
   if (!(await commit())) { log(`viral-watch: cannot save state (${saveError}) — safe no-op`); return { status: 'no-state-write', error: saveError }; }
   const xo = { token: env.xToken, fetchImpl, timeoutMs: cfg.x.timeout_ms };
-  // Re-test min_likes once a week in case X turns it (back) on for our tier.
-  if (state.flags.min_likes_unsupported && nowMs - Date.parse(state.flags.min_likes_unsupported) > 7 * 24 * core.HOUR) delete state.flags.min_likes_unsupported;
+  // Re-test min_likes and note_tweet once a week in case X turns them (back) on.
+  for (const flag of ['min_likes_unsupported', 'note_tweet_unsupported']) {
+    if (state.flags[flag] && nowMs - Date.parse(state.flags[flag]) > 7 * 24 * core.HOUR) delete state.flags[flag];
+  }
   const lines = [];
   const run = { type: 'run', time: nowIso, window: win.reason, watched: 0, queries: 0, posts_returned: 0, new_post_reads: 0, new_user_reads: 0, tracked: 0, candidates: 0, councils: 0, alerts: 0, errors: [] };
 
@@ -160,7 +162,7 @@ export async function runViralWatch({ env, now = new Date(), fetchImpl = fetch, 
     const search = (query) => {
       const since = state.since[query.key];
       const useSince = !query.threshold && since?.id && nowMs - Date.parse(since.at) < cfg.x.discovery_window_min * core.MINUTE;
-      return x.searchRecent(xo, { query: query.q, maxResults: cfg.x.max_results, sinceId: useSince ? since.id : undefined, startTime, expandAuthors: expand });
+      return x.searchRecent(xo, { query: query.q, maxResults: cfg.x.max_results, sinceId: useSince ? since.id : undefined, startTime, expandAuthors: expand, fields: x.tweetFields(state.flags) });
     };
     const take = (query, body) => {
       run.queries += 1;
@@ -172,7 +174,13 @@ export async function runViralWatch({ env, now = new Date(), fetchImpl = fetch, 
     };
     let queries = core.buildQueries(watched, cfg, state.flags);
     let settled = await Promise.allSettled(queries.map(search));
-    if (settled.some((r, i) => r.status === 'rejected' && queries[i].threshold && x.rejectsMinLikes(r.reason))) {
+    // note_tweet is in every request, so a rejection fails them all: drop it once and redo the searches.
+    if (settled.some((r) => r.status === 'rejected' && x.rejectsNoteTweet(r.reason))) {
+      state.flags.note_tweet_unsupported = nowIso;
+      log('viral-watch: X rejected note_tweet — long posts that may be cut off are skipped from now on');
+      settled = await Promise.allSettled(queries.map(search));
+    }
+    if (settled.some((r, i) => r.status === 'rejected' && queries[i].threshold && !x.rejectsNoteTweet(r.reason) && x.rejectsMinLikes(r.reason))) {
       state.flags.min_likes_unsupported = nowIso;
       log('viral-watch: X rejected min_likes — dropping it and filtering likes in code from now on');
       const keep = settled.map((r, i) => ({ r, q: queries[i] })).filter(({ r, q }) => !(r.status === 'rejected' && q.threshold));
@@ -186,23 +194,36 @@ export async function runViralWatch({ env, now = new Date(), fetchImpl = fetch, 
     if (expand) noteUsers(users.keys());
   }
 
+  // Screens read the whole post (note_tweet for long posts). The stored copy is
+  // only the prompt-sized start, so every fresh copy from X is screened again
+  // here, and a post that now fails is dropped.
+  const TEXT_KEEP = 1200;
+  const screen = (post, match) => (!state.flags.note_tweet_unsupported || !core.mayBeCut(post) ? null : 'long_post: full text not available to screen')
+    || core.postSkipReason({ ...post, text: core.fullText(post) }, match, cfg, adultTokens);
+  const refresh = (p, fresh, m) => {
+    const why = screen(fresh, watch.find((c) => c.key === p.case_key) || null);
+    if (why) {
+      delete state.tracked[p.id]; state.skipped[p.id] = nowMs;
+      lines.push({ type: 'near_miss', time: nowIso, post_id: p.id, author_id: p.author_id, case: p.case_key, level: null, metrics_now: m, sent: false, reason: `skip on re-check: ${why}` });
+      return;
+    }
+    p.text = core.fullText(fresh).slice(0, TEXT_KEEP);
+    p.sensitive = Boolean(fresh.possibly_sensitive);
+    p.checks = [...p.checks, { t: nowMs, m }].slice(-3);
+  };
+
   // 3. New posts: gates first, then track. Known posts: add a check.
   const minLikesInCode = Boolean(state.flags.min_likes_unsupported);
   for (const [id, { post, kind }] of found) {
     const m = core.metricsOf(post.public_metrics);
     const known = state.tracked[id];
-    if (known) {
-      known.text = String(post.text || '').slice(0, 600);
-      known.sensitive = Boolean(post.possibly_sensitive);
-      known.checks = [...known.checks, { t: nowMs, m }].slice(-3);
-      continue;
-    }
+    if (known) { refresh(known, post, m); continue; }
     if (state.skipped[id]) continue;
     const ageMin = (nowMs - Date.parse(post.created_at)) / core.MINUTE;
     if (!(ageMin <= cfg.score.warm.max_age_min)) continue;
     // Match against every watched case so a case without an NEP page logs as no_page.
-    const match = core.matchCase(post.text, watch);
-    const skip = core.postSkipReason(post, match, cfg, adultTokens);
+    const match = core.matchCase(core.fullText(post), watch);
+    const skip = screen(post, match);
     if (skip) {
       state.skipped[id] = nowMs;
       if (core.meetsSize(m, cfg.score.hot)) {
@@ -213,7 +234,7 @@ export async function runViralWatch({ env, now = new Date(), fetchImpl = fetch, 
     if (kind === 'case' && minLikesInCode && m.likes < cfg.x.min_likes && ageMin > cfg.score.hot.max_age_min) continue;
     state.tracked[id] = {
       id, case_key: match.key, author_id: post.author_id, username: users.get(post.author_id)?.username || null,
-      created_at: post.created_at, text: String(post.text || '').slice(0, 600), sensitive: Boolean(post.possibly_sensitive),
+      created_at: post.created_at, text: core.fullText(post).slice(0, TEXT_KEEP), sensitive: Boolean(post.possibly_sensitive),
       checks: [{ t: nowMs, m }], tried: [], logged: [], alerted: false,
     };
   }
@@ -225,16 +246,21 @@ export async function runViralWatch({ env, now = new Date(), fetchImpl = fetch, 
     .filter((p) => !p.alerted && p.checks[p.checks.length - 1].t !== nowMs)
     .filter((p) => !capReached || postSeen.has(p.id));
   if (stale.length && !xBlocked) {
+    const lookup = () => x.lookupPosts(xo, stale.map((p) => p.id), x.tweetFields(state.flags));
     try {
-      const body = await x.lookupPosts(xo, stale.map((p) => p.id));
+      let body;
+      try { body = await lookup(); } catch (err) {
+        if (state.flags.note_tweet_unsupported || !x.rejectsNoteTweet(err)) throw err;
+        state.flags.note_tweet_unsupported = nowIso;
+        log('viral-watch: X rejected note_tweet — long posts that may be cut off are skipped from now on');
+        body = await lookup();
+      }
       const back = new Map((body.data || []).map((p) => [p.id, p]));
       notePosts(back.keys());
       for (const p of stale) {
         const fresh = back.get(p.id);
         if (!fresh) { delete state.tracked[p.id]; continue; }
-        p.text = String(fresh.text || p.text).slice(0, 600);
-        p.sensitive = Boolean(fresh.possibly_sensitive);
-        p.checks = [...p.checks, { t: nowMs, m: core.metricsOf(fresh.public_metrics) }].slice(-3);
+        refresh(p, fresh, core.metricsOf(fresh.public_metrics));
       }
     } catch (err) { xFail('lookup', err); }
   }

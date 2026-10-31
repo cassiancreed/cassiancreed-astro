@@ -9,7 +9,7 @@ The Neural Edge Publishing site (Astro on Netlify). `npm run build` checks and b
 - **Watched cases:** cases in `src/data/court-calendar.tsv` with a court date from yesterday through the next 7 days (plus ongoing trials), and only if NEP has a page for the case. Tier A outlet handles are in `src/data/viral-watch.json`. They are marked TODO-VERIFY and are not searched until marked `"verified"`.
 - **HOT** (reply now): post is 60 minutes old or less, has 2,000+ views or 50+ likes/reposts/replies/quotes, and grew 20%+ since the last check. Alert: "HOT reply: case".
 - **WARM** (our own post): post is 60 to 180 minutes old, just as big, and still growing. Alert: "Post chance: case". The button opens X with our post and our page link.
-- **Skipped:** posts that name a child, sensitive media, graphic words, or no case/page match.
+- **Skipped:** posts that name a child, sensitive media, graphic words, a block-list word (slurs, violent or sexual words), or no case/page match. Long posts are checked in full (X's `note_tweet`), not just the first 280 characters. The same block list fails a draft. Tune it in `src/data/viral-watch.json` (`block_words`; slurs are stored as hashes in `block_word_hashes`).
 - **Mini council:** draft model, then judge model (8 hard checks + 6 reader scores, X weights). It sends only if all 8 checks pass, the weighted score is 8.0+, and Ryan is 6.0+. The code also checks length (200 max), no links, 1 hashtag max, no bait, and no "killer"/"guilty" unless the record says convicted. One redraft at most.
 - **Limits:** 6 alerts a day (`VIRAL_DAILY_CAP`), 1 alert per case per 3 hours, 2 replies per X account per day, 1 alert per run.
 - All thresholds are **THEORY v1**. Tune them in `src/data/viral-watch.json`.

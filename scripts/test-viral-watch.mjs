@@ -168,6 +168,127 @@ test('post gates: Minor Shield, sensitive media, graphic words, no case, no page
   assert.equal(skip('LINDSAY CLANCY hearing Monday'), null);
 });
 
+// ------------------------------------------------- long posts + block list ----
+
+const LONG_CLEAN_START = `Lindsay Clancy is due back in court Monday for the double jeopardy motion. ${'The hearing follows the September mistrial and a long fight over the holdout juror. '.repeat(3)}`.slice(0, 280);
+const longPost = (tail) => ({ text: LONG_CLEAN_START, note_tweet: { text: `${LONG_CLEAN_START} ${tail}` } });
+
+test('long posts: screens and case match read note_tweet (or note_post), not just the first 280 characters', () => {
+  const watch = [{ key: 'a', name: 'Lindsay Clancy', terms: ['Lindsay Clancy'], termsNorm: ['lindsay clancy'], page: { url: 'https://cassiancreed.com/post/x/' } }];
+  const adults = core.adultTokensFor(watch);
+  const p = longPost('Remember her son Dawson.');
+  assert.equal(core.charCount(p.text), 280);
+  assert.ok(core.charCount(p.note_tweet.text) > 280 && p.note_tweet.text.indexOf('Dawson') > 280);
+  assert.equal(core.minorShieldHit(p.text, { adultTokens: adults }), null); // the cut-off text alone looks clean
+  assert.match(core.postSkipReason(p, core.matchCase(core.fullText(p), watch), cfg, adults), /^minor_shield/);
+  assert.equal(core.fullText({ text: 'short', note_post: { text: 'the newer name' } }), 'the newer name');
+  assert.equal(core.fullText({ text: 'short' }), 'short');
+  // The case name only after character 280 still matches.
+  const late = { text: 'x '.repeat(140), note_tweet: { text: `${'x '.repeat(140)} Lindsay Clancy hearing Monday` } };
+  assert.equal(core.matchCase(core.fullText(late), watch)?.key, 'a');
+  assert.match(core.postSkipReason({ ...longPost('Autopsy photos leaked.') }, watch[0], cfg, adults), /^graphic/);
+  assert.equal(core.mayBeCut({ text: 'x'.repeat(270) }), true);
+  assert.equal(core.mayBeCut({ text: 'x'.repeat(269) }), false);
+  assert.equal(core.mayBeCut({ text: 'x'.repeat(280), note_tweet: { text: 'x'.repeat(400) } }), false);
+});
+
+// One scheduled run with a hand-made X answer. Returns the search requests, the log lines and the state.
+async function oneRun({ search, rejectNoteTweet = false, at = NOW, seed }) {
+  const store = memoryStore(); const requests = [];
+  if (seed) store.data.set('state', JSON.stringify(seed));
+  const fetchImpl = async (url) => {
+    const u = new URL(url);
+    if (u.origin !== 'https://api.x.com') throw new Error(`unexpected ${url}`);
+    requests.push(u);
+    const fields = u.searchParams.get('tweet.fields') || '';
+    if (rejectNoteTweet && fields.includes('note_tweet')) return { ok: false, status: 400, json: async () => ({ errors: [{ parameters: { 'tweet.fields': ['note_tweet'] }, message: 'The `tweet.fields` query parameter value [note_tweet] is not one of [attachments,author_id,created_at]' }], title: 'Invalid Request' }) };
+    const data = u.pathname === '/2/tweets/search/recent' ? search : search.filter((p) => (u.searchParams.get('ids') || '').split(',').includes(p.id));
+    return { ok: true, status: 200, json: async () => ({ data, meta: { result_count: data.length } }) };
+  };
+  const r = await runViralWatch({ env: readEnv(SECRETS), now: new Date(at), fetchImpl, store, files, log: () => {} });
+  return { r, requests, lines: (store.data.get('viral-log/2026-11-02') || '').trim().split('\n').filter(Boolean).map((l) => JSON.parse(l)), state: JSON.parse(store.data.get('state')) };
+}
+const bigMetrics = { impression_count: 9000, like_count: 300, retweet_count: 40, reply_count: 20, quote_count: 5 };
+
+test('scheduled run: a long post that names a child after character 280 is skipped, never tracked', async () => {
+  const post = { id: '1990000000000000901', author_id: '9100000000000000901', created_at: ago(20), public_metrics: bigMetrics, possibly_sensitive: false, ...longPost('Her daughter Ava would have been 6.') };
+  const { r, requests, lines, state } = await oneRun({ search: [post] });
+  assert.equal(r.status, 'ok');
+  assert.ok(requests.every((u) => u.searchParams.get('tweet.fields').split(',').includes('note_tweet')), 'note_tweet requested');
+  assert.ok(lines.some((l) => l.post_id === post.id && /^skip: minor_shield/.test(l.reason)));
+  assert.equal(state.tracked[post.id], undefined);
+  assert.ok(state.skipped[post.id]);
+});
+
+test('scheduled run: a clean long post is tracked with its full text', async () => {
+  const post = { id: '1990000000000000902', author_id: '9100000000000000902', created_at: ago(20), public_metrics: bigMetrics, possibly_sensitive: false, ...longPost('Court starts at 9 a.m.') };
+  const { state } = await oneRun({ search: [post] });
+  assert.ok(state.tracked[post.id].text.includes('Court starts at 9 a.m.'));
+});
+
+test('scheduled run: a tracked post whose fresh full text now fails a screen is dropped on re-check', async () => {
+  const id = '1990000000000000903';
+  const seed = core.emptyState();
+  seed.tracked[id] = { id, case_key: 'lindsay-clancy', author_id: '9100000000000000903', username: null, created_at: ago(30), text: LONG_CLEAN_START, sensitive: false, checks: [{ t: NOW - 600_000, m: core.metricsOf(bigMetrics) }], tried: [], logged: [], alerted: false };
+  const post = { id, author_id: '9100000000000000903', created_at: ago(30), public_metrics: bigMetrics, possibly_sensitive: false, ...longPost('Her son Dawson, 3, was home.') };
+  const { lines, state } = await oneRun({ search: [post], seed });
+  assert.equal(state.tracked[id], undefined);
+  assert.ok(lines.some((l) => l.post_id === id && /^skip on re-check: minor_shield/.test(l.reason)));
+  assert.equal(lines.filter((l) => l.council).length, 0);
+});
+
+test('if X rejects note_tweet, the run retries without it, remembers, and skips posts that may be cut off', async () => {
+  const cut = { id: '1990000000000000904', author_id: '9100000000000000904', created_at: ago(20), public_metrics: bigMetrics, possibly_sensitive: false, text: LONG_CLEAN_START };
+  const short = { id: '1990000000000000905', author_id: '9100000000000000905', created_at: ago(20), public_metrics: bigMetrics, possibly_sensitive: false, text: 'Lindsay Clancy is due back in court Monday.' };
+  const { r, requests, lines, state } = await oneRun({ search: [cut, short], rejectNoteTweet: true });
+  assert.equal(r.status, 'ok');
+  const searches = requests.filter((u) => u.pathname === '/2/tweets/search/recent');
+  assert.equal(searches.length, 2);
+  assert.ok(searches[0].searchParams.get('tweet.fields').includes('note_tweet') && !searches[1].searchParams.get('tweet.fields').includes('note_tweet'));
+  assert.ok(searches[1].searchParams.get('query').includes('min_likes:25'), 'min_likes kept: a note_tweet rejection is not a min_likes rejection');
+  assert.ok(state.flags.note_tweet_unsupported); assert.ok(!state.flags.min_likes_unsupported);
+  assert.ok(lines.some((l) => l.post_id === cut.id && /long_post/.test(l.reason)));
+  assert.ok(state.tracked[short.id]);
+});
+
+test('block list: slurs (by hash) and violent or sexual words, whole-word and case-insensitive', () => {
+  const s = cfg.safety;
+  assert.ok(s.block_words.length > 0 && s.block_word_hashes.length > 0);
+  for (const w of s.block_words) assert.ok(!/[A-Z]/.test(w) && w.trim() === w, `"${w}" should be lowercase and trimmed`);
+  assert.match(core.blockWordHit('He was RAPED, reports say', s), /block list word "raped"/);
+  assert.match(core.blockWordHit('a snuff  film', s), /snuff\s+film/);
+  assert.match(core.blockWordHit('Ｎｕｄｅ photos', s), /nude/); // full-width letters
+  // Whole words only: these must not trigger.
+  for (const ok of ['The therapist testified in Sussex County.', 'Grape juice and Middlesex Superior Court.', 'Al Gore and Loretta Lynch were not involved.', 'The prosecutors expect a verdict.']) {
+    assert.equal(core.blockWordHit(ok, s), null, ok);
+  }
+  // Hashed words: add a test word's hash and confirm the per-word match.
+  const t = { ...s, block_word_hashes: [...s.block_word_hashes, core.hashWord('zorblat')] };
+  assert.equal(core.blockWordHit('what a ZORBLAT thing', t), 'block list word (hashed slur)');
+  assert.equal(core.blockWordHit('zorblatty is a different word', t), null);
+  assert.ok(!SETTINGS.toLowerCase().includes('zorblat'));
+});
+
+test('block list: a source post is skipped and a draft fails', () => {
+  const watch = [{ key: 'a', name: 'Lindsay Clancy', terms: ['Lindsay Clancy'], termsNorm: ['lindsay clancy'], page: { url: 'https://cassiancreed.com/post/x/' } }];
+  const t = clone(cfg); t.safety.block_word_hashes.push(core.hashWord('zorblat'));
+  assert.match(core.postSkipReason({ text: 'Lindsay Clancy hearing: leaked nudes claim' }, watch[0], cfg, new Set()), /block list word "nudes"/);
+  assert.match(core.postSkipReason({ text: 'Lindsay Clancy is a zorblat' }, watch[0], t, new Set()), /hashed slur/);
+  assert.match(core.checkDraft('Nov. 2 hearing. Sexy headline aside, she is charged.', { level: 'HOT', convicted: false, cfg }).failed.join(), /block list word "sexy"/);
+  assert.match(core.checkDraft('Nov. 2 hearing for the zorblat.', { level: 'HOT', convicted: false, cfg: t }).failed.join(), /hashed slur/);
+});
+
+test('block list never matches a watched case name or search term on the live calendar', () => {
+  const calendar = parseCourtCalendar(read('src/data/court-calendar.tsv'));
+  for (const section of [calendar.entries, calendar.unconfirmed, calendar.appeals, calendar.completed]) {
+    for (const row of section || []) {
+      const hit = core.blockWordHit(row.case, cfg.safety);
+      const excluded = cfg.watch.exclude_case_patterns.some((p) => new RegExp(p, 'i').test(`${row.case} ${row.proceeding} ${row.status}`));
+      assert.ok(!hit || excluded, `case "${row.case}" trips the block list (${hit})`);
+    }
+  }
+});
+
 test('Minor Shield block list works by hash, so names are never stored in plain text', () => {
   const c = clone(cfg);
   c.safety.minor_name_hashes.push(core.hashWord('zelda'));

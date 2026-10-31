@@ -286,13 +286,56 @@ export function minorShieldHit(text, { hashes = [], adultTokens = new Set() } = 
   return null;
 }
 
+// ------------------------------------------------------------ long posts ----
+
+// X returns only the first part of a long post (over 280 characters) in `text`;
+// the whole post is in note_tweet.text (the newer API reference calls it
+// note_post). Every screen and the case match read the whole post.
+export function fullText(post) {
+  return String(post?.note_tweet?.text || post?.note_post?.text || post?.text || '');
+}
+
+// When X will not send note_tweet, a post this long may be cut off, so its
+// hidden part cannot be screened: skip it.
+export const LONG_POST_CHARS = 270;
+export const mayBeCut = (post) => !post?.note_tweet?.text && !post?.note_post?.text && charCount(post?.text) >= LONG_POST_CHARS;
+
+// ------------------------------------------------------------ block list ----
+
+// Block list for slurs and violent or sexual words, checked on the source post
+// (skip) and on every draft (no alert). safety.block_words are plain words and
+// phrases, matched whole-word and case-insensitive. safety.block_word_hashes are
+// SHA-256 hashes of lowercase single words (slurs), so this public repo never
+// spells them out; every word in the text is hashed and compared.
+const escapeRe = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+const blockCache = new WeakMap();
+function blockRegex(safety) {
+  if (!blockCache.has(safety)) {
+    const words = (safety.block_words || []).map((w) => String(w).trim()).filter(Boolean);
+    blockCache.set(safety, words.length ? new RegExp(`(?<![\\p{L}\\p{N}_])(?:${words.map((w) => escapeRe(w).replace(/\s+/g, '\\s+')).join('|')})(?![\\p{L}\\p{N}_])`, 'iu') : null);
+  }
+  return blockCache.get(safety);
+}
+
+export function blockWordHit(text, safety = {}) {
+  const n = String(text || '').normalize('NFKC');
+  const re = blockRegex(safety);
+  const m = re && n.match(re);
+  if (m) return `block list word "${m[0].toLowerCase()}"`;
+  const hashes = new Set(safety.block_word_hashes || []);
+  if (hashes.size) for (const w of n.matchAll(/[\p{L}]+/gu)) if (hashes.has(sha256(w[0]))) return 'block list word (hashed slur)';
+  return null;
+}
+
 export function postSkipReason(post, match, cfg, adultTokens) {
-  const text = post.text || '';
+  const text = fullText(post);
   const minor = minorShieldHit(text, { hashes: cfg.safety.minor_name_hashes, adultTokens });
   if (minor) return `minor_shield: ${minor}`;
   if (post.possibly_sensitive) return 'sensitive_media';
   const graphic = compile(cfg.safety.post_skip_patterns).find((re) => re.test(text));
   if (graphic) return `graphic: ${graphic.source}`;
+  const blocked = blockWordHit(text, cfg.safety);
+  if (blocked) return blocked;
   if (!match) return 'no_case_match';
   if (!match.page) return 'no_page';
   return null;
@@ -370,6 +413,8 @@ export function checkDraft(text, { level, convicted, cfg, adultTokens = new Set(
   if (CASHTAG.test(n)) failed.push('$cashtag in text');
   if (PHONE.test(n)) failed.push('phone number in text');
   for (const re of compile(s.draft_block_patterns)) { const m = n.match(re); if (m) failed.push(`blocked word "${m[0]}"`); }
+  const listed = blockWordHit(n, s);
+  if (listed) failed.push(listed);
   for (const re of compile(s.bait_patterns)) { const m = n.match(re); if (m) failed.push(`bait "${m[0]}"`); }
   if (!convicted) {
     const stripped = n.replace(NEGATED_STATUS, ' ');
