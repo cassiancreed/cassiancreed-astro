@@ -9,7 +9,7 @@ victim: "Jade Benning, 25, and her unborn child"
 incidentDate: "February 25 to March 6, 2023"
 location: "Nashville, Tennessee"
 jurisdiction: "Davidson County Criminal Court, Nashville, Tennessee"
-status: "Blaise Taylor was convicted by a Davidson County jury on July 1, 2026, and sentenced to life in prison on Sept. 9, 2026. He maintains he is innocent. His attorney has said the defense will appeal. We have not verified whether an appeal or other challenge has been filed or decided."
+status: "Blaise Taylor was convicted by a Davidson County jury on July 1, 2026, and sentenced to life in prison on Sept. 9, 2026. His attorney has said he maintains he is innocent and that the defense will appeal. We have not verified whether an appeal or other challenge has been filed or decided."
 ---
 
 *Status as of Oct. 31, 2026, 7:54 AM PT. Court records can change.*
