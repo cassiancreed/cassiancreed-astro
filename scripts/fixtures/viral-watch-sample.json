@@ -1,0 +1,305 @@
+{
+  "_about": "Saved sample for scripts/viral-watch-dryrun.mjs and scripts/test-viral-watch.mjs. Calendar rows are copied from src/data/court-calendar.tsv as of 2026-10-31 so the sample never drifts when the live calendar changes. X posts, accounts and model replies are made up for testing; post ids and handles are fake. Nothing here is ever sent anywhere.",
+  "calendar_rows": [
+    {
+      "section": "scheduled",
+      "id": "clancy-november-motions",
+      "case": "Lindsay Clancy",
+      "proceeding": "Hearing after mistrial — double jeopardy motion to dismiss and other pending motions",
+      "date_iso": "2026-11-02",
+      "date_text": "Monday, November 2, 2026 — time not publicly verified",
+      "timezone": "America/New_York",
+      "time_status": "not publicly verified",
+      "court": "Plymouth County Superior Court, Plymouth, MA",
+      "docket": "Not publicly verified (official docket not yet read)",
+      "verified": "October 29, 2026, 04:08 PDT (America/Los_Angeles)",
+      "ongoing": "",
+      "groups": "next|hearings",
+      "status": "Clancy remains charged and has pleaded not guilty. The judge declared a mistrial on September 4 after the jury could not agree; there is no verdict. On October 1 the judge denied a renewed request for a required finding of not guilty (that ruling is not a finding of guilt). On October 21 he denied a defense request for an evidentiary hearing about the holdout juror. The defense motion to dismiss on double jeopardy grounds (the rule against being tried twice for the same crime) has not been decided. In a written opposition made public October 28, prosecutors argue the mistrial was proper because the jury was deadlocked. Prosecutors have not formally said whether they will retry the case. Clancy remains presumed innocent.",
+      "detail": "A mistrial was declared September 4, 2026. The Boston Globe and Boston 25 News (October 21, 2026) report the double jeopardy motion will be argued at a November 2 hearing before Judge Sullivan. Court TV reports that defense requests to preserve juror records and turn over the juror questionnaire will also be heard that day. No retrial decision, retrial date or conviction has been reported.",
+      "next_note": "Reports differ on whether defense requests about juror records will also be heard November 2. Time not publicly verified. Confirm the court listing before attending. Sources: CBS Boston, October 28, 2026; Boston Globe, October 21, 2026; Boston 25 News, October 21, 2026; Court TV, October 21, 2026.",
+      "source_url": "https://www.cbsnews.com/boston/news/lindsay-clancy-retrial-prosecution-motion/",
+      "source_label": "CBS Boston, October 28, 2026 — prosecutors oppose motion to dismiss; next court date November 2",
+      "source_type": "Court reporting",
+      "source2_url": "https://www.bostonglobe.com/2026/10/21/metro/lindsay-clancy-holdout-juror-double-jeopardy/",
+      "source2_label": "Boston Globe, October 21, 2026 — double jeopardy motion set for November 2",
+      "internal_link": "/post/lindsay-clancy-trial/",
+      "internal_link_text": "Full Clancy trial tracker",
+      "internal_link2": "/post/lindsay-clancy-trial-2026-postpartum-psychosis/",
+      "internal_link2_text": "Clinical and legal primer",
+      "faq_question": "When is Lindsay Clancy’s next reported hearing?"
+    },
+    {
+      "section": "unconfirmed",
+      "id": "millete-sentencing",
+      "case": "Larry Millete",
+      "proceeding": "Sentencing delayed — November 2 reported; primary setting unverified",
+      "date_iso": "2026-11-02",
+      "date_text": "Monday, November 2, 2026 — reported replacement setting; time and primary confirmation unverified",
+      "timezone": "America/Los_Angeles",
+      "time_status": "not publicly verified",
+      "court": "San Diego County Superior Court, South Bay courthouse, Chula Vista, CA — Department S-05",
+      "docket": "SCS319857",
+      "verified": "October 2, 2026, 13:04 PDT (America/Los_Angeles)",
+      "ongoing": "",
+      "groups": "",
+      "status": "Millete was convicted of first-degree murder on July 9, 2026, and later pleaded guilty to a separate weapons count. The official September 29 calendar listed probation hearing and sentencing, but that setting has elapsed and no official disposition has been verified here.",
+      "detail": "KOGO’s September 30 report, citing CBS 8, says sentencing was delayed to November 2 after a defense request for more preparation. The rolling official calendar could not be reread at this cutoff. The replacement date is therefore reported, not independently confirmed; no sentence is treated as imposed.",
+      "next_note": "Confirm November 2 and the clock time against the official court record before attending. Preserve the sentencing outcome as unverified.",
+      "source_url": "https://www.sandiego.courts.ca.gov/portal/online/calendar/F_BCCAL1.html",
+      "source_label": "San Diego Superior Court South County calendars — September 29 listing and September 30 page prepared at 5:25:07 a.m. with no Millete listing",
+      "source_type": "Primary — court calendar",
+      "source2_url": "https://kogo.iheart.com/alternate/amp/2026-09-29-milletes-murder-sentence-delayed/",
+      "source2_label": "KOGO News, Dan Mitchinson, September 30, 2026 — reported November 2 continuance, citing CBS 8",
+      "internal_link": "/post/the-maya-millete-case-larry-milletes-no-body-murder-trial-explained/",
+      "internal_link_text": "Read the verdict update",
+      "internal_link2": "",
+      "internal_link2_text": "",
+      "faq_question": "When is Larry Millete’s listed sentencing hearing?"
+    },
+    {
+      "section": "scheduled",
+      "id": "morphew-status-conference",
+      "case": "Barry Morphew — Suzanne Morphew case",
+      "proceeding": "Status conference",
+      "date_iso": "2026-11-03",
+      "date_text": "Tuesday, November 3, 2026, 1:30 p.m. MT (virtual)",
+      "timezone": "America/Denver",
+      "time_status": "confirmed",
+      "court": "Twelfth Judicial District Court, Alamosa County, Alamosa, CO",
+      "docket": "Case No. 25CR128",
+      "verified": "October 29, 2026, 04:08 PDT (America/Los_Angeles)",
+      "ongoing": "",
+      "groups": "next|hearings",
+      "status": "Morphew has been indicted on a first-degree murder charge in the 2020 disappearance and death of his wife, Suzanne Morphew. An earlier 2021 case against him was dismissed by prosecutors before trial. The current charge is an allegation, and he is presumed innocent unless and until proved guilty in court.",
+      "detail": "The current Colorado Judicial Branch case page lists a virtual status conference on November 3 at 1:30 p.m. Mountain. The former September 17 listing is obsolete. Both current English and Spanish views showed November 3 at the verification cutoff; the August 7 order and September 3 reporting were superseded by the later court page and September 8 reports.",
+      "next_note": "Monitor the official case page and docket for changes to the November 3 status conference. A July 19, 2027 trial date is reporter-supported but is not stated in the current official case-page header.",
+      "source_url": "https://www.coloradojudicial.gov/node/13869",
+      "source_label": "Colorado Judicial Branch, official case page for 25CR128 (November 3 status conference)",
+      "source_type": "Primary — official court case page",
+      "source2_url": "https://www.denvergazette.com/2026/09/08/judge-ups-barry-morphews-bond-to-10-million/",
+      "source2_label": "Denver Gazette, September 8 court report confirming the November 3 status conference",
+      "internal_link": "",
+      "internal_link_text": "",
+      "internal_link2": "",
+      "internal_link2_text": "",
+      "faq_question": "When is Barry Morphew’s next court date?"
+    }
+  ],
+  "users": {
+    "9100000000000000001": "CourtWatchDemo",
+    "9100000000000000002": "SanDiegoNewsDemo",
+    "9100000000000000003": "TrueCrimeFanDemo",
+    "9100000000000000004": "ColoradoDeskDemo",
+    "9100000000000000005": "GoreClipsDemo"
+  },
+  "runs": [
+    {
+      "at": "2026-11-02T16:50:00Z",
+      "note": "Run 1 (8:50 AM PT): first sight of every post. Nothing can be HOT yet because growth needs a second check.",
+      "search": [
+        {
+          "id": "1990000000000000001",
+          "created_at": "2026-11-02T16:30:00Z",
+          "author_id": "9100000000000000001",
+          "text": "Lindsay Clancy is due back in court Monday. The double jeopardy motion gets argued after the September mistrial. Huge day for this case.",
+          "possibly_sensitive": false,
+          "public_metrics": {
+            "impression_count": 1500,
+            "like_count": 40,
+            "retweet_count": 8,
+            "reply_count": 6,
+            "quote_count": 1,
+            "bookmark_count": 0
+          }
+        },
+        {
+          "id": "1990000000000000002",
+          "created_at": "2026-11-02T15:20:00Z",
+          "author_id": "9100000000000000002",
+          "text": "Larry Millete sentencing is supposed to happen today in Chula Vista. Maya's family has waited five years for this day.",
+          "possibly_sensitive": false,
+          "public_metrics": {
+            "impression_count": 9000,
+            "like_count": 240,
+            "retweet_count": 40,
+            "reply_count": 15,
+            "quote_count": 5,
+            "bookmark_count": 0
+          }
+        },
+        {
+          "id": "1990000000000000003",
+          "created_at": "2026-11-02T16:40:00Z",
+          "author_id": "9100000000000000003",
+          "text": "Prayers for little Tommy, 4, and his sisters. Lindsay Clancy hearing is Monday and I can't stop thinking about them.",
+          "possibly_sensitive": false,
+          "public_metrics": {
+            "impression_count": 2600,
+            "like_count": 60,
+            "retweet_count": 10,
+            "reply_count": 9,
+            "quote_count": 2,
+            "bookmark_count": 0
+          }
+        },
+        {
+          "id": "1990000000000000004",
+          "created_at": "2026-11-02T16:20:00Z",
+          "author_id": "9100000000000000004",
+          "text": "Barry Morphew status conference is Tuesday in Alamosa. Still no trial date the court has confirmed.",
+          "possibly_sensitive": false,
+          "public_metrics": {
+            "impression_count": 3100,
+            "like_count": 70,
+            "retweet_count": 12,
+            "reply_count": 5,
+            "quote_count": 1,
+            "bookmark_count": 0
+          }
+        },
+        {
+          "id": "1990000000000000005",
+          "created_at": "2026-11-02T16:45:00Z",
+          "author_id": "9100000000000000005",
+          "text": "Graphic video from the Lindsay Clancy house was leaked. Gore warning.",
+          "possibly_sensitive": true,
+          "public_metrics": {
+            "impression_count": 5200,
+            "like_count": 90,
+            "retweet_count": 30,
+            "reply_count": 20,
+            "quote_count": 4,
+            "bookmark_count": 0
+          }
+        },
+        {
+          "id": "1990000000000000006",
+          "created_at": "2026-11-02T16:35:00Z",
+          "author_id": "9100000000000000003",
+          "text": "Anyone else following Lindsay Clancy? Feels like nobody talks about it.",
+          "possibly_sensitive": false,
+          "public_metrics": {
+            "impression_count": 400,
+            "like_count": 26,
+            "retweet_count": 1,
+            "reply_count": 3,
+            "quote_count": 0,
+            "bookmark_count": 0
+          }
+        }
+      ]
+    },
+    {
+      "at": "2026-11-02T17:00:00Z",
+      "note": "Run 2 (9:00 AM PT): post A is 30 min old and up 73% (HOT). Post B is up 15.6% (WARM) but only one alert goes out per run.",
+      "search": [
+        {
+          "id": "1990000000000000001",
+          "created_at": "2026-11-02T16:30:00Z",
+          "author_id": "9100000000000000001",
+          "text": "Lindsay Clancy is due back in court Monday. The double jeopardy motion gets argued after the September mistrial. Huge day for this case.",
+          "possibly_sensitive": false,
+          "public_metrics": {
+            "impression_count": 2600,
+            "like_count": 70,
+            "retweet_count": 15,
+            "reply_count": 9,
+            "quote_count": 2,
+            "bookmark_count": 0
+          }
+        },
+        {
+          "id": "1990000000000000006",
+          "created_at": "2026-11-02T16:35:00Z",
+          "author_id": "9100000000000000003",
+          "text": "Anyone else following Lindsay Clancy? Feels like nobody talks about it.",
+          "possibly_sensitive": false,
+          "public_metrics": {
+            "impression_count": 430,
+            "like_count": 27,
+            "retweet_count": 1,
+            "reply_count": 3,
+            "quote_count": 0,
+            "bookmark_count": 0
+          }
+        }
+      ],
+      "lookup": [
+        {
+          "id": "1990000000000000002",
+          "created_at": "2026-11-02T15:20:00Z",
+          "author_id": "9100000000000000002",
+          "text": "Larry Millete sentencing is supposed to happen today in Chula Vista. Maya's family has waited five years for this day.",
+          "possibly_sensitive": false,
+          "public_metrics": {
+            "impression_count": 10400,
+            "like_count": 270,
+            "retweet_count": 46,
+            "reply_count": 18,
+            "quote_count": 6,
+            "bookmark_count": 0
+          }
+        }
+      ]
+    },
+    {
+      "at": "2026-11-02T17:10:00Z",
+      "note": "Run 3 (9:10 AM PT): post B is still growing (WARM) and gets the own-post alert. Post A was already alerted and is not re-checked.",
+      "search": [],
+      "lookup": [
+        {
+          "id": "1990000000000000002",
+          "created_at": "2026-11-02T15:20:00Z",
+          "author_id": "9100000000000000002",
+          "text": "Larry Millete sentencing is supposed to happen today in Chula Vista. Maya's family has waited five years for this day.",
+          "possibly_sensitive": false,
+          "public_metrics": {
+            "impression_count": 11800,
+            "like_count": 300,
+            "retweet_count": 50,
+            "reply_count": 20,
+            "quote_count": 6,
+            "bookmark_count": 0
+          }
+        },
+        {
+          "id": "1990000000000000006",
+          "created_at": "2026-11-02T16:35:00Z",
+          "author_id": "9100000000000000003",
+          "text": "Anyone else following Lindsay Clancy? Feels like nobody talks about it.",
+          "possibly_sensitive": false,
+          "public_metrics": {
+            "impression_count": 440,
+            "like_count": 27,
+            "retweet_count": 1,
+            "reply_count": 3,
+            "quote_count": 0,
+            "bookmark_count": 0
+          }
+        }
+      ]
+    }
+  ],
+  "canned": {
+    "1990000000000000001": {
+      "draft": [
+        "Big day. Full tracker at cassiancreed.com/post/lindsay-clancy-trial and the jury never reached a verdict.",
+        "Monday's hearing is on the double jeopardy motion to dismiss. The judge declared a mistrial Sept. 4; Clancy remains charged and has pleaded not guilty."
+      ],
+      "judge": [
+        "```json\n{\"hard_checks_pass\": true, \"failed\": [], \"scores\": {\"Michelle\": 9, \"Ryan\": 8.5, \"Amanda\": 8.5, \"Quinn\": 8.5, \"Marcus\": 9, \"Destiny\": 7.5}, \"weighted\": 8.56, \"verdict\": \"PASS\", \"fix\": \"\"}\n```"
+      ]
+    },
+    "1990000000000000002": {
+      "draft": [
+        "Larry Millete was convicted of first-degree murder July 9. His sentencing is set for Nov. 2 in San Diego County Superior Court. Remembering Maya Millete.",
+        "Larry Millete was convicted of first-degree murder July 9. A Nov. 2 sentencing date is reported but not yet confirmed by the court. Remembering Maya Millete."
+      ],
+      "judge": [
+        "{\"hard_checks_pass\": false, \"failed\": [\"status_words\"], \"scores\": {\"Michelle\": 8.5, \"Ryan\": 8, \"Amanda\": 8.5, \"Quinn\": 8, \"Marcus\": 6.5, \"Destiny\": 7.5}, \"weighted\": 7.97, \"verdict\": \"REDO\", \"fix\": \"Say the Nov. 2 sentencing date is reported, not confirmed by the court.\"}",
+        "{\"hard_checks_pass\": true, \"failed\": [], \"scores\": {\"Michelle\": 9, \"Ryan\": 8, \"Amanda\": 9, \"Quinn\": 8.5, \"Marcus\": 9, \"Destiny\": 7.5}, \"weighted\": 8.57, \"verdict\": \"PASS\", \"fix\": \"\"}"
+      ]
+    }
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "_about": "Viral Watch (Route A) settings, read by netlify/functions/viral-watch/. Every number here is THEORY v1: a starting guess to tune from the viral-log blobs. Secrets never go in this file; they live in Netlify environment variables.",
+  "version": "1.0.0",
+  "active_hours": {
+    "_note": "Runs only between start and end, Pacific time. VIRAL_MAX_UNTIL (ISO time) extends a TV/verdict night; values more than max_until_cap_hours ahead are ignored so a stale setting cannot run all night forever.",
+    "timezone": "America/Los_Angeles",
+    "start": "06:00",
+    "end": "22:30",
+    "max_until_cap_hours": 12
+  },
+  "watch": {
+    "_note": "Cases come from src/data/court-calendar.tsv: rows dated from lookback_days ago through days_ahead from today (Pacific), plus rows marked ongoing. Only cases with an NEP page are searched. term_overrides replace the auto-built search names for a case whose name column contains case_contains.",
+    "days_ahead": 7,
+    "lookback_days": 1,
+    "sections": ["scheduled", "unconfirmed", "appeal", "completed"],
+    "exclude_case_patterns": ["molest", "sexual", "\\brape", "child sex", "indecent", "pornograph"],
+    "term_overrides": [
+      { "case_contains": "Charlie Kirk", "terms": ["Tyler Robinson"], "_why": "\"Charlie Kirk\" alone matches thousands of political posts a day and would burn the read budget." }
+    ],
+    "drop_terms": ["Charlie Kirk"],
+    "max_terms_per_case": 4
+  },
+  "tier_a_handles": {
+    "_note": "Placeholder list. Every handle is TODO-VERIFY until the owner's ledger confirms the exact account. Handles are only searched when status is \"verified\" (or use_unverified is true), so a wrong or look-alike account never gets a reply.",
+    "use_unverified": false,
+    "min_likes": 0,
+    "handles": [
+      { "handle": "CourtTV", "status": "TODO-VERIFY", "note": "Court TV" },
+      { "handle": "LawCrimeNetwork", "status": "TODO-VERIFY", "note": "Law&Crime" },
+      { "handle": "48hours", "status": "TODO-VERIFY", "note": "CBS 48 Hours" },
+      { "handle": "DatelineNBC", "status": "TODO-VERIFY", "note": "NBC Dateline" },
+      { "handle": "crimeonline", "status": "TODO-VERIFY", "note": "CrimeOnline" },
+      { "handle": "NancyGrace", "status": "TODO-VERIFY", "note": "Nancy Grace" },
+      { "handle": "OxygenTV", "status": "TODO-VERIFY", "note": "Oxygen True Crime" },
+      { "handle": "DiscoveryID", "status": "TODO-VERIFY", "note": "Investigation Discovery" }
+    ]
+  },
+  "event_words": ["verdict", "sentenced", "sentencing", "mistrial", "\"jury selection\"", "\"pleaded guilty\"", "\"pleaded not guilty\"", "arraigned", "indicted", "\"preliminary hearing\"", "\"double jeopardy\""],
+  "own_handles": ["CassianCreed"],
+  "x": {
+    "_note": "X API v2 recent search. The X docs list min_likes (not min_faves, which X rejects with a 400). If min_likes is rejected the function drops it once, remembers that, and filters likes in code. Searches with a like threshold use a rolling start_time window instead of since_id, because since_id would skip a post that crosses the threshold after its ID range was passed; X bills a re-read of the same post once per UTC day. Plain searches (Tier A) use since_id.",
+    "min_likes": 25,
+    "max_results": 10,
+    "max_queries_per_run": 4,
+    "query_max_chars": 512,
+    "discovery_window_min": 180,
+    "max_tracked": 25,
+    "daily_post_read_cap": 600,
+    "daily_user_read_cap": 40,
+    "expand_authors": "on_alert",
+    "_expand_authors_note": "\"on_alert\" looks up the @handle only for a post that reaches the council (about $0.010 per user read). \"always\" adds expansions=author_id to every search, as first specified, and pays for every author.",
+    "timeout_ms": 6000
+  },
+  "score": {
+    "_note": "HOT = young and taking off: reply now. WARM = older but still growing: our own post. Growth compares this check with the last check (about 10 minutes apart). Views are X impressions; engagement = likes + reposts + replies + quotes.",
+    "hot": { "max_age_min": 60, "min_impressions": 2000, "min_engagement": 50, "min_growth_pct": 20 },
+    "warm": { "min_age_min": 60, "max_age_min": 180, "min_impressions": 2000, "min_engagement": 50, "min_growth_pct": 0 }
+  },
+  "limits": {
+    "case_cooldown_hours": 3,
+    "max_replies_per_account_per_day": 2,
+    "max_alerts_per_run": 1,
+    "max_councils_per_run": 2,
+    "max_councils_per_day": 20,
+    "run_budget_ms": 26000,
+    "_note": "Netlify stops a scheduled function at 30 seconds. run_budget_ms leaves room to save state; a council that would not finish in time is skipped and logged, never sent half-checked."
+  },
+  "council": {
+    "_note": "Mini council: DRAFT model writes, a separate JUDGE model grades on the iSWEAT 3.9.3 X lens. Weights are the X column of iSWEAT 3.9.3 section 8.6.9. Ryan floor 6.0 is the iSWEAT social floor.",
+    "pass_weighted": 8.0,
+    "ryan_floor": 6.0,
+    "weights": { "Michelle": 28, "Ryan": 18, "Amanda": 16, "Quinn": 12, "Marcus": 12, "Destiny": 14 },
+    "max_chars": 200,
+    "max_hashtags": 1,
+    "draft_max_tokens": 300,
+    "judge_max_tokens": 700,
+    "draft_timeout_ms": 9000,
+    "judge_timeout_ms": 12000
+  },
+  "safety": {
+    "_note": "Minor Shield: child names are stored only as SHA-256 hashes of the lowercase word (same method as scripts/test-clancy-child-names.mjs), so this file never spells them out. Patterns are case-insensitive regular expressions.",
+    "_minor_name_hashes_note": "First three: the Clancy children (copied from scripts/test-clancy-child-names.mjs). Last two: the two child victims in the Vallow case. A post naming any of them is skipped, and a draft naming them fails. Add more with: node -e \"console.log(require('crypto').createHash('sha256').update('name'.toLowerCase()).digest('hex'))\"",
+    "minor_name_hashes": [
+      "b8d8a9b672985b1df0c1c580e2981200646f9120945b31f5407722bda0e1e62a",
+      "9691cf90923cba9d50a547cd5af5c04ebc0f40055a10f2f38a8b020a02e83c9d",
+      "da300511638e3ff16685f1e37560546114df666ee1b507c1679125345aaf9483",
+      "28585b10532342e5d09bf7df7d5aca8881bbb6cfcb57f4155996deaef57dd544",
+      "de3bbd0fd7945e42581643b18cdf28dd3ed61d9c3d541b7b016081564b65a3f3"
+    ],
+    "post_skip_patterns": ["dismember", "decapitat", "behead", "mutilat", "disembowel", "\\bgore\\b", "\\bgory\\b", "autopsy (photo|picture|image)s?", "crime scene (photo|picture|image)s?", "graphic (video|footage|image|photo)", "\\btortur", "\\brape", "sexual(ly)? (assault|abuse)", "molest", "burned alive", "\\bnsfw\\b"],
+    "draft_block_patterns": ["\\bkillers?\\b", "\\bmurderers?\\b", "\\bmonsters?\\b", "\\bevil\\b", "\\btwisted\\b", "\\bsick(o|ening)?\\b", "\\bpsycho", "\\bsavage\\b", "\\bbutcher", "\\bslaughter", "rot in", "burn in hell", "deserves? (to die|death|the chair)", "\\bshocking\\b", "\\bhorrific\\b", "\\bgruesome\\b", "\\bbloody\\b", "\\bblood\\b", "stabbed", "strangled", "bludgeon", "dismember", "decapitat", "\\bgore\\b", "autopsy", "\\btortur"],
+    "bait_patterns": ["\\bRT\\b", "\\bretweet", "\\brepost (this|if)", "like if", "\\blike this\\b", "\\bfollow (us|me|for|along)\\b", "\\bshare (this|if)\\b", "\\bthoughts\\?", "\\bagree\\?", "what do you think", "comment below", "drop a", "you won'?t believe", "must[- ]see", "link in bio", "\\bDM\\b", "check out", "\\bsubscribe\\b", "\\bclick\\b"],
+    "_guilt_note": "Checked only when the calendar row does not record a conviction. Exact negatives such as \"pleaded not guilty\" or \"has not been convicted\" are removed before this check.",
+    "guilt_patterns_unless_convicted": ["\\bguilty\\b", "\\bguilt\\b", "\\bconvicted\\b", "\\bconvictions?\\b", "\\bperpetrator\\b", "\\bculprit\\b"]
+  }
+}
