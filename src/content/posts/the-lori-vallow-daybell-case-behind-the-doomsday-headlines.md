@@ -1,10 +1,10 @@
 ---
-title: "The Lori Vallow Daybell Case: Remembering JJ, Tylee, and Tammy Behind the \"Doomsday\" Headlines"
-description: "Lori Vallow Daybell was convicted of murdering her children JJ and Tylee and conspiring to kill Tammy Daybell. Their story first — and where the 2026 appeal stands."
+title: "The Lori Vallow Daybell Case: Remembering Her Two Children and Tammy Daybell Behind the \"Doomsday\" Headlines"
+description: "Lori Vallow Daybell was convicted of murdering her two children and conspiring to kill Tammy Daybell. Their story first — and where her Idaho appeal stands."
 pubDate: 2026-05-15
 tag: "Case Files"
 featured: false
-victim: "JJ Vallow (7), Tylee Ryan (16), Tammy Daybell (49)"
+victim: "Her two children (ages 7 and 16) and Tammy Daybell (49)"
 incidentDate: "2019"
 location: "Idaho and Arizona"
 jurisdiction: "Idaho and Arizona state courts"
