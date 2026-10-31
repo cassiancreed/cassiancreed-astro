@@ -4,14 +4,14 @@ seoTitle: "Jake and Callum Robinson Mexico Trial: What We Know"
 description: "Jake Robinson, Callum Robinson and Jack Carter Rhoad were killed in Baja California in 2024. Three men were convicted on Oct. 9, 2026 and sentenced on Oct. 16. What the trial's first two days showed."
 pubDate: 2026-09-10
 updatedDate: 2026-10-31
-status: "Three men found guilty by the trial judge in Ensenada on Oct. 9, 2026, of the three murders, armed robbery and armed carjacking; each sentenced Oct. 16, 2026, to 158 years and nine months in prison. Their lawyers say they will appeal."
+status: "Three men found guilty by the trial judge in Ensenada on Oct. 9, 2026, of the three murders, armed robbery and armed carjacking; each sentenced Oct. 16, 2026, to 158 years and nine months in prison. Their lawyers say they will appeal; the judgment is not final."
 tag: "Explainers"
 featured: false
 cover: "/case-art/mexico-trial-hero-16x9-web.jpg"
 coverAlt: "Three surfboards rest beside a Pacific beach at sunset, with camping gear nearby and a distant civic building on a coastal hillside."
 ---
 
-*Status as of Oct. 31, 2026 (Pacific).* On Oct. 9, 2026, the trial judge in Ensenada found three men guilty of the murders of Jake Robinson, Callum Robinson and Jack Carter Rhoad, and of armed robbery and armed carjacking ([Al Jazeera, Oct. 10, 2026](https://www.aljazeera.com/news/2026/10/10/mexican-judge-sentences-three-men-for-murders-of-australian-us-surfers)). On Oct. 16, the judge sentenced each man to 158 years and nine months in prison and ordered compensation to the families ([AAP via Illawarra Mercury, Oct. 17, 2026](https://www.illawarramercury.com.au/story/9370247/trio-sentenced-to-158-years-for-killing-aussie-surfers/)). Their lawyers say they will appeal. This is the trial court's judgment; an appeal court could review it. The account below covers only the first two days of the trial, through Sept. 10, 2026.
+*Status as of Oct. 31, 2026 (Pacific).* On Oct. 9, 2026, the trial judge in Ensenada found three men guilty of the murders of Jake Robinson, Callum Robinson and Jack Carter Rhoad, and of armed robbery and armed carjacking ([Al Jazeera, Oct. 10, 2026](https://www.aljazeera.com/news/2026/10/10/mexican-judge-sentences-three-men-for-murders-of-australian-us-surfers)). On Oct. 16, the judge sentenced each man to 158 years and nine months in prison and ordered compensation to the families ([AAP via Illawarra Mercury, Oct. 17, 2026](https://www.illawarramercury.com.au/story/9370247/trio-sentenced-to-158-years-for-killing-aussie-surfers/)). Their lawyers say they will appeal. This is the trial court's judgment, not a final one. In Mexico, an appeal court may look at the facts again and could change the result. The account below covers only the first two days of the trial, through Sept. 10, 2026.
 
 Jake Robinson, Callum Robinson, and Jack Carter Rhoad were camping and surfing near Punta San José on Baja California’s Pacific coast when they disappeared after their last contact around April 27, 2024. Their bodies were later recovered from a well or shaft several miles from the campsite.
 
