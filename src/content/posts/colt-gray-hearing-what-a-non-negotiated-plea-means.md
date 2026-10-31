@@ -3,10 +3,14 @@ title: "Colt Gray Hearing: What a Non-Negotiated Plea Means"
 seoTitle: "Colt Gray Hearing: What a Non-Negotiated Plea Means"
 description: "A non-negotiated plea leaves sentencing entirely to the judge. What Friday's Colt Gray hearing can decide, what it can't, and what happens either way."
 pubDate: 2026-07-20
+updatedDate: 2026-10-31
+status: "Pleaded guilty to 55 counts; sentenced July 28, 2026 to life in prison without the possibility of parole (Barrow County Superior Court, Judge Nicholas Primm)."
 tag: Case Files
 featured: false
 capture: "case"
 ---
+
+**Status as of Oct. 31, 2026 (Pacific):** The defendant, who was 14 at the time of the shooting, pleaded guilty to 55 counts. On July 28, 2026, Barrow County Superior Court Judge Nicholas Primm sentenced him to life in prison without the possibility of parole, after three days of victim impact statements, evidence and expert testimony ([Georgia Public Broadcasting, July 28, 2026](https://www.gpb.org/news/2026/07/28/apalachee-high-school-shooter-16-sentenced-life-without-parole)). We found no later court date. See the [Court Calendar](/court-calendar/#completed-1) for the latest checked status. The explainer below was written before that hearing.
 
 *Before Friday's hearing in Barrow County, here is what a non-negotiated
 plea is, what the hearing can and cannot decide, and what happens in
@@ -170,8 +174,8 @@ records speak.
 - **The sentence, if sentencing proceeds** — decided by Judge Primm
   alone, after argument from both sides.
 
-We will update this page after the hearing with what the record actually
-shows — not before.
+The hearing has happened. The plea was entered and the judge imposed life
+in prison without the possibility of parole on July 28, 2026 ([Georgia Public Broadcasting, July 28, 2026](https://www.gpb.org/news/2026/07/28/apalachee-high-school-shooter-16-sentenced-life-without-parole)).
 
 *For how these proceedings work more generally, see our explainers on
 [what actually happens on day one of a high-profile trial](https://cassiancreed.com/post/what-actually-happens-on-day-one-of-a-high-profile-trial/),
@@ -184,7 +188,8 @@ terms are defined in the [glossary](https://cassiancreed.com/glossary/).*
 
 ---
 
-*Colt Gray is charged, not convicted. He is presumed innocent unless and
-until proven guilty in a court of law. This page describes court
-scheduling and legal process as of July 20, 2026, and will be updated
-after the July 24 hearing.*
+*Status as of Oct. 31, 2026 (Pacific): the defendant pleaded guilty to 55
+counts and was sentenced on July 28, 2026, to life in prison without the
+possibility of parole. The explainer above describes court scheduling and
+legal process as of July 20, 2026, before that hearing. See the
+[Court Calendar](/court-calendar/#completed-1) for the latest checked status.*

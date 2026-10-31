@@ -1,14 +1,15 @@
 ---
 title: "Baby Boy Doe Case Update: Dianne Curry Peck and DNA"
-description: "The Mansfield Baby Boy Doe case: Dianne Curry Peck's not-guilty plea, the August 31 pretrial date, and how genetic genealogy reopened the 1985 case."
+description: "The Mansfield Baby Boy Doe case: Dianne Curry Peck's not-guilty plea, her next court date (reports conflict), and how genetic genealogy reopened the 1985 case."
 pubDate: 2026-07-18
+updatedDate: 2026-10-31
 tag: "Case Files"
 featured: false
 victim: "Baby Boy Doe, a newborn, Mansfield, Massachusetts"
 incidentDate: "January 1985"
 location: "Mansfield, Massachusetts"
 jurisdiction: "Bristol County Superior Court, Fall River, Massachusetts"
-status: "Dianne Curry Peck charged with one count of murder; pleaded not guilty; pretrial conference publicly scheduled for August 31, 2026. No trial date set."
+status: "Dianne Curry Peck charged with one count of murder; pleaded not guilty; presumed innocent. No trial date set. Next court date not confirmed: one report gave Aug. 31, 2026; another said December. No public result of an Aug. 31 hearing found as of Oct. 31, 2026."
 capture: "case"
 ---
 
@@ -47,13 +48,13 @@ The most precise formulation is that Othram generated the SNP profile that enabl
 - **Arraignment:** June 30, 2026, in Fall River Superior Court.
 - **Plea:** Not guilty.
 - **Release conditions publicly reported:** $100,000 surety or $10,000 cash; reports also state that Peck surrendered her passport.
-- **Next publicly reported event:** A pretrial conference publicly scheduled for August 31, 2026.
+- **Next court date (as of Oct. 31, 2026):** Not confirmed. One report citing the court file gave August 31, 2026; another said December. We found no public report of what happened on August 31. Confirm with the Bristol County Superior Court clerk.
 
 A note on dates matters here: the grand-jury indictment was announced June 29; June 30 was the arraignment and not-guilty plea. June 30 is not the indictment date.
 
 Although the indictment drew a short burst of news coverage, continuing case coverage remains unusually sparse. Most outlets have not built a dedicated tracker or returned to the case since the arraignment.
 
-## What the August 31 Conference Will Decide
+## What a Pretrial Conference Decides
 
 A [pretrial conference](/glossary/#pretrial-conference) is where the court addresses scheduling, discovery, motions, and other issues before any trial date is set. The next scheduled court date is not a trial, and it is not a hearing at which guilt is decided.
 
@@ -61,13 +62,13 @@ A pretrial conference is an early case-management stage. The judge and lawyers u
 
 Massachusetts criminal rules require the prosecution to provide the defense with broad categories of relevant material, which can include police reports, recorded or written statements, laboratory material, photographs, witness information, and evidence that may help the defense. In this case, discovery could be unusually large and technically demanding, reaching back to 1985 and reportedly including preserved biological evidence, modern genome sequencing, forensic genetic genealogy, confirmatory DNA testing, historical records, and interviews conducted decades later.
 
-The most meaningful things to watch on August 31 would be whether the date remains on the court calendar, whether counsel reports that automatic discovery is complete, whether either side identifies missing DNA, genealogy, medical, or interview material, whether motion deadlines are set, whether an evidentiary hearing is scheduled, whether release conditions change, and whether the court sets a final pretrial conference or trial date. None of those outcomes should be predicted. The hearing may be brief and administrative, particularly in a complex case at an early stage.
+The most meaningful things to watch at the next pretrial conference would be whether the date remains on the court calendar, whether counsel reports that automatic discovery is complete, whether either side identifies missing DNA, genealogy, medical, or interview material, whether motion deadlines are set, whether an evidentiary hearing is scheduled, whether release conditions change, and whether the court sets a final pretrial conference or trial date. None of those outcomes should be predicted. The hearing may be brief and administrative, particularly in a complex case at an early stage.
 
 ## The Presumption of Innocence
 
 Dianne Curry Peck has pleaded not guilty to one count of murder. The charge is an accusation. She remains presumed innocent unless prosecutors prove guilt beyond a reasonable doubt in court. The pretrial conference will not answer who is criminally responsible for the infant's death. It will begin defining which evidence can be tested, which legal disputes require rulings, and how the case will move forward.
 
-The August 31 date is publicly scheduled based on contemporaneous reporting. A fresh, line-by-line docket entry confirming that date was not independently retrievable for this update, and no later schedule change was found.
+Status as of Oct. 31, 2026: reports conflict on the next court date (August 31, 2026 in one report citing the court file; December in another). A docket entry confirming either date was not independently retrievable, and we found no public report of an August 31 result. See the [Court Calendar](/court-calendar/#peck-pretrial) for the latest checked status.
 
 ## Sources
 

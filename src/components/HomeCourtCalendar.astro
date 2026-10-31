@@ -18,7 +18,8 @@ const CalendarHeading = fullPage ? 'h1' : 'h2';
 const CALENDAR_ALERT_FORM_ID = '4d7c7c61-f04c-4870-bf20-f1af8a540e0f';
 const CALENDAR_ALERT_URL = `https://subscribe-forms.beehiiv.com/v3/forms/${CALENDAR_ALERT_FORM_ID}?utm_source=website&utm_medium=calendar_alert&utm_campaign=court_calendar_updates`;
 // Add a case only after its paid explainer has a verified public checkout URL.
-const LIVE_EXPLAINER_IDS = new Set(['patterson-appeal']);
+// patterson-appeal removed 2026-10-31: its guide link is off after the Oct. 30 ruling.
+const LIVE_EXPLAINER_IDS = new Set([]);
 // Lindsay Clancy sales promotion is paused until the post-mistrial PDF and
 // checkout copy are current. Keep the verified tracker live without a paid CTA.
 const CASE_BOOKS = new Map([]);

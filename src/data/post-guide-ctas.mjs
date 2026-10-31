@@ -21,7 +21,7 @@ export const POST_GUIDE_CTAS = {
   'the-lindsay-clancy-case-three-children-one-trial-and-the-questions-massachusetts-must-answer': { product: 'lindsay-clancy-post-mistrial-field-guide', campaign: 'explainer_clancy_v1', key: 'clancy_overview', skipBottom: true },
   'kouri-richins-eric-richins-murder': { product: 'eric-richins-kouri-evidence-verdict', campaign: 'explainer_richins_v1', key: 'richins' },
   'luigi-mangione-psychiatric-defense-withdrawn-trial-2026': { product: 'brian-thompson-luigi-mangione-two-courts', campaign: 'explainer_luigi_v1', key: 'mangione' },
-  'erin-patterson-case-explained': { product: 'case-chess-erin-patterson', campaign: 'explainer_patterson_v1', key: 'patterson' },
+  // erin-patterson-case-explained: guide button off since 2026-10-31 (Oct. 30 appeal ruling came after the guide's edition; cutoff not verifiable).
   'michelle-parker-case-dale-smith-charged-no-body': { product: 'both-sides-michelle-parker-guide-v3', campaign: 'explainer_parker_bothsides_v3', key: 'parker' },
   // In-article button sits near the end of this post, so the bottom one read as a duplicate (cold eyes, Oct 27, 2026).
   'what-happened-at-great-wolf-lodge-poconos-case': { product: 'great-wolf-lodge-case-guide', campaign: 'explainer_great_wolf_v1', key: 'great_wolf', skipBottom: true },

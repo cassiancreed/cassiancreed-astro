@@ -3,7 +3,7 @@ title: "The Jared Bridegan Case: Where It Stands and What Happens Next"
 seoTitle: "Jared Bridegan Case: Verdict, Charges and 2027 Trial"
 description: "Jared Bridegan was killed in Jacksonville Beach in 2022. One man is convicted. Shanna Gardner and Henry Tenon are charged and face a joint trial in May 2027."
 pubDate: 2026-10-19
-updatedDate: 2026-10-25
+updatedDate: 2026-10-31
 tag: "Explainers"
 featured: false
 victim: "Jared Bridegan"
@@ -13,7 +13,7 @@ jurisdiction: "Fourth Judicial Circuit Court, Duval County, Florida"
 status: "Mario Fernandez Saldana convicted Aug. 26, 2026; new-trial motion and appeal reported; murder sentencing postponed, no new date set (Action News Jax, Sept. 29, 2026). Shanna Gardner and Henry Tenon charged; not guilty pleas; presumed innocent; joint trial set for May 2027."
 ---
 
-*Updated Sunday, October 25, 2026.*
+*Status as of Oct. 31, 2026 (Pacific). Source: Action News Jax, Sept. 29, 2026; News4JAX, Oct. 7, 2026. Court records can change. Check our [Court Calendar](https://cassiancreed.com/court-calendar/) and its "last updated" date.*
 
 Jared Bridegan was shot and killed in Jacksonville Beach, Florida, on February 16, 2022. One man, Mario Fernandez Saldana, was convicted of his murder on August 26, 2026. Two others, his ex-wife Shanna Gardner and Henry Tenon, are charged. They have pleaded not guilty. Their joint trial is set for May 2027.
 
@@ -62,7 +62,7 @@ Fernandez Saldana's verdict does not decide anything about Gardner or Tenon. A n
 ## Key dates ahead
 
 - **Murder sentencing:** The murder sentencing was postponed; no new date has been set (Action News Jax, Sept. 29, 2026) ([source](https://www.actionnewsjax.com/news/local/convicted-murderer-mario-fernandez-saldana-pleads-not-guilty-molesting-two-children/PRAELSKKXNHD3D7FQFPNMXZQ6M/)).
-- **October 27, 2026:** Fernandez Saldana's reported court date in his separate Florida child-molestation cases, not the murder sentencing. Those charges are allegations; he is presumed innocent on them ([Action News Jax, Sept. 29, 2026](https://www.actionnewsjax.com/news/local/convicted-murderer-mario-fernandez-saldana-pleads-not-guilty-molesting-two-children/PRAELSKKXNHD3D7FQFPNMXZQ6M/)). An earlier report also listed a pretrial hearing for Gardner that day. Newer reports do not mention it, so we treat it as unconfirmed.
+- **October 27, 2026 (passed):** This was a reported court date in Fernandez Saldana's separate Florida child-molestation cases, not the murder sentencing. Those charges are allegations; he is presumed innocent on them ([Action News Jax, Sept. 29, 2026](https://www.actionnewsjax.com/news/local/convicted-murderer-mario-fernandez-saldana-pleads-not-guilty-molesting-two-children/PRAELSKKXNHD3D7FQFPNMXZQ6M/)). An earlier report also listed a pretrial hearing for Gardner that day; newer reports did not confirm it. As of Oct. 31, 2026, we found no public report of what happened on Oct. 27.
 - **April 26, 2027:** Gardner's final pretrial hearing ([Action News Jax, Sept. 18, 2026](https://www.actionnewsjax.com/news/local/jared-bridegan-murder-2-charges-against-shanna-gardner-dropped-ahead-trial/CLUPHGIER5G6ZGEW3XBPW4RJYY/)). The time is not public.
 - **Week of May 3, 2027:** Jury selection for the joint trial of Gardner and Tenon ([News4JAX, Oct. 7, 2026](https://www.news4jax.com/news/local/2026/10/07/accused-gunman-henry-tenon-appears-in-court-for-first-time-under-updated-charges-in-jared-bridegan-murder/)).
 - **May 10, 2027:** The joint trial is set to start. It is planned to last about three weeks.
@@ -81,7 +81,7 @@ Mario Fernandez Saldana. A jury found him guilty of first-degree murder and soli
 
 ### Has Mario Fernandez Saldana been sentenced?
 
-Not yet, as of October 25, 2026. He faces a mandatory life sentence. The murder sentencing was postponed; no new date has been set (Action News Jax, Sept. 29, 2026).
+Not yet, as of October 31, 2026. He faces a mandatory life sentence. The murder sentencing was postponed; no new date has been set (Action News Jax, Sept. 29, 2026).
 
 ### Is Shanna Gardner guilty?
 

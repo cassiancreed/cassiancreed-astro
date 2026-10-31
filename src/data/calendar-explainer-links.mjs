@@ -69,12 +69,9 @@ const EXISTING_CASE_GUIDES = {
     bookKey: 'lindsay-clancy-post-mistrial-field-guide',
     placement: 'court_calendar_clancy_mistrial_entry',
   },
-  'patterson-appeal': {
-    url: 'https://cassiancreed.beehiiv.com/products/case-chess-erin-patterson',
-    text: 'Read the Case Chess guide: The Erin Patterson Case — $1.99',
-    bookKey: 'case-chess-erin-patterson',
-    placement: 'court_calendar_case_guide',
-  },
+  // patterson-appeal: guide link removed 2026-10-31. The Court of Appeal ruled
+  // Oct. 30, 2026, after the guide's edition; the guide's cutoff date was not
+  // verifiable, so no buy link runs until the listing carries a status note.
 };
 
 export const CALENDAR_EXPLAINER_CASES = [
@@ -278,7 +275,7 @@ export const CALENDAR_EXPLAINER_CASES = [
     "free": [
       {
         "url": "/post/erin-patterson-case-explained/",
-        "text": "The Erin Patterson Case: Where the Appeal Stands Now"
+        "text": "The Erin Patterson Case: Appeal Dismissed, Sentence Raised to Life Without Parole"
       }
     ],
     "paid": []
