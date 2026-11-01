@@ -1,0 +1,59 @@
+{
+ "tts_input_script": "Today at twelve thirty Pacific, the Barry Morphew case is back in court. First, the victim: Suzanne Morphew. She was forty-nine when she went missing on Mother's Day, May tenth, twenty twenty. Her remains were found in twenty twenty-three. Her husband, Barry Morphew, is charged with first-degree murder in her death. He pleaded not guilty. By law, he is presumed innocent. An earlier case against him was dismissed in twenty twenty-two. Today is a status conference, held by video. It is a check-in on the schedule. It is not a trial. No verdict can come from it. News reports say his trial is planned for summer twenty twenty-seven. Court dates and sources: Cassy-an Creed dot com.",
+ "whisper_small_en_heard": "Today, at 1230 Pacific, the Barry Morphew case is back in court. First, the victim, Suzanne Morphew. She was 49 when she went missing on Mother's Day, May 10, 2020. Her remains were found in 2023. Her husband, Barry Morphew, is charged with first -degree murder in her death. He pleaded not guilty. By law, he is presumed innocent. An earlier case against him was dismissed in 2022. Today is a status conference held by video. It is a check -in on the schedule. It is not a trial. No verdict can come from it. News reports say his trial is planned for summer 2027. Court dates and sources, cassiankreed .com.",
+ "key_terms_heard": {
+  "Barry": true,
+  "Morphew": true,
+  "Suzanne": true,
+  "49": true,
+  "Mother's": true,
+  "May": true,
+  "10": true,
+  "2020": true,
+  "2023": true,
+  "first": true,
+  "degree": true,
+  "murder": true,
+  "not": true,
+  "guilty": true,
+  "presumed": true,
+  "innocent": true,
+  "2022": true,
+  "status": true,
+  "conference": true,
+  "video": true,
+  "trial": true,
+  "verdict": true,
+  "2027": true,
+  "Pacific": true,
+  "1230": true,
+  "cassiankreed": true
+ },
+ "key_terms_ok": 26,
+ "key_terms_total": 26,
+ "low_confidence_words": [
+  [
+   "Suzanne",
+   5.74,
+   5.92,
+   0.415
+  ],
+  [
+   "It",
+   28.06,
+   28.56,
+   0.263
+  ],
+  [
+   "cassiankreed",
+   38.8,
+   39.28,
+   0.53
+  ]
+ ],
+ "notes": [
+  "'twelve thirty' heard as 1230 (right)",
+  "'Cassy-an Creed dot com' heard as cassiankreed .com (name heard as one brand word; same as Vallow, cleared)",
+  "no a.m./p.m. letters spoken; no 'slash' spoken"
+ ]
+}

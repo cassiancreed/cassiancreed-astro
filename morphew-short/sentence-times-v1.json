@@ -1,0 +1,72 @@
+{
+ "sr": 24000,
+ "speed": 1.05,
+ "dur": 40.347375,
+ "sentences": [
+  {
+   "text": "Today at twelve thirty Pacific, the Barry Morphew case is back in court.",
+   "start": 0.05,
+   "end": 4.166
+  },
+  {
+   "text": "First, the victim: Suzanne Morphew.",
+   "start": 4.466,
+   "end": 6.575
+  },
+  {
+   "text": "She was forty-nine when she went missing on Mother's Day, May tenth, twenty twenty.",
+   "start": 6.775,
+   "end": 11.106
+  },
+  {
+   "text": "Her remains were found in twenty twenty-three.",
+   "start": 11.306,
+   "end": 13.586
+  },
+  {
+   "text": "Her husband, Barry Morphew, is charged with first-degree murder in her death.",
+   "start": 13.886,
+   "end": 18.012
+  },
+  {
+   "text": "He pleaded not guilty.",
+   "start": 18.212,
+   "end": 19.476
+  },
+  {
+   "text": "By law, he is presumed innocent.",
+   "start": 19.676,
+   "end": 21.521
+  },
+  {
+   "text": "An earlier case against him was dismissed in twenty twenty-two.",
+   "start": 21.771,
+   "end": 25.34
+  },
+  {
+   "text": "Today is a status conference, held by video.",
+   "start": 25.64,
+   "end": 28.295
+  },
+  {
+   "text": "It is a check-in on the schedule. It is not a trial.",
+   "start": 28.445,
+   "end": 31.227
+  },
+  {
+   "text": "No verdict can come from it.",
+   "start": 31.377,
+   "end": 32.845
+  },
+  {
+   "text": "News reports say his trial is planned for summer twenty twenty-seven.",
+   "start": 33.145,
+   "end": 36.736
+  },
+  {
+   "text": "Court dates and sources: Cassy-an Creed dot com.",
+   "start": 37.036,
+   "end": 40.047
+  }
+ ]
+}
