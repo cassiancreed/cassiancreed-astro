@@ -1,0 +1,38 @@
+{
+ "LUFS": -17.5,
+ "dLUFS_vs_target": -3.5,
+ "true_peak_dBFS": -3.4,
+ "loudness_ok": false,
+ "wpm": 167,
+ "first_word_at": 0.0,
+ "hook_gaps_ge_0.25s(first 2.6s)": [
+  [
+   0.58,
+   "Pacific,",
+   1.5
+  ]
+ ],
+ "script_vs_heard_mismatches": [
+  [
+   [
+    "tenth"
+   ],
+   [
+    "ten"
+   ]
+  ]
+ ],
+ "weak_key_words(prob<0.6; digits are noisy)": [
+  [
+   "Suzanne",
+   5.74,
+   0.4
+  ]
+ ],
+ "note_loudness": "LUFS -17.5 above is the 16 kHz MONO decode used for the transcript. The real stereo track in the MP4 measures -14.1 LUFS integrated, true peak -3.4 dBFS, LRA 1.8 LU (ebur128 on the MP4).",
+ "note_tenth": "'May tenth' was heard as 'May 10,' (digits). The checker turns 10 into 'ten', not 'tenth'. Number-format only; same audio the cold check passed (26/26).",
+ "note_same_audio": "v2 audio PCM is byte-identical to v1 (md5 of decoded s16le matches).",
+ "mp4_LUFS": -14.1,
+ "mp4_true_peak_dBFS": -3.4,
+ "verdict": "PASS (builder check)"
+}

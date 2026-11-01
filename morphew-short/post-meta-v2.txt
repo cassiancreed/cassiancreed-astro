@@ -1,0 +1,8 @@
+Version: morphew-status-short-v2 (file name, end card and MP4 title match)
+Captions: YouTube, TikTok, Facebook use post-caption-v2.txt. Instagram uses post-caption-instagram-v2.txt ("link in bio").
+Cover frame: 1.0 s on all 4 networks (hook fully built at 0.85 s: Ember TODAY block, 12:30 P.M. PACIFIC, Barry Morphew case). Frame 0.0 s is also fully drawn (no fade-in). Instagram covers cannot be changed after posting.
+YouTube Short title (64 chars): Barry Morphew Case Back in Court Today: Nov. 3 Status Conference
+Alt text (Instagram/Facebook): Vertical video with text cards on a dark background. An orange block reads: Today, 12:30 p.m. Pacific. Then: Barry Morphew case is back in court, status conference by video, Alamosa, Colorado. First, the victim: Suzanne Morphew, 49, went missing on Mother's Day, May 10, 2020; her remains were found in 2023. The charge: first-degree murder, an accusation, not a finding; pleaded not guilty; presumed innocent. First case dismissed April 2022; new grand jury indictment June 2025. A check-in, not a trial. Jury trial reported for summer 2027. Court dates and sources: cassiancreed.com. Narrated with an AI voice.
+YouTube tags: Suzanne Morphew, Barry Morphew, Barry Morphew trial, Morphew status conference, Colorado court, true crime
+Planned post: Tue Nov 3, 2026, 6:15 AM PT. Must post before 12:30 PM PT (hook says "Today"). Not scheduled: Metricool hands-off order.
+At scheduling: check the Instagram bio link goes to cassiancreed.com; confirm the TikTok API count for Nov 3 is 15 or fewer; confirm Facebook link-free test status.

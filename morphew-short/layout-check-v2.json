@@ -1,0 +1,233 @@
+{
+ "version": "morphew-status-short-v2",
+ "states": [
+  {
+   "n": 0,
+   "start": 0.0,
+   "end": 0.45,
+   "card": "hook",
+   "step": 0,
+   "caption": "Today at 12:30\u00a0Pacific,"
+  },
+  {
+   "n": 1,
+   "start": 0.45,
+   "end": 0.85,
+   "card": "hook",
+   "step": 1,
+   "caption": "Today at 12:30\u00a0Pacific,"
+  },
+  {
+   "n": 2,
+   "start": 0.85,
+   "end": 2.0,
+   "card": "hook",
+   "step": 2,
+   "caption": "Today at 12:30\u00a0Pacific,"
+  },
+  {
+   "n": 3,
+   "start": 2.0,
+   "end": 2.96,
+   "card": "hook",
+   "step": 2,
+   "caption": "the Barry\u00a0Morphew case"
+  },
+  {
+   "n": 4,
+   "start": 2.96,
+   "end": 4.46,
+   "card": "hook",
+   "step": 2,
+   "caption": "is back in court."
+  },
+  {
+   "n": 5,
+   "start": 4.46,
+   "end": 5.66,
+   "card": "victim",
+   "step": 0,
+   "caption": "First, the victim:"
+  },
+  {
+   "n": 6,
+   "start": 5.66,
+   "end": 6.68,
+   "card": "victim",
+   "step": 0,
+   "caption": "Suzanne\u00a0Morphew."
+  },
+  {
+   "n": 7,
+   "start": 6.68,
+   "end": 8.32,
+   "card": "victim",
+   "step": 1,
+   "caption": "She was 49 when she went missing"
+  },
+  {
+   "n": 8,
+   "start": 8.32,
+   "end": 9.52,
+   "card": "victim",
+   "step": 1,
+   "caption": "on Mother's\u00a0Day,"
+  },
+  {
+   "n": 9,
+   "start": 9.52,
+   "end": 11.26,
+   "card": "victim",
+   "step": 2,
+   "caption": "May 10, 2020."
+  },
+  {
+   "n": 10,
+   "start": 11.26,
+   "end": 13.84,
+   "card": "victim",
+   "step": 3,
+   "caption": "Her remains were found in 2023."
+  },
+  {
+   "n": 11,
+   "start": 13.84,
+   "end": 15.46,
+   "card": "charge",
+   "step": 0,
+   "caption": "Her husband, Barry\u00a0Morphew,"
+  },
+  {
+   "n": 12,
+   "start": 15.46,
+   "end": 17.28,
+   "card": "charge",
+   "step": 1,
+   "caption": "is charged with first-degree murder"
+  },
+  {
+   "n": 13,
+   "start": 17.28,
+   "end": 18.16,
+   "card": "charge",
+   "step": 1,
+   "caption": "in her death."
+  },
+  {
+   "n": 14,
+   "start": 18.16,
+   "end": 19.62,
+   "card": "charge",
+   "step": 2,
+   "caption": "He pleaded not guilty."
+  },
+  {
+   "n": 15,
+   "start": 19.62,
+   "end": 21.7,
+   "card": "charge",
+   "step": 3,
+   "caption": "By law, he is presumed innocent."
+  },
+  {
+   "n": 16,
+   "start": 21.7,
+   "end": 23.08,
+   "card": "history",
+   "step": 0,
+   "caption": "An earlier case against him"
+  },
+  {
+   "n": 17,
+   "start": 23.08,
+   "end": 25.6,
+   "card": "history",
+   "step": 1,
+   "caption": "was dismissed in 2022."
+  },
+  {
+   "n": 18,
+   "start": 25.6,
+   "end": 26.98,
+   "card": "today",
+   "step": 0,
+   "caption": "Today is a status conference,"
+  },
+  {
+   "n": 19,
+   "start": 26.98,
+   "end": 27.98,
+   "card": "today",
+   "step": 0,
+   "caption": "held by video."
+  },
+  {
+   "n": 20,
+   "start": 27.98,
+   "end": 30.2,
+   "card": "today",
+   "step": 1,
+   "caption": "It is a check-in on the schedule."
+  },
+  {
+   "n": 21,
+   "start": 30.2,
+   "end": 31.4,
+   "card": "today",
+   "step": 2,
+   "caption": "It is not a trial."
+  },
+  {
+   "n": 22,
+   "start": 31.4,
+   "end": 33.32,
+   "card": "today",
+   "step": 3,
+   "caption": "No verdict can come from it."
+  },
+  {
+   "n": 23,
+   "start": 33.32,
+   "end": 34.58,
+   "card": "next",
+   "step": 0,
+   "caption": "News reports say his trial"
+  },
+  {
+   "n": 24,
+   "start": 34.58,
+   "end": 37.08,
+   "card": "next",
+   "step": 1,
+   "caption": "is planned for summer 2027."
+  },
+  {
+   "n": 25,
+   "start": 37.08,
+   "end": 38.72,
+   "card": "end",
+   "step": 0,
+   "caption": "Court dates and sources:"
+  },
+  {
+   "n": 26,
+   "start": 38.72,
+   "end": 40.347,
+   "card": "end",
+   "step": 0,
+   "caption": "cassiancreed.com"
+  }
+ ],
+ "all_safe": true,
+ "safe_box": "x 60-960, y 220-1560",
+ "unsafe": [],
+ "caption_max_words": 5,
+ "caption_lines_over_7_words": [],
+ "frames": 146,
+ "fonts": [
+  "Barlow Condensed",
+  "Source Serif 4"
+ ],
+ "cover_time_s": 1.0,
+ "victim_card_bottom": 1103
+}
