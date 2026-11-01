@@ -6,8 +6,10 @@ import { pageSchema } from '../utils/page-schema.mjs';
 // CREATOR CASE KITS — offer page (Lane C, Creator Desk C2, 2026-10-21).
 // 2026-10-28: buying OPEN for one kit — the Alexander brothers kit v1.2 is
 // Live on Beehiiv at /products/alexander-brothers-creator-case-kit (the v1.1
-// product is archived; never link its old slug). The founding plan is still
-// "coming soon". No Offer schema yet, so structured data makes no price claim.
+// product is archived; never link its old slug).
+// 2026-11-01: the $39/month Founding Creator Plan is LIVE. Join button links to
+// its Stripe payment link (PLAN_URL). It was not open before this date.
+// No Offer schema yet, so structured data makes no price claim.
 // C2b (2026-10-22): cold-eyes fixes 1, 3, 4, 6, 8, 9, 11, 12 applied.
 // Doctrine v2.1 §10: never tell a buyer what they may or may not say; never
 // promise updated files. Never print internal file names in public copy.
@@ -16,6 +18,8 @@ const TITLE = 'Court Case Kits for Creators';
 const DESCRIPTION = 'Sourced court case kits for true-crime YouTubers, TikTokers and podcasters. Status, dates, timeline and sources in one file. Free sample inside.';
 const SAMPLE = '/creators/samples/faith-hedgepeth-case-kit.html';
 const CONTACT = 'mailto:cassiancreed@cassiancreed.com?subject=' + encodeURIComponent('Creator case kits');
+const PLAN_URL = 'https://buy.stripe.com/9B66oH1Hr89T4P04w67IY00';
+const PLAN_LABEL = 'Join the Founding Creator Plan, $39 a month';
 const KIT_KEY = 'alexander-brothers-creator-case-kit';
 const kitUrl = (placement) => 'https://cassiancreed.beehiiv.com/products/' + KIT_KEY + '?' + new URLSearchParams({
   utm_source: 'cassiancreed.com',
@@ -37,16 +41,16 @@ const jsonld = pageSchema({
   <article class="post creators">
     <p class="evidence evidence--accent">For creators</p>
     <h1>Court Case Kits for Creators</h1>
-    <p class="post__note">We do the court research. You make the show. Page updated October 28, 2026.</p>
+    <p class="post__note">We do the court research. You make the show. Page updated November 1, 2026.</p>
 
     <div class="quick" aria-label="The offer at a glance">
       <ul>
         <li><strong>What it is:</strong> a PDF research file on one live court case. Every fact links to its source. Our free sample is 6 pages.</li>
-        <li><strong>Price:</strong> $29 for one kit, or $39 a month on the founding plan.</li>
-        <li><strong>Delivery:</strong> a download link right after checkout.</li>
-        <li><strong>Can I buy now?</strong> Yes, for one case. The Alexander brothers kit is on sale now. The founding plan is not open yet.</li>
+        <li><strong>Price:</strong> $29 for one kit, or $39 a month on the Founding Creator Plan.</li>
+        <li><strong>Delivery:</strong> a kit comes as a download link right after checkout. Plan members get the Court Week for Creators sheet by email every Thursday.</li>
+        <li><strong>Can I buy now?</strong> Yes. The Alexander brothers kit is on sale now. The Founding Creator Plan is open now too. Cancel the plan any time by email.</li>
       </ul>
-      <p class="quick__actions"><a class="btn" href={kitUrl('creators_quick')} data-book-key={KIT_KEY} data-cta-placement="creators_quick">Buy the Alexander brothers kit, $29</a> <a class="quick__ask" href={SAMPLE}>Read the free sample kit</a> <a class="quick__ask" href={CONTACT}>Ask about a case you cover</a></p>
+      <p class="quick__actions"><a class="btn" href={kitUrl('creators_quick')} data-book-key={KIT_KEY} data-cta-placement="creators_quick">Buy the Alexander brothers kit, $29</a> <a class="btn" href={PLAN_URL}>{PLAN_LABEL}</a> <a class="quick__ask" href={SAMPLE}>Read the free sample kit</a> <a class="quick__ask" href={CONTACT}>Ask about a case you cover</a></p>
     </div>
 
     <div class="post__content">
@@ -85,8 +89,8 @@ const jsonld = pageSchema({
       <p>We do not change the sample's facts, so it shows exactly what a kit looks like on the day it is made. If we find an error, we add a dated correction note. The sample also says plainly what we did not check: for this kit, we did not check the court's own case file (the docket).</p>
       <p><a class="btn" href={SAMPLE}>Read the free Hedgepeth sample kit</a></p>
 
-      <h2 id="each-week">What will members get each week?</h2>
-      <p>The founding plan is not open yet. When it opens, members get <strong>Court Week for Creators</strong> every Thursday. Members also get each new case kit we release while they are members.</p>
+      <h2 id="each-week">What do members get each week?</h2>
+      <p>The Founding Creator Plan is open now. Members get <strong>Court Week for Creators</strong> by email every Thursday. Members also get each new case kit we release while they are members.</p>
       <p>Each Court Week sheet lists the coming week's court dates in the cases we follow. For each date it shows:</p>
       <ul class="kit-list">
         <li>the case, the court and the case number when we found one;</li>
@@ -95,6 +99,8 @@ const jsonld = pageSchema({
         <li>what to check before you go live;</li>
         <li>a link to each source, and when we last checked it.</li>
       </ul>
+      <p><a class="btn" href={PLAN_URL}>{PLAN_LABEL}</a></p>
+      <p>You can cancel any time by email.</p>
 
       <h2 id="price">How much does it cost?</h2>
       <div class="price-grid">
@@ -105,19 +111,19 @@ const jsonld = pageSchema({
           <p class="price__soon"><a href={kitUrl('creators_price')} data-book-key={KIT_KEY} data-cta-placement="creators_price">Buy the Alexander brothers kit →</a></p>
         </div>
         <div class="price">
-          <p class="price__name">Founding plan</p>
+          <p class="price__name">Founding Creator Plan</p>
           <p class="price__amount">$39<span>/month</span></p>
-          <p class="price__note">When it opens: Court Week for Creators every Thursday, plus each new kit we release while you are a member.</p>
-          <p class="price__soon">Join link: coming soon</p>
+          <p class="price__note">Court Week for Creators by email every Thursday, plus each new kit we release while you are a member. Cancel any time by email.</p>
+          <p class="price__soon"><a class="btn" href={PLAN_URL}>{PLAN_LABEL}</a></p>
         </div>
       </div>
-      <p>One kit is on sale now: <a href={kitUrl('creators_price_note')} data-book-key={KIT_KEY} data-cta-placement="creators_price_note">the Alexander brothers kit</a>. The founding plan is not open yet. To see a kit first, read the <a href={SAMPLE}>free sample kit</a>. To ask for a kit on a case you cover, <a href={CONTACT}>email us</a>.</p>
+      <p>Two things are on sale now: <a href={kitUrl('creators_price_note')} data-book-key={KIT_KEY} data-cta-placement="creators_price_note">the Alexander brothers kit</a> and <a href={PLAN_URL}>the Founding Creator Plan</a>. To see a kit first, read the <a href={SAMPLE}>free sample kit</a>. To ask for a kit on a case you cover, <a href={CONTACT}>email us</a>.</p>
 
       <h2 id="delivery">How does delivery work?</h2>
-      <p>You pay on our newsletter store page. Each kit is a PDF file. After checkout you get a link to download it. Members get each new Court Week sheet and each new kit the same way, as a file to download.</p>
+      <p>You pay for a kit on our newsletter store page. Each kit is a PDF file. After checkout you get a link to download it. You pay for the Founding Creator Plan on a secure Stripe checkout page. Plan members get each Court Week for Creators sheet by email every Thursday.</p>
 
       <h2 id="refunds">What if I need help or want a refund?</h2>
-      <p>For a missing download, a refund request, or any other order question, email <a href="mailto:cassiancreed@cassiancreed.com">cassiancreed@cassiancreed.com</a>.</p>
+      <p>For a missing download, a refund request, or any other order question, email <a href="mailto:cassiancreed@cassiancreed.com">cassiancreed@cassiancreed.com</a>. To cancel the Founding Creator Plan, email the same address. You can cancel any time.</p>
 
       <h2 id="how-fresh">How fresh are the facts?</h2>
       <p>Every kit shows the exact time its facts were checked. Court cases move fast, and a kit's facts are not changed after that time. If we find an error, we add a dated correction note. For the newest dates, open our free <a href="/court-calendar/">Court Calendar</a> and check its "last updated" time.</p>
