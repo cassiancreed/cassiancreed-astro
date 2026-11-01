@@ -1,0 +1,1125 @@
+{
+ "all_safe": true,
+ "min_px": 40,
+ "caption_px": [
+  70,
+  74,
+  76,
+  78,
+  80,
+  82,
+  84,
+  88
+ ],
+ "card_starts": [
+  0.0,
+  6.62,
+  13.42,
+  23.52,
+  26.8,
+  36.3,
+  40.68
+ ],
+ "beats": [
+  0,
+  0.25,
+  0.7,
+  2.82,
+  2.97,
+  4.42,
+  6.62,
+  7.5,
+  8.66,
+  10.02,
+  13.42,
+  14.62,
+  16.3,
+  19.46,
+  21.8,
+  23.52,
+  24.58,
+  25.52,
+  26.8,
+  26.9,
+  28.26,
+  31.04,
+  33.02,
+  34.14,
+  36.3,
+  36.35,
+  38.63,
+  40.68,
+  41.28,
+  41.58
+ ],
+ "caption_starts": [
+  0.0,
+  2.74,
+  4.34,
+  6.54,
+  7.52,
+  8.68,
+  10.04,
+  12.02,
+  14.46,
+  15.7,
+  16.62,
+  17.84,
+  19.02,
+  20.4,
+  21.46,
+  22.28,
+  23.44,
+  24.5,
+  25.54,
+  26.72,
+  28.52,
+  30.0,
+  30.96,
+  31.78,
+  32.94,
+  34.06,
+  36.22,
+  37.6,
+  38.5,
+  39.2,
+  40.6,
+  42.28
+ ],
+ "texts": [
+  {
+   "text": "COURT DAY  \u00b7  MON NOV 2, 2026",
+   "bbox": [
+    102,
+    255,
+    832,
+    298
+   ],
+   "px": 48,
+   "safe": true
+  },
+  {
+   "text": "Narrated with an AI voice",
+   "bbox": [
+    80,
+    1510,
+    533,
+    1539
+   ],
+   "px": 40,
+   "safe": true
+  },
+  {
+   "text": "TODAY",
+   "bbox": [
+    80,
+    371,
+    682,
+    503
+   ],
+   "px": 176,
+   "safe": true
+  },
+  {
+   "text": "10:15 A.M. PACIFIC",
+   "bbox": [
+    80,
+    549,
+    927,
+    621
+   ],
+   "px": 96,
+   "safe": true
+  },
+  {
+   "text": "Lori Vallow Daybell's",
+   "bbox": [
+    80,
+    680,
+    940,
+    764
+   ],
+   "px": 92,
+   "safe": true
+  },
+  {
+   "text": "appeal",
+   "bbox": [
+    80,
+    795,
+    358,
+    878
+   ],
+   "px": 92,
+   "safe": true
+  },
+  {
+   "text": "Idaho Supreme Court  \u00b7  Boise",
+   "bbox": [
+    80,
+    924,
+    747,
+    971
+   ],
+   "px": 50,
+   "safe": true
+  },
+  {
+   "text": "11:15 a.m. MT",
+   "bbox": [
+    80,
+    997,
+    370,
+    1034
+   ],
+   "px": 50,
+   "safe": true
+  },
+  {
+   "text": "A review, not a new trial",
+   "bbox": [
+    80,
+    1079,
+    746,
+    1133
+   ],
+   "px": 60,
+   "safe": true
+  },
+  {
+   "text": "FIRST, THE VICTIMS",
+   "bbox": [
+    108,
+    342,
+    563,
+    385
+   ],
+   "px": 48,
+   "safe": true
+  },
+  {
+   "text": "Her son, 7",
+   "bbox": [
+    156,
+    480,
+    564,
+    554
+   ],
+   "px": 92,
+   "safe": true
+  },
+  {
+   "text": "Her daughter, 16",
+   "bbox": [
+    156,
+    683,
+    835,
+    767
+   ],
+   "px": 92,
+   "safe": true
+  },
+  {
+   "text": "Tammy Daybell, 49",
+   "bbox": [
+    156,
+    889,
+    932,
+    973
+   ],
+   "px": 92,
+   "safe": true
+  },
+  {
+   "text": "THE 2023 VERDICT",
+   "bbox": [
+    108,
+    342,
+    547,
+    377
+   ],
+   "px": 48,
+   "safe": true
+  },
+  {
+   "text": "A jury convicted her of:",
+   "bbox": [
+    80,
+    436,
+    756,
+    494
+   ],
+   "px": 62,
+   "safe": true
+  },
+  {
+   "text": "First-degree murder",
+   "bbox": [
+    152,
+    565,
+    886,
+    636
+   ],
+   "px": 74,
+   "safe": true
+  },
+  {
+   "text": "Deaths of her son and daughter",
+   "bbox": [
+    152,
+    655,
+    806,
+    699
+   ],
+   "px": 46,
+   "safe": true
+  },
+  {
+   "text": "Conspiring to murder",
+   "bbox": [
+    152,
+    791,
+    896,
+    859
+   ],
+   "px": 72,
+   "safe": true
+  },
+  {
+   "text": "Tammy Daybell, 49",
+   "bbox": [
+    152,
+    881,
+    548,
+    925
+   ],
+   "px": 46,
+   "safe": true
+  },
+  {
+   "text": "Sentence: life without parole",
+   "bbox": [
+    80,
+    998,
+    922,
+    1055
+   ],
+   "px": 62,
+   "safe": true
+  },
+  {
+   "text": "Per KSL.com, 2023",
+   "bbox": [
+    80,
+    1077,
+    426,
+    1112
+   ],
+   "px": 40,
+   "safe": true
+  },
+  {
+   "text": "WHAT TODAY IS",
+   "bbox": [
+    108,
+    342,
+    473,
+    377
+   ],
+   "px": 48,
+   "safe": true
+  },
+  {
+   "text": "A REVIEW,",
+   "bbox": [
+    80,
+    452,
+    755,
+    570
+   ],
+   "px": 132,
+   "safe": true
+  },
+  {
+   "text": "NOT A NEW TRIAL",
+   "bbox": [
+    80,
+    611,
+    940,
+    684
+   ],
+   "px": 98,
+   "safe": true
+  },
+  {
+   "text": "No witnesses testify",
+   "bbox": [
+    152,
+    777,
+    736,
+    833
+   ],
+   "px": 60,
+   "safe": true
+  },
+  {
+   "text": "Each side gets 30 minutes",
+   "bbox": [
+    152,
+    864,
+    896,
+    921
+   ],
+   "px": 60,
+   "safe": true
+  },
+  {
+   "text": "Per EastIdahoNews",
+   "bbox": [
+    152,
+    949,
+    505,
+    979
+   ],
+   "px": 40,
+   "safe": true
+  },
+  {
+   "text": "WHAT EACH SIDE SAYS",
+   "bbox": [
+    108,
+    342,
+    643,
+    377
+   ],
+   "px": 48,
+   "safe": true
+  },
+  {
+   "text": "Per their court briefs, via EastIdahoNews",
+   "bbox": [
+    80,
+    416,
+    812,
+    451
+   ],
+   "px": 40,
+   "safe": true
+  },
+  {
+   "text": "HER ATTORNEYS SAY",
+   "bbox": [
+    116,
+    510,
+    588,
+    544
+   ],
+   "px": 46,
+   "safe": true
+  },
+  {
+   "text": "The judge wrongly removed",
+   "bbox": [
+    116,
+    579,
+    852,
+    632
+   ],
+   "px": 56,
+   "safe": true
+  },
+  {
+   "text": "the attorney she hired.",
+   "bbox": [
+    116,
+    645,
+    709,
+    698
+   ],
+   "px": 56,
+   "safe": true
+  },
+  {
+   "text": "She was denied",
+   "bbox": [
+    116,
+    711,
+    531,
+    753
+   ],
+   "px": 56,
+   "safe": true
+  },
+  {
+   "text": "a speedy trial.",
+   "bbox": [
+    116,
+    777,
+    485,
+    830
+   ],
+   "px": 56,
+   "safe": true
+  },
+  {
+   "text": "THE STATE SAYS",
+   "bbox": [
+    116,
+    912,
+    485,
+    946
+   ],
+   "px": 46,
+   "safe": true
+  },
+  {
+   "text": "Her convictions should stand.",
+   "bbox": [
+    116,
+    981,
+    900,
+    1023
+   ],
+   "px": 56,
+   "safe": true
+  },
+  {
+   "text": "No error big enough",
+   "bbox": [
+    116,
+    1047,
+    639,
+    1100
+   ],
+   "px": 56,
+   "safe": true
+  },
+  {
+   "text": "to undo the verdict.",
+   "bbox": [
+    116,
+    1113,
+    629,
+    1154
+   ],
+   "px": 56,
+   "safe": true
+  },
+  {
+   "text": "WHAT COMES NEXT",
+   "bbox": [
+    108,
+    342,
+    573,
+    377
+   ],
+   "px": 48,
+   "safe": true
+  },
+  {
+   "text": "The justices rule later,",
+   "bbox": [
+    152,
+    465,
+    836,
+    528
+   ],
+   "px": 66,
+   "safe": true
+  },
+  {
+   "text": "in writing",
+   "bbox": [
+    152,
+    559,
+    445,
+    622
+   ],
+   "px": 66,
+   "safe": true
+  },
+  {
+   "text": "No decision date announced",
+   "bbox": [
+    152,
+    656,
+    693,
+    688
+   ],
+   "px": 42,
+   "safe": true
+  },
+  {
+   "text": "Until then,",
+   "bbox": [
+    152,
+    785,
+    472,
+    845
+   ],
+   "px": 66,
+   "safe": true
+  },
+  {
+   "text": "her convictions stand",
+   "bbox": [
+    152,
+    876,
+    827,
+    926
+   ],
+   "px": 66,
+   "safe": true
+  },
+  {
+   "text": "While the appeal is pending",
+   "bbox": [
+    152,
+    960,
+    674,
+    1000
+   ],
+   "px": 42,
+   "safe": true
+  },
+  {
+   "text": "Court dates and sources:",
+   "bbox": [
+    80,
+    636,
+    930,
+    689
+   ],
+   "px": 70,
+   "safe": true
+  },
+  {
+   "text": "cassiancreed.com",
+   "bbox": [
+    80,
+    741,
+    938,
+    813
+   ],
+   "px": 96,
+   "safe": true
+  },
+  {
+   "text": "/court-calendar",
+   "bbox": [
+    79,
+    851,
+    828,
+    935
+   ],
+   "px": 96,
+   "safe": true
+  },
+  {
+   "text": "vallow-appeal-short-v2  \u00b7  Nov 2, 2026",
+   "bbox": [
+    80,
+    995,
+    773,
+    1032
+   ],
+   "px": 40,
+   "safe": true
+  },
+  {
+   "text": "Today at",
+   "bbox": [
+    342,
+    1261,
+    678,
+    1339
+   ],
+   "px": 84,
+   "safe": true
+  },
+  {
+   "text": "10:15, Pacific\u00a0time,",
+   "bbox": [
+    151,
+    1359,
+    869,
+    1434
+   ],
+   "px": 84,
+   "safe": true
+  },
+  {
+   "text": "the Idaho Supreme",
+   "bbox": [
+    135,
+    1260,
+    885,
+    1340
+   ],
+   "px": 84,
+   "safe": true
+  },
+  {
+   "text": "Court hears",
+   "bbox": [
+    275,
+    1359,
+    746,
+    1422
+   ],
+   "px": 84,
+   "safe": true
+  },
+  {
+   "text": "Lori\u00a0Vallow\u00a0Daybell's",
+   "bbox": [
+    112,
+    1262,
+    909,
+    1340
+   ],
+   "px": 82,
+   "safe": true
+  },
+  {
+   "text": "appeal.",
+   "bbox": [
+    369,
+    1359,
+    652,
+    1436
+   ],
+   "px": 82,
+   "safe": true
+  },
+  {
+   "text": "First, the victims:",
+   "bbox": [
+    153,
+    1308,
+    867,
+    1387
+   ],
+   "px": 88,
+   "safe": true
+  },
+  {
+   "text": "her son, 7.",
+   "bbox": [
+    308,
+    1309,
+    713,
+    1387
+   ],
+   "px": 88,
+   "safe": true
+  },
+  {
+   "text": "Her daughter, 16.",
+   "bbox": [
+    165,
+    1308,
+    855,
+    1392
+   ],
+   "px": 88,
+   "safe": true
+  },
+  {
+   "text": "And Tammy\u00a0Daybell, 49.",
+   "bbox": [
+    115,
+    1314,
+    905,
+    1381
+   ],
+   "px": 70,
+   "safe": true
+  },
+  {
+   "text": "In 2023, a jury",
+   "bbox": [
+    233,
+    1260,
+    788,
+    1339
+   ],
+   "px": 84,
+   "safe": true
+  },
+  {
+   "text": "convicted her",
+   "bbox": [
+    238,
+    1359,
+    782,
+    1422
+   ],
+   "px": 84,
+   "safe": true
+  },
+  {
+   "text": "of first-degree murder",
+   "bbox": [
+    117,
+    1312,
+    903,
+    1383
+   ],
+   "px": 74,
+   "safe": true
+  },
+  {
+   "text": "in the deaths of",
+   "bbox": [
+    189,
+    1308,
+    832,
+    1375
+   ],
+   "px": 88,
+   "safe": true
+  },
+  {
+   "text": "her son and daughter.",
+   "bbox": [
+    112,
+    1312,
+    909,
+    1386
+   ],
+   "px": 78,
+   "safe": true
+  },
+  {
+   "text": "It also convicted her",
+   "bbox": [
+    111,
+    1309,
+    909,
+    1372
+   ],
+   "px": 84,
+   "safe": true
+  },
+  {
+   "text": "of conspiring",
+   "bbox": [
+    248,
+    1260,
+    772,
+    1340
+   ],
+   "px": 84,
+   "safe": true
+  },
+  {
+   "text": "to murder",
+   "bbox": [
+    315,
+    1360,
+    706,
+    1422
+   ],
+   "px": 84,
+   "safe": true
+  },
+  {
+   "text": "Tammy\u00a0Daybell.",
+   "bbox": [
+    182,
+    1309,
+    838,
+    1391
+   ],
+   "px": 88,
+   "safe": true
+  },
+  {
+   "text": "She is serving life",
+   "bbox": [
+    146,
+    1308,
+    875,
+    1392
+   ],
+   "px": 88,
+   "safe": true
+  },
+  {
+   "text": "without parole.",
+   "bbox": [
+    196,
+    1308,
+    825,
+    1391
+   ],
+   "px": 88,
+   "safe": true
+  },
+  {
+   "text": "Today is a review,",
+   "bbox": [
+    151,
+    1308,
+    870,
+    1391
+   ],
+   "px": 88,
+   "safe": true
+  },
+  {
+   "text": "not a new trial.",
+   "bbox": [
+    207,
+    1308,
+    814,
+    1374
+   ],
+   "px": 88,
+   "safe": true
+  },
+  {
+   "text": "No witnesses testify.",
+   "bbox": [
+    114,
+    1311,
+    906,
+    1387
+   ],
+   "px": 80,
+   "safe": true
+  },
+  {
+   "text": "Her attorneys",
+   "bbox": [
+    240,
+    1261,
+    781,
+    1339
+   ],
+   "px": 84,
+   "safe": true
+  },
+  {
+   "text": "say the judge",
+   "bbox": [
+    247,
+    1359,
+    774,
+    1439
+   ],
+   "px": 84,
+   "safe": true
+  },
+  {
+   "text": "wrongly removed",
+   "bbox": [
+    163,
+    1261,
+    857,
+    1340
+   ],
+   "px": 84,
+   "safe": true
+  },
+  {
+   "text": "the attorney",
+   "bbox": [
+    267,
+    1360,
+    753,
+    1438
+   ],
+   "px": 84,
+   "safe": true
+  },
+  {
+   "text": "she hired,",
+   "bbox": [
+    308,
+    1308,
+    713,
+    1387
+   ],
+   "px": 88,
+   "safe": true
+  },
+  {
+   "text": "and that she",
+   "bbox": [
+    265,
+    1261,
+    756,
+    1323
+   ],
+   "px": 84,
+   "safe": true
+  },
+  {
+   "text": "was denied",
+   "bbox": [
+    285,
+    1359,
+    736,
+    1422
+   ],
+   "px": 84,
+   "safe": true
+  },
+  {
+   "text": "a speedy trial.",
+   "bbox": [
+    220,
+    1308,
+    800,
+    1391
+   ],
+   "px": 88,
+   "safe": true
+  },
+  {
+   "text": "The State",
+   "bbox": [
+    317,
+    1260,
+    704,
+    1323
+   ],
+   "px": 84,
+   "safe": true
+  },
+  {
+   "text": "asks the court",
+   "bbox": [
+    227,
+    1360,
+    794,
+    1422
+   ],
+   "px": 84,
+   "safe": true
+  },
+  {
+   "text": "to keep her",
+   "bbox": [
+    295,
+    1263,
+    725,
+    1340
+   ],
+   "px": 82,
+   "safe": true
+  },
+  {
+   "text": "convictions in place.",
+   "bbox": [
+    116,
+    1358,
+    905,
+    1436
+   ],
+   "px": 82,
+   "safe": true
+  },
+  {
+   "text": "The justices",
+   "bbox": [
+    268,
+    1260,
+    752,
+    1339
+   ],
+   "px": 84,
+   "safe": true
+  },
+  {
+   "text": "rule later,",
+   "bbox": [
+    325,
+    1360,
+    695,
+    1434
+   ],
+   "px": 84,
+   "safe": true
+  },
+  {
+   "text": "in writing.",
+   "bbox": [
+    304,
+    1308,
+    717,
+    1392
+   ],
+   "px": 88,
+   "safe": true
+  },
+  {
+   "text": "Until then,",
+   "bbox": [
+    297,
+    1308,
+    723,
+    1387
+   ],
+   "px": 88,
+   "safe": true
+  },
+  {
+   "text": "her convictions stand.",
+   "bbox": [
+    112,
+    1312,
+    908,
+    1369
+   ],
+   "px": 76,
+   "safe": true
+  },
+  {
+   "text": "Court dates",
+   "bbox": [
+    275,
+    1260,
+    746,
+    1323
+   ],
+   "px": 84,
+   "safe": true
+  },
+  {
+   "text": "and sources:",
+   "bbox": [
+    257,
+    1360,
+    764,
+    1422
+   ],
+   "px": 84,
+   "safe": true
+  },
+  {
+   "text": "cassiancreed.com,",
+   "bbox": [
+    135,
+    1260,
+    886,
+    1335
+   ],
+   "px": 84,
+   "safe": true
+  },
+  {
+   "text": "court\u00a0calendar",
+   "bbox": [
+    220,
+    1360,
+    801,
+    1422
+   ],
+   "px": 84,
+   "safe": true
+  }
+ ]
+}
