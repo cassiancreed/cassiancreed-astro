@@ -1,6 +1,6 @@
 {
  "sr": 24000,
- "dur": 44.89983333333333,
+ "dur": 44.99941666666667,
  "sentences": [
   {
    "text": "Today at ten fifteen a.m. Pacific, the Idaho Supreme Court hears Lori Vallow Daybell's appeal.",
@@ -44,38 +44,38 @@
   },
   {
    "text": "Today is a review, not a new trial.",
-   "start": 23.454,
-   "end": 25.398
+   "start": 23.404,
+   "end": 25.348
   },
   {
    "text": "No witnesses testify.",
-   "start": 25.548,
-   "end": 27.002
+   "start": 25.498,
+   "end": 26.952
   },
   {
-   "text": "Her lawyers say the judge wrongly removed the attorney she hired, and denied her a speedy trial.",
-   "start": 27.302,
-   "end": 32.409
+   "text": "Her lawyers say the judge wrongly removed the attorney she hired, and that she was denied a speedy trial.",
+   "start": 27.252,
+   "end": 32.659
   },
   {
    "text": "The State asks the court to keep her convictions in place.",
-   "start": 32.609,
-   "end": 35.514
+   "start": 32.859,
+   "end": 35.763
   },
   {
    "text": "The justices rule later, in writing.",
-   "start": 35.864,
-   "end": 37.874
+   "start": 36.113,
+   "end": 38.124
   },
   {
    "text": "Until then, her convictions stand.",
-   "start": 38.024,
-   "end": 39.899
+   "start": 38.274,
+   "end": 40.148
   },
   {
    "text": "Court dates and sources: Cassy-an Creed dot com, slash court calendar.",
-   "start": 40.199,
-   "end": 44.5
+   "start": 40.398,
+   "end": 44.699
   }
  ]
 }

@@ -322,19 +322,22 @@ CHUNKS = [
     (74, "Her lawyers say the judge"),
     (79, "wrongly removed the attorney"),
     (83, "she hired,"),
-    (85, "and denied her a speedy trial."),
-    (91, "The State asks the court"),
-    (96, "to keep her convictions in place."),
-    (102, "The justices rule later,"),
-    (106, "in writing."),
-    (108, "Until then,"),
-    (110, "her convictions stand."),
-    (113, "Court dates and sources:"),
-    (117, "cassiancreed.com/court-calendar"),
+    (85, "and that she was denied"),
+    (90, "a speedy trial."),
+    (93, "The State asks the court"),
+    (98, "to keep her convictions in place."),
+    (104, "The justices rule later,"),
+    (108, "in writing."),
+    (110, "Until then,"),
+    (112, "her convictions stand."),
+    (115, "Court dates and sources:"),
+    (119, "cassiancreed.com/court-calendar"),
 ]
+
+
 # card changes at these word indexes
 CARDS = [(0, "hook"), (16, "victims"), (29, "verdict"), (63, "today"), (74, "sides1"),
-         (91, "sides2"), (102, "next"), (113, "end")]
+         (93, "sides2"), (104, "next"), (115, "end")]
 
 
 def ffdur(path):

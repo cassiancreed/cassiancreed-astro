@@ -9,13 +9,13 @@ S = [
  ("her son, seven.", 0.15), ("Her daughter, sixteen.", 0.15), ("And Tammy Daybell, forty-nine.", 0.3),
  ("In twenty twenty-three, a jury convicted her of first-degree murder in the deaths of her son and daughter.", 0.2),
  ("It also convicted her of conspiring to murder Tammy Daybell.", 0.2),
- ("She is serving life without parole.", 0.3),
+ ("She is serving life without parole.", 0.25),
  ("Today is a review, not a new trial.", 0.15), ("No witnesses testify.", 0.3),
- ("Her lawyers say the judge wrongly removed the attorney she hired, and denied her a speedy trial.", 0.2),
+ ("Her lawyers say the judge wrongly removed the attorney she hired, and that she was denied a speedy trial.", 0.2),
  ("The State asks the court to keep her convictions in place.", 0.35),
  ("The justices rule later, in writing.", 0.15),
- ("Until then, her convictions stand.", 0.3),
- ("Court dates and sources: Cassy-an Creed dot com, slash court calendar.", 0.35),
+ ("Until then, her convictions stand.", 0.25),
+ ("Court dates and sources: Cassy-an Creed dot com, slash court calendar.", 0.25),
 ]
 parts=[]; sr=None; marks=[]; t=0.0
 for text,p in S:
