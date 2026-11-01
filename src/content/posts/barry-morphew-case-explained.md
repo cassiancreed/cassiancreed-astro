@@ -10,10 +10,10 @@ victim: "Suzanne Morphew (49)"
 incidentDate: "May 10, 2020"
 location: "Chaffee County, Colorado"
 jurisdiction: "12th Judicial District, Alamosa County, Colorado"
-status: "Barry Morphew is charged with first-degree murder, has pleaded not guilty and is presumed innocent. Virtual status conference set for Nov. 3, 2026, 1:30 p.m. MT. Jury trial reported for July 2027."
+status: "Barry Morphew is charged with first-degree murder, has pleaded not guilty and is presumed innocent. Virtual status conference set for Nov. 3, 2026, 1:30 p.m. MT (12:30 p.m. PT). Jury trial reported for summer 2027."
 ---
 
-*Status as of Nov. 1, 2026 (Pacific). Sources: Colorado Judicial Branch case page; Denver7, June 24 and July 6, 2026; Denver Gazette, Sept. 3 and 8, 2026. Court dates can change. Check our [Court Calendar](/court-calendar/#morphew-status-conference) for the latest checked status.*
+*Status as of Nov. 1, 2026 (Pacific). Sources: Colorado Judicial Branch case page; Denver7, June 24 and July 6, 2026; The Gazette, Sept. 3, 2026; Denver Gazette, Sept. 8, 2026. Court dates can change. Check our [Court Calendar](/court-calendar/#morphew-status-conference) for the latest checked status.*
 
 Suzanne Morphew disappeared on Mother's Day, May 10, 2020. She was 49. Her remains were found in 2023. Her husband, Barry Morphew, is charged with first-degree murder in her death. He has pleaded not guilty. He is presumed innocent. A court check-in, called a status conference, is set for Tuesday, Nov. 3, 2026.
 
@@ -36,7 +36,7 @@ We keep this page to what court and news sources confirm. Her family and friends
 | Legal status | Presumed innocent unless and until a court finds him guilty. No court has done that. |
 | Court | 12th Judicial District, Alamosa County, Colorado. Judge Amanda Hopkins. Case No. 25CR128 ([Denver7, July 6, 2026](https://www.denver7.com/news/local-news/barry-morphew-trial-pushed-to-next-summer-7-years-after-suzanne-morphew-went-missing); [Colorado Judicial Branch](https://www.coloradojudicial.gov/node/13869)). |
 | Next hearing | Status conference. Tuesday, Nov. 3, 2026, 1:30 p.m. Mountain Time (12:30 p.m. Pacific). Virtual ([Colorado Judicial Branch](https://www.coloradojudicial.gov/node/13869)). |
-| Trial | Jury trial reported for July 2027 in Alamosa. It is expected to last about six weeks ([Denver7, July 6, 2026](https://www.denver7.com/news/local-news/barry-morphew-trial-pushed-to-next-summer-7-years-after-suzanne-morphew-went-missing)). |
+| Trial | Jury trial reported for next summer (2027) in Alamosa. It is expected to last about six weeks ([Denver7, July 6, 2026](https://www.denver7.com/news/local-news/barry-morphew-trial-pushed-to-next-summer-7-years-after-suzanne-morphew-went-missing)). |
 | Bond | $10 million, cash only, set Sept. 8, 2026 ([Denver Gazette, Sept. 8, 2026](https://www.denvergazette.com/2026/09/08/judge-ups-barry-morphews-bond-to-10-million/)). |
 
 ## The Nov. 3 hearing, in plain words
@@ -47,7 +47,7 @@ A status conference is a check-in. The judge and the lawyers talk about the sche
 
 The court page does not say what will be discussed. We will not guess.
 
-Earlier reports listed a Sept. 17 status date ([Denver7, July 6, 2026](https://www.denver7.com/news/local-news/barry-morphew-trial-pushed-to-next-summer-7-years-after-suzanne-morphew-went-missing); [Denver Gazette, Sept. 3, 2026](https://gazette.com/2026/09/03/judge-orders-home-confinement-for-barry-morphew/)). The court's current page lists Nov. 3.
+Earlier reports listed a Sept. 17 status date ([Denver7, July 6, 2026](https://www.denver7.com/news/local-news/barry-morphew-trial-pushed-to-next-summer-7-years-after-suzanne-morphew-went-missing); [The Gazette, Sept. 3, 2026](https://gazette.com/2026/09/03/judge-orders-home-confinement-for-barry-morphew/)). The court's current page lists Nov. 3.
 
 The court page also says you cannot join the court's Webex room without permission from the court.
 
@@ -64,9 +64,9 @@ The court page also says you cannot join the court's Webex room without permissi
 
 ## The bond change in September
 
-Prosecutors asked the judge to change his bond. They said he had not followed court orders. They pointed to an alleged hit-and-run crash in Denver on Aug. 26 ([Denver Gazette, Sept. 3, 2026](https://gazette.com/2026/09/03/judge-orders-home-confinement-for-barry-morphew/); [Denver Gazette, Sept. 8, 2026](https://www.denvergazette.com/2026/09/08/judge-ups-barry-morphews-bond-to-10-million/)). Those are claims by prosecutors. They are not findings of guilt on any charge.
+Prosecutors asked the judge to change his bond. They said he had not followed court orders. They pointed to an alleged hit-and-run crash in Denver on Aug. 26 ([The Gazette, Sept. 3, 2026](https://gazette.com/2026/09/03/judge-orders-home-confinement-for-barry-morphew/); [Denver Gazette, Sept. 8, 2026](https://www.denvergazette.com/2026/09/08/judge-ups-barry-morphews-bond-to-10-million/)). Those are claims by prosecutors. They are not findings of guilt on any charge.
 
-Barry Morphew was arrested on an Alamosa County warrant for failure to comply ([CNN Newsource via Hawaii News Now, Sept. 6, 2026](https://www.hawaiinewsnow.com/2026/09/06/man-accused-killing-wife-arrested-while-awaiting-murder-trial/)). On Sept. 8, Judge Hopkins raised the bond from $3 million to $10 million, cash only. She also limited when he may leave home ([Denver Gazette, Sept. 8, 2026](https://www.denvergazette.com/2026/09/08/judge-ups-barry-morphews-bond-to-10-million/)). The defense argued he has attended every hearing and the public is not in danger.
+Barry Morphew was arrested on an Alamosa County warrant for failure to comply ([CNN Newsource via Hawaii News Now, Sept. 6, 2026](https://www.hawaiinewsnow.com/2026/09/06/man-accused-killing-wife-arrested-while-awaiting-murder-trial/)). On Sept. 8, Judge Hopkins raised the bond from $3 million to $10 million, cash only. She also limited when he may leave home ([Denver Gazette, Sept. 8, 2026](https://www.denvergazette.com/2026/09/08/judge-ups-barry-morphews-bond-to-10-million/)). The defense argued he has attended every hearing and the public is not in danger ([Denver Gazette, Sept. 8, 2026](https://www.denvergazette.com/2026/09/08/judge-ups-barry-morphews-bond-to-10-million/)).
 
 We did not find a report that says whether the new bond has been posted. A bond order does not decide the murder charge.
 
@@ -90,11 +90,11 @@ No. No court has found him guilty. The charge is an accusation. He is presumed i
 
 ### When is the Barry Morphew trial?
 
-Denver7 reported on July 6, 2026 that a jury trial is set for July 2027 in Alamosa. It is expected to last about six weeks. The Denver Gazette reported a July 19 start date ([Denver Gazette, Sept. 3, 2026](https://gazette.com/2026/09/03/judge-orders-home-confinement-for-barry-morphew/)). The court's case-page header does not list a trial date, so treat the date as reported, not confirmed.
+Denver7 reported on July 6, 2026 that a jury trial is set for next summer in Alamosa; its June 24 report says the trial was delayed until 2027. It is expected to last about six weeks. The Gazette reported a July 19 start date ([The Gazette, Sept. 3, 2026](https://gazette.com/2026/09/03/judge-orders-home-confinement-for-barry-morphew/)). The court's case-page header does not list a trial date, so treat the date as reported, not confirmed.
 
 ### Why was the first case against Barry Morphew dismissed?
 
-It was dismissed in April 2022, before trial. The Denver Gazette reported it was because no body had been found at that time ([Denver Gazette, Sept. 3, 2026](https://gazette.com/2026/09/03/judge-orders-home-confinement-for-barry-morphew/)). Suzanne's remains were found in September 2023. The current case began with a June 2025 grand jury indictment.
+It was dismissed in April 2022, before trial. The Gazette reported it was because no body had been found at that time ([The Gazette, Sept. 3, 2026](https://gazette.com/2026/09/03/judge-orders-home-confinement-for-barry-morphew/)). Suzanne's remains were found in September 2023. The current case began with a June 2025 grand jury indictment.
 
 ### Can I watch the Nov. 3 hearing?
 

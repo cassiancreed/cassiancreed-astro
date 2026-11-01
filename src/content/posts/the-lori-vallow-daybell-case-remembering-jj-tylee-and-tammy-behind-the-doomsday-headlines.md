@@ -12,7 +12,7 @@ jurisdiction: "Idaho and Arizona state courts"
 status: "Convicted (2023 and 2025); multiple life sentences without parole; Idaho appeal pending; Idaho Supreme Court oral argument set for Nov. 2, 2026"
 ---
 
-*Status as of Nov. 1, 2026 (Pacific): convicted; Idaho appeal pending; oral argument set for Nov. 2, 2026, 11:15 a.m. Mountain Time ([CBS2 News, Sept. 2, 2026](https://idahonews.com/news/local/idaho-supreme-court-to-hear-lori-vallow-daybell-appeal-arguments)). An appeal is not a reversal. See the [Court Calendar](/court-calendar/#vallow-idaho-appeal-argument) for the latest checked status.*
+*Status as of Nov. 1, 2026 (Pacific): convicted; Idaho appeal pending; oral argument set for Nov. 2, 2026, 11:15 a.m. Mountain Time (10:15 a.m. Pacific) ([Idaho Supreme Court calendar](https://isc.idaho.gov/cases-opinions/court-calendar); [EastIdahoNews, Sept. 1, 2026](https://www.eastidahonews.com/2026/09/idaho-supreme-court-sets-date-to-hear-appealate-oral-arguments-in-lori-vallow-daybell-case/)). An appeal is not a reversal. See the [Court Calendar](/court-calendar/#vallow-idaho-appeal-argument) for the latest checked status.*
 
 Lori Vallow Daybell was convicted in Idaho in May 2023 of murdering her two children, 7-year-old Joshua "JJ" Vallow and 16-year-old Tylee Ryan, and of conspiring to kill Tammy Daybell, the wife of the man she would marry. She is serving three life sentences without parole in Idaho, plus two additional life sentences imposed in Arizona in 2025 for separate murder conspiracies. As of May 2026, her Idaho convictions are under appeal at the Idaho Supreme Court, but the verdicts and her imprisonment stand. The press calls her the "Doomsday Mom." That label sells, but it pulls attention toward the killer and away from the people who mattered: two children and a schoolteacher who deserved long, ordinary lives. This is their story first.
 
@@ -54,6 +54,6 @@ EastIdahoNews reported that the Idaho Supreme Court provides a live video feed a
 
 ### When will the Idaho Supreme Court decide?
 
-No ruling date has been announced. Neither report we checked says when the court will rule. Until it does, her Idaho convictions stand. An appeal is not a reversal.
+No ruling date has been announced. Neither report we checked says when the court will rule. Her Idaho convictions stand while the appeal is pending. An appeal is not a reversal.
 
 Cover this case? Our [court case kits for creators](/creators/).
