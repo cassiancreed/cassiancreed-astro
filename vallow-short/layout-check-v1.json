@@ -1,0 +1,4042 @@
+{
+ "states": [
+  {
+   "n": 0,
+   "start": 0.0,
+   "end": 2.9,
+   "card": "hook",
+   "caption": "Today at 10:15\u00a0a.m. Pacific,"
+  },
+  {
+   "n": 1,
+   "start": 2.9,
+   "end": 4.46,
+   "card": "hook",
+   "caption": "the Idaho Supreme Court hears"
+  },
+  {
+   "n": 2,
+   "start": 4.46,
+   "end": 6.68,
+   "card": "hook",
+   "caption": "Lori\u00a0Vallow\u00a0Daybell's appeal."
+  },
+  {
+   "n": 3,
+   "start": 6.68,
+   "end": 7.64,
+   "card": "victims",
+   "caption": "First, the victims:"
+  },
+  {
+   "n": 4,
+   "start": 7.64,
+   "end": 8.8,
+   "card": "victims",
+   "caption": "her son, 7."
+  },
+  {
+   "n": 5,
+   "start": 8.8,
+   "end": 10.12,
+   "card": "victims",
+   "caption": "Her daughter, 16."
+  },
+  {
+   "n": 6,
+   "start": 10.12,
+   "end": 12.08,
+   "card": "victims",
+   "caption": "And Tammy\u00a0Daybell, 49."
+  },
+  {
+   "n": 7,
+   "start": 12.08,
+   "end": 14.52,
+   "card": "verdict",
+   "caption": "In 2023, a jury convicted her"
+  },
+  {
+   "n": 8,
+   "start": 14.52,
+   "end": 15.78,
+   "card": "verdict",
+   "caption": "of first-degree murder"
+  },
+  {
+   "n": 9,
+   "start": 15.78,
+   "end": 16.7,
+   "card": "verdict",
+   "caption": "in the deaths of"
+  },
+  {
+   "n": 10,
+   "start": 16.7,
+   "end": 17.88,
+   "card": "verdict",
+   "caption": "her son and daughter."
+  },
+  {
+   "n": 11,
+   "start": 17.88,
+   "end": 19.06,
+   "card": "verdict",
+   "caption": "It also convicted her"
+  },
+  {
+   "n": 12,
+   "start": 19.06,
+   "end": 20.44,
+   "card": "verdict",
+   "caption": "of conspiring to murder"
+  },
+  {
+   "n": 13,
+   "start": 20.44,
+   "end": 21.48,
+   "card": "verdict",
+   "caption": "Tammy\u00a0Daybell."
+  },
+  {
+   "n": 14,
+   "start": 21.48,
+   "end": 22.3,
+   "card": "verdict",
+   "caption": "She is serving life"
+  },
+  {
+   "n": 15,
+   "start": 22.3,
+   "end": 23.48,
+   "card": "verdict",
+   "caption": "without parole."
+  },
+  {
+   "n": 16,
+   "start": 23.48,
+   "end": 24.56,
+   "card": "today",
+   "caption": "Today is a review,"
+  },
+  {
+   "n": 17,
+   "start": 24.56,
+   "end": 25.58,
+   "card": "today",
+   "caption": "not a new trial."
+  },
+  {
+   "n": 18,
+   "start": 25.58,
+   "end": 27.26,
+   "card": "today",
+   "caption": "No witnesses testify."
+  },
+  {
+   "n": 19,
+   "start": 27.26,
+   "end": 28.46,
+   "card": "sides1",
+   "caption": "Her lawyers say the judge"
+  },
+  {
+   "n": 20,
+   "start": 28.46,
+   "end": 29.92,
+   "card": "sides1",
+   "caption": "wrongly removed the attorney"
+  },
+  {
+   "n": 21,
+   "start": 29.92,
+   "end": 30.46,
+   "card": "sides1",
+   "caption": "she hired,"
+  },
+  {
+   "n": 22,
+   "start": 30.46,
+   "end": 32.6,
+   "card": "sides1",
+   "caption": "and denied her a speedy trial."
+  },
+  {
+   "n": 23,
+   "start": 32.6,
+   "end": 33.72,
+   "card": "sides2",
+   "caption": "The State asks the court"
+  },
+  {
+   "n": 24,
+   "start": 33.72,
+   "end": 35.86,
+   "card": "sides2",
+   "caption": "to keep her convictions in place."
+  },
+  {
+   "n": 25,
+   "start": 35.86,
+   "end": 37.24,
+   "card": "next",
+   "caption": "The justices rule later,"
+  },
+  {
+   "n": 26,
+   "start": 37.24,
+   "end": 38.06,
+   "card": "next",
+   "caption": "in writing."
+  },
+  {
+   "n": 27,
+   "start": 38.06,
+   "end": 38.84,
+   "card": "next",
+   "caption": "Until then,"
+  },
+  {
+   "n": 28,
+   "start": 38.84,
+   "end": 40.24,
+   "card": "next",
+   "caption": "her convictions stand."
+  },
+  {
+   "n": 29,
+   "start": 40.24,
+   "end": 41.94,
+   "card": "end",
+   "caption": "Court dates and sources:"
+  },
+  {
+   "n": 30,
+   "start": 41.94,
+   "end": 44.9,
+   "card": "end",
+   "caption": "cassiancreed.com/court-calendar"
+  }
+ ],
+ "safe": [
+  {
+   "state": 0,
+   "text": "COURT CALENDAR  \u00b7  MON NOV 2, 2026",
+   "bbox": [
+    72,
+    279,
+    738,
+    311
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 0,
+   "text": "Narrated with an AI voice",
+   "bbox": [
+    72,
+    1454,
+    457,
+    1479
+   ],
+   "safe": true,
+   "words": 5
+  },
+  {
+   "state": 0,
+   "text": "TODAY",
+   "bbox": [
+    68,
+    389,
+    643,
+    515
+   ],
+   "safe": true,
+   "words": 1
+  },
+  {
+   "state": 0,
+   "text": "10:15 A.M. PACIFIC",
+   "bbox": [
+    70,
+    563,
+    882,
+    632
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 0,
+   "text": "The Idaho Supreme Court hears",
+   "bbox": [
+    72,
+    686,
+    881,
+    736
+   ],
+   "safe": true,
+   "words": 5
+  },
+  {
+   "state": 0,
+   "text": "Lori Vallow Daybell's appeal.",
+   "bbox": [
+    72,
+    764,
+    794,
+    815
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 0,
+   "text": "11:15 a.m. MT \u00b7 Boise, Idaho",
+   "bbox": [
+    72,
+    854,
+    622,
+    895
+   ],
+   "safe": true,
+   "words": 5
+  },
+  {
+   "state": 0,
+   "text": "A review, not a new trial",
+   "bbox": [
+    72,
+    927,
+    614,
+    972
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 0,
+   "text": "Today at",
+   "bbox": [
+    318,
+    1192,
+    646,
+    1269
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 0,
+   "text": "10:15\u00a0a.m. Pacific,",
+   "bbox": [
+    148,
+    1289,
+    817,
+    1363
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 1,
+   "text": "COURT CALENDAR  \u00b7  MON NOV 2, 2026",
+   "bbox": [
+    72,
+    279,
+    738,
+    311
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 1,
+   "text": "Narrated with an AI voice",
+   "bbox": [
+    72,
+    1454,
+    457,
+    1479
+   ],
+   "safe": true,
+   "words": 5
+  },
+  {
+   "state": 1,
+   "text": "TODAY",
+   "bbox": [
+    68,
+    389,
+    643,
+    515
+   ],
+   "safe": true,
+   "words": 1
+  },
+  {
+   "state": 1,
+   "text": "10:15 A.M. PACIFIC",
+   "bbox": [
+    70,
+    563,
+    882,
+    632
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 1,
+   "text": "The Idaho Supreme Court hears",
+   "bbox": [
+    72,
+    686,
+    881,
+    736
+   ],
+   "safe": true,
+   "words": 5
+  },
+  {
+   "state": 1,
+   "text": "Lori Vallow Daybell's appeal.",
+   "bbox": [
+    72,
+    764,
+    794,
+    815
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 1,
+   "text": "11:15 a.m. MT \u00b7 Boise, Idaho",
+   "bbox": [
+    72,
+    854,
+    622,
+    895
+   ],
+   "safe": true,
+   "words": 5
+  },
+  {
+   "state": 1,
+   "text": "A review, not a new trial",
+   "bbox": [
+    72,
+    927,
+    614,
+    972
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 1,
+   "text": "the Idaho Supreme",
+   "bbox": [
+    116,
+    1191,
+    848,
+    1269
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 1,
+   "text": "Court hears",
+   "bbox": [
+    252,
+    1289,
+    712,
+    1351
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 2,
+   "text": "COURT CALENDAR  \u00b7  MON NOV 2, 2026",
+   "bbox": [
+    72,
+    279,
+    738,
+    311
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 2,
+   "text": "Narrated with an AI voice",
+   "bbox": [
+    72,
+    1454,
+    457,
+    1479
+   ],
+   "safe": true,
+   "words": 5
+  },
+  {
+   "state": 2,
+   "text": "TODAY",
+   "bbox": [
+    68,
+    389,
+    643,
+    515
+   ],
+   "safe": true,
+   "words": 1
+  },
+  {
+   "state": 2,
+   "text": "10:15 A.M. PACIFIC",
+   "bbox": [
+    70,
+    563,
+    882,
+    632
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 2,
+   "text": "The Idaho Supreme Court hears",
+   "bbox": [
+    72,
+    686,
+    881,
+    736
+   ],
+   "safe": true,
+   "words": 5
+  },
+  {
+   "state": 2,
+   "text": "Lori Vallow Daybell's appeal.",
+   "bbox": [
+    72,
+    764,
+    794,
+    815
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 2,
+   "text": "11:15 a.m. MT \u00b7 Boise, Idaho",
+   "bbox": [
+    72,
+    854,
+    622,
+    895
+   ],
+   "safe": true,
+   "words": 5
+  },
+  {
+   "state": 2,
+   "text": "A review, not a new trial",
+   "bbox": [
+    72,
+    927,
+    614,
+    972
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 2,
+   "text": "Lori\u00a0Vallow\u00a0Daybell's",
+   "bbox": [
+    103,
+    1190,
+    861,
+    1264
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 2,
+   "text": "appeal.",
+   "bbox": [
+    348,
+    1284,
+    617,
+    1358
+   ],
+   "safe": true,
+   "words": 1
+  },
+  {
+   "state": 3,
+   "text": "COURT CALENDAR  \u00b7  MON NOV 2, 2026",
+   "bbox": [
+    72,
+    279,
+    738,
+    311
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 3,
+   "text": "Narrated with an AI voice",
+   "bbox": [
+    72,
+    1454,
+    457,
+    1479
+   ],
+   "safe": true,
+   "words": 5
+  },
+  {
+   "state": 3,
+   "text": "FIRST, THE VICTIMS",
+   "bbox": [
+    98,
+    360,
+    496,
+    398
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 3,
+   "text": "Her son, 7",
+   "bbox": [
+    142,
+    483,
+    497,
+    551
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 3,
+   "text": "Her daughter, 16",
+   "bbox": [
+    142,
+    658,
+    733,
+    730
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 3,
+   "text": "Tammy Daybell, 49",
+   "bbox": [
+    142,
+    834,
+    834,
+    906
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 3,
+   "text": "First, the victims:",
+   "bbox": [
+    141,
+    1192,
+    823,
+    1267
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 4,
+   "text": "COURT CALENDAR  \u00b7  MON NOV 2, 2026",
+   "bbox": [
+    72,
+    279,
+    738,
+    311
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 4,
+   "text": "Narrated with an AI voice",
+   "bbox": [
+    72,
+    1454,
+    457,
+    1479
+   ],
+   "safe": true,
+   "words": 5
+  },
+  {
+   "state": 4,
+   "text": "FIRST, THE VICTIMS",
+   "bbox": [
+    98,
+    360,
+    496,
+    398
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 4,
+   "text": "Her son, 7",
+   "bbox": [
+    142,
+    483,
+    497,
+    551
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 4,
+   "text": "Her daughter, 16",
+   "bbox": [
+    142,
+    658,
+    733,
+    730
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 4,
+   "text": "Tammy Daybell, 49",
+   "bbox": [
+    142,
+    834,
+    834,
+    906
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 4,
+   "text": "her son, 7.",
+   "bbox": [
+    289,
+    1193,
+    676,
+    1267
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 5,
+   "text": "COURT CALENDAR  \u00b7  MON NOV 2, 2026",
+   "bbox": [
+    72,
+    279,
+    738,
+    311
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 5,
+   "text": "Narrated with an AI voice",
+   "bbox": [
+    72,
+    1454,
+    457,
+    1479
+   ],
+   "safe": true,
+   "words": 5
+  },
+  {
+   "state": 5,
+   "text": "FIRST, THE VICTIMS",
+   "bbox": [
+    98,
+    360,
+    496,
+    398
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 5,
+   "text": "Her son, 7",
+   "bbox": [
+    142,
+    483,
+    497,
+    551
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 5,
+   "text": "Her daughter, 16",
+   "bbox": [
+    142,
+    658,
+    733,
+    730
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 5,
+   "text": "Tammy Daybell, 49",
+   "bbox": [
+    142,
+    834,
+    834,
+    906
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 5,
+   "text": "Her daughter, 16.",
+   "bbox": [
+    153,
+    1192,
+    811,
+    1272
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 6,
+   "text": "COURT CALENDAR  \u00b7  MON NOV 2, 2026",
+   "bbox": [
+    72,
+    279,
+    738,
+    311
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 6,
+   "text": "Narrated with an AI voice",
+   "bbox": [
+    72,
+    1454,
+    457,
+    1479
+   ],
+   "safe": true,
+   "words": 5
+  },
+  {
+   "state": 6,
+   "text": "FIRST, THE VICTIMS",
+   "bbox": [
+    98,
+    360,
+    496,
+    398
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 6,
+   "text": "Her son, 7",
+   "bbox": [
+    142,
+    483,
+    497,
+    551
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 6,
+   "text": "Her daughter, 16",
+   "bbox": [
+    142,
+    658,
+    733,
+    730
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 6,
+   "text": "Tammy Daybell, 49",
+   "bbox": [
+    142,
+    834,
+    834,
+    906
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 6,
+   "text": "And",
+   "bbox": [
+    404,
+    1192,
+    560,
+    1251
+   ],
+   "safe": true,
+   "words": 1
+  },
+  {
+   "state": 6,
+   "text": "Tammy\u00a0Daybell, 49.",
+   "bbox": [
+    117,
+    1287,
+    848,
+    1363
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 7,
+   "text": "COURT CALENDAR  \u00b7  MON NOV 2, 2026",
+   "bbox": [
+    72,
+    279,
+    738,
+    311
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 7,
+   "text": "Narrated with an AI voice",
+   "bbox": [
+    72,
+    1454,
+    457,
+    1479
+   ],
+   "safe": true,
+   "words": 5
+  },
+  {
+   "state": 7,
+   "text": "THE 2023 VERDICT",
+   "bbox": [
+    98,
+    360,
+    482,
+    391
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 7,
+   "text": "A jury convicted her of:",
+   "bbox": [
+    72,
+    443,
+    704,
+    497
+   ],
+   "safe": true,
+   "words": 5
+  },
+  {
+   "state": 7,
+   "text": "First-degree murder",
+   "bbox": [
+    136,
+    565,
+    810,
+    629
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 7,
+   "text": "Deaths of her son and daughter",
+   "bbox": [
+    136,
+    657,
+    733,
+    697
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 7,
+   "text": "Conspiring to murder",
+   "bbox": [
+    136,
+    771,
+    839,
+    836
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 7,
+   "text": "Tammy Daybell, 49",
+   "bbox": [
+    136,
+    864,
+    497,
+    904
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 7,
+   "text": "Sentence: life without parole",
+   "bbox": [
+    72,
+    954,
+    758,
+    1003
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 7,
+   "text": "Per KSL.com, 2023",
+   "bbox": [
+    72,
+    1023,
+    385,
+    1054
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 7,
+   "text": "In 2023, a jury",
+   "bbox": [
+    211,
+    1191,
+    753,
+    1269
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 7,
+   "text": "convicted her",
+   "bbox": [
+    217,
+    1289,
+    748,
+    1351
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 8,
+   "text": "COURT CALENDAR  \u00b7  MON NOV 2, 2026",
+   "bbox": [
+    72,
+    279,
+    738,
+    311
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 8,
+   "text": "Narrated with an AI voice",
+   "bbox": [
+    72,
+    1454,
+    457,
+    1479
+   ],
+   "safe": true,
+   "words": 5
+  },
+  {
+   "state": 8,
+   "text": "THE 2023 VERDICT",
+   "bbox": [
+    98,
+    360,
+    482,
+    391
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 8,
+   "text": "A jury convicted her of:",
+   "bbox": [
+    72,
+    443,
+    704,
+    497
+   ],
+   "safe": true,
+   "words": 5
+  },
+  {
+   "state": 8,
+   "text": "First-degree murder",
+   "bbox": [
+    136,
+    565,
+    810,
+    629
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 8,
+   "text": "Deaths of her son and daughter",
+   "bbox": [
+    136,
+    657,
+    733,
+    697
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 8,
+   "text": "Conspiring to murder",
+   "bbox": [
+    136,
+    771,
+    839,
+    836
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 8,
+   "text": "Tammy Daybell, 49",
+   "bbox": [
+    136,
+    864,
+    497,
+    904
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 8,
+   "text": "Sentence: life without parole",
+   "bbox": [
+    72,
+    954,
+    758,
+    1003
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 8,
+   "text": "Per KSL.com, 2023",
+   "bbox": [
+    72,
+    1023,
+    385,
+    1054
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 8,
+   "text": "of first-degree murder",
+   "bbox": [
+    100,
+    1189,
+    864,
+    1257
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 9,
+   "text": "COURT CALENDAR  \u00b7  MON NOV 2, 2026",
+   "bbox": [
+    72,
+    279,
+    738,
+    311
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 9,
+   "text": "Narrated with an AI voice",
+   "bbox": [
+    72,
+    1454,
+    457,
+    1479
+   ],
+   "safe": true,
+   "words": 5
+  },
+  {
+   "state": 9,
+   "text": "THE 2023 VERDICT",
+   "bbox": [
+    98,
+    360,
+    482,
+    391
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 9,
+   "text": "A jury convicted her of:",
+   "bbox": [
+    72,
+    443,
+    704,
+    497
+   ],
+   "safe": true,
+   "words": 5
+  },
+  {
+   "state": 9,
+   "text": "First-degree murder",
+   "bbox": [
+    136,
+    565,
+    810,
+    629
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 9,
+   "text": "Deaths of her son and daughter",
+   "bbox": [
+    136,
+    657,
+    733,
+    697
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 9,
+   "text": "Conspiring to murder",
+   "bbox": [
+    136,
+    771,
+    839,
+    836
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 9,
+   "text": "Tammy Daybell, 49",
+   "bbox": [
+    136,
+    864,
+    497,
+    904
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 9,
+   "text": "Sentence: life without parole",
+   "bbox": [
+    72,
+    954,
+    758,
+    1003
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 9,
+   "text": "Per KSL.com, 2023",
+   "bbox": [
+    72,
+    1023,
+    385,
+    1054
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 9,
+   "text": "in the deaths of",
+   "bbox": [
+    175,
+    1192,
+    789,
+    1255
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 10,
+   "text": "COURT CALENDAR  \u00b7  MON NOV 2, 2026",
+   "bbox": [
+    72,
+    279,
+    738,
+    311
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 10,
+   "text": "Narrated with an AI voice",
+   "bbox": [
+    72,
+    1454,
+    457,
+    1479
+   ],
+   "safe": true,
+   "words": 5
+  },
+  {
+   "state": 10,
+   "text": "THE 2023 VERDICT",
+   "bbox": [
+    98,
+    360,
+    482,
+    391
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 10,
+   "text": "A jury convicted her of:",
+   "bbox": [
+    72,
+    443,
+    704,
+    497
+   ],
+   "safe": true,
+   "words": 5
+  },
+  {
+   "state": 10,
+   "text": "First-degree murder",
+   "bbox": [
+    136,
+    565,
+    810,
+    629
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 10,
+   "text": "Deaths of her son and daughter",
+   "bbox": [
+    136,
+    657,
+    733,
+    697
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 10,
+   "text": "Conspiring to murder",
+   "bbox": [
+    136,
+    771,
+    839,
+    836
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 10,
+   "text": "Tammy Daybell, 49",
+   "bbox": [
+    136,
+    864,
+    497,
+    904
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 10,
+   "text": "Sentence: life without parole",
+   "bbox": [
+    72,
+    954,
+    758,
+    1003
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 10,
+   "text": "Per KSL.com, 2023",
+   "bbox": [
+    72,
+    1023,
+    385,
+    1054
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 10,
+   "text": "her son and daughter.",
+   "bbox": [
+    104,
+    1190,
+    860,
+    1260
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 11,
+   "text": "COURT CALENDAR  \u00b7  MON NOV 2, 2026",
+   "bbox": [
+    72,
+    279,
+    738,
+    311
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 11,
+   "text": "Narrated with an AI voice",
+   "bbox": [
+    72,
+    1454,
+    457,
+    1479
+   ],
+   "safe": true,
+   "words": 5
+  },
+  {
+   "state": 11,
+   "text": "THE 2023 VERDICT",
+   "bbox": [
+    98,
+    360,
+    482,
+    391
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 11,
+   "text": "A jury convicted her of:",
+   "bbox": [
+    72,
+    443,
+    704,
+    497
+   ],
+   "safe": true,
+   "words": 5
+  },
+  {
+   "state": 11,
+   "text": "First-degree murder",
+   "bbox": [
+    136,
+    565,
+    810,
+    629
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 11,
+   "text": "Deaths of her son and daughter",
+   "bbox": [
+    136,
+    657,
+    733,
+    697
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 11,
+   "text": "Conspiring to murder",
+   "bbox": [
+    136,
+    771,
+    839,
+    836
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 11,
+   "text": "Tammy Daybell, 49",
+   "bbox": [
+    136,
+    864,
+    497,
+    904
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 11,
+   "text": "Sentence: life without parole",
+   "bbox": [
+    72,
+    954,
+    758,
+    1003
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 11,
+   "text": "Per KSL.com, 2023",
+   "bbox": [
+    72,
+    1023,
+    385,
+    1054
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 11,
+   "text": "It also convicted her",
+   "bbox": [
+    102,
+    1191,
+    863,
+    1251
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 12,
+   "text": "COURT CALENDAR  \u00b7  MON NOV 2, 2026",
+   "bbox": [
+    72,
+    279,
+    738,
+    311
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 12,
+   "text": "Narrated with an AI voice",
+   "bbox": [
+    72,
+    1454,
+    457,
+    1479
+   ],
+   "safe": true,
+   "words": 5
+  },
+  {
+   "state": 12,
+   "text": "THE 2023 VERDICT",
+   "bbox": [
+    98,
+    360,
+    482,
+    391
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 12,
+   "text": "A jury convicted her of:",
+   "bbox": [
+    72,
+    443,
+    704,
+    497
+   ],
+   "safe": true,
+   "words": 5
+  },
+  {
+   "state": 12,
+   "text": "First-degree murder",
+   "bbox": [
+    136,
+    565,
+    810,
+    629
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 12,
+   "text": "Deaths of her son and daughter",
+   "bbox": [
+    136,
+    657,
+    733,
+    697
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 12,
+   "text": "Conspiring to murder",
+   "bbox": [
+    136,
+    771,
+    839,
+    836
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 12,
+   "text": "Tammy Daybell, 49",
+   "bbox": [
+    136,
+    864,
+    497,
+    904
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 12,
+   "text": "Sentence: life without parole",
+   "bbox": [
+    72,
+    954,
+    758,
+    1003
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 12,
+   "text": "Per KSL.com, 2023",
+   "bbox": [
+    72,
+    1023,
+    385,
+    1054
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 12,
+   "text": "of conspiring",
+   "bbox": [
+    226,
+    1191,
+    738,
+    1269
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 12,
+   "text": "to murder",
+   "bbox": [
+    292,
+    1290,
+    673,
+    1351
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 13,
+   "text": "COURT CALENDAR  \u00b7  MON NOV 2, 2026",
+   "bbox": [
+    72,
+    279,
+    738,
+    311
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 13,
+   "text": "Narrated with an AI voice",
+   "bbox": [
+    72,
+    1454,
+    457,
+    1479
+   ],
+   "safe": true,
+   "words": 5
+  },
+  {
+   "state": 13,
+   "text": "THE 2023 VERDICT",
+   "bbox": [
+    98,
+    360,
+    482,
+    391
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 13,
+   "text": "A jury convicted her of:",
+   "bbox": [
+    72,
+    443,
+    704,
+    497
+   ],
+   "safe": true,
+   "words": 5
+  },
+  {
+   "state": 13,
+   "text": "First-degree murder",
+   "bbox": [
+    136,
+    565,
+    810,
+    629
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 13,
+   "text": "Deaths of her son and daughter",
+   "bbox": [
+    136,
+    657,
+    733,
+    697
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 13,
+   "text": "Conspiring to murder",
+   "bbox": [
+    136,
+    771,
+    839,
+    836
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 13,
+   "text": "Tammy Daybell, 49",
+   "bbox": [
+    136,
+    864,
+    497,
+    904
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 13,
+   "text": "Sentence: life without parole",
+   "bbox": [
+    72,
+    954,
+    758,
+    1003
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 13,
+   "text": "Per KSL.com, 2023",
+   "bbox": [
+    72,
+    1023,
+    385,
+    1054
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 13,
+   "text": "Tammy\u00a0Daybell.",
+   "bbox": [
+    169,
+    1193,
+    795,
+    1271
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 14,
+   "text": "COURT CALENDAR  \u00b7  MON NOV 2, 2026",
+   "bbox": [
+    72,
+    279,
+    738,
+    311
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 14,
+   "text": "Narrated with an AI voice",
+   "bbox": [
+    72,
+    1454,
+    457,
+    1479
+   ],
+   "safe": true,
+   "words": 5
+  },
+  {
+   "state": 14,
+   "text": "THE 2023 VERDICT",
+   "bbox": [
+    98,
+    360,
+    482,
+    391
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 14,
+   "text": "A jury convicted her of:",
+   "bbox": [
+    72,
+    443,
+    704,
+    497
+   ],
+   "safe": true,
+   "words": 5
+  },
+  {
+   "state": 14,
+   "text": "First-degree murder",
+   "bbox": [
+    136,
+    565,
+    810,
+    629
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 14,
+   "text": "Deaths of her son and daughter",
+   "bbox": [
+    136,
+    657,
+    733,
+    697
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 14,
+   "text": "Conspiring to murder",
+   "bbox": [
+    136,
+    771,
+    839,
+    836
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 14,
+   "text": "Tammy Daybell, 49",
+   "bbox": [
+    136,
+    864,
+    497,
+    904
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 14,
+   "text": "Sentence: life without parole",
+   "bbox": [
+    72,
+    954,
+    758,
+    1003
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 14,
+   "text": "Per KSL.com, 2023",
+   "bbox": [
+    72,
+    1023,
+    385,
+    1054
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 14,
+   "text": "She is serving life",
+   "bbox": [
+    134,
+    1192,
+    830,
+    1272
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 15,
+   "text": "COURT CALENDAR  \u00b7  MON NOV 2, 2026",
+   "bbox": [
+    72,
+    279,
+    738,
+    311
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 15,
+   "text": "Narrated with an AI voice",
+   "bbox": [
+    72,
+    1454,
+    457,
+    1479
+   ],
+   "safe": true,
+   "words": 5
+  },
+  {
+   "state": 15,
+   "text": "THE 2023 VERDICT",
+   "bbox": [
+    98,
+    360,
+    482,
+    391
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 15,
+   "text": "A jury convicted her of:",
+   "bbox": [
+    72,
+    443,
+    704,
+    497
+   ],
+   "safe": true,
+   "words": 5
+  },
+  {
+   "state": 15,
+   "text": "First-degree murder",
+   "bbox": [
+    136,
+    565,
+    810,
+    629
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 15,
+   "text": "Deaths of her son and daughter",
+   "bbox": [
+    136,
+    657,
+    733,
+    697
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 15,
+   "text": "Conspiring to murder",
+   "bbox": [
+    136,
+    771,
+    839,
+    836
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 15,
+   "text": "Tammy Daybell, 49",
+   "bbox": [
+    136,
+    864,
+    497,
+    904
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 15,
+   "text": "Sentence: life without parole",
+   "bbox": [
+    72,
+    954,
+    758,
+    1003
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 15,
+   "text": "Per KSL.com, 2023",
+   "bbox": [
+    72,
+    1023,
+    385,
+    1054
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 15,
+   "text": "without parole.",
+   "bbox": [
+    182,
+    1192,
+    783,
+    1272
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 16,
+   "text": "COURT CALENDAR  \u00b7  MON NOV 2, 2026",
+   "bbox": [
+    72,
+    279,
+    738,
+    311
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 16,
+   "text": "Narrated with an AI voice",
+   "bbox": [
+    72,
+    1454,
+    457,
+    1479
+   ],
+   "safe": true,
+   "words": 5
+  },
+  {
+   "state": 16,
+   "text": "WHAT TODAY IS",
+   "bbox": [
+    98,
+    360,
+    418,
+    391
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 16,
+   "text": "A REVIEW,",
+   "bbox": [
+    68,
+    452,
+    549,
+    536
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 16,
+   "text": "NOT A NEW TRIAL",
+   "bbox": [
+    68,
+    575,
+    893,
+    645
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 16,
+   "text": "No witnesses testify",
+   "bbox": [
+    104,
+    729,
+    648,
+    782
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 16,
+   "text": "Justices hear the lawyers",
+   "bbox": [
+    104,
+    810,
+    519,
+    845
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 16,
+   "text": "Each side gets 30 minutes",
+   "bbox": [
+    104,
+    921,
+    798,
+    974
+   ],
+   "safe": true,
+   "words": 5
+  },
+  {
+   "state": 16,
+   "text": "Per EastIdahoNews",
+   "bbox": [
+    104,
+    1004,
+    420,
+    1029
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 16,
+   "text": "Today is a review,",
+   "bbox": [
+    139,
+    1192,
+    826,
+    1271
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 17,
+   "text": "COURT CALENDAR  \u00b7  MON NOV 2, 2026",
+   "bbox": [
+    72,
+    279,
+    738,
+    311
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 17,
+   "text": "Narrated with an AI voice",
+   "bbox": [
+    72,
+    1454,
+    457,
+    1479
+   ],
+   "safe": true,
+   "words": 5
+  },
+  {
+   "state": 17,
+   "text": "WHAT TODAY IS",
+   "bbox": [
+    98,
+    360,
+    418,
+    391
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 17,
+   "text": "A REVIEW,",
+   "bbox": [
+    68,
+    452,
+    549,
+    536
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 17,
+   "text": "NOT A NEW TRIAL",
+   "bbox": [
+    68,
+    575,
+    893,
+    645
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 17,
+   "text": "No witnesses testify",
+   "bbox": [
+    104,
+    729,
+    648,
+    782
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 17,
+   "text": "Justices hear the lawyers",
+   "bbox": [
+    104,
+    810,
+    519,
+    845
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 17,
+   "text": "Each side gets 30 minutes",
+   "bbox": [
+    104,
+    921,
+    798,
+    974
+   ],
+   "safe": true,
+   "words": 5
+  },
+  {
+   "state": 17,
+   "text": "Per EastIdahoNews",
+   "bbox": [
+    104,
+    1004,
+    420,
+    1029
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 17,
+   "text": "not a new trial.",
+   "bbox": [
+    193,
+    1192,
+    772,
+    1255
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 18,
+   "text": "COURT CALENDAR  \u00b7  MON NOV 2, 2026",
+   "bbox": [
+    72,
+    279,
+    738,
+    311
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 18,
+   "text": "Narrated with an AI voice",
+   "bbox": [
+    72,
+    1454,
+    457,
+    1479
+   ],
+   "safe": true,
+   "words": 5
+  },
+  {
+   "state": 18,
+   "text": "WHAT TODAY IS",
+   "bbox": [
+    98,
+    360,
+    418,
+    391
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 18,
+   "text": "A REVIEW,",
+   "bbox": [
+    68,
+    452,
+    549,
+    536
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 18,
+   "text": "NOT A NEW TRIAL",
+   "bbox": [
+    68,
+    575,
+    893,
+    645
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 18,
+   "text": "No witnesses testify",
+   "bbox": [
+    104,
+    729,
+    648,
+    782
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 18,
+   "text": "Justices hear the lawyers",
+   "bbox": [
+    104,
+    810,
+    519,
+    845
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 18,
+   "text": "Each side gets 30 minutes",
+   "bbox": [
+    104,
+    921,
+    798,
+    974
+   ],
+   "safe": true,
+   "words": 5
+  },
+  {
+   "state": 18,
+   "text": "Per EastIdahoNews",
+   "bbox": [
+    104,
+    1004,
+    420,
+    1029
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 18,
+   "text": "No witnesses testify.",
+   "bbox": [
+    96,
+    1190,
+    868,
+    1264
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 19,
+   "text": "COURT CALENDAR  \u00b7  MON NOV 2, 2026",
+   "bbox": [
+    72,
+    279,
+    738,
+    311
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 19,
+   "text": "Narrated with an AI voice",
+   "bbox": [
+    72,
+    1454,
+    457,
+    1479
+   ],
+   "safe": true,
+   "words": 5
+  },
+  {
+   "state": 19,
+   "text": "WHAT EACH SIDE SAYS",
+   "bbox": [
+    98,
+    360,
+    566,
+    391
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 19,
+   "text": "Per their court briefs, via EastIdahoNews",
+   "bbox": [
+    72,
+    416,
+    735,
+    449
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 19,
+   "text": "HER LAWYERS SAY",
+   "bbox": [
+    104,
+    501,
+    469,
+    530
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 19,
+   "text": "The judge wrongly removed",
+   "bbox": [
+    104,
+    559,
+    761,
+    607
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 19,
+   "text": "the lawyer she hired.",
+   "bbox": [
+    104,
+    621,
+    592,
+    668
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 19,
+   "text": "She was denied",
+   "bbox": [
+    104,
+    683,
+    474,
+    721
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 19,
+   "text": "a speedy trial.",
+   "bbox": [
+    104,
+    745,
+    433,
+    792
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 19,
+   "text": "Her lawyers",
+   "bbox": [
+    252,
+    1192,
+    713,
+    1269
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 19,
+   "text": "say the judge",
+   "bbox": [
+    225,
+    1289,
+    740,
+    1367
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 20,
+   "text": "COURT CALENDAR  \u00b7  MON NOV 2, 2026",
+   "bbox": [
+    72,
+    279,
+    738,
+    311
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 20,
+   "text": "Narrated with an AI voice",
+   "bbox": [
+    72,
+    1454,
+    457,
+    1479
+   ],
+   "safe": true,
+   "words": 5
+  },
+  {
+   "state": 20,
+   "text": "WHAT EACH SIDE SAYS",
+   "bbox": [
+    98,
+    360,
+    566,
+    391
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 20,
+   "text": "Per their court briefs, via EastIdahoNews",
+   "bbox": [
+    72,
+    416,
+    735,
+    449
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 20,
+   "text": "HER LAWYERS SAY",
+   "bbox": [
+    104,
+    501,
+    469,
+    530
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 20,
+   "text": "The judge wrongly removed",
+   "bbox": [
+    104,
+    559,
+    761,
+    607
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 20,
+   "text": "the lawyer she hired.",
+   "bbox": [
+    104,
+    621,
+    592,
+    668
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 20,
+   "text": "She was denied",
+   "bbox": [
+    104,
+    683,
+    474,
+    721
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 20,
+   "text": "a speedy trial.",
+   "bbox": [
+    104,
+    745,
+    433,
+    792
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 20,
+   "text": "wrongly removed",
+   "bbox": [
+    144,
+    1192,
+    821,
+    1269
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 20,
+   "text": "the attorney",
+   "bbox": [
+    245,
+    1290,
+    720,
+    1367
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 21,
+   "text": "COURT CALENDAR  \u00b7  MON NOV 2, 2026",
+   "bbox": [
+    72,
+    279,
+    738,
+    311
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 21,
+   "text": "Narrated with an AI voice",
+   "bbox": [
+    72,
+    1454,
+    457,
+    1479
+   ],
+   "safe": true,
+   "words": 5
+  },
+  {
+   "state": 21,
+   "text": "WHAT EACH SIDE SAYS",
+   "bbox": [
+    98,
+    360,
+    566,
+    391
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 21,
+   "text": "Per their court briefs, via EastIdahoNews",
+   "bbox": [
+    72,
+    416,
+    735,
+    449
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 21,
+   "text": "HER LAWYERS SAY",
+   "bbox": [
+    104,
+    501,
+    469,
+    530
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 21,
+   "text": "The judge wrongly removed",
+   "bbox": [
+    104,
+    559,
+    761,
+    607
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 21,
+   "text": "the lawyer she hired.",
+   "bbox": [
+    104,
+    621,
+    592,
+    668
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 21,
+   "text": "She was denied",
+   "bbox": [
+    104,
+    683,
+    474,
+    721
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 21,
+   "text": "a speedy trial.",
+   "bbox": [
+    104,
+    745,
+    433,
+    792
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 21,
+   "text": "she hired,",
+   "bbox": [
+    289,
+    1192,
+    676,
+    1267
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 22,
+   "text": "COURT CALENDAR  \u00b7  MON NOV 2, 2026",
+   "bbox": [
+    72,
+    279,
+    738,
+    311
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 22,
+   "text": "Narrated with an AI voice",
+   "bbox": [
+    72,
+    1454,
+    457,
+    1479
+   ],
+   "safe": true,
+   "words": 5
+  },
+  {
+   "state": 22,
+   "text": "WHAT EACH SIDE SAYS",
+   "bbox": [
+    98,
+    360,
+    566,
+    391
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 22,
+   "text": "Per their court briefs, via EastIdahoNews",
+   "bbox": [
+    72,
+    416,
+    735,
+    449
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 22,
+   "text": "HER LAWYERS SAY",
+   "bbox": [
+    104,
+    501,
+    469,
+    530
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 22,
+   "text": "The judge wrongly removed",
+   "bbox": [
+    104,
+    559,
+    761,
+    607
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 22,
+   "text": "the lawyer she hired.",
+   "bbox": [
+    104,
+    621,
+    592,
+    668
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 22,
+   "text": "She was denied",
+   "bbox": [
+    104,
+    683,
+    474,
+    721
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 22,
+   "text": "a speedy trial.",
+   "bbox": [
+    104,
+    745,
+    433,
+    792
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 22,
+   "text": "and denied her",
+   "bbox": [
+    196,
+    1191,
+    768,
+    1253
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 22,
+   "text": "a speedy trial.",
+   "bbox": [
+    212,
+    1289,
+    752,
+    1367
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 23,
+   "text": "COURT CALENDAR  \u00b7  MON NOV 2, 2026",
+   "bbox": [
+    72,
+    279,
+    738,
+    311
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 23,
+   "text": "Narrated with an AI voice",
+   "bbox": [
+    72,
+    1454,
+    457,
+    1479
+   ],
+   "safe": true,
+   "words": 5
+  },
+  {
+   "state": 23,
+   "text": "WHAT EACH SIDE SAYS",
+   "bbox": [
+    98,
+    360,
+    566,
+    391
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 23,
+   "text": "Per their court briefs, via EastIdahoNews",
+   "bbox": [
+    72,
+    416,
+    735,
+    449
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 23,
+   "text": "HER LAWYERS SAY",
+   "bbox": [
+    104,
+    501,
+    469,
+    530
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 23,
+   "text": "The judge wrongly removed",
+   "bbox": [
+    104,
+    559,
+    761,
+    607
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 23,
+   "text": "the lawyer she hired.",
+   "bbox": [
+    104,
+    621,
+    592,
+    668
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 23,
+   "text": "She was denied",
+   "bbox": [
+    104,
+    683,
+    474,
+    721
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 23,
+   "text": "a speedy trial.",
+   "bbox": [
+    104,
+    745,
+    433,
+    792
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 23,
+   "text": "THE STATE SAYS",
+   "bbox": [
+    104,
+    867,
+    425,
+    896
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 23,
+   "text": "Her convictions should stand.",
+   "bbox": [
+    104,
+    925,
+    804,
+    963
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 23,
+   "text": "No error big enough",
+   "bbox": [
+    104,
+    987,
+    571,
+    1035
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 23,
+   "text": "to undo the verdict.",
+   "bbox": [
+    104,
+    1049,
+    562,
+    1086
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 23,
+   "text": "The State",
+   "bbox": [
+    293,
+    1191,
+    671,
+    1253
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 23,
+   "text": "asks the court",
+   "bbox": [
+    206,
+    1290,
+    759,
+    1351
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 24,
+   "text": "COURT CALENDAR  \u00b7  MON NOV 2, 2026",
+   "bbox": [
+    72,
+    279,
+    738,
+    311
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 24,
+   "text": "Narrated with an AI voice",
+   "bbox": [
+    72,
+    1454,
+    457,
+    1479
+   ],
+   "safe": true,
+   "words": 5
+  },
+  {
+   "state": 24,
+   "text": "WHAT EACH SIDE SAYS",
+   "bbox": [
+    98,
+    360,
+    566,
+    391
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 24,
+   "text": "Per their court briefs, via EastIdahoNews",
+   "bbox": [
+    72,
+    416,
+    735,
+    449
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 24,
+   "text": "HER LAWYERS SAY",
+   "bbox": [
+    104,
+    501,
+    469,
+    530
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 24,
+   "text": "The judge wrongly removed",
+   "bbox": [
+    104,
+    559,
+    761,
+    607
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 24,
+   "text": "the lawyer she hired.",
+   "bbox": [
+    104,
+    621,
+    592,
+    668
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 24,
+   "text": "She was denied",
+   "bbox": [
+    104,
+    683,
+    474,
+    721
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 24,
+   "text": "a speedy trial.",
+   "bbox": [
+    104,
+    745,
+    433,
+    792
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 24,
+   "text": "THE STATE SAYS",
+   "bbox": [
+    104,
+    867,
+    425,
+    896
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 24,
+   "text": "Her convictions should stand.",
+   "bbox": [
+    104,
+    925,
+    804,
+    963
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 24,
+   "text": "No error big enough",
+   "bbox": [
+    104,
+    987,
+    571,
+    1035
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 24,
+   "text": "to undo the verdict.",
+   "bbox": [
+    104,
+    1049,
+    562,
+    1086
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 24,
+   "text": "to keep her",
+   "bbox": [
+    272,
+    1192,
+    692,
+    1267
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 24,
+   "text": "convictions in place.",
+   "bbox": [
+    97,
+    1287,
+    867,
+    1363
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 25,
+   "text": "COURT CALENDAR  \u00b7  MON NOV 2, 2026",
+   "bbox": [
+    72,
+    279,
+    738,
+    311
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 25,
+   "text": "Narrated with an AI voice",
+   "bbox": [
+    72,
+    1454,
+    457,
+    1479
+   ],
+   "safe": true,
+   "words": 5
+  },
+  {
+   "state": 25,
+   "text": "WHAT COMES NEXT",
+   "bbox": [
+    98,
+    360,
+    505,
+    391
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 25,
+   "text": "The justices rule later,",
+   "bbox": [
+    104,
+    468,
+    767,
+    529
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 25,
+   "text": "in writing",
+   "bbox": [
+    104,
+    557,
+    388,
+    619
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 25,
+   "text": "No decision date announced",
+   "bbox": [
+    104,
+    647,
+    568,
+    674
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 25,
+   "text": "Until then,",
+   "bbox": [
+    104,
+    750,
+    414,
+    809
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 25,
+   "text": "her convictions stand",
+   "bbox": [
+    104,
+    837,
+    758,
+    886
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 25,
+   "text": "While the appeal is pending",
+   "bbox": [
+    104,
+    914,
+    553,
+    948
+   ],
+   "safe": true,
+   "words": 5
+  },
+  {
+   "state": 25,
+   "text": "The justices rule later,",
+   "bbox": [
+    99,
+    1189,
+    866,
+    1259
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 26,
+   "text": "COURT CALENDAR  \u00b7  MON NOV 2, 2026",
+   "bbox": [
+    72,
+    279,
+    738,
+    311
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 26,
+   "text": "Narrated with an AI voice",
+   "bbox": [
+    72,
+    1454,
+    457,
+    1479
+   ],
+   "safe": true,
+   "words": 5
+  },
+  {
+   "state": 26,
+   "text": "WHAT COMES NEXT",
+   "bbox": [
+    98,
+    360,
+    505,
+    391
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 26,
+   "text": "The justices rule later,",
+   "bbox": [
+    104,
+    468,
+    767,
+    529
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 26,
+   "text": "in writing",
+   "bbox": [
+    104,
+    557,
+    388,
+    619
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 26,
+   "text": "No decision date announced",
+   "bbox": [
+    104,
+    647,
+    568,
+    674
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 26,
+   "text": "Until then,",
+   "bbox": [
+    104,
+    750,
+    414,
+    809
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 26,
+   "text": "her convictions stand",
+   "bbox": [
+    104,
+    837,
+    758,
+    886
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 26,
+   "text": "While the appeal is pending",
+   "bbox": [
+    104,
+    914,
+    553,
+    948
+   ],
+   "safe": true,
+   "words": 5
+  },
+  {
+   "state": 26,
+   "text": "in writing.",
+   "bbox": [
+    285,
+    1192,
+    680,
+    1272
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 27,
+   "text": "COURT CALENDAR  \u00b7  MON NOV 2, 2026",
+   "bbox": [
+    72,
+    279,
+    738,
+    311
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 27,
+   "text": "Narrated with an AI voice",
+   "bbox": [
+    72,
+    1454,
+    457,
+    1479
+   ],
+   "safe": true,
+   "words": 5
+  },
+  {
+   "state": 27,
+   "text": "WHAT COMES NEXT",
+   "bbox": [
+    98,
+    360,
+    505,
+    391
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 27,
+   "text": "The justices rule later,",
+   "bbox": [
+    104,
+    468,
+    767,
+    529
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 27,
+   "text": "in writing",
+   "bbox": [
+    104,
+    557,
+    388,
+    619
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 27,
+   "text": "No decision date announced",
+   "bbox": [
+    104,
+    647,
+    568,
+    674
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 27,
+   "text": "Until then,",
+   "bbox": [
+    104,
+    750,
+    414,
+    809
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 27,
+   "text": "her convictions stand",
+   "bbox": [
+    104,
+    837,
+    758,
+    886
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 27,
+   "text": "While the appeal is pending",
+   "bbox": [
+    104,
+    914,
+    553,
+    948
+   ],
+   "safe": true,
+   "words": 5
+  },
+  {
+   "state": 27,
+   "text": "Until then,",
+   "bbox": [
+    279,
+    1192,
+    686,
+    1267
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 28,
+   "text": "COURT CALENDAR  \u00b7  MON NOV 2, 2026",
+   "bbox": [
+    72,
+    279,
+    738,
+    311
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 28,
+   "text": "Narrated with an AI voice",
+   "bbox": [
+    72,
+    1454,
+    457,
+    1479
+   ],
+   "safe": true,
+   "words": 5
+  },
+  {
+   "state": 28,
+   "text": "WHAT COMES NEXT",
+   "bbox": [
+    98,
+    360,
+    505,
+    391
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 28,
+   "text": "The justices rule later,",
+   "bbox": [
+    104,
+    468,
+    767,
+    529
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 28,
+   "text": "in writing",
+   "bbox": [
+    104,
+    557,
+    388,
+    619
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 28,
+   "text": "No decision date announced",
+   "bbox": [
+    104,
+    647,
+    568,
+    674
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 28,
+   "text": "Until then,",
+   "bbox": [
+    104,
+    750,
+    414,
+    809
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 28,
+   "text": "her convictions stand",
+   "bbox": [
+    104,
+    837,
+    758,
+    886
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 28,
+   "text": "While the appeal is pending",
+   "bbox": [
+    104,
+    914,
+    553,
+    948
+   ],
+   "safe": true,
+   "words": 5
+  },
+  {
+   "state": 28,
+   "text": "her convictions stand.",
+   "bbox": [
+    105,
+    1189,
+    859,
+    1243
+   ],
+   "safe": true,
+   "words": 3
+  },
+  {
+   "state": 29,
+   "text": "COURT CALENDAR  \u00b7  MON NOV 2, 2026",
+   "bbox": [
+    72,
+    279,
+    738,
+    311
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 29,
+   "text": "Narrated with an AI voice",
+   "bbox": [
+    72,
+    1454,
+    457,
+    1479
+   ],
+   "safe": true,
+   "words": 5
+  },
+  {
+   "state": 29,
+   "text": "Court dates and sources:",
+   "bbox": [
+    72,
+    656,
+    898,
+    707
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 29,
+   "text": "cassiancreed.com",
+   "bbox": [
+    72,
+    753,
+    895,
+    822
+   ],
+   "safe": true,
+   "words": 1
+  },
+  {
+   "state": 29,
+   "text": "/court-calendar",
+   "bbox": [
+    71,
+    857,
+    789,
+    938
+   ],
+   "safe": true,
+   "words": 1
+  },
+  {
+   "state": 29,
+   "text": "vallow-appeal-short-v1 \u00b7 Nov 2, 2026",
+   "bbox": [
+    72,
+    990,
+    607,
+    1018
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 29,
+   "text": "Court dates",
+   "bbox": [
+    253,
+    1191,
+    712,
+    1253
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 29,
+   "text": "and sources:",
+   "bbox": [
+    235,
+    1290,
+    730,
+    1351
+   ],
+   "safe": true,
+   "words": 2
+  },
+  {
+   "state": 30,
+   "text": "COURT CALENDAR  \u00b7  MON NOV 2, 2026",
+   "bbox": [
+    72,
+    279,
+    738,
+    311
+   ],
+   "safe": true,
+   "words": 6
+  },
+  {
+   "state": 30,
+   "text": "Narrated with an AI voice",
+   "bbox": [
+    72,
+    1454,
+    457,
+    1479
+   ],
+   "safe": true,
+   "words": 5
+  },
+  {
+   "state": 30,
+   "text": "Court dates and sources:",
+   "bbox": [
+    72,
+    656,
+    898,
+    707
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 30,
+   "text": "cassiancreed.com",
+   "bbox": [
+    72,
+    753,
+    895,
+    822
+   ],
+   "safe": true,
+   "words": 1
+  },
+  {
+   "state": 30,
+   "text": "/court-calendar",
+   "bbox": [
+    71,
+    857,
+    789,
+    938
+   ],
+   "safe": true,
+   "words": 1
+  },
+  {
+   "state": 30,
+   "text": "vallow-appeal-short-v1 \u00b7 Nov 2, 2026",
+   "bbox": [
+    72,
+    990,
+    607,
+    1018
+   ],
+   "safe": true,
+   "words": 4
+  },
+  {
+   "state": 30,
+   "text": "cassiancreed.com/court-calendar",
+   "bbox": [
+    109,
+    1181,
+    855,
+    1222
+   ],
+   "safe": true,
+   "words": 1
+  }
+ ],
+ "all_safe": true,
+ "max_words_per_line": 6,
+ "lines_over_7_words": []
+}
