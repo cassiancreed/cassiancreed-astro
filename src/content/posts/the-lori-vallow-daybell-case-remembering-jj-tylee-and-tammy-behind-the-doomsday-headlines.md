@@ -2,7 +2,7 @@
 title: "The Lori Vallow Daybell Case: Remembering JJ, Tylee, and Tammy Behind the \"Doomsday\" Headlines"
 description: "Lori Vallow Daybell was convicted of murdering her children JJ and Tylee and conspiring to kill Tammy Daybell. Their story first — and where the 2026 appeal stands."
 pubDate: 2026-05-15
-updatedDate: 2026-10-31
+updatedDate: 2026-11-01
 tag: "Case Files"
 featured: false
 victim: "JJ Vallow (7), Tylee Ryan (16), Tammy Daybell (49)"
@@ -12,7 +12,7 @@ jurisdiction: "Idaho and Arizona state courts"
 status: "Convicted (2023 and 2025); multiple life sentences without parole; Idaho appeal pending; Idaho Supreme Court oral argument set for Nov. 2, 2026"
 ---
 
-*Status as of Oct. 31, 2026 (Pacific): convicted; Idaho appeal pending; oral argument set for Nov. 2, 2026 ([CBS2 News, Sept. 2, 2026](https://idahonews.com/news/local/idaho-supreme-court-to-hear-lori-vallow-daybell-appeal-arguments)). An appeal is not a reversal. See the [Court Calendar](/court-calendar/#vallow-idaho-appeal-argument) for the latest checked status.*
+*Status as of Nov. 1, 2026 (Pacific): convicted; Idaho appeal pending; oral argument set for Nov. 2, 2026, 11:15 a.m. Mountain Time (10:15 a.m. Pacific) ([Idaho Supreme Court calendar](https://isc.idaho.gov/cases-opinions/court-calendar); [EastIdahoNews, Sept. 1, 2026](https://www.eastidahonews.com/2026/09/idaho-supreme-court-sets-date-to-hear-appealate-oral-arguments-in-lori-vallow-daybell-case/)). An appeal is not a reversal. See the [Court Calendar](/court-calendar/#vallow-idaho-appeal-argument) for the latest checked status.*
 
 Lori Vallow Daybell was convicted in Idaho in May 2023 of murdering her two children, 7-year-old Joshua "JJ" Vallow and 16-year-old Tylee Ryan, and of conspiring to kill Tammy Daybell, the wife of the man she would marry. She is serving three life sentences without parole in Idaho, plus two additional life sentences imposed in Arizona in 2025 for separate murder conspiracies. As of May 2026, her Idaho convictions are under appeal at the Idaho Supreme Court, but the verdicts and her imprisonment stand. The press calls her the "Doomsday Mom." That label sells, but it pulls attention toward the killer and away from the people who mattered: two children and a schoolteacher who deserved long, ordinary lives. This is their story first.
 
@@ -32,4 +32,28 @@ In May 2023, an Idaho jury convicted Lori of first-degree murder in the deaths o
 
 ## The Appeals, and What Remains
 
-Lori Vallow Daybell is appealing her Idaho convictions, raising claims that the trial court wrongly disqualified her chosen attorney, that her rights were affected during a period when her competency was in question, that Arizona-related evidence was improperly admitted, and that her speedy-trial right was violated. The State of Idaho has filed a lengthy response disputing those claims. As of Oct. 31, 2026, the appeal is pending before the Idaho Supreme Court, which has set oral argument for Nov. 2, 2026 ([CBS2 News, Sept. 2, 2026](https://idahonews.com/news/local/idaho-supreme-court-to-hear-lori-vallow-daybell-appeal-arguments)). An appeal is not a reversal — the convictions are intact, and outcomes are uncertain. Whatever the courts decide, nothing in those filings will return what was taken. JJ should be a young man now. Tylee should be deep into her twenties. Tammy should be watching her children grow up. The only legacy worth protecting is theirs: a little brother who loved trains, a big sister who loved him back, and a mother and teacher who simply wanted to live her life. They are the center of this story. They always were.
+Lori Vallow Daybell is appealing her Idaho convictions, raising claims that the trial court wrongly disqualified her chosen attorney, that her rights were affected during a period when her competency was in question, that Arizona-related evidence was improperly admitted, and that her speedy-trial right was violated. The State of Idaho has filed a lengthy response disputing those claims. As of Nov. 1, 2026, the appeal is pending before the Idaho Supreme Court, which has set oral argument for Nov. 2, 2026 ([CBS2 News, Sept. 2, 2026](https://idahonews.com/news/local/idaho-supreme-court-to-hear-lori-vallow-daybell-appeal-arguments)). An appeal is not a reversal — the convictions are intact, and outcomes are uncertain. Whatever the courts decide, nothing in those filings will return what was taken. JJ should be a young man now. Tylee should be deep into her twenties. Tammy should be watching her children grow up. The only legacy worth protecting is theirs: a little brother who loved trains, a big sister who loved him back, and a mother and teacher who simply wanted to live her life. They are the center of this story. They always were.
+
+## Questions people ask about the appeal
+
+### When is Lori Vallow Daybell's appeal hearing?
+
+Monday, Nov. 2, 2026, at 11:15 a.m. Mountain Time (10:15 a.m. Pacific), at the Idaho Supreme Court in Boise. The court's calendar lists it as State v. Vallow, Docket 51091 ([Idaho Supreme Court calendar](https://isc.idaho.gov/cases-opinions/court-calendar); [EastIdahoNews, Sept. 1, 2026](https://www.eastidahonews.com/2026/09/idaho-supreme-court-sets-date-to-hear-appealate-oral-arguments-in-lori-vallow-daybell-case/)). Court dates can change. Check our [Court Calendar](/court-calendar/#vallow-idaho-appeal-argument).
+
+### Is the appeal hearing a new trial?
+
+No. Each side's lawyers get 30 minutes to speak to the justices. The justices have read the written arguments and may ask questions ([EastIdahoNews, Sept. 1, 2026](https://www.eastidahonews.com/2026/09/idaho-supreme-court-sets-date-to-hear-appealate-oral-arguments-in-lori-vallow-daybell-case/)).
+
+### What is Lori Vallow Daybell appealing?
+
+Her lawyers argue that the trial judge wrongly removed her chosen lawyer. They say she was left without a lawyer at key hearings, and that important hearings were held without her while she was deemed not competent to stand trial. They challenge how evidence from her Arizona cases was used. And they say her speedy-trial right was violated. She asks the court to reverse the convictions and dismiss the charges, or to reverse them and order a new trial ([EastIdahoNews, Sept. 1, 2026](https://www.eastidahonews.com/2026/09/idaho-supreme-court-sets-date-to-hear-appealate-oral-arguments-in-lori-vallow-daybell-case/); [CBS2 News, Sept. 2, 2026](https://idahonews.com/news/local/idaho-supreme-court-to-hear-lori-vallow-daybell-appeal-arguments)). The State of Idaho says there were no reversible errors and that her lawyer was properly removed because of conflicts from his earlier work for Chad Daybell ([EastIdahoNews, Sept. 1, 2026](https://www.eastidahonews.com/2026/09/idaho-supreme-court-sets-date-to-hear-appealate-oral-arguments-in-lori-vallow-daybell-case/)).
+
+### Can the public watch the Vallow appeal hearing?
+
+EastIdahoNews reported that the Idaho Supreme Court provides a live video feed and that Courtroom Insider will livestream it. The same report says Lori Vallow Daybell is not expected to attend ([EastIdahoNews, Sept. 1, 2026](https://www.eastidahonews.com/2026/09/idaho-supreme-court-sets-date-to-hear-appealate-oral-arguments-in-lori-vallow-daybell-case/)).
+
+### When will the Idaho Supreme Court decide?
+
+No ruling date has been announced. Neither report we checked says when the court will rule. Her Idaho convictions stand while the appeal is pending. An appeal is not a reversal.
+
+Cover this case? Our [court case kits for creators](/creators/).

@@ -2,7 +2,7 @@
 title: "Lindsay Clancy trial tracker: Mistrial, pending charges and next hearing"
 description: "Lindsay Clancy’s unresolved murder charges after a mistrial, current hearing coverage, and the Massachusetts criminal-responsibility standard."
 pubDate: 2026-07-15
-updatedDate: 2026-10-31
+updatedDate: 2026-11-01
 tag: Case Files
 featured: false
 victim: "Three children, ages 5, 3 and 8 months"
@@ -141,6 +141,22 @@ This ledger is for editors and readers who encounter assertions circulating arou
 
 No verdict was returned. Judge Sullivan declared a mistrial September 4 after the jury could not agree. No conviction or acquittal was entered, and Clancy remains presumed innocent.
 
+### Can Lindsay Clancy be tried again after the mistrial?
+
+That has not been decided. A mistrial means the trial ended without a verdict. Clancy's lawyers say a second trial would be double jeopardy, the rule against being tried twice for the same crime. Prosecutors say double jeopardy does not apply because the judge properly declared the mistrial on Sept. 4 ([NBC10 Boston, Oct. 29, 2026](https://www.nbcboston.com/news/local/lindsay-clancy-case-update-new-motions/4039723/)). The judge has not ruled on the motion to dismiss. Plymouth County District Attorney Timothy Cruz has not announced whether he will retry her ([Boston Globe, Oct. 29, 2026](https://www.bostonglobe.com/2026/10/29/metro/lindsay-clancy-dismiss-motion-juror/); [NBC10 Boston, Oct. 29, 2026](https://www.nbcboston.com/news/local/lindsay-clancy-case-update-new-motions/4039723/)). Clancy remains charged, has pleaded not guilty and is presumed innocent.
+
+### Is there a date for a second Lindsay Clancy trial?
+
+No. A defense filing noted that there is no trial date ([NBC10 Boston, Oct. 29, 2026](https://www.nbcboston.com/news/local/lindsay-clancy-case-update-new-motions/4039723/)). No retrial date has been reported as of Nov. 1, 2026.
+
+### When is Lindsay Clancy's next hearing?
+
+Monday, Nov. 2, 2026, in Plymouth Superior Court before Judge William Sullivan. The Boston Globe reported on Oct. 29 that it is set for Monday morning (Eastern Time). The exact clock time is not publicly verified ([Boston Globe, Oct. 29, 2026](https://www.bostonglobe.com/2026/10/29/metro/lindsay-clancy-dismiss-motion-juror/)). Check our [Court Calendar](/court-calendar/#clancy-november-motions) for the latest checked status.
+
+### What will the Nov. 2 hearing decide?
+
+The main matter is the defense motion to dismiss all three murder charges on double-jeopardy grounds. In a written filing, prosecutors say the judge took every possible step to address the foreperson's notes while avoiding pressure on the dissenting juror ([Boston Globe, Oct. 29, 2026](https://www.bostonglobe.com/2026/10/29/metro/lindsay-clancy-dismiss-motion-juror/)). The Globe also reported that the prosecution's request to limit media statements in the case is among the motions ([Boston Globe, Oct. 29, 2026](https://www.bostonglobe.com/2026/10/29/metro/lindsay-clancy-dismiss-motion-juror/)). The defense opposes it ([NBC10 Boston, Oct. 29, 2026](https://www.nbcboston.com/news/local/lindsay-clancy-case-update-new-motions/4039723/)). A judge can rule at the hearing or later. We will not predict the outcome.
+
 ### What charges does Lindsay Clancy face?
 
 She faces three counts of first-degree murder and has pleaded not guilty. Prosecutors' July 9 *nolle prosequi* removed three additional method-specific counts as legally redundant; it did not dispose of the murder charges.
@@ -173,9 +189,15 @@ The judge allowed the recording for the trial that ended in a mistrial. This tra
 
 A hearing is set for November 2, 2026, before Judge Sullivan on the defense motion to dismiss on double-jeopardy grounds and other pending matters. On October 21 the judge denied a separate defense request for an evidentiary hearing about the holdout juror. As of October 31, prosecutors had not formally said whether they will retry the case. A motions hearing is not a retrial, and the clock time is not publicly verified.
 
+Cover this case? Our [court case kits for creators](/creators/).
+
 ## Update log
 
 These dated entries record what was known at each cutoff; earlier trial-stage descriptions are historical.
+
+### November 1, 2026 — Questions added; status rechecked
+
+**CHECKED:** The newest reports we found are dated Oct. 29, 2026 (Boston Globe; NBC10 Boston). They still show a hearing on Nov. 2, 2026 in Plymouth Superior Court. No retrial decision and no retrial date have been reported. We added reader questions on retrial, double jeopardy and the next hearing. The clock time remains unverified.
 
 ### October 31, 2026 — Holdout-juror ruling and prosecution response
 
@@ -251,6 +273,8 @@ Court schedules and evidentiary plans can change. This tracker distinguishes wha
 - [Double-jeopardy motion set for November 2 — Boston Globe, October 21, 2026](https://www.bostonglobe.com/2026/10/21/metro/lindsay-clancy-holdout-juror-double-jeopardy/)
 - [Judge denies evidentiary hearing on holdout juror — WBUR, October 22, 2026](https://www.wbur.org/news/2026/10/22/judge-sullivan-lindsay-clancy-lone-juror-defense-denial)
 - [Judge denies evidentiary hearing; be ready to discuss retrial — Boston.com, October 22, 2026](https://www.boston.com/news/crime/2026/10/22/lindsay-clancy-judge-denies-evidentiary-hearing-holdout-juror/)
+- [Hearing set for Monday; motion to dismiss and prosecution request to limit media statements — Boston Globe, October 29, 2026](https://www.bostonglobe.com/2026/10/29/metro/lindsay-clancy-dismiss-motion-juror/)
+- [New motions; prosecutors say double jeopardy does not apply; no retrial decision or trial date — NBC10 Boston, October 29, 2026](https://www.nbcboston.com/news/local/lindsay-clancy-case-update-new-motions/4039723/)
 - [Prosecutors oppose motion to dismiss — CBS Boston, October 28, 2026](https://www.cbsnews.com/boston/news/lindsay-clancy-retrial-prosecution-motion/)
 - [Double-jeopardy motion to dismiss and holdout-juror inquiry request — Boston Globe, October 8, 2026](https://www.bostonglobe.com/2026/10/08/metro/lindsay-clancy-hearing-dismissal-holdout-juror/)
 - [October 1 ruling — Associated Press via Boston.com](https://www.boston.com/news/crime/2026/10/01/judge-denies-defense-motion-asking-lindsay-clancy-be-found-not-guilty-due-to-a-lack-of-evidence/)
@@ -292,7 +316,7 @@ Court schedules and evidentiary plans can change. This tracker distinguishes wha
   "headline": "Lindsay Clancy trial tracker: Mistrial, pending charges and next hearing",
   "description": "Lindsay Clancy’s unresolved murder charges after a mistrial, current hearing coverage, and the Massachusetts criminal-responsibility standard.",
   "datePublished": "2026-07-15",
-  "dateModified": "2026-10-19",
+  "dateModified": "2026-11-01",
   "author": { "@type": "Person", "name": "Cassian Creed", "url": "https://cassiancreed.com/about/" },
   "publisher": { "@type": "Organization", "name": "Neural Edge Publishing", "url": "https://cassiancreed.com/" },
   "articleSection": "Crime and Courts",
