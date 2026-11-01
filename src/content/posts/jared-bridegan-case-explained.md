@@ -31,7 +31,7 @@ This case is about Jared first. He was a dad and a husband.
 
 There are three people in this case. Each one is at a different stage.
 
-| Person | Role in the case | Status as of Oct. 19, 2026 |
+| Person | Role in the case | Status as of Oct. 31, 2026 |
 |---|---|---|
 | Mario Fernandez Saldana | Convicted | Found guilty Aug. 26, 2026. Not yet sentenced. A new-trial motion and an appeal are reported. |
 | Shanna Gardner | Charged | Pleaded not guilty. Presumed innocent. Trial set for May 2027. |
