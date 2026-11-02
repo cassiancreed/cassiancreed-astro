@@ -352,14 +352,14 @@ export const CALENDAR_EXPLAINER_CASES = [
     "paid": []
   },
   {
-    "key": "colt-gray",
+    "key": "apalachee-plea-hearing",
     "entryIds": [
       "completed-1"
     ],
     "free": [
       {
-        "url": "/post/colt-gray-hearing-what-a-non-negotiated-plea-means/",
-        "text": "Colt Gray Hearing: What a Non-Negotiated Plea Means"
+        "url": "/post/apalachee-plea-hearing-what-a-non-negotiated-plea-means/",
+        "text": "Apalachee Plea Hearing: What a Non-Negotiated Plea Means"
       }
     ],
     "paid": []
@@ -706,7 +706,7 @@ const PUBLISHED_POSTS = new Set([
   "/post/chevy-chase-cold-case-dna/",
   "/post/does-criminal-profiling-actually-work/",
   "/post/etan-patz-supreme-court-2026-conviction-reinstated/",
-  "/post/colt-gray-hearing-what-a-non-negotiated-plea-means/",
+  "/post/apalachee-plea-hearing-what-a-non-negotiated-plea-means/",
   "/post/diddy-s-verdict-explained-what-sean-combs-was-convicted-of-and-what-the-jury-rejected/",
   "/post/how-washington-courts-work-hernandez-melgar/",
   "/post/how-a-family-tree-catches-killers/",

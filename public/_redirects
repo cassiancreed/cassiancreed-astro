@@ -36,3 +36,7 @@ https://www.cassiancreed.com/*   https://cassiancreed.com/:splat   301!
 # Minor Shield fix (Doctrine v2.7, 2026-11-02): the old Round Lake Beach case-page address carried a child's name; the new address is role-based
 /baby-jacob-round-lake-beach-genetic-genealogy/   /round-lake-beach-newborn-genetic-genealogy/   301!
 /baby-jacob-round-lake-beach-genetic-genealogy    /round-lake-beach-newborn-genetic-genealogy/   301!
+
+# Minor Shield fix (Doctrine v2.7, 2026-11-02): the old Apalachee plea-hearing address carried the name of a defendant who was 14 when charged; the new address is role-based
+/post/colt-gray-hearing-what-a-non-negotiated-plea-means/   /post/apalachee-plea-hearing-what-a-non-negotiated-plea-means/   301!
+/post/colt-gray-hearing-what-a-non-negotiated-plea-means    /post/apalachee-plea-hearing-what-a-non-negotiated-plea-means/   301!
