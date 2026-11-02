@@ -57,6 +57,6 @@ Before the hearing, EastIdahoNews reported that the Idaho Supreme Court provides
 
 ### When will the Idaho Supreme Court decide?
 
-The court heard oral argument on Nov. 2, 2026, and has not ruled. No ruling date has been announced, and none of the reports we checked gives one. Her Idaho convictions stand while the appeal is pending. An appeal is not a reversal.
+The court heard oral argument on Nov. 2, 2026, and has not ruled. No ruling date has been announced, and none of the reports we checked gives one. Her Idaho convictions stand while the appeal is pending. An appeal is not a reversal. This is general information, not legal advice.
 
 Cover this case? Our [court case kits for creators](/creators/).
