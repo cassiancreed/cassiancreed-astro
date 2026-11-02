@@ -85,9 +85,6 @@ const completed = rankByTrend([
   ...calendar.completed,
   ...international.concluded.map((entry) => toPassive(entry, 'completed')),
 ]);
-const completedNextDateById = new Map([
-  ['salazar-clinkunbroomer-trial', calendar.completed.find((entry) => entry.id === 'salazar-clinkunbroomer-trial')?.nextNote],
-]);
 const latestReview = [calendar.metadata.last_updated, international.metadata.last_updated].sort().at(-1);
 const LAST_UPDATED = formatCalendarDate(latestReview);
 const PAGE_TITLE = calendar.metadata.page_title;
@@ -121,16 +118,17 @@ const nextDates = rankCalendarEntries(byGroup('next'));
 const inCourtNow = nextDates.filter((e) => e.ongoing === true);
 const upcomingDates = nextDates.filter((e) => e.ongoing !== true);
 
-// A completed entry is one step in a case. If the same case still has a court
-// date on this page, the case is not over: the badge must not say "Concluded",
-// and the next-date line shows that real date. A date that has passed is never
-// shown as the next one.
-const sameCaseAhead = (e) => nextDates.filter((next) => next.case === e.case);
-const completedBadge = (e) => completedLabel(e, nextDates, 'Concluded');
-const nextDateAhead = (e) => sameCaseAhead(e)
-  .filter((next) => next.dateISO >= BUILD_DATE)
-  .sort((a, b) => a.dateISO.localeCompare(b.dateISO))[0]?.dateText;
-const completedNextDate = (e) => completedNextDateById.get(e.id) || nextDateAhead(e) || NO_DATE;
+// A completed entry is one step in a case. Its badge comes from the shared rule
+// in calendar-completed-labels.mjs. Its next-date line shows the same case's
+// next dated entry; a date that has passed is never shown as the next one.
+const openCaseEntries = [...nextDates, ...unconfirmed, ...appeals];
+const completedBadge = (e) => completedLabel(e, openCaseEntries, 'Concluded');
+// These civil trust rows are a separate matter from the criminal case of the
+// same name, so they never borrow the criminal case's next date.
+const NO_SHARED_NEXT_DATE = new Set(['reiner-probate', 'reiner-trust-access-oct23']);
+const completedNextDate = (e) => (NO_SHARED_NEXT_DATE.has(e.id) ? null : nextDates
+  .filter((next) => next.case === e.case && next.dateISO >= BUILD_DATE)
+  .sort((a, b) => a.dateISO.localeCompare(b.dateISO))[0]?.dateText) || NO_DATE;
 
 const faqRows = [
   ...entries.map((row) => ({ ...row, section: 'scheduled' })),
@@ -557,7 +555,7 @@ const jsonld = {
             <tr>
               <td class="t-case">{e.case}</td>
               <td>{completedBadge(e)}</td>
-              <td class="t-none">{nextDateAhead(e) || NO_DATE}</td>
+              <td class="t-none">{completedNextDate(e)}</td>
               <td>{e.where}</td>
               <td><a href={`#${e.id}`}>Status and source &rarr;</a><div class="calendar-resource-list" data-calendar-list-entry={e.id}>{calendarLinksFor(e).map((link) => <CalendarExplainerLink link={link} />)}</div></td>
             </tr>

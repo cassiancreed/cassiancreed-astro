@@ -58,6 +58,7 @@ const CALENDAR_WORD_HASHES=new Set([
   'b42878b772050402f45fbf662c6660df8f97c23677ebbf9dcdc8e54b3ca6d007', // Mukdahan (Thailand) case victim, first name
   'e804ad19613d5deee5335d15fbcd9eba69d41c829f48575966217213c86ebe85', // Mukdahan (Thailand) case victim, family name
   'b1f57dc257db82155f8378e9a2099e434ed4b59c42e9e3453b9d04075f2f9d81', // Apalachee shooting student victim, family name
+  'cfcd47a89a49b999d075caba75f776190b0e35805340ae2a5bef2ceb0f89e6a0', // East Baton Rouge Parish investigation victim (15), family name
 ]);
 const CALENDAR_PAIR_HASHES=new Set([
   '0aa09f4887d655ee0425c0371adfad190d3128d07585952ff87b2f0f8d21496f', // Burke case victim, family names
@@ -67,6 +68,7 @@ const CALENDAR_PAIR_HASHES=new Set([
   '868c3396c2ea352fdd7917327c7a186a65922c089081b2026af0193fcedcad5c', // Karmelo Anthony case victim (17)
   'ac4e8d3be7aff3adb9f7b9ca340468b46bcb17d25860b1f56942b9e3a413188d', // Brantham (Suffolk) coronial case child
   '1b1e3f1122c3188fc7068cfc0eabac30ac70e73c3df36c786f88a5f0bfa02371', // Apalachee shooting student victim
+  'bb70416bf82131c672b41b711d674e9ec94e931934981b5306cd1562dafc2cc6', // Anoka County case (defendant Jordan Collins Sr.) teen victim
 ]);
 const CALENDAR_PAGES=[
   'dist/court-calendar/index.html',
