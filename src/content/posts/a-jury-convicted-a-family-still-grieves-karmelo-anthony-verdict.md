@@ -13,7 +13,7 @@ status: "Convicted of murder and sentenced to 35 years June 9, 2026; notice of a
 
 *Updated Wednesday, October 21, 2026: An earlier version said an appeal was available. Karmelo Anthony's lawyers filed a notice of appeal on June 10, 2026. On August 22, 2026, retired Judge Michael Chitty denied his motion for a new trial. The murder conviction and 35-year sentence stand while the appeal is pending. Details and sources are in the appeals section below.*
 
-Austin Metcalf was 17 years old. A junior at Memorial High School in Frisco, Texas. The MVP linebacker on his football team. A twin, with a brother named Hunter who was standing right next to him when it happened.
+Austin Metcalf was 17 years old. A junior at Memorial High School in Frisco, Texas. The MVP linebacker on his football team. A twin, with a brother who was standing right next to him when it happened.
 
 On April 2, 2025, Austin went to a high school track meet at David Kuykendall Stadium. He did not come home.
 
@@ -29,7 +29,7 @@ The incident took place at approximately 10:00 a.m. during an 11-5A district cha
 
 According to the police report and trial testimony, Anthony entered the Memorial tent. Austin told him to leave. Anthony reached into his bag and said, "Touch me and see what happens." Austin made physical contact — he pushed Anthony. Anthony pulled a pocket knife and stabbed Austin once in the chest, then ran from the stadium. Police apprehended Anthony within the stadium within minutes.
 
-Austin Metcalf died from that single stab wound. His twin brother Hunter was present. He tried to help.
+Austin Metcalf died from that single stab wound. His twin brother was present. He tried to help.
 
 On arrest, Anthony reportedly told responding officers: "I'm not alleged, I did it" — and asked whether the situation could be considered self-defense and whether Metcalf was going to be okay.
 
@@ -49,7 +49,7 @@ The prosecution called more than 20 witnesses across five days, presenting the p
 
 Assistant District Attorney Bill Wirskye addressed the jury plainly in his closing: "This is not self-defense, folks. It's murder." The prosecution's theory was that Anthony provoked the confrontation — that the verbal threat and the reach into the bag came before any physical contact from Austin, and that a shove does not justify a knife. "You do not get to meet a shove with a stab," Wirskye told the jury, "especially if you provoke the shove."
 
-The defense called its own witnesses and presented a different frame. Defense attorney Mike Howard argued that Anthony, described as 5 feet 8 inches and approximately 130 pounds, faced a confrontation involving Austin and Hunter Metcalf — both described as approximately 6 feet 1 inch and around 215 pounds. Howard told the jury that his client made a split-second decision out of genuine fear after the first physical contact was made by Austin. A former teammate testified that Anthony appeared distraught immediately after the incident.
+The defense called its own witnesses and presented a different frame. Defense attorney Mike Howard argued that Anthony, described as 5 feet 8 inches and approximately 130 pounds, faced a confrontation involving Austin and his twin brother — both described as approximately 6 feet 1 inch and around 215 pounds. Howard told the jury that his client made a split-second decision out of genuine fear after the first physical contact was made by Austin. A former teammate testified that Anthony appeared distraught immediately after the incident.
 
 Anthony chose not to testify. Under the Fifth Amendment, he had no obligation to do so, and the jury was instructed that no inference could be drawn from that choice.
 
@@ -99,7 +99,7 @@ See every date we track on our [Court Calendar](/court-calendar/) (as of October
 
 He was a football MVP. He had a 4.0 GPA. He went to a track meet on a Wednesday morning in April, and he never made it to the finish line.
 
-His twin brother Hunter was there when it happened. He stayed with Austin after the stabbing. That detail is in the record, and it belongs there.
+His twin brother was there when it happened. He stayed with Austin after the stabbing. That detail is in the record, and it belongs there.
 
 A jury of twelve people listened to every piece of evidence in this case for more than a week. They heard from more than twenty witnesses. They saw the video. They came back with a verdict the same day deliberations began.
 

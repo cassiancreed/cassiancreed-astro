@@ -67,8 +67,15 @@ const JUVENILE_UNDER_16_PAIR_HASHES=new Set([
   '51c2557a6c8f30a6f5bc1303488423bfe4413fbd4a593d1faf2118a23736cdca', // Chippewa County homicide case: defendant charged at 14, first name and first family name
   'd25eea619d295c8844a9481be56491c0947eaee43aa358fa700338ddae2e60f3', // Chippewa County homicide case: defendant charged at 14, the two family names
 ]);
+// A living child is never named. First and family name together are checked on
+// every built page (text included) and in the spreadsheets. See the page-scoped
+// first-name check further down.
+const LIVING_CHILD_PAIR_HASHES=new Set([
+  '760f737bac965241cb4049fab5f028097e6a316534d039a2cf95042ef94ddd19', // Frisco (Texas) track-meet case: the victim's living twin brother, first and family name
+]);
 const CALENDAR_PAIR_HASHES=new Set([
   ...JUVENILE_UNDER_16_PAIR_HASHES,
+  ...LIVING_CHILD_PAIR_HASHES,
   '0aa09f4887d655ee0425c0371adfad190d3128d07585952ff87b2f0f8d21496f', // Los Angeles murder case rows: victim (14), family names
   '1a1c6e7377be6efed9aceac1e24a4eb92d244d58df264c5d28b9141664d1dc13', // Chippewa County case victim
   '36376b8d6cbf6d302ac5cce63811ec62d93efe66e28c08c8462a7f9a6650f103', // Saratoga Springs case child victim
@@ -122,6 +129,17 @@ const ADDRESS_FIRST_NAME_HASHES=new Set([
   'c35d6aaf3b3885dfc9f36cddf48a65e93a919e13165fbbcfc0f9de5636279559', // Round Lake Beach (Illinois) newborn case: first name in the retired page address
   'cf3a3bbe331c3950d16a8e9917c5bb8340e7c0ef917da25d4a96f92d074bce05', // Brantham (Suffolk) coronial row: first name in the retired row ID
   'af4417c67db4242eba59efa05eee07571b2f1abe6658b5994f3b02d2ebe7a98c', // Anoka County trial-watch row: first name in the retired row ID
+  'e9a63a4eb15738ae85cd416221c8fcc4ccc0018fac91335b42eaa016c76e87f9', // Frisco (Texas) track-meet case: the victim's living twin brother, first name (also checked in that post's text, below)
+]);
+// The living twin's first name alone is also checked in the article text of the
+// Frisco post. It is not checked in every article: the same first name is an
+// ordinary name for adults in other cases. The page is picked by the hash of its
+// path (lowercase, no trailing slash), like the retired addresses below.
+const LIVING_CHILD_FIRST_NAME_HASHES=new Set([
+  'e9a63a4eb15738ae85cd416221c8fcc4ccc0018fac91335b42eaa016c76e87f9', // Frisco (Texas) track-meet case: the victim's living twin brother, first name
+]);
+const LIVING_CHILD_TEXT_PAGE_HASHES=new Set([
+  '5a226f7662f6926847b47a534d2aa1e00786c17d115dde37747d2a44e6620e3c', // Frisco (Texas) track-meet verdict post
 ]);
 // OWNER DECISION PENDING (public-safety alert): /today/ and /missing-persons/
 // still show the name of one missing child from the missing-persons list. The
@@ -243,6 +261,31 @@ test('juveniles charged under 16 are not named anywhere on the built site',()=>{
     const text=ownText(readFileSync(path,'utf8'));
     assert.deepEqual(protectedNames(text,{words:new Set(),pairs:JUVENILE_UNDER_16_PAIR_HASHES}),[],path+' names a juvenile who was charged under 16');
   }
+});
+// Names of a living child in article text. The first and family name together are
+// banned on every page. The first name alone is banned on the pages picked by
+// pagePath hash only (see LIVING_CHILD_TEXT_PAGE_HASHES).
+const pageKey=path=>path.replace(/\\/g,'/').replace(/^dist/,'').replace(/\/index\.html$/,'').toLowerCase();
+function livingChildNames(path,text,{pairs=LIVING_CHILD_PAIR_HASHES,names=LIVING_CHILD_FIRST_NAME_HASHES,pages=LIVING_CHILD_TEXT_PAGE_HASHES}={}) {
+  const onNamedPage=pages.has(hash(pageKey(path)));
+  return protectedNames(ownText(text),{words:onNamedPage?names:new Set(),pairs});
+}
+test('the living-child check finds a name where it must and leaves other pages alone',()=>{
+  const fixture={ pairs:new Set([hash('zorblax fixture')]),names:new Set([hash('zorblax')]),pages:new Set([hash('/post/fixture-page')]) };
+  const page='dist/post/fixture-page/index.html';
+  const other='dist/post/another-page/index.html';
+  assert.equal(livingChildNames(page,'<p>His brother Zorblax was there.</p>',fixture).length,1,'first name on the named page');
+  assert.equal(livingChildNames(other,'<p>The attorney Zorblax spoke.</p>',fixture).length,0,'first name alone on another page');
+  assert.equal(livingChildNames(other,'<p>Zorblax Fixture was there.</p>',fixture).length,1,'first and family name on any page');
+  assert.equal(livingChildNames(page,'<a href="https://example.org/zorblax">link</a>',fixture).length,0,'another site\'s link is not our text');
+});
+test('a living child is not named anywhere on the built site',()=>{
+  const pageHashes=new Set();
+  for(const path of builtPages.concat(['dist/sitemap.xml','dist/rss.xml','dist/llms.txt'])) {
+    pageHashes.add(hash(pageKey(path)));
+    assert.deepEqual(livingChildNames(path,readFileSync(path,'utf8')),[],path+' names a living child');
+  }
+  for(const id of LIVING_CHILD_TEXT_PAGE_HASHES) assert.ok(pageHashes.has(id),'a page picked for the first-name check is not built; update the hash');
 });
 // The calendar spreadsheets feed the calendar pages, so check the rows at the
 // source too: row IDs, headings and site links must be name-free, and a
