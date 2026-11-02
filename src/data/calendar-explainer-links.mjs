@@ -6,7 +6,7 @@ const EXISTING_CASE_GUIDES = {
   'burke-prelim': {
     url: 'https://cassiancreed.beehiiv.com/products/celeste-rivas-hernandez-d4vd-charges-guide?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=explainer_d4vd_v2&utm_content=status_entry',
     text: 'Read the Case Chess guide: The D4vd Case — $1.99',
-    bookKey: 'celeste-rivas-hernandez-d4vd-charges-guide',
+    bookKey: 'guide-la-arraignment',
     placement: 'court_calendar_d4vd_status_entry',
   },
   'parker-smith-first-appearance': {
@@ -191,7 +191,7 @@ export const CALENDAR_EXPLAINER_CASES = [
       }
     ],
     "paid": [
-      "austin-metcalf-karmelo-anthony-case-guide"
+      "guide-frisco-verdict"
     ]
   },
   {
@@ -246,7 +246,7 @@ export const CALENDAR_EXPLAINER_CASES = [
       }
     ],
     "paid": [
-      "celeste-rivas-hernandez-d4vd-charges-guide"
+      "guide-la-arraignment"
     ]
   },
   {
@@ -605,7 +605,7 @@ const HISTORICAL_ROUNDUPS = [
 const WEEKLY_ROUNDUP_IDS = new Set(["farwell-trial-oct19","burke-prelim","sullivan-jury-trial","reiner-criminal-pretrial","reiner-trust-access-oct23","crum-spencer-hearing","robinson-pretrial-conference"]);
 const WEEKLY_ROUNDUP = {"url":"/post/this-week-in-court-october-19-23-2026/","text":"This Week in Court: Oct. 19-23"};
 export const LIVE_PRODUCTS = {
-  "austin-metcalf-karmelo-anthony-case-guide": {
+  "guide-frisco-verdict": {
     "url": "https://cassiancreed.beehiiv.com/products/austin-metcalf-karmelo-anthony-case-guide",
     "title": "Case Chess: The Karmelo Anthony Case — What's Actually Happening and What It Means",
     "price": "$1.99"
@@ -615,7 +615,7 @@ export const LIVE_PRODUCTS = {
     "title": "Both Sides of the Story: Michelle Parker — Can There Be a Murder Case With No Body?",
     "price": "$1.99"
   },
-  "celeste-rivas-hernandez-d4vd-charges-guide": {
+  "guide-la-arraignment": {
     "url": "https://cassiancreed.beehiiv.com/products/celeste-rivas-hernandez-d4vd-charges-guide",
     "title": "Case Chess: The D4vd Case — What's Actually Happening and What It Means",
     "price": "$1.99"
@@ -686,7 +686,7 @@ const PRODUCT_CAMPAIGNS = {
   "charlie-kirk-case-guide": "explainer_robinson_v1",
   "alexander-brothers-case-guide": "explainer_alexander_v1",
   "murdaugh-retrial-guide": "explainer_murdaugh_v1",
-  "austin-metcalf-karmelo-anthony-case-guide": "explainer_anthony_v1",
+  "guide-frisco-verdict": "explainer_anthony_v1",
   "jared-bridegan-case-guide-v2": "explainer_bridegan_v2",
   "tupac-shakur-keffe-d-case-guide": "explainer_tupac_v1"
 };
@@ -807,7 +807,7 @@ export const CALENDAR_LINK_TYPES = ['free', 'paid', 'book'];
 // GUIDE-02: free page-1 previews. Each preview sits right after its paid guide
 // link and is always a local /previews/ PDF, never a Beehiiv product URL.
 export const GUIDE_PREVIEWS = {
-  'celeste-rivas-hernandez-d4vd-charges-guide': '/previews/d4vd-guide-v2-preview.pdf',
+  'guide-la-arraignment': '/previews/d4vd-guide-v2-preview.pdf',
   'both-sides-michelle-parker-guide-v3': '/previews/michelle-parker-both-sides-v3-preview.pdf',
 };
 export const PREVIEW_LINK_TEXT = 'Read a free sample';

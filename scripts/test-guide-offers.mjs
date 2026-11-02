@@ -2,13 +2,16 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync,readdirSync,existsSync,statSync} from 'node:fs';
 import {join} from 'node:path';
-import {calendarLinksFor,classifyCalendarLink,GUIDE_PREVIEWS,PREVIEW_LINK_TEXT} from '../src/data/calendar-explainer-links.mjs';
+import {calendarLinksFor,classifyCalendarLink,GUIDE_PREVIEWS,LIVE_PRODUCTS,PREVIEW_LINK_TEXT} from '../src/data/calendar-explainer-links.mjs';
 import {parseCourtCalendar} from '../src/data/court-calendar-parser.mjs';
 const c=parseCourtCalendar(readFileSync('src/data/court-calendar.tsv','utf8'));
 const entries=[...c.entries,...c.appeals,...c.unconfirmed,...c.investigations,...c.completed];
 const oldKeys=['michelle-parker-'+'case-guide','both-sides-michelle-parker-'+'no-body-guide'];
 const productPrefix='https://cassiancreed.beehiiv.com/products/';
-const keys=['both-sides-michelle-parker-guide-v3','celeste-rivas-hernandez-d4vd-charges-guide'];
+// Keys are internal and role-based. The Beehiiv product handle is read from LIVE_PRODUCTS.
+const keys=['both-sides-michelle-parker-guide-v3','guide-la-arraignment'];
+const handleOf=(key)=>LIVE_PRODUCTS[key]?new URL(LIVE_PRODUCTS[key].url).pathname.split('/').pop():key;
+const keyOfHandle=(handle)=>Object.keys(LIVE_PRODUCTS).find(key=>handleOf(key)===handle)||handle;
 const anchors=(html)=>[...html.matchAll(/<a\b([^>]*)>([\s\S]*?)<\/a>/g)].map(m=>({attrs:m[1],body:m[2],href:m[1].match(/\bhref="([^"]*)"/)?.[1]?.replace(/&amp;/g,'&')}));
 const files=(dir)=>readdirSync(dir,{withFileTypes:true}).flatMap(e=>e.isDirectory()?files(join(dir,e.name)):[join(dir,e.name)]);
 test('no retired Parker product destination remains in site sources or built output',()=>{
@@ -30,7 +33,7 @@ test('each Parker calendar entry has only the v3 paid offer after free explainer
  }
 });
 test('a Beehiiv product or book destination cannot be labeled FREE',()=>{
- for(const url of [...keys.map(key=>productPrefix+key),productPrefix+'jury-chess','/books/']){
+ for(const url of [...keys.map(key=>productPrefix+handleOf(key)),productPrefix+'jury-chess','/books/']){
   assert.notEqual(classifyCalendarLink({url,type:'free'}).badge,'FREE');
  }
 });
@@ -39,9 +42,9 @@ test('rendered guide offers show prices and each is followed by its FREE page-1 
  for(const file of files('dist').filter(f=>f.endsWith('.html'))){
   const list=anchors(readFileSync(file,'utf8'));
   list.forEach((a,i)=>{
-   if(!keys.some(key=>a.href?.split('?')[0]===productPrefix+key))return;
+   if(!keys.some(key=>a.href?.split('?')[0]===productPrefix+handleOf(key)))return;
    assert.match(a.body,/\$1\.99 GUIDE/,file);count++;
-   const key=new URL(a.href).pathname.split('/').pop(),next=list[i+1];
+   const key=keyOfHandle(new URL(a.href).pathname.split('/').pop()),next=list[i+1];
    assert.ok(next,'preview after '+key+' in '+file);
    assert.equal(next.href,GUIDE_PREVIEWS[key],'preview after '+key+' in '+file);
    assert.match(next.body,/>FREE</,file);assert.match(next.body,/Read a free sample (?:→|&rarr;)/,file);
@@ -69,7 +72,7 @@ test('every /previews/ link in dist resolves to a real PDF in dist',()=>{
 });
 test('FREE badge never appears on a Beehiiv product URL in sources or built output',()=>{
  for(const key of keys){
-  const links=calendarLinksFor({id:'x',link:productPrefix+key,linkText:'x'});
+  const links=calendarLinksFor({id:'x',link:productPrefix+handleOf(key),linkText:'x'});
   for(const l of links)if(l.badge==='FREE')assert.ok(!/beehiiv\.com/.test(l.url),l.url);
  }
  for(const url of Object.values(GUIDE_PREVIEWS))assert.equal(classifyCalendarLink({url,type:'free'}).badge,'FREE');
@@ -85,8 +88,8 @@ test('D4vd keeps its paid section before Sources and posts reuse shared badge CS
  const s=readFileSync('src/content/posts/what-happens-at-d4vds-monday-hearing.md','utf8');
  assert.ok(s.indexOf('## What to watch for next')<s.indexOf('## Want the full case in one place?'));
  assert.ok(s.indexOf('## Want the full case in one place?')<s.indexOf('## Sources'));
- assert.ok(s.includes(productPrefix+keys[1]));
- assert.ok(s.indexOf(productPrefix+keys[1])<s.indexOf(GUIDE_PREVIEWS[keys[1]]));
+ assert.ok(s.includes(productPrefix+handleOf(keys[1])));
+ assert.ok(s.indexOf(productPrefix+handleOf(keys[1]))<s.indexOf(GUIDE_PREVIEWS[keys[1]]));
  assert.match(readFileSync('src/pages/post/[slug].astro','utf8'),/calendar-explainer-links\.css/);
  assert.match(readFileSync('src/components/CalendarExplainerLink.astro','utf8'),/calendar-explainer-links\.css/);
  assert.equal(PREVIEW_LINK_TEXT,'Read a free sample');
