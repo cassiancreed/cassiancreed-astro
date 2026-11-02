@@ -11,6 +11,7 @@ import { formatCalendarDate, parseCourtCalendar } from '../data/court-calendar-p
 import internationalTsv from '../data/international-watch.tsv?raw';
 import { parseInternationalWatch } from '../data/international-watch-parser.mjs';
 import { rankByTrend, rankCalendarEntries } from '../data/calendar-display-priority.mjs';
+import { completedLabel } from '../data/calendar-completed-labels.mjs';
 
 // All editable calendar content lives in one spreadsheet-style TSV file.
 // Replace or edit src/data/court-calendar.tsv; the parser validates every row
@@ -125,12 +126,7 @@ const upcomingDates = nextDates.filter((e) => e.ongoing !== true);
 // and the next-date line shows that real date. A date that has passed is never
 // shown as the next one.
 const sameCaseAhead = (e) => nextDates.filter((next) => next.case === e.case);
-const COMPLETED_BADGE_BY_ID = new Map([
-  ['davis-tupac-openings', 'Sentencing reported'],
-  ['vallow-idaho-appeal-argument', 'Argued · no ruling yet'],
-]);
-const completedBadge = (e) => COMPLETED_BADGE_BY_ID.get(e.id)
-  || (sameCaseAhead(e).length ? 'Past step · case still open' : 'Concluded');
+const completedBadge = (e) => completedLabel(e, nextDates, 'Concluded');
 const nextDateAhead = (e) => sameCaseAhead(e)
   .filter((next) => next.dateISO >= BUILD_DATE)
   .sort((a, b) => a.dateISO.localeCompare(b.dateISO))[0]?.dateText;

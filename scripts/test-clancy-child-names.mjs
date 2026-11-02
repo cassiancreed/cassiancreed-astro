@@ -42,3 +42,56 @@ test('no other built page names a Clancy child victim near the case name',()=>{
     assert.equal(near.length,0,f.path+' names a Clancy child victim');
   }
 });
+
+// Minor Shield (Doctrine v2.7): on the calendar pages, no child victim's name may
+// reach structured data (JSON-LD), the page title, meta tags or alt text. Those
+// are what search engines, social cards and screen readers pick up. The list is
+// the Clancy names above, the Minor Shield list in viral-watch.json, and the
+// calendar names below. Single words are used only for distinctive names; a
+// first name that is also a common word or place is checked as "first last".
+const viralWatch=JSON.parse(readFileSync('src/data/viral-watch.json','utf8'));
+const CALENDAR_WORD_HASHES=new Set([
+  ...CHILD_NAME_HASHES,
+  ...viralWatch.safety.minor_name_hashes,
+  '5b0e1ceb3173b8ff0de2a262df2abaa0d403bfaea700f399f82a4c9f7226398b', // Burke case victim, first name
+  '890dbc9bccdbc3cb8cb4684578d283b4506c41f9934c1e5b0132b77cdafd1b41', // Mukdahan (Thailand) case victim, nickname
+  'b42878b772050402f45fbf662c6660df8f97c23677ebbf9dcdc8e54b3ca6d007', // Mukdahan (Thailand) case victim, first name
+  'e804ad19613d5deee5335d15fbcd9eba69d41c829f48575966217213c86ebe85', // Mukdahan (Thailand) case victim, family name
+  'b1f57dc257db82155f8378e9a2099e434ed4b59c42e9e3453b9d04075f2f9d81', // Apalachee shooting student victim, family name
+]);
+const CALENDAR_PAIR_HASHES=new Set([
+  '0aa09f4887d655ee0425c0371adfad190d3128d07585952ff87b2f0f8d21496f', // Burke case victim, family names
+  '1a1c6e7377be6efed9aceac1e24a4eb92d244d58df264c5d28b9141664d1dc13', // Chippewa County case victim
+  '36376b8d6cbf6d302ac5cce63811ec62d93efe66e28c08c8462a7f9a6650f103', // Saratoga Springs case child victim
+  'be3aae4585ddd63c50de1fd9fde6d2cdba5ae082b5f7618c2602773c5e5c4793', // Lebron case infant, the name he was known by
+  '868c3396c2ea352fdd7917327c7a186a65922c089081b2026af0193fcedcad5c', // Karmelo Anthony case victim (17)
+  'ac4e8d3be7aff3adb9f7b9ca340468b46bcb17d25860b1f56942b9e3a413188d', // Brantham (Suffolk) coronial case child
+  '1b1e3f1122c3188fc7068cfc0eabac30ac70e73c3df36c786f88a5f0bfa02371', // Apalachee shooting student victim
+]);
+const CALENDAR_PAGES=[
+  'dist/court-calendar/index.html',
+  'dist/court-calendar/archive/index.html',
+  'dist/international-court-watch/index.html',
+  'dist/today/index.html',
+  'dist/index.html',
+];
+function schemaAndMeta(text) {
+  return [
+    ...[...text.matchAll(/<script type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)].map(m=>m[1]),
+    ...[...text.matchAll(/<title>([\s\S]*?)<\/title>/g)].map(m=>m[1]),
+    ...[...text.matchAll(/<meta\b[^>]*\bcontent="([^"]*)"/g)].map(m=>m[1]),
+    ...[...text.matchAll(/\balt="([^"]*)"/g)].map(m=>m[1]),
+  ].join('\n');
+}
+function calendarNameHits(text) {
+  const words=[...text.matchAll(/[A-Za-z]+/g)].map(m=>m[0].toLowerCase());
+  return words.filter((word,i)=>CALENDAR_WORD_HASHES.has(hash(word))
+    ||(i+1<words.length&&CALENDAR_PAIR_HASHES.has(hash(word+' '+words[i+1])))).length;
+}
+test('calendar pages keep child victims out of structured data, meta tags and alt text',()=>{
+  for(const path of CALENDAR_PAGES) {
+    const text=readFileSync(path,'utf8');
+    assert.ok(schemaAndMeta(text).length>0,path+' has no structured data or meta tags to check');
+    assert.equal(calendarNameHits(schemaAndMeta(text)),0,path+' puts a child victim’s name in structured data, meta tags or alt text');
+  }
+});
