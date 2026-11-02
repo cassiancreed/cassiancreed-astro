@@ -24,3 +24,7 @@ https://www.cassiancreed.com/*   https://cassiancreed.com/:splat   301!
 # Jury-intent consolidation (2026-08-08)
 /post/mistrial-vs-hung-jury-what-s-the-difference/   /post/what-actually-happens-when-a-jury-deliberates/   301!
 /post/mistrial-vs-hung-jury-what-s-the-difference    /post/what-actually-happens-when-a-jury-deliberates/   301!
+
+# Minor Shield fix (Doctrine v2.4 M10c, 2026-11-02): old Vallow address named child victims
+/post/the-lori-vallow-daybell-case-remembering-jj-tylee-and-tammy-behind-the-doomsday-headlines/   /post/lori-vallow-daybell-case-and-appeal/   301!
+/post/the-lori-vallow-daybell-case-remembering-jj-tylee-and-tammy-behind-the-doomsday-headlines    /post/lori-vallow-daybell-case-and-appeal/   301!
