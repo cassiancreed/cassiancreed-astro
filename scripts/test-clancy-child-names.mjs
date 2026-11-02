@@ -141,14 +141,17 @@ const LIVING_CHILD_FIRST_NAME_HASHES=new Set([
 const LIVING_CHILD_TEXT_PAGE_HASHES=new Set([
   '5a226f7662f6926847b47a534d2aa1e00786c17d115dde37747d2a44e6620e3c', // Frisco (Texas) track-meet verdict post
 ]);
-// OWNER DECISION PENDING (public-safety alert): /today/ and /missing-persons/
-// still show the name of one missing child from the missing-persons list. The
-// owner has not decided whether a missing child may be named in a public-safety
-// alert, so the guard lets that one name stand on those two pages only. Remove
-// this exemption when the owner decides.
-const PUBLIC_SAFETY_ALERT_PAGES=new Set(['dist/today/index.html','dist/missing-persons/index.html']);
-const PUBLIC_SAFETY_ALERT_HASHES=new Set([
-  'ac4e8d3be7aff3adb9f7b9ca340468b46bcb17d25860b1f56942b9e3a413188d', // Brantham (Suffolk) coronial case child: missing-child alert
+// /today/ and /missing-persons/ list missing people by name on purpose. Whether a
+// LIVING missing child may be named in an active alert is a separate question
+// that stays open for a later council; this guard does not decide it, so first
+// names are not tested inside addresses and IDs on those two pages. There is no
+// exemption for a child who was found dead: the alert's job ended, so that child
+// is role-only on these pages like everywhere else.
+const MISSING_PERSON_LIST_PAGES=new Set(['dist/today/index.html','dist/missing-persons/index.html']);
+// A child who was found dead after a missing-person alert is named nowhere in our
+// own text: not on the alert pages, not in the calendar, not in an address.
+const FOUND_DEAD_CHILD_PAIR_HASHES=new Set([
+  'ac4e8d3be7aff3adb9f7b9ca340468b46bcb17d25860b1f56942b9e3a413188d', // Brantham (Suffolk) coronial case child, first and family name
 ]);
 // Web addresses that carried a child's name and now redirect. Each hash is of the
 // lowercase path without its trailing slash. The old path may stay only as the
@@ -162,8 +165,8 @@ const RETIRED_ADDRESS_HASHES=new Set([
 
 const lettersIn=text=>[...text.matchAll(/[A-Za-z]+/g)].map(m=>m[0].toLowerCase());
 // Hashes of protected names found in text. firstNames: also test the first names
-// that are checked only in addresses and IDs. skip: hashes allowed on this page.
-function protectedNames(text,{firstNames=false,skip=new Set(),words=CALENDAR_WORD_HASHES,pairs=CALENDAR_PAIR_HASHES,names=ADDRESS_FIRST_NAME_HASHES}={}) {
+// that are checked only in addresses and IDs.
+function protectedNames(text,{firstNames=false,words=CALENDAR_WORD_HASHES,pairs=CALENDAR_PAIR_HASHES,names=ADDRESS_FIRST_NAME_HASHES}={}) {
   const list=lettersIn(text);
   const found=[];
   list.forEach((word,i)=>{
@@ -172,7 +175,7 @@ function protectedNames(text,{firstNames=false,skip=new Set(),words=CALENDAR_WOR
     const two=i+1<list.length?hash(word+' '+list[i+1]):'';
     if(two&&pairs.has(two)) found.push(two);
   });
-  return found.filter(h=>!skip.has(h));
+  return found;
 }
 // Another site's address (a news link, a Beehiiv product) is that site's text,
 // not ours; this guard checks our own surfaces only.
@@ -210,13 +213,12 @@ function allFiles(dir) {
 const builtFiles=allFiles('dist').map(path=>path.replace(/\\/g,'/'));
 const builtPages=builtFiles.filter(path=>path.endsWith('.html'));
 function namesOnPage(path,html) {
-  const skip=PUBLIC_SAFETY_ALERT_PAGES.has(path)?PUBLIC_SAFETY_ALERT_HASHES:new Set();
   const bad=[];
   for(const [kind,text] of nameSurfaces(html)) {
-    // Row IDs, web addresses and tracking tags also carry first names; those two pages list
-    // missing people by name on purpose, so first names are not tested there.
-    const firstNames=addressKinds.has(kind)&&!PUBLIC_SAFETY_ALERT_PAGES.has(path);
-    if(protectedNames(text,{firstNames,skip}).length) bad.push(kind);
+    // Row IDs, web addresses and tracking tags also carry first names; the missing-person
+    // list pages name living missing people on purpose, so first names are not tested there.
+    const firstNames=addressKinds.has(kind)&&!MISSING_PERSON_LIST_PAGES.has(path);
+    if(protectedNames(text,{firstNames}).length) bad.push(kind);
   }
   return [...new Set(bad)];
 }
@@ -286,6 +288,13 @@ test('a living child is not named anywhere on the built site',()=>{
     assert.deepEqual(livingChildNames(path,readFileSync(path,'utf8')),[],path+' names a living child');
   }
   for(const id of LIVING_CHILD_TEXT_PAGE_HASHES) assert.ok(pageHashes.has(id),'a page picked for the first-name check is not built; update the hash');
+});
+test('a child who was found dead after a missing-person alert is role-only in our own text',()=>{
+  for(const path of builtPages.concat(['dist/sitemap.xml','dist/rss.xml','dist/llms.txt'])) {
+    const text=ownText(readFileSync(path,'utf8'));
+    assert.deepEqual(protectedNames(text,{words:new Set(),pairs:FOUND_DEAD_CHILD_PAIR_HASHES}),[],path+' names a child who was found dead');
+  }
+  for(const path of MISSING_PERSON_LIST_PAGES) assert.ok(builtPages.includes(path),path+' is not built');
 });
 // The calendar spreadsheets feed the calendar pages, so check the rows at the
 // source too: row IDs, headings and site links must be name-free, and a
