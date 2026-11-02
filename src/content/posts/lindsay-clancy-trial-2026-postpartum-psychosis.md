@@ -2,7 +2,7 @@
 title: "Postpartum psychosis and criminal responsibility: A careful guide to the Lindsay Clancy case"
 description: "A victim-first, clinically grounded guide to postpartum psychosis, Massachusetts's lack-of-criminal-responsibility standard, and which claims in the Lindsay Clancy case remain disputed."
 pubDate: 2026-06-23
-updatedDate: 2026-10-31
+updatedDate: 2026-11-02
 tag: Case Files
 featured: false
 victim: "Three children, ages 5, 3 and 8 months"
@@ -18,9 +18,9 @@ jurisdiction: Plymouth County Superior Court, Massachusetts
 
 > **Looking for current court status?** See the [Lindsay Clancy trial tracker](/post/lindsay-clancy-trial/) for the latest verified schedule, rulings, charges, and verdict status.
 >
-> **Current posture (as of October 31, 2026):** The September 4 mistrial left the charges unresolved. [AP reports an October 1 denial of the renewed acquittal request](https://www.boston.com/news/crime/2026/10/01/judge-denies-defense-motion-asking-lindsay-clancy-be-found-not-guilty-due-to-a-lack-of-evidence/). On October 21 the judge denied a defense request for an evidentiary hearing about the holdout juror ([WBUR, October 22](https://www.wbur.org/news/2026/10/22/judge-sullivan-lindsay-clancy-lone-juror-defense-denial)). Neither ruling is a finding of guilt. A hearing on the defense motion to dismiss is set for November 2. Clancy remains presumed innocent; see the [tracker](/post/lindsay-clancy-trial/) for the latest checked status.
+> **Current posture (as of Nov. 2, 2026):** The September 4 mistrial left the charges unresolved. [AP reports an October 1 denial of the renewed acquittal request](https://www.boston.com/news/crime/2026/10/01/judge-denies-defense-motion-asking-lindsay-clancy-be-found-not-guilty-due-to-a-lack-of-evidence/). On October 21 the judge denied a defense request for an evidentiary hearing about the holdout juror ([WBUR, October 22](https://www.wbur.org/news/2026/10/22/judge-sullivan-lindsay-clancy-lone-juror-defense-denial)). Neither ruling is a finding of guilt. Judge William Sullivan heard the defense motion to dismiss on Nov. 2 and has not ruled. No retrial date is set. The next hearing is Nov. 16. Clancy remains presumed innocent; see the [tracker](/post/lindsay-clancy-trial/) for the latest checked status.
 >
-> **Procedural status checked:** October 31, 2026 (Pacific). The clinical material below is background, not a new clinical assessment.
+> **Procedural status checked:** Nov. 2, 2026 (Pacific). The clinical material below is background, not a new clinical assessment.
 
 Three children, ages 5, 3 and 8 months, died after events at their Duxbury home in January 2023. Their mother, Lindsay Clancy, has pleaded not guilty to three counts of first-degree murder. **PROSECUTION:** Prosecutors allege she acted deliberately. **DEFENSE:** Her lawyers argue she experienced postpartum psychosis and lacked criminal responsibility. A jury has not decided those disputed questions.
 

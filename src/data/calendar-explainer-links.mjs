@@ -113,7 +113,8 @@ export const CALENDAR_EXPLAINER_CASES = [
     "entryIds": [
       "clancy-trial",
       "clancy-status-hearing",
-      "clancy-november-motions"
+      "clancy-november-motions",
+      "clancy-hearing-2026-11-16"
     ],
     "free": [
       {

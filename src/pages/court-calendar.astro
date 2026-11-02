@@ -86,6 +86,7 @@ const completed = rankByTrend([
 ]);
 const completedNextDateById = new Map([
   ['salazar-clinkunbroomer-trial', calendar.completed.find((entry) => entry.id === 'salazar-clinkunbroomer-trial')?.nextNote],
+  ['clancy-november-motions', calendar.entries.find((entry) => entry.id === 'clancy-hearing-2026-11-16')?.dateText],
 ]);
 const latestReview = [calendar.metadata.last_updated, international.metadata.last_updated].sort().at(-1);
 const LAST_UPDATED = formatCalendarDate(latestReview);
