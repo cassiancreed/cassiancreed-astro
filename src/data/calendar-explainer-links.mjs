@@ -444,8 +444,8 @@ export const CALENDAR_EXPLAINER_CASES = [
     ],
     "free": [
       {
-        "url": "/post/the-lori-vallow-daybell-case-remembering-jj-tylee-and-tammy-behind-the-doomsday-headlines/",
-        "text": "Read the JJ, Tylee and Tammy Daybell case background"
+        "url": "/post/lori-vallow-daybell-case-and-appeal/",
+        "text": "Read the Lori Vallow Daybell case background"
       }
     ],
     "paid": []
@@ -760,7 +760,7 @@ const PUBLISHED_POSTS = new Set([
   "/post/the-laci-peterson-case-what-happened-and-where-scott-peterson-s-case-stands-now/",
   "/post/kouri-richins-eric-richins-murder/",
   "/post/the-murder-of-rachel-morin-how-her-killer-was-found/",
-  "/post/the-lori-vallow-daybell-case-remembering-jj-tylee-and-tammy-behind-the-doomsday-headlines/",
+  "/post/lori-vallow-daybell-case-and-appeal/",
   "/post/the-trail-the-murder-of-rachel-morin-the-full-account/",
   "/post/this-week-in-court-september-13-2026/",
   "/post/the-murder-of-rachel-nickell-how-dna-caught-robert-napper-and-cleared-colin-stagg/",
