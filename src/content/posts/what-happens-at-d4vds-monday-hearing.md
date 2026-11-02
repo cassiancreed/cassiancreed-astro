@@ -6,7 +6,7 @@ pubDate: 2026-10-17
 tag: "Explainers"
 featured: false
 capture: "jury"
-victim: "Celeste Rivas Hernandez"
+victim: "A 14-year-old girl"
 location: "Los Angeles, California"
 jurisdiction: "Los Angeles County Superior Court"
 status: "Charged; pleaded not guilty; presumed innocent"
@@ -26,7 +26,7 @@ News reports call Monday's hearing a status conference. ABC News described it as
 
 The time has not been publicly verified. Court times can change. Check our Court Calendar before Monday.
 
-## Who Celeste was
+## Who she was
 
 Celeste Rivas Hernandez was a 14-year-old girl. September 7, 2026, would have been her 16th birthday. Her family marked that day in public and asked officials to seek the death penalty.
 

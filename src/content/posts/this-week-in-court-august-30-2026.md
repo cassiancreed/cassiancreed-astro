@@ -90,7 +90,7 @@ Lyrics and a public persona do not independently prove criminal intent. Lawyers'
 - **Remaining testimony:** The witnesses called as the government continues its case.
 - **Evidentiary rulings:** Decisions about which exhibits or statements jurors may consider.
 
-## Celeste Rivas Hernandez Case: David Anthony Burke's Arraignment
+## The D4vd Case: David Anthony Burke's Arraignment
 
 ### Current posture
 
