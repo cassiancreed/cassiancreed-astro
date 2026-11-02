@@ -2,19 +2,19 @@
 import Base from '../layouts/Base.astro';
 import { pageSchema } from '../utils/page-schema.mjs';
 import CaptureBlock from '../components/CaptureBlock.astro';
-// Discovery-layer case file — "A Name for Baby Jacob" (Round Lake Beach, IL, 2001 infant-Doe IGG cold case).
+// Discovery-layer case file — Round Lake Beach, IL, 2001 newborn cold case solved with IGG.
 // Guardrails (Tier ORANGE): Jennifer Lebron is CHARGED, NOT CONVICTED. "charged"/"alleged" only; no guilt asserted.
 // Charges stated precisely: TWO COUNTS OF INVOLUNTARY MANSLAUGHTER (felony) — NOT murder.
-// Victim-first: the child, IGG-named "Jacob," is centered. No sensationalizing; cause of death not described.
+// Victim-first: the child is centered. No sensationalizing; cause of death not described.
 // "TWIN" claim EXCLUDED — Baby Boy Doe appears only as a thematic companion, never a literal twin/connected case.
 // Cross-links are by topic (not by brick number) to the live genealogy hub + the Baby Boy Doe case file.
 const jsonld = pageSchema({
   "type": "Article",
-  "title": "Jacob Hope: A Name for the Round Lake Beach Baby — How Genetic Genealogy Reopened a 2001 Cold Case | Cassian Creed",
-  "headline": "Jacob Hope: A Name for the Round Lake Beach Baby — How Genetic Genealogy Reopened a 2001 Cold Case",
-  "description": "The newborn known as 'Jacob Hope,' found in Round Lake Beach in 2001, was identified through investigative genetic genealogy. In July 2026 his mother was charged — stated precisely, presumption of innocence first.",
-  "path": "/baby-jacob-round-lake-beach-genetic-genealogy/",
-  "source": "src/pages/baby-jacob-round-lake-beach-genetic-genealogy.astro",
+  "title": "A Name for the Round Lake Beach Newborn — How Genetic Genealogy Reopened a 2001 Cold Case | Cassian Creed",
+  "headline": "A Name for the Round Lake Beach Newborn — How Genetic Genealogy Reopened a 2001 Cold Case",
+  "description": "The newborn boy found in Round Lake Beach in 2001 was identified through investigative genetic genealogy. In July 2026 his mother was charged — stated precisely, presumption of innocence first.",
+  "path": "/round-lake-beach-newborn-genetic-genealogy/",
+  "source": "src/pages/round-lake-beach-newborn-genetic-genealogy.astro",
   "category": [
     "Case Files",
     "/case-files/"
@@ -22,12 +22,12 @@ const jsonld = pageSchema({
 });
 ---
 <Base jsonld={jsonld}
-  title="Jacob Hope: A Name for the Round Lake Beach Baby &mdash; How Genetic Genealogy Reopened a 2001 Cold Case | Cassian Creed"
-  description="The newborn known as 'Jacob Hope,' found in Round Lake Beach in 2001, was identified through investigative genetic genealogy. In July 2026 his mother was charged &mdash; stated precisely, presumption of innocence first."
+  title="A Name for the Round Lake Beach Newborn &mdash; How Genetic Genealogy Reopened a 2001 Cold Case | Cassian Creed"
+  description="The newborn boy found in Round Lake Beach in 2001 was identified through investigative genetic genealogy. In July 2026 his mother was charged &mdash; stated precisely, presumption of innocence first."
 >
   <article class="post">
     <p class="evidence evidence--accent">Case File</p>
-    <h1>Jacob Hope: A Name for the Round Lake Beach Baby &mdash; How Genetic Genealogy Reopened a 2001 Cold Case</h1>
+    <h1>A Name for the Round Lake Beach Newborn &mdash; How Genetic Genealogy Reopened a 2001 Cold Case</h1>
 
     <div class="post__content">
       <div class="res" id="answer-box">
@@ -38,7 +38,7 @@ const jsonld = pageSchema({
       </div>
       <p class="evidence evidence--accent">Case status: Charges filed July 14, 2026 &middot; Court-active &middot; Next hearing August 12, 2026 &middot; No conviction.</p>
 
-      <h2 id="new-development">New development (July 2026): a charge in Jacob Hope&rsquo;s case</h2>
+      <h2 id="new-development">New development (July 2026): a charge in the newborn&rsquo;s case</h2>
       <p>For nearly 25 years, the child had a name the community gave him but no name of his own on the record, and no one held to account. That changed in July 2026.</p>
       <p>On <strong>July 14, 2026</strong>, the Round Lake Beach Police Department and the Lake County State&rsquo;s Attorney&rsquo;s Office announced in a joint statement that <strong>Jennifer Lebron, 48, of Lake Villa</strong>, had been charged in connection with the infant&rsquo;s death. Authorities identify Lebron as the baby&rsquo;s mother.</p>
       <p>The precise charge matters, and we state it precisely: Lebron was charged with <strong>two counts of involuntary manslaughter</strong>. This is <strong>not</strong> a murder charge. In 2001, a <em>different</em> woman had been charged with first-degree murder in the case, but investigators later determined she had never been pregnant; those charges were dismissed in October 2001, and the case went cold.</p>
@@ -98,6 +98,6 @@ const jsonld = pageSchema({
   </article>
 
   <div class="wrap"><section class="subscribe" id="free-guide">
-    <CaptureBlock offer="dna" campaign="baby_jacob" />
+    <CaptureBlock offer="dna" campaign="round_lake_beach_newborn" />
   </section></div>
 </Base>

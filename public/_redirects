@@ -32,3 +32,7 @@ https://www.cassiancreed.com/*   https://cassiancreed.com/:splat   301!
 # Minor Shield fix (Doctrine v2.7, 2026-11-02): the old Frisco verdict address carried a child's name; the new address is role-based
 /post/a-jury-convicted-a-family-still-grieves-karmelo-anthony-verdict-austin-metcalf/   /post/a-jury-convicted-a-family-still-grieves-karmelo-anthony-verdict/   301!
 /post/a-jury-convicted-a-family-still-grieves-karmelo-anthony-verdict-austin-metcalf    /post/a-jury-convicted-a-family-still-grieves-karmelo-anthony-verdict/   301!
+
+# Minor Shield fix (Doctrine v2.7, 2026-11-02): the old Round Lake Beach case-page address carried a child's name; the new address is role-based
+/baby-jacob-round-lake-beach-genetic-genealogy/   /round-lake-beach-newborn-genetic-genealogy/   301!
+/baby-jacob-round-lake-beach-genetic-genealogy    /round-lake-beach-newborn-genetic-genealogy/   301!
