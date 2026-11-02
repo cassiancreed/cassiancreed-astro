@@ -21,7 +21,7 @@ Lori Vallow Daybell was convicted in Idaho in May 2023 of murdering her two chil
 
 ## Who the Two Children Were
 
-Joshua "JJ" Vallow was seven, a boy who loved trains and lit up around the people he trusted. His grandparents fought publicly and relentlessly to find him, and have since become advocates for other missing and exploited children. Tylee Ryan was sixteen, a teenager with a sharp sense of humor and a deep bond with her little brother. Both children vanished in September 2019. For months, while investigators and grandparents searched, their mother told a shifting series of stories. The two children were found in June 2020, buried on property belonging to Chad Daybell. Out of respect for them, this piece will not detail what was done to them. What matters is that two children who should be alive today are not, and the adults responsible were the people most obligated to protect them.
+Joshua "JJ" Vallow was seven, a boy who loved trains and lit up around the people he trusted. His grandparents fought publicly and relentlessly to find him, and have since become advocates for other missing children. Tylee Ryan was sixteen, a teenager with a sharp sense of humor and a deep bond with her little brother. Both children vanished in September 2019. For months, while investigators and grandparents searched, their mother told a shifting series of stories. The two children were found in June 2020, buried on property belonging to Chad Daybell. Out of respect for them, this piece will not detail what was done to them. What matters is that two children who should be alive today are not, and the adults responsible were the people most obligated to protect them.
 
 ## Who Tammy Daybell Was
 
