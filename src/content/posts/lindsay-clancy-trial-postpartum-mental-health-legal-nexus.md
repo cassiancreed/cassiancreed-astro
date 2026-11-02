@@ -3,21 +3,21 @@ title: "The Legal Nexus of Postpartum Mental Health: An Investigative Report on 
 seoTitle: "Lindsay Clancy Trial: Psychiatric Evidence and the Law"
 description: "The Lindsay Clancy trial turns on a precise question: how psychiatric evidence, postpartum psychosis, and Massachusetts criminal-responsibility law fit together."
 pubDate: 2026-08-09
-updatedDate: 2026-10-31
+updatedDate: 2026-11-02
 tag: "Case Files"
 featured: false
 victim: "Three children, ages 5, 3 and 8 months"
 incidentDate: "January 24, 2023"
 location: "Duxbury, Massachusetts"
 jurisdiction: "Plymouth County Superior Court, Massachusetts"
-status: "Mistrial declared Sept. 4, 2026; three first-degree murder charges unresolved; pleaded not guilty; presumed innocent. Motion to dismiss set for a Nov. 2, 2026 hearing. This report's research cutoff is Aug. 8, 2026."
+status: "Mistrial declared Sept. 4, 2026; three first-degree murder charges unresolved; pleaded not guilty; presumed innocent. As of Nov. 2, 2026: Judge William Sullivan heard the defense motion to dismiss on Nov. 2 and has not ruled. No retrial date is set. The next hearing is Nov. 16. This report's research cutoff is Aug. 8, 2026."
 cover: "/og.png"
 ---
 
 <div class="status-box" style="border:1px solid var(--rule,#e4e0d9);border-left:4px solid var(--accent,#b91c1c);background:var(--card,#faf9f7);padding:1rem 1.25rem;margin:1.5rem 0;border-radius:6px;font-size:.95rem">
 <strong>Content note:</strong> This report discusses the deaths of children, a suicide attempt, and severe postpartum mental illness. It contains no graphic descriptions.<br><br>
 <strong>Research cutoff:</strong> August 8, 2026. The trial was active, the defense case was incomplete, and no verdict had been returned.<br><br>
-<strong>Status as of October 31, 2026:</strong> The trial ended in a mistrial on September 4, 2026, after the jury could not agree. There is no verdict. Clancy remains charged with three counts of first-degree murder, has pleaded not guilty, and is presumed innocent. On October 21 the judge denied a defense request for an evidentiary hearing about the holdout juror (WBUR, October 22). A hearing on the defense motion to dismiss is set for November 2 (Boston Globe, October 21). Prosecutors have not formally said whether they will retry the case (CBS Boston, October 28). See the <a href="/post/lindsay-clancy-trial/">Clancy trial tracker</a> and the <a href="/court-calendar/#clancy-november-motions">Court Calendar</a> for the latest checked status.
+<strong>Status as of Nov. 2, 2026:</strong> The trial ended in a mistrial on September 4, 2026, after the jury could not agree. There is no verdict. Clancy remains charged with three counts of first-degree murder, has pleaded not guilty, and is presumed innocent. On October 21 the judge denied a defense request for an evidentiary hearing about the holdout juror (WBUR, October 22). Judge William Sullivan heard the defense motion to dismiss on Nov. 2 and has not ruled. No retrial date is set. The next hearing is Nov. 16. (AP and Boston 25 News, Nov. 2, 2026). See the <a href="/post/lindsay-clancy-trial/">Clancy trial tracker</a> and the <a href="/court-calendar/#clancy-november-motions">Court Calendar</a> for the latest checked status.
 </div>
 
 The Lindsay Clancy trial in Plymouth Superior Court is more than a factual inquiry into the deaths of three children. Because the defense does not dispute physical causation, the central contested question is whether the Commonwealth can prove beyond a reasonable doubt that Clancy was criminally responsible when the three children died.
