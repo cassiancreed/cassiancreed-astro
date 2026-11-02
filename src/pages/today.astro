@@ -3,6 +3,7 @@ import Base from '../layouts/Base.astro';
 import CaptureBlock from '../components/CaptureBlock.astro';
 import calendarTsv from '../data/court-calendar.tsv?raw';
 import { formatCalendarDate, parseCourtCalendar } from '../data/court-calendar-parser.mjs';
+import { completedLabel } from '../data/calendar-completed-labels.mjs';
 import missingTsv from '../data/missing-persons.tsv?raw';
 import { parseMissingPersons } from '../data/missing-persons-parser.mjs';
 
@@ -53,6 +54,14 @@ const courtRows = [
   ...calendar.completed.map((entry) => ({ ...entry, section: 'completed' })),
 ];
 
+// The same open-case inputs the court calendar uses: dated entries still ahead
+// (or ongoing), plus unconfirmed and appeal entries.
+const openCourtEntries = [
+  ...calendar.entries.filter((entry) => entry.ongoing || entry.dateISO >= BUILD_DATE),
+  ...calendar.unconfirmed,
+  ...calendar.appeals,
+];
+
 const courtChanges = courtRows.flatMap((entry) => {
   const changed = verifiedDate(entry.verified);
   if (!changed) return [];
@@ -63,7 +72,11 @@ const courtChanges = courtRows.flatMap((entry) => {
     id: `court-${entry.id}`,
     kind: 'court',
     changed,
-    label: entry.id === 'davis-tupac-openings' ? 'Sentencing reported' : courtSectionLabel(entry.section),
+    // Same rule as the court calendar: only a row on the ended-case allow-list
+    // is called an outcome; everything else is a step.
+    label: entry.section === 'completed'
+      ? completedLabel(entry, openCourtEntries, courtSectionLabel('completed'))
+      : courtSectionLabel(entry.section),
     name: entry.case,
     headline: entry.proceeding,
     summary: entry.status,
