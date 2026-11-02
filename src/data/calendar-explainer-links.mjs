@@ -186,8 +186,8 @@ export const CALENDAR_EXPLAINER_CASES = [
     ],
     "free": [
       {
-        "url": "/post/a-jury-convicted-a-family-still-grieves-karmelo-anthony-verdict-austin-metcalf/",
-        "text": "A Jury Convicted. A Family Still Grieves. The Trial of Karmelo Anthony Is Over — What Comes Next for Austin Metcalf's Case."
+        "url": "/post/a-jury-convicted-a-family-still-grieves-karmelo-anthony-verdict/",
+        "text": "A Jury Convicted. A Family Still Grieves. The Trial of Karmelo Anthony Is Over — What Comes Next."
       }
     ],
     "paid": [
@@ -692,7 +692,7 @@ const PRODUCT_CAMPAIGNS = {
 };
 const PUBLISHED_POSTS = new Set([
   "/post/alexander-brothers-sentencing-what-sentence-did-they-get/",
-  "/post/a-jury-convicted-a-family-still-grieves-karmelo-anthony-verdict-austin-metcalf/",
+  "/post/a-jury-convicted-a-family-still-grieves-karmelo-anthony-verdict/",
   "/post/baby-boy-doe-mansfield-1985/",
   "/post/anatomy-of-a-murder-trial-hernandez-melgar/",
   "/post/cheryl-lynn-edwards-jane-clinton-doe-timeline/",

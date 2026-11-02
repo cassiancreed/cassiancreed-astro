@@ -10,7 +10,7 @@ import { LIVE_PRODUCTS, GUIDE_PREVIEWS, PREVIEW_LINK_TEXT } from './calendar-exp
 export const POST_GUIDE_CTAS = {
   'jared-bridegan-case-explained': { product: 'jared-bridegan-case-guide-v2', campaign: 'explainer_bridegan_v2', key: 'bridegan' },
   'the-murdaugh-murders-how-alex-murdaugh-was-convicted-and-why-he-now-faces-a-new-trial': { product: 'murdaugh-retrial-guide', campaign: 'explainer_murdaugh_v1', key: 'murdaugh' },
-  'a-jury-convicted-a-family-still-grieves-karmelo-anthony-verdict-austin-metcalf': { product: 'austin-metcalf-karmelo-anthony-case-guide', campaign: 'explainer_anthony_v1', key: 'anthony' },
+  'a-jury-convicted-a-family-still-grieves-karmelo-anthony-verdict': { product: 'austin-metcalf-karmelo-anthony-case-guide', campaign: 'explainer_anthony_v1', key: 'anthony' },
   'why-was-keffe-d-convicted-tupac-shakur': { product: 'tupac-shakur-keffe-d-case-guide', campaign: 'explainer_tupac_v1', key: 'tupac' },
   'christa-pike-failed-execution-what-happens-next': { product: 'christa-pike-failed-execution-guide', campaign: 'explainer_pike_v1', key: 'pike' },
   'what-happens-at-d4vds-monday-hearing': { product: 'celeste-rivas-hernandez-d4vd-charges-guide', campaign: 'explainer_d4vd_v2', key: 'd4vd' },

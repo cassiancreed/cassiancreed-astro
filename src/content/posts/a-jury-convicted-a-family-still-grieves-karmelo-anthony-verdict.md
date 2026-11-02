@@ -1,10 +1,10 @@
 ---
-title: "A Jury Convicted. A Family Still Grieves. The Trial of Karmelo Anthony Is Over — What Comes Next for Austin Metcalf's Case."
-description: "A Collin County jury convicted Karmelo Anthony of murder on June 9, 2026, rejecting his claim of self-defense in the stabbing death of 17-year-old Austin Metcalf."
+title: "A Jury Convicted. A Family Still Grieves. The Trial of Karmelo Anthony Is Over — What Comes Next."
+description: "A Collin County jury convicted Karmelo Anthony of murder on June 9, 2026, rejecting his claim of self-defense in the stabbing death of a 17-year-old at a Frisco track meet."
 pubDate: 2026-06-09
 tag: "Case Files"
 featured: false
-victim: "Austin Metcalf, 17"
+victim: "A 17-year-old high school student"
 incidentDate: "April 2, 2025"
 location: "Frisco, Texas"
 jurisdiction: "Collin County, Texas"
@@ -95,7 +95,7 @@ See every date we track on our [Court Calendar](/court-calendar/) (as of October
 
 ---
 
-## Austin Metcalf
+## Remembering the 17-Year-Old
 
 He was a football MVP. He had a 4.0 GPA. He went to a track meet on a Wednesday morning in April, and he never made it to the finish line.
 
