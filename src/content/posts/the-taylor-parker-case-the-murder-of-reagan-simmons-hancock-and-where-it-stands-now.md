@@ -5,7 +5,7 @@ description: "Taylor Parker's outcome and sentence, and where she is now: her ca
 pubDate: 2026-06-03
 tag: "Case Files"
 featured: true
-victim: "Reagan Simmons-Hancock and her newborn daughter"
+victim: "Reagan Simmons-Hancock and her unborn daughter"
 faqSkip: ["Who was Reagan Simmons-Hancock?"]
 incidentDate: "October 9, 2020"
 location: "New Boston, Texas"
