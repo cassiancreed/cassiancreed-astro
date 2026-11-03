@@ -6,7 +6,6 @@ pubDate: 2026-06-03
 tag: "Case Files"
 featured: true
 victim: "Reagan Simmons-Hancock and her unborn daughter"
-faqSkip: ["Who was Reagan Simmons-Hancock?"]
 incidentDate: "October 9, 2020"
 location: "New Boston, Texas"
 jurisdiction: "Bowie County, Texas"
@@ -18,7 +17,7 @@ status: "Convicted of capital murder and sentenced to death (Nov. 9, 2022); sent
 
 Netflix's documentary **_Maternal Instinct_** arrives June 12, 2026, and it will bring a wave of new attention to one of the most disturbing Texas cases of the decade. Before that happens, this case file does what the headlines rarely do: it puts the victims first, sticks to the record, and lays out exactly where the case stands today.
 
-Cassian Creed compiled this Neural Edge Publishing case file from court rulings and contemporaneous reporting, keeping Reagan Simmons-Hancock and Braxlynn Sage Hancock at the center of the account rather than using renewed documentary attention as a reason to repeat graphic detail. Where the case posture changes, the court record—not the documentary's release cycle—controls the update.
+Cassian Creed compiled this Neural Edge Publishing case file from court rulings and contemporaneous reporting, keeping Reagan Simmons-Hancock and her baby daughter at the center of the account rather than using renewed documentary attention as a reason to repeat graphic detail. Where the case posture changes, the court record—not the documentary's release cycle—controls the update.
 
 <div class="capture-cta" style="border:1px solid var(--rule,#3a332c);border-left:4px solid var(--accent,#e0563b);background:var(--card,#1a1613);color:var(--ink,#f6f1ea);padding:1.25rem 1.5rem;margin:1.75rem 0;border-radius:8px">
 <p style="margin:0 0 .4rem;font-size:1.12rem;font-weight:700;line-height:1.3">Get the case files the news won't run — free, straight to your inbox.</p>
@@ -26,7 +25,7 @@ Cassian Creed compiled this Neural Edge Publishing case file from court rulings 
 <iframe class="capture__embed" src="https://subscribe-forms.beehiiv.com/v3/forms/4d0df7d0-f274-4901-a457-091f80cecef0?utm_source=website&amp;utm_medium=post_cta&amp;utm_campaign=lm_case_how-to-read-a-case" title="Get the free guide" loading="lazy" scrolling="no" frameborder="0" style="display:block;width:100%;max-width:460px;height:220px;border:0;margin:0;background:transparent;color-scheme:light"></iframe>
 </div>
 
-The people this case is about are **Reagan Simmons-Hancock**, 21, of New Boston, Texas, and her unborn daughter, **Braxlynn Sage Hancock.** Reagan was a young mother and a customer service representative with Flying Burger in Texarkana; in her family's own words, she was “pregnant with her daughter, Braxlynn Sage Hancock.” On the morning of October 9, 2020, her own mother found her body in her home. Her three-year-old daughter was there at the time. Whatever else is said about this case, it begins and ends with them.
+The people this case is about are **Reagan Simmons-Hancock**, 21, of New Boston, Texas, and her unborn daughter. Reagan was a young mother and a customer service representative with Flying Burger in Texarkana; in her family's own words, she was “pregnant with her daughter.” On the morning of October 9, 2020, her own mother found her body in her home. Her three-year-old daughter was there at the time. Whatever else is said about this case, it begins and ends with them.
 
 ## What the record shows
 
@@ -34,7 +33,7 @@ Taylor Rene Parker was convicted of capital murder for what happened that mornin
 
 According to the evidence presented at trial, Parker had spent roughly ten months faking a pregnancy — using a silicone prosthetic belly, fabricated ultrasound images, and even a gender-reveal celebration — to convince those around her, including her boyfriend, that she was expecting. Reagan Simmons-Hancock, who was genuinely pregnant and near her due date, was an acquaintance.
 
-On October 9, 2020, Parker attacked Reagan inside her home and killed her, then removed Reagan's unborn daughter in an attempt to pass the baby off as her own. Shortly afterward, a Texas Department of Public Safety trooper stopped Parker for driving erratically; she claimed she had just given birth on the roadside. The baby, Braxlynn, was rushed to a hospital but could not be saved. Investigators say the crime scene and Parker's own prior internet searches showed this was not an impulsive act but a planned one.
+On October 9, 2020, Parker attacked Reagan inside her home and killed her, then removed Reagan's unborn daughter in an attempt to pass the baby off as her own. Shortly afterward, a Texas Department of Public Safety trooper stopped Parker for driving erratically; she claimed she had just given birth on the roadside. The baby was rushed to a hospital but could not be saved. Investigators say the crime scene and Parker's own prior internet searches showed this was not an impulsive act but a planned one.
 
 We have chosen not to dwell on the graphic specifics that filled the trial coverage. They are part of the public record and easy to find; repeating them in detail serves the spectacle, not the people who were lost.
 
@@ -64,7 +63,7 @@ Parker's conviction and death sentence were upheld on direct appeal, and the U.S
 
 ### Supreme Court certiorari denial
 
-Reagan Simmons-Hancock and her unborn daughter, Braxlynn, remain at the center of this case as another stage of legal review ends. ([Bates-Rolf Funeral Home, joint obituary, accessed July 18, 2026](https://www.batesrolffuneralhome.com/obituary/reagan-braxlynn-hancock); [Texas Court of Criminal Appeals, *Parker v. State*, November 6, 2025, opinion hosted by Justia](https://law.justia.com/cases/texas/court-of-criminal-appeals/2025/ap-77-110.html)) On May 18, 2026, the U.S. Supreme Court denied Taylor Parker's petition for a writ of certiorari in **Taylor Rene Parker v. Texas, No. 25-7025**. The denial means the justices chose not to hear the case; it does not say whether they agreed or disagreed with the arguments in Parker's petition. The order leaves in place the Texas Court of Criminal Appeals' November 6, 2025 decision affirming Parker's capital-murder conviction and death sentence. ([Supreme Court of the United States, docket No. 25-7025, May 18, 2026](https://www.supremecourt.gov/search.aspx?filename=%2Fdocket%2Fdocketfiles%2Fhtml%2Fpublic%2F25-7025.html); [Office of the Clerk, Supreme Court of the United States, certiorari guide, January 2023](https://www.supremecourt.gov/casehand/guideforIFPcases2023.pdf); [Texas Court of Criminal Appeals, *Parker v. State*, November 6, 2025, opinion hosted by Justia](https://law.justia.com/cases/texas/court-of-criminal-appeals/2025/ap-77-110.html))
+Reagan Simmons-Hancock and her unborn daughter remain at the center of this case as another stage of legal review ends. ([Bates-Rolf Funeral Home, joint obituary, accessed July 18, 2026](https://www.batesrolffuneralhome.com/obituary/reagan-braxlynn-hancock); [Texas Court of Criminal Appeals, *Parker v. State*, November 6, 2025, opinion hosted by Justia](https://law.justia.com/cases/texas/court-of-criminal-appeals/2025/ap-77-110.html)) On May 18, 2026, the U.S. Supreme Court denied Taylor Parker's petition for a writ of certiorari in **Taylor Rene Parker v. Texas, No. 25-7025**. The denial means the justices chose not to hear the case; it does not say whether they agreed or disagreed with the arguments in Parker's petition. The order leaves in place the Texas Court of Criminal Appeals' November 6, 2025 decision affirming Parker's capital-murder conviction and death sentence. ([Supreme Court of the United States, docket No. 25-7025, May 18, 2026](https://www.supremecourt.gov/search.aspx?filename=%2Fdocket%2Fdocketfiles%2Fhtml%2Fpublic%2F25-7025.html); [Office of the Clerk, Supreme Court of the United States, certiorari guide, January 2023](https://www.supremecourt.gov/casehand/guideforIFPcases2023.pdf); [Texas Court of Criminal Appeals, *Parker v. State*, November 6, 2025, opinion hosted by Justia](https://law.justia.com/cases/texas/court-of-criminal-appeals/2025/ap-77-110.html))
 
 ### Netflix documentary coverage
 
@@ -90,7 +89,7 @@ The next publicly identifiable milestone is action in Parker's pending state-hab
 
 Our **A.I. AL** system — our Artificial Intelligence · Analytical Logic method, always overseen by humans — works only from the public record, and it played no part in the actual investigation. Reading the documented facts, one pattern stands out: the deception was long, elaborate, and visible to people around her for nearly a year. A fake pregnancy sustained for ten months is not a secret kept in isolation; it is a story told repeatedly, to many people, with props.
 
-We say this carefully, because hindsight is cheap and no one watching a friend's "pregnancy" is obligated to suspect murder. The analytical point is narrower and is the one our work is built on: **fixation plus escalating deception is a pattern worth taking seriously, long before it becomes violence.** The value of revisiting a case like this is not to relive the horror but to sharpen what a community might notice next time — and to keep Reagan and Braxlynn at the center of why that matters.
+We say this carefully, because hindsight is cheap and no one watching a friend's "pregnancy" is obligated to suspect murder. The analytical point is narrower and is the one our work is built on: **fixation plus escalating deception is a pattern worth taking seriously, long before it becomes violence.** The value of revisiting a case like this is not to relive the horror but to sharpen what a community might notice next time — and to keep Reagan and her baby at the center of why that matters.
 
 ## Frequently Asked Questions
 
@@ -98,7 +97,7 @@ We say this carefully, because hindsight is cheap and no one watching a friend's
 It is a documentary, premiering June 12, 2026, about the 2020 murder of Reagan Simmons-Hancock and her unborn daughter, and the prosecution of Taylor Parker.
 
 **Who was Reagan Simmons-Hancock?**
-A 21-year-old mother from New Boston, Texas. She was killed on October 9, 2020, while pregnant with her daughter Braxlynn Sage Hancock, who also did not survive.
+A 21-year-old mother from New Boston, Texas. She was killed on October 9, 2020, while pregnant with her daughter, who also did not survive.
 
 **What was Taylor Parker convicted of?**
 Capital murder. A Bowie County jury found her guilty on October 3, 2022, and sentenced her to death on November 9, 2022.
@@ -111,7 +110,7 @@ She remains on Texas's death row. No execution date has been set as of this writ
 
 ---
 
-It is easy, with a case this shocking, to remember the name of the person who did it and forget the people it was done to. The truer memorial is the other way around. Reagan Simmons-Hancock and her daughter Braxlynn are the reason this story is told at all — say their names first.
+It is easy, with a case this shocking, to remember the name of the person who did it and forget the people it was done to. The truer memorial is the other way around. Reagan Simmons-Hancock and her baby daughter are the reason this story is told at all — remember them first.
 
 **Get *How to Read a Case Like the Court Does*.** Our free field guide to how to weigh evidence instead of guessing, and what a verdict actually settles — subscribe and it's in your inbox. [Send me the free guide →](https://cassiancreed.beehiiv.com/subscribe)
 

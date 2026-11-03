@@ -13,7 +13,7 @@ status: "Convicted of murder and sentenced to 35 years June 9, 2026; notice of a
 
 *Updated Wednesday, October 21, 2026: An earlier version said an appeal was available. Karmelo Anthony's lawyers filed a notice of appeal on June 10, 2026. On August 22, 2026, retired Judge Michael Chitty denied his motion for a new trial. The murder conviction and 35-year sentence stand while the appeal is pending. Details and sources are in the appeals section below.*
 
-Austin Metcalf was 17 years old. A junior at Memorial High School in Frisco, Texas. The MVP linebacker on his football team. A twin, with a brother who was standing right next to him when it happened.
+Austin was 17 years old. A junior at Memorial High School in Frisco, Texas. The MVP linebacker on his football team. A twin, with a brother who was standing right next to him when it happened.
 
 On April 2, 2025, Austin went to a high school track meet at David Kuykendall Stadium. He did not come home.
 
@@ -29,9 +29,9 @@ The incident took place at approximately 10:00 a.m. during an 11-5A district cha
 
 According to the police report and trial testimony, Anthony entered the Memorial tent. Austin told him to leave. Anthony reached into his bag and said, "Touch me and see what happens." Austin made physical contact — he pushed Anthony. Anthony pulled a pocket knife and stabbed Austin once in the chest, then ran from the stadium. Police apprehended Anthony within the stadium within minutes.
 
-Austin Metcalf died from that single stab wound. His twin brother was present. He tried to help.
+Austin died from that single stab wound. His twin brother was present. He tried to help.
 
-On arrest, Anthony reportedly told responding officers: "I'm not alleged, I did it" — and asked whether the situation could be considered self-defense and whether Metcalf was going to be okay.
+On arrest, Anthony reportedly told responding officers: "I'm not alleged, I did it" — and asked whether the situation could be considered self-defense and whether Austin was going to be okay.
 
 More than 30 students and coaches witnessed the confrontation. Surveillance video of the incident and body camera footage from responding officers were both presented to the jury at trial.
 
@@ -105,7 +105,7 @@ A jury of twelve people listened to every piece of evidence in this case for mor
 
 Both the verdict and the sentence came the same day. However the appeals process unfolds, those twelve people have now answered the question the law asked them to answer.
 
-Austin Metcalf was 17. He deserved to come home from that track meet.
+Austin was 17. He deserved to come home from that track meet.
 
 ---
 

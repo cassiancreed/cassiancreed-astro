@@ -58,7 +58,7 @@ Full details: https://cassiancreed.com/court-calendar/
 
 **Time:** 9:30 a.m. CT (7:30 a.m. PT), Room 405, per the Will County court schedule.
 
-Corie Walsh of Frankfort, Illinois, is charged with three counts of first-degree murder in the death of her 2-year-old son, Barrett. She pleaded not guilty on Sept. 24. She is presumed innocent.
+Corie Walsh of Frankfort, Illinois, is charged with three counts of first-degree murder in the death of her 2-year-old son. She pleaded not guilty on Sept. 24. She is presumed innocent.
 
 **What to watch:** Whether the court sets a schedule for the case.
 

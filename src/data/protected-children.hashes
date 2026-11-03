@@ -18,6 +18,12 @@ c8427504a6fc3e2dbdde2e82f617a4c4a45ebd68933fa0b1f4e4784ffbcdf096  # Idaho 2019 c
 28585b10532342e5d09bf7df7d5aca8881bbb6cfcb57f4155996deaef57dd544  # Idaho 2019 case: girl (16), first name
 ac4e8d3be7aff3adb9f7b9ca340468b46bcb17d25860b1f56942b9e3a413188d  # Brantham (Suffolk) 2026: boy (3), first and family name
 1ae26652fce06a69c7d90c77e3f24da3c270fbe1565f2069b9db7d22efe0b809  # New York 1979: boy (6), first and family name
+
+[everywhere]
+612e108fe1fb58fd3b767e31f9572f0b02cefa7cacb10b8805c62e8a55df6fc1  # Seneca (South Carolina) 2026: teenager located safe, first and middle name
+11f046c74e6a2bd0d3d413e087f3d93ebf1504e9cc9ada508716c69ffe1d6a48  # Seneca (South Carolina) 2026: teenager located safe, middle and family name
+087e804233bf6b6e36e56bd09d902a5788706365abfda480b136aeed87caf399  # Seneca (South Carolina) 2026: teenager located safe, first and family name
+09be40dc1ecc03e73067e05e18bc266bd2b16049c2459fe0f0653a6b972b65f8  # Los Angeles (California) 2026: boy (10) located in good health, first and family name
 fe07025ed2603dcc6b56d635aa57ee318fe714635527f93b4209837622b8cb20  # Los Angeles 2025: girl (14), first name and first family name
 0aa09f4887d655ee0425c0371adfad190d3128d07585952ff87b2f0f8d21496f  # Los Angeles 2025: girl (14), the two family names
 cfbbcd7f2f500ad389168ea3f2aa70dcc47b985646cb39e204289a63f72845dc  # Los Angeles 2025: girl (14), first name and last family name
@@ -50,9 +56,12 @@ cb27253dea135e059fec74a490e547f171f116f6d333d0d9f066b2b86876b0e6  # Wichita (Kan
 4aa19733bcdce976d1e247b8f433a0626deb707128b9f65de564b5fa76c75820  # Frankfort (Illinois) 2026: boy (2), first and family name
 18f6ee321a8392f8e5436f81d66f2f41b86b019a181e60cdf4f400c37cc41cf8  # Fruitland (Idaho) 2021: boy (5), first and family name
 1074f1168987dc971bad286778e7f23b5dcb912912aeff332fd1d504d3dc1942  # Muhlenberg County (Kentucky) 2026: infant boy (11 months), first and family name
-
-[everywhere]
-612e108fe1fb58fd3b767e31f9572f0b02cefa7cacb10b8805c62e8a55df6fc1  # Seneca (South Carolina) 2026: teenager located safe, first and middle name
-11f046c74e6a2bd0d3d413e087f3d93ebf1504e9cc9ada508716c69ffe1d6a48  # Seneca (South Carolina) 2026: teenager located safe, middle and family name
-087e804233bf6b6e36e56bd09d902a5788706365abfda480b136aeed87caf399  # Seneca (South Carolina) 2026: teenager located safe, first and family name
-09be40dc1ecc03e73067e05e18bc266bd2b16049c2459fe0f0653a6b972b65f8  # Los Angeles (California) 2026: boy (10) located in good health, first and family name
+868c3396c2ea352fdd7917327c7a186a65922c089081b2026af0193fcedcad5c  # Frisco (Texas) 2025: boy (17), first and family name. The Name Card allows the first name only, in article text
+905d127a73d6f7251f8d655b20b44fb2e0ede73e0af76ab5a72bb1322d10c202  # Frisco (Texas) 2025: boy (17), family name alone. The Name Card allows the first name only, in article text
+3614f7e180d9000547fe4b19cbdb4d222cdd4d4675a023588a69fbe2d1140189@7ed335629a6a5c3b0a04032a86a88750d2291b539004e1e51e48898ce9d19124  # Delphi (Indiana) 2017: girl (13), first name used alone
+3614f7e180d9000547fe4b19cbdb4d222cdd4d4675a023588a69fbe2d1140189@c6eb24d1cfc4b1629789e9795a4148a1d3ffb8ead2cb2e54acd0044629ce1855  # Delphi (Indiana) 2017: girl (13), first name used alone
+a0670a0fd3b5c9ae86b9186fac1543e3ceef4a103e5d4efb9db38787c3a9c1d1@a227a19d0247ec0fd21fc84ea614597fff256c9394392ab196a31ced3316c910  # Phoenix (Arizona) 1984: girl (14), first name used alone
+c35d6aaf3b3885dfc9f36cddf48a65e93a919e13165fbbcfc0f9de5636279559@017e3991cd285e2c22a539f2f8af8559e65bb2217b9874ef4d1cd6c4ee97650f  # Round Lake Beach (Illinois) 2001: newborn boy, first name used alone
+4d30c878c44ec3d52deb0318ae71d9a9b7a91391a46a9d704697570af06426f0@c8c0917578f70de60886957aef0e97b1a5b778d9430cbd3235f43347c94916b2  # Modesto (California) 2002: unborn son, the name his parents planned
+aec0e78824de1205cf98384780983c6f2b7c03f8a6e5036a508ece76f1b3c5a7@f3c9cd6237cad153a7b93f5b832205eaf4e4fa29d2e8a8eebaa90e77e24ac48b  # Wichita (Kansas) 1974: girl (11), first name used alone
+fb4683e1bc592e05e5cd68d305f4aa1f0641af38faa8c02e7bccc9f5654162c5@6f943a64d462a56ae6f17a7ed3185eceec2dcfd3513cdaf7f062b7ee8c27f7c9  # Frankfort (Illinois) 2026: boy (2), first name used alone

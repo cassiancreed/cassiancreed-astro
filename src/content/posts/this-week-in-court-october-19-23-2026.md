@@ -30,7 +30,7 @@ Full details: https://cassiancreed.com/court-calendar/
 
 **Time:** Time not publicly verified.
 
-Singer David Anthony Burke, known as D4vd, is charged with murder in the death of 14-year-old Celeste Rivas Hernandez. He has pleaded not guilty. A public defender now leads his defense after his private lawyers withdrew. Monday is a status hearing. The court may check on trial readiness and set the next dates. No trial date has been set.
+Singer David Anthony Burke, known as D4vd, is charged with murder in the death of a 14-year-old girl in Los Angeles. He has pleaded not guilty. A public defender now leads his defense after his private lawyers withdrew. Monday is a status hearing. The court may check on trial readiness and set the next dates. No trial date has been set.
 
 **What to watch:** Whether the new defense team asks for more time.
 
@@ -66,7 +66,7 @@ Full details: https://cassiancreed.com/court-calendar/
 
 **Time:** 8:30 a.m. ET (5:30 a.m. PT).
 
-In August, a jury found Jeffrey Norman Crum Sr. guilty of kidnapping, sexual battery, and murder in the 1993 death of 12-year-old Jennifer Renee Odom. The jury then voted 12–0 to recommend death. That vote is not the final sentence. A Spencer hearing is the step where the judge hears more before deciding. In Florida, the final sentence usually comes at a later court date.
+In August, a jury found Jeffrey Norman Crum Sr. guilty of kidnapping, sexual battery, and murder in the 1993 death of a 12-year-old girl from Pasco County, Florida. The jury then voted 12–0 to recommend death. That vote is not the final sentence. A Spencer hearing is the step where the judge hears more before deciding. In Florida, the final sentence usually comes at a later court date.
 
 **What to watch:** Whether the judge sets a date for the final sentence.
 

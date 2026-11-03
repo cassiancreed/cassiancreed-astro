@@ -94,7 +94,7 @@ Lyrics and a public persona do not independently prove criminal intent. Lawyers'
 
 ### Current posture
 
-After a five-day preliminary hearing, a Los Angeles County judge held David Anthony Burke, known as D4vd, to answer after finding sufficient probable cause for the case to proceed. Burke faces charges connected to the death of 14-year-old Celeste Rivas Hernandez. He has pleaded not guilty and remains presumed innocent.
+After a five-day preliminary hearing, a Los Angeles County judge held David Anthony Burke, known as D4vd, to answer after finding sufficient probable cause for the case to proceed. Burke faces charges connected to the death of a 14-year-old girl in Los Angeles. He has pleaded not guilty and remains presumed innocent.
 
 The proceeding now moves to arraignment on the information. A holding order at a preliminary hearing is not a conviction and does not establish guilt beyond a reasonable doubt.
 
@@ -154,7 +154,7 @@ If one of these legal stages deserves a deeper explainer, leave the case name in
 - [NBC Connecticut, Clancy deliberations and August 31 resumption](https://www.nbcconnecticut.com/news/national-international/lindsay-clancy-verdict-watch-jury-deliberations/3769550/)
 - [Associated Press, Davis defense rests and closing arguments are scheduled](https://apnews.com/article/tupac-shakur-duane-keffe-d-davis-01cf59fb7a4d9c4bb974e584bb4676f0)
 - [U.S. District Court, Central District of California trial calendar](https://apps.cacd.uscourts.gov/JpsApi/File/75d7eb18-dc9f-4ce6-cb0b-08defd365623)
-- [Los Angeles County District Attorney, charges in the Celeste Rivas Hernandez case](https://da.lacounty.gov/about/inside-LADA/singer-d4vd-charged-capital-murder-14-year-old-girl)
+- [Los Angeles County District Attorney, charges in the case of a 14-year-old girl in Los Angeles](https://da.lacounty.gov/about/inside-LADA/singer-d4vd-charged-capital-murder-14-year-old-girl)
 - [Utah County Attorney, September 1 preliminary-hearing argument notice](https://atty.utahcounty.gov/media/ckpr/135)
 
 *True crime that respects victims.*

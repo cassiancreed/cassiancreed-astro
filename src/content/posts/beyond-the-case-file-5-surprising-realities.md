@@ -41,7 +41,7 @@ But forensic analysts distinguish between a lead and a conviction. IGG provides 
 
 We often view victims as passive participants in their own tragedies, but modern technology has allowed them to reach out from the past to secure their own justice.
 
-In the Delphi murders, Libby German's final moments included recording the man investigators would eventually identify as her killer. In her last minutes, she created the primary witness testimony when no one else was there to see it. That wasn't luck. It was agency — and it mattered in court.
+In the Delphi murders, the 14-year-old girl's final moments included recording the man investigators would eventually identify as her killer. In her last minutes, she created the primary witness testimony when no one else was there to see it. That wasn't luck. It was agency — and it mattered in court.
 
 In the age of digital forensics, these breadcrumbs — a single video, a GPS ping, a recorded heartbeat — bridge the gap between a stagnant investigation and a definitive conviction.
 
