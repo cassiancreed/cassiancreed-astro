@@ -98,6 +98,40 @@ const CALENDAR_PAIR_HASHES=new Set([
   'c475e9ebbaa39f484e82da4afff461eab90b6b88739596bebe214d00953ac01c', // Maricopa County (Arizona) teen homicide: victim (16), first and family name
   '21145875513d58636bd392a4b90db6c9b0b8c94a3ace63fdd0709ac35fb3f381', // Boulder (Colorado) unsolved homicide: child (6), first and family name
 ]);
+// ---- The hand-kept list of protected children ---------------------------------------
+// src/data/protected-children.hashes holds children the data cannot flag on its own (no age
+// is written beside the name). Hashes only; each line has a role comment and no name. Two
+// sections:
+//   [surface]    the name may appear in article text only, and only because its Name
+//                Card passed. Anywhere else it fails (title, heading, meta, address, ...).
+//   [everywhere] the Name Card did not pass (FAIL or UNSURE). The name fails everywhere,
+//                article text included. A line may end its hash with @<hash of a page
+//                path> to apply only on that page (for a first name that is also an
+//                ordinary name, like a first name used alone).
+// A hash is of a lowercase word, or of two words in a row with a space between them, with
+// accents removed. The same hash can be used for a word or a pair.
+const PROTECTED_LIST_PATH='src/data/protected-children.hashes';
+function parseProtectedList(text) {
+  const list={surface:new Set(),everywhere:new Set(),scoped:new Map(),problems:[]};
+  let section='';
+  text.split(/\r?\n/).forEach((line,n)=>{
+    const trimmed=line.trim();
+    if(!trimmed||trimmed.startsWith('#')) return;
+    const header=trimmed.match(/^\[(surface|everywhere)\]$/);
+    if(header) { section=header[1]; return; }
+    const m=trimmed.match(/^([0-9a-f]{64})(?:@([0-9a-f]{64}))?\s+#\s+(\S.{9,})$/);
+    if(!m||!section||(m[2]&&section!=='everywhere')) { list.problems.push('line '+(n+1)); return; }
+    if(m[2]) { if(!list.scoped.has(m[2])) list.scoped.set(m[2],new Set()); list.scoped.get(m[2]).add(m[1]); }
+    else list[section].add(m[1]);
+  });
+  return list;
+}
+const PROTECTED_LIST=parseProtectedList(existsSync(PROTECTED_LIST_PATH)?readFileSync(PROTECTED_LIST_PATH,'utf8'):'');
+// Every listed hash is also protected on the surfaces the other lists protect.
+for(const id of [...PROTECTED_LIST.surface,...PROTECTED_LIST.everywhere,...[...PROTECTED_LIST.scoped.values()].flatMap(set=>[...set])]) {
+  CALENDAR_WORD_HASHES.add(id);
+  CALENDAR_PAIR_HASHES.add(id);
+}
 const CALENDAR_PAGES=[
   'dist/court-calendar/index.html',
   'dist/court-calendar/archive/index.html',
@@ -211,7 +245,7 @@ const RETIRED_ROW_ID_HASHES=new Set([
   '1f654591835b3eee70555e03bf23ba61b3b014f589876f703ed9116f38b67d66', // Maricopa County (Arizona) teen homicide row, severed trial
 ]);
 
-const lettersIn=text=>[...text.matchAll(/[A-Za-z]+/g)].map(m=>m[0].toLowerCase());
+const lettersIn=text=>[...text.normalize('NFD').replace(/[\u0300-\u036f]/g,'').matchAll(/[A-Za-z]+/g)].map(m=>m[0].toLowerCase());
 // Hashes of protected names found in text. firstNames: also test the first names
 // that are checked only in addresses and IDs.
 function protectedNames(text,{firstNames=false,words=CALENDAR_WORD_HASHES,pairs=PAIRS_WITH_ALERT,names=ADDRESS_FIRST_NAME_HASHES}={}) {
@@ -239,13 +273,35 @@ const FULL_NAME=`${NAME_WORD}(?: (?:[A-Z]\\.|${NAME_WORD})){0,3}`;
 // Words that show a match is a place, a date or a phrase, not a person. A pair that holds one is skipped.
 const NOT_A_NAME=new Set('january february march april may june july august september october november december monday tuesday wednesday thursday friday saturday sunday the a an in on at of for and but or as by he she they his her their it this that these those case court judge state day year years age aged mr mrs ms dr jr sr high school college university academy elementary middle county city police sheriff department hospital center church park lake river island beach street avenue road bridge district prison jail federal supreme circuit grand jury trial murder death shooting fire house home'.split(' '));
 const PLACEHOLDER_WORDS=new Set(['jane','john','doe','baby','boy','girl','infant','unknown','unidentified']);
+// Ages come as digits ("14"), hyphenated ("14-year-old"), or spelled out ("fourteen",
+// "five-year-old"). Spelled-out ages count only inside an "N-year-old"-style phrase, so a
+// word like "one" in "one of the jurors" is never read as an age. A month age ("11-month-old")
+// is a child of age 0.
+const AGE_WORDS={one:1,two:2,three:3,four:4,five:5,six:6,seven:7,eight:8,nine:9,ten:10,eleven:11,twelve:12,thirteen:13,fourteen:14,fifteen:15,sixteen:16,seventeen:17,eighteen:18,nineteen:19,twenty:20};
+const AGE_WORD_FORMS=Object.keys(AGE_WORDS).flatMap(word=>[word,word[0].toUpperCase()+word.slice(1)]).join('|');
+const AGE=`(?<![\\w-])(\\d{1,2}|${AGE_WORD_FORMS})(?![\\w])`;
+const ageOf=token=>/^\d/.test(token)?Number(token):(AGE_WORDS[token.toLowerCase()]??99);
+const ROLE_NOUN='(?:(?:high school |college |middle school )?(?:student|boy|girl|son|daughter|teen|teenager|child|victim|baby|infant)(?:,|\\s+named|\\s+identified as)?\\s+)?';
 const AGE_PATTERNS=[
-  {rx:new RegExp(`(${FULL_NAME}) \\((\\d{1,2})\\)`,'g'),name:1,age:2},
+  {rx:new RegExp(`(${FULL_NAME}) \\(${AGE}\\)`,'g'),name:1,age:2},
   {rx:new RegExp(`(${FULL_NAME}), (\\d{1,2})(?=[,.;)\\s]|$)`,'g'),name:1,age:2},
-  {rx:new RegExp(`\\b(\\d{1,2})-year-old (?:(?:high school |college |middle school )?(?:student|boy|girl|son|daughter|teen|teenager|child|victim|baby)(?:,|\\s+named|\\s+identified as)?\\s+)?(${FULL_NAME})`,'g'),name:2,age:1},
-  {rx:new RegExp(`(${FULL_NAME}),? \\(?(?:aged?|age) (\\d{1,2})\\b`,'g'),name:1,age:2},
-  {rx:new RegExp(`(${FULL_NAME}), (?:a|an|the) (\\d{1,2})-year-old`,'g'),name:1,age:2},
-  {rx:new RegExp(`(${FULL_NAME}) was (\\d{1,2}) years old`,'g'),name:1,age:2},
+  {rx:new RegExp(`${AGE}[- ]years?[- ]old ${ROLE_NOUN}(${FULL_NAME})`,'g'),name:2,age:1},
+  {rx:new RegExp(`(${FULL_NAME}),? \\(?(?:aged?|age) ${AGE}`,'g'),name:1,age:2},
+  {rx:new RegExp(`(${FULL_NAME}), (?:a|an|the) ${AGE}[- ]years?[- ]old`,'g'),name:1,age:2},
+  {rx:new RegExp(`(${FULL_NAME}) was ${AGE} years? old`,'g'),name:1,age:2},
+  // Babies: "11-month-old Name", "Name, an 11-month-old", "Name was 11 months old".
+  {rx:new RegExp(`${AGE}[- ]months?[- ]old ${ROLE_NOUN}(${FULL_NAME})`,'g'),name:2,age:()=>0},
+  {rx:new RegExp(`(${FULL_NAME}), (?:a|an|the) ${AGE}[- ]months?[- ]old`,'g'),name:1,age:()=>0},
+  {rx:new RegExp(`(${FULL_NAME}) was ${AGE} months old`,'g'),name:1,age:()=>0},
+];
+// A child named beside "presumed dead", "remains" or another sign of a death, with no age
+// written: "the boy, Name, whose remains..." / "Name, a girl, was killed". The sentence must
+// carry a death word, and the name must sit right beside a child word.
+const DEATH_GATE=/presumed (?:dead|death)|presumed to be dead|\bremains\b|found dead|body was found|\bkilled\b|\bmurdered\b|\bdied\b|death of|disappearance of/i;
+const CHILD_NOUN='(?:boy|girl|toddler|infant|baby|newborn|child)';
+const CHILD_APPOSITION=[
+  new RegExp(`\\b${CHILD_NOUN}(?:,|\\s+named|\\s+called)?\\s+(${FULL_NAME})`,'g'),
+  new RegExp(`(${FULL_NAME}),? (?:a|an|the|her|his|their) (?:[a-z-]+ ){0,3}${CHILD_NOUN}\\b`,'g'),
 ];
 const CHARGE_BEFORE=/\b(?:defendant|suspect|accused)\s*$/i;
 const CHARGE_AFTER=/^[,;)\s]*(?:(?:who|and he|and she|he|she)\s+)?(?:(?:was|is|were|has been|had been|pleaded|pled)\s+)?(?:charged|accused|arrested|convicted|sentenced|indicted|guilty|not guilty)\b/i;
@@ -259,19 +315,29 @@ function namePairs(words) {
   return [words[0]+' '+words[n-1],words[n-2]+' '+words[n-1]];
 }
 const looksLikeName=words=>words.length>=2&&!words.some(word=>NOT_A_NAME.has(word)||PLACEHOLDER_WORDS.has(word));
-// Lowercase pairs of every name found beside an age under 18.
-function minorNamePairs(text) {
+const plain=text=>text.normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+// Lowercase pairs of every name found beside a child signal: an age under 18 (digits,
+// hyphenated or spelled out), or a child word plus a death word. A defendant is left out.
+function minorNamePairs(raw) {
+  const text=plain(raw);
   const found=new Set();
+  const take=(m,group)=>{
+    const end=m.index+m[0].length;
+    if(CHARGE_BEFORE.test(text.slice(Math.max(0,m.index-40),m.index))||CHARGE_AFTER.test(text.slice(end,end+60))) return;
+    let words=(m[group].match(/[A-Za-z]+/g)||[]).map(word=>word.toLowerCase());
+    while(words.length&&NOT_A_NAME.has(words[0])) words.shift();
+    if(!looksLikeName(words)) return;
+    for(const pair of namePairs(words)) found.add(pair);
+  };
   for(const {rx,name,age} of AGE_PATTERNS) {
     for(const m of text.matchAll(rx)) {
-      if(Number(m[age])>=18) continue;
-      const end=m.index+m[0].length;
-      if(CHARGE_BEFORE.test(text.slice(Math.max(0,m.index-40),m.index))||CHARGE_AFTER.test(text.slice(end,end+60))) continue;
-      let words=(m[name].match(/[A-Za-z]+/g)||[]).map(word=>word.toLowerCase());
-      while(words.length&&NOT_A_NAME.has(words[0])) words.shift();
-      if(!looksLikeName(words)) continue;
-      for(const pair of namePairs(words)) found.add(pair);
+      const years=typeof age==='function'?age(m):ageOf(m[age]);
+      if(years<18) take(m,name);
     }
+  }
+  for(const sentence of text.split(/(?<=[.!?])\s+|\n+/)) {
+    if(!DEATH_GATE.test(sentence)) continue;
+    for(const rx of CHILD_APPOSITION) for(const m of sentence.matchAll(rx)) take({...m,index:text.indexOf(sentence)+m.index,0:m[0]},1);
   }
   return found;
 }
@@ -545,6 +611,20 @@ test('names are built from the site\'s own data: a name beside an age under 18 i
   assert.deepEqual(pairs('Apalachee High School, 14 students spoke.'),[],'a place');
   assert.deepEqual(pairs('Baby Doe (1) was found.'),[],'a placeholder');
   assert.deepEqual(pairs('Texas (12) voted.'),[],'one word is not a name');
+  // Spelled-out and hyphenated ages, months, and a child word beside a death word.
+  assert.deepEqual(pairs('The five-year-old Zorblax Fixture vanished.'),['zorblax fixture'],'a spelled-out, hyphenated age');
+  assert.deepEqual(pairs('Five-year-old Zorblax Fixture vanished.'),['zorblax fixture'],'a spelled-out age at the start of a sentence');
+  assert.deepEqual(pairs('Zorblax Fixture, a fourteen-year-old, was found.'),['zorblax fixture']);
+  assert.deepEqual(pairs('Zorblax Fixture was fourteen years old.'),['zorblax fixture']);
+  assert.deepEqual(pairs('Zorblax Fixture (fourteen) was found.'),['zorblax fixture']);
+  assert.deepEqual(pairs('The 11-month-old Zorblax Fixture was found.'),['zorblax fixture'],'a baby');
+  assert.deepEqual(pairs('Zorblax Fixture was 11 months old.'),['zorblax fixture'],'a baby');
+  assert.deepEqual(pairs('The twenty-one-year-old Zorblax Fixture spoke.'),[],'"one" inside "twenty-one" is not an age');
+  assert.deepEqual(pairs('San Antonio, one juror said.'),[],'"one" outside an age phrase is not an age');
+  assert.deepEqual(pairs('The remains of the boy Zorblax Fixture were never found.'),['zorblax fixture'],'a child word and "remains"');
+  assert.deepEqual(pairs('Zorblax Fixture, the boy, was presumed dead.'),['zorblax fixture'],'a child word and "presumed dead"');
+  assert.deepEqual(pairs('The girl Zorblax Fixture won a prize.'),[],'a child word without a death word');
+  assert.deepEqual(pairs('Zorblax Fixture, a man, was killed.'),[],'an adult');
   assert.ok(DERIVED_PAIR_HASHES.size>=5,'the data produced almost no names; the age patterns may have broken');
 });
 test('the owner allowlists are only the two marked ones, and each is still in use',()=>{
@@ -576,4 +656,38 @@ test('built script files keep protected names out of their keys and addresses',(
     if(protectedNames(tokens,{firstNames:true}).length||retiredRowId(tokens)) bad.push(path);
   }
   assert.deepEqual(bad,[],'a built script file names a protected child');
+});
+
+// ---------------------------------------------------------------------------
+// Children whose Name Card did not pass are named nowhere, article text included.
+// ---------------------------------------------------------------------------
+function bodyBanHits(path,text,list=PROTECTED_LIST) {
+  const ids=new Set(list.everywhere);
+  for(const id of list.scoped.get(hash(pageKey(path)))||[]) ids.add(id);
+  return protectedNames(ownText(text),{words:ids,pairs:ids,firstNames:false});
+}
+test('the protected-children list file reads cleanly: every line is a hash with a role comment',()=>{
+  assert.ok(existsSync(PROTECTED_LIST_PATH),PROTECTED_LIST_PATH+' is missing');
+  assert.deepEqual(PROTECTED_LIST.problems,[],'these lines of '+PROTECTED_LIST_PATH+' are not "hash  # role comment" under a [surface] or [everywhere] heading');
+  assert.ok(PROTECTED_LIST.surface.size+PROTECTED_LIST.everywhere.size>0,PROTECTED_LIST_PATH+' lists no child');
+});
+test('the list file understands sections, page scope and role comments',()=>{
+  const a=hash('zorblax fixture');
+  const b=hash('quentin');
+  const list=parseProtectedList(`# note\n[surface]\n${a}  # fixture child, first and family name\n[everywhere]\n${b}@${hash('/post/fixture-page')}  # fixture child, first name on one page\n${a} no comment\n`);
+  assert.deepEqual([...list.surface],[a]);
+  assert.deepEqual([...list.scoped.get(hash('/post/fixture-page'))],[b]);
+  assert.equal(list.problems.length,1,'a line without a role comment is a problem');
+  assert.equal(parseProtectedList(`[surface]\n${a}@${b}  # a scoped line is not allowed here\n`).problems.length,1);
+  const ban=parseProtectedList(`[everywhere]\n${a}  # fixture child, first and family name\n${b}@${hash('/post/fixture-page')}  # fixture child, first name on one page\n`);
+  assert.equal(bodyBanHits('dist/post/other/index.html','<p>Zorblax Fixture and Quentin.</p>',ban).length,1,'the pair fails in article text; the scoped first name does not fail on another page');
+  assert.equal(bodyBanHits('dist/post/fixture-page/index.html','<p>Quentin spoke.</p>',ban).length,1,'the scoped first name fails on its page');
+  assert.equal(bodyBanHits('dist/post/other/index.html','<a href="https://news.example/zorblax-fixture">x</a>',ban).length,0,'another site\'s address is its own text');
+});
+test('a child whose Name Card did not pass is named nowhere on the built site, article text included',()=>{
+  const bad=[];
+  for(const path of builtPages.concat(['dist/sitemap.xml','dist/rss.xml','dist/llms.txt'])) {
+    if(bodyBanHits(path,readFileSync(path,'utf8')).length) bad.push(path);
+  }
+  assert.deepEqual(bad,[],bad.length+' built files name a child whose Name Card did not pass');
 });

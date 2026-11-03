@@ -1,0 +1,52 @@
+# Protected children: hashes only, one per line, each with a role comment (no names).
+# Format:  <sha256 of a lowercase word, or of two words in a row>  # role comment
+# A name is lowercase letters only, accents removed. See scripts/test-clancy-child-names.mjs.
+#
+# [surface]    The Name Card passed. The name may be in article text, and nowhere else
+#              (not a title, heading, meta tag, address, ID, image text or structured data).
+# [everywhere] The Name Card did not pass (FAIL or UNSURE). Role words only, article text
+#              included. "hash@pagehash" applies on one page only (a first name used alone).
+
+[surface]
+ff39abc149561065d7e00fde13831021d0101c8b839449ddd8bc7e54af36f008  # New Hampshire girl (5), Manchester, case decided 2024: first and family name
+9fb8321e6e02cd7c8eb2e3c7713b913bc903f5fe08bcce9593c76d75f35c368c  # Winder (Georgia) 2024 school shooting: boy (14), first and family name
+b1f57dc257db82155f8378e9a2099e434ed4b59c42e9e3453b9d04075f2f9d81  # Winder (Georgia) 2024 school shooting: boy (14), family name
+1b1e3f1122c3188fc7068cfc0eabac30ac70e73c3df36c786f88a5f0bfa02371  # Winder (Georgia) 2024 school shooting: boy (14), first and family name
+7b9941d82f3ffba7ff1db14c2387bf08dac3d6a0ae9c51106bdfe2a96f74da92  # Idaho 2019 case: boy (7), first and family name
+89192aae334e3b6a650580e757692abbb1bffec4f890f75c19e96ec8f5d9aa69  # Idaho 2019 case: boy (7), nickname and family name
+c8427504a6fc3e2dbdde2e82f617a4c4a45ebd68933fa0b1f4e4784ffbcdf096  # Idaho 2019 case: girl (16), first and family name
+28585b10532342e5d09bf7df7d5aca8881bbb6cfcb57f4155996deaef57dd544  # Idaho 2019 case: girl (16), first name
+ac4e8d3be7aff3adb9f7b9ca340468b46bcb17d25860b1f56942b9e3a413188d  # Brantham (Suffolk) 2026: boy (3), first and family name
+1ae26652fce06a69c7d90c77e3f24da3c270fbe1565f2069b9db7d22efe0b809  # New York 1979: boy (6), first and family name
+fe07025ed2603dcc6b56d635aa57ee318fe714635527f93b4209837622b8cb20  # Los Angeles 2025: girl (14), first name and first family name
+0aa09f4887d655ee0425c0371adfad190d3128d07585952ff87b2f0f8d21496f  # Los Angeles 2025: girl (14), the two family names
+cfbbcd7f2f500ad389168ea3f2aa70dcc47b985646cb39e204289a63f72845dc  # Los Angeles 2025: girl (14), first name and last family name
+5b0e1ceb3173b8ff0de2a262df2abaa0d403bfaea700f399f82a4c9f7226398b  # Los Angeles 2025: girl (14), first name
+f057f391ba66477ba5a5a6ddd3fbd0ec03afc4fccb9d9f83302d8c5c97956eaa  # Delphi (Indiana) 2017: girl (14), first and family name
+90f931694ccea52238225b62857cb3d26816ff43dd5ef32daad70a3693daeefa  # Delphi (Indiana) 2017: girl (14), given name and family name
+7cf7b152874767a5b190cd48117669627a549810cc5768f638642ff021e8293a  # Delphi (Indiana) 2017: girl (14), nickname
+e1f8f44e9c55a7e7f7cc3b0a3602e536b728a69277e0b60b1771e4b8e067f776  # Delphi (Indiana) 2017: girl (13), first and family name
+6ca67a10d61c6d54722d8f4d5781ed8673762c90aaf56085a08a323ae425f3ea  # Delphi (Indiana) 2017: girl (13), given name and family name
+21145875513d58636bd392a4b90db6c9b0b8c94a3ace63fdd0709ac35fb3f381  # Boulder (Colorado) 1996: girl (6), first and family name
+9ac565be51857cbde1c820d9afc8c67c602663f41f8077c4627c901cf6a92ce0  # Boulder (Colorado) 1996: girl (6), first name, accents removed
+f658a64db78bccb69f0af80b882a828ca3f8a84dc058ff4d7c0dc17a4d818f6d  # Phoenix (Arizona) 1984: girl (14), first and family name
+470550b71be3d76fde35d9fa4a55faba519e142057b46430c6f5bcb1c5881661  # Phoenix (Arizona) 1984: girl (14), first and middle name
+7fc8c2c87f6ba16797b0a6fb0b74b66f253fa75ee70473cf1c02a6cb66445785  # Phoenix (Arizona) 1984: girl (14), middle and family name
+4939f33893f8fb5fc44bbdd07ad014cd86b5593a88a6b0c2c3172c442e94c45d  # Phoenix (Arizona) 1984: girl (14), family name
+1ce77db3fc6741da47619d06cc3d2b2fd0267733cb87a0ad911600cf4abe9ac6  # Woodlawn (Maryland) 1976: girl (16), first and family name
+c37ea01ffc00282486304172acc2f2227509b5cc6e9a210048efac795f4e5033  # Woodlawn (Maryland) 1976: girl (16), family name
+be3aae4585ddd63c50de1fd9fde6d2cdba5ae082b5f7618c2602773c5e5c4793  # Round Lake Beach (Illinois) 2001: newborn boy, the name a charity gave him
+26edad35c87d78e7ed735d44f0a1afaba8f50d17a5bc110215f1e92110da3188  # Round Lake Beach (Illinois) 2001: newborn boy, the name a charity gave him
+6e6bd29552dc5b649f924d60538c7916b10a16c71326662d275b8fc756c35da8  # New Boston (Texas) 2020: newborn girl, first and middle name
+088f5651028191ac0ed572a1bfe9b9c8544fa091149dfd8d70bd34d7f3af3609  # New Boston (Texas) 2020: newborn girl, middle and family name
+11b461f2f2beb567040a3667ebfbe8d80b818d3cd16453e5b52583784560b1c4  # New Boston (Texas) 2020: newborn girl, first and family name
+97b172a5e233b2f23d3d416ad3b43462e61ca33326a16bcabbe45210519fe9d5  # New Boston (Texas) 2020: newborn girl, first name
+d0f2e9c3d3dbb2cd4cfa60fd292322ac8724b2e78753569e7b5197beba16f1dc  # Wichita (Kansas) 1974: girl (11), first and family name
+cb27253dea135e059fec74a490e547f171f116f6d333d0d9f066b2b86876b0e6  # Wichita (Kansas) 1974: boy (9), family name and suffix
+0f8d6fea74374da2f2634e66fefee1d2568c2296a16a21b8ec22b5d477acda5b  # Wichita (Kansas) 1974: boy (9), family name and suffix
+6d72962b7a68bc7f17efb3a4a410488de00621e857d14b462ac7c6d227ff2d65  # Pasco County (Florida) 1993: girl (12), first and family name
+0505b27e31a0c06f5943a600b076bf43079785b7fb2e0697355f7871c86b4a1d  # Pasco County (Florida) 1993: girl (12), middle and family name
+53de420607723f4e1db8bc6d4f734156cf72682a7c325172a1c261be1c3d4a29  # Pasco County (Florida) 1993: girl (12), first and middle name
+4aa19733bcdce976d1e247b8f433a0626deb707128b9f65de564b5fa76c75820  # Frankfort (Illinois) 2026: boy (2), first and family name
+18f6ee321a8392f8e5436f81d66f2f41b86b019a181e60cdf4f400c37cc41cf8  # Fruitland (Idaho) 2021: boy (5), first and family name
+1074f1168987dc971bad286778e7f23b5dcb912912aeff332fd1d504d3dc1942  # Muhlenberg County (Kentucky) 2026: infant boy (11 months), first and family name
