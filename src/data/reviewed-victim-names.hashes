@@ -1,0 +1,6 @@
+# Victim names a person has checked by hand: hashes only, one per line, each with a role comment (no names).
+# Format:  <sha256 of the name in lowercase letters only, no spaces or accents>  # role comment
+# scripts/warn-victim-names.mjs prints every "death of / murder of / killing of <Name>" phrase in the
+# built pages whose text block has no age. It prints each name's hash. After a person checks the name
+# (an adult, or a child whose Name Card passed), add that hash here so the name is not listed again.
+# A child with no Name Card goes in src/data/protected-children.hashes instead, and is made role-only.
