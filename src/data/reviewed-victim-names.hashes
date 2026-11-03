@@ -3,4 +3,6 @@
 # scripts/warn-victim-names.mjs prints every "death of / murder of / killing of <Name>" phrase in the
 # built pages whose text block has no age. It prints each name's hash. After a person checks the name
 # (an adult, or a child whose Name Card passed), add that hash here so the name is not listed again.
+# The same file is used by the second warning list (court-calendar rows with "juvenile", "teen",
+# "minor", "boy" or "girl" next to a name).
 # A child with no Name Card goes in src/data/protected-children.hashes instead, and is made role-only.

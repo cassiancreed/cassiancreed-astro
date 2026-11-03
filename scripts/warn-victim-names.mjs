@@ -46,7 +46,13 @@ const cleanName = (name) => {
   while (words.length && LEADING.has(bare(words[0]))) words.shift();
   return words.length >= 2 ? words.join(' ') : '';
 };
-const looksLikeAPerson = (name) => Boolean(name) && !NOT_A_PERSON.has(bare(name.split(/\s+/)[0]));
+// Last words of a place, a court or an office, not a person.
+const NOT_A_PERSON_END = new Set(['county', 'parish', 'court', 'city', 'state', 'district', 'jail', 'prison', 'school', 'hospital', 'police', 'department',
+  'office', 'sheriff', 'university', 'college', 'academy', 'center', 'centre', 'times', 'news', 'post', 'tv', 'division']);
+const looksLikeAPerson = (name) => {
+  const words = (name || '').split(/\s+/).filter(Boolean);
+  return words.length >= 2 && !NOT_A_PERSON.has(bare(words[0])) && !NOT_A_PERSON_END.has(bare(words[words.length - 1]));
+};
 
 const ENTITIES = {amp: '&', lt: '<', gt: '>', quot: '"', apos: "'", nbsp: ' ', rsquo: '’', lsquo: '‘', ndash: '–', mdash: '—'};
 const decode = (text) => text
@@ -76,6 +82,56 @@ export function phrasesWithoutAge(block, reviewed = new Set()) {
   return found;
 }
 
+// ---- Calendar rows that call someone a juvenile, teen, minor, boy or girl next to a name ----
+// A second warning list. A court-calendar row can name a young person without an age (a
+// news source may only say "a juvenile"). This lists each row text that has one of those
+// words within a few words of a name, so a person can hand-check it. An adult witness or
+// defendant can be listed too. A name checked by hand goes in the same reviewed file.
+const CHILD_ROLE = '(?:[Jj]uveniles?|[Tt]een(?:ager|age)?s?|[Mm]inors?|[Bb]oys?|[Gg]irls?)';
+const ROLE_THEN_NAME = new RegExp(`\\b${CHILD_ROLE}\\b[^.;:!?]{0,40}?\\b(${NAME})`, 'g');
+const NAME_THEN_ROLE = new RegExp(`(${NAME})[^.;:!?]{0,40}?\\b${CHILD_ROLE}\\b`, 'g');
+const ROW_TEXT_FIELDS = ['proceeding', 'status', 'detail', 'next_note', 'source_label', 'source2_label'];
+export function roleNextToName(text, reviewed = new Set()) {
+  const found = [];
+  for (const re of [ROLE_THEN_NAME, NAME_THEN_ROLE]) {
+    re.lastIndex = 0;
+    for (const m of text.matchAll(re)) {
+      const name = cleanName(m[1]);
+      if (!looksLikeAPerson(name) || reviewed.has(hashOfName(name))) continue;
+      found.push({name, snippet: m[0].replace(m[1], name)});
+    }
+  }
+  return found;
+}
+export function calendarRowWarnings(tsv, reviewed = new Set()) {
+  const [head, ...lines] = tsv.split(/\r?\n/).filter((line) => line.trim());
+  const cols = head.split('\t');
+  const byName = new Map();
+  for (const line of lines) {
+    const cells = line.split('\t');
+    const row = Object.fromEntries(cols.map((col, i) => [col, cells[i] || '']));
+    for (const field of ROW_TEXT_FIELDS) {
+      for (const hit of roleNextToName(row[field], reviewed)) {
+        const key = hashOfName(hit.name);
+        if (!byName.has(key)) byName.set(key, {name: hit.name, hash: key, snippet: hit.snippet, rows: new Set()});
+        byName.get(key).rows.add(`${row.id} (${field})`);
+      }
+    }
+  }
+  return [...byName.values()].sort((a, b) => a.name.localeCompare(b.name));
+}
+export function rowReport(list) {
+  if (!list.length) return 'calendar-row warnings: none.';
+  return [
+    `WARNING (not a failure): ${list.length} name${list.length === 1 ? '' : 's'} in a court-calendar row with "juvenile", "teen", "minor", "boy" or "girl" next to it.`,
+    'A person must check each one: a child with no Name Card must be role-only in the row text and the row ID.',
+    `Checked by hand and fine? Add its hash (below) to ${REVIEWED_PATH} with a role comment and no name.`,
+    ...list.map((item) => `  ${item.hash}  ${item.snippet}  [${[...item.rows].sort().join('; ')}]`),
+  ].join('\n');
+}
+const CALENDAR_PATH = 'src/data/court-calendar.tsv';
+const REVIEWED_PATH = 'src/data/reviewed-victim-names.hashes';
+
 const htmlFiles = (dir) => existsSync(dir)
   ? readdirSync(dir, {withFileTypes: true}).flatMap((e) => e.isDirectory() ? htmlFiles(join(dir, e.name)) : /\.html$/.test(e.name) ? [join(dir, e.name).replace(/\\/g, '/')] : [])
   : [];
@@ -95,7 +151,6 @@ export function scan(dist = 'dist', reviewed = new Set()) {
   return [...byName.values()].sort((a, b) => Number(b.childWord) - Number(a.childWord) || a.name.localeCompare(b.name));
 }
 
-const REVIEWED_PATH = 'src/data/reviewed-victim-names.hashes';
 export function report(list) {
   if (!list.length) return 'victim-name warnings: none.';
   return [
@@ -107,11 +162,12 @@ export function report(list) {
 }
 
 if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
+  const reviewed = existsSync(REVIEWED_PATH) ? reviewedHashes(readFileSync(REVIEWED_PATH, 'utf8')) : new Set();
   if (!existsSync('dist')) {
     console.log('victim-name warnings: no dist folder, skipped.');
   } else {
-    const reviewed = existsSync(REVIEWED_PATH) ? reviewedHashes(readFileSync(REVIEWED_PATH, 'utf8')) : new Set();
     console.log(report(scan('dist', reviewed)));
   }
+  console.log(existsSync(CALENDAR_PATH) ? rowReport(calendarRowWarnings(readFileSync(CALENDAR_PATH, 'utf8'), reviewed)) : 'calendar-row warnings: no calendar file, skipped.');
   process.exit(0);
 }

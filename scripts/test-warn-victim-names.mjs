@@ -5,7 +5,7 @@ import {tmpdir} from 'node:os';
 import {join} from 'node:path';
 import {spawnSync} from 'node:child_process';
 import {fileURLToPath} from 'node:url';
-import {hasAge, hashOfName, phrasesWithoutAge, report, reviewedHashes, scan, textBlocks} from './warn-victim-names.mjs';
+import {calendarRowWarnings, hasAge, hashOfName, phrasesWithoutAge, report, reviewedHashes, roleNextToName, rowReport, scan, textBlocks} from './warn-victim-names.mjs';
 
 // The victim-name warning list (scripts/warn-victim-names.mjs) is a warning, never a failure.
 // These tests check what it lists and that it always exits 0. The names are made up.
@@ -78,5 +78,49 @@ test('the command prints warnings and still exits 0', () => {
     rmSync(join(dir, 'dist'), {recursive: true, force: true});
     const none = spawnSync(process.execPath, [fileURLToPath(new URL('./warn-victim-names.mjs', import.meta.url))], {cwd: dir, encoding: 'utf8'});
     assert.equal(none.status, 0);
+  } finally { rmSync(dir, {recursive: true, force: true}); }
+});
+
+const roleNames = (text, reviewed) => roleNextToName(text, reviewed).map((hit) => hit.name);
+
+test('a juvenile, teen, minor, boy or girl next to a name is listed', () => {
+  assert.deepEqual(roleNames('Police said a juvenile, Zorblax Fixture, was shot.'), ['Zorblax Fixture']);
+  assert.deepEqual(roleNames('Zorblax Fixture, a teen witness, took the stand.'), ['Zorblax Fixture']);
+  assert.deepEqual(roleNames('The girl Zorblax Fixture was found safe.'), ['Zorblax Fixture']);
+  assert.deepEqual(roleNames('A minor named Zorblax Fixture was a witness.'), ['Zorblax Fixture']);
+});
+
+test('the role word must be near the name, in the same sentence, and the name must look like a person', () => {
+  assert.deepEqual(roleNames('A juvenile was shot. Zorblax Fixture was indicted a week later.'), []);
+  assert.deepEqual(roleNames('He is charged in the death of a juvenile in Mecklenburg County.'), []);
+  assert.deepEqual(roleNames('The teen witnesses Court TV reported on were not named.'), []);
+  assert.deepEqual(roleNames('The boy lived in a house on a long road, and later Zorblax Fixture moved in.'), []);
+  assert.deepEqual(roleNames('Police said a juvenile, Zorblax Fixture, was shot.', reviewedHashes(`${hashOfName('Zorblax Fixture')}  # checked by hand\n`)), []);
+});
+
+test('calendar rows are checked field by field, and the list says which row and field', () => {
+  const tsv = ['section\tid\tcase\tproceeding\tstatus\tdetail\tnext_note\tsource_label\tsource2_label',
+    'open\trow-one\tA case\tHearing\tPolice said a juvenile, Zorblax Fixture, was shot.\tx\tx\tNews\t',
+    'open\trow-two\tA case\tHearing\tHe is charged in the death of a juvenile.\tx\tx\tNews\t',
+    'open\trow-three\tA case\tHearing\tx\tx\tx\tNews story about teen Quimby Fixture\t'].join('\n');
+  const list = calendarRowWarnings(tsv);
+  assert.deepEqual(list.map((item) => item.name), ['Quimby Fixture', 'Zorblax Fixture']);
+  assert.deepEqual([...list[1].rows], ['row-one (status)']);
+  assert.deepEqual([...list[0].rows], ['row-three (source_label)']);
+  assert.equal(list[1].hash, hashOfName('Zorblax Fixture'));
+  assert.match(rowReport(list), /WARNING \(not a failure\): 2 names/);
+  assert.match(rowReport([]), /none/);
+  assert.deepEqual(calendarRowWarnings(tsv, reviewedHashes(`${hashOfName('Zorblax Fixture')}  # checked by hand\n`)).map((item) => item.name), ['Quimby Fixture']);
+});
+
+test('the command also prints the calendar-row warnings and still exits 0', () => {
+  const dir = mkdtempSync(join(tmpdir(), 'victim-names-'));
+  try {
+    mkdirSync(join(dir, 'src', 'data'), {recursive: true});
+    writeFileSync(join(dir, 'src', 'data', 'court-calendar.tsv'), 'section\tid\tcase\tproceeding\tstatus\tdetail\tnext_note\tsource_label\tsource2_label\nopen\trow-one\tA case\tHearing\tPolice said a juvenile, Zorblax Fixture, was shot.\tx\tx\tNews\t\n');
+    const run = spawnSync(process.execPath, [fileURLToPath(new URL('./warn-victim-names.mjs', import.meta.url))], {cwd: dir, encoding: 'utf8'});
+    assert.equal(run.status, 0, 'warnings must never fail the build');
+    assert.match(run.stdout, /WARNING \(not a failure\): 1 name in a court-calendar row/);
+    assert.match(run.stdout, /juvenile, Zorblax Fixture.*row-one \(status\)/);
   } finally { rmSync(dir, {recursive: true, force: true}); }
 });
