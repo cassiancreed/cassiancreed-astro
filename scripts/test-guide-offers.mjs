@@ -38,13 +38,16 @@ test('a Beehiiv product or book destination cannot be labeled FREE',()=>{
  }
 });
 test('rendered guide offers show prices and each is followed by its FREE page-1 preview',()=>{
- let count=0,previews=0;
+ let count=0,previews=0,withPreview=0;
  for(const file of files('dist').filter(f=>f.endsWith('.html'))){
   const list=anchors(readFileSync(file,'utf8'));
   list.forEach((a,i)=>{
    if(!keys.some(key=>a.href?.split('?')[0]===productPrefix+handleOf(key)))return;
    assert.match(a.body,/\$1\.99 GUIDE/,file);count++;
    const key=keyOfHandle(new URL(a.href).pathname.split('/').pop()),next=list[i+1];
+   // A guide with no entry in GUIDE_PREVIEWS (its Name Card did not pass) has no preview, and none may be linked.
+   if(!GUIDE_PREVIEWS[key]){assert.ok(!next?.href?.includes('/previews/'),'a preview after '+key+' in '+file);return;}
+   withPreview++;
    assert.ok(next,'preview after '+key+' in '+file);
    assert.equal(next.href,GUIDE_PREVIEWS[key],'preview after '+key+' in '+file);
    assert.match(next.body,/>FREE</,file);assert.match(next.body,/Read a free sample (?:→|&rarr;)/,file);
@@ -53,7 +56,7 @@ test('rendered guide offers show prices and each is followed by its FREE page-1 
   });
  }
  assert.ok(count>=8,'Expected calendar and both free-post offers');
- assert.equal(previews,count);
+ assert.equal(previews,withPreview);
 });
 test('every /previews/ link in dist resolves to a real PDF in dist',()=>{
  let seen=0;
@@ -89,7 +92,7 @@ test('D4vd keeps its paid section before Sources and posts reuse shared badge CS
  assert.ok(s.indexOf('## What to watch for next')<s.indexOf('## Want the full case in one place?'));
  assert.ok(s.indexOf('## Want the full case in one place?')<s.indexOf('## Sources'));
  assert.ok(s.includes(productPrefix+handleOf(keys[1])));
- assert.ok(s.indexOf(productPrefix+handleOf(keys[1]))<s.indexOf(GUIDE_PREVIEWS[keys[1]]));
+ assert.ok(!GUIDE_PREVIEWS[keys[1]]&&!s.includes('/previews/'),'the D4vd guide has no free preview');
  assert.match(readFileSync('src/pages/post/[slug].astro','utf8'),/calendar-explainer-links\.css/);
  assert.match(readFileSync('src/components/CalendarExplainerLink.astro','utf8'),/calendar-explainer-links\.css/);
  assert.equal(PREVIEW_LINK_TEXT,'Read a free sample');

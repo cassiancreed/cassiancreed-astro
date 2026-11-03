@@ -806,10 +806,12 @@ export const JURY_CHESS_LINK = {
 export const CALENDAR_LINK_TYPES = ['free', 'paid', 'book'];
 // GUIDE-02: free page-1 previews. Each preview sits right after its paid guide
 // link and is always a local /previews/ PDF, never a Beehiiv product URL.
+// The Los Angeles guide has no preview: its Name Card did not pass and page 1 names the child.
+// Its old preview address is in REMOVED_PREVIEWS and may not be linked again.
 export const GUIDE_PREVIEWS = {
-  'guide-la-arraignment': '/previews/d4vd-guide-v2-preview.pdf',
   'both-sides-michelle-parker-guide-v3': '/previews/michelle-parker-both-sides-v3-preview.pdf',
 };
+export const REMOVED_PREVIEWS = ['/previews/d4vd-guide-v2-preview.pdf'];
 export const PREVIEW_LINK_TEXT = 'Read a free sample';
 export function previewLinkFor(paidLink) {
   const url = GUIDE_PREVIEWS[paidLink?.bookKey];
