@@ -243,6 +243,8 @@ const RETIRED_ROW_ID_HASHES=new Set([
   '25bd32a8e24777687bbb309144cf05867f952d7560d840cd4c86267dc1520dbc', // Muhlenberg County (Kentucky) infant row
   'f6d112190982bddda2919484eafe0c02da7e9b8f47623543ba4c6ab18ff2d1bd', // Maricopa County (Arizona) teen homicide row, joint trial
   '1f654591835b3eee70555e03bf23ba61b3b014f589876f703ed9116f38b67d66', // Maricopa County (Arizona) teen homicide row, severed trial
+  '752553bf38fd1c30dd7410f570c93ced7371ad40b1a42f28e39db39c55a89d5f', // Galveston County (Texas) 1984 teen case row
+  'bca8509b4f61e46785667a2aad9e8c09c54bfd149696c2f02e571fb3a3e86e2c', // Mecklenburg County (North Carolina) 2026 juvenile homicide row
 ]);
 
 const lettersIn=text=>[...text.normalize('NFD').replace(/[\u0300-\u036f]/g,'').matchAll(/[A-Za-z]+/g)].map(m=>m[0].toLowerCase());
