@@ -357,16 +357,19 @@ const DERIVED_PAIR_HASHES=new Set(dataTexts().flatMap(text=>[...minorNamePairs(t
 //     /missing-persons/ and /today/ only (see MISSING_PERSON_LIST_PAGES).
 //   - Role-only: a status of found or resolved, or no active official poster (a link
 //     whose label says withdrawn, unavailable, former, canceled or absent is no poster).
-// The site's data has no age column, so a child entry is found by what the data says:
-// a national-center (NCMEC) entry, an entry the agency labels "Missing Child", or a
-// government entry that carries a national-center poster or case number. Adult entries
-// are not touched by this rule. Built from missing-persons.tsv, not typed by hand.
+// A state government missing-child notice that names the child counts as an official
+// poster (owner's ruling): the entry may stay named if it links that notice and is active.
+// The site's data has no age column, so a child entry is found by what the data says, whoever
+// the source is (national center, police, sheriff or a government list): a national-center
+// (NCMEC) entry, an entry the agency labels "Missing Child", or any entry that carries a
+// national-center poster link, case number or status note. Adult entries are not touched
+// by this rule. Built from missing-persons.tsv, not typed by hand.
 const ACTIVE_STATUSES=new Set(['missing','endangered','involuntarily_missing','abducted','voluntarily_absent']);
 const FOUND_STATUSES=new Set(['located_safe','recovered_deceased','resolved']);
 const GONE_LINK_LABEL=/withdrawn|unavailable|former|cancel|absent|no longer|expired|archived/i;
 const POSTER_LINK_LABEL=/poster|flyer|notice|alert|bulletin|profile|case page|update|missing[- ]child/i;
 const NOT_A_POSTER_LABEL=/contact|directory|annual report|home ?page|main page|feed|search|\blist\b/i;
-const LAW_ENFORCEMENT_ADDRESS=/police|sheriff|patrol|wsp|attorneygeneral|public-safety|missing/i;
+const LAW_ENFORCEMENT_ADDRESS=/police|sheriff|patrol|wsp|fbi|attorneygeneral|public-safety|missing/i;
 function officialPosterLink(url,label) {
   if(!url||GONE_LINK_LABEL.test(label||'')) return false;
   let link;
@@ -380,7 +383,8 @@ function missingRows() {
   const head=lines[0].split('\t');
   return lines.slice(1).map((line,i)=>({line,number:i+2})).filter(({line})=>line).map(({line,number})=>({...Object.fromEntries(head.map((column,i)=>[column,line.split('\t')[i]||''])),number}));
 }
-const isChildAlertRow=row=>row.kind==='case'&&(row.source_type==='ncmec'||/^Missing Child/i.test(row.agency_status)||(row.source_type==='government'&&(/NCMEC|Missing Children/i.test(row.case_number)||['source_url','source2_url','tip_url'].some(key=>/missingkids\.org/i.test(row[key])))));
+const hasNationalCenterEvidence=row=>/NCMEC|Missing Child/i.test(row.case_number+' '+row.agency_status)||['source_url','source2_url','tip_url'].some(key=>/missingkids\.org/i.test(row[key]));
+const isChildAlertRow=row=>row.kind==='case'&&(row.source_type==='ncmec'||/^Missing Child/i.test(row.agency_status)||hasNationalCenterEvidence(row));
 const hasOfficialPoster=row=>officialPosterLink(row.source_url,row.source_label)||officialPosterLink(row.source2_url,row.source2_label);
 const CHILD_WORDS=/\b(?:child|children|boy|girl|teen(?:ager)?|juvenile|minor|runaway|infant|baby|toddler|\d{1,2}-year-old)\b/i;
 // An entry found or resolved is a child's when the data says so (a child alert row, or a child word in it).
@@ -694,6 +698,7 @@ test('an official poster is the national center\'s poster page or a police .gov 
 });
 test('alert rule: a living child in an active alert with an official poster may be named; every other child entry is role-only; adult entries are left alone',()=>{
   const row=(over)=>({kind:'case',id:'x',name:'Zorblax Fixture',status:'missing',agency_status:'Missing Child',source_type:'ncmec',case_number:'NCMEC 1',source_url:'https://www.missingkids.org/poster/NCMC/1/1',source_label:'NCMEC missing-child poster',source2_url:'',source2_label:'',tip_url:'',summary:'x',...over});
+  const adult=(over)=>row({case_number:'Sheriff 9',source_url:'https://news.example/x',source_label:'News story',source2_url:'',source2_label:'',...over});
   const ids=rows=>alertRule(rows).allowed.map(r=>r.id).join()+'|'+alertRule(rows).roleOnly.map(r=>r.id).join();
   assert.equal(ids([row({id:'a'})]),'a|','active, poster linked: may be named');
   assert.equal(ids([row({id:'b',source_label:'Withdrawn NCMEC poster'})]),'|b','poster withdrawn: role-only');
@@ -701,11 +706,21 @@ test('alert rule: a living child in an active alert with an official poster may 
   assert.equal(ids([row({id:'d',status:'located_safe'})]),'|d','found safe: role-only, even with the poster link');
   assert.equal(ids([row({id:'e',status:'recovered_deceased'})]),'|e','found dead: role-only');
   assert.equal(ids([row({id:'f',status:'located_safe',source_type:'investigating_agency',agency_status:'Located safe',summary:'The teenager was found.'})]),'|f','found child (a child word in the entry): role-only');
-  assert.equal(ids([row({id:'g',status:'located_safe',source_type:'investigating_agency',agency_status:'Located safe',summary:'She was found.'})]),'|','found adult: left alone');
-  assert.equal(ids([row({id:'h',source_type:'investigating_agency',agency_status:'Missing',source_url:'https://www.fbi.gov/wanted/kidnap/x',source_label:'FBI missing-person poster'})]),'|','adult entry: left alone');
-  assert.equal(ids([row({id:'i',source_type:'tribal_authority',agency_status:'Open',source_url:'https://www.bia.gov/x',source_label:'BIA case profile'})]),'|','age not stated: left alone');
+  assert.equal(ids([adult({id:'g',status:'located_safe',source_type:'investigating_agency',agency_status:'Located safe',summary:'She was found.'})]),'|','found adult: left alone');
+  assert.equal(ids([adult({id:'h',source_type:'investigating_agency',agency_status:'Missing',source_url:'https://www.fbi.gov/wanted/kidnap/x',source_label:'FBI missing-person poster'})]),'|','adult entry: left alone');
+  assert.equal(ids([adult({id:'i',source_type:'tribal_authority',agency_status:'Open',source_url:'https://www.bia.gov/x',source_label:'BIA case profile'})]),'|','age not stated: left alone');
   assert.equal(ids([row({id:'j',source_type:'government',agency_status:'Missing',case_number:'Virginia Missing Children\'s Clearinghouse VA26-1'})]),'j|','a clearinghouse child entry with its poster: may be named');
   assert.equal(ids([row({id:'k',source_type:'government',agency_status:'Missing',case_number:'Sheriff 55',source_url:'https://wsp.example.gov/list.pdf',source_label:'WSP list'})]),'|','a government list that does not say child: left alone');
+  // The source type does not matter: an agency entry that carries the national center's case number is a child entry too.
+  const agency=(over)=>row({source_type:'investigating_agency',agency_status:'Listed missing by Example Police; NCMEC poster withdrawn',source_url:'https://www.example.gov/police/missing_persons.php',source_label:'Example Police missing-persons page',source2_url:'https://www.missingkids.org/poster/NCMC/1/1',source2_label:'Withdrawn NCMEC poster',...over});
+  assert.equal(ids([agency({id:'l'})]),'|l','an agency entry whose national-center poster is withdrawn and whose only other link is a police list page: role-only');
+  assert.equal(ids([agency({id:'m',source2_label:'NCMEC poster',agency_status:'Missing'})]),'m|','an agency entry with a live national-center poster: may be named');
+  assert.equal(ids([agency({id:'n',source_type:'investigating_agency',agency_status:'Missing',source_url:'https://www.fbi.gov/wanted/kidnap/x',source_label:'FBI missing-person poster'})]),'n|','an FBI poster counts');
+  // A state government missing-child notice that names the child is an official poster (owner ruling).
+  const state=(over)=>row({source_type:'government',agency_status:'State notice active; NCMEC poster unavailable',source_url:'https://www.example.gov/Law-Enforcement/Missing-Persons',source_label:'State printable missing-child notice',source2_url:'',source2_label:'',...over});
+  assert.equal(ids([state({id:'o'})]),'o|','a state notice, linked and active: may stay named');
+  assert.equal(ids([state({id:'p',source_url:'',source_label:''})]),'|p','a state entry with no link: role-only');
+  assert.equal(ids([state({id:'q',status:'located_safe'})]),'|q','a state entry that was found: role-only');
   for(const name of ['A boy from Brantham, Suffolk, found dead September 2026','A 10-year-old boy from Los Angeles, California, located in good health October 2026','Two children missing from Redmond, Washington, since December 2023','A child missing from Naugatuck, Connecticut, since August 2026']) assert.equal(ROLE_ONLY_NAME.test(name),true,name);
   for(const name of ['Zorblax Fixture','A. J. Fixture','Zorblax Fixture and Quentin Fixture','The Fixture family']) assert.equal(ROLE_ONLY_NAME.test(name),false,name);
 });
