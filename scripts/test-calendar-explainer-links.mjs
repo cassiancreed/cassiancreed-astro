@@ -54,7 +54,7 @@ test('day markers aggregate all entries and retain free, paid, book order', () =
 });
 
 test('review exclusions never receive BOOK links, even when their event is a jury trial', () => {
-  assert.deepEqual([...JURY_CHESS_EXCLUDED_IDS], ["goncalves-wsu-trial","aramburu-paris-trial","kepner-federal-trial","brianna-moore-trial","clancy-trial","virzi-trial","canyon-county-idaho-child-case-trial","crum-jury-recommendation","maricopa-county-teen-homicide-meisner-trial","maricopa-county-teen-homicide-five-defendant-trial","elmore-laura-miller-trial","wagner-trial","gardner-jury-selection","gardner-trial","bridegan-fernandez-trial","farwell-jury-trial","farwell-trial-oct19","carter-brooks-trial","ryan-cavett-trial","killins-verdict-sentencing","eaton-burlington-trial","banks-federal-trial","conway-mo3-trial"]);
+  assert.deepEqual([...JURY_CHESS_EXCLUDED_IDS], ["goncalves-wsu-trial","aramburu-paris-trial","kepner-federal-trial","brianna-moore-trial","clancy-trial","virzi-trial","canyon-county-idaho-child-case-trial","crum-jury-recommendation","maricopa-county-teen-homicide-meisner-trial","maricopa-county-teen-homicide-five-defendant-trial","elmore-galveston-county-teen-manslaughter-trial","wagner-trial","gardner-jury-selection","gardner-trial","bridegan-fernandez-trial","farwell-jury-trial","farwell-trial-oct19","carter-brooks-trial","ryan-cavett-trial","killins-verdict-sentencing","eaton-burlington-trial","banks-federal-trial","conway-mo3-trial"]);
   for (const id of JURY_CHESS_EXCLUDED_IDS) {
     const entry = entries.find(e => e.id === id);
     assert.ok(entry, id);
