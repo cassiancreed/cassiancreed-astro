@@ -80,7 +80,7 @@ At sentencing on August 18, 2005, the court heard from victims' family members b
 
 Since around 2023, investigators in other states have examined whether Rader could be connected to unsolved crimes that occurred during his active years and his long dormant stretch. These inquiries deserve careful framing. Rader has been convicted only of the ten Kansas murders. Any other claimed link is, until proven, exactly that: an open question, and he is entitled to the presumption of innocence on matters never charged or adjudicated.
 
-In Oklahoma, the Osage County Sheriff's Office publicly described Rader as a person of interest in the 1976 disappearance of **Cynthia Dawn Kinney**, a young laundromat worker whose body has never been found. The local district attorney, however, said publicly that there was not enough evidence to formally name Rader a suspect. As of this writing, that case remains unsolved and the question of any BTK connection remains unproven.
+In Oklahoma, the Osage County Sheriff's Office publicly described Rader as a person of interest in the 1976 disappearance of a 16-year-old girl who worked at a laundromat in Pawhuska, Oklahoma. Her body has never been found. The local district attorney, however, said publicly that there was not enough evidence to formally name Rader a suspect. As of this writing, that case remains unsolved and the question of any BTK connection remains unproven.
 
 A separate inquiry has since been resolved in the opposite direction. The 1990 death of **Shawna Beth Garber** in Missouri had drawn speculation about a possible BTK link. In March 2024, authorities announced that the case was closed with a different man identified as the person responsible, and Rader was excluded as a suspect. That outcome is a useful reminder of why these links must be treated cautiously: speculation around an infamous name can outrun the evidence, and following the forensics where they actually lead is what serves victims.
 
@@ -101,7 +101,7 @@ After pleading guilty in June 2005, Rader was sentenced in August 2005 to ten co
 It stands for "bind, torture, kill," a name the offender chose for himself in communications with the media and police. We use it only to identify the case, not to amplify the self-image he sought.
 
 **Is Dennis Rader linked to other unsolved murders?**
-He has been examined as a person of interest in some cold cases, most notably the 1976 disappearance of Cynthia Dawn Kinney in Oklahoma, which remains unsolved and unproven as to any BTK connection. A Missouri case once tied to speculation, the 1990 death of Shawna Beth Garber, was closed in 2024 with a different man named and Rader excluded. Outside his ten Kansas convictions, no additional murders have been proven against him.
+He has been examined as a person of interest in some cold cases, most notably the 1976 disappearance of a 16-year-old girl in Oklahoma, which remains unsolved and unproven as to any BTK connection. A Missouri case once tied to speculation, the 1990 death of Shawna Beth Garber, was closed in 2024 with a different man named and Rader excluded. Outside his ten Kansas convictions, no additional murders have been proven against him.
 
 ---
 
