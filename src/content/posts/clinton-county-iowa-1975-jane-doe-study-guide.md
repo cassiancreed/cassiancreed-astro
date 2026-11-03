@@ -1,10 +1,10 @@
 ---
-title: "Study Guide: The Identification of Cheryl Lynn Edwards"
-description: "A study guide on the identification of Cheryl Lynn Edwards, formerly known as Jane Clinton Doe, and the forensic genetic genealogy work that restored her name after 51 years."
+title: "Study Guide: The 2026 Identification of the 1975 Clinton County, Iowa Jane Doe"
+description: "A study guide on the identification of a 15-year-old girl, formerly known as Jane Clinton Doe, and the forensic genetic genealogy work that restored her name after 51 years."
 pubDate: 2026-06-26
 tag: "Case Files"
 featured: false
-victim: "Cheryl Lynn Edwards"
+victim: "A 15-year-old girl, formerly known as Jane Clinton Doe"
 incidentDate: "1975"
 location: "Clinton County, Iowa"
 jurisdiction: "Clinton County, Iowa"
@@ -13,7 +13,7 @@ cover: "/covers/generated-image.png"
 capture: "dna"
 ---
 
-## Study Guide: The Identification of Cheryl Lynn Edwards
+## Study Guide: The 2026 Identification of the 1975 Clinton County, Iowa Jane Doe
 
 Use this study guide to review the key facts of the Cheryl Lynn Edwards case, the forensic methods involved, and the questions worth thinking through. It is built for careful study, not for spectacle.
 

@@ -85,7 +85,7 @@ function extractFaq(body) {
   }
   return out;
 }
-const faq = extractFaq(post.body);
+const faq = extractFaq(post.body).filter(f => !(post.data.faqSkip ?? []).includes(f.q));
 const faqNode = faq.length ? {
   "@type":"FAQPage",
   "mainEntity": faq.map(f => ({ "@type":"Question", "name": f.q, "acceptedAnswer": { "@type":"Answer", "text": f.a } }))

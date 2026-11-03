@@ -17,7 +17,7 @@ The cases worth following, kept current. This is our running watchlist of the mo
 <iframe class="capture__embed" src="https://subscribe-forms.beehiiv.com/v3/forms/4d0df7d0-f274-4901-a457-091f80cecef0?utm_source=website&amp;utm_medium=post_cta&amp;utm_campaign=lm_case_how-to-read-a-case" title="Get the free guide" loading="lazy" scrolling="no" frameborder="0" style="display:block;width:100%;max-width:460px;height:220px;border:0;margin:0;background:transparent;color-scheme:light"></iframe>
 </div>
 
-## Etan Patz — conviction reinstated by the U.S. Supreme Court, June 22, 2026
+## The 1979 SoHo disappearance — conviction reinstated by the U.S. Supreme Court, June 22, 2026
 
 Victim: Etan Patz, 6, who vanished on May 25, 1979 during his first solo walk to the school bus in SoHo, Manhattan, and became the original "milk carton kid." Status: Pedro Hernandez, convicted in 2017, had his conviction reinstated 6-3 by the U.S. Supreme Court on June 22, 2026 under AEDPA; he continues to serve 25 years to life. What's next: the case is now closed; Hernandez was denied a new trial. Why it matters: a decades-long disappearance that reshaped how America searches for missing children reaches a final legal resolution. Read the full case file.
 

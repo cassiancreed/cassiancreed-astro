@@ -288,8 +288,8 @@ export const CALENDAR_EXPLAINER_CASES = [
     ],
     "free": [
       {
-        "url": "/post/the-delphi-murders-how-libby-german-s-own-phone-helped-convict-richard-allen/",
-        "text": "The Delphi Murders: How Libby German's Own Phone Helped Convict Richard Allen"
+        "url": "/post/the-delphi-murders-how-a-victims-own-phone-helped-convict-richard-allen/",
+        "text": "The Delphi Murders: How a Victim's Own Phone Helped Convict Richard Allen"
       }
     ],
     "paid": []
@@ -331,8 +331,8 @@ export const CALENDAR_EXPLAINER_CASES = [
     ],
     "free": [
       {
-        "url": "/post/etan-patz-supreme-court-2026-conviction-reinstated/",
-        "text": "Etan Patz — SCOTUS Reinstates Pedro Hernandez Conviction"
+        "url": "/post/soho-1979-disappearance-supreme-court-2026-conviction-reinstated/",
+        "text": "The 1979 SoHo Disappearance — SCOTUS Reinstates Pedro Hernandez Conviction"
       }
     ],
     "paid": []
@@ -695,17 +695,17 @@ const PUBLISHED_POSTS = new Set([
   "/post/a-jury-convicted-a-family-still-grieves-karmelo-anthony-verdict/",
   "/post/baby-boy-doe-mansfield-1985/",
   "/post/anatomy-of-a-murder-trial-hernandez-melgar/",
-  "/post/cheryl-lynn-edwards-jane-clinton-doe-timeline/",
+  "/post/clinton-county-iowa-1975-jane-doe-case-timeline/",
   "/post/can-you-be-convicted-of-murder-without-a-body/",
-  "/post/cheryl-lynn-edwards-study-guide/",
+  "/post/clinton-county-iowa-1975-jane-doe-study-guide/",
   "/post/beyond-the-case-file-5-surprising-realities/",
-  "/post/cheryl-lynn-edwards-jane-clinton-doe-faq/",
+  "/post/clinton-county-iowa-1975-jane-doe-identified-faq/",
   "/post/christa-pike-failed-execution-what-happens-next/",
   "/post/eugene-gligor-leslie-preer/",
   "/post/erin-patterson-case-explained/",
   "/post/chevy-chase-cold-case-dna/",
   "/post/does-criminal-profiling-actually-work/",
-  "/post/etan-patz-supreme-court-2026-conviction-reinstated/",
+  "/post/soho-1979-disappearance-supreme-court-2026-conviction-reinstated/",
   "/post/apalachee-plea-hearing-what-a-non-negotiated-plea-means/",
   "/post/diddy-s-verdict-explained-what-sean-combs-was-convicted-of-and-what-the-jury-rejected/",
   "/post/how-washington-courts-work-hernandez-melgar/",
@@ -718,7 +718,7 @@ const PUBLISHED_POSTS = new Set([
   "/post/gilgo-beach-murders-science-unravels-nightmare/",
   "/post/karen-read-was-acquitted-of-killing-john-o-keefe-his-family-is-still-waiting-for-answers/",
   "/post/leslie-preer-murder/",
-  "/post/jane-clinton-doe-identified-cheryl-lynn-edwards/",
+  "/post/clinton-county-iowa-1975-jane-doe-identification/",
   "/post/lindsay-clancy-trial-2026-postpartum-psychosis/",
   "/post/irasema-chavez-mayra-velasquez-arlington-cold-case/",
   "/post/lindsay-clancy-trial-postpartum-mental-health-legal-nexus/",
@@ -748,7 +748,7 @@ const PUBLISHED_POSTS = new Set([
   "/post/the-frame-the-banfield-au-pair-affair-the-full-account/",
   "/post/the-gabby-petito-case-timeline-investigation-and-lasting-impact/",
   "/post/the-gilgo-beach-murders-rex-heuermann-pleads-guilty-and-eight-women-are-finally-named/",
-  "/post/the-delphi-murders-how-libby-german-s-own-phone-helped-convict-richard-allen/",
+  "/post/the-delphi-murders-how-a-victims-own-phone-helped-convict-richard-allen/",
   "/post/the-casey-goodson-jr-case-ex-deputy-jason-meade-reckless-homicide-conviction-explained/",
   "/post/the-frame-christine-banfield-joseph-ryan-fairfax-au-pair-murders/",
   "/post/the-btk-killer-how-dennis-rader-was-finally-caught/",

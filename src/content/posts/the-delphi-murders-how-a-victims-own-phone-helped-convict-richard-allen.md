@@ -1,11 +1,11 @@
 ---
-title: "The Delphi Murders: How Libby German's Own Phone Helped Convict Richard Allen"
-description: "Abby Williams and Libby German were killed in 2017. How Libby's own phone recording helped convict Richard Allen — and where the 2026 appeal stands."
+title: "The Delphi Murders: How a Victim's Own Phone Helped Convict Richard Allen"
+description: "Two girls, 13 and 14, were killed near Delphi, Indiana in 2017. How one girl's own phone recording helped convict Richard Allen — and where the 2026 appeal stands."
 pubDate: 2026-05-17
 updatedDate: 2026-10-31
 tag: "Case Files"
 featured: false
-victim: "Abby Williams (13) and Libby German (14)"
+victim: "Two girls, ages 13 and 14"
 incidentDate: "February 13, 2017"
 location: "Delphi, Indiana"
 jurisdiction: "Indiana state court (Carroll County)"
@@ -16,7 +16,7 @@ coverAlt: "An old iron railroad trestle spanning a dark creek at night, its gird
 
 Richard Allen is the man convicted of murdering Abigail "Abby" Williams, 13, and Liberty "Libby" German, 14, two best friends from Delphi, Indiana, who were killed on February 13, 2017. After more than five years of investigation, Allen — a local pharmacy technician who had lived quietly in the same small town the whole time — was arrested in October 2022. On November 11, 2024, a jury found him guilty on all four counts, and in December 2024 a judge sentenced him to 130 years in prison. Allen has appealed; his case is before the Court of Appeals of Indiana, where oral arguments were heard on September 21, 2026. As of October 31, 2026, no decision has been reported, and the conviction stands. That is the legal shape of the story. But the heart of it belongs to two eighth-graders who deserve to be remembered as far more than how they died.
 
-## Who Abby and Libby Were
+## Who the Two Girls Were
 
 Abby Williams and Libby German were inseparable — the kind of friends whose families' lives had grown braided together through years of sleepovers and shared rides. Abby loved to draw and paint; she was creative and a little shy until you got to know her, and then she was funny. Libby was the spark — outgoing, athletic, the one who documented everything because that's what teenagers in 2017 did with the people they loved. On a mild February afternoon during a day off from school, a family member dropped the two girls off to walk the Monon High Bridge Trail, a stretch of old railroad track and woods that locals had hiked for generations. It was supposed to be an ordinary outing. When the girls didn't show up at the agreed pickup spot that evening, their families raised the alarm. Searchers found their bodies the next day in the woods near the bridge.
 

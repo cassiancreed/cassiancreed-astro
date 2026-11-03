@@ -40,3 +40,24 @@ https://www.cassiancreed.com/*   https://cassiancreed.com/:splat   301!
 # Minor Shield fix (Doctrine v2.7, 2026-11-02): the old Apalachee plea-hearing address carried the name of a defendant who was 14 when charged; the new address is role-based
 /post/colt-gray-hearing-what-a-non-negotiated-plea-means/   /post/apalachee-plea-hearing-what-a-non-negotiated-plea-means/   301!
 /post/colt-gray-hearing-what-a-non-negotiated-plea-means    /post/apalachee-plea-hearing-what-a-non-negotiated-plea-means/   301!
+
+# Minor Shield fix, second pass (Doctrine v2.7, 2026-11-02): six old post addresses carried the names of children who died (a 1979 SoHo disappearance, two Delphi girls, and a 1975 Iowa Jane Doe in four posts); the new addresses are place-and-year based
+/post/cheryl-lynn-edwards-jane-clinton-doe-faq/   /post/clinton-county-iowa-1975-jane-doe-identified-faq/   301!
+/post/cheryl-lynn-edwards-jane-clinton-doe-faq    /post/clinton-county-iowa-1975-jane-doe-identified-faq/   301!
+/post/cheryl-lynn-edwards-jane-clinton-doe-timeline/   /post/clinton-county-iowa-1975-jane-doe-case-timeline/   301!
+/post/cheryl-lynn-edwards-jane-clinton-doe-timeline    /post/clinton-county-iowa-1975-jane-doe-case-timeline/   301!
+/post/cheryl-lynn-edwards-study-guide/   /post/clinton-county-iowa-1975-jane-doe-study-guide/   301!
+/post/cheryl-lynn-edwards-study-guide    /post/clinton-county-iowa-1975-jane-doe-study-guide/   301!
+/post/jane-clinton-doe-identified-cheryl-lynn-edwards/   /post/clinton-county-iowa-1975-jane-doe-identification/   301!
+/post/jane-clinton-doe-identified-cheryl-lynn-edwards    /post/clinton-county-iowa-1975-jane-doe-identification/   301!
+/post/etan-patz-supreme-court-2026-conviction-reinstated/   /post/soho-1979-disappearance-supreme-court-2026-conviction-reinstated/   301!
+/post/etan-patz-supreme-court-2026-conviction-reinstated    /post/soho-1979-disappearance-supreme-court-2026-conviction-reinstated/   301!
+/post/the-delphi-murders-how-libby-german-s-own-phone-helped-convict-richard-allen/   /post/the-delphi-murders-how-a-victims-own-phone-helped-convict-richard-allen/   301!
+/post/the-delphi-murders-how-libby-german-s-own-phone-helped-convict-richard-allen    /post/the-delphi-murders-how-a-victims-own-phone-helped-convict-richard-allen/   301!
+
+# Same fix for the social-card images of those posts: the old image file names carried the names; the images moved to the new post names
+/og/cheryl-lynn-edwards-jane-clinton-doe-faq.jpg   /og/clinton-county-iowa-1975-jane-doe-identified-faq.jpg   301!
+/og/cheryl-lynn-edwards-jane-clinton-doe-timeline.jpg   /og/clinton-county-iowa-1975-jane-doe-case-timeline.jpg   301!
+/og/cheryl-lynn-edwards-study-guide.jpg   /og/clinton-county-iowa-1975-jane-doe-study-guide.jpg   301!
+/og/jane-clinton-doe-identified-cheryl-lynn-edwards.jpg   /og/clinton-county-iowa-1975-jane-doe-identification.jpg   301!
+/og/the-delphi-murders-how-libby-german-s-own-phone-helped-convict-richard-allen.png   /og/the-delphi-murders-how-a-victims-own-phone-helped-convict-richard-allen.png   301!

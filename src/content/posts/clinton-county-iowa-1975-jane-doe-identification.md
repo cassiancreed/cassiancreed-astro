@@ -1,10 +1,10 @@
 ---
-title: "The Identification of Cheryl Lynn Edwards: Restoring Identity After 51 Years"
+title: "The 2026 Identification of the 1975 Clinton County, Iowa Jane Doe: Restoring Identity After 51 Years"
 description: "After 51 years as Jane Clinton Doe, a 15-year-old homicide victim has her name back. Forensic genetic genealogy restored her identity; the homicide investigation remains active."
 pubDate: 2026-06-26
 tag: "Case Files"
 featured: true
-victim: "Cheryl Lynn Edwards"
+victim: "A 15-year-old girl, formerly known as Jane Clinton Doe"
 incidentDate: "April 11, 1975"
 location: "Clinton County, Iowa"
 jurisdiction: "Iowa Department of Public Safety; Clinton County Sheriff's Office"
