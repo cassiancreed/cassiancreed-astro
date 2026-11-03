@@ -1,0 +1,170 @@
+# Protected children: hashes only, one per line, each with a role comment (no names).
+# Format:  <sha256 of a lowercase word, or of two words in a row>  # role comment
+# A name is lowercase letters only, accents removed. See scripts/test-clancy-child-names.mjs.
+#
+# [surface]    The Name Card passed. The name may be in article text, and nowhere else
+#              (not a title, heading, meta tag, address, ID, image text or structured data).
+# [everywhere] The Name Card did not pass (FAIL or UNSURE). Role words only, article text
+#              included. "hash@pagehash" applies on one page only (a first name used alone).
+
+[surface]
+ff39abc149561065d7e00fde13831021d0101c8b839449ddd8bc7e54af36f008  # New Hampshire girl (5), Manchester, case decided 2024: first and family name
+9fb8321e6e02cd7c8eb2e3c7713b913bc903f5fe08bcce9593c76d75f35c368c  # Winder (Georgia) 2024 school shooting: boy (14), first and family name
+b1f57dc257db82155f8378e9a2099e434ed4b59c42e9e3453b9d04075f2f9d81  # Winder (Georgia) 2024 school shooting: boy (14), family name
+1b1e3f1122c3188fc7068cfc0eabac30ac70e73c3df36c786f88a5f0bfa02371  # Winder (Georgia) 2024 school shooting: boy (14), first and family name
+7b9941d82f3ffba7ff1db14c2387bf08dac3d6a0ae9c51106bdfe2a96f74da92  # Idaho 2019 case: boy (7), first and family name
+89192aae334e3b6a650580e757692abbb1bffec4f890f75c19e96ec8f5d9aa69  # Idaho 2019 case: boy (7), nickname and family name
+c8427504a6fc3e2dbdde2e82f617a4c4a45ebd68933fa0b1f4e4784ffbcdf096  # Idaho 2019 case: girl (16), first and family name
+28585b10532342e5d09bf7df7d5aca8881bbb6cfcb57f4155996deaef57dd544  # Idaho 2019 case: girl (16), first name
+ac4e8d3be7aff3adb9f7b9ca340468b46bcb17d25860b1f56942b9e3a413188d  # Brantham (Suffolk) 2026: boy (3), first and family name
+1ae26652fce06a69c7d90c77e3f24da3c270fbe1565f2069b9db7d22efe0b809  # New York 1979: boy (6), first and family name
+
+[everywhere]
+612e108fe1fb58fd3b767e31f9572f0b02cefa7cacb10b8805c62e8a55df6fc1  # Seneca (South Carolina) 2026: teenager located safe, first and middle name
+11f046c74e6a2bd0d3d413e087f3d93ebf1504e9cc9ada508716c69ffe1d6a48  # Seneca (South Carolina) 2026: teenager located safe, middle and family name
+087e804233bf6b6e36e56bd09d902a5788706365abfda480b136aeed87caf399  # Seneca (South Carolina) 2026: teenager located safe, first and family name
+09be40dc1ecc03e73067e05e18bc266bd2b16049c2459fe0f0653a6b972b65f8  # Los Angeles (California) 2026: boy (10) located in good health, first and family name
+fe07025ed2603dcc6b56d635aa57ee318fe714635527f93b4209837622b8cb20  # Los Angeles 2025: girl (14), first name and first family name
+0aa09f4887d655ee0425c0371adfad190d3128d07585952ff87b2f0f8d21496f  # Los Angeles 2025: girl (14), the two family names
+cfbbcd7f2f500ad389168ea3f2aa70dcc47b985646cb39e204289a63f72845dc  # Los Angeles 2025: girl (14), first name and last family name
+5b0e1ceb3173b8ff0de2a262df2abaa0d403bfaea700f399f82a4c9f7226398b  # Los Angeles 2025: girl (14), first name
+f057f391ba66477ba5a5a6ddd3fbd0ec03afc4fccb9d9f83302d8c5c97956eaa  # Delphi (Indiana) 2017: girl (14), first and family name
+90f931694ccea52238225b62857cb3d26816ff43dd5ef32daad70a3693daeefa  # Delphi (Indiana) 2017: girl (14), given name and family name
+7cf7b152874767a5b190cd48117669627a549810cc5768f638642ff021e8293a  # Delphi (Indiana) 2017: girl (14), nickname
+e1f8f44e9c55a7e7f7cc3b0a3602e536b728a69277e0b60b1771e4b8e067f776  # Delphi (Indiana) 2017: girl (13), first and family name
+6ca67a10d61c6d54722d8f4d5781ed8673762c90aaf56085a08a323ae425f3ea  # Delphi (Indiana) 2017: girl (13), given name and family name
+21145875513d58636bd392a4b90db6c9b0b8c94a3ace63fdd0709ac35fb3f381  # Boulder (Colorado) 1996: girl (6), first and family name
+9ac565be51857cbde1c820d9afc8c67c602663f41f8077c4627c901cf6a92ce0  # Boulder (Colorado) 1996: girl (6), first name, accents removed
+f658a64db78bccb69f0af80b882a828ca3f8a84dc058ff4d7c0dc17a4d818f6d  # Phoenix (Arizona) 1984: girl (14), first and family name
+470550b71be3d76fde35d9fa4a55faba519e142057b46430c6f5bcb1c5881661  # Phoenix (Arizona) 1984: girl (14), first and middle name
+7fc8c2c87f6ba16797b0a6fb0b74b66f253fa75ee70473cf1c02a6cb66445785  # Phoenix (Arizona) 1984: girl (14), middle and family name
+4939f33893f8fb5fc44bbdd07ad014cd86b5593a88a6b0c2c3172c442e94c45d  # Phoenix (Arizona) 1984: girl (14), family name
+1ce77db3fc6741da47619d06cc3d2b2fd0267733cb87a0ad911600cf4abe9ac6  # Woodlawn (Maryland) 1976: girl (16), first and family name
+c37ea01ffc00282486304172acc2f2227509b5cc6e9a210048efac795f4e5033  # Woodlawn (Maryland) 1976: girl (16), family name
+be3aae4585ddd63c50de1fd9fde6d2cdba5ae082b5f7618c2602773c5e5c4793  # Round Lake Beach (Illinois) 2001: newborn boy, the name a charity gave him
+26edad35c87d78e7ed735d44f0a1afaba8f50d17a5bc110215f1e92110da3188  # Round Lake Beach (Illinois) 2001: newborn boy, the name a charity gave him
+6e6bd29552dc5b649f924d60538c7916b10a16c71326662d275b8fc756c35da8  # New Boston (Texas) 2020: newborn girl, first and middle name
+088f5651028191ac0ed572a1bfe9b9c8544fa091149dfd8d70bd34d7f3af3609  # New Boston (Texas) 2020: newborn girl, middle and family name
+11b461f2f2beb567040a3667ebfbe8d80b818d3cd16453e5b52583784560b1c4  # New Boston (Texas) 2020: newborn girl, first and family name
+97b172a5e233b2f23d3d416ad3b43462e61ca33326a16bcabbe45210519fe9d5  # New Boston (Texas) 2020: newborn girl, first name
+d0f2e9c3d3dbb2cd4cfa60fd292322ac8724b2e78753569e7b5197beba16f1dc  # Wichita (Kansas) 1974: girl (11), first and family name
+cb27253dea135e059fec74a490e547f171f116f6d333d0d9f066b2b86876b0e6  # Wichita (Kansas) 1974: boy (9), family name and suffix
+0f8d6fea74374da2f2634e66fefee1d2568c2296a16a21b8ec22b5d477acda5b  # Wichita (Kansas) 1974: boy (9), family name and suffix
+6d72962b7a68bc7f17efb3a4a410488de00621e857d14b462ac7c6d227ff2d65  # Pasco County (Florida) 1993: girl (12), first and family name
+0505b27e31a0c06f5943a600b076bf43079785b7fb2e0697355f7871c86b4a1d  # Pasco County (Florida) 1993: girl (12), middle and family name
+53de420607723f4e1db8bc6d4f734156cf72682a7c325172a1c261be1c3d4a29  # Pasco County (Florida) 1993: girl (12), first and middle name
+4aa19733bcdce976d1e247b8f433a0626deb707128b9f65de564b5fa76c75820  # Frankfort (Illinois) 2026: boy (2), first and family name
+18f6ee321a8392f8e5436f81d66f2f41b86b019a181e60cdf4f400c37cc41cf8  # Fruitland (Idaho) 2021: boy (5), first and family name
+1074f1168987dc971bad286778e7f23b5dcb912912aeff332fd1d504d3dc1942  # Muhlenberg County (Kentucky) 2026: infant boy (11 months), first and family name
+868c3396c2ea352fdd7917327c7a186a65922c089081b2026af0193fcedcad5c  # Frisco (Texas) 2025: boy (17), first and family name. The Name Card allows the first name only, in article text
+905d127a73d6f7251f8d655b20b44fb2e0ede73e0af76ab5a72bb1322d10c202  # Frisco (Texas) 2025: boy (17), family name alone. The Name Card allows the first name only, in article text
+3614f7e180d9000547fe4b19cbdb4d222cdd4d4675a023588a69fbe2d1140189@7ed335629a6a5c3b0a04032a86a88750d2291b539004e1e51e48898ce9d19124  # Delphi (Indiana) 2017: girl (13), first name used alone
+3614f7e180d9000547fe4b19cbdb4d222cdd4d4675a023588a69fbe2d1140189@c6eb24d1cfc4b1629789e9795a4148a1d3ffb8ead2cb2e54acd0044629ce1855  # Delphi (Indiana) 2017: girl (13), first name used alone
+a0670a0fd3b5c9ae86b9186fac1543e3ceef4a103e5d4efb9db38787c3a9c1d1@a227a19d0247ec0fd21fc84ea614597fff256c9394392ab196a31ced3316c910  # Phoenix (Arizona) 1984: girl (14), first name used alone
+c35d6aaf3b3885dfc9f36cddf48a65e93a919e13165fbbcfc0f9de5636279559@017e3991cd285e2c22a539f2f8af8559e65bb2217b9874ef4d1cd6c4ee97650f  # Round Lake Beach (Illinois) 2001: newborn boy, first name used alone
+4d30c878c44ec3d52deb0318ae71d9a9b7a91391a46a9d704697570af06426f0@c8c0917578f70de60886957aef0e97b1a5b778d9430cbd3235f43347c94916b2  # Modesto (California) 2002: unborn son, the name his parents planned
+aec0e78824de1205cf98384780983c6f2b7c03f8a6e5036a508ece76f1b3c5a7@f3c9cd6237cad153a7b93f5b832205eaf4e4fa29d2e8a8eebaa90e77e24ac48b  # Wichita (Kansas) 1974: girl (11), first name used alone
+fb4683e1bc592e05e5cd68d305f4aa1f0641af38faa8c02e7bccc9f5654162c5@6f943a64d462a56ae6f17a7ed3185eceec2dcfd3513cdaf7f062b7ee8c27f7c9  # Frankfort (Illinois) 2026: boy (2), first name used alone
+
+# Missing children whose alert has no active official poster (the entry is role-only until a poster link is added).
+# Remove a line when its entry links an active official poster again.
+fcb1f0e121a4ffd17f7d33453af19ac5c49948bf3f3dfd00ee4a371b0d5782f1  # Missing child, no active official poster, Naugatuck, Connecticut, since 2026-08: two-word form of the name
+9553d16cf2dc22560046b542b02aee96e848ebd43112ec94e50c4d956e8622a2  # Missing child, no active official poster, Naugatuck, Connecticut, since 2026-08: two-word form of the name
+9071b0d8a3ce26be60e4abfebe8556d119d9b79736273380c94dc9f17fbbfb6b  # Missing child, no active official poster, Redmond, Washington, since 2023-12: two-word form of the name
+260fbc476b307388efad81c911d85124f84faba5052dec7a3900f22056b43a9d  # Missing child, no active official poster, Redmond, Washington, since 2023-12: two-word form of the name
+2b1963d2e03276e7ff8d96b8a44716d594f6ce974c42a5dececd945da97365c4  # Missing child, no active official poster, Redmond, Washington, since 2023-12: two-word form of the name
+c983add84f549ef7af43df00e1fc9fd8b3ad7384f7906efd1a1fe6f173fd8e1f  # Missing child, no active official poster, Cranston, Rhode Island, since 2026-08: two-word form of the name
+f7c08bc2507d76b44b375328bfd47bb7d67170fe895f161cc942fa89049b81a6  # Missing child, no active official poster, Vancouver, Washington, since 2026-06: two-word form of the name
+ce5a67ded097b5c9e10ae3e970f58681f06426725cf3a5d47f01a42b0b18c00b  # Missing child, no active official poster, Vancouver, Washington, since 2026-06: two-word form of the name
+476f8e4a949e4d9a300bcf55156ffdaea13290dc0d2dde87f87cb6b59febab13  # Missing child, no active official poster, Pensacola, Florida, since 2026-09: two-word form of the name
+6fabfb72fee97dccfa1e5cef7daadaaec677680615ea232062f53fff1d535f21  # Missing child, no active official poster, Pensacola, Florida, since 2026-09: two-word form of the name
+fbabe3cc21a231eea04bfdf4e8c2f78106ec2eefd3aaffd9589ce3de79ce4b8b  # Missing child, no active official poster, Norfolk, Virginia, since 2026-08: two-word form of the name
+c3591fa815f121bfa6c4e5767020b0ff92b9c31bddda193aa12ce4b7b0c3b31c  # Missing child, no active official poster, Norfolk, Virginia, since 2026-08: two-word form of the name
+ce17821221aa6db725582f41fc7afb20f0c86ac98786558e75ed68dd4000e82a  # Missing child, no active official poster, San Tan Valley, Arizona, since 2026-08: two-word form of the name
+c6d6017d49fcab4f7ad99957f5a384874674140fd7166ff000b627e8635ca932  # Missing child, no active official poster, San Tan Valley, Arizona, since 2026-08: two-word form of the name
+760b7567589ce0ddc5936a85d4145376de454619d824165e3ba5dbb742b4215f  # Missing child, no active official poster, Reading, Pennsylvania, since 2026-08: two-word form of the name
+49774732fc7986aaf4abe36e166f30db95e7faf67cd55ba56597b44dad57262f  # Missing child, no active official poster, Dallas, Texas, since 2026-08: two-word form of the name
+cb85e803097d85477922e7cc006ecbddb0dd024d208dae8674c9a96c2c8c9378  # Missing child, no active official poster, Dallas, Texas, since 2026-08: two-word form of the name
+4dcf69d16ddb2d23986cf0483d26aca77c48fb8a62bc4732d924fb436d2d2326  # Missing child, no active official poster, Houston, Texas, since 2026-08: two-word form of the name
+c1b0fb5d77851defba63b0154a8fdd144b683b4308568dc6c042bd443ade8dc8  # Missing child, no active official poster, Houston, Texas, since 2026-08: two-word form of the name
+3930933d2da8946fba45d7e0886497f89f2847c306f8099657f2f0522bf84cfa  # Missing child, no active official poster, Amarillo, Texas, since 2026-08: two-word form of the name
+682fa24af216dbf14723f45debda300bf0771783b47c41a88669fbd2e00f6b97  # Missing child, no active official poster, Glendale, Arizona, since 2026-09: two-word form of the name
+e5e44928785860baf4c29f531a1a7b3f22e7c985083b27435fb8c2d8fd1da2d0  # Missing child, no active official poster, Glendale, Arizona, since 2026-09: two-word form of the name
+b148aa6f12c097fbde144a4a3cbcdb81bf1cf8723bca610320b1bac9905430b7  # Missing child, no active official poster, Columbus, Ohio, since 2026-09: two-word form of the name
+604c482f7fdbbe9a2aa3ddb88cf72632e3af7cac392b86a727dc8e33f9da62ef  # Missing child, no active official poster, Alexandria, Virginia, since 2026-09: two-word form of the name
+7509332184c8f2fc527e91fbec69135b279c44fb7eaa6571092d56d49a0937ba  # Missing child, no active official poster, Alexandria, Virginia, since 2026-09: two-word form of the name
+683878e699542abff83441849a55d9475d8b1532ea987cdfc43ded3b07b19a19  # Missing child, no active official poster, Marion, Arkansas, since 2026-09: two-word form of the name
+9e85a14e9b39f3238ec2f595ac742ebf519a24a2c26d06e30b96e03c23f0066e  # Missing child, no active official poster, Pleasantville, New York, since 2026-09: two-word form of the name
+03f5f0edbd6039b4cfce1bbbfd018b8f08acf37d93132c5860fe0d9dd558176a  # Missing child, no active official poster, Ponce, Puerto Rico, since 2026-08: two-word form of the name
+c9150c62b74108295b285d344d0c49b4ead1a929a777c0714d807ae588660222  # Missing child, no active official poster, Ponce, Puerto Rico, since 2026-08: two-word form of the name
+e783ab7d7f210846735f984105108e87caa24fd8e3349887b36b0bed3fb3d061  # Missing child, no active official poster, Richland, Mississippi, since 2026-08: two-word form of the name
+98673cb52fc4f182e86dd8bc942e52056098b29152e0b3d54711ce8161ad7aa3  # Missing child, no active official poster, Weaverville, California, since 2026-08: two-word form of the name
+1273f4f1ca7fb0431399d374b0f3e630589dfd51fe5ace0f63271ece54cb492f  # Missing child, no active official poster, Tampa, Florida, since 2026-09: two-word form of the name
+915d35d27b6a2b3e51c70859ab8fb231ade4415b31a8fa0a6481b0c19993d939  # Missing child, no active official poster, Tampa, Florida, since 2026-09: two-word form of the name
+fa65092a48ada420fd2e555d2860fe9a67ff73547fac197a966ffb3921243f47  # Missing child, no active official poster, Corpus Christi, Texas, since 2026-09: two-word form of the name
+78b6a51a5afcb78a79066f573d3ba4fd8280798a0eef0f2d0b5e6c0d64b88a46  # Missing child, no active official poster, Baltimore, Maryland, since 2026-09: two-word form of the name
+21ad4f3572db4774f6c98172368129bc7d7e97f6603735fba3637e0c927e110b  # Missing child, no active official poster, Baltimore, Maryland, since 2026-09: two-word form of the name
+3222b32f5e567cc8e87cca14045024c96f926e9eb8804d252ca81c86a29bcb0c  # Missing child, no active official poster, New Brunswick, New Jersey, since 2026-09: two-word form of the name
+9aec62cdbff6919e592581e411726054c5021c9f4ae190b8432b3422340972a5  # Missing child, no active official poster, Nashville, Tennessee, since 2026-09: two-word form of the name
+c779d6db1f0e75a9a685fd370b61dd60c0d29609cb4bd7f528fb88b4a25171f3  # Missing child, no active official poster, Spokane Valley, Washington, since 2026-09: two-word form of the name
+5f3aaa7221fb7392671e01d3bfbee3ff783cd4bc013c5e0aa64b4b5eccf38b05  # Missing child, no active official poster, Spokane Valley, Washington, since 2026-09: two-word form of the name
+e1e6fc383f9456857a41885ac773d7cc4298ce37cd55e043029bde319b0ed563  # Missing child, no active official poster, Dallas, Georgia, since 2026-09: two-word form of the name
+a19bcb545b42564fa5d0175c630d4018ae69ae11892d6c8b226f96aabcad44fe  # Missing child, no active official poster, Dallas, Georgia, since 2026-09: two-word form of the name
+0802d3c88cf3db9b80b7ba16d07c85c7d44ebfb37c12bd6263b370e15b43561e  # Missing child, no active official poster, Huntington Park, California, since 2026-09: two-word form of the name
+7f2c11e05b2c5a9a3b799956530d836c59d64c40a7c1df4a2f04cb532735748c  # Missing child, no active official poster, Huntington Park, California, since 2026-09: two-word form of the name
+055e5153e4615d2589d7ffe2a3c8190eaffd62d68e2d1a7045ddb1b8fbc71a52  # Missing child, no active official poster, Fairbanks, Alaska, since 2026-10: two-word form of the name
+b31127e92567a6f04a77c06846b53465243f8e69e91b8ecfdfc4d70634f3c23a  # Missing child, no active official poster, Tyler, Texas, since 2026-09: two-word form of the name
+e04f41a4d7a86b47c4f3be239e25c17d5759a93a43c3c9973664913674a32bf9  # Missing child, no active official poster, Tyler, Texas, since 2026-09: two-word form of the name
+e6524fe0d1fce4bb456fa63f38489fe6f6e573a643bda7cae0aa183a0f7de17c  # Missing child, no active official poster, Atlanta, Georgia, since 2026-09: two-word form of the name
+9d07c44b0d208ec07dc983483a416780b7f51f57995240b59e76e4e7ea463d79  # Missing child, no active official poster, Atlanta, Georgia, since 2026-09: two-word form of the name
+3d90356363ef44856cd327a022cd3cff834f09b77e64365f5f59a51b5c881513  # Missing child, no active official poster, Chesterfield County, Virginia, since 2026-09: two-word form of the name
+1889bd7d2da2663415a96c7976c2d0d16d443e489f439758c568c8c1f2788a1c  # Missing child, no active official poster, Chesterfield County, Virginia, since 2026-09: two-word form of the name
+78c4cf3e1844c10d993dadd9310ce4d2de6fa782550823f07b7f849cd5c0ef5d  # Missing child, no active official poster, Dumfries, Virginia, since 2026-09: two-word form of the name
+663671cc1cecfad0d65b67a88a2fd7b7b51241c088cab88f7e47b95f73f3b1a3  # Missing child, no active official poster, Dumfries, Virginia, since 2026-09: two-word form of the name
+026abe0b03de93ce585beda109ac8e3626bfddc9190b8540b96edfbc7cbe3ddd  # Missing child, no active official poster, Forney, Texas, since 2026-09: two-word form of the name
+2220988667a32eda911d0d6c2c51d346d198f44cdf93285909f939e52544fab0  # Missing child, no active official poster, Forney, Texas, since 2026-09: two-word form of the name
+a17064d00d656a47aae3221c1230ec8861eb0c649f39e849564eed1ebc833712  # Missing child, no active official poster, Chicago, Illinois, since 2026-09: two-word form of the name
+e4fe978223a2c81e058ee60a142f0a56967fdbbfb230ca90c331d7a121066025  # Missing child, no active official poster, Ewa Beach, Hawaii, since 2026-09: two-word form of the name
+6f7f2d6b78e5e2a8be13472a834914a05e40df3d122789f2ec5e19a68d5235f2  # Missing child, no active official poster, Fairfax County, Virginia, since 2026-09: two-word form of the name
+a12b7b86f16c13a5cc4dce62f5bacd24748f065ba58fe03ad8ee7d5561a8589f  # Missing child, no active official poster, Fairfax County, Virginia, since 2026-09: two-word form of the name
+9555b8be0413d4f172acd53e0a9de6c9724f4cca82fe3bd402e1d96214cc6f2d  # Missing child, no active official poster, Ontario, Oregon, since 2026-09: two-word form of the name
+c9e6c02e437bbd3692f93a571809ac950d38bfad263b831bc55ebf988106262f  # Missing child, no active official poster, Houston, Texas, since 2026-09: two-word form of the name
+9383d343d8947865c99194fcbcea57d99e08903c132c064e00275673a71d2510  # Missing child, no active official poster, Houston, Texas, since 2026-09: two-word form of the name
+c98f1f42f5d1e70554d023a28574454b2607c38a04a0b0e2d4bb71e928a00d05  # Missing child, no active official poster, Chesterfield County, Virginia, since 2026-09: two-word form of the name
+e5366aa9f65b8626284bdcc1f4430f9a61890b09dfa0acd003231cc67ca5f361  # Missing child, no active official poster, Chesterfield County, Virginia, since 2026-09: two-word form of the name
+9c7cc2e503a1b42878736219f424995eccdad2d88e34634238e525bdf72dd648  # Missing child, no active official poster, Springfield, Missouri, since 2026-09: two-word form of the name
+187023c977ff692c6e7e0f947c42a06c575d646beda81dc2c0c18fc3768373c8  # Missing child, no active official poster, Houston, Texas, since 2026-09: two-word form of the name
+c59d36ed025a71800d051306bb6a88b46698685a58299d30e22bed4f57e1f09b  # Missing child, no active official poster, Houston, Texas, since 2026-09: two-word form of the name
+5a0708c186483c84e6356b21947140adcf260c8311bc6a519ad7badf7192817c  # Missing child, no active official poster, Evansville, Indiana, since 2026-09: two-word form of the name
+7b4abdb13f4c2273857bd7c775fbb46523c794db883b21a882e28daa19e75d60  # Missing child, no active official poster, Evansville, Indiana, since 2026-09: two-word form of the name
+45d686ae2b6f53905eedc8a4562d7b19b9fb15f433d372abd03c983007111524  # Missing child, no active official poster, Omaha, Nebraska, since 2026-09: two-word form of the name
+59151f4d4782bfed47745bf314ac7f5e9e38e6eca1163d0f6ed480bc376c34c6  # Missing child, no active official poster, Omaha, Nebraska, since 2026-09: two-word form of the name
+4d4ab269b17366287a7cc252c3e06bba1e6ad14e7d18ab84882c839ec6529101  # Missing child, no active official poster, Oregon City, Oregon, since 2026-09: two-word form of the name
+57b44015d21ab113007c3a939306688034984f7a8b84b4d778d9f7fcb532af59  # Missing child, no active official poster, Oregon City, Oregon, since 2026-09: two-word form of the name
+2b920b6f820f83c7d515ec129bf0642d08433510c7954f75c2f466f2108e77a4  # Missing child, no active official poster, Bryan, Texas, since 2026-10: two-word form of the name
+1033205b4e1a349b4c075977d3e6ccf09910fe7044d017543f93fce43636eace  # Missing child, no active official poster, Bryan, Texas, since 2026-10: two-word form of the name
+20073011def70b0b021fca50c15c54cb9066c812af170516c0c492e1a2a01cf4  # Missing child, no active official poster, Louisville, Kentucky, since 2026-10: two-word form of the name
+3218a866cd3c15cd4db23cbb921b7767ed14fad085ed26874a58189066f71b8f  # Missing child, no active official poster, Black Jack, Missouri, since 2026-10: two-word form of the name
+f28e61b4d1ef07096906bed22642e8d914ff4565ea9a5e325b7f2fa135003dff  # Missing child, no active official poster, Black Jack, Missouri, since 2026-10: two-word form of the name
+ac8b2007f946db528bc1f70c2f812fc373904880359087bc8551cf1051cb424d  # Missing child, no active official poster, Fairfax County, Virginia, since 2026-10: two-word form of the name
+a9733a3639e7f52ccb68c4611152776de0021ba5f0d3905a29de5aa82107a3fc  # Missing child, no active official poster, Staten Island, New York, since 2026-10: two-word form of the name
+81bdfe703a2b7a3f83e61573d210a9676f0aa2f2e4f948a5fb9ef6cbcd73e952  # Missing child, no active official poster, South Burlington, Vermont, since 2026-10: two-word form of the name
+3605c4c9c39bcd4771de79f9102576580cf4833e64db7d423108c114c337fc24  # Missing child, no active official poster, South Burlington, Vermont, since 2026-10: two-word form of the name
+bdc73e7afe6c17b0e9aedeac8205a05362e08609492fdaa94d71eb0a607a80f1  # Missing child, no active official poster, Mason, Michigan, since 2026-10: two-word form of the name
+b6f26e6040cf28608527bd4b08206881b04ef0f4cac6ef4c332562db1d71134b  # Missing child, no active official poster, Mason, Michigan, since 2026-10: two-word form of the name
+aa1f4c603f5ad7814c619d47ce302501781f3168db7ccb9946beaf9161d35d4b  # Missing child, no active official poster, Rochester, New York, since 2026-10: two-word form of the name
+9989d2fc116cb8fafab78d6238687043f67be5b8cbc8b1a05cd85593b9923e23  # Missing child, no active official poster, Houston, Texas, since 2026-10: two-word form of the name
+d588370a544fb171ec941ee7c378ffb8bf7155d4254ec2d819bca8cc6cf372da  # Missing child, no active official poster, Lynn, Massachusetts, since 2026-10: two-word form of the name
+05a059fa36dc0437d494d6eff16c9c615c98ed46d1906f0297a2190748589a61  # Missing child, no active official poster, Lynn, Massachusetts, since 2026-10: two-word form of the name
+10f7f7e3c0ee70f109387f3ddcafb9c1323f4b056c3c7a17054ee7369531f2f6  # Missing child, no active official poster, Loudoun County, Virginia, since 2026-10: two-word form of the name
+e7dbc5128181f40ea69a61ac56b808badc6917a48beda6c5b53b4610e57e3dde  # Missing child, no active official poster, Loudoun County, Virginia, since 2026-10: two-word form of the name
+b674814dd380be708a2dbca6d3b8dbb567133e269b3bfb284a02aedd06c0a6a9  # Missing child, no active official poster, San Antonio, Texas, since 2026-10: two-word form of the name
+c356127d2043192b8af92daa969bd38929403e3c7c5e044e3e54ba85a4f3ed02  # Missing child, no active official poster, San Antonio, Texas, since 2026-10: two-word form of the name
+e9495f16a04fa7e506c80c755dc47422faf918d938e0f17b85db84a5efabc5dc  # Missing child, no active official poster, Las Vegas, Nevada, since 2026-10: two-word form of the name
+123edec6e68ff640769dcffd5ae36b734e4a8496796527da326e92883f434259  # Missing child, no active official poster, Las Vegas, Nevada, since 2026-10: two-word form of the name
+4c833e12046c1e80616a9177df983612f6dac21b20bc4735848a3629f26d6b0b  # Missing child, no active official poster, Houston, Texas, since 2026-10: two-word form of the name
+1d3eab04e13b96e4671321dbe4c5bb6345f1b3b63bcc16a11155d4ac87ace78c  # Missing child, no active official poster, Philadelphia, Pennsylvania, since 2026-10: two-word form of the name
+1f5ca2668a5c7b0875b5a0417f34efa6b918237e3d51c7e25e153b7bbfedfa66  # Missing child, no active official poster, Victorville, California, since 2026-10: two-word form of the name
+a8d275308ab41ee14aa84a7f62c2b33ba09638146607fedefb016eceb72cdc48  # Missing child, no active official poster, Springfield, Missouri, since 2026-10: two-word form of the name
+e72fd32bd14438c970dc3c455af42634d521d1380666125735fa28c3d06f73ab  # Missing child, no active official poster, Redding, California, since 2026-09: two-word form of the name
+c475e9ebbaa39f484e82da4afff461eab90b6b88739596bebe214d00953ac01c  # Maricopa County (Arizona) 2023: boy (16), first and family name

@@ -6,7 +6,7 @@ const EXISTING_CASE_GUIDES = {
   'burke-prelim': {
     url: 'https://cassiancreed.beehiiv.com/products/celeste-rivas-hernandez-d4vd-charges-guide?utm_source=cassiancreed.com&utm_medium=court_calendar&utm_campaign=explainer_d4vd_v2&utm_content=status_entry',
     text: 'Read the Case Chess guide: The D4vd Case — $1.99',
-    bookKey: 'celeste-rivas-hernandez-d4vd-charges-guide',
+    bookKey: 'guide-la-arraignment',
     placement: 'court_calendar_d4vd_status_entry',
   },
   'parker-smith-first-appearance': {
@@ -186,12 +186,12 @@ export const CALENDAR_EXPLAINER_CASES = [
     ],
     "free": [
       {
-        "url": "/post/a-jury-convicted-a-family-still-grieves-karmelo-anthony-verdict-austin-metcalf/",
-        "text": "A Jury Convicted. A Family Still Grieves. The Trial of Karmelo Anthony Is Over — What Comes Next for Austin Metcalf's Case."
+        "url": "/post/a-jury-convicted-a-family-still-grieves-karmelo-anthony-verdict/",
+        "text": "A Jury Convicted. A Family Still Grieves. The Trial of Karmelo Anthony Is Over — What Comes Next."
       }
     ],
     "paid": [
-      "austin-metcalf-karmelo-anthony-case-guide"
+      "guide-frisco-verdict"
     ]
   },
   {
@@ -246,7 +246,7 @@ export const CALENDAR_EXPLAINER_CASES = [
       }
     ],
     "paid": [
-      "celeste-rivas-hernandez-d4vd-charges-guide"
+      "guide-la-arraignment"
     ]
   },
   {
@@ -288,8 +288,8 @@ export const CALENDAR_EXPLAINER_CASES = [
     ],
     "free": [
       {
-        "url": "/post/the-delphi-murders-how-libby-german-s-own-phone-helped-convict-richard-allen/",
-        "text": "The Delphi Murders: How Libby German's Own Phone Helped Convict Richard Allen"
+        "url": "/post/the-delphi-murders-how-a-victims-own-phone-helped-convict-richard-allen/",
+        "text": "The Delphi Murders: How a Victim's Own Phone Helped Convict Richard Allen"
       }
     ],
     "paid": []
@@ -325,14 +325,14 @@ export const CALENDAR_EXPLAINER_CASES = [
     "paid": []
   },
   {
-    "key": "etan-patz",
+    "key": "soho-1979-disappearance",
     "entryIds": [
       "unconfirmed-4"
     ],
     "free": [
       {
-        "url": "/post/etan-patz-supreme-court-2026-conviction-reinstated/",
-        "text": "Etan Patz — SCOTUS Reinstates Pedro Hernandez Conviction"
+        "url": "/post/soho-1979-disappearance-supreme-court-2026-conviction-reinstated/",
+        "text": "The 1979 SoHo Disappearance — SCOTUS Reinstates Pedro Hernandez Conviction"
       }
     ],
     "paid": []
@@ -352,14 +352,14 @@ export const CALENDAR_EXPLAINER_CASES = [
     "paid": []
   },
   {
-    "key": "colt-gray",
+    "key": "apalachee-plea-hearing",
     "entryIds": [
       "completed-1"
     ],
     "free": [
       {
-        "url": "/post/colt-gray-hearing-what-a-non-negotiated-plea-means/",
-        "text": "Colt Gray Hearing: What a Non-Negotiated Plea Means"
+        "url": "/post/apalachee-plea-hearing-what-a-non-negotiated-plea-means/",
+        "text": "Apalachee Plea Hearing: What a Non-Negotiated Plea Means"
       }
     ],
     "paid": []
@@ -605,7 +605,7 @@ const HISTORICAL_ROUNDUPS = [
 const WEEKLY_ROUNDUP_IDS = new Set(["farwell-trial-oct19","burke-prelim","sullivan-jury-trial","reiner-criminal-pretrial","reiner-trust-access-oct23","crum-spencer-hearing","robinson-pretrial-conference"]);
 const WEEKLY_ROUNDUP = {"url":"/post/this-week-in-court-october-19-23-2026/","text":"This Week in Court: Oct. 19-23"};
 export const LIVE_PRODUCTS = {
-  "austin-metcalf-karmelo-anthony-case-guide": {
+  "guide-frisco-verdict": {
     "url": "https://cassiancreed.beehiiv.com/products/austin-metcalf-karmelo-anthony-case-guide",
     "title": "Case Chess: The Karmelo Anthony Case — What's Actually Happening and What It Means",
     "price": "$1.99"
@@ -615,7 +615,7 @@ export const LIVE_PRODUCTS = {
     "title": "Both Sides of the Story: Michelle Parker — Can There Be a Murder Case With No Body?",
     "price": "$1.99"
   },
-  "celeste-rivas-hernandez-d4vd-charges-guide": {
+  "guide-la-arraignment": {
     "url": "https://cassiancreed.beehiiv.com/products/celeste-rivas-hernandez-d4vd-charges-guide",
     "title": "Case Chess: The D4vd Case — What's Actually Happening and What It Means",
     "price": "$1.99"
@@ -686,27 +686,27 @@ const PRODUCT_CAMPAIGNS = {
   "charlie-kirk-case-guide": "explainer_robinson_v1",
   "alexander-brothers-case-guide": "explainer_alexander_v1",
   "murdaugh-retrial-guide": "explainer_murdaugh_v1",
-  "austin-metcalf-karmelo-anthony-case-guide": "explainer_anthony_v1",
+  "guide-frisco-verdict": "explainer_anthony_v1",
   "jared-bridegan-case-guide-v2": "explainer_bridegan_v2",
   "tupac-shakur-keffe-d-case-guide": "explainer_tupac_v1"
 };
 const PUBLISHED_POSTS = new Set([
   "/post/alexander-brothers-sentencing-what-sentence-did-they-get/",
-  "/post/a-jury-convicted-a-family-still-grieves-karmelo-anthony-verdict-austin-metcalf/",
+  "/post/a-jury-convicted-a-family-still-grieves-karmelo-anthony-verdict/",
   "/post/baby-boy-doe-mansfield-1985/",
   "/post/anatomy-of-a-murder-trial-hernandez-melgar/",
-  "/post/cheryl-lynn-edwards-jane-clinton-doe-timeline/",
+  "/post/clinton-county-iowa-1975-jane-doe-case-timeline/",
   "/post/can-you-be-convicted-of-murder-without-a-body/",
-  "/post/cheryl-lynn-edwards-study-guide/",
+  "/post/clinton-county-iowa-1975-jane-doe-study-guide/",
   "/post/beyond-the-case-file-5-surprising-realities/",
-  "/post/cheryl-lynn-edwards-jane-clinton-doe-faq/",
+  "/post/clinton-county-iowa-1975-jane-doe-identified-faq/",
   "/post/christa-pike-failed-execution-what-happens-next/",
   "/post/eugene-gligor-leslie-preer/",
   "/post/erin-patterson-case-explained/",
   "/post/chevy-chase-cold-case-dna/",
   "/post/does-criminal-profiling-actually-work/",
-  "/post/etan-patz-supreme-court-2026-conviction-reinstated/",
-  "/post/colt-gray-hearing-what-a-non-negotiated-plea-means/",
+  "/post/soho-1979-disappearance-supreme-court-2026-conviction-reinstated/",
+  "/post/apalachee-plea-hearing-what-a-non-negotiated-plea-means/",
   "/post/diddy-s-verdict-explained-what-sean-combs-was-convicted-of-and-what-the-jury-rejected/",
   "/post/how-washington-courts-work-hernandez-melgar/",
   "/post/how-a-family-tree-catches-killers/",
@@ -718,7 +718,7 @@ const PUBLISHED_POSTS = new Set([
   "/post/gilgo-beach-murders-science-unravels-nightmare/",
   "/post/karen-read-was-acquitted-of-killing-john-o-keefe-his-family-is-still-waiting-for-answers/",
   "/post/leslie-preer-murder/",
-  "/post/jane-clinton-doe-identified-cheryl-lynn-edwards/",
+  "/post/clinton-county-iowa-1975-jane-doe-identification/",
   "/post/lindsay-clancy-trial-2026-postpartum-psychosis/",
   "/post/irasema-chavez-mayra-velasquez-arlington-cold-case/",
   "/post/lindsay-clancy-trial-postpartum-mental-health-legal-nexus/",
@@ -748,7 +748,7 @@ const PUBLISHED_POSTS = new Set([
   "/post/the-frame-the-banfield-au-pair-affair-the-full-account/",
   "/post/the-gabby-petito-case-timeline-investigation-and-lasting-impact/",
   "/post/the-gilgo-beach-murders-rex-heuermann-pleads-guilty-and-eight-women-are-finally-named/",
-  "/post/the-delphi-murders-how-libby-german-s-own-phone-helped-convict-richard-allen/",
+  "/post/the-delphi-murders-how-a-victims-own-phone-helped-convict-richard-allen/",
   "/post/the-casey-goodson-jr-case-ex-deputy-jason-meade-reckless-homicide-conviction-explained/",
   "/post/the-frame-christine-banfield-joseph-ryan-fairfax-au-pair-murders/",
   "/post/the-btk-killer-how-dennis-rader-was-finally-caught/",
@@ -787,7 +787,7 @@ const PUBLISHED_POSTS = new Set([
 // from a hearing's notes, a grand jury, or an appellate reference to a verdict.
 export const JURY_CHESS_ENTRY_IDS = new Set(["faith-hedgepeth-trial","murdaugh-retrial","salazar-clinkunbroomer-trial","bhatt-jury-selection","moore-sherman-trial","bohm-trial","mary-collins-trial","martin-risner-sentencing"]);
 // killins-verdict-sentencing: living survivor.
-export const JURY_CHESS_EXCLUDED_IDS = new Set(["goncalves-wsu-trial","aramburu-paris-trial","kepner-federal-trial","brianna-moore-trial","clancy-trial","virzi-trial","michael-vaughan-trial","crum-jury-recommendation","preston-lord-meisner-trial","preston-lord-five-defendant-trial","elmore-laura-miller-trial","wagner-trial","gardner-jury-selection","gardner-trial","bridegan-fernandez-trial","farwell-jury-trial","farwell-trial-oct19","carter-brooks-trial","ryan-cavett-trial","killins-verdict-sentencing","eaton-burlington-trial","banks-federal-trial","conway-mo3-trial"]);
+export const JURY_CHESS_EXCLUDED_IDS = new Set(["goncalves-wsu-trial","aramburu-paris-trial","kepner-federal-trial","brianna-moore-trial","clancy-trial","virzi-trial","canyon-county-idaho-child-case-trial","crum-jury-recommendation","maricopa-county-teen-homicide-meisner-trial","maricopa-county-teen-homicide-five-defendant-trial","elmore-laura-miller-trial","wagner-trial","gardner-jury-selection","gardner-trial","bridegan-fernandez-trial","farwell-jury-trial","farwell-trial-oct19","carter-brooks-trial","ryan-cavett-trial","killins-verdict-sentencing","eaton-burlington-trial","banks-federal-trial","conway-mo3-trial"]);
 // Jury Chess only on US criminal jury events. Never civil, foreign, child-victim, juvenile, or cases with a living survivor. Owner may override per case.
 export function juryChessEligible(entry) {
   if (JURY_CHESS_EXCLUDED_IDS.has(entry.id)) return false;
@@ -806,10 +806,12 @@ export const JURY_CHESS_LINK = {
 export const CALENDAR_LINK_TYPES = ['free', 'paid', 'book'];
 // GUIDE-02: free page-1 previews. Each preview sits right after its paid guide
 // link and is always a local /previews/ PDF, never a Beehiiv product URL.
+// The Los Angeles guide has no preview: its Name Card did not pass and page 1 names the child.
+// Its old preview address is in REMOVED_PREVIEWS and may not be linked again.
 export const GUIDE_PREVIEWS = {
-  'celeste-rivas-hernandez-d4vd-charges-guide': '/previews/d4vd-guide-v2-preview.pdf',
   'both-sides-michelle-parker-guide-v3': '/previews/michelle-parker-both-sides-v3-preview.pdf',
 };
+export const REMOVED_PREVIEWS = ['/previews/d4vd-guide-v2-preview.pdf'];
 export const PREVIEW_LINK_TEXT = 'Read a free sample';
 export function previewLinkFor(paidLink) {
   const url = GUIDE_PREVIEWS[paidLink?.bookKey];

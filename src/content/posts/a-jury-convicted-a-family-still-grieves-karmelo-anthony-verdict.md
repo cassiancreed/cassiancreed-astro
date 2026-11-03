@@ -1,10 +1,10 @@
 ---
-title: "A Jury Convicted. A Family Still Grieves. The Trial of Karmelo Anthony Is Over — What Comes Next for Austin Metcalf's Case."
-description: "A Collin County jury convicted Karmelo Anthony of murder on June 9, 2026, rejecting his claim of self-defense in the stabbing death of 17-year-old Austin Metcalf."
+title: "A Jury Convicted. A Family Still Grieves. The Trial of Karmelo Anthony Is Over — What Comes Next."
+description: "A Collin County jury convicted Karmelo Anthony of murder on June 9, 2026, rejecting his claim of self-defense in the stabbing death of a 17-year-old at a Frisco track meet."
 pubDate: 2026-06-09
 tag: "Case Files"
 featured: false
-victim: "Austin Metcalf, 17"
+victim: "A 17-year-old high school student"
 incidentDate: "April 2, 2025"
 location: "Frisco, Texas"
 jurisdiction: "Collin County, Texas"
@@ -13,7 +13,7 @@ status: "Convicted of murder and sentenced to 35 years June 9, 2026; notice of a
 
 *Updated Wednesday, October 21, 2026: An earlier version said an appeal was available. Karmelo Anthony's lawyers filed a notice of appeal on June 10, 2026. On August 22, 2026, retired Judge Michael Chitty denied his motion for a new trial. The murder conviction and 35-year sentence stand while the appeal is pending. Details and sources are in the appeals section below.*
 
-Austin Metcalf was 17 years old. A junior at Memorial High School in Frisco, Texas. The MVP linebacker on his football team. A twin, with a brother named Hunter who was standing right next to him when it happened.
+Austin was 17 years old. A junior at Memorial High School in Frisco, Texas. The MVP linebacker on his football team. A twin, with a brother who was standing right next to him when it happened.
 
 On April 2, 2025, Austin went to a high school track meet at David Kuykendall Stadium. He did not come home.
 
@@ -29,9 +29,9 @@ The incident took place at approximately 10:00 a.m. during an 11-5A district cha
 
 According to the police report and trial testimony, Anthony entered the Memorial tent. Austin told him to leave. Anthony reached into his bag and said, "Touch me and see what happens." Austin made physical contact — he pushed Anthony. Anthony pulled a pocket knife and stabbed Austin once in the chest, then ran from the stadium. Police apprehended Anthony within the stadium within minutes.
 
-Austin Metcalf died from that single stab wound. His twin brother Hunter was present. He tried to help.
+Austin died from that single stab wound. His twin brother was present. He tried to help.
 
-On arrest, Anthony reportedly told responding officers: "I'm not alleged, I did it" — and asked whether the situation could be considered self-defense and whether Metcalf was going to be okay.
+On arrest, Anthony reportedly told responding officers: "I'm not alleged, I did it" — and asked whether the situation could be considered self-defense and whether Austin was going to be okay.
 
 More than 30 students and coaches witnessed the confrontation. Surveillance video of the incident and body camera footage from responding officers were both presented to the jury at trial.
 
@@ -49,7 +49,7 @@ The prosecution called more than 20 witnesses across five days, presenting the p
 
 Assistant District Attorney Bill Wirskye addressed the jury plainly in his closing: "This is not self-defense, folks. It's murder." The prosecution's theory was that Anthony provoked the confrontation — that the verbal threat and the reach into the bag came before any physical contact from Austin, and that a shove does not justify a knife. "You do not get to meet a shove with a stab," Wirskye told the jury, "especially if you provoke the shove."
 
-The defense called its own witnesses and presented a different frame. Defense attorney Mike Howard argued that Anthony, described as 5 feet 8 inches and approximately 130 pounds, faced a confrontation involving Austin and Hunter Metcalf — both described as approximately 6 feet 1 inch and around 215 pounds. Howard told the jury that his client made a split-second decision out of genuine fear after the first physical contact was made by Austin. A former teammate testified that Anthony appeared distraught immediately after the incident.
+The defense called its own witnesses and presented a different frame. Defense attorney Mike Howard argued that Anthony, described as 5 feet 8 inches and approximately 130 pounds, faced a confrontation involving Austin and his twin brother — both described as approximately 6 feet 1 inch and around 215 pounds. Howard told the jury that his client made a split-second decision out of genuine fear after the first physical contact was made by Austin. A former teammate testified that Anthony appeared distraught immediately after the incident.
 
 Anthony chose not to testify. Under the Fifth Amendment, he had no obligation to do so, and the jury was instructed that no inference could be drawn from that choice.
 
@@ -90,22 +90,22 @@ See every date we track on our [Court Calendar](/court-calendar/) (as of October
 ## Want the full case in one place?
 
 <div class="guide-offer">
-<a class="guide-btn" data-link-type="paid" href="https://cassiancreed.beehiiv.com/products/austin-metcalf-karmelo-anthony-case-guide?utm_source=cassiancreed.com&amp;utm_medium=post_cta&amp;utm_campaign=explainer_anthony_v1&amp;utm_content=anthony_free_post_end" target="_blank" rel="noopener noreferrer" data-book-key="austin-metcalf-karmelo-anthony-case-guide" data-cta-placement="anthony_free_post_end"><span class="calendar-badge" data-link-type="paid" aria-hidden="true">$1.99 GUIDE</span><span>Get the $1.99 guide: Case Chess: The Karmelo Anthony Case — What's Actually Happening and What It Means →</span></a>
+<a class="guide-btn" data-link-type="paid" href="https://cassiancreed.beehiiv.com/products/austin-metcalf-karmelo-anthony-case-guide?utm_source=cassiancreed.com&amp;utm_medium=post_cta&amp;utm_campaign=explainer_anthony_v1&amp;utm_content=anthony_free_post_end" target="_blank" rel="noopener noreferrer" data-book-key="guide-frisco-verdict" data-cta-placement="anthony_free_post_end"><span class="calendar-badge" data-link-type="paid" aria-hidden="true">$1.99 GUIDE</span><span>Get the $1.99 guide: Case Chess: The Karmelo Anthony Case — What's Actually Happening and What It Means →</span></a>
 </div>
 
 ---
 
-## Austin Metcalf
+## Remembering the 17-Year-Old
 
 He was a football MVP. He had a 4.0 GPA. He went to a track meet on a Wednesday morning in April, and he never made it to the finish line.
 
-His twin brother Hunter was there when it happened. He stayed with Austin after the stabbing. That detail is in the record, and it belongs there.
+His twin brother was there when it happened. He stayed with Austin after the stabbing. That detail is in the record, and it belongs there.
 
 A jury of twelve people listened to every piece of evidence in this case for more than a week. They heard from more than twenty witnesses. They saw the video. They came back with a verdict the same day deliberations began.
 
 Both the verdict and the sentence came the same day. However the appeals process unfolds, those twelve people have now answered the question the law asked them to answer.
 
-Austin Metcalf was 17. He deserved to come home from that track meet.
+Austin was 17. He deserved to come home from that track meet.
 
 ---
 

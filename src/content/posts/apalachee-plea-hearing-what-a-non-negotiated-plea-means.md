@@ -1,7 +1,7 @@
 ---
-title: "Colt Gray Hearing: What a Non-Negotiated Plea Means"
-seoTitle: "Colt Gray Hearing: What a Non-Negotiated Plea Means"
-description: "A non-negotiated plea leaves sentencing entirely to the judge. What Friday's Colt Gray hearing can decide, what it can't, and what happens either way."
+title: "Apalachee Plea Hearing: What a Non-Negotiated Plea Means"
+seoTitle: "Apalachee Plea Hearing: What a Non-Negotiated Plea Means"
+description: "A non-negotiated plea leaves sentencing entirely to the judge. What Friday's Apalachee plea hearing can decide, what it can't, and what happens either way."
 pubDate: 2026-07-20
 updatedDate: 2026-10-31
 status: "Pleaded guilty to 55 counts; sentenced July 28, 2026 to life in prison without the possibility of parole (Barrow County Superior Court, Judge Nicholas Primm)."
@@ -37,7 +37,7 @@ term below matters only in that light.
 
 ## What Is Set for Friday, July 24
 
-Colt Gray, who was 14 at the time of the shooting and is charged as an
+The defendant, who was 14 at the time of the shooting and is charged as an
 adult, faces 55 counts, including malice murder, felony murder,
 aggravated assault (including 25 counts), aggravated battery, and
 cruelty to children. His last confirmed plea is **not guilty**. He is
@@ -82,7 +82,7 @@ Three practical consequences follow:
 
 ## What Friday's Hearing Can Decide
 
-If Colt Gray enters a guilty plea and Judge Primm accepts it after the
+If the defendant enters a guilty plea and Judge Primm accepts it after the
 required in-court colloquy (the on-the-record questioning that confirms
 a plea is knowing and voluntary), the hearing can:
 
@@ -94,7 +94,7 @@ a plea is knowing and voluntary), the hearing can:
 - **End the need for the trial** currently scheduled to begin with jury
   selection on October 13, using Columbia County jurors.
 
-Because Gray was 14 at the time of the alleged offenses, the U.S.
+Because the defendant was 14 at the time of the alleged offenses, the U.S.
 Supreme Court's decision in *Roper v. Simmons* bars a death sentence.
 Georgia law still permits a discretionary sentence of life without
 parole for a juvenile convicted of murder — the court must remain free
@@ -124,7 +124,7 @@ Primm granted a venue change, citing pretrial publicity.
 
 ## Why a 14-Year-Old Is Charged as an Adult
 
-Gray was 14 on September 4, 2024, and is now 16. Under Georgia law
+The defendant was 14 on September 4, 2024, and is now 16. Under Georgia law
 (O.C.G.A. § 15-11-560), an alleged murder by a defendant aged 13
 through 16 falls within the superior court's exclusive original
 jurisdiction — the case begins in the adult system by statute, rather
@@ -141,7 +141,7 @@ explainer.
 ## The Parental-Accountability Thread: Colin Gray
 
 One part of this case is no longer an accusation. On March 3, 2026, a
-jury **convicted** Colin Gray — Colt Gray's father — on all 27 counts he
+jury **convicted** Colin Gray — the defendant's father — on all 27 counts he
 faced, including second-degree murder in the deaths of Mason
 Schermerhorn and Christian Angulo, involuntary manslaughter in the
 deaths of Richard Aspinwall and Cristina Irimie, 18 counts of cruelty to

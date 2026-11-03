@@ -1,10 +1,10 @@
 ---
-title: "Jane Clinton Doe Identified as Cheryl Lynn Edwards: Your Questions Answered"
-description: "A plain-language FAQ on how a 1975 Jane Doe case was resolved through forensic genetic genealogy, who Cheryl Lynn Edwards was, and where the investigation stands now."
+title: "The 1975 Clinton County, Iowa Jane Doe Identified: Your Questions Answered"
+description: "A plain-language FAQ on how a 1975 Jane Doe case was resolved through forensic genetic genealogy, who the 15-year-old girl was, and where the investigation stands now."
 pubDate: 2026-06-26
 tag: Case Files
 featured: false
-victim: Cheryl Lynn Edwards (formerly Jane Clinton Doe), 15
+victim: A 15-year-old girl, formerly known as Jane Clinton Doe
 incidentDate: "1975"
 location: Clinton County, Iowa
 jurisdiction: Clinton County, Iowa
@@ -13,13 +13,13 @@ cover: /covers/generated-image.png
 capture: "dna"
 ---
 
-## Jane Clinton Doe Identified as Cheryl Lynn Edwards: Frequently Asked Questions
+## The 1975 Clinton County, Iowa Jane Doe Identified: Frequently Asked Questions
 
 For decades she was known only as Jane Clinton Doe. In June 2026, she got her name back. This FAQ answers the most common questions about the case in plain language.
 
 *New here? Get the free guide and explore our other true crime case files.*
 
-## Who was Cheryl Lynn Edwards?
+## Who was the 15-year-old girl?
 
 Cheryl Lynn Edwards was born in San Diego, California, in 1959. She was 15 years old when she died. Her last known residence was Waukegan, Illinois, and she disappeared in 1975.
 

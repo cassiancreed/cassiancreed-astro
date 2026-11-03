@@ -1,10 +1,10 @@
 ---
-title: "Cheryl Lynn Edwards Case Timeline: From Jane Clinton Doe to a Name"
-description: "A clear, year-by-year timeline of the Cheryl Lynn Edwards case, from her 1959 birth and 1975 disappearance to the 2026 identification through forensic genetic genealogy."
+title: "The 1975 Clinton County, Iowa Jane Doe Case Timeline: From Jane Clinton Doe to a Name"
+description: "A clear, year-by-year timeline of the 1975 Clinton County, Iowa Jane Doe case, from her 1959 birth and 1975 disappearance to the 2026 identification through forensic genetic genealogy."
 pubDate: 2026-06-26
 tag: Case Files
 featured: false
-victim: Cheryl Lynn Edwards (formerly Jane Clinton Doe), 15
+victim: A 15-year-old girl, formerly known as Jane Clinton Doe
 incidentDate: "1975"
 location: Clinton County, Iowa
 jurisdiction: Clinton County, Iowa
@@ -13,7 +13,7 @@ cover: /covers/generated-image.png
 capture: "dna"
 ---
 
-## Cheryl Lynn Edwards Case Timeline: From Jane Clinton Doe to a Name
+## The 1975 Clinton County, Iowa Jane Doe Case Timeline: From Jane Clinton Doe to a Name
 
 For nearly fifty years, this case had no name attached to it. The timeline below lays out what is known, in order, from her birth to her identification in 2026.
 

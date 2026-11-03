@@ -1,9 +1,10 @@
 ---
 title: "Finding the Remains: How Investigators Use Timelines, Cell Pings, and Geography"
-description: "When a victim's body is hidden, the search becomes a problem of time and space — rebuilt from the last-known timeline, cell-site data, vehicle movement, and geographic probability. How those methods work, and why some searches, like Harmony Montgomery's, remain agonizingly unfinished."
+description: "When a victim's body is hidden, the search becomes a problem of time and space — rebuilt from the last-known timeline, cell-site data, vehicle movement, and geographic probability. How those methods work, and why some searches, like the one for a 5-year-old girl from Manchester, New Hampshire, remain agonizingly unfinished."
 pubDate: 2026-06-02
 tag: "Explainers"
 featured: false
+faqSkip: ["Why haven't Harmony Montgomery's remains been found?"]
 ---
 
 Some of the hardest searches of all begin after a case is, on paper, solved. The perpetrator is known — sometimes convicted — but a family still has no one to bury, because the remains were hidden and the truth was never told. These searches become a problem of **time and space**: rebuilding where a body could have been taken, from the trail an offender couldn't help leaving behind. Here is how investigators approach that problem, and why it is sometimes heartbreakingly unfinished.

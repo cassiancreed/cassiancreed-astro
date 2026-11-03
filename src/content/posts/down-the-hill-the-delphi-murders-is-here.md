@@ -1,13 +1,13 @@
 ---
 title: "The Delphi Murders — A Restrained, Victim-First Account"
-description: "A restrained, victim-first account of the Delphi, Indiana case — the murders of Abby Williams and Libby German, and the town that spent five years suspecting the wrong men."
+description: "A restrained, victim-first account of the Delphi, Indiana case — the murders of two girls, ages 13 and 14, and the town that spent five years suspecting the wrong men."
 pubDate: 2026-06-04
 tag: "Case Files"
 featured: false
 archived: true
 archiveNote: "This retired release announcement is preserved for context. The title is not part of NEP's currently verified product line."
-replacementPath: "/post/the-delphi-murders-how-libby-german-s-own-phone-helped-convict-richard-allen/"
-victim: "Abby Williams & Libby German"
+replacementPath: "/post/the-delphi-murders-how-a-victims-own-phone-helped-convict-richard-allen/"
+victim: "Two girls, ages 13 and 14"
 incidentDate: "February 13, 2017"
 location: "Delphi, Indiana"
 jurisdiction: "Carroll County, Indiana"
@@ -17,9 +17,9 @@ coverAlt: "An old iron railroad trestle spanning a dark creek at night, its gird
 ---
 
 
-Our new full-length case file, *Down the Hill: The Delphi Murders*, is available now. It is the story of Abigail Williams and Liberty German — Abby and Libby — and of the small Indiana town that loved them, lost them, and then spent five years afraid of the wrong people.
+Our new full-length case file, *Down the Hill: The Delphi Murders*, is available now. It is the story of two girls from Delphi, one 13 and one 14, and of the small Indiana town that loved them, lost them, and then spent five years afraid of the wrong people.
 
-They were children. Abby was thirteen. Libby was fourteen. On a mild winter afternoon in February 2017, they went for a walk on a trail they knew well, the kind of walk that ends with a ride home and a normal evening. They did not come home. We will not narrate their last hours for spectacle, and you will not find that here. What we owe them is dignity, and the discipline to remember them as people first: two girls with phones and inside jokes and futures that should have been long.
+They were children. One was thirteen. The other was fourteen. On a mild winter afternoon in February 2017, they went for a walk on a trail they knew well, the kind of walk that ends with a ride home and a normal evening. They did not come home. We will not narrate their last hours for spectacle, and you will not find that here. What we owe them is dignity, and the discipline to remember them as people first: two girls with phones and inside jokes and futures that should have been long.
 
 ## What This Book Is
 
@@ -51,4 +51,4 @@ Richard Allen, a Delphi resident, was charged in the case and convicted in Novem
 
 ---
 
-Abby Williams and Libby German were thirteen and fourteen years old. The headlines will keep orbiting the man convicted of killing them, and the appeals will run their course. But the loss belongs to two girls and to the families and the town that still carry it. We wrote *Down the Hill* to keep that center clear — and to ask, honestly, what we owe the innocent while we search for the guilty.
+The two girls were thirteen and fourteen years old. The headlines will keep orbiting the man convicted of killing them, and the appeals will run their course. But the loss belongs to two girls and to the families and the town that still carry it. We wrote *Down the Hill* to keep that center clear — and to ask, honestly, what we owe the innocent while we search for the guilty.

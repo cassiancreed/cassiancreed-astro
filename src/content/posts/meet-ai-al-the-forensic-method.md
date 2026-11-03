@@ -32,7 +32,7 @@ The method does three different things depending on what the evidence earns. All
 
 **When it refuses — the Central Park Five.** Five teenagers were convicted in 1989, almost entirely on confessions. But those confessions all came out of the same room, after the same coercive interrogations — so they weren't five clues. They were *one event wearing five coats.* And the one piece of truly independent evidence, the DNA, *excluded all five* and pointed to someone else, who was later proven to be the real attacker. A.I. AL, run on that case, refuses the conviction the real system made — because the math itself refuses it. That's the whole point of the method, in one case.
 
-**When it withholds — JonBenét Ramsey.** Thirty years of public suspicion, and still no honest name. So A.I. AL does the disciplined thing: it names *no one*, it notes that the family was cleared by DNA, and it points instead at the one real objective lead — the unidentified DNA, and the genetic genealogy that could resolve it. An honest "not yet, but here's the thread worth pulling" is not a failure. It's the system working.
+**When it withholds — the 1996 killing of a 6-year-old girl in Boulder, Colorado.** Thirty years of public suspicion, and still no honest name. So A.I. AL does the disciplined thing: it names *no one*, it notes that the family was cleared by DNA, and it points instead at the one real objective lead — the unidentified DNA, and the genetic genealogy that could resolve it. An honest "not yet, but here's the thread worth pulling" is not a failure. It's the system working.
 
 Converge, refuse, withhold. It speaks when the evidence earns it, and it stays silent when it doesn't.
 

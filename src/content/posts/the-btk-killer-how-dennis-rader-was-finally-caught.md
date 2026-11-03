@@ -26,7 +26,7 @@ It was the killer's own decision to resurface in 2004 that ultimately undid him.
 
 Ten people were killed. They are named here because they, not the man who took their lives, are the reason this case matters.
 
-- **Joseph Otero, 38; Julie Otero, 34; Josephine Otero, 11; and Joseph Otero Jr., 9** were murdered together in their Wichita home on January 15, 1974. The killing of an entire family, including two children, remains the case's most devastating crime.
+- **Joseph Otero, 38; Julie Otero, 34; and their two children, an 11-year-old girl and a 9-year-old boy,** were murdered together in their Wichita home on January 15, 1974. The killing of an entire family, including two children, remains the case's most devastating crime.
 - **Kathryn Bright, 21**, was attacked in her home on April 4, 1974. Her brother Kevin was wounded in the attack and survived, becoming an early witness.
 - **Shirley Vian, 26**, a mother, was killed on March 17, 1977, in a home where her young children were present.
 - **Nancy Fox, 25**, was murdered on December 8, 1977. The killer himself reported the crime in an anonymous call, a chilling marker of his need for attention.
@@ -105,7 +105,7 @@ He has been examined as a person of interest in some cold cases, most notably th
 
 ---
 
-This account is published in memory of Joseph, Julie, Josephine, and Joseph Otero Jr.; Kathryn Bright; Shirley Vian; Nancy Fox; Marine Hedge; Vicki Wegerle; and Dolores Davis. They were neighbors, parents, and children, and they are remembered here for their lives rather than the manner of their deaths.
+This account is published in memory of Joseph and Julie Otero and their two children, an 11-year-old girl and a 9-year-old boy; Kathryn Bright; Shirley Vian; Nancy Fox; Marine Hedge; Vicki Wegerle; and Dolores Davis. They were neighbors, parents, and children, and they are remembered here for their lives rather than the manner of their deaths.
 
 ## Sources
 

@@ -8,7 +8,7 @@ featured: false
 
 *A forensic companion to the Netflix documentary premiering June 12, 2026.*
 
-**Reagan Simmons-Hancock** was 21 years old and expecting her daughter, **Braxlynn Sage Hancock**, in October 2020. She lived in New Boston, Texas. Her three-year-old child was in the house when she died. That is the center of this case, and it is where any honest account of the documentary begins.
+**Reagan Simmons-Hancock** was 21 years old and expecting her daughter in October 2020. She lived in New Boston, Texas. Her three-year-old child was in the house when she died. That is the center of this case, and it is where any honest account of the documentary begins.
 
 Netflix's *Maternal Instinct* arrives June 12, 2026, directed by Jessica Dimmock (*Unsolved Mysteries*) and produced by Story Syndicate. It will bring a new wave of viewers to one of the most forensically documented cases of premeditated deception in recent Texas criminal history. If you watch it and find yourself asking, "How do investigators actually reconstruct a crime like this from the inside out?" — this post is the answer.
 
@@ -28,7 +28,7 @@ A shift in location-based searches beginning around September 14, 2020 — rough
 
 **Layer three: the social performance record.** A series of Facebook posts, preserved by the platform and entered as exhibits, showed the supposed week-by-week progression of Parker's pregnancy. There were gender-reveal photographs. There were the kinds of posts that accumulate likes from friends and family who have no reason to question them. From a forensic standpoint, a social media performance record is particularly durable: the platform timestamps every post, preserves the metadata, and maintains the audience reaction data. Deleting a post afterward leaves a gap that investigators can identify. The gender-reveal event had real-world participants who could testify to what they saw.
 
-**Layer four: the physical encounter record.** The final and most direct layer was the trooper stop. After leaving the scene on October 9, 2020, Parker was pulled over by a Texas Department of Public Safety trooper for erratic driving. She told him she had just given birth on the roadside. Braxlynn was with her in the vehicle. The trooper's dashcam and bodycam, plus the subsequent hospital records, created an additional timestamped record of where Parker was, what she said, and what condition she and the infant were in. That stop — which Parker almost certainly did not plan for — became one of the most significant documented moments in the case.
+**Layer four: the physical encounter record.** The final and most direct layer was the trooper stop. After leaving the scene on October 9, 2020, Parker was pulled over by a Texas Department of Public Safety trooper for erratic driving. She told him she had just given birth on the roadside. The baby was with her in the vehicle. The trooper's dashcam and bodycam, plus the subsequent hospital records, created an additional timestamped record of where Parker was, what she said, and what condition she and the infant were in. That stop — which Parker almost certainly did not plan for — became one of the most significant documented moments in the case.
 
 ## What the A.I. AL lens reads in this structure
 
@@ -46,11 +46,11 @@ For investigators, this kind of case illustrates why digital forensics has chang
 
 When you hear testimony about the internet searches, the argument is identical: these searches did not happen by accident, they happened in sequence, and the sequence has a direction.
 
-The documentary cannot cover everything the trial covered. A case with over 140 witnesses and 1,000 exhibits will always be compressed. If you find yourself wanting the sourced record — the full timeline, the legal history through the Supreme Court, and a victim-first account that puts Reagan and Braxlynn at the center — that is what our [full case file](/post/the-taylor-parker-case-the-murder-of-reagan-simmons-hancock-and-where-it-stands-now/) is built for.
+The documentary cannot cover everything the trial covered. A case with over 140 witnesses and 1,000 exhibits will always be compressed. If you find yourself wanting the sourced record — the full timeline, the legal history through the Supreme Court, and a victim-first account that puts Reagan and her baby daughter at the center — that is what our [full case file](/post/the-taylor-parker-case-the-murder-of-reagan-simmons-hancock-and-where-it-stands-now/) is built for.
 
 If you want sourced, victim-first case files like this one, subscribe free and we'll send you *How to Read a Case Like the Court Does*, our field guide to reading a case the way a court does: [cassiancreed.beehiiv.com/subscribe](https://cassiancreed.beehiiv.com/subscribe).
 
-Reagan Simmons-Hancock and Braxlynn Sage Hancock are the reason this documentary exists, and the reason this account was written. Say their names first.
+Reagan Simmons-Hancock and her baby daughter are the reason this documentary exists, and the reason this account was written. Remember them first.
 
 ## Sources
 

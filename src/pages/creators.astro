@@ -19,6 +19,10 @@ const DESCRIPTION = 'Sourced court case kits for true-crime YouTubers, TikTokers
 const SAMPLE = '/creators/samples/faith-hedgepeth-case-kit.html';
 const CONTACT = 'mailto:cassiancreed@cassiancreed.com?subject=' + encodeURIComponent('Creator case kits');
 const PLAN_URL = 'https://buy.stripe.com/9B66oH1Hr89T4P04w67IY00';
+// Every Stripe link carries client_reference_id = site-<page>-<slot>, so a checkout
+// shows which page and button it came from. Lowercase a-z, 0-9 and hyphens only,
+// 40 characters at most, never a person's name. scripts/test-checkout-tags.mjs checks the built pages.
+const planUrl = (slot) => PLAN_URL + '?' + new URLSearchParams({ client_reference_id: 'site-creators-' + slot });
 const PLAN_LABEL = 'Join the Founding Creator Plan, $39 a month';
 const KIT_KEY = 'alexander-brothers-creator-case-kit';
 const kitUrl = (placement) => 'https://cassiancreed.beehiiv.com/products/' + KIT_KEY + '?' + new URLSearchParams({
@@ -50,7 +54,7 @@ const jsonld = pageSchema({
         <li><strong>Delivery:</strong> a kit comes as a download link right after checkout. Plan members get the Court Week for Creators sheet by email every Thursday.</li>
         <li><strong>Can I buy now?</strong> Yes. The Alexander brothers kit is on sale now. The Founding Creator Plan is open now too. Cancel the plan any time by email.</li>
       </ul>
-      <p class="quick__actions"><a class="btn" href={kitUrl('creators_quick')} data-book-key={KIT_KEY} data-cta-placement="creators_quick">Buy the Alexander brothers kit, $29</a> <a class="btn" href={PLAN_URL}>{PLAN_LABEL}</a> <a class="quick__ask" href={SAMPLE}>Read the free sample kit</a> <a class="quick__ask" href={CONTACT}>Ask about a case you cover</a></p>
+      <p class="quick__actions"><a class="btn" href={kitUrl('creators_quick')} data-book-key={KIT_KEY} data-cta-placement="creators_quick">Buy the Alexander brothers kit, $29</a> <a class="btn" href={planUrl('quick')}>{PLAN_LABEL}</a> <a class="quick__ask" href={SAMPLE}>Read the free sample kit</a> <a class="quick__ask" href={CONTACT}>Ask about a case you cover</a></p>
     </div>
 
     <div class="post__content">
@@ -99,7 +103,7 @@ const jsonld = pageSchema({
         <li>what to check before you go live;</li>
         <li>a link to each source, and when we last checked it.</li>
       </ul>
-      <p><a class="btn" href={PLAN_URL}>{PLAN_LABEL}</a></p>
+      <p><a class="btn" href={planUrl('join')}>{PLAN_LABEL}</a></p>
       <p>You can cancel any time by email.</p>
 
       <h2 id="price">How much does it cost?</h2>
@@ -114,10 +118,10 @@ const jsonld = pageSchema({
           <p class="price__name">Founding Creator Plan</p>
           <p class="price__amount">$39<span>/month</span></p>
           <p class="price__note">Court Week for Creators by email every Thursday, plus each new kit we release while you are a member. Cancel any time by email.</p>
-          <p class="price__soon"><a class="btn" href={PLAN_URL}>{PLAN_LABEL}</a></p>
+          <p class="price__soon"><a class="btn" href={planUrl('price')}>{PLAN_LABEL}</a></p>
         </div>
       </div>
-      <p>Two things are on sale now: <a href={kitUrl('creators_price_note')} data-book-key={KIT_KEY} data-cta-placement="creators_price_note">the Alexander brothers kit</a> and <a href={PLAN_URL}>the Founding Creator Plan</a>. To see a kit first, read the <a href={SAMPLE}>free sample kit</a>. To ask for a kit on a case you cover, <a href={CONTACT}>email us</a>.</p>
+      <p>Two things are on sale now: <a href={kitUrl('creators_price_note')} data-book-key={KIT_KEY} data-cta-placement="creators_price_note">the Alexander brothers kit</a> and <a href={planUrl('note')}>the Founding Creator Plan</a>. To see a kit first, read the <a href={SAMPLE}>free sample kit</a>. To ask for a kit on a case you cover, <a href={CONTACT}>email us</a>.</p>
 
       <h2 id="delivery">How does delivery work?</h2>
       <p>You pay for a kit on our newsletter store page. Each kit is a PDF file. After checkout you get a link to download it. You pay for the Founding Creator Plan on a secure Stripe checkout page. Plan members get each Court Week for Creators sheet by email every Thursday.</p>

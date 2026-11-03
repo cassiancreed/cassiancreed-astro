@@ -12,6 +12,8 @@ const posts = defineCollection({
     archived: z.boolean().default(false),
     archiveNote: z.string().optional(),
     replacementPath: z.string().optional(),
+    // Questions (exact text) left out of the FAQPage structured data only; the page text is unchanged.
+    faqSkip: z.array(z.string()).optional(),
     victim: z.string().optional(),
     incidentDate: z.string().optional(),
     location: z.string().optional(),
