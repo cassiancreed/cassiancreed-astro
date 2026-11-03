@@ -59,6 +59,10 @@ const CALENDAR_WORD_HASHES=new Set([
   'e804ad19613d5deee5335d15fbcd9eba69d41c829f48575966217213c86ebe85', // Mukdahan (Thailand) case victim, family name
   'b1f57dc257db82155f8378e9a2099e434ed4b59c42e9e3453b9d04075f2f9d81', // Apalachee shooting student victim, family name
   'cfcd47a89a49b999d075caba75f776190b0e35805340ae2a5bef2ceb0f89e6a0', // East Baton Rouge Parish investigation victim (15), family name
+  'e272a9a3741641035eaab8f23e251ea960c3a62d02d55cfa31204a8545cbfe7e', // 1979 SoHo (New York) disappearance: boy (6), family name
+  '97b172a5e233b2f23d3d416ad3b43462e61ca33326a16bcabbe45210519fe9d5', // New Boston (Texas) case: newborn daughter, first name
+  '9ac565be51857cbde1c820d9afc8c67c602663f41f8077c4627c901cf6a92ce0', // Boulder (Colorado) unsolved homicide: child (6), first name
+  '9e0a936ccd6d41353eb5ad06d147219aee09097231f892a417688b07150ece9d', // Boulder (Colorado) unsolved homicide: child (6), first name as it splits around an accented letter
 ]);
 // A juvenile charged with a crime under age 16 is never named anywhere on the
 // site: not in a title, heading, address, ID or in the article text.
@@ -84,6 +88,15 @@ const CALENDAR_PAIR_HASHES=new Set([
   'ac4e8d3be7aff3adb9f7b9ca340468b46bcb17d25860b1f56942b9e3a413188d', // Brantham (Suffolk) coronial case child
   '1b1e3f1122c3188fc7068cfc0eabac30ac70e73c3df36c786f88a5f0bfa02371', // Apalachee shooting student victim
   'bb70416bf82131c672b41b711d674e9ec94e931934981b5306cd1562dafc2cc6', // Anoka County trial-watch row: teen victim
+  '1ae26652fce06a69c7d90c77e3f24da3c270fbe1565f2069b9db7d22efe0b809', // 1979 SoHo (New York) disappearance: boy (6), first and family name
+  'e1f8f44e9c55a7e7f7cc3b0a3602e536b728a69277e0b60b1771e4b8e067f776', // Delphi (Indiana) case: girl (13), first and family name
+  'f057f391ba66477ba5a5a6ddd3fbd0ec03afc4fccb9d9f83302d8c5c97956eaa', // Delphi (Indiana) case: girl (14), first and family name
+  '01cb5060aafe21ff499ba2b49010774ed4483a1059d109fc0e769d3cf9f95eef', // Clinton County (Iowa) 1975 Jane Doe: girl (15), first and middle name
+  '2518f8177d008335523fe31f41bb68b26ffd739ca5b6d9015160ee7348c34ca9', // Clinton County (Iowa) 1975 Jane Doe: girl (15), middle and family name
+  '6e6bd29552dc5b649f924d60538c7916b10a16c71326662d275b8fc756c35da8', // New Boston (Texas) case: newborn daughter, first and middle name
+  '088f5651028191ac0ed572a1bfe9b9c8544fa091149dfd8d70bd34d7f3af3609', // New Boston (Texas) case: newborn daughter, middle and family name
+  'c475e9ebbaa39f484e82da4afff461eab90b6b88739596bebe214d00953ac01c', // Maricopa County (Arizona) teen homicide: victim (16), first and family name
+  '21145875513d58636bd392a4b90db6c9b0b8c94a3ace63fdd0709ac35fb3f381', // Boulder (Colorado) unsolved homicide: child (6), first and family name
 ]);
 const CALENDAR_PAGES=[
   'dist/court-calendar/index.html',
@@ -121,6 +134,22 @@ test('calendar pages keep child victims out of structured data, meta tags and al
 // RSS feed, llms.txt, or a calendar row ID or heading. Names appear in this file
 // only as SHA-256 hashes; each comment gives a place and a role, never a person
 // or a family.
+//
+// What is protected, in three layers:
+//   1. Hashes found by hand (the lists below).
+//   2. Names the guard reads from the site's own data on every run: a name beside an
+//      age under 18 in the posts and calendar sheets (see "Protected names built from
+//      the site's own data"), and the children in active missing-person alerts.
+//   3. Retired page addresses and calendar row IDs, which may not come back.
+// What is read: every attribute of every element, every link to our own site
+// (cassiancreed.com AND our Beehiiv store, cassiancreed.beehiiv.com), data inside
+// scripts, script files, the sitemap, RSS feed, llms.txt and _redirects.
+//
+// Only TWO owner allowlists exist. Each is marked, small and tested to be in use:
+//   OWNER RENAME PENDING (Beehiiv handles): two product addresses on our Beehiiv store.
+//   OWNER DOCTRINE DECISION PENDING: living children in active alerts, on /missing-persons/
+//   and /today/ only.
+// Another site's link (a news story, a police release) is that site's text, not ours.
 // ---------------------------------------------------------------------------
 // First names that sat inside retired web addresses or row IDs. They are checked
 // only inside addresses and IDs, never in prose, because a first name alone can
@@ -130,6 +159,11 @@ const ADDRESS_FIRST_NAME_HASHES=new Set([
   'cf3a3bbe331c3950d16a8e9917c5bb8340e7c0ef917da25d4a96f92d074bce05', // Brantham (Suffolk) coronial row: first name in the retired row ID
   'af4417c67db4242eba59efa05eee07571b2f1abe6658b5994f3b02d2ebe7a98c', // Anoka County trial-watch row: first name in the retired row ID
   'e9a63a4eb15738ae85cd416221c8fcc4ccc0018fac91335b42eaa016c76e87f9', // Frisco (Texas) track-meet case: the victim's living twin brother, first name (also checked in that post's text, below)
+  '6d667067b13775eef94459be1c8229ffff7248d70299b847aef97bbbc66de96b', // 1979 SoHo (New York) disappearance: boy (6), first name
+  '3614f7e180d9000547fe4b19cbdb4d222cdd4d4675a023588a69fbe2d1140189', // Delphi (Indiana) case: girl (13), first name
+  '7cf7b152874767a5b190cd48117669627a549810cc5768f638642ff021e8293a', // Delphi (Indiana) case: girl (14), first name
+  '9c0e126a9f0375702fc470f76553b6d09047271297fc6ca114e56b0120906f5c', // Clinton County (Iowa) 1975 Jane Doe: girl (15), first name
+  '27511e620b42e8fbec37edf4bfc765d490f326137a40a51837184f61b8aae39f', // Maricopa County (Arizona) teen homicide: victim (16), first name
 ]);
 // The living twin's first name alone is also checked in the article text of the
 // Frisco post. It is not checked in every article: the same first name is an
@@ -161,12 +195,26 @@ const RETIRED_ADDRESS_HASHES=new Set([
   'f83159b18d39f6c5627f4261bf8cb73fd4879d504d0b0595ffc6ae5147bea525', // Round Lake Beach (Illinois) newborn case page
   'c95ac64a5500f1b28b76e87000d7f242c6066a35a297382b40ffbc2ba41cfa1c', // Apalachee High School plea-hearing post (defendant charged at 14)
   '96f1614fe4618e77566e08121e077512bd149f9410128c3593cb9354a44d4540', // Vallow case post (two children)
+  'd3162821c0096c43b299c85add38b4e037f2189669b04792a2a33859e465041f', // Clinton County (Iowa) 1975 Jane Doe FAQ post
+  '0e1fc93ccc2af6dc50fb34eddaeb4077a745a20d4a6a31ae2d503530cefad848', // Clinton County (Iowa) 1975 Jane Doe timeline post
+  '325420c8c211ff6855912aa270cd1ccd3ef566db17553c7cf8bb23e321d29c77', // Clinton County (Iowa) 1975 Jane Doe study-guide post
+  '1ee5dcc70ed37584f9f5ab026a092ffebd415bdc224721519f1bbaffd5168baa', // Clinton County (Iowa) 1975 Jane Doe identification post
+  '9099f60720f374f1ca370e66a1390d42205a05106d960a744917b04f42886624', // 1979 SoHo (New York) disappearance post
+  '0747067915ddb12c9cde3c258f89229bea56039dd5a942038294a077c553dd42', // Delphi (Indiana) case post
+]);
+// Calendar row IDs that named a child who died. An ID is a page anchor, so it
+// cannot be redirected; it may not come back as an element ID or a #link.
+const RETIRED_ROW_ID_HASHES=new Set([
+  '2dae06fed85d80b5d3f92fcf1fefd4ee926c5597ee023d3703ec316499ba62dd', // Boulder (Colorado) row
+  '25bd32a8e24777687bbb309144cf05867f952d7560d840cd4c86267dc1520dbc', // Muhlenberg County (Kentucky) infant row
+  'f6d112190982bddda2919484eafe0c02da7e9b8f47623543ba4c6ab18ff2d1bd', // Maricopa County (Arizona) teen homicide row, joint trial
+  '1f654591835b3eee70555e03bf23ba61b3b014f589876f703ed9116f38b67d66', // Maricopa County (Arizona) teen homicide row, severed trial
 ]);
 
 const lettersIn=text=>[...text.matchAll(/[A-Za-z]+/g)].map(m=>m[0].toLowerCase());
 // Hashes of protected names found in text. firstNames: also test the first names
 // that are checked only in addresses and IDs.
-function protectedNames(text,{firstNames=false,words=CALENDAR_WORD_HASHES,pairs=CALENDAR_PAIR_HASHES,names=ADDRESS_FIRST_NAME_HASHES}={}) {
+function protectedNames(text,{firstNames=false,words=CALENDAR_WORD_HASHES,pairs=PAIRS_WITH_ALERT,names=ADDRESS_FIRST_NAME_HASHES}={}) {
   const list=lettersIn(text);
   const found=[];
   list.forEach((word,i)=>{
@@ -177,13 +225,117 @@ function protectedNames(text,{firstNames=false,words=CALENDAR_WORD_HASHES,pairs=
   });
   return found;
 }
-// Another site's address (a news link, a Beehiiv product) is that site's text,
-// not ours; this guard checks our own surfaces only.
-const EXTERNAL_URL=/https?:\/\/(?!(?:www\.)?cassiancreed\.com(?![\w.-]))[^\s"'<>)\\]+/g;
+// ---- Protected names built from the site's own data ------------------------------
+// The hashes above were found by hand, and a name nobody hashed slipped through.
+// So the guard also reads the site's own data and protects every child it finds:
+// a name written next to an age under 18 in any post or calendar sheet, in the
+// forms "Name (13)", "Name, 6,", "Name was 17 years old", "Name, a 14-year-old" and
+// "the 14-year-old Name". A name written beside a charge ("defendant", "charged",
+// "convicted" and the like) is a defendant, not a victim, and is left out. Names
+// live only in memory while the test runs; nothing prints one. A victim whose age
+// the data never states still needs a hash above.
+const NAME_WORD="[A-Z][a-z]+(?:[-'\u2019][A-Z]?[a-z]+)*";
+const FULL_NAME=`${NAME_WORD}(?: (?:[A-Z]\\.|${NAME_WORD})){0,3}`;
+// Words that show a match is a place, a date or a phrase, not a person. A pair that holds one is skipped.
+const NOT_A_NAME=new Set('january february march april may june july august september october november december monday tuesday wednesday thursday friday saturday sunday the a an in on at of for and but or as by he she they his her their it this that these those case court judge state day year years age aged mr mrs ms dr jr sr high school college university academy elementary middle county city police sheriff department hospital center church park lake river island beach street avenue road bridge district prison jail federal supreme circuit grand jury trial murder death shooting fire house home'.split(' '));
+const PLACEHOLDER_WORDS=new Set(['jane','john','doe','baby','boy','girl','infant','unknown','unidentified']);
+const AGE_PATTERNS=[
+  {rx:new RegExp(`(${FULL_NAME}) \\((\\d{1,2})\\)`,'g'),name:1,age:2},
+  {rx:new RegExp(`(${FULL_NAME}), (\\d{1,2})(?=[,.;)\\s]|$)`,'g'),name:1,age:2},
+  {rx:new RegExp(`\\b(\\d{1,2})-year-old (?:(?:high school |college |middle school )?(?:student|boy|girl|son|daughter|teen|teenager|child|victim|baby)(?:,|\\s+named|\\s+identified as)?\\s+)?(${FULL_NAME})`,'g'),name:2,age:1},
+  {rx:new RegExp(`(${FULL_NAME}),? \\(?(?:aged?|age) (\\d{1,2})\\b`,'g'),name:1,age:2},
+  {rx:new RegExp(`(${FULL_NAME}), (?:a|an|the) (\\d{1,2})-year-old`,'g'),name:1,age:2},
+  {rx:new RegExp(`(${FULL_NAME}) was (\\d{1,2}) years old`,'g'),name:1,age:2},
+];
+const CHARGE_BEFORE=/\b(?:defendant|suspect|accused)\s*$/i;
+const CHARGE_AFTER=/^[,;)\s]*(?:(?:who|and he|and she|he|she)\s+)?(?:(?:was|is|were|has been|had been|pleaded|pled)\s+)?(?:charged|accused|arrested|convicted|sentenced|indicted|guilty|not guilty)\b/i;
+// The two-word forms a person's name takes in print. A two-word name is one pair. A
+// longer name is its first and last word, and its last two words, so a first and
+// middle name alone (a common pair) does not flag an adult who shares it.
+function namePairs(words) {
+  const n=words.length;
+  if(n<2) return [];
+  if(n===2) return [words.join(' ')];
+  return [words[0]+' '+words[n-1],words[n-2]+' '+words[n-1]];
+}
+const looksLikeName=words=>words.length>=2&&!words.some(word=>NOT_A_NAME.has(word)||PLACEHOLDER_WORDS.has(word));
+// Lowercase pairs of every name found beside an age under 18.
+function minorNamePairs(text) {
+  const found=new Set();
+  for(const {rx,name,age} of AGE_PATTERNS) {
+    for(const m of text.matchAll(rx)) {
+      if(Number(m[age])>=18) continue;
+      const end=m.index+m[0].length;
+      if(CHARGE_BEFORE.test(text.slice(Math.max(0,m.index-40),m.index))||CHARGE_AFTER.test(text.slice(end,end+60))) continue;
+      let words=(m[name].match(/[A-Za-z]+/g)||[]).map(word=>word.toLowerCase());
+      while(words.length&&NOT_A_NAME.has(words[0])) words.shift();
+      if(!looksLikeName(words)) continue;
+      for(const pair of namePairs(words)) found.add(pair);
+    }
+  }
+  return found;
+}
+function dataTexts() {
+  const texts=[];
+  for(const name of readdirSync('src/content/posts')) if(/\.mdx?$/.test(name)) texts.push(readFileSync(join('src/content/posts',name),'utf8'));
+  for(const name of readdirSync('src/data')) if(/\.tsv$/.test(name)&&!/^missing-persons/.test(name)) texts.push(readFileSync(join('src/data',name),'utf8'));
+  return texts;
+}
+const DERIVED_PAIR_HASHES=new Set(dataTexts().flatMap(text=>[...minorNamePairs(text)]).map(hash));
+// OWNER DOCTRINE DECISION PENDING (living children in active missing-person alerts):
+// /missing-persons/ and /today/ list the children that NCMEC (the National Center for
+// Missing & Exploited Children) reports missing, by name, on purpose. Whether a LIVING
+// missing child may be named in an active alert is for a later council to decide, so
+// these names are allowed on those two pages ONLY (see MISSING_PERSON_LIST_PAGES) and
+// are protected everywhere else. Built from missing-persons.tsv, not typed by hand.
+function missingChildPairs() {
+  const [head,...rows]=readFileSync('src/data/missing-persons.tsv','utf8').split(/\r?\n/).filter(Boolean).map(line=>line.split('\t'));
+  const [kind,source,name,status,agency]=['kind','source_type','name','status','agency_status'].map(column=>head.indexOf(column));
+  const found=new Set();
+  // Active alerts from the child-missing centres (NCMEC and state clearinghouses), or
+  // any active alert the agency itself labels a missing child. A row that is resolved
+  // is not here: a child who was found has no alert to name them in.
+  for(const row of rows.filter(row=>row[kind]==='case'&&row[status]==='missing'&&(['ncmec','government'].includes(row[source])||/^Missing Child/i.test(row[agency])))) {
+    const words=(row[name].match(/[A-Za-z]+/g)||[]).map(word=>word.toLowerCase());
+    for(const pair of namePairs(words)) found.add(pair);
+  }
+  return found;
+}
+const ALERT_PAIR_HASHES=new Set([...missingChildPairs()].map(hash));
+const PAIRS_EVERYWHERE=new Set([...CALENDAR_PAIR_HASHES,...DERIVED_PAIR_HASHES]);
+const PAIRS_WITH_ALERT=new Set([...PAIRS_EVERYWHERE,...ALERT_PAIR_HASHES]);
+// Another site's address (a news link) is that site's text, not ours. Our Beehiiv
+// store (cassiancreed.beehiiv.com) is OURS: its addresses, keys and tracking tags
+// are checked like any other of our surfaces.
+const EXTERNAL_URL=/https?:\/\/(?!(?:www\.)?cassiancreed\.com(?![\w.-])|cassiancreed\.beehiiv\.com(?![\w.-]))[^\s"'<>)\\]+/g;
+// OWNER RENAME PENDING (Beehiiv handles): two paid-guide product pages on our
+// Beehiiv store still carry a child victim's name in their address. The owner has
+// to rename them in Beehiiv; until then those two exact product addresses (the
+// path only; the query string is still checked) are the ONLY names allowed in a
+// link. Each entry is the hash of the lowercase product path. Delete an entry
+// once the handle is renamed; the test below fails if an entry is no longer used.
+const OWNER_RENAME_PENDING_BEEHIIV_PATH_HASHES=new Set([
+  'c85fc1d3bf6bba2dd3d25e853819274cf7b470090f0da604c1f004d622d91900', // paid guide for the Frisco (Texas) track-meet case (victim, 17)
+  'bf8fcaa89742b9d1b703bbb28630e93fe0324840184ba25a184d1796185c6ea2', // paid guide for the Los Angeles case (victim, 14)
+]);
+const BEEHIIV_PRODUCT=/https?:\\?\/\\?\/cassiancreed\.beehiiv\.com\\?\/products\\?\/([A-Za-z0-9_-]+)/g;
+// An allowed product address becomes a neutral one of the same shape, so its query string is still checked.
+const allowPendingHandles=(text,allowed=OWNER_RENAME_PENDING_BEEHIIV_PATH_HASHES)=>text.replace(BEEHIIV_PRODUCT,(all,handle)=>allowed.has(hash('/products/'+handle))?'https://cassiancreed.beehiiv.com/products/owner-rename-pending':all);
 const ownText=text=>text.replace(EXTERNAL_URL,' ');
 const stripTags=html=>html.replace(/<[^>]+>/g,' ');
-const ownAddress=value=>/^(\/(?!\/)|#|https?:\/\/(www\.)?cassiancreed\.com(?![\w.-]))/.test(value);
+const ownAddress=value=>/^(\/(?!\/)|#|https?:\/\/(www\.)?cassiancreed\.com(?![\w.-])|https?:\/\/cassiancreed\.beehiiv\.com(?![\w.-]))/.test(value);
+// Slug-like tokens (hyphenated or underscored words) are how names ride along in
+// keys, IDs and addresses, inside scripts and data as well as in attributes.
+const slugTokens=text=>(text.match(/[A-Za-z0-9]+(?:[-_][A-Za-z0-9]+)+/g)||[]).join(' ');
+const looksLikeKey=value=>/^[A-Za-z0-9][A-Za-z0-9_:\/.#?=&%-]*$/.test(value);
+// Attributes that hold layout, not words or names.
+const SKIP_ATTRIBUTES=new Set(['class','style','d','points','viewbox','transform','fill','stroke','width','height','rel','target','type','lang','charset','media','sizes','loading','decoding','crossorigin','referrerpolicy','role','tabindex','method','enctype','autocomplete']);
+const ADDRESS_ATTRIBUTES=new Set(['href','src','action','poster','cite','formaction','data-href','data-url','data-src']);
+const ID_ATTRIBUTES=new Set(['id','for','aria-labelledby','aria-describedby','aria-controls','headers','list','form']);
+const LABEL_ATTRIBUTES=new Set(['alt','title','aria-label','placeholder']);
 // The places a page shows a name outside its article text. Each entry: [kind, text].
+// EVERY attribute of every element is read, not a short list: data-* keys, preview
+// keys and the like are surfaces too.
 function nameSurfaces(html) {
   const found=[];
   const take=(kind,regex,pick)=>{ for(const m of html.matchAll(regex)) found.push([kind,ownText(pick(m))]); };
@@ -191,18 +343,31 @@ function nameSurfaces(html) {
   take('heading',/<h[1-6]\b[^>]*>([\s\S]*?)<\/h[1-6]>/g,m=>stripTags(m[1]));
   take('meta',/<meta\b[^>]*\bcontent="([^"]*)"/g,m=>m[1]);
   take('structured data',/<script type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g,m=>m[1]);
-  take('image or label text',/\b(?:alt|title|aria-label)="([^"]*)"/g,m=>m[1]);
-  take('element ID',/\bid="([^"]*)"/g,m=>m[1]);
-  for(const m of html.matchAll(/\b(?:href|src|action|poster)="([^"]*)"/g)) {
-    if(ownAddress(m[1])) found.push(['web address',m[1]]);
-    // Another site's address is its own text, but the tracking tags we add to
-    // its query string (utm_campaign and the like) are ours.
-    else if(/^https?:\/\//.test(m[1])&&m[1].includes('?')) found.push(['tracking tag',m[1].slice(m[1].indexOf('?'))]);
+  // Scripts and embedded data: keys and addresses only (their prose is article text).
+  for(const m of html.matchAll(/<script\b(?![^>]*application\/ld\+json)[^>]*>([\s\S]*?)<\/script>/g)) found.push(['script key',slugTokens(ownText(m[1]))]);
+  for(const tag of html.matchAll(/<[a-zA-Z][^>]*>/g)) {
+    for(const a of tag[0].matchAll(/([^\s"'<>\/=]+)\s*=\s*"([^"]*)"/g)) {
+      const name=a[1].toLowerCase();
+      const value=a[2];
+      if(SKIP_ATTRIBUTES.has(name)) continue;
+      if(ADDRESS_ATTRIBUTES.has(name)||name==='srcset') {
+        for(const url of name==='srcset'?value.split(',').map(part=>part.trim().split(/\s+/)[0]):[value]) {
+          if(ownAddress(url)) found.push(['web address',url]);
+          // Another site's address is its own text, but the tracking tags we add to
+          // its query string (utm_campaign and the like) are ours.
+          else if(/^https?:\/\//.test(url)&&url.includes('?')) found.push(['tracking tag',url.slice(url.indexOf('?'))]);
+        }
+      }
+      else if(ID_ATTRIBUTES.has(name)) found.push(['element ID',value]);
+      else if(name.startsWith('data-nep-')) found.push(['tracking tag',ownText(value)]);
+      else if(LABEL_ATTRIBUTES.has(name)) found.push(['image or label text',ownText(value)]);
+      else if(name==='content'||name==='name') continue; // meta content is read above; form field names are not words
+      else found.push([looksLikeKey(value)?'attribute key':'attribute text',ownText(value)]);
+    }
   }
-  take('tracking tag',/\bdata-nep-[a-z-]+="([^"]*)"/g,m=>m[1]);
   return found;
 }
-const addressKinds=new Set(['web address','element ID','tracking tag']);
+const addressKinds=new Set(['web address','element ID','tracking tag','attribute key','script key']);
 function allFiles(dir) {
   return readdirSync(dir).flatMap(name=>{
     const path=join(dir,name);
@@ -212,13 +377,20 @@ function allFiles(dir) {
 }
 const builtFiles=allFiles('dist').map(path=>path.replace(/\\/g,'/'));
 const builtPages=builtFiles.filter(path=>path.endsWith('.html'));
+const retiredRowId=(text,ids=RETIRED_ROW_ID_HASHES)=>text.split(/[\s#/?&=]+/).some(token=>token&&ids.has(hash(token)));
 function namesOnPage(path,html) {
   const bad=[];
-  for(const [kind,text] of nameSurfaces(html)) {
+  // OWNER DOCTRINE DECISION PENDING: the list pages may show the missing children (see above).
+  const onListPage=MISSING_PERSON_LIST_PAGES.has(path);
+  const pairs=onListPage?PAIRS_EVERYWHERE:PAIRS_WITH_ALERT;
+  // OWNER RENAME PENDING: the two Beehiiv product addresses are hidden first, wherever they sit
+  // (a link, a script's data); the query string after them is still checked.
+  for(const [kind,text] of nameSurfaces(allowPendingHandles(html))) {
     // Row IDs, web addresses and tracking tags also carry first names; the missing-person
     // list pages name living missing people on purpose, so first names are not tested there.
-    const firstNames=addressKinds.has(kind)&&!MISSING_PERSON_LIST_PAGES.has(path);
-    if(protectedNames(text,{firstNames}).length) bad.push(kind);
+    const firstNames=addressKinds.has(kind)&&!onListPage;
+    if(protectedNames(text,{firstNames,pairs}).length) bad.push(kind);
+    if(retiredRowId(text)) bad.push('retired row ID');
   }
   return [...new Set(bad)];
 }
@@ -239,9 +411,9 @@ test('the guard finds a name in each place it must watch, and ignores article te
 });
 test('no built page puts a child who died in a title, heading, meta tag, structured data, image text, element ID, tracking tag or web address',()=>{
   assert.ok(builtPages.length>100,'Expected the built site, found '+builtPages.length+' pages');
-  for(const path of builtPages) {
-    assert.deepEqual(namesOnPage(path,readFileSync(path,'utf8')),[],path+' names a protected child outside its article text');
-  }
+  // Collect every page first, so one run lists them all (places only, never a name).
+  const bad=builtPages.map(path=>[path,namesOnPage(path,readFileSync(path,'utf8'))]).filter(([,kinds])=>kinds.length);
+  assert.deepEqual(bad.map(([path,kinds])=>path+' ('+kinds.join(', ')+')'),[],bad.length+' built pages name a protected child outside their article text');
 });
 test('no built file name, sitemap entry, RSS item, llms.txt line or redirect target names a protected child',()=>{
   for(const path of builtFiles) {
@@ -338,4 +510,70 @@ test('retired child-name addresses 301 to role-based pages that exist',()=>{
   for(const id of RETIRED_ADDRESS_HASHES) {
     assert.ok((seen.get(id)||0)>=2,'a retired address needs two 301 lines (with and without the trailing slash); hash '+id.slice(0,8));
   }
+});
+
+// ---------------------------------------------------------------------------
+// The guard checks itself, and the two owner allowlists stay small and in use.
+// ---------------------------------------------------------------------------
+test('the guard reads every attribute and link, treats our Beehiiv store as ours, and lets through only the allowed product address',()=>{
+  const handle='zorblax-fixture-guide';
+  const allowed=new Set([hash('/products/'+handle)]);
+  const fixture={ words:new Set(),pairs:new Set([hash('zorblax fixture')]),names:new Set([hash('zorblax')]) };
+  const kindsOf=html=>[...new Set(nameSurfaces(allowPendingHandles(html,allowed)).filter(([kind,text])=>protectedNames(text,{...fixture,firstNames:addressKinds.has(kind)}).length).map(([kind])=>kind))].sort();
+  const store='https://cassiancreed.beehiiv.com/products/';
+  assert.deepEqual(kindsOf(`<a href="${store}${handle}">buy</a>`),[],'the allowed product address passes');
+  assert.deepEqual(kindsOf(`<a href="${store}${handle}-v2">buy</a>`),['web address'],'any other product address with the name fails');
+  assert.deepEqual(kindsOf(`<a href="${store}${handle}?utm_campaign=zorblax_fixture">buy</a>`),['web address'],'the query string after an allowed address is still checked');
+  assert.deepEqual(kindsOf(`<button data-book-key="zorblax-fixture-guide-x" data-preview-for="zorblax-fixture-guide-x">buy</button>`),['attribute key'],'data attributes are read');
+  assert.deepEqual(kindsOf(`<script>var cards=[{"url":"${store}${handle}-v2"}];</script>`),['script key'],'a script that carries an address is read');
+  assert.deepEqual(kindsOf(`<script>var cards=[{"url":"${store.replace(/\//g,'\\/')}${handle}"}];</script>`),[],'the allowed address passes inside escaped script data too');
+  assert.deepEqual(kindsOf('<a href="https://cassiancreed.com/post/zorblax-fixture/">a</a><a href="https://www.cassiancreed.com/post/zorblax-fixture/">b</a>'),['web address'],'our own addresses are read');
+  assert.deepEqual(kindsOf('<a href="https://news.example/zorblax-fixture">other site</a>'),[],'another site\'s address is its own text');
+  assert.equal(retiredRowId('see #zorblax-row',new Set([hash('zorblax-row')])),true,'a retired row ID is found in a link');
+  assert.equal(retiredRowId('zorblax row',new Set([hash('zorblax-row')])),false,'a retired row ID is the whole token');
+});
+test('names are built from the site\'s own data: a name beside an age under 18 is protected; adults, defendants, places and placeholders are not',()=>{
+  const pairs=text=>[...minorNamePairs(text)].sort();
+  assert.deepEqual(pairs('Zorblax Fixture (13) was found.'),['zorblax fixture']);
+  assert.deepEqual(pairs('The 14-year-old Zorblax Fixture was last seen.'),['zorblax fixture']);
+  assert.deepEqual(pairs('Zorblax Fixture, 16, was killed.'),['zorblax fixture']);
+  assert.deepEqual(pairs('Zorblax Fixture, age 12, was killed.'),['zorblax fixture']);
+  assert.deepEqual(pairs('Zorblax Quentin Fixture was 9 years old.'),['quentin fixture','zorblax fixture'],'a long name is its first and last words and its last two');
+  assert.deepEqual(pairs('Zorblax Fixture (45) is a witness.'),[],'an adult');
+  assert.deepEqual(pairs('Zorblax Fixture, 17, was charged with theft.'),[],'a defendant');
+  assert.deepEqual(pairs('The defendant Zorblax Fixture (16) appeared.'),[],'a defendant');
+  assert.deepEqual(pairs('Apalachee High School, 14 students spoke.'),[],'a place');
+  assert.deepEqual(pairs('Baby Doe (1) was found.'),[],'a placeholder');
+  assert.deepEqual(pairs('Texas (12) voted.'),[],'one word is not a name');
+  assert.ok(DERIVED_PAIR_HASHES.size>=5,'the data produced almost no names; the age patterns may have broken');
+});
+test('the owner allowlists are only the two marked ones, and each is still in use',()=>{
+  // 1. OWNER RENAME PENDING (Beehiiv handles): two product addresses, each still linked.
+  assert.equal(OWNER_RENAME_PENDING_BEEHIIV_PATH_HASHES.size,2,'only the two pending Beehiiv product addresses may be allowed');
+  const linked=new Set();
+  for(const path of builtPages) for(const m of readFileSync(path,'utf8').matchAll(BEEHIIV_PRODUCT)) linked.add(hash('/products/'+m[1]));
+  for(const id of OWNER_RENAME_PENDING_BEEHIIV_PATH_HASHES) assert.ok(linked.has(id),'an allowed Beehiiv address is no longer linked; delete its entry (hash '+id.slice(0,8)+')');
+  // 2. OWNER DOCTRINE DECISION PENDING: living children in active alerts, on two pages only.
+  assert.deepEqual([...MISSING_PERSON_LIST_PAGES].sort(),['dist/missing-persons/index.html','dist/today/index.html']);
+  assert.ok(ALERT_PAIR_HASHES.size>=20,'the alert list was not built from missing-persons.tsv');
+  for(const path of MISSING_PERSON_LIST_PAGES) {
+    const shown=protectedNames(ownText(readFileSync(path,'utf8')),{words:new Set(),pairs:ALERT_PAIR_HASHES}).length;
+    assert.ok(shown>0,path+' no longer shows an alert name; the allowance for it is stale');
+  }
+});
+// Script files can carry keys and addresses too (the calendar's data, for one).
+function scriptFiles(dir) {
+  return readdirSync(dir).flatMap(name=>{
+    const path=join(dir,name).replace(/\\/g,'/');
+    if(statSync(path).isDirectory()) return scriptFiles(path);
+    return /\.m?js$/.test(name)?[path]:[];
+  });
+}
+test('built script files keep protected names out of their keys and addresses',()=>{
+  const bad=[];
+  for(const path of scriptFiles('dist')) {
+    const tokens=slugTokens(allowPendingHandles(ownText(readFileSync(path,'utf8'))));
+    if(protectedNames(tokens,{firstNames:true}).length||retiredRowId(tokens)) bad.push(path);
+  }
+  assert.deepEqual(bad,[],'a built script file names a protected child');
 });

@@ -325,7 +325,7 @@ export const CALENDAR_EXPLAINER_CASES = [
     "paid": []
   },
   {
-    "key": "etan-patz",
+    "key": "soho-1979-disappearance",
     "entryIds": [
       "unconfirmed-4"
     ],
