@@ -180,10 +180,10 @@ test('calendar pages keep child victims out of structured data, meta tags and al
 // (cassiancreed.com AND our Beehiiv store, cassiancreed.beehiiv.com), data inside
 // scripts, script files, the sitemap, RSS feed, llms.txt and _redirects.
 //
-// Only TWO owner allowlists exist. Each is marked, small and tested to be in use:
+// Only ONE owner allowlist is left. It is marked, small and tested to be in use:
 //   OWNER RENAME PENDING (Beehiiv handles): two product addresses on our Beehiiv store.
-//   OWNER DOCTRINE DECISION PENDING: living children in active alerts, on /missing-persons/
-//   and /today/ only.
+// Living children in missing-person alerts follow a rule, not an allowlist (see "The
+// missing-child alert rule" below), and may be named on /missing-persons/ and /today/ only.
 // Another site's link (a news story, a police release) is that site's text, not ours.
 // ---------------------------------------------------------------------------
 // First names that sat inside retired web addresses or row IDs. They are checked
@@ -210,12 +210,11 @@ const LIVING_CHILD_FIRST_NAME_HASHES=new Set([
 const LIVING_CHILD_TEXT_PAGE_HASHES=new Set([
   '5a226f7662f6926847b47a534d2aa1e00786c17d115dde37747d2a44e6620e3c', // Frisco (Texas) track-meet verdict post
 ]);
-// /today/ and /missing-persons/ list missing people by name on purpose. Whether a
-// LIVING missing child may be named in an active alert is a separate question
-// that stays open for a later council; this guard does not decide it, so first
-// names are not tested inside addresses and IDs on those two pages. There is no
-// exemption for a child who was found dead: the alert's job ended, so that child
-// is role-only on these pages like everywhere else.
+// /today/ and /missing-persons/ list missing people by name on purpose. A LIVING
+// child in an ACTIVE alert may be named there under the alert rule below, so first
+// names are not tested inside addresses and IDs on those two pages. A child who was
+// found, alive or dead, or whose alert has no active official poster, is role-only
+// on these pages like everywhere else.
 const MISSING_PERSON_LIST_PAGES=new Set(['dist/today/index.html','dist/missing-persons/index.html']);
 // A child who was found dead after a missing-person alert is named nowhere in our
 // own text: not on the alert pages, not in the calendar, not in an address.
@@ -349,27 +348,65 @@ function dataTexts() {
   return texts;
 }
 const DERIVED_PAIR_HASHES=new Set(dataTexts().flatMap(text=>[...minorNamePairs(text)]).map(hash));
-// OWNER DOCTRINE DECISION PENDING (living children in active missing-person alerts):
-// /missing-persons/ and /today/ list the children that NCMEC (the National Center for
-// Missing & Exploited Children) reports missing, by name, on purpose. Whether a LIVING
-// missing child may be named in an active alert is for a later council to decide, so
-// these names are allowed on those two pages ONLY (see MISSING_PERSON_LIST_PAGES) and
-// are protected everywhere else. Built from missing-persons.tsv, not typed by hand.
-function missingChildPairs() {
-  const [head,...rows]=readFileSync('src/data/missing-persons.tsv','utf8').split(/\r?\n/).filter(Boolean).map(line=>line.split('\t'));
-  const [kind,source,name,status,agency]=['kind','source_type','name','status','agency_status'].map(column=>head.indexOf(column));
-  const found=new Set();
-  // Active alerts from the child-missing centres (NCMEC and state clearinghouses), or
-  // any active alert the agency itself labels a missing child. A row that is resolved
-  // is not here: a child who was found has no alert to name them in.
-  for(const row of rows.filter(row=>row[kind]==='case'&&row[status]==='missing'&&(['ncmec','government'].includes(row[source])||/^Missing Child/i.test(row[agency])))) {
-    const words=(row[name].match(/[A-Za-z]+/g)||[]).map(word=>word.toLowerCase());
-    for(const pair of namePairs(words)) found.add(pair);
-  }
-  return found;
+// ---- The missing-child alert rule (owner decision, November 2, 2026) -----------------
+// A LIVING child in an ACTIVE missing-person alert may be named exactly as the official
+// poster names them, and the entry must link that official poster: the national center's
+// poster page (missingkids.org/poster/...) or a police, sheriff or state patrol .gov page.
+// Within one day of the child being found, alive or dead, the entry goes role-only.
+//   - Named: status is active AND the entry links an official poster. Allowed on
+//     /missing-persons/ and /today/ only (see MISSING_PERSON_LIST_PAGES).
+//   - Role-only: a status of found or resolved, or no active official poster (a link
+//     whose label says withdrawn, unavailable, former, canceled or absent is no poster).
+// The site's data has no age column, so a child entry is found by what the data says:
+// a national-center (NCMEC) entry, an entry the agency labels "Missing Child", or a
+// government entry that carries a national-center poster or case number. Adult entries
+// are not touched by this rule. Built from missing-persons.tsv, not typed by hand.
+const ACTIVE_STATUSES=new Set(['missing','endangered','involuntarily_missing','abducted','voluntarily_absent']);
+const FOUND_STATUSES=new Set(['located_safe','recovered_deceased','resolved']);
+const GONE_LINK_LABEL=/withdrawn|unavailable|former|cancel|absent|no longer|expired|archived/i;
+const POSTER_LINK_LABEL=/poster|flyer|notice|alert|bulletin|profile|case page|update|missing[- ]child/i;
+const NOT_A_POSTER_LABEL=/contact|directory|annual report|home ?page|main page|feed|search|\blist\b/i;
+const LAW_ENFORCEMENT_ADDRESS=/police|sheriff|patrol|wsp|attorneygeneral|public-safety|missing/i;
+function officialPosterLink(url,label) {
+  if(!url||GONE_LINK_LABEL.test(label||'')) return false;
+  let link;
+  try { link=new URL(url); } catch { return false; }
+  const host=link.hostname.toLowerCase().replace(/^www\./,'');
+  if(host==='missingkids.org'&&link.pathname.startsWith('/poster/')) return true;
+  return host.endsWith('.gov')&&LAW_ENFORCEMENT_ADDRESS.test(host+link.pathname)&&POSTER_LINK_LABEL.test(label||'')&&!NOT_A_POSTER_LABEL.test(label||'');
 }
-const ALERT_PAIR_HASHES=new Set([...missingChildPairs()].map(hash));
-const PAIRS_EVERYWHERE=new Set([...CALENDAR_PAIR_HASHES,...DERIVED_PAIR_HASHES]);
+function missingRows() {
+  const lines=readFileSync('src/data/missing-persons.tsv','utf8').split(/\r?\n/);
+  const head=lines[0].split('\t');
+  return lines.slice(1).map((line,i)=>({line,number:i+2})).filter(({line})=>line).map(({line,number})=>({...Object.fromEntries(head.map((column,i)=>[column,line.split('\t')[i]||''])),number}));
+}
+const isChildAlertRow=row=>row.kind==='case'&&(row.source_type==='ncmec'||/^Missing Child/i.test(row.agency_status)||(row.source_type==='government'&&(/NCMEC|Missing Children/i.test(row.case_number)||['source_url','source2_url','tip_url'].some(key=>/missingkids\.org/i.test(row[key])))));
+const hasOfficialPoster=row=>officialPosterLink(row.source_url,row.source_label)||officialPosterLink(row.source2_url,row.source2_label);
+const CHILD_WORDS=/\b(?:child|children|boy|girl|teen(?:ager)?|juvenile|minor|runaway|infant|baby|toddler|\d{1,2}-year-old)\b/i;
+// An entry found or resolved is a child's when the data says so (a child alert row, or a child word in it).
+const isFoundChildRow=row=>row.kind==='case'&&FOUND_STATUSES.has(row.status)&&(isChildAlertRow(row)||CHILD_WORDS.test(row.name+' '+row.summary+' '+row.agency_status));
+// A name that is role words starts with an article and a lowercase word or an age:
+// "A boy from Brantham, Suffolk, found dead", "A 10-year-old boy from ...", "Two children missing from ...".
+const ROLE_ONLY_NAME=/^(?:An?|The|Two|Three|Four) (?:\d|[a-z])/;
+// Which entries may carry a living child's name, and which must be role-only.
+function alertRule(rows) {
+  const allowed=[]; const roleOnly=[];
+  for(const row of rows) {
+    if(isChildAlertRow(row)&&ACTIVE_STATUSES.has(row.status)&&hasOfficialPoster(row)) allowed.push(row);
+    else if(isChildAlertRow(row)||isFoundChildRow(row)) roleOnly.push(row);
+  }
+  return {allowed,roleOnly};
+}
+const pairsOfName=name=>{
+  const found=[];
+  for(const person of name.split(/ and /)) found.push(...namePairs((plain(person).match(/[A-Za-z]+/g)||[]).filter(word=>word.length>1).map(word=>word.toLowerCase())));
+  return found;
+};
+const ALERT_RULE=alertRule(missingRows());
+const ALERT_PAIR_HASHES=new Set(ALERT_RULE.allowed.flatMap(row=>pairsOfName(row.name)).map(hash));
+// A role-only entry that still carries a name is blocked on every page, the alert pages too.
+const BLOCKED_ALERT_PAIR_HASHES=new Set(ALERT_RULE.roleOnly.filter(row=>!ROLE_ONLY_NAME.test(row.name)).flatMap(row=>pairsOfName(row.name)).map(hash));
+const PAIRS_EVERYWHERE=new Set([...CALENDAR_PAIR_HASHES,...DERIVED_PAIR_HASHES,...BLOCKED_ALERT_PAIR_HASHES]);
 const PAIRS_WITH_ALERT=new Set([...PAIRS_EVERYWHERE,...ALERT_PAIR_HASHES]);
 // Another site's address (a news link) is that site's text, not ours. Our Beehiiv
 // store (cassiancreed.beehiiv.com) is OURS: its addresses, keys and tracking tags
@@ -447,7 +484,7 @@ const builtPages=builtFiles.filter(path=>path.endsWith('.html'));
 const retiredRowId=(text,ids=RETIRED_ROW_ID_HASHES)=>text.split(/[\s#/?&=]+/).some(token=>token&&ids.has(hash(token)));
 function namesOnPage(path,html) {
   const bad=[];
-  // OWNER DOCTRINE DECISION PENDING: the list pages may show the missing children (see above).
+  // The alert rule: the list pages may show a living child in an active alert that links an official poster.
   const onListPage=MISSING_PERSON_LIST_PAGES.has(path);
   const pairs=onListPage?PAIRS_EVERYWHERE:PAIRS_WITH_ALERT;
   // OWNER RENAME PENDING: the two Beehiiv product addresses are hidden first, wherever they sit
@@ -628,19 +665,57 @@ test('names are built from the site\'s own data: a name beside an age under 18 i
   assert.deepEqual(pairs('Zorblax Fixture, a man, was killed.'),[],'an adult');
   assert.ok(DERIVED_PAIR_HASHES.size>=1,'the data produced no names at all; the age patterns may have broken');
 });
-test('the owner allowlists are only the two marked ones, and each is still in use',()=>{
+test('the one owner allowlist is the marked Beehiiv one and is still in use; alert names follow the alert rule',()=>{
   // 1. OWNER RENAME PENDING (Beehiiv handles): two product addresses, each still linked.
   assert.equal(OWNER_RENAME_PENDING_BEEHIIV_PATH_HASHES.size,2,'only the two pending Beehiiv product addresses may be allowed');
   const linked=new Set();
   for(const path of builtPages) for(const m of readFileSync(path,'utf8').matchAll(BEEHIIV_PRODUCT)) linked.add(hash('/products/'+m[1]));
   for(const id of OWNER_RENAME_PENDING_BEEHIIV_PATH_HASHES) assert.ok(linked.has(id),'an allowed Beehiiv address is no longer linked; delete its entry (hash '+id.slice(0,8)+')');
-  // 2. OWNER DOCTRINE DECISION PENDING: living children in active alerts, on two pages only.
+  // 2. The alert rule (not an allowlist): living children in active alerts with an official poster, on two pages only.
   assert.deepEqual([...MISSING_PERSON_LIST_PAGES].sort(),['dist/missing-persons/index.html','dist/today/index.html']);
   assert.ok(ALERT_PAIR_HASHES.size>=20,'the alert list was not built from missing-persons.tsv');
   for(const path of MISSING_PERSON_LIST_PAGES) {
     const shown=protectedNames(ownText(readFileSync(path,'utf8')),{words:new Set(),pairs:ALERT_PAIR_HASHES}).length;
     assert.ok(shown>0,path+' no longer shows an alert name; the allowance for it is stale');
   }
+});
+test('an official poster is the national center\'s poster page or a police .gov notice; a withdrawn poster, a contact page or a non-.gov site is none',()=>{
+  assert.equal(officialPosterLink('https://www.missingkids.org/poster/NCMC/1000001/1','NCMEC missing-child poster'),true);
+  assert.equal(officialPosterLink('https://www.missingkids.org/poster/USVA/VA26-0001/1','Virginia clearinghouse missing-child poster'),true);
+  assert.equal(officialPosterLink('https://www.missingkids.org/poster/NCMC/1000001/1','Withdrawn NCMEC poster'),false,'a withdrawn poster is not active');
+  assert.equal(officialPosterLink('https://www.missingkids.org/poster/NCMC/1000001/1','Unavailable NCMEC poster'),false);
+  assert.equal(officialPosterLink('https://www.missingkids.org/gethelpnow/search','NCMEC search page'),false,'only a poster page counts');
+  assert.equal(officialPosterLink('https://sheriff.example.gov/alerts/missing-child','County Sheriff missing-child notice'),true);
+  assert.equal(officialPosterLink('https://www.example.gov/police','Example Police Department'),false,'a department home page is not a poster');
+  assert.equal(officialPosterLink('https://www.example.gov/police/contact','Police contact page'),false);
+  assert.equal(officialPosterLink('https://es.example.gov/alerts/x/','Canceled State Patrol alert'),false,'a canceled alert is not active');
+  assert.equal(officialPosterLink('https://www.examplesheriff.org/missing','Sheriff missing-child notice'),false,'the site must be .gov');
+  assert.equal(officialPosterLink('','NCMEC missing-child poster'),false);
+});
+test('alert rule: a living child in an active alert with an official poster may be named; every other child entry is role-only; adult entries are left alone',()=>{
+  const row=(over)=>({kind:'case',id:'x',name:'Zorblax Fixture',status:'missing',agency_status:'Missing Child',source_type:'ncmec',case_number:'NCMEC 1',source_url:'https://www.missingkids.org/poster/NCMC/1/1',source_label:'NCMEC missing-child poster',source2_url:'',source2_label:'',tip_url:'',summary:'x',...over});
+  const ids=rows=>alertRule(rows).allowed.map(r=>r.id).join()+'|'+alertRule(rows).roleOnly.map(r=>r.id).join();
+  assert.equal(ids([row({id:'a'})]),'a|','active, poster linked: may be named');
+  assert.equal(ids([row({id:'b',source_label:'Withdrawn NCMEC poster'})]),'|b','poster withdrawn: role-only');
+  assert.equal(ids([row({id:'c',source_url:'https://news.example/story',source_label:'News story'})]),'|c','no official poster link: role-only');
+  assert.equal(ids([row({id:'d',status:'located_safe'})]),'|d','found safe: role-only, even with the poster link');
+  assert.equal(ids([row({id:'e',status:'recovered_deceased'})]),'|e','found dead: role-only');
+  assert.equal(ids([row({id:'f',status:'located_safe',source_type:'investigating_agency',agency_status:'Located safe',summary:'The teenager was found.'})]),'|f','found child (a child word in the entry): role-only');
+  assert.equal(ids([row({id:'g',status:'located_safe',source_type:'investigating_agency',agency_status:'Located safe',summary:'She was found.'})]),'|','found adult: left alone');
+  assert.equal(ids([row({id:'h',source_type:'investigating_agency',agency_status:'Missing',source_url:'https://www.fbi.gov/wanted/kidnap/x',source_label:'FBI missing-person poster'})]),'|','adult entry: left alone');
+  assert.equal(ids([row({id:'i',source_type:'tribal_authority',agency_status:'Open',source_url:'https://www.bia.gov/x',source_label:'BIA case profile'})]),'|','age not stated: left alone');
+  assert.equal(ids([row({id:'j',source_type:'government',agency_status:'Missing',case_number:'Virginia Missing Children\'s Clearinghouse VA26-1'})]),'j|','a clearinghouse child entry with its poster: may be named');
+  assert.equal(ids([row({id:'k',source_type:'government',agency_status:'Missing',case_number:'Sheriff 55',source_url:'https://wsp.example.gov/list.pdf',source_label:'WSP list'})]),'|','a government list that does not say child: left alone');
+  for(const name of ['A boy from Brantham, Suffolk, found dead September 2026','A 10-year-old boy from Los Angeles, California, located in good health October 2026','Two children missing from Redmond, Washington, since December 2023','A child missing from Naugatuck, Connecticut, since August 2026']) assert.equal(ROLE_ONLY_NAME.test(name),true,name);
+  for(const name of ['Zorblax Fixture','A. J. Fixture','Zorblax Fixture and Quentin Fixture','The Fixture family']) assert.equal(ROLE_ONLY_NAME.test(name),false,name);
+});
+test('in missing-persons.tsv a child entry without an active official poster, and a found child entry, carries role words and no name',()=>{
+  const {allowed,roleOnly}=ALERT_RULE;
+  assert.ok(allowed.length>=20,'the alert rule found almost no named alerts; the data or the rule may have broken');
+  const named=roleOnly.filter(row=>!ROLE_ONLY_NAME.test(row.name)).map(row=>row.number);
+  assert.deepEqual(named,[],'lines '+named.join(', ')+' of missing-persons.tsv name a child who has no active official poster or was found: use role words, or add the poster link');
+  for(const row of roleOnly) assert.equal(row.id,row.follow_key,'line '+row.number+': a role-only entry keeps one key for its ID and follow key');
+  for(const row of ALERT_RULE.allowed) assert.ok(hasOfficialPoster(row)&&ACTIVE_STATUSES.has(row.status),'line '+row.number+': a named alert needs an active status and an official poster link');
 });
 // Script files can carry keys and addresses too (the calendar's data, for one).
 function scriptFiles(dir) {
