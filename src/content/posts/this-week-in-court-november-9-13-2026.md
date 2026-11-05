@@ -8,7 +8,7 @@ featured: false
 capture: "jury"
 ---
 
-**Status as of November 5, 2026, 3:00 p.m. PT.** Three trials go on, and one jury may already be deciding when the week starts. There are also hearings in Utah, Colorado and South Carolina. Here is who, when, and what to watch.
+**Status as of November 5, 2026, 9:30 a.m. PT.** Three trials go on, and one jury may already be deciding when the week starts. There are also hearings in Utah, Colorado and South Carolina. Here is who, when, and what to watch.
 
 *One of these cases involves the death of a pregnant woman and her unborn baby. All times are local court time, with Pacific time next to them. Courts can change dates and times at any time. Check the Court Calendar before you tune in. We list a livestream only when a court or network confirms one, so none are listed here.*
 
