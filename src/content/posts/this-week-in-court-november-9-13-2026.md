@@ -1,7 +1,7 @@
 ---
 title: "This Week in Court: November 9–13, 2026"
 seoTitle: "This Week in Court: Nov. 9–13, 2026 Hearings"
-description: "Court dates Nov. 9–13, 2026: Tyler Robinson's schedule hearing, Alex Murdaugh's motion to dismiss, a Missy Woods hearing, and the Farwell, Bhatt and Conway trials."
+description: "Court dates Nov. 9–13: Tyler Robinson's schedule hearing, Alex Murdaugh's motion to dismiss, a Missy Woods hearing, and the Farwell, Bhatt and Conway trials."
 pubDate: 2026-11-06
 tag: "Case Files"
 featured: false
