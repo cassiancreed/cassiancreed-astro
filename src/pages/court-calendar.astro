@@ -301,9 +301,13 @@ const jsonld = {
   internalLinksOnly
 >
   <p class="wrap"><a href="/true-crime-watch-calendar/">What to watch: True Crime Watch Calendar →</a></p>
+  <section class="wrap cal-alert" id="court-updates">
+    <CaptureBlock offer="calendar" content="court_calendar_top" />
+  </section>
   <HomeCourtCalendar fullPage />
 
   <nav class="wrap cal-quick-links" aria-label="Court calendar resources">
+    <a href="#court-updates">Date-change emails</a>
     <a href="#in-court-now">In court now</a>
     <a href="#next-dates">Detailed entries</a>
     <a href="/court-calendar/archive/">Closed cases</a>
@@ -390,10 +394,6 @@ const jsonld = {
         </article>
       ))}
     </div>
-  </section>
-
-  <section class="wrap cal-sec" id="court-updates">
-    <CaptureBlock offer="calendar" content="court_calendar_page" />
   </section>
 
   <section class="wrap cal-sec">
