@@ -34,6 +34,7 @@ Active-case pages can change. Re-fetch the canonical page at citation time and p
 - [True Crime Watch Calendar](https://cassiancreed.com/true-crime-watch-calendar/): US release dates for true-crime shows, films and podcasts, with sources and matching explainers. Check its as-of date; times may change.
 - [Court Calendar](https://cassiancreed.com/court-calendar/): Current hearing and trial dates, each tied to an identified outside source; verify the last-checked date before citing.
 - [Forensic Tools](https://cassiancreed.com/forensic-tools/): What investigative and forensic methods can establish, and what they cannot.
+- [Trending True Crime Cases](https://cassiancreed.com/trending/): Cases getting the most attention right now, with checked statuses.
 
 - [Jury Chess](https://cassiancreed.com/books/jury-chess/): A plain-language guide to criminal jury trials.
 - [Missing Persons](https://cassiancreed.com/missing-persons/): Official case sources and agency tip routes.
