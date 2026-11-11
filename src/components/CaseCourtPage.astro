@@ -1,0 +1,126 @@
+---
+// CaseCourtPage — one page per live case (Order 101, 2026-11-11).
+// Every date, time, court and status on this page is read from
+// src/data/court-calendar.tsv at build time, so a case page can never drift
+// from the Court Calendar. Only the victim-first lede and the question title
+// are written by hand (in each page file), and they must stay status-true.
+import Base from '../layouts/Base.astro';
+import CaptureBlock from './CaptureBlock.astro';
+import calendarTsv from '../data/court-calendar.tsv?raw';
+import { formatCalendarDate, parseCourtCalendar } from '../data/court-calendar-parser.mjs';
+
+export interface Props {
+  title: string;          // question-style <title>
+  description: string;
+  h1: string;             // the question people search
+  lede: string[];         // victim-first paragraphs, status-true
+  cases: string[];        // exact `case` values from court-calendar.tsv
+  offer?: 'calendar' | 'birchmore';
+  formHeadline?: string;
+  formSubtext?: string;
+  content: string;        // utm_content for the form
+  questions?: { q: string; a: string }[]; // extra buyer questions, status-true
+  answer?: string;        // hand-written short answer (only for cases with no upcoming date)
+}
+
+const { title, description, h1, lede, cases, offer = 'calendar', formHeadline, formSubtext, content, questions = [], answer } = Astro.props;
+const cal = parseCourtCalendar(calendarTsv);
+const mine = (rows) => rows.filter((r) => cases.includes(r.case));
+const today = new Date().toISOString().slice(0, 10);
+
+const upcoming = mine(cal.entries)
+  .filter((r) => r.dateISO >= today)
+  .sort((a, b) => a.dateISO.localeCompare(b.dateISO));
+const completed = mine(cal.completed)
+  .filter((r) => r.dateISO)
+  .sort((a, b) => b.dateISO.localeCompare(a.dateISO));
+const unconfirmed = mine(cal.unconfirmed);
+const next = upcoming[0] ?? null;
+const latest = completed[0] ?? null;
+
+const timeNote = (r) => (r.timeStatus === 'confirmed' ? '' : ' The start time is not confirmed.');
+const shortAnswer = answer ?? (next
+  ? `${next.dateText}. ${next.proceeding}, ${next.court}.${timeNote(next)} Court dates can change; this page reads the same checked record as our Court Calendar.`
+  : latest
+    ? `No upcoming court date is on the public record right now. The most recent step, on ${formatCalendarDate(latest.dateISO)}: ${latest.proceeding}.`
+    : 'No confirmed upcoming court date has been found.');
+
+const checked = [...upcoming, ...completed.slice(0, 1)].map((r) => r.verified).filter(Boolean)[0] ?? null;
+const sources = [...upcoming, ...completed.slice(0, 2)]
+  .flatMap((r) => [[r.src, r.srcLabel], r.src2 ? [r.src2, r.srcLabel2] : null])
+  .filter(Boolean)
+  .filter((s, i, all) => all.findIndex((x) => x[0] === s[0]) === i);
+
+const faq = [{ q: h1, a: shortAnswer }, ...questions];
+const jsonld = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faq.map(({ q, a }) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })),
+};
+---
+<Base title={title} description={description} jsonld={jsonld}>
+  <div class="wrap case-court">
+    <p class="evidence evidence--accent"><a href="/court-calendar/">Court Calendar</a> &middot; case page</p>
+    <h1>{h1}</h1>
+    <p class="case-court__answer"><strong>Short answer:</strong> {shortAnswer}</p>
+    {checked && <p class="case-court__checked">Last checked: {checked}</p>}
+
+    {lede.map((p) => <p>{p}</p>)}
+
+    <h2>Next court date</h2>
+    {next ? (
+      upcoming.map((r) => (
+        <div class="row" id={r.id}>
+          <p class="row__type">{r.proceeding}</p>
+          <p class="row__when"><strong>{r.dateText}</strong></p>
+          <p class="row__where">{r.court}{r.docket && <> &middot; {r.docket}</>}</p>
+          <p class="row__status">{r.status}</p>
+          {r.nextNote && <p class="row__nodate">{r.nextNote}</p>}
+        </div>
+      ))
+    ) : (
+      <p>No upcoming court date is on the public record right now. We add one only when a court record or two named reports confirm it.</p>
+    )}
+
+    {unconfirmed.length > 0 && (
+      <>
+        <h2>Dates we have not confirmed</h2>
+        {unconfirmed.map((r) => <p>{r.proceeding}. {r.status}</p>)}
+      </>
+    )}
+
+    {latest && (
+      <>
+        <h2>What happened most recently?</h2>
+        <div class="row row--done" id={latest.id}>
+          <p class="row__type">{latest.proceeding}</p>
+          <p class="row__where">{latest.where}</p>
+          <p class="row__status">{latest.status}</p>
+          {latest.nextNote && <p class="row__nodate">{latest.nextNote}</p>}
+        </div>
+      </>
+    )}
+
+    {questions.map(({ q, a }) => (<><h2>{q}</h2><p>{a}</p></>))}
+
+    <div id="case-updates">
+      <CaptureBlock offer={offer} content={content} headline={formHeadline} subtext={formSubtext} />
+    </div>
+
+    <h2>Sources</h2>
+    <ul class="case-court__sources">
+      {sources.map(([url, label]) => <li><a href={url} target="_blank" rel="noopener noreferrer">{label}</a></li>)}
+    </ul>
+    <p>Court dates change often. Every date here comes from the same checked record as the <a href="/court-calendar/">Court Calendar</a>. See <a href="/court-calendar-policy/">how we check court dates</a>.</p>
+  </div>
+</Base>
+
+<style>
+  .case-court { max-width: 760px; padding-block: 2rem 3rem; }
+  .case-court h1 { margin-top: .4rem; }
+  .case-court__answer { font-size: 1.1rem; padding: .9rem 1rem; border-left: 4px solid var(--accent, #A8503A); background: rgba(168,80,58,.07); }
+  .case-court__checked { font-size: .9rem; opacity: .8; }
+  .case-court .row { margin: 1rem 0; padding: 1rem; border: 1px solid rgba(0,0,0,.12); border-radius: 8px; }
+  .case-court .row__type { font-weight: 700; text-transform: uppercase; font-size: .8rem; letter-spacing: .04em; }
+  .case-court__sources li { margin: .3rem 0; }
+</style>
