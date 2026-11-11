@@ -477,6 +477,7 @@ const jsonld = {
         {e.id === 'bridegan-fernandez-trial' && <p class="row__meta">Setting source: <a href="https://core.duvalclerk.com/CoreCms.aspx?mode=PublicAccess" target="_blank" rel="noopener noreferrer">Duval County Clerk CORE, docket 16-2023-CF-002862-AXXX-MA</a> (verified August 27, 2026).</p>}
         <p class="row__note">{e.note}</p>
         <p class="row__meta">Source: {e.srcLabel} ({e.srcType}){e.src2 && <span class="row__src2"> &middot; Also: {e.srcLabel2}</span>}</p>
+        {e.id === 'farwell-jury-trial' && <CaptureBlock offer="birchmore" content="court_calendar_farwell" />}
         {e.id === 'mary-collins-trial' && (
           <article class="collins-free-update" aria-labelledby="mary-collins-free-update">
             <h4 id="mary-collins-free-update">Mary Collins: Verdicts and Sentences</h4>
