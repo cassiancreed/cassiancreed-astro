@@ -7,11 +7,14 @@ const calendar = read('dist/court-calendar/index.html');
 const frames = html => [...html.matchAll(/<iframe\b[^>]*>/g)].map(match => match[0]);
 const courtId = '4d7c7c61-f04c-4870-bf20-f1af8a540e0f';
 test('both rendered Court embeds permit overflow and retain accessible titles', () => {
- for (const html of [home, calendar]) {
+ // Order 6-7 (2026-11-10): the homepage now carries a second Court embed at the very top, so home expects 2, the calendar page 1.
+ for (const [html, expected] of [[home, 2], [calendar, 1]]) {
   const court = frames(html).filter(frame => frame.includes(courtId));
-  assert.equal(court.length, 1);
-  assert.match(court[0], /scrolling="auto"/);
-  assert.match(court[0], /title="[^"]+"/);
+  assert.equal(court.length, expected);
+  for (const frame of court) {
+   assert.match(frame, /scrolling="auto"/);
+   assert.match(frame, /title="[^"]+"/);
+  }
  }
 });
 test('non-Court capture embeds keep their existing scrolling setting', () => {
