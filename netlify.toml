@@ -220,3 +220,16 @@
   to = "/post/why-was-keffe-d-convicted-tupac-shakur/"
   status = 301
   force = true
+
+# Order 83 (2026-11-11): GSC "Not found (404)" lists /down-the-hill/ (old book URL). Send it to the books shelf.
+[[redirects]]
+  from = "/down-the-hill"
+  to = "/books/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/down-the-hill/"
+  to = "/books/"
+  status = 301
+  force = true
