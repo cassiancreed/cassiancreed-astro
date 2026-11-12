@@ -103,6 +103,8 @@ const jsonld = {
 
     {questions.map(({ q, a }) => (<><h2>{q}</h2><p>{a}</p></>))}
 
+    <slot />
+
     <div id="case-updates">
       <CaptureBlock offer={offer} content={content} headline={formHeadline} subtext={formSubtext} />
     </div>
