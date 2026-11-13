@@ -65,3 +65,8 @@ https://www.cassiancreed.com/*   https://cassiancreed.com/:splat   301!
 
 # Old guide link from the welcome email -> Guides hub
 /guides/how-to-read-a-case/   /guides/   302
+
+# Welcome-email guide link fix (2026-11-13, Order 177 LOGJAM): the email links to
+# /guides/how-to-read-a-case/ (404 since at least Nov 10); send it to the real PDF
+/guides/how-to-read-a-case/   /guides/how-to-read-a-case.pdf   301!
+/guides/how-to-read-a-case    /guides/how-to-read-a-case.pdf   301!
