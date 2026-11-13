@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import CalendarExplainerLink from '../components/CalendarExplainerLink.astro';
+import CaptureBlock from '../components/CaptureBlock.astro';
 import raw from '../data/media-calendar.tsv?raw';
 import courtRaw from '../data/court-calendar.tsv?raw';
 import { parseMediaCalendar, mediaDates, mediaVisible, pacificToday, formatMediaAsOf } from '../data/media-calendar-parser.mjs';
@@ -29,6 +30,7 @@ function topicFor(row) {
       <p class="watch-note">Times are shown as listed by the source. ET/PT means the same clock time on the East and West Coast feeds. Check local listings.</p>
       <p class="watch-note">People who are charged or accused are presumed innocent unless and until proven guilty in court.</p>
     </header>
+    <CaptureBlock offer="calendar" content="watch_calendar_top" />
     {['no','yes'].map(standing => (
       <section class="watch-section" aria-labelledby={standing === 'yes' ? 'weekly-slots' : 'dated-releases'}>
         <h2 id={standing === 'yes' ? 'weekly-slots' : 'dated-releases'}>{standing === 'yes' ? 'Weekly slots' : 'Coming up'}</h2>
