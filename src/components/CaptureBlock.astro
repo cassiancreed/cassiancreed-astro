@@ -97,11 +97,15 @@ export interface Props {
       Use when a page already carries one inline embed (avoids duplicate same-form
       embeds colliding — the homepage bug this component fixes). Default true. */
   embed?: boolean;
+  /** Optional plain-text thank-you shown in place of the form after a real
+      submit (Homepage fix, owner order Nov 8, 2026). Default keeps the
+      original neutral note. */
+  successText?: string;
 }
 
 const EMBED_BASE = 'https://subscribe-forms.beehiiv.com/v3/forms';
 
-const { offer = 'case', campaign, content, headline, subtext, button, embed = true } = Astro.props;
+const { offer = 'case', campaign, content, headline, subtext, button, embed = true, successText } = Astro.props;
 const o = OFFERS[offer] ?? OFFERS.case;
 
 const camp             = campaign ?? o.campaign;
@@ -178,7 +182,7 @@ const calendarCosts = ['/court-calendar/','/true-crime-watch-calendar/'].include
           </p>
           <p class="capture__helper">After submitting, follow Beehiiv&rsquo;s on-screen confirmation instructions and check the email address you provided.</p>
           <div class="capture__success" role="status" hidden>
-            <strong>Submission received.</strong> Follow the confirmation instructions shown by Beehiiv and check your inbox or spam folder.
+            {successText ? successText : (<><strong>Submission received.</strong> Follow the confirmation instructions shown by Beehiiv and check your inbox or spam folder.</>)}
           </div>
         </>
       ) : (
