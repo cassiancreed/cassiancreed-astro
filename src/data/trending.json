@@ -1,0 +1,39 @@
+{
+  "updated": "2026-11-13",
+  "updatedText": "Friday, Nov. 13, 2026",
+  "method": "Ranked by how much news coverage each case got in the last 72 hours, from our daily trending scan. It is a measure of attention, not of guilt. Each status below comes from our sourced court calendar, not from the scan.",
+  "cases": [
+    {
+      "rank": 1,
+      "title": "Maggie and Paul Murdaugh: Alex Murdaugh's retrial",
+      "status": "AWAITING RETRIAL · APRIL 2027",
+      "why": "His 2023 murder convictions were overturned in May 2026. A judge heard his motion to dismiss the murder charges on Nov. 13. The retrial is set for April 2027 in Sumter County. He is presumed innocent of the murder charges.",
+      "explainer": "/post/the-murdaugh-murders-how-alex-murdaugh-was-convicted-and-why-he-now-faces-a-new-trial/",
+      "courtId": "murdaugh-retrial"
+    },
+    {
+      "rank": 2,
+      "title": "The Lindsay Clancy case",
+      "status": "MISTRIAL · NEXT HEARING NOV. 16",
+      "why": "Her trial ended in a mistrial on Sept. 4, 2026, which is not a verdict. On Nov. 9 the judge denied her motion to dismiss. No retrial date is set. She remains charged, has pleaded not guilty and is presumed innocent.",
+      "explainer": "/post/lindsay-clancy-trial/",
+      "courtId": "clancy-hearing-2026-11-16"
+    },
+    {
+      "rank": 3,
+      "title": "The Idaho student murders: the Bryan Kohberger case",
+      "status": "SENTENCED 2025 · PETITION PENDING",
+      "why": "Kaylee Goncalves, Madison Mogen, Xana Kernodle and Ethan Chapin were killed in 2022. Kohberger pleaded guilty and was sentenced to life without parole in July 2025. A post-conviction petition is pending.",
+      "explainer": "/post/what-happened-in-the-idaho-student-murders-the-bryan-kohberger-case-explained/",
+      "courtId": "kohberger-disqualification-hearing"
+    },
+    {
+      "rank": 4,
+      "title": "The Jared Bridegan case",
+      "status": "FOUND GUILTY · SENTENCING NOT CONFIRMED",
+      "why": "A jury found Mario Fernandez Saldana guilty of first-degree murder on Aug. 26, 2026. We have not confirmed a sentencing date. Shanna Gardner and Henry Tenon are charged and presumed innocent; their trial is set for 2027.",
+      "explainer": "/post/jared-bridegan-case-explained/",
+      "courtId": "bridegan-fernandez-saldana-sentencing-2026-10-27"
+    }
+  ]
+}

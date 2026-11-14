@@ -11,6 +11,7 @@ import ReportError from '../../components/ReportError.astro';
 import { postSocialImage } from '../../utils/post-social-images.mjs';
 import { categoryForTag } from '../../data/content-categories.mjs';
 import { breadcrumbList } from '../../utils/page-schema.mjs';
+import { terms as dictionaryTerms } from '../../data/legal-dictionary.mjs';
 export async function getStaticPaths() {
   const posts = await getCollection('posts');
   // Nancy Guthrie coverage is excluded from related-content rails by standing order; the pages themselves stay live.
@@ -25,6 +26,8 @@ export async function getStaticPaths() {
   });
 }
 const { post, related = [] } = Astro.props;
+// Two-way dictionary links (Order 187): terms whose case links point at this post.
+const postTerms = dictionaryTerms.filter(t => (t.links || []).some(l => l.href === `/post/${post.slug}/`));
 const isTupacFree = post.slug === 'why-was-keffe-d-convicted-tupac-shakur';
 const isTupacWithdrawal = post.slug === 'tupac-shakur-homicide-evidence-evolution';
 const isTupacRepair = isTupacFree || isTupacWithdrawal;
@@ -124,6 +127,13 @@ const jsonld = isTupacWithdrawal ? undefined : {
       </aside>
     )}
     <div class="post__content"><Content /></div>
+    {postTerms.length > 0 && !post.data.archived && (
+      <aside class="post__hub post__terms" aria-label="Legal terms in this case">
+        <strong>Legal terms in this case:</strong>{' '}
+        {postTerms.map((t, i) => (<>{i > 0 && ' · '}<a href={`/glossary/#${t.id}`}>{t.term}</a></>))}
+        {' '}&mdash; plain-English definitions in our <a href="/glossary/">legal dictionary</a>.
+      </aside>
+    )}
     {!post.data.archived && <GuideCTA slug={post.slug} />}
     {post.data.relatedBook && <BookCTA book={post.data.relatedBook} placement="end" />}
     {captureOffer === 'dna' && !post.data.archived && (
