@@ -174,7 +174,7 @@ const calendarCosts = ['/court-calendar/','/true-crime-watch-calendar/'].include
               src={embedSrc}
               title={resolvedButton}
               loading="lazy"
-              scrolling={(offer === 'calendar' || offer === 'birchmore') ? 'auto' : 'no'}
+              scrolling={offer === 'calendar' ? 'auto' : 'no'}
               frameborder="0"
             ></iframe>
           </div>
@@ -451,7 +451,10 @@ const calendarCosts = ['/court-calendar/','/true-crime-watch-calendar/'].include
       width: calc(100% + 2.5rem);
       margin-left: -1.25rem;
     }
-    .capture__embed-window--calendar,
+    .capture__embed-window--calendar {
+      width: 100%;
+      margin-left: 0;
+    }
     .capture__embed-window--full {
       width: 100%;
       margin-left: 0;
