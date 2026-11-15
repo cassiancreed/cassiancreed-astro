@@ -181,9 +181,9 @@ const calendarCosts = ['/court-calendar/','/true-crime-watch-calendar/'].include
           <p class="capture__fallback">
             Form not loading? <a href={subscribeHref} data-nep-campaign={camp} data-nep-conversion-page={conversionPage} data-nep-cta-id={`${ctaId}_fallback`} data-nep-form-id={o.formId} data-nep-offer-id={o.offerId} target="_blank" rel="noopener noreferrer">{calendarCosts && <CalendarCostBadge url={subscribeHref} />} {resolvedButton} &rarr;</a>
           </p>
-          <p class="capture__helper">After submitting, follow Beehiiv&rsquo;s on-screen confirmation instructions and check the email address you provided.</p>
+          <p class="capture__helper">{offer === 'birchmore' ? 'After you press Subscribe, your brief is emailed to the address you enter. Check spam if you do not see it.' : <>After submitting, follow Beehiiv&rsquo;s on-screen confirmation instructions and check the email address you provided.</>}</p>
           <div class="capture__success" role="status" hidden>
-            {successText ? successText : (<><strong>Submission received.</strong> Follow the confirmation instructions shown by Beehiiv and check your inbox or spam folder.</>)}
+            {successText ? successText : offer === 'birchmore' ? (<><strong>You&rsquo;re in.</strong> Your Sandra Birchmore brief is on its way. Check your inbox in a minute, and your spam folder if it is not there.</>) : (<><strong>Submission received.</strong> Follow the confirmation instructions shown by Beehiiv and check your inbox or spam folder.</>)}
           </div>
         </>
       ) : (
@@ -221,6 +221,33 @@ const calendarCosts = ['/court-calendar/','/true-crime-watch-calendar/'].include
       fire('capture_success', iframe);
     });
   }
+
+  // Birchmore form (Nov 15 2026): Beehiiv sends the WHOLE page (not just the
+  // iframe) to /?subscribed=1&email=... after a real submit. Show the thank-you
+  // in the Birchmore block and remove the email from the address bar.
+  (function(){
+    try {
+      var q = new URLSearchParams(location.search);
+      if (q.get('subscribed') !== '1') return;
+      var f = document.querySelector('iframe[data-nep-offer-id="birchmore_brief_v1"]');
+      if (f) {
+        var cta = f.closest('.capture-cta');
+        if (cta) {
+          var ok = cta.querySelector('.capture__success'); if (ok) ok.hidden = false;
+          f.hidden = true;
+          var win = cta.querySelector('.capture__embed-window'); if (win) win.hidden = true;
+          var fb = cta.querySelector('.capture__fallback'); if (fb) fb.hidden = true;
+          var hp = cta.querySelector('.capture__helper'); if (hp) hp.hidden = true;
+          if (ok && ok.scrollIntoView) ok.scrollIntoView({ block: 'center' });
+        }
+      }
+      if (q.has('email') || q.has('_bhref')) {
+        q.delete('email'); q.delete('_bhref');
+        var rest = q.toString();
+        history.replaceState(null, '', location.pathname + (rest ? '?' + rest : '') + location.hash);
+      }
+    } catch (e) {}
+  })();
 
   // ── Shared helpers (0726) ────────────────────────────────────────────────
   function origin(){ try { return window.NEP_ORIGIN || null; } catch(e){ return null; } }
