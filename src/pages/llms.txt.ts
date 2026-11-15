@@ -40,6 +40,17 @@ Active-case pages can change. Re-fetch the canonical page at citation time and p
 - [Missing Persons](https://cassiancreed.com/missing-persons/): Official case sources and agency tip routes.
 - [What Changed](https://cassiancreed.com/today/): Verified changes in tracked cases.
 
+## Next court dates by case
+
+Each page reads from the checked Court Calendar. Check the last-checked date before citing a date or time.
+
+- [Next Court Dates by Case](https://cassiancreed.com/court-dates/): One page per live case with the next court date, the court, the time if known, and sources.
+- [Karen Read court dates](https://cassiancreed.com/court-dates/karen-read/)
+- [Luigi Mangione court dates](https://cassiancreed.com/court-dates/luigi-mangione/)
+- [Matthew Farwell court dates](https://cassiancreed.com/court-dates/matthew-farwell/)
+- [Tyler Robinson court dates](https://cassiancreed.com/court-dates/tyler-robinson/)
+- [Yella Beezy (MO3 case) court dates](https://cassiancreed.com/court-dates/yella-beezy/)
+
 ## Priority case files and trackers
 
 - [Nestor Hernandez Melgar / Lindsay Geary](https://cassiancreed.com/post/nestor-hernandez-melgar-lindsay-geary-case/): Canonical case hub separating the jury verdict from the medical examiner’s undetermined manner-of-death classification.
