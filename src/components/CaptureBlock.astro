@@ -234,15 +234,15 @@ const calendarCosts = ['/court-calendar/','/true-crime-watch-calendar/'].include
         var cta = f.closest('.capture-cta');
         if (cta) {
           var ok = cta.querySelector('.capture__success'); if (ok) ok.hidden = false;
-          f.hidden = true;
-          var win = cta.querySelector('.capture__embed-window'); if (win) win.hidden = true;
-          var fb = cta.querySelector('.capture__fallback'); if (fb) fb.hidden = true;
-          var hp = cta.querySelector('.capture__helper'); if (hp) hp.hidden = true;
+          f.hidden = true; f.style.display = 'none';
+          var win = cta.querySelector('.capture__embed-window'); if (win) { win.hidden = true; win.style.display = 'none'; }
+          var fb = cta.querySelector('.capture__fallback'); if (fb) { fb.hidden = true; fb.style.display = 'none'; }
+          var hp = cta.querySelector('.capture__helper'); if (hp) { hp.hidden = true; hp.style.display = 'none'; }
           if (ok && ok.scrollIntoView) ok.scrollIntoView({ block: 'center' });
         }
       }
-      if (q.has('email') || q.has('_bhref')) {
-        q.delete('email'); q.delete('_bhref');
+      if (q.has('email') || q.has('_bhref') || q.has('sub_id')) {
+        q.delete('email'); q.delete('_bhref'); q.delete('sub_id');
         var rest = q.toString();
         history.replaceState(null, '', location.pathname + (rest ? '?' + rest : '') + location.hash);
       }
