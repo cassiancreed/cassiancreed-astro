@@ -162,6 +162,7 @@ const calendarCosts = ['/court-calendar/','/true-crime-watch-calendar/'].include
           <div class:list={[
             'capture__embed-window',
             { 'capture__embed-window--calendar': offer === 'calendar' },
+            { 'capture__embed-window--full': offer === 'birchmore' },
           ]}>
             <iframe
               class="capture__embed"
@@ -173,7 +174,7 @@ const calendarCosts = ['/court-calendar/','/true-crime-watch-calendar/'].include
               src={embedSrc}
               title={resolvedButton}
               loading="lazy"
-              scrolling={offer === 'calendar' ? 'auto' : 'no'}
+              scrolling={(offer === 'calendar' || offer === 'birchmore') ? 'auto' : 'no'}
               frameborder="0"
             ></iframe>
           </div>
@@ -425,6 +426,24 @@ const calendarCosts = ['/court-calendar/','/true-crime-watch-calendar/'].include
     height: clamp(360px, 60dvh, 520px);
   }
 
+  /* Birchmore Brief form has its own title, text and an email box, so the
+     64px crop built for the one-button guide forms hid the email field
+     (mystery-shopper test, Sun Nov 15, 2026). Show the whole form document. */
+  .capture__embed-window--full {
+    max-width: 600px;
+    height: auto;
+    overflow: hidden;
+  }
+  .capture__embed-window--full .capture__embed {
+    display: block;
+    position: static;
+    top: auto;
+    left: auto;
+    width: calc(100% + 160px);
+    margin-left: -80px;
+    height: 400px;
+  }
+
   /* Reclaim card padding on narrow screens so the embedded guide button label
      fits without clipping; the iframe crop and form destination stay unchanged. */
   @media (max-width: 430px) {
@@ -432,7 +451,8 @@ const calendarCosts = ['/court-calendar/','/true-crime-watch-calendar/'].include
       width: calc(100% + 2.5rem);
       margin-left: -1.25rem;
     }
-    .capture__embed-window--calendar {
+    .capture__embed-window--calendar,
+    .capture__embed-window--full {
       width: 100%;
       margin-left: 0;
     }
