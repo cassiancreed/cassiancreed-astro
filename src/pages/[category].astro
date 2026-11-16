@@ -32,8 +32,39 @@ const searchText = (post) => [
 const archiveDescription = tag === 'Case Files'
   ? 'Browse dated, sourced, victim-centered case files. Each article is a snapshot of the verified record on its publication date; for current court dates and case status, use the Court Calendar.'
   : 'Browse plain-language explainers of evidence, criminal law, forensic science, and the court process.';
+const { category } = Astro.params;
+const pageUrl = `https://cassiancreed.com/${category}/`;
+const jsonld = [
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": `${label} — Cassian Creed`,
+    "description": archiveDescription,
+    "url": pageUrl,
+    "isPartOf": { "@id": "https://cassiancreed.com/#org" },
+    "mainEntity": {
+      "@type": "ItemList",
+      "numberOfItems": posts.length,
+      "itemListOrder": "https://schema.org/ItemListOrderDescending",
+      "itemListElement": posts.slice(0, 20).map((post, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "url": `https://cassiancreed.com/post/${post.slug}/`,
+        "name": post.data.title,
+      })),
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://cassiancreed.com/" },
+      { "@type": "ListItem", "position": 2, "name": label, "item": pageUrl },
+    ],
+  },
+];
 ---
-<Base title={`${label} — Cassian Creed`} description={archiveDescription}>
+<Base title={`${label} — Cassian Creed`} description={archiveDescription} jsonld={jsonld}>
   <section class="hero archive-hero wrap">
     <span class="evidence evidence--accent">Case Files Archive</span>
     <h1>{label}</h1>
