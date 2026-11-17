@@ -202,7 +202,7 @@ const visibleDayEntries = (entries) => {
         ))}
       </div>
       <div class="home-calendar__days" data-calendar-days>
-        {serverDays.map((day) => day.isPast ? (
+        {serverDays.map((day, dayIndex) => <>{day.isPast ? (
           <span class="home-calendar__day is-past" aria-hidden="true"></span>
         ) : (
           <button
@@ -226,7 +226,9 @@ const visibleDayEntries = (entries) => {
               </span>
             ))}
           </button>
-        ))}
+        )}{fullPage && dayIndex === 6 && Astro.slots.has('after-first-week') && (
+          <div class="home-calendar__signup" data-calendar-signup><slot name="after-first-week" /></div>
+        )}</>)}
       </div>
     </div>
 
@@ -332,6 +334,7 @@ const visibleDayEntries = (entries) => {
     let selectedDate = entries.find((entry) => !entry.ongoing && entry.dateISO >= buildDate)?.dateISO || buildDate;
     const monthLabel = root.querySelector('[data-calendar-month]');
     const days = root.querySelector('[data-calendar-days]');
+    const signupRow = root.querySelector('[data-calendar-signup]');
     const agendaTitle = root.querySelector('[data-calendar-agenda-title]');
     const agenda = root.querySelector('[data-calendar-agenda]');
     const alertDialog = root.querySelector('[data-calendar-alert-dialog]');
@@ -527,6 +530,7 @@ const visibleDayEntries = (entries) => {
         ? new Date(buildParts[0], buildParts[1] - 1, buildParts[2])
         : new Date(shown.getFullYear(), shown.getMonth(), 1);
       const start = new Date(first.getFullYear(), first.getMonth(), first.getDate() - first.getDay());
+      if (signupRow && signupRow.parentNode) signupRow.remove();
       days.replaceChildren();
       for (let index = 0; index < 42; index += 1) {
         const date = new Date(start);
@@ -592,6 +596,8 @@ const visibleDayEntries = (entries) => {
         });
         days.append(button);
       }
+      // Slim sign-up row sits right under the first week (Order 389 follow-up).
+      if (signupRow) days.insertBefore(signupRow, days.children[7] || null);
     }
 
     function openSearchResult() {
@@ -688,6 +694,8 @@ const visibleDayEntries = (entries) => {
   .home-calendar__ongoing a{color:var(--ink-2);font-size:11px;text-decoration:none}
   .home-calendar__ongoing a+a::before{margin-right:9px;color:var(--ink-3);content:'\00b7'}
   .home-calendar__weekdays,.home-calendar__days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr))}
+  .home-calendar__signup{grid-column:1/-1;min-width:0;border-top:1px solid var(--line)}
+  .home-calendar__signup .capture{margin:0;border-radius:0;border-left:0;border-right:0}
   .home-calendar__weekdays>span{padding:0 5px 8px;color:var(--ink-3);font-family:var(--mono);font-size:10px;letter-spacing:.05em;text-align:center;text-transform:uppercase}
   .home-calendar__day-short{display:none}
   .home-calendar__day{min-height:94px;padding:8px;border:0;border-top:1px solid var(--line);border-right:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer;text-align:left;overflow:hidden}
