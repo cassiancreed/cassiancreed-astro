@@ -2,9 +2,12 @@
 title: "Does Criminal Profiling Actually Work? What the Science Says"
 description: "Criminal profiling is a true-crime staple — but does it actually catch killers? What the FBI's behavioral analysis does, what peer-reviewed research found about its accuracy, and why a profile can never name a suspect."
 pubDate: 2026-06-02
+updatedDate: 2026-11-16
 tag: "Explainers"
 featured: false
 ---
+
+*Updated Monday, November 16, 2026: An earlier version quoted a conclusion and a comparison group that we could not match to the cited source. We removed both. The finding that profilers were often little better than laypeople at predicting offender traits is unchanged.*
 
 Criminal profiling can help an investigation narrow its focus — but the research is blunter than television suggests: studies have repeatedly found that profilers are often no better than non-experts at predicting an offender's characteristics, and a profile can never identify a specific person. It is a tool for prioritizing leads, not proof of guilt. Here is what profiling actually is, what the evidence shows, and why the difference matters so much.
 
@@ -16,9 +19,9 @@ It is a genuinely useful way to *think* about a case. The question is whether it
 
 ## What the science says
 
-Here the honest answer diverges sharply from the dramatized one. In an influential analysis titled "The Criminal Profiling Illusion," the researcher Brent Snook and colleagues reviewed the published studies and ran meta-analyses comparing self-described profilers and experienced investigators against non-profilers — including college students. The finding was sobering: profilers were often little better, if at all, than laypeople at predicting offender characteristics from crime-scene information.
+Here the honest answer diverges sharply from the dramatized one. Brent Snook and colleagues have reviewed the research comparing profilers with non-profilers. Their finding was sobering: profilers were often little better than laypeople at predicting offender characteristics from crime-scene information.
 
-The review also looked at how profiles are actually built. A majority of the publications it examined relied on anecdotal inference rather than tested method; a meaningful share rested on intuition. Their conclusion was measured but clear — while the field may be moving toward a more scientific footing, offender profiling "may not yet rise to the level of science." Other systematic reviews across decades of research have reached similarly cautious conclusions about its predictive validity.
+Reviews of the research have urged caution about how well profiles predict who committed a crime.
 
 None of this means profiling is worthless. It means its confidence should be calibrated honestly — which is exactly where popular true crime tends to fail.
 
