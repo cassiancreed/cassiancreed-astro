@@ -759,7 +759,7 @@ const PUBLISHED_POSTS = new Set([
   "/post/the-maya-millete-case-larry-milletes-no-body-murder-trial-explained/",
   "/post/the-laci-peterson-case-what-happened-and-where-scott-peterson-s-case-stands-now/",
   "/post/kouri-richins-eric-richins-murder/",
-  "/post/the-murder-of-rachel-morin-how-her-killer-was-found/",
+  "/post/the-murder-of-rachel-morin-how-her-case-was-solved/",
   "/post/lori-vallow-daybell-case-and-appeal/",
   "/post/the-trail-the-murder-of-rachel-morin-the-full-account/",
   "/post/this-week-in-court-september-13-2026/",
