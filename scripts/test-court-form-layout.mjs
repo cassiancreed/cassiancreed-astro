@@ -8,7 +8,8 @@ const frames = html => [...html.matchAll(/<iframe\b[^>]*>/g)].map(match => match
 const courtId = '4d7c7c61-f04c-4870-bf20-f1af8a540e0f';
 test('both rendered Court embeds permit overflow and retain accessible titles', () => {
  // Order 6-7 (2026-11-10): the homepage now carries a second Court embed at the very top, so home expects 2, the calendar page 1.
- for (const [html, expected] of [[home, 2], [calendar, 1]]) {
+ // Order 389 (2026-11-16): owner moved the sign-up BELOW the dates as one slim link row, so the calendar page now carries 0 Court embeds (the slim row links to the same form id).
+ for (const [html, expected] of [[home, 2], [calendar, 0]]) {
   const court = frames(html).filter(frame => frame.includes(courtId));
   assert.equal(court.length, expected);
   for (const frame of court) {
