@@ -3,17 +3,17 @@ title: "The Erin Patterson Case: Appeal Dismissed, Sentence Raised to Life Witho
 seoTitle: "Erin Patterson Appeal Decision: What the Court Ruled"
 description: "Don Patterson, Gail Patterson and Heather Wilkinson died after a July 2023 lunch in Leongatha, Victoria. On Oct. 30, 2026, the Court of Appeal dismissed Erin Patterson's conviction appeal and raised her sentence to life without parole."
 pubDate: 2026-10-19
-updatedDate: 2026-10-31
+updatedDate: 2026-11-01
 tag: "Explainers"
 featured: false
 victim: "Don Patterson, Gail Patterson, Heather Wilkinson; survivor Ian Wilkinson"
 incidentDate: "July 29, 2023"
 location: "Leongatha, Victoria, Australia"
 jurisdiction: "Supreme Court of Victoria; Court of Appeal"
-status: "Convicted July 7, 2025 of three murders and one attempted murder. Oct. 30, 2026: the Court of Appeal of Victoria dismissed her conviction appeal and, on the prosecution's appeal, increased her sentence to life without parole. She could still ask the High Court of Australia for special leave to appeal; none reported as of Oct. 31, 2026."
+status: "Convicted July 7, 2025 of three murders and one attempted murder. Oct. 30, 2026: the Court of Appeal of Victoria dismissed her conviction appeal and, on the prosecution's appeal, increased her sentence to life without parole. She could still ask the High Court of Australia for special leave to appeal; none reported as of Nov. 1, 2026."
 ---
 
-*Status as of Oct. 31, 2026 (Pacific). Source: ABC News Australia, Oct. 30, 2026, and the Supreme Court of Victoria. Court records can change. Check our [Court Calendar](https://cassiancreed.com/court-calendar/) and its "last updated" date.*
+> **Update, as of November 1, 2026 (Pacific):** Don Patterson, Gail Patterson and Heather Wilkinson died after the July 2023 lunch. Ian Wilkinson survived. On Oct. 30, 2026, Victoria's Court of Appeal decided both appeals. It dismissed Erin Patterson's appeal. Her three murder convictions and one attempted murder conviction stand. It allowed the prosecution's appeal and removed her 33-year non-parole period. She stays sentenced to life in prison and cannot get parole. The court said the case was "of such shocking criminality that it is inappropriate to fix a non-parole period." It is not yet known if she will ask the High Court of Australia for permission to appeal. Sources: [Supreme Court of Victoria](https://www.supremecourt.vic.gov.au/news/erin-patterson-appeals-judgment); [ABC News Australia, Oct. 30, 2026](https://www.abc.net.au/news/2026-10-30/erin-patterson-loses-mushroom-murder-convictions-appeal/107326714). Court records can change. Check our [Court Calendar](https://cassiancreed.com/court-calendar/) and its "last updated" date.
 
 Three people died after a family lunch in Leongatha, Victoria, in July 2023. They were Don Patterson, Gail Patterson and Heather Wilkinson. Ian Wilkinson survived. In July 2025, a jury found Erin Patterson guilty of three murders and one attempted murder. On Oct. 30, 2026, Victoria's Court of Appeal dismissed her appeal. The same court raised her sentence to life in prison without parole.
 
@@ -32,17 +32,17 @@ They were parents, grandparents, a wife and a husband. This case is about them f
 
 ## Where the case stands today
 
-| Item | Status as of Oct. 31, 2026 |
+| Item | Status as of Nov. 1, 2026 |
 |---|---|
 | Verdict | Guilty of three murders and one attempted murder (July 7, 2025) |
 | First sentence | Life in prison, with a 33-year non-parole period (Sept. 8, 2025) |
 | Her appeal | Dismissed by the Court of Appeal (Oct. 30, 2026) |
-| Prosecution appeal | Allowed. Sentence raised to life without parole (Oct. 30, 2026) |
-| Next step | She could ask the High Court of Australia for special leave to appeal. None reported as of Oct. 31, 2026. |
+| Prosecution appeal | Allowed. The 33-year non-parole period was removed. She stays on a life sentence with no parole (Oct. 30, 2026) |
+| Next step | She could ask the High Court of Australia for special leave to appeal. It is not yet known if she will. None reported as of Nov. 1, 2026. |
 
 Her convictions stand. Her sentence is now life in prison without parole. The court set no date when she can ask for parole.
 
-One route is still open. She can ask Australia's highest court to hear her case. As of Oct. 31, 2026, no such request has been reported.
+One route is still open. She can ask Australia's highest court to hear her case. As of Nov. 1, 2026, no such request has been reported.
 
 ## The trial and the first sentence
 
@@ -67,12 +67,12 @@ Prosecutors said the case against her was "overwhelming" ([ABC News Australia, A
 
 ## What the court decided on Oct. 30, 2026
 
-The three judges gave their decision in Melbourne on Friday, Oct. 30, 2026, at 10 a.m. local time ([Supreme Court of Victoria](https://www.supremecourt.vic.gov.au/news/erin-patterson-appeals-livestreamed)). Justice McLeish read the reasons in court ([ABC News Australia, Oct. 30, 2026](https://www.abc.net.au/news/2026-10-30/erin-patterson-appeal-decision-live-updates/107322086)).
+The three judges gave their decision in Melbourne on Friday, Oct. 30, 2026, at 10 a.m. local time ([Supreme Court of Victoria](https://www.supremecourt.vic.gov.au/news/erin-patterson-appeals-judgment)). Justice McLeish read the reasons in court ([ABC News Australia, Oct. 30, 2026](https://www.abc.net.au/news/2026-10-30/erin-patterson-appeal-decision-live-updates/107322086)).
 
-- **Her appeal: dismissed.** The court let her argue two of her seven grounds: the jury's accommodation and the use of her mobile phone data as evidence. It rejected both. It refused to hear the other five. Her convictions stand.
-- **The prosecution's appeal: allowed.** The court set aside the 33-year non-parole period. It re-sentenced her to life in prison without parole. Justice McLeish said parole was not appropriate in this case ([ABC News Australia, Oct. 30, 2026](https://www.abc.net.au/news/2026-10-30/erin-patterson-appeal-decision-live-updates/107322086)).
+- **Her appeal: dismissed.** The court let her argue two of her seven grounds: the jury's accommodation and the use of her mobile phone data as evidence. It rejected both. It refused to hear the other five. Her convictions stand ([ABC News Australia live coverage, Oct. 30, 2026](https://www.abc.net.au/news/2026-10-30/erin-patterson-appeal-decision-live-updates/107322086)).
+- **The prosecution's appeal: allowed.** The court set aside the 33-year non-parole period. It re-sentenced her to life in prison without parole. The court said the case was "of such shocking criminality that it is inappropriate to fix a non-parole period" ([ABC News Australia, Oct. 30, 2026](https://www.abc.net.au/news/2026-10-30/erin-patterson-loses-mushroom-murder-convictions-appeal/107326714)).
 
-This summary comes from ABC's reports from the courtroom. The court's own notice confirms the date and time. We have not yet read the full written judgment.
+This summary comes from ABC's reports from the courtroom. The court's own notice confirms the date and time. The notice links to the full written judgment on AustLII. We could not open it as of Nov. 1, 2026, so we have not checked this summary against it.
 
 ## What happens next
 
@@ -80,7 +80,7 @@ Her remaining route is the High Court of Australia. She would first need the cou
 
 A second appeal in Victoria is possible only with fresh and compelling evidence. An expert quoted by ABC called that "most unlikely" in her case ([ABC News Australia, Oct. 30, 2026](https://www.abc.net.au/news/2026-10-30/erin-patterson-mushroom-murder-appeal-what-next/107315286)).
 
-As of Oct. 31, 2026, no request to the High Court has been reported. We will not guess what happens next. See the [Court Calendar entry](/court-calendar/#patterson-appeal) for the latest status we have checked.
+As of Nov. 1, 2026, no request to the High Court has been reported. We will not guess what happens next. See the [Court Calendar entry](/court-calendar/#patterson-appeal) for the latest status we have checked.
 
 ## Questions people ask
 
@@ -102,11 +102,11 @@ Yes. On Oct. 30, 2026, the Court of Appeal of Victoria dismissed her appeal agai
 
 ### Can Erin Patterson still appeal?
 
-She can ask the High Court of Australia for special leave to appeal. The High Court uses strict rules to choose which cases it hears. As of Oct. 31, 2026, no request has been reported.
+She can ask the High Court of Australia for special leave to appeal. The High Court uses strict rules to choose which cases it hears. As of Nov. 1, 2026, no request has been reported.
 
 ### Will Erin Patterson get a new trial?
 
-Not from this appeal. The Court of Appeal dismissed it. Only the High Court could change that result, and no request to it has been reported as of Oct. 31, 2026.
+Not from this appeal. The Court of Appeal dismissed it. Only the High Court could change that result, and no request to it has been reported as of Nov. 1, 2026.
 
 ### Where is Leongatha?
 
@@ -120,7 +120,8 @@ It is a country town in Victoria, Australia, about 135 kilometers southeast of M
 
 ## Sources
 
-- Supreme Court of Victoria, "Erin Patterson appeals – judgment" (judgment handed down Friday, Oct. 30, 2026, 10 a.m.): https://www.supremecourt.vic.gov.au/news/erin-patterson-appeals-livestreamed
+- Supreme Court of Victoria, "Erin Patterson appeals – judgment" (judgment handed down Friday, Oct. 30, 2026, 10 a.m.): https://www.supremecourt.vic.gov.au/news/erin-patterson-appeals-judgment
+- ABC News Australia, "Mushroom murderer Erin Patterson likely to die in jail after failed appeal," Oct. 30, 2026: https://www.abc.net.au/news/2026-10-30/erin-patterson-loses-mushroom-murder-convictions-appeal/107326714
 - ABC News Australia, "Victoria's Court of Appeal hands down Erin Patterson's judgment," Oct. 30, 2026: https://www.abc.net.au/news/2026-10-30/victoria-s-court-of-appeal-hands-down-erin-patterson-s-judgment/107327662
 - ABC News Australia, appeal decision live coverage, Oct. 30, 2026: https://www.abc.net.au/news/2026-10-30/erin-patterson-appeal-decision-live-updates/107322086
 - ABC News Australia, what happens next after the appeal decision, Oct. 30, 2026: https://www.abc.net.au/news/2026-10-30/erin-patterson-mushroom-murder-appeal-what-next/107315286
