@@ -101,11 +101,15 @@ export interface Props {
       submit (Homepage fix, owner order Nov 8, 2026). Default keeps the
       original neutral note. */
   successText?: string;
+  /** true → ONE slim row (short line + button), no embed, no headline block.
+      Used where the page content must stay above the fold (court calendar,
+      owner order Nov 16 2026). Same form id, UTMs and tracking as the full block. */
+  slim?: boolean;
 }
 
 const EMBED_BASE = 'https://subscribe-forms.beehiiv.com/v3/forms';
 
-const { offer = 'case', campaign, content, headline, subtext, button, embed = true, successText } = Astro.props;
+const { offer = 'case', campaign, content, headline, subtext, button, embed = true, successText, slim = false } = Astro.props;
 const o = OFFERS[offer] ?? OFFERS.case;
 
 const camp             = campaign ?? o.campaign;
@@ -141,6 +145,12 @@ const embedSrc =
 const calendarCosts = ['/court-calendar/','/true-crime-watch-calendar/'].includes(Astro.url.pathname);
 ---
 
+{slim ? (
+<section class="capture capture--slim" aria-label="Email newsletter sign-up">
+  <p class="capture__slim-text"><strong>{resolvedHeadline}</strong> <span>Free. No daily emails. Unsubscribe anytime.</span></p>
+  <a class="capture__button capture__button--slim" data-nep-campaign={camp} data-nep-conversion-page={conversionPage} data-nep-cta-id={ctaId} data-nep-form-id={o.formId} data-nep-offer-id={o.offerId} href={subscribeHref} target="_blank" rel="noopener noreferrer">{resolvedButton} &rarr;</a>
+</section>
+) : (
 <section class="capture" aria-label="Email newsletter sign-up">
   <div class="capture__inner">
     <h2 class="capture__headline">{resolvedHeadline}</h2>
@@ -192,6 +202,7 @@ const calendarCosts = ['/court-calendar/','/true-crime-watch-calendar/'].include
     </div>
   </div>
 </section>
+)}
 
 <script>
   // DG4 (NEP-OPS-CWK-0718DG): honest capture success feedback.
@@ -539,8 +550,23 @@ const calendarCosts = ['/court-calendar/','/true-crime-watch-calendar/'].include
   .capture__button:active { transform: translateY(1px); }
   .capture__button:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
 
+  /* Slim one-row variant (court calendar, Nov 16 2026). */
+  .capture--slim {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.6rem 1rem;
+    padding: 0.7rem 1rem;
+    margin: 1.25rem 0;
+  }
+  .capture__slim-text { margin: 0; color: var(--ink-2); font-size: 0.95rem; line-height: 1.35; flex: 1 1 260px; }
+  .capture__slim-text strong { color: var(--ink); font-family: var(--serif); font-size: 1.05rem; font-weight: 600; }
+  .capture__button--slim { width: auto; min-width: 0; min-height: 40px; padding: 0.5rem 1.1rem; font-size: 0.9rem; flex: 0 0 auto; }
+
   @media (min-width: 640px) {
     .capture { padding: 2.25rem 2rem; }
+    .capture--slim { padding: 0.7rem 1.1rem; }
     .capture__headline { font-size: 1.9rem; }
     .capture__button { width: auto; min-width: 240px; align-self: flex-start; }
   }
