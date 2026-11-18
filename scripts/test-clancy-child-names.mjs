@@ -682,7 +682,11 @@ test('the one owner allowlist is the marked Beehiiv one and is still in use; ale
   assert.ok(ALERT_PAIR_HASHES.size>=20,'the alert list was not built from missing-persons.tsv');
   for(const path of MISSING_PERSON_LIST_PAGES) {
     const shown=protectedNames(ownText(readFileSync(path,'utf8')),{words:new Set(),pairs:ALERT_PAIR_HASHES}).length;
-    assert.ok(shown>0,path+' no longer shows an alert name; the allowance for it is stale');
+    // The full missing-person list must still show an allowed alert name. /today/
+    // is only the seven days ending on the later dataset date, so a court-calendar
+    // publication can move that week past the latest alert verification. The page
+    // stays allowed to name an alert; this build does not have to contain one.
+    if(path==='dist/missing-persons/index.html') assert.ok(shown>0,path+' no longer shows an alert name; the allowance for it is stale');
   }
 });
 test('an official poster is the national center\'s poster page or a police .gov notice; a withdrawn poster, a contact page or a non-.gov site is none',()=>{
