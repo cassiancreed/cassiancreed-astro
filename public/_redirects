@@ -1,3 +1,7 @@
+# /newsletter/ was a 404 (RB-036 / order 453, 2026-11-17): send it to the Beehiiv sign-up page
+/newsletter    https://cassiancreed.beehiiv.com/subscribe?utm_source=website&utm_medium=newsletter_redirect   302
+/newsletter/   https://cassiancreed.beehiiv.com/subscribe?utm_source=website&utm_medium=newsletter_redirect   302
+
 # Meta posts -> dedicated pages
 /post/start-here-a-reader-s-guide-to-cassian-creed   /start-here/   301
 /post/our-standard-how-we-tell-these-stories         /about/        301
