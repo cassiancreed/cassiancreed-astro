@@ -5,7 +5,10 @@
 // Tiers:
 //   confirmed        — two or more independent non-social sources. No label.
 //   official-single  — one official publisher (court docket, prosecutor, DOJ,
-//                      or court press release). Label: "1 source, official".
+//                      court press release, or a police, state police, sheriff,
+//                      prison/corrections, or laboratory release). Label:
+//                      "1 source, official". A news report about an agency is
+//                      still news.
 //   news-single      — one news publisher. Label: "Unconfirmed, 1 source".
 //   social-only      — every recorded source is an X or Reddit post. Not a
 //                      calendar row.
@@ -49,6 +52,14 @@ const isCourtPressRelease = (source) => {
   return /\b(court|judiciary|judicial branch|trial chamber)\b/i.test(text);
 };
 
+// Voice XO, November 17, 2026: these agency releases are official. A news
+// source type never qualifies, even when the story describes a police release.
+const isAgencyRelease = (source) => {
+  if (NEWS_TYPE.test(source.type || '')) return false;
+  const text = `${source.type || ''} ${source.label || ''} ${hostname(source.url)}`;
+  return /\b(police|sheriff|state patrol|troopers|corrections|correctional|department of criminal justice|prison|forensic laboratory|laboratory)\b/i.test(text);
+};
+
 export const isClearlyOfficialSource = (source) => {
   const type = source.type || '';
   if (NEWS_TYPE.test(type) && OFFICIAL_TYPE.test(type)) return false;
@@ -56,6 +67,7 @@ export const isClearlyOfficialSource = (source) => {
   if (isDoj(source)) return true;
   if (!NEWS_TYPE.test(type) && /\b(district attorney|state attorney|prosecutors?(?:'s)? office|attorney general)\b/i.test(source.label || '')) return true;
   if (isCourtPressRelease(source)) return true;
+  if (isAgencyRelease(source)) return true;
   return false;
 };
 

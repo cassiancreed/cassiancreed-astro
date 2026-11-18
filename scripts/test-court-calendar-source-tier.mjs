@@ -96,13 +96,24 @@ test('same-host news labels that name different outlets stay unlabeled', () => {
   assert.deepEqual(result, { tier: 'unclassified', label: null });
 });
 
-test('a single police release is not given an official or news label', () => {
+test('a single police, sheriff, corrections, or laboratory release is official', () => {
+  for (const source of [
+    { sourceUrl: 'https://www.troopers.ny.gov/example', sourceType: 'Primary — police release', sourceLabel: 'New York State Police update' },
+    { sourceUrl: 'https://www.beaufortcountysheriff.org/example', sourceType: 'Primary — government source', sourceLabel: 'Official Beaufort County Sheriff appeal' },
+    { sourceUrl: 'https://www.tdcj.texas.gov/example', sourceType: 'Primary — state agency record', sourceLabel: 'Texas Department of Criminal Justice, offender record' },
+    { sourceUrl: 'https://dnasolves.com/example', sourceType: 'Primary — participating forensic laboratory', sourceLabel: 'Othram, participating laboratory announcement' },
+  ]) {
+    assert.equal(classify(source).tier, 'official-single', source.sourceLabel);
+  }
+});
+
+test('a news report about a police announcement is not an official source', () => {
   const result = classify({
-    sourceUrl: 'https://www.troopers.ny.gov/example',
-    sourceType: 'Primary — police release',
-    sourceLabel: 'New York State Police update',
+    sourceUrl: 'https://www.aol.com/one',
+    sourceType: 'Named outlet',
+    sourceLabel: 'Law & Crime / AOL, police announcement report',
   });
-  assert.deepEqual(result, { tier: 'unclassified', label: null });
+  assert.equal(result.tier, 'news-single');
 });
 
 test('the parser rejects a social-only calendar row', () => {
@@ -131,6 +142,13 @@ const OFFICIAL_IDS = [
   'chafin-case-closed',
   'completed-4',
   'duterte-trial-opening',
+  'unconfirmed-3',
+  'amos-pine-bluff',
+  'taylor-lawrence',
+  'regina-hess-identification',
+  'boulder-colorado-child-homicide-investigation',
+  'watkins-missing',
+  'turner-dore',
 ];
 
 const NEWS_IDS = [
@@ -165,14 +183,7 @@ const NEWS_IDS = [
 ];
 
 const UNCLASSIFIED_IDS = [
-  'unconfirmed-3',
-  'amos-pine-bluff',
-  'taylor-lawrence',
   'muhlenberg-county-infant-death-hearing',
-  'regina-hess-identification',
-  'boulder-colorado-child-homicide-investigation',
-  'watkins-missing',
-  'turner-dore',
 ];
 
 test('recorded calendar rows keep the derived tiers and do not invent labels', () => {

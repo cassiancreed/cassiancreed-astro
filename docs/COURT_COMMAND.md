@@ -256,9 +256,9 @@ pronunciations: []
 
 Owner decision RB-022, November 17, 2026, replaced the requirement of two or more sources before a date could be listed. `timeStatus` is unchanged and is not this label. The public label is derived from the recorded source fields. Do not add a tier column.
 
-- One official source (a court docket, a prosecutor, the Department of Justice, or a court press release) is listed and labelled `1 source, official`.
+- One official source (a court docket, a prosecutor, the Department of Justice, a court press release, or a police, state police, sheriff, prison or corrections, or laboratory release) is listed and labelled `1 source, official`. A news report about an agency is still a news source. Voice XO, November 17, 2026, added those agency releases.
 - One news source is listed, labelled `Unconfirmed, 1 source`, with the source shown and a “Know something? Tell us” invite. The invite is the existing correction mailto, `cassiancreed@cassiancreed.com`, subject `Court Calendar correction`.
-- One X or Reddit post, with no court, prosecutor, DOJ, court press release, or news source, is not a calendar row. Hold it as a tip until a real source backs it.
+- One X or Reddit post, with no court, prosecutor, DOJ, court press release, police, state police, sheriff, prison or corrections, laboratory, or news source, is not a calendar row. Hold it as a tip until a real source backs it.
 - Two or more independent sources are confirmed and carry no source-count label.
 
 An X or Reddit post does not count toward the independent-source total. Two URLs on the same host count as one publisher. A row whose recorded sources do not clearly match one of these tiers stays unlabeled. Do not guess a tier for it. See `src/data/COURT_CALENDAR_README.md`.

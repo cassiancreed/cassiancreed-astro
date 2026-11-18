@@ -108,7 +108,7 @@ export function parseCourtCalendar(tsv) {
       source2Label: row.source2_label,
     });
     if (sourceTier.tier === 'social-only') {
-      fail(line, 'a social-only X or Reddit post is not a calendar row; hold it until a court, prosecutor, DOJ, court press release, or news source backs it');
+      fail(line, 'a social-only X or Reddit post is not a calendar row; hold it until a court, prosecutor, DOJ, court press release, police, state police, sheriff, prison or corrections, laboratory, or news source backs it');
     }
     parsed.push({ ...row, line, sourceTier: sourceTier.tier, sourceTierLabel: sourceTier.label });
   }

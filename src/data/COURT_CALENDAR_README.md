@@ -146,8 +146,11 @@ two or more sources before it could be listed. The public label is derived by
 not hand-write the label into `status` or `detail`.
 
 - **One official source** — a court docket, court record, court listing, court
-  order, prosecutor, Department of Justice source, or court press release, with
-  no second independent publisher — is listed and labelled `1 source, official`.
+  order, prosecutor, Department of Justice source, court press release, or a
+  police, state police, sheriff, prison or corrections, or laboratory release,
+  with no second independent publisher — is listed and labelled
+  `1 source, official`. A news report about an agency is still a news source.
+  Voice XO, November 17, 2026, added the agency releases to this list.
 - **One news source** — a recorded reporting or named-outlet source, with no
   second independent publisher — is listed and labelled `Unconfirmed, 1 source`.
   The page shows that source and a “Know something? Tell us” link to the
@@ -155,12 +158,13 @@ not hand-write the label into `status` or `detail`.
   `Court Calendar correction`).
 - **Social-only** — the only recorded source is an X or Reddit post — is not a
   calendar row. The parser rejects it. Hold the tip until a court, prosecutor,
-  DOJ, court press release, or news source backs it.
+  DOJ, court press release, police, state police, sheriff, prison or
+  corrections, laboratory, or news source backs it.
 - **Two or more independent sources** — different publishers, not counting an
   X or Reddit post — are confirmed and carry no source-count label.
-- **Not clearly classifiable** — for example a single police, sheriff,
-  corrections, or laboratory source, or two news labels on the same host that
-  name different outlets — stays on the calendar with no source-count label.
+- **Not clearly classifiable** — for example two news labels on the same host
+  that name different outlets — stays on the calendar with no source-count
+  label.
   Do not guess a tier for that row. Changing it requires a source edit that
   makes the tier clear.
 
