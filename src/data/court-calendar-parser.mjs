@@ -1,3 +1,5 @@
+import { classifyCourtCalendarSources } from './court-calendar-source-tier.mjs';
+
 const COLUMNS = [
   'section', 'id', 'case', 'proceeding', 'date_iso', 'date_text', 'timezone', 'time_status', 'court', 'docket',
   'verified', 'ongoing', 'groups', 'status', 'detail', 'next_note', 'source_url',
@@ -97,7 +99,18 @@ export function parseCourtCalendar(tsv) {
       for (const group of groups) if (!VALID_GROUPS.has(group)) fail(line, `invalid group "${group}"`);
       if (row.ongoing && row.ongoing !== 'true') fail(line, 'ongoing must be blank or true');
     }
-    parsed.push({ ...row, line });
+
+    const sourceTier = classifyCourtCalendarSources({
+      sourceUrl: row.source_url,
+      sourceType: row.source_type,
+      sourceLabel: row.source_label,
+      source2Url: row.source2_url,
+      source2Label: row.source2_label,
+    });
+    if (sourceTier.tier === 'social-only') {
+      fail(line, 'a social-only X or Reddit post is not a calendar row; hold it until a court, prosecutor, DOJ, court press release, or news source backs it');
+    }
+    parsed.push({ ...row, line, sourceTier: sourceTier.tier, sourceTierLabel: sourceTier.label });
   }
 
   const metadata = Object.fromEntries(parsed.filter((r) => r.section === 'meta').map((r) => [r.id, r.status]));
@@ -113,6 +126,7 @@ export function parseCourtCalendar(tsv) {
     groups: r.groups.split('|').filter(Boolean), status: r.status, detail: r.detail,
     nextNote: r.next_note || null, src: r.source_url, srcLabel: r.source_label,
     srcType: r.source_type, src2: r.source2_url || null, srcLabel2: r.source2_label || null,
+    sourceTier: r.sourceTier, sourceTierLabel: r.sourceTierLabel,
     link: r.internal_link || null, linkText: r.internal_link_text || null,
     link2: r.internal_link2 || null, linkText2: r.internal_link2_text || null,
     faqQuestion: r.faq_question || null,
@@ -125,6 +139,7 @@ export function parseCourtCalendar(tsv) {
     status: r.status, note: r.detail, nextNote: r.next_note || null,
     src: r.source_url, srcLabel: r.source_label, srcType: r.source_type,
     src2: r.source2_url || null, srcLabel2: r.source2_label || null,
+    sourceTier: r.sourceTier, sourceTierLabel: r.sourceTierLabel,
     link: r.internal_link || null, linkText: r.internal_link_text || null,
     faqQuestion: r.faq_question || null,
   }));

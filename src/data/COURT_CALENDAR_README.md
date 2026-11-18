@@ -137,6 +137,39 @@ to open. The level controls treatment, never inclusion or commercial prominence.
   validator rejects external URLs so calendar links cannot send readers away.
 - Do not put tabs or hard line breaks inside a cell.
 
+## Source-count labels (RB-022)
+
+Owner decision RB-022, November 17, 2026, replaced the rule that a date needed
+two or more sources before it could be listed. The public label is derived by
+`court-calendar-source-tier.mjs` from `source_url`, `source_label`,
+`source_type`, and the optional second source. Do not add a tier column, and do
+not hand-write the label into `status` or `detail`.
+
+- **One official source** — a court docket, court record, court listing, court
+  order, prosecutor, Department of Justice source, or court press release, with
+  no second independent publisher — is listed and labelled `1 source, official`.
+- **One news source** — a recorded reporting or named-outlet source, with no
+  second independent publisher — is listed and labelled `Unconfirmed, 1 source`.
+  The page shows that source and a “Know something? Tell us” link to the
+  existing correction mailto (`cassiancreed@cassiancreed.com`, subject
+  `Court Calendar correction`).
+- **Social-only** — the only recorded source is an X or Reddit post — is not a
+  calendar row. The parser rejects it. Hold the tip until a court, prosecutor,
+  DOJ, court press release, or news source backs it.
+- **Two or more independent sources** — different publishers, not counting an
+  X or Reddit post — are confirmed and carry no source-count label.
+- **Not clearly classifiable** — for example a single police, sheriff,
+  corrections, or laboratory source, or two news labels on the same host that
+  name different outlets — stays on the calendar with no source-count label.
+  Do not guess a tier for that row. Changing it requires a source edit that
+  makes the tier clear.
+
+An X or Reddit URL does not count as a confirming source. Two URLs on the same
+host count as one publisher. `time_status` is unchanged and is not this label.
+The same derivation is applied to international rows when they render on the
+public calendar. The international `listed` section still requires the court
+itself to have published the date.
+
 ## Retiring an entry to the archive
 
 A `completed` row leaves the live page only when the matter is finished and has

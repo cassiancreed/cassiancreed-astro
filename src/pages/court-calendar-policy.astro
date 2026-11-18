@@ -1,14 +1,12 @@
 ---
 import Base from '../layouts/Base.astro';
+import { CORRECTION_MAILTO } from '../data/court-calendar-corrections.mjs';
 
 // COURT CALENDAR AND CASE-TRACKING POLICY
 // The body text of this page is approved policy language. Do not rewrite,
 // tighten, summarize, or "improve" it. Formatting (paragraph breaks, headings,
 // links) may change; wording may not. Any wording change must be logged.
-const LAST_UPDATED = 'July 27, 2026';
-
-const CORRECTION_MAILTO =
-  'mailto:cassiancreed@cassiancreed.com?subject=Court%20Calendar%20correction&body=Case%20or%20person%20name%3A%0D%0AWhat%20is%20wrong%3A%0D%0AWhat%20the%20correct%20information%20is%3A%0D%0AOfficial%20record%20or%20source%20(link%20or%20citation)%3A%0D%0AYour%20name%20and%20role%20(optional)%3A%0D%0A';
+const LAST_UPDATED = 'November 17, 2026';
 
 const jsonld = {
   '@context': 'https://schema.org',
@@ -92,16 +90,29 @@ const jsonld = {
         <li>Docket or case number, when safely and publicly available</li>
         <li>Exact present legal status</li>
         <li>A neutral description of the matter</li>
-        <li>The next confirmed court date, or a clearly labelled tentative date supported by an attributable court participant or courtroom report</li>
+        <li>The next court date when one is listed: confirmed when it rests on an official source or on two or more independent sources, or labelled “Unconfirmed, 1 source” when it rests on one news report</li>
         <li>Event type</li>
         <li>Time and timezone, when confirmed</li>
         <li>Courthouse or remote-hearing information, when confirmed and appropriate</li>
         <li>The date the entry was last verified</li>
-        <li>The primary official source, where available, and reliable reporting where it is needed</li>
+        <li>The sources the source-count rule requires: one official source, one labelled news source, or two or more independent sources</li>
         <li>A correction route</li>
       </ul>
       <p>When no future event is confirmed, the entry reads: <strong>No confirmed upcoming court date found.</strong> A tentative date may appear only when an attributable court participant or identified courtroom report names that specific date and the event appears more likely than not to occur then. Tentative entries are italicized and labelled; NEP never publishes its internal confidence percentage or estimates a date merely to fill the calendar.</p>
       <p>A case that cannot meet these requirements is not published. Cases with unresolved identity, jurisdiction, legal status, sourcing, or scheduling questions are held back rather than published in partial form.</p>
+    </div>
+  </section>
+
+  <section class="wrap pol-sec" aria-labelledby="source-count">
+    <h2 id="source-count">How many sources a date needs</h2>
+    <div class="prose">
+      <p>Nov 17, 2026, owner decision RB-022 replaced the requirement that a date have two or more sources before it could be listed. The source-count label is separate from whether a start time is confirmed.</p>
+      <ul>
+        <li><strong>One official source.</strong> A court docket, a prosecutor, the Department of Justice, or a court press release is enough. The entry is listed and labelled “1 source, official.”</li>
+        <li><strong>One news source.</strong> The entry is listed and labelled “Unconfirmed, 1 source.” The source is shown, and the entry includes a <a href={CORRECTION_MAILTO}>Know something? Tell us</a> invite. That invite uses the correction address on this page.</li>
+        <li><strong>Social-only.</strong> One post on X or Reddit is not listed. It stays off the calendar until a court, prosecutor, Department of Justice, court press release, or news source backs it.</li>
+        <li><strong>Two or more independent sources.</strong> The entry is confirmed and carries no source-count label.</li>
+      </ul>
     </div>
   </section>
 
@@ -122,6 +133,13 @@ const jsonld = {
         <a class="pol-btn" href={CORRECTION_MAILTO}>Report a correction</a>
         <a class="pol-back" href="/court-calendar/">Back to the court calendar &rarr;</a>
       </p>
+    </div>
+  </section>
+
+  <section class="wrap pol-sec" aria-labelledby="wording-log">
+    <h2 id="wording-log">Wording log</h2>
+    <div class="prose">
+      <p>Nov 17, 2026, owner decision RB-022. Replaced the requirement of two or more sources before a date could be listed. One official source (a court docket, a prosecutor, the Department of Justice, or a court press release) may be listed and labelled “1 source, official.” One news source may be listed, labelled “Unconfirmed, 1 source,” with the source shown and a “Know something? Tell us” invite to the correction address. One X or Reddit post, with no other source, is not listed. Two or more independent sources are confirmed and carry no source-count label. The “What every published entry shows” bullets for the next court date and for sources were amended to match. Last updated on this page moved from July 27, 2026 to November 17, 2026.</p>
     </div>
   </section>
 

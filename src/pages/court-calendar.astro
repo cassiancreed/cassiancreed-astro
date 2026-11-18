@@ -4,7 +4,9 @@ import CalendarExplainerLink from '../components/CalendarExplainerLink.astro';
 import CalendarCostBadge from '../components/CalendarCostBadge.astro';
 import HomeCourtCalendar from '../components/HomeCourtCalendar.astro';
 import CaptureBlock from '../components/CaptureBlock.astro';
+import SourceTierNote from '../components/SourceTierNote.astro';
 import { calendarLinksFor } from '../data/calendar-explainer-links.mjs';
+import { CORRECTION_EMAIL, CORRECTION_MAILTO } from '../data/court-calendar-corrections.mjs';
 
 import calendarTsv from '../data/court-calendar.tsv?raw';
 import { formatCalendarDate, parseCourtCalendar } from '../data/court-calendar-parser.mjs';
@@ -39,6 +41,8 @@ const toScheduled = (entry) => ({
   srcType: entry.srcType,
   src2: entry.src2,
   srcLabel2: entry.srcLabel2,
+  sourceTier: entry.sourceTier,
+  sourceTierLabel: entry.sourceTierLabel,
   link: entry.link,
   linkText: entry.linkText,
   link2: null,
@@ -64,6 +68,8 @@ const toPassive = (entry, section) => ({
   srcType: entry.srcType,
   src2: entry.src2,
   srcLabel2: entry.srcLabel2,
+  sourceTier: entry.sourceTier,
+  sourceTierLabel: entry.sourceTierLabel,
   link: entry.link,
   linkText: entry.linkText,
   faqQuestion: entry.faqQuestion,
@@ -101,8 +107,6 @@ const localDateParts = Object.fromEntries(
     .map((part) => [part.type, part.value]),
 );
 const BUILD_DATE = `${localDateParts.year}-${localDateParts.month}-${localDateParts.day}`;
-
-const CORRECTION_EMAIL = 'cassiancreed@cassiancreed.com';
 
 const NO_DATE = 'No confirmed upcoming court date found.';
 const TIME_NOT_VERIFIED = 'The time has not been publicly verified.';
@@ -170,7 +174,7 @@ const genericFaqs = [
   },
   {
     question: 'How are these dates verified?',
-    answer: "Each one traces to a court filing, a prosecutor's office, a state agency record, or courtroom reporting. Each entry names its source and retains its own verification date. The page update date is not a claim that every entry was rechecked.",
+    answer: 'One official source — a court docket, a prosecutor, the Department of Justice, or a court press release — is enough to list a date, and that entry is labelled “1 source, official.” One news report is listed as “Unconfirmed, 1 source,” with the source shown. Two or more independent sources are confirmed and carry no source-count label. A post on X or Reddit, alone, is not listed. Each entry names its source and retains its own verification date. The page update date is not a claim that every entry was rechecked.',
   },
 ];
 const allFaqs = [...caseFaqs, ...genericFaqs];
@@ -314,7 +318,7 @@ const jsonld = {
     <a href="#next-dates">Detailed entries</a>
     <a href="/court-calendar/archive/">Closed cases</a>
     <CalendarExplainerLink link={{ url: '/post/this-week-in-court-october-19-23-2026/', text: 'This week: October 19–23' }} />
-    <a href="/support/">Report a correction</a>
+    <a href={CORRECTION_MAILTO}>Report a correction</a>
   </nav>
 
   <section class="wrap cal-sec case-guides" aria-labelledby="case-guides-title">
@@ -343,6 +347,7 @@ const jsonld = {
           <p class="card__type">{e.proceeding}</p>
           <h3 class="card__case">{e.case}</h3>
           <p class="card__when"><span class="card__k">{e.dateISO > BUILD_DATE ? 'Next listed setting' : 'Listed date'}</span><time datetime={e.dateISO}>{e.dateText}</time></p>
+          <SourceTierNote entry={e} />
           <p class="card__court">{e.court}</p>
           {e.docket && <p class="card__docket">{e.docket}</p>}
           <p class="card__status"><span class="card__k">Status</span> {e.status}</p>
@@ -358,7 +363,7 @@ const jsonld = {
             {e.src2 && <span class="card__src2">{e.srcLabel2}</span>}
           </p>
           <p class="card__links">{calendarLinksFor(e).every((link) => link.type === 'book') && <span class="card__soon">Our case file on this is in progress.</span>} {calendarLinksFor(e).map((link) => <CalendarExplainerLink link={link} />)} <a class="card__help" href="/support/">Victim &amp; Reader Resources</a>
-            <a class="card__help" href="/support/">Report a correction</a>
+            <a class="card__help" href={CORRECTION_MAILTO}>Report a correction</a>
           </p>
         </article>
       ))}
@@ -376,6 +381,7 @@ const jsonld = {
           <p class="card__when"><time datetime={e.dateISO}>{e.dateText}</time></p>
           {e.timeStatus === 'tentative' && <p class="card__nodate"><strong>Tentative:</strong> This expected date is sourced but not yet confirmed by the court.</p>}
           {e.timeStatus === 'not publicly verified' && <p class="card__nodate">{TIME_NOT_VERIFIED}</p>}
+          <SourceTierNote entry={e} />
           <p class="card__court">{e.court}</p>
           {e.docket && <p class="card__docket">{e.docket}</p>}
           <p class="card__status"><span class="card__k">Status</span> {e.status}</p>
@@ -391,7 +397,7 @@ const jsonld = {
             {e.src2 && <span class="card__src2">{e.srcLabel2}</span>}
           </p>
           <p class="card__links">{calendarLinksFor(e).every((link) => link.type === 'book') && <span class="card__soon">Our case file on this is in progress.</span>} {calendarLinksFor(e).map((link) => <CalendarExplainerLink link={link} />)} <a class="card__help" href="/support/">Victim &amp; Reader Resources</a>
-            <a class="card__help" href="/support/">Report a correction</a>
+            <a class="card__help" href={CORRECTION_MAILTO}>Report a correction</a>
           </p>
         </article>
       ))}
@@ -417,12 +423,13 @@ const jsonld = {
         <p class="row__type">{e.type || 'Post-conviction motions'}</p>
         <h3 class="row__case">{e.case}</h3>
         <p class="row__when">{e.where}</p>
+        <SourceTierNote entry={e} />
         {e.docket && <p class="row__docket">{e.docket}</p>}
         <p class="row__status">{e.status}</p>
         <p class="row__nodate"><strong>Expected development:</strong> {e.nextNote || NO_DATE}</p>
         <p class="row__note">{e.note}</p>
         <p class="row__meta">Subject to change by the court &middot; Source: {e.srcLabel} ({e.srcType}){e.src2 && <span class="row__src2"> &middot; Also: {e.srcLabel2}</span>}</p>
-        <p class="row__links">{calendarLinksFor(e).every((link) => link.type === 'book') && <span class="card__soon">Our case file on this is in progress.</span>} {calendarLinksFor(e).map((link) => <CalendarExplainerLink link={link} />)} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <a class="row__help" href="/support/">Report a correction</a></p>
+        <p class="row__links">{calendarLinksFor(e).every((link) => link.type === 'book') && <span class="card__soon">Our case file on this is in progress.</span>} {calendarLinksFor(e).map((link) => <CalendarExplainerLink link={link} />)} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <a class="row__help" href={CORRECTION_MAILTO}>Report a correction</a></p>
       </div>
     ))}
   </section>
@@ -435,11 +442,12 @@ const jsonld = {
         <p class="row__type">Investigation &middot; no court proceeding</p>
         <h3 class="row__case">{e.case}</h3>
         <p class="row__when">{e.where}</p>
+        <SourceTierNote entry={e} />
         <p class="row__status">{e.status}</p>
         <p class="row__nodate"><strong>Next development to verify:</strong> {e.nextNote || 'Not yet identified.'}</p>
         <p class="row__note">{e.note}</p>
         <p class="row__meta">No court date exists for this matter &middot; Source: {e.srcLabel} ({e.srcType}){e.src2 && <span class="row__src2"> &middot; Also: {e.srcLabel2}</span>}</p>
-        <p class="row__links">{calendarLinksFor(e).every((link) => link.type === 'book') && <span class="card__soon">Our case file on this is in progress.</span>} {calendarLinksFor(e).map((link) => <CalendarExplainerLink link={link} />)} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <a class="row__help" href="/support/">Report a correction</a></p>
+        <p class="row__links">{calendarLinksFor(e).every((link) => link.type === 'book') && <span class="card__soon">Our case file on this is in progress.</span>} {calendarLinksFor(e).map((link) => <CalendarExplainerLink link={link} />)} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <a class="row__help" href={CORRECTION_MAILTO}>Report a correction</a></p>
       </div>
     ))}
   </section>
@@ -452,13 +460,14 @@ const jsonld = {
         <p class="row__type">No date set</p>
         <h3 class="row__case">{e.case}</h3>
         <p class="row__when">{e.where}</p>
+        <SourceTierNote entry={e} />
         {e.docket && <p class="row__docket">{e.docket}</p>}
         <p class="row__nodate"><strong>Next court date:</strong> {NO_DATE}</p>
         <p class="row__status">{e.status}</p>
         {e.nextNote && <p class="row__nodate"><strong>Expected next step:</strong> {e.nextNote}</p>}
         <p class="row__note">{e.note}</p>
         <p class="row__meta">Subject to change by the court &middot; Source: {e.srcLabel} ({e.srcType}){e.src2 && <span class="row__src2"> &middot; Also: {e.srcLabel2}</span>}</p>
-        <p class="row__links">{calendarLinksFor(e).every((link) => link.type === 'book') && <span class="card__soon">Our case file on this is in progress.</span>} {calendarLinksFor(e).map((link) => <CalendarExplainerLink link={link} />)} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <a class="row__help" href="/support/">Report a correction</a>
+        <p class="row__links">{calendarLinksFor(e).every((link) => link.type === 'book') && <span class="card__soon">Our case file on this is in progress.</span>} {calendarLinksFor(e).map((link) => <CalendarExplainerLink link={link} />)} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <a class="row__help" href={CORRECTION_MAILTO}>Report a correction</a>
         </p>
       </div>
     ))}
@@ -472,6 +481,7 @@ const jsonld = {
         <p class="row__type">{completedBadge(e)}</p>
         <h3 class="row__case">{e.case}</h3>
         <p class="row__when">{e.where}</p>
+        <SourceTierNote entry={e} />
         {e.docket && <p class="row__docket">{e.docket}</p>}
         <p class="row__nodate"><strong>Next court date:</strong> {completedNextDate(e)}</p>
         <p class="row__status">{e.status}</p>
@@ -498,7 +508,7 @@ const jsonld = {
             <p>Primary source: Mecklenburg County District Attorney, October 12, 2026 release, <a href="https://charmeckda.com/wp-content/uploads/2026/10/101226_1.pdf">https://charmeckda.com/wp-content/uploads/2026/10/101226_1.pdf</a></p>
           </article>
         )}
-        <p class="row__links">{calendarLinksFor(e).every((link) => link.type === 'book') && e.id !== 'mary-collins-trial' && <span class="card__soon">Our case file on this is in progress.</span>} {calendarLinksFor(e).map((link) => <CalendarExplainerLink link={link} />)} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <a class="row__help" href="/support/">Report a correction</a></p>
+        <p class="row__links">{calendarLinksFor(e).every((link) => link.type === 'book') && e.id !== 'mary-collins-trial' && <span class="card__soon">Our case file on this is in progress.</span>} {calendarLinksFor(e).map((link) => <CalendarExplainerLink link={link} />)} <a class="row__help" href="/support/">Victim &amp; Reader Resources</a> <a class="row__help" href={CORRECTION_MAILTO}>Report a correction</a></p>
       </div>
     ))}
   </section>
@@ -521,7 +531,7 @@ const jsonld = {
           {nextDates.map((e) => (
             <tr>
               <td class="t-case">{e.case}</td>
-              <td>{e.proceeding}</td>
+              <td>{e.proceeding}{e.sourceTierLabel && <div class="t-tier">{e.sourceTierLabel}</div>}</td>
               <td><time datetime={e.dateISO}>{e.dateText}</time></td>
               <td>{e.court}</td>
               <td><a href={`#${e.id}`}>Status and source &rarr;</a><div class="calendar-resource-list" data-calendar-list-entry={e.id}>{calendarLinksFor(e).map((link) => <CalendarExplainerLink link={link} />)}</div></td>
@@ -530,7 +540,7 @@ const jsonld = {
           {appeals.map((e) => (
             <tr>
               <td class="t-case">{e.case}</td>
-              <td>{e.type || 'Post-conviction motions'}</td>
+              <td>{e.type || 'Post-conviction motions'}{e.sourceTierLabel && <div class="t-tier">{e.sourceTierLabel}</div>}</td>
               <td class="t-none">{NO_DATE}</td>
               <td>{e.where}</td>
               <td><a href={`#${e.id}`}>Status and source &rarr;</a><div class="calendar-resource-list" data-calendar-list-entry={e.id}>{calendarLinksFor(e).map((link) => <CalendarExplainerLink link={link} />)}</div></td>
@@ -539,7 +549,7 @@ const jsonld = {
           {investigations.map((e) => (
             <tr>
               <td class="t-case">{e.case}</td>
-              <td>Investigation &mdash; no court proceeding</td>
+              <td>Investigation &mdash; no court proceeding{e.sourceTierLabel && <div class="t-tier">{e.sourceTierLabel}</div>}</td>
               <td class="t-none">None; no court proceeding exists.</td>
               <td>{e.where}</td>
               <td><a href={`#${e.id}`}>Status and source &rarr;</a><div class="calendar-resource-list" data-calendar-list-entry={e.id}>{calendarLinksFor(e).map((link) => <CalendarExplainerLink link={link} />)}</div></td>
@@ -548,7 +558,7 @@ const jsonld = {
           {unconfirmed.map((e) => (
             <tr>
               <td class="t-case">{e.case}</td>
-              <td>{e.proceeding || '\u2014'}</td>
+              <td>{e.proceeding || '\u2014'}{e.sourceTierLabel && <div class="t-tier">{e.sourceTierLabel}</div>}</td>
               <td class="t-none">{NO_DATE}</td>
               <td>{e.where}</td>
               <td><a href={`#${e.id}`}>Status and source &rarr;</a><div class="calendar-resource-list" data-calendar-list-entry={e.id}>{calendarLinksFor(e).map((link) => <CalendarExplainerLink link={link} />)}</div></td>
@@ -557,7 +567,7 @@ const jsonld = {
           {completed.map((e) => (
             <tr>
               <td class="t-case">{e.case}</td>
-              <td>{completedBadge(e)}</td>
+              <td>{completedBadge(e)}{e.sourceTierLabel && <div class="t-tier">{e.sourceTierLabel}</div>}</td>
               <td class="t-none">{completedNextDate(e)}</td>
               <td>{e.where}</td>
               <td><a href={`#${e.id}`}>Status and source &rarr;</a><div class="calendar-resource-list" data-calendar-list-entry={e.id}>{calendarLinksFor(e).map((link) => <CalendarExplainerLink link={link} />)}</div></td>
@@ -574,7 +584,14 @@ const jsonld = {
     <h2 id="how-we-verify">How We Verify Court Dates</h2>
     <div class="prose">
       <p>A wrong date is not a small mistake. It sends a victim's family to an empty courtroom, and it puts a scheduled proceeding in a defendant's name that may not exist. So we hold every line on this page to the same rule.</p>
-      <p>Cassian Creed maintains this Neural Edge Publishing calendar as a verification index, not a source of record: every published date must trace to a court, prosecutor, state agency, or identified courtroom report. When a date cannot be tied to a public source, Neural Edge Publishing leaves it unconfirmed rather than turning an expectation into a scheduled proceeding.</p>
+      <p>Cassian Creed maintains this Neural Edge Publishing calendar as a verification index, not a source of record. A date is listed under the source-count rule below. When a date cannot be tied to a public source, Neural Edge Publishing leaves it off the calendar rather than turning an expectation into a scheduled proceeding.</p>
+      <ol>
+        <li><strong>One official source.</strong> A court docket, a prosecutor, the Department of Justice, or a court press release is enough. The entry is labelled “1 source, official.”</li>
+        <li><strong>One news source.</strong> The entry is listed and labelled “Unconfirmed, 1 source.” The source is shown, with a <a href={CORRECTION_MAILTO}>Know something? Tell us</a> invite.</li>
+        <li><strong>Social-only is not listed.</strong> One post on X or Reddit stays off this calendar until a court, prosecutor, Department of Justice, court press release, or news source backs it.</li>
+        <li><strong>Two or more independent sources.</strong> The entry is confirmed and carries no source-count label.</li>
+      </ol>
+      <p>The calendar also follows these handling rules:</p>
       <ol>
         <li><strong>The source is never us.</strong> Each date traces to a court filing, a prosecutor's office, a state agency record, or a reporter who was in the room. We do not cite our own articles as the source for a date.</li>
         <li><strong>We name the source type.</strong> A district attorney's announcement and a news report are not the same thing, so we label which one you are looking at.</li>
@@ -610,7 +627,7 @@ const jsonld = {
       <p>Yes, and they often do. Hearings get continued, trials get pushed, and courts reschedule with little notice. Treat every date here as the best current information, not a promise.</p>
 
       <h3>How are these dates verified?</h3>
-      <p>Each one traces to a court filing, a prosecutor's office, a state agency record, or courtroom reporting. Each entry names its source and retains its own verification date. The page update date is not a claim that every entry was rechecked. See <a href="#how-we-verify">How We Verify Court Dates</a>.</p>
+      <p>One official source — a court docket, a prosecutor, the Department of Justice, or a court press release — is enough to list a date, and that entry is labelled “1 source, official.” One news report is listed as “Unconfirmed, 1 source,” with the source shown. Two or more independent sources are confirmed and carry no source-count label. A post on X or Reddit, alone, is not listed. Each entry names its source and retains its own verification date. The page update date is not a claim that every entry was rechecked. See <a href="#how-we-verify">How We Verify Court Dates</a>.</p>
     </div>
   </section>
 
@@ -683,6 +700,7 @@ const jsonld = {
     .card__src{font-size:13px;margin:0 0 12px}
     .card__src a,.row__meta a{color:var(--accent);text-decoration:underline;text-underline-offset:2px}
     .card__srctype{display:block;font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:var(--ink-3);margin-top:3px}
+    .t-tier{font-family:var(--mono);font-size:11px;color:var(--ink-2);margin-top:4px;letter-spacing:.02em}
     .card__links,.row__links{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin:0;padding-top:12px;border-top:1px solid var(--line)}
     .card__read,.row__links a{color:var(--accent);text-decoration:none;font-size:14px}
     .card__read:hover,.row__links a:hover{text-decoration:underline}

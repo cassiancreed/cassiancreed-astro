@@ -2,6 +2,8 @@
 import calendarTsv from '../data/court-calendar.tsv?raw';
 import CalendarExplainerLink from './CalendarExplainerLink.astro';
 import CalendarCostBadge from './CalendarCostBadge.astro';
+import SourceTierNote from './SourceTierNote.astro';
+import { CORRECTION_MAILTO } from '../data/court-calendar-corrections.mjs';
 import { calendarLinksFor, calendarLinkTypesFor, JURY_CHESS_LINK } from '../data/calendar-explainer-links.mjs';
 import { formatCalendarDate, parseCourtCalendar } from '../data/court-calendar-parser.mjs';
 import internationalTsv from '../data/international-watch.tsv?raw';
@@ -97,6 +99,9 @@ const clientEntries = visibleEntries.map((entry) => ({
   hasExplainer: LIVE_EXPLAINER_IDS.has(entry.id),
   sourceUrl: entry.src,
   sourceLabel: entry.srcLabel,
+  sourceTier: entry.sourceTier || null,
+  sourceTierLabel: entry.sourceTierLabel || null,
+  tellUsHref: CORRECTION_MAILTO,
   link: entry.link,
   linkText: entry.linkText,
   explainerLinks: calendarLinksFor(entry),
@@ -257,6 +262,7 @@ const visibleDayEntries = (entries) => {
             )}
             <p class="home-calendar__agenda-court">{entry.court}</p>
             <p class="home-calendar__agenda-source"><span>Source:</span> <a href={entry.sourceUrl} target="_blank" rel="noopener noreferrer">{entry.sourceLabel}</a></p>
+            <SourceTierNote entry={{ sourceTier: entry.sourceTier, sourceTierLabel: entry.sourceTierLabel, src: entry.sourceUrl, srcLabel: entry.sourceLabel }} />
             <div class="home-calendar__agenda-actions">
               {entry.explainerLinks.map((link) => <CalendarExplainerLink link={link} />)}
               <a href={`/court-calendar/#${entry.id}`}>Calendar details &rarr;</a>
@@ -472,6 +478,30 @@ const visibleDayEntries = (entries) => {
         sourceLink.target = '_blank';
         sourceLink.rel = 'noopener noreferrer';
         source.append(sourcePrefix, sourceLink);
+        const tierNote = document.createElement('p');
+        if (entry.sourceTierLabel) {
+          tierNote.className = 'source-tier';
+          tierNote.dataset.sourceTier = entry.sourceTier || '';
+          const tierLabel = document.createElement('strong');
+          tierLabel.className = 'source-tier__label';
+          tierLabel.textContent = entry.sourceTierLabel;
+          tierNote.append(tierLabel);
+          if (entry.sourceTier === 'news-single') {
+            const more = document.createElement('span');
+            more.className = 'source-tier__more';
+            more.append(document.createTextNode('Source: '));
+            const sourceAgain = document.createElement('a');
+            sourceAgain.href = entry.sourceUrl;
+            sourceAgain.target = '_blank';
+            sourceAgain.rel = 'noopener noreferrer';
+            sourceAgain.textContent = entry.sourceLabel;
+            const tellUs = document.createElement('a');
+            tellUs.href = entry.tellUsHref;
+            tellUs.textContent = 'Know something? Tell us';
+            more.append(sourceAgain, document.createTextNode('. '), tellUs);
+            tierNote.append(more);
+          }
+        }
         const actions = document.createElement('div');
         actions.className = 'home-calendar__agenda-actions';
         for (const link of entry.explainerLinks) {
@@ -516,7 +546,9 @@ const visibleDayEntries = (entries) => {
         if (entry.timeStatus === 'tentative') article.append(tentative);
         article.append(title, type, status);
         if (entry.book) article.append(createBookPromo(entry.book));
-        article.append(court, source, actions);
+        article.append(court, source);
+        if (entry.sourceTierLabel) article.append(tierNote);
+        article.append(actions);
         agenda.append(article);
       });
     }
@@ -739,6 +771,10 @@ const visibleDayEntries = (entries) => {
   .home-calendar__agenda-source{margin:0 0 12px;color:var(--ink-3);font-size:10px;line-height:1.45}
   .home-calendar__agenda-source span{font-family:var(--mono);text-transform:uppercase}
   .home-calendar__agenda-source a{color:var(--ink-2);text-decoration-color:rgba(214,172,92,.55);text-underline-offset:2px}
+  .home-calendar__agenda :global(.source-tier){margin:0 0 12px;padding:8px 10px;border-radius:7px;background:var(--bg-3);font-size:13px;line-height:1.45;color:var(--ink)}
+  .home-calendar__agenda :global(.source-tier__label){font-family:var(--mono);font-size:12px;letter-spacing:.02em}
+  .home-calendar__agenda :global(.source-tier__more){display:block;margin-top:4px}
+  .home-calendar__agenda :global(.source-tier a){color:var(--accent)}
   .home-calendar__agenda-actions{display:flex;flex-direction:column;align-items:flex-start;gap:8px}
   .home-calendar__agenda-actions a,.home-calendar__agenda-actions button{border:0;background:transparent;color:var(--ink-2);cursor:pointer;font:inherit;font-size:12px;padding:0;text-decoration:none;text-align:left}
   .home-calendar__agenda-actions button{color:var(--accent);font-weight:700}
