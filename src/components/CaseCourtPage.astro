@@ -6,6 +6,7 @@
 // are written by hand (in each page file), and they must stay status-true.
 import Base from '../layouts/Base.astro';
 import CaptureBlock from './CaptureBlock.astro';
+import SourceTierNote from './SourceTierNote.astro';
 import calendarTsv from '../data/court-calendar.tsv?raw';
 import { formatCalendarDate, parseCourtCalendar } from '../data/court-calendar-parser.mjs';
 
@@ -73,19 +74,25 @@ const jsonld = {
         <div class="row" id={r.id}>
           <p class="row__type">{r.proceeding}</p>
           <p class="row__when"><strong>{r.dateText}</strong></p>
+          <SourceTierNote entry={r} />
           <p class="row__where">{r.court}{r.docket && <> &middot; {r.docket}</>}</p>
           <p class="row__status">{r.status}</p>
           {r.nextNote && <p class="row__nodate">{r.nextNote}</p>}
         </div>
       ))
     ) : (
-      <p>No upcoming court date is on the public record right now. We add one only when a court record or two named reports confirm it.</p>
+      <p>No upcoming court date is on the public record right now. A date is listed from one official source — a court docket, a prosecutor, the Department of Justice, a court press release, or a police, state police, sheriff, prison or corrections, or laboratory release — or from two independent sources. A single news report is listed only with an unconfirmed label.</p>
     )}
 
     {unconfirmed.length > 0 && (
       <>
         <h2>Dates we have not confirmed</h2>
-        {unconfirmed.map((r) => <p>{r.proceeding}. {r.status}</p>)}
+        {unconfirmed.map((r) => (
+          <>
+            <p>{r.proceeding}. {r.status}</p>
+            <SourceTierNote entry={r} />
+          </>
+        ))}
       </>
     )}
 
@@ -94,6 +101,7 @@ const jsonld = {
         <h2>What happened most recently?</h2>
         <div class="row row--done" id={latest.id}>
           <p class="row__type">{latest.proceeding}</p>
+          <SourceTierNote entry={latest} />
           <p class="row__where">{latest.where}</p>
           <p class="row__status">{latest.status}</p>
           {latest.nextNote && <p class="row__nodate">{latest.nextNote}</p>}
