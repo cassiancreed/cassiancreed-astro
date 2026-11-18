@@ -1,5 +1,5 @@
 ---
-title: "The Murder of Rachel Morin: How Her Killer Was Found"
+title: "The Murder of Rachel Morin: How Her Case Was Solved"
 description: "How DNA and genetic genealogy identified Rachel Morin's killer on Maryland's Ma & Pa Trail, and the 2025 conviction and life sentence that followed."
 pubDate: 2026-05-16
 tag: "Case Files"
