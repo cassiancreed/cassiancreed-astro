@@ -43,7 +43,7 @@ Homicide law in the United States is mostly state law, so the labels and boundar
 
 ## Seen in These Cases
 
-- [The Murder of Rachel Morin: How Her Killer Was Found](/post/the-murder-of-rachel-morin-how-her-killer-was-found/) — Victor Martinez-Hernandez was convicted of first-degree murder (along with first-degree rape and kidnapping), a clear example of the top-tier charge applied to a deliberate killing.
+- [The Murder of Rachel Morin: How Her Killer Was Found](/post/the-murder-of-rachel-morin-how-her-case-was-solved/) — Victor Martinez-Hernandez was convicted of first-degree murder (along with first-degree rape and kidnapping), a clear example of the top-tier charge applied to a deliberate killing.
 - [The Golden State Killer: How Genetic Genealogy Caught Joseph DeAngelo](/post/the-golden-state-killer-how-genetic-genealogy-caught-joseph-deangelo/) — DeAngelo pleaded guilty to multiple counts of first-degree murder, illustrating premeditated, serial killings at the most serious degree.
 
 ## Sources

@@ -1,6 +1,7 @@
 # Meta posts -> dedicated pages
 /post/start-here-a-reader-s-guide-to-cassian-creed   /start-here/   301
 /post/our-standard-how-we-tell-these-stories         /about/        301
+/post/the-murder-of-rachel-morin-how-her-killer-was-found   /post/the-murder-of-rachel-morin-how-her-case-was-solved/   301
 # Legacy Wix blog index -> Case Files
 /blog                                                /case-files/   301
 /blog/*                                              /case-files/   301
