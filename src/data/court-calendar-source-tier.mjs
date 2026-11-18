@@ -10,6 +10,9 @@
 //                      "1 source, official". A news report about an agency is
 //                      still news.
 //   news-single      — one news publisher. Label: "Unconfirmed, 1 source".
+//   news-double      — two news reports from different named outlets that share one
+//                      host (for example two outlets syndicated on AOL), so their
+//                      independence is not proven. Label: "2 news sources".
 //   social-only      — every recorded source is an X or Reddit post. Not a
 //                      calendar row.
 //   unclassified     — the recorded sources do not clearly earn a tier. No
@@ -17,6 +20,7 @@
 
 export const OFFICIAL_SINGLE_LABEL = '1 source, official';
 export const NEWS_SINGLE_LABEL = 'Unconfirmed, 1 source';
+export const NEWS_DOUBLE_LABEL = '2 news sources';
 
 const OFFICIAL_TYPE = /prosecutor|court press release|clerk docket|filed hearing notice|county court portal|official court|appellate court docket|court docket|court record|court listing|court order|court schedule|court opinion|court list|court case page/i;
 const NEWS_TYPE = /reporting|news report|news coverage|named outlet|named local outlet/i;
@@ -92,6 +96,7 @@ const sameHostNewsConflict = (sources) => {
 const labeled = (tier) => {
   if (tier === 'official-single') return { tier, label: OFFICIAL_SINGLE_LABEL };
   if (tier === 'news-single') return { tier, label: NEWS_SINGLE_LABEL };
+  if (tier === 'news-double') return { tier, label: NEWS_DOUBLE_LABEL };
   return { tier, label: null };
 };
 
@@ -112,9 +117,8 @@ export function classifyCourtCalendarSources({
 
   const publishers = new Set(confirming.map((source) => publisherKey(source.url)).filter(Boolean));
   if (publishers.size >= 2) return labeled('confirmed');
-  if (sameHostNewsConflict(confirming)) return labeled('unclassified');
-
   const primary = confirming.find((source) => source.type) || confirming[0];
+  if (sameHostNewsConflict(confirming)) return labeled(isClearlyNewsSource(primary) ? 'news-double' : 'unclassified');
   if (isClearlyOfficialSource(primary)) return labeled('official-single');
   if (isClearlyNewsSource(primary)) return labeled('news-single');
   return labeled('unclassified');

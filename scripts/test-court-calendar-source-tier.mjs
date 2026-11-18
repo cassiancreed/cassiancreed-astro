@@ -85,7 +85,7 @@ test('two pages from the same court are one official source', () => {
   assert.equal(result.tier, 'official-single');
 });
 
-test('same-host news labels that name different outlets stay unlabeled', () => {
+test('same-host news labels that name different outlets get the 2 news sources label', () => {
   const result = classify({
     sourceUrl: 'https://www.aol.com/one',
     sourceType: 'Named outlet',
@@ -93,7 +93,7 @@ test('same-host news labels that name different outlets stay unlabeled', () => {
     source2Url: 'https://www.aol.com/two',
     source2Label: 'WEHT via AOL, later report',
   });
-  assert.deepEqual(result, { tier: 'unclassified', label: null });
+  assert.deepEqual(result, { tier: 'news-double', label: '2 news sources' });
 });
 
 test('a single police, sheriff, corrections, or laboratory release is official', () => {
@@ -182,7 +182,9 @@ const NEWS_IDS = [
   'ormanjhi-triple-murder',
 ];
 
-const UNCLASSIFIED_IDS = [
+const UNCLASSIFIED_IDS = [];
+
+const NEWS_DOUBLE_IDS = [
   'muhlenberg-county-infant-death-hearing',
 ];
 
@@ -197,10 +199,12 @@ test('recorded calendar rows keep the derived tiers and do not invent labels', (
   assert.deepEqual(ids('official-single'), [...OFFICIAL_IDS].sort());
   assert.deepEqual(ids('news-single'), [...NEWS_IDS].sort());
   assert.deepEqual(ids('unclassified'), [...UNCLASSIFIED_IDS].sort());
+  assert.deepEqual(ids('news-double'), [...NEWS_DOUBLE_IDS].sort());
   assert.equal(ids('social-only').length, 0);
   for (const row of rows) {
     if (row.sourceTier === 'official-single') assert.equal(row.sourceTierLabel, OFFICIAL_SINGLE_LABEL);
     else if (row.sourceTier === 'news-single') assert.equal(row.sourceTierLabel, NEWS_SINGLE_LABEL);
+    else if (row.sourceTier === 'news-double') assert.equal(row.sourceTierLabel, '2 news sources');
     else assert.equal(row.sourceTierLabel, null);
   }
   assert.equal(rows.find((row) => row.id === 'mangione-federal-sentencing').sourceTier, 'confirmed');
