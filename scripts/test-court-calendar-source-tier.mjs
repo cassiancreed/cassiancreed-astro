@@ -153,6 +153,7 @@ const OFFICIAL_IDS = [
 
 const NEWS_IDS = [
   'isabelle-johnson-hearing',
+  'arndt-sentencing-2027-01-20',
   'unconfirmed-1',
   'unconfirmed-2',
   'unconfirmed-5',
