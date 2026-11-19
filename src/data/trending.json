@@ -1,7 +1,7 @@
 {
-  "updated": "2026-11-18",
-  "updatedText": "Wednesday, Nov. 18, 2026",
-  "method": "Grouped by where each case is in its news cycle, not by guilt. Dates and statuses were checked on Nov. 18 against court coverage and our sourced court calendar; where a date comes from fewer than three independent sources it is marked reported.",
+  "updated": "2026-11-19",
+  "updatedText": "Thursday, Nov. 19, 2026",
+  "method": "Grouped by where each case is in its news cycle, not by guilt. Dates and statuses were re-checked Nov. 18 and 19 against court coverage and our sourced court calendar; where a date comes from fewer than three independent sources it is marked reported.",
   "phases": [
     {
       "key": "buildup",
@@ -23,32 +23,40 @@
     {
       "phase": "buildup",
       "title": "Maggie and Paul Murdaugh: Alex Murdaugh's retrial",
-      "status": "AWAITING RETRIAL · RULING EXPECTED THIS WEEK",
-      "why": "His 2023 murder convictions were overturned in May 2026. A judge heard his motion to dismiss the murder indictments on Nov. 13, and a written ruling is expected this week. The retrial is set for April 5, 2027, a date that can change. He is presumed innocent of the murder charges.",
+      "status": "AWAITING RETRIAL · DISMISSAL RULING NOT FOUND YET",
+      "why": "His 2023 murder convictions were overturned in May 2026. A judge heard his motion to dismiss the murder indictments on Nov. 13. As of Nov. 19 we have not found a ruling on it. The retrial is set for April 2027, a date that can change. He is presumed innocent of the murder charges.",
       "explainer": "/post/the-murdaugh-murders-how-alex-murdaugh-was-convicted-and-why-he-now-faces-a-new-trial/",
       "courtId": "murdaugh-retrial"
     },
     {
-      "phase": "buildup",
+      "phase": "spike",
       "title": "The Lindsay Clancy case",
-      "status": "MISTRIAL · RETRIAL SET FOR MARCH 29, 2027",
-      "why": "Her trial ended in a mistrial on Sept. 4, 2026, which is not a verdict. On Nov. 9 the judge denied her motion to dismiss, and a retrial is set for March 29, 2027, with a status hearing on Dec. 30. She has pleaded not guilty and is presumed innocent.",
+      "status": "MISTRIAL · NOV. 19: REFERRED TO FULL SJC · RETRIAL STILL SET MARCH 29, 2027",
+      "why": "Her trial ended in a mistrial on Sept. 4, 2026, which is not a verdict. On Nov. 19, a justice of the Massachusetts Supreme Judicial Court sent her double jeopardy petition to the full court, with arguments expected in January 2027. That referral is not a ruling. The retrial is still set for March 29, 2027, and a status hearing for Dec. 30. She has pleaded not guilty and is presumed innocent.",
       "explainer": "/post/lindsay-clancy-trial/",
-      "courtId": "clancy-retrial-2027-03-29"
+      "courtId": "clancy-sjc-oral-argument-2027-01"
+    },
+    {
+      "phase": "spike",
+      "title": "The Susan Smith parole hearing",
+      "status": "PAROLE DENIED NOV. 19",
+      "why": "South Carolina's parole board voted unanimously on Nov. 19, 2026 to deny parole to Susan Smith, who was convicted of murder in 1995 for the deaths of her two sons. Their father asked the board to keep her in prison. State law lets her ask again every two years, a rule reported in 2024 and not re-checked for this hearing.",
+      "explainer": null,
+      "courtId": "smith-susan-second-parole-hearing"
     },
     {
       "phase": "spike",
       "title": "The Richard Glossip case",
-      "status": "PLEA ENTERED NOV. 12 · SENTENCING REPORTED DEC. 17",
-      "why": "On Nov. 12, 2026, Oklahoma prosecutors dropped the first-degree murder charge and Richard Glossip pleaded guilty to a lesser charge in the 1997 death of Barry Van Treese. The attorney general's office calls it accessory to first-degree murder; his defense calls it accessory after the fact. He has not been sentenced. Sentencing is reported for Dec. 17; AP says only that it is in December.",
+      "status": "PLEA ENTERED NOV. 12 · SENTENCING DEC. 17 (REPORTED)",
+      "why": "On Nov. 12, 2026, Oklahoma prosecutors dropped the first-degree murder charge and Richard Glossip pleaded guilty to a lesser charge in the 1997 death of Barry Van Treese. The attorney general's office calls it accessory to murder; his defense calls it accessory after the fact. He has not been sentenced. Sentencing is reported for Dec. 17; one outlet says Dec. 17 and 18.",
       "explainer": null,
       "courtId": "glossip-sentencing-2026-12-17"
     },
     {
       "phase": "spike",
       "title": "The Dwain Hall trial",
-      "status": "ON TRIAL · JURY SELECTION BEGAN NOV. 16",
-      "why": "Dwain Hall is on trial in Marion County, Florida, charged with first-degree murder and kidnapping. Jury selection began Nov. 16, and the trial is reported to last about a week, so a verdict could come soon. He is presumed innocent.",
+      "status": "ON TRIAL · OPENING STATEMENTS NOV. 17",
+      "why": "Dwain Hall is on trial in Marion County, Florida, charged with first-degree murder and kidnapping in the death of Sonia Exelby. Jury selection began Nov. 16 and opening statements were Nov. 17. The trial was expected to last about a week, so a verdict could come soon. He has pleaded not guilty and is presumed innocent.",
       "explainer": null,
       "courtId": "dwain-hall-trial-2026-11-17"
     },
