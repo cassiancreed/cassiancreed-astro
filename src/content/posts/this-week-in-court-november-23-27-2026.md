@@ -18,7 +18,7 @@ capture: "jury"
 
 **Time:** Not publicly verified. No daily start time or courtroom has been published.
 
-Sonia Exelby, 32, of England, died in Florida. Dwain Hall is charged with first-degree murder and kidnapping in her death. He has pleaded not guilty and is presumed innocent. The charges are allegations. WCJB reported that opening statements and testimony began on Tuesday, Nov. 17. On Wednesday, Nov. 18, the trial's third day, jurors watched the rest of a recorded interview Hall gave to investigators. The station reported that the state expected to call about 15 witnesses. No verdict has been reported.
+Dwain Hall is charged with first-degree murder and kidnapping in the death of Sonia Exelby, 32, of England. He has pleaded not guilty and is presumed innocent. The charges are allegations. WCJB reported that opening statements and testimony began on Tuesday, Nov. 17. On Wednesday, Nov. 18, the trial's third day, jurors watched the rest of a recorded interview Hall gave to investigators. The station reported that the state expected to call about 15 witnesses. No verdict has been reported.
 
 **What to watch:** Whether the state rests its case, and when the jury gets the case. No end date has been verified.
 
@@ -42,7 +42,7 @@ Full details: https://cassiancreed.com/court-calendar/
 
 **Time:** Not publicly verified. News reports give the date but no time.
 
-Kimberly Sullivan is accused of holding her stepson captive in their Waterbury home for more than 20 years. She has pleaded not guilty and is presumed innocent. The charges are allegations. They include kidnapping, first-degree assault, unlawful restraint and cruelty to persons. NBC Connecticut reported on Oct. 20 that a judge is reviewing sealed records to decide what can be used at trial. It also reported that the defense wants a 12-person jury instead of six, and that questions about the jury panel and expert witnesses will be decided at the Nov. 23 hearing. WJAR reported that the trial is expected in February. Nov. 23 is not a trial date.
+Kimberly Sullivan is accused of holding her stepson captive in their home for more than 20 years. She has pleaded not guilty and is presumed innocent. The charges are allegations. They include kidnapping, first-degree assault, unlawful restraint and cruelty to persons. NBC Connecticut reported on Oct. 20 that a judge is reviewing sealed records to decide what can be used at trial. It also reported that the defense wants a 12-person jury instead of six, and that questions about the jury panel and expert witnesses will be decided at the Nov. 23 hearing. WJAR reported that the trial is expected in February. Nov. 23 is not a trial date.
 
 **What to watch:** Whether the judge rules on jury size. Our last check of this case was Oct. 21, so look for newer news before you rely on this date.
 
