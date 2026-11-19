@@ -2,35 +2,40 @@
 import Base from '../layouts/Base.astro';
 import data from '../data/trending.json';
 const trending = data.cases;
+const phases = data.phases.map((ph) => ({ ...ph, cases: trending.filter((c) => c.phase === ph.key) })).filter((ph) => ph.cases.length);
 const jsonld = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "name": "Trending True Crime Cases — Cassian Creed",
-  "description": "The true-crime cases getting the most news coverage right now, ranked by coverage, not guilt, each linked to its sourced case file and court date.",
+  "description": "True-crime cases getting attention right now, grouped by where each one is in its news cycle, each linked to its court date.",
   "dateModified": data.updated,
   "url": "https://cassiancreed.com/trending/"
 };
 ---
-<Base title="Trending True Crime Cases — Cassian Creed" description="The true-crime cases getting the most news coverage right now, ranked by coverage, not guilt, each linked to its sourced case file and court date." jsonld={jsonld}>
+<Base title="Trending True Crime Cases — Cassian Creed" description="True-crime cases getting attention right now, grouped by where each one is in its news cycle, each linked to its court date." jsonld={jsonld}>
   <section class="hero wrap">
     <p class="evidence evidence--accent">Trending Now</p>
     <h1>The cases everyone's following.</h1>
-    <p class="trend-lede">The cases getting the most news coverage right now. <strong>Trending by coverage, not guilt:</strong> a case on this list is getting attention; that says nothing about who did what. Each one links to our sourced, victim-first case file and its next court date.</p>
+    <p class="trend-lede">The cases getting attention right now, grouped by where each one is in its news cycle. <strong>Trending is not guilt:</strong> a case on this list is getting attention; that says nothing about who did what. Each one links to its court date, and to our victim-first case file where we have one.</p>
     <p class="trend-stamp">Updated {data.updatedText}. {data.method}</p>
   </section>
 
-  <section class="wrap">
-    <ol class="trend-grid">
-      {trending.map((c) => (
-        <li class="trend-card">
-          <span class="trend-card__status">#{c.rank} · {c.status}</span>
-          <h2 class="trend-card__title"><a href={c.explainer}>{c.title}</a></h2>
-          <p class="trend-card__why">{c.why}</p>
-          <p class="trend-card__links"><a class="trend-card__cta" href={c.explainer}>Read the case file &rarr;</a> <a class="trend-card__cta" href={`/court-calendar/#${c.courtId}`}>Court date &rarr;</a></p>
-        </li>
-      ))}
-    </ol>
-  </section>
+  {phases.map((ph) => (
+    <section class="wrap trend-phase">
+      <h2 class={`trend-phase__title trend-phase__title--${ph.key}`}>{ph.label}</h2>
+      <p class="trend-phase__blurb">{ph.blurb}</p>
+      <ul class="trend-grid">
+        {ph.cases.map((c) => (
+          <li class="trend-card">
+            <span class="trend-card__status">{c.status}</span>
+            <h3 class="trend-card__title">{c.explainer ? <a href={c.explainer}>{c.title}</a> : c.title}</h3>
+            <p class="trend-card__why">{c.why}</p>
+            <p class="trend-card__links">{c.explainer && <a class="trend-card__cta" href={c.explainer}>Read the case file &rarr;</a>} <a class="trend-card__cta" href={`/court-calendar/#${c.courtId}`}>Court date &rarr;</a></p>
+          </li>
+        ))}
+      </ul>
+    </section>
+  ))}
 
   <section class="wrap trend-dossier">
     <div class="trend-dossier__inner">
@@ -51,6 +56,9 @@ const jsonld = {
 
   <style>
     .trend-lede{color:var(--ink-2);max-width:62ch;font-size:18px;margin:18px 0 0}
+    .trend-phase{padding-top:6px}
+    .trend-phase__title{font-family:var(--serif);font-weight:600;font-size:26px;margin:22px 0 4px}
+    .trend-phase__blurb{color:var(--ink-3);font-size:15px;max-width:68ch;margin:0 0 12px}
     .trend-grid{list-style:none;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:8px 0 28px}
     .trend-card{display:block;background:var(--bg-2);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:10px;padding:20px 22px;transition:border-color .2s,transform .2s}
     .trend-card:hover{border-color:rgba(224,86,59,.55);transform:translateY(-2px)}

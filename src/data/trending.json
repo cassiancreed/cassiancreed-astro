@@ -1,26 +1,75 @@
 {
-  "updated": "2026-11-13",
-  "updatedText": "Friday, Nov. 13, 2026",
-  "method": "Ranked by how much news coverage each case got in the last 72 hours, from our daily trending scan. It is a measure of attention, not of guilt. Each status below comes from our sourced court calendar, not from the scan.",
+  "updated": "2026-11-19",
+  "updatedText": "Thursday, Nov. 19, 2026",
+  "method": "Grouped by where each case is in its news cycle, not by guilt. Dates and statuses were re-checked Nov. 18 and 19 against court coverage and our sourced court calendar; where a date comes from fewer than three independent sources it is marked reported.",
+  "phases": [
+    {
+      "key": "buildup",
+      "label": "Building up",
+      "blurb": "A big court moment is coming. Attention usually grows for weeks beforehand, longest before a trial."
+    },
+    {
+      "key": "spike",
+      "label": "In the spotlight now",
+      "blurb": "A major moment just happened or is happening. Attention tends to peak for about a week."
+    },
+    {
+      "key": "fade",
+      "label": "Past the peak",
+      "blurb": "The big moment has passed. Attention usually falls to a small fraction of its peak within one to four weeks, unless a new court date arrives."
+    }
+  ],
   "cases": [
     {
-      "rank": 1,
+      "phase": "buildup",
       "title": "Maggie and Paul Murdaugh: Alex Murdaugh's retrial",
-      "status": "AWAITING RETRIAL · APRIL 2027",
-      "why": "His 2023 murder convictions were overturned in May 2026. A judge heard his motion to dismiss the murder charges on Nov. 13. The retrial is set for April 2027 in Sumter County. He is presumed innocent of the murder charges.",
+      "status": "AWAITING RETRIAL · DISMISSAL RULING NOT FOUND YET",
+      "why": "His 2023 murder convictions were overturned in May 2026. A judge heard his motion to dismiss the murder indictments on Nov. 13. As of Nov. 19 we have not found a ruling on it. The retrial is set for April 2027, a date that can change. He is presumed innocent of the murder charges.",
       "explainer": "/post/the-murdaugh-murders-how-alex-murdaugh-was-convicted-and-why-he-now-faces-a-new-trial/",
       "courtId": "murdaugh-retrial"
     },
     {
-      "rank": 2,
+      "phase": "spike",
       "title": "The Lindsay Clancy case",
-      "status": "MISTRIAL · NEXT HEARING NOV. 16",
-      "why": "Her trial ended in a mistrial on Sept. 4, 2026, which is not a verdict. On Nov. 9 the judge denied her motion to dismiss. No retrial date is set. She remains charged, has pleaded not guilty and is presumed innocent.",
+      "status": "MISTRIAL · NOV. 19: REFERRED TO FULL SUPREME JUDICIAL COURT · RETRIAL STILL SET MARCH 29, 2027",
+      "why": "Her trial ended in a mistrial on Sept. 4, 2026, which is not a verdict. On Nov. 19, a justice of the Massachusetts Supreme Judicial Court sent her double jeopardy petition to the full court, with arguments expected in January 2027. That referral is not a ruling. The retrial is still set for March 29, 2027, and a status hearing for Dec. 30. She has pleaded not guilty and is presumed innocent.",
       "explainer": "/post/lindsay-clancy-trial/",
-      "courtId": "clancy-hearing-2026-11-16"
+      "courtId": "clancy-sjc-oral-argument-2027-01"
     },
     {
-      "rank": 3,
+      "phase": "spike",
+      "title": "The Susan Smith parole hearing",
+      "status": "PAROLE DENIED NOV. 19",
+      "why": "South Carolina's parole board voted unanimously on Nov. 19, 2026 to deny parole to Susan Smith, who was convicted of murder in 1995 for the deaths of her two sons. Their father asked the board to keep her in prison. State law lets her ask again every two years, a rule reported in 2024 and not re-checked for this hearing.",
+      "explainer": null,
+      "courtId": "smith-susan-second-parole-hearing"
+    },
+    {
+      "phase": "spike",
+      "title": "The Richard Glossip case",
+      "status": "PLEA ENTERED NOV. 12 · SENTENCING DEC. 17 (REPORTED)",
+      "why": "On Nov. 12, 2026, Oklahoma prosecutors dropped the first-degree murder charge and Richard Glossip pleaded guilty to a lesser charge in the 1997 death of Barry Van Treese. The attorney general's office calls it accessory to murder; his defense calls it accessory after the fact. He has not been sentenced. Sentencing is reported for Dec. 17; one outlet says Dec. 17 and 18.",
+      "explainer": null,
+      "courtId": "glossip-sentencing-2026-12-17"
+    },
+    {
+      "phase": "spike",
+      "title": "The Dwain Hall trial",
+      "status": "ON TRIAL · OPENING STATEMENTS NOV. 17",
+      "why": "Dwain Hall is on trial in Marion County, Florida, charged with first-degree murder and kidnapping in the death of Sonia Exelby. Jury selection began Nov. 16 and opening statements were Nov. 17. The trial was expected to last about a week, so a verdict could come soon. He has pleaded not guilty and is presumed innocent.",
+      "explainer": null,
+      "courtId": "dwain-hall-trial-2026-11-17"
+    },
+    {
+      "phase": "fade",
+      "title": "The Naresh Bhatt case",
+      "status": "CONVICTED NOV. 10 · SENTENCING SET FOR MARCH 12, 2027",
+      "why": "A Prince William County, Virginia, jury found Naresh Bhatt guilty on all counts on Nov. 10, 2026, in the death of his wife, Mamta Kafle Bhatt. Sentencing is scheduled for March 12, 2027.",
+      "explainer": null,
+      "courtId": "bhatt-sentencing-2027-03-12"
+    },
+    {
+      "phase": "fade",
       "title": "The Idaho student murders: the Bryan Kohberger case",
       "status": "SENTENCED 2025 · PETITION PENDING",
       "why": "Kaylee Goncalves, Madison Mogen, Xana Kernodle and Ethan Chapin were killed in 2022. Kohberger pleaded guilty and was sentenced to life without parole in July 2025. A post-conviction petition is pending.",
@@ -28,7 +77,7 @@
       "courtId": "kohberger-disqualification-hearing"
     },
     {
-      "rank": 4,
+      "phase": "fade",
       "title": "The Jared Bridegan case",
       "status": "FOUND GUILTY · SENTENCING NOT CONFIRMED",
       "why": "A jury found Mario Fernandez Saldana guilty of first-degree murder on Aug. 26, 2026. We have not confirmed a sentencing date. Shanna Gardner and Henry Tenon are charged and presumed innocent; their trial is set for 2027.",
