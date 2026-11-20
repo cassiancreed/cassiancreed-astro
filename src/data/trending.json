@@ -1,7 +1,7 @@
 {
-  "updated": "2026-11-19",
-  "updatedText": "Thursday, Nov. 19, 2026",
-  "method": "Grouped by where each case is in its news cycle, not by guilt. Dates and statuses were re-checked Nov. 18 and 19 against court coverage and our sourced court calendar; where a date comes from fewer than three independent sources it is marked reported.",
+  "updated": "2026-11-20",
+  "updatedText": "Friday, Nov. 20, 2026",
+  "method": "Grouped by where each case is in its news cycle, not by guilt. Dates and statuses were re-checked Nov. 18 and 19 (the Murdaugh, Dwain Hall and Kosowski entries again on Nov. 20) against court coverage and our sourced court calendar; where a date comes from fewer than three independent sources it is marked reported.",
   "phases": [
     {
       "key": "buildup",
@@ -23,8 +23,8 @@
     {
       "phase": "buildup",
       "title": "Maggie and Paul Murdaugh: Alex Murdaugh's retrial",
-      "status": "AWAITING RETRIAL · DISMISSAL RULING NOT FOUND YET",
-      "why": "His 2023 murder convictions were overturned in May 2026. A judge heard his motion to dismiss the murder indictments on Nov. 13. As of Nov. 19 we have not found a ruling on it. The retrial is set for April 2027, a date that can change. He is presumed innocent of the murder charges.",
+      "status": "AWAITING RETRIAL · DISMISSAL MOTION DENIED NOV. 20 · RETRIAL SET FOR APRIL 5, 2027",
+      "why": "His 2023 murder convictions were overturned in May 2026. On Nov. 20, 2026, Judge Debra McCaslin denied his motion to dismiss the murder indictments, the Associated Press, ABC News and FITSNews reported. The retrial is set for April 5, 2027 in Sumter County, a date that can change. He is presumed innocent of the murder charges.",
       "explainer": "/post/the-murdaugh-murders-how-alex-murdaugh-was-convicted-and-why-he-now-faces-a-new-trial/",
       "courtId": "murdaugh-retrial"
     },
@@ -54,11 +54,19 @@
     },
     {
       "phase": "spike",
-      "title": "The Dwain Hall trial",
-      "status": "ON TRIAL · OPENING STATEMENTS NOV. 17",
-      "why": "Dwain Hall is on trial in Marion County, Florida, charged with first-degree murder and kidnapping in the death of Sonia Exelby. Jury selection began Nov. 16 and opening statements were Nov. 17. The trial was expected to last about a week, so a verdict could come soon. He has pleaded not guilty and is presumed innocent.",
+      "title": "The Dwain Hall case",
+      "status": "FOUND GUILTY NOV. 20 · TWO CONSECUTIVE LIFE TERMS (REPORTED)",
+      "why": "A Marion County, Florida jury found Dwain Hall guilty of first-degree murder and kidnapping in the death of Sonia Exelby on Nov. 20, 2026, and he was sentenced to two consecutive life terms, the State Attorney's Office and Court TV reported. A conviction can be challenged on appeal.",
       "explainer": null,
       "courtId": "dwain-hall-trial-2026-11-17"
+    },
+    {
+      "phase": "spike",
+      "title": "The Tomasz Kosowski case",
+      "status": "SENTENCED TO DEATH NOV. 20",
+      "why": "Judge Joseph Bulone sentenced Tomasz Kosowski to death on Nov. 20, 2026 for the first-degree murder of Steven Cozzi in Pinellas County, Florida, CNN, ABC News and FOX 13 reported. Bulone found him guilty on Sept. 23 after a bench trial in which Kosowski represented himself. The sentence can be challenged on appeal.",
+      "explainer": null,
+      "courtId": "kosowski-spencer-hearing"
     },
     {
       "phase": "fade",
