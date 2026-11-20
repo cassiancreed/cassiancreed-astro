@@ -392,7 +392,7 @@ const jsonld = {
           </p>
           <p class="card__src">
             <span class="card__k">Source</span>
-            <span>{e.srcLabel}</span>
+            {e.id === 'kosowski-spencer-hearing' ? <a href={e.src}>{e.srcLabel}</a> : <span>{e.srcLabel}</span>}
             <span class="card__srctype">{e.srcType}</span>
             {e.src2 && <span class="card__src2">{e.srcLabel2}</span>}
           </p>
