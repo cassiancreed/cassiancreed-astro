@@ -8,7 +8,7 @@ featured: false
 capture: "jury"
 ---
 
-**Status as of November 19, 2026, 9:30 a.m. PT.** It is a short court week. One trial is already under way, and three hearings are listed on Monday and Tuesday. Thursday is Thanksgiving, and our calendar has no hearings for Nov. 26 or 27. Here is who, when, and what to watch.
+**Status as of November 20, 2026, 4:00 a.m. PT.** It is a short court week. One trial is already under way, and three hearings are listed on Monday and Tuesday. Thursday is Thanksgiving, and our calendar has no hearings for Nov. 26 or 27. Here is who, when, and what to watch.
 
 *One of these cases involves the death of a young child. All times are local court time, with Pacific time next to them. Courts can change dates and times at any time. We could not open every court page today, so each time below is as last confirmed on the date shown. Check the Court Calendar before you tune in. We list a livestream only when a court or network confirms one, so none are listed here.*
 
@@ -18,7 +18,7 @@ capture: "jury"
 
 **Time:** Not publicly verified. No daily start time or courtroom has been published.
 
-Dwain Hall is charged with first-degree murder and kidnapping in the death of Sonia Exelby, 32, of England. He has pleaded not guilty and is presumed innocent. The charges are allegations. WCJB reported that opening statements and testimony began on Tuesday, Nov. 17. On Wednesday, Nov. 18, the trial's third day, jurors watched the rest of a recorded interview Hall gave to investigators. The station reported that the state expected to call about 15 witnesses. No verdict has been reported.
+Dwain Hall is charged with first-degree murder and kidnapping in the death of Sonia Exelby, 32, of England. He has pleaded not guilty and is presumed innocent. The charges are allegations. WCJB reported that opening statements and testimony began on Tuesday, Nov. 17. On Wednesday, Nov. 18, the trial's third day, jurors watched the rest of a recorded interview Hall gave to investigators. The station reported that the state expected to call about 15 witnesses. As of our Nov. 20 morning check, no verdict had been reported.
 
 **What to watch:** Whether the state rests its case, and when the jury gets the case. No end date has been verified.
 
@@ -44,7 +44,7 @@ Full details: https://cassiancreed.com/court-calendar/
 
 Kimberly Sullivan is accused of holding her stepson captive in their home for more than 20 years. She has pleaded not guilty and is presumed innocent. The charges are allegations. They include kidnapping, first-degree assault, unlawful restraint and cruelty to persons. NBC Connecticut reported on Oct. 20 that a judge is reviewing sealed records to decide what can be used at trial. It also reported that the defense wants a 12-person jury instead of six, and that questions about the jury panel and expert witnesses will be decided at the Nov. 23 hearing. WJAR reported that the trial is expected in February. Nov. 23 is not a trial date.
 
-**What to watch:** Whether the judge rules on jury size. Our last check of this case was Oct. 21, so look for newer news before you rely on this date.
+**What to watch:** Whether the judge rules on jury size. WJAR calls Nov. 23 a motions hearing. We found no newer report of a change as of Nov. 20. Check the Court Calendar before you rely on this date.
 
 Full details: https://cassiancreed.com/court-calendar/
 
