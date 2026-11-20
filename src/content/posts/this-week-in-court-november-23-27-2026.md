@@ -1,26 +1,26 @@
 ---
 title: "This Week in Court: November 23–27, 2026"
 seoTitle: "This Week in Court: Nov. 23–27, 2026 Hearings"
-description: "Court dates Nov. 23–27, 2026: the Dwain Hall trial in Florida, Corie Walsh in Illinois, Kimberly Sullivan in Connecticut, and the Karen Read civil case hearing."
+description: "Court dates Nov. 23–27, 2026: Corie Walsh in Illinois, Kimberly Sullivan in Connecticut, and the Karen Read civil case hearing. Plus the Dwain Hall verdict and sentence."
 pubDate: 2026-11-20
 tag: "Case Files"
 featured: false
 capture: "jury"
 ---
 
-**Status as of November 20, 2026, 4:00 a.m. PT.** It is a short court week. One trial is already under way, and three hearings are listed on Monday and Tuesday. Thursday is Thanksgiving, and our calendar has no hearings for Nov. 26 or 27. Here is who, when, and what to watch.
+**Status as of November 20, 2026, 4:00 a.m. PT; Dwain Hall section updated 2:30 p.m. PT the same day.** It is a short court week. Three hearings are listed on Monday and Tuesday. The Dwain Hall trial in Florida ended on Friday, Nov. 20, so it is no longer on the week's schedule. Thursday is Thanksgiving, and our calendar has no hearings for Nov. 26 or 27. Here is who, when, and what to watch.
 
 *One of these cases involves the death of a young child. All times are local court time, with Pacific time next to them. Courts can change dates and times at any time. We could not open every court page today, so each time below is as last confirmed on the date shown. Check the Court Calendar before you tune in. We list a livestream only when a court or network confirms one, so none are listed here.*
 
 ---
 
-### All week — Dwain Hall trial continues (Marion County, Florida)
+### Update, Friday, Nov. 20 — Dwain Hall verdict and sentence (Marion County, Florida)
 
-**Time:** Not publicly verified. No daily start time or courtroom has been published.
+**Time:** Not a scheduled event this week. The trial is over.
 
-Dwain Hall is charged with first-degree murder and kidnapping in the death of Sonia Exelby, 32, of England. He has pleaded not guilty and is presumed innocent. The charges are allegations. WCJB reported that opening statements and testimony began on Tuesday, Nov. 17. On Wednesday, Nov. 18, the trial's third day, jurors watched the rest of a recorded interview Hall gave to investigators. The station reported that the state expected to call about 15 witnesses. As of our Nov. 20 morning check, no verdict had been reported.
+On Friday, Nov. 20, a Marion County jury found Dwain Hall guilty of first-degree murder and kidnapping in the death of Sonia Exelby, 32, of England. The Fifth Judicial Circuit State Attorney's Office said Judge Timothy McCourt sentenced him to two life terms, served back to back. Hall had pleaded not guilty. The verdict and sentence can still be challenged on appeal, and we have not verified any appeal filing.
 
-**What to watch:** Whether the state rests its case, and when the jury gets the case. No end date has been verified.
+**What to watch:** Whether Hall files an appeal. No later court date has been verified.
 
 Full details: https://cassiancreed.com/court-calendar/
 
@@ -76,7 +76,7 @@ Full details: https://cassiancreed.com/court-calendar/
 
 ## Sources
 
-[WCJB, Nov. 18, 2026](https://www.wcjb.com/2026/11/18/jury-sees-detectives-interview-ocala-man-accused-killing-uk-woman/) · [WCJB, Nov. 17, 2026](https://www.wcjb.com/2026/11/17/trial-underway-ocala-man-charged-uk-womans-death/) · [Will County public court schedule](https://wcccdata.com/wccc/schedule/pdf/public/W.pdf) · [NBC Connecticut, Oct. 20, 2026](https://www.nbcconnecticut.com/news/local/judge-to-review-dcf-other-records-ahead-of-kimberly-sullivan-trial/3786712/) · [WJAR, Oct. 21, 2026](https://turnto10.com/news/local/connecticut-woman-accused-holding-stepson-captive-trial-feburary-waterbury-october-21-2026) · [MassCourts](https://www.masscourts.org/eservices/home.page) · [CBS Boston](https://www.cbsnews.com/boston/news/colin-albert-deposition-karen-read-lawsuit/) · [ABC News, Oct. 13, 2026](https://abcnews.com/US/mother-teen-son-plead-guilty-death-teens-girlfriend/story?id=137229227)
+[State Attorney, Fifth Judicial Circuit, Nov. 20, 2026](https://www.sao5.org/jury-finds-dwain-hall-guilty-on-all-charges-in-the-murder-of-united-kingdom-woman-sonia-exelby-sentenced-to-life/) · [WCJB, Nov. 18, 2026](https://www.wcjb.com/2026/11/18/jury-sees-detectives-interview-ocala-man-accused-killing-uk-woman/) · [WCJB, Nov. 17, 2026](https://www.wcjb.com/2026/11/17/trial-underway-ocala-man-charged-uk-womans-death/) · [Will County public court schedule](https://wcccdata.com/wccc/schedule/pdf/public/W.pdf) · [NBC Connecticut, Oct. 20, 2026](https://www.nbcconnecticut.com/news/local/judge-to-review-dcf-other-records-ahead-of-kimberly-sullivan-trial/3786712/) · [WJAR, Oct. 21, 2026](https://turnto10.com/news/local/connecticut-woman-accused-holding-stepson-captive-trial-feburary-waterbury-october-21-2026) · [MassCourts](https://www.masscourts.org/eservices/home.page) · [CBS Boston](https://www.cbsnews.com/boston/news/colin-albert-deposition-karen-read-lawsuit/) · [ABC News, Oct. 13, 2026](https://abcnews.com/US/mother-teen-son-plead-guilty-death-teens-girlfriend/story?id=137229227)
 
 ## Stay in the loop
 
