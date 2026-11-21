@@ -39,7 +39,7 @@ const weekHas = w => rows.some(r => w.days.includes(r.d));
 const badge = r => r.src>=3 ? '3 sources' : r.src===2 ? '2 sources' : '1 source';
 const timeKey = r => r.t==='All day' ? 0 : (()=>{const m=r.t.match(/(\d+):(\d+) (AM|PM)/);return ((+m[1]%12)+(m[3]==='PM'?12:0))*60+ +m[2];})();
 ---
-<Base title="Watch Guide | Cassian Creed" description="Upcoming true crime on TV and streaming, laid out like a cable guide." noindex={true}>
+<Base title="Watch Guide | Cassian Creed" description="Upcoming true crime on TV and streaming, laid out like a cable guide.">
   <section class="wrap wg">
     <header>
       <h1>Watch Guide</h1>
