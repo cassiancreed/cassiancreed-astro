@@ -116,30 +116,7 @@ const navItems = [
   { href: '/about/',               label: 'About' },
   { href: '/court-calendar/#court-updates', label: 'Court Updates', cta: true },
 ];
-const desktopPrimary = [
-  { href: '/today/', label: 'What Changed' },
-  { href: '/court-calendar/', label: 'Court Calendar' },
-  { href: '/true-crime-watch-calendar/', label: 'True Crime Watch Calendar' },
-  { href: '/missing-persons/', label: 'Missing Persons' },
-  { href: '/genealogy/', label: 'Genealogy' },
-  { href: '/case-files/', label: 'Case Files' },
-  { href: '/books/', label: 'Jury Chess' },
-  { href: '/court-calendar/#court-updates', label: 'Court Updates', cta: true },
-];
-const exploreItems = [
-  { href: '/start-here/', label: 'Start Here' },
-  { href: '/trending/', label: 'Trending Cases' },
-  { href: '/guides/', label: 'Guides' },
-  { href: '/glossary/', label: 'Glossary' },
-  { href: '/artwork/', label: 'Artwork Library' },
-  { href: '/safety/', label: 'Stay Safe' },
-  { href: '/voir-dire-simulator/', label: 'Jury Simulator' },
-  { href: '/ai-al/', label: 'A.I. AL' },
-  { href: '/about/', label: 'About' },
-];
 const resolvedNav = navItems;
-const resolvedDesktopPrimary = desktopPrimary;
-const resolvedExplore = exploreItems;
 // Standalone pages that are not themselves a nav item highlight their nav
 // CATEGORY, so no page ever renders with zero highlighted nav item
 // (NEP-FIX-CWK-0718L). Add new standalone pages here when they ship.
@@ -183,7 +160,6 @@ function navActive(href){
   if (NAV_CATEGORY[navPath] === h) return true;      // standalone page -> its category
   return false;
 }
-const exploreActive = resolvedExplore.some(i => navActive(i.href));
 ---
 <!doctype html>
 <html lang="en">
@@ -343,19 +319,8 @@ const exploreActive = resolvedExplore.some(i => navActive(i.href));
   <header class="site-head"><div class="site-head__inner">
     <a class={homeActive ? "brand active" : "brand"} href="/" aria-current={homeActive ? "page" : undefined}>Cassian<br/>Creed</a>
     <nav class="nav nav--desktop" aria-label="Primary">
-      {resolvedDesktopPrimary.slice(0, 3).map(i => (
-        <a href={i.href} class={navActive(i.href) ? 'active' : undefined} aria-current={navActive(i.href) ? 'page' : undefined}>{i.label}</a>
-      ))}
-      <details class="nav__explore">
-        <summary class={exploreActive ? 'active' : undefined}>More</summary>
-        <div class="nav__panel">
-          {resolvedExplore.map(i => (
-            <a href={i.href} class={navActive(i.href) ? 'active' : undefined} aria-current={navActive(i.href) ? 'page' : undefined}>{i.label}</a>
-          ))}
-        </div>
-      </details>
-      {resolvedDesktopPrimary.slice(3).map(i => (
-        <a href={i.href} class:list={[navActive(i.href) && 'active', i.cta && 'nav__cta']} aria-current={navActive(i.href) ? 'page' : undefined}>{i.label}</a>
+      {resolvedNav.map(i => (
+        <a href={i.href} class:list={[navActive(i.href) && 'active', i.cta && 'nav__cta']} aria-current={navActive(i.href) ? 'page' : undefined}>{i.label === 'Books' ? 'Jury Chess' : i.label}</a>
       ))}
     </nav>
     <details class="nav-menu">
