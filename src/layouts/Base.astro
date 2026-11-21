@@ -94,7 +94,7 @@ const personLd = {
 // visitors always know where they are. .nav a.active styling already lives in global.css.
 const navPath = (Astro.url.pathname.replace(/\/+$/, '') || '/');
 const navItems = [
-  { href: '/',                      label: 'Home' },
+  // Home is the brand link at top left; the pull-down opens with Start Here, then Trending Cases (owner, Nov 20).
   { href: '/start-here/',          label: 'Start Here' },
   { href: '/trending/',             label: 'Trending Cases' },
   { href: '/today/',                label: 'What Changed' },
