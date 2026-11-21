@@ -30,7 +30,7 @@ const jsonld = {
             <span class="trend-card__status">{c.status}</span>
             <h3 class="trend-card__title">{c.explainer ? <a href={c.explainer}>{c.title}</a> : c.title}</h3>
             <p class="trend-card__why">{c.why}</p>
-            <p class="trend-card__links">{c.explainer && <a class="trend-card__cta" href={c.explainer}>Read the case file &rarr;</a>} <a class="trend-card__cta" href={`/court-calendar/#${c.courtId}`}>Court date &rarr;</a></p>
+            <p class="trend-card__links">{c.explainer && <a class="trend-card__cta" href={c.explainer}>Read the case file &rarr;</a>} <a class="trend-card__cta" href={`/court-calendar/#${c.courtId}`}>{c.linkLabel || "Court date"} &rarr;</a> {c.sourceUrl && <a class="trend-card__cta" href={c.sourceUrl} rel="noopener">{c.sourceLabel || "Official source"} &rarr;</a>}</p>
           </li>
         ))}
       </ul>
