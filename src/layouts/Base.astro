@@ -95,13 +95,13 @@ const personLd = {
 const navPath = (Astro.url.pathname.replace(/\/+$/, '') || '/');
 const navItems = [
   { href: '/',                      label: 'Home' },
-  { href: '/today/',                label: 'What Changed' },
+  { href: '/start-here/',          label: 'Start Here' },
   { href: '/trending/',             label: 'Trending Cases' },
+  { href: '/today/',                label: 'What Changed' },
   { href: '/court-calendar/',      label: 'Court Calendar' },
   { href: '/true-crime-watch-calendar/', label: 'True Crime Watch Calendar' },
   { href: '/missing-persons/',     label: 'Missing Persons' },
   { href: '/genealogy/',           label: 'Genealogy' },
-  { href: '/start-here/',          label: 'Start Here' },
   { href: '/case-files/',          label: 'Blog' },
   { href: '/guides/',              label: 'Guides' },
   { href: '/glossary/',            label: 'Glossary' },
@@ -127,8 +127,8 @@ const desktopPrimary = [
   { href: '/court-calendar/#court-updates', label: 'Court Updates', cta: true },
 ];
 const exploreItems = [
-  { href: '/trending/', label: 'Trending Cases' },
   { href: '/start-here/', label: 'Start Here' },
+  { href: '/trending/', label: 'Trending Cases' },
   { href: '/guides/', label: 'Guides' },
   { href: '/glossary/', label: 'Glossary' },
   { href: '/artwork/', label: 'Artwork Library' },
