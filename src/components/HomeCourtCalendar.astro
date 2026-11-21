@@ -9,6 +9,7 @@ import { formatCalendarDate, parseCourtCalendar } from '../data/court-calendar-p
 import internationalTsv from '../data/international-watch.tsv?raw';
 import { parseInternationalWatch } from '../data/international-watch-parser.mjs';
 import { calendarDisplayPriority, rankCalendarEntries } from '../data/calendar-display-priority.mjs';
+import { certaintyFor } from '../data/certainty.mjs';
 
 interface Props {
   fullPage?: boolean;
@@ -101,6 +102,7 @@ const clientEntries = visibleEntries.map((entry) => ({
   sourceLabel: entry.srcLabel,
   sourceTier: entry.sourceTier || null,
   sourceTierLabel: entry.sourceTierLabel || null,
+  certainty: certaintyFor(entry),
   tellUsHref: CORRECTION_MAILTO,
   link: entry.link,
   linkText: entry.linkText,
@@ -262,7 +264,7 @@ const visibleDayEntries = (entries) => {
             )}
             <p class="home-calendar__agenda-court">{entry.court}</p>
             <p class="home-calendar__agenda-source"><span>Source:</span> <a href={entry.sourceUrl} target="_blank" rel="noopener noreferrer">{entry.sourceLabel}</a></p>
-            <SourceTierNote entry={{ sourceTier: entry.sourceTier, sourceTierLabel: entry.sourceTierLabel, src: entry.sourceUrl, srcLabel: entry.sourceLabel }} />
+            <SourceTierNote entry={{ sourceTier: entry.sourceTier, sourceTierLabel: entry.sourceTierLabel, certainty: entry.certainty, src: entry.sourceUrl, srcLabel: entry.sourceLabel }} />
             <div class="home-calendar__agenda-actions">
               {entry.explainerLinks.map((link) => <CalendarExplainerLink link={link} />)}
               <a href={`/court-calendar/#${entry.id}`}>Calendar details &rarr;</a>
@@ -479,9 +481,18 @@ const visibleDayEntries = (entries) => {
         sourceLink.rel = 'noopener noreferrer';
         source.append(sourcePrefix, sourceLink);
         const tierNote = document.createElement('p');
+        tierNote.className = 'source-tier';
+        tierNote.dataset.sourceTier = entry.sourceTier || '';
+        const CERT = { confirmed: '\u2705 Confirmed', reported: '\uD83D\uDFE1 Reported', unconfirmed: '\u26AA Unconfirmed' };
+        const certLevel = CERT[entry.certainty] ? entry.certainty : 'unconfirmed';
+        const certBadge = document.createElement('a');
+        certBadge.className = 'cert cert--' + certLevel;
+        certBadge.href = '/how-we-check-our-facts/';
+        certBadge.title = 'How we check our facts';
+        certBadge.textContent = CERT[certLevel];
+        tierNote.append(certBadge);
         if (entry.sourceTierLabel) {
-          tierNote.className = 'source-tier';
-          tierNote.dataset.sourceTier = entry.sourceTier || '';
+          tierNote.append(document.createTextNode(' '));
           const tierLabel = document.createElement('strong');
           tierLabel.className = 'source-tier__label';
           tierLabel.textContent = entry.sourceTierLabel;
@@ -547,7 +558,7 @@ const visibleDayEntries = (entries) => {
         article.append(title, type, status);
         if (entry.book) article.append(createBookPromo(entry.book));
         article.append(court, source);
-        if (entry.sourceTierLabel) article.append(tierNote);
+        article.append(tierNote);
         article.append(actions);
         agenda.append(article);
       });

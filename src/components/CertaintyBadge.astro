@@ -10,7 +10,7 @@ const MAP = {
 const m = MAP[level] ?? MAP.unconfirmed;
 ---
 <a class={`cert cert--${level}`} href="/how-we-check-our-facts/" title="How we check our facts"><span aria-hidden="true">{m.icon}</span> {m.word}</a>
-<style>
+<style is:global>
   .cert{display:inline-block;font-size:11px;font-weight:600;line-height:1;padding:3px 7px;border-radius:999px;border:1px solid currentColor;text-decoration:none;white-space:nowrap}
   .cert--confirmed{color:#1f7a3d;background:#e8f5ec}
   .cert--reported{color:#7a5b00;background:#fff6d6}

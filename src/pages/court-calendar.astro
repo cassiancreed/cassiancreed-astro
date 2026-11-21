@@ -5,6 +5,9 @@ import CalendarCostBadge from '../components/CalendarCostBadge.astro';
 import HomeCourtCalendar from '../components/HomeCourtCalendar.astro';
 import CaptureBlock from '../components/CaptureBlock.astro';
 import SourceTierNote from '../components/SourceTierNote.astro';
+import CertaintyBadge from '../components/CertaintyBadge.astro';
+import CertaintyLegend from '../components/CertaintyLegend.astro';
+import { certaintyFor } from '../data/certainty.mjs';
 import { calendarLinksFor } from '../data/calendar-explainer-links.mjs';
 import { CORRECTION_EMAIL, CORRECTION_MAILTO } from '../data/court-calendar-corrections.mjs';
 
@@ -306,6 +309,7 @@ const jsonld = {
 >
   <p class="wrap"><a href="/true-crime-watch-calendar/">What to watch: True Crime Watch Calendar →</a></p>
   <p class="wrap cal-sub" id="case-pages">Case pages: <a href="/court-dates/luigi-mangione/">Luigi Mangione</a> &middot; <a href="/court-dates/karen-read/">Karen Read</a> &middot; <a href="/court-dates/tyler-robinson/">Tyler Robinson</a> &middot; <a href="/court-dates/matthew-farwell/">Matthew Farwell</a> &middot; <a href="/court-dates/yella-beezy/">Yella Beezy (MO3 case)</a> &middot; <a href="/court-dates/">all case pages</a></p>
+  <div class="wrap"><CertaintyLegend /></div>
   <HomeCourtCalendar fullPage>
     <div slot="after-first-week" id="court-updates">
       <CaptureBlock offer="calendar" content="court_calendar_slim" slim headline="Get an email when a court date changes." button="Get date alerts" />
@@ -531,7 +535,7 @@ const jsonld = {
           {nextDates.map((e) => (
             <tr>
               <td class="t-case">{e.case}</td>
-              <td>{e.proceeding}{e.sourceTierLabel && <div class="t-tier">{e.sourceTierLabel}</div>}</td>
+              <td>{e.proceeding}<div class="t-tier"><CertaintyBadge level={certaintyFor(e)} />{e.sourceTierLabel && <> {e.sourceTierLabel}</>}</div></td>
               <td><time datetime={e.dateISO}>{e.dateText}</time></td>
               <td>{e.court}</td>
               <td><a href={`#${e.id}`}>Status and source &rarr;</a><div class="calendar-resource-list" data-calendar-list-entry={e.id}>{calendarLinksFor(e).map((link) => <CalendarExplainerLink link={link} />)}</div></td>
@@ -540,7 +544,7 @@ const jsonld = {
           {appeals.map((e) => (
             <tr>
               <td class="t-case">{e.case}</td>
-              <td>{e.type || 'Post-conviction motions'}{e.sourceTierLabel && <div class="t-tier">{e.sourceTierLabel}</div>}</td>
+              <td>{e.type || 'Post-conviction motions'}<div class="t-tier"><CertaintyBadge level={certaintyFor(e)} />{e.sourceTierLabel && <> {e.sourceTierLabel}</>}</div></td>
               <td class="t-none">{NO_DATE}</td>
               <td>{e.where}</td>
               <td><a href={`#${e.id}`}>Status and source &rarr;</a><div class="calendar-resource-list" data-calendar-list-entry={e.id}>{calendarLinksFor(e).map((link) => <CalendarExplainerLink link={link} />)}</div></td>
@@ -549,7 +553,7 @@ const jsonld = {
           {investigations.map((e) => (
             <tr>
               <td class="t-case">{e.case}</td>
-              <td>Investigation &mdash; no court proceeding{e.sourceTierLabel && <div class="t-tier">{e.sourceTierLabel}</div>}</td>
+              <td>Investigation &mdash; no court proceeding<div class="t-tier"><CertaintyBadge level={certaintyFor(e)} />{e.sourceTierLabel && <> {e.sourceTierLabel}</>}</div></td>
               <td class="t-none">None; no court proceeding exists.</td>
               <td>{e.where}</td>
               <td><a href={`#${e.id}`}>Status and source &rarr;</a><div class="calendar-resource-list" data-calendar-list-entry={e.id}>{calendarLinksFor(e).map((link) => <CalendarExplainerLink link={link} />)}</div></td>
@@ -558,7 +562,7 @@ const jsonld = {
           {unconfirmed.map((e) => (
             <tr>
               <td class="t-case">{e.case}</td>
-              <td>{e.proceeding || '\u2014'}{e.sourceTierLabel && <div class="t-tier">{e.sourceTierLabel}</div>}</td>
+              <td>{e.proceeding || '\u2014'}<div class="t-tier"><CertaintyBadge level={certaintyFor(e)} />{e.sourceTierLabel && <> {e.sourceTierLabel}</>}</div></td>
               <td class="t-none">{NO_DATE}</td>
               <td>{e.where}</td>
               <td><a href={`#${e.id}`}>Status and source &rarr;</a><div class="calendar-resource-list" data-calendar-list-entry={e.id}>{calendarLinksFor(e).map((link) => <CalendarExplainerLink link={link} />)}</div></td>
@@ -567,7 +571,7 @@ const jsonld = {
           {completed.map((e) => (
             <tr>
               <td class="t-case">{e.case}</td>
-              <td>{completedBadge(e)}{e.sourceTierLabel && <div class="t-tier">{e.sourceTierLabel}</div>}</td>
+              <td>{completedBadge(e)}<div class="t-tier"><CertaintyBadge level={certaintyFor(e)} />{e.sourceTierLabel && <> {e.sourceTierLabel}</>}</div></td>
               <td class="t-none">{completedNextDate(e)}</td>
               <td>{e.where}</td>
               <td><a href={`#${e.id}`}>Status and source &rarr;</a><div class="calendar-resource-list" data-calendar-list-entry={e.id}>{calendarLinksFor(e).map((link) => <CalendarExplainerLink link={link} />)}</div></td>
