@@ -31,7 +31,10 @@ img{max-width:100%}
 .nav{display:flex;gap:18px;font-size:12px;letter-spacing:.02em;color:var(--ink-2)}
 .nav a:hover{color:var(--ink)}
 .nav a.active{color:var(--accent);font-weight:700}
-.nav--desktop{align-items:center;flex-wrap:wrap;justify-content:flex-end;gap:8px 8px;max-width:min(980px,calc(100vw - 150px))}
+.site-head__inner{flex-wrap:wrap}
+.nav--desktop{align-items:stretch;flex-wrap:wrap;justify-content:flex-start;gap:8px;flex:1 1 100%;order:3;max-width:none;margin-top:8px}
+.nav--desktop a{flex:1 1 auto;text-align:center}
+@media(min-width:1100px){.nav--desktop{display:grid;grid-template-columns:repeat(8,1fr)}.nav--desktop a{display:flex;align-items:center;justify-content:center;white-space:normal;line-height:1.2}}
 .nav--desktop a{padding:7px 13px;border:1px solid var(--line-strong);border-radius:999px;white-space:nowrap;color:var(--ink)}
 .nav--desktop a:hover{border-color:var(--accent)}
 .nav--desktop a.active{background:rgba(232,93,61,.16);border-color:var(--accent)}
