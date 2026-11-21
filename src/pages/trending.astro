@@ -1,8 +1,19 @@
 ---
 import Base from '../layouts/Base.astro';
 import data from '../data/trending.json';
+import trends from '../data/trends.json';
 const trending = data.cases;
 const phases = data.phases.map((ph) => ({ ...ph, cases: trending.filter((c) => c.phase === ph.key) })).filter((ph) => ph.cases.length);
+
+const W = 560, H = 150, PL = 30, PR = 10, PT = 10, PB = 22;
+const n = trends.days.length;
+const px = (i) => PL + (i * (W - PL - PR)) / (n - 1);
+const py = (v) => PT + (1 - v / 100) * (H - PT - PB);
+const line = (vals) => vals.map((v, i) => `${i ? 'L' : 'M'}${px(i).toFixed(1)} ${py(v).toFixed(1)}`).join(' ');
+const ticks = [0, 7, 14, 21, 28, n - 1];
+const lastWeekAvg = (vals) => Math.round(vals.slice(-7).reduce((a, b) => a + b, 0) / 7);
+const peakDay = (vals) => trends.days[vals.indexOf(Math.max(...vals))];
+const colors = ['#e0563b', '#6aa9ff', '#e6c04a', '#7bd88f', '#c792ea'];
 const jsonld = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
@@ -20,6 +31,20 @@ const jsonld = {
     <p class="trend-stamp">Updated {data.updatedText}. {data.method}</p>
   </section>
 
+
+  <section class="wrap trend-combo">
+    <h2 class="trend-combo__title">Who is rising right now</h2>
+    <p class="trend-chart__cap">Search interest, U.S., last 30 days (Google Trends, 100 = peak). Five cases with the most search interest in the past 7 days, on one shared scale. Data as of {trends.asOfText}. {trends.note}</p>
+    <svg class="trend-svg" viewBox={`0 0 ${W} ${H}`} role="img" aria-label="Line chart of Google Trends search interest in the U.S. over the last 30 days for five cases">
+      {[0, 25, 50, 75, 100].map((g) => (<g><line x1={PL} x2={W - PR} y1={py(g)} y2={py(g)} class="trend-grid-line" /><text x={PL - 4} y={py(g) + 3} class="trend-axis" text-anchor="end">{g}</text></g>))}
+      {ticks.map((t) => (<text x={px(t)} y={H - 6} class="trend-axis" text-anchor="middle">{trends.days[t]}</text>))}
+      {trends.top5.map((k, i) => (<path d={line(trends.shared[k])} fill="none" stroke={colors[i]} stroke-width="2" stroke-linejoin="round" />))}
+    </svg>
+    <ul class="trend-legend">
+      {trends.top5.map((k, i) => (<li><span class="trend-key" style={`background:${colors[i]}`}></span>{trends.caseNames[k]} <em>(7-day average {lastWeekAvg(trends.shared[k])})</em></li>))}
+    </ul>
+  </section>
+
   {phases.map((ph) => (
     <section class="wrap trend-phase">
       <h2 class={`trend-phase__title trend-phase__title--${ph.key}`}>{ph.label}</h2>
@@ -27,6 +52,16 @@ const jsonld = {
       <ul class="trend-grid">
         {ph.cases.map((c) => (
           <li class="trend-card">
+            {c.trendKey && trends.solo[c.trendKey] && (
+              <figure class="trend-chart">
+                <svg class="trend-svg trend-svg--sm" viewBox={`0 0 ${W} ${H}`} role="img" aria-label={`Search interest in ${trends.caseNames[c.trendKey]}, U.S., last 30 days. Peak on ${peakDay(trends.solo[c.trendKey])}.`}>
+                  {[0, 50, 100].map((g) => (<g><line x1={PL} x2={W - PR} y1={py(g)} y2={py(g)} class="trend-grid-line" /><text x={PL - 4} y={py(g) + 3} class="trend-axis" text-anchor="end">{g}</text></g>))}
+                  {ticks.map((t) => (<text x={px(t)} y={H - 6} class="trend-axis" text-anchor="middle">{trends.days[t]}</text>))}
+                  <path d={line(trends.solo[c.trendKey])} fill="none" stroke="#e0563b" stroke-width="2" stroke-linejoin="round" />
+                </svg>
+                <figcaption>Search interest, U.S., last 30 days (Google Trends; 100 = this case&rsquo;s own peak, {peakDay(trends.solo[c.trendKey])}). As of {trends.asOf}.</figcaption>
+              </figure>
+            )}
             <span class="trend-card__status">{c.status}</span>
             <h3 class="trend-card__title">{c.explainer ? <a href={c.explainer}>{c.title}</a> : c.title}</h3>
             <p class="trend-card__why">{c.why}</p>
@@ -55,6 +90,16 @@ const jsonld = {
   </section>
 
   <style>
+    .trend-combo{padding:10px 0 6px}
+    .trend-combo__title{font-family:var(--serif);font-weight:600;font-size:26px;margin:14px 0 4px}
+    .trend-chart__cap,.trend-chart figcaption{color:var(--ink-3);font-size:13px;margin:4px 0 8px;max-width:70ch}
+    .trend-chart{margin:0 0 12px}
+    .trend-svg{width:100%;height:auto;display:block;background:var(--bg-2);border:1px solid var(--line);border-radius:8px}
+    .trend-grid-line{stroke:var(--line);stroke-width:1}
+    .trend-axis{fill:var(--ink-3);font-size:9px;font-family:var(--mono)}
+    .trend-legend{list-style:none;padding:0;margin:10px 0 0;display:flex;flex-wrap:wrap;gap:6px 18px;font-size:14px;color:var(--ink-2)}
+    .trend-legend em{color:var(--ink-3);font-style:normal;font-size:12px}
+    .trend-key{display:inline-block;width:12px;height:3px;margin-right:6px;vertical-align:middle}
     .trend-lede{color:var(--ink-2);max-width:62ch;font-size:18px;margin:18px 0 0}
     .trend-phase{padding-top:6px}
     .trend-phase__title{font-family:var(--serif);font-weight:600;font-size:26px;margin:22px 0 4px}
