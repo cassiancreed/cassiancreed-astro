@@ -4,6 +4,8 @@
 // Preview only. Every row below was reported by a research seat and NOT yet opened by us,
 // so each shows "Unconfirmed" or "2 sources" as the seats reported. Plain channel names, no logos yet.
 import Base from '../layouts/Base.astro';
+import CertaintyBadge from '../components/CertaintyBadge.astro';
+import CertaintyLegend from '../components/CertaintyLegend.astro';
 const rows = [
   { d:'2026-11-21', t:'9:00 PM', ch:'Oxygen', show:'Prosecuting Evil with Kelly Siegler: "Blood Against Blood" (new)', src:1 },
   { d:'2026-11-21', t:'10:00 PM', ch:'Oxygen', show:'Homicide for the Holidays: "Season of Secrets" (new)', src:1 },
@@ -36,7 +38,10 @@ const weeks = [];
 for (let s='2026-11-21'; s <= '2026-12-28'; s = addDays(s,7)) weeks.push({ start:s, days:[0,1,2,3,4,5,6].map(i => addDays(s,i)) });
 const fmt = (s,o) => new Date(s+'T12:00:00Z').toLocaleDateString('en-US',{timeZone:'UTC',...o});
 const weekHas = w => rows.some(r => w.days.includes(r.d));
-const badge = r => r.src>=3 ? '3 sources' : r.src===2 ? '2 sources' : '1 source';
+// Certainty (checked Nov 21, 2026 against the Court Date Watcher schedule): air dates are seat-reported, so every row starts Unconfirmed.
+// A row is Reported only where that schedule lists two independent sources for it.
+const REPORTED = ['Sarah Mattered','Terror in the Toy Store','Jade Benning'];
+const level = r => REPORTED.some(t => r.show.includes(t)) ? 'reported' : 'unconfirmed';
 const timeKey = r => r.t==='All day' ? 0 : (()=>{const m=r.t.match(/(\d+):(\d+) (AM|PM)/);return ((+m[1]%12)+(m[3]==='PM'?12:0))*60+ +m[2];})();
 ---
 <Base title="Watch Guide | Cassian Creed" description="Upcoming true crime on TV and streaming, laid out like a cable guide.">
@@ -44,7 +49,8 @@ const timeKey = r => r.t==='All day' ? 0 : (()=>{const m=r.t.match(/(\d+):(\d+) 
     <header>
       <h1>Watch Guide</h1>
       <p>Upcoming true crime on TV and streaming, laid out like the cable guide: channels down the left, days across the top, each show a block. Times are Eastern. Schedules change, and TV lists only about two weeks ahead.</p>
-      <p class="wg-note">Each block shows how many sources list it. "1 source" means we have not yet seen a second listing. Names and logos belong to their owners; this site is not affiliated with these channels. People who are charged or accused are presumed innocent unless and until proven guilty.</p>
+      <p class="wg-note">Each block carries a badge for how sure we are. "Unconfirmed" means we have not yet seen a second listing. Names and logos belong to their owners; this site is not affiliated with these channels. People who are charged or accused are presumed innocent unless and until proven guilty.</p>
+      <CertaintyLegend />
       <nav class="wg-jump" aria-label="Jump to a week">
         {weeks.map(w => <a href={`#w-${w.start}`}>{fmt(w.start,{month:'short',day:'numeric'})} &ndash; {fmt(w.days[6],{month:'short',day:'numeric'})}</a>)}
       </nav>
@@ -69,7 +75,7 @@ const timeKey = r => r.t==='All day' ? 0 : (()=>{const m=r.t.match(/(\d+):(\d+) 
                           <strong>{r.show}</strong>
                           {r.case && <em class="wg-case">Case: {r.link ? <a href={r.link}>{r.case}</a> : r.case}</em>}
                           {r.spike && <em class="wg-spike">{r.spike} <a href={`/court-calendar/#${r.calId}`}>Court date &rarr;</a></em>}
-                          <span class="wg-src">{badge(r)}</span>
+                          <span class="wg-src"><CertaintyBadge level={level(r)} /></span>
                         </div>
                       )) : <span class="wg-none" aria-label="nothing listed">&ndash;</span>}</td>;
                     })}

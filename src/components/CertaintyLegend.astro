@@ -1,0 +1,18 @@
+---
+import CertaintyBadge from './CertaintyBadge.astro';
+---
+<aside class="cert-legend" aria-label="What the certainty badges mean">
+  <p class="cert-legend__t"><strong>How sure are we?</strong> Every fact line carries one of three badges.</p>
+  <ul>
+    <li><CertaintyBadge level="confirmed" /> Three or more sources, or an official court record.</li>
+    <li><CertaintyBadge level="reported" /> Two sources.</li>
+    <li><CertaintyBadge level="unconfirmed" /> One source so far.</li>
+  </ul>
+  <p class="cert-legend__l"><a href="/how-we-check-our-facts/">How we check our facts &rarr;</a></p>
+</aside>
+<style>
+  .cert-legend{border:1px solid var(--line);border-radius:10px;background:var(--bg-2);padding:12px 16px;margin:18px 0;max-width:72ch}
+  .cert-legend p{margin:0 0 6px;font-size:14px}
+  .cert-legend ul{list-style:none;margin:0;padding:0;display:grid;gap:6px;font-size:14px}
+  .cert-legend__l{margin-top:8px!important}
+</style>
