@@ -1,5 +1,6 @@
 ---
-// MOCKUP (Nov 20, 2026): TV-guide layout for upcoming true crime on TV and streaming.
+// MOCKUP v2 (Nov 20, 2026): cable-guide MATRIX (channels down the left, days across the top, shows as blocks). Earlier v1 was a day list.
+// (was) TV-guide layout for upcoming true crime on TV and streaming.
 // Preview only. Every row below was reported by a research seat and NOT yet opened by us,
 // so each shows "Unconfirmed" or "2 sources" as the seats reported. Plain channel names, no logos yet.
 import Base from '../layouts/Base.astro';
@@ -27,72 +28,89 @@ const rows = [
   { d:'2026-12-16', t:'All day', ch:'Netflix', show:'A Deadly Affair: The Pamela Smart Story (documentary)', case:'Pamela Smart', src:2 },
   { d:'2026-12-28', t:'All day', ch:'Prime Video', show:'One Night in Idaho: Catching a Killer', case:'The Idaho student murders', link:'/post/what-happened-in-the-idaho-student-murders-the-bryan-kohberger-case-explained/', src:2, later:true },
 ];
-const days = [...new Set(rows.map(r => r.d))];
-const dayLabel = d => new Date(d+'T12:00:00-08:00').toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',timeZone:'America/Los_Angeles'});
-const dayShort = d => new Date(d+'T12:00:00-08:00').toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric',timeZone:'America/Los_Angeles'});
+const CH = ['Oxygen','Investigation Discovery','NBC','CBS','Netflix','Peacock','Hulu','Prime Video'];
+const chans = CH.filter(c => rows.some(r => r.ch === c));
+const iso = d => d.toISOString().slice(0,10);
+const addDays = (s,n) => { const d = new Date(s+'T12:00:00Z'); d.setUTCDate(d.getUTCDate()+n); return iso(d); };
+const weeks = [];
+for (let s='2026-11-21'; s <= '2026-12-28'; s = addDays(s,7)) weeks.push({ start:s, days:[0,1,2,3,4,5,6].map(i => addDays(s,i)) });
+const fmt = (s,o) => new Date(s+'T12:00:00Z').toLocaleDateString('en-US',{timeZone:'UTC',...o});
+const weekHas = w => rows.some(r => w.days.includes(r.d));
 const badge = r => r.src>=3 ? '3 sources' : r.src===2 ? '2 sources' : '1 source';
+const timeKey = r => r.t==='All day' ? 0 : (()=>{const m=r.t.match(/(\d+):(\d+) (AM|PM)/);return ((+m[1]%12)+(m[3]==='PM'?12:0))*60+ +m[2];})();
 ---
-<Base title="Watch Guide (mockup) | Cassian Creed" description="Upcoming true crime on TV and streaming, laid out like a TV guide." noindex={true}>
+<Base title="Watch Guide (mockup) | Cassian Creed" description="Upcoming true crime on TV and streaming, laid out like a cable guide." noindex={true}>
   <section class="wrap wg">
     <header>
       <p class="evidence evidence--accent">Mockup preview, not live</p>
       <h1>Watch Guide</h1>
-      <p>Upcoming true crime on TV and streaming, day by day, like the guide you grew up with. Times are Eastern. Schedules change, and TV lists only about two weeks ahead.</p>
-      <p class="wg-note">Each row shows how many sources list it. "1 source" means we have not yet seen a second listing. Names and logos belong to their owners; this site is not affiliated with these channels. People who are charged or accused are presumed innocent unless and until proven guilty.</p>
-      <nav class="wg-jump" aria-label="Jump to a day">
-        {days.map(d => <a href={`#d-${d}`}>{dayShort(d)}</a>)}
+      <p>Upcoming true crime on TV and streaming, laid out like the cable guide: channels down the left, days across the top, each show a block. Times are Eastern. Schedules change, and TV lists only about two weeks ahead.</p>
+      <p class="wg-note">Each block shows how many sources list it. "1 source" means we have not yet seen a second listing. Names and logos belong to their owners; this site is not affiliated with these channels. People who are charged or accused are presumed innocent unless and until proven guilty.</p>
+      <nav class="wg-jump" aria-label="Jump to a week">
+        {weeks.map(w => <a href={`#w-${w.start}`}>{fmt(w.start,{month:'short',day:'numeric'})} &ndash; {fmt(w.days[6],{month:'short',day:'numeric'})}</a>)}
       </nav>
     </header>
 
-    {days.map(d => (
-      <section class="wg-day" id={`d-${d}`} aria-labelledby={`h-${d}`}>
-        <h2 id={`h-${d}`}>{dayLabel(d)}</h2>
-        <div class="wg-grid" role="table" aria-label={`Shows on ${dayLabel(d)}`}>
-          <div class="wg-head" role="row"><span role="columnheader">Channel</span><span role="columnheader">Time</span><span role="columnheader">Show</span><span role="columnheader">Check</span></div>
-          {rows.filter(r => r.d===d).map(r => (
-            <div class="wg-row" role="row">
-              <span class="wg-ch" role="cell">{r.ch}</span>
-              <span class="wg-time" role="cell">{r.t}</span>
-              <span class="wg-show" role="cell">
-                <strong>{r.show}</strong>
-                {r.case && <em class="wg-case">The case: {r.link ? <a href={r.link}>{r.case}</a> : r.case}</em>}
-                {r.spike && <em class="wg-spike">{r.spike} <a href={`/court-calendar/#${r.calId}`}>Court date &rarr;</a></em>}
-                {r.later && <em class="wg-spike">Farthest-out title we have seen.</em>}
-              </span>
-              <span class="wg-src" role="cell" data-n={r.src}>{badge(r)}</span>
-            </div>
-          ))}
-        </div>
+    {weeks.map(w => (
+      <section class="wg-week" id={`w-${w.start}`} aria-labelledby={`wh-${w.start}`}>
+        <h2 id={`wh-${w.start}`}>Week of {fmt(w.start,{month:'long',day:'numeric'})}</h2>
+        {weekHas(w) ? (
+          <div class="wg-scroll" tabindex="0" role="region" aria-label={`Guide for the week of ${fmt(w.start,{month:'long',day:'numeric'})}, scrolls sideways`}>
+            <table class="wg-matrix">
+              <thead><tr><th scope="col" class="wg-corner">Channel</th>{w.days.map(d => <th scope="col"><span>{fmt(d,{weekday:'short'})}</span> {fmt(d,{month:'short',day:'numeric'})}</th>)}</tr></thead>
+              <tbody>
+                {chans.map(c => (
+                  <tr>
+                    <th scope="row" class="wg-chan">{c}</th>
+                    {w.days.map(d => {
+                      const cell = rows.filter(r => r.ch===c && r.d===d).sort((a,b)=>timeKey(a)-timeKey(b));
+                      return <td>{cell.length ? cell.map(r => (
+                        <div class="wg-block" data-n={r.src}>
+                          <span class="wg-t">{r.t}</span>
+                          <strong>{r.show}</strong>
+                          {r.case && <em class="wg-case">Case: {r.link ? <a href={r.link}>{r.case}</a> : r.case}</em>}
+                          {r.spike && <em class="wg-spike">{r.spike} <a href={`/court-calendar/#${r.calId}`}>Court date &rarr;</a></em>}
+                          <span class="wg-src">{badge(r)}</span>
+                        </div>
+                      )) : <span class="wg-none" aria-label="nothing listed">&ndash;</span>}</td>;
+                    })}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        ) : (
+          <p class="wg-note">Networks and services have not posted this week yet. We check again each week.</p>
+        )}
       </section>
     ))}
 
-    <p class="wg-note">Dates after about two weeks are thin because networks have not posted them yet. We check again each week. This is a schedule, not a review. See also: <a href="/court-calendar/">Court Calendar</a>.</p>
+    <p class="wg-note">This is a schedule, not a review. See also: <a href="/court-calendar/">Court Calendar</a>.</p>
   </section>
 </Base>
 
 <style>
-  .wg{max-width:1000px;padding-top:36px;padding-bottom:56px}
+  .wg{max-width:1200px;padding-top:36px;padding-bottom:56px}
   .wg h1{font-family:var(--serif);font-size:clamp(36px,6vw,58px);line-height:1.1;margin:12px 0 20px}
   .wg header>p{max-width:72ch}
   .wg-note{font-size:14px;color:var(--ink-2)}
   .wg-jump{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0}
   .wg-jump a{border:1px solid var(--line-strong,var(--line));border-radius:999px;padding:6px 12px;font-size:14px}
-  .wg-day{margin-top:34px;scroll-margin-top:24px}
-  .wg-day h2{font-family:var(--serif);font-size:30px;margin:0 0 12px}
-  .wg-grid{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--bg-2)}
-  .wg-head,.wg-row{display:grid;grid-template-columns:170px 90px minmax(0,1fr) 100px;gap:14px;padding:12px 16px;align-items:start}
-  .wg-head{background:var(--bg-3);font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-3)}
-  .wg-row{border-top:1px solid var(--line)}
-  .wg-ch{font-weight:700;color:var(--accent-2,var(--ink))}
-  .wg-time{font-variant-numeric:tabular-nums}
-  .wg-show strong{display:block;font-weight:600}
-  .wg-show em{display:block;font-style:normal;font-size:14px;color:var(--ink-2);margin-top:4px}
-  .wg-spike{border-left:3px solid var(--accent);padding-left:8px}
-  .wg-src{font-size:13px;color:var(--ink-2)}
-  .wg-src[data-n="1"]{color:var(--ink-3)}
-  @media(max-width:700px){
-    .wg-head{display:none}
-    .wg-row{grid-template-columns:1fr auto;grid-template-areas:"ch time" "show show" "src src";gap:6px 12px}
-    .wg-ch{grid-area:ch}.wg-time{grid-area:time;text-align:right}.wg-show{grid-area:show}.wg-src{grid-area:src}
-  }
+  .wg-week{margin-top:34px;scroll-margin-top:24px}
+  .wg-week h2{font-family:var(--serif);font-size:30px;margin:0 0 12px}
+  .wg-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--bg-2)}
+  .wg-matrix{border-collapse:collapse;width:100%;min-width:1080px;table-layout:fixed}
+  .wg-matrix th,.wg-matrix td{border:1px solid var(--line);padding:8px;vertical-align:top;text-align:left;font-size:14px}
+  .wg-matrix thead th{background:var(--bg-3);font-weight:600;position:sticky;top:0}
+  .wg-matrix thead th span{color:var(--accent-2,var(--ink-2));text-transform:uppercase;font-size:12px;letter-spacing:.05em;margin-right:4px}
+  .wg-corner,.wg-chan{width:132px;position:sticky;left:0;background:var(--bg-3);z-index:1}
+  .wg-chan{font-weight:700;color:var(--accent-2,var(--ink));font-size:14px}
+  .wg-block{border-left:3px solid var(--accent);background:var(--bg-3);border-radius:4px;padding:6px 8px;margin-bottom:6px}
+  .wg-block[data-n="1"]{border-left-color:var(--ink-3)}
+  .wg-block:last-child{margin-bottom:0}
+  .wg-t{display:block;font-size:12px;color:var(--ink-2);font-variant-numeric:tabular-nums}
+  .wg-block strong{display:block;font-weight:600;line-height:1.3;overflow-wrap:anywhere}
+  .wg-block em{display:block;font-style:normal;font-size:12px;color:var(--ink-2);margin-top:3px}
+  .wg-src{display:block;font-size:11px;color:var(--ink-3);margin-top:4px}
+  .wg-none{color:var(--ink-3)}
 </style>
