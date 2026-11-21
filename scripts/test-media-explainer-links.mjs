@@ -126,7 +126,7 @@ test('rendered route, sitemap, nav and shared style integration',()=>{
   assert.match(page,/Not yet confirmed by the network\./);
   assert.match(page,/hidePastMedia\(\)/);
   const nav=readFileSync('src/layouts/Base.astro','utf8');
-  assert.equal((nav.match(/label: 'True Crime Watch Calendar'/g)||[]).length,2);
+  assert.equal((nav.match(/label: 'True Crime Watch Calendar'/g)||[]).length,1);
   assert.ok(indexablePageRoutes().some(({route,noindex})=>route==='/true-crime-watch-calendar/'&&!noindex));
   assert.ok(readFileSync('src/pages/llms.txt.ts','utf8').includes('/true-crime-watch-calendar/'));
   // C7: the Watch Calendar is linked from the Books page and the Court Calendar.
