@@ -46,6 +46,15 @@ img{max-width:100%}
 .nav-menu__panel{position:absolute;right:0;top:calc(100% + 10px);display:grid;gap:4px;width:min(280px,calc(100vw - 32px));max-height:calc(100vh - 90px);overflow:auto;padding:12px;background:var(--bg-2);border:1px solid var(--line-strong);border-radius:10px;box-shadow:var(--shadow)}
 .nav-menu__panel a{padding:9px 11px;border-radius:6px;color:var(--ink-2)}
 .nav-menu__panel a.active{background:rgba(232,93,61,.16);color:var(--ink);font-weight:700}
+/* MENU REWORK (Nov 20, 2026): every pull-down item is its own tab, laid out in exactly two rows.
+   Start Here is first, Trending Cases second. Extra tabs scroll sideways, never a third row. */
+.nav__explore .nav__panel,.nav-menu .nav-menu__panel{display:grid;grid-template-rows:repeat(2,auto);grid-auto-flow:column;grid-auto-columns:max-content;gap:8px;overflow-x:auto;overflow-y:hidden}
+.nav__explore .nav__panel{right:0;width:max-content;max-width:min(94vw,760px);min-width:0}
+.nav-menu .nav-menu__panel{width:min(94vw,640px);max-height:none}
+.nav__explore .nav__panel a,.nav-menu .nav-menu__panel a{display:block;white-space:nowrap;padding:10px 16px;border:1px solid var(--line-strong);border-radius:999px;color:var(--ink);background:var(--bg)}
+.nav__explore .nav__panel a:hover,.nav-menu .nav-menu__panel a:hover{border-color:var(--accent)}
+.nav__explore .nav__panel a.active,.nav-menu .nav-menu__panel a.active,.nav-menu .nav-menu__panel a[aria-current="page"]{background:rgba(232,93,61,.16);border-color:var(--accent);color:var(--ink);font-weight:700}
+.nav-menu .nav-menu__panel a.nav__cta{background:var(--accent);color:#1a0f0a;border-color:var(--accent)}
 
 /* hero */
 .hero{padding:64px 0 28px}
