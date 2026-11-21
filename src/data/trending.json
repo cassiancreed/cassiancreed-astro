@@ -96,9 +96,12 @@
       "phase": "fade",
       "title": "The Jared Bridegan case",
       "status": "SENTENCED NOV. 12 · LIFE IN PRISON",
-      "why": "Judge London Kite sentenced Mario Fernandez Saldana on Nov. 12, 2026 to life in prison, plus 30 years on a second count, Action News Jax and Court TV reported. A jury found him guilty on Aug. 26 of first-degree murder and solicitation to commit a capital felony in the killing of Jared Bridegan. Shanna Gardner and Henry Tenon are charged and presumed innocent; their trial is set for 2027.",
+      "why": "Judge London Kite sentenced Mario Fernandez Saldana on Nov. 12, 2026 to life in prison for first-degree murder, plus 30 years for solicitation, to run concurrent with the life term, the State Attorney\u2019s Office announced. A jury found him guilty on Aug. 26 of first-degree murder and solicitation to commit a capital felony in the killing of Jared Bridegan. Shanna Gardner and Henry Tenon are charged and presumed innocent; their trial is set for 2027.",
       "explainer": "/post/jared-bridegan-case-explained/",
-      "courtId": "bridegan-fernandez-saldana-sentencing-2026-10-27"
+      "courtId": "bridegan-fernandez-saldana-sentencing-2026-10-27",
+      "linkLabel": "Case status",
+      "sourceUrl": "https://sao4th.com/news/2026/mario-fernandez-saldana-sentenced-to-life-plus-30-years-for-murder-of-jared-bridegan/",
+      "sourceLabel": "State Attorney release"
     }
   ]
 }

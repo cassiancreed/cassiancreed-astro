@@ -3,17 +3,17 @@ title: "The Jared Bridegan Case: Where It Stands and What Happens Next"
 seoTitle: "Jared Bridegan Case: Verdict, Charges and 2027 Trial"
 description: "Jared Bridegan was killed in Jacksonville Beach in 2022. One man is convicted. Shanna Gardner and Henry Tenon are charged and face a joint trial in May 2027."
 pubDate: 2026-10-19
-updatedDate: 2026-11-01
+updatedDate: 2026-11-20
 tag: "Explainers"
 featured: false
 victim: "Jared Bridegan"
 incidentDate: "February 16, 2022"
 location: "Jacksonville Beach, Florida"
 jurisdiction: "Fourth Judicial Circuit Court, Duval County, Florida"
-status: "Mario Fernandez Saldana convicted Aug. 26, 2026; new-trial motion and appeal reported; we found no report of a sentence as of Nov. 1, 2026 (Sept. 29 reports differ on an Oct. 27 sentencing hearing). Shanna Gardner and Henry Tenon charged; not guilty pleas; presumed innocent; joint trial set for May 2027."
+status: "Mario Fernandez Saldana convicted Aug. 26, 2026 and sentenced Nov. 12, 2026 to life in prison plus a concurrent 30 years. Shanna Gardner and Henry Tenon charged; not guilty pleas; presumed innocent; joint trial set for May 2027."
 ---
 
-*Status as of Nov. 1, 2026 (Pacific). Sources: Action News Jax, Sept. 29 and Oct. 7, 2026; News4JAX, Sept. 29 and Oct. 7, 2026. Court records can change. Check our [Court Calendar](https://cassiancreed.com/court-calendar/) and its "last updated" date.*
+*Status as of Nov. 20, 2026 (Pacific). Sources: [State Attorney's Office, Nov. 12, 2026](https://sao4th.com/news/2026/mario-fernandez-saldana-sentenced-to-life-plus-30-years-for-murder-of-jared-bridegan/); [Action News Jax](https://www.actionnewsjax.com/news/local/jared-bridegans-family-speaks-out-mario-fernandez-saldana-receives-life-sentence-murder/TVMHT6UEYRDWXPWG2BBDBSAUVQ/); News4JAX, Oct. 7, 2026. Court records can change. Check our [Court Calendar](https://cassiancreed.com/court-calendar/) and its "last updated" date.*
 
 Jared Bridegan was shot and killed in Jacksonville Beach, Florida, on February 16, 2022. One man, Mario Fernandez Saldana, was convicted of his murder on August 26, 2026. Two others, his ex-wife Shanna Gardner and Henry Tenon, are charged. They have pleaded not guilty. Their joint trial is set for May 2027.
 
@@ -31,9 +31,9 @@ This case is about Jared first. He was a dad and a husband.
 
 There are three people in this case. Each one is at a different stage.
 
-| Person | Role in the case | Status as of Nov. 1, 2026 |
+| Person | Role in the case | Status as of Nov. 20, 2026 |
 |---|---|---|
-| Mario Fernandez Saldana | Convicted | Found guilty Aug. 26, 2026. We found no report of a sentence as of Nov. 1, 2026. A new-trial motion and an appeal are reported. |
+| Mario Fernandez Saldana | Convicted and sentenced | Found guilty Aug. 26, 2026. Sentenced Nov. 12, 2026 to life in prison, plus a concurrent 30-year term. |
 | Shanna Gardner | Charged | Pleaded not guilty. Presumed innocent. Trial set for May 2027. |
 | Henry Tenon | Charged | Pleaded not guilty. Presumed innocent. Trial set for May 2027. |
 
@@ -41,9 +41,9 @@ There are three people in this case. Each one is at a different stage.
 
 **What the jury decided.** On August 26, 2026, a Duval County jury found Mario Fernandez Saldana guilty of first-degree murder and solicitation to commit a capital felony. The jury deliberated for about four hours ([State Attorney's Office, Aug. 26, 2026](https://sao4th.com/news/2026/mario-fernandez-saldana-found-guilty-of-murdering-jared-bridegan/); [Action News Jax, Sept. 18, 2026](https://www.actionnewsjax.com/news/local/jared-bridegan-murder-2-charges-against-shanna-gardner-dropped-ahead-trial/CLUPHGIER5G6ZGEW3XBPW4RJYY/)). He was married to Shanna Gardner at the time of the killing.
 
-**The sentence he faces.** First-degree murder in Florida carries a mandatory life sentence. Judge London Kite will set the sentence ([State Attorney's Office, Aug. 26, 2026](https://sao4th.com/news/2026/mario-fernandez-saldana-found-guilty-of-murdering-jared-bridegan/)). On the morning of Sept. 29, News4JAX reported that the judge set a sentencing hearing for Oct. 27 ([News4JAX, Sept. 29, 2026](https://www.news4jax.com/news/local/2026/09/29/mario-fernandez-convicted-in-jared-bridegan-murder-expected-to-plead-not-guilty-to-separate-child-sex-charges/)). Later that day, Action News Jax reported, citing the court's Felonies Department, that the murder sentencing was postponed with no new date ([Action News Jax, Sept. 29, 2026](https://www.actionnewsjax.com/news/local/convicted-murderer-mario-fernandez-saldana-pleads-not-guilty-molesting-two-children/PRAELSKKXNHD3D7FQFPNMXZQ6M/)). We found no report of a sentence as of Nov. 1, 2026. Court dates can move.
+**The sentence.** On Nov. 12, 2026, Judge London Kite sentenced Mario Fernandez Saldana to life in Florida State Prison for first-degree murder. He also received 30 years for solicitation to commit a capital felony, to run concurrent with the life sentence ([State Attorney's Office, Nov. 12, 2026](https://sao4th.com/news/2026/mario-fernandez-saldana-sentenced-to-life-plus-30-years-for-murder-of-jared-bridegan/)). Action News Jax reported the judge denied the defense motion for a new trial before sentencing ([Action News Jax](https://www.actionnewsjax.com/news/local/jared-bridegans-family-speaks-out-mario-fernandez-saldana-receives-life-sentence-murder/TVMHT6UEYRDWXPWG2BBDBSAUVQ/)). Earlier reports of an Oct. 27 sentencing hearing differed; the sentence was imposed Nov. 12.
 
-**His challenge.** His lawyers filed a motion for a new trial on September 3, 2026. They say he did not get a fair trial ([Action News Jax, Sept. 9, 2026](https://www.actionnewsjax.com/news/local/defense-team-seeks-new-trial-mario-fernandez-saldana-jared-bridegan-murder-case/OSJ35XKYLNFS5HDHY4GN2WK674/)). Action News Jax reported that he was due back in court on Oct. 12 to ask for a new trial ([Action News Jax, Sept. 29, 2026](https://www.actionnewsjax.com/news/local/convicted-murderer-mario-fernandez-saldana-pleads-not-guilty-molesting-two-children/PRAELSKKXNHD3D7FQFPNMXZQ6M/)). News4JAX reported on September 29 that his lawyers are appealing ([News4JAX, Sept. 29, 2026](https://www.news4jax.com/news/local/2026/09/29/mario-fernandez-convicted-in-jared-bridegan-murder-expected-to-plead-not-guilty-to-separate-child-sex-charges/)). We found no public report of a ruling as of November 1, 2026.
+**His challenge.** His lawyers filed a motion for a new trial on September 3, 2026. They said he did not get a fair trial ([Action News Jax, Sept. 9, 2026](https://www.actionnewsjax.com/news/local/defense-team-seeks-new-trial-mario-fernandez-saldana-jared-bridegan-murder-case/OSJ35XKYLNFS5HDHY4GN2WK674/)). Action News Jax reported the judge denied that motion before sentencing ([Action News Jax](https://www.actionnewsjax.com/news/local/jared-bridegans-family-speaks-out-mario-fernandez-saldana-receives-life-sentence-murder/TVMHT6UEYRDWXPWG2BBDBSAUVQ/)). We have not found a report on any appeal since the sentence.
 
 So the conviction stands. But his challenge is still pending. It is not fully settled.
 
@@ -61,8 +61,8 @@ Fernandez Saldana's verdict does not decide anything about Gardner or Tenon. A n
 
 ## Key dates ahead
 
-- **Murder sentencing:** Reports differ. On the morning of Sept. 29, News4JAX said a sentencing hearing was set for Oct. 27 ([source](https://www.news4jax.com/news/local/2026/09/29/mario-fernandez-convicted-in-jared-bridegan-murder-expected-to-plead-not-guilty-to-separate-child-sex-charges/)). Later that day, Action News Jax said it was postponed with no new date ([source](https://www.actionnewsjax.com/news/local/convicted-murderer-mario-fernandez-saldana-pleads-not-guilty-molesting-two-children/PRAELSKKXNHD3D7FQFPNMXZQ6M/)). We found no report of a sentence as of Nov. 1, 2026.
-- **October 27, 2026 (passed):** This was a reported court date in Fernandez Saldana's separate Florida child-molestation case. News4JAX also reported a murder sentencing hearing that day ([News4JAX, Sept. 29, 2026](https://www.news4jax.com/news/local/2026/09/29/mario-fernandez-convicted-in-jared-bridegan-murder-expected-to-plead-not-guilty-to-separate-child-sex-charges/)); Action News Jax did not. Those charges are allegations; he is presumed innocent on them ([Action News Jax, Sept. 29, 2026](https://www.actionnewsjax.com/news/local/convicted-murderer-mario-fernandez-saldana-pleads-not-guilty-molesting-two-children/PRAELSKKXNHD3D7FQFPNMXZQ6M/)). An earlier report also listed a pretrial hearing for Gardner that day; newer reports did not confirm it. As of Nov. 1, 2026, we found no public report of what happened on Oct. 27.
+- **Murder sentencing (done):** Nov. 12, 2026. Life in prison, plus a concurrent 30-year term ([State Attorney's Office, Nov. 12, 2026](https://sao4th.com/news/2026/mario-fernandez-saldana-sentenced-to-life-plus-30-years-for-murder-of-jared-bridegan/)). No further murder-sentencing date.
+- **October 27, 2026 (passed):** This was a reported court date in Fernandez Saldana's separate Florida child-molestation case. News4JAX also reported a murder sentencing hearing that day ([News4JAX, Sept. 29, 2026](https://www.news4jax.com/news/local/2026/09/29/mario-fernandez-convicted-in-jared-bridegan-murder-expected-to-plead-not-guilty-to-separate-child-sex-charges/)); Action News Jax did not. Those charges are allegations; he is presumed innocent on them ([Action News Jax, Sept. 29, 2026](https://www.actionnewsjax.com/news/local/convicted-murderer-mario-fernandez-saldana-pleads-not-guilty-molesting-two-children/PRAELSKKXNHD3D7FQFPNMXZQ6M/)). An earlier report also listed a pretrial hearing for Gardner that day; newer reports did not confirm it. We did not find a report of what happened in those separate cases on Oct. 27.
 - **April 26, 2027:** Gardner's final pretrial hearing ([Action News Jax, Sept. 18, 2026](https://www.actionnewsjax.com/news/local/jared-bridegan-murder-2-charges-against-shanna-gardner-dropped-ahead-trial/CLUPHGIER5G6ZGEW3XBPW4RJYY/)). The time is not public.
 - **Week of May 3, 2027:** Jury selection for the joint trial of Gardner and Tenon ([News4JAX, Oct. 7, 2026](https://www.news4jax.com/news/local/2026/10/07/accused-gunman-henry-tenon-appears-in-court-for-first-time-under-updated-charges-in-jared-bridegan-murder/)).
 - **May 10, 2027:** The joint trial is set to start. It is planned to last about three weeks.
@@ -77,11 +77,11 @@ He was shot and killed on February 16, 2022, in Jacksonville Beach, Florida. He 
 
 ### Who has been convicted in the Jared Bridegan case?
 
-Mario Fernandez Saldana. A jury found him guilty of first-degree murder and solicitation on August 26, 2026. His lawyers have asked for a new trial and are appealing. We found no public report of a ruling as of November 1, 2026.
+Mario Fernandez Saldana. A jury found him guilty of first-degree murder and solicitation on August 26, 2026. He was sentenced on November 12, 2026 to life in prison, plus a concurrent 30-year term.
 
 ### Has Mario Fernandez Saldana been sentenced?
 
-We found no report of a sentence as of November 1, 2026. He faces a mandatory life sentence. On Sept. 29, News4JAX reported a sentencing hearing set for Oct. 27; later that day, Action News Jax reported the sentencing was postponed with no new date. We found no report of what happened that day.
+Yes. On November 12, 2026, Judge London Kite sentenced him to life in Florida State Prison for first-degree murder and 30 years for solicitation to commit a capital felony, to run concurrent with the life sentence ([State Attorney's Office](https://sao4th.com/news/2026/mario-fernandez-saldana-sentenced-to-life-plus-30-years-for-murder-of-jared-bridegan/)). Earlier reports of an Oct. 27 hearing differed; that date was not the sentencing.
 
 ### Is Shanna Gardner guilty?
 
@@ -123,6 +123,8 @@ Big cases with more than one defendant often take years. Here, charges changed, 
 ## Sources
 
 - Fourth Judicial Circuit State Attorney's Office, "Mario Fernandez Saldana Found Guilty of Murdering Jared Bridegan," August 26, 2026: https://sao4th.com/news/2026/mario-fernandez-saldana-found-guilty-of-murdering-jared-bridegan/
+- State Attorney's Office, "Mario Fernandez Saldana Sentenced to Life Plus 30 Years for Murder of Jared Bridegan," November 12, 2026: https://sao4th.com/news/2026/mario-fernandez-saldana-sentenced-to-life-plus-30-years-for-murder-of-jared-bridegan/
+- Action News Jax, "Jared Bridegan's family speaks out as Mario Fernandez-Saldana receives life sentence for murder" (new trial denied; life sentence): https://www.actionnewsjax.com/news/local/jared-bridegans-family-speaks-out-mario-fernandez-saldana-receives-life-sentence-murder/TVMHT6UEYRDWXPWG2BBDBSAUVQ/
 - News4JAX, "Guilty verdict for Fernandez — now all eyes turn to Gardner and Tenon," August 26, 2026: https://www.news4jax.com/news/local/2026/08/27/guilty-verdict-for-fernandez-now-all-eyes-turn-to-gardner-and-tenon/
 - Action News Jax, "Defense team seeks new trial for Mario Fernandez Saldana in the Jared Bridegan murder case," September 9, 2026: https://www.actionnewsjax.com/news/local/defense-team-seeks-new-trial-mario-fernandez-saldana-jared-bridegan-murder-case/OSJ35XKYLNFS5HDHY4GN2WK674/
 - Action News Jax, "Jared Bridegan murder: 2 charges against Shanna Gardner dropped ahead of trial," September 18, 2026: https://www.actionnewsjax.com/news/local/jared-bridegan-murder-2-charges-against-shanna-gardner-dropped-ahead-trial/CLUPHGIER5G6ZGEW3XBPW4RJYY/
