@@ -39,10 +39,9 @@ const weekHas = w => rows.some(r => w.days.includes(r.d));
 const badge = r => r.src>=3 ? '3 sources' : r.src===2 ? '2 sources' : '1 source';
 const timeKey = r => r.t==='All day' ? 0 : (()=>{const m=r.t.match(/(\d+):(\d+) (AM|PM)/);return ((+m[1]%12)+(m[3]==='PM'?12:0))*60+ +m[2];})();
 ---
-<Base title="Watch Guide (mockup) | Cassian Creed" description="Upcoming true crime on TV and streaming, laid out like a cable guide." noindex={true}>
+<Base title="Watch Guide | Cassian Creed" description="Upcoming true crime on TV and streaming, laid out like a cable guide." noindex={true}>
   <section class="wrap wg">
     <header>
-      <p class="evidence evidence--accent">Mockup preview, not live</p>
       <h1>Watch Guide</h1>
       <p>Upcoming true crime on TV and streaming, laid out like the cable guide: channels down the left, days across the top, each show a block. Times are Eastern. Schedules change, and TV lists only about two weeks ahead.</p>
       <p class="wg-note">Each block shows how many sources list it. "1 source" means we have not yet seen a second listing. Names and logos belong to their owners; this site is not affiliated with these channels. People who are charged or accused are presumed innocent unless and until proven guilty.</p>
