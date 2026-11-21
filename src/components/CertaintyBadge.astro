@@ -1,0 +1,18 @@
+---
+// Certainty badge (Pretty Protocol): icon + color + word, never color alone, no red.
+// level: 'confirmed' (3+ sources or an official court record), 'reported' (2 sources), 'unconfirmed' (1 source).
+const { level = 'unconfirmed' } = Astro.props;
+const MAP = {
+  confirmed: { icon: '✅', word: 'Confirmed' },
+  reported: { icon: '🟡', word: 'Reported' },
+  unconfirmed: { icon: '⚪', word: 'Unconfirmed' },
+};
+const m = MAP[level] ?? MAP.unconfirmed;
+---
+<a class={`cert cert--${level}`} href="/how-we-check-our-facts/" title="How we check our facts"><span aria-hidden="true">{m.icon}</span> {m.word}</a>
+<style>
+  .cert{display:inline-block;font-size:11px;font-weight:600;line-height:1;padding:3px 7px;border-radius:999px;border:1px solid currentColor;text-decoration:none;white-space:nowrap}
+  .cert--confirmed{color:#1f7a3d;background:#e8f5ec}
+  .cert--reported{color:#7a5b00;background:#fff6d6}
+  .cert--unconfirmed{color:#4a4f57;background:#eceef1}
+</style>

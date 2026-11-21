@@ -1,0 +1,35 @@
+---
+import Base from '../layouts/Base.astro';
+import CertaintyLegend from '../components/CertaintyLegend.astro';
+---
+<Base title="How We Check Our Facts | Cassian Creed" description="What the Confirmed, Reported and Unconfirmed badges mean, and how we count sources before we publish a fact.">
+  <section class="wrap hw">
+    <h1>How we check our facts</h1>
+    <p>Trust comes first. Every date, charge, verdict and air time on this site is tied to a source, and the badge next to it tells you how many we have.</p>
+    <CertaintyLegend />
+    <h2>How we count</h2>
+    <ul>
+      <li><strong>Confirmed:</strong> three or more independent sources agree, or we have the official court record.</li>
+      <li><strong>Reported:</strong> two sources agree. We say who reported it.</li>
+      <li><strong>Unconfirmed:</strong> one source so far. We keep it visible, label it, and look for a second.</li>
+    </ul>
+    <p>Two listings that come from the same outlet count as one source. If sources disagree, we say so instead of picking a winner. People who are charged or accused are presumed innocent unless and until proven guilty. If we get something wrong, <a href="/corrections-policy/">we correct it</a>.</p>
+    <h2>How we use AI</h2>
+    <p>Our research is AI-assisted and overseen by humans. Where AI helped write or check a page, we say so. Read more on <a href="/about/">our About page</a>.</p>
+    <h2>Where to go next</h2>
+    <p>Start free and go as deep as you want. You never have to buy anything to read the facts.</p>
+    <ol>
+      <li><a href="/guides/">Free explainers and guides</a>: how courts, evidence and DNA work, in plain words.</li>
+      <li><a href="/books/">Paid case guides</a>, when you want one case laid out in full.</li>
+      <li>The book on a case, where we have one, on the same <a href="/books/">books page</a>.</li>
+      <li><a href="/books/jury-chess/">Jury Chess</a>, our book on how criminal jury trials actually work.</li>
+    </ol>
+    <p class="hw-note">We do not put a sales message next to a case where a child died. We only offer products we would stand behind.</p>
+  </section>
+</Base>
+<style>
+  .hw{max-width:72ch;padding-top:36px;padding-bottom:56px}
+  .hw h1{font-family:var(--serif);font-size:clamp(34px,6vw,52px);line-height:1.1;margin:12px 0 20px}
+  .hw h2{font-family:var(--serif);font-size:26px;margin:28px 0 10px}
+  .hw-note{font-size:14px;color:var(--ink-2)}
+</style>
