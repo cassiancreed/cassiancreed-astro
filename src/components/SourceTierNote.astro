@@ -11,11 +11,11 @@ const news = entry?.sourceTier === 'news-single';
 const level = entry ? (entry.certainty || certaintyFor(entry)) : null;
 ---
 {level && !label && (
-  <p class="source-tier source-tier--badge"><CertaintyBadge level={level} /></p>
+  <p class="source-tier source-tier--badge"><CertaintyBadge level={level} checked={entry?.verified || ''} /></p>
 )}
 {label && (
   <p class="source-tier" data-source-tier={entry.sourceTier}>
-    <CertaintyBadge level={level} /> <strong class="source-tier__label">{label}</strong>
+    <CertaintyBadge level={level} checked={entry?.verified || ''} /> <strong class="source-tier__label">{label}</strong>
     {news && (
       <span class="source-tier__more">
         Source: <a href={entry.src} target="_blank" rel="noopener noreferrer">{entry.srcLabel}</a>.

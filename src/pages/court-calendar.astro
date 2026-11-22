@@ -535,7 +535,7 @@ const jsonld = {
           {nextDates.map((e) => (
             <tr>
               <td class="t-case">{e.case}</td>
-              <td>{e.proceeding}<div class="t-tier"><CertaintyBadge level={certaintyFor(e)} />{e.sourceTierLabel && <> {e.sourceTierLabel}</>}</div></td>
+              <td>{e.proceeding}<div class="t-tier"><CertaintyBadge level={certaintyFor(e)} checked={e.verified || ''} />{e.sourceTierLabel && <> {e.sourceTierLabel}</>}</div></td>
               <td><time datetime={e.dateISO}>{e.dateText}</time></td>
               <td>{e.court}</td>
               <td><a href={`#${e.id}`}>Status and source &rarr;</a><div class="calendar-resource-list" data-calendar-list-entry={e.id}>{calendarLinksFor(e).map((link) => <CalendarExplainerLink link={link} />)}</div></td>
@@ -544,7 +544,7 @@ const jsonld = {
           {appeals.map((e) => (
             <tr>
               <td class="t-case">{e.case}</td>
-              <td>{e.type || 'Post-conviction motions'}<div class="t-tier"><CertaintyBadge level={certaintyFor(e)} />{e.sourceTierLabel && <> {e.sourceTierLabel}</>}</div></td>
+              <td>{e.type || 'Post-conviction motions'}<div class="t-tier"><CertaintyBadge level={certaintyFor(e)} checked={e.verified || ''} />{e.sourceTierLabel && <> {e.sourceTierLabel}</>}</div></td>
               <td class="t-none">{NO_DATE}</td>
               <td>{e.where}</td>
               <td><a href={`#${e.id}`}>Status and source &rarr;</a><div class="calendar-resource-list" data-calendar-list-entry={e.id}>{calendarLinksFor(e).map((link) => <CalendarExplainerLink link={link} />)}</div></td>
@@ -553,7 +553,7 @@ const jsonld = {
           {investigations.map((e) => (
             <tr>
               <td class="t-case">{e.case}</td>
-              <td>Investigation &mdash; no court proceeding<div class="t-tier"><CertaintyBadge level={certaintyFor(e)} />{e.sourceTierLabel && <> {e.sourceTierLabel}</>}</div></td>
+              <td>Investigation &mdash; no court proceeding<div class="t-tier"><CertaintyBadge level={certaintyFor(e)} checked={e.verified || ''} />{e.sourceTierLabel && <> {e.sourceTierLabel}</>}</div></td>
               <td class="t-none">None; no court proceeding exists.</td>
               <td>{e.where}</td>
               <td><a href={`#${e.id}`}>Status and source &rarr;</a><div class="calendar-resource-list" data-calendar-list-entry={e.id}>{calendarLinksFor(e).map((link) => <CalendarExplainerLink link={link} />)}</div></td>
@@ -562,7 +562,7 @@ const jsonld = {
           {unconfirmed.map((e) => (
             <tr>
               <td class="t-case">{e.case}</td>
-              <td>{e.proceeding || '\u2014'}<div class="t-tier"><CertaintyBadge level={certaintyFor(e)} />{e.sourceTierLabel && <> {e.sourceTierLabel}</>}</div></td>
+              <td>{e.proceeding || '\u2014'}<div class="t-tier"><CertaintyBadge level={certaintyFor(e)} checked={e.verified || ''} />{e.sourceTierLabel && <> {e.sourceTierLabel}</>}</div></td>
               <td class="t-none">{NO_DATE}</td>
               <td>{e.where}</td>
               <td><a href={`#${e.id}`}>Status and source &rarr;</a><div class="calendar-resource-list" data-calendar-list-entry={e.id}>{calendarLinksFor(e).map((link) => <CalendarExplainerLink link={link} />)}</div></td>
@@ -571,7 +571,7 @@ const jsonld = {
           {completed.map((e) => (
             <tr>
               <td class="t-case">{e.case}</td>
-              <td>{completedBadge(e)}<div class="t-tier"><CertaintyBadge level={certaintyFor(e)} />{e.sourceTierLabel && <> {e.sourceTierLabel}</>}</div></td>
+              <td>{completedBadge(e)}<div class="t-tier"><CertaintyBadge level={certaintyFor(e)} checked={e.verified || ''} />{e.sourceTierLabel && <> {e.sourceTierLabel}</>}</div></td>
               <td class="t-none">{completedNextDate(e)}</td>
               <td>{e.where}</td>
               <td><a href={`#${e.id}`}>Status and source &rarr;</a><div class="calendar-resource-list" data-calendar-list-entry={e.id}>{calendarLinksFor(e).map((link) => <CalendarExplainerLink link={link} />)}</div></td>
