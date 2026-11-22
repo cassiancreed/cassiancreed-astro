@@ -1,15 +1,20 @@
 ---
 // Certainty badge (Pretty Protocol): icon + color + word, never color alone, no red.
-// level: 'confirmed' (3+ sources or an official court record), 'reported' (2 sources), 'unconfirmed' (1 source).
-const { level = 'unconfirmed' } = Astro.props;
+// level keys stay confirmed | reported | unconfirmed; the words shown are "3+ sources agree", "2 sources agree", "1 source" (no red).
+// Words (owner rule, Nov 21, 2026): never "Confirmed". Show how many sources agree. Reprints count as one source.
+// Optional `checked` = the date we last checked (ISO date or short text); shown after the words.
+const { level = 'unconfirmed', checked = '' } = Astro.props;
 const MAP = {
-  confirmed: { icon: '✅', word: 'Confirmed' },
-  reported: { icon: '🟡', word: 'Reported' },
-  unconfirmed: { icon: '⚪', word: 'Unconfirmed' },
+  confirmed: { icon: '✅', word: '3+ sources agree' },
+  reported: { icon: '🟡', word: '2 sources agree' },
+  unconfirmed: { icon: '⚪', word: '1 source' },
 };
 const m = MAP[level] ?? MAP.unconfirmed;
+const when = /^\d{4}-\d{2}-\d{2}/.test(checked)
+  ? new Date(checked.slice(0, 10) + 'T12:00:00Z').toLocaleDateString('en-US', { timeZone: 'UTC', month: 'short', day: 'numeric' })
+  : checked;
 ---
-<a class={`cert cert--${level}`} href="/how-we-check-our-facts/" title="How we check our facts"><span aria-hidden="true">{m.icon}</span> {m.word}</a>
+<a class={`cert cert--${level}`} href="/how-we-check-our-facts/" title="How we check our facts"><span aria-hidden="true">{m.icon}</span> {m.word}{when && <> &middot; checked {when}</>}</a>
 <style is:global>
   .cert{display:inline-block;font-size:11px;font-weight:600;line-height:1;padding:3px 7px;border-radius:999px;border:1px solid currentColor;text-decoration:none;white-space:nowrap}
   .cert--confirmed{color:#1f7a3d;background:#e8f5ec}

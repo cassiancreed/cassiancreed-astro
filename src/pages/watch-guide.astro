@@ -49,7 +49,7 @@ const timeKey = r => r.t==='All day' ? 0 : (()=>{const m=r.t.match(/(\d+):(\d+) 
     <header>
       <h1>Watch Guide</h1>
       <p>Upcoming true crime on TV and streaming, laid out like the cable guide: channels down the left, days across the top, each show a block. Times are Eastern. Schedules change, and TV lists only about two weeks ahead.</p>
-      <p class="wg-note">Each block carries a badge for how sure we are. "Unconfirmed" means we have not yet seen a second listing. Names and logos belong to their owners; this site is not affiliated with these channels. People who are charged or accused are presumed innocent unless and until proven guilty.</p>
+      <p class="wg-note">Each block carries a badge for how sure we are. "1 source" means we have not yet seen a second listing. Names and logos belong to their owners; this site is not affiliated with these channels. People who are charged or accused are presumed innocent unless and until proven guilty.</p>
       <CertaintyLegend />
       <nav class="wg-jump" aria-label="Jump to a week">
         {weeks.map(w => <a href={`#w-${w.start}`}>{fmt(w.start,{month:'short',day:'numeric'})} &ndash; {fmt(w.days[6],{month:'short',day:'numeric'})}</a>)}
@@ -75,7 +75,7 @@ const timeKey = r => r.t==='All day' ? 0 : (()=>{const m=r.t.match(/(\d+):(\d+) 
                           <strong>{r.show}</strong>
                           {r.case && <em class="wg-case">Case: {r.link ? <a href={r.link}>{r.case}</a> : r.case}</em>}
                           {r.spike && <em class="wg-spike">{r.spike} <a href={`/court-calendar/#${r.calId}`}>Court date &rarr;</a></em>}
-                          <span class="wg-src"><CertaintyBadge level={level(r)} /></span>
+                          <span class="wg-src"><CertaintyBadge level={level(r)} checked="Nov. 21" /></span>
                         </div>
                       )) : <span class="wg-none" aria-label="nothing listed">&ndash;</span>}</td>;
                     })}

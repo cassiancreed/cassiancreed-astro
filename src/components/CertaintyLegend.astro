@@ -2,11 +2,11 @@
 import CertaintyBadge from './CertaintyBadge.astro';
 ---
 <aside class="cert-legend" aria-label="What the certainty badges mean">
-  <p class="cert-legend__t"><strong>How sure are we?</strong> Every fact line carries one of three badges.</p>
+  <p class="cert-legend__t"><strong>How sure are we?</strong> Every fact line says how many sources agree, and when we last checked.</p>
   <ul>
-    <li><CertaintyBadge level="confirmed" /> Three or more sources, or an official court record.</li>
-    <li><CertaintyBadge level="reported" /> Two sources.</li>
-    <li><CertaintyBadge level="unconfirmed" /> One source so far.</li>
+    <li><CertaintyBadge level="confirmed" /> Three or more sources agree, or we have the official court record.</li>
+    <li><CertaintyBadge level="reported" /> Two sources agree.</li>
+    <li><CertaintyBadge level="unconfirmed" /> One source so far. A reprint of the same report counts as one.</li>
   </ul>
   <p class="cert-legend__l"><a href="/how-we-check-our-facts/">How we check our facts &rarr;</a></p>
 </aside>
