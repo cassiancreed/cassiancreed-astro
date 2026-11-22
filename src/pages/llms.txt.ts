@@ -35,6 +35,7 @@ Active-case pages can change. Re-fetch the canonical page at citation time and p
 - [Court Calendar](https://cassiancreed.com/court-calendar/): Current hearing and trial dates, each tied to an identified outside source; verify the last-checked date before citing.
 - [Forensic Tools](https://cassiancreed.com/forensic-tools/): What investigative and forensic methods can establish, and what they cannot.
 - [Trending True Crime Cases](https://cassiancreed.com/trending/): Cases getting the most attention right now, with checked statuses.
+- [Watch Guide](https://cassiancreed.com/watch-guide/): Upcoming true crime on TV and streaming, laid out like a cable guide.
 
 - [Jury Chess](https://cassiancreed.com/books/jury-chess/): A plain-language guide to criminal jury trials.
 - [Missing Persons](https://cassiancreed.com/missing-persons/): Official case sources and agency tip routes.
@@ -53,6 +54,7 @@ Each page reads from the checked Court Calendar. Check the last-checked date bef
 
 ## Priority case files and trackers
 
+- [Jared Bridegan case explained](https://cassiancreed.com/post/jared-bridegan-case-explained/): 
 - [Nestor Hernandez Melgar / Lindsay Geary](https://cassiancreed.com/post/nestor-hernandez-melgar-lindsay-geary-case/): Canonical case hub separating the jury verdict from the medical examiner’s undetermined manner-of-death classification.
 - [Lindsay Clancy trial tracker](https://cassiancreed.com/post/lindsay-clancy-trial/): Active Massachusetts trial tracker separating verified court facts, allegations, defense arguments, and unadjudicated claims.
 - [Round Lake Beach newborn case](https://cassiancreed.com/round-lake-beach-newborn-genetic-genealogy/): Case file on the identification of a newborn found in 2001, the July 2026 charges, and genetic genealogy as a lead rather than proof.
