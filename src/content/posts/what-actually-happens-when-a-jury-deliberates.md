@@ -7,6 +7,10 @@ updatedDate: 2026-08-08
 tag: Explainers
 featured: false
 capture: "case"
+relatedBook:
+  key: jury-chess
+  midCopy: "This explainer covers what happens once the case goes to the jury. Jury Chess maps the surrounding trial path without treating wait time as a signal."
+  endCopy: "Jury Chess explains instructions, notes, deadlock, and verdict—and what deliberation length does not decide."
 ---
 
 When a judge says the case is "going to the jury," it sounds like a handoff — and in a real sense, it is. The trial phase ends, and the decision phase begins. But before jurors ever set foot in the deliberation room, there is one final, critical step: jury instructions.
