@@ -27,7 +27,8 @@
       "why": "His 2023 murder convictions were overturned in May 2026. On Nov. 20, 2026, Judge Debra McCaslin denied his motion to dismiss the murder indictments, the Associated Press, ABC News and FITSNews reported. The retrial is set for April 5, 2027 in Sumter County, a date that can change. He is presumed innocent of the murder charges.",
       "explainer": "/post/the-murdaugh-murders-how-alex-murdaugh-was-convicted-and-why-he-now-faces-a-new-trial/",
       "courtId": "murdaugh-retrial",
-      "trendKey": "murdaugh"
+      "trendKey": "murdaugh",
+      "certainty": "confirmed"
     },
     {
       "phase": "spike",
@@ -36,7 +37,8 @@
       "why": "Her trial ended in a mistrial on Sept. 4, 2026, which is not a verdict. On Nov. 19, a justice of the Massachusetts Supreme Judicial Court sent her double jeopardy petition to the full court, with arguments expected in January 2027. That referral is not a ruling. The retrial is still set for March 29, 2027, and a status hearing for Dec. 30. She has pleaded not guilty and is presumed innocent.",
       "explainer": "/post/lindsay-clancy-trial/",
       "courtId": "clancy-sjc-oral-argument-2027-01",
-      "trendKey": "clancy"
+      "trendKey": "clancy",
+      "certainty": "unconfirmed"
     },
     {
       "phase": "spike",
@@ -45,7 +47,8 @@
       "why": "South Carolina's parole board voted unanimously on Nov. 19, 2026 to deny parole to Susan Smith, who was convicted of murder in 1995 for the deaths of her two sons, SC Daily Gazette, NBC News and FOX Carolina reported. Their father, David Smith, asked the board to keep her in prison. NBC News reports she can ask again in 2028.",
       "explainer": null,
       "courtId": "smith-susan-second-parole-hearing",
-      "trendKey": "smith"
+      "trendKey": "smith",
+      "certainty": "confirmed"
     },
     {
       "phase": "spike",
@@ -54,7 +57,8 @@
       "why": "On Nov. 12, 2026, Oklahoma prosecutors dropped the first-degree murder charge and Richard Glossip pleaded guilty to a lesser charge in the 1997 death of Barry Van Treese, the Associated Press reported. The attorney general's office calls it accessory to murder; his defense calls it accessory after the fact. He has not been sentenced. The Death Penalty Information Center reports sentencing on Dec. 17; the AP says only December, and one outlet says Dec. 17 and 18.",
       "explainer": null,
       "courtId": "glossip-sentencing-2026-12-17",
-      "trendKey": "glossip"
+      "trendKey": "glossip",
+      "certainty": "reported"
     },
     {
       "phase": "spike",
@@ -63,7 +67,8 @@
       "why": "A federal jury in Los Angeles found Jonathan Rinderknecht guilty on Nov. 20, 2026 of one count of destruction of property by means of fire and one count of arson affecting property used in interstate commerce, ABC7, NBC Los Angeles and UPI reported. Prosecutors said he started the fire that grew into the January 2025 Palisades Fire, which killed 12 people. His first trial ended in a mistrial in June, with jurors split 10 to 2 for acquittal. He has not been sentenced; sentencing is set for March 17, 2027. A conviction can be challenged on appeal.",
       "explainer": null,
       "courtId": "rinderknecht-sentencing-2027-03-17",
-      "trendKey": "rinderknecht"
+      "trendKey": "rinderknecht",
+      "certainty": "confirmed"
     },
     {
       "phase": "spike",
@@ -72,7 +77,8 @@
       "why": "A Marion County, Florida jury found Dwain Hall guilty of first-degree murder and kidnapping in the death of Sonia Exelby on Nov. 20, 2026, and he was sentenced to two consecutive life terms, the State Attorney's Office and Court TV reported. A conviction can be challenged on appeal.",
       "explainer": null,
       "courtId": "dwain-hall-trial-2026-11-17",
-      "trendKey": "hall"
+      "trendKey": "hall",
+      "certainty": "reported"
     },
     {
       "phase": "spike",
@@ -81,7 +87,8 @@
       "why": "Judge Joseph Bulone sentenced Tomasz Kosowski to death on Nov. 20, 2026 for the first-degree murder of Steven Cozzi in Pinellas County, Florida, CNN, ABC News and FOX 13 reported. Bulone found him guilty on Sept. 23 after a bench trial in which Kosowski represented himself. The sentence can be challenged on appeal.",
       "explainer": null,
       "courtId": "kosowski-spencer-hearing",
-      "trendKey": "kosowski"
+      "trendKey": "kosowski",
+      "certainty": "confirmed"
     },
     {
       "phase": "fade",
@@ -90,7 +97,8 @@
       "why": "A Prince William County, Virginia, jury found Naresh Bhatt guilty on all counts on Nov. 10, 2026, in the death of his wife, Mamta Kafle Bhatt, FOX 5 DC, WJLA and CNN reported. Sentencing is scheduled for March 12, 2027.",
       "explainer": null,
       "courtId": "bhatt-sentencing-2027-03-12",
-      "trendKey": "bhatt"
+      "trendKey": "bhatt",
+      "certainty": "confirmed"
     },
     {
       "phase": "fade",
@@ -99,7 +107,8 @@
       "why": "Kaylee Goncalves, Madison Mogen, Xana Kernodle and Ethan Chapin were killed in 2022. Kohberger pleaded guilty and was sentenced to four consecutive life terms in July 2025. In July 2026 he filed a petition for post-conviction relief, which ABC News and NBC News reported. We have not seen a ruling on it.",
       "explainer": "/post/what-happened-in-the-idaho-student-murders-the-bryan-kohberger-case-explained/",
       "courtId": "kohberger-disqualification-hearing",
-      "trendKey": "kohberger"
+      "trendKey": "kohberger",
+      "certainty": "confirmed"
     },
     {
       "phase": "fade",
@@ -111,7 +120,8 @@
       "linkLabel": "Case status",
       "sourceUrl": "https://sao4th.com/news/2026/mario-fernandez-saldana-sentenced-to-life-plus-30-years-for-murder-of-jared-bridegan/",
       "sourceLabel": "State Attorney release",
-      "trendKey": "bridegan"
+      "trendKey": "bridegan",
+      "certainty": "reported"
     }
   ]
 }
