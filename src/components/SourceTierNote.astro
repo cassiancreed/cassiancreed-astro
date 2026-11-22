@@ -2,14 +2,20 @@
 // Public source-count label for one calendar row. Confirmed rows and rows
 // whose sources do not clearly earn a tier render nothing.
 import { CORRECTION_MAILTO } from '../data/court-calendar-corrections.mjs';
+import { certaintyFor } from '../data/certainty.mjs';
+import CertaintyBadge from './CertaintyBadge.astro';
 
 const { entry } = Astro.props;
 const label = entry?.sourceTierLabel;
 const news = entry?.sourceTier === 'news-single';
+const level = entry ? (entry.certainty || certaintyFor(entry)) : null;
 ---
+{level && !label && (
+  <p class="source-tier source-tier--badge"><CertaintyBadge level={level} /></p>
+)}
 {label && (
   <p class="source-tier" data-source-tier={entry.sourceTier}>
-    <strong class="source-tier__label">{label}</strong>
+    <CertaintyBadge level={level} /> <strong class="source-tier__label">{label}</strong>
     {news && (
       <span class="source-tier__more">
         Source: <a href={entry.src} target="_blank" rel="noopener noreferrer">{entry.srcLabel}</a>.
