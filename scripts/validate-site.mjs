@@ -118,6 +118,9 @@ const expectedJuryChessCheckoutCtas = new Map([
   ['/post/this-week-in-court-august-30-2026/', [
     `${juryChessProductUrl}?utm_source=website&utm_medium=book_cta&utm_campaign=twic_to_jury_chess&utm_content=this-week-in-court-august-30-2026_end`,
   ]],
+  ['/post/what-actually-happens-when-a-jury-deliberates/', [
+    `${juryChessProductUrl}?utm_source=website&utm_medium=book_cta&utm_campaign=melgar_cluster&utm_content=what-actually-happens-when-a-jury-deliberates_end`,
+  ]],
 ]);
 
 let juryChessCheckoutCtaCount = 0;
@@ -132,7 +135,7 @@ for (const [route, file] of routes) {
     failures.push(`${route}: Jury Chess checkout CTAs do not match the attribution contract; expected ${JSON.stringify(expected)}, found ${JSON.stringify(actual)}`);
   }
 }
-if (juryChessCheckoutCtaCount !== 13) failures.push(`expected 13 Jury Chess checkout CTAs, found ${juryChessCheckoutCtaCount}`);
+if (juryChessCheckoutCtaCount !== 14) failures.push(`expected 14 Jury Chess checkout CTAs, found ${juryChessCheckoutCtaCount}`);
 
 const beehiivProductUrlPrefix = 'https://cassiancreed.beehiiv.com/products/';
 const expectedProductMetadata = new Map([
