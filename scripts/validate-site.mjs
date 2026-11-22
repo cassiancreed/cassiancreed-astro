@@ -89,8 +89,9 @@ const expectedJuryChessCheckoutCtas = new Map([
     `${juryChessProductUrl}?utm_source=website&utm_medium=homepage&utm_campaign=jury_chess&utm_content=homepage_jury_chess_primary`,
   ]],
   ['/books/', [
-    `${juryChessProductUrl}?utm_source=cassiancreed.com&utm_medium=books_page_cross_sell&utm_campaign=clancy_to_jury_chess&utm_content=clancy_trial_cross_sell`,
+    // Money order on the shelf: Jury Chess primary first, then Clancy cross-sell.
     `${juryChessProductUrl}?utm_source=cassiancreed.com&utm_medium=books_page&utm_campaign=jury_chess&utm_content=jury_chess_primary`,
+    `${juryChessProductUrl}?utm_source=cassiancreed.com&utm_medium=books_page_cross_sell&utm_campaign=clancy_to_jury_chess&utm_content=clancy_trial_cross_sell`,
   ]],
   ['/books/jury-chess/', [
     `${juryChessProductUrl}?utm_source=cassiancreed.com&utm_medium=jury_chess_landing&utm_campaign=jury_chess&utm_content=jury_chess_primary`,
@@ -155,14 +156,14 @@ const expectedProductMetadata = new Map([
   ]],
   ['/books/', [
     {
-      href: `${juryChessProductUrl}?utm_source=cassiancreed.com&utm_medium=books_page_cross_sell&utm_campaign=clancy_to_jury_chess&utm_content=clancy_trial_cross_sell`,
-      bookKey: 'jury-chess',
-      placement: 'books_page_cross_sell',
-    },
-    {
       href: `${juryChessProductUrl}?utm_source=cassiancreed.com&utm_medium=books_page&utm_campaign=jury_chess&utm_content=jury_chess_primary`,
       bookKey: 'jury-chess',
       placement: 'books_page_primary',
+    },
+    {
+      href: `${juryChessProductUrl}?utm_source=cassiancreed.com&utm_medium=books_page_cross_sell&utm_campaign=clancy_to_jury_chess&utm_content=clancy_trial_cross_sell`,
+      bookKey: 'jury-chess',
+      placement: 'books_page_cross_sell',
     },
     {
       href: 'https://cassiancreed.beehiiv.com/products/voir-dire-the-free-guide',

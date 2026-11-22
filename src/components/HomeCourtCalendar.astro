@@ -480,18 +480,18 @@ const visibleDayEntries = (entries) => {
         sourceLink.target = '_blank';
         sourceLink.rel = 'noopener noreferrer';
         source.append(sourcePrefix, sourceLink);
-        const tierNote = document.createElement('p');
-        tierNote.className = 'source-tier';
-        tierNote.dataset.sourceTier = entry.sourceTier || '';
-        const CERT = { confirmed: '\u2705 Confirmed', reported: '\uD83D\uDFE1 Reported', unconfirmed: '\u26AA Unconfirmed' };
-        const certLevel = CERT[entry.certainty] ? entry.certainty : 'unconfirmed';
+        const CERT_WORD = { confirmed: '\u2705 3+ sources agree', reported: '\uD83D\uDFE1 2 sources agree', unconfirmed: '\u26AA 1 source' };
+        const certLevel = CERT_WORD[entry.certainty] ? entry.certainty : 'unconfirmed';
         const certBadge = document.createElement('a');
         certBadge.className = 'cert cert--' + certLevel;
         certBadge.href = '/how-we-check-our-facts/';
         certBadge.title = 'How we check our facts';
-        certBadge.textContent = CERT[certLevel];
-        tierNote.append(certBadge);
+        certBadge.textContent = CERT_WORD[certLevel];
+        const tierNote = document.createElement('p');
         if (entry.sourceTierLabel) {
+          tierNote.className = 'source-tier';
+          tierNote.dataset.sourceTier = entry.sourceTier || '';
+          tierNote.append(certBadge);
           tierNote.append(document.createTextNode(' '));
           const tierLabel = document.createElement('strong');
           tierLabel.className = 'source-tier__label';
@@ -512,6 +512,9 @@ const visibleDayEntries = (entries) => {
             more.append(sourceAgain, document.createTextNode('. '), tellUs);
             tierNote.append(more);
           }
+        } else {
+          tierNote.className = 'source-tier source-tier--badge';
+          tierNote.append(certBadge);
         }
         const actions = document.createElement('div');
         actions.className = 'home-calendar__agenda-actions';
@@ -782,10 +785,16 @@ const visibleDayEntries = (entries) => {
   .home-calendar__agenda-source{margin:0 0 12px;color:var(--ink-3);font-size:10px;line-height:1.45}
   .home-calendar__agenda-source span{font-family:var(--mono);text-transform:uppercase}
   .home-calendar__agenda-source a{color:var(--ink-2);text-decoration-color:rgba(214,172,92,.55);text-underline-offset:2px}
-  .home-calendar__agenda :global(.source-tier){margin:0 0 12px;padding:8px 10px;border-radius:7px;background:var(--bg-3);font-size:13px;line-height:1.45;color:var(--ink)}
-  .home-calendar__agenda :global(.source-tier__label){font-family:var(--mono);font-size:12px;letter-spacing:.02em}
-  .home-calendar__agenda :global(.source-tier__more){display:block;margin-top:4px}
+  .home-calendar__agenda :global(.source-tier){display:flex;flex-wrap:wrap;align-items:center;gap:4px 6px;margin:0 0 6px;padding:0;border-radius:0;background:transparent;font-size:12px;line-height:1.35;color:var(--ink)}
+  .home-calendar__agenda :global(.source-tier--badge){display:inline-flex;margin:0 0 4px}
+  .home-calendar__agenda :global(.source-tier__label){font-family:var(--mono);font-size:10px;letter-spacing:.02em;font-weight:600}
+  .home-calendar__agenda :global(.source-tier__more){display:inline;margin:0;font-size:11px}
   .home-calendar__agenda :global(.source-tier a){color:var(--accent)}
+  @media (min-width:768px){
+    .home-calendar__agenda :global(.source-tier){font-size:13px;gap:5px 8px}
+    .home-calendar__agenda :global(.source-tier__label){font-size:11px}
+    .home-calendar__agenda :global(.source-tier__more){font-size:12px}
+  }
   .home-calendar__agenda-actions{display:flex;flex-direction:column;align-items:flex-start;gap:8px}
   .home-calendar__agenda-actions a,.home-calendar__agenda-actions button{border:0;background:transparent;color:var(--ink-2);cursor:pointer;font:inherit;font-size:12px;padding:0;text-decoration:none;text-align:left}
   .home-calendar__agenda-actions button{color:var(--accent);font-weight:700}

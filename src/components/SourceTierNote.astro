@@ -1,6 +1,7 @@
 ---
 // Public source-count label for one calendar row. Confirmed rows and rows
 // whose sources do not clearly earn a tier render nothing.
+// Badge sits inline beside nearby text — not a padded block.
 import { CORRECTION_MAILTO } from '../data/court-calendar-corrections.mjs';
 import { certaintyFor } from '../data/certainty.mjs';
 import CertaintyBadge from './CertaintyBadge.astro';
@@ -26,8 +27,14 @@ const level = entry ? (entry.certainty || certaintyFor(entry)) : null;
 )}
 
 <style>
-  .source-tier{margin:0 0 12px;padding:8px 10px;border-radius:7px;background:var(--bg-3, rgba(0,0,0,.04));font-size:14px;line-height:1.45;color:var(--ink, inherit)}
-  .source-tier__label{font-family:var(--mono, ui-monospace, monospace);font-size:12px;letter-spacing:.02em}
-  .source-tier__more{display:block;margin-top:4px}
+  .source-tier{display:flex;flex-wrap:wrap;align-items:center;gap:4px 6px;margin:0 0 6px;padding:0;border-radius:0;background:transparent;font-size:12px;line-height:1.35;color:var(--ink, inherit)}
+  .source-tier--badge{display:inline-flex;margin:0 0 4px}
+  .source-tier__label{font-family:var(--mono, ui-monospace, monospace);font-size:10px;letter-spacing:.02em;font-weight:600}
+  .source-tier__more{display:inline;margin:0;font-size:11px}
   .source-tier a{color:var(--accent, #A8503A)}
+  @media (min-width:768px){
+    .source-tier{font-size:13px;gap:5px 8px}
+    .source-tier__label{font-size:11px}
+    .source-tier__more{font-size:12px}
+  }
 </style>
