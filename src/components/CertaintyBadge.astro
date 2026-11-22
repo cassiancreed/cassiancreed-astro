@@ -3,6 +3,7 @@
 // level keys stay confirmed | reported | unconfirmed; the words shown are "3+ sources agree", "2 sources agree", "1 source" (no red).
 // Words (owner rule, Nov 21, 2026): never "Confirmed". Show how many sources agree. Reprints count as one source.
 // Optional `checked` = the date we last checked (ISO date or short text); shown after the words.
+// Size (Nov 22, 2026): keep the pill inline beside status text — small on phone, still readable.
 const { level = 'unconfirmed', checked = '' } = Astro.props;
 const MAP = {
   confirmed: { icon: '✅', word: '3+ sources agree' },
@@ -16,8 +17,11 @@ const when = /^\d{4}-\d{2}-\d{2}/.test(checked)
 ---
 <a class={`cert cert--${level}`} href="/how-we-check-our-facts/" title="How we check our facts"><span aria-hidden="true">{m.icon}</span> {m.word}{when && <> &middot; checked {when}</>}</a>
 <style is:global>
-  .cert{display:inline-block;font-size:11px;font-weight:600;line-height:1;padding:3px 7px;border-radius:999px;border:1px solid currentColor;text-decoration:none;white-space:nowrap}
+  .cert{display:inline-flex;align-items:center;gap:.2em;vertical-align:middle;font-size:9px;font-weight:600;line-height:1.2;padding:1px 5px;border-radius:999px;border:1px solid currentColor;text-decoration:none;white-space:nowrap;max-width:100%}
   .cert--confirmed{color:#1f7a3d;background:#e8f5ec}
   .cert--reported{color:#7a5b00;background:#fff6d6}
   .cert--unconfirmed{color:#4a4f57;background:#eceef1}
+  @media (min-width:768px){
+    .cert{font-size:10px;padding:2px 6px}
+  }
 </style>

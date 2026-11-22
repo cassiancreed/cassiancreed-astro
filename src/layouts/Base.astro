@@ -112,7 +112,7 @@ const navItems = [
   // CONVERSION-FIRST RANK 1 (2026-07-28): the '/the-trail/' nav item was
   // removed with The Trail's landing page while the title is held for
   // worthiness review. /the-trail/ now 301s (see netlify.toml).
-  { href: '/books/',               label: 'Jury Chess' },
+  { href: '/books/',               label: 'Our Books' },
   { href: '/about/',               label: 'About' },
   { href: '/court-calendar/#court-updates', label: 'Court Updates', cta: true },
 ];
@@ -320,14 +320,14 @@ function navActive(href){
     <a class={homeActive ? "brand active" : "brand"} href="/" aria-current={homeActive ? "page" : undefined}>Cassian<br/>Creed</a>
     <nav class="nav nav--desktop" aria-label="Primary">
       {resolvedNav.map(i => (
-        <a href={i.href} class:list={[navActive(i.href) && 'active', i.cta && 'nav__cta']} aria-current={navActive(i.href) ? 'page' : undefined}>{i.label === 'Books' ? 'Jury Chess' : i.label}</a>
+        <a href={i.href} class:list={[navActive(i.href) && 'active', i.cta && 'nav__cta']} aria-current={navActive(i.href) ? 'page' : undefined}>{i.label}</a>
       ))}
     </nav>
     <details class="nav-menu">
       <summary>Menu</summary>
       <nav class="nav-menu__panel" aria-label="Mobile primary">
         {resolvedNav.map(i => (
-          <a href={i.href} class:list={[navActive(i.href) && 'active', i.cta && 'nav__cta']} aria-current={navActive(i.href) ? 'page' : undefined}>{i.label === 'Books' ? 'Jury Chess' : i.label}</a>
+          <a href={i.href} class:list={[navActive(i.href) && 'active', i.cta && 'nav__cta']} aria-current={navActive(i.href) ? 'page' : undefined}>{i.label}</a>
         ))}
       </nav>
     </details>

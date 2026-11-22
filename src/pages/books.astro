@@ -6,7 +6,10 @@ import RetailStoreLine from '../components/RetailStoreLine.astro';
 // Copy is CERTIFIED text: do not paraphrase. Buy buttons use the exact live
 // Beehiiv product URLs. Free guide CTA goes to the guide's own live $0 product
 // checkout (delivery-matched); no anchor bounces on this page.
+// Shelf order is by money: Jury Chess ($5.99) first, then $1.99 case guides.
+// Erin Patterson is intentionally omitted until title/links are confirmed.
 const caseGuides = [
+  { id: 'jared-bridegan-case', title: 'Case Chess: The Jared Bridegan Case', bookKey: 'jared-bridegan-case-guide-v2', campaign: 'explainer_bridegan_v2', cover: '/covers/case-chess-jared-bridegan.jpg', coverAlt: 'Book cover of Case Chess: The Jared Bridegan Case by Cassian Creed' },
   { id: 'brian-thompson-case', title: 'Case Chess: The Brian Thompson Case — What\'s Actually Happening and What It Means', bookKey: 'brian-thompson-luigi-mangione-two-courts', campaign: 'explainer_luigi_v1' },
   { id: 'lindsay-clancy-trial', title: 'Case Chess: The Lindsay Clancy Case — What\'s Actually Happening and What It Means', bookKey: 'lindsay-clancy-post-mistrial-field-guide', campaign: 'explainer_clancy_v1' },
   { id: 'eric-richins-case', title: 'Case Chess: The Eric Richins Case — What\'s Actually Happening and What It Means', bookKey: 'eric-richins-kouri-evidence-verdict', campaign: 'explainer_kouri_v1' },
@@ -17,6 +20,18 @@ const caseGuides = [
   buyUrl: `https://cassiancreed.beehiiv.com/products/${guide.bookKey}?utm_source=cassiancreed.com&utm_medium=books_page&utm_campaign=${guide.campaign}&utm_content=books_guide_card`,
 }));
 const jsonld = [
+  // Money order: Jury Chess first, then $1.99 case guides.
+  {
+    "@context": "https://schema.org",
+    "@type": "Book",
+    "name": "Jury Chess: How Criminal Jury Trials Actually Work",
+    "author": { "@id": "https://cassiancreed.com/#cassian-creed" },
+    "publisher": { "@id": "https://cassiancreed.com/#org" },
+    "bookFormat": "https://schema.org/EBook",
+    "inLanguage": "en-US",
+    "genre": ["Law", "Nonfiction"],
+    "offers": [{ "@type": "Offer", "price": JURY_CHESS_PRICE, "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://cassiancreed.beehiiv.com/products/jury-chess-authority-edition-v3-2", "seller": { "@id": "https://cassiancreed.com/#org" } }]
+  },
   // CONVERSION-FIRST RANK 1 (2026-07-28): the Book + Offer nodes for
   // "The Trail: The Murder of Rachel Morin" and "The Frame: The Murders of
   // Christine Banfield and Joseph Ryan" were removed here while both titles are
@@ -33,17 +48,6 @@ const jsonld = [
     "inLanguage": "en-US",
     "offers": [{ "@type": "Offer", "price": "1.99", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": guide.url, "seller": { "@id": "https://cassiancreed.com/#org" } }]
   })),
-  {
-    "@context": "https://schema.org",
-    "@type": "Book",
-    "name": "Jury Chess: How Criminal Jury Trials Actually Work",
-    "author": { "@id": "https://cassiancreed.com/#cassian-creed" },
-    "publisher": { "@id": "https://cassiancreed.com/#org" },
-    "bookFormat": "https://schema.org/EBook",
-    "inLanguage": "en-US",
-    "genre": ["Law", "Nonfiction"],
-    "offers": [{ "@type": "Offer", "price": JURY_CHESS_PRICE, "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://cassiancreed.beehiiv.com/products/jury-chess-authority-edition-v3-2", "seller": { "@id": "https://cassiancreed.com/#org" } }]
-  }
   // NEP-CWK-NO-ACCIDENT-WEBSITE-REMOVAL-0726: the third Book node
   // ("No Accident: The Mackenzie Shirilla Story") was removed with its catalog
   // card. Title withdrawn from the site by ruling — do not reinstate the node,
@@ -72,8 +76,32 @@ const jsonld = [
         stylesheet below and are unused until a title reclaims them. Do not
         restore either card until Cassian approves the title's return. */}
 
+    {/* Money order: Jury Chess first. Dedicated landing stays at /books/jury-chess/. */}
+    <div class="bk bk--ink" id="jury-chess">
+      <div class="bk__cover bk__cover--art">
+        <span class="bk__ribbon bk__ribbon--live">On sale</span>
+        <img class="bk__img" src="/covers/jury-chess.jpg" alt="Book cover of Jury Chess: How Criminal Jury Trials Actually Work by Cassian Creed — a courtroom drawn in line art with a chessboard set in the jury box" width="600" height="900" loading="lazy" />
+      </div>
+      <div class="bk__meta">
+        <h2 class="bk__title">Jury Chess: How Criminal Jury Trials Actually Work</h2>
+        <p class="bk__hook">A criminal jury trial is not a television story or a public vote.</p>
+        <p class="bk__desc">It is a controlled legal process shaped by burdens of proof, evidence rules, courtroom roles, jury instructions, and the limits of the admitted record. <em>Jury Chess</em> explains how that process works from jury selection through verdict—how to separate evidence from argument, follow objections and rulings, evaluate forensic claims carefully, and avoid treating allegations or public commentary as proof. Written for readers who follow criminal trials, with practical “Watch for This” exercises and 212 source notes. This book is for general education and is not legal advice.</p>
+        <div class="bk__cta">
+          <p class="bk__price">{JURY_CHESS_PRICE_TEXT}</p>
+          <a class="btn bk__buy" href="https://cassiancreed.beehiiv.com/products/jury-chess-authority-edition-v3-2?utm_source=cassiancreed.com&amp;utm_medium=books_page&amp;utm_campaign=jury_chess&amp;utm_content=jury_chess_primary" target="_blank" rel="noopener noreferrer" data-book-key="jury-chess" data-cta-placement="books_page_primary">Get the book →</a>
+        </div>
+        <RetailStoreLine bookKey="jury-chess-authority-edition-v3-2" placement="books_page_primary_retail" />
+        <p class="bk__landing"><a href="/books/jury-chess/">Jury Chess product page &rarr;</a></p>
+      </div>
+    </div>
+
     {caseGuides.map((guide) => (
       <div class="bk bk--ink" id={guide.id}>
+        {guide.cover && (
+          <div class="bk__cover bk__cover--art">
+            <img class="bk__img" src={guide.cover} alt={guide.coverAlt} width="600" height="900" loading="lazy" />
+          </div>
+        )}
         <div class="bk__meta">
           <p class="bk__hook">Case guide · PDF download</p>
           <h2 class="bk__title">{guide.title}</h2>
@@ -94,23 +122,6 @@ const jsonld = [
         </div>
       </div>
     ))}
-
-    <div class="bk bk--ink" id="jury-chess">
-      <div class="bk__cover bk__cover--art">
-        <span class="bk__ribbon bk__ribbon--live">On sale</span>
-        <img class="bk__img" src="/covers/jury-chess.jpg" alt="Book cover of Jury Chess: How Criminal Jury Trials Actually Work by Cassian Creed — a courtroom drawn in line art with a chessboard set in the jury box" width="600" height="900" loading="lazy" />
-      </div>
-      <div class="bk__meta">
-        <h2 class="bk__title">Jury Chess: How Criminal Jury Trials Actually Work</h2>
-        <p class="bk__hook">A criminal jury trial is not a television story or a public vote.</p>
-        <p class="bk__desc">It is a controlled legal process shaped by burdens of proof, evidence rules, courtroom roles, jury instructions, and the limits of the admitted record. <em>Jury Chess</em> explains how that process works from jury selection through verdict—how to separate evidence from argument, follow objections and rulings, evaluate forensic claims carefully, and avoid treating allegations or public commentary as proof. Written for readers who follow criminal trials, with practical “Watch for This” exercises and 212 source notes. This book is for general education and is not legal advice.</p>
-        <div class="bk__cta">
-          <p class="bk__price">{JURY_CHESS_PRICE_TEXT}</p>
-          <a class="btn bk__buy" href="https://cassiancreed.beehiiv.com/products/jury-chess-authority-edition-v3-2?utm_source=cassiancreed.com&amp;utm_medium=books_page&amp;utm_campaign=jury_chess&amp;utm_content=jury_chess_primary" target="_blank" rel="noopener noreferrer" data-book-key="jury-chess" data-cta-placement="books_page_primary">Get the book →</a>
-        </div>
-        <RetailStoreLine bookKey="jury-chess-authority-edition-v3-2" placement="books_page_primary_retail" />
-      </div>
-    </div>
 
     {/* NEP-CWK-NO-ACCIDENT-WEBSITE-REMOVAL-0726: the third shelf card
         ("No Accident: The Mackenzie Shirilla Story") was removed here — card,
@@ -189,6 +200,8 @@ const jsonld = [
   .bk__next-copy{margin:0 0 8px;font-size:13.5px;line-height:1.5;color:var(--ink-2)}
   .bk__next-link{font-weight:700;color:var(--accent,#e0563b);text-underline-offset:3px}
   .bk__next-link:focus-visible{outline:2px solid currentColor;outline-offset:3px;border-radius:2px}
+  .bk__landing{margin:0;font-size:13.5px}
+  .bk__landing a{color:var(--accent,#e0563b);text-underline-offset:3px}
   .guide-offer{background:var(--bg-3,#15110e);border:1px solid rgba(95,174,126,.5);border-radius:14px;padding:26px 28px;margin:30px 0 8px;display:flex;flex-direction:column;gap:10px}
   .guide-offer__h{font-family:var(--serif);font-weight:600;font-size:26px;margin:0}
   .guide-offer__p{margin:0;font-size:15px;line-height:1.55;color:var(--ink-2);max-width:70ch}
