@@ -1,9 +1,9 @@
 {
  "asOf": "2026-11-22",
- "asOfText": "Sunday, Nov. 22, 2026, about 10:30 a.m. PT",
+ "asOfText": "Sunday, Nov. 22, 2026, about 8:33 p.m. PT",
  "source": "Google Trends, U.S., past 30 days, daily",
  "sourceUrl": "https://trends.google.com/trends/",
- "note": "Nov. 22 is a partial day.",
+ "note": "Nov. 22 is shown as read at about 8:33 p.m. PT; Google counts days on its own clock, so the last point may still move.",
  "days": [
   "Oct 22",
   "Oct 23",
@@ -405,59 +405,59 @@
    2,
    1,
    1,
+   2,
    1,
+   2,
+   2,
+   2,
    1,
+   2,
+   3,
    3,
    2,
    2,
-   1,
-   1,
-   3,
-   3,
    2,
-   2,
-   1,
    1,
    7,
    6,
-   8,
-   15,
+   9,
+   16,
    100,
-   53,
+   54,
    14,
    8
   ],
   "clancy": [
    22,
+   19,
+   17,
+   15,
+   14,
+   14,
    18,
+   20,
+   19,
+   19,
    16,
+   68,
+   34,
+   17,
    15,
    13,
    14,
+   12,
+   16,
+   28,
+   17,
+   17,
+   16,
+   15,
+   15,
+   60,
+   30,
    17,
    19,
-   18,
-   18,
-   16,
-   66,
-   33,
-   16,
-   14,
-   13,
-   14,
-   11,
-   16,
-   27,
-   17,
-   16,
-   16,
-   15,
-   15,
-   58,
-   28,
-   15,
-   18,
-   18,
+   19,
    14,
    14
   ],
@@ -493,7 +493,7 @@
    0,
    2,
    25,
-   8
+   6
   ],
   "kosowski": [
    0,
@@ -526,8 +526,8 @@
    0,
    0,
    5,
-   19,
-   9
+   20,
+   8
   ],
   "hall": [
    0,
@@ -590,7 +590,7 @@
   "kosowski": "Tomasz Kosowski",
   "hall": "Dwain Hall"
  },
- "runNote": "Nov. 22, 10:28 AM slot. One Google Trends comparison of five terms (Smith, Clancy, Rinderknecht, Hall, Kosowski), past 30 days, U.S.; Smith is 100 on Nov. 19, so the five share one scale. Nov. 22 is a partial day. The other cases' one-term charts were not re-read this run and keep their 6:30 a.m. values.",
+ "runNote": "Nov. 22, about 8:33 PM PT, off-slot run (owner order 19, \"fix Trending\"). One Google Trends comparison of five terms (Smith, Clancy, Rinderknecht, Hall, Kosowski), past 30 days, U.S.; Smith is 100 on Nov. 19, so the five share one scale. Google also returned a partial Nov. 23 point, which is not shown. Oct. 22 keeps its earlier value. The other cases' one-term charts were not re-read this run and keep their 6:30 a.m. values.",
  "xRadar": {
   "asOf": "2026-11-22",
   "status": "not counted",
@@ -615,6 +615,11 @@
     "time": "2026-11-22 10:30 PT",
     "google": 14,
     "x": "not counted"
+   },
+   {
+    "time": "2026-11-22 20:33 PT",
+    "google": 14,
+    "x": "not counted"
    }
   ],
   "smith": [
@@ -625,6 +630,11 @@
    },
    {
     "time": "2026-11-22 10:30 PT",
+    "google": 8,
+    "x": "not counted"
+   },
+   {
+    "time": "2026-11-22 20:33 PT",
     "google": 8,
     "x": "not counted"
    }
@@ -646,6 +656,11 @@
     "time": "2026-11-22 10:30 PT",
     "google": 8,
     "x": "not counted"
+   },
+   {
+    "time": "2026-11-22 20:33 PT",
+    "google": 6,
+    "x": "not counted"
    }
   ],
   "hall": [
@@ -656,6 +671,11 @@
    },
    {
     "time": "2026-11-22 10:30 PT",
+    "google": 1,
+    "x": "not counted"
+   },
+   {
+    "time": "2026-11-22 20:33 PT",
     "google": 1,
     "x": "not counted"
    }
@@ -669,6 +689,11 @@
    {
     "time": "2026-11-22 10:30 PT",
     "google": 9,
+    "x": "not counted"
+   },
+   {
+    "time": "2026-11-22 20:33 PT",
+    "google": 8,
     "x": "not counted"
    }
   ],
