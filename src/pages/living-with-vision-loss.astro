@@ -1,0 +1,174 @@
+---
+import Base from '../layouts/Base.astro';
+import { pageSchema } from '../utils/page-schema.mjs';
+const title = "Living With Vision Loss: Free Tools and Tips";
+const description = "Free phone tools, talking-camera apps, and simple home tips for people with vision loss, plus a short guide for parents of blind or low-vision kids.";
+const jsonld = pageSchema({
+  "type": "WebPage",
+  "title": title,
+  "headline": title,
+  "description": description,
+  "path": "/living-with-vision-loss/",
+  "source": "src/pages/living-with-vision-loss.astro"
+});
+---
+<Base jsonld={jsonld} title={title} description={description}>
+  <article class="vision wrap">
+    <header class="vision__hero">
+      <p class="evidence evidence--accent">Accessibility</p>
+      <h1>Living With Vision Loss: Free Tools and Tips</h1>
+      <p class="vision__promise">Plain tips anyone can use. Most of these tools are already on your phone or free to download.</p>
+      <p class="vision__note">Cassian Creed is legally blind. These are tools and habits he has found useful. They are not endorsements or promises that they will work for you. This page is not medical advice. Ask your doctor, eye doctor or pharmacist about your health.</p>
+    </header>
+
+    <nav class="vision__jump" aria-label="On this page">
+      <ul>
+        <li><a href="#phone-tools">Tools already on your phone</a></li>
+        <li><a href="#camera-apps">Point your camera and hear it</a></li>
+        <li><a href="#ai-helpers">AI helpers for adults</a></li>
+        <li><a href="#parents">For parents of blind or low-vision kids</a></li>
+        <li><a href="#home-tips">Simple home tips</a></li>
+      </ul>
+    </nav>
+
+    <section id="phone-tools" aria-labelledby="phone-tools-title">
+      <h2 id="phone-tools-title">1. Tools already on your phone</h2>
+      <p>You do not need to buy anything. Both iPhone and Android come with a screen reader (it speaks what is on the screen) and a magnifier.</p>
+
+      <h3>iPhone</h3>
+      <h4>VoiceOver (speaks the screen out loud)</h4>
+      <ul>
+        <li>Say to Siri: &ldquo;Turn on VoiceOver.&rdquo;</li>
+        <li>Or triple-click the side button (iPhone with Face ID) or the Home button (other iPhones).</li>
+        <li>Or go to Settings, then Accessibility, then VoiceOver, and turn it on.</li>
+      </ul>
+      <p>Heads up: when VoiceOver is on, your phone uses new gestures. Tap once to hear an item. Double-tap to open it. Apple has a practice area in the same settings screen. <a href="https://support.apple.com/guide/iphone/turn-on-and-practice-voiceover-iph3e2e415f/ios" target="_blank" rel="noopener noreferrer">Apple&rsquo;s VoiceOver guide (opens in a new tab)</a>.</p>
+      <h4>Magnifier (a built-in magnifying glass)</h4>
+      <ul>
+        <li>Open the Magnifier app. If you can&rsquo;t find it, swipe down on the Home Screen and search for &ldquo;Magnifier.&rdquo;</li>
+        <li>You can also say to Siri: &ldquo;Open Magnifier.&rdquo;</li>
+        <li>Point the back camera at the print and drag the zoom slider.</li>
+      </ul>
+      <p>Magnifier also has a Detection Mode that can describe what the camera sees. Apple says not to rely on it in risky situations, such as for navigation. <a href="https://support.apple.com/HT209517" target="_blank" rel="noopener noreferrer">Apple&rsquo;s Magnifier guide (opens in a new tab)</a>.</p>
+
+      <h3>Android</h3>
+      <h4>TalkBack (speaks the screen out loud)</h4>
+      <ul>
+        <li>Go to Settings, then Accessibility, then TalkBack, then choose Use TalkBack.</li>
+        <li>Or turn on the TalkBack shortcut in that same screen. On many phones you can then hold both volume keys for a few seconds to turn it on or off.</li>
+        <li>Or say: &ldquo;Hey Google, turn on TalkBack.&rdquo;</li>
+      </ul>
+      <p>Steps differ a little by phone brand and Android version. <a href="https://support.google.com/accessibility/android/answer/6007100" target="_blank" rel="noopener noreferrer">Google&rsquo;s TalkBack guide (opens in a new tab)</a>.</p>
+      <h4>Magnification (zoom in on anything)</h4>
+      <ul>
+        <li>Go to Settings, then Accessibility, then Magnification.</li>
+        <li>Turn on the Magnification shortcut. You can pick a button on the screen, both volume keys, or a triple-tap.</li>
+      </ul>
+      <p><a href="https://support.google.com/accessibility/android/answer/6006949" target="_blank" rel="noopener noreferrer">Google&rsquo;s Magnification guide (opens in a new tab)</a>.</p>
+    </section>
+
+    <section id="camera-apps" aria-labelledby="camera-apps-title">
+      <h2 id="camera-apps-title">2. Point your camera and hear it</h2>
+      <p>These free apps use your phone&rsquo;s camera to read text out loud or describe what is in front of you. They can make mistakes, so double-check anything important.</p>
+      <div class="vision__cards">
+        <div class="vision__card">
+          <h3>Be My Eyes</h3>
+          <p><strong>Works on:</strong> iPhone and Android.</p>
+          <p><strong>Cost:</strong> Free.</p>
+          <p>Call a volunteer who can see through your camera, or ask the built-in AI helper to describe a photo.</p>
+          <p><a href="https://apps.apple.com/app/id905177575" target="_blank" rel="noopener noreferrer">Be My Eyes on the App Store (opens in a new tab)</a>. On Android, search for &ldquo;Be My Eyes&rdquo; in Google Play.</p>
+        </div>
+        <div class="vision__card">
+          <h3>Seeing AI (from Microsoft)</h3>
+          <p><strong>Works on:</strong> iPhone and Android.</p>
+          <p><strong>Cost:</strong> Free.</p>
+          <p>Reads short text and whole pages, describes scenes, and reads currency. It works with VoiceOver and TalkBack.</p>
+          <p><a href="https://apps.apple.com/app/id999062298" target="_blank" rel="noopener noreferrer">Seeing AI on the App Store (opens in a new tab)</a> or <a href="https://www.seeingai.com/Android" target="_blank" rel="noopener noreferrer">Seeing AI for Android (opens in a new tab)</a>.</p>
+        </div>
+        <div class="vision__card">
+          <h3>Lookout (from Google)</h3>
+          <p><strong>Works on:</strong> Android only.</p>
+          <p><strong>Cost:</strong> Free.</p>
+          <p>Modes for reading text, documents, and food labels, reading money, and describing images. If text is not read clearly, try turning the phone sideways or moving it closer or farther away.</p>
+          <p><a href="https://play.google.com/store/apps/details?id=com.google.android.apps.accessibility.reveal" target="_blank" rel="noopener noreferrer">Lookout on Google Play (opens in a new tab)</a>. <a href="https://support.google.com/accessibility/android/answer/9031274" target="_blank" rel="noopener noreferrer">Google&rsquo;s Lookout guide (opens in a new tab)</a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="ai-helpers" aria-labelledby="ai-helpers-title">
+      <h2 id="ai-helpers-title">3. AI helpers for adults</h2>
+      <p>An AI assistant is a program you can talk or type to. Cassian uses one called Claude, by voice. Here are things you can ask it to do:</p>
+      <ul>
+        <li>Take a photo of a letter or a bottle label and ask it to read the words out loud.</li>
+        <li>If some words are cut off, ask it how to move the phone so the whole page fits.</li>
+        <li>Ask it to take notes while you are on a phone call. Tell the other person first.</li>
+        <li>Keep a typed list of your medicines in one place, and ask it to read the list back.</li>
+      </ul>
+      <p class="vision__warn"><strong>Always double-check medicine.</strong> AI can misread a label or get a number wrong. Before you take anything, check the name and dose with your pharmacist or doctor.</p>
+      <p>The Claude app is free to download. It also has paid plans you do not need to start. Get it from the <a href="https://apps.apple.com/us/app/claude-by-anthropic/id6473753684" target="_blank" rel="noopener noreferrer">App Store (opens in a new tab)</a>, or search for &ldquo;Claude by Anthropic&rdquo; in Google Play.</p>
+    </section>
+
+    <section id="parents" aria-labelledby="parents-title">
+      <h2 id="parents-title">4. For parents of blind or low-vision kids</h2>
+      <p class="vision__warn"><strong>Important: Claude is for adults only.</strong> Anthropic, the company that makes Claude, requires every user to be at least 18 years old. Children should not use AI assistants like Claude on their own. A parent can use AI tools for the child, and the child can use kid-safe tools instead.</p>
+      <div class="vision__box">
+        <h3>Kid-safe tools to start with</h3>
+        <ul>
+          <li>The built-in phone readers and magnifiers from section 1.</li>
+          <li>Be My Eyes, with a parent nearby. Check the age rating in the app store first.</li>
+          <li>Vision services through your child&rsquo;s school.</li>
+        </ul>
+        <h3>Questions to ask the school</h3>
+        <ul>
+          <li>Can my child be seen by a TVI? A TVI is a teacher of students with visual impairments.</li>
+          <li>Can my child get orientation and mobility (O&amp;M) help? This teaches a child to understand a space and move around safely.</li>
+        </ul>
+        <h3>National groups that help families</h3>
+        <ul>
+          <li><a href="https://www.afb.org/blindness-and-low-vision/familyconnect" target="_blank" rel="noopener noreferrer">American Foundation for the Blind: FamilyConnect (opens in a new tab)</a>. A free resource for parents, now run by the American Printing House for the Blind. It includes ParentConnect, an online support group.</li>
+          <li><a href="https://nfb.org" target="_blank" rel="noopener noreferrer">National Federation of the Blind (opens in a new tab)</a>. Its National Organization of Parents of Blind Children is for families, teachers and friends of blind children.</li>
+          <li><a href="https://aphconnectcenter.org/familyconnect/" target="_blank" rel="noopener noreferrer">American Printing House for the Blind: FamilyConnect (opens in a new tab)</a>. Tips, information and personal stories for families.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="home-tips" aria-labelledby="home-tips-title">
+      <h2 id="home-tips-title">5. Simple home tips</h2>
+      <ul>
+        <li>Use big-print or talking labels on things you use every day.</li>
+        <li>Keep your medicine list in one place. Keep a copy by the phone and a copy on your phone.</li>
+        <li>For older family members, a landline phone with an answering machine can be easier than a smartphone.</li>
+        <li>Double-check every medicine with your pharmacist.</li>
+        <li>Put things back in the same spot every time.</li>
+      </ul>
+      <p class="vision__note">This is not medical advice. Ask your doctor, eye doctor or pharmacist.</p>
+      <p class="vision__fine">Apps and settings change. Checked November 23, 2026. If something here is out of date, please use the &ldquo;Report an error&rdquo; link at the bottom of the page.</p>
+    </section>
+  </article>
+</Base>
+
+<style>
+  .vision{max-width:820px;padding-top:54px;padding-bottom:70px;font-size:19px;line-height:1.65}
+  .vision__hero h1{font-family:var(--serif);font-size:clamp(38px,6.4vw,64px);line-height:1.04;margin:10px 0 16px}
+  .vision__promise{font-family:var(--serif);font-size:clamp(23px,3.2vw,31px);line-height:1.3;margin:0 0 18px;color:var(--ink)}
+  .vision__note,.vision__warn{padding:16px 20px;border-left:4px solid var(--accent);background:var(--bg-2);border-radius:0 9px 9px 0;color:var(--ink);margin:18px 0}
+  .vision__warn{border-left-color:#d9a441}
+  .vision__fine{color:var(--ink-2);font-size:16px}
+  .vision__jump{margin:30px 0 44px;padding:20px 24px;border:1px solid var(--line-strong,var(--line));border-radius:12px;background:var(--bg-2)}
+  .vision__jump ul{margin:0;padding-left:22px}
+  .vision__jump li{margin:6px 0}
+  .vision section{scroll-margin-top:92px;margin:0 0 56px}
+  .vision h2{font-family:var(--serif);font-size:clamp(30px,4.4vw,42px);line-height:1.12;margin:0 0 14px}
+  .vision h3{font-family:var(--serif);font-size:26px;line-height:1.2;margin:28px 0 8px}
+  .vision h4{font-size:19px;margin:20px 0 6px;color:var(--ink)}
+  .vision p,.vision li{color:var(--ink)}
+  .vision ul{padding-left:24px}
+  .vision li{margin:7px 0}
+  .vision a{color:#ff8a70;text-decoration:underline;text-underline-offset:3px}
+  .vision a:focus-visible{outline:3px solid #ffd479;outline-offset:3px}
+  .vision__cards{display:grid;gap:16px;margin-top:18px}
+  .vision__card,.vision__box{padding:22px 24px;border:1px solid var(--line-strong,var(--line));border-radius:12px;background:var(--bg-2)}
+  .vision__card h3,.vision__box h3{margin-top:0}
+  .vision__box h3:not(:first-child){margin-top:24px}
+  .vision__card p{margin:6px 0}
+</style>
