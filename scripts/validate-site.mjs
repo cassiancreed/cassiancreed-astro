@@ -105,22 +105,22 @@ const expectedJuryChessCheckoutCtas = new Map([
     `${juryChessProductUrl}?utm_source=cassiancreed.com&utm_medium=day_one_explainer&utm_campaign=jury_chess&utm_content=closing_cta`,
   ]],
   ['/post/anatomy-of-a-murder-trial-hernandez-melgar/', [
-    `${juryChessProductUrl}?utm_source=website&utm_medium=book_cta&utm_campaign=melgar_cluster&utm_content=anatomy-of-a-murder-trial-hernandez-melgar_mid`,
-    `${juryChessProductUrl}?utm_source=website&utm_medium=book_cta&utm_campaign=melgar_cluster&utm_content=anatomy-of-a-murder-trial-hernandez-melgar_end`,
+    `${juryChessProductUrl}?utm_source=website&utm_medium=book_cta&utm_campaign=anatomy-of-a-murder-trial-hernandez-melgar&utm_content=anatomy-of-a-murder-trial-hernandez-melgar_mid`,
+    `${juryChessProductUrl}?utm_source=website&utm_medium=book_cta&utm_campaign=anatomy-of-a-murder-trial-hernandez-melgar&utm_content=anatomy-of-a-murder-trial-hernandez-melgar_end`,
   ]],
   ['/post/how-washington-courts-work-hernandez-melgar/', [
-    `${juryChessProductUrl}?utm_source=website&utm_medium=book_cta&utm_campaign=melgar_cluster&utm_content=how-washington-courts-work-hernandez-melgar_mid`,
-    `${juryChessProductUrl}?utm_source=website&utm_medium=book_cta&utm_campaign=melgar_cluster&utm_content=how-washington-courts-work-hernandez-melgar_end`,
+    `${juryChessProductUrl}?utm_source=website&utm_medium=book_cta&utm_campaign=how-washington-courts-work-hernandez-melgar&utm_content=how-washington-courts-work-hernandez-melgar_mid`,
+    `${juryChessProductUrl}?utm_source=website&utm_medium=book_cta&utm_campaign=how-washington-courts-work-hernandez-melgar&utm_content=how-washington-courts-work-hernandez-melgar_end`,
   ]],
   ['/post/murder-staged-as-suicide-hernandez-melgar/', [
-    `${juryChessProductUrl}?utm_source=website&utm_medium=book_cta&utm_campaign=melgar_cluster&utm_content=murder-staged-as-suicide-hernandez-melgar_mid`,
-    `${juryChessProductUrl}?utm_source=website&utm_medium=book_cta&utm_campaign=melgar_cluster&utm_content=murder-staged-as-suicide-hernandez-melgar_end`,
+    `${juryChessProductUrl}?utm_source=website&utm_medium=book_cta&utm_campaign=murder-staged-as-suicide-hernandez-melgar&utm_content=murder-staged-as-suicide-hernandez-melgar_mid`,
+    `${juryChessProductUrl}?utm_source=website&utm_medium=book_cta&utm_campaign=murder-staged-as-suicide-hernandez-melgar&utm_content=murder-staged-as-suicide-hernandez-melgar_end`,
   ]],
   ['/post/this-week-in-court-august-30-2026/', [
-    `${juryChessProductUrl}?utm_source=website&utm_medium=book_cta&utm_campaign=twic_to_jury_chess&utm_content=this-week-in-court-august-30-2026_end`,
+    `${juryChessProductUrl}?utm_source=website&utm_medium=book_cta&utm_campaign=this-week-in-court-august-30-2026&utm_content=this-week-in-court-august-30-2026_end`,
   ]],
   ['/post/what-actually-happens-when-a-jury-deliberates/', [
-    `${juryChessProductUrl}?utm_source=website&utm_medium=book_cta&utm_campaign=melgar_cluster&utm_content=what-actually-happens-when-a-jury-deliberates_end`,
+    `${juryChessProductUrl}?utm_source=website&utm_medium=book_cta&utm_campaign=what-actually-happens-when-a-jury-deliberates&utm_content=what-actually-happens-when-a-jury-deliberates_end`,
   ]],
 ]);
 
