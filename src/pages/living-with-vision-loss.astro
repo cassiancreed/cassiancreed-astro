@@ -1,8 +1,8 @@
 ---
 import Base from '../layouts/Base.astro';
 import { pageSchema } from '../utils/page-schema.mjs';
-const title = "Living With Vision Loss: Free Tools and Tips";
-const description = "Free phone tools, talking-camera apps, and simple home tips for people with vision loss, plus a short guide for parents of blind or low-vision kids.";
+const title = "Disability Tips: Free Tools and Ways AI Can Help";
+const description = "Plain, free tips for vision, hearing, mobility, ADHD, ACHD, and memory needs, with safe ways to use AI and a parent guide.";
 const jsonld = pageSchema({
   "type": "WebPage",
   "title": title,
@@ -16,23 +16,28 @@ const jsonld = pageSchema({
   <article class="vision wrap">
     <header class="vision__hero">
       <p class="evidence evidence--accent">Accessibility</p>
-      <h1>Living With Vision Loss: Free Tools and Tips</h1>
-      <p class="vision__promise">Plain tips anyone can use. Most of these tools are already on your phone or free to download.</p>
-      <p class="vision__note">Cassian Creed is legally blind. These are tools and habits he has found useful. They are not endorsements or promises that they will work for you. This page is not medical advice. Ask your doctor, eye doctor or pharmacist about your health.</p>
+      <h1>Disability Tips: Free Tools and Ways AI Can Help</h1>
+      <p class="vision__promise">Small changes can make daily tasks easier. Start with the tools already on your phone. Different people need different things.</p>
+      <p class="vision__note">These are general ideas, not a test or a treatment. AI can make mistakes. Ask a trained person when a task affects health, money, travel, or safety. This page is not medical advice.</p>
     </header>
 
     <nav class="vision__jump" aria-label="On this page">
       <ul>
         <li><a href="#phone-tools">Tools already on your phone</a></li>
         <li><a href="#camera-apps">Point your camera and hear it</a></li>
-        <li><a href="#ai-helpers">AI helpers for adults</a></li>
+        <li><a href="#hearing">Hearing and captions</a></li>
+        <li><a href="#mobility">Mobility and hands-free help</a></li>
+        <li><a href="#attention">ADHD and attention</a></li>
+        <li><a href="#achd">ACHD and long-term health tasks</a></li>
+        <li><a href="#memory">Memory and reminders</a></li>
+        <li><a href="#ai-helpers">Safe AI help for adults</a></li>
         <li><a href="#parents">For parents of blind or low-vision kids</a></li>
         <li><a href="#home-tips">Simple home tips</a></li>
       </ul>
     </nav>
 
     <section id="phone-tools" aria-labelledby="phone-tools-title">
-      <h2 id="phone-tools-title">1. Tools already on your phone</h2>
+      <h2 id="phone-tools-title">Vision: tools already on your phone</h2>
       <p>You do not need to buy anything. Both iPhone and Android come with a screen reader (it speaks what is on the screen) and a magnifier.</p>
 
       <h3>iPhone</h3>
@@ -68,7 +73,7 @@ const jsonld = pageSchema({
     </section>
 
     <section id="camera-apps" aria-labelledby="camera-apps-title">
-      <h2 id="camera-apps-title">2. Point your camera and hear it</h2>
+      <h2 id="camera-apps-title">Vision: point your camera and hear it</h2>
       <p>These free apps use your phone&rsquo;s camera to read text out loud or describe what is in front of you. They can make mistakes, so double-check anything important.</p>
       <div class="vision__cards">
         <div class="vision__card">
@@ -95,37 +100,94 @@ const jsonld = pageSchema({
       </div>
     </section>
 
-    <section id="ai-helpers" aria-labelledby="ai-helpers-title">
-      <h2 id="ai-helpers-title">3. AI helpers for adults</h2>
-      <p>An AI assistant is a program you can talk or type to. Cassian uses one called Claude, by voice. Here are things you can ask it to do:</p>
+
+    <section id="hearing" aria-labelledby="hearing-title">
+      <h2 id="hearing-title">Hearing: read what people say</h2>
       <ul>
-        <li>Take a photo of a letter or a bottle label and ask it to read the words out loud.</li>
-        <li>If some words are cut off, ask it how to move the phone so the whole page fits.</li>
-        <li>Ask it to take notes while you are on a phone call. Tell the other person first.</li>
-        <li>Keep a typed list of your medicines in one place, and ask it to read the list back.</li>
+        <li>On iPhone, go to Settings, then Accessibility, then Live Captions on supported phones. You can also turn on captions in video apps.</li>
+        <li>On Android, open Settings, then Accessibility. Look for Live Caption or Live Transcribe. Names may differ by phone.</li>
+        <li>For a meeting, ask for written notes or real captions. Let others know if you plan to record.</li>
       </ul>
-      <p class="vision__warn"><strong>Always double-check medicine.</strong> AI can misread a label or get a number wrong. Before you take anything, check the name and dose with your pharmacist or doctor.</p>
-      <p>The Claude app is free to download. It also has paid plans you do not need to start. Get it from the <a href="https://apps.apple.com/us/app/claude-by-anthropic/id6473753684" target="_blank" rel="noopener noreferrer">App Store (opens in a new tab)</a>, or search for &ldquo;Claude by Anthropic&rdquo; in Google Play.</p>
+      <p>AI can turn a rough transcript into a short list of key points. Captions may miss words, names, or numbers. Do not use them as your only guide in an emergency.</p>
+      <p><a href="https://support.apple.com/guide/iphone/iphe0990f7bb/ios" target="_blank" rel="noopener noreferrer">Apple Live Captions guide</a> · <a href="https://support.google.com/accessibility/android/answer/9158064" target="_blank" rel="noopener noreferrer">Google Live Transcribe guide</a></p>
+    </section>
+
+    <section id="mobility" aria-labelledby="mobility-title">
+      <h2 id="mobility-title">Mobility: use your phone with less touch</h2>
+      <ul>
+        <li>On iPhone, go to Settings, Accessibility, then Voice Control. Follow Set Up Voice Control. You can say “open,” “tap,” or “scroll.”</li>
+        <li>On Android, find Voice Access in Settings, Accessibility. If it is not there, check Google Play.</li>
+        <li>Use dictation to write a message without long typing. Keep the phone where you can reach it.</li>
+      </ul>
+      <p>AI may help write an email or make a packing list. It cannot tell whether a path, ramp, door, or lift is safe. Check access details with the place you plan to visit.</p>
+      <p><a href="https://support.apple.com/guide/iphone/iph2c21a3c88/ios" target="_blank" rel="noopener noreferrer">Apple Voice Control guide</a> · <a href="https://support.google.com/accessibility/android/answer/6151848" target="_blank" rel="noopener noreferrer">Android Voice Access guide</a></p>
+    </section>
+
+    <section id="attention" aria-labelledby="attention-title">
+      <h2 id="attention-title">ADHD and attention: make the next step small</h2>
+      <ul>
+        <li>Put one task on the screen at a time.</li>
+        <li>Use a short timer and a reminder for the next step.</li>
+        <li>Ask AI to split a long task into three simple steps. Check the steps and set your own pace.</li>
+      </ul>
+      <p>Try a routine that works for you. You do not need to share a diagnosis with an AI service.</p>
+      <p><a href="https://www.cdc.gov/adhd/treatment/behavior-therapy.html" target="_blank" rel="noopener noreferrer">CDC: routines and clear tasks</a></p>
+    </section>
+
+    <section id="achd" aria-labelledby="achd-title">
+      <h2 id="achd-title">ACHD: keep health tasks easy to follow</h2>
+      <p><strong>ACHD means adult congenital heart disease.</strong> It is not the same as ADHD. Not every adult with ACHD has the same daily needs.</p>
+      <ul>
+        <li>Keep appointments and questions in a calendar or note.</li>
+        <li>Ask AI to turn your own questions into a short list for a doctor visit.</li>
+        <li>Keep a current medicine list that you review with your care team, not with AI alone.</li>
+      </ul>
+      <p>Only your healthcare team can give care advice. AI must not change your treatment, tell you which medicines to take, or judge symptoms.</p>
+      <p><a href="https://www.achaheart.org/your-heart/resources/achd-care-guidelines" target="_blank" rel="noopener noreferrer">Adult Congenital Heart Association: ACHD resources</a></p>
+    </section>
+
+    <section id="memory" aria-labelledby="memory-title">
+      <h2 id="memory-title">Memory: keep important things in one place</h2>
+      <ul>
+        <li>Put keys, glasses, and your phone in the same place each day.</li>
+        <li>Use a calendar or talking reminder for times and tasks.</li>
+        <li>Ask AI to make a clear checklist from your own notes. Check each item before relying on it.</li>
+      </ul>
+      <p>If memory changes make daily life unsafe or hard, talk with a healthcare professional. AI does not test or diagnose memory problems.</p>
+      <p><a href="https://www.nia.nih.gov/health/memory-loss-and-forgetfulness/memory-forgetfulness-and-aging-whats-normal-and-whats-not" target="_blank" rel="noopener noreferrer">National Institute on Aging: memory tips</a></p>
+    </section>
+
+    <section id="ai-helpers" aria-labelledby="ai-helpers-title">
+      <h2 id="ai-helpers-title">How AI can help adults</h2>
+      <p>An AI assistant is a tool you can speak or type to. It can explain text, make a simple list, or help plan a task. It does not always get the facts right.</p>
+      <ul>
+        <li>Ask for a plain-language summary of a long letter. Check the source text for errors.</li>
+        <li>Ask which parts of a photo are cut off so you can take it again.</li>
+        <li>Make a to-do list from notes you type after a call. Ask before recording anyone.</li>
+        <li>Turn your own notes into questions to ask a doctor or pharmacist. Do not share private records unless you understand the tool’s privacy rules.</li>
+      </ul>
+      <p class="vision__warn"><strong>Safety first:</strong> Never use AI alone to choose a medicine, confirm a dose, cross a road, judge an emergency, or make a medical choice. AI can misread labels and numbers. A pharmacist or clinician must check medicine questions.</p>
+      <p>Claude is for adults 18 and older. Its app is free to download, with optional paid plans. Get it from the <a href="https://apps.apple.com/us/app/claude-by-anthropic/id6473753684" target="_blank" rel="noopener noreferrer">App Store (opens in a new tab)</a>, or search for &ldquo;Claude by Anthropic&rdquo; in Google Play.</p>
     </section>
 
     <section id="parents" aria-labelledby="parents-title">
-      <h2 id="parents-title">4. For parents of blind or low-vision kids</h2>
-      <p class="vision__warn"><strong>Important: Claude is for adults only.</strong> Anthropic, the company that makes Claude, requires every user to be at least 18 years old. Children should not use AI assistants like Claude on their own. A parent can use AI tools for the child, and the child can use kid-safe tools instead.</p>
+      <h2 id="parents-title">For parents of a blind child</h2>
+      <p class="vision__warn"><strong>Important: Claude is for adults only.</strong> Anthropic, the company that makes Claude, requires every user to be at least 18 years old. Parents should run AI tools for children. Children can use age-right, accessible tools with adult help. Check each app’s age rule and privacy settings.</p>
       <div class="vision__box">
         <h3>Kid-safe tools to start with</h3>
         <ul>
-          <li>The built-in phone readers and magnifiers from section 1.</li>
-          <li>Be My Eyes, with a parent nearby. Check the age rating in the app store first.</li>
+          <li>Built-in phone readers, magnifiers, and school-approved access tools.</li>
+          <li>A parent may use a camera or reading app to help with a task. Check the app age rules first.</li>
           <li>Vision services through your child&rsquo;s school.</li>
         </ul>
         <h3>Questions to ask the school</h3>
         <ul>
-          <li>Can my child be seen by a TVI? A TVI is a teacher of students with visual impairments.</li>
-          <li>Can my child get orientation and mobility (O&amp;M) help? This teaches a child to understand a space and move around safely.</li>
+          <li>Can the school check how my child uses vision to learn, and what reading format works best? Can a TVI (teacher of students with visual impairments) join the school team?</li>
+          <li>Can we discuss an Individualized Education Program (IEP), Braille or other reading tools, and orientation and mobility (O&amp;M) training? O&amp;M teaches travel and space skills.</li>
         </ul>
         <h3>National groups that help families</h3>
         <ul>
-          <li><a href="https://www.afb.org/blindness-and-low-vision/familyconnect" target="_blank" rel="noopener noreferrer">American Foundation for the Blind: FamilyConnect (opens in a new tab)</a>. A free resource for parents, now run by the American Printing House for the Blind. It includes ParentConnect, an online support group.</li>
+          <li><a href="https://www.afb.org/blindness-and-low-vision" target="_blank" rel="noopener noreferrer">American Foundation for the Blind (opens in a new tab)</a>. Research, education, and advocacy for blind and low-vision people.</li>
           <li><a href="https://nfb.org" target="_blank" rel="noopener noreferrer">National Federation of the Blind (opens in a new tab)</a>. Its National Organization of Parents of Blind Children is for families, teachers and friends of blind children.</li>
           <li><a href="https://aphconnectcenter.org/familyconnect/" target="_blank" rel="noopener noreferrer">American Printing House for the Blind: FamilyConnect (opens in a new tab)</a>. Tips, information and personal stories for families.</li>
         </ul>
@@ -133,18 +195,18 @@ const jsonld = pageSchema({
     </section>
 
     <section id="home-tips" aria-labelledby="home-tips-title">
-      <h2 id="home-tips-title">5. Simple home tips</h2>
+      <h2 id="home-tips-title">Home tips for many needs</h2>
       <ul>
         <li>Use big-print or talking labels on things you use every day.</li>
         <li>Keep your medicine list in one place. Keep a copy by the phone and a copy on your phone.</li>
-        <li>For older family members, a landline phone with an answering machine can be easier than a smartphone.</li>
+        <li>Try a simple phone, a talking clock, or a written routine if it fits the person’s needs.</li>
         <li>Double-check every medicine with your pharmacist.</li>
         <li>Put things back in the same spot every time.</li>
       </ul>
       <p class="vision__note">This is not medical advice. Ask your doctor, eye doctor or pharmacist.</p>
-      <p class="vision__fine">Apps and settings change. Checked November 23, 2026. If something here is out of date, please use the &ldquo;Report an error&rdquo; link at the bottom of the page.</p>
+      <p class="vision__fine">Apps and settings change. Sources reviewed November 23, 2026. If something here is out of date, please use the &ldquo;Report an error&rdquo; link at the bottom of the page.</p>
     </section>
-  </article>
+    </article>
 </Base>
 
 <style>
