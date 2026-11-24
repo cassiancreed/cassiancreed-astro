@@ -154,7 +154,9 @@ const OFFICIAL_IDS = [
 const NEWS_IDS = [
   'moser-heintz-arraignment',
   'isabelle-johnson-hearing',
+  'arndt-motion-2026-12-16',
   'arndt-sentencing-2027-01-20',
+  'walsh-release-motion-2027-01-05',
   'unconfirmed-1',
   'unconfirmed-2',
   'unconfirmed-5',
