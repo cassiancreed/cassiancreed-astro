@@ -194,7 +194,7 @@ const visibleDayEntries = (entries) => {
 
   <p class="calendar-legend"><span><i class="calendar-dot" data-link-type="free" aria-hidden="true"></i>FREE explainer</span> · <span><i class="calendar-dot" data-link-type="paid" aria-hidden="true"></i>$1.99 guide</span> · <span><i class="calendar-dot" data-link-type="book" aria-hidden="true"></i>BOOK</span></p>
   <div class="home-calendar__layout">
-    <div class="home-calendar__month" role="grid" aria-labelledby="home-calendar-title">
+    <div class="home-calendar__month" role="group" aria-label="Calendar month and selectable dates">
       {ongoingNowEntries.length > 0 && (
         <div class="home-calendar__ongoing" aria-label="Trials currently underway">
           <span>Trials underway</span>
@@ -203,9 +203,9 @@ const visibleDayEntries = (entries) => {
           ))}
         </div>
       )}
-      <div class="home-calendar__weekdays" role="row">
+      <div class="home-calendar__weekdays">
         {['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'].map((day) => (
-          <span role="columnheader"><span class="home-calendar__day-wide">{day}</span><span class="home-calendar__day-short">{day.charAt(0)}</span></span>
+          <span><span class="home-calendar__day-wide">{day}</span><span class="home-calendar__day-short">{day.charAt(0)}</span></span>
         ))}
       </div>
       <div class="home-calendar__days" data-calendar-days>
@@ -600,7 +600,6 @@ const visibleDayEntries = (entries) => {
         if (key === keyFor(new Date())) button.classList.add('is-today');
         if (key === selectedDate) button.classList.add('is-selected');
         if (dateEntries.length) button.classList.add('has-events');
-        button.setAttribute('role', 'gridcell');
         button.setAttribute('aria-label', `${dateFormatter.format(date)}${dateEntries.length ? `, ${dateEntries.length} proceeding${dateEntries.length > 1 ? 's' : ''}` : ''}`);
         const linkTypes = calendarLinkTypesFor(dateEntries);
         if (linkTypes.length) button.setAttribute('aria-label', button.getAttribute('aria-label') + ', ' + linkTypes.map((type) => ({free:'FREE explainer',paid:'paid guide',book:'BOOK'}[type])).join(', '));
