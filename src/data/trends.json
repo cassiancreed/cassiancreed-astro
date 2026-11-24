@@ -1,6 +1,6 @@
 {
  "asOf": "2026-11-23",
- "asOfText": "Monday, Nov. 23, 2026, about 2:30 p.m. PT",
+ "asOfText": "Monday, Nov. 23, 2026, about 6:30 p.m. PT",
  "source": "Google Trends, U.S., past 30 days, daily",
  "sourceUrl": "https://trends.google.com/trends/",
  "note": "Nov. 22 is the last full day shown. Google counts days on its own clock, and its partial Nov. 23 point is not charted.",
@@ -396,70 +396,70 @@
   "smith": [
    1,
    1,
-   2,
+   3,
    4,
    4,
    3,
    3,
    2,
-   2,
    1,
    1,
-   2,
-   1,
-   2,
-   2,
+   0,
    2,
    1,
    2,
+   2,
+   2,
+   1,
+   1,
+   4,
    3,
-   3,
-   2,
    2,
    2,
    1,
+   2,
    7,
-   6,
+   7,
    9,
-   16,
-   100,
-   55,
    15,
+   100,
+   52,
+   13,
    8
   ],
   "clancy": [
    22,
    19,
-   17,
-   15,
-   14,
-   14,
-   18,
-   20,
-   19,
-   19,
    16,
-   68,
-   34,
+   14,
+   14,
+   14,
    17,
+   19,
+   18,
+   18,
+   16,
+   66,
+   34,
+   16,
    15,
    13,
    14,
    12,
-   16,
-   28,
-   17,
-   17,
-   16,
-   15,
-   15,
-   60,
-   30,
-   17,
-   19,
-   20,
    14,
-   15
+   27,
+   17,
+   16,
+   16,
+   15,
+   15,
+   58,
+   28,
+   16,
+   18,
+   19,
+   13,
+   14
   ],
   "rinderknecht": [
    0,
@@ -492,7 +492,7 @@
    0,
    0,
    2,
-   27,
+   26,
    7
   ],
   "kosowski": [
@@ -526,8 +526,8 @@
    0,
    0,
    5,
-   20,
-   9
+   19,
+   8
   ],
   "hall": [
    0,
@@ -559,7 +559,7 @@
    2,
    2,
    2,
-   3,
+   2,
    1,
    1
   ]
@@ -590,7 +590,7 @@
   "kosowski": "Tomasz Kosowski",
   "hall": "Dwain Hall"
  },
- "runNote": "Nov. 23, about 2:30 p.m. PT, 2:28 p.m. slot. One Google Trends comparison of five terms (Susan Smith, Lindsay Clancy, Jonathan Rinderknecht, Dwain Hall, Tomasz Kosowski), past 30 days, U.S.; Smith is 100 on Nov. 19, so the five share one scale. Nov. 22 values unchanged (8, 15, 7, 1, 9); Google nudged earlier days (smith [54, 14, 8] to [55, 15, 8]; clancy [19, 14, 15] to [20, 14, 15]; rinderknecht [2, 25, 7] to [2, 27, 7]) and the charted points were updated. Google's partial Nov. 23 point (4, 11, 2, 0, 4) is logged in the run series, not charted. The other cases' one-term charts were not re-read this run and keep their earlier values.",
+ "runNote": "Nov. 23, about 6:30 p.m. PT, 6:28 p.m. slot. One Google Trends comparison of five terms (Susan Smith, Lindsay Clancy, Jonathan Rinderknecht, Dwain Hall, Tomasz Kosowski), past 30 days, U.S.; Smith is 100 on Nov. 19, so the five share one scale. Nov. 22 values unchanged for Smith, Clancy, Rinderknecht, Hall (8, 14, 7, 1) and Kosowski 8. Google's window moved forward two days, so it re-scaled some earlier points by 1 to 3 (for example Smith Nov. 20 from 55 to 52, Clancy Nov. 2 from 68 to 66); the charted points were updated. Google's partial Nov. 23 point (Smith 4, Clancy 11, Rinderknecht 2, Hall 1, Kosowski 4) is logged in the run series, not charted. Google also shows a partial Nov. 24 point (4, 13, 1, 2, 2); it is not logged or charted. The other cases' one-term charts were not re-read this run and keep their earlier values.",
  "xRadar": {
   "asOf": "2026-11-23",
   "status": "not counted",
@@ -635,6 +635,11 @@
     "time": "2026-11-23 14:29 PT",
     "google": 11,
     "x": "not counted"
+   },
+   {
+    "time": "2026-11-23 18:30 PT",
+    "google": 11,
+    "x": "not counted"
    }
   ],
   "smith": [
@@ -665,6 +670,11 @@
    },
    {
     "time": "2026-11-23 14:29 PT",
+    "google": 4,
+    "x": "not counted"
+   },
+   {
+    "time": "2026-11-23 18:30 PT",
     "google": 4,
     "x": "not counted"
    }
@@ -706,6 +716,11 @@
     "time": "2026-11-23 14:29 PT",
     "google": 2,
     "x": "not counted"
+   },
+   {
+    "time": "2026-11-23 18:30 PT",
+    "google": 2,
+    "x": "not counted"
    }
   ],
   "hall": [
@@ -738,6 +753,11 @@
     "time": "2026-11-23 14:29 PT",
     "google": 0,
     "x": "not counted"
+   },
+   {
+    "time": "2026-11-23 18:30 PT",
+    "google": 1,
+    "x": "not counted"
    }
   ],
   "kosowski": [
@@ -768,6 +788,11 @@
    },
    {
     "time": "2026-11-23 14:29 PT",
+    "google": 4,
+    "x": "not counted"
+   },
+   {
+    "time": "2026-11-23 18:30 PT",
     "google": 4,
     "x": "not counted"
    }
