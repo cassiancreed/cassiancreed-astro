@@ -1,6 +1,6 @@
 {
- "asOf": "2026-11-24",
- "asOfText": "Tuesday, Nov. 24, 2026, about 6:40 p.m. PT",
+ "asOf": "2026-11-25",
+ "asOfText": "Wednesday, Nov. 25, 2026, about 10:35 a.m. PT",
  "source": "Google Trends, U.S., past 30 days, daily",
  "sourceUrl": "https://trends.google.com/trends/",
  "note": "Nov. 22 is the last full day shown. Google counts days on its own clock, and its partial Nov. 23 point is not charted.",
@@ -406,17 +406,17 @@
    1,
    1,
    2,
-   2,
+   1,
    2,
    2,
    2,
    1,
    1,
+   4,
    3,
-   3,
    2,
    2,
-   2,
+   1,
    1,
    7,
    6,
@@ -436,29 +436,29 @@
    14,
    17,
    20,
-   19,
+   18,
    18,
    16,
-   66,
-   34,
-   17,
-   15,
-   13,
-   14,
-   12,
-   15,
-   27,
-   17,
-   17,
-   17,
-   15,
-   15,
-   61,
-   28,
+   65,
+   33,
    16,
-   19,
-   19,
+   15,
+   12,
    14,
+   11,
+   14,
+   26,
+   18,
+   16,
+   16,
+   14,
+   14,
+   57,
+   28,
+   15,
+   18,
+   19,
+   13,
    14
   ],
   "rinderknecht": [
@@ -526,7 +526,7 @@
    0,
    0,
    5,
-   20,
+   19,
    8
   ],
   "hall": [
@@ -559,7 +559,7 @@
    2,
    2,
    2,
-   3,
+   2,
    1,
    1
   ]
@@ -590,7 +590,7 @@
   "kosowski": "Tomasz Kosowski",
   "hall": "Dwain Hall"
  },
- "runNote": "Nov. 24, about 6:40 p.m. PT, run by hand by the Lieutenant (Order 282). One Google Trends comparison of five terms (Susan Smith, Lindsay Clancy, Jonathan Rinderknecht, Dwain Hall, Tomasz Kosowski), past 30 days, U.S.; Smith is 100 on Nov. 19, so the five share one scale. Google re-scaled 2 earlier points by 1 to 2; the charted points are updated. Nov. 22 is still the last full day charted. Google's Nov. 23 point (Smith 5, Clancy 12, Rinderknecht 2, Hall 1, Kosowski 4) has not changed in three reads, and its Nov. 24 point (3, 12, 1, 1, 2) is logged in the run series, not charted. X radar: the Lieutenant opened X Radar at 6:29 p.m. PT and read the Court Movement list on Latest. Verdict watch: Beau Lamarre-Condon (Australia) was found guilty, per ABC News, Nine News and a post by Dr. Josie McSkimming; ABC News, SBS and 1News NZ are the three outlets on file. Court TV posted that a Georgia jury in the Lacy Boles trial returned a verdict after under five hours; that post does not give the result, so no card. Headline check by search: Lindsay Clancy retrial set for March 29, 2027 (Oxygen, CP24, ABC News); Dwain Hall murder trial began Nov. 16 in Marion County, Florida (Court TV, LA Magazine); Rinderknecht retrial is with the jury (NBC Los Angeles); Tomasz Kosowski was found guilty in September (KOLD, blue News); Susan Smith was denied parole in 2024 and has a second hearing in 2026. No card wording changed. The other cases' one-term charts were not re-read and keep their earlier values.",
+ "runNote": "Nov. 25, about 10:35 a.m. PT, scheduled run by the Lieutenant (Pink Chrome). One Google Trends comparison of five terms (Susan Smith, Lindsay Clancy, Jonathan Rinderknecht, Dwain Hall, Tomasz Kosowski), past 30 days, U.S.; Smith is 100 on Nov. 19, so the five share one scale. Google re-scaled 22 earlier points by 1 to 4 (mostly Clancy); the charted points are updated. Nov. 22 is still the last full day charted. Google's Nov. 23 point (5, 11, 2, 1, 4) and Nov. 24 point (3, 12, 1, 1, 2) are logged in the run series, not charted; its partial Nov. 25 point (Smith 2, Clancy 11, Rinderknecht 0, Hall 1, Kosowski 2) is logged in the series only. X radar: the Radar list was opened and read at 10:3x a.m. PT (counts only, posts not opened). Verdict watch: three accounts read (Cathy Russon, Court TV, Law&Crime). Court TV and Russon posts in the last 24 hours concern the Lacy Boles trial, which is already logged; East Idaho News, Swisher Post and Court TV trial updates now report a guilty murder verdict in the death of Daniel Akers (headline level, article text not opened here; no card written). Law&Crime's only hit was an old Bryce Stamper video recap. Headline check by search: Rinderknecht retrial result not seen (only the June mistrial and retrial pages came back); Dwain Hall trial coverage seen (CBS12, Court TV, LA Magazine), no result seen. No card wording changed.",
  "xRadar": {
   "asOf": "2026-11-24",
   "status": "Radar list read by the Lieutenant at 6:29 PM PT (Order 282), Court Movement on Latest; counts are the Radar's own window, a sample, not a total of X",
@@ -642,12 +642,13 @@
    }
   },
   "radarCounts": {
-   "Working Query": "80",
-   "Major Media Amplifiers": "16.6K",
-   "Missing persons, DNA, and Cold Cases": "967",
-   "Arrests and Charges": "6,875",
-   "Court Movement": "454 on the list, 404 inside the 7-day view",
-   "asOf": "2026-11-24 18:29 PT"
+   "Working Query": "84",
+   "Major Media Amplifiers": "18.4K",
+   "Missing persons, DNA, and Cold Cases": "1,231",
+   "Arrests and Charges": "7,583",
+   "Court Movement": "511",
+   "asOf": "2026-11-25 10:3x PT",
+   "note": "counts as shown on the Radar list page, the Radar's own window; a sample, not a total of X; posts not opened"
   }
  },
  "series": {
@@ -713,6 +714,11 @@
     "time": "2026-11-24 18:40 PT",
     "google": 12,
     "x": "radar list read 6:29 PM PT: count in the Radar's own window, a sample, not a total of X"
+   },
+   {
+    "time": "2026-11-25 10:35 PT",
+    "google": 11,
+    "x": "radar list read 10:3x AM PT: count in the Radar's own window, a sample, not a total of X"
    }
   ],
   "smith": [
@@ -770,6 +776,11 @@
     "time": "2026-11-24 18:40 PT",
     "google": 3,
     "x": "radar list read 6:29 PM PT: count in the Radar's own window, a sample, not a total of X"
+   },
+   {
+    "time": "2026-11-25 10:35 PT",
+    "google": 2,
+    "x": "radar list read 10:3x AM PT: count in the Radar's own window, a sample, not a total of X"
    }
   ],
   "glossip": [
@@ -834,6 +845,11 @@
     "time": "2026-11-24 18:40 PT",
     "google": 1,
     "x": "radar list read 6:29 PM PT: count in the Radar's own window, a sample, not a total of X"
+   },
+   {
+    "time": "2026-11-25 10:35 PT",
+    "google": 0,
+    "x": "radar list read 10:3x AM PT: count in the Radar's own window, a sample, not a total of X"
    }
   ],
   "hall": [
@@ -891,6 +907,11 @@
     "time": "2026-11-24 18:40 PT",
     "google": 1,
     "x": "radar list read 6:29 PM PT: count in the Radar's own window, a sample, not a total of X"
+   },
+   {
+    "time": "2026-11-25 10:35 PT",
+    "google": 1,
+    "x": "radar list read 10:3x AM PT: count in the Radar's own window, a sample, not a total of X"
    }
   ],
   "kosowski": [
@@ -948,6 +969,11 @@
     "time": "2026-11-24 18:40 PT",
     "google": 2,
     "x": "radar list read 6:29 PM PT: count in the Radar's own window, a sample, not a total of X"
+   },
+   {
+    "time": "2026-11-25 10:35 PT",
+    "google": 2,
+    "x": "radar list read 10:3x AM PT: count in the Radar's own window, a sample, not a total of X"
    }
   ],
   "bhatt": [
@@ -978,14 +1004,16 @@
    "caseName": "Lacy Boles (GA v. Lacy Boles)",
    "postUrl": "not captured (owner paste has no link)",
    "postAge": "Nov 24; Radar Latest read 6:29 PM PT shows the post at 2,899 views, still no result in the post text",
-   "word": "verdict (jury back after a little less than five hours; the post does not give the result)"
+   "word": "verdict (jury back after a little less than five hours; the post does not give the result)",
+   "result": "Guilty of murder per East Idaho News, Swisher Post and Court TV trial updates (headline level, seen Nov 25 10:3x AM PT); needs a scored card and doctrine check before any card; none written"
   },
   {
    "account": "Cathy Russon @cathyrusson",
    "caseName": "Lacy Boles (GA v. Lacy Boles)",
    "postUrl": "not captured",
    "postAge": "Nov 24 about 5:05 PM PT",
-   "word": "verdict (from Order 262)"
+   "word": "verdict (from Order 262)",
+   "result": "Guilty of murder per East Idaho News, Swisher Post and Court TV trial updates (headline level, seen Nov 25 10:3x AM PT); needs a scored card and doctrine check before any card; none written"
   },
   {
    "account": "not a watched account (seen in the paste)",
@@ -993,6 +1021,13 @@
    "postUrl": "abc.net.au/news/2026-11-25 (ABC News); also Nine News and a post by Dr. Josie McSkimming on X, Nov 24 US time; SBS and 1News NZ confirm",
    "postAge": "Nov 24 US time (Nov 25 Sydney)",
    "word": "guilty"
+  },
+  {
+   "account": "Law&Crime @LawCrimeNetwork",
+   "caseName": "Bryce Stamper (old verdict, video recap)",
+   "postUrl": "not captured",
+   "postAge": "Nov 24",
+   "word": "found guilty (old verdict, 1 source, no card)"
   }
  ]
 }
