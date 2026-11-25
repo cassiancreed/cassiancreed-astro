@@ -142,6 +142,7 @@ const OFFICIAL_IDS = [
   'chafin-case-closed',
   'completed-4',
   'duterte-trial-opening',
+  'duterte-status-conference',
   'unconfirmed-3',
   'amos-pine-bluff',
   'taylor-lawrence',
