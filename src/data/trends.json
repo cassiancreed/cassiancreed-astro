@@ -1,6 +1,6 @@
 {
  "asOf": "2026-11-24",
- "asOfText": "Tuesday, Nov. 24, 2026, about 4:01 p.m. PT",
+ "asOfText": "Tuesday, Nov. 24, 2026, about 5:56 p.m. PT",
  "source": "Google Trends, U.S., past 30 days, daily",
  "sourceUrl": "https://trends.google.com/trends/",
  "note": "Nov. 22 is the last full day shown. Google counts days on its own clock, and its partial Nov. 23 point is not charted.",
@@ -423,43 +423,43 @@
    9,
    15,
    100,
-   55,
+   52,
    14,
-   9
+   8
   ],
   "clancy": [
    22,
    19,
    17,
    15,
+   13,
    14,
-   15,
-   18,
+   17,
    20,
    19,
-   19,
+   18,
    16,
-   67,
-   35,
+   66,
+   34,
    17,
    15,
    13,
    14,
    12,
    15,
-   28,
+   27,
    17,
    17,
    17,
    15,
+   15,
+   60,
+   28,
    16,
-   61,
-   30,
-   16,
-   18,
-   20,
-   13,
-   15
+   19,
+   19,
+   14,
+   14
   ],
   "rinderknecht": [
    0,
@@ -492,7 +492,7 @@
    0,
    0,
    2,
-   28,
+   26,
    7
   ],
   "kosowski": [
@@ -590,12 +590,57 @@
   "kosowski": "Tomasz Kosowski",
   "hall": "Dwain Hall"
  },
- "runNote": "Nov. 24, about 4:01 p.m. PT, run by hand by the Lieutenant in a Pink Chrome tab group (Order 252). One Google Trends comparison of five terms (Susan Smith, Lindsay Clancy, Jonathan Rinderknecht, Dwain Hall, Tomasz Kosowski), past 30 days, U.S.; Smith is 100 on Nov. 19, so the five share one scale. Nov. 22 is still the last full day charted. Google's complete Nov. 23 point (Smith 5, Clancy 12, Rinderknecht 2, Hall 1, Kosowski 4) and its partial Nov. 24 point (3, 12, 1, 1, 2) are logged in the run series, not charted. The other cases' one-term charts were not re-read and keep their earlier values. No card wording changed.",
+ "runNote": "Nov. 24, about 5:56 p.m. PT, run by hand by the Lieutenant (Order 267). One Google Trends comparison of five terms (Susan Smith, Lindsay Clancy, Jonathan Rinderknecht, Dwain Hall, Tomasz Kosowski), past 30 days, U.S.; Smith is 100 on Nov. 19, so the five share one scale. Google re-scaled 17 earlier points by 1 to 3 (for example Smith Nov. 20 55 to 52, Clancy Nov. 17 30 to 28); the charted points are updated. Nov. 22 is still the last full day charted. Google's complete Nov. 23 point (Smith 5, Clancy 12, Rinderknecht 2, Hall 1, Kosowski 4) and its partial Nov. 24 point (3, 11, 1, 1, 2) are logged in the run series, not charted. X radar is a sample from the owner's screen paste of the Court Movement list (about 5:53 p.m. PT), not a count. Verdict watch from that paste: Court TV posted a Lacy Boles (Georgia) verdict Nov. 24, and Beau Lamarre-Condon (Australia) was found guilty (ABC News, SBS, 1News NZ); neither is a card yet. No card wording changed. The other cases' one-term charts were not re-read and keep their earlier values.",
  "xRadar": {
   "asOf": "2026-11-24",
-  "status": "not counted",
-  "method": "X radar not run this slot (no count read; never written without one).",
-  "cases": {}
+  "status": "sample from the owner's paste, not a count",
+  "method": "Owner pasted the X list Court Movement (Radar), two copies at about 5:53 PM PT, Order 267. Counted the posts in the paste that name each case and wrote the top post's views. A sample of one list, not a total. Never written as a 24-hour count.",
+  "cases": {
+   "clancy": {
+    "query": "owner paste of X list Court Movement",
+    "count24h": "not counted",
+    "postsInSample": 1,
+    "topPostViews": "46.1K",
+    "note": "one account's claim about a mother and the Clancy trial; no news link; not verified",
+    "asOf": "2026-11-24 17:56 PT"
+   },
+   "kosowski": {
+    "query": "owner paste of X list Court Movement",
+    "count24h": "not counted",
+    "postsInSample": 2,
+    "topPostViews": "634",
+    "note": "posts quote the Tampa Bay Times on the self-represented surgeon",
+    "asOf": "2026-11-24 17:56 PT"
+   },
+   "hall": {
+    "query": "owner paste of X list Court Movement",
+    "count24h": "not counted",
+    "postsInSample": 1,
+    "topPostViews": "560",
+    "note": "MK True Crime podcast post on the trial",
+    "asOf": "2026-11-24 17:56 PT"
+   },
+   "murdaugh": {
+    "query": "owner paste of X list Court Movement",
+    "count24h": "not counted",
+    "postsInSample": 2,
+    "topPostViews": "443",
+    "note": "two small accounts say a judge refused to dismiss the indictment and a new trial is set for April; no outlet link; not verified (search found only 2024 stories)",
+    "asOf": "2026-11-24 17:56 PT"
+   },
+   "smith": {
+    "query": "owner paste of X list Court Movement",
+    "count24h": "not counted",
+    "postsInSample": 0,
+    "asOf": "2026-11-24 17:56 PT"
+   },
+   "rinderknecht": {
+    "query": "owner paste of X list Court Movement",
+    "count24h": "not counted",
+    "postsInSample": 0,
+    "asOf": "2026-11-24 17:56 PT"
+   }
+  }
  },
  "series": {
   "murdaugh": [
@@ -650,6 +695,11 @@
     "time": "2026-11-24 16:01 PT",
     "google": 12,
     "x": "not counted"
+   },
+   {
+    "time": "2026-11-24 17:56 PT",
+    "google": 11,
+    "x": "paste 5:53 PM: 1 post, 46.1K views (one account, unverified claim); sample, not a total"
    }
   ],
   "smith": [
@@ -697,6 +747,11 @@
     "time": "2026-11-24 16:01 PT",
     "google": 5,
     "x": "not counted"
+   },
+   {
+    "time": "2026-11-24 17:56 PT",
+    "google": 3,
+    "x": "paste 5:53 PM: 0 posts in the owner's X list paste; sample, not a total"
    }
   ],
   "glossip": [
@@ -751,6 +806,11 @@
     "time": "2026-11-24 16:01 PT",
     "google": 2,
     "x": "not counted"
+   },
+   {
+    "time": "2026-11-24 17:56 PT",
+    "google": 1,
+    "x": "paste 5:53 PM: 0 posts in the owner's X list paste; sample, not a total"
    }
   ],
   "hall": [
@@ -798,6 +858,11 @@
     "time": "2026-11-24 16:01 PT",
     "google": 1,
     "x": "not counted"
+   },
+   {
+    "time": "2026-11-24 17:56 PT",
+    "google": 1,
+    "x": "paste 5:53 PM: 1 post, 560 views (MK True Crime); sample, not a total"
    }
   ],
   "kosowski": [
@@ -845,6 +910,11 @@
     "time": "2026-11-24 16:01 PT",
     "google": 4,
     "x": "not counted"
+   },
+   {
+    "time": "2026-11-24 17:56 PT",
+    "google": 2,
+    "x": "paste 5:53 PM: 2 posts, top 634 views (Nov 23); sample, not a total"
    }
   ],
   "bhatt": [
@@ -868,5 +938,28 @@
     "x": "not counted"
    }
   ]
- }
+ },
+ "watchHits": [
+  {
+   "account": "Court TV @CourtTV",
+   "caseName": "Lacy Boles (GA v. Lacy Boles)",
+   "postUrl": "not captured (owner paste has no link)",
+   "postAge": "Nov 24, 1,063 views",
+   "word": "verdict (jury back after a little less than five hours; the post does not give the result)"
+  },
+  {
+   "account": "Cathy Russon @cathyrusson",
+   "caseName": "Lacy Boles (GA v. Lacy Boles)",
+   "postUrl": "not captured",
+   "postAge": "Nov 24 about 5:05 PM PT",
+   "word": "verdict (from Order 262)"
+  },
+  {
+   "account": "not a watched account (seen in the paste)",
+   "caseName": "Beau Lamarre-Condon (Australia)",
+   "postUrl": "abc.net.au/news/2026-11-25 (ABC News, SBS and 1News NZ confirm: guilty of two murders and aggravated break and enter, unanimous)",
+   "postAge": "Nov 24 US time (Nov 25 Sydney)",
+   "word": "guilty"
+  }
+ ]
 }
