@@ -1,0 +1,92 @@
+---
+import Base from '../layouts/Base.astro';
+import { pageSchema } from '../utils/page-schema.mjs';
+import data from '../data/good-news.json';
+// Good News page (owner, Nov 25, 2026). Content lives in src/data/good-news.json.
+// To refresh from a new daily "NEP Good News" doc: replace the items, update
+// "updated", "updatedText" and "windowText", and keep each fact traced to its
+// linked sources. Case wording follows docs/NEP-Case-Handling-Doctrine-v2.0.md
+// (a charged person is "charged, not convicted" in every line, title and alt).
+const title = 'Good News in Cold Cases | Cassian Creed';
+const description = 'Cold case wins, checked and sourced: names given back to the unidentified and old cases that move forward in court.';
+const jsonld = pageSchema({
+  type: 'CollectionPage',
+  title,
+  headline: 'Good news in cold cases',
+  description,
+  path: '/good-news/',
+  source: 'src/pages/good-news.astro',
+});
+---
+<Base title={title} description={description} jsonld={jsonld}>
+  <section class="hero wrap">
+    <p class="evidence evidence--accent">Good News</p>
+    <h1>Good news in cold cases</h1>
+    <p class="gn-lede">Not every true crime story ends in more pain. Here, a lost name comes back, or an old case finally moves to court. We link every source, so you can check us.</p>
+    <p class="gn-stamp">Updated <time datetime={data.updated}>{data.updatedText}</time>. Covers {data.windowText}.</p>
+  </section>
+
+  <section class="wrap gn-list" aria-label="This week's good news">
+    {data.items.map((item) => (
+      <article class="gn-card" id={item.id} aria-labelledby={`${item.id}-title`}>
+        <p class="gn-card__kind">{item.kind}</p>
+        <h2 class="gn-card__title" id={`${item.id}-title`}>{item.title}</h2>
+        {item.body.map((para) => <p>{para}</p>)}
+        {item.next && <p>{item.next}</p>}
+        {item.status && <p class="gn-card__status"><strong>Where it stands:</strong> {item.status}</p>}
+        {item.quote && (
+          <blockquote class="gn-card__quote">
+            <p>&ldquo;{item.quote}&rdquo;</p>
+            <footer>{item.quoteBy}</footer>
+          </blockquote>
+        )}
+        {item.help && <p class="gn-card__help"><strong>How you can help:</strong> {item.help}</p>}
+        {item.note && <p class="gn-card__note">{item.note}</p>}
+        <p class="gn-card__note">New to DNA family-tree work? Read <a href="/how-forensic-genetic-genealogy-works/">how forensic genetic genealogy works</a>.</p>
+        <div class="gn-card__sources">
+          <h3 class="gn-card__sources-title">Sources</h3>
+          <ul>
+            {item.sources.map((src) => (
+              <li><a href={src.url} target="_blank" rel="noopener noreferrer">{src.label} (opens in a new tab)</a></li>
+            ))}
+          </ul>
+          {item.sourceNote && <p class="gn-card__note">{item.sourceNote}</p>}
+        </div>
+      </article>
+    ))}
+  </section>
+
+  <section class="wrap gn-foot">
+    <div class="gn-foot__inner">
+      <h2>How we pick good news</h2>
+      <p>Good news here means one of two things: an unknown person gets their name back, or a long-open case takes a real step in court. A charge is not a conviction, and we say so.</p>
+      <p>Want more? Read <a href="/the-names-genetic-genealogy-gave-back/">the names genetic genealogy gave back</a>, or see <a href="/how-we-check-our-facts/">how we check our facts</a>.</p>
+    </div>
+  </section>
+
+  <style>
+    .gn-lede{color:var(--ink-2);max-width:62ch;font-size:18px;margin:18px 0 0}
+    .gn-stamp{color:var(--ink-3);font-size:15px;max-width:70ch;margin:10px 0 0}
+    .gn-list{display:grid;gap:18px;padding:8px 0 24px}
+    .gn-card{background:var(--bg-2);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:10px;padding:22px 24px;max-width:78ch}
+    .gn-card p{color:var(--ink-2);font-size:17px;line-height:1.6;margin:0 0 12px}
+    .gn-card__kind{font-family:var(--mono);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent) !important;margin:0 0 6px !important}
+    .gn-card__title{font-family:var(--serif);font-weight:600;font-size:26px;line-height:1.25;margin:0 0 12px;color:var(--ink)}
+    .gn-card__status,.gn-card__help{background:var(--bg-3);border:1px solid var(--line);border-radius:8px;padding:12px 14px}
+    .gn-card strong{color:var(--ink)}
+    .gn-card__quote{margin:0 0 12px;padding:0 0 0 14px;border-left:2px solid var(--line)}
+    .gn-card__quote p{font-style:italic;margin:0 0 4px}
+    .gn-card__quote footer{color:var(--ink-3);font-size:15px}
+    .gn-card__note{color:var(--ink-3) !important;font-size:15px !important}
+    .gn-card__sources{border-top:1px solid var(--line);margin-top:6px;padding-top:12px}
+    .gn-card__sources-title{font-family:var(--mono);font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin:0 0 6px}
+    .gn-card__sources ul{margin:0 0 8px;padding-left:20px}
+    .gn-card__sources li{color:var(--ink-2);font-size:15px;margin:0 0 4px}
+    .gn-card a,.gn-foot a{color:var(--accent);text-decoration:underline}
+    .gn-foot{padding:8px 0 40px}
+    .gn-foot__inner{background:var(--bg-3);border:1px solid rgba(224,86,59,.25);border-radius:12px;padding:26px;max-width:78ch}
+    .gn-foot__inner h2{font-family:var(--serif);font-weight:600;font-size:24px;margin:0 0 10px}
+    .gn-foot__inner p{color:var(--ink-2);font-size:17px;margin:0 0 10px}
+    @media(max-width:680px){.gn-card{padding:18px}.gn-card__title{font-size:23px}}
+  </style>
+</Base>
