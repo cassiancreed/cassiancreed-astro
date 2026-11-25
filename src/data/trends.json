@@ -1,6 +1,6 @@
 {
  "asOf": "2026-11-24",
- "asOfText": "Tuesday, Nov. 24, 2026, about 12:40 p.m. PT",
+ "asOfText": "Tuesday, Nov. 24, 2026, about 4:01 p.m. PT",
  "source": "Google Trends, U.S., past 30 days, daily",
  "sourceUrl": "https://trends.google.com/trends/",
  "note": "Nov. 22 is the last full day shown. Google counts days on its own clock, and its partial Nov. 23 point is not charted.",
@@ -402,7 +402,7 @@
    3,
    3,
    2,
-   2,
+   1,
    1,
    1,
    2,
@@ -417,7 +417,7 @@
    2,
    2,
    2,
-   2,
+   1,
    7,
    6,
    9,
@@ -425,7 +425,7 @@
    100,
    55,
    14,
-   8
+   9
   ],
   "clancy": [
    22,
@@ -438,27 +438,27 @@
    20,
    19,
    19,
-   17,
-   68,
+   16,
+   67,
    35,
    17,
-   16,
-   13,
    15,
+   13,
+   14,
    12,
    15,
-   27,
-   18,
-   16,
+   28,
    17,
-   16,
+   17,
+   17,
    15,
-   62,
-   29,
    16,
-   19,
-   19,
-   14,
+   61,
+   30,
+   16,
+   18,
+   20,
+   13,
    15
   ],
   "rinderknecht": [
@@ -492,7 +492,7 @@
    0,
    0,
    2,
-   27,
+   28,
    7
   ],
   "kosowski": [
@@ -526,8 +526,8 @@
    0,
    0,
    5,
-   21,
-   10
+   20,
+   8
   ],
   "hall": [
    0,
@@ -590,7 +590,7 @@
   "kosowski": "Tomasz Kosowski",
   "hall": "Dwain Hall"
  },
- "runNote": "Nov. 24, about 12:40 p.m. PT, run by hand by the Lieutenant in a Pink Chrome tab group (Order 221). One Google Trends comparison of five terms (Susan Smith, Lindsay Clancy, Jonathan Rinderknecht, Dwain Hall, Tomasz Kosowski), past 30 days, U.S.; Smith is 100 on Nov. 19, so the five share one scale. Nov. 22 is still the last full day charted. Google's complete Nov. 23 point (Smith 5, Clancy 11, Rinderknecht 2, Hall 1, Kosowski 4) and its partial Nov. 24 point (3, 11, 1, 1, 2) are logged in the run series, not charted. The other cases' one-term charts were not re-read and keep their earlier values. No card wording changed.",
+ "runNote": "Nov. 24, about 4:01 p.m. PT, run by hand by the Lieutenant in a Pink Chrome tab group (Order 252). One Google Trends comparison of five terms (Susan Smith, Lindsay Clancy, Jonathan Rinderknecht, Dwain Hall, Tomasz Kosowski), past 30 days, U.S.; Smith is 100 on Nov. 19, so the five share one scale. Nov. 22 is still the last full day charted. Google's complete Nov. 23 point (Smith 5, Clancy 12, Rinderknecht 2, Hall 1, Kosowski 4) and its partial Nov. 24 point (3, 12, 1, 1, 2) are logged in the run series, not charted. The other cases' one-term charts were not re-read and keep their earlier values. No card wording changed.",
  "xRadar": {
   "asOf": "2026-11-24",
   "status": "not counted",
@@ -645,6 +645,11 @@
     "time": "2026-11-24 12:40 PT",
     "google": 11,
     "x": "not counted"
+   },
+   {
+    "time": "2026-11-24 16:01 PT",
+    "google": 12,
+    "x": "not counted"
    }
   ],
   "smith": [
@@ -686,6 +691,11 @@
    {
     "time": "2026-11-24 12:40 PT",
     "google": 3,
+    "x": "not counted"
+   },
+   {
+    "time": "2026-11-24 16:01 PT",
+    "google": 5,
     "x": "not counted"
    }
   ],
@@ -736,6 +746,11 @@
     "time": "2026-11-24 12:40 PT",
     "google": 1,
     "x": "not counted"
+   },
+   {
+    "time": "2026-11-24 16:01 PT",
+    "google": 2,
+    "x": "not counted"
    }
   ],
   "hall": [
@@ -776,6 +791,11 @@
    },
    {
     "time": "2026-11-24 12:40 PT",
+    "google": 1,
+    "x": "not counted"
+   },
+   {
+    "time": "2026-11-24 16:01 PT",
     "google": 1,
     "x": "not counted"
    }
@@ -819,6 +839,11 @@
    {
     "time": "2026-11-24 12:40 PT",
     "google": 2,
+    "x": "not counted"
+   },
+   {
+    "time": "2026-11-24 16:01 PT",
+    "google": 4,
     "x": "not counted"
    }
   ],
