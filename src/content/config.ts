@@ -30,6 +30,8 @@ const posts = defineCollection({
     listen: z.object({
       spotifyEpisode: z.string().regex(/^[A-Za-z0-9]{22}$/),
       title: z.string(),
+      // Optional line under the button, e.g. for an earlier episode on the same case.
+      note: z.string().optional(),
     }).optional(),
     relatedBook: z.object({
       key: z.literal('jury-chess'),

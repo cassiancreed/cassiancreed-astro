@@ -5,8 +5,8 @@
 // stays light and nothing from Spotify loads until a reader asks for it.
 // Paid audio is never put here: this button only takes a public Spotify
 // episode id from the post's front matter.
-interface Props { episode: string; title: string }
-const { episode, title } = Astro.props;
+interface Props { episode: string; title: string; note?: string }
+const { episode, title, note } = Astro.props;
 const playerId = `listen-player-${episode}`;
 ---
 <div class="listen" data-listen>
@@ -14,7 +14,7 @@ const playerId = `listen-player-${episode}`;
     <span class="listen__icon" aria-hidden="true">&#9654;</span>
     <span class="listen__label">Listen to the full episode</span>
   </button>
-  <span class="listen__note">Free. It plays here from our show on Spotify.</span>
+  <span class="listen__note">{note ?? 'Free. It plays here from our show on Spotify.'}</span>
   <div class="listen__player" id={playerId} hidden></div>
   <noscript><a class="listen__fallback" href={`https://open.spotify.com/episode/${episode}`} target="_blank" rel="noopener noreferrer">Listen on Spotify &rarr;</a></noscript>
 </div>

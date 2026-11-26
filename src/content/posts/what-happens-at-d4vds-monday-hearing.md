@@ -10,6 +10,10 @@ victim: "A 14-year-old girl"
 location: "Los Angeles, California"
 jurisdiction: "Los Angeles County Superior Court"
 status: "Charged; pleaded not guilty; presumed innocent"
+listen:
+  spotifyEpisode: "6D6WfSD7E5po0v04rdglUm"
+  title: "D4vd Ordered to Stand Trial: What the Judge's Ruling Means"
+  note: "Free. Our earlier episode on this case, from July 28, 2026."
 ---
 
 *Updated Tuesday, October 20, 2026. This story involves the death of a child.*

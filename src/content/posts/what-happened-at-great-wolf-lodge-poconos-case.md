@@ -12,6 +12,9 @@ jurisdiction: "Monroe County, Pennsylvania (Magisterial District Court 43-3-03; 
 status: "Metallica Harrison is charged with two counts of criminal homicide. She is presumed innocent. No plea is on the court docket. Preliminary hearing set for Nov. 3, 2026, 1 p.m. Eastern."
 cover: "/case-art/great-wolf-lodge-case-explainer.png"
 coverAlt: "Blue-gray title card with the words: Case explainer, Neural Edge Publishing. The Great Wolf Lodge Case: What the Nov. 3 Hearing Decides. cassiancreed.com."
+listen:
+  spotifyEpisode: "2EOEj2cY1uFzpiG7c4OXW8"
+  title: "Great Wolf Lodge Case: Charles Harrison, His Son and What Nov. 3 Can Decide"
 ---
 
 *Status as of Oct. 22, 2026, 11:55 AM PT. Court dates can change. Check the date on our [Court Calendar](https://cassiancreed.com/court-calendar/) and see its "last updated" date.*
