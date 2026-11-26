@@ -1,4 +1,5 @@
 ---
+import { tabExplainerFor } from '../data/tab-explainers.mjs';
 import '../styles/global.css';
 import ReportError from '../components/ReportError.astro';
 export interface Props {
@@ -119,6 +120,7 @@ const navItems = [
   { href: '/court-calendar/#court-updates', label: 'Court Updates', cta: true },
 ];
 const resolvedNav = navItems;
+const tabExplainer = tabExplainerFor(Astro.url.pathname);
 // Standalone pages that are not themselves a nav item highlight their nav
 // CATEGORY, so no page ever renders with zero highlighted nav item
 // (NEP-FIX-CWK-0718L). Add new standalone pages here when they ship.
@@ -334,7 +336,14 @@ function navActive(href){
       </nav>
     </details>
   </div></header>
-  <main id="main-content" tabindex="-1"><slot /></main>
+  <main id="main-content" tabindex="-1">
+    {tabExplainer && (
+      <aside class="wrap tab-explainer" aria-label="What this page is for">
+        <p><span class="tab-explainer__label">What this page is for</span> {tabExplainer}</p>
+      </aside>
+    )}
+    <slot />
+  </main>
   <footer class="site-foot"><div class="site-foot__inner">
     <span class="evidence">© 2026 Neural Edge Publishing</span>
     <span class="site-foot__note">Sourced · victim-centered · no gratuitous detail.</span>
