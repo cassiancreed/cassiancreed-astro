@@ -13,6 +13,9 @@ status: "Active investigation — Nancy remains missing; no one charged in the d
 cover: "/covers/nancy-guthrie-case-update-2026.png"
 coverAlt: "Editorial Nancy Guthrie case-update graphic with an Arizona map, Tucson night scene, door camera, timeline, and Confirmed, Claimed, Unknown evidence labels."
 capture: "safety"
+listen:
+  spotifyEpisode: "0gVY7vMMCMAS484jONuw6p"
+  title: "Nancy Guthrie Case Update: The Ransom Notes, FBI Evidence & What Remains Unconfirmed"
 ---
 
 > **August 6 update:** Read the [verified Jan. 31–Aug. 6 timeline](/post/nancy-guthrie-case-update-verified-timeline/), the [ransom-communication evidence guide](/post/nancy-guthrie-ransom-notes-what-they-reveal/), and the [Arizona/federal jurisdiction explainer](/post/nancy-guthrie-arizona-federal-kidnapping-jurisdiction/). Nancy remains missing; an unknown writer's claim about her death has not been publicly confirmed by investigators.

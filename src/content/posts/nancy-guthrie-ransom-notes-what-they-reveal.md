@@ -13,6 +13,9 @@ status: "Missing; investigation active; anonymous claims remain unconfirmed"
 cover: "/covers/nancy-guthrie-case-update-2026.png"
 coverAlt: "Editorial Nancy Guthrie case-update graphic with an Arizona map, Tucson night scene, door camera, timeline, and Confirmed, Claimed, Unknown evidence labels."
 capture: "safety"
+listen:
+  spotifyEpisode: "0gVY7vMMCMAS484jONuw6p"
+  title: "Nancy Guthrie Case Update: The Ransom Notes, FBI Evidence & What Remains Unconfirmed"
 ---
 
 > **If you recognize a concrete detail connected to Nancy Guthrie’s disappearance, send it privately to the FBI at 1-800-CALL-FBI or [tips.fbi.gov](https://tips.fbi.gov/). Do not post names, handwriting accusations, or alleged evidence publicly.**

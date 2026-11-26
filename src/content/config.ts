@@ -25,6 +25,12 @@ const posts = defineCollection({
     capture: z.string().optional(),
     cover: z.string().optional(),
     coverAlt: z.string().optional(),
+    // Site fix list v2, accessibility: a public Spotify episode for the Listen
+    // button. Only a free, public episode id goes here, never paid audio.
+    listen: z.object({
+      spotifyEpisode: z.string().regex(/^[A-Za-z0-9]{22}$/),
+      title: z.string(),
+    }).optional(),
     relatedBook: z.object({
       key: z.literal('jury-chess'),
       midCopy: z.string(),

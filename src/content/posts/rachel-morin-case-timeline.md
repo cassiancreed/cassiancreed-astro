@@ -9,6 +9,9 @@ incidentDate: "August 2023"
 location: "Bel Air, Harford County, Maryland"
 jurisdiction: "Maryland state court"
 status: "Victor Martinez-Hernandez convicted (April 2025), life without parole; appeal pending"
+listen:
+  spotifyEpisode: "37J4OqhMHX4tVzjzjTFnuE"
+  title: "The DNA Trail to Rachel Morin's Killer"
 ---
 
 Rachel Morin was thirty-seven years old, a mother of five, and a regular on the Ma & Pa Heritage Trail in Bel Air, Maryland. On the evening of August 5, 2023, she left to walk and run that familiar path — and did not come home. The investigation that followed took nearly a year, spanned two coasts, and ultimately rested on a forensic technique that has changed how unsolved violent crimes are approached: investigative genetic genealogy (IGG). Victor Antonio Martinez-Hernandez was convicted of her murder in April 2025 and sentenced to life in prison without the possibility of parole.

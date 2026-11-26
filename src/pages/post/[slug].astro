@@ -8,6 +8,7 @@ import BookCTA from '../../components/BookCTA.astro';
 import GuideCTA from '../../components/GuideCTA.astro';
 import SafetyAlert from '../../components/SafetyAlert.astro';
 import ReportError from '../../components/ReportError.astro';
+import ListenButton from '../../components/ListenButton.astro';
 import { postSocialImage } from '../../utils/post-social-images.mjs';
 import { categoryForTag } from '../../data/content-categories.mjs';
 import { breadcrumbList } from '../../utils/page-schema.mjs';
@@ -107,6 +108,7 @@ const jsonld = isTupacWithdrawal ? undefined : {
     <p class="evidence evidence--accent">{post.data.tag}</p>
     <h1>{post.data.title}</h1>
 <p class="post__dates"><time datetime={post.data.pubDate.toISOString().slice(0,10)}>Published {formatDateUtc(post.data.pubDate)}</time>{post.data.updatedDate && <> · <time datetime={post.data.updatedDate.toISOString().slice(0,10)}>Updated {formatDateUtc(post.data.updatedDate)}</time></>}</p>
+    {post.data.listen && !post.data.archived && <ListenButton episode={post.data.listen.spotifyEpisode} title={post.data.listen.title} />}
     {post.data.archived && (
       <aside class="post__archive" aria-label="Archive notice">
         <strong>Archive notice.</strong> {post.data.archiveNote ?? 'This page is preserved for context and is not part of current reporting or promotion.'}

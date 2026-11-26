@@ -1,0 +1,68 @@
+---
+// Site fix list v2, accessibility part 1: a Listen button near the top of a
+// post that already has its own episode. Free pages play the full episode.
+// The Spotify player loads only after the button is pressed, so the page
+// stays light and nothing from Spotify loads until a reader asks for it.
+// Paid audio is never put here: this button only takes a public Spotify
+// episode id from the post's front matter.
+interface Props { episode: string; title: string }
+const { episode, title } = Astro.props;
+const playerId = `listen-player-${episode}`;
+---
+<div class="listen" data-listen>
+  <button type="button" class="listen__btn" aria-expanded="false" aria-controls={playerId} data-episode={episode} data-title={title}>
+    <span class="listen__icon" aria-hidden="true">&#9654;</span>
+    <span class="listen__label">Listen to the full episode</span>
+  </button>
+  <span class="listen__note">Free. It plays here from our show on Spotify.</span>
+  <div class="listen__player" id={playerId} hidden></div>
+  <noscript><a class="listen__fallback" href={`https://open.spotify.com/episode/${episode}`} target="_blank" rel="noopener noreferrer">Listen on Spotify &rarr;</a></noscript>
+</div>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>('[data-listen] .listen__btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const player = document.getElementById(btn.getAttribute('aria-controls') || '');
+      const label = btn.querySelector('.listen__label');
+      if (!player || !label) return;
+      const open = btn.getAttribute('aria-expanded') === 'true';
+      if (open) {
+        player.hidden = true;
+        btn.setAttribute('aria-expanded', 'false');
+        label.textContent = 'Listen to the full episode';
+        return;
+      }
+      if (!player.firstChild) {
+        const frame = document.createElement('iframe');
+        frame.src = `https://open.spotify.com/embed/episode/${btn.dataset.episode}?theme=0`;
+        frame.width = '100%';
+        frame.height = '152';
+        frame.loading = 'lazy';
+        frame.style.border = '0';
+        frame.style.borderRadius = '12px';
+        frame.allow = 'clipboard-write; encrypted-media; fullscreen; picture-in-picture';
+        frame.title = `Listen: ${btn.dataset.title}`;
+        player.appendChild(frame);
+      }
+      player.hidden = false;
+      btn.setAttribute('aria-expanded', 'true');
+      label.textContent = 'Hide the player';
+    });
+  });
+</script>
+
+<style>
+  .listen { margin: 14px 0 18px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; }
+  .listen__btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    min-height: 44px; padding: 10px 18px; border-radius: 999px;
+    border: 2px solid var(--accent); background: var(--accent); color: #fff;
+    font: inherit; font-weight: 700; cursor: pointer;
+  }
+  .listen__btn:hover { filter: brightness(1.08); }
+  .listen__btn:focus-visible { outline: 3px solid var(--ink, #111); outline-offset: 3px; }
+  .listen__btn[aria-expanded="true"] { background: transparent; color: var(--accent); }
+  .listen__note { font-size: 14px; color: var(--ink-3, #555); }
+  .listen__player { flex-basis: 100%; }
+  .listen__fallback { font-weight: 700; }
+</style>
