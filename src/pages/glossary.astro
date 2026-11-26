@@ -10,6 +10,20 @@ import CaptureBlock from '../components/CaptureBlock.astro';
 
 import { terms } from '../data/legal-dictionary.mjs';
 
+// Dictionary order: A to Z by headword, natural sort (2 before 10), a leading
+// "The", "A" or "An" ignored. The data file keeps its own order.
+const sortKey = (t) => t.term.replace(/^(the|a|an)\s+/i, '');
+const sorted = [...terms].sort((a, b) => sortKey(a).localeCompare(sortKey(b), 'en', { numeric: true, sensitivity: 'base' }));
+const letterOf = (t) => sortKey(t).charAt(0).toUpperCase();
+const groups = [];
+for (const t of sorted) {
+  const L = letterOf(t);
+  if (!groups.length || groups[groups.length - 1].letter !== L) groups.push({ letter: L, items: [] });
+  groups[groups.length - 1].items.push(t);
+}
+const used = new Set(groups.map((g) => g.letter));
+const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+
 const jsonld = {
   '@context': 'https://schema.org',
   '@type': 'DefinedTermSet',
@@ -36,31 +50,40 @@ const jsonld = {
   <article class="post">
     <div class="post__content">
       <p>An indictment is not a verdict. A dropped charge is not an acquittal. A judge stepping aside is not a judge being fired. These distinctions decide how a story is understood &mdash; so we define them, plainly, and link each one to the case where it mattered.</p>
-      <p class="post__note">This dictionary grows with our case files. Updated Nov. 13, 2026. General U.S. meanings; rules differ by state, and nothing here is legal advice.</p>
+      <p class="post__note" id="dict-top">This dictionary grows with our case files. Updated Nov. 13, 2026. General U.S. meanings; rules differ by state, and nothing here is legal advice.</p>
 
-      <nav class="post__note" aria-label="Jump to a term">
-        <strong>Jump to:</strong>
-        {terms.map((t, i) => (<>{i > 0 && ' · '}<a href={`#${t.id}`}>{t.term}</a></>))}
+      <nav class="dict-az" aria-label="Jump to a letter">
+        {alphabet.map((L) => used.has(L)
+          ? <a href={`#letter-${L}`}>{L}</a>
+          : <span aria-hidden="true">{L}</span>)}
       </nav>
 
-      {terms.map(t => (
-        <section class="forensic__block" id={t.id}>
-          <h2>{t.term}</h2>
-          <p>{t.def}</p>
-          <p><strong>Why it matters:</strong> {t.why}</p>
-          {t.links && t.links.length > 0 && (
-            <p class="post__note">
-              <strong>See it in a case:</strong>{' '}
-              {t.links.map((l, i) => (
-                <>
-                  {i > 0 && ' · '}
-                  {l.ext
-                    ? <a href={l.href} target="_blank" rel="noopener noreferrer">{l.label}</a>
-                    : <a href={l.href}>{l.label}</a>}
-                </>
-              ))}
-            </p>
-          )}
+      {groups.map((g) => (
+        <section class="dict-letter" id={`letter-${g.letter}`} aria-labelledby={`letter-${g.letter}-h`}>
+          <h2 class="dict-letter__h" id={`letter-${g.letter}-h`}>{g.letter}</h2>
+          <dl class="dict-list">
+            {g.items.map((t) => (
+              <div class="dict-entry" id={t.id}>
+                <dt class="dict-entry__word"><a href={`#${t.id}`}>{t.term}</a></dt>
+                <dd class="dict-entry__def">{t.def}</dd>
+                <dd class="dict-entry__why"><strong>Why it matters:</strong> {t.why}</dd>
+                {t.links && t.links.length > 0 && (
+                  <dd class="dict-entry__see">
+                    <strong>See it in a case:</strong>{' '}
+                    {t.links.map((l, i) => (
+                      <>
+                        {i > 0 && ' · '}
+                        {l.ext
+                          ? <a href={l.href} target="_blank" rel="noopener noreferrer">{l.label}</a>
+                          : <a href={l.href}>{l.label}</a>}
+                      </>
+                    ))}
+                  </dd>
+                )}
+              </div>
+            ))}
+          </dl>
+          <p class="dict-top"><a href="#dict-top">Back to A to Z &uarr;</a></p>
         </section>
       ))}
 
@@ -71,4 +94,22 @@ const jsonld = {
   <div class="wrap"><section class="subscribe" id="free-guide">
     <CaptureBlock offer="case" content="glossary" />
   </section></div>
+
+  <style>
+    .dict-az{display:flex;flex-wrap:wrap;gap:4px;margin:18px 0 8px;padding:10px 0;background:var(--bg);border-bottom:1px solid var(--line)}
+    .dict-az a,.dict-az span{display:inline-flex;align-items:center;justify-content:center;min-width:30px;height:30px;font-family:var(--mono);font-size:14px;border-radius:4px}
+    .dict-az a{color:var(--ink);background:var(--bg-2);border:1px solid var(--line);text-decoration:none}
+    .dict-az a:hover,.dict-az a:focus{color:var(--accent);border-color:var(--accent)}
+    .dict-az span{color:var(--ink-3);opacity:.45}
+    .dict-letter{margin:26px 0 0;scroll-margin-top:64px}
+    .dict-letter__h{font-family:var(--serif);font-size:44px;line-height:1;color:var(--accent);margin:0 0 6px;padding-bottom:6px;border-bottom:2px solid var(--accent)}
+    .dict-list{margin:0}
+    .dict-entry{padding:14px 0;border-bottom:1px solid var(--line);scroll-margin-top:64px}
+    .dict-entry:target{background:rgba(224,86,59,.06)}
+    .dict-entry__word{font-family:var(--serif);font-weight:700;font-size:22px;margin:0 0 4px}
+    .dict-entry__word a{color:var(--ink);text-decoration:none}
+    .dict-entry__def{margin:0 0 6px;font-size:17px;line-height:1.55}
+    .dict-entry__why,.dict-entry__see{margin:0 0 4px;color:var(--ink-2);font-size:15px}
+    .dict-top{margin:10px 0 0;font-size:13px;font-family:var(--mono)}
+  </style>
 </Base>
