@@ -1,6 +1,6 @@
 {
  "asOf": "2026-11-25",
- "asOfText": "Wednesday, Nov. 25, 2026, about 10:35 a.m. PT",
+ "asOfText": "Wednesday, Nov. 25, 2026, about 6:30 p.m. PT",
  "source": "Google Trends, U.S., past 30 days, daily",
  "sourceUrl": "https://trends.google.com/trends/",
  "note": "Nov. 22 is the last full day shown. Google counts days on its own clock, and its partial Nov. 23 point is not charted.",
@@ -402,12 +402,12 @@
    3,
    3,
    2,
-   1,
+   2,
    1,
    1,
    2,
    1,
-   2,
+   3,
    2,
    2,
    1,
@@ -416,50 +416,50 @@
    3,
    2,
    2,
-   1,
-   1,
+   2,
+   2,
    7,
    6,
    9,
-   15,
+   16,
    100,
-   52,
-   14,
-   8
+   54,
+   15,
+   9
   ],
   "clancy": [
    22,
    19,
    17,
    15,
+   15,
    14,
-   14,
+   18,
+   21,
+   19,
+   19,
+   16,
+   68,
+   35,
    17,
-   20,
-   18,
-   18,
    16,
-   65,
-   33,
-   16,
+   13,
    15,
    12,
-   14,
-   11,
-   14,
-   26,
-   18,
-   16,
-   16,
-   14,
-   14,
-   57,
-   28,
    15,
+   28,
    18,
+   17,
+   17,
+   15,
+   15,
+   62,
+   29,
+   16,
    19,
-   13,
-   14
+   20,
+   14,
+   15
   ],
   "rinderknecht": [
    0,
@@ -492,7 +492,7 @@
    0,
    0,
    2,
-   26,
+   27,
    7
   ],
   "kosowski": [
@@ -526,8 +526,8 @@
    0,
    0,
    5,
-   19,
-   8
+   20,
+   9
   ],
   "hall": [
    0,
@@ -559,7 +559,7 @@
    2,
    2,
    2,
-   2,
+   3,
    1,
    1
   ]
@@ -590,7 +590,7 @@
   "kosowski": "Tomasz Kosowski",
   "hall": "Dwain Hall"
  },
- "runNote": "Nov. 25, about 10:35 a.m. PT, scheduled run by the Lieutenant (Pink Chrome). One Google Trends comparison of five terms (Susan Smith, Lindsay Clancy, Jonathan Rinderknecht, Dwain Hall, Tomasz Kosowski), past 30 days, U.S.; Smith is 100 on Nov. 19, so the five share one scale. Google re-scaled 22 earlier points by 1 to 4 (mostly Clancy); the charted points are updated. Nov. 22 is still the last full day charted. Google's Nov. 23 point (5, 11, 2, 1, 4) and Nov. 24 point (3, 12, 1, 1, 2) are logged in the run series, not charted; its partial Nov. 25 point (Smith 2, Clancy 11, Rinderknecht 0, Hall 1, Kosowski 2) is logged in the series only. X radar: the Radar list was opened and read at 10:3x a.m. PT (counts only, posts not opened). Verdict watch: three accounts read (Cathy Russon, Court TV, Law&Crime). Court TV and Russon posts in the last 24 hours concern the Lacy Boles trial, which is already logged; East Idaho News, Swisher Post and Court TV trial updates now report a guilty murder verdict in the death of Daniel Akers (headline level, article text not opened here; no card written). Law&Crime's only hit was an old Bryce Stamper video recap. Headline check by search: Rinderknecht retrial result not seen (only the June mistrial and retrial pages came back); Dwain Hall trial coverage seen (CBS12, Court TV, LA Magazine), no result seen. No card wording changed.",
+ "runNote": "Nov. 25, about 6:30 p.m. PT, scheduled run by the Lieutenant (Pink Chrome). One Google Trends comparison of five terms (Susan Smith, Lindsay Clancy, Jonathan Rinderknecht, Dwain Hall, Tomasz Kosowski), past 30 days, U.S.; Smith is 100 on Nov. 19, so the five share one scale. Google re-scaled 37 earlier points by 1 to 5 (mostly Clancy); the charted points are updated. Nov. 22 is still the last full day charted. Google's Nov. 23 point (5, 12, 2, 1, 4) and Nov. 24 point (4, 13, 1, 1, 3) are logged here, not charted; its Nov. 25 point (3, 12, 0, 1, 2) is logged in the series only. X radar: not read this run (counts from 10:3x a.m. kept). Verdict watch: three accounts read (Cathy Russon, Court TV, Law&Crime), 0 new hits. Court TV and Russon posts in the last 24 hours concern the Lacy Boles trial, which is already logged; Law&Crime's only hit was the old Bryce Stamper video recap. Headline check by search: Susan Smith parole denied Nov. 19 (WBTV, SC Daily Gazette, WSOC, Court TV); Lindsay Clancy retrial set for March 2027 (CP24, ABC and Fox station pages); Rinderknecht retrial result not seen (only the June mistrial pages came back); Boles result and Dwain Hall result not re-seen. No card wording changed.",
  "xRadar": {
   "asOf": "2026-11-24",
   "status": "Radar list read by the Lieutenant at 6:29 PM PT (Order 282), Court Movement on Latest; counts are the Radar's own window, a sample, not a total of X",
@@ -719,6 +719,11 @@
     "time": "2026-11-25 10:35 PT",
     "google": 11,
     "x": "radar list read 10:3x AM PT: count in the Radar's own window, a sample, not a total of X"
+   },
+   {
+    "time": "2026-11-25 18:30 PT",
+    "google": 12,
+    "x": "not read this run (X radar not opened); sample, not a total"
    }
   ],
   "smith": [
@@ -781,6 +786,11 @@
     "time": "2026-11-25 10:35 PT",
     "google": 2,
     "x": "radar list read 10:3x AM PT: count in the Radar's own window, a sample, not a total of X"
+   },
+   {
+    "time": "2026-11-25 18:30 PT",
+    "google": 3,
+    "x": "not read this run (X radar not opened); sample, not a total"
    }
   ],
   "glossip": [
@@ -850,6 +860,11 @@
     "time": "2026-11-25 10:35 PT",
     "google": 0,
     "x": "radar list read 10:3x AM PT: count in the Radar's own window, a sample, not a total of X"
+   },
+   {
+    "time": "2026-11-25 18:30 PT",
+    "google": 0,
+    "x": "not read this run (X radar not opened); sample, not a total"
    }
   ],
   "hall": [
@@ -912,6 +927,11 @@
     "time": "2026-11-25 10:35 PT",
     "google": 1,
     "x": "radar list read 10:3x AM PT: count in the Radar's own window, a sample, not a total of X"
+   },
+   {
+    "time": "2026-11-25 18:30 PT",
+    "google": 1,
+    "x": "not read this run (X radar not opened); sample, not a total"
    }
   ],
   "kosowski": [
@@ -974,6 +994,11 @@
     "time": "2026-11-25 10:35 PT",
     "google": 2,
     "x": "radar list read 10:3x AM PT: count in the Radar's own window, a sample, not a total of X"
+   },
+   {
+    "time": "2026-11-25 18:30 PT",
+    "google": 2,
+    "x": "not read this run (X radar not opened); sample, not a total"
    }
   ],
   "bhatt": [
