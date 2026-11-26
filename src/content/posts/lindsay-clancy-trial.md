@@ -3,14 +3,14 @@ title: "Lindsay Clancy trial tracker: Mistrial, pending charges and next hearing
 seoTitle: "Lindsay Clancy Retrial? Mistrial, Charges, Next Hearing"
 description: "Lindsay Clancy’s unresolved murder charges after a mistrial, current hearing coverage, and the Massachusetts criminal-responsibility standard."
 pubDate: 2026-07-15
-updatedDate: 2026-11-02
+updatedDate: 2026-11-25
 tag: Case Files
 featured: false
 victim: "Three children, ages 5, 3 and 8 months"
 incidentDate: January 2023
 location: Duxbury, Massachusetts
 jurisdiction: Plymouth County Superior Court, Massachusetts
-status: "Mistrial declared September 4. Murder charges remain unresolved. October 21: judge denied a defense request for an evidentiary hearing about the holdout juror. As of Nov. 2, 2026: Judge William Sullivan heard the defense motion to dismiss on Nov. 2 and has not ruled. No retrial date is set. The next hearing is Nov. 16."
+status: "Mistrial declared September 4. Murder charges remain unresolved. Nov. 9: judge denied the defense motion to dismiss. Retrial set: jury selection March 29, 2027. Nov. 25: the Supreme Judicial Court denied prosecutors' request to pause the retrial while it hears her double-jeopardy appeal. Presumed innocent."
 ---
 
 <div class="status-box" style="border:1px solid var(--rule,#e4e0d9);border-left:4px solid var(--accent,#b91c1c);background:var(--card,#faf9f7);padding:1rem 1.25rem;margin:1.5rem 0;border-radius:6px;font-size:.95rem">
@@ -31,13 +31,14 @@ Cassian Creed maintains this Neural Edge Publishing tracker using available cour
 <li><strong>Judge:</strong> William F. Sullivan.</li>
 <li><strong>Charges now pending:</strong> Three counts of first-degree murder.</li>
 <li><strong>Plea:</strong> Not guilty (her defense: lack of criminal responsibility).</li>
-<li><strong>Status as of Nov. 2, 2026:</strong> Charged; pleaded not guilty; presumed innocent. No verdict.</li>
-<li><strong>Nov. 2 hearing and next step:</strong> Judge William Sullivan heard the defense motion to dismiss on Nov. 2 and has not ruled. No retrial date is set. The next hearing is Nov. 16. (AP and Boston 25 News, Nov. 2, 2026).</li>
+<li><strong>Status as of Nov. 25, 2026:</strong> Charged; pleaded not guilty; presumed innocent. No verdict.</li>
+<li><strong>Newest ruling (Nov. 25):</strong> Massachusetts' highest court, the Supreme Judicial Court, denied prosecutors' request to pause the retrial while it decides her double-jeopardy appeal. It gave no reason. Jury selection stays set for March 29, 2027. (ABC News, Boston 25 News and Fox News, Nov. 25, 2026.) This ruling is not a finding of guilt.</li>
+<li><strong>Motion to dismiss:</strong> Denied by Judge Sullivan on Nov. 9. He found the mistrial was needed because the jury was deadlocked (WBUR, Nov. 9; Fox News, Nov. 10). Her lawyers have appealed that ruling to the Supreme Judicial Court, which is expected to hear it in January 2027 (ABC News, Nov. 19).</li>
 <li><strong>Holdout-juror hearing request:</strong> Denied October 21. The judge ruled that information found after the mistrial cannot be used to attack it (Boston.com and WBUR, October 22). This ruling is not a finding of guilt.</li>
-<li><strong>Retrial:</strong> No retrial date is set, and the judge has not ruled on the motion to dismiss. In a written opposition made public October 28, prosecutors argue the mistrial was proper and ask to continue the case (CBS Boston, October 28).</li>
+<li><strong>Retrial:</strong> Jury selection is set to begin March 29, 2027, in Plymouth Superior Court (ABC News, Nov. 19 and Nov. 25; Boston 25 News, Nov. 25). The appeal could still change that.</li>
 <li><strong>Renewed acquittal request:</strong> Denied October 1, according to AP. This ruling is not a conviction.</li>
 
-<li><strong>Current-source cutoff:</strong> Nov. 2, 2026. This tracker uses attributed reporting; direct docket access remains unavailable.</li>
+<li><strong>Current-source cutoff:</strong> Nov. 25, 2026, 7 p.m. Pacific. This tracker uses attributed reporting; direct docket access remains unavailable.</li>
 </ul>
 <p style="margin-bottom:0">The mistrial ended this trial without a conviction or acquittal. Clancy remains presumed innocent.</p>
 </div>
@@ -60,11 +61,13 @@ Three children, ages 5, 3 and 8 months, died after events at their Duxbury home 
 | Plea | **VERIFIED** | Not guilty. |
 | Trial posture | **VERIFIED** | The trial ended September 4 in a mistrial after the jury could not agree. The three murder charges remain pending. |
 | Court and judge | **VERIFIED** | Plymouth Superior Court; Judge William F. Sullivan. |
-| Next scheduled step | **REPORTED** | Judge William Sullivan heard the defense motion to dismiss on Nov. 2 and has not ruled. No retrial date is set. The next hearing is Nov. 16. (AP and Boston 25 News, Nov. 2, 2026.) The motion to dismiss rests on double-jeopardy grounds (the rule that a person can't be tried twice for the same crime). |
+| Next scheduled step | **REPORTED** | The full Supreme Judicial Court is expected to hear her double-jeopardy appeal in January 2027 (ABC News, Nov. 19; Boston 25 News, Nov. 25). Double jeopardy is the rule that a person can't be tried twice for the same crime. |
+| Motion to dismiss | **REPORTED RULING** | Denied Nov. 9, 2026, by Judge Sullivan (WBUR, Nov. 9; Fox News, Nov. 10). Under appeal. Not a finding of guilt. |
+| Request to pause the retrial | **REPORTED RULING** | Prosecutors asked the Supreme Judicial Court to pause the retrial until it rules on the appeal. Her lawyers objected. The court denied the request without explanation (ABC News, Boston 25 News and Fox News, Nov. 25, 2026). |
 | Holdout-juror hearing request | **REPORTED RULING** | Denied October 21, 2026 (WBUR, October 22). Not a finding of guilt. |
-| Hearing time | **NOT PUBLICLY VERIFIED** | The next reported hearing has no independently verified start time in this tracker. |
+| Hearing time | **NOT PUBLICLY VERIFIED** | The time of the January appeal hearing has not been publicly verified by two sources in this tracker. |
 | Renewed acquittal request | **REPORTED RULING** | See the October 1 update below; the charges remain unresolved. |
-| Retrial date | **NOT SET** | As of Nov. 2, 2026, no retrial date is set, and the judge has not ruled on the motion to dismiss. Prosecutors' October 28 written opposition asks to continue the case (CBS Boston). A motions hearing is not a retrial. |
+| Retrial date | **REPORTED** | Jury selection is set to begin March 29, 2027 (ABC News, Nov. 19 and Nov. 25; Boston 25 News, Nov. 25; Fox News, Nov. 25). The Supreme Judicial Court's appeal ruling could still change that. |
 | Defense counsel | **VERIFIED** | Kevin Reddington. |
 | Core defense | **DEFENSE** | Lack of criminal responsibility, tied to the defense's contention that Clancy experienced postpartum psychosis and that alleged overmedication affected her condition. |
 | Burden on criminal responsibility | **VERIFIED** | Once evidence fairly raises lack of criminal responsibility, Massachusetts law requires the Commonwealth to prove beyond a reasonable doubt that the defendant was criminally responsible. |
@@ -93,15 +96,31 @@ A clinical diagnosis and a legal finding are not the same thing. Experts may add
 
 Judge William Sullivan declared a mistrial on September 4 after the jury reported that it could not reach a unanimous verdict. The trial ended without a conviction or acquittal. Clancy remains charged with three counts of first-degree murder, has pleaded not guilty, and remains presumed innocent.
 
-### November 2 hearing — checked Nov. 2
+### November 25 ruling — checked Nov. 25
 
-**As of Nov. 2, 2026:** Judge William Sullivan heard the defense motion to dismiss on Nov. 2 and has not ruled. No retrial date is set. The next hearing is Nov. 16. ([AP, Nov. 2, 2026](https://www.wsls.com/news/national/2026/11/02/lindsay-clancy-returns-to-court-in-a-bid-to-dismiss-charges-she-killed-her-three-young-children/); [Boston 25 News, Nov. 2, 2026](https://www.boston25news.com/news/local/lindsay-clancy-live-updates-second-trial-remains-undecided-judge-weighs-motions/3ASH6J67WFHK5OZ55BYRJDKT4M/)). The Nov. 2 hearing was set in October, [the Boston Globe reported October 21](https://www.bostonglobe.com/2026/10/21/metro/lindsay-clancy-holdout-juror-double-jeopardy/). The clock time of the Nov. 16 hearing is not independently verified.
+**RULING (Nov. 25):** Massachusetts' highest court, the Supreme Judicial Court, denied prosecutors' request to pause Lindsay Clancy's retrial. It gave no reason. Jury selection stays set for March 29, 2027 ([ABC News, Nov. 25, 2026](https://abcnews.com/US/massachusetts-high-court-denies-attempt-delay-lindsey-clancy/story?id=138448426); [Boston 25 News via Yahoo, Nov. 25, 2026](https://www.yahoo.com/news/us/articles/sjc-denies-prosecutors-request-delay-175929425.html); [Fox News via Yahoo, Nov. 25, 2026](https://www.yahoo.com/news/us/articles/lindsay-clancy-retrial-moves-forward-192703270.html)).
+
+**PROSECUTION:** Prosecutors asked the court to wait until it rules on her double-jeopardy appeal. They called it "ambitious" to expect a ruling before jury selection begins ([Boston 25 News via Yahoo, Nov. 25, 2026](https://www.yahoo.com/news/us/articles/sjc-denies-prosecutors-request-delay-175929425.html)).
+
+**DEFENSE:** Her lawyers objected. They said she "wants to keep her trial date" ([Fox News via Yahoo, Nov. 25, 2026](https://www.yahoo.com/news/us/articles/lindsay-clancy-retrial-moves-forward-192703270.html)).
+
+This ruling is not a finding of guilt. Clancy remains charged, has pleaded not guilty, and is presumed innocent.
+
+### November 9 ruling and the appeal — checked Nov. 25
+
+**RULING (Nov. 9):** Judge Sullivan denied the defense motion to dismiss. He found the mistrial was needed because the jury was deadlocked, so a retrial does not put her in double jeopardy. He also denied a defense request for a limited inquiry into the holdout juror, and denied a prosecution request to limit what defense lawyers say to the media ([WBUR, Nov. 9, 2026](https://www.wbur.org/news/2026/11/09/lindsay-clancy-double-jeapardy-motions-denied); [Fox News, Nov. 10, 2026](https://www.foxnews.com/us/michael-ruiz-lindsay-clancy-judge-denies-double-jeopardy-motion-explains-jury-notes-deadlock)).
+
+**APPEAL:** Her lawyers then asked the Supreme Judicial Court to throw out the charges. A single justice sent the appeal to the full court, which is expected to hear it in January 2027 ([ABC News, Nov. 19, 2026](https://abcnews.com/US/lindsay-clancy-files-appeal-ahead-march-2027-retrial/story?id=138277240)). The retrial was set for March 29, 2027 ([ABC News, Nov. 19, 2026](https://abcnews.com/US/lindsay-clancy-files-appeal-ahead-march-2027-retrial/story?id=138277240)).
+
+### November 2 hearing — historical
+
+**At the time (Nov. 2, 2026):** Judge William Sullivan heard the defense motion to dismiss on Nov. 2 and had not ruled. No retrial date was set. The next hearing was Nov. 16. ([AP, Nov. 2, 2026](https://www.wsls.com/news/national/2026/11/02/lindsay-clancy-returns-to-court-in-a-bid-to-dismiss-charges-she-killed-her-three-young-children/); [Boston 25 News, Nov. 2, 2026](https://www.boston25news.com/news/local/lindsay-clancy-live-updates-second-trial-remains-undecided-judge-weighs-motions/3ASH6J67WFHK5OZ55BYRJDKT4M/)). The Nov. 2 hearing was set in October, [the Boston Globe reported October 21](https://www.bostonglobe.com/2026/10/21/metro/lindsay-clancy-holdout-juror-double-jeopardy/). The clock time of the Nov. 16 hearing was not independently verified.
 
 **DEFENSE:** Clancy's lawyers ask the judge to dismiss the three murder charges on double-jeopardy grounds. They also asked for an evidentiary hearing about the one juror who did not agree with the other 11 ([Boston Globe, October 8](https://www.bostonglobe.com/2026/10/08/metro/lindsay-clancy-hearing-dismissal-holdout-juror/)).
 
 **RULING (October 21):** Judge Sullivan denied the request for that evidentiary hearing. He wrote that information found after the mistrial "cannot be used to attack" the finding that a mistrial was needed ([Boston.com, October 22](https://www.boston.com/news/crime/2026/10/22/lindsay-clancy-judge-denies-evidentiary-hearing-holdout-juror/); [WBUR, October 22](https://www.wbur.org/news/2026/10/22/judge-sullivan-lindsay-clancy-lone-juror-defense-denial)). This ruling is not a finding of guilt. The motion to dismiss itself has not been decided.
 
-**PROSECUTION:** In a written opposition made public October 28, prosecutors argue the mistrial was properly declared because the jury was deadlocked ([CBS Boston, October 28](https://www.cbsnews.com/boston/news/lindsay-clancy-retrial-prosecution-motion/)). No retrial date is set. Clancy remains charged, has pleaded not guilty, and is presumed innocent.
+**PROSECUTION:** In a written opposition made public October 28, prosecutors argue the mistrial was properly declared because the jury was deadlocked ([CBS Boston, October 28](https://www.cbsnews.com/boston/news/lindsay-clancy-retrial-prosecution-motion/)). At the time, no retrial date was set. Clancy remains charged, has pleaded not guilty, and is presumed innocent.
 
 ### October 1 ruling — checked October 2
 
@@ -144,23 +163,23 @@ No verdict was returned. Judge Sullivan declared a mistrial September 4 after th
 
 ### Is a mistrial the same as a not-guilty verdict?
 
-No. A mistrial means the trial ended with no verdict. Judge Sullivan declared one on Sept. 4 after the jury could not agree. No conviction or acquittal was entered. Clancy is still charged, has pleaded not guilty and is presumed innocent. Whether she can be tried again has not been decided. This is general information, not legal advice.
+No. A mistrial means the trial ended with no verdict. Judge Sullivan declared one on Sept. 4 after the jury could not agree. No conviction or acquittal was entered. Clancy is still charged, has pleaded not guilty and is presumed innocent. A retrial is set, but her appeal asks the state's highest court to block it. This is general information, not legal advice.
 
 ### Can Lindsay Clancy be tried again after the mistrial?
 
-That has not been decided. A mistrial means the trial ended without a verdict. Clancy's lawyers say a second trial would be double jeopardy, the rule against being tried twice for the same crime. Prosecutors say double jeopardy does not apply because the judge properly declared the mistrial on Sept. 4 ([NBC10 Boston, Oct. 29, 2026](https://www.nbcboston.com/news/local/lindsay-clancy-case-update-new-motions/4039723/)). Judge Sullivan heard the motion to dismiss on Nov. 2 and has not ruled ([AP, Nov. 2, 2026](https://www.wsls.com/news/national/2026/11/02/lindsay-clancy-returns-to-court-in-a-bid-to-dismiss-charges-she-killed-her-three-young-children/); [Boston 25 News, Nov. 2, 2026](https://www.boston25news.com/news/local/lindsay-clancy-live-updates-second-trial-remains-undecided-judge-weighs-motions/3ASH6J67WFHK5OZ55BYRJDKT4M/)). No retrial date is set. Clancy remains charged, has pleaded not guilty and is presumed innocent. This is general information, not legal advice.
+For now, yes, but it is not final. A mistrial means the trial ended without a verdict. Clancy's lawyers say a second trial would be double jeopardy, the rule against being tried twice for the same crime. Prosecutors say double jeopardy does not apply because the judge properly declared the mistrial on Sept. 4 ([NBC10 Boston, Oct. 29, 2026](https://www.nbcboston.com/news/local/lindsay-clancy-case-update-new-motions/4039723/)). On Nov. 9, Judge Sullivan agreed with prosecutors and denied the motion to dismiss ([WBUR, Nov. 9, 2026](https://www.wbur.org/news/2026/11/09/lindsay-clancy-double-jeapardy-motions-denied); [Fox News, Nov. 10, 2026](https://www.foxnews.com/us/michael-ruiz-lindsay-clancy-judge-denies-double-jeopardy-motion-explains-jury-notes-deadlock)). Her lawyers have appealed to the Supreme Judicial Court, which is expected to hear the appeal in January 2027 ([ABC News, Nov. 19, 2026](https://abcnews.com/US/lindsay-clancy-files-appeal-ahead-march-2027-retrial/story?id=138277240)). Clancy remains charged, has pleaded not guilty and is presumed innocent. This is general information, not legal advice.
 
 ### Is there a date for a second Lindsay Clancy trial?
 
-No. A defense filing noted that there is no trial date ([NBC10 Boston, Oct. 29, 2026](https://www.nbcboston.com/news/local/lindsay-clancy-case-update-new-motions/4039723/)). As of Nov. 2, 2026, no retrial date is set ([AP, Nov. 2, 2026](https://www.wsls.com/news/national/2026/11/02/lindsay-clancy-returns-to-court-in-a-bid-to-dismiss-charges-she-killed-her-three-young-children/); [Boston 25 News, Nov. 2, 2026](https://www.boston25news.com/news/local/lindsay-clancy-live-updates-second-trial-remains-undecided-judge-weighs-motions/3ASH6J67WFHK5OZ55BYRJDKT4M/)).
+Yes. Jury selection is set to begin March 29, 2027 ([ABC News, Nov. 19, 2026](https://abcnews.com/US/lindsay-clancy-files-appeal-ahead-march-2027-retrial/story?id=138277240); [Boston 25 News via Yahoo, Nov. 25, 2026](https://www.yahoo.com/news/us/articles/sjc-denies-prosecutors-request-delay-175929425.html)). On Nov. 25, the Supreme Judicial Court refused to pause the retrial while it hears her appeal ([ABC News, Nov. 25, 2026](https://abcnews.com/US/massachusetts-high-court-denies-attempt-delay-lindsey-clancy/story?id=138448426); [Fox News via Yahoo, Nov. 25, 2026](https://www.yahoo.com/news/us/articles/lindsay-clancy-retrial-moves-forward-192703270.html)). The appeal could still change the date.
 
 ### When is Lindsay Clancy's next hearing?
 
-Monday, Nov. 16, 2026, before Judge William Sullivan ([AP, Nov. 2, 2026](https://www.wsls.com/news/national/2026/11/02/lindsay-clancy-returns-to-court-in-a-bid-to-dismiss-charges-she-killed-her-three-young-children/); [Boston 25 News, Nov. 2, 2026](https://www.boston25news.com/news/local/lindsay-clancy-live-updates-second-trial-remains-undecided-judge-weighs-motions/3ASH6J67WFHK5OZ55BYRJDKT4M/)). Judge William Sullivan heard the defense motion to dismiss on Nov. 2 and has not ruled. No retrial date is set. The next hearing is Nov. 16. The exact clock time is not independently verified. Check our [Court Calendar](/court-calendar/#clancy-november-motions) for the latest checked status.
+The next big step is her appeal before the full Supreme Judicial Court, expected in January 2027 ([ABC News, Nov. 19, 2026](https://abcnews.com/US/lindsay-clancy-files-appeal-ahead-march-2027-retrial/story?id=138277240); [Boston 25 News via Yahoo, Nov. 25, 2026](https://www.yahoo.com/news/us/articles/sjc-denies-prosecutors-request-delay-175929425.html)). Jury selection for the retrial is set to begin March 29, 2027. The exact time of the appeal hearing has not been confirmed by two sources. Check our [Court Calendar](/court-calendar/#clancy-november-motions) for the latest checked status.
 
 ### What happened at the Nov. 2 hearing?
 
-Judge William Sullivan heard the defense motion to dismiss on Nov. 2 and has not ruled. No retrial date is set. The next hearing is Nov. 16. ([AP, Nov. 2, 2026](https://www.wsls.com/news/national/2026/11/02/lindsay-clancy-returns-to-court-in-a-bid-to-dismiss-charges-she-killed-her-three-young-children/); [Boston 25 News, Nov. 2, 2026](https://www.boston25news.com/news/local/lindsay-clancy-live-updates-second-trial-remains-undecided-judge-weighs-motions/3ASH6J67WFHK5OZ55BYRJDKT4M/)). The main matter was the defense motion to dismiss all three murder charges on double-jeopardy grounds. In a written filing, prosecutors say the judge took every possible step to address the foreperson's notes while avoiding pressure on the dissenting juror ([Boston Globe, Oct. 29, 2026](https://www.bostonglobe.com/2026/10/29/metro/lindsay-clancy-dismiss-motion-juror/)). The Globe also reported that the prosecution's request to limit media statements in the case was among the motions ([Boston Globe, Oct. 29, 2026](https://www.bostonglobe.com/2026/10/29/metro/lindsay-clancy-dismiss-motion-juror/)). The defense opposes it ([NBC10 Boston, Oct. 29, 2026](https://www.nbcboston.com/news/local/lindsay-clancy-case-update-new-motions/4039723/)). AP reports the judge heard arguments on that request on Nov. 2; no ruling on it has been reported ([AP, Nov. 2, 2026](https://www.wsls.com/news/national/2026/11/02/lindsay-clancy-returns-to-court-in-a-bid-to-dismiss-charges-she-killed-her-three-young-children/)). We will not predict the outcome.
+Judge William Sullivan heard the defense motion to dismiss on Nov. 2 and ruled later, on Nov. 9 ([AP, Nov. 2, 2026](https://www.wsls.com/news/national/2026/11/02/lindsay-clancy-returns-to-court-in-a-bid-to-dismiss-charges-she-killed-her-three-young-children/); [Boston 25 News, Nov. 2, 2026](https://www.boston25news.com/news/local/lindsay-clancy-live-updates-second-trial-remains-undecided-judge-weighs-motions/3ASH6J67WFHK5OZ55BYRJDKT4M/)). The main matter was the defense motion to dismiss all three murder charges on double-jeopardy grounds. In a written filing, prosecutors say the judge took every possible step to address the foreperson's notes while avoiding pressure on the dissenting juror ([Boston Globe, Oct. 29, 2026](https://www.bostonglobe.com/2026/10/29/metro/lindsay-clancy-dismiss-motion-juror/)). The Globe also reported that the prosecution's request to limit media statements in the case was among the motions ([Boston Globe, Oct. 29, 2026](https://www.bostonglobe.com/2026/10/29/metro/lindsay-clancy-dismiss-motion-juror/)). The defense opposes it ([NBC10 Boston, Oct. 29, 2026](https://www.nbcboston.com/news/local/lindsay-clancy-case-update-new-motions/4039723/)). AP reports the judge heard arguments on that request on Nov. 2 ([AP, Nov. 2, 2026](https://www.wsls.com/news/national/2026/11/02/lindsay-clancy-returns-to-court-in-a-bid-to-dismiss-charges-she-killed-her-three-young-children/)). On Nov. 9 he denied it ([WBUR, Nov. 9, 2026](https://www.wbur.org/news/2026/11/09/lindsay-clancy-double-jeapardy-motions-denied)).
 
 ### What charges does Lindsay Clancy face?
 
@@ -192,13 +211,17 @@ The judge allowed the recording for the trial that ended in a mistrial. This tra
 
 ### What happens next?
 
-Judge William Sullivan heard the defense motion to dismiss on Nov. 2 and has not ruled. No retrial date is set. The next hearing is Nov. 16. On October 21 the judge denied a separate defense request for an evidentiary hearing about the holdout juror. A motions hearing is not a retrial, and the clock time of the Nov. 16 hearing is not independently verified.
+The full Supreme Judicial Court is expected to hear her double-jeopardy appeal in January 2027 ([ABC News, Nov. 19, 2026](https://abcnews.com/US/lindsay-clancy-files-appeal-ahead-march-2027-retrial/story?id=138277240)). On Nov. 25 it refused prosecutors' request to pause the retrial in the meantime ([ABC News, Nov. 25, 2026](https://abcnews.com/US/massachusetts-high-court-denies-attempt-delay-lindsey-clancy/story?id=138448426); [Boston 25 News via Yahoo, Nov. 25, 2026](https://www.yahoo.com/news/us/articles/sjc-denies-prosecutors-request-delay-175929425.html); [Fox News via Yahoo, Nov. 25, 2026](https://www.yahoo.com/news/us/articles/lindsay-clancy-retrial-moves-forward-192703270.html)). Jury selection is set to begin March 29, 2027. Clancy remains charged, has pleaded not guilty, and is presumed innocent.
 
 Cover this case? Our [court case kits for creators](/creators/).
 
 ## Update log
 
 These dated entries record what was known at each cutoff; earlier trial-stage descriptions are historical.
+
+### November 25, 2026 — High court won't pause the retrial
+
+**RULING:** The Supreme Judicial Court denied prosecutors' request to pause the retrial while it hears her double-jeopardy appeal. Jury selection stays set for March 29, 2027 ([ABC News, Nov. 25, 2026](https://abcnews.com/US/massachusetts-high-court-denies-attempt-delay-lindsey-clancy/story?id=138448426); [Boston 25 News via Yahoo, Nov. 25, 2026](https://www.yahoo.com/news/us/articles/sjc-denies-prosecutors-request-delay-175929425.html); [Fox News via Yahoo, Nov. 25, 2026](https://www.yahoo.com/news/us/articles/lindsay-clancy-retrial-moves-forward-192703270.html)). **ALSO ADDED:** Judge Sullivan's Nov. 9 denial of the motion to dismiss ([WBUR, Nov. 9, 2026](https://www.wbur.org/news/2026/11/09/lindsay-clancy-double-jeapardy-motions-denied); [Fox News, Nov. 10, 2026](https://www.foxnews.com/us/michael-ruiz-lindsay-clancy-judge-denies-double-jeopardy-motion-explains-jury-notes-deadlock)) and the appeal to the full court ([ABC News, Nov. 19, 2026](https://abcnews.com/US/lindsay-clancy-files-appeal-ahead-march-2027-retrial/story?id=138277240)). We updated the status box, fact card and reader questions. This ruling is not a finding of guilt.
 
 ### November 2, 2026 — Nov. 2 hearing held; no ruling
 
