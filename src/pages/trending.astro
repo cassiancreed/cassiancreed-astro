@@ -12,7 +12,10 @@ const n = trends.days.length;
 const px = (i) => PL + (i * (W - PL - PR)) / (n - 1);
 const py = (v) => PT + (1 - v / 100) * (H - PT - PB);
 const line = (vals) => vals.map((v, i) => `${i ? 'L' : 'M'}${px(i).toFixed(1)} ${py(v).toFixed(1)}`).join(' ');
-const ticks = [0, 7, 14, 21, 28, n - 1];
+// Weekly ticks from the first day; drop a weekly tick that would crowd the last day's label.
+const ticks = [...[0, 7, 14, 21, 28].filter((t) => t < n - 1 - 4), n - 1];
+// First label hangs right, last label hangs left, so neither is cut off at the chart edge.
+const tickAnchor = (t) => (t === 0 ? 'start' : t === n - 1 ? 'end' : 'middle');
 const lastWeekAvg = (vals) => Math.round(vals.slice(-7).reduce((a, b) => a + b, 0) / 7);
 const peakDay = (vals) => trends.days[vals.indexOf(Math.max(...vals))];
 const colors = ['#e0563b', '#6aa9ff', '#e6c04a', '#7bd88f', '#c792ea'];
@@ -41,7 +44,7 @@ const jsonld = {
     <p class="trend-chart__cap">Search interest, U.S., last 30 days (Google Trends, 100 = peak). Five cases with the most search interest in the past 7 days, on one shared scale. Data as of {trends.asOfText}. {trends.note}</p>
     <svg class="trend-svg" viewBox={`0 0 ${W} ${H}`} role="img" aria-label="Line chart of Google Trends search interest in the U.S. over the last 30 days for five cases">
       {[0, 25, 50, 75, 100].map((g) => (<g><line x1={PL} x2={W - PR} y1={py(g)} y2={py(g)} class="trend-grid-line" /><text x={PL - 4} y={py(g) + 3} class="trend-axis" text-anchor="end">{g}</text></g>))}
-      {ticks.map((t) => (<text x={px(t)} y={H - 6} class="trend-axis" text-anchor="middle">{trends.days[t]}</text>))}
+      {ticks.map((t) => (<text x={px(t)} y={H - 6} class="trend-axis" text-anchor={tickAnchor(t)}>{trends.days[t]}</text>))}
       {trends.top5.map((k, i) => (<path d={line(trends.shared[k])} fill="none" stroke={colors[i]} stroke-width="2" stroke-linejoin="round" />))}
     </svg>
     <ul class="trend-legend">
@@ -60,7 +63,7 @@ const jsonld = {
               <figure class="trend-chart">
                 <svg class="trend-svg trend-svg--sm" viewBox={`0 0 ${W} ${H}`} role="img" aria-label={`Search interest in ${trends.caseNames[c.trendKey]}, U.S., last 30 days. Peak on ${peakDay(trends.solo[c.trendKey])}.`}>
                   {[0, 50, 100].map((g) => (<g><line x1={PL} x2={W - PR} y1={py(g)} y2={py(g)} class="trend-grid-line" /><text x={PL - 4} y={py(g) + 3} class="trend-axis" text-anchor="end">{g}</text></g>))}
-                  {ticks.map((t) => (<text x={px(t)} y={H - 6} class="trend-axis" text-anchor="middle">{trends.days[t]}</text>))}
+                  {ticks.map((t) => (<text x={px(t)} y={H - 6} class="trend-axis" text-anchor={tickAnchor(t)}>{trends.days[t]}</text>))}
                   <path d={line(trends.solo[c.trendKey])} fill="none" stroke="#e0563b" stroke-width="2" stroke-linejoin="round" />
                 </svg>
                 <figcaption>Search interest, U.S., last 30 days (Google Trends; 100 = this case&rsquo;s own peak, {peakDay(trends.solo[c.trendKey])}). As of {trends.asOf}.</figcaption>
