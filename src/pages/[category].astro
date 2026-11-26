@@ -66,7 +66,7 @@ const jsonld = [
 ---
 <Base title={`${label} — Cassian Creed`} description={archiveDescription} jsonld={jsonld}>
   <section class="hero archive-hero wrap">
-    <span class="evidence evidence--accent">Case Files Archive</span>
+    <span class="evidence evidence--accent">{tag === 'Case Files' ? 'Case Files Archive' : 'Explainers Archive'}</span>
     <h1>{label}</h1>
     <p class="archive-hero__lede">{archiveDescription}</p>
     <p class="post__note">Also in the library: the <a href="/guides/">Resources &amp; Guides</a> &middot; the <a href="/glossary/">Glossary</a> &middot; the free <a href="/safety/">Stay Safe guide</a> &middot; <a href="/how-forensic-genetic-genealogy-works/">how forensic genetic genealogy works</a> &middot; the <a href="/court-calendar/">Court Calendar</a>.</p>
@@ -99,18 +99,24 @@ const jsonld = [
     <div class="archive-grid" id="archive-grid">
       {posts.map((post) => (
         <a
-          class="archive-card"
+          class:list={['archive-card', { 'archive-card--plain': !post.data.cover }]}
           href={`/post/${post.slug}/`}
           data-search={searchText(post)}
         >
-          <div
-            class="archive-card__art"
-            style={post.data.cover ? `background-image:linear-gradient(rgba(10,14,26,.18),rgba(10,14,26,.72)),url(${post.data.cover});background-size:cover;background-position:center 32%` : undefined}
-          >
-            <span class="archive-card__tag">{post.data.tag}</span>
-          </div>
+          {/* Site fix list v2, item 6: a picture only when the post has a cover.
+              No more tall empty colour blocks, and no category pill (every card
+              on this page is the same category). */}
+          {post.data.cover && (
+            <div
+              class="archive-card__art"
+              style={`background-image:linear-gradient(rgba(10,14,26,.12),rgba(10,14,26,.45)),url(${post.data.cover});background-size:cover;background-position:center 32%`}
+            ></div>
+          )}
           <div class="archive-card__body">
-            <time datetime={post.data.pubDate.toISOString().slice(0, 10)}>{formatDate(post.data.pubDate)}</time>
+            <p class="archive-card__meta">
+              <time datetime={post.data.pubDate.toISOString().slice(0, 10)}>{formatDate(post.data.pubDate)}</time>
+              {post.data.location && <span class="archive-card__place">{post.data.location}</span>}
+            </p>
             <h3>{post.data.title}</h3>
             {post.data.description && <p>{post.data.description}</p>}
             <span class="archive-card__link">Read {post.data.tag === 'Case Files' ? 'case file' : 'explainer'} <span aria-hidden="true">→</span></span>
@@ -146,3 +152,22 @@ const jsonld = [
     })();
   </script>
 </Base>
+
+<style>
+  /* Site fix list v2, item 6: tidy blog cards. */
+  .archive-grid { align-items: stretch; }
+  .archive-card--plain { border-top: 3px solid var(--accent); }
+  .archive-card--plain:nth-child(4n+2) { border-top-color: #5fae7e; }
+  .archive-card--plain:nth-child(4n+3) { border-top-color: #875d98; }
+  .archive-card--plain:nth-child(4n+4) { border-top-color: #c7a24b; }
+  .archive-card .archive-card__meta {
+    display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px;
+    margin: 0; -webkit-line-clamp: unset; overflow: visible;
+  }
+  .archive-card__place {
+    font-family: var(--mono); font-size: 11px; letter-spacing: .04em; color: var(--ink-3);
+    min-width: 0; max-width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .archive-card h3 { font-size: 21px; margin: 8px 0 8px; }
+  .archive-card__art { height: 140px; }
+</style>
