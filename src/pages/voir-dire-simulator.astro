@@ -1,6 +1,13 @@
 ---
 import Base from '../layouts/Base.astro';
-import CaptureBlock from '../components/CaptureBlock.astro';
+import BookCTA from '../components/BookCTA.astro';
+
+const FREE_GUIDE = 'https://cassiancreed.beehiiv.com/products/voir-dire-the-free-guide';
+const juryChess = {
+  key: 'jury-chess',
+  midCopy: 'The simulator is the short version. Jury Chess walks through a whole criminal jury trial, from jury selection to verdict, in plain English.',
+  endCopy: 'The simulator is the short version. Jury Chess walks through a whole criminal jury trial, from jury selection to verdict, in plain English.',
+};
 
 const jsonld = {
   '@context': 'https://schema.org',
@@ -61,6 +68,7 @@ const jsonld = {
       and learn the real difference between a <strong>challenge for cause</strong>, a
       <strong>peremptory strike</strong>, and the constitutional tripwire called a <strong>Batson challenge</strong>.
     </p>
+    <p class="vds-start-guide">New to jury selection? <a href={FREE_GUIDE} target="_blank" rel="noopener noreferrer" data-book-key="not_applicable" data-cta-placement="voir_dire_sim_hero_free_guide">Read the free Voir Dire guide first &rarr;</a></p>
     <p class="vds-disclaimer" role="note">
       A simplified educational model. Not legal advice, not a prediction tool. Procedures vary by
       state and court. All jurors fictional.
@@ -174,8 +182,13 @@ const jsonld = {
         <div id="end-profile" class="vds-profile"></div>
         <div id="end-teach" class="vds-teach"></div>
         <div class="vds-banks">
-          <h3>You just played the surface.</h3>
-          <CaptureBlock offer="case" content="voir_dire_sim" />
+          <h3>You just played the surface. Here is what to read next.</h3>
+          <div class="vds-next">
+            <p class="vds-next__step"><span class="vds-k">Step 1 &middot; Free</span> <strong>The Voir Dire guide.</strong> How challenges for cause, peremptory strikes and juror bias really work, in plain English. It comes by email.</p>
+            <a class="btn" href={FREE_GUIDE} target="_blank" rel="noopener noreferrer" data-book-key="not_applicable" data-cta-placement="voir_dire_sim_end_free_guide">Get the free guide &rarr;</a>
+          </div>
+          <p class="vds-next__step"><span class="vds-k">Step 2 &middot; Go deeper</span></p>
+          <BookCTA book={juryChess} placement="end" />
         </div>
         <button type="button" id="vds-again" class="vds-act">Play again with new conditions</button>
       </div>
@@ -188,6 +201,16 @@ const jsonld = {
       <p>Everything above is a compressed model of a process you can watch play out in real coverage. Two places to see it live: our <a href="/court-calendar/">True Crime Court Calendar</a> tracks upcoming jury selections and hearings with sourced dates, and <a href="/post/anatomy-of-a-murder-trial-hernandez-melgar/">Anatomy of a Murder Trial</a> walks a real conviction from jury selection to verdict.</p>
       <p>The two-strike system is real: unlimited challenges for cause that a judge must grant, and a limited stack of peremptories that need no reason &mdash; bounded by <em>Batson v. Kentucky</em> (1986), which forbids striking jurors because of race or ethnicity, and <em>J.E.B. v. Alabama</em> (1994), which extended that protection to gender. Age and occupation are not Batson-protected classes, and the simulator reflects that line exactly.</p>
     </div>
+  </section>
+
+  <section class="wrap vds-sec" aria-labelledby="vds-learn">
+    <h2 id="vds-learn">Learn more about jury selection</h2>
+    <div class="vds-next">
+      <p class="vds-next__step"><span class="vds-k">Step 1 &middot; Free</span> <strong>Start with the free Voir Dire guide.</strong> It explains challenges for cause, peremptory strikes, juror bias, and what to watch when a real jury is picked. It comes by email.</p>
+      <a class="btn" href={FREE_GUIDE} target="_blank" rel="noopener noreferrer" data-book-key="not_applicable" data-cta-placement="voir_dire_sim_learn_free_guide">Get the free guide &rarr;</a>
+    </div>
+    <p class="vds-next__step"><span class="vds-k">Step 2 &middot; Go deeper</span></p>
+    <BookCTA book={juryChess} placement="mid" />
   </section>
 
   <section class="wrap vds-sec" aria-labelledby="vds-faq">
@@ -207,6 +230,12 @@ const jsonld = {
   </section>
 
   <style>
+    .vds-start-guide{font-size:17px;margin:14px 0 0;max-width:70ch}
+    .vds-start-guide a{color:var(--accent);text-decoration:underline;font-weight:600}
+    .vds-next{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px;padding:18px 20px;background:var(--bg-3);border:1px solid rgba(246,199,107,.45);border-radius:12px;margin:0 0 18px}
+    .vds-next .vds-next__step{flex:1 1 320px;margin:0}
+    .vds-next__step{font-size:16px;line-height:1.5;color:var(--ink);margin:6px 0 0}
+    .vds-next__step .vds-k{display:block}
     .vds-intro{font-size:19px;line-height:1.6;max-width:70ch;color:var(--ink)}
     .vds-intro strong{color:var(--accent)}
     .vds-disclaimer{margin:18px 0 0;padding:10px 14px;border:1px solid var(--line-strong);border-left:3px solid var(--accent-2);border-radius:8px;font-family:var(--mono);font-size:12.5px;letter-spacing:.02em;color:var(--ink-2);max-width:70ch}
