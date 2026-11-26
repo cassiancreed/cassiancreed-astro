@@ -9,7 +9,7 @@
     "calendar:check": "node --test scripts/test-court-calendar-dates.mjs scripts/test-calendar-explainer-links.mjs scripts/test-court-calendar-source-tier.mjs && node scripts/validate-court-calendar.mjs",
     "archive:check": "node scripts/validate-court-calendar-archive.mjs",
     "intl:check": "node scripts/validate-international-watch.mjs",
-    "missing:check": "node scripts/validate-missing-persons.mjs && node --test scripts/test-missing-persons-holds.mjs",
+    "missing:check": "node scripts/validate-missing-persons.mjs && node --test scripts/test-missing-persons-holds.mjs scripts/test-missing-persons-official-images.mjs",
     "posts:check": "node scripts/validate-post-archive.mjs",
     "site:check": "node scripts/validate-site.mjs && node --test scripts/test-court-form-layout.mjs scripts/test-post-guide-ctas.mjs scripts/test-clancy-child-names.mjs scripts/test-checkout-tags.mjs scripts/test-preview-links.mjs scripts/test-warn-victim-names.mjs && node scripts/warn-victim-names.mjs",
     "canon:check": "node scripts/validate-case-handling-canon.mjs",

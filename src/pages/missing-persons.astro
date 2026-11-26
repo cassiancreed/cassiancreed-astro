@@ -2,9 +2,13 @@
 import Base from '../layouts/Base.astro';
 import missingTsv from '../data/missing-persons.tsv?raw';
 import { formatMissingDate, parseMissingPersons } from '../data/missing-persons-parser.mjs';
+import officialImagesTsv from '../data/missing-persons-official-images.tsv?raw';
+import { officialImagesById, parseOfficialImages, validateOfficialImages } from '../data/missing-persons-official-images.mjs';
 import 'leaflet/dist/leaflet.css';
 
 const missing = parseMissingPersons(missingTsv);
+// Only images an official source released, labeled with that source.
+const officialImages = officialImagesById(validateOfficialImages(parseOfficialImages(officialImagesTsv), missing.cases));
 const active = missing.active;
 const resolved = missing.resolved;
 const first = active[0] ?? null;
@@ -49,6 +53,7 @@ const jsonld = {
         <p class="evidence evidence--accent">NEP Missing Persons</p>
         <h1>Every missing person is a person—not a mystery character.</h1>
         <p class="mp-hero__lede">Explore selected cases through verified public information. The map uses approximate locations for context and sends every lead directly to the investigating agency or authorized tipline.</p>
+        <p class="mp-hero__guide"><a href="#first-hours">Someone you love is missing? Read the free first-hours guide</a></p>
       </div>
       <aside class="mp-trust" aria-label="Missing Persons Map safeguards">
         <p><strong>{active.length}</strong> active {active.length === 1 ? 'case' : 'cases'}</p>
@@ -62,6 +67,21 @@ const jsonld = {
     <strong>NEP is not law enforcement and does not receive tips.</strong>
     <span>If you have information, use the official contact shown on that person&rsquo;s card. Call 911 or local emergency services for an immediate emergency.</span>
     <span>Each card shows its own verification date. Some sources could not be rechecked in the latest review; an inaccessible or withdrawn notice is not proof that a person has been found.</span>
+  </section>
+
+  <section class="wrap mp-first-hours" id="first-hours" aria-labelledby="first-hours-heading">
+    <p class="evidence evidence--accent">Free guide</p>
+    <h2 id="first-hours-heading">If someone you love is missing: the first hours</h2>
+    <p class="mp-first-hours__lede">Do not wait. These steps come from the National Center for Missing &amp; Exploited Children (NCMEC) and NamUs.</p>
+    <ol class="mp-first-hours__steps">
+      <li><strong>Call 911 or your local police now.</strong> Do not wait. Act right away.</li>
+      <li><strong>For a child, call NCMEC next.</strong> After you call police, call <a href="tel:18008435678">1-800-THE-LOST (1-800-843-5678)</a>. It is open 24 hours a day.</li>
+      <li><strong>Check the home and car.</strong> Look in closets, beds, piles of laundry, big appliances and cars, including the trunk. If a child goes missing in a store, tell the manager or security, then call police.</li>
+      <li><strong>Tell police the key facts.</strong> Give the person&rsquo;s name, birth date, height and weight, any glasses, braces or marks, what they were wearing, and when you noticed they were gone.</li>
+      <li><strong>For a child, ask police to add them to the FBI&rsquo;s missing person file right away.</strong> This file is called NCIC.</li>
+      <li><strong>If the search goes on, use NamUs.</strong> Families can enter a case and ask about a free family DNA kit.</li>
+    </ol>
+    <p class="mp-first-hours__sources">Official sources: <a href="https://www.missingkids.org/gethelpnow/isyourchildmissing">NCMEC: Is your child missing?</a> · <a href="https://namus.nij.ojp.gov/">NamUs</a></p>
   </section>
 
   <section class="wrap mp-scale" aria-labelledby="national-scale-heading">
@@ -136,24 +156,42 @@ const jsonld = {
           <div class="mp-detail" aria-live="polite">
             {active.map((entry) => (
               <article id={`missing-${entry.id}`} class="mp-status-card" data-case-panel={entry.id}>
+                <div class="mp-person">
+                  {officialImages.get(entry.id)?.photo ? (
+                    <figure class="mp-photo">
+                      <img src={officialImages.get(entry.id).photo.image_path} alt={`Official photo of ${entry.name}`} loading="lazy" width="160" height="200" />
+                      <figcaption>Photo: <a href={officialImages.get(entry.id).photo.source_url}>{officialImages.get(entry.id).photo.source_label}</a></figcaption>
+                    </figure>
+                  ) : (
+                    <a class="mp-photo mp-photo--link" href={entry.source_url}>See {entry.name}&rsquo;s photo on the official poster</a>
+                  )}
+                  <div class="mp-person__main">
+                    <h3 tabindex="-1">{entry.name}</h3>
+                    <p class="mp-last-seen"><span>Last seen area</span> {entry.approx_location}</p>
+                    <p class="mp-last-seen"><span>Missing since</span> {qualifiedMissingDates[entry.id] ?? formatMissingDate(entry.date_missing)}</p>
+                    <div class="mp-card-actions">
+                      <a class="btn" href={entry.tip_url}>{entry.tip_label}</a>
+                      {entry.tip_phone && <a class="btn btn--ghost" href={`tel:${entry.tip_phone.replace(/[^+\d]/g, '')}`}>Call {entry.tip_phone}</a>}
+                      <button class="mp-follow-button" hidden type="button" data-follow-case={entry.id} data-follow-key={entry.follow_key} data-follow-name={entry.name}>Follow this case</button>
+                    </div>
+                  </div>
+                </div>
+                {officialImages.get(entry.id)?.age_progression && (
+                  <figure class="mp-progression">
+                    <img src={officialImages.get(entry.id).age_progression.image_path} alt={`Official age progression of ${entry.name} at age ${officialImages.get(entry.id).age_progression.age_shown}`} loading="lazy" width="160" height="200" />
+                    <figcaption>Age progression to age {officialImages.get(entry.id).age_progression.age_shown}, released by <a href={officialImages.get(entry.id).age_progression.source_url}>{officialImages.get(entry.id).age_progression.source_label}</a> on {formatMissingDate(officialImages.get(entry.id).age_progression.released)}. This is an estimate, not a real photo.</figcaption>
+                  </figure>
+                )}
                 <div class="mp-status-card__top">
                   <span class={`mp-status-pill mp-status-pill--${entry.status}`}>{entry.statusLabel}</span>
-                  <span class="mp-verified">Status verified as of {formatMissingDate(entry.verification_date)}</span>
+                  <span class="mp-verified">Checked on {formatMissingDate(entry.verification_date)}</span>
                 </div>
-                <h3 tabindex="-1">{entry.name}</h3>
                 <p class="mp-summary">{entry.summary}</p>
                 <dl>
-                  <div><dt>Approximate location</dt><dd>{entry.approx_location}</dd></div>
-                  <div><dt>Date missing</dt><dd>{qualifiedMissingDates[entry.id] ?? formatMissingDate(entry.date_missing)}</dd></div>
                   <div><dt>Verified status</dt><dd>{entry.statusLabel} <span class="mp-agency-status">(agency lists: {entry.agency_status})</span></dd></div>
                   <div><dt>Investigating agency</dt><dd>{entry.investigating_agency}</dd></div>
                   {entry.case_number && <div><dt>Official case number</dt><dd>{entry.case_number}</dd></div>}
                 </dl>
-                <div class="mp-card-actions">
-                  <a class="btn" href={entry.tip_url}>{entry.tip_label}</a>
-                  {entry.tip_phone && <a class="btn btn--ghost" href={`tel:${entry.tip_phone.replace(/[^+\d]/g, '')}`}>Call {entry.tip_phone}</a>}
-                  <button class="mp-follow-button" hidden type="button" data-follow-case={entry.id} data-follow-key={entry.follow_key} data-follow-name={entry.name}>Follow this case</button>
-                </div>
                 <p class="mp-sources">
                   Official verification: <a href={entry.source_url}>{entry.source_label}</a>
                   {entry.source2_url && <> · <a href={entry.source2_url}>{entry.source2_label}</a></>}
@@ -204,12 +242,6 @@ const jsonld = {
 
   <section class="wrap mp-bridges" aria-label="Related public-interest resources">
     <article class="mp-bridge">
-      <p class="evidence evidence--accent">How this stays free</p>
-      <h2>Publishing supports the public-service work.</h2>
-      <p>Cassian Creed&rsquo;s paid books and explainers help support the research, verification, and technology that keep this Missing Persons Map free. Missing-person information will never be placed behind a paywall, and all leads are directed to the appropriate authorities.</p>
-      <a href="/books/">See Cassian Creed&rsquo;s books <span aria-hidden="true">→</span></a>
-    </article>
-    <article class="mp-bridge">
       <p class="evidence evidence--accent">Genealogy and identification</p>
       <h2>How a family tree can help restore a name.</h2>
       <p>Forensic genetic genealogy can help generate an identification lead, but it is not proof by itself and does not apply to every missing-person case. Learn how the process works, what ethical databases permit, and how laboratories such as Othram contribute.</p>
@@ -224,6 +256,8 @@ const jsonld = {
       <p><strong>Authority first.</strong> Every published record starts with an investigating agency or authoritative missing-person system.</p>
       <p><strong>Status means exactly what it says.</strong> Missing does not automatically mean abducted; recovered deceased does not mean homicide.</p>
       <p><strong>Privacy over spectacle.</strong> No private addresses, sensitive search locations, fabricated likenesses, or unverified accusations.</p>
+      <p><strong>Official images only.</strong> A photo or age progression appears only when an official source released it, and the card names that source. NEP never makes its own.</p>
+      <p><strong>No ads and no sales.</strong> This page carries no ads and sells nothing.</p>
       <p><strong>Tips go to investigators.</strong> NEP provides context and amplification, never a competing tip inbox.</p>
     </div>
   </section>
@@ -404,7 +438,21 @@ const jsonld = {
   .mp-follow{display:grid;grid-template-columns:1fr auto;gap:34px;align-items:center;margin-top:54px;padding-top:28px;padding-bottom:28px;border:1px solid rgba(224,86,59,.3);border-left:3px solid var(--accent);border-radius:10px;background:var(--bg-2)}
   .mp-follow p{max-width:68ch;color:var(--ink-2);margin:12px 0 0}.mp-follow__selection strong{color:var(--ink)}.mp-follow__button{white-space:nowrap}
   .mp-resolved{padding-top:54px}.mp-resolved>p{color:var(--ink-2);max-width:70ch}.mp-resolved__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.mp-resolved article{padding:18px;border:1px solid var(--line);border-radius:8px;background:var(--bg-2)}.mp-resolved h3{font-family:var(--serif);font-size:24px;margin:12px 0 6px}.mp-resolved article p{color:var(--ink-3);font-size:13px}.mp-resolved a{color:var(--accent);font-size:13px}
-  .mp-bridges{display:grid;grid-template-columns:1fr 1fr;gap:18px;padding-top:56px}.mp-bridge{padding:28px;border:1px solid var(--line);border-radius:10px;background:linear-gradient(145deg,var(--bg-2),#12100e)}.mp-bridge h2{font-size:32px}.mp-bridge>p:not(.evidence){color:var(--ink-2);font-size:15px}.mp-bridge>a,.mp-bridge__links a{color:var(--accent);text-decoration:underline}.mp-bridge__links{line-height:1.8}
+  .mp-bridges{display:grid;grid-template-columns:1fr;gap:18px;padding-top:56px}.mp-bridge{padding:28px;border:1px solid var(--line);border-radius:10px;background:linear-gradient(145deg,var(--bg-2),#12100e)}.mp-bridge h2{font-size:32px}.mp-bridge>p:not(.evidence){color:var(--ink-2);font-size:15px}.mp-bridge>a,.mp-bridge__links a{color:var(--accent);text-decoration:underline}.mp-bridge__links{line-height:1.8}
+  .mp-hero__guide{margin:16px 0 0}.mp-hero__guide a{color:var(--accent);text-decoration:underline;font-weight:600}
+  .mp-first-hours{margin-top:28px;padding-top:24px;padding-bottom:24px;border:1px solid rgba(95,174,126,.34);border-radius:10px;background:var(--bg-2)}
+  .mp-first-hours h2{font-family:var(--serif);font-size:clamp(26px,3.6vw,38px);line-height:1.1;margin:6px 0 8px}
+  .mp-first-hours__lede{color:var(--ink-2);margin:0 0 12px}
+  .mp-first-hours__steps{margin:0;padding-left:22px;display:grid;gap:10px;color:var(--ink-2);line-height:1.55}.mp-first-hours__steps strong{color:var(--ink)}.mp-first-hours__steps a{color:var(--accent);text-decoration:underline}
+  .mp-first-hours__sources{margin:14px 0 0;color:var(--ink-3);font-size:12px}.mp-first-hours__sources a{color:var(--accent);text-decoration:underline}
+  .mp-person{display:grid;grid-template-columns:120px minmax(0,1fr);gap:16px;align-items:start}
+  .mp-photo{margin:0}.mp-photo img,.mp-progression img{display:block;width:120px;height:150px;object-fit:cover;border-radius:6px;border:1px solid var(--line)}
+  .mp-photo figcaption,.mp-progression figcaption{margin-top:6px;font-size:11px;line-height:1.4;color:var(--ink-3)}.mp-photo figcaption a,.mp-progression figcaption a{color:var(--accent);text-decoration:underline}
+  .mp-photo--link{display:flex;align-items:center;justify-content:center;width:120px;height:150px;padding:10px;text-align:center;border:1px dashed var(--line);border-radius:6px;color:var(--accent);font-size:12px;line-height:1.35;text-decoration:underline}
+  .mp-progression{display:grid;grid-template-columns:120px minmax(0,1fr);gap:16px;align-items:center;margin:16px 0 0}
+  .mp-status-card .mp-person__main h3{margin-top:0}
+  .mp-last-seen{margin:0 0 6px;font-size:14px;line-height:1.45;color:var(--ink)}.mp-last-seen span{display:block;font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+  .mp-status-card .mp-status-card__top{margin-top:18px}
   .mp-method{padding-top:56px}.mp-method__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px 24px;margin-top:18px}.mp-method__grid p{margin:0;padding:16px 0;border-top:1px solid var(--line);color:var(--ink-2)}.mp-method__grid strong{color:var(--ink)}
   @media(max-width:900px){.mp-scale__grid{grid-template-columns:1fr}.mp-scale__grid article{min-height:0}.mp-hero__inner,.mp-workspace{grid-template-columns:1fr}.mp-trust{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.mp-trust p{border:0}.mp-detail{min-height:0}.mp-bridges{grid-template-columns:1fr}.mp-map{height:420px}}
   @media(max-width:640px){.mp-hero{padding:44px 0 30px}.mp-hero__inner{gap:26px}.mp-trust{grid-template-columns:1fr;gap:0}.mp-trust p{border-bottom:1px solid var(--line)}.mp-explorer__head{display:block}.mp-explorer__head>p{margin-top:12px}.mp-search{grid-template-columns:1fr}.mp-search label{grid-column:auto}.mp-case-list{grid-template-columns:1fr}.mp-map{height:340px}.mp-status-card dl div{grid-template-columns:1fr;gap:4px}.mp-follow{grid-template-columns:1fr;gap:18px}.mp-follow__button{justify-self:start}.mp-method__grid,.mp-resolved__grid{grid-template-columns:1fr}}
