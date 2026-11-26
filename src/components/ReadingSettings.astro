@@ -1,0 +1,70 @@
+---
+// Site fix list v2, accessibility part 3: text size and contrast.
+// Choices are kept in this browser only (localStorage), never sent anywhere.
+// The saved choice is applied before the page paints by the small inline
+// script in Base.astro's <head>, so the page does not flash.
+---
+<details class="reading" data-reading>
+  <summary class="reading__summary"><span aria-hidden="true">Aa</span> Text size and contrast</summary>
+  <div class="reading__panel">
+    <div class="reading__group" role="group" aria-labelledby="reading-size-label">
+      <span class="reading__label" id="reading-size-label">Text size</span>
+      <button type="button" class="reading__opt" data-size="0" aria-pressed="true">Normal</button>
+      <button type="button" class="reading__opt" data-size="1" aria-pressed="false">Large</button>
+      <button type="button" class="reading__opt" data-size="2" aria-pressed="false">Larger</button>
+    </div>
+    <div class="reading__group" role="group" aria-labelledby="reading-contrast-label">
+      <span class="reading__label" id="reading-contrast-label">Contrast</span>
+      <button type="button" class="reading__opt" data-contrast="0" aria-pressed="true">Standard</button>
+      <button type="button" class="reading__opt" data-contrast="1" aria-pressed="false">High</button>
+    </div>
+    <p class="reading__hint">Your choice stays on this device.</p>
+  </div>
+</details>
+
+<script>
+  const KEY = 'cc-reading';
+  const root = document.documentElement;
+  function read() {
+    try { return JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch { return {}; }
+  }
+  function apply(s: { size?: number; contrast?: number }) {
+    root.classList.remove('ts-1', 'ts-2', 'hc');
+    if (s.size === 1) root.classList.add('ts-1');
+    if (s.size === 2) root.classList.add('ts-2');
+    if (s.contrast === 1) root.classList.add('hc');
+    document.querySelectorAll<HTMLButtonElement>('[data-reading] [data-size]').forEach((b) => {
+      b.setAttribute('aria-pressed', String(Number(b.dataset.size) === (s.size || 0)));
+    });
+    document.querySelectorAll<HTMLButtonElement>('[data-reading] [data-contrast]').forEach((b) => {
+      b.setAttribute('aria-pressed', String(Number(b.dataset.contrast) === (s.contrast || 0)));
+    });
+  }
+  let state = read();
+  apply(state);
+  document.querySelectorAll<HTMLButtonElement>('[data-reading] .reading__opt').forEach((b) => {
+    b.addEventListener('click', () => {
+      if (b.dataset.size !== undefined) state = { ...state, size: Number(b.dataset.size) };
+      if (b.dataset.contrast !== undefined) state = { ...state, contrast: Number(b.dataset.contrast) };
+      try { localStorage.setItem(KEY, JSON.stringify(state)); } catch {}
+      apply(state);
+    });
+  });
+</script>
+
+<style>
+  .reading { max-width: 1180px; margin: 8px auto 0; padding: 0 24px; font-size: 14px; }
+  .reading__summary { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; cursor: pointer; color: var(--ink); list-style: none; }
+  .reading__summary::-webkit-details-marker { display: none; }
+  .reading__summary span { font-family: var(--serif); font-weight: 700; font-size: 18px; color: var(--accent); }
+  .reading__panel { display: flex; flex-wrap: wrap; gap: 10px 24px; align-items: center; padding: 10px 0 14px; }
+  .reading__group { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+  .reading__label { font-weight: 700; margin-right: 4px; }
+  .reading__opt {
+    min-height: 44px; min-width: 44px; padding: 8px 14px; border-radius: 999px;
+    border: 1px solid var(--line-strong, rgba(255,255,255,.3)); background: transparent; color: var(--ink);
+    font: inherit; cursor: pointer;
+  }
+  .reading__opt[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); font-weight: 700; }
+  .reading__hint { margin: 0; color: var(--ink-3); font-size: 13px; flex-basis: 100%; }
+</style>
