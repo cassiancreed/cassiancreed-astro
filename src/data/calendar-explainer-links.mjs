@@ -763,7 +763,7 @@ const PUBLISHED_POSTS = new Set([
   "/post/lori-vallow-daybell-case-and-appeal/",
   "/post/the-trail-the-murder-of-rachel-morin-the-full-account/",
   "/post/this-week-in-court-september-13-2026/",
-  "/post/the-murder-of-rachel-nickell-how-dna-caught-robert-napper-and-cleared-colin-stagg/",
+  "/post/the-killing-of-rachel-nickell-how-dna-caught-robert-napper-and-cleared-colin-stagg/",
   "/post/the-taylor-parker-case-the-murder-of-reagan-simmons-hancock-and-where-it-stands-now/",
   "/post/this-week-in-court-october-4-2026/",
   "/post/this-week-in-court-october-19-23-2026/",
