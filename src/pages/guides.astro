@@ -97,40 +97,50 @@ const jsonld = pageSchema({
   <article class="post">
     <div class="post__content">
       <p>Neural Edge Publishing is not a single book. It is a body of work: sourced, victim-first case files; plain-language forensic explainers; practical guides that ask nothing of you in return; and tools that let you sit in the chair yourself. Everything here is free to read. Nothing here is gated.</p>
-
-      <h2 id="guides-and-tools">Guides, tools &amp; reference</h2>
     </div>
   </article>
 
-  <section class="wrap"><div class="grid">
-    {guides.map(g => (
-      <a class="card" href={g.href}>
-        <div class="card__tile">
-          <div class="tile__top"><span class="tile__no">{g.kicker}</span><span class="tile__tag">Free</span></div>
-          <h3 class="card__title">{g.title}</h3>
-        </div>
-        <div class="card__body"><p>{g.desc}</p></div>
+  {/* Site fix list v2, item 6: compact cards with the title and summary in one
+      box, a heading that lines up with the grid, and the library links as three
+      matching cards instead of a long column of buttons. */}
+  <section class="wrap guides-sec" aria-labelledby="guides-and-tools">
+    <h2 id="guides-and-tools" class="guides-sec__h">Guides, tools &amp; reference</h2>
+    <div class="guides-grid">
+      {guides.map(g => (
+        <a class="guide-card" href={g.href}>
+          <span class="guide-card__top"><span class="guide-card__kind">{g.kicker}</span><span class="guide-card__free">Free</span></span>
+          <h3 class="guide-card__title">{g.title}</h3>
+          <p class="guide-card__desc">{g.desc}</p>
+          <span class="guide-card__go">Open <span aria-hidden="true">&rarr;</span></span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="wrap guides-sec" aria-labelledby="the-library">
+    <h2 id="the-library" class="guides-sec__h">The library</h2>
+    <div class="library-grid">
+      <a class="library-card" id="the-case-files" href="/case-files/">
+        <span class="library-card__count">{caseFiles.length}</span>
+        <h3>Case files</h3>
+        <p>Sourced, victim-first case files built on the public record: court filings, charging papers and courtroom reporting. Everyone charged is presumed innocent unless a court finds them guilty.</p>
+        <span class="library-card__go">Browse all case files <span aria-hidden="true">&rarr;</span></span>
       </a>
-    ))}
-  </div></section>
-
-  <article class="post">
-    <div class="post__content">
-      <h2 id="the-case-files">The case files</h2>
-      <p>{caseFiles.length} sourced, victim-first case files &mdash; each built on the public record: court filings, charging documents, and courtroom reporting. The presumption of innocence is absolute.</p>
-      <p><a class="btn" href="/case-files/">Browse all case files &rarr;</a></p>
-
-      <h2 id="the-explainers">The explainers</h2>
-      <p>{explainers.length} plain-language explainers on how the science and the system actually work &mdash; genetic genealogy, false confessions, coercive control, forensic evidence, and the courtroom process itself.</p>
-      <p><a class="btn btn--ghost" href="/explainers/">Browse all explainers &rarr;</a></p>
-
-      <h2 id="jury-chess">Jury Chess</h2>
-      <p>The verified Cassian Creed courtroom guide explains how criminal jury trials work, from jury selection through verdict.</p>
-      <p><a class="btn btn--ghost" href="/books/">Explore Jury Chess &rarr;</a></p>
-
-      <p class="post__note">New here? <a href="/start-here/">Start Here</a> is the shortest path in. Or read our <a href="/mission/">mission</a> &mdash; victim-centered, evidence-first, and accountable.</p>
+      <a class="library-card" id="the-explainers" href="/explainers/">
+        <span class="library-card__count">{explainers.length}</span>
+        <h3>Explainers</h3>
+        <p>Plain-language explainers on how the science and the system work: genetic genealogy, false confessions, coercive control, forensic evidence and the courtroom itself.</p>
+        <span class="library-card__go">Browse all explainers <span aria-hidden="true">&rarr;</span></span>
+      </a>
+      <a class="library-card" id="jury-chess" href="/books/">
+        <span class="library-card__count">Book</span>
+        <h3>Jury Chess</h3>
+        <p>The verified Cassian Creed courtroom guide explains how criminal jury trials work, from jury selection through verdict.</p>
+        <span class="library-card__go">Explore Jury Chess <span aria-hidden="true">&rarr;</span></span>
+      </a>
     </div>
-  </article>
+    <p class="guides-sec__note">New here? <a href="/start-here/">Start Here</a> is the shortest path in. Or read our <a href="/mission/">mission</a> &mdash; victim-centered, evidence-first, and accountable.</p>
+  </section>
 
   <div class="wrap"><section class="subscribe" id="free-guide">
     <CaptureBlock offer="case" content="guides" />
@@ -138,20 +148,29 @@ const jsonld = pageSchema({
 </Base>
 
 <style>
-  /* NEP-OPS-CMT-0718DP: the global rule `.post__content a{color:var(--accent)}`
-     was overriding the base filled `.btn` label colour, painting the "Browse all
-     case files" text the same orange as the button fill (#e0563b) — an invisible
-     label on a solid orange block. Restore legibility using the site's
-     established filled-button pattern (cream #F6F1EA on #A8503A), matching the
-     capture buttons that render "Get the free guide" correctly. Scoped here so it
-     only touches THIS page's filled CTA — the outlined `.btn--ghost` links are
-     left exactly as they were. */
-  .post__content a.btn:not(.btn--ghost) {
-    color: #F6F1EA;
-    background: #A8503A;
-    text-decoration: none;
+  .guides-sec { margin: 8px auto 36px; }
+  .guides-sec__h { font-family: var(--serif); font-weight: 600; font-size: clamp(26px, 3.4vw, 34px); line-height: 1.15; margin: 0 0 16px; }
+  .guides-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+  .guide-card, .library-card {
+    display: flex; flex-direction: column; min-width: 0;
+    background: var(--bg-2); border: 1px solid var(--line); border-radius: 10px; padding: 18px;
+    color: var(--ink); text-decoration: none; transition: border-color .2s, transform .2s;
   }
-  .post__content a.btn:not(.btn--ghost):hover {
-    color: #F6F1EA;
-  }
+  .guide-card:hover, .library-card:hover { border-color: rgba(224,86,59,.55); transform: translateY(-2px); }
+  .guide-card__top { display: flex; justify-content: space-between; gap: 10px; font-family: var(--mono); font-size: 10px; letter-spacing: .16em; text-transform: uppercase; }
+  .guide-card__kind { color: var(--accent); }
+  .guide-card__free { color: var(--ink-3); }
+  .guide-card__title { font-family: var(--serif); font-weight: 600; font-size: 21px; line-height: 1.2; margin: 10px 0 8px; }
+  .guide-card__desc { color: var(--ink-2); font-size: 15px; line-height: 1.55; margin: 0 0 14px; }
+  .guide-card__go, .library-card__go { margin-top: auto; font-family: var(--mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2); }
+  .guide-card:hover .guide-card__go, .library-card:hover .library-card__go { color: var(--accent); }
+  .library-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+  .library-card { border-top: 3px solid var(--accent); }
+  .library-card__count { font-family: var(--serif); font-size: 34px; line-height: 1; color: var(--accent); }
+  .library-card h3 { font-family: var(--serif); font-weight: 600; font-size: 22px; margin: 8px 0 8px; }
+  .library-card p { color: var(--ink-2); font-size: 15px; line-height: 1.55; margin: 0 0 14px; }
+  .guides-sec__note { color: var(--ink-2); margin: 18px 0 0; }
+  .guides-sec__note a { color: var(--accent); }
+  @media (max-width: 900px) { .guides-grid, .library-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 620px) { .guides-grid, .library-grid { grid-template-columns: 1fr; } }
 </style>
