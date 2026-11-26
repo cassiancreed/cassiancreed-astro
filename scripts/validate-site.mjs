@@ -104,6 +104,10 @@ const expectedJuryChessCheckoutCtas = new Map([
   ['/post/what-actually-happens-on-day-one-of-a-high-profile-trial/', [
     `${juryChessProductUrl}?utm_source=cassiancreed.com&utm_medium=day_one_explainer&utm_campaign=jury_chess&utm_content=closing_cta`,
   ]],
+  ['/voir-dire-simulator/', [
+    `${juryChessProductUrl}?utm_source=website&utm_medium=book_cta&utm_campaign=voir-dire-simulator&utm_content=voir-dire-simulator_end`,
+    `${juryChessProductUrl}?utm_source=website&utm_medium=book_cta&utm_campaign=voir-dire-simulator&utm_content=voir-dire-simulator_mid`,
+  ]],
   ['/post/anatomy-of-a-murder-trial-hernandez-melgar/', [
     `${juryChessProductUrl}?utm_source=website&utm_medium=book_cta&utm_campaign=anatomy-of-a-murder-trial-hernandez-melgar&utm_content=anatomy-of-a-murder-trial-hernandez-melgar_mid`,
     `${juryChessProductUrl}?utm_source=website&utm_medium=book_cta&utm_campaign=anatomy-of-a-murder-trial-hernandez-melgar&utm_content=anatomy-of-a-murder-trial-hernandez-melgar_end`,
@@ -136,7 +140,7 @@ for (const [route, file] of routes) {
     failures.push(`${route}: Jury Chess checkout CTAs do not match the attribution contract; expected ${JSON.stringify(expected)}, found ${JSON.stringify(actual)}`);
   }
 }
-if (juryChessCheckoutCtaCount !== 14) failures.push(`expected 14 Jury Chess checkout CTAs, found ${juryChessCheckoutCtaCount}`);
+if (juryChessCheckoutCtaCount !== 16) failures.push(`expected 16 Jury Chess checkout CTAs, found ${juryChessCheckoutCtaCount}`);
 
 const beehiivProductUrlPrefix = 'https://cassiancreed.beehiiv.com/products/';
 const expectedProductMetadata = new Map([
@@ -169,6 +173,16 @@ const expectedProductMetadata = new Map([
       href: 'https://cassiancreed.beehiiv.com/products/voir-dire-the-free-guide',
       bookKey: 'not_applicable',
       placement: 'books_page_free_guide',
+    },
+  ]],
+  // Site Fix List v2 item 4 (Nov 26, 2026): the Jury Simulator points to the
+  // free Voir Dire guide first, then Jury Chess.
+  ['/voir-dire-simulator/', [
+    {
+      href: 'https://cassiancreed.beehiiv.com/products/voir-dire-the-free-guide',
+      bookKey: 'not_applicable',
+      count: 3,
+      placements: ['voir_dire_sim_hero_free_guide', 'voir_dire_sim_end_free_guide', 'voir_dire_sim_learn_free_guide'],
     },
   ]],
   // Patterson guide links on /court-calendar/ and /international-court-watch/
@@ -222,8 +236,11 @@ for (const [route, file] of routes) {
       continue;
     }
     for (const actual of matches) {
-      if (actual['data-book-key'] !== expected.bookKey || actual['data-cta-placement'] !== expected.placement) {
-        failures.push(`${route}: product CTA metadata mismatch for ${expected.href}; expected ${expected.bookKey}/${expected.placement}, found ${actual['data-book-key']}/${actual['data-cta-placement']}`);
+      const placementOk = expected.placements
+        ? expected.placements.includes(actual['data-cta-placement'])
+        : actual['data-cta-placement'] === expected.placement;
+      if (actual['data-book-key'] !== expected.bookKey || !placementOk) {
+        failures.push(`${route}: product CTA metadata mismatch for ${expected.href}; expected ${expected.bookKey}/${expected.placement ?? expected.placements.join('|')}, found ${actual['data-book-key']}/${actual['data-cta-placement']}`);
       }
     }
   }
@@ -241,7 +258,8 @@ for (const [route, file] of routes) {
   }
 }
 if (beehiivProductAnchorCount < 14) failures.push(`expected at least 14 static Beehiiv product CTAs, found ${beehiivProductAnchorCount}`);
-if (notApplicableBookKeyCount !== 1) failures.push(`expected one non-book Beehiiv product CTA, found ${notApplicableBookKeyCount}`);
+// The free Voir Dire guide is the only non-book product: 1 on /books/ + 3 on /voir-dire-simulator/.
+if (notApplicableBookKeyCount !== 4) failures.push(`expected four free Voir Dire guide CTAs (1 on /books/, 3 on /voir-dire-simulator/), found ${notApplicableBookKeyCount}`);
 
 const courtCalendarHtml = await readFile(routes.get('/court-calendar/'), 'utf8');
 const courtCalendarJsonLd = [...courtCalendarHtml.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
