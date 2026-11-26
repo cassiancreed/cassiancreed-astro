@@ -1,7 +1,8 @@
 ---
-title: "The Murder of Rachel Nickell: How an Innocent Man Was Targeted, and DNA Found the Real Killer"
-description: "Rachel Nickell was murdered on Wimbledon Common in 1992. Police wrongly pursued an innocent man, Colin Stagg; years later DNA identified the real killer, Robert Napper. A case about not creating a second victim."
+title: "The Killing of Rachel Nickell: How an Innocent Man Was Targeted, and DNA Found the Real Killer"
+description: "Rachel Nickell was killed on Wimbledon Common in 1992. Police wrongly pursued an innocent man, Colin Stagg; years later DNA identified the real killer, Robert Napper. A case about not creating a second victim."
 pubDate: 2026-06-03
+updatedDate: 2026-11-25
 tag: "Case Files"
 featured: false
 victim: "Rachel Nickell, 23"
@@ -35,7 +36,7 @@ When the case reached the Old Bailey in 1994, the trial judge ruled the undercov
 
 ## The real killer: Robert Napper
 
-The truth was established not by a profile or a confession, but by forensic science. As DNA techniques advanced, evidence preserved from the scene was re-examined, and it pointed to **Robert Napper** — a man already detained for other serious violent crimes, including the 1993 murders of Samantha Bisset and her young daughter, for which he had been sent to a secure hospital.
+The truth was established not by a profile or a confession, but by forensic science. As DNA techniques advanced, evidence preserved from the scene was re-examined, and it pointed to **Robert Napper** — a man already detained for other serious violent crimes, including the 1993 killings of Samantha Bisset and her young daughter, for which he had been sent to a secure hospital.
 
 In **December 2008**, sixteen years after Rachel Nickell's death, Napper admitted responsibility. He pleaded guilty to manslaughter on the grounds of diminished responsibility — a plea reflecting his severe mental illness — and was ordered to be detained indefinitely at **Broadmoor**, the high-security psychiatric hospital, where the judge described him as a very dangerous man. The Metropolitan Police and prosecutors publicly acknowledged the failures of the original investigation and apologized to Rachel Nickell's family and to Colin Stagg.
 
@@ -43,7 +44,7 @@ In **December 2008**, sixteen years after Rachel Nickell's death, Napper admitte
 
 ## Why this case still matters
 
-The murder of Rachel Nickell is remembered for two intertwined failures and one eventual correction. The failure to protect a young mother on a public common. The failure of an investigation that, under pressure, pursued an innocent man and let the real offender remain free long enough to kill again. And the correction — slow, scientific, and incomplete — that finally established the truth through DNA.
+The killing of Rachel Nickell is remembered for two intertwined failures and one eventual correction. The failure to protect a young mother on a public common. The failure of an investigation that, under pressure, pursued an innocent man and let the real offender remain free long enough to kill again. And the correction — slow, scientific, and incomplete — that finally established the truth through DNA.
 
 For us, it is the clearest possible statement of a single rule: **the job is to help the victims, and never to create new ones by ruining an innocent person.** Rachel Nickell deserved justice. So did Colin Stagg, who was owed his good name. The two are not in tension — they are the same duty. A case is only truly solved when the right person is identified *and* the wrongly accused are cleared.
 
@@ -56,7 +57,7 @@ Robert Napper. In December 2008 he pleaded guilty to her manslaughter on the gro
 No. Colin Stagg was an innocent man wrongly pursued by the original investigation. The case against him collapsed at the Old Bailey in 1994 when the judge ruled the undercover "honeytrap" operation was entrapment and inadmissible. He was later formally cleared, apologized to, and awarded £706,000 in compensation.
 
 **How was the real killer finally identified?**
-Advances in DNA profiling allowed forensic evidence preserved from the scene to be re-examined. That evidence connected Robert Napper, who was already detained for other violent crimes, to Rachel Nickell's murder.
+Advances in DNA profiling allowed forensic evidence preserved from the scene to be re-examined. That evidence connected Robert Napper, who was already detained for other violent crimes, to Rachel Nickell's killing.
 
 **Why was Napper sent to a hospital rather than prison?**
 Napper pleaded guilty to manslaughter by reason of diminished responsibility, reflecting a finding of severe mental illness. He was ordered detained indefinitely at Broadmoor rather than given a fixed prison term.
