@@ -142,6 +142,7 @@ const serverDays = Array.from({ length: 42 }, (_, index) => {
 });
 const initialSelectedDate = selectedEntry?.dateISO ?? buildDate;
 const initialSelectedEntries = clientEntries.filter((entry) => entry.dateISO === initialSelectedDate);
+const dayLabelFormatter = new Intl.DateTimeFormat('en-US', { timeZone: 'UTC', weekday: 'long', month: 'long', day: 'numeric' });
 const initialSelectedLabel = new Intl.DateTimeFormat('en-US', {
   weekday: 'long', month: 'long', day: 'numeric', timeZone: 'UTC',
 }).format(new Date(`${initialSelectedDate}T00:00:00Z`));
@@ -222,7 +223,7 @@ const visibleDayEntries = (entries) => {
               day.entries.length > 0 && 'has-events',
             ]}
             data-calendar-date={day.key}
-            aria-label={`${day.key}${day.entries.length ? `, ${day.entries.length} proceeding${day.entries.length > 1 ? 's' : ''}` : ''}${calendarLinkTypesFor(day.entries).length ? ', ' + calendarLinkTypesFor(day.entries).map((type) => ({free:'FREE explainer',paid:'paid guide',book:'BOOK'}[type])).join(', ') : ''}`}
+            aria-label={`${dayLabelFormatter.format(new Date(`${day.key}T12:00:00Z`))}${day.entries.length ? `, ${day.entries.length} proceeding${day.entries.length > 1 ? 's' : ''}` : ''}${calendarLinkTypesFor(day.entries).length ? ', ' + calendarLinkTypesFor(day.entries).map((type) => ({free:'FREE explainer',paid:'paid guide',book:'BOOK'}[type])).join(', ') : ''}`}
           >
             <span class="home-calendar__day-number">{day.day}</span>
             <span class="calendar-day-types" aria-hidden="true">{calendarLinkTypesFor(day.entries).map((type) => <i class="calendar-dot" data-link-type={type}></i>)}</span>
