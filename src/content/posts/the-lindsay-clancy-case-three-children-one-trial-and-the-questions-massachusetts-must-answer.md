@@ -2,7 +2,7 @@
 title: "The Lindsay Clancy Case: Three Children, One Trial, and the Questions Massachusetts Must Answer"
 description: "Lindsay Clancy is charged in the deaths of her three children; her defense cites severe postpartum psychosis. The case, the medication record, and the unresolved charges after the September mistrial."
 pubDate: 2026-05-19
-updatedDate: 2026-11-02
+updatedDate: 2026-11-25
 tag: "Case Files"
 featured: false
 victim: "Three children, ages 5, 3 and 8 months"
@@ -16,11 +16,11 @@ coverAlt: "A New England colonial house at winter dusk, one upstairs window warm
 
 Lindsay Clancy, a former labor-and-delivery nurse from Duxbury, Massachusetts, is accused of killing her three young children at the family's home on January 24, 2023. She pleaded not guilty and faces three counts of first-degree murder, and her attorney has said she will pursue a defense of lack of criminal responsibility rooted in severe postpartum mental illness. The trial ended in a mistrial September 4 without a verdict. Until a jury says otherwise, Clancy is presumed innocent. This case has drawn national attention because it sits at an unbearable intersection: three children are gone, and the woman charged with their deaths was, by multiple accounts, a mother in acute psychiatric crisis who had repeatedly sought help. Both can be true. Holding them together is the only honest way to write about what happened in Duxbury.
 
-## Current procedural update — November 2, 2026
+## Current procedural update — November 25, 2026
 
-**As of Nov. 2, 2026:** Judge William Sullivan heard the defense motion to dismiss on Nov. 2 and has not ruled. No retrial date is set. The next hearing is Nov. 16. ([AP, Nov. 2, 2026](https://www.wsls.com/news/national/2026/11/02/lindsay-clancy-returns-to-court-in-a-bid-to-dismiss-charges-she-killed-her-three-young-children/); [Boston 25 News, Nov. 2, 2026](https://www.boston25news.com/news/local/lindsay-clancy-live-updates-second-trial-remains-undecided-judge-weighs-motions/3ASH6J67WFHK5OZ55BYRJDKT4M/)).
+**As of Nov. 25, 2026:** On Nov. 9, Judge William Sullivan denied the defense motion to dismiss; he found the mistrial was needed because the jury was deadlocked ([WBUR, Nov. 9, 2026](https://www.wbur.org/news/2026/11/09/lindsay-clancy-double-jeapardy-motions-denied); [Fox News, Nov. 10, 2026](https://www.foxnews.com/us/michael-ruiz-lindsay-clancy-judge-denies-double-jeopardy-motion-explains-jury-notes-deadlock)). Her lawyers appealed that ruling to the Supreme Judicial Court, Massachusetts' highest court, which is expected to hear it in January 2027 ([ABC News, Nov. 19, 2026](https://abcnews.com/US/lindsay-clancy-files-appeal-ahead-march-2027-retrial/story?id=138277240)). On Nov. 25, that court denied prosecutors' request to pause the retrial while it decides the appeal, and gave no reason ([ABC News, Nov. 25, 2026](https://abcnews.com/US/massachusetts-high-court-denies-attempt-delay-lindsey-clancy/story?id=138448426); [Boston 25 News via Yahoo, Nov. 25, 2026](https://www.yahoo.com/news/us/articles/sjc-denies-prosecutors-request-delay-175929425.html); [Fox News via Yahoo, Nov. 25, 2026](https://www.yahoo.com/news/us/articles/lindsay-clancy-retrial-moves-forward-192703270.html)). Retrial jury selection is set for March 29, 2027; the appeal could still change that. None of these rulings is a finding of guilt.
 
-[AP reported that the renewed acquittal request was denied October 1](https://www.boston.com/news/crime/2026/10/01/judge-denies-defense-motion-asking-lindsay-clancy-be-found-not-guilty-due-to-a-lack-of-evidence/). The charges remain unresolved; Clancy remains presumed innocent. See the [trial tracker](/post/lindsay-clancy-trial/) and [Court Calendar](/court-calendar/#clancy-november-motions) for the latest checked status and verification limits. Procedural cutoff: November 2, 2026, 11:00 a.m. Pacific.
+[AP reported that the renewed acquittal request was denied October 1](https://www.boston.com/news/crime/2026/10/01/judge-denies-defense-motion-asking-lindsay-clancy-be-found-not-guilty-due-to-a-lack-of-evidence/). The charges remain unresolved; Clancy remains presumed innocent. See the [trial tracker](/post/lindsay-clancy-trial/) and [Court Calendar](/court-calendar/#clancy-retrial-2027-03-29) for the latest checked status and verification limits. Procedural cutoff: November 25, 2026, 7:00 p.m. Pacific.
 
 ## Historical pretrial status — July 2026
 
