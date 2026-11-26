@@ -9,7 +9,7 @@ capture: "dna"
 featured: false
 ---
 
-In May 2025, in Montgomery County Circuit Court, Eugene Gligor pleaded guilty to second-degree murder in the killing of Leslie Preer. Leslie was found dead in her Chevy Chase, Maryland, home on May 2, 2001. She was 49 years old. Her case went 23 years without an arrest.
+In May 2025, in Montgomery County Circuit Court, Eugene Gligor pleaded guilty to second-degree murder in the killing of Leslie Preer. Leslie was found dead in her Chevy Chase, Maryland, home on May 2, 2001. She was 49 years old. Some reports give her age as 50. Her case went 23 years without an arrest.
 
 The question most people ask first is not how he was caught. The question is how he stayed free for so long.
 
@@ -25,7 +25,7 @@ Gligor went on to live his life. Fox News reports that he lived in Washington, D
 
 In September 2022, Montgomery County police teamed with Othram, a forensic DNA lab in The Woodlands, Texas. Othram built a DNA profile from the crime scene evidence and gave it to investigators for a genetic genealogy search. Charging documents say the profile went to FamilyTreeDNA's database. Its list of DNA matches included the surname Gligor. ABC News reports that the closest match led to a family line in Romania. State's Attorney John McCarthy said the DNA led to a distant relative from Romania. Detectives then found the Gligor name in the original case file.
 
-Next, detectives needed confirmation. In June 2024, with help from customs officials at Dulles International Airport, they collected a water bottle Gligor drank from and threw away during a secondary screening, according to ABC News and Bethesda Magazine. Police say the DNA from it matched the DNA from the crime scene. The genealogy was the lead. The direct DNA match was the proof.
+Next, detectives needed confirmation. In June 2024, with help from customs officials at Dulles International Airport, they collected a water bottle Gligor drank from and threw away, according to ABC News. Bethesda Magazine reports this happened during a secondary screening. Fox News, citing court filings obtained by The Washington Post, describes the screening as staged. Police say the DNA from it matched the DNA from the crime scene. The genealogy was the lead. The direct DNA match was the proof.
 
 Eugene Gligor was arrested in June 2024 and charged with first-degree murder. On May 7, 2025, he pleaded guilty to second-degree murder in Montgomery County Circuit Court. On Aug. 28, 2025, he was sentenced to 30 years with all but 22 suspended, followed by five years of supervised probation.
 

@@ -9,7 +9,7 @@ capture: "dna"
 featured: false
 ---
 
-When Montgomery County detectives sent crime scene evidence from the Leslie Preer case to Othram in September 2022, the case had been cold for more than two decades. Leslie, 49, was found dead in her Chevy Chase, Maryland, home on May 2, 2001. They turned to a method called investigative genetic genealogy. Many people misunderstand it.
+When Montgomery County detectives sent crime scene evidence from the Leslie Preer case to Othram in September 2022, the case had been cold for more than two decades. Leslie, 49, was found dead in her Chevy Chase, Maryland, home on May 2, 2001. Some reports give her age as 50. They turned to a method called investigative genetic genealogy. Many people misunderstand it.
 
 This post explains what happened in the investigation and how the method works. It is based on police, prosecutor and news reports.
 
@@ -29,7 +29,7 @@ Which brings us to the confirmation step.
 
 Once investigators had reason to look closely at Gligor, they needed proof that the crime scene DNA was his. ABC News reports that because his DNA had never been entered into a law enforcement database like CODIS, detectives had to collect a sample of his DNA to compare. The genealogy result was a lead, not proof.
 
-In June 2024, with help from customs officials at Dulles International Airport, detectives collected a water bottle Gligor drank from and threw away during a secondary screening, according to ABC News and Bethesda Magazine. Fox News, citing court filings obtained by The Washington Post, describes the screening as staged. Police say the DNA from the bottle was compared with the crime scene DNA and "generated a positive match."
+In June 2024, with help from customs officials at Dulles International Airport, detectives collected a water bottle Gligor drank from and threw away, according to ABC News. Bethesda Magazine reports this happened during a secondary screening. Fox News, citing court filings obtained by The Washington Post, describes the screening as staged. Police say the DNA from the bottle was compared with the crime scene DNA and "generated a positive match."
 
 That match is what made this case. The genealogy database and the family tree were essential steps, but his arrest rested on a direct DNA match between the bottle and the crime scene. The genealogy work got investigators to the right person's water bottle.
 
