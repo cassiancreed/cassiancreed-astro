@@ -65,7 +65,16 @@ const OFFERS = {
     campaign: 'court_calendar_updates',
     offerId: 'court_calendar_updates_v1',
     headline: 'Get the week’s court dates in your inbox.',
-    subtext: 'Get the week’s court dates in your inbox, every week. Free. No daily emails. Unsubscribe anytime.',
+    subtext: 'Here is what you get. It is free.',
+    // Site fix list v2, item 5 (Nov 25, 2026): say what the reader gets, not
+    // just "sign up". Matches the Beehiiv form's own promise ("a short email
+    // when we change a court date, time, location, or phase"), its optional
+    // "Cases you follow" field, and the weekly This Week in Court email.
+    whatYouGet: [
+      'A short email when a court date, time, place or stage changes.',
+      'This Week in Court: the week’s hearings and trials in one email.',
+      'You can name the cases you follow. That part is optional.',
+    ],
     button: 'Get weekly court dates',
   },
   birchmore: {
@@ -120,6 +129,8 @@ const resolvedButton   = button   ?? o.button;
 // Ungated crisis line (safety offer only). Always rendered before signup.
 const safetyLine       = (o as { safetyLine?: string }).safetyLine;
 const safetyOffer      = offer === 'safety';
+// What the reader gets, as a short list (calendar offer only for now).
+const whatYouGet       = (o as { whatYouGet?: string[] }).whatYouGet ?? [];
 const conversionPage   = Astro.url.pathname;
 const ctaId            = content || 'capture_block';
 
@@ -148,6 +159,12 @@ const calendarCosts = ['/court-calendar/','/true-crime-watch-calendar/'].include
 {slim ? (
 <section class="capture capture--slim" aria-label="Email newsletter sign-up">
   <p class="capture__slim-text"><strong>{resolvedHeadline}</strong> <span>Free. No daily emails. Unsubscribe anytime.</span></p>
+  {whatYouGet.length > 0 && (
+    <div class="capture__get capture__get--slim">
+      <p class="capture__get-title">What you get</p>
+      <ul>{whatYouGet.map((item) => <li>{item}</li>)}</ul>
+    </div>
+  )}
   <a class="capture__button capture__button--slim" data-nep-campaign={camp} data-nep-conversion-page={conversionPage} data-nep-cta-id={ctaId} data-nep-form-id={o.formId} data-nep-offer-id={o.offerId} href={subscribeHref} target="_blank" rel="noopener noreferrer">{resolvedButton} &rarr;</a>
 </section>
 ) : (
@@ -158,6 +175,10 @@ const calendarCosts = ['/court-calendar/','/true-crime-watch-calendar/'].include
       <p class="capture__safety" role="note">{safetyLine}</p>
     )}
     <p class="capture__subtext">{resolvedSubtext}</p>
+    {whatYouGet.length > 0 && (
+      <ul class="capture__get">{whatYouGet.map((item) => <li>{item}</li>)}</ul>
+    )}
+    {whatYouGet.length > 0 && <p class="capture__get-note">No daily emails. Unsubscribe anytime.</p>}
 
     {/* .capture-cta wrapper keeps the GA4 subscribe_click handler firing on the
         <a> in either mode. */}
@@ -562,6 +583,12 @@ const calendarCosts = ['/court-calendar/','/true-crime-watch-calendar/'].include
   }
   .capture__slim-text { margin: 0; color: var(--ink-2); font-size: 0.95rem; line-height: 1.35; flex: 1 1 260px; }
   .capture__slim-text span { margin-left: .4em; }
+  .capture__get { margin: 0.6rem 0 0.9rem; padding-left: 1.2rem; color: var(--ink-2); font-size: 0.95rem; line-height: 1.45; text-align: left; }
+  .capture__get li { margin: 0.2rem 0; }
+  .capture__get-note { margin: 0 0 0.8rem; color: var(--ink-3); font-size: 0.85rem; }
+  .capture__get--slim { flex: 1 1 100%; margin: 0; padding: 0; }
+  .capture__get--slim ul { margin: 0.2rem 0 0; padding-left: 1.2rem; }
+  .capture__get-title { margin: 0; font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); }
   .capture__slim-text strong { color: var(--ink); font-family: var(--serif); font-size: 1.05rem; font-weight: 600; }
   .capture__button--slim { width: auto; min-width: 0; min-height: 40px; padding: 0.5rem 1.1rem; font-size: 0.9rem; flex: 0 0 auto; }
 
