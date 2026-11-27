@@ -194,6 +194,7 @@ const jsonld = {
           <article id={`missing-${entry.id}`}>
             <span class={`mp-status-pill mp-status-pill--${entry.status}`}>{entry.statusLabel}</span>
             <h3>{entry.name}</h3>
+            {entry.summary && <p>{entry.summary}</p>}
             <p>Status verified as of {formatMissingDate(entry.verification_date)}.</p>
             <a href={entry.source_url}>Official source <span aria-hidden="true">→</span></a>
           </article>
