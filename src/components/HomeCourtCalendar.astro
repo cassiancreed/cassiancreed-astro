@@ -145,16 +145,24 @@ const initialSelectedEntries = clientEntries.filter((entry) => entry.dateISO ===
 const initialSelectedLabel = new Intl.DateTimeFormat('en-US', {
   weekday: 'long', month: 'long', day: 'numeric', timeZone: 'UTC',
 }).format(new Date(`${initialSelectedDate}T00:00:00Z`));
-const initialMonthLabel = new Intl.DateTimeFormat('en-US', {
-  month: 'long', year: 'numeric', timeZone: 'UTC',
-}).format(firstOfMonth);
+// Order 1 (2026-11-27): the live view is a rolling 6-week grid (today to
+// grid end), so the label names the dates shown, not just the build month.
+const rangeLabel = (from, to, tz) => {
+  const opts = { month: 'short', day: 'numeric', year: 'numeric', ...(tz ? { timeZone: tz } : {}) };
+  return `${new Intl.DateTimeFormat('en-US', opts).format(from)} – ${new Intl.DateTimeFormat('en-US', opts).format(to)}`;
+};
+const initialMonthLabel = (() => {
+  const end = new Date(`${buildDate}T00:00:00Z`);
+  end.setUTCDate(end.getUTCDate() - end.getUTCDay() + 41);
+  return rangeLabel(new Date(`${buildDate}T00:00:00Z`), end, 'UTC');
+})();
 const trendPresentation = (score, hasExplainer = false) => {
   const strength = Math.max(0, Math.min(1, score / 104));
   const mix = (low, high) => Math.round(low + ((high - low) * strength));
   return [
     `font-size:${(9.4 + (strength * 3)).toFixed(2)}px`,
     `font-weight:${Math.round(450 + (strength * 310))}`,
-    hasExplainer ? 'color:rgb(78 214 190)' : `color:rgb(${mix(138, 255)} ${mix(132, 111)} ${mix(124, 79)})`,
+    hasExplainer ? 'color:rgb(78 214 190)' : `color:rgb(${mix(214, 255)} ${mix(208, 140)} ${mix(200, 110)})`,
   ].join(';');
 };
 const visibleDayEntries = (entries) => {
@@ -363,7 +371,7 @@ const visibleDayEntries = (entries) => {
       return [
         `font-size:${(9.4 + (strength * 3)).toFixed(2)}px`,
         `font-weight:${Math.round(450 + (strength * 310))}`,
-        hasExplainer ? 'color:rgb(78 214 190)' : `color:rgb(${mix(138, 255)} ${mix(132, 111)} ${mix(124, 79)})`,
+        hasExplainer ? 'color:rgb(78 214 190)' : `color:rgb(${mix(214, 255)} ${mix(208, 140)} ${mix(200, 110)})`,
       ].join(';');
     }
 
@@ -576,6 +584,11 @@ const visibleDayEntries = (entries) => {
         ? new Date(buildParts[0], buildParts[1] - 1, buildParts[2])
         : new Date(shown.getFullYear(), shown.getMonth(), 1);
       const start = new Date(first.getFullYear(), first.getMonth(), first.getDate() - first.getDay());
+      if (isCurrentMonth) {
+        const end = new Date(start); end.setDate(start.getDate() + 41);
+        const fmt = new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+        monthLabel.textContent = `${fmt.format(first)} – ${fmt.format(end)}`;
+      }
       if (signupRow && signupRow.parentNode) signupRow.remove();
       days.replaceChildren();
       for (let index = 0; index < 42; index += 1) {
@@ -753,7 +766,7 @@ const visibleDayEntries = (entries) => {
   .home-calendar__day.is-selected{background:rgba(232,93,61,.1);box-shadow:inset 0 0 0 2px var(--accent)}
   .home-calendar__day.is-today .home-calendar__day-number{display:inline-grid;width:25px;height:25px;place-items:center;border-radius:50%;background:transparent;border:2px solid var(--accent);color:var(--ink);font-size:12px;font-weight:700}
   .home-calendar__day-number{font-family:var(--mono);font-size:11px}
-  .home-calendar__event-label{display:block;margin-top:6px;color:var(--ink-3);font-size:9.4px;font-weight:450;line-height:1.25;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .home-calendar__event-label{display:block;margin-top:6px;color:var(--ink-2);font-size:9.4px;font-weight:450;line-height:1.25;white-space:normal;overflow-wrap:anywhere}
   .home-calendar__event-label+.home-calendar__event-label{margin-top:4px}
   .home-calendar__event-label.is-tentative{color:rgb(214 172 92)!important}
   .home-calendar__event-name{font-size:1em}
