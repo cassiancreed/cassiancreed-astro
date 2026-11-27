@@ -1,21 +1,23 @@
 ---
 title: "The Erin Patterson Case: Appeal Dismissed, Sentence Raised to Life Without Parole"
-seoTitle: "Erin Patterson Appeal Decision: What the Court Ruled"
-description: "Don Patterson, Gail Patterson and Heather Wilkinson died after a July 2023 lunch in Leongatha, Victoria. On Oct. 30, 2026, the Court of Appeal dismissed Erin Patterson's conviction appeal and raised her sentence to life without parole."
+seoTitle: "Erin Patterson: High Court Application and Appeal Status"
+description: "Don Patterson, Gail Patterson and Heather Wilkinson died after a family lunch in Victoria. Erin Patterson's convictions stand. Her lawyers reportedly asked Australia's High Court for permission to appeal."
 pubDate: 2026-10-19
-updatedDate: 2026-10-31
+updatedDate: 2026-11-27
 tag: "Explainers"
 featured: false
 victim: "Don Patterson, Gail Patterson, Heather Wilkinson; survivor Ian Wilkinson"
 incidentDate: "July 29, 2023"
 location: "Leongatha, Victoria, Australia"
 jurisdiction: "Supreme Court of Victoria; Court of Appeal"
-status: "Convicted July 7, 2025 of three murders and one attempted murder. Oct. 30, 2026: the Court of Appeal of Victoria dismissed her conviction appeal and, on the prosecution's appeal, increased her sentence to life without parole. She could still ask the High Court of Australia for special leave to appeal; none reported as of Oct. 31, 2026."
+status: "Convicted of three murders and one attempted murder. Victoria's Court of Appeal dismissed her conviction appeal and increased her sentence to life without parole. Her lawyers reportedly applied for permission to appeal to the High Court of Australia. No High Court hearing date or decision verified."
 ---
 
-*Status as of Oct. 31, 2026 (Pacific). Source: ABC News Australia, Oct. 30, 2026, and the Supreme Court of Victoria. Court records can change. Check our [Court Calendar](https://cassiancreed.com/court-calendar/) and its "last updated" date.*
+*Court status checked Nov. 27, 2026. See our [Court Calendar](/court-calendar/#patterson-appeal) for the sources and current status.*
 
 Three people died after a family lunch in Leongatha, Victoria, in July 2023. They were Don Patterson, Gail Patterson and Heather Wilkinson. Ian Wilkinson survived. In July 2025, a jury found Erin Patterson guilty of three murders and one attempted murder. On Oct. 30, 2026, Victoria's Court of Appeal dismissed her appeal. The same court raised her sentence to life in prison without parole.
+
+[Guardian Australia](https://www.theguardian.com/australia-news/2026/nov/27/erin-patterson-launches-high-court-appeal-over-mushroom-convictions-ntwnfb) reports that Patterson's lawyers applied to the High Court of Australia for permission to appeal on Nov. 27, 2026 (Melbourne time; **unconfirmed, one source** for the filing date). Her convictions and life sentence without parole remain in force. No High Court hearing date or decision has been verified.
 
 ## Who they were
 
@@ -32,17 +34,15 @@ They were parents, grandparents, a wife and a husband. This case is about them f
 
 ## Where the case stands today
 
-| Item | Status as of Oct. 31, 2026 |
+| Item | Status as of Nov. 27, 2026 |
 |---|---|
 | Verdict | Guilty of three murders and one attempted murder (July 7, 2025) |
 | First sentence | Life in prison, with a 33-year non-parole period (Sept. 8, 2025) |
 | Her appeal | Dismissed by the Court of Appeal (Oct. 30, 2026) |
 | Prosecution appeal | Allowed. Sentence raised to life without parole (Oct. 30, 2026) |
-| Next step | She could ask the High Court of Australia for special leave to appeal. None reported as of Oct. 31, 2026. |
+| High Court | Her lawyers reportedly applied for permission to appeal. No High Court decision or hearing date has been verified. |
 
 Her convictions stand. Her sentence is now life in prison without parole. The court set no date when she can ask for parole.
-
-One route is still open. She can ask Australia's highest court to hear her case. As of Oct. 31, 2026, no such request has been reported.
 
 ## The trial and the first sentence
 
@@ -72,15 +72,11 @@ The three judges gave their decision in Melbourne on Friday, Oct. 30, 2026, at 1
 - **Her appeal: dismissed.** The court let her argue two of her seven grounds: the jury's accommodation and the use of her mobile phone data as evidence. It rejected both. It refused to hear the other five. Her convictions stand.
 - **The prosecution's appeal: allowed.** The court set aside the 33-year non-parole period. It re-sentenced her to life in prison without parole. Justice McLeish said parole was not appropriate in this case ([ABC News Australia, Oct. 30, 2026](https://www.abc.net.au/news/2026-10-30/erin-patterson-appeal-decision-live-updates/107322086)).
 
-This summary comes from ABC's reports from the courtroom. The court's own notice confirms the date and time. We have not yet read the full written judgment.
+The [Supreme Court of Victoria](https://www.supremecourt.vic.gov.au/news/erin-patterson-appeal-judgments) published both judgments. This summary also draws on ABC's courtroom reporting.
 
 ## What happens next
 
-Her remaining route is the High Court of Australia. She would first need the court's permission to appeal, called special leave. A legal expert quoted by ABC said the High Court uses "very strict criteria" to choose which cases it will hear ([ABC News Australia, Oct. 30, 2026](https://www.abc.net.au/news/2026-10-30/erin-patterson-mushroom-murder-appeal-what-next/107315286)).
-
-A second appeal in Victoria is possible only with fresh and compelling evidence. An expert quoted by ABC called that "most unlikely" in her case ([ABC News Australia, Oct. 30, 2026](https://www.abc.net.au/news/2026-10-30/erin-patterson-mushroom-murder-appeal-what-next/107315286)).
-
-As of Oct. 31, 2026, no request to the High Court has been reported. We will not guess what happens next. See the [Court Calendar entry](/court-calendar/#patterson-appeal) for the latest status we have checked.
+Her lawyers have reportedly asked the High Court to hear her appeal. That permission is called special leave. An application is not a grant of leave. The [High Court](https://www.hcourt.gov.au/cases-and-judgments/special-leave) can decide on the papers or at a hearing. No decision or hearing date has been verified. See our [Court Calendar entry](/court-calendar/#patterson-appeal).
 
 ## Questions people ask
 
@@ -98,15 +94,15 @@ Life in prison without parole. The Court of Appeal set it on Oct. 30, 2026. It r
 
 ### Has the Erin Patterson appeal been decided?
 
-Yes. On Oct. 30, 2026, the Court of Appeal of Victoria dismissed her appeal against her convictions. It also allowed the prosecution's appeal and raised her sentence to life without parole.
+The Victorian appeal was decided on Oct. 30, 2026. The Court of Appeal dismissed her conviction appeal and raised her sentence to life without parole on the prosecution’s appeal. No decision has been verified on the separate High Court application.
 
 ### Can Erin Patterson still appeal?
 
-She can ask the High Court of Australia for special leave to appeal. The High Court uses strict rules to choose which cases it hears. As of Oct. 31, 2026, no request has been reported.
+Her lawyers reportedly asked the High Court of Australia for permission to appeal. We have not verified that permission has been granted.
 
 ### Will Erin Patterson get a new trial?
 
-Not from this appeal. The Court of Appeal dismissed it. Only the High Court could change that result, and no request to it has been reported as of Oct. 31, 2026.
+No new trial has been ordered. Applying for permission to appeal does not set aside the convictions or change the sentence.
 
 ### Where is Leongatha?
 
@@ -119,6 +115,10 @@ It is a country town in Victoria, Australia, about 135 kilometers southeast of M
 **See every court date we track:** [Court Calendar](https://cassiancreed.com/court-calendar/).
 
 ## Sources
+
+- [Guardian Australia: High Court special-leave application](https://www.theguardian.com/australia-news/2026/nov/27/erin-patterson-launches-high-court-appeal-over-mushroom-convictions-ntwnfb)
+- [Supreme Court of Victoria: appeal judgments](https://www.supremecourt.vic.gov.au/news/erin-patterson-appeal-judgments)
+- [High Court of Australia: how special leave is decided](https://www.hcourt.gov.au/cases-and-judgments/special-leave)
 
 - Supreme Court of Victoria, "Erin Patterson appeals – judgment" (judgment handed down Friday, Oct. 30, 2026, 10 a.m.): https://www.supremecourt.vic.gov.au/news/erin-patterson-appeals-livestreamed
 - ABC News Australia, "Victoria's Court of Appeal hands down Erin Patterson's judgment," Oct. 30, 2026: https://www.abc.net.au/news/2026-10-30/victoria-s-court-of-appeal-hands-down-erin-patterson-s-judgment/107327662

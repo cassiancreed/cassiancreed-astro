@@ -1,24 +1,25 @@
 ---
 title: "What Happened at Great Wolf Lodge in the Poconos? The Case Explained"
 seoTitle: "What Happened at Great Wolf Lodge? Poconos Case Explained"
-description: "Charles Harrison, 36, and his 3-year-old son died at Great Wolf Lodge in the Poconos. Who is charged, what the Nov. 3 hearing decides, and what is next."
+description: "Charles Harrison, 36, and his 3-year-old son died at Great Wolf Lodge in the Poconos. The charges, the preliminary-hearing waiver, and what comes next."
 pubDate: 2026-10-22
+updatedDate: 2026-11-27
 tag: "Explainers"
 featured: false
 victim: "Charles Harrison, 36, and his 3-year-old son"
 incidentDate: "October 12, 2026"
 location: "Great Wolf Lodge, Scotrun, Pocono Township, Monroe County, Pennsylvania"
 jurisdiction: "Monroe County, Pennsylvania (Magisterial District Court 43-3-03; Court of Common Pleas)"
-status: "Metallica Harrison is charged with two counts of criminal homicide. She is presumed innocent. No plea is on the court docket. Preliminary hearing set for Nov. 3, 2026, 1 p.m. Eastern."
+status: "Metallica Harrison is charged with two counts of criminal homicide and is presumed innocent. She waived the preliminary hearing. A formal arraignment is reported; the current docket and any plea are not verified."
 cover: "/case-art/great-wolf-lodge-case-explainer.png"
 coverAlt: "Blue-gray title card with the words: Case explainer, Neural Edge Publishing. The Great Wolf Lodge Case: What the Nov. 3 Hearing Decides. cassiancreed.com."
 ---
 
-*Status as of Oct. 22, 2026, 11:55 AM PT. Court dates can change. Check the date on our [Court Calendar](https://cassiancreed.com/court-calendar/) and see its "last updated" date.*
+*Court status checked Nov. 27, 2026. The title card is from the original Oct. 22 edition, before the preliminary hearing was waived. Check our [Court Calendar](/court-calendar/) for current dates.*
 
-Charles Harrison, 36, and his 3-year-old son died at the Great Wolf Lodge in Scotrun, Pennsylvania, on Monday, Oct. 12, 2026. The coroner's office ruled both deaths homicides. His wife, Metallica Harrison, 27, is charged with two counts of criminal homicide. She is presumed innocent, and no plea is on the court docket. [[1]](#src-1)[[2]](#src-2)[[3]](#src-3)[[4]](#src-4)
+Charles Harrison, 36, and his 3-year-old son died at the Great Wolf Lodge in Scotrun, Pennsylvania, on Monday, Oct. 12, 2026. The coroner's office ruled both deaths homicides. His wife, Metallica Harrison, 27, is charged with two counts of criminal homicide. She is presumed innocent. We have not verified a plea on the current docket. [[1]](#src-1)[[2]](#src-2)[[3]](#src-3)[[4]](#src-4)
 
-Her next court date is a preliminary hearing on Tuesday, Nov. 3, 2026, at 1 p.m. Eastern at the Monroe County Courthouse in Stroudsburg. [[4]](#src-4)
+Harrison waived the preliminary hearing on Nov. 3. That let the case move to the Monroe County Court of Common Pleas without an evidentiary preliminary hearing. It was not a guilty plea. [[12]](#src-12)[[13]](#src-13)
 
 ## Who died at Great Wolf Lodge?
 
@@ -48,15 +49,13 @@ Some news reports describe claims that relatives made to police, quoted in a sea
 
 Bail was denied at her first court appearance on Oct. 13. She is in custody in Monroe County. [[3]](#src-3)[[4]](#src-4) Denying bail is a ruling about custody. It is not a finding of guilt.
 
-In mid-October, news reports said court records listed no lawyer for her. [[1]](#src-1)[[3]](#src-3) We have not verified who represents her now.
+Daily Voice reports that lawyer Jason Allen Labar signed the waiver with Harrison. We have not independently verified her current counsel. [[12]](#src-12)
 
 ## When is the next court date?
 
-The preliminary hearing is set for **Tuesday, Nov. 3, 2026, at 1 p.m. Eastern** at the Monroe County Courthouse in Stroudsburg. The judge listed on the docket is Magisterial District Judge Daniel Kresge. [[4]](#src-4)
+[Daily Voice](https://dailyvoice.com/article/metallica-harrison-4-key-developments-great-wolf-lodge-case/) reports formal arraignment for **Thursday, Jan. 7, 2027, at 9:30 a.m. Eastern** at the Monroe County Courthouse in Stroudsburg (**unconfirmed, one source** for this setting). We could not verify it on the current court docket.
 
-It was first set for Oct. 21. Monroe County President Judge Jonathan Mark granted the state's request to move it to the courthouse on Nov. 3. [[7]](#src-7) The Oct. 21 date now shows as "Continued" on the docket.
-
-Some earlier listings showed other dates. When we read the court docket on Oct. 22, Nov. 3 was the only upcoming event listed. Its status was "Scheduled." [[4]](#src-4)
+The October docket listed the Nov. 3 preliminary hearing after it was moved from Oct. 21. Harrison waived that hearing. [[4]](#src-4)[[7]](#src-7)[[12]](#src-12)[[13]](#src-13)
 
 ## What is a preliminary hearing?
 
@@ -66,13 +65,9 @@ Under Pennsylvania's court rules, the judge decides "whether there is a prima fa
 
 So a judge can send a case forward even though no jury has heard it. That does not mean the case has been proven.
 
-## What happens after the hearing?
+## What did the waiver change?
 
-If the judge finds a prima facie case, the charges are "held for court." The case then moves to the Monroe County Court of Common Pleas. There, prosecutors file the formal charges, and she would be formally arraigned. A plea is usually entered at that step.
-
-If the judge finds the evidence is not enough for a charge, that charge can be dismissed.
-
-Either way, Nov. 3 is not a verdict.
+The waiver let the case move to the county trial court without an evidentiary preliminary hearing. It was not a finding of guilt or a plea. At formal arraignment, the court addresses the charges and a plea is usually entered. [[12]](#src-12)[[13]](#src-13)
 
 ## Will prosecutors seek the death penalty?
 
@@ -80,17 +75,17 @@ No death-penalty notice has been reported. Talk of it so far came from a private
 
 Under Pennsylvania's rules, if prosecutors want to seek the death penalty, they must file a notice "at or before the time of arraignment." There are two exceptions: facts they learn later, or more time the court allows. [[10]](#src-10)
 
-## Can I watch the hearing?
+## Can I watch a court hearing?
 
 Not on camera. Court rules bar photos and video. A recording made for the court record may not be played in public. [[11]](#src-11)
 
-You can follow the case on the Pennsylvania court portal. The docket numbers are MJ-43303-CR-0000313-2026 and CP-45-MD-0000755-2026. [[4]](#src-4)
+You can follow the case on the Pennsylvania court portal. Earlier records list MJ-43303-CR-0000313-2026 and CP-45-MD-0000755-2026. The Common Pleas criminal docket number has not been verified. [[4]](#src-4)
 
 ## What is still unknown?
 
 - Who her lawyer is now
 - Whether she will enter a plea, and what it will be
-- The courtroom for Nov. 3
+- The courtroom and current docket setting for formal arraignment
 - Any motive. Prosecutors have not stated one in public.
 - Whether prosecutors will seek the death penalty
 
@@ -103,10 +98,10 @@ Yes. Charles Harrison, 36, and his 3-year-old son died there on Oct. 12, 2026. T
 Metallica Harrison, 27, Charles Harrison's wife. She is charged with two counts of criminal homicide and is presumed innocent.
 
 **Has Metallica Harrison entered a plea?**
-No plea is on the court docket as of Oct. 22.
+No plea was listed on the Oct. 22 docket we read. We have not verified a plea since then. Waiving the hearing was not a guilty plea.
 
-**When is Metallica Harrison's preliminary hearing?**
-Tuesday, Nov. 3, 2026, at 1 p.m. Eastern at the Monroe County Courthouse in Stroudsburg. Court dates can change.
+**When is Metallica Harrison's next court date?**
+She waived the preliminary hearing on Nov. 3. Daily Voice reports formal arraignment on Jan. 7, 2027, at 9:30 a.m. Eastern (**unconfirmed, one source**). [[12]](#src-12)
 
 **Is there a threat to the public?**
 Police said there is "no threat to the community."
@@ -119,7 +114,7 @@ Police said there is "no threat to the community."
 
 ## Keep track of this case
 
-Court dates move. See the Nov. 3 hearing and its source on our [Court Calendar](https://cassiancreed.com/court-calendar/), and check its "last updated" date.
+Court dates can change. See the reported arraignment and its source on our [Court Calendar](/court-calendar/).
 
 **Get free case alerts:** sign up at [cassiancreed.beehiiv.com](https://cassiancreed.beehiiv.com).
 
@@ -136,3 +131,5 @@ Court dates move. See the Nov. 3 hearing and its source on our [Court Calendar](
 9. <span id="src-9"></span>[IBTimes UK, Oct. 19, 2026](https://www.ibtimes.co.uk/metallica-rose-harrison-pennsylvania-death-penalty-case-1826453)
 10. <span id="src-10"></span>[Pa.R.Crim.P. 802, 234 Pa. Code r. 802](https://regulations.justia.com/states/pennsylvania/title-234/chapter-8/part-a/rule-802/)
 11. <span id="src-11"></span>[Pa.R.Crim.P. 112](https://www.courtrules.net/pennsylvania/pa-criminal-procedure/rule-112)
+12. <span id="src-12"></span>[Daily Voice: waiver and reported formal arraignment](https://dailyvoice.com/article/metallica-harrison-4-key-developments-great-wolf-lodge-case/)
+13. <span id="src-13"></span>[WBRE/WYOU: preliminary hearing waived](https://www.aol.com/articles/accused-great-wolf-lodge-killer-185344000.html)
