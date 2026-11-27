@@ -18,13 +18,18 @@ const ticks = [...[0, 7, 14, 21, 28].filter((t) => t < n - 1 - 4), n - 1];
 const tickAnchor = (t) => (t === 0 ? 'start' : t === n - 1 ? 'end' : 'middle');
 const lastWeekAvg = (vals) => Math.round(vals.slice(-7).reduce((a, b) => a + b, 0) / 7);
 const peakDay = (vals) => trends.days[vals.indexOf(Math.max(...vals))];
+// Order 1 (2026-11-27): the page stamp reads the newest data time on the page
+// (chart or case cards), and says which part was checked when.
+const chartIsNewer = String(trends.asOf) > String(data.updated);
+const pageUpdatedText = chartIsNewer ? trends.asOfText : data.updatedText;
+const pageUpdatedISO = chartIsNewer ? trends.asOf : data.updated;
 const colors = ['#e0563b', '#6aa9ff', '#e6c04a', '#7bd88f', '#c792ea'];
 const jsonld = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "name": "Trending True Crime Cases — Cassian Creed",
   "description": "True-crime cases getting attention right now, grouped by where each one is in its news cycle, each linked to its court date.",
-  "dateModified": data.updated,
+  "dateModified": pageUpdatedISO,
   "url": "https://cassiancreed.com/trending/"
 };
 ---
@@ -33,7 +38,7 @@ const jsonld = {
     <p class="evidence evidence--accent">Trending Now</p>
     <h1>The cases everyone's following.</h1>
     <p class="trend-lede">The cases getting attention right now, grouped by where each one is in its news cycle. <strong>Trending is not guilt:</strong> a case on this list is getting attention; that says nothing about who did what. Each one links to its court date, and to our victim-first case file where we have one.</p>
-    <p class="trend-stamp">Updated {data.updatedText}. {data.method}</p>
+    <p class="trend-stamp">Updated {pageUpdatedText}.{chartIsNewer && <> The search chart uses that data; the case cards were last checked {data.updatedText}.</>} {data.method}</p>
   </section>
 
 

@@ -3,14 +3,14 @@ title: "Lindsay Clancy trial tracker: Mistrial, pending charges and next hearing
 seoTitle: "Lindsay Clancy Retrial? Mistrial, Charges, Next Hearing"
 description: "Lindsay Clancy’s unresolved murder charges after a mistrial, current hearing coverage, and the Massachusetts criminal-responsibility standard."
 pubDate: 2026-07-15
-updatedDate: 2026-11-25
+updatedDate: 2026-11-27
 tag: Case Files
 featured: false
 victim: "Three children, ages 5, 3 and 8 months"
 incidentDate: January 2023
 location: Duxbury, Massachusetts
 jurisdiction: Plymouth County Superior Court, Massachusetts
-status: "Mistrial declared September 4. Murder charges remain unresolved. Nov. 9: judge denied the defense motion to dismiss. Retrial set: jury selection March 29, 2027. Nov. 25: the Supreme Judicial Court denied prosecutors' request to pause the retrial while it hears her double-jeopardy appeal. Presumed innocent."
+status: "Mistrial declared September 4. Murder charges remain unresolved. Nov. 9: judge denied the defense motion to dismiss. Retrial set: jury selection March 29, 2027. Nov. 23 (reported Nov. 25): the Supreme Judicial Court denied prosecutors' request to pause the retrial while it hears her double-jeopardy appeal. Presumed innocent."
 ---
 
 <div class="status-box" style="border:1px solid var(--rule,#e4e0d9);border-left:4px solid var(--accent,#b91c1c);background:var(--card,#faf9f7);padding:1rem 1.25rem;margin:1.5rem 0;border-radius:6px;font-size:.95rem">
@@ -32,10 +32,11 @@ Cassian Creed maintains this Neural Edge Publishing tracker using available cour
 <li><strong>Charges now pending:</strong> Three counts of first-degree murder.</li>
 <li><strong>Plea:</strong> Not guilty (her defense: lack of criminal responsibility).</li>
 <li><strong>Status as of Nov. 25, 2026:</strong> Charged; pleaded not guilty; presumed innocent. No verdict.</li>
-<li><strong>Newest ruling (Nov. 25):</strong> Massachusetts' highest court, the Supreme Judicial Court, denied prosecutors' request to pause the retrial while it decides her double-jeopardy appeal. It gave no reason. Jury selection stays set for March 29, 2027. (ABC News, Boston 25 News and Fox News, Nov. 25, 2026.) This ruling is not a finding of guilt.</li>
+<li><strong>Newest ruling (Nov. 23, reported Nov. 25):</strong> Massachusetts' highest court, the Supreme Judicial Court, denied prosecutors' request to pause the retrial while it decides her double-jeopardy appeal. It gave no reason. Jury selection stays set for March 29, 2027. (ABC News, Boston 25 News and Fox News, Nov. 25, 2026.) This ruling is not a finding of guilt.</li>
 <li><strong>Motion to dismiss:</strong> Denied by Judge Sullivan on Nov. 9. He found the mistrial was needed because the jury was deadlocked (WBUR, Nov. 9; Fox News, Nov. 10). Her lawyers have appealed that ruling to the Supreme Judicial Court, which is expected to hear it in January 2027 (ABC News, Nov. 19).</li>
 <li><strong>Holdout-juror hearing request:</strong> Denied October 21. The judge ruled that information found after the mistrial cannot be used to attack it (Boston.com and WBUR, October 22). This ruling is not a finding of guilt.</li>
-<li><strong>Retrial:</strong> Jury selection is set to begin March 29, 2027, in Plymouth Superior Court (ABC News, Nov. 19 and Nov. 25; Boston 25 News, Nov. 25). The appeal could still change that.</li>
+<li><strong>Retrial:</strong> Jury selection is set to begin March 29, 2027, in Plymouth Superior Court (ABC News, Nov. 19 and Nov. 25; Boston 25 News, Nov. 25). A final pretrial conference stays set for Feb. 18, 2027 (Boston Globe, Nov. 25; NBC Boston, Nov. 16; two sources, so treat it as reported, not confirmed). The appeal could still change these dates.</li>
+<li><strong>Status hearing:</strong> Dec. 30, 2026 (NBC Boston and Patriot Ledger, Nov. 16; two sources). The time has not been published.</li>
 <li><strong>Renewed acquittal request:</strong> Denied October 1, according to AP. This ruling is not a conviction.</li>
 
 <li><strong>Current-source cutoff:</strong> Nov. 25, 2026, 7 p.m. Pacific. This tracker uses attributed reporting; direct docket access remains unavailable.</li>
@@ -96,9 +97,9 @@ A clinical diagnosis and a legal finding are not the same thing. Experts may add
 
 Judge William Sullivan declared a mistrial on September 4 after the jury reported that it could not reach a unanimous verdict. The trial ended without a conviction or acquittal. Clancy remains charged with three counts of first-degree murder, has pleaded not guilty, and remains presumed innocent.
 
-### November 25 ruling — checked Nov. 25
+### November 23 ruling (reported Nov. 25) — checked Nov. 27
 
-**RULING (Nov. 25):** Massachusetts' highest court, the Supreme Judicial Court, denied prosecutors' request to pause Lindsay Clancy's retrial. It gave no reason. Jury selection stays set for March 29, 2027 ([ABC News, Nov. 25, 2026](https://abcnews.com/US/massachusetts-high-court-denies-attempt-delay-lindsey-clancy/story?id=138448426); [Boston 25 News via Yahoo, Nov. 25, 2026](https://www.yahoo.com/news/us/articles/sjc-denies-prosecutors-request-delay-175929425.html); [Fox News via Yahoo, Nov. 25, 2026](https://www.yahoo.com/news/us/articles/lindsay-clancy-retrial-moves-forward-192703270.html)).
+**RULING (Nov. 23, reported Nov. 25):** Massachusetts' highest court, the Supreme Judicial Court, denied prosecutors' request to pause Lindsay Clancy's retrial the same day prosecutors filed it, Monday, Nov. 23. It gave no reason ([Boston Globe, Nov. 25, 2026](https://www.bostonglobe.com/2026/11/25/metro/lindsay-clancy-retrial-sjc-pause/)). Jury selection stays set for March 29, 2027 ([ABC News, Nov. 25, 2026](https://abcnews.com/US/massachusetts-high-court-denies-attempt-delay-lindsey-clancy/story?id=138448426); [Boston 25 News via Yahoo, Nov. 25, 2026](https://www.yahoo.com/news/us/articles/sjc-denies-prosecutors-request-delay-175929425.html); [Fox News via Yahoo, Nov. 25, 2026](https://www.yahoo.com/news/us/articles/lindsay-clancy-retrial-moves-forward-192703270.html)).
 
 **PROSECUTION:** Prosecutors asked the court to wait until it rules on her double-jeopardy appeal. They called it "ambitious" to expect a ruling before jury selection begins ([Boston 25 News via Yahoo, Nov. 25, 2026](https://www.yahoo.com/news/us/articles/sjc-denies-prosecutors-request-delay-175929425.html)).
 
@@ -171,7 +172,7 @@ For now, yes, but it is not final. A mistrial means the trial ended without a ve
 
 ### Is there a date for a second Lindsay Clancy trial?
 
-Yes. Jury selection is set to begin March 29, 2027 ([ABC News, Nov. 19, 2026](https://abcnews.com/US/lindsay-clancy-files-appeal-ahead-march-2027-retrial/story?id=138277240); [Boston 25 News via Yahoo, Nov. 25, 2026](https://www.yahoo.com/news/us/articles/sjc-denies-prosecutors-request-delay-175929425.html)). On Nov. 25, the Supreme Judicial Court refused to pause the retrial while it hears her appeal ([ABC News, Nov. 25, 2026](https://abcnews.com/US/massachusetts-high-court-denies-attempt-delay-lindsey-clancy/story?id=138448426); [Fox News via Yahoo, Nov. 25, 2026](https://www.yahoo.com/news/us/articles/lindsay-clancy-retrial-moves-forward-192703270.html)). The appeal could still change the date.
+Yes. Jury selection is set to begin March 29, 2027 ([ABC News, Nov. 19, 2026](https://abcnews.com/US/lindsay-clancy-files-appeal-ahead-march-2027-retrial/story?id=138277240); [Boston 25 News via Yahoo, Nov. 25, 2026](https://www.yahoo.com/news/us/articles/sjc-denies-prosecutors-request-delay-175929425.html)). On Nov. 23, the Supreme Judicial Court refused to pause the retrial while it hears her appeal ([ABC News, Nov. 25, 2026](https://abcnews.com/US/massachusetts-high-court-denies-attempt-delay-lindsey-clancy/story?id=138448426); [Fox News via Yahoo, Nov. 25, 2026](https://www.yahoo.com/news/us/articles/lindsay-clancy-retrial-moves-forward-192703270.html)). The appeal could still change the date.
 
 ### When is Lindsay Clancy's next hearing?
 
@@ -211,7 +212,7 @@ The judge allowed the recording for the trial that ended in a mistrial. This tra
 
 ### What happens next?
 
-The full Supreme Judicial Court is expected to hear her double-jeopardy appeal in January 2027 ([ABC News, Nov. 19, 2026](https://abcnews.com/US/lindsay-clancy-files-appeal-ahead-march-2027-retrial/story?id=138277240)). On Nov. 25 it refused prosecutors' request to pause the retrial in the meantime ([ABC News, Nov. 25, 2026](https://abcnews.com/US/massachusetts-high-court-denies-attempt-delay-lindsey-clancy/story?id=138448426); [Boston 25 News via Yahoo, Nov. 25, 2026](https://www.yahoo.com/news/us/articles/sjc-denies-prosecutors-request-delay-175929425.html); [Fox News via Yahoo, Nov. 25, 2026](https://www.yahoo.com/news/us/articles/lindsay-clancy-retrial-moves-forward-192703270.html)). Jury selection is set to begin March 29, 2027. Clancy remains charged, has pleaded not guilty, and is presumed innocent.
+The full Supreme Judicial Court is expected to hear her double-jeopardy appeal in January 2027 ([ABC News, Nov. 19, 2026](https://abcnews.com/US/lindsay-clancy-files-appeal-ahead-march-2027-retrial/story?id=138277240)). On Nov. 23 it refused prosecutors' request to pause the retrial in the meantime ([ABC News, Nov. 25, 2026](https://abcnews.com/US/massachusetts-high-court-denies-attempt-delay-lindsey-clancy/story?id=138448426); [Boston 25 News via Yahoo, Nov. 25, 2026](https://www.yahoo.com/news/us/articles/sjc-denies-prosecutors-request-delay-175929425.html); [Fox News via Yahoo, Nov. 25, 2026](https://www.yahoo.com/news/us/articles/lindsay-clancy-retrial-moves-forward-192703270.html)). Jury selection is set to begin March 29, 2027. Clancy remains charged, has pleaded not guilty, and is presumed innocent.
 
 Cover this case? Our [court case kits for creators](/creators/).
 

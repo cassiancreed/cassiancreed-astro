@@ -10,10 +10,13 @@ import RetailStoreLine from '../components/RetailStoreLine.astro';
 // Erin Patterson is intentionally omitted until title/links are confirmed.
 const caseGuides = [
   { id: 'jared-bridegan-case', title: 'Case Chess: The Jared Bridegan Case', bookKey: 'jared-bridegan-case-guide-v2', campaign: 'explainer_bridegan_v2', cover: '/covers/case-chess-jared-bridegan.jpg', coverAlt: 'Book cover of Case Chess: The Jared Bridegan Case by Cassian Creed' },
-  { id: 'brian-thompson-case', title: 'Case Chess: The Brian Thompson Case — What\'s Actually Happening and What It Means', bookKey: 'brian-thompson-luigi-mangione-two-courts', campaign: 'explainer_luigi_v1' },
+  { id: 'brian-thompson-case', title: 'Case Chess: The Brian Thompson Case — What\'s Actually Happening and What It Means', bookKey: 'brian-thompson-luigi-mangione-two-courts', campaign: 'explainer_luigi_v1', cover: '/covers/case-chess-brian-thompson.jpg', coverWide: true, coverAlt: 'Cover of Case Chess: The Brian Thompson Case, Luigi Mangione: Two Courts, One Legal Collision, by Cassian Creed, $1.99' },
+  // Order 1 (2026-11-27): Clancy card has no cover on purpose. The live Beehiiv
+  // cover prints the names of the three children who died (Doctrine: never name a
+  // child who died, incl. thumbnails). Owner must swap the Beehiiv cover first.
   { id: 'lindsay-clancy-trial', title: 'Case Chess: The Lindsay Clancy Case — What\'s Actually Happening and What It Means', bookKey: 'lindsay-clancy-post-mistrial-field-guide', campaign: 'explainer_clancy_v1' },
-  { id: 'eric-richins-case', title: 'Case Chess: The Eric Richins Case — What\'s Actually Happening and What It Means', bookKey: 'eric-richins-kouri-evidence-verdict', campaign: 'explainer_kouri_v1' },
-  { id: 'great-wolf-lodge-case', title: 'The Great Wolf Lodge Case Guide', bookKey: 'great-wolf-lodge-case-guide', campaign: 'explainer_great_wolf_v1' },
+  { id: 'eric-richins-case', title: 'Case Chess: The Eric Richins Case — What\'s Actually Happening and What It Means', bookKey: 'eric-richins-kouri-evidence-verdict', campaign: 'explainer_kouri_v1', cover: '/covers/case-chess-eric-richins.jpg', coverWide: true, coverAlt: 'Cover of Case Chess: The Eric Richins Case, The Evidence-to-Verdict Guide, by Cassian Creed, $1.99' },
+  { id: 'great-wolf-lodge-case', title: 'The Great Wolf Lodge Case Guide', bookKey: 'great-wolf-lodge-case-guide', campaign: 'explainer_great_wolf_v1', cover: '/covers/great-wolf-lodge-case-guide.jpg', coverAlt: 'Book cover of The Great Wolf Lodge Case Guide by Neural Edge Publishing' },
 ].map((guide) => ({
   ...guide,
   url: `https://cassiancreed.beehiiv.com/products/${guide.bookKey}`,
@@ -98,8 +101,8 @@ const jsonld = [
     {caseGuides.map((guide) => (
       <div class="bk bk--ink" id={guide.id}>
         {guide.cover && (
-          <div class="bk__cover bk__cover--art">
-            <img class="bk__img" src={guide.cover} alt={guide.coverAlt} width="600" height="900" loading="lazy" />
+          <div class={guide.coverWide ? 'bk__cover bk__cover--art bk__cover--wide' : 'bk__cover bk__cover--art'}>
+            <img class="bk__img" src={guide.cover} alt={guide.coverAlt} width={guide.coverWide ? '1200' : '600'} height={guide.coverWide ? '675' : '900'} loading="lazy" />
           </div>
         )}
         <div class="bk__meta">
@@ -177,6 +180,8 @@ const jsonld = [
   .bk__cover{position:relative;aspect-ratio:2/3;padding:22px 20px;display:flex;flex-direction:column;color:#f5efe8;isolation:isolate}
   .bk--square .bk__cover{aspect-ratio:1/1}
   .bk__cover--art{padding:0}
+  .bk__cover--wide{aspect-ratio:16/9}
+  .bk__cover--wide .bk__img{object-fit:contain}
   .bk__img{display:block;width:100%;height:100%;object-fit:cover}
   .bk__cover::after{content:"";position:absolute;inset:0;z-index:-1;opacity:.9}
   .bk--rust .bk__cover{background:linear-gradient(150deg,#7a2417,#c9472b 55%,#e0563b)}
