@@ -110,6 +110,7 @@ const navItems = [
   { href: '/guides/',              label: 'Guides' },
   { href: '/glossary/',            label: 'Glossary' },
   { href: '/safety/',              label: 'Stay Safe' },
+  { href: '/living-with-vision-loss/', label: 'Vision Loss Help' },
   { href: '/voir-dire-simulator/', label: 'Jury Simulator' },
   { href: '/ai-al/',               label: 'A.I. AL' },
   // CONVERSION-FIRST RANK 1 (2026-07-28): the '/the-trail/' nav item was
@@ -174,7 +175,11 @@ function navActive(href){
   <meta name="description" content={renderedDescription} />
   {noindex && <meta name="robots" content="noindex,follow" />}
   <meta name="theme-color" content="#14110f" />
+  <link rel="icon" href="/favicon.ico" sizes="48x48" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
   <link rel="canonical" href={canonical} />
   <meta property="og:type" content={ogType} />
   <meta property="og:title" content={renderedTitle} />
@@ -348,7 +353,7 @@ function navActive(href){
     <span class="evidence">© 2026 Neural Edge Publishing</span>
     <span class="site-foot__note">Sourced · victim-centered · no gratuitous detail.</span>
     <span class="site-foot__report"><ReportError pageTitle={baseTitle} /> · <a class="site-foot__policy" href="/corrections-policy/">Corrections policy</a> · <a class="site-foot__policy" href="/privacy/">Privacy policy</a></span>
-            <span class="site-foot__social"><a href="/today/">What Changed</a> · <a href="/trending/">Trending Cases</a> · <a href="/court-calendar/archive/">Court Calendar Archive</a> · <a href="/missing-persons/">Missing Persons</a> · <a href="/genealogy/">Genealogy</a> · <a href="/explainers/">Explainers</a> · <a href="/guides/">Guides</a> · <a href="/glossary/">Glossary</a> · <a href="/case-solver/">Case Solver</a> · <a href="/forensic-tools/">Forensic Tools</a> · <a href="/safety/">Stay Safe</a> · <a href="/living-with-vision-loss/">Disability Tips &amp; AI Help</a> · <a href="/support/">Support</a> · <a href="/mission/">Mission</a> · <a href="/about/">About</a>{internalLinksOnly ? <> · Follow on X · Follow on TikTok · Free newsletter</> : <> · <a href="https://x.com/CassianCreed">Follow on X</a> · <a href="https://www.tiktok.com/@cassiancreed">Follow on TikTok</a> · <a href="/#free-guide">Free newsletter</a></>}</span>
+            <span class="site-foot__social"><a href="/today/">What Changed</a> · <a href="/trending/">Trending Cases</a> · <a href="/court-calendar/archive/">Court Calendar Archive</a> · <a href="/missing-persons/">Missing Persons</a> · <a href="/genealogy/">Genealogy</a> · <a href="/explainers/">Explainers</a> · <a href="/guides/">Guides</a> · <a href="/glossary/">Glossary</a> · <a href="/case-solver/">Case Solver</a> · <a href="/forensic-tools/">Forensic Tools</a> · <a href="/safety/">Stay Safe</a> · <a href="/living-with-vision-loss/">Living With Vision Loss</a> · <a href="/support/">Support</a> · <a href="/mission/">Mission</a> · <a href="/about/">About</a>{internalLinksOnly ? <> · Follow on X · Follow on TikTok · Free newsletter</> : <> · <a href="https://x.com/CassianCreed">Follow on X</a> · <a href="https://www.tiktok.com/@cassiancreed">Follow on TikTok</a> · <a href="/#free-guide">Free newsletter</a></>}</span>
   </div></footer>
   <script is:inline>
   (function(){
