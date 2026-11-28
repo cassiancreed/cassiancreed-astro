@@ -61,9 +61,5 @@ What happened to Etan Patz changed American childhood. Who killed Etan Patz was 
 
 *If this case file moved you, subscribe to Neural Edge Publishing, explore our other true crime case files, and follow us for ongoing coverage of the cases that rewrite the law. More at cassiancreed.com.*
 
-## Listen to this case
-
-<iframe loading="lazy" style="border-radius:12px" src="https://open.spotify.com/embed/episode/6ArfeTybQ5QZlKjNUaZalb?theme=0" width="100%" height="152" frameborder="0" allow="clipboard-write; encrypted-media; fullscreen; picture-in-picture" title="Listen: The 1979 SoHo Disappearance and the 2026 Supreme Court Ruling — Cassian Creed: Daily Update"></iframe>
-
 > **Get the next case file the day it ships**  
 > [Get *How to Read a Case Like the Court Does*, our field guide to reading a case the way a court does →](https://cassiancreed.beehiiv.com/subscribe?utm_source=website&utm_medium=av_embed&utm_campaign=lm_case_how-to-read-a-case)
