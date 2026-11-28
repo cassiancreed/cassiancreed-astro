@@ -1,8 +1,8 @@
 ---
 import Base from '../layouts/Base.astro';
 import { pageSchema } from '../utils/page-schema.mjs';
-const title = "Disability Tips: Free Tools and Ways AI Can Help";
-const description = "Plain, free tips for vision, hearing, mobility, ADHD, ACHD, and memory needs, with safe ways to use AI and a parent guide.";
+const title = "Living With Vision Loss: Free Tools and Tips";
+const description = "Free phone tools, apps, and voice AI for people with vision loss, sorted by need. Honest notes on what a legally blind business owner uses, plus a guide for parents.";
 const jsonld = pageSchema({
   "type": "WebPage",
   "title": title,
@@ -16,174 +16,167 @@ const jsonld = pageSchema({
   <article class="vision wrap">
     <header class="vision__hero">
       <p class="evidence evidence--accent">Accessibility</p>
-      <h1>Disability Tips: Free Tools and Ways AI Can Help</h1>
-      <p class="vision__promise">Small changes can make daily tasks easier. Start with the tools already on your phone. Different people need different things.</p>
-      <p class="vision__note">These are general ideas, not a test or a treatment. AI can make mistakes. Ask a trained person when a task affects health, money, travel, or safety. This page is not medical advice.</p>
+      <h1>Living With Vision Loss: Free Tools and Tips</h1>
+      <p class="vision__promise">Find your need below. Each one lists free tools that may help. Start with what is already on your phone.</p>
+      <div class="vision__who">
+        <p><strong>Why this page is here:</strong> Cassian Creed, who runs this site, is legally blind. He uses this kind of technology every day to run his business. Each tool below says honestly whether Cassian uses it or not.</p>
+      </div>
+      <p class="vision__note">This page is not medical advice. It does not test or treat your eyes. AI can make mistakes. Ask an eye doctor, a pharmacist, or another trained person when a task affects health, money, travel, or safety.</p>
     </header>
 
     <nav class="vision__jump" aria-label="On this page">
       <ul>
-        <li><a href="#phone-tools">Tools already on your phone</a></li>
-        <li><a href="#camera-apps">Point your camera and hear it</a></li>
-        <li><a href="#hearing">Hearing and captions</a></li>
-        <li><a href="#mobility">Mobility and hands-free help</a></li>
-        <li><a href="#attention">ADHD and attention</a></li>
-        <li><a href="#achd">ACHD and long-term health tasks</a></li>
-        <li><a href="#memory">Memory and reminders</a></li>
-        <li><a href="#ai-helpers">Safe AI help for adults</a></li>
-        <li><a href="#parents">For parents of blind or low-vision kids</a></li>
+        <li><a href="#cant-see-screen">If it is hard to see the screen</a></li>
+        <li><a href="#narrow-view">If your side vision is narrow</a></li>
+        <li><a href="#small-print">If small print is hard to read</a></li>
+        <li><a href="#read-it">If you need a letter, label, or money read to you</a></li>
+        <li><a href="#a-person">If you want a person to look for you</a></li>
+        <li><a href="#typing">If typing or reading long text wears you out</a></li>
+        <li><a href="#parents">For parents of a blind or low-vision child</a></li>
+        <li><a href="#other-needs">Other needs: hearing, mobility, attention, heart care, memory</a></li>
         <li><a href="#home-tips">Simple home tips</a></li>
       </ul>
     </nav>
 
-    <section id="phone-tools" aria-labelledby="phone-tools-title">
-      <h2 id="phone-tools-title">Vision: tools already on your phone</h2>
-      <p>You do not need to buy anything. Both iPhone and Android come with a screen reader (it speaks what is on the screen) and a magnifier.</p>
-
-      <h3>iPhone</h3>
-      <h4>VoiceOver (speaks the screen out loud)</h4>
-      <ul>
-        <li>Say to Siri: &ldquo;Turn on VoiceOver.&rdquo;</li>
-        <li>Or triple-click the side button (iPhone with Face ID) or the Home button (other iPhones).</li>
-        <li>Or go to Settings, then Accessibility, then VoiceOver, and turn it on.</li>
-      </ul>
-      <p>Heads up: when VoiceOver is on, your phone uses new gestures. Tap once to hear an item. Double-tap to open it. Apple has a practice area in the same settings screen. <a href="https://support.apple.com/guide/iphone/turn-on-and-practice-voiceover-iph3e2e415f/ios" target="_blank" rel="noopener noreferrer">Apple&rsquo;s VoiceOver guide (opens in a new tab)</a>.</p>
-      <h4>Magnifier (a built-in magnifying glass)</h4>
-      <ul>
-        <li>Open the Magnifier app. If you can&rsquo;t find it, swipe down on the Home Screen and search for &ldquo;Magnifier.&rdquo;</li>
-        <li>You can also say to Siri: &ldquo;Open Magnifier.&rdquo;</li>
-        <li>Point the back camera at the print and drag the zoom slider.</li>
-      </ul>
-      <p>Magnifier also has a Detection Mode that can describe what the camera sees. Apple says not to rely on it in risky situations, such as for navigation. <a href="https://support.apple.com/HT209517" target="_blank" rel="noopener noreferrer">Apple&rsquo;s Magnifier guide (opens in a new tab)</a>.</p>
-
-      <h3>Android</h3>
-      <h4>TalkBack (speaks the screen out loud)</h4>
-      <ul>
-        <li>Go to Settings, then Accessibility, then TalkBack, then choose Use TalkBack.</li>
-        <li>Or turn on the TalkBack shortcut in that same screen. On many phones you can then hold both volume keys for a few seconds to turn it on or off.</li>
-        <li>Or say: &ldquo;Hey Google, turn on TalkBack.&rdquo;</li>
-      </ul>
-      <p>Steps differ a little by phone brand and Android version. <a href="https://support.google.com/accessibility/android/answer/6007100" target="_blank" rel="noopener noreferrer">Google&rsquo;s TalkBack guide (opens in a new tab)</a>.</p>
-      <h4>Magnification (zoom in on anything)</h4>
-      <ul>
-        <li>Go to Settings, then Accessibility, then Magnification.</li>
-        <li>Turn on the Magnification shortcut. You can pick a button on the screen, both volume keys, or a triple-tap.</li>
-      </ul>
-      <p><a href="https://support.google.com/accessibility/android/answer/6006949" target="_blank" rel="noopener noreferrer">Google&rsquo;s Magnification guide (opens in a new tab)</a>.</p>
-    </section>
-
-    <section id="camera-apps" aria-labelledby="camera-apps-title">
-      <h2 id="camera-apps-title">Vision: point your camera and hear it</h2>
-      <p>These free apps use your phone&rsquo;s camera to read text out loud or describe what is in front of you. They can make mistakes, so double-check anything important.</p>
+    <section id="cant-see-screen" aria-labelledby="cant-see-screen-title">
+      <h2 id="cant-see-screen-title">If it is hard to see the screen</h2>
+      <p>Try a screen reader. It speaks what is on the screen out loud. Both iPhone and Android have one for free.</p>
       <div class="vision__cards">
         <div class="vision__card">
-          <h3>Be My Eyes</h3>
-          <p><strong>Works on:</strong> iPhone and Android.</p>
-          <p><strong>Cost:</strong> Free.</p>
-          <p>Call a volunteer who can see through your camera, or ask the built-in AI helper to describe a photo.</p>
-          <p><a href="https://apps.apple.com/app/id905177575" target="_blank" rel="noopener noreferrer">Be My Eyes on the App Store (opens in a new tab)</a>. On Android, search for &ldquo;Be My Eyes&rdquo; in Google Play.</p>
+          <h3>VoiceOver (iPhone)</h3>
+          <p class="vision__tag vision__tag--not">Cassian hasn&rsquo;t used this, but it may help if you have this need</p>
+          <ul>
+            <li>Say to Siri: &ldquo;Turn on VoiceOver.&rdquo;</li>
+            <li>Or go to Settings, then Accessibility, then VoiceOver.</li>
+            <li>When it is on, tap once to hear an item. Double-tap to open it. Apple has a practice area in the same screen.</li>
+          </ul>
+          <p><a href="https://support.apple.com/guide/iphone/turn-on-and-practice-voiceover-iph3e2e415f/ios" target="_blank" rel="noopener noreferrer">Apple&rsquo;s VoiceOver guide (opens in a new tab)</a></p>
         </div>
         <div class="vision__card">
-          <h3>Seeing AI (from Microsoft)</h3>
-          <p><strong>Works on:</strong> iPhone and Android.</p>
-          <p><strong>Cost:</strong> Free.</p>
-          <p>Reads short text and whole pages, describes scenes, and reads currency. It works with VoiceOver and TalkBack.</p>
-          <p><a href="https://apps.apple.com/app/id999062298" target="_blank" rel="noopener noreferrer">Seeing AI on the App Store (opens in a new tab)</a> or <a href="https://www.seeingai.com/Android" target="_blank" rel="noopener noreferrer">Seeing AI for Android (opens in a new tab)</a>.</p>
-        </div>
-        <div class="vision__card">
-          <h3>Lookout (from Google)</h3>
-          <p><strong>Works on:</strong> Android only.</p>
-          <p><strong>Cost:</strong> Free.</p>
-          <p>Modes for reading text, documents, and food labels, reading money, and describing images. If text is not read clearly, try turning the phone sideways or moving it closer or farther away.</p>
-          <p><a href="https://play.google.com/store/apps/details?id=com.google.android.apps.accessibility.reveal" target="_blank" rel="noopener noreferrer">Lookout on Google Play (opens in a new tab)</a>. <a href="https://support.google.com/accessibility/android/answer/9031274" target="_blank" rel="noopener noreferrer">Google&rsquo;s Lookout guide (opens in a new tab)</a>.</p>
+          <h3>TalkBack (Android)</h3>
+          <p class="vision__tag vision__tag--not">Cassian hasn&rsquo;t used this, but it may help if you have this need</p>
+          <ul>
+            <li>Go to Settings, then Accessibility, then TalkBack, then Use TalkBack.</li>
+            <li>Or say: &ldquo;Hey Google, turn on TalkBack.&rdquo;</li>
+            <li>Steps differ a little by phone brand.</li>
+          </ul>
+          <p><a href="https://support.google.com/accessibility/android/answer/6007100" target="_blank" rel="noopener noreferrer">Google&rsquo;s TalkBack guide (opens in a new tab)</a></p>
         </div>
       </div>
     </section>
 
-
-    <section id="hearing" aria-labelledby="hearing-title">
-      <h2 id="hearing-title">Hearing: read what people say</h2>
-      <ul>
-        <li>On iPhone, go to Settings, then Accessibility, then Live Captions on supported phones. You can also turn on captions in video apps.</li>
-        <li>On Android, open Settings, then Accessibility. Look for Live Caption or Live Transcribe. Names may differ by phone.</li>
-        <li>For a meeting, ask for written notes or real captions. Let others know if you plan to record.</li>
-      </ul>
-      <p>AI can turn a rough transcript into a short list of key points. Captions may miss words, names, or numbers. Do not use them as your only guide in an emergency.</p>
-      <p><a href="https://support.apple.com/guide/iphone/iphe0990f7bb/ios" target="_blank" rel="noopener noreferrer">Apple Live Captions guide</a> · <a href="https://support.google.com/accessibility/android/answer/9158064" target="_blank" rel="noopener noreferrer">Google Live Transcribe guide</a></p>
+    <section id="narrow-view" aria-labelledby="narrow-view-title">
+      <h2 id="narrow-view-title">If your side vision is narrow</h2>
+      <p>Some people lose part of their field of view. That means less fits in what they can see at one time. Cassian has this kind of vision loss.</p>
+      <p><strong>A tip from Cassian:</strong> bigger text can make it worse for him. When words get bigger, fewer of them fit in his view. Instead, he lets the phone or an AI assistant talk to him. If your vision loss is like his, try the voice tools in <a href="#typing">the typing and reading section</a> first.</p>
+      <p>Everyone is different. An eye doctor or a low-vision specialist can help you find what works for your eyes.</p>
     </section>
 
-    <section id="mobility" aria-labelledby="mobility-title">
-      <h2 id="mobility-title">Mobility: use your phone with less touch</h2>
-      <ul>
-        <li>On iPhone, go to Settings, Accessibility, then Voice Control. Follow Set Up Voice Control. You can say “open,” “tap,” or “scroll.”</li>
-        <li>On Android, find Voice Access in Settings, Accessibility. If it is not there, check Google Play.</li>
-        <li>Use dictation to write a message without long typing. Keep the phone where you can reach it.</li>
-      </ul>
-      <p>AI may help write an email or make a packing list. It cannot tell whether a path, ramp, door, or lift is safe. Check access details with the place you plan to visit.</p>
-      <p><a href="https://support.apple.com/guide/iphone/iph2c21a3c88/ios" target="_blank" rel="noopener noreferrer">Apple Voice Control guide</a> · <a href="https://support.google.com/accessibility/android/answer/6151848" target="_blank" rel="noopener noreferrer">Android Voice Access guide</a></p>
+    <section id="small-print" aria-labelledby="small-print-title">
+      <h2 id="small-print-title">If small print is hard to read</h2>
+      <p>Your phone camera can work like a magnifying glass. You can also make text bigger and bolder. These help many people, but not everyone. See the tip about <a href="#narrow-view">narrow side vision</a>.</p>
+      <div class="vision__cards">
+        <div class="vision__card">
+          <h3>Magnifier (iPhone)</h3>
+          <p class="vision__tag vision__tag--not">Cassian hasn&rsquo;t used this, but it may help if you have this need</p>
+          <ul>
+            <li>Open the Magnifier app, or say to Siri: &ldquo;Open Magnifier.&rdquo;</li>
+            <li>Point the back camera at the print and drag the zoom slider.</li>
+          </ul>
+          <p><a href="https://support.apple.com/HT209517" target="_blank" rel="noopener noreferrer">Apple&rsquo;s Magnifier guide (opens in a new tab)</a></p>
+        </div>
+        <div class="vision__card">
+          <h3>Magnification (Android)</h3>
+          <p class="vision__tag vision__tag--not">Cassian hasn&rsquo;t used this, but it may help if you have this need</p>
+          <ul>
+            <li>Go to Settings, then Accessibility, then Magnification.</li>
+            <li>Turn on the shortcut. You can pick a button on the screen, both volume keys, or a triple-tap.</li>
+          </ul>
+          <p><a href="https://support.google.com/accessibility/android/answer/6006949" target="_blank" rel="noopener noreferrer">Google&rsquo;s Magnification guide (opens in a new tab)</a></p>
+        </div>
+        <div class="vision__card">
+          <h3>Bigger or bold text (any phone or computer)</h3>
+          <p class="vision__tag vision__tag--not">Cassian tried this. It makes things worse for him, but it may help you</p>
+          <p>Look in Settings for Display, Text size, Font size, or Bold text. Cassian has tried this. It does not work for him, because less fits in his view.</p>
+        </div>
+      </div>
     </section>
 
-    <section id="attention" aria-labelledby="attention-title">
-      <h2 id="attention-title">ADHD and attention: make the next step small</h2>
-      <ul>
-        <li>Put one task on the screen at a time.</li>
-        <li>Use a short timer and a reminder for the next step.</li>
-        <li>Ask AI to split a long task into three simple steps. Check the steps and set your own pace.</li>
-      </ul>
-      <p>Try a routine that works for you. You do not need to share a diagnosis with an AI service.</p>
-      <p><a href="https://www.cdc.gov/adhd/treatment/behavior-therapy.html" target="_blank" rel="noopener noreferrer">CDC: routines and clear tasks</a></p>
+    <section id="read-it" aria-labelledby="read-it-title">
+      <h2 id="read-it-title">If you need a letter, label, or money read to you</h2>
+      <p>These free apps use your phone camera to read text out loud or tell you what is in front of you. They can make mistakes. Double-check anything important, like medicine or bills.</p>
+      <div class="vision__cards">
+        <div class="vision__card">
+          <h3>Seeing AI (from Microsoft)</h3>
+          <p class="vision__tag vision__tag--not">Cassian hasn&rsquo;t used this, but it may help if you have this need</p>
+          <p><strong>Works on:</strong> iPhone and Android. <strong>Cost:</strong> Free.</p>
+          <p>Reads short text and whole pages, describes scenes, and reads money.</p>
+          <p><a href="https://apps.apple.com/app/id999062298" target="_blank" rel="noopener noreferrer">Seeing AI on the App Store (opens in a new tab)</a> or <a href="https://www.seeingai.com/Android" target="_blank" rel="noopener noreferrer">Seeing AI for Android (opens in a new tab)</a></p>
+        </div>
+        <div class="vision__card">
+          <h3>Lookout (from Google)</h3>
+          <p class="vision__tag vision__tag--not">Cassian hasn&rsquo;t used this, but it may help if you have this need</p>
+          <p><strong>Works on:</strong> Android only. <strong>Cost:</strong> Free.</p>
+          <p>Reads text, documents, food labels, and money. It can also describe pictures. If it misreads, turn the phone sideways or move it closer or farther away.</p>
+          <p><a href="https://play.google.com/store/apps/details?id=com.google.android.apps.accessibility.reveal" target="_blank" rel="noopener noreferrer">Lookout on Google Play (opens in a new tab)</a></p>
+        </div>
+      </div>
+      <p>You can also snap a photo and ask a voice AI assistant to read it to you. See the next sections.</p>
     </section>
 
-    <section id="achd" aria-labelledby="achd-title">
-      <h2 id="achd-title">ACHD: keep health tasks easy to follow</h2>
-      <p><strong>ACHD means adult congenital heart disease.</strong> It is not the same as ADHD. Not every adult with ACHD has the same daily needs.</p>
-      <ul>
-        <li>Keep appointments and questions in a calendar or note.</li>
-        <li>Ask AI to turn your own questions into a short list for a doctor visit.</li>
-        <li>Keep a current medicine list that you review with your care team, not with AI alone.</li>
-      </ul>
-      <p>Only your healthcare team can give care advice. AI must not change your treatment, tell you which medicines to take, or judge symptoms.</p>
-      <p><a href="https://www.achaheart.org/your-heart/resources/" target="_blank" rel="noopener noreferrer">Adult Congenital Heart Association: ACHD resources</a></p>
+    <section id="a-person" aria-labelledby="a-person-title">
+      <h2 id="a-person-title">If you want a person to look for you</h2>
+      <div class="vision__cards">
+        <div class="vision__card">
+          <h3>Be My Eyes</h3>
+          <p class="vision__tag vision__tag--not">Cassian hasn&rsquo;t used this, but it may help if you have this need</p>
+          <p><strong>Works on:</strong> iPhone and Android. <strong>Cost:</strong> Free.</p>
+          <p>Call a volunteer who can see through your camera. The app also has an AI helper that can describe a photo.</p>
+          <p><a href="https://apps.apple.com/app/id905177575" target="_blank" rel="noopener noreferrer">Be My Eyes on the App Store (opens in a new tab)</a>. On Android, search for &ldquo;Be My Eyes&rdquo; in Google Play.</p>
+        </div>
+      </div>
     </section>
 
-    <section id="memory" aria-labelledby="memory-title">
-      <h2 id="memory-title">Memory: keep important things in one place</h2>
-      <ul>
-        <li>Put keys, glasses, and your phone in the same place each day.</li>
-        <li>Use a calendar or talking reminder for times and tasks.</li>
-        <li>Ask AI to make a clear checklist from your own notes. Check each item before relying on it.</li>
-      </ul>
-      <p>If memory changes make daily life unsafe or hard, talk with a healthcare professional. AI does not test or diagnose memory problems.</p>
-      <p><a href="https://www.nia.nih.gov/health/memory-loss-and-forgetfulness/memory-forgetfulness-and-aging-whats-normal-and-whats-not" target="_blank" rel="noopener noreferrer">National Institute on Aging: memory tips</a></p>
-    </section>
-
-    <section id="ai-helpers" aria-labelledby="ai-helpers-title">
-      <h2 id="ai-helpers-title">How AI can help adults</h2>
-      <p>An AI assistant is a tool you can speak or type to. It can explain text, make a simple list, or help plan a task. It does not always get the facts right.</p>
-      <ul>
-        <li>Ask for a plain-language summary of a long letter. Check the source text for errors.</li>
-        <li>Ask which parts of a photo are cut off so you can take it again.</li>
-        <li>Make a to-do list from notes you type after a call. Ask before recording anyone.</li>
-        <li>Turn your own notes into questions to ask a doctor or pharmacist. Do not share private records unless you understand the tool’s privacy rules.</li>
-      </ul>
-      <p class="vision__warn"><strong>Safety first:</strong> Never use AI alone to choose a medicine, confirm a dose, cross a road, judge an emergency, or make a medical choice. AI can misread labels and numbers. A pharmacist or clinician must check medicine questions.</p>
-      <p>Claude is for adults 18 and older. Its app is free to download, with optional paid plans. Get it from the <a href="https://apps.apple.com/us/app/claude-by-anthropic/id6473753684" target="_blank" rel="noopener noreferrer">App Store (opens in a new tab)</a>, or search for &ldquo;Claude by Anthropic&rdquo; in Google Play.</p>
+    <section id="typing" aria-labelledby="typing-title">
+      <h2 id="typing-title">If typing or reading long text wears you out</h2>
+      <p>This is where Cassian gets the most help. He talks to his phone and to AI assistants for almost everything. You can talk instead of type, and the assistant can talk back.</p>
+      <div class="vision__cards">
+        <div class="vision__card">
+          <h3>AI assistants you can talk to</h3>
+          <p class="vision__tag vision__tag--uses">Cassian uses this</p>
+          <p>Cassian uses Claude by voice on his Android phone for almost everything. He also uses ChatGPT voice. For work, he uses Gemini, Perplexity, and Copilot too.</p>
+          <p>You can ask an assistant to read a long letter in plain words, make a short to-do list, or help you write an email. Most have a free version. Some have paid plans.</p>
+          <p><strong>Age rules:</strong> Claude is for adults 18 and older. Check each app&rsquo;s age rule before a child uses it.</p>
+          <p>Get them from your phone&rsquo;s app store: <a href="https://claude.ai/download" target="_blank" rel="noopener noreferrer">Claude (opens in a new tab)</a> · <a href="https://openai.com/chatgpt/download/" target="_blank" rel="noopener noreferrer">ChatGPT (opens in a new tab)</a> · <a href="https://gemini.google.com/" target="_blank" rel="noopener noreferrer">Gemini (opens in a new tab)</a> · <a href="https://www.perplexity.ai/" target="_blank" rel="noopener noreferrer">Perplexity (opens in a new tab)</a> · <a href="https://copilot.microsoft.com/" target="_blank" rel="noopener noreferrer">Copilot (opens in a new tab)</a></p>
+        </div>
+        <div class="vision__card">
+          <h3>Dictation (talk to type)</h3>
+          <p class="vision__tag vision__tag--uses">Cassian uses this</p>
+          <p>Tap the microphone on your phone&rsquo;s keyboard and say your words. The phone types them for you. This works in texts, emails, and most apps.</p>
+        </div>
+        <div class="vision__card">
+          <h3>Siri, Google Assistant, and Alexa</h3>
+          <p class="vision__tag vision__tag--uses">Cassian uses this</p>
+          <p>Ask out loud to call someone, set a timer, check the weather, or open an app. Cassian uses Siri or Google Assistant on the go and Alexa at home.</p>
+        </div>
+      </div>
+      <p class="vision__warn"><strong>Safety first:</strong> Never use AI alone to choose a medicine, check a dose, cross a road, judge an emergency, or make a medical choice. AI can misread labels and numbers. A pharmacist or doctor must check medicine questions. Do not share private records unless you understand the app&rsquo;s privacy rules.</p>
     </section>
 
     <section id="parents" aria-labelledby="parents-title">
-      <h2 id="parents-title">For parents of a blind child</h2>
-      <p class="vision__warn"><strong>Important: Claude is for adults only.</strong> Anthropic, the company that makes Claude, requires every user to be at least 18 years old. Parents should run AI tools for children. Children can use age-right, accessible tools with adult help. Check each app’s age rule and privacy settings.</p>
+      <h2 id="parents-title">For parents of a blind or low-vision child</h2>
+      <p>Parents can try the tools on this page first and then help their child. Children can use built-in phone readers and magnifiers with adult help. Many AI assistants are for adults only, so a parent should run those.</p>
       <div class="vision__box">
         <h3>Kid-safe tools to start with</h3>
         <ul>
-          <li>Built-in phone readers, magnifiers, and school-approved access tools.</li>
-          <li>A parent may use a camera or reading app to help with a task. Check the app age rules first.</li>
+          <li>Built-in phone screen readers and magnifiers.</li>
+          <li>Reading and access tools your child&rsquo;s school approves.</li>
           <li>Vision services through your child&rsquo;s school.</li>
         </ul>
         <h3>Questions to ask the school</h3>
         <ul>
           <li>Can the school check how my child uses vision to learn, and what reading format works best? Can a TVI (teacher of students with visual impairments) join the school team?</li>
-          <li>Can we discuss an Individualized Education Program (IEP), Braille or other reading tools, and orientation and mobility (O&amp;M) training? O&amp;M teaches travel and space skills.</li>
+          <li>Can we talk about an Individualized Education Program (IEP), Braille or other reading tools, and orientation and mobility (O&amp;M) training? O&amp;M teaches travel and space skills.</li>
         </ul>
         <h3>National groups that help families</h3>
         <ul>
@@ -192,6 +185,62 @@ const jsonld = pageSchema({
           <li><a href="https://aphconnectcenter.org/familyconnect/" target="_blank" rel="noopener noreferrer">American Printing House for the Blind: FamilyConnect (opens in a new tab)</a>. Tips, information and personal stories for families.</li>
         </ul>
       </div>
+    </section>
+
+    <section id="other-needs" aria-labelledby="other-needs-title">
+      <h2 id="other-needs-title">Other needs: hearing, mobility, attention, heart care, memory</h2>
+      <p>Many people live with more than one need. These short, general tips may help.</p>
+      <div id="hearing" aria-labelledby="hearing-title">
+      <h3 id="hearing-title">Hearing: read what people say</h3>
+      <ul>
+        <li>On iPhone, go to Settings, then Accessibility, then Live Captions on supported phones. You can also turn on captions in video apps.</li>
+        <li>On Android, open Settings, then Accessibility. Look for Live Caption or Live Transcribe. Names may differ by phone.</li>
+        <li>For a meeting, ask for written notes or real captions. Let others know if you plan to record.</li>
+      </ul>
+      <p>AI can turn a rough transcript into a short list of key points. Captions may miss words, names, or numbers. Do not use them as your only guide in an emergency.</p>
+      <p><a href="https://support.apple.com/guide/iphone/iphe0990f7bb/ios" target="_blank" rel="noopener noreferrer">Apple Live Captions guide</a> · <a href="https://support.google.com/accessibility/android/answer/9158064" target="_blank" rel="noopener noreferrer">Google Live Transcribe guide</a></p>
+    </div>
+      <div id="mobility" aria-labelledby="mobility-title">
+      <h3 id="mobility-title">Mobility: use your phone with less touch</h3>
+      <ul>
+        <li>On iPhone, go to Settings, Accessibility, then Voice Control. Follow Set Up Voice Control. You can say “open,” “tap,” or “scroll.”</li>
+        <li>On Android, find Voice Access in Settings, Accessibility. If it is not there, check Google Play.</li>
+        <li>Use dictation to write a message without long typing. Keep the phone where you can reach it.</li>
+      </ul>
+      <p>AI may help write an email or make a packing list. It cannot tell whether a path, ramp, door, or lift is safe. Check access details with the place you plan to visit.</p>
+      <p><a href="https://support.apple.com/guide/iphone/iph2c21a3c88/ios" target="_blank" rel="noopener noreferrer">Apple Voice Control guide</a> · <a href="https://support.google.com/accessibility/android/answer/6151848" target="_blank" rel="noopener noreferrer">Android Voice Access guide</a></p>
+    </div>
+      <div id="attention" aria-labelledby="attention-title">
+      <h3 id="attention-title">ADHD and attention: make the next step small</h3>
+      <ul>
+        <li>Put one task on the screen at a time.</li>
+        <li>Use a short timer and a reminder for the next step.</li>
+        <li>Ask AI to split a long task into three simple steps. Check the steps and set your own pace.</li>
+      </ul>
+      <p>Try a routine that works for you. You do not need to share a diagnosis with an AI service.</p>
+      <p><a href="https://www.cdc.gov/adhd/treatment/behavior-therapy.html" target="_blank" rel="noopener noreferrer">CDC: routines and clear tasks</a></p>
+    </div>
+      <div id="achd" aria-labelledby="achd-title">
+      <h3 id="achd-title">ACHD: keep health tasks easy to follow</h3>
+      <p><strong>ACHD means adult congenital heart disease.</strong> It is not the same as ADHD. Not every adult with ACHD has the same daily needs.</p>
+      <ul>
+        <li>Keep appointments and questions in a calendar or note.</li>
+        <li>Ask AI to turn your own questions into a short list for a doctor visit.</li>
+        <li>Keep a current medicine list that you review with your care team, not with AI alone.</li>
+      </ul>
+      <p>Only your healthcare team can give care advice. AI must not change your treatment, tell you which medicines to take, or judge symptoms.</p>
+      <p><a href="https://www.achaheart.org/your-heart/resources/" target="_blank" rel="noopener noreferrer">Adult Congenital Heart Association: ACHD resources</a></p>
+    </div>
+      <div id="memory" aria-labelledby="memory-title">
+      <h3 id="memory-title">Memory: keep important things in one place</h3>
+      <ul>
+        <li>Put keys, glasses, and your phone in the same place each day.</li>
+        <li>Use a calendar or talking reminder for times and tasks.</li>
+        <li>Ask AI to make a clear checklist from your own notes. Check each item before relying on it.</li>
+      </ul>
+      <p>If memory changes make daily life unsafe or hard, talk with a healthcare professional. AI does not test or diagnose memory problems.</p>
+      <p><a href="https://www.nia.nih.gov/health/memory-loss-and-forgetfulness/memory-forgetfulness-and-aging-whats-normal-and-whats-not" target="_blank" rel="noopener noreferrer">National Institute on Aging: memory tips</a></p>
+    </div>
     </section>
 
     <section id="home-tips" aria-labelledby="home-tips-title">
@@ -206,7 +255,7 @@ const jsonld = pageSchema({
       <p class="vision__note">This is not medical advice. Ask your doctor, eye doctor or pharmacist.</p>
       <p class="vision__fine">Apps and settings change. Sources reviewed November 23, 2026. If something here is out of date, please use the &ldquo;Report an error&rdquo; link at the bottom of the page.</p>
     </section>
-    </article>
+  </article>
 </Base>
 
 <style>
@@ -233,4 +282,8 @@ const jsonld = pageSchema({
   .vision__card h3,.vision__box h3{margin-top:0}
   .vision__box h3:not(:first-child){margin-top:24px}
   .vision__card p{margin:6px 0}
+  .vision__tag{display:inline-block;margin:4px 0 10px;padding:4px 12px;border-radius:999px;font-size:16px;font-weight:700;line-height:1.4}
+  .vision__tag--uses{background:#e8ad45;color:#14110f}
+  .vision__tag--not{background:transparent;color:var(--ink);border:2px solid var(--line-strong,var(--line))}
+  .vision__who{padding:18px 22px;border:2px solid #e8ad45;border-radius:12px;background:var(--bg-2);margin:22px 0}
 </style>

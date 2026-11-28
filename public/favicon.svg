@@ -1,6 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
   <title id="title">Cassian Creed</title>
-  <rect width="64" height="64" rx="12" fill="#14110f"/>
-  <path d="M43 17c-3-3-7-5-12-5-11 0-19 8-19 20s8 20 19 20c5 0 9-2 12-5l-5-7c-2 2-4 3-7 3-6 0-10-4-10-11s4-11 10-11c3 0 5 1 7 3z" fill="#f4efe8"/>
-  <path d="M45 12h7v40h-7z" fill="#e0563b"/>
+  <rect width="64" height="64" rx="12" fill="#0b0a09"/>
+  <g fill="none" stroke="#e8ad45" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M 54 20 L 46 28 H 24 A 3.6 4 0 0 0 24 36 H 46 L 54 44"/>
+    <path d="M 50 16 L 42 24 H 24 A 7.2 8 0 0 0 24 40 H 42 L 50 48"/>
+    <path d="M 46 12 L 38 20 H 24 A 10.8 12 0 0 0 24 44 H 38 L 46 52"/>
+    <path d="M 42 8 L 34 16 H 24 A 14.4 16 0 0 0 24 48 H 34 L 42 56"/>
+  </g>
+  <g fill="#0b0a09" stroke="#e8ad45" stroke-width="2">
+    <circle cx="54" cy="20" r="2.2"/>
+    <circle cx="50" cy="48" r="2.2"/>
+    <circle cx="46" cy="12" r="2.2"/>
+    <circle cx="42" cy="56" r="2.2"/>
+  </g>
 </svg>
