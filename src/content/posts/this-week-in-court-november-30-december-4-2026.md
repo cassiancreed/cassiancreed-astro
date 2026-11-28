@@ -1,28 +1,16 @@
 ---
 title: "This Week in Court: November 30–December 4, 2026"
 seoTitle: "This Week in Court: Nov. 30–Dec. 4, 2026 Hearings"
-description: "Court dates Nov. 30–Dec. 4, 2026: a Pennsylvania mother-and-son case, Mario Fernandez Saldana's separate Florida charges, Brianna Moore, a Mangione sentencing filing, and the Dec. 7 Madison Brooks trial."
+description: "Court dates Nov. 30–Dec. 4, 2026: Mario Fernandez Saldana's separate Florida charges, Brianna Moore, a Mangione sentencing filing, and the Dec. 7 Madison Brooks trial."
 pubDate: 2026-11-27
 tag: "Case Files"
 featured: false
 capture: "jury"
 ---
 
-**Status as of November 26, 2026:** This is a light week. Four cases have a date from Monday to Friday, and a fifth trial is set for the Monday after. Most of these dates come from news reports, not from a court notice we could read. We say so in each section. Where we could not re-check a date today, we name the day we last checked it.
+**Status as of November 26, 2026; updated November 28 for the Karoline Heintz case:** This is a light week. Three cases have dates from Monday to Friday, including one filing deadline. A separate trial is reported for the Monday after. Most of these dates come from news reports, not from a court notice we could read. We say so in each section. Where we could not re-check a date today, we name the day we last checked it.
 
 *Some of these cases involve the death of an infant, sexual assault charges, and a child-molestation charge. We do not give graphic details. Times are local court time. Courts can change dates at any time, so check the Court Calendar before you plan around one.*
-
----
-
-### Monday, Nov. 30 — A mother and her son, court appearance (Washington County, Pennsylvania)
-
-**Time:** Not published. The time has not been publicly verified.
-
-Karoline Heintz was a college student and soccer player who planned to become a doctor. She was found dead in a car in Washington County in August. Her boyfriend is charged with criminal homicide. His mother is charged with offenses that include hindering apprehension, tampering with evidence and abuse of a corpse. Both pleaded not guilty on Oct. 13. Because the record we read does not show how old the son was in August, we describe the defendants by role. The mother is not charged with causing the death. Both are presumed innocent. ABC News, citing WTAE, reports both are due in court on Nov. 30. The reason for the date has not been reported.
-
-**What to watch:** Whether the court joins the two cases for one trial, which the district attorney is reported to expect, and whether a trial date is set.
-
-Full details: https://cassiancreed.com/court-calendar/
 
 ---
 
@@ -63,6 +51,14 @@ Brian Thompson, the UnitedHealthcare CEO, was shot and killed in Manhattan in De
 Case explainer: https://cassiancreed.com/post/luigi-mangione-psychiatric-defense-withdrawn-trial-2026/
 
 Full details: https://cassiancreed.com/court-calendar/
+
+---
+
+### Date change: Karoline Heintz case (Washington County, Pennsylvania)
+
+The court canceled the November 30 status conferences. Both are now scheduled for January 21, 2027, at 1 p.m. Eastern in Courtroom 7, according to the two Washington County court dockets. Both defendants pleaded not guilty and are presumed innocent.
+
+[Check both court records on the Court Calendar](https://cassiancreed.com/court-calendar/).
 
 ---
 
