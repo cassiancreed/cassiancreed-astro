@@ -58,7 +58,7 @@ Full details: https://cassiancreed.com/court-calendar/
 
 The court canceled the November 30 status conferences. Both are now scheduled for January 21, 2027, at 1 p.m. Eastern in Courtroom 7, according to the two Washington County court dockets. Both defendants pleaded not guilty and are presumed innocent.
 
-[Check both court records on the Court Calendar](https://cassiancreed.com/court-calendar/).
+Court records: [docket ending 1628](https://ujsportal.pacourts.us/Report/CpDocketSheet?docketNumber=CP-63-CR-0001628-2026&dnh=Znm3b2fS5FqWBzTcxwTRpg%3D%3D) and [docket ending 1627](https://ujsportal.pacourts.us/Report/CpDocketSheet?docketNumber=CP-63-CR-0001627-2026&dnh=dQHeXtGFgXW6cXb%2BTp3XIw%3D%3D). See the [Court Calendar](https://cassiancreed.com/court-calendar/) for the current setting.
 
 ---
 
