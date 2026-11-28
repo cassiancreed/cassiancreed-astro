@@ -30,7 +30,7 @@ On June 17, 2026, he was sentenced. This is the record of what the plea establis
 
 ## Case Facts at a Glance
 
-| | |
+| Fact | Detail |
 |---|---|
 | **Defendant** | Rex Heuermann, 61, architect from Massapequa Park, New York |
 | **Plea entered** | April 8, 2026, Suffolk County Court |

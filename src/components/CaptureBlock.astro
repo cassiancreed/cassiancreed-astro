@@ -133,6 +133,8 @@ const safetyOffer      = offer === 'safety';
 const whatYouGet       = (o as { whatYouGet?: string[] }).whatYouGet ?? [];
 const conversionPage   = Astro.url.pathname;
 const ctaId            = content || 'capture_block';
+// Screen readers list each sign-up box by its own headline, so two boxes on one page are told apart.
+const labelId          = `capture-${ctaId}-${slim ? 'slim' : 'full'}-${(globalThis.__ccCaptureCount = ((globalThis as any).__ccCaptureCount ?? 0) + 1)}`;
 
 // Fallback / non-embed link. encodeURIComponent guards odd campaign strings.
 // NEP-FIX-0824: this used to point at cassiancreed.beehiiv.com/subscribe — the
@@ -157,8 +159,8 @@ const calendarCosts = ['/court-calendar/','/true-crime-watch-calendar/'].include
 ---
 
 {slim ? (
-<section class="capture capture--slim" aria-label="Email newsletter sign-up">
-  <p class="capture__slim-text"><strong>{resolvedHeadline}</strong> <span>Free. No daily emails. Unsubscribe anytime.</span></p>
+<section class="capture capture--slim" aria-labelledby={labelId}>
+  <p class="capture__slim-text"><strong id={labelId}>{resolvedHeadline}</strong> <span>Free. No daily emails. Unsubscribe anytime.</span></p>
   {whatYouGet.length > 0 && (
     <div class="capture__get capture__get--slim">
       <p class="capture__get-title">What you get</p>
@@ -168,9 +170,9 @@ const calendarCosts = ['/court-calendar/','/true-crime-watch-calendar/'].include
   <a class="capture__button capture__button--slim" data-nep-campaign={camp} data-nep-conversion-page={conversionPage} data-nep-cta-id={ctaId} data-nep-form-id={o.formId} data-nep-offer-id={o.offerId} href={subscribeHref} target="_blank" rel="noopener noreferrer">{resolvedButton} &rarr;</a>
 </section>
 ) : (
-<section class="capture" aria-label="Email newsletter sign-up">
+<section class="capture" aria-labelledby={labelId}>
   <div class="capture__inner">
-    <h2 class="capture__headline">{resolvedHeadline}</h2>
+    <h2 class="capture__headline" id={labelId}>{resolvedHeadline}</h2>
     {safetyLine && (
       <p class="capture__safety" role="note">{safetyLine}</p>
     )}

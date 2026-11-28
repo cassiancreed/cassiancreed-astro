@@ -12,6 +12,9 @@ location: "Duxbury, Massachusetts"
 jurisdiction: "Plymouth County Superior Court, Massachusetts"
 status: "Mistrial declared Sept. 4, 2026; three first-degree murder charges unresolved; pleaded not guilty; presumed innocent. As of Nov. 25, 2026: the judge denied the defense motion to dismiss on Nov. 9; the defense appealed to the Supreme Judicial Court, which on Nov. 23 denied prosecutors' request to pause the retrial (reported Nov. 25). Retrial jury selection is set for March 29, 2027. This report's research cutoff is Aug. 8, 2026."
 cover: "/og.png"
+listen:
+  spotifyEpisode: "0ts6Gm09jAlK2AEjU93jZW"
+  title: "Lindsay Clancy Trial: How Psychiatric Evidence Shapes What the Jury Must Decide"
 ---
 
 <div class="status-box" style="border:1px solid var(--rule,#e4e0d9);border-left:4px solid var(--accent,#b91c1c);background:var(--card,#faf9f7);padding:1rem 1.25rem;margin:1.5rem 0;border-radius:6px;font-size:.95rem">

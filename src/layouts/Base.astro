@@ -1,6 +1,7 @@
 ---
 import { tabExplainerFor } from '../data/tab-explainers.mjs';
 import '../styles/global.css';
+import ReadingSettings from '../components/ReadingSettings.astro';
 import ReportError from '../components/ReportError.astro';
 export interface Props {
   title: string;
@@ -322,6 +323,10 @@ function navActive(href){
     }catch(e){}
   })();
   </script>
+  <script is:inline>
+    /* Site fix list v2: apply the saved text size and contrast before paint. */
+    try { var s = JSON.parse(localStorage.getItem('cc-reading') || '{}') || {}; var c = document.documentElement.classList; if (s.size === 1) c.add('ts-1'); if (s.size === 2) c.add('ts-2'); if (s.contrast === 1) c.add('hc'); } catch (e) {}
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -341,6 +346,7 @@ function navActive(href){
       </nav>
     </details>
   </div></header>
+  <ReadingSettings />
   <main id="main-content" tabindex="-1">
     {tabExplainer && (
       <aside class="wrap tab-explainer" aria-label="What this page is for">

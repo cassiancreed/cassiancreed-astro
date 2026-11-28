@@ -13,7 +13,7 @@ status: Conviction reinstated 6-3, June 22, 2026 (McCarthy v. Hernandez)
 
 ## The 1979 SoHo Disappearance: What Happened, Who Killed the Boy, and Why the Supreme Court Reinstated the Conviction in 2026
 
-On the morning of May 25, 1979, a six-year-old boy named Etan Patz left his family's apartment in SoHo, Manhattan, and walked toward his school bus stop alone for the very first time. It was a two-block journey. He never arrived. For forty-seven years, the question of what happened to Etan Patz haunted a city, reshaped how America protects its children, and wound through three trials and the highest court in the land.
+On the morning of May 25, 1979, a six-year-old boy left his family's apartment in SoHo, Manhattan, and walked toward his school bus stop alone for the very first time. It was a two-block journey. He never arrived. For forty-seven years, the question of what happened to him haunted a city, reshaped how America protects its children, and wound through three trials and the highest court in the land.
 
 This is the full case file — the disappearance, the milk carton kid, the confession of Pedro Hernandez, and the 6-3 Supreme Court ruling on June 22, 2026 that reinstated his conviction.
 
@@ -21,15 +21,15 @@ This is the full case file — the disappearance, the milk carton kid, the confe
 
 ## What Happened to the 6-Year-Old Boy?
 
-Etan's disappearance exposed a catastrophic void in how missing children were handled. There was no body, no physical evidence, and no immediate suspect. With nothing to go on, the search stretched into decades and transformed a local missing-persons report into a national priority — ultimately driving the creation of coordinated databases and child-safety protocols that did not exist before 1979.
+The boy's disappearance exposed a catastrophic void in how missing children were handled. There was no body, no physical evidence, and no immediate suspect. With nothing to go on, the search stretched into decades and transformed a local missing-persons report into a national priority — ultimately driving the creation of coordinated databases and child-safety protocols that did not exist before 1979.
 
 ## The Milk Carton Kid
 
-Etan Patz became the original "milk carton kid," his face printed on cartons in kitchens across the country. That campaign helped launch the National Center for Missing & Exploited Children, and May 25 — the day he vanished — was later designated National Missing Children's Day. For a generation, his photograph was the face of a new and frightening idea: that a child could disappear in plain sight.
+The boy became the original "milk carton kid," his face printed on cartons in kitchens across the country. That campaign helped launch the National Center for Missing & Exploited Children, and May 25 — the day he vanished — was later designated National Missing Children's Day. For a generation, his photograph was the face of a new and frightening idea: that a child could disappear in plain sight.
 
 ## Who Killed the Boy?
 
-For decades there was no answer. Then, in 2012, a tip led investigators to Pedro Hernandez, who had worked at a neighborhood bodega in 1979. Hernandez confessed that he lured Etan into the store's basement with the promise of a soda, strangled him, and disposed of his body.
+For decades there was no answer. Then, in 2012, a tip led investigators to Pedro Hernandez, who had worked at a neighborhood bodega in 1979. Hernandez confessed that he lured the boy into the store's basement with the promise of a soda, strangled him, and disposed of his body.
 
 His defense argued the confession was the product of a fragile mind — citing a roughly seven-hour interrogation conducted before he was read his Miranda rights, alongside a documented history of mental illness and hallucinations. Prosecutors countered that the later, videotaped confessions were reliable and corroborated.
 
@@ -57,13 +57,9 @@ The ruling closes a forty-seven-year saga and leaves Pedro Hernandez serving his
 
 ## The Bottom Line
 
-What happened to Etan Patz changed American childhood. Who killed Etan Patz was answered, contested, and — in 2026 — settled. The milk carton kid's case is now one of the defining legal stories of its era.
+What happened to this boy changed American childhood. Who killed him was answered, contested, and — in 2026 — settled. The milk carton kid's case is now one of the defining legal stories of its era.
 
 *If this case file moved you, subscribe to Neural Edge Publishing, explore our other true crime case files, and follow us for ongoing coverage of the cases that rewrite the law. More at cassiancreed.com.*
-
-## Listen to this case
-
-<iframe loading="lazy" style="border-radius:12px" src="https://open.spotify.com/embed/episode/6ArfeTybQ5QZlKjNUaZalb?theme=0" width="100%" height="152" frameborder="0" allow="clipboard-write; encrypted-media; fullscreen; picture-in-picture" title="Listen: The 1979 SoHo Disappearance and the 2026 Supreme Court Ruling — Cassian Creed: Daily Update"></iframe>
 
 > **Get the next case file the day it ships**  
 > [Get *How to Read a Case Like the Court Does*, our field guide to reading a case the way a court does →](https://cassiancreed.beehiiv.com/subscribe?utm_source=website&utm_medium=av_embed&utm_campaign=lm_case_how-to-read-a-case)

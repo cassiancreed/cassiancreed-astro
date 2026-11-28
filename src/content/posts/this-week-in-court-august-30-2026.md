@@ -10,6 +10,9 @@ relatedBook:
   key: jury-chess
   midCopy: "This week's proceedings put five different legal tasks in view, from jury deliberations to a probable-cause ruling. Jury Chess explains how evidence, burdens, instructions, and courtroom procedure shape those decisions."
   endCopy: "Follow the cases on the court calendar, then use Jury Chess to understand what each legal stage asks a judge or jury to decide—and what it does not."
+listen:
+  spotifyEpisode: "4uAphKcurkHA8HycND08KU"
+  title: "This Week in Court: Lindsay Clancy, Keffe D, Lil Durk, D4vd & Tyler Robinson"
 ---
 
 <div class="status-box" style="border:1px solid var(--rule,#e4e0d9);border-left:4px solid var(--accent,#b91c1c);background:var(--card,#faf9f7);padding:1rem 1.25rem;margin:1.5rem 0;border-radius:6px;font-size:.95rem">

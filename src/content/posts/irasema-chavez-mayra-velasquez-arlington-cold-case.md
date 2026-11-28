@@ -11,6 +11,9 @@ status: "Charged — Mayra Velasquez, 42, charged with capital murder. The charg
 capture: "case"
 seoTitle: "Irasema Chavez Cold Case: Mayra Velasquez and the IGG Break"
 description: "How did genetic genealogy lead to Mayra Velasquez's arrest in the Irasema Chavez case? Read the known record, what remains undisclosed, and what comes next."
+listen:
+  spotifyEpisode: "1UH5D1dHLR0T4D2NRgVzE3"
+  title: "The Irasema Chavez Cold Case: A Lead Is Not a Verdict"
 ---
 
 *Case file current through July 21, 2026. A joint Arlington Police Department–FBI briefing was held on Wednesday, July 22, 2026; what officials disclosed there is not yet reflected in this file.*

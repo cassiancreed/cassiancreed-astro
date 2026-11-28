@@ -34,7 +34,7 @@ const buyParams = new URLSearchParams({
 const buyUrl = `${selected.buyUrl}?${buyParams}`;
 ---
 
-<aside class:list={['book-cta', `book-cta--${placement}`]} aria-label={`Related book: ${selected.title}`}>
+<aside class:list={['book-cta', `book-cta--${placement}`]} aria-label={`${placement === 'mid' ? 'Related book' : 'Related book, end of page'}: ${selected.title}`}>
   <a class="book-cta__cover" href={selected.detailsUrl} aria-label={`Learn more about ${selected.title}`}>
     <img src={selected.cover} alt={selected.coverAlt} width="600" height="900" loading="lazy" decoding="async" />
   </a>
