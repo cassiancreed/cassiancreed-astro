@@ -13,6 +13,9 @@ status: "Investigation active; no kidnapping charge identified in current FBI ma
 cover: "/covers/nancy-guthrie-case-update-2026.png"
 coverAlt: "Editorial Nancy Guthrie case-update graphic with an Arizona map, Tucson night scene, door camera, timeline, and Confirmed, Claimed, Unknown evidence labels."
 capture: "safety"
+listen:
+  spotifyEpisode: "0gVY7vMMCMAS484jONuw6p"
+  title: "Nancy Guthrie Case Update: The Ransom Notes, FBI Evidence & What Remains Unconfirmed"
 ---
 
 > **Nancy Guthrie remains missing. Send direct, fact-based information to 1-800-CALL-FBI or [tips.fbi.gov](https://tips.fbi.gov/). Do not publish accusations or alleged evidence in comments.**

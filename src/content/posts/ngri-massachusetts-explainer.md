@@ -7,6 +7,9 @@ jurisdiction: "Massachusetts"
 capture: "case"
 seoTitle: "Massachusetts NGRI: What Not Criminally Responsible Means"
 description: "What does not criminally responsible (NGRI) mean in Massachusetts? Learn how observation, commitment hearings, and renewed commitments work after a verdict."
+listen:
+  spotifyEpisode: "5k6hnIZ2kthRrIZsBP1Nfd"
+  title: "Lindsay Clancy Trial: What the Jury Must Decide About Criminal Responsibility"
 ---
 
 One claim is circulating every time a Massachusetts murder trial involves a mental-illness defense, and it is wrong: that a verdict of not guilty by reason of lack of criminal responsibility means the defendant "walks free."

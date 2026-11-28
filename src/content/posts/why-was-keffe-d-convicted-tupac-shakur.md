@@ -11,6 +11,10 @@ incidentDate: "September 7, 1996"
 location: "Las Vegas, Nevada"
 jurisdiction: "Clark County, Nevada"
 status: "L2-provisional — convicted; AP reported 40 years to life on October 13, 2026; Davis says he will appeal; no filed notice verified at the cutoff."
+listen:
+  spotifyEpisode: "0bpyrfEDh4Z4AHboEdGcNa"
+  title: "Tupac Shakur Murder Trial 2026: Why Does Keffe D Face Murder Charges If He Isn't Accused of Firing the Fatal Shots?"
+  note: "Free. Our earlier episode on this case, from August 14, 2026, before the verdict."
 ---
 
 By Cassian Creed | Neural Edge Publishing

@@ -10,6 +10,9 @@ incidentDate: July 23, 2026
 location: Owasso, Tulsa County, Oklahoma
 jurisdiction: Tulsa County District Court, Oklahoma; U.S. Attorney's Office (referral for review)
 status: No standing conviction. Both principals deceased. Homicide investigation open.
+listen:
+  spotifyEpisode: "0ACqzdp6CVnYeOXqDB96L6"
+  title: "Case File: Sara Gilson — What the Court Record Shows"
 ---
 
 <div class="status-box" style="border:1px solid var(--rule,#e4e0d9);border-left:4px solid var(--accent,#b91c1c);background:var(--card,#faf9f7);padding:1rem 1.25rem;margin:1.5rem 0;border-radius:6px;font-size:.95rem">

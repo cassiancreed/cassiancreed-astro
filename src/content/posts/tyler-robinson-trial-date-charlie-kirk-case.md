@@ -12,6 +12,10 @@ jurisdiction: "Utah Fourth District Court, Provo, Utah County, Utah"
 status: "Tyler Robinson is charged with aggravated murder and six other counts. He pleaded not guilty and is presumed innocent. No trial date is set. The judge set Nov. 9, 2026 to rule on a trial schedule."
 cover: "/case-art/tyler-robinson-case-explainer.png"
 coverAlt: "Dark title card with the words: Case explainer, Neural Edge Publishing. The Tyler Robinson Case: No Trial Date Yet. cassiancreed.com."
+listen:
+  spotifyEpisode: "5PBRxM5Cj9KtBwMby8U8gC"
+  title: "Tyler Robinson Preliminary Hearing Explained: What Happens Next?"
+  note: "Free. Our earlier episode on this case, from July 30, 2026."
 ---
 
 *Status as of Oct. 24, 2026, 12:00 PM PT. Court dates can change. Check our [Court Calendar](https://cassiancreed.com/court-calendar/) and its "last updated" date.*
