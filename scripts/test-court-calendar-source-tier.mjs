@@ -130,6 +130,7 @@ test('the parser rejects a social-only calendar row', () => {
 });
 
 const OFFICIAL_IDS = [
+  'moser-heintz-arraignment',
   'goncalves-wsu-trial',
   'canyon-county-idaho-child-case-oct7-suppression',
   'unconfirmed-4',
@@ -152,7 +153,6 @@ const OFFICIAL_IDS = [
 ];
 
 const NEWS_IDS = [
-  'moser-heintz-arraignment',
   'isabelle-johnson-hearing',
   'arndt-motion-2026-12-16',
   'arndt-sentencing-2027-01-20',
@@ -205,6 +205,9 @@ test('recorded calendar rows keep the derived tiers and do not invent labels', (
   assert.deepEqual(ids('unclassified'), [...UNCLASSIFIED_IDS].sort());
   assert.deepEqual(ids('news-double'), [...NEWS_DOUBLE_IDS].sort());
   assert.equal(ids('social-only').length, 0);
+  const moser = domestic.entries.find((row) => row.id === 'moser-heintz-arraignment');
+  assert.equal(moser.dateISO, '2027-01-21');
+  assert.equal(moser.sourceTier, 'official-single');
   for (const row of rows) {
     if (row.sourceTier === 'official-single') assert.equal(row.sourceTierLabel, OFFICIAL_SINGLE_LABEL);
     else if (row.sourceTier === 'news-single') assert.equal(row.sourceTierLabel, NEWS_SINGLE_LABEL);
